@@ -3,9 +3,7 @@ var LANDING_PAGE_HERO_HEIGHT = 550 - 64;
 $(function() {
 	window.isSmall = $(window).width() <= 600;
     window.pathArray = window.location.pathname.split( '/' );
-    window.onLandingPage = ($.inArray('index.html', window.pathArray) >= 0 
-    		&& $.inArray('documentation', window.pathArray) < 0) 
-    		|| window.pathArray[window.pathArray.length -1].length == 0;
+    window.onLandingPage = 0;
         
     initEffects();
     initSideNav();
@@ -100,12 +98,12 @@ function initSideNav() {
 }
 
 function getLinkUrl() {
-    var indexOfDocumentation = window.pathArray.indexOf('documentation');
-    var linkUrl = 'documentation/';
+    var indexOfDocumentation = window.pathArray.indexOf('/');
+    var linkUrl = '';
     for (i = indexOfDocumentation + 1; i < pathArray.length; i++) { 
         var pathSegment = pathArray[i];
         if(pathSegment.indexOf('.html') != -1) {
-            linkUrl += pathSegment;   
+            linkUrl += pathSegment;
         } else {
             linkUrl += pathSegment + "/";   
         }
