@@ -1,3 +1,8 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
 
 # Eclipse Jetty Configuration
 

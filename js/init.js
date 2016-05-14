@@ -98,15 +98,16 @@ function initSideNav() {
 }
 
 function getLinkUrl() {
-    var indexOfDocumentation = window.pathArray.indexOf('/');
     var linkUrl = '';
-    for (i = indexOfDocumentation + 1; i < pathArray.length; i++) { 
+    for (i = 1; i < pathArray.length; i++) { 
         var pathSegment = pathArray[i];
-        if(pathSegment.indexOf('.html') != -1) {
-            linkUrl += pathSegment;
-        } else {
-            linkUrl += pathSegment + "/";   
+        if(pathSegment!='') {
+			linkUrl += "/" + pathSegment;
         }
     }
-    return linkUrl;
+    if(!linkUrl.endsWith('.html')) {
+	    return linkUrl + "/index.html";
+	} else {
+		return linkUrl;
+	}
 }

@@ -1,0 +1,76 @@
+category,label
+action,Ecobee Action
+action,Mail Action
+action,MiOS Action
+action,Pebble Action
+action,Pushover Action
+action,Telegram Action
+action,XBMC Action
+action,XMPP Action
+binding,Alarm Decoder Binding
+binding,Anel Binding
+binding,CalDAV Binding (command)
+binding,CalDAV Binding (personal)
+binding,ComfoAir Binding
+binding,Denon Binding
+binding,DMX OLA Binding
+binding,eBUS Binding
+binding,Ecobee Binding
+binding,Energenie Binding
+binding,EnOcean Binding
+binding,Enphase Energy Binding
+binding,Epson Projector Binding
+binding,Exec Binding
+binding,Freeswitch Binding
+binding,FS20 Binding
+binding,Garadget Binding
+binding,GC100IR Binding
+binding,GPIO Binding
+binding,Heatmiser Binding
+binding,HTTP Binding
+binding,IHC Binding
+binding,InsteonPLM Binding
+binding,Intertechno Binding
+binding,KNX Binding
+binding,Koubachi Binding
+binding,LCN Binding
+binding,Milight Binding
+binding,MiOS Binding
+binding,Modbus Binding
+binding,MQTT Binding
+binding,Chamberlain MyQ Binding
+binding,Neohub Binding
+binding,Nest Binding
+binding,Nibe Heatpump Binding
+binding,Onkyo Binding
+binding,OpenEnergyMonitor Binding
+binding,OneWire Binding
+binding,OWServer Binding
+binding,Visonic PowerMax Binding
+binding,RWE SmartHome Binding
+binding,Samsung A/C Binding
+binding,Sapp Binding
+binding,Satel Binding
+binding,Serial Binding
+binding,SNMP Binding
+binding,Swegon Ventilation Binding
+binding,TCP/UDP Binding
+binding,Tellstick Binding
+binding,Tinkerforge Binding
+binding,Weather Binding
+binding,WOL (Wake-on-LAN) Binding
+binding,XBMC Binding
+persistence,InfluxDB (v 1.0) Persistence
+persistence,JDBC Persistence Apache Derby
+persistence,JDBC Persistence H2
+persistence,JDBC Persistence HSQLDB
+persistence,JDBC Persistence MariaDB
+persistence,JDBC Persistence MySQL
+persistence,JDBC Persistence PostgreSQL
+persistence,JDBC Persistence SQLite
+persistence,JPA Persistence
+persistence,MapDB Persistence
+persistence,MQTT Persistence
+persistence,MySQL Persistence
+persistence,RRD4j Persistence
+voice,Mary TTS

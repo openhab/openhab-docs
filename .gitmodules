@@ -4,3 +4,6 @@
 [submodule "_repos/smarthome"]
 	path = _repos/smarthome
 	url = https://github.com/eclipse/smarthome.git
+[submodule "_repos/openhab"]
+	path = _repos/openhab
+	url = https://github.com/openhab/openhab

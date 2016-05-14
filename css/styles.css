@@ -471,16 +471,16 @@ section .target .footer i:before {
     font-size: 2rem;
 }
 
-section .target.target-hardware .footer {
-    background-color: #e64a19;
+section .target.target-beginner .footer {
+    background-color: #448AFF;
 }
 
-section .target.target-solution .footer{
-    background-color: #6DAC41;
+section .target.target-advanced .footer{
+    background-color: #448AFF;
 }
 
-section .target.target-developer .footer{
-    background-color: #c2185b;
+section .target.target-migration .footer{
+    background-color: #448AFF;
 }
 
 section#hardware .section-header {
