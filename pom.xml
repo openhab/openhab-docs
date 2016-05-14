@@ -19,6 +19,9 @@
           <filesets>
             <fileset>
               <directory>${basedir}/features/bindings/</directory>
+              <directory>${basedir}/features/uis/</directory>
+              <directory>${basedir}/features/iconsets/</directory>
+              <directory>${basedir}/concepts/</directory>
             </fileset>
           </filesets>
         </configuration>
@@ -26,6 +29,24 @@
       <plugin>
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
+          <execution>
+            <id>copy-concepts-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/concepts/</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
+                  <includes>
+                    <include>**/*.md</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
           <execution>
             <id>copy-binding-docs</id>
             <phase>process-resources</phase>
@@ -61,7 +82,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/features/ui/iconset</outputDirectory>
+              <outputDirectory>${basedir}/features/iconsets</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
@@ -69,6 +90,29 @@
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
                   </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-ui-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/features/uis</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                  <excludes>
+                    <exclude>**/iconset/**</exclude>
+                  </excludes>
                 </resource>
               </resources>
             </configuration>
@@ -117,7 +161,7 @@
             </goals>
             <configuration>
               <source>
-                def iconsets = new File(project.basedir, 'features/ui/iconset')
+                def iconsets = new File(project.basedir, 'features/iconsets')
 
                 iconsets.eachFile
                 {
@@ -133,6 +177,36 @@
                 if(readme.exists()) {
                 println readme
                 readme.renameTo(new File(simpleIconsetNameDir.path, 'readme.md'))
+                }
+                }
+                }
+              </source>
+            </configuration>
+          </execution>
+          <execution>
+            <id>rename-ui-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <source>
+                def uis = new File(project.basedir, 'features/uis')
+
+                uis.eachFile
+                {
+                def name = it.name
+                if(name.contains('smarthome.ui.') &amp;&amp; !name.contains('iconset')) {
+                def uiId =
+                it.name.replace('org.eclipse.smarthome.ui.', '')
+                def simpleUiNameDir = new
+                File(uis.path, uiId)
+                it.renameTo(simpleUiNameDir)
+                def readme = new
+                File(simpleUiNameDir.path, 'README.md')
+                if(readme.exists()) {
+                println readme
+                readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
                 }
                 }
                 }
