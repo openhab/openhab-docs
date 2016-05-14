@@ -1,0 +1,11 @@
+# Site settings
+title: openHAB
+description: Open Source Smart Home Solution
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://docs.openhab.org" # the base hostname & protocol for your site
+twitter_username: openhab
+github_username:  openhab
+source: src
+
+# Build settings
+markdown: kramdown
