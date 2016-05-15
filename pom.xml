@@ -132,6 +132,8 @@
             <configuration>
               <source>
                 def bindings = new File(project.basedir, 'features/bindings')
+				def bindingList = new File(project.basedir, '_data/bindings.csv')
+				bindingList.write("id,label\n")
 
                 bindings.eachFile
                 {
@@ -150,6 +152,8 @@
                 if(!readme.text.startsWith('---')) {
                 	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
                 }
+                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '')
+                bindingList.append(bindingId + ',' + label + '\n')
                 }
                 }
                 }

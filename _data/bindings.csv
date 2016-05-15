@@ -1,0 +1,36 @@
+id,label
+digitalstrom, digitalSTROM
+fsinternetradio, FS Internet Radio
+hue, Philips Hue
+lifx, LIFX
+ntp, NTP
+sonos, Sonos
+wemo, Belkin Wemo
+yahooweather, YahooWeather
+astro, Astro
+autelis, Autelis Pool Control
+avmfritz, AVM FRITZ!
+dscalarm,DSC Alarm
+freebox, Freebox Configuration
+harmonyhub, Logitech Harmony Hub
+homematic, Homematic
+ipp, IPP
+keba, Keba
+kostalinverter, Kostal inverter
+lutron, Lutron
+max,MAX!
+netatmo, Netatmo
+network, Network
+opensprinkler, OpenSprinkler
+orvibo, Orvibo
+pioneeravr, PioneerAVR Configuration
+pulseaudio, Pulseaudio
+rfxcom, RFXCOM
+rme, RME
+samsungtv, Samsung TV
+smaenergymeter, SMA Energy Meter
+squeezebox, Logitech Squeezebox
+tesla, Tesla
+urtsi, Somfy URTSI II
+vitotronic, vitotronic
+zwave, ZWave
