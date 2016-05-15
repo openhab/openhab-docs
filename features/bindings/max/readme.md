@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 #MAX! Binding
 
 This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/).

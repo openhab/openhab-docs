@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Somfy URTSI II Binding
 
 The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third party systems and SOMFY’s RTS Motors and controls. It is capable of individual or group control, and can be operated via infrared remote, RS232 and RS485 serial communication. Once an input is activated, an RTS radio command is sent to the automated window treatment. 

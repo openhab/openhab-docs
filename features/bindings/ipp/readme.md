@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # IPP Binding
 
 This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding.

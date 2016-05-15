@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # OpenSprinkler Binding
 
 This binding allows allows basic control of the OpenSprinkler and OpenSprinkler PI (Plus) devices. Stations can be controlled to be turned on or off and rain sensor state can be read.

@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Logitech Squeezebox Binding
 
 This binding integrates the [Logitech Media Server](http://www.mysqueezebox.com) and compatible Squeeze players.

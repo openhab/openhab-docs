@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # AVM FRITZ! Binding
 
 The binding integrates the AHA ( [AVM Home Automation](http://avm.de/ratgeber/smart-home/) ) system.  

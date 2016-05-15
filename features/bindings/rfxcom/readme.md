@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # RFXCOM Binding
 
 This binding integrates large number of sensors and actuators from several different manufactures throug the [RFXCOM transceivers](http://www.rfxcom.com).

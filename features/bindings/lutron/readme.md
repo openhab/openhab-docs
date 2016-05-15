@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Lutron Binding
 
 This binding integrates with [Lutron](http://www.lutron.com) light control systems.

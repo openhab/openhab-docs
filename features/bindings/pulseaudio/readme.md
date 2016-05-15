@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Pulseaudio Binding
 
 This binding integrates pulseaudio devices.

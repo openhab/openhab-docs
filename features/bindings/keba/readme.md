@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Keba Binding
 
 This binding integrates the [Keba KeContact EV Charging Stations](http://www.keba.com).

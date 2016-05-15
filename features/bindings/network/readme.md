@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Network Binding
 
 This binding integrates a way to check whether a device is currently available on the network and the required ping time. 

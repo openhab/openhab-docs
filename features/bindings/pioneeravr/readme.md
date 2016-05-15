@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # PioneerAVR Binding Configuration
 
 ##Binding configuration

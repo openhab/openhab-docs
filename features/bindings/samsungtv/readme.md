@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Samsung TV Binding
 
 This binding integrates the [Samsung TV's](http://www.samsung.com).

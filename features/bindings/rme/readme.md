@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # RME Binding
 
 This binding integrates the RME RainManager rain water pump and management system

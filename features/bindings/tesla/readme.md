@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Tesla Binding
 
 This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com).

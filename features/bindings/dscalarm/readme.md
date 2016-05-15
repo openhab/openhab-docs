@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 #DSC Alarm Binding
 
 This is an OpenHAB binding for a DSC PowerSeries Alarm System utilizing the EyezOn Envisalink 3/2DS interface or the DSC IT-100 RS-232 interface.

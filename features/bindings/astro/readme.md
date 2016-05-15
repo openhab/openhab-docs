@@ -1,3 +1,9 @@
+---
+layout: documentation
+---
+
+{% include base.html %}
+
 # Astro Binding
 
 The Astro binding is used for calculating many DateTime and positional values for sun and moon.
