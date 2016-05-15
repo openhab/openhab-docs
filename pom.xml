@@ -21,7 +21,7 @@
               <directory>${basedir}/features/bindings/</directory>
               <directory>${basedir}/features/uis/</directory>
               <directory>${basedir}/features/iconsets/</directory>
-              <directory>${basedir}/concepts/</directory>
+              <directory>${basedir}/esh/</directory>
             </fileset>
           </filesets>
         </configuration>
@@ -30,18 +30,24 @@
         <artifactId>maven-resources-plugin</artifactId>
         <executions>
           <execution>
-            <id>copy-concepts-docs</id>
+            <id>copy-esh-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/concepts/</outputDirectory>
+              <outputDirectory>${basedir}/esh/</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
                   <includes>
                     <include>**/*.md</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/_repos/smarthome/docs/documentation/development</directory>
+                  <includes>
+                    <include>**/guidelines.md</include>
                   </includes>
                 </resource>
               </resources>
