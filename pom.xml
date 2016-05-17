@@ -19,8 +19,14 @@
           <filesets>
             <fileset>
               <directory>${basedir}/features/bindings/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/features/uis/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/features/iconsets/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/esh/</directory>
             </fileset>
           </filesets>
@@ -139,7 +145,7 @@
               <source>
                 def bindings = new File(project.basedir, 'features/bindings')
 				def bindingList = new File(project.basedir, '_data/bindings.csv')
-				bindingList.write("id,label\n")
+				bindingList.write("id,label,description\n")
 
                 bindings.eachFile
                 {
@@ -158,8 +164,22 @@
                 if(!readme.text.startsWith('---')) {
                 	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
                 }
-                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '')
-                bindingList.append(bindingId + ',' + label + '\n')
+                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '').trim()
+				def description = ""
+				boolean firstHeadline = false
+				for(def line : readme.readLines()) {
+                 if(line.startsWith('#')) {
+                 	if(!firstHeadline) {
+                 		firstHeadline = true
+                 	}
+                 } else {
+                 	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		                 description = line.trim()
+                  		 break
+		        	}
+                 }
+                }
+                bindingList.append(bindingId + ',' + label + ',"' + description + '"\n')
                 }
                 }
                 }

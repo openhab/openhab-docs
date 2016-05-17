@@ -4,43 +4,15 @@ layout: documentation
 
 {% include base.html %}
 
-# List of available Add-ons
-
-All optional add-ons for openHAB 2 are part of the distribution. This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible. If you are successfully using a 1.x add-on with the 2.0 runtime, which is not yet on this list, please create a PR for adding it.
+# List of available bindings
 
 ## 2.0 Bindings
+{% assign bindings = site.data.bindings | sort: 'label.toLowerCase()' %}
 
 | Binding | Description |
 |-------|----------------------|
-| [Astro Binding](bindings/astro/readme.html) | Astronomical calculations for sun and moon positions |
-| [Autelis Binding](bindings/autelis/readme.html) | Pool controller |
-| [AVM Fritz!Box Binding](bindings/avmfritz/readme.html) | currently only supports FRITZ AHA devices |
-| [DSCAlarm Binding](bindings/dscalarm/readme.html) | DSC PowerSeries alarm systems |
-| [Freebox Binding](bindings/freebox/readme.html) | the french [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) server |
-| [HDanywhere Binding](bindings/hdanywhere/) | HDMI matrix |
-| [IPP Binding](bindings/ipp/readme.html) | Internet Printing Protocol (replaces 1.x CUPS Binding) |
-| [KEBA Binding](bindings/keba/readme.html) | Electric vehicle charging station |
-| [Kostal Inverter Binding](bindings/kostalinverter/readme.html) | Photovoltaic converter |
-| [FS Internet Radio Binding](bindings/fsinternetradio/readme.html) | Internet radios with chip from Frontier Silicon |
-| [LIFX Binding](bindings/lifx/readme.html) | Wifi-enabled LED bulbs |
-| [Lutron Binding](bindings/lutron/readme.html) | Dimmers And Lighting Controls |
-| [MAX! Binding](bindings/max/readme.html) | Heater control solution by eQ-3 |
-| [Network Binding](bindings/network/) | Scans local network (replaces 1.x networkhealth Binding) |
-| [NTP Binding](bindings/ntp/readme.html) | NTP time servers |
-| [OpenSprinkler Binding](bindings/opensprinkler/readme.html) | Open sprinkler system |
-| [PioneerAVR Binding](bindings/pioneeravr/readme.html) | AV receivers by Pioneer |
-| [Philips Hue Binding](bindings/hue/readme.html) | LED lighting system |
-| [Pulseaudio Binding](bindings/pulseaudio/readme.html) | software-based audio distribution |
-| [Rfxcom Binding](bindings/rfxcom/readme.html) | 433MHz radio transceiver and devices |
-| [SamsungTV Binding](bindings/samsungtv/readme.html) | Samsung Smart TVs |
-| [SMAEnergyMeter Binding](bindings/smaenergymeter/readme.html) | SMA Energy Meter for photovoltaic systems |
-| [Sonos Binding](bindings/sonos/readme.html) | Multi-room audio system |
-| [Squeezebox Binding](bindings/squeezebox/readme.html) | Logitech's connected speakers |
-| [Tesla Binding](bindings/tesla/readme.html) | Teslas Model S Electric Vehicle |
-| [Vitotronic Binding](bindings/vitotronic/readme.html) | Heating systems by Viessmann |
-| [WeMo Binding](bindings/wemo/readme.html) | Switchable sockets by Belkin |
-| [YahooWeather Binding](bindings/yahooweather/readme.html) | Weather information from Yahoo |
-| [Z-Wave Binding](bindings/zwave/readme.html) | Z-Wave radio controlled devices |
+{% for binding in bindings %}| [{{ binding.label }}]({{docu}}/features/bindings/{{ binding.id }}/readme.html) | {{ binding.description }} |
+{% endfor %}					
 
 ## Compatible 1.x Add-ons
 

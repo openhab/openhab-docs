@@ -1,36 +1,37 @@
-id,label
-digitalstrom, digitalSTROM
-fsinternetradio, FS Internet Radio
-hue, Philips Hue
-lifx, LIFX
-ntp, NTP
-sonos, Sonos
-wemo, Belkin Wemo
-yahooweather, YahooWeather
-astro, Astro
-autelis, Autelis Pool Control
-avmfritz, AVM FRITZ!
-dscalarm,DSC Alarm
-freebox, Freebox Configuration
-harmonyhub, Logitech Harmony Hub
-homematic, Homematic
-ipp, IPP
-keba, Keba
-kostalinverter, Kostal inverter
-lutron, Lutron
-max,MAX!
-netatmo, Netatmo
-network, Network
-opensprinkler, OpenSprinkler
-orvibo, Orvibo
-pioneeravr, PioneerAVR Configuration
-pulseaudio, Pulseaudio
-rfxcom, RFXCOM
-rme, RME
-samsungtv, Samsung TV
-smaenergymeter, SMA Energy Meter
-squeezebox, Logitech Squeezebox
-tesla, Tesla
-urtsi, Somfy URTSI II
-vitotronic, vitotronic
-zwave, ZWave
+id,label,description
+digitalstrom,digitalSTROM,"This binding integrates the [digitalSTROM-System](http://www.digitalstrom.de/)."
+fsinternetradio,FS Internet Radio,"This binding integrates internet radios based on the [Frontier Silicon chipset](http://www.frontier-silicon.com/)."
+hue,Philips Hue,"This binding integrates the [Philips Hue Lighting system](http://www.meethue.com)."
+lifx,LIFX,"This binding integrates the [LIFX LED Bulb](http://www.lifx.com/). All LIFX bulbs are directly connected to the WLAN and the binding communicates with them over a UDP protocol."
+ntp,NTP,"The NTP binding is used for displaying the local date and time based update from an NTP server."
+sonos,Sonos,"This binding integrates the [Sonos Multi-Room Audio system](http://www.sonos.com)."
+wemo,Belkin Wemo,"This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/)."
+yahooweather,YahooWeather,"This binding uses the [Yahoo Weather service](https://developer.yahoo.com/weather/) for providing current weather information."
+astro,Astro,"The Astro binding is used for calculating many DateTime and positional values for sun and moon."
+autelis,Autelis Pool Control,"Autelis manufactures a network enabled pool interface for many popular pool systems.  See [the Autelis website](http://www.autelis.com) and the  [Autelis Command Protocol](http://www.autelis.com/wiki/index.php?title=Pool_Control_(PI)_HTTP_Command_Reference) for more information."
+avmfritz,AVM FRITZ!,"The binding integrates the AHA ( [AVM Home Automation](http://avm.de/ratgeber/smart-home/) ) system."
+dscalarm,DSC Alarm,"This is an OpenHAB binding for a DSC PowerSeries Alarm System utilizing the EyezOn Envisalink 3/2DS interface or the DSC IT-100 RS-232 interface."
+freebox,Freebox,"This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation."
+harmonyhub,Logitech Harmony Hub,"The Harmony Hub binding is used to enable communication between openHAB2 and multiple Logitech Harmony Hub devices. The API exposed by the Harmony Hub is relatively limited, but it does allow for reading the current activity as well as setting the activity and sending device commands."
+homematic,Homematic,"This is the binding for the [eQ-3 Homematic Solution](http://www.eq-3.de/)."
+ipp,IPP,"This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
+keba,Keba,"This binding integrates the [Keba KeContact EV Charging Stations](http://www.keba.com)."
+kostalinverter,Kostal inverter,"![LIFX E27](doc/kostalpico.jpg)"
+lutron,Lutron,"This binding integrates with [Lutron](http://www.lutron.com) light control systems."
+max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/)."
+netatmo,Netatmo,"The Netatmo binding integrates the following Netatmo products :"
+network,Network,"This binding integrates a way to check whether a device is currently available on the network and the required ping time."
+opensprinkler,OpenSprinkler,"This binding allows allows basic control of the OpenSprinkler and OpenSprinkler PI (Plus) devices. Stations can be controlled to be turned on or off and rain sensor state can be read."
+orvibo,Orvibo,"This binding integrates Orvibo devices that communicate using UDP. Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future."
+pioneeravr,PioneerAVR Configuration,"The binding can auto-discover the Pioneer AVRs present on your local network. The auto-discovery is enabled by default. To disable it, you can create a file in the services directory called pioneeravr.cfg with the following content:"
+pulseaudio,Pulseaudio,"This binding integrates pulseaudio devices."
+rfxcom,RFXCOM,"This binding integrates large number of sensors and actuators from several different manufactures throug the [RFXCOM transceivers](http://www.rfxcom.com)."
+rme,RME,"This binding integrates the RME RainManager rain water pump and management system"
+samsungtv,Samsung TV,"This binding integrates the [Samsung TV's](http://www.samsung.com)."
+smaenergymeter,SMA Energy Meter,"This Binding is used to display the measured values of a SMA Energy Meter device. It shows purchased and grid feed-in power and energy."
+squeezebox,Logitech Squeezebox,"This binding integrates the [Logitech Media Server](http://www.mysqueezebox.com) and compatible Squeeze players."
+systeminfo,Systeminfo,"System information Binding provides operating system and hardware information including:"
+tesla,Tesla,"This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com)."
+urtsi,Somfy URTSI II,"The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third party systems and SOMFY’s RTS Motors and controls. It is capable of individual or group control, and can be operated via infrared remote, RS232 and RS485 serial communication. Once an input is activated, an RTS radio command is sent to the automated window treatment."
+vitotronic,vitotronic,"Viessmann heating systems with vitotronic has a optolink Interface for maintenance."
+zwave,ZWave,"The ZWave binding supports an interface to a wireless ZWave home automation network."

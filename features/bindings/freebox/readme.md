@@ -4,7 +4,7 @@ layout: documentation
 
 {% include base.html %}
 
-# Freebox Binding Configuration
+# Freebox Binding
 
 This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation.
 
