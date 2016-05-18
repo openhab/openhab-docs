@@ -1,2 +1,7 @@
 _site
 .sass-cache
+.jekyll-metadata
+project.pbxproj
+*.xcworkspacedata
+*.xcscmblueprint
+*.xcuserstate
