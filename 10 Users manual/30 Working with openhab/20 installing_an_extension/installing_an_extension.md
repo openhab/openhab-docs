@@ -1,2 +1,0 @@
-# Installing an extension
-

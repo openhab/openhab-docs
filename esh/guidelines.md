@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: developersguide
 ---
 
 {% include base.html %}
