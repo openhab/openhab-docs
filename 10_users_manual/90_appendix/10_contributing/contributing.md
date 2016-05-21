@@ -6,7 +6,9 @@ layout: usersmanual
 
 # Contributing to openHAB
 
- use the table below to determine where your issue should be logged:
+## Logging issues
+
+Use the table below to determine where your issue should be logged:
 
 Issue | Where to report
 ------|----------------

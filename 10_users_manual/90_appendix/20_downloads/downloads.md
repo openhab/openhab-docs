@@ -6,6 +6,8 @@ layout: usersmanual
 
 # Download reference
 
+## OpenHAB distribution
+
 The openHAB distribution is built on our [Cloudbees Jenkins](https://openhab.ci.cloudbees.com/), where you can get the latest snapshots:
 
  - [Offline Distribution](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip)
