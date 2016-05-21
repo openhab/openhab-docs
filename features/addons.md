@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: usersmanual
 ---
 
 {% include base.html %}

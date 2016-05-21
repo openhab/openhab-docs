@@ -8,7 +8,6 @@ layout: documentation
 
 Eclipse SmartHome has a strict separation between the physical world (the "things", see below) and the application, which is built around the notion of "items" (also called the virtual layer).
 
-Items represent functionality that is used by the application (mainly user interfaces or automation logic). Items have a state and are used through events.
   
 The following item types are currently available (alphabetical order):
 
