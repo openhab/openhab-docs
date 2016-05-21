@@ -4,7 +4,7 @@ layout: usersmanual
 
 {% include base.html %}
 
-# About of this part
+# Overview
 
 The goal of this part is to present a second level of use of openHAB 2 with a more complex binding: the z-wave binding.
 

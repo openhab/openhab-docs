@@ -4,7 +4,7 @@ layout: usersmanual
 
 {% include base.html %}
 
-# About of this part
+# Overview
 
 
 This part covers all the basic use of OpenHAB: how to install a binding, how to configure them, the inbox....

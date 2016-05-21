@@ -4,8 +4,6 @@ layout: usersmanual
 
 {% include base.html %}
 
-# Add-on list
-
 ## Available Add-ons
 
 All optional add-ons for openHAB 2 are part of the distribution. This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible. 

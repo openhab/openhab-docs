@@ -73,8 +73,7 @@ Currently there is only one keypad thing type to cover all keypads. Not all chan
 
 ## Full Example
 
-demo.Things:
-
+demo.things:
 ```
 lutron:dimmer:theater (lutron:ipbridge:radiora2) [ integrationId=8, fadeOutTime=2 ]
 lutron:occupancysensor:theater (lutron:ipbridge:radiora2) [ integrationId=9 ]
