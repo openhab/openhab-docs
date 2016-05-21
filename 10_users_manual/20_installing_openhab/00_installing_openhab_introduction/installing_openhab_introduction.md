@@ -10,11 +10,11 @@ This parts covers the different steps needed to have a working install of openHA
 
 This is done thru 3 steps:
 
-* checking Java version
+* checking Java version,
 
-* installing openHAB 2 itself
+* installing openHAB 2 itself,
 
-* using the logs.
+* installing the designer.
 
 The last chapter discusses about the migration from openHAB 1.x.
 

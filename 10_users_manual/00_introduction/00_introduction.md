@@ -4,7 +4,9 @@ layout: usersmanual
 
 {% include base.html %}
 
-# What is openHAB
+# Overview
+
+## What is openHAB ?
 
 openHAB is a software for integrating different home automation systems and technologies into one single solution that allows over-arching automation rules and that offers uniform user interfaces.
 
@@ -12,7 +14,7 @@ openHAB 2 is the successor of [openHAB 1](https://github.com/openhab/openhab/wik
 
 openHAB is a highly modular software, which means that the base installation (the "runtime") can be extended through different kinds of "add-ons".
 
-# The documentation
+## The documentation
 
 The _user’s manual_ has been built in order to guide you for your first contact with OpenHAB. It guides you step by step in your discovery of OpenHAB mechanisms.
 

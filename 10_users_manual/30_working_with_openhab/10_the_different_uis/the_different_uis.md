@@ -8,7 +8,7 @@ layout: usersmanual
 
 OpenHAB 2 offers different UIs in its standard configuration: the _Paper UI_, the _Basic UI_ and the _Classic UI_.
 
-# The Paper UI
+## The Paper UI
 
 The Paper UI is a new interface that helps setting up and configuring your openHAB instance.
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
@@ -30,7 +30,7 @@ Here you can find a small screencast about the Paper UI:
 
 [![Paper UI](http://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
 
-# The Basic UI
+## The Basic UI
 
 The Basic UI is a web interface based on Material Design Lite from Google. This interface is used to present the different sitemaps.
 
@@ -46,7 +46,7 @@ The UIs features are:
 
 ![](images/screenshot-2-full.png)
 
-# The Classic UI
+## The Classic UI
 
 The Classic UI offers the same services that the Basic UI but with a different look and feel, close to an old iOS one.
 

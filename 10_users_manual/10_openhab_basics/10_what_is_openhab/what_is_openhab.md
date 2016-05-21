@@ -12,7 +12,7 @@ But openHAB is also a __community__ of users, contributors and maintainers.
 
 In this chapter, we are going to see a little bit more of these two aspects.
 
-# OpenHAB structure
+## OpenHAB structure
 
 OpenHAB 2 is an open-source solution based on the [Eclipse SmartHome]() framework. It is fully written in Java and uses [Apache Karaf](http://karaf.apache.org/) together with [Eclipse Equinox](https://www.eclipse.org/equinox/) as an OSGi runtime and bundles this with [Jetty](https://www.eclipse.org/jetty/) as an HTTP server.
 
@@ -32,7 +32,7 @@ Add-ons can come from three different origins :
 
 We will learn more about add-ons in the following chapters.
 
-# The OpenHAB community
+## The OpenHAB community
 
 OpenHAB is not only a solution but also a community.
 
