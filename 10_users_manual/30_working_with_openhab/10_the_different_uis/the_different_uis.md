@@ -22,7 +22,7 @@ It does not (yet) cover all aspects, so you still need to resort to textual conf
 - Linking items to channels: Instead of adding a binding configuration to your item file, you can directly link Thing channels to your items.
 ![](images/paperui3.png)
 
-Note that you still need to define your items, sitemaps, persistence configurations and rules in the according config files (as done in openHAB 1). Such functionality will be added bit by bit to the Paper UI only.
+Note that you still need to define your items, sitemaps, persistence configurations and rules in the according configuration files (as done in openHAB 1). Such functionality will be added bit by bit to the Paper UI only.
 
 All these aspects are explained in the rest of this manual/
 
@@ -53,5 +53,6 @@ The Classic UI offers the same services that the Basic UI but with a different l
 ![](images/classicui1.png)
 
 ![](images/classicui2.png)
+
 
 

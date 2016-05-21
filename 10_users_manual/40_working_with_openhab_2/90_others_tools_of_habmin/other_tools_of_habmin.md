@@ -4,7 +4,7 @@ layout: usersmanual
 
 {% include base.html %}
 
-# Other tools of Habmin
+# Other tools of HABmin
 
 ## The Sitemap viewer
 
@@ -14,7 +14,7 @@ layout: usersmanual
 
 In the left menu, click on *Tools*, *Z-Wave network viewer*.
 
-The viewer display a graph of the network. You can have information about the node by clicking on it.
+The viewer displays a graph of the network. You can have information about the node by clicking on it.
 
 ![](images/network-viewer.png)
 
@@ -24,15 +24,16 @@ When a node has any kind of error, it is displayed in red.
 
 # The ZWave Database
 
-Habmin is using an internal database to fetch configuration data corresponding to the device.
+HABmin is using an internal database to fetch configuration data corresponding to the device.
 
 
-If this device is not in the database,then no device name nor model will be displayed but a code identifying the device.
+If this device is not in the database, then no device name nor model will be displayed but a code identifying the device.
 
 ![](../Adding_a_new_thing/images/zwave-node-badnode.png)
 
-In this example, the Thing "Z-wave Node 3" has not been found in the ZWave database and the Thing "Z-wave Node 4"  has been successfully identified.
+In this example, the Thing "Z-wave Node 3" has not been found in the ZWave database and the Thing "Z-wave Node 4" has been successfully identified.
 
 <<< TO BE COMPLETED >>>
+
 
 

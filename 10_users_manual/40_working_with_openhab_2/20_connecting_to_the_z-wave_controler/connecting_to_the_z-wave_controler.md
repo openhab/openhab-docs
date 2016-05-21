@@ -17,7 +17,7 @@ Working with the Z-Wave devices will be done in __HABmin__.
 
 ## Adding the Thing
 
-* From OpenHab welcome screen, choose the __HABmin__ tile.
+* From openHAB welcome screen, choose the __HABmin__ tile.
 * On the left menu, click on __Configuration__ and __Things configuration__.
 * The controller must be added manually. Click on the __+__ sign, at the top of the screen.
 
@@ -27,7 +27,7 @@ Working with the Z-Wave devices will be done in __HABmin__.
 
 ![](images/zwave-controller-config-2.png)
 
-* You can then select : __Z-Wave Serial Controller__ :
+* You can then select: __Z-Wave Serial Controller__ :
 
 ![](images/zwave-controller-config-3.png)
 
@@ -37,8 +37,8 @@ Working with the Z-Wave devices will be done in __HABmin__.
 
 * Click on save, and you are ready to configure it.
 
-> When click on __Save__, nothing change on the screen, but the log file confirms that a next thing has been defined.
-> The log files looks like:
+> When click on __Save__, nothing changes on the screen, but the log file confirms that a next thing has been defined.
+> The log file looks like:
 
 ```
 2016-05-09 18:53:33.987 [INFO ] [smarthome.event.ThingAddedEvent     ] - Thing 'zwave:serial_zstick:154966faddf' has been added.
@@ -59,7 +59,7 @@ Working with the Z-Wave devices will be done in __HABmin__.
 
 ## Configuring the port
 ---
-*Guidelines : this section is so far centered on Mac OS. It must be modified in order to cover Linux and Windows.*
+*This section is so far centred on Mac OS. It must be modified in order to cover Linux and Windows.*
 ---
 
 ### Finding the port name
@@ -68,7 +68,7 @@ Working with the Z-Wave devices will be done in __HABmin__.
 * Type the following command `ls \dev\tty*`
 * Depending on your USB device, the name can look like `/dev/tty.SLAB_USBtoUART` or `/dev/tty.usbmodem14111`
 
-The port name that is displayed is the parameter needed 
+The port name that is displayed is the parameter needed
 
 ### Setting the port name
 
@@ -97,7 +97,7 @@ The port name that is displayed is the parameter needed
 
 The console will display messages related to the binding initialisation.`
 
-> A "clean" startup looks this way in the log file :
+> A "clean" startup looks this way in the log file:
 >
 ```
 2016-05-09 21:29:33.195 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /ui
@@ -119,7 +119,8 @@ The console will display messages related to the binding initialisation.`
 2016-05-09 21:29:36.876 [INFO ] [age.SerialApiGetInitDataMessageClass] - # Nodes = 1
 2016-05-09 21:29:36.877 [INFO ] [age.SerialApiGetInitDataMessageClass] - ----------------------------------------------------------------------------
 2016-05-09 21:29:36.881 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from OFFLINE to ONLINE
-``` 
+```
+
 
 
 

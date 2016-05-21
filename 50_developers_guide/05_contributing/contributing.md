@@ -112,8 +112,6 @@ component affected. For example, if a change affects `docs/` and `distributions/
 needs an absolute majority from the maintainers of `docs/` AND, separately, an
 absolute majority of the maintainers of `addons/`.
 
-For more details see [MAINTAINERS.md](project-orga/MAINTAINERS.md)
-
 ### Sign your work
 
 The sign-off is a simple line at the end of the explanation for the

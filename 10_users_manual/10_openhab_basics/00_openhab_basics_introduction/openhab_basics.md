@@ -9,7 +9,7 @@ layout: usersmanual
 
 This first part of the user's manual presents the concept you need to understand before going in more practical aspects.
 
-After some more elements about OpenHAB itself and ist community, this parts covers :
+After some more elements about OpenHAB itself and its community, this parts covers:
 
 - the difference between _things_, _items_ and _channels_,
 
@@ -18,3 +18,4 @@ After some more elements about OpenHAB itself and ist community, this parts cove
 - what is _sitemap_,
 
 - the different kinds of _add-ons_.
+
