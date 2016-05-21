@@ -1,3 +1,9 @@
+---
+layout: developersguide
+---
+
+{% include base.html %}
+
 # Compatibility Layer for openHAB 1.x Add-ons
 
 openHAB 2 used [Eclipse SmartHome](https://www.eclipse.org/smarthome/) as its core framework. Although many classes are similar, all of them have at least a different namespace (`org.eclipse.smarthome` instead of `org.openhab`) - as a result, none the existing 1.x add-ons would work on openHAB 2.
