@@ -80,8 +80,7 @@ Here after are the ID values of the input sources:
 
 ##Full example
 
-*demo.Things:
-
+*demo.things:
 ```
 pioneeravr:ipAvr:vsx921 [ address="192.168.188.89" ]
 ```

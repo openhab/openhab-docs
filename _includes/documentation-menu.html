@@ -1,7 +1,7 @@
 {% include base.html %} {% assign docu = base %}
 
 <ul class="nav">
-	<li><a href="{{docu}}/index.html">Overview</a></li>
+	<li><a href="{{docu}}/reference/introduction/introduction.html">Overview</a></li>
 	<li><a href="{{docu}}/esh/items.html">Concepts</a>
 		<ul>
 			<li><a href="{{docu}}/esh/items.html">Items</a></li>
@@ -9,32 +9,9 @@
 			<li><a href="{{docu}}/esh/discovery.html">Inbox & Discovery</a></li>
 		</ul>
 	</li>
-	<li><a href="{{docu}}/features/addons.html">Add-ons</a>
-		<ul>
-			<li><a href="{{docu}}/features/bindings.html">Bindings</a>
-				<ul>
-					{% for binding in site.data.bindings %}
-					<li><a href="{{docu}}/features/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
-					{% endfor %}					
-				</ul>
-			</li>
-			<li><a href="{{docu}}/features/uis.html">User Interfaces</a>
-				<ul>
-					<li><a href="{{docu}}/features/ui/basic/readme.html">Basic UI</a></li>
-					<li><a href="{{docu}}/features/iconsets/classic/readme.html">Classic Iconset</a></li>
-				</ul>
-			</li>
-		</ul>
-	</li>
-	<li><a href="{{docu}}/development/ide.html">Development</a>
-		<ul>
-			<li><a href="{{docu}}/development/ide.html">IDE Setup</a></li>
-            <li><a href="{{docu}}/esh/guidelines.html">Guidelines</a></li>
-            <li><a href="{{docu}}/development/bindings.html">Bindings</a></li>
-		</ul></li>
-	<li><a href="{{docu}}/community/contributing.html">Community</a>
-		<ul>
-			<li><a href="{{docu}}/community/contributing.html">Contributing</a></li>
-			<li><a href="{{docu}}/community/downloads.html">Downloads</a></li>
-		</ul></li>
+    <li><a href="{{docu}}/reference/installation/gettingstarted.html">Installing openHAB</a/></li>
+    <ul>
+        <li><a href="{{docu}}/reference/installation/gettingstarted.html">Installing openHAB</a/></li>
+        <li><a href="{{docu}}/reference/installation/jetty.html">Jetty Configuration</a/></li>
+    </ul>
 </ul>

@@ -41,8 +41,7 @@ All devices support some of the following channels:
 
 ## Full Example
 
-demo.Things:
-
+demo.things:
 ```
 network:device:1 [ hostname="192.168.0.64", port="0", retry="1", timeout="5000", refresh_interval="60000", use_system_ping="false" ]
 ```

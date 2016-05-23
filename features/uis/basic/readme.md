@@ -4,12 +4,11 @@ layout: documentation
 
 {% include base.html %}
 
-## Basic UI
+## Eclipse Smarthome BasicUI
 
-The Basic UI is a web interface based on Material Design Lite from Google.
+BasicUI is a web interface for Eclipse Smarthome based on Material Design Lite from Google.
 
 Features:
-
 * Responsive layout suitable for various screen sizes
 * AJAX navigation
 * Live update<sup>1</sup>
@@ -17,7 +16,6 @@ Features:
 <sup>1</sup>: as for now, only control states and icons are updated. Visibility changes require a page reload.
 
 Configuration:
-
 ```
 org.eclipse.smarthome.basicui:defaultSitemap=demo
 # Icons can be disabled
