@@ -13,6 +13,7 @@ _Note_: If you are successfully using a 1.x add-on with the 2.0 runtime, which i
 |-------------|----------------------|
 |[Bindings](bindings.html)| Bindings integrate physical hardware, external systems and web services in openHAB |
 |[User Interfaces](uis.html)| User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
+|[System Integration](io.html)| System integrations expose openHAB to an external system |
 
 ...
 

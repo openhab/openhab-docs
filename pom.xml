@@ -24,6 +24,9 @@
               <directory>${basedir}/features/uis/</directory>
             </fileset>
             <fileset>
+              <directory>${basedir}/features/io/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/features/iconsets/</directory>
             </fileset>
             <fileset>
@@ -125,6 +128,26 @@
                   <excludes>
                     <exclude>**/iconset/**</exclude>
                   </excludes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-io-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/features/io</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
                 </resource>
               </resources>
             </configuration>
@@ -240,6 +263,38 @@
                 if(readme.exists()) {
                 println readme
                 readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+                }
+                }
+                }
+              </source>
+            </configuration>
+          </execution>
+          <execution>
+            <id>rename-io-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <source>
+                def uis = new File(project.basedir, 'features/io')
+
+                uis.eachFile
+                {
+                def name = it.name
+                if(name.contains('org.openhab.io.')) {
+                def uiId =
+                it.name.replace('org.openhab.io.', '')
+                def simpleUiNameDir = new
+                File(uis.path, uiId)
+                it.renameTo(simpleUiNameDir)
+                def readme = new File(simpleUiNameDir.path, 'README.md')
+                if(readme.exists()) {
+                println readme
+                readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+                if(!readme.text.startsWith('---')) {
+                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                }
                 }
                 }
                 }
