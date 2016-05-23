@@ -5,7 +5,7 @@ layout: usersmanual
 {% include base.html %}
 
 
-# About of this part
+# Overview
 
 This first part of the user's manual presents the concept you need to understand before going in more practical aspects.
 

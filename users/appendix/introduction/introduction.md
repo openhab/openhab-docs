@@ -4,7 +4,7 @@ layout: usersmanual
 
 {% include base.html %}
 
-# About of this part
+# Overview
 
 This part contains some extra information that are placed here in order to keep the manual content as simple as possible.
 

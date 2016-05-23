@@ -4,7 +4,7 @@ layout: usersmanual
 
 {% include base.html %}
 
-# About this part
+# Overview
 
 This parts covers the different steps needed to have a working install of openHAB 2.
 

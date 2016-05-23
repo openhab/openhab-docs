@@ -1,5 +1,5 @@
 ---
-layout: gettingstarted
+layout: documentation
 ---
 
 {% include base.html %}
@@ -12,10 +12,13 @@ openHAB 2 is the successor of [openHAB 1](https://github.com/openhab/openhab/wik
 
 openHAB is a highly modular software, which means that the base installation (the "runtime") can be extended through different kinds of "add-ons".
 
-# User's documentation
+# User Documentation
 
-The _user’s manual_ has been built in order to guide you for your first contact with OpenHAB. It guides you step by step in your discovery of OpenHAB mechanisms.
+The [_User Manual_](users/introduction/introduction.html) has been built in order to guide you for your first contact with openHAB. It guides you step by step in your discovery of openHAB mechanisms.
 
+This manual is an on-going work.
+
+<!--
 Two companion books will help you while you will need more information.
 
 The _Reference manual_ is an extensive reference of what is presented in the user’s manual. This manual is useful for you when you need to know all the details of something you have learnt in the User’s manual.
@@ -29,9 +32,10 @@ For example, speaking of the scripting language:
 - the _cookbook_ contains real-life use cases that you can use for your own setup.
 
 This set of manuals is an on-going work.
+-->
 
-# Developer's documentation
+# Developer Documentation
 
-The _developer's guide_ contains practical and technical information for people willing to contribute to the development of openHAB or of one of its add-ons.
+The [_Developer Guide_](developers/introduction/introduction) contains practical and technical information for people willing to contribute to the development of openHAB or of one of its add-ons.
 
 This manual is an on-going work.

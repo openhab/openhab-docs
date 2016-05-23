@@ -102,8 +102,7 @@ The following are only support by the OpenSprinkler using the HTTP API interface
 
 ## Full Example
 
-demo.Things:
-
+demo.things:
 ```
 opensprinkler:http:1 [ hostname="192.168.1.23", port=80, password="opendoor", refresh=60 ]
 ```
