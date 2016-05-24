@@ -109,6 +109,7 @@ opensprinkler:http:1 [ hostname="192.168.1.23", port=80, password="opendoor", re
 ```
 
 demo.items:
+
 ```
 Group stations
 Switch Station01 (stations) { channel="opensprinkler:http:1:station01" }
@@ -124,6 +125,7 @@ Switch RainSensor { channel="opensprinkler:http:1:rainsensor" }
 ```
 
 demo.sitemap:
+
 ```
 sitemap demo label="Main Menu"
 {
