@@ -1,5 +1,5 @@
 ---
-layout: documentation
+layout: intro
 ---
 
 {% include base.html %}
