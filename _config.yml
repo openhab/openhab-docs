@@ -7,3 +7,4 @@ twitter_username: openhab
 github_username:  openhab
 # Build settings
 markdown: kramdown
+source: _source
