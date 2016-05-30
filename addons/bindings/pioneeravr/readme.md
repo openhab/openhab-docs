@@ -6,7 +6,7 @@ layout: documentation
 
 # PioneerAVR Binding Configuration
 
-##Binding configuration
+## Binding configuration
 
 The binding can auto-discover the Pioneer AVRs present on your local network. The auto-discovery is enabled by default. To disable it, you can create a file in the services directory called pioneeravr.cfg with the following content:
 
@@ -34,13 +34,14 @@ Configuration of serialAvr:
 * serialPort: the name of the serial port on your computer. (mandatory)
 
 Example:
+
 ```
 pioneeravr:ipAvr:vsx921IP [ address="192.168.1.25", tcpPort="23" ]
-pioneeravr:serialAvr:vsx921Serial [ serialPort="COM9" ] 
+pioneeravr:serialAvr:vsx921Serial [ serialPort="COM9" ]
 ```
 
 
-##Channels
+## Channels
 
 * power: power On/Off the AVR. Receive power events.
 * volumeDimmer: Increase/Decrease the volume on the AVR or set the volume as %. Receive volume change events (in %).  
@@ -78,14 +79,16 @@ Here after are the ID values of the input sources:
 * 31: HDMI (cyclic)
 
 
-##Full example
+## Full example
 
-*demo.things:
+*demo.Things:
+
 ```
 pioneeravr:ipAvr:vsx921 [ address="192.168.188.89" ]
 ```
 
 *demo.items:
+
 ```
 /* Pioneer AVR Items */
 Switch vsx921PowerSwitch		"Power"								(All)	{ channel="pioneeravr:ipAvr:vsx921:power" }
@@ -97,6 +100,7 @@ String vsx921InformationDisplay "Information [%s]"		<none> 		(All)	{ channel="pi
 ```
 
 *demo.sitemap:
+
 ```
 sitemap demo label="Main Menu"
 {
