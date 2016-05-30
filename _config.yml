@@ -7,4 +7,4 @@ twitter_username: openhab
 github_username:  openhab
 # Build settings
 markdown: kramdown
-source: _source
+exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]
