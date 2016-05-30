@@ -25,7 +25,7 @@ Once you have Jekyll installed and the repository checked out, simply run
 jekyll serve
 ```
 
-from within the repository root folder and point your browser to [`http://localhost:4000`[(http://localhost:4000).
+from within the repository root folder and point your browser to [`http://localhost:4000`](http://localhost:4000).
 This will give you a preview of the documentation in the same way as it will appear on docs.openhab.org once your PR is merged.
 Changes to the markdown files will automatically be taken into account as Jekyll re-generates the pages on the fly.
 
