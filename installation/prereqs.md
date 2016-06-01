@@ -4,11 +4,11 @@ layout: documentation
 
 {% include base.html %}
 
-# Checking Java
+# Prerequisites
 
-Before anything else, check that the correct version of Java has been installed.
+You require a JDK 8 in order to run openHAB. Note that there are often issues with OpenJDK, therefore it is advised to use the OracleJDK instead.
 
-To do this :
+Check that the correct version of Java has been installed:
 
 * Open the terminal window
 
