@@ -23,6 +23,7 @@ The goals of the openHAB project can be summarized as:
 
 The openHAB framework consists of a set of OSGi bundles which define services and extension points that can be deployed on an OSGi runtime. The framework is meant to be usable on any kind of system that can run an OSGi stack - from a multi-core business class server, to a virtual machine, from a residential gateway to a NAS, from an old laptop to single board computer like a Raspberry Pi.
 
+The openHAB framework focuses focuses on services and APIs in the following areas:
 
 * _Data Handling_: includes an extensible type system for smart home data, commands which provide abstracted data and device access, and event mechanisms to distribute data updates
 * _Rule Engines_: an event processing environment supporting the creation of "when this occurs do that" logic which drives the home automation's behavior

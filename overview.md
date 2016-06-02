@@ -41,6 +41,9 @@ Please post questions or comments to the [openHAB forum](https://community.openh
 
 Rules about posting an issue and [contributions guidelines](appendix/contributing.html) are in the _Appendix_.
 
+<<<<<<< HEAD
 # Developer Documentation
 
 The [_Developer Guide_](/developers) contains practical and technical information for people desiring to contribute to the development of openHAB or of one of its add-ons.
+=======
+>>>>>>> refs/remotes/openhab/gh-pages
