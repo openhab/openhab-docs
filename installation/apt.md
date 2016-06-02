@@ -13,7 +13,7 @@ layout: documentation
     - with wget:
 
     ```
-    wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' &#124; sudo apt-key add -
+    wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
     ```
 
     - or with curl:
@@ -23,6 +23,7 @@ layout: documentation
     ```
 
 1.  Add openHAB apt repository to the apt sources list (Note: the current openhab.list file will be overwritten)
+
     - To install a beta releases use:
 
     ```
@@ -32,7 +33,7 @@ layout: documentation
     - For stable releases use:
 
     ```
-    echo "deb http://dl.bintray.com/openhab/apt-repo2 stable main" | sudo tee /etc/apt/sources.list.d/openhab.list
+    echo 'deb http://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab.list
     ```
 
 1.  Resynchronize the package index
@@ -42,6 +43,7 @@ layout: documentation
     ```
 
 1.  Install openHAB
+
     - Either use the offline distribution which is full blown and comes with all addons. Additional addons will be 
     installed an request from your local disk.
 
@@ -85,36 +87,41 @@ layout: documentation
     sudo systemctl enable openhab2
     ```
 
+
 # To Upgrade
+
 Note: changed configuration files will be retained even on upgrades.
 
-    sudo apt-get update
-    sudo apt-get upgrade
+```
+sudo apt-get update
+sudo apt-get upgrade
+```
 
-# File locations
-* **service configuration** /etc/default/openhab2
-* **site configuration**  /etc/openhab2
-* **log files**  /var/log/openhab2
-* **userdata like rrd4j databases**  /var/lib/openhab2 and subdirectories
-* **openHAB application**  /usr/share/openhab2
+# File Locations
+
+| service configuration | `/etc/default/openhab2` |
+| site configuration | `/etc/openhab2` |
+| log files |  `/var/log/openhab2` |
+| userdata like rrd4j databases | `/var/lib/openhab2` and subdirectories |
+| openHAB application |  `/usr/share/openhab2` |
 
 
 # Advanced Setup - Apt Repository Distributions
 
-1. stable
+* stable
 
     The latest stable openHAB release will be installed.
 
-1. testing
+* testing
 
     The latest release candidate of openHAB will be installed.
 
-1. version based distribution names (2.0.0.b3, 2.0.0, ...)
+* version based distribution names (2.0.0.b3, 2.0.0, ...)
 
     All Releases are available as with a distribution name corresponding to the version name.
-If you want to stick your installation to a specific version use one of these distribution names.
-The installation will only be upgraded if you change the sources.list to another version.
-Therefore "apt-get update && apt-get upgrade" can be safely used for the other linux software.
+    If you want to stick your installation to a specific version use one of these distribution names.
+    The installation will only be upgraded if you change the sources.list to another version.
+    Therefore `apt-get update && apt-get upgrade` can be safely used for the other Linux software.
 
     Examples:
 
@@ -122,3 +129,4 @@ Therefore "apt-get update && apt-get upgrade" can be safely used for the other l
     echo "deb https://dl.bintray.com/openhab/apt-repo2 2.0.0.b3 main" | sudo tee -a /etc/apt/sources.list
     echo "deb https://dl.bintray.com/openhab/apt-repo 2.0.0 main" | sudo tee -a /etc/apt/sources.list
     ```
+
