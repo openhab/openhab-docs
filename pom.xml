@@ -18,19 +18,19 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>${basedir}/_source/addons/bindings/</directory>
+              <directory>${basedir}/addons/bindings/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_source/addons/uis/</directory>
+              <directory>${basedir}/addons/uis/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_source/addons/io/</directory>
+              <directory>${basedir}/addons/io/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_source/addons/iconsets/</directory>
+              <directory>${basedir}/addons/iconsets/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_source/concepts/</directory>
+              <directory>${basedir}/concepts/</directory>
             </fileset>
           </filesets>
         </configuration>
@@ -45,7 +45,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_source/concepts/</outputDirectory>
+              <outputDirectory>${basedir}/concepts/</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
@@ -69,7 +69,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_source/addons/bindings/</outputDirectory>
+              <outputDirectory>${basedir}/addons/bindings/</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
@@ -97,7 +97,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_source/addons/iconsets</outputDirectory>
+              <outputDirectory>${basedir}/addons/iconsets</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
@@ -116,7 +116,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_source/addons/uis</outputDirectory>
+              <outputDirectory>${basedir}/addons/uis</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
@@ -139,7 +139,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_source/addons/io</outputDirectory>
+              <outputDirectory>${basedir}/addons/io</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
@@ -166,8 +166,8 @@
             </goals>
             <configuration>
               <source>
-                def bindings = new File(project.basedir, '_source/addons/bindings')
-				def bindingList = new File(project.basedir, '_source/_data/bindings.csv')
+                def bindings = new File(project.basedir, 'addons/bindings')
+				def bindingList = new File(project.basedir, '_data/bindings.csv')
 				bindingList.write("id,label,description\n")
 
                 bindings.eachFile
@@ -218,7 +218,7 @@
             <configuration>
               <source>
                 def feature = new File(project.basedir, '_repos/openhab/features/openhab-addons/src/main/feature/feature.xml')
-				def addonList = new File(project.basedir, '_source/_data/oh1addons.csv')
+				def addonList = new File(project.basedir, '_data/oh1addons.csv')
 				addonList.write("category,label\n")
 
 				def root = new XmlParser().parse(feature)
@@ -240,7 +240,7 @@
             </goals>
             <configuration>
               <source>
-                def iconsets = new File(project.basedir, '_source/addons/iconsets')
+                def iconsets = new File(project.basedir, 'addons/iconsets')
 
                 iconsets.eachFile
                 {
@@ -270,7 +270,7 @@
             </goals>
             <configuration>
               <source>
-                def uis = new File(project.basedir, '_source/addons/uis')
+                def uis = new File(project.basedir, 'addons/uis')
 
                 uis.eachFile
                 {
@@ -300,7 +300,7 @@
             </goals>
             <configuration>
               <source>
-                def uis = new File(project.basedir, '_source/addons/io')
+                def uis = new File(project.basedir, 'addons/io')
 
                 uis.eachFile
                 {

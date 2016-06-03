@@ -3,8 +3,10 @@ action,Ecobee Action
 action,Mail Action
 action,MiOS Action
 action,Pebble Action
+action,Prowl Action
 action,Pushover Action
 action,Telegram Action
+action,Twitter Action
 action,XBMC Action
 action,XMPP Action
 binding,Alarm Decoder Binding
