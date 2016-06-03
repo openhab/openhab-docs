@@ -51,6 +51,7 @@
                   <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
                   <includes>
                     <include>**/*.md</include>
+                    <include>**/*.png</include>
                   </includes>
                 </resource>
                 <resource>
