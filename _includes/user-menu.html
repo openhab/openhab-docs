@@ -12,8 +12,8 @@
 	</li>
 	<li><a href="{{docu}}/installation/index.html">Installation</a>
 		<ul>
-			<li><a href="{{docu}}/installation/index.html">Overview</a>
-            <li><a href="{{docu}}/installation/prereqs.html">Prerequisites</a></li>
+			<li><a href="{{docu}}/installation/index.html">Overview</a></li>
+      <li><a href="{{docu}}/installation/prereqs.html">Prerequisites</a></li>
 			<li><a href="{{docu}}/installation/apt.html">Linux (APT)</a></li>
 			<li><a href="{{docu}}/installation/linux.html">Linux (manual)</a></li>
 			<li><a href="{{docu}}/installation/rasppi.html">Raspberry Pi</a></li>
@@ -29,6 +29,12 @@
 		<ul>
             <li><a href="{{docu}}/configuration/jetty.html">Reverse Proxy</a></li>
         </ul>
+	</li>
+	<li><a href="{{docu}}/administration/index.html">Administration</a>
+		<ul>
+			<li><a href="{{docu}}/administration/index.html">Overview</a></li>
+			<li><a href="{{docu}}/administration/logging.html">Logging</a></li>
+		</ul>
 	</li>
 	<li><a href="{{docu}}/features/index.html">Features</a>
 		<ul>
@@ -50,7 +56,7 @@
 				<ul>
 					{% for binding in site.data.bindings %}
 					<li><a href="{{docu}}/addons/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
-					{% endfor %}					
+					{% endfor %}
 				</ul>
 			</li>
 			<li><a href="{{docu}}/addons/io.html">System Integrations</a>
