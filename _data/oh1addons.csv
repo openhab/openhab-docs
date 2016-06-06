@@ -44,6 +44,7 @@ binding,Chamberlain MyQ Binding
 binding,Neohub Binding
 binding,Nest Binding
 binding,Nibe Heatpump Binding
+binding,Nikobus Binding
 binding,Onkyo Binding
 binding,OpenEnergyMonitor Binding
 binding,OneWire Binding
