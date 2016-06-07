@@ -11,12 +11,12 @@ layout: documentation
 **Important** To be able to use UPnP for discovery the container needs to be started with ``--net=host``.
 
 The following will run openHAB in demo mode on the host machine:
+
 ```
 docker run -it --name openhab --net=host openhab/openhab:amd64-online server
 ```
 
 **NOTE** Although this is the simplest method to getting openHAB up and running, but it is not the preferred method. To properly run the container, please specify a **host volume** for the ``conf`` and ``userdata`` directory:
-
 
 ```
 docker run \
@@ -32,6 +32,7 @@ docker run \
 ```
 
 or with ``docker-compose.yml``
+
 ```
 ---
 openhab:
@@ -49,16 +50,21 @@ openhab:
     - '/opt/openhab/conf:/openhab/conf'
   command: "server"
 ```
+
 then start with ``docker-compose up -d``
 
 **Accessing the console**
-``docker exec -it openhab console``
+
+```
+docker exec -it openhab console
+```
 
 **Debug Mode**
 
 You can start the container with the command ``docker run -it openhab/openhab debug`` to get into the debug shell.
 
 **Environment variables**
+
 *  `OPENHAB_HTTP_PORT`=8080
 *  `OPENHAB_HTTPS_PORT`=8443
 *  `EXTRA_JAVA_OPTS`
@@ -69,5 +75,3 @@ You can start the container with the command ``docker run -it openhab/openhab de
 * `-v /openhab/conf` - openhab configs
 * `-v /openhab/userdata` - openhab userdata directory
 * `--device=/dev/ttyUSB0` - attach your devices like RFXCOM or Z-Wave Sticks to the container
-
-
