@@ -13,6 +13,7 @@ Download SPK package from [Releases](https://github.com/openhab/openhab-syno-spk
 ## Installation
 
 When you want to install a specific version of openHAB .spk file:
+
 1.  Login in to DiskStation Manager.2.  
 2.  Go to Main Menu > Package Center.
 3.  Click on the Manual Install button.
