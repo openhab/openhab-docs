@@ -34,8 +34,8 @@ Change the workgroup name if needed, but otherwise enable WINS support:
 
 then add the following to the share definitions section (scroll all the way down to the bottom of the long file):
 
-`[OpenHAB Home]`
- `comment= OpenHAB Home`
+`[openHAB Home]`
+ `comment= openHAB Home`
  `path=/usr/share/openhab`
  `browseable=Yes`
  `writeable=Yes`
@@ -43,8 +43,8 @@ then add the following to the share definitions section (scroll all the way down
  `create mask=0777`
  `directory mask=0777`
  `public=no`
-`[OpenHAB Config]`
- `comment= OpenHAB Site Config`
+`[openHAB Config]`
+ `comment= openHAB Site Config`
  `path=/etc/openhab`
  `browseable=Yes`
  `writeable=Yes`
