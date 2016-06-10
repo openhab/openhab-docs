@@ -4,11 +4,15 @@ layout: documentation
 
 {% include base.html %}
 
-# Logging Features
+# Logging in openHAB
 
-- Looking at the log
-- Defining the log
-- Logging in rules
+This chapter describes the logging functionality in openHAB:
+
+- [Looking at the log](#looking-at-the-log)
+- [Defining what to log](#defining-what-to-log)
+- [Create log entries in own rules](#create-log-entries-in-own-rules)
+- [Logging into a separate file](#logging-into-a-separate-file)
+- [Config file](#config-file)
 
 ## Looking at the log
 
@@ -26,38 +30,36 @@ Log files are written to the directory `userdata/logs` an can be accessed using 
 
 ### Karaf console
 
-The Karaf console offers the option to monitor the log in realtime.
+The [Karaf console](console.html) allows to monitor the log in realtime.
 
-If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default Username/Password is **karaf/karaf**.
+The log shell comes with the following commands:
+
+- log:clear: clear the log
+- log:display: display the last log entries
+- log:display-exception: display the last exception from the log
+- log:get: show the log levels
+- log:set: set the log levels
+- log:tail: continuous display of the log entries
+
+For example, following command enables the realtime monitoring of the default log:
 
 ```
-ssh karaf@localhost -p 8101
-Password authentication
-Password:
+openhab> log:tail
+12:45:23.170 [INFO ] [marthome.event.ItemStateChangedEvent] - Sonos_Kueche_Controller changed from PLAY to PAUSE
+14:29:52.648 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'hue:PAR16_50_TW:1:24' changed from ONLINE to OFFLINE: Bridge reports light as not reachable
+14:29:76.348 [DEBUG] [ipse.smarthome.model.script.JK.Sonos] - This is a debug message!
+```
+An useful functionality is that also filters can be applied:
 
-                          __  _____    ____      
-  ____  ____  ___  ____  / / / /   |  / __ )     
- / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
-/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /      
-\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/     
-    /_/                        2.0.0-SNAPSHOT
-
-Hit '<tab>' for a list of available commands
-and '[cmd] --help' for help on a specific command.
-Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
-
-openhab>
+```
+openhab> log:tail org.eclipse.smarthome.model.script.JK
+14:29:76.348 [DEBUG] [ipse.smarthome.model.script.JK.Sonos] - This is a debug message!
 ```
 
-Useful commands regarding logging:
+Please see the [Karaf documentation](http://karaf.apache.org/manual/latest/#_commands_2) for more examples and details.
 
-- `log:tail`: Show the live logging output, end it by pressing ctrl+c.
-- `log:exception-display`: Show the last exception of the log file.
-- `log:display org.openhab.binding.zwave`: Show log entries from the zwave binding only.
 
-Please check the [Karaf reference](http://karaf.apache.org/manual/latest/) for details.
-
-## Defining the log
+## Defining what to log
 
 In order to see the messages, logging needs to activated defining what should be logged and in which detail. This can be done in Karaf using the following console command:
 
@@ -82,27 +84,61 @@ Following example sets the logging for the SONOS binding to **Debug**
 log:set DEBUG org.openhab.binding.sonos
 ```
 
-## Logging in rules
+Note that the log levels set using the log:set commands are not persistent and will be lost upon restart. To configure those in a persistent way, the commands have to be added to the [configuration file](logging.html#Config-file).
 
-It is also possible to create log entries during rule execution. This is especially useful for debugging purposes.
+## Create log entries in own rules
 
-For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: **Test**) and the text which should appear in the log:
+It is also possible to create own log entries in rules. This is especially useful for debugging purposes.
+
+For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: **JK**) and the text which should appear in the log:
 
 ```
-logError("Test","This is a log entry of type Error!")
-logWarn("Test","This is a log entry of type Warn!")
-logInfo("Test","This is a log entry of type Info!")
-logDebug("Test","This is a log entry of type Debug!")
+logError("JK","This is a log entry of type Error!")
+logWarn("JK","This is a log entry of type Warn!")
+logInfo("JK","This is a log entry of type Info!")
+logDebug("JK","This is a log entry of type Debug!")
 ```
 
 In order to see the messages, logging for the message class has to be activated. The main package is predefined (org.eclipse.smarthome.model.script) and the subpackage needs to be concatenated:
 
 ```
-log:set DEBUG org.eclipse.smarthome.model.script.Test
+log:set DEBUG org.eclipse.smarthome.model.script.JK
 ```
 
 The output for the above log statement of type **Debug** is:
 
 ```
-2016-06-04 16:28:39.482 [DEBUG] [.eclipse.smarthome.model.script.Test] - This is a log entry of type DEBUG!
+2016-06-04 16:28:39.482 [DEBUG] [.eclipse.smarthome.model.script.JK] - This is a log entry of type DEBUG!
 ```
+
+## Logging into a separate file
+
+Per default all log entries are saved in the file _openhab.log_ and event specific entries also in the file _events.log_. Additional files can be defined in order to write specifics logs to a separate place.
+
+In order to create a new log file following two areas needs to be added to the [config file](#config-file):
+
+1. A new file appender:
+
+```
+# File appender - jk.log
+log4j.appender.jk=org.apache.log4j.RollingFileAppender
+log4j.appender.jk.layout=org.apache.log4j.PatternLayout
+log4j.appender.jk.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
+log4j.appender.jk.file=${openhab.logdir}/jk.log
+log4j.appender.jk.append=true
+log4j.appender.jk.maxFileSize=10MB
+log4j.appender.jk.maxBackupIndex=10
+```
+
+2. A new logger:
+```
+# Logger - jk.log
+log4j.logger.org.eclipse.smarthome.model.script.JK = WARN, jk
+log4j.logger.org.eclipse.smarthome.model.script.JK.Sonos = DEBUG
+```
+
+## Config file
+
+The config file for logging is **org.ops4j.pax.logging.cfg** and can be found in the **runtime/karaf/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/karaf/etc/)
+
+_Note:_  Currently the file org.ops4j.pax.logging.cfg will get overwritten with the default version on every update of openHAB. There is an [issue](https://github.com/openhab/openhab-distro/issues/225) on this.
