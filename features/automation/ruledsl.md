@@ -184,7 +184,7 @@ Combining these features, you can easily write code like
 
 ### Implicit Variables inside the Execution Block
 
-Besides the implicitly available variables for items and commands/states (see the [script documentation](#scripts)), rules can have additional pre-defined variables, depending on their triggers:
+Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
 - Every rule that has at least one command event trigger, will have the variable `receivedCommand` available, which can be used inside the execution block.
 - Every rule that has at least one status change event trigger, will have the variable `previousState` available, which can be used inside the execution block.
