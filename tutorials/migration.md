@@ -14,8 +14,8 @@ Note: This page is work in progress and serves as a place to collect whatever yo
 
 - The Classic UI URL has changed from `/openhab.app` to `/classicui/app`, so you can access your sitemaps at `http://<server>:8080/classicui/app?sitemap=<yoursitemap>`
 - A new default sitemap provider is in place, which provides a dynamic sitemap with the name `_default`, which lists all group items that are not contained within any other group.
-- The `configuration` folder has been renamed to `conf`
-- Instead of the global `configuration/openhab.cfg` file, there is now an individual file per add-on in `conf/services`
+- The `configurations` folder has been renamed to `conf`
+- Instead of the global `configurations/openhab.cfg` file, there is now an individual file per add-on in `conf/services`.  The `<key>:` prepended to each configuration property is removed in the new `<key>.cfg` files.
 - The OSGi console commands are now available as "smarthome", not as "openhab" anymore.
 - The webapps folder has been discontinued, but static resources can be placed in `conf/html`.
 - It is possible to provide your own custom icons in the `conf/icons/classic` folder - no need to overwrite the icons that come with the runtime.
@@ -28,6 +28,12 @@ In order to continue using rules from openHAB 1, a few minor changes might be ne
 
 1. Import statements at the top are not required anymore for any org.openhab package, so these can be removed
 1. The state "Uninitialized" has been renamed to "NULL" and thus needs to be replaced in the rules
+1. The `HSBType` state type can no longer be constructed using a `java.awt.Color` object, and there is no longer a `toColor()` method.  Use the following alternatives:
+
+```java
+var HSBType hsb = HSBType::fromRGB(color.red, color.green, color.blue)
+var Color color = Color::getHSBColor(hsb.hue.floatValue / 360, hsb.saturation.floatValue / 100, hsb.brightness.floatValue / 100)
+```
 
 ## Transforms
 

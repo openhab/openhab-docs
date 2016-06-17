@@ -19,6 +19,7 @@ keba,Keba,"This binding integrates the [Keba KeContact EV Charging Stations](htt
 kostalinverter,Kostal inverter,"Scrapes the web interface of the inverter for the metrics of the supported channels below."
 lutron,Lutron,"This binding integrates with [Lutron](http://www.lutron.com) light control systems."
 max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/)."
+milight,Milight,"The openHAB2 Milight binding allows to send commands to multiple Milight bridges."
 netatmo,Netatmo,"The Netatmo binding integrates the following Netatmo products :"
 network,Network,"This binding integrates a way to check whether a device is currently available on the network and the required ping time."
 opensprinkler,OpenSprinkler,"This binding allows allows basic control of the OpenSprinkler and OpenSprinkler PI (Plus) devices. Stations can be controlled to be turned on or off and rain sensor state can be read."
