@@ -21,8 +21,8 @@ Install openHAB on Linux, see [Installation on Linux through APT](http://docs.op
 Curiously, everything was installed as owned by “root”. We need to fix that with the following commands.
 
 ```
-sudo chown -hR openhab:openhab /etc/openhab
-sudo chown -hR openhab:openhab /usr/share/openhab
+sudo chown -hR openhab:openhab /etc/init.d/openhab2
+sudo chown -hR openhab:openhab /usr/share/openhab2
 ```
 
 Next, we’ll install Samba and share the configuration and user folders – this will make it easier to install add-ons and change the sitemap remotely.
