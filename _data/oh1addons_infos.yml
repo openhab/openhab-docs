@@ -1,4 +1,4 @@
-# This list is used to complete the list of OpenHAB 1.x compatible add-ons page with description and wiki url
+# This list is used to complete the list of openHAB 1.x compatible add-ons page with description and wiki url
 # The "label" MUST match the label in the oh1addons.csv file
 
 - label: Ecobee Action
@@ -190,7 +190,7 @@
   wiki_url: https://github.com/openhab/openhab/wiki/Powermax-alarm-binding
 
 - label: RWE SmartHome Binding
-  description: Allows to integrate RWE Smarthome into OpenHAB
+  description: Allows to integrate RWE Smarthome into openHAB
   wiki_url: https://github.com/openhab/openhab/wiki/RWE-Smarthome-Binding
 
 - label: Samsung A/C Binding
