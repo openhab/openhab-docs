@@ -2,6 +2,7 @@ category,label
 action,Ecobee Action
 action,Mail Action
 action,MiOS Action
+action,MQTT Action
 action,Pebble Action
 action,Prowl Action
 action,Pushover Action
@@ -37,6 +38,7 @@ binding,KNX Binding
 binding,Koubachi Binding
 binding,LCN Binding
 binding,LGTV Binding
+binding,MochadX10 Binding
 binding,Milight Binding
 binding,MiOS Binding
 binding,Modbus Binding
