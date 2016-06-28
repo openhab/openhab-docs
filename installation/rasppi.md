@@ -43,7 +43,7 @@ wins support = yes
 then add the following to the share definitions section (scroll all the way down to the bottom of the long file):
 
 ```
-[openHAB Home]`
+[openHAB Home]
  comment= openHAB Home
  path=/usr/share/openhab
  browseable=Yes
@@ -94,7 +94,7 @@ error on first launch openHAB
 Now would be a good time to learn the command to tail the openHAB log so you can keep an eye on errors.
 
 ```
-tail -f /var/log/openhab/openhab.log
+tail -f /var/log/openhab2/openhab.log
 ```
 
 Keep that running and open in a separate SSH window at all times.
