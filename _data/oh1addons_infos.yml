@@ -2,55 +2,55 @@
 # The "label" MUST match the label in the oh1addons.csv file
 
 - label: Ecobee Action
-  description: The Ecobee Action bundle provides actions such as setting and clearing program holds, sending a text message to the thermostat's display, renaming a remote wireless sensor, and other functions that cannot be performed by setting object properties
+  description: Set and clear program holds, send a text message to the thermostat's display, rename a remote wireless sensor, and other functions
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#ecobee-actions
 
 - label: Mail Action
-  description: This add-on provides SMTP services
+  description: Send SMTP (email) messages from scripts and rules
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#mail-actions
 
 - label: MiOS Action
-  description: 
+  description: Invoke scenes and actions in the MiOS HA Controller (Vera, e.g.)
   wiki_url: https://github.com/openhab/openhab/wiki/MiOS-Action
 
+- label: MQTT Action
+  description: Publish messages to MQTT brokers
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#mqtt-action
+
 - label: Prowl Action
-  description: Prowl lets you use push notifications on iOS devices
+  description: Use push notifications on iOS devices
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#prowl-actions
 
 - label: Pushover Action
-  description: The pushover action allows you to notify mobile devices of a message using the Pushover API web service.
+  description: Notify mobile devices of a message using the Pushover API web service
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#pushover-actions
 
 - label: Telegram Action
-  description: The Telegram action allows sending formatted messages to Telegram clients, by using the Telegram Bot API.
+  description: Send formatted messages to Telegram clients by using the Telegram Bot API
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#telegram-action
 
 - label: Twitter Action
-  description: Connect to Twitter through this action
+  description: Send Tweets and direct messages via Twitter
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#twitter-actions
 
 - label: XBMC Action
-  description: Sends notifications to XBMC
+  description: Send notifications to XBMC
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#xbmc-actions
 
 - label: XMPP Action
-  description: 
+  description: Send messages to an XMPP user or multi-user chat
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#xmpp-actions
 
-- label: 
-  description: 
-  wiki_url: 
-
 - label: Alarm Decoder Binding
-  description: Hardware adapter that interfaces with Ademco/Honeywell alarm panels
+  description: Access the status of contacts and motion detectors connected to Honeywell Vista 20p and similar alarm panels
   wiki_url: https://github.com/openhab/openhab/wiki/AlarmDecoder-binding
 
 - label: Anel Binding
-  description: Anel binding for NET-PwrCtrl devices - power sockets / relays that can be configured
+  description: Monitor and control Anel NET-PwrCtrl power sockets and relays
   wiki_url: https://github.com/openhab/openhab/wiki/Anel-Binding
 
 - label: ComfoAir Binding
-  description: Binding should be compatible with the Zehnder ComfoAir ventilation systems
+  description: Monitor and control Zehnder ComfoAir ventilation systems
   wiki_url: https://github.com/openhab/openhab/wiki/Comfo-Air-Binding
 
 - label: Denon Binding
@@ -62,15 +62,15 @@
   wiki_url: https://github.com/openhab/openhab/wiki/eBUS-Binding
 
 - label: Ecobee Binding
-  description: Range of Wi-Fi enabled thermostats
+  description: Monitor and control Ecobee thermostats
   wiki_url: https://github.com/openhab/openhab/wiki/Ecobee-Binding
 
 - label: Energenie Binding
-  description: allows to send commands to multiple Gembird energenie PMS-LAN power extenders.
+  description: Send commands to multiple Gembird energenie PMS-LAN power extenders.
   wiki_url: https://github.com/openhab/openhab/wiki/Energenie-Binding
 
 - label: EnOcean Binding
-  description: 
+  description: Control EnOcean devices using a USB 300 gateway
   wiki_url: https://github.com/openhab/openhab/wiki/EnOcean-Binding
 
 - label: Enphase Energy Binding
@@ -289,14 +289,6 @@
   description: 
   wiki_url: https://github.com/openhab/openhab/wiki/rrd4j-Persistence
 
-- label: 
-  description: 
-  wiki_url: 
-
 - label: XBMC Binding
   description: Allows openhab items to receive realtime updates about information like player state and running media from one or more instances of xbmc
   wiki_url: https://github.com/openhab/openhab/wiki/XBMC-Binding
-
-- label: 
-  description: 
-  wiki_url: 
