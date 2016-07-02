@@ -3,17 +3,28 @@ layout: documentation
 ---
 
 {% assign addons = site.data.oh1addons %}
+{% assign infos = site.data.oh1addons_infos %}
 
 {% include base.html %}
 
 ## Compatible 1.x Add-ons
 
-| Add-on | Type |
-|--------|------|
-{% for addon in addons %}| {{ addon.label }} | {{ addon.category }} |
-{% endfor %}					
+| Addon | Description | Type |
+|-------|-------------|------|
+{% for addon in addons %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} | {{ addon.category }} |
+{% endfor %}
 
-## Currently incompatible 1.x Add-ons:
+> **Many 1.x add-ons STILL NEED TO BE TESTED and will probably work on openHAB 2**.
+>
+> For the full list that exists for openHAB 1, please refer to:
+> 
+> * the right sidebar on the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki/Configuring-the-openHAB-runtime) for missing add-ons
+> * [this page](https://github.com/openhab/openhab/wiki/Actions) for missing actions
+>
+> For information on how to test and add add-ons that are not yet included, please see the [compatibility layer documentation](/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution).
+
+
+## Currently Incompatible 1.x Add-ons:
 
 | Add-on | Type | Reason
 |--------|------|------|

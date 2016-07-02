@@ -1,0 +1,294 @@
+# This list is used to complete the list of openHAB 1.x compatible add-ons page with description and wiki url
+# The "label" MUST match the label in the oh1addons.csv file
+
+- label: Ecobee Action
+  description: Set and clear program holds, send a text message to the thermostat's display, rename a remote wireless sensor, and other functions
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#ecobee-actions
+
+- label: Mail Action
+  description: Send SMTP (email) messages from scripts and rules
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#mail-actions
+
+- label: MiOS Action
+  description: Invoke scenes and actions in the MiOS HA Controller (Vera, e.g.)
+  wiki_url: https://github.com/openhab/openhab/wiki/MiOS-Action
+
+- label: MQTT Action
+  description: Publish messages to MQTT brokers
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#mqtt-action
+
+- label: Prowl Action
+  description: Use push notifications on iOS devices
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#prowl-actions
+
+- label: Pushover Action
+  description: Notify mobile devices of a message using the Pushover API web service
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#pushover-actions
+
+- label: Telegram Action
+  description: Send formatted messages to Telegram clients by using the Telegram Bot API
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#telegram-action
+
+- label: Twitter Action
+  description: Send Tweets and direct messages via Twitter
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#twitter-actions
+
+- label: XBMC Action
+  description: Send notifications to XBMC
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#xbmc-actions
+
+- label: XMPP Action
+  description: Send messages to an XMPP user or multi-user chat
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#xmpp-actions
+
+- label: Alarm Decoder Binding
+  description: Access the status of contacts and motion detectors connected to Honeywell Vista 20p and similar alarm panels
+  wiki_url: https://github.com/openhab/openhab/wiki/AlarmDecoder-binding
+
+- label: Anel Binding
+  description: Monitor and control Anel NET-PwrCtrl power sockets and relays
+  wiki_url: https://github.com/openhab/openhab/wiki/Anel-Binding
+
+- label: ComfoAir Binding
+  description: Monitor and control Zehnder ComfoAir ventilation systems
+  wiki_url: https://github.com/openhab/openhab/wiki/Comfo-Air-Binding
+
+- label: Denon Binding
+  description: This binding supports Denon AV receivers
+  wiki_url: https://github.com/openhab/openhab/wiki/Denon-Binding
+
+- label: eBUS Binding
+  description: The eBUS protocol is used by heating system vendors like Wolf, Vaillant, Kromschröder etc.
+  wiki_url: https://github.com/openhab/openhab/wiki/eBUS-Binding
+
+- label: Ecobee Binding
+  description: Monitor and control Ecobee thermostats
+  wiki_url: https://github.com/openhab/openhab/wiki/Ecobee-Binding
+
+- label: Energenie Binding
+  description: Send commands to multiple Gembird energenie PMS-LAN power extenders.
+  wiki_url: https://github.com/openhab/openhab/wiki/Energenie-Binding
+
+- label: EnOcean Binding
+  description: Control EnOcean devices using a USB 300 gateway
+  wiki_url: https://github.com/openhab/openhab/wiki/EnOcean-Binding
+
+- label: Enphase Energy Binding
+  description: For people with Enphase Energy microinverters used in their solar installation
+  wiki_url: https://github.com/openhab/openhab/wiki/Enphase-Energy-Binding
+
+- label: Epson Projector Binding
+  description: Compatible with Epson projectors which support ESC/VP21 protocol over serial port
+  wiki_url: https://github.com/openhab/openhab/wiki/Epson-Projector-Binding
+
+- label: Exec Binding
+  description: Enhance openHAB with a "swiss-army-knife-binding" which executes given commands on the commandline
+  wiki_url: https://github.com/openhab/openhab/wiki/Exec-Binding
+
+- label: Freeswitch Binding
+  description: It connects to a freeswitch instance and can report on current active calls as well as show unread voicemails and if a MWI is on
+  wiki_url: https://github.com/openhab/openhab/wiki/Freeswitch-Binding
+
+- label: FS20 Binding
+  description: Enables support of sending and receiving FS20 messages via the CUL transport
+  wiki_url: https://github.com/openhab/openhab/wiki/FS20-Binding
+
+- label: Garadget Binding
+  description: Cloud-based device that "futurizes" your existing garage door opener
+  wiki_url: https://github.com/openhab/openhab/wiki/Garadget-Binding
+
+- label: GC100IR Binding
+  description: Global Cache IR binding, which allows openhab items to send commands to the corresponding IR devices from one or more instances of Global Cache
+  wiki_url: https://github.com/openhab/openhab/wiki/Global-Cache-IR-Binding
+
+- label: GPIO Binding
+  description: Binding for local GPIO subsystem, currently only this exposed to user space by Linux GPIO framework is implemented
+  wiki_url: https://github.com/openhab/openhab/wiki/GPIO-Binding
+
+- label: Heatmiser Binding
+  description: Allows you to control Heatmiser RS-422 network thermostats
+  wiki_url: https://github.com/openhab/openhab/wiki/Heatmiser-Binding
+
+- label: HTTP Binding
+  description: If you want to let openHAB request an URL when special events occur or let it poll a given URL frequently
+  wiki_url: https://github.com/openhab/openhab/wiki/Http-Binding
+
+- label: IHC Binding
+  description: This binding is for the "Intelligent Home Control" building automation system originally made by LK, but now owned by Schneider Electric and sold as "IHC Intelligent Home Control"
+  wiki_url: https://github.com/openhab/openhab/wiki/IHC-Binding
+
+- label: InsteonPLM Binding
+  description: Insteon is a home area networking technology developed primarily for connecting light switches and loads
+  wiki_url: https://github.com/openhab/openhab/wiki/Insteon-PLM-Binding
+
+- label: KNX Binding
+  description: Allows to connect to KNX Home Automation installations
+  wiki_url: https://github.com/openhab/openhab/wiki/KNX-Binding
+
+- label: Koubachi Binding
+  description: The Koubachi Services help everybody without a green thumb to be a perfect gardener
+  wiki_url: https://github.com/openhab/openhab/wiki/Koubachi-Binding
+
+- label: LCN Binding
+  description: LCN Local Control Network
+  wiki_url: https://github.com/openhab/openhab/wiki/LCN-Binding
+
+- label: LGTV Binding
+  description: Every LG TV Model with Netcast 3.0 and Netcast 4.0 (Model years 2012 & 2013)
+  wiki_url: https://github.com/openhab/openhab/wiki/Lg-TV
+
+- label: Milight Binding
+  description: Allows to send commands to multiple Milight bridges
+  wiki_url: https://github.com/openhab/openhab/wiki/Milight-Binding
+
+- label: MiOS Binding
+  description: Exposes read, and read-command, access to Devices controlled by a MiOS Home Automation controller
+  wiki_url: https://github.com/openhab/openhab/wiki/MiOS-Binding
+
+- label: Modbus Binding
+  description: Supports both TCP and Serial slaves. RTU, ASCII and BIN variants of Serial Modbus are supported
+  wiki_url: https://github.com/openhab/openhab/wiki/Modbus-Binding
+
+- label: MQTT Binding
+  description: This binding allows openHAB to act as an MQTT client, so that openHAB items can send and receive MQTT messages to/from an MQTT broker
+  wiki_url: https://github.com/openhab/openhab/wiki/MQTT-Binding
+
+- label: Chamberlain MyQ Binding
+  description: Allows you to connect your garage door to the internet to be controlled from anywhere using your smartphone
+  wiki_url: https://github.com/openhab/openhab/wiki/Chamberlain-MyQ-Binding
+
+- label: Neohub Binding
+  description: Allows you to connect openhab via TCP/IP to Heatmiser's NeoHub and integrate your NeoStat thermostats onto the bus.
+  wiki_url: https://github.com/openhab/openhab/wiki/NeoHub-Binding
+
+- label: Nest Binding
+  description: Wi-Fi enabled Nest Learning Thermostat, the Nest Protect Smoke+CO detector, and the Nest Cam
+  wiki_url: https://github.com/openhab/openhab/wiki/Nest-Binding
+
+- label: Nibe Heatpump Binding
+  description: Used to get live data from from Nibe heat pumps without modbus adapter
+  wiki_url: https://github.com/openhab/openhab/wiki/Nibe-Heat-Pump-Binding
+
+- label: Nikobus Binding
+  description: Allows openHAB to interact with the nikobus home automation system.
+  wiki_url: https://github.com/openhab/openhab/wiki/Nikobus-Binding
+
+- label: Onkyo Binding
+  description: Binding should be compatible with Onkyo AV receivers which support ISCP
+  wiki_url: https://github.com/openhab/openhab/wiki/Onkyo-Binding
+
+- label: OpenEnergyMonitor Binding
+  description: Used to get live data from open energy monitor device
+  wiki_url: https://github.com/openhab/openhab/wiki/Open-Energy-Monitor-Binding
+
+- label: OneWire Binding
+  description: OneWire bus system is a lightweight and cheap bus system mostly used for sensors like, temperature, humidity, counters and presence
+  wiki_url: https://github.com/openhab/openhab/wiki/One-Wire-Binding
+
+- label: Visonic PowerMax Binding
+  description: Powermax alarm panel series and the Powermaster alarm series
+  wiki_url: https://github.com/openhab/openhab/wiki/Powermax-alarm-binding
+
+- label: RWE SmartHome Binding
+  description: Allows to integrate RWE Smarthome into openHAB
+  wiki_url: https://github.com/openhab/openhab/wiki/RWE-Smarthome-Binding
+
+- label: Samsung A/C Binding
+  description: Samsung Smart Air Conditioner Binding.
+  wiki_url: https://github.com/openhab/openhab/wiki/Samsung-AC-binding
+
+- label: Sapp Binding
+  description: Allows to connect to Picnet Home Automation installations
+  wiki_url: https://github.com/openhab/openhab/wiki/Picnet-Sapp-Binding
+
+- label: Satel Binding
+  description: Binding for Satel Integra Alarm System which allows you to connect to your alarm system
+  wiki_url: https://github.com/openhab/openhab/wiki/Satel-Alarm-Binding
+
+- label: Serial Binding
+  description: Bind an item to a Serial device
+  wiki_url: https://github.com/openhab/openhab/wiki/Serial-Binding
+
+- label: SNMP Binding
+  description: The SNMP binding allows SNMP GET (polling) and SNMP SET (commanding), and the reception of SNMP TRAPs (asynchronous events). SNMP is often found in network equipment, and the binding can be used to ensure your network is operating correctly.  The out binding can be used to configure network settings.
+  wiki_url: https://github.com/openhab/openhab/wiki/Snmp-Binding
+
+- label: Swegon Ventilation Binding
+  description: Used to get live data from Swegon ventilation systems
+  wiki_url: https://github.com/openhab/openhab/wiki/Swegon-Ventilation-Binding
+
+- label: TCP/UDP Binding
+  description: provides basic support for TCP based ASCII protocols.
+  wiki_url: https://github.com/openhab/openhab/wiki/TCP-Binding
+
+- label: Tellstick Binding
+  description: Tested against Tellstick DUO, it should also work with a basic Tellstick
+  wiki_url: https://github.com/openhab/openhab/wiki/Tellstick-Binding
+
+- label: Tinkerforge Binding
+  description: TinkerForge is a system of open source hardware building blocks that allows you to combine sensor and actuator blocks by plug and play.
+  wiki_url: https://github.com/openhab/openhab/wiki/Tinkerforge-Binding
+
+- label: Weather Binding
+  description: Collects current and forecast weather data from different providers with a free weather API
+  wiki_url: https://github.com/openhab/openhab/wiki/Weather-Binding
+
+- label: WOL (Wake-on-LAN) Binding
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/Wake-on-LAN-Binding-%28WoL%29
+
+- label: InfluxDB (v 1.0) Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/InfluxDB-Persistence
+
+- label: JDBC Persistence Apache Derby
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence H2
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence HSQLDB
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence MariaDB
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence MySQL
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence PostgreSQL
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JDBC Persistence SQLite
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
+
+- label: JPA Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/JPA-Persistence
+
+- label: MapDB Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/mapdb-Persistence
+
+- label: MQTT Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/MQTT-Persistence
+
+- label: MySQL Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/MySQL-Persistence
+
+- label: RRD4j Persistence
+  description: 
+  wiki_url: https://github.com/openhab/openhab/wiki/rrd4j-Persistence
+
+- label: XBMC Binding
+  description: Allows openhab items to receive realtime updates about information like player state and running media from one or more instances of xbmc
+  wiki_url: https://github.com/openhab/openhab/wiki/XBMC-Binding
