@@ -165,6 +165,10 @@
   description: Wi-Fi enabled Nest Learning Thermostat, the Nest Protect Smoke+CO detector, and the Nest Cam
   wiki_url: https://github.com/openhab/openhab/wiki/Nest-Binding
 
+- label: Network UPS Tools Binding
+  description: Support for power devices such as uninterruptible power supplies (UPS), power distribution units and solar controllers
+  wiki_url: https://github.com/openhab/openhab/wiki/Network-UPS-Tools
+
 - label: Nibe Heatpump Binding
   description: Used to get live data from from Nibe heat pumps without modbus adapter
   wiki_url: https://github.com/openhab/openhab/wiki/Nibe-Heat-Pump-Binding
@@ -172,6 +176,10 @@
 - label: Nikobus Binding
   description: Allows openHAB to interact with the nikobus home automation system.
   wiki_url: https://github.com/openhab/openhab/wiki/Nikobus-Binding
+
+- label: Novelan Heatpump Binding
+  description: Support heat pumps that use the Luxtronic 2 contol unit of Alpha Innotec, such as the Novelan control unit
+  wiki_url: https://github.com/openhab/openhab/wiki/Novelan-Luxtronic-heat-pump-binding
 
 - label: Onkyo Binding
   description: Binding should be compatible with Onkyo AV receivers which support ISCP
