@@ -6,9 +6,11 @@ layout: documentation
 
 # Installation on a Raspberry Pi
 
+Here you will find some suggestions on how to configure a dedicated [RaspberryPi](https://www.raspberrypi.org) to run as a openHAB server. Your personal preferences and needs may differ.
+
 There’s no pre-configured image for openHAB, so installation is done the old fashioned way via a command line.
 
-Start with the latest (full) Raspbian SD image (not the “lite” version, these don’t include the Java Virtual Machine). Get your network cable plugged in, then boot up, and navigate through SSH. Run:
+Start with the latest (full) [Raspbian SD image](https://www.raspberrypi.org/downloads/raspbian) (not the “lite” version, these don’t include the Java Virtual Machine). Get your network cable plugged in, then boot up, and navigate through SSH. Run:
 
 ```
 sudo raspi-config
@@ -43,8 +45,8 @@ wins support = yes
 then add the following to the share definitions section (scroll all the way down to the bottom of the long file):
 
 ```
-[openHAB Home]
- comment= openHAB Home
+[openHAB]
+ comment=OpenHAB2 application
  path=/usr/share/openhab
  browseable=Yes
  writeable=Yes
@@ -52,8 +54,8 @@ then add the following to the share definitions section (scroll all the way down
  create mask=0777
  directory mask=0777
  public=no
-[openHAB Config]
- comment= openHAB Site Config
+ [openHAB-etc]
+ comment=OpenHAB2 site configuration
  path=/etc/openhab
  browseable=Yes
  writeable=Yes
