@@ -8,18 +8,17 @@ layout: documentation
 
 The Designer is an eclipse-based IDE allowing to edit text configuration file.
 
-## Install
+## Installation
 
-To do this:
-
-* Go to the following site (it contains the latest version) : `https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds.`
-* In the nightly snapshots build, click on the link: `Eclipse SmartHome Designer (Mac OSX 64bit)`, to download it in your "download" folder.
+* the latest version is available for download here: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
+* get the designer for your plattform (Windows/OSX/Linux)
+* as the SmartHome Designer is still in development, consider selecting the nightly snapshots build
 
 ![](images/smarthone-designer-05.png)
 
-* with the finder, navigate to the `openHAB` folder we created during the OpenHab installation
-* create a new folder called `extra` in the `openHAB` folder
-* move the file we have just downloaded inside this folder
+* navigate to the `openHAB` folder we created during the openHAB installation
+* create a new folder called `extra`
+* move the downloaded file (e.g. `eclipsesmarthome-incubation-0.9.0-SNAPSHOT-designer.zip`) inside the created folder
 
 ## First launch of the designer
 
@@ -27,7 +26,7 @@ At the first launch only, we need to tell to the designer where are the configur
 
 To do so:
 
-* using the finder, go to the `extra` folder we created just before;
+* go to the `extra` folder we created just before;
 * double-click on the `Eclipse SmartHome Designer` icon
 * when the launch of the designer is completed, the following window appears:
 
