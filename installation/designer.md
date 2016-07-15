@@ -4,52 +4,46 @@ layout: documentation
 
 {% include base.html %}
 
-# Installing the designer
+# Eclipse SmartHome Designer
 
-The Designer is an eclipse-based IDE allowing to edit text configuration file.
+The Eclipse SmartHome Designer is an eclipse-based IDE specialized for Eclipse SmartHome and openHAB configuration file management.
+While your openHAB setup may run on a dedicated system, like a [Raspberry Pi](rasppi.html), the Designer can be installed and executed on your personal PC or Mac. In order to configure your openHAB setup, you will need a mounted network share to your configuration. 
 
-## Installation
+## Setup
 
-* the latest version is available for download here: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
-* get the designer for your plattform (Windows/OSX/Linux)
-* as the SmartHome Designer is still in development, consider selecting the nightly snapshots build
+* The latest version is available for download at: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
+* Get the designer for your plattform (Windows/OSX/Linux)
+* As the SmartHome Designer is still in development, consider selecting the nightly snapshots build
 
 ![](images/smarthone-designer-05.png)
 
-* navigate to the `openHAB` folder we created during the openHAB installation
-* create a new folder called `extra`
-* move the downloaded file (e.g. `eclipsesmarthome-incubation-0.9.0-SNAPSHOT-designer.zip`) inside the created folder
+The downloaded `.zip` archive contains the Designer executables. 
+* **Windows**: Extract the archive to a path of your choosing, e.g. `C:\EclipseSmarthomeDesigner`
+* **Linux**: Extract the archive to a path of your choosing, e.g. `/opt/eclipsesmarthomedesigner`
+* **Max OSX**: move the archive to your programs
 
-## First launch of the designer
+## First launch
 
-At the first launch only, we need to tell to the designer where are the configuration file.
-
-To do so:
-
-* go to the `extra` folder we created just before;
-* double-click on the `Eclipse SmartHome Designer` icon
-* when the launch of the designer is completed, the following window appears:
+After launching the Designer executable, you will see an empty configuration file pane on the top left:
 
 ![](images/smarthone-designer-10.png)
 
-At this stage, the configuration window is empty as the designer does not know where are the configuration files.
+You will need to tell the Designer where your configuration files are located.
+If your openHAB setup is on a different machine, you have to have some kind of network share set up and mounted. An example on how to do that on a Linux system can be found in the [Raspberry Pi article](rasppi.html).
 
-To tell it where are these files:
-
-* click on the small `folder` icon at the top right of the configuration window,
-* a file browser pops up,
-* navigate to the `openHAB` folder we have created when installing openHAB,
-* double-click on the `conf` folder,
+* Click on the small `folder` icon at the top right of the configuration window
+* Navigate to your openHAB configuration folder (containing `items`, `rules`, ...)
 
 ![](images/smarthone-designer-15.png)
 
-* click on the button `Open`,
-* the `Configuration` windows now lists the different configuration folders:
+* Click on the Open button
+* The configuration pane should now list the different configuration folders:
 
 ![](images/smarthone-designer-20.png)
 
+## Usage
 
-
+You may now create and modify your configuration files. Changes are automatically loaded by the openHAB runtime.
 
 
 
