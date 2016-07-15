@@ -6,9 +6,11 @@ layout: documentation
 
 # Installation on a Raspberry Pi
 
+Here you will find some suggestions on how to configure a dedicated [RaspberryPi](https://www.raspberrypi.org) to run as a openHAB server. Your personal preferences and needs may differ.
+
 There’s no pre-configured image for openHAB, so installation is done the old fashioned way via a command line.
 
-Start with the latest (full) Raspbian SD image (not the “lite” version, these don’t include the Java Virtual Machine). Get your network cable plugged in, then boot up, and navigate through SSH. Run:
+Start with the latest (full) [Raspbian SD image](https://www.raspberrypi.org/downloads/raspbian) (not the “lite” version, these don’t include the Java Virtual Machine). Get your network cable plugged in, then boot up, and navigate through SSH. Run:
 
 ```
 sudo raspi-config
@@ -43,18 +45,18 @@ wins support = yes
 then add the following to the share definitions section (scroll all the way down to the bottom of the long file):
 
 ```
-[openHAB Home]
- comment= openHAB Home
- path=/usr/share/openhab
+[openHAB]
+ comment=openHAB2 application
+ path=/usr/share/openhab2
  browseable=Yes
  writeable=Yes
  only guest=no
  create mask=0777
  directory mask=0777
  public=no
-[openHAB Config]
- comment= openHAB Site Config
- path=/etc/openhab
+ [openHAB-etc]
+ comment=openHAB2 site configuration
+ path=/etc/openhab2
  browseable=Yes
  writeable=Yes
  only guest=no
@@ -89,7 +91,6 @@ smb://openhab@raspberrypi.local
 
 Authenticate with username openhab and the chosen password, then open up both the shares to have a look around. Then should even be able to open http://raspberrypi.local:8080/ in the web browser, but then will be met with an error because don´t haven’t create a sitemap yet. That’s normal.
 
-error on first launch openHAB
 
 Now would be a good time to learn the command to tail the openHAB log so you can keep an eye on errors.
 
