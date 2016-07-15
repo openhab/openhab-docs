@@ -91,7 +91,6 @@ smb://openhab@raspberrypi.local
 
 Authenticate with username openhab and the chosen password, then open up both the shares to have a look around. Then should even be able to open http://raspberrypi.local:8080/ in the web browser, but then will be met with an error because don´t haven’t create a sitemap yet. That’s normal.
 
-error on first launch openHAB
 
 Now would be a good time to learn the command to tail the openHAB log so you can keep an eye on errors.
 
