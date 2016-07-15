@@ -46,7 +46,7 @@ then add the following to the share definitions section (scroll all the way down
 
 ```
 [openHAB]
- comment=OpenHAB2 application
+ comment=openHAB2 application
  path=/usr/share/openhab2
  browseable=Yes
  writeable=Yes
@@ -55,7 +55,7 @@ then add the following to the share definitions section (scroll all the way down
  directory mask=0777
  public=no
  [openHAB-etc]
- comment=OpenHAB2 site configuration
+ comment=openHAB2 site configuration
  path=/etc/openhab2
  browseable=Yes
  writeable=Yes
