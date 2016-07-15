@@ -17,7 +17,8 @@ While your openHAB setup may run on a dedicated system, like a [Raspberry Pi](ra
 
 ![](images/smarthome-designer-05.png)
 
-The downloaded `.zip` archive contains the Designer executable. 
+The downloaded `.zip` archive contains the Designer executable.
+
 * **Windows**: Extract the archive to a path of your choosing, e.g. `C:\designer`
 * **Linux**: Extract the archive to a path of your choosing, e.g. `/opt/designer`
 * **Max OSX**: Extract the archive to your applications folder
