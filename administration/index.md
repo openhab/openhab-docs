@@ -6,12 +6,13 @@ layout: documentation
 
 # Overview
 
-As a base technology openHAB uses Karaf (i.e. for bundle management). [Apache Karaf](http://karaf.apache.org/) is an open source implementation of the [OSGi](https://en.wikipedia.org/wiki/OSGi) Release 5 core framework specification.
+As a base technology openHAB uses Karaf. [Apache Karaf](http://karaf.apache.org/) is a modern and polymorphic container able to host different kind of applications.
 
-Therefore following of the administration tasks are performed in the [Karaf console](console.html):
+Therefore some of the administration tasks are performed in the [Karaf console](console.html):
 
 - [Logging](logging.html)
 - [Bundle Management](bundles.html)
+- [Runtime Commands](runtime.html)
 
 <br>
 <br>
