@@ -16,6 +16,7 @@ Note: This page is work in progress and serves as a place to collect whatever yo
 - A new default sitemap provider is in place, which provides a dynamic sitemap with the name `_default`, which lists all group items that are not contained within any other group.
 - The `configurations` folder has been renamed to `conf`
 - Instead of the global `configurations/openhab.cfg` file, there is now an individual file per add-on in `conf/services`.  The `<key>:` prepended to each configuration property is removed in the new `<key>.cfg` files.
+- You can still put additional jar files in the `addons` folder to install bindings that are not available in the distribution, but please note that removing a jar file from this folder will not uninstall it. To uninstall it, you will have to use the console command bundle:uninstall.
 - The OSGi console commands are now available as "smarthome", not as "openhab" anymore.
 - The webapps folder has been discontinued, but static resources can be placed in `conf/html`.
 - It is possible to provide your own custom icons in the `conf/icons/classic` folder - no need to overwrite the icons that come with the runtime.
