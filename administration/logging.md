@@ -81,7 +81,7 @@ The levels built a hierarchy with **Error** on the top and **Debug** on the bott
 Following example sets the logging for the SONOS binding to **Debug**
 
 ```
-log:set DEBUG org.openhab.binding.sonos
+log:set DEBUG org.openhab.binding.zwave
 ```
 
 Note that the log levels set using the log:set commands are not persistent and will be lost upon restart. To configure those in a persistent way, the commands have to be added to the [configuration file](logging.html#Config-file).
@@ -131,10 +131,10 @@ log4j.appender.jk.maxBackupIndex=10
 ```
 
 2. A new logger:
+
 ```
 # Logger - jk.log
 log4j.logger.org.eclipse.smarthome.model.script.JK = WARN, jk
-log4j.logger.org.eclipse.smarthome.model.script.JK.Sonos = DEBUG
 ```
 
 ## Config file
