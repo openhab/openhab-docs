@@ -12,6 +12,7 @@ The integration happens through the digitalSTROM-Server, which acts as a gateway
 **Note:** All was tested with digitalSTROM-Server firmware version 1.9.3 to 1.10.3.
 
 ![various_digitalSTROM_clamps](doc/DS-Clamps.jpg)
+
 ## Supported Things
 
 ### digitalSTROM-Server
