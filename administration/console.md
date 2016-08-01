@@ -37,11 +37,12 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 openhab>
 ```
 
-_Help_ is listing all available commands:
+# Using the console
+
+**Help** is listing all available commands:
 
 ```
 openhab> help
-...
 ```
 
 or describes a specific subsystem/command:
@@ -52,6 +53,27 @@ openhab> help bundle
 
 openhab> help bundle:stop
 ...
+```
+
+The console also supports auto-completion during input. Auto-Completion proposes possible commands based on the current input and is triggered by the **tab** key. So for example entering _bun_ and pressing the tab key will result in:
+
+```  
+openhab> bundle
+bundle                   bundle:capabilities      bundle:classes           bundle:diag              bundle:dynamic-import    
+bundle:find-class        bundle:headers           bundle:id                bundle:info              bundle:install           
+bundle:list              bundle:load-test         bundle:refresh           bundle:requirements      bundle:resolve           
+bundle:restart           bundle:services          bundle:start             bundle:start-level       bundle:stop              
+bundle:tree-show         bundle:uninstall         bundle:update            bundle:watch      
+```  
+
+Another useful feature the **\| (pipe)** and **grep** functionality which filters long output lists:
+
+```  
+openhab> bundle:list | grep openHAB
+164 | Active    |  90 | 2.0.0.201607210102    | openHAB Core
+165 | Active    |  80 | 2.0.0.201607210102    | openHAB Karaf Integration
+195 | Active    |  80 | 2.0.0.201607210102    | openHAB 1.x Compatibility Layer
+196 | Active    |  80 | 2.0.0.201607210102    | openHAB REST Documentation
 ```
 
 The Karaf session is ended by using the logout command:

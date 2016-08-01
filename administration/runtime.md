@@ -23,14 +23,14 @@ __Please note: Some of the commands described here are executed on the internal 
 Query an item's state:
 
 ```
-openhab> smarthome:status Sonos_Kitchen_Controller
-PLAY
+openhab> smarthome:status Heating_GF_Corridor
+OFF
 ```
 
 Changing an item's state:
 
 ```
-openhab> smarthome:send Light_Kueche_Innen1_Toggle ON
+openhab> smarthome:send Heating_GF_Corridor ON
 Command has been sent successfully.
 ```
 
