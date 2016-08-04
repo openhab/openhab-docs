@@ -1,5 +1,6 @@
 ---
 layout: developersguide
+title: OSGi
 ---
 
 {% include base.html %}
@@ -42,7 +43,7 @@ More details about the OSGi architecture can be found at <https://www.osgi.org/d
 Bundles
 -------
 
-Modules (called **bundles**) are the smallest unit of modularization. Technically a bundle is a JAR file with additional meta information. This information is stored in file called [**manifest**](#important-definitions) file. The manifest file is part of the standard [Java specification](http://docs.oracle.com/javase/7/docs/technotes/guides/jar/jar.html#), but OSGi adds additional metadata to it in form of specific headers. The *Bundle-SymbolicName* and the *Bundle-Version* headers uniquely identify a bundle. In OSGi is allowed to have **bundles with same name, but different version running at the same time.** 
+Modules (called **bundles**) are the smallest unit of modularization. Technically a bundle is a JAR file with additional meta information. This information is stored in file called [**manifest**](#important-definitions) file. The manifest file is part of the standard [Java specification](http://docs.oracle.com/javase/7/docs/technotes/guides/jar/jar.html#), but OSGi adds additional metadata to it in form of specific headers. The *Bundle-SymbolicName* and the *Bundle-Version* headers uniquely identify a bundle. In OSGi is allowed to have **bundles with same name, but different version running at the same time.**
 
 Some of the most important information that the manifest contains are the bundle dependencies. **A bundle can depend on another bundle or on a package**. Preferred way to define dependencies in a bundle is with *Import-Package* and *Export-Package* headers and not with *Require-Bundle* header. This gives you an access only to the packages that you need and allows you to exchange the packages at a later point in time. You can find more information in [Why using Require-Bundle is a bad practice and should be avoided](http://web.ist.utl.pt/ist162500/?p=104).
 
@@ -56,14 +57,14 @@ Bundle-ManifestVersion: 2
 Bundle-Name: Example Plug-in
 Bundle-SymbolicName: com.example.myosgi; singleton:=true
 Bundle-Version: 1.0.0
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7 
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Import-Package: org.example.required
 Export-Package: org.example.provided
 ```
 [OSGi Service Platform Core Specification, Chapter 3.5][OSGi-Core] contains detailed information about the *Module Layer* and description of the headers (*Manifest-Version*, *Bundle-ManifestVersion*, *Bundle-Name*) used in this example.
 
 Bundles are used often to register and consume services. You will find more information about that in the [Services](#services) section.
- 
+
 Lifecycle
 ---------
 
@@ -89,9 +90,9 @@ Fig.2 Bundle State diagram
 
 Services
 -------
-Another main concept, that allows the bundles to communicate between each other, is the *service* model. 
+Another main concept, that allows the bundles to communicate between each other, is the *service* model.
 
-**In OSGi, a bundle can register a *service* in a central [service registry](#important-definitions) under one ore more *service interface***. Published services also have service properties associated with them in the registry. It is an important feature of OSGi, because it provides a central place to register and get services. A bundle is permitted to register service objects at any time during the STARTING, ACTIVE or STOPPING states. Other bundles can go the registry and list all objects, that are registered under a specific interface or class. 
+**In OSGi, a bundle can register a *service* in a central [service registry](#important-definitions) under one ore more *service interface***. Published services also have service properties associated with them in the registry. It is an important feature of OSGi, because it provides a central place to register and get services. A bundle is permitted to register service objects at any time during the STARTING, ACTIVE or STOPPING states. Other bundles can go the registry and list all objects, that are registered under a specific interface or class.
 
 A bundle can therefore register a service, it can get a service and it can track for appearing and disappearing of service. **Any number of bundles can register the same service type and any number of bundles can get the same service.** A simple diagram of the service usage and tracking is shown on Fig. 3.
 
@@ -107,7 +108,7 @@ Important Definitions
 
 **manifest** - descriptive information about the bundle, contained in its JAR file
 
-**Service Registry** - enables a bundle to publish objects to a shared registry, advertised via a given set of Java interfaces. 
+**Service Registry** - enables a bundle to publish objects to a shared registry, advertised via a given set of Java interfaces.
 
 Further Reading
 ----------

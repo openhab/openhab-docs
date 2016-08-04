@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Administration
 ---
 
 {% include base.html %}
@@ -13,26 +14,3 @@ Therefore some of the administration tasks are performed in the [Karaf console](
 - [Logging](logging.html)
 - [Bundle Management](bundles.html)
 - [Runtime Commands](runtime.html)
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- The BRs are a very bad implementation of a bad work around in order to move the horicontal scroll bar to the bottom of the sreen -->

@@ -1,10 +1,11 @@
 ---
 layout: documentation
+title: Karaf Console
 ---
 
 {% include base.html %}
 
-# Karaf console
+# Karaf Console
 
 The Karaf console offers the option to:
 
@@ -12,7 +13,7 @@ The Karaf console offers the option to:
 * manage [bundles](bundles.html)
 * [runtime commands](runtime.html)
 
-# Accessing the console
+# Accessing the Console
 
 Accessing the Karaf console depends on the start mode of openHAB. The manually start using shell/batch script ends directly in the Karaf console.
 
@@ -82,7 +83,7 @@ The Karaf session is ended by using the logout command:
 openhab> logout
 ```
 
-# Configuring the console
+# Configuring the Console
 
 By default due to security reasons openhab binds it's shell to localhost. If you are using local network or you are fully aware of all risks of exposing your system to public network you can change bind address in **org.apache.karaf.shell.cfg** config file. It can be found in the **runtime/karaf/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/karaf/etc/), replace line:
 

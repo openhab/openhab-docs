@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Hue Emulation
 ---
 
 {% include base.html %}
@@ -12,7 +13,7 @@ Hue Emulation exposes openHAB items as Hue devices to other Hue HTTP API compati
 
 ## Features:
 
-* UPNP automatic discovery 
+* UPNP automatic discovery
 * Support ON/OFF and Percent/Decimal item types
 * Can expose any type of item, not just lights
 * Pairing (security) can be enabled/disabled in real time using the configuration service (under services in the PaperUI for example)  

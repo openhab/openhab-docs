@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Contribution
 ---
 
 # Contributing to openHAB
@@ -74,7 +75,7 @@ your documentation changes for clarity, concision, and correctness, as
 well as a clean documentation build.
 
 Write clean code. Universally formatted code promotes ease of writing, reading,
-and maintenance. 
+and maintenance.
 
 Pull requests descriptions should be as clear as possible and include a
 reference to all the issues that they address.
@@ -209,4 +210,3 @@ general guidelines for the community as a whole:
   respond to an email you are potentially sending to a large number of
   people.  Please consider this before you update.  Also remember that
   nobody likes spam.
-

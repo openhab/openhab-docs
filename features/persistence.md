@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Persistence
 ---
 
 {% include base.html %}
