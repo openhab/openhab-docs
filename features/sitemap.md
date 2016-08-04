@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Sitemaps
 ---
 
 {% include base.html %}
