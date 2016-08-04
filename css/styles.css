@@ -717,6 +717,10 @@ body.documentation .content-wrapper {
     }
 }
 
+body.documentation section#documentation .content img {
+	max-width: 100%;
+	height: auto;
+}
 body.documentation section#documentation .content > h1:first-child {
 	margin-top: 0px;
 }
