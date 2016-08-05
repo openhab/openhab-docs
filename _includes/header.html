@@ -6,7 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
  {% include base.html %}
 <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
-<title>openHAB - Empowering the Smart Home</title>
+<title>{% if page.title != nil %}{{ page.title }} - {% endif %}openHAB - Empowering the Smart Home</title>
  
 <!-- CSS -->
 <link href="{{base}}/css/materialize.css" type="text/css" rel="stylesheet"
