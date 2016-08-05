@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Runtime Commands
 ---
 
 {% include base.html %}

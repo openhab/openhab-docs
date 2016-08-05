@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: UI Features
 ---
 
 {% include base.html %}

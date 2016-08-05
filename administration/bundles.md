@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Bundle Management
 ---
 
 {% include base.html %}

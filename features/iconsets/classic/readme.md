@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Classic Icon Set
 ---
 
 {% include base.html %}
