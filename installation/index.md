@@ -1,14 +1,58 @@
 ---
 layout: documentation
+title: Installation
 ---
 
 {% include base.html %}
 
-# Installing openHAB
+# Installation
+
+openHAB 2 is based on the Eclipse SmartHome framework and is fully written in Java.
+As such, it is only depending on a [Java Development Kit](http://java.com/de/download/manual.jsp), which is available for many platforms.
+openHAB can be executed on different versions of **MacOS**, **Windows** or many different variants of **Linux** (Ubuntu, Raspbian, ...).
+
+## Prerequisites
+
+Make sure that you have an up to date version of the [Oracle Java Development Kit](http://java.com/de/download/manual.jsp) on your host system installed.
+Oracle Java Version 8 is recommended for openHAB.
+
+A famous alternative to Oracle Java is the OpenJDK.
+Note that openHAB may be unstable and slower executed by OpenJDK, it is therefor **recommended** to switch to Oracle Java if possible.
+
+Check your current Java version by opening a console and typing "java -version":
+
+```
+console$ java -version
+java version "1.8.0 73"
+Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
+Java HotSpot(TM) 64-Bit Server VM (build 25.73-b02, mixed mode)
+```
+
+## Setup variants
+
+Before you can start, there are three decisions to make:
+
+1. openHAB 2 is available as a plattform independent archive file or through a package repository for Linux systems.
+Because of automatic updates, installation through a package repository is recommended.
+
+2. You can use the latest official release or a snapshot containing all current changes.
+Because openHAB 2 is still under heavy development, it is recommended for experienced users to use the latest snapshot.
+
+3. The distribution is available in two flavors:
+  * offline: This package contains all available add-ons and allows installing them locally, i.e. completely offline.
+  * online: This package only contains the core runtime and downloads any add-on from a remote repository.
 
 ## Installation
 
-openHAB comes as a [platform independent zip file](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip), which you only need to extract to some folder.
+Please follow the instructions in the installation article matching your platform. 
+
+
+
+
+
+
+
+<!-- That shouldn't be here
 
 You will find the following folders:
 
@@ -183,3 +227,4 @@ sudo systemctl status openhab
  sudo systemctl disable openhab
 ```
  
+-->
