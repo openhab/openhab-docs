@@ -27,8 +27,3 @@ To illustrate these concepts, take a two-channel actuator that controls two ligh
 The actuator is the _Thing_. This might be installed in the electrical cabinet, it has a physical address and needs to be setup and configured in order to be used.
 The user is instead interested in the two lights, which are located at different locations in his home. These lights are the desired functionality, thus the _Items_ and they are linked to the _Channels_ of the actuator.
 A _Link_ can be regarded like a physical wire in this example.
-
-
-
-
-
