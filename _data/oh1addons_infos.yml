@@ -121,6 +121,10 @@
   description: Insteon is a home area networking technology developed primarily for connecting light switches and loads
   wiki_url: https://github.com/openhab/openhab/wiki/Insteon-PLM-Binding
 
+- label: IRTrans Binding
+  description: Allows openHAB to communicate with the infrared emitter/transceiver of IrTrans
+  wiki_url: https://github.com/openhab/openhab/wiki/Ir-Trans-Binding
+
 - label: KNX Binding
   description: Allows to connect to KNX Home Automation installations
   wiki_url: https://github.com/openhab/openhab/wiki/KNX-Binding
@@ -221,6 +225,10 @@
   description: The SNMP binding allows SNMP GET (polling) and SNMP SET (commanding), and the reception of SNMP TRAPs (asynchronous events). SNMP is often found in network equipment, and the binding can be used to ensure your network is operating correctly.  The out binding can be used to configure network settings.
   wiki_url: https://github.com/openhab/openhab/wiki/Snmp-Binding
 
+- label: Souliss Binding
+  description: Souliss is a networking framework for Arduino and compatibles board, is designed to build easily a Smart Home distributed over multiple boards via Ethernet, wireless point-to-point and RS485 bus. 
+  wiki_url: https://github.com/openhab/openhab/wiki/Souliss-Arduino-based-SmartHome-Binding
+
 - label: Swegon Ventilation Binding
   description: Used to get live data from Swegon ventilation systems
   wiki_url: https://github.com/openhab/openhab/wiki/Swegon-Ventilation-Binding
@@ -242,59 +250,59 @@
   wiki_url: https://github.com/openhab/openhab/wiki/Weather-Binding
 
 - label: WOL (Wake-on-LAN) Binding
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/Wake-on-LAN-Binding-%28WoL%29
 
 - label: InfluxDB (v 1.0) Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/InfluxDB-Persistence
 
 - label: JDBC Persistence Apache Derby
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence H2
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence HSQLDB
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence MariaDB
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence MySQL
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence PostgreSQL
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JDBC Persistence SQLite
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JDBC-Persistence
 
 - label: JPA Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/JPA-Persistence
 
 - label: MapDB Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/mapdb-Persistence
 
 - label: MQTT Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/MQTT-Persistence
 
 - label: MySQL Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/MySQL-Persistence
 
 - label: RRD4j Persistence
-  description: 
+  description:
   wiki_url: https://github.com/openhab/openhab/wiki/rrd4j-Persistence
 
 - label: XBMC Binding
