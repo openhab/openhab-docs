@@ -1,24 +1,25 @@
 ---
 layout: developersguide
+title: Contribution
 ---
 
 {% include base.html %}
 
-# Contributing to the development of openHAB
+# Contributing to the Development of openHAB
 
-## The repositories
+## The Repositories
 
 Note that the openHAB distribution repository does not contain any source code, but it rather aggregates features from different repos:
 
-- [Eclipse SmartHome Framework](https://github.com/eclipse/smarthome): This repo holds the major parts of the core functionality.
-- [openHAB 2 Core](https://github.com/kaikreuzer/openhab-core): This repo contains a few small bundles that are not part of Eclipse SmartHome, but required for the openHAB runtime. This e.g. contains a compatibility layer for supporting openHAB 1 add-ons.
-- [openHAB 2 Add-ons](https://github.com/openhab/openhab2): Add-ons of openHAB that use the Eclipse SmartHome APIs can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
-- [openHAB 1 Add-ons](https://github.com/openhab/openhab): Add-ons developed for openHAB 1.x. Most of them are working smoothly on the openHAB 2 runtime and thus they are packaged within the distribution. 
-- [Eclipse SmartHome Extensions](https://github.com/eclipse/smarthome/tree/master/extensions): Since openHAB uses the Eclipse SmartHome framework, it is automatically compatible with all extensions that are available for it and maintained within the Eclipse SmartHome repository. These are usually high-quality extensions that might be even used in commercial products.
+* [Eclipse SmartHome Framework](https://github.com/eclipse/smarthome): This repo holds the major parts of the core functionality.
+* [openHAB 2 Core](https://github.com/kaikreuzer/openhab-core): This repo contains a few small bundles that are not part of Eclipse SmartHome, but required for the openHAB runtime. This e.g. contains a compatibility layer for supporting openHAB 1 add-ons.
+* [openHAB 2 Add-ons](https://github.com/openhab/openhab2): Add-ons of openHAB that use the Eclipse SmartHome APIs can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
+* [openHAB 1 Add-ons](https://github.com/openhab/openhab): Add-ons developed for openHAB 1.x. Most of them are working smoothly on the openHAB 2 runtime and thus they are packaged within the distribution.
+* [Eclipse SmartHome Extensions](https://github.com/eclipse/smarthome/tree/master/extensions): Since openHAB uses the Eclipse SmartHome framework, it is automatically compatible with all extensions that are available for it and maintained within the Eclipse SmartHome repository. These are usually high-quality extensions that might be even used in commercial products.
 
-## Contribution guidelines
+## Contribution Guidelines
 
-### Pull requests are always welcome
+### Pull Requests are Always Welcome
 
 We are always thrilled to receive pull requests, and do our best to
 process them as fast as possible. Not sure if that typo is worth a pull
@@ -33,21 +34,21 @@ to do everything for everybody. This means that we might decide against
 incorporating a new feature. However, there might be a way to implement
 that feature *on top of* openHAB.
 
-### Discuss your design on the mailing list
+### Discuss your Design on the Mailing List
 
-We recommend discussing your plans [in the discussion forum](https://community.openhab.org/)
+We recommend discussing your plans [in the discussion forum](https://community.openhab.org)
 before starting to code - especially for more ambitious contributions.
 This gives other contributors a chance to point you in the right
 direction, give feedback on your design, and maybe point out if someone
 else is working on the same thing.
 
-### Create issues...
+### Create Issues...
 
 Any significant improvement should be documented as [a GitHub
 issue](https://github.com/openhab/openhab-distro/issues?labels=enhancement&page=1&state=open) before anybody
 starts working on it.
 
-### ...but check for existing issues first!
+### ...but Check for Existing Issues First!
 
 Please take a moment to check that an issue doesn't already exist
 documenting your bug report or improvement proposal. If it does, it
@@ -72,7 +73,7 @@ your documentation changes for clarity, concision, and correctness, as
 well as a clean documentation build.
 
 Write clean code. Universally formatted code promotes ease of writing, reading,
-and maintenance. 
+and maintenance.
 
 Pull requests descriptions should be as clear as possible and include a
 reference to all the issues that they address.
@@ -102,7 +103,7 @@ name and email address match your git configuration. The AUTHORS file is
 regenerated occasionally from the git commit history, so a mismatch may result
 in your changes being overwritten.
 
-### Merge approval
+### Merge Approval
 
 openHAB maintainers use LGTM (Looks Good To Me) in comments on the code review
 to indicate acceptance.
@@ -112,7 +113,7 @@ component affected. For example, if a change affects `docs/` and `distributions/
 needs an absolute majority from the maintainers of `docs/` AND, separately, an
 absolute majority of the maintainers of `addons/`.
 
-### Sign your work
+### Sign your Work
 
 The sign-off is a simple line at the end of the explanation for the
 patch, which certifies that you wrote it or otherwise have the right to
@@ -165,14 +166,14 @@ then you just add a line to every git commit message:
 
 using your real name (sorry, no pseudonyms or anonymous contributions.)
 
-#### Small patch exception
+#### Small Patch Exception
 
 There are several exceptions to the signing requirement. Currently these are:
 
 * Your patch fixes spelling or grammar errors.
 * Your patch is a single line change to documentation.
 
-### How can I become a maintainer?
+### How can I Become a Maintainer?
 
 * Step 1: learn the component inside out
 * Step 2: make yourself useful by contributing code, bugfixes, support etc.
@@ -205,4 +206,3 @@ general guidelines for the community as a whole:
   respond to an email you are potentially sending to a large number of
   people.  Please consider this before you update.  Also remember that
   nobody likes spam.
-

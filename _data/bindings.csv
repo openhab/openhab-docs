@@ -23,7 +23,7 @@ max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.
 meteostick,Meteostick,"This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle. This is an RF receiver that can receive data directly from Davis weather devices (and others)"
 milight,Milight,"The openHAB2 Milight binding allows to send commands to multiple Milight bridges."
 netatmo,Netatmo,"The Netatmo binding integrates the following Netatmo products :"
-network,Network,"This binding integrates a way to check whether a device is currently available on the network and the required ping time."
+network,Network,"This binding allows to check, whether a device is currently available on the network."
 onkyo,Onkyo,"This binding integrates the Onkyo AV receivers."
 opensprinkler,OpenSprinkler,"This binding allows allows basic control of the OpenSprinkler and OpenSprinkler PI (Plus) devices. Stations can be controlled to be turned on or off and rain sensor state can be read."
 orvibo,Orvibo,"This binding integrates Orvibo devices that communicate using UDP. Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future."
@@ -38,4 +38,3 @@ systeminfo,Systeminfo,"System information Binding provides operating system and 
 tesla,Tesla,"This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com)."
 urtsi,Somfy URTSI II,"The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third party systems and SOMFY’s RTS Motors and controls. It is capable of individual or group control, and can be operated via infrared remote, RS232 and RS485 serial communication. Once an input is activated, an RTS radio command is sent to the automated window treatment."
 vitotronic,vitotronic,"Viessmann heating systems with vitotronic has a optolink Interface for maintenance."
-zwave,ZWave,"The ZWave binding supports an interface to a wireless ZWave home automation network."

@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Next-Gen Rules
 ---
 
 {% include base.html %}

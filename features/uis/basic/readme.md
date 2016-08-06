@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: BasicUI
 ---
 
 {% include base.html %}
@@ -31,4 +32,3 @@ Screenshots:
 
 [![Screenshot 1](doc/screenshot-1.png)](doc/screenshot-1-full.png)
 [![Screenshot 2](doc/screenshot-2.png)](doc/screenshot-2-full.png)
-

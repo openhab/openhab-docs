@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: HomeKit Add-on
 ---
 
 {% include base.html %}

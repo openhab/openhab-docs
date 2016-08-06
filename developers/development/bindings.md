@@ -1,10 +1,11 @@
 ---
 layout: developersguide
+title: Developing bindings
 ---
 
 {% include base.html %}
 
-# Developing a new binding for openHAB 2
+# Developing a New Binding for openHAB 2
 
 This page describes the necessary steps in order to implement a new binding for openHAB 2.
 
@@ -12,14 +13,14 @@ _Note:_ Please note that in contrast to openHAB 1.x, openHAB 2 is based on the [
 
 For information about code style and naming conventions, please see the [guidelines of Eclipse SmartHome](https://www.eclipse.org/smarthome/documentation/development/guidelines.html).
 
-## Choosing a namespace
+## Choosing a Namespace
 
 As a first step, you need to decide in which namespace you want to develop your binding - assuming that you want to contribute it back to the community, you have two options:
 
 * You can choose `org.eclipse.smarthome`, if you want to directly contribute it to the Eclipse SmartHome project. The advantage of this option is that you make it available to a wider audience as your binding will also be available for other solutions than openHAB that are based on Eclipse SmartHome. The disadvantage is that the contribution process is stricter as it involves intellectual property checks and in general makes it harder or even impossible to include third-party libraries with copy-left licenses such as LGPL or code that you have written by reverse engineering some protocol.
 * You can choose `org.openhab`, if you want it to be used for openHAB only. This is the better option, if your binding is not interesting for other solutions, requires special libraries or has technical dependencies on openHAB specific things (although this should be avoided as much as possible).
 
-## Creating a skeleton
+## Creating a Skeleton
 
 For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding. For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with a single parameter, which is your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem'). When prompted, enter your name as author and hit "Y" to start the skeleton generation.
 

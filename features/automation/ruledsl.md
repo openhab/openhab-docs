@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Rules
 ---
 
 {% include base.html %}
@@ -48,9 +49,9 @@ Note: The rule syntax is based on [Xbase](http://www.eclipse.org/Xtext/#xbase) a
 A rule file is a text file with the following structure:
 
     [Imports]
-    
+
     [Variable Declarations]
-    
+
     [Rules]
 
 The ***Imports*** section contains import statement just like in Java. As in Java, they make the imported types available without having to use the fully qualified name for them. For further details, please see the [Xtend documentation for imports](http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports).
@@ -73,17 +74,17 @@ org.eclipse.smarthome.model.script.actions
 
 The ***Variable Declarations*** section can be used to declare variables that should be accessible to all rules in this file. You can declare variables with or without initial values and modifiable or read-only. For further details, please see the [Xtend documentation for variable declarations](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration).
 
-Example: 
+Example:
 
 ```java
 // a variable with an initial value. Note that the variable type is automatically inferred
-var counter = 0 
-    
+var counter = 0
+
 // a read-only value, again the type is automatically inferred
-val msg = "This is a message" 
-    
+val msg = "This is a message"
+
 // an uninitialized variable where we have to provide the type (as it cannot be inferred from an initial value)
-var Number x 
+var Number x
 ```
 
 > Bug: There seem to be [some issues](https://github.com/eclipse/smarthome/issues/1393#issuecomment-223764080) with global variables that still need to be fixed.
@@ -93,8 +94,8 @@ The ***Rules*** section contains a list of rules. Each rule has the following sy
 ```java
 rule "rule name"
 when
-    <TRIGGER CONDITION1> or 
-    <TRIGGER_CONDITION2> or 
+    <TRIGGER CONDITION1> or
+    <TRIGGER_CONDITION2> or
     <TRIGGER_CONDITION3>
     ...
 then
@@ -127,7 +128,7 @@ Item <item> received update [<state>]
 Item <item> changed [from <state>] [to <state>]
 ```
 
-> A simplistic explanation of the differences between `command` and `update` (useful if you are new to openHAB) can be found on the [Actions page](https://github.com/openhab/openhab/wiki/Actions#sendcommand-vs-postupdate) 
+> A simplistic explanation of the differences between `command` and `update` (useful if you are new to openHAB) can be found on the [Actions page](https://github.com/openhab/openhab/wiki/Actions#sendcommand-vs-postupdate)
 
 ### Time-based Triggers
 
@@ -151,7 +152,7 @@ A cron expression takes the form of six or optionally seven fields:
 
 for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06).
 
-You may also use [CronMaker](http://www.cronmaker.com/) to generate cron expressions. 
+You may also use [CronMaker](http://www.cronmaker.com/) to generate cron expressions.
 
 ### System-based Triggers
 
@@ -168,7 +169,7 @@ The expression language used within scripts is the same that is used in the Xten
 
 The syntax is very similar to Java, but has many nice features that allows writing concise code. It is especially powerful in handling collections. What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.
 
-To be able to do something useful with the scripts, openHAB provides access to 
+To be able to do something useful with the scripts, openHAB provides access to
 
 - all defined items, so that you can easily access them by their name
 - all enumerated states/commands, e.g. `ON, OFF, DOWN, INCREASE` etc.
@@ -239,16 +240,16 @@ Taking all the information together, an example rule file could look like this:
 
 ```java
 var Number counter
-    
+
 // setting the counter to some initial value
 // we could have done this in the variable declaration already
 rule Startup
-when 
+when
 	System started
 then
 	counter = 0
 end
-    
+
 // increase the counter at midnight
 rule "Increase counter"
 when
@@ -256,16 +257,16 @@ when
 then
 	counter = counter + 1
 end
-    
+
 // tell the number of days either at noon or if a button is pressed
 rule "Announce number of days up"
 when
-	Time is noon or 
+	Time is noon or
 	Item AnnounceButton received command ON
 then
 	say("The system is up since " + counter + " days")
 end
-    
+
 // sets the counter to the value of a received command
 rule "Set the counter"
 when

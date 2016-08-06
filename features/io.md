@@ -1,10 +1,11 @@
 ---
 layout: documentation
+title: System Integrations
 ---
 
 {% include base.html %}
 
-# List of System integrations
+# List of System Integrations
 
 ## System Integration
 
