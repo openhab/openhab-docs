@@ -1,14 +1,99 @@
 ---
 layout: documentation
+title: Installation Overwiew
 ---
 
 {% include base.html %}
 
-# Installing openHAB
+# Installation Overview
+
+openHAB 2 is based on the Eclipse SmartHome framework and is fully written in Java.
+As such, it only depends on a [Java Development Kit](http://java.com/de/download/manual.jsp), which is available for many platforms.
+openHAB can be executed on different versions of **Mac OS X** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
+
+Please be aware of the fact, that openHAB 2 is based on a new core and introduces new concepts.
+Therefore, tutorials and help you may find on the internet for openhab 1 **might** be outdated!
+
+## Platform Recommendations
+
+1. You are **new to openHAB 2** and want to give it a try? You are in luck:
+  - Set up openHAB 2 on your local PC or Mac in just a few steps.
+
+2. You gained some experience and want to use openHAB to seriously control your home?
+  Typical hardware and software requirements are:
+    - **24/7 availability:** A dedicated system connected by Ethernet and running continuously.
+    - **Energy and space efficient:** A device capable of performing the task at hand without being exaggerated
+    - **Extendibility:** Your system should be capable of running additional software like an MQTT broker or a persistence and graphing software.
+    - **Peripherals:** Depending on your home automation hardware, you will need additional peripheral devices such as a WiFi interface or a special USB radio module.
+  
+  Many devices are suited to host a continuous installation of openHAB 2.
+  The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, experiences with many other devices can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
+
+## Prerequisites
+
+Make sure that you have an up to date version of the [Oracle Java Development Kit](http://java.com/de/download/manual.jsp) on your host system installed.
+Oracle Java Version 8 is recommended for openHAB.
+
+A famous alternative to Oracle Java is the OpenJDK.
+Note that openHAB may be unstable and slower executed by OpenJDK, it is therefor **recommended** to switch to Oracle Java if possible.
+
+Check your current Java version by opening a console and typing "java -version":
+
+```
+console$ java -version
+java version "1.8.0 73"
+Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
+Java HotSpot(TM) 64-Bit Server VM (build 25.73-b02, mixed mode)
+```
+
+## Setup variants
+
+Before you can start, three decisions have to be made:
+
+1. openHAB 2 is available as a platform independent archive file or through a package repository:
+  - **Manual setup:** Download and extract a platform independent zip archive: [Mac OS X](macosx.html), [Windows](windows.html), [Linux](linux.html)
+  - **Package setup:** Install though a package repository, including automatic updates.
+    This option is only available for Debian or Ubuntu derivatives: [Linux (apt/deb)](apt.html)
+
+2. Stable release or cutting edge:
+  - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
+  - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on CloudBees](https://openhab.ci.cloudbees.com/job/openHAB-Distribution)).
+   
+  Because openHAB 2 is still under heavy development, it is recommended for experienced users to use the latest snapshot.
+
+3. The distribution is available in two flavors:
+  - **Offline:** This package contains all available add-ons and allows installing them locally, i.e. completely offline.
+  - **Online:** This package only contains the core runtime and downloads any add-on from a remote repository.
+
+  We currently recommend to use the "offline" version and to update regularly.
 
 ## Installation
 
-openHAB comes as a [platform independent zip file](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip), which you only need to extract to some folder.
+Please follow the instructions in the installation article matching your platform.
+
+## Additional Steps
+
+After you got openHAB 2 set up and running, there are a few additional setup steps you should consider:
+
+* Configure a network share on your openHAB host device and mount it locally: [Samba Share](rasppi.html) 
+* Install the [Eclipse SmartHome Designer](designer.html) on your local machine, to manage your (remote) configuration files.
+  The designer comes with built-in support for the openHAB syntax and elements.
+
+## Getting started 
+
+With the openHAB 2 distribution up and running, you should now continue with
+the [Demo Tutorial](http://docs.openhab.org/tutorials/demo.html),
+the [Beginner Tutorial](http://docs.openhab.org/tutorials/beginner)
+or by working on your [own configuration](http://docs.openhab.org/configuration).
+
+## Help
+
+The very active [openHAB Community Forum](https://community.openhab.org) provides many more details and hints.
+If you run into any problems, use the search function or open a new thread with your detailed question.
+
+
+
+<!-- That shouldn't be here
 
 You will find the following folders:
 
@@ -126,60 +211,5 @@ openhab:install-service
 
 in the shell and make sure that the folder `<openhab root folder>/runtime/karaf` is writable (only required at this time, you can make it read-only again afterwards).
 The files are then generated for you and a short guide is displayed on what further actions you need to take to register it as a system service.
-
-### Raspberry Pi
-
-If you're running Raspbian Jessie and have systemd installed the following steps will allow you to register openHAB as a service so that it runs at startup and automatically restarts if openHAB crashes.
-
- 1. Make sure openHAB is installed somewhere, for the purpose of this guide it's installed in /opt/openhab2.
- 2. Create the following file called "openhab.service" in /lib/systemd/system/ replacing the username with whichever user runs openHAB on your setup.
  
-```
-[Unit]
-Description=Starts and stops the openHAB Home Automation Bus
-Documentation=http://www.openhab.org
-Wants=network-online.target
-After=network-online.target
-
-[Service]
-Type=simple
-GuessMainPID=yes
-User=**enter your openhab username here**
-ExecStart=/opt/openhab2/start.sh
-ExecStop=kill -SIGINT $MAINPID
-Restart=on-failure
-WorkingDirectory=/opt/openhab2
-
-[Install]
-WantedBy=multi-user.target
-```
- 
- 3. Run the following commands to enable the service, start the service and check the status of the service respectively.
- 
-```
-sudo systemctl enable openhab
-sudo systemctl start openhab
-sudo systemctl status openhab
-```
-
- 4. Assuming all looks good when you checked the status of the service, i.e. you see something like the below on your command line, then it should now be setup to run as a service.
-
-```
- openhab.service - Starts and stops the openHAB Home Automation Bus
-   Loaded: loaded (/etc/systemd/system/openhab.service; enabled)
-   Active: active (running) since Thu 2016-01-14 01:16:00 GMT; 18h ago
-     Docs: http://www.openhab.org
-```
- 
- 5. If you need to stop openHAB use the following command.
-  
-```
- sudo systemctl stop openhab
-```
- 
- 6. If you need to disable the service so that it doesn't run at startup use the following command.
- 
-```
- sudo systemctl disable openhab
-```
- 
+-->
