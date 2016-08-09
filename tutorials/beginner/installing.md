@@ -52,4 +52,4 @@ Now the functionality offered by the newly installed binding can be added. For t
 ## Related Information
 
 * [Concepts of Things](http://docs.openhab.org/concepts/things.html)
-* [Discovery of Items](http://docs.openhab.org/concepts/discovery.html)
+* [Discovery of Things](http://docs.openhab.org/concepts/discovery.html)
