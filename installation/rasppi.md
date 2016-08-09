@@ -51,7 +51,8 @@ As a good practice, run a full upgrade and install packages you like or need (a 
 
 ```
 sudo apt-get update
-sudo apt-get full-upgrade
+sudo apt-get upgrade
+
 sudo apt-get install screen mc vim nano curl wget unzip git htop vfu
 ```
 
