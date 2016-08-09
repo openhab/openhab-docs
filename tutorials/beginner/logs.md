@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+title: Looking at the Logs
 ---
 
 {% include base.html %}
@@ -35,9 +36,3 @@ To find them:
 2016-05-09 21:29:33.252 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at /start
 2016-05-09 21:29:33.567 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Serial port is initialized
 ```
-
-
-
-
-
-

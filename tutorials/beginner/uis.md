@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+title: User Interface
 ---
 
 {% include base.html %}
@@ -53,6 +54,3 @@ The Classic UI offers the same services that the Basic UI but with a different l
 ![](images/classicui1.png)
 
 ![](images/classicui2.png)
-
-
-
