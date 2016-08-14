@@ -291,9 +291,14 @@ Restart=on-failure
 WantedBy=multi-user.target
 ```
 
-Next, start the service and retrieve status information:
+Next, enable the service to be executed on system startup, start the service and retrieve status information:
 
 ```shell
+# initialize the new service (execute only once)
+sudo systemctl daemon-reload
+sudo systemctl enable openhab2.service
+
+#start and retrieve status
 sudo systemctl start openhab2.service
 sudo systemctl status openhab2.service
 ```
@@ -305,14 +310,6 @@ The output of `status` after a successful execution should be similar to:
    Loaded: loaded (/lib/systemd/system/openhab2.service; enabled)
    Active: active (running) since Thu 2016-08-14 01:16:00 GMT; 18h ago
      Docs: http://docs.openhab.org
-```
-
-If everything went fine, enable the service to be executed on system startup:
-
-```shell
-# initialize the new service (execute only once)
-sudo systemctl daemon-reload
-sudo systemctl enable openhab2.service
 ```
 
 #### Upgrade, Backup and Restore
