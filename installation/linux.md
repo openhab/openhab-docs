@@ -186,12 +186,14 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, take backup of your settings and execute:
+To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, take backup, then unistall and remove the repository:
 
 ```shell
 sudo apt-get purge openhab2-offline
 # respectively
 sudo apt-get purge openhab2-online
+
+sudo rm /etc/apt/sources.list.d/openhab.list
 ```
 
 ### Manual Installation
@@ -240,23 +242,24 @@ sudo chown -hR openhab:openhab /opt/openhab2
 ```
 
 Everything is ready for a first test run.
-Execute openHAB and you should be able to reach the openHAB 2 Portal at [http://openhab-device:8080](http://192.168.0.3:8080) after a few minutes:
-
-<!-- Note to author: Yes Yes, this will be changed ;) -->
+**Execute** openHAB and you should be able to reach the openHAB 2 Portal at [http://openhab-device:8080](http://192.168.0.3:8080) after a few minutes:
 
 ```shell
-sudo /opt/openhab2/start.sh
+# execute as restricted user openhab:
+sudo su -s /bin/bash -c '/opt/openhab2/start.sh' openhab
 ```
 
 You will see the openHAB Karaf Console in your terminal and can directly interact with it.
-An important downside is, that openHAB will be terminated, as soon as you close your terminal.
-To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal:
+Please be aware, that openHAB 2 will need a few minutes so finish the first start, even after the Karaf console is visible.
+Let openHAB 2 settle for **around 15 minutes**.
+If the portal is not reachable by then, restart once.
 
-```shell
-screen -d -m /opt/openhab2/start.sh
-```
+![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
-A cleaner approach is to create a Linux service, described next.
+An important downside of the above methode is, that openHAB will be terminated, as soon as you close your terminal.
+To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal.
+
+A cleaner approach is to create a Linux service.
 
 #### Service
 
@@ -501,3 +504,9 @@ In order to get more insight on what your openHAB system is doing and to see occ
 You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
 
 With openHAB 2 you can also [use the Karaf console](http://docs.openhab.org/administration/logging.html#karaf-console) to have a colored glance at the logging information.
+
+Note: When starting openHAB 2 for the first time, you may see the following error in `openhab.log`, which is okay to occur once at first boot:
+```text
+2016-08-14 23:37:34.447 [ERROR] [.glassfish.hk2.osgi-resource-locator] - FrameworkEvent ERROR - org.glassfish.hk2.osgi-resource-locator
+org.osgi.framework.BundleException: Exception in org.apache.karaf.features.internal.service.FeaturesServiceImpl$3.end()
+```
