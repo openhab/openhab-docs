@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: Installation Overwiew
+title: Installation Overview
 ---
 
 {% include base.html %}
@@ -12,7 +12,7 @@ As such, it only depends on a [Java Development Kit](http://java.com/de/download
 openHAB can be executed on different versions of **Mac OS X** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
 
 Please be aware of the fact, that openHAB 2 is based on a new core and introduces new concepts.
-Therefore, tutorials and help you may find on the internet for openhab 1 **might** be outdated!
+Therefore, tutorials and help you may find on the internet for openHAB 1 **might** be outdated!
 
 ## Platform Recommendations
 
@@ -25,40 +25,41 @@ Therefore, tutorials and help you may find on the internet for openhab 1 **might
     - **Energy and space efficient:** A device capable of performing the task at hand without being exaggerated
     - **Extendibility:** Your system should be capable of running additional software like an MQTT broker or a persistence and graphing software.
     - **Peripherals:** Depending on your home automation hardware, you will need additional peripheral devices such as a WiFi interface or a special USB radio module.
-  
+
   Many devices are suited to host a continuous installation of openHAB 2.
   The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, experiences with many other devices can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
 
 ## Prerequisites
 
 Make sure that you have an up to date version of the [Oracle Java Development Kit](http://java.com/de/download/manual.jsp) on your host system installed.
-Oracle Java Version 8 is recommended for openHAB.
+A famous choice is OpenJDK, however, Oracle Java Version 8 is recommended for openHAB.
+openHAB may be unstable and slower executed by OpenJDK.
 
-A famous alternative to Oracle Java is the OpenJDK.
-Note that openHAB may be unstable and slower executed by OpenJDK, it is therefor **recommended** to switch to Oracle Java if possible.
+> Oracle Java offers significant performance advantages over OpenJDK on ARM platforms, and will expand the range of Java applications that run well [on the Raspberry Pi].
 
 Check your current Java version by opening a console and typing "java -version":
 
-```
-console$ java -version
+```text
 java version "1.8.0 73"
 Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
 Java HotSpot(TM) 64-Bit Server VM (build 25.73-b02, mixed mode)
 ```
+
+If your output differs, please install Oracle Java 8.
 
 ## Setup variants
 
 Before you can start, three decisions have to be made:
 
 1. openHAB 2 is available as a platform independent archive file or through a package repository:
-  - **Manual setup:** Download and extract a platform independent zip archive: [Mac OS X](macosx.html), [Windows](windows.html), [Linux](linux.html)
+  - **Manual setup:** Download and extract a platform independent zip archive: [Mac OS X](macosx.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
   - **Package setup:** Install though a package repository, including automatic updates.
-    This option is only available for Debian or Ubuntu derivatives: [Linux (apt/deb)](apt.html)
+    This option is only available for Debian or Ubuntu derivatives and the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
 2. Stable release or cutting edge:
   - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
   - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on CloudBees](https://openhab.ci.cloudbees.com/job/openHAB-Distribution)).
-   
+
   Because openHAB 2 is still under heavy development, it is recommended for experienced users to use the latest snapshot.
 
 3. The distribution is available in two flavors:
@@ -75,11 +76,11 @@ Please follow the instructions in the installation article matching your platfor
 
 After you got openHAB 2 set up and running, there are a few additional setup steps you should consider:
 
-* Configure a network share on your openHAB host device and mount it locally: [Samba Share](rasppi.html) 
+* Configure a network share on your openHAB host device and mount it locally: [Linux Samba Share](linux.html#network-sharing), Windows file sharing, ...
 * Install the [Eclipse SmartHome Designer](designer.html) on your local machine, to manage your (remote) configuration files.
   The designer comes with built-in support for the openHAB syntax and elements.
 
-## Getting started 
+## Getting started
 
 With the openHAB 2 distribution up and running, you should now continue with
 the [Demo Tutorial](http://docs.openhab.org/tutorials/demo.html),
@@ -101,8 +102,8 @@ You will find the following folders:
  - `runtime`: This contains the openHAB binaries, there should normally be no need to touch anything in here - the whole folder can be considered to be read-only.
  - `userdata`: Here you will find all the data that is generated during runtime: log files, database files, etc. In theory this should be the only folder where openHAB needs write permission on.
  - `addons`: Here you can drop add-ons (or any other OSGi bundles) that you want to be deployed in your instance. These can be add-ons for openHAB 1.x and 2.x likewise. Note that all "normal" add-ons are already included in the openHAB distribution and all you need is to name them in your 'addons.cfg' file (see below). Hence the `addons` folder is mainly useful if you have received jars from other sources and want to install and test them. Please note that removing a file from this folder will not uninstall the add-on. To uninstall it, you will have to use the console command bundle:uninstall.
- 
-## Choosing a Base Package and Add-ons to be Installed 
+
+## Choosing a Base Package and Add-ons to be Installed
 
 If you do not do any changes to the distribution, it will by default install a standard package, which comes with the most common UIs.
 
@@ -140,7 +141,7 @@ misc = myopenhab
 ```  
 
 Many add-ons require some configuration. In openHAB 1.x, this was done in the central `openhab.cfg` file. In openHAB 2.x this has changed to separate files in the folder `conf/services`, e.g. the add-on 'acme' is configured in the file `conf/services/acme.cfg`.
- 
+
 Likewise, the syntax in the configuration files has changed to not require the namespace anymore, i.e. instead of
 
 ```
@@ -177,7 +178,7 @@ For example:
 
 ```
 export EXTRA_JAVA_OPTS=-Dgnu.io.rxtx.SerialPorts=/dev/ttyAMA0
-``` 
+```
 
 ## Starting the Runtime
 
@@ -193,23 +194,23 @@ openHAB uses Apache Karaf and thus comes with a very powerful shell for managing
  - `log:exception-display`: Show the last exception of the log file.
  - `log:set DEBUG org.openhab.binding.sonos`: Enables debug logging for a certain binding.
  - `feature:list`: Lists all features available and shows there status. openHAB add-ons are made available as such Karaf features.
- - `feature:install openhab-binding-knx`: Installs a certain add-on (here KNX). 
+ - `feature:install openhab-binding-knx`: Installs a certain add-on (here KNX).
  - `bundle:list -s`: Lists all installed bundles with their symbolic name.
  - `logout`: Shuts down openHAB.
- 
+
 ## Registering openHAB as a System Service in the OS
 
-Karaf provides the possibility to be automatically started on system startup as a service. As different mechanisms are required for the different operating systems, Karaf detects your OS and generates the required files. 
+Karaf provides the possibility to be automatically started on system startup as a service. As different mechanisms are required for the different operating systems, Karaf detects your OS and generates the required files.
 
 This capability is currently not available for ARM based devices (e.g. Raspberry Pi 1 and 2) but further below shows the manual steps needed. On Linux systems, you can use the command ```arch``` to show which CPU architecture is being used.
 
 To install openHAB as a service, call
 
 ```
-openhab:install-service 
+openhab:install-service
 ```
 
 in the shell and make sure that the folder `<openhab root folder>/runtime/karaf` is writable (only required at this time, you can make it read-only again afterwards).
 The files are then generated for you and a short guide is displayed on what further actions you need to take to register it as a system service.
- 
+
 -->
