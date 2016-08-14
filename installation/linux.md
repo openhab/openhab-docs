@@ -283,7 +283,7 @@ Group=openhab
 GuessMainPID=yes
 WorkingDirectory=/opt/openhab2
 #EnvironmentFile=/etc/default/openhab2
-ExecStart=/opt/openhab2/start.sh
+ExecStart=/opt/openhab2/start.sh server
 ExecStop=kill -SIGINT $MAINPID
 Restart=on-failure
 
