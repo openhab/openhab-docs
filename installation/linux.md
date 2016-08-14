@@ -7,6 +7,11 @@ title: openHAB 2 on Linux
 
 # openHAB 2 on Linux
 
+<!-- TODO th
+  * de/reinstallation
+  * manual non-root
+-->
+
 The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the focus on Debian/Ubuntu derivatives.
 openHAB 2 can be set up and executed on other Linux distributions, the steps may slightly differ.
 
@@ -132,8 +137,6 @@ This is especially important if you are working with the latest snapshot as chan
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
 
-<!-- Note to author: Article on backups needed! -->
-
 Upgrading is as easy as:
 
 ```shell
@@ -149,13 +152,38 @@ apt-get --reinstall install openhab2-offline
 apt-get --reinstall install openhab2-online
 ```
 
-#### File Locations
+#### Backup and Restore
 
-| openHAB application              | `/usr/share/openhab2`    |
-| Site configuration               | `/etc/openhab2`          |
-| Log files                        | `/var/log/openhab2`      |
-| Userdata like rrd4j databases    | `/var/lib/openhab2`      |
-| Service configuration            | `/etc/default/openhab2`  |
+To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
+
+```shell
+# stop openhab instance (here: systemd service)
+sudo systemctl stop openhab2.service
+
+# backup current installation with settings
+TIMESTAMP=`date +%Y%m%d_%H%M%S`;
+mkdir  ~/openhab2-backup-$TIMESTAMP
+cp -arv /etc/openhab2 ~/openhab2-backup-$TIMESTAMP/conf
+cp -arv /var/lib/openhab2 ~/openhab2-backup-$TIMESTAMP/userdata
+
+# restart openhab instance
+sudo systemctl start openhab2.service
+```
+
+If you later want to restore settings, just replace them.
+Maybe you will need to delete the existing data first.
+
+```shell
+# stop openhab instance (here: systemd service)
+sudo systemctl stop openhab2.service
+
+# restore data
+sudo cp -ar /opt/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
+sudo cp -ar /opt/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+
+# restart openhab instance
+sudo systemctl start openhab2.service
+```
 
 ### Manual Installation
 
@@ -238,12 +266,14 @@ After=network-online.target
 
 [Service]
 Type=simple
-GuessMainPID=yes
 User=openhab
-ExecStart=/opt/openhab2/start.sh
+Group=openhab
+GuessMainPID=yes
+WorkingDirectory=/opt/openhab2
+#EnvironmentFile=/etc/default/openhab2
+ExecStart=/opt/openhab2/start.sh (server???)
 ExecStop=kill -SIGINT $MAINPID
 Restart=on-failure
-WorkingDirectory=/opt/openhab2
 
 [Install]
 WantedBy=multi-user.target
@@ -273,6 +303,53 @@ sudo systemctl daemon-reload
 sudo systemctl enable openhab2.service
 ```
 
+#### Upgrade, Backup and Restore
+
+To stay up to date with new releases, you should do regular upgrades of your manual installation.
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
+
+Your personal configuration will be retained on upgrades.
+We still recommend a backup before each upgrade.
+
+To upgrade your manual installation, you simply need to replace the openHAB runtime files.
+Make sure to first **stop your openHAB instance**.
+
+To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
+
+The following shell commands will create a backup, install the newest openHAB 2 version and restore settings:
+
+```shell
+# stop openhab instance (here: systemd service)
+sudo systemctl stop openhab2.service
+
+# backup current installation with settings
+TIMESTAMP=`date +%Y%m%d_%H%M%S`;
+sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
+
+# download new version (please replace URL)
+cd /tmp
+wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip
+sudo unzip openhab-offline-2.0.0-SNAPSHOT.zip -d /opt/openhab2
+rm openhab-offline-2.0.0-SNAPSHOT.zip
+
+# restore configuration and userdata
+sudo cp -ar /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
+sudo cp -ar /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
+
+# restart openhab instance
+sudo systemctl start openhab2.service
+```
+
+## File Locations
+
+|                                  | Repository Installation  | Manual Installation (according to [guide](#manual-installation))  |
+|:--------------------------------:|:-------------------------|:------------------------------------------------------------------|
+| openHAB application              | `/usr/share/openhab2`    | `/opt/openhab2`                                                   |
+| Site configuration               | `/etc/openhab2`          | `/opt/openhab2/conf`                                              |
+| Log files                        | `/var/log/openhab2`      | `/opt/openhab2/userdata/logs`                                     |
+| Userdata like rrd4j databases    | `/var/lib/openhab2`      | `/opt/openhab2/userdata`                                          |
+| Service configuration            | `/etc/default/openhab2`  | (not preconfigured)                                               |
+
 ## Network Sharing
 
 openHAB depends on configuration files and folders with custom content (details in [Configuration](http://docs.openhab.org/configuration/index.html) articles).
@@ -283,7 +360,7 @@ The [Eclipse SmartHome Designer](http://docs.openhab.org/installation/designer.h
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba. Afterwards open it's configuration file in your favorite editor:
 
-```
+```shell
 sudo apt-get install samba samba-common-bin
 sudo vim /etc/samba/smb.conf
 ```
