@@ -127,7 +127,7 @@ The first start may take **up to 15 minutes**, this is a good time to reward you
 
 You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://192.168.0.3:8080) at this point.
 
-![The openHAB 2 portal page](images\Accueil_Openhab_2.png)
+![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
 #### Upgrade
 
@@ -147,10 +147,14 @@ sudo apt-get upgrade
 Execute this additional command if you are working with the latest snapshot from CloudBees (every few weeks should suffice):
 
 ```shell
-apt-get --reinstall install openhab2-offline
+sudo apt-get --reinstall install openhab2-offline
 # respectively
-apt-get --reinstall install openhab2-online
+sudo apt-get --reinstall install openhab2-online
 ```
+
+Reason: Snapshot builds are not provided as distinguishable versioned releases.
+As such, apt does not detect the new snapshot as a possible upgrade.
+To verify a new version is available and installed, check the [build history](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution) and the build version in the Karaf console before and after upgrade.
 
 #### Backup and Restore
 
@@ -178,8 +182,8 @@ Maybe you will need to delete the existing data first.
 sudo systemctl stop openhab2.service
 
 # restore data
-sudo cp -ar /opt/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
-sudo cp -ar /opt/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+sudo cp -arv /opt/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
+sudo cp -arv /opt/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
 
 # restart openhab instance
 sudo systemctl start openhab2.service
@@ -241,13 +245,13 @@ sudo /opt/openhab2/start.sh
 
 You will see the openHAB Karaf Console in your terminal and can directly interact with it.
 An important downside is, that openHAB will be terminated, as soon as you close your terminal.
-To work around that, a quick solution is, to execute openHAB in a detached screen terminal:
+To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal:
 
 ```shell
 screen -d -m /opt/openhab2/start.sh
 ```
 
-A cleaner approach is to create a Linux service.
+A cleaner approach is to create a Linux service, described next.
 
 #### Service
 
@@ -333,8 +337,11 @@ sudo unzip openhab-offline-2.0.0-SNAPSHOT.zip -d /opt/openhab2
 rm openhab-offline-2.0.0-SNAPSHOT.zip
 
 # restore configuration and userdata
-sudo cp -ar /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
-sudo cp -ar /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
+
+# fix permissions
+sudo chown -hR openhab:openhab /opt/openhab2
 
 # restart openhab instance
 sudo systemctl start openhab2.service
