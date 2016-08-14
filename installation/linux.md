@@ -7,11 +7,6 @@ title: openHAB 2 on Linux
 
 # openHAB 2 on Linux
 
-<!-- TODO th
-  * de/reinstallation
-  * manual non-root
--->
-
 The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the focus on Debian/Ubuntu derivatives.
 openHAB 2 can be set up and executed on other Linux distributions, the steps may slightly differ.
 
@@ -189,6 +184,16 @@ sudo cp -arv ~/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
 sudo systemctl start openhab2.service
 ```
 
+#### Uninstall
+
+To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, take backup of your settings and execute:
+
+```shell
+sudo apt-get purge openhab2-offline
+# respectively
+sudo apt-get purge openhab2-online
+```
+
 ### Manual Installation
 
 The manual installation/setup is an alternative to the otherwise **recommended** [installation through package repository](#package-repository-installation).
@@ -345,6 +350,17 @@ sudo chown -hR openhab:openhab /opt/openhab2
 
 # restart openhab instance
 sudo systemctl start openhab2.service
+```
+
+#### Uninstall
+
+To uninstall (or more precisely remove) openHAB 2 after being manually set up, take a backup if needed and then simply stop and deactivate the openHAB service and get rid of all files:
+
+```shell
+sudo systemctl stop openhab2.service
+sudo systemctl disable openhab2.service
+sudo rm -rf /opt/openhab2/
+sudo rm /lib/systemd/system/openhab2.service
 ```
 
 ## File Locations
