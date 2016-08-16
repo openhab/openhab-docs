@@ -45,26 +45,13 @@ Each item type has been optimized for certain components in your smart home. Thi
 An example:
 Have a look at the following table and find the itemtype "Color". A Philips Hue RGB light bulb provides three pieces of information. Its on or off state, its current brightness, and the color.
 
-If you want to change one of these values you can use four commands.
+If you want to change one of these values you can use any of four item types.
 - Switch the bulb on or off (`Switch` item)
-- Increase or decrease the brightness (`Dimmer` Item)
+- Increase or decrease the brightness (`Dimmer` item)
 - Set the brightness to a specific value (`Number` item)
 - Change the bulb's color (`Color` item)
 
-OpenHAB2 provides you the following item types:
-
-Item Type | Description | Accepted Command Types
-----------|-------------|-----------------------
-Switch    | Represents a switch that can be ON or OFF e.g. lights, etc. but can also represent virtual switches e.g. presence detection, etc. | OnOff
-Number    | Stores a decimal value and is usually used for all kinds of sensors, i.e. temperature, brightness, wind, etc. It can also be used as a counter or as any other thing that can be expressed as a number.                                                               | Decimal
-String    | Stores any kind of string or textual representation of a DateTime.       | String
-Group     | Item to nest other items / collect them in groups                        | The accepted command types of a group item is the same as of the underlying base item. If none is defined, the intersection of all sets of accepted command types of all group members is used instead.
-Dimmer    | Accepts percent values to set the dimmed state. Can also be used as a switch by accepting ON/OFF commands (though this only mimics a Switch by sending 0% and 100% for ON/OFF. See 'Dimmers vs Switches' note below                                                 | OnOff, IncreaseDecrease, Percent
-Color     | Can be used for color information (RGB)                                  | OnOff, IncreaseDecrease, Percent, HSB
-Contact   | Can be used for sensors that return an "open" or "close" as a state. This is useful for doors, windows, etc. | OpenClose
-DateTime  | Stores a timestamp including a valid time zone.                          | DateTime
-Player    | Allows the conrtol players, i.e. Sonos or Squeezebox.                    | PlayPause, NextPrevious, RewindFastforward
-Rollershutter | Allows the control of roller shutters, i.e. moving them up, down, stopping or setting it to close to a certain percentage. | UpDown, StopMove, Percent
+All available openHAB2 item types and their relevant commands can be viewed [here](http://docs.openhab.org/concepts/items.html).
 
 ### Dimmers vs Switches
 While a Dimmer item can accept either OnOff, IncreaseDecrease, or Percent updates, Dimmer items store their state as a Percent value.  See the following example:
@@ -192,7 +179,7 @@ Transform files use UTF-8 encoding, so unicode symbols will also work.
     FIRST_QUARTER=🌓 First Quarter
 
 ## Icons
-OpenHAB provides you a set of [basic icons](http://docs.openhab.org/addons/iconsets/classic/readme.html) by default. However if you wish to use custom icons you need to create the folder `conf/icons/classic/` and place all your icons inside. These icons will be used in all of the openHAB frontends. The images must be in .png or .svg format, and have a name with only small letters and a hyphen or underscore (if required). The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files.
+OpenHAB provides you a set of [basic icons](http://docs.openhab.org/addons/iconsets/classic/readme.html) by default. However if you wish to use custom icons you need to place them inside the `conf/icons/classic/` folder. These icons will be used in all of the openHAB frontends. The images must be in .png or .svg format, and have a name with only small letters and a hyphen or underscore (if required). The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files.
 
 As an example, to use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>`.  
 
@@ -229,7 +216,8 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:c
 
 When you install a binding through PaperUI it will automatically create a .cfg file in `conf/services/` for the appropriate binding. Inside these files are a predefined set of variables which are required for the binding to operate. In many cases you will need to view and edit these to suit your system. These variables can hold ip addresses, API keys, user names, passwords etc. These are all in plain text, so be careful who you share these with if some data is sensitive.
 
-If you are using legacy openHAB 1.x ( or beta/custom bindings ), then these .jar files need to be placed in the `/addons/` folder. If configuration is required then you will need to create an `openhag.cfg` file in `/conf/services/` and paste the appropriate binding configuration into this.
+If you need to use legacy openHAB 1.x bindings then you need to enable this feature through the PaperUI menu by turning on `Include Legacy 1.x Bindings` found at `/configuration/services/configure extension management/`. After downloading the legacy .jar files, they need to be placed in the `/addons/` folder. If further configuration is required then you will need to create an `openhab.cfg` file in `/conf/services/` and paste the appropriate binding configuration into this. For all other native openHAB2 bindings, configuration is done through a `bindingname.cfg` file in the same location.
+
 
 ## Restore States
 When restarting your openHAB installation you may find there are times when your logs indicate some items are UNDEF. This is because, by default, item states are not persisted when openHAB restarts. To have your states persist across restarts you will need to install a [Persistence](http://docs.openhab.org/features/persistence.html) extension.
