@@ -473,30 +473,28 @@ Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"
 
 Below you can find a list of standard colors and their respective RGB color code.
 Please take note, that other colors can be used.
-It is generally expected that valid HTML colors will be accepted (eg "green", "lightgrey", "#334455"), but a UI may only accept internally defined colors or work with a special theme.
+It is generally expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but a UI may only accept internally defined colors or work with a special theme.
 The given color names are agreed on between all openHAB UIs and are therefor your safest choice.
 
-| Color Name  | RGB Color Code                                     |
-|-------------|----------------------------------|
-| maroon      | #800000
-| red         | <span style="color: #ffffff; background-color: #ff0000">&nbsp;#ff0000&nbsp;</span>
-| orange      | #ffa500
-| yellow      | #ffff00
-| olive       | #808000
-| purple      | #800080
-| fuchsia     | #ff00ff
-| white       | #ffffff
-| lime        | #00ff00
-| green       | #008000
-| navy        | #000080
-| blue        | #0000ff
-| aqua        | #00ffff
-| teal        | #008080
-| black       | #000000
-| silver      | #c0c0c0
-| gray        | #808080
-
-<!-- TODO: Color previews -->
+| Color Name  | Preview and RGB Color Code                 |
+|-------------|--------------------------------------------|
+| maroon      | *`► #800000`*{: style="color: #800000"}
+| red         | *`► #ff0000`*{: style="color: #ff0000"}
+| orange      | *`► #ffa500`*{: style="color: #ffa500"}
+| yellow      | *`► #ffff00`*{: style="color: #ffff00"}
+| olive       | *`► #808000`*{: style="color: #808000"}
+| purple      | *`► #800080`*{: style="color: #800080"}
+| fuchsia     | *`► #ff00ff`*{: style="color: #ff00ff"}
+| white       | *`► #ffffff`*{: style="color: #ffffff"}
+| lime        | *`► #00ff00`*{: style="color: #00ff00"}
+| green       | *`► #008000`*{: style="color: #008000"}
+| navy        | *`► #000080`*{: style="color: #000080"}
+| blue        | *`► #0000ff`*{: style="color: #0000ff"}
+| aqua        | *`► #00ffff`*{: style="color: #00ffff"}
+| teal        | *`► #008080`*{: style="color: #008080"}
+| black       | *`► #000000`*{: style="color: #000000"}
+| silver      | *`► #c0c0c0`*{: style="color: #c0c0c0"}
+| gray        | *`► #808080`*{: style="color: #808080"}
 
 ### Icons
 
