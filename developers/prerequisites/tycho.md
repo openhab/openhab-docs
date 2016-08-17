@@ -82,7 +82,9 @@ Tests are executed in a test runtime (based on [OSGi](OSGi.html)).
 Target platform
 ----------------
 
-Target platform is the set of plug-ins which you can use for your development or your build process to resolve the project dependencies.
+[Target platform](targetplatform.html) is the set of plug-ins which you can use for your development or your build process to resolve the project dependencies.
+
+If you are using a [target definition file](targetplatform.html#target-definition), the file should contain only "Software site" locations (i.e. *location* elements with *type="InstallableUnit"*).
 
 When you execute the build, the bundles that are available (can be used as dependencies) form the **effective content of the target platform**. It consists of the following plug-ins:
 
