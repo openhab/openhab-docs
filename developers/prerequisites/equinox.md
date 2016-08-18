@@ -44,7 +44,7 @@ Then follow these steps:
 <img src="images/RunConfiguration.png" width="600"/>  
 Picture 1. Run Configurations dialog window  
 
-If you use Eclipse for an IDE, this will be the easiest way to run your bundles in an Equinox runtime. If you do not have experience with writing OSGi bundles, go to our [coding tasks page](OSGi-tasks.html).
+If you use Eclipse for an IDE, this will be the easiest way to run your bundles in an Equinox runtime. If you do not have experience with writing OSGi bundles, go to our [coding tasks page](osgitasks.html).
 
 ## III. Run Equinox standalone
 
@@ -121,7 +121,7 @@ Some of the core bundles are listed in the table below. Some or all of these bun
 
  Name | Bundle Symbolic Name | Description 
  -------- | -------- | -------- 
-Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi R4 [Declarative Services](osgi-ds.html) specification 
+Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi R4 [Declarative Services](osgids.html) specification 
 Event Admin Service | org.eclipse.equinox.event | OSGi R4 [Event Admin](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model 
 Log Service | org.eclipse.equinox.log | This [LogService](https://osgi.org/javadoc/r4v42/org/osgi/service/log/LogService.html) provides a general-purpose message logger for the OSGi environment 
 Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles 
