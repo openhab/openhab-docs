@@ -21,7 +21,7 @@ The OSGi Declarative Services functionality is part of the [OSGi 4.2 Compendium 
 
 ## II. Declarative Services 
 
-In the [OSGi Overview article](OSGi.html) we have mentioned that a bundle can register, unregister, get and unget services from a central point - the Service Registry. In order to simplify the usage of services the [OSGi Alliance](https://www.osgi.org/about-us/) has developed a model of managing services dynamically called *Declarative Services*. In order to understand this model, we will have to first explain a few terms, used below:
+In the [OSGi Overview article](osgi.html) we have mentioned that a bundle can register, unregister, get and unget services from a central point - the Service Registry. In order to simplify the usage of services the [OSGi Alliance](https://www.osgi.org/about-us/) has developed a model of managing services dynamically called *Declarative Services*. In order to understand this model, we will have to first explain a few terms, used below:
 
 - **Declarative Services Container** (we will use the shorthand **DS**) - a module that is managing the [lifecycle](#vii-component-lifecycle) of a *service component* dynamically. It activates and deactivates different components, basing its decisions on the information contained in the *component description*;
 - **Service Component** (or also **component**) - an object whose lifecycle is managed, usually by a component framework such as Declarative Services (DS). A component may publish itself as an OSGi service or consume OSGi services. A component can refer to a number of services; 
@@ -114,7 +114,7 @@ Let's take a look at some settings, that we can apply:
 
 ### 2. Implementation Class
 
-Most of the bundles will require access to other services. A component may be used to inject the service in the bundle through the `bind()` and `unbind()` methods called on the component instance (the implementation class). In the component description above, we have set that our `bind()` method is named `setLog()`, so now we can inspect an instance of the *LogService* provided by the DS. The `activate()` and `deactivate()` methods are called from DS, when the component configuration is activated and deactivated (more about [activation](http://localhost:4000/developers/prerequisites/OSGi-ds.html#activaiton)):
+Most of the bundles will require access to other services. A component may be used to inject the service in the bundle through the `bind()` and `unbind()` methods called on the component instance (the implementation class). In the component description above, we have set that our `bind()` method is named `setLog()`, so now we can inspect an instance of the *LogService* provided by the DS. The `activate()` and `deactivate()` methods are called from DS, when the component configuration is activated and deactivated (more about [activation](osgids.html#activaiton)):
  
 ```java
 package com.example.consumer;
@@ -243,10 +243,10 @@ A component goes through several states in his lifecycle:
 - **REGISTERED** - temporary state. Only *delayed* components go through this state;
 - **ACTIVE** - the component is active and component instance is created.
 
-<img src="images/Immediate Component Lifecycle.png" width="320" height="200" />  
+<img src="images/immediatecomponent.png" width="320" height="200" />  
 Fig.1 Immediate component lifecycle
 
-<img src="images/Delayed Component Lifecycle.png" width="400" height="200" />  
+<img src="images/delayedcomponent.png" width="400" height="200" />  
 Fig.2 Delayed component lifecycle 
 
 
@@ -288,7 +288,7 @@ Deactivation consists of the following actions:
  
 For more information - [OSGi 4.2 Compendium Specifiaction, Chapter 112.5 Component Life Cycle][OSGi-Compendium].
 
-If you want to practice, what you have learned so far, you can try out our [OSGi Coding tasks](OSGi-tasks.html). In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.
+If you want to practice, what you have learned so far, you can try out our [OSGi Coding tasks](osgids.html). In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.
 
 ## VIII. Further Reading
 

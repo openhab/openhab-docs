@@ -10,7 +10,7 @@ Target platform
 
 ## Introduction
 
-The *Target Platform* is a collection of plug-ins which your workspace will be built and run against. It describes the platform that you are developing for. It can be used from [Tycho Maven plugins](Tycho.html) as well.
+The *Target Platform* is a collection of plug-ins which your workspace will be built and run against. It describes the platform that you are developing for. It can be used from [Tycho Maven plugins](tycho.html) as well.
 
 ## Target Definition
 
@@ -55,7 +55,7 @@ Target definitions are stored in a file with the extension `.target`. The openHA
 </target>
 ```
 
-This file lists the different repositories (or also "update sites"), where the plug-ins are stored, and artifacts ("installable units"). To find more about update sites and installable units, take a look at the [p2 short overview](Equinox.html#vi-p2).
+This file lists the different repositories (or also "update sites"), where the plug-ins are stored, and artifacts ("installable units"). To find more about update sites and installable units, take a look at the [p2 short overview](equinox.html#vi-p2).
 
 ## openHAB target platform
 
@@ -69,7 +69,7 @@ Eclipse has a graphical interface for working with the target platform. It is lo
 
 Depending on the repositories that you have selected in the installation process, you might have many options in this window. For openHAB development choose `openHAB Target Platform`. Make sure that it is checked and that it is "Active".
 
-<img src="images/Target Platform.PNG" width="600"/>  
+<img src="images/targetplatform.png" width="600"/>  
 Fig. 1. Target Platform dialog window
 
    Hint! If for some reason the target platform that you want to use is missing from this list, the easiest way to add it is to close this window and simply drag and drop the target definition file into Eclipse. In the top right corner you will see a button `Set as current target platform`. 
@@ -96,7 +96,7 @@ You can edit the target definition file with any text editor that you want, but 
 - in the `Locations` tab select `Add..`;
 - Select `Folder` and follow the wizard.
 
-<img src="images/Edit Target Definition.PNG" width="600"/>  
+<img src="images/edittarget.png" width="600"/>  
 Fig. 2. Edit Target Definition dialog window
 
 ## Further Reading

@@ -77,7 +77,7 @@ You can execute tests with:
 
 `mvn clean integration-test`
  
-Tests are executed in a test runtime (based on [OSGi](OSGi.html)).
+Tests are executed in a test runtime (based on [OSGi](osgi.html)).
 
 Target platform
 ----------------
@@ -120,12 +120,12 @@ In order to resolve the problem, you will have to include the bundle that is exp
 
 Further Reading
 ----------
-<https://wiki.eclipse.org/Tycho/Target_Platform>
-<br/><https://wiki.eclipse.org/Tycho/Packaging_Types>
-<br/><https://github.com/FTSRG/cheat-sheets/wiki/Maven-and-Eclipse#tycho>
-<br/><http://www.vogella.com/tutorials/EclipseTycho/article.html>
-<br/><http://www.vogella.com/tutorials/EclipseTargetPlatform/article.html>
-<br/><https://wiki.eclipse.org/PDE/Target_Definitions>  
+- <https://wiki.eclipse.org/Tycho/Target_Platform>
+- <https://wiki.eclipse.org/Tycho/Packaging_Types>
+- <https://github.com/FTSRG/cheat-sheets/wiki/Maven-and-Eclipse#tycho>
+- <http://www.vogella.com/tutorials/EclipseTycho/article.html>
+- <http://www.vogella.com/tutorials/EclipseTargetPlatform/article.html>
+- <https://wiki.eclipse.org/PDE/Target_Definitions>  
 
 [target-platform]: http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.pde.doc.user%2Fconcepts%2Ftarget.htm
 [Tycho]: https://eclipse.org/tycho/sitedocs/index.html
