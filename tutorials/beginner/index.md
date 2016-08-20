@@ -18,7 +18,7 @@ The result of the additional configuration will look as follows:
 ![](images/Overview_Result.png)
 
 
-The tutorial is divided in five parts:
+The tutorial consists of following chapters:
 
 ## Overview of the User Interfaces
 
@@ -28,9 +28,9 @@ The standard openHAB installation offers several [User Interfaces](uis.html). In
 
 The main part of the tutorial follows a workflow which is common when adding new functionality:
 
-1. [Installing an Extension](installing.html)
-2. [Configuring Functionality](configuring.html)
-3. [Defining User Interface](persistence.html)
+1. [Install an Extension](installextension.html)
+2. [Configure Functionality](configure.html)
+3. [Define User Interface](defineui.html)
 
 ## Looking at the logs
 

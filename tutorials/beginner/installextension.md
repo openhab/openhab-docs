@@ -5,7 +5,7 @@ title: Installing Extension
 
 {% include base.html %}
 
-# Installing an Extension
+# Install an Extension
 
 One of the strengths of openHAB is that new capabilities can easily be added by installing extensions. These capabilities can be a technology (like Z-Wave, Philips HUE, Sonos, ...), user interfaces, database connections and others.
 
@@ -25,7 +25,7 @@ The workflow for adding a binding normally consists of three steps:
 
 ## Add New Binding
 
-| 1. |  ```http://192.168.20.3:8080/start/index```   | Point your browser to the PaperUI. Please adjust the IP adress to that of your openHab server. |
+| 1. |  ```http://192.168.20.3:8080/start/index```   | Point your browser to the PaperUI. Please adjust the IP address to that of your open server. |
 | 2. | ![](images/Installing_Extension_Start.png)    | 1. Click in the left hand menu to the item **Extension** <BR> 2. Ensure that the tab **Bindings** is selected  <BR> 3. Scroll down to the entry **System Info Binding** and press **Install** on the right hand side    |
 | 3. | ![](images/Installing_Extension_Success.png)  | Once the extension is installed, the extension's symbol is marked as active. |
 
