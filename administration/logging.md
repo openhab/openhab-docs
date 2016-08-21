@@ -118,14 +118,17 @@ The output for the above log statement of type **Debug** is:
 
 Per default all log entries are saved in the file _openhab.log_ and event specific entries also in the file _events.log_. Additional files can be defined in order to write specifics logs to a separate place.
 
-In order to create a new log file following two areas needs to be added to the [config file](#config-file):
+In order to create a new log file following two blocks need to be added to the [config file](#config-file):
 
 1. A new logger:
 
 ```
 # Logger - Demo.log
 log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
+log4j.additivity.org.eclipse.smarthome.model.script.Demo = false
 ```
+
+Note: The second line (log4j.additivity) is preventing that log entries for "Demo" are also written to the standard log.
 
 2. A new file appender:
 
