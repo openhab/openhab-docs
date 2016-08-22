@@ -41,7 +41,7 @@ Then follow these steps:
 6. Click on "Validate Bundles" and make sure that "No problems were detected" is displayed.
 7. You can start Equinox with the "Run" button.
 
-<img src="images/RunConfiguration.png" width="600"/>  
+<img src="images/runconfiguration.png" width="600"/>  
 Picture 1. Run Configurations dialog window  
 
 If you use Eclipse for an IDE, this will be the easiest way to run your bundles in an Equinox runtime. If you do not have experience with writing OSGi bundles, go to our [coding tasks page](osgitasks.html).

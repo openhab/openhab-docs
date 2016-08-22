@@ -288,7 +288,7 @@ Deactivation consists of the following actions:
  
 For more information - [OSGi 4.2 Compendium Specifiaction, Chapter 112.5 Component Life Cycle][OSGi-Compendium].
 
-If you want to practice, what you have learned so far, you can try out our [OSGi Coding tasks](osgids.html). In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.
+If you want to practice, what you have learned so far, you can try out our [OSGi Coding tasks](osgitasks.html). In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.
 
 ## VIII. Further Reading
 

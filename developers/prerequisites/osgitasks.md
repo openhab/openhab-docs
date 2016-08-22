@@ -195,5 +195,5 @@ Some of the tutorials listed below are not up-to-date with the latest versions o
 [ManagedService]: https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ManagedService.html
 [ServiceTracker]: https://osgi.org/javadoc/r4v42/org/osgi/util/tracker/ServiceTracker.html
 [SERVICE_RANKING]: https://osgi.org/javadoc/r4v42/org/osgi/framework/Constants.html#SERVICE%5FRANKING
-[ds]: /OSGi-ds
+[ds]: osgids.html
 [CommandProvider]: http://help.eclipse.org/neon/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Freference%2Fapi%2Forg%2Feclipse%2Fosgi%2Fframework%2Fconsole%2FCommandProvider.html
