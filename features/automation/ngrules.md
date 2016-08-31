@@ -13,7 +13,7 @@ Eclipse SmartHome now comes with an initial version of a next-generation rule en
 
 In order to install it you need to:
 
-- Enable remote repository access of your runtime as well as enabling experimental features. You can do so in the Paper UI under `Configuration->Services->System->Extension Management`:
+- Enable remote repository access of your runtime as well as enabling experimental features. You can do so in the Paper UI under `Configuration->System->Extension Management`:
 ![enable experimental](images/experimental.png)
 - Install the rule engine from `Extensions->Misc-> Rule Engine (Experimental)`:
 ![rule engine](images/ruleengine.png)
