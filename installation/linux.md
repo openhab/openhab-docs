@@ -139,6 +139,11 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+**Edit:** As of 01.09.2016, the following described problem and workaround are **outdated**.
+openHAB snapshots are now upgraded by the above commands, just like any other linux package.
+
+Snapshot builds are not provided as distinguishable versioned releases.
+As such, apt does not detect the new snapshot as a possible upgrade.
 Execute this additional command if you are working with the latest snapshot from CloudBees (every few weeks should suffice):
 
 ```shell
@@ -146,10 +151,7 @@ sudo apt-get --reinstall install openhab2-offline
 # respectively
 sudo apt-get --reinstall install openhab2-online
 ```
-
-Reason: Snapshot builds are not provided as distinguishable versioned releases.
-As such, apt does not detect the new snapshot as a possible upgrade.
-To verify a new version is available and installed, check the [build history](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution) and the build version in the Karaf console before and after upgrade.
+**Edit end**
 
 #### Backup and Restore
 
