@@ -88,6 +88,14 @@
                     <include>**/cfg/**</include>
                   </includes>
                 </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab-bundles/bindings</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
               </resources>
             </configuration>
           </execution>
@@ -129,6 +137,14 @@
                   <excludes>
                     <exclude>**/iconset/**</exclude>
                   </excludes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab-bundles/uis</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
                 </resource>
               </resources>
             </configuration>
@@ -276,9 +292,9 @@
                 uis.eachFile
                 {
                 def name = it.name
-                if(name.contains('smarthome.ui.') &amp;&amp; !name.contains('iconset')) {
+                if((name.contains('smarthome.ui.') || name.contains('openhab.ui.')) &amp;&amp; !name.contains('iconset')) {
                 def uiId =
-                it.name.replace('org.eclipse.smarthome.ui.', '')
+                it.name.replace('org.eclipse.smarthome.ui.', '').replace('org.openhab.ui.', '')
                 def simpleUiNameDir = new
                 File(uis.path, uiId)
                 it.renameTo(simpleUiNameDir)

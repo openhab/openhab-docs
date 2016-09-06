@@ -10,3 +10,7 @@
 	path = _repos/openhab
 	url = https://github.com/openhab/openhab
 	branch = master
+[submodule "_repos/openhab-bundles"]
+	path = _repos/openhab-bundles
+	url = https://github.com/openhab/openhab-bundles
+	branch = master

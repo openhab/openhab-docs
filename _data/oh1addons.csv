@@ -82,4 +82,3 @@ persistence,MapDB Persistence
 persistence,MQTT Persistence
 persistence,MySQL Persistence
 persistence,RRD4j Persistence
-voice,Mary TTS
