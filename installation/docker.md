@@ -56,7 +56,7 @@ then start with ``docker-compose up -d``
 **Accessing the console**
 
 ```
-docker exec -it openhab console
+docker exec -it openhab /openhab/runtime/karaf/bin/client 
 ```
 
 **Debug Mode**
