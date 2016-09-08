@@ -6,6 +6,26 @@ layout: documentation
 
 # Installation through Docker
 
+## Image Variants
+There are Docker images for three architectures and there is an online and offline version for each architecture.
+- amd64 : online, offline
+- armhf : online, offline
+- arm64 : online, offline
+
+To obtain the official Docker image from [Docker Hub](https://hub.docker.com/r/openhab/openhab/) use:
+
+```
+docker pull openhab/openhab:<architecture>-<[on|off]line>
+```
+
+For example, to pull the amd64 offline image use:
+
+```
+docker pull openhab/openhab:amd64-offline
+```
+
+If you are unsure about what architecture and version to choose use `openhab/openhab:amd64-online`.
+
 ## Usage
 
 **Important** To be able to use UPnP for discovery the container needs to be started with ``--net=host``.
