@@ -48,17 +48,17 @@ Alternatively resort to the [manual installation approach](linux.html#manual-ins
 Choose between the latest Beta release or a Snapshot with all incoming contributions, rebuild on [every change](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
-The repository URLs will be stored in the file `/etc/apt/sources.list.d/openhab.list`.
+The repository URLs will be stored in the file `/etc/apt/sources.list.d/openhab2.list`.
 Be careful to not have conflicting repositories in your sources list.
 
 Decide between two options:
 
 * **Beta Release**
 
-  Add the **openHAB 2 Beta repository** to your systems apt sources list (will overwrite your existing `openhab.list`):
+  Add the **openHAB 2 Beta repository** to your systems apt sources list (will overwrite your existing `openhab2.list`):
 
   ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab.list
+  echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
   Additionally, you need to add the openHAB 2 Bintray repositories key to your package manager by using either `wget` or `curl`:
@@ -71,11 +71,11 @@ Decide between two options:
 
 * **Snapshot Release**
 
-  Add the **openHAB 2 Snapshot repositories** to your systems apt sources list (will overwrite your existing `openhab.list`):
+  Add the **openHAB 2 Snapshot repositories** to your systems apt sources list (will overwrite your existing `openhab2.list`):
 
   ```shell
-  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab.list
-  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab.list
+  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
   ```
 
   Note: CloudBees provides the openHAB 2 repositories through HTTPS.
@@ -195,7 +195,7 @@ sudo apt-get purge openhab2-offline
 # respectively
 sudo apt-get purge openhab2-online
 
-sudo rm /etc/apt/sources.list.d/openhab.list
+sudo rm /etc/apt/sources.list.d/openhab2.list
 ```
 
 ### Manual Installation
