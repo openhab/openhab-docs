@@ -20,7 +20,7 @@ Accessing the Karaf console depends on the start mode of openHAB. The manually s
 If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default Username/Password is **openhab/habopen**.
 
 ```
-ssh karaf@localhost -p 8101
+ssh openhab@localhost -p 8101
 Password authentication
 Password:
 
@@ -37,6 +37,8 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 
 openhab>
 ```
+
+In case the command fails, you can try to delete the file **$HOME/.ssh/known.hosts** and then try again.
 
 # Using the console
 
