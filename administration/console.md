@@ -17,12 +17,12 @@ The Karaf console offers the option to:
 
 Accessing the Karaf console depends on the start mode of openHAB. The manually start using shell/batch script ends directly in the Karaf console.
 
-If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default Username/Password is **openhab/habopen**.
+If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default Username/Password is **openhab/habopen**. Be aware, that the first connection attempt may take a few seconds longer.
 
 ```
-ssh karaf@localhost -p 8101
+ssh openhab@localhost -p 8101
 Password authentication
-Password:
+Password: 
 
                           __  _____    ____      
   ____  ____  ___  ____  / / / /   |  / __ )     
@@ -38,7 +38,7 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 openhab>
 ```
 
-# Using the console
+# Using the Console
 
 **Help** is listing all available commands:
 
@@ -85,15 +85,13 @@ openhab> logout
 
 # Configuring the Console
 
-By default due to security reasons openhab binds it's shell to localhost. If you are using local network or you are fully aware of all risks of exposing your system to public network you can change bind address in **org.apache.karaf.shell.cfg** config file. It can be found in the **runtime/karaf/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/karaf/etc/), replace line:
+By default due to security reasons openhab binds its shell to localhost. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in `org.apache.karaf.shell.cfg` config file. It can be found in the `runtime/karaf/etc/` folder (in case openHAB was installed via apt, the full path is: `/usr/share/openhab2/runtime/karaf/etc/`), replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces.
 
+The above can be accomplished by the following command (you may need to adapt the path):
 ```
-sshHost=127.0.0.1
-```
-to contain IP address you want to bind or 0.0.0.0 if you would like to bind to all available network interfaces:
-
-```
-sshHost=0.0.0.0
+sed -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /usr/share/openhab2/runtime/karaf/etc/org.apache.karaf.shell.cfg
 ```
 
-Please check the [Karaf reference](http://karaf.apache.org/manual/latest/) for details.
+-----
+
+Please check the [Karaf reference](http://karaf.apache.org/manual/latest/) for more details.
