@@ -6,7 +6,7 @@ layout: documentation
 
 # Network Binding
 
-This binding allows to check, whether a device is currently available on the network.
+This binding allows to check whether a device is currently available on the network.
 This happens by either using [ping](https://en.wikipedia.org/wiki/Ping_%28networking_utility%29) or by a successful TCP connection on a port of your choosing.
 
 ## Supported Things
@@ -28,7 +28,7 @@ network:device:devicename [ hostname="192.168.0.64", port="0", retry="1", timeou
 - **hostname:** IP address or hostname of the device
 - **port:** "0" to use ICMP ping or the number of an open TCP port on the device
 - **retry:** After how many ping retries shall the device be assumed as offline
-- **timeout:** How long shall the ping wait for an answer (in milliseconds, `60000` = one minute) 
+- **timeout:** How long shall the ping wait for an answer (in milliseconds, `60000` = one minute)
 - **refresh_interval:** How often shall the device be checked  (in milliseconds, `5000` = 5 seconds)
 - **use\_system\_ping:** Use the real ICMP ping program of the operating system, instead of the Java ping. Useful if the devices cannot be reached by Java ping. **Beware**: By setting this option to `true`, the **port option is ignored**.
 - **dhcplisten:** Listen for DHCP Request messages.
