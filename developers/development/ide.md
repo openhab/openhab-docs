@@ -35,7 +35,7 @@ The Eclipse IDE is used for openHAB developments. The Eclipse Installer automati
 8. Your workspace should now fully compile and you can start the runtime by launching the "openHAB_Runtime" launch configuration.
 
 Note that you will find the sources in a subfolder called "git" within your selected installation folder. You can use any kind of git client here, if you do not want to use the git support from within the Eclipse IDE.
-If you want to push changes, you need to do so to your personal fork of the repository in order to create a pull request. You will find more details in the ["How to contribute"](../../../CONTRIBUTING.md) documentation.
+If you want to push changes, you need to do so to your personal fork of the repository in order to create a pull request. You will find more details in the ["How to contribute"](../contributing/contributing) documentation.
 
 ## Building, Running and Debugging
 
