@@ -79,7 +79,7 @@ Decide between two options:
   Additionally, you need to add the openHAB 2 Snapshots repository key to your package manager:
   
   ```shell
-  wget -qO - http://www.openhab.org/keys/public-key-snapshots.asc | sudo apt-key add -
+  wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
   ```
   
   Note: CloudBees provides the openHAB 2 repositories through HTTPS.
