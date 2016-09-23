@@ -394,9 +394,9 @@ Next, add the desired share configurations to the end of the file:
 * Package repository based installation:
 
   ```ini
-  [openHAB-sys]
-    comment=openHAB2 application
-    path=/usr/share/openhab2
+  [openHAB2-userdata]
+    comment=openHAB2 userdata
+    path=/var/lib/openhab2
     browseable=Yes
     writeable=Yes
     only guest=no
@@ -404,7 +404,7 @@ Next, add the desired share configurations to the end of the file:
     create mask=0777
     directory mask=0777
 
-  [openHAB-conf]
+  [openHAB2-conf]
     comment=openHAB2 site configuration
     path=/etc/openhab2
     browseable=Yes
