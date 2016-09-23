@@ -61,12 +61,10 @@ Decide between two options:
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Additionally, you need to add the openHAB 2 Bintray repositories key to your package manager by using either `wget` or `curl`:
+  Additionally, you need to add the openHAB 2 Bintray repository key to your package manager:
 
   ```shell
   wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
-  # or
-  curl 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
   ```
 
 * **Snapshot Release**
@@ -77,10 +75,15 @@ Decide between two options:
   echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
   echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
   ```
-
+  
+  Additionally, you need to add the openHAB 2 Snapshots repository key to your package manager:
+  
+  ```shell
+  wget -qO - http://www.openhab.org/keys/public-key-snapshots.asc | sudo apt-key add -
+  ```
+  
   Note: CloudBees provides the openHAB 2 repositories through HTTPS.
   If your system fails at the next step, install the missing dependency: `sudo apt-get install apt-transport-https`
-
 
 Scan the newly added repository and resynchronize the package index:
 
@@ -138,20 +141,6 @@ Upgrading is as easy as:
 sudo apt-get update
 sudo apt-get upgrade
 ```
-
-**Edit:** As of 01.09.2016, the following described problem and workaround are **outdated**.
-openHAB snapshots are now upgraded by the above commands, just like any other linux package.
-
-Snapshot builds are not provided as distinguishable versioned releases.
-As such, apt does not detect the new snapshot as a possible upgrade.
-Execute this additional command if you are working with the latest snapshot from CloudBees (every few weeks should suffice):
-
-```shell
-sudo apt-get --reinstall install openhab2-offline
-# respectively
-sudo apt-get --reinstall install openhab2-online
-```
-**Edit end**
 
 #### Backup and Restore
 
@@ -378,7 +367,7 @@ sudo rm /lib/systemd/system/openhab2.service
 ## Network Sharing
 
 openHAB depends on configuration files and folders with custom content (details in [Configuration](http://docs.openhab.org/configuration/index.html) articles).
-Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a Samba network share is highly recommended.
+Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a Samba network share is **highly recommended**.
 
 The [Eclipse SmartHome Designer](http://docs.openhab.org/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
 
@@ -405,9 +394,9 @@ Next, add the desired share configurations to the end of the file:
 * Package repository based installation:
 
   ```ini
-  [openHAB-sys]
-    comment=openHAB2 application
-    path=/usr/share/openhab2
+  [openHAB2-userdata]
+    comment=openHAB2 userdata
+    path=/var/lib/openhab2
     browseable=Yes
     writeable=Yes
     only guest=no
@@ -415,7 +404,7 @@ Next, add the desired share configurations to the end of the file:
     create mask=0777
     directory mask=0777
 
-  [openHAB-conf]
+  [openHAB2-conf]
     comment=openHAB2 site configuration
     path=/etc/openhab2
     browseable=Yes
