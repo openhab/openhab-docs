@@ -218,7 +218,7 @@ Regardless of the option you choose, make sure you change the port to listen in 
 	listen                          443 ssl;
 ```
 
-After restarting NGINX service, you will be using a valid HTTPS certificate, you can check by going to https://mydomain_or_myip and confirming with your browser that you have a valid certificate. **These certificates expire within a few months** so it is important to run the updater in a cron expression (and also restart NGINX) as explained in the Certbot setup instructions. If you want to keep hold of a HTTP server for some reason, just add ```listen 80;``` 
+After restarting NGINX service, you will be using a valid HTTPS certificate, you can check by going to https://mydomain_or_myip and confirming with your browser that you have a valid certificate. **These certificates expire within a few months** so it is important to run the updater in a cron expression (and also restart NGINX) as explained in the Certbot setup instructions. If you want to keep hold of a HTTP server for some reason, just add `listen 80;` and remove the Strict-Transport-Security line.
 
 ### Redirecting HTTP Traffic to HTTPS
 
