@@ -48,6 +48,8 @@ The devices support the following channels:
 | currentartist | String | Name of the artist currently playing | all |
 | currenttitle | String | Title of the song currently playing | all |
 | currenttrack | String       | This channel indicates the name of the track or radio station currently playing | all |
+| currenttrackuri | String | URI of the current track | all |
+| currenttransporturi | String | URI of the current AV transport | all |
 | favorite | String | Play the given favorite entry. The favorite entry has to be predefined in the Sonos Controller app | all |
 | led | Switch | Set or get the status of the white led on the front of the Zone Player | all |
 | localcoordinator | Switch | Indicator set to ON if the this Zone Player is the Zone Group Coordinator | all |
@@ -62,11 +64,13 @@ The devices support the following channels:
 | publicaddress | Switch | Put all Zone Players in one group, and stream audio from the line-in from the Zone Player that triggered the command | PLAY5, CONNECT, CONNECTAMP |
 | radio | String | Play the given radio station. The radio station has to be predefined in the Sonos Controller app | all |
 | remove | String | Remove the given Zone Player to the group of this Zone Player | all |
+| repeat | String | Repeat the current track or queue. The accepted values are OFF, ONE and ALL | all |
 | restore | Switch | Restore the state of the Zone Player | all |
 | restoreall | Switch | Restore the state of all the Zone Players | all |
 | volume | Dimmer       | This channel supports setting the master volume of the zoneplayer | all |
 | save | Switch | Save the state of the Zone Player | all |
 | saveall | Switch | Save the state of all the Zone Players | all |
+| shuffle | Switch | Shuffle the queue playback | all |
 | snooze | Switch | Snooze the running alarm, if any, with the given number of minutes | all |
 | standalone | Switch | Make the Zone Player leave its Group and become a standalone Zone Player | all |
 | state | String | The State channel contains state of the Zone Player, e.g. PLAYING, STOPPED,... | all |

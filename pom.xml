@@ -303,6 +303,9 @@
                 if(readme.exists()) {
                 println readme
                 readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+                if(!readme.text.startsWith('---')) {
+                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                }
                 }
                 }
                 }
