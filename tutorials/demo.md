@@ -61,7 +61,7 @@ To understand their meaning and how you can tweak them all, please refer to our 
 
 ## Using the Shell
 
-openHAB uses Apache Karaf and thus comes with a very powerful shell for managing the installation. Please check the [Karaf command reference](http://karaf.apache.org/manual/latest/commands/commands.html) for details. Useful commands e.g. include:
+openHAB uses Apache Karaf and thus comes with a very powerful shell for managing the installation. Please check the [Karaf command reference](https://karaf.apache.org/manual/latest/#_commands) for details. Useful commands e.g. include:
 
  - `log:tail`: Show the live logging output, end it by pressing ctrl+c.
  - `log:exception-display`: Show the last exception of the log file.
