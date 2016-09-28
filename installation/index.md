@@ -85,7 +85,7 @@ After you got openHAB 2 set up and running, there are a few additional setup ste
 With the openHAB 2 distribution up and running, you should now continue with
 the [Demo Tutorial](http://docs.openhab.org/tutorials/demo.html),
 the [Beginner Tutorial](http://docs.openhab.org/tutorials/beginner)
-or by working on your [own configuration](http://docs.openhab.org/configuration/jetty.html).
+or by working on your own configuration.
 
 ## Help
 
