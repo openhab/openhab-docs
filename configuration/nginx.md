@@ -6,7 +6,7 @@ title: NGINX Reverse Proxy
 {% include base.html %}
 
 # Running openHAB Behind a Reverse Proxy
-A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to *http://mydomain_or_myip* to your openHAB runtime. You just have to **replace *mydomain_or_myip*** with either and **internal or external IP** (e.g. xx.xx.xx.xx) or a **domain** if you own one that links to the external IP of openHAB (e.g. openhab.mydomain.tld).
+A reverse proxy simply directs client requests to the appropriate server. This means you can proxy connections to *http://mydomain_or_myip* to your openHAB runtime. You just have to **replace *mydomain_or_myip*** with either an **internal or external IP** (e.g. xx.xx.xx.xx) or a **domain** if you own one that links to the external IP of openHAB (e.g. openhab.mydomain.tld).
 
 Running openHAB behind a reverse proxy allows you to access your openHAB runtime via port 80 (HTTP) and 443 (HTTPS). It also provides you a simple way of **protecting your server** with authentication and secure certificates.
 
@@ -19,7 +19,7 @@ This page is structured as follows:
 
 ## Setting up NGINX to Proxy openHAB
 
-These are the steps required to use **NGINX**, a lightweight HTTP server, although you can use **Apache HTTP** server or any other HTTP server which supports reverse proxying.
+These are the steps required to use [**NGINX**](https://nginx.org), a lightweight HTTP server, although you can use **Apache HTTP** server or any other HTTP server which supports reverse proxying.
 
 ### Installation
 
