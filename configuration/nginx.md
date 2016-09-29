@@ -120,7 +120,7 @@ Once again, any changes you make to these files **must be followed with restarti
 
 ## Setting up a domain
 
-To generate a trusted certificate, you need to own a domain. To aquire your own domain, you can use one of the following methods:
+To generate a trusted certificate, you need to own a domain. To acquire your own domain, you can use one of the following methods:
 
 |Method|Example Links|Note|
 |:-|:-:|:-|
@@ -144,7 +144,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
   sudo apt-get install openssl
   ```
 
-  Once complete, you need to create a directory where our certifcates can be placed:
+  Once complete, you need to create a directory where our certificates can be placed:
 
   ```shell
   sudo mkdir -p /etc/ssl/certs
@@ -234,7 +234,7 @@ server {
 
 ## Putting it All Together
 
-After following all the steps on this page, you *should* have a NGINX server configutration that looks like this:
+After following all the steps on this page, you *should* have a NGINX server configuration that looks like this:
 
 ```
 server {
@@ -267,3 +267,28 @@ server {
 	}
 }
 ```
+
+## Additional HTTPS Security
+
+This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#enabling-https), **but you need to follow at least one of them first**.
+
+First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: this will take a few minutes to complete:**
+
+```shell
+mkdir -p /etc/nginx/ssl
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+```
+
+Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``. All of these settings are customisable, but make sure you [read up on](http://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
+
+```
+	ssl_protocols                   TLSv1 TLSv1.1 TLSv1.2;
+	ssl_prefer_server_ciphers       on;
+	ssl_dhparam                     /etc/nginx/ssl/dhparam.pem;
+	ssl_ciphers                     ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:HIGH:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!CBC:!EDH:!kEDH:!PSK:!SRP:!kECDH;
+	ssl_session_timeout             1d;
+	ssl_session_cache               shared:SSL:10m;
+	keepalive_timeout               70;
+```
+
+To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you dont want your domain seen). If you're achieving A or A+ here, then your client-openHAB communication is very secure.
