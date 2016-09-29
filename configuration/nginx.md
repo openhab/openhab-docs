@@ -37,7 +37,7 @@ NGINX configures the server when it starts up based on configuration files. The 
 
 The recommended configuration below assumes that you run the reverse proxy on the same machine as your openHAB runtime. If this doesn't fit for you, you just have to replace `proxy_pass http://localhost:8080/` by your openHAB runtime hostname (such as *http://youropenhabhostname:8080/*).
 
-```
+```nginx
 server {
 	listen                          80;
 	server_name                     mydomain_or_myip;
@@ -52,6 +52,14 @@ server {
 	}
 }
 ```
+
+It is also recommended to name the file to something relevant to what it's doing, if you already have a default file in place, then you can rename it via:
+
+```shell
+sudo mv /etc/nginx/sites-enabled/default /etc/nginx/sites-enabled/openhab
+```
+
+Otherwise, create a new file. **Every file in the `sites-enabled` folder gets processed by NGINX, so make sure you only have one per site.**
 
 After saving over the file but **before you commit** the changes to our server, you should **test** to see if our changes contain any errors; this is done with the command:
 
@@ -91,9 +99,9 @@ You will receive a prompt to create a password for this username, once finished 
 
 ### Referencing the File in the NGINX Configuration
 
-Now the configuration file (`/etc/nginx/sites-enabled/default`) needs to be edited to use this password. Open the configuration file and **add** the following lines underneath the proxy_* settings:
+Now the configuration file (`/etc/nginx/sites-enabled/openhab`) needs to be edited to use this password. Open the configuration file and **add** the following lines underneath the proxy_* settings:
 
-```
+```nginx
 		auth_basic                            "Username and Password Required";
 		auth_basic_user_file                  /etc/nginx/.htpasswd;
 ```
@@ -120,7 +128,7 @@ Once again, any changes you make to these files **must be followed with restarti
 
 ## Setting up a domain
 
-To generate a trusted certificate, you need to own a domain. To aquire your own domain, you can use one of the following methods:
+To generate a trusted certificate, you need to own a domain. To acquire your own domain, you can use one of the following methods:
 
 |Method|Example Links|Note|
 |:-|:-:|:-|
@@ -144,7 +152,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
   sudo apt-get install openssl
   ```
 
-  Once complete, you need to create a directory where our certifcates can be placed:
+  Once complete, you need to create a directory where our certificates can be placed:
 
   ```shell
   sudo mkdir -p /etc/ssl/certs
@@ -163,7 +171,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
   The certificate and key should have been placed in `/etc/ssl/`. NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic. In the NGINX configuration, place the following underneath your server_name variable:
 
-  ```
+  ```nginx
   	ssl_certificate                 /etc/ssl/openhab.crt;
   	ssl_certificate_key             /etc/ssl/openhab.key;
   ```
@@ -186,7 +194,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
   Next add the new location parameter to your NGINX config, this should be **placed above the last brace** in the server setting:
 
-  ```
+  ```nginx
   	location /.well-known/acme-challenge/ {
   		root                            /var/www/mydomain;
   	}
@@ -204,7 +212,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
   The certificate and key should have been placed in `/etc/letsencrypt/live/mydomain_or_myip`. NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic, using Strict Transport Security to prevent man-in-the-middle attacks. In the NGINX configuration, place the following underneath your server_name variable:
 
-  ```
+  ```nginx
   		ssl_certificate                 /etc/letsencrypt/live/mydomain_or_myip/fullchain.pem;
   		ssl_certificate_key             /etc/letsencrypt/live/mydomain_or_myip/privkey.pem;
   		add_header                      Strict-Transport-Security "max-age=31536000"; 
@@ -214,7 +222,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
 
-```
+```nginx
 	listen                          443 ssl;
 ```
 
@@ -224,7 +232,7 @@ After restarting NGINX service, you will be using a valid HTTPS certificate, you
 
 You may want to redirect all HTTP traffic to HTTPS, you can do this by adding the following to the NGINX configuration. This will essentially replace the HTTP url with the HTTPS version!
 
-```
+```nginx
 server {
 	listen                          80;
 	server_name                     mydomain_or_myip;
@@ -234,9 +242,9 @@ server {
 
 ## Putting it All Together
 
-After following all the steps on this page, you *should* have a NGINX server configutration that looks like this:
+After following all the steps on this page, you *should* have a NGINX server configuration (`/etc/nginx/sites-enabled/openhab`) that looks like this:
 
-```
+```nginx
 server {
 	listen                          80;
 	server_name                     mydomain_or_myip;
@@ -267,3 +275,38 @@ server {
 	}
 }
 ```
+
+## Additional HTTPS Security
+
+To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you dont want your domain seen).
+
+This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#enabling-https), **but you need to follow at least one of them first**.
+
+First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: this will take a few minutes to complete:**
+
+```shell
+mkdir -p /etc/nginx/ssl
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+```
+
+Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``. All of these settings are customisable, but make sure you [read up on](http://nginx.org/en/docs/http/configuring_https_servers.html) what these do first before changing them:
+
+```nginx
+	ssl_protocols                   TLSv1 TLSv1.1 TLSv1.2;
+	ssl_prefer_server_ciphers       on;
+	ssl_dhparam                     /etc/nginx/ssl/dhparam.pem;
+	ssl_ciphers                     ECDHE-ECDSA-AES256-GCM-SHA384:ECDHE-RSA-AES256-GCM-SHA384:ECDHE-ECDSA-AES256-SHA384:ECDHE-RSA-AES256-SHA384:ECDHE-ECDSA-AES128-GCM-SHA256:ECDHE-RSA-AES128-GCM-SHA256:ECDHE-ECDSA-AES128-SHA256:ECDHE-RSA-AES128-SHA256:ECDHE-RSA-AES256-SHA:HIGH:!aNULL:!eNULL:!LOW:!3DES:!MD5:!EXP:!CBC:!EDH:!kEDH:!PSK:!SRP:!kECDH;
+	ssl_session_timeout             1d;
+	ssl_session_cache               shared:SSL:10m;
+	keepalive_timeout               70;
+```
+
+Feel free to test the new configuration again on [SSL Labs](https://www.ssllabs.com/ssltest/). If you're achieving A or A+ here, then your client-openHAB communication is very secure.
+
+### Further reading
+
+The setup above is a suggestion for high compatibility with an A+ rating at the time of writing, however flaws in these settings (particularly the cyphers) may become known overtime. The following articles may be useful when understanding and changing these settings.
+
+ - [Better Crypto](https://bettercrypto.org/)
+ - [SSL Labs - Best Practices](https://www.ssllabs.com/projects/best-practices/)
+ - [Hynek Schlawack - Hardening Your Web Server’s SSL Ciphers](https://hynek.me/articles/hardening-your-web-servers-ssl-ciphers/)
