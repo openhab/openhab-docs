@@ -17,8 +17,8 @@ package org.openhab.training.electricity.provider;
 public interface ElectricityProvider {
 
     /**
-     * Indicates whether an {@link ElectricityProvider} can provide enough energy
-     * to a consumer.
+     * Indicates whether an {@link ElectricityProvider} can provide enough
+     * energy to a consumer.
      * 
      * @param value
      *            the energy consumption of the consumer
@@ -26,4 +26,12 @@ public interface ElectricityProvider {
      *         requirements, false otherwise
      */
     boolean provide(int value);
+
+    /**
+     * Returns the type of the {@link ElectricityProvider} from
+     * {@link ElectricityProviderType}.
+     * 
+     * @return the type of the {@link ElectricityProvider}.
+     */
+    ElectricityProviderType getType();
 }
