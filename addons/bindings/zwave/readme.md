@@ -101,12 +101,14 @@ There are a huge number of things supported by the Z-Wave binding, so configurat
 
 Things configured manually require the following minimum configuration to be set. -:
 
-| Configuration    | Description                                                                                                   |
-|------------------|---------------------------------------------------------------------------------------------------------------|
-| zwave_nodeid     | Sets the node id of the node within the network.                                                              |
-| zwave_deviceid   | Specifies the manufacturer device ID for this device (as decimal). This is used to get the thing type from the database.  |
-| zwave_devicetype | Specifies the manufacturer device type for this device (as decimal). This is used to get the thing type from the database. |
-| zwave_version    | Specifies the application version for this device. This is used to get the thing type from the database.      |
+| Configuration      | Description                                                                                                   |
+|--------------------|---------------------------------------------------------------------------------------------------------------|
+| zwave_nodeid       | Sets the node id of the node within the network.                                                              |
+| zwave_manufacturer | Sets the manufacturer ID for this device (as decimal). This is used to get the thing type from the database.  |
+| zwave_deviceid     | Specifies the device ID for this device (as decimal). This is used to get the thing type from the database.   |
+| zwave_devicetype   | Specifies the device type for this device (as decimal). This is used to get the thing type from the database. |
+| zwave_version      | Specifies the application version for this device. This is used to get the thing type from the database.      |
+
 
 
 ## Channels
