@@ -6,6 +6,7 @@ action,MQTT Action
 action,Pebble Action
 action,Prowl Action
 action,Pushover Action
+action,Pushsafer Action
 action,Telegram Action
 action,Twitter Action
 action,XBMC Action
@@ -34,6 +35,7 @@ binding,HTTP Binding
 binding,IHC Binding
 binding,InsteonPLM Binding
 binding,Intertechno Binding
+binding,IPX800 Binding
 binding,IRTrans Binding
 binding,KNX Binding
 binding,Koubachi Binding
