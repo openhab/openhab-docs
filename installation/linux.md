@@ -275,7 +275,7 @@ GuessMainPID=yes
 WorkingDirectory=/opt/openhab2
 #EnvironmentFile=/etc/default/openhab2
 ExecStart=/opt/openhab2/start.sh server
-ExecStop=kill -SIGINT $MAINPID
+ExecStop=/bin/kill -SIGINT $MAINPID
 Restart=on-failure
 
 [Install]
