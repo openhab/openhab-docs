@@ -18,6 +18,8 @@ Before you start, you should first install the [Eclipse IDE](../development/ide.
 
 In order to run your samples in an OSGi Runtime you might want to start Equinox in a command line.
 
+You might take a look at the [Coding Guidelines](/developers/development/guidelines.html) as well.
+
 ## Tasks
 
 The tasks are divided in several sections:
@@ -25,6 +27,8 @@ The tasks are divided in several sections:
 {::options toc_levels="3"/}
 * TOC
 {:toc}
+
+Sample implementations of the tasks will be added in the [openHAB docs repo](https://github.com/openhab/openhab-docs/tree/gh-pages/_sample_code/osgi_codings_tasks/bundles).
 
 ### I. Writing basic OSGi bundle
 
@@ -38,7 +42,7 @@ The tasks are divided in several sections:
 
     Hint! Find out how can you export packages in OSGi.
 
-3. Modify the `org.openhab.training.helloosgi` bundle to use the `TimeUtilities` class to display the current time stamp on the console when it is started.
+3. Create an `org.openhab.training.helloosgi.modified` bundle to use the `TimeUtilities` class to display the current time stamp on the console when it is started.
 
 ### II. Services
 
@@ -69,10 +73,9 @@ interface `ElectricityConsumer` with methods:
 
     Hint! An ElectricityProvider can be used by different consumers simultaneously. Consider whether it is necessary to make an implementation of this class thread-safe.
 
-2. Create an interface `DynamicConsumer` that should manage the availability of the different `ElectricityProvider`. It defines three methods:
+2. Create an interface `DynamicConsumer` in an `org.openhab.training.electricity.dynamicconsumer` bundle that should manage the availability of the different `ElectricityProvider`. It defines two methods:
 	- `void providerAdded(ElectricityProvider)` - called when a new provider is registered in the *ServiceRegistry*. It should add the provider in a list with available electricity sources for the current device;
-	- `void providerRemoved(ElectricityProvider)` - called when a provider is unregistered from the *ServiceRegistry*. It should remove the provider from a list with available electricity sources for the current device;
-	- `void providerChanged(ElectricityProvider)` - called when a provider configuration is changed. Depending on the change it may add or remove the provider from the list with available providers.
+	- `void providerRemoved(ElectricityProvider)` - called when a provider is unregistered from the *ServiceRegistry*. It should remove the provider from a list with available electricity sources for the current device.
 3. Create a `TV` consumer with `int consumption = 10`, that implements the `ElectricityConsumer` interface and the `DynamicConsumer`interface in an `org.openhab.training.electricity.tv` bundle by using [*ServiceTracker*][ServiceTracker]. The `TV` should be able to dynamically switch between different `ElectricityProvider`:
 	- when both providers are available, it should work with the `HomeElectricityNetwork`;
 	- otherwise it should use the provider that is available at the moment;
@@ -86,56 +89,59 @@ interface `ElectricityConsumer` with methods:
 ### IV. Declarative Services and Components
 
 1. Provider and consumer:
-	- rewrite all tasks in section [II.](#ii-services) and [III.](#iii-service-tracker) to use the `ElectricityProvider` service by injecting it by the means of [*Declarative Services*][ds] (do not use Service Tracker and BundleContext);
+	- rewrite all tasks in section [II.](#ii-services) and [III.](#iii-service-tracker) to use the `ElectricityProvider` service by injecting it by the means of [*Declarative Services*][ds] (do not use Service Tracker and BundleContext).The name of the new bundles will be the same, but ending with a .ds (e.g. `org.openhab.training.electricity.tv.ds`);
 
     Hint! Install `org.eclipse.equinox.ds` bundle in order to use *Declarative Services*. 
 
-2. Create a `SolarRadio` consumer that extends `BasicRadio` from III.2 in an `org.openhab.training.electricity.solarradio` bundle. This radio does not need any `ElectricityProvider` to run, but will use one, if it is available (the device should not stop when there are no providers available).  
+2. Create a `SolarRadio` consumer that extends `BasicRadio` from IV.1 in an `org.openhab.training.electricity.solarradio` bundle. This radio does not need any `ElectricityProvider` to run, but will use one, if it is available (the device should not stop when there are no providers available).  
 
       Hint! Read about cardinality in OSGi Declarative Services!
 
-3. Create a `CombinedSolarRadio` that extends `BaisicRadio` and implements `DynamicConsumer` in `org.openhab.training.electricity.combinedradio` it the following way:
+3. Create a `CombinedSolarRadio` that extends `SolarRadio` and implements `DynamicConsumer` in `org.openhab.training.electricity.combinedradio` it the following way:
      - the consumer does not need any provider to run;
      - if one is available, it must set it as current and use it;
      - if more than one are available, add all to the list with available providers.
-4. What happens when you stop the provider that is not in use? Why does the `CombinedSolarRadio` stops and starts? Modify the consumer to handle the removal of the service dynamically - without calling the stop and start methods every time!
 
-     Hint! Read about service policy in OSGi!
-
-5. Test all the bundles in the OSGi container by starting and stopping the different `ElectricityProvider` implementations and track, if the consumers are used as expected.
+     Hint! What happens when you stop the provider that is not in use? Why does the `CombinedSolarRadio` stops and starts? Modify the consumer to handle the removal of the service dynamically - without calling the stop and start methods every time! Read about service policy in OSGi!
+	
+     Hint! Test all the bundles in the OSGi container by starting and stopping the different `ElectricityProvider` implementations and track, if the consumers are used as expected.
 
 ### V. Events
 
-1. In the `org.openhab.training.util` bundle create and register as a service ` TimeEventSender`, that sends events with topic "org/openhab/training/time" every minute with the current time stamp (hh:mm) (you can use the `TimeUtilities` class form chapter [I.](#i-writing-basic-osgi-bundle)).
+1. Create a bundle `org.openhab.training.util.sender` that registers as a service `TimeEventSender`, that sends events with topic "org/openhab/training/time" every minute with the current time stamp (hh:mm) (you can use the `TimeUtilities` class from chapter [I.](#i-writing-basic-osgi-bundle)).
 
      Hint! Install `org.eclipse.equinox.event` bundle in order to use *EventAdmin* service for sending events.  
      Hint! [ScheduledExecutorService](https://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html) can be used in this task.
 
-2. Modify the `org.openhab.training.electricity.tv.TV` to listen for events with this topic and print an error on the console, when one event is not received.
+2. Extend the `org.openhab.training.electricity.tv.ds.TV` class from IV.1 in an `org.openhab.training.electricity.tv.events` bundle to listen for events and print them on the console.
 
 ### VI. Managed Services
 
-1. Implement the [*ManagedService*][ManagedService] interface in the `org.openhab.training.electricity.tv.TV` class.
-2. Add a configuration to the `TV` class with property "autoSleep" and value a timestamp (hh:mm).
-3. Modify the method that listens for the events with topic "time" from section V.:
-	- when the "autoSleep" property is equal to the "time" topic, display message on the console, that `TV` goes to sleep mode and stop listening for events.
-4. Modify the `Battery` provider by implementing the *ManagedService* interface. After this modification, it should be possible to change the charge of a battery.
+1. Implement the [*ManagedService*][ManagedService] interface in the `org.openhab.training.electricity.tv.events` bundle and:
+	- add a configuration to the `TV` class with property "autoSleep" and value a timestamp (hh:mm);
+	- modify the method that listens for events with topic "time" to stop the bundle, when the "autoSleep" property is equal to the "time" topic.
+2. Create another implementation of the `ElectricityProvider` interface (`RechargableBattery`) in an `org.openhab.training.electricity.rechargablebattery` bundle that:
+	- has a  finite charge (e.g `int capacity = 30`);
+	- implements the *ManagedService* interface. After this modification, it should be possible to change the charge of a battery with a `setCharge(int capacity)` method;
+	- when the battery is recharged (the configuration of the battery is changed), the consumers must be notified about the change.
+
+      Hint! Read about the [ConfigurationAdmin](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html) service and how you can use it to change the configuration of a ManagedService. You might want to implement additional bundle that is using the ConfigurationAdmin service to change the configuration of the battery to perform a quick test.
 
 ### VII. Console Commands
 
-1. Implement a service in  the `org.openhab.training.util` bundle that adds console command, that:
+1. Implement a service in  the `org.openhab.training.util.console` bundle that adds console command, that:
 	- displays all  `ElectricityProvider` implementations that are registered with their charge;
 	- displays all consumers, to which providers are they connected (which providers are available) and what is the current provider at the moment;
 
     Hint! You might have to register all consumers as services in the OSGi ServiceRegistry.
 
-	- recharges the `Battery` with a provided value;
+	- sets the charge of the `RechargableBattery` to a provided value;
 	- changes the configuration of the `TV`.
 
     Hint! You can add console commands with the help of
 [CommandProvider][CommandProvider]
 
-2. Test the console commands in the OSGi runtime by starting the different Radio consumers and the TV consumer. Start only the `Battery` provider and wait until it is discharged. Check if the consumers have stopped as expected. Recharge the battery and check, if the consumers have started. You can try out different scenarios as well!
+    Hint! Test the console commands in the OSGi runtime by starting the different Radio consumers and the TV consumer. Start only the `Battery` provider and wait until it is discharged. Check if the consumers have stopped as expected. Recharge the battery and check, if the consumers have started. You can try out different scenarios as well!
 
 ## References 
 
