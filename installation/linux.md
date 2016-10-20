@@ -43,7 +43,7 @@ The manual installation through a platform independent archive file is suited fo
 ### Package Repository Installation
 
 Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
-Alternatively resort to the [manual installation approach](linux.html#manual-installation).
+Alternatively resort to the [manual installation approach](#manual-installation).
 
 Choose between the latest Beta release or a Snapshot with all incoming contributions, rebuild on [every change](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
@@ -366,10 +366,10 @@ sudo rm /lib/systemd/system/openhab2.service
 
 ## Network Sharing
 
-openHAB depends on configuration files and folders with custom content (details in [Configuration](http://docs.openhab.org/configuration/index.html) articles).
+openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/features/index.html) articles).
 Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a Samba network share is **highly recommended**.
 
-The [Eclipse SmartHome Designer](http://docs.openhab.org/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
+The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
 
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba. Afterwards open it's configuration file in your favorite editor:
@@ -471,7 +471,7 @@ Be sure to use the actual host name instead of `openhab-device`.
 When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
-If everything went well, you are set and ready to start [configuring](http://docs.openhab.org/configuration/index.html) your openHAB system.
+If everything went well, you are set and ready to start [configuring]({{base}}/features/index.html) your openHAB system.
 
 ## Viewing Log Messages
 
@@ -491,7 +491,7 @@ In order to get more insight on what your openHAB system is doing and to see occ
 
 You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
 
-With openHAB 2 you can also [use the Karaf console](http://docs.openhab.org/administration/logging.html#karaf-console) to have a colored glance at the logging information.
+With openHAB 2 you can also [use the Karaf console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
 
 Note: When starting openHAB 2 for the first time, you may see the following error in `openhab.log`, which is okay to occur once at first boot:
 ```text

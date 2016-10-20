@@ -83,8 +83,8 @@ After you got openHAB 2 set up and running, there are a few additional setup ste
 ## Getting started
 
 With the openHAB 2 distribution up and running, you should now continue with
-the [Demo Tutorial](http://docs.openhab.org/tutorials/demo.html),
-the [Beginner Tutorial](http://docs.openhab.org/tutorials/beginner)
+the [Demo Tutorial]({{base}}/tutorials/demo.html),
+the [Beginner Tutorial]({{base}}/tutorials/beginner)
 or by working on your own configuration.
 
 ## Help
