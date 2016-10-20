@@ -10,7 +10,7 @@ The 'Demo' is a quick and easy way to see the user interface for a virtual home 
 
 ## Prerequisites
 
-Make sure that you have a [JDK 8](/installation/index.html#prerequisites) installed.
+Make sure that you have a [JDK 8]({{base}}/installation/index.html#prerequisites) installed.
 
 ## Installation
 

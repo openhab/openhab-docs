@@ -12,21 +12,10 @@ title: Rules
 openHAB has a highly integrated, lightweight but yet powerful rule engine included.
 On this page you will learn how to leverage its functionality to do *real* home automation.
 
-* [Defining Rules](#defining-rules)
-  * [File Location](#file-location)
-  * [IDE Support](#ide-support)
-  * [The Syntax](#the-syntax)
-  * Triggers
-    * [Rule Triggers](#rule-triggers)
-    * [Event-based Triggers](#event-based-triggers)
-    * [Time-based Triggers](#time-based-triggers)
-    * [System-based Triggers](#system-based-triggers)
-  * [Scripts](#scripts)
-    * [Implicit Variables inside the Execution Block](#implicit-variables-inside-the-execution-block)
-    * [Concurrency Guard](#concurrency-guard)
-    * [Logging](#logging)
-  * [Example](#example)
-  * [Differences to openHAB 1](#diff)
+{::options toc_levels="2..4"/}
+
+* TOC
+{:toc}
 
 ## Defining Rules
 
@@ -38,7 +27,7 @@ A rule file can contain multiple rules. All rules of a file share a common execu
 
 ### IDE Support
 
-The [Eclipse SmartHome Designer](../installation/designer.html) offers support for rules, which includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc. This makes the creation of rules very easy!
+The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) offers support for rules, which includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc. This makes the creation of rules very easy!
 
 > Bug: Please note that there are a couple of [open bugs](https://github.com/eclipse/smarthome/issues?q=is%3Aopen+is%3Aissue+label%3ADesigner+label%3Abug), which result in error markers in the Designer, while the rules are executed nicely by the runtime.
 

@@ -7,14 +7,14 @@ title: Sitemaps
 
 # Sitemaps
 
-In openHAB a collection of [Things](http://docs.openhab.org/concepts/things.html) and [Items](http://docs.openhab.org/concepts/items.html) represent physical or logical objects of the users home automation setup.
+In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects of the users home automation setup.
 Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various frontends,
-including [BasicUI](http://docs.openhab.org/addons/uis/basic/readme.html),
+including [BasicUI]({{base}}/addons/uis/basic/readme.html),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
 The definition of sitemaps happens declarative in a file with a clear syntax, described below.
 A sitemap definition file is stored in the folder `<openhab_config>/sitemaps` and has to have the `.sitemap` filename extension.
-For easy editing, the [openHAB Designer](http://docs.openhab.org/installation/designer.html) brings full IDE support for these files.
+For easy editing, the [openHAB Designer]({{base}}/installation/designer.html) brings full IDE support for these files.
 
 The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/openhab-demo-resources/src/main/resources/sitemaps/demo.sitemap), which should let you easily understand possible elements and structures.
 It is recommended to use the `demo.sitemap` or another example sitemap as a starting point towards a customized sitemap fitting your personal home setup.
@@ -136,10 +136,10 @@ This provides the flexibility to present items in the way desired in your home a
 **General remarks on parameters:**
 
 * In the following definitions, parameters in `[square brackets]` are optional, parameters in front are considered more relevant.
-* Common parameters, also known from [items definition](http://docs.openhab.org/configuration/items.html):
-  * `item` defines the name of the item you want to present (e.g. `Temperature`), [more details](http://docs.openhab.org/configuration/items.html).
-  * `label` sets the textual description besides the preprocessed item data (e.g. "`Now [%s °C]`"), [more details](http://docs.openhab.org/configuration/items.html).
-  * `icon` is the name of the icon file to show next to the element, [more details](http://docs.openhab.org/configuration/items.html).
+* Common parameters, also known from [items definition](items.html):
+  * `item` defines the name of the item you want to present (e.g. `Temperature`), [more details](items.html).
+  * `label` sets the textual description besides the preprocessed item data (e.g. "`Now [%s °C]`"), [more details](items.html).
+  * `icon` is the name of the icon file to show next to the element, [more details](items.html).
 * Additional parameters like `mappings` or `valuecolor` are described below.
 
 <!-- TODO: turn links to article subheaders -->
@@ -166,7 +166,7 @@ Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 
 Presents data as normal text.
 Most item types can be used, the values can be prepared and reformatted by using string formatters and transformations.
-Please check with the documentation on the [item label](http://docs.openhab.org/configuration/items.html) for details.
+Please check with the documentation on the [item label](items.html) for details.
 
 <!--TODO: Link to items-labels -->
 
@@ -180,7 +180,7 @@ Group [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 
 The element will be clickable, revealing a new view showing all group items.
 In addition, item groups may be configured to hold a value, just like with normal items.
-Please refer to the documentation on [items](http://docs.openhab.org/configuration/items.html) for details.
+Please refer to the documentation on [items](items.html) for details.
 
 <!--TODO: Link to items-groups -->
 
@@ -499,7 +499,7 @@ The given color names are agreed on between all openHAB UIs and are therefor you
 ### Icons
 
 openHAB allows a set of icons to be assigned to the different states of an item and therefor to be presented in a sitemap.
-Please refer to the documentation on [item configuration](http://docs.openhab.org/configuration/items.html) for details.
+Please refer to the documentation on [item configuration](items.html) for details.
 
 ![battery-0](iconsets/classic/icons/battery-0.png "battery-0")
 ![battery-30](iconsets/classic/icons/battery-30.png "battery-30")

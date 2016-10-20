@@ -36,7 +36,7 @@ The OSGi framework consist of several layers build on top of each other (See Fig
   - **Security Layer** - optional layer, based on the Java 2 security architecture, that manages permissions for different modules.
 
 ![OSGi Layers][fig1]  
-Fig.1 OSGi Layering (Source:<https://www.osgi.org/wp-content/uploads/layeringosgi.png>)
+Fig.1 OSGi Layering (Source:<https://www.osgi.org/wp-content/uploads/layering-osgi.png>)
 
 More details about the OSGi architecture can be found at <https://www.osgi.org/developer/architecture/>
 
