@@ -22,8 +22,16 @@ When you want to install a specific version of openHAB .spk file:
   
 ## Configuration
 
-The addons and configuration files are located at:
+The configuration files are located at:
 ```
 /volume1/public/OpenHAB2/conf
-/volume1/public/OpenHAB2/addons
 ```
+
+## Working devices
+
+| DiskStation | Package version |
+|-------|----------------------|
+| DS101j | [1.8.3](https://github.com/openhab/openhab-syno-spk/releases/tag/1.8.3) |
+| DS209 | [1.8.3](https://github.com/openhab/openhab-syno-spk/releases/tag/1.8.3) or [2.0.0-beta3](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0-beta3) |
+
+Please complete the list accordingly, thank you!
