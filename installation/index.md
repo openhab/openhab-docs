@@ -8,7 +8,7 @@ title: Installation Overview
 # Installation Overview
 
 openHAB 2 is based on the Eclipse SmartHome framework and is fully written in Java.
-As such, it only depends on a [Java Development Kit](http://java.com/de/download/manual.jsp), which is available for many platforms.
+As such, it only depends on a [Java Virtual Machine](http://java.com/de/download/manual.jsp), which is available for many platforms.
 openHAB can be executed on different versions of **Mac OS X** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
 
 Please be aware of the fact, that openHAB 2 is based on a new core and introduces new concepts.
