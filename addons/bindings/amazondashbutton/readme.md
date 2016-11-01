@@ -82,3 +82,16 @@ Background discovery is supported. Just press the button in order to put it into
 ## Channels
 
 * Press: Channel for recognizing presses on the Amazon Dash Button
+
+## Example Use
+
+The binding uses a trigger channel which doesn't have to be linked to an item. You can easily use it in your rules like this:
+
+```
+rule "Dash button pressed"
+    when
+        Channel "amazondashbutton:dashbutton:ac-63-be-xx-xx-xx:press" triggered
+    then
+        println("The Dash button has been pressed")
+end
+```
