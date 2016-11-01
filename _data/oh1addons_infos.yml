@@ -17,6 +17,10 @@
   description: Publish messages to MQTT brokers
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#mqtt-action
 
+- label: NotifyMyAndroid Action
+  description: Deliver push notifications to your Android device
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#notifymyandroid-actions
+
 - label: Prowl Action
   description: Use push notifications on iOS devices
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#prowl-actions
