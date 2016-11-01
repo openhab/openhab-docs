@@ -86,6 +86,7 @@ Background discovery is supported. Just press the button in order to put it into
 ## Example Use
 
 The binding uses a trigger channel which doesn't have to be linked to an item. You can easily use it in your rules like this:
+
 ```
 rule "Dash button pressed"
     when
