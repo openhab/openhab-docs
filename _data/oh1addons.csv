@@ -3,6 +3,7 @@ action,Ecobee Action
 action,Mail Action
 action,MiOS Action
 action,MQTT Action
+action,NotifyMyAndroid Action
 action,Pebble Action
 action,Prowl Action
 action,Pushover Action
@@ -18,6 +19,7 @@ binding,CalDAV Binding (personal)
 binding,ComfoAir Binding
 binding,Denon Binding
 binding,DMX OLA Binding
+binding,DSMR Binding
 binding,eBUS Binding
 binding,Ecobee Binding
 binding,Energenie Binding

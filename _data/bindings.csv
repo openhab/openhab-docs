@@ -11,6 +11,7 @@ amazondashbutton,Amazon Dash Button,"The Amazon Dash Button is a very cheap devi
 astro,Astro,"The Astro binding is used for calculating many DateTime and positional values for sun and moon."
 autelis,Autelis Pool Control,"Autelis manufactures a network enabled pool interface for many popular pool systems.  See [the Autelis website](http://www.autelis.com) and the  [Autelis Command Protocol](http://www.autelis.com/wiki/index.php?title=Pool_Control_(PI)_HTTP_Command_Reference) for more information."
 avmfritz,AVM FRITZ!,"The binding integrates the AHA ( [AVM Home Automation](http://avm.de/ratgeber/smart-home/) ) system."
+chromecast,Chromecast,"The binding integrates Google Chromecast streaming devices."
 dscalarm,DSC Alarm,"This is an OpenHAB binding for a DSC PowerSeries Alarm System utilizing the EyezOn Envisalink 3/2DS interface or the DSC IT-100 RS-232 interface."
 feed,Feed,"This binding allows you to integrate feeds in the OpenHAB environment."
 freebox,Freebox,"This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation."
