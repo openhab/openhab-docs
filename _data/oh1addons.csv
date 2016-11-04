@@ -57,6 +57,7 @@ binding,Nikobus Binding
 binding,Novelan Heatpump Binding
 binding,OpenEnergyMonitor Binding
 binding,OneWire Binding
+binding,Owntracks (mqttitude) Binding
 binding,OWServer Binding
 binding,Plugwise Binding
 binding,Visonic PowerMax Binding
