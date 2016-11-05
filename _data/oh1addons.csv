@@ -48,6 +48,7 @@ binding,Milight Binding
 binding,MiOS Binding
 binding,Modbus Binding
 binding,MQTT Binding
+binding,OwnTracks (formerly MQTTitude) Binding
 binding,Chamberlain MyQ Binding
 binding,Neohub Binding
 binding,Nest Binding
@@ -57,7 +58,6 @@ binding,Nikobus Binding
 binding,Novelan Heatpump Binding
 binding,OpenEnergyMonitor Binding
 binding,OneWire Binding
-binding,Owntracks (mqttitude) Binding
 binding,OWServer Binding
 binding,Plugwise Binding
 binding,Visonic PowerMax Binding
