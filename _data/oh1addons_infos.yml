@@ -162,7 +162,7 @@
   wiki_url: https://github.com/openhab/openhab/wiki/MQTT-Binding
 
 - label: Owntracks Binding
-  description: Owntracks (formerly known as Mqttitude) provides device location data via an mqtt bridge to openHAB
+  description: Owntracks (formerly known as MQTTitude) provides device location data via an MQTT bridge to openHAB
   wiki_url: https://github.com/openhab/openhab/wiki/Mqttitude-Binding
 
 - label: Chamberlain MyQ Binding
