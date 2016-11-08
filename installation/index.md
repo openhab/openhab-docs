@@ -210,7 +210,7 @@ To install openHAB as a service, call
 openhab:install-service
 ```
 
-in the shell and make sure that the folder `<openhab root folder>/runtime/karaf` is writable (only required at this time, you can make it read-only again afterwards).
+in the shell and make sure that the folder `<openhab root folder>/runtime` is writable (only required at this time, you can make it read-only again afterwards).
 The files are then generated for you and a short guide is displayed on what further actions you need to take to register it as a system service.
 
 -->
