@@ -142,6 +142,4 @@ log4j.appender.Demo.maxBackupIndex=10
 
 ## Config file
 
-The config file for logging is **org.ops4j.pax.logging.cfg** and can be found in the **runtime/karaf/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/karaf/etc/)
-
-_Note:_  Currently the file org.ops4j.pax.logging.cfg will get overwritten with the default version on every update of openHAB. There is an [issue](https://github.com/openhab/openhab-distro/issues/225) on this.
+The config file for logging is **org.ops4j.pax.logging.cfg** and can be found in the **runtime/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/etc/)
