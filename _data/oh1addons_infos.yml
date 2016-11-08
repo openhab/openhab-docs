@@ -17,6 +17,10 @@
   description: Publish messages to MQTT brokers
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#mqtt-action
 
+- label: NotifyMyAndroid Action
+  description: Deliver push notifications to your Android device
+  wiki_url: https://github.com/openhab/openhab/wiki/Actions#notifymyandroid-actions
+
 - label: Prowl Action
   description: Use push notifications on iOS devices
   wiki_url: https://github.com/openhab/openhab/wiki/Actions#prowl-actions
@@ -157,6 +161,10 @@
   description: This binding allows openHAB to act as an MQTT client, so that openHAB items can send and receive MQTT messages to/from an MQTT broker
   wiki_url: https://github.com/openhab/openhab/wiki/MQTT-Binding
 
+- label: Owntracks Binding
+  description: Owntracks (formerly known as MQTTitude) provides device location data via an MQTT bridge to openHAB
+  wiki_url: https://github.com/openhab/openhab/wiki/Mqttitude-Binding
+
 - label: Chamberlain MyQ Binding
   description: Allows you to connect your garage door to the internet to be controlled from anywhere using your smartphone
   wiki_url: https://github.com/openhab/openhab/wiki/Chamberlain-MyQ-Binding
@@ -226,7 +234,7 @@
   wiki_url: https://github.com/openhab/openhab/wiki/Snmp-Binding
 
 - label: Souliss Binding
-  description: Souliss is a networking framework for Arduino and compatibles board, is designed to build easily a Smart Home distributed over multiple boards via Ethernet, wireless point-to-point and RS485 bus. 
+  description: Souliss is a networking framework for Arduino and compatibles board, is designed to build easily a Smart Home distributed over multiple boards via Ethernet, wireless point-to-point and RS485 bus.
   wiki_url: https://github.com/openhab/openhab/wiki/Souliss-Arduino-based-SmartHome-Binding
 
 - label: Swegon Ventilation Binding

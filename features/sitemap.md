@@ -7,19 +7,19 @@ title: Sitemaps
 
 # Sitemaps
 
-In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects of the users home automation setup.
+In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects of the user's home automation setup.
 Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various frontends,
 including [BasicUI]({{base}}/addons/uis/basic/readme.html),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
-The definition of sitemaps happens declarative in a file with a clear syntax, described below.
+The definition of sitemaps happens declaratively in a file with a clear syntax, described below.
 A sitemap definition file is stored in the folder `<openhab_config>/sitemaps` and has to have the `.sitemap` filename extension.
 For easy editing, the [openHAB Designer]({{base}}/installation/designer.html) brings full IDE support for these files.
 
 The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/openhab-demo-resources/src/main/resources/sitemaps/demo.sitemap), which should let you easily understand possible elements and structures.
-It is recommended to use the `demo.sitemap` or another example sitemap as a starting point towards a customized sitemap fitting your personal home setup.
+It is recommended to use the `demo.sitemap` or another example sitemap as a starting point towards building a customized sitemap that fits your personal home setup.
 
-The following example illustrates how a typical sitemap definition might look like:
+The following example illustrates what a typical sitemap definition might look like:
 
 ```xtend
 sitemap demo label="My home automation" {
@@ -332,6 +332,8 @@ The image has to be available on a reachable website or webserver without passwo
 It's also possible to place an image in the `html` folder under your configuration folder.
 The file will be available under the "static" route, [http://<my.openHAB.device>:8080/static/image.png](http://127.0.0.1:8080/static).
 
+* `item` can refer to a String item whose state is an URL to an image.  Some clients may not (yet) consider `item`.
+* `url` is the default URL from which to retrieve the image, if there is no associated item or if the associated item's state is not an URL.
 * `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
 
 ![Presentation of the image element in BasicUI](images/sitemap_demo_image.png)
@@ -339,7 +341,7 @@ The file will be available under the "static" route, [http://<my.openHAB.device>
 ### Element Type 'Video'
 
 ```xtend
-Video item=<itemname> [icon="<iconname>"] url="<url of video to embed>" [encoding="<video encoding>"]
+Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encoding="<video encoding>"]
 ```
 
 Allows to integrate a video presentation into a your sitemap.
@@ -347,6 +349,8 @@ Not all video encodings (formats) are supported, you may need to transcode your 
 The video has to be reachable directly via URL.
 An embedded or protected video is not supported.
 
+* `item` can refer to a String item whose state is an URL to a video.    Some clients may not (yet) consider `item`.
+* `url` is the default URL from which to retrieve the video, if there is no associated item or if the associated item's state is not an URL.
 * `encoding` can stay left empty for auto selection, for an MJPEG video please set the "mjpeg" encoding explicitly.
 
 ![Presentation of the video element in BasicUI](images/sitemap_demo_video.png)
