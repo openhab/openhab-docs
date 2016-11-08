@@ -85,11 +85,11 @@ openhab> logout
 
 # Configuring the Console
 
-By default due to security reasons openhab binds its shell to localhost. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in `org.apache.karaf.shell.cfg` config file. It can be found in the `runtime/karaf/etc/` folder (in case openHAB was installed via apt, the full path is: `/usr/share/openhab2/runtime/karaf/etc/`), replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces.
+By default due to security reasons openhab binds its shell to localhost. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in `org.apache.karaf.shell.cfg` config file. It can be found in the `runtime/etc/` folder (in case openHAB was installed via apt, the full path is: `/usr/share/openhab2/runtime/etc/`), replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces.
 
 The above can be accomplished by the following command (you may need to adapt the path):
 ```
-sed -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /usr/share/openhab2/runtime/karaf/etc/org.apache.karaf.shell.cfg
+sed -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /usr/share/openhab2/runtime/etc/org.apache.karaf.shell.cfg
 ```
 
 -----
