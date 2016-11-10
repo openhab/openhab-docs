@@ -128,6 +128,10 @@
 - label: IRTrans Binding
   description: Allows openHAB to communicate with the infrared emitter/transceiver of IrTrans
   wiki_url: https://github.com/openhab/openhab/wiki/Ir-Trans-Binding
+  
+- label: jointSPACE Binding
+  description: Allows openHAB control your Philips TV that is compatible with the jointSPACE JSON API over Ethernet.
+  wiki_url: https://github.com/openhab/openhab/wiki/jointSPACE-Binding
 
 - label: KNX Binding
   description: Allows to connect to KNX Home Automation installations
