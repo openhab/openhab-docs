@@ -62,6 +62,13 @@
 					{% endfor %}
 				</ul>
 			</li>
+			<li><a href="{{docu}}/addons/voice.html">Voice Services</a>
+				<ul>
+					{% for binding in site.data.voice %}
+					<li><a href="{{docu}}/addons/voice/{{ voice.id }}/readme.html">{{ voice.label }}</a></li>
+					{% endfor %}
+				</ul>
+			</li>
 			<li><a href="{{docu}}/addons/io.html">System Integrations</a>
 				<ul>
 					<li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>

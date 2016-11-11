@@ -150,6 +150,34 @@
             </configuration>
           </execution>
           <execution>
+            <id>copy-voice-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/addons/voice</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab2-addons/addons/voice</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
             <id>copy-io-docs</id>
             <phase>process-resources</phase>
             <goals>
@@ -245,6 +273,57 @@
 				  def label = it['@description']
 				  if(category!='io' &amp;&amp; category!='transport')
                     addonList.append(category + ',' + label + '\n')
+                }
+              </source>
+            </configuration>
+          </execution>
+          <execution>
+            <id>rename-voice-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <source>
+                def voice = new File(project.basedir, 'addons/voice')
+				def voiceList = new File(project.basedir, '_data/voice.csv')
+				voiceList.write("id,label,description\n")
+
+                voice.eachFile
+                {
+                def name = it.name
+                if(name.contains('voice')) {
+                def voiceId =
+                it.name.replace('org.eclipse.smarthome.voice.', '').replace('org.openhab.voice.', '')
+                def simpleVoiceNameDir = new
+                File(voice.path, voiceId)
+                it.renameTo(simpleVoiceNameDir)
+                def readme = new
+                File(simpleVoiceNameDir.path, 'README.md')
+                if(readme.exists()) {
+                println readme
+                readme.renameTo(new File(simpleVoiceNameDir.path, 'readme.md'))
+                if(!readme.text.startsWith('---')) {
+                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                }
+                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').trim()
+				def description = ""
+				boolean firstHeadline = false
+				for(def line : readme.readLines()) {
+                 if(line.startsWith('#')) {
+                 	if(!firstHeadline) {
+                 		firstHeadline = true
+                 	}
+                 } else {
+                 	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		                 description = line.trim()
+                  		 break
+		        	}
+                 }
+                }
+                voiceList.append(voiceId + ',' + label + ',"' + description + '"\n')
+                }
+                }
                 }
               </source>
             </configuration>
