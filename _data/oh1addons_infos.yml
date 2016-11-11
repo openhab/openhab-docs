@@ -89,6 +89,10 @@
   description: Enhance openHAB with a "swiss-army-knife-binding" which executes given commands on the commandline
   wiki_url: https://github.com/openhab/openhab/wiki/Exec-Binding
 
+- label: Fatek PLC Binding
+  description: Support for Fatek PLC with native protocol communication.
+  wiki_url: https://github.com/openhab/openhab/wiki/Fatek-PLC-Binding
+  
 - label: Freeswitch Binding
   description: It connects to a freeswitch instance and can report on current active calls as well as show unread voicemails and if a MWI is on
   wiki_url: https://github.com/openhab/openhab/wiki/Freeswitch-Binding
