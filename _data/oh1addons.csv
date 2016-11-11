@@ -27,6 +27,7 @@ binding,EnOcean Binding
 binding,Enphase Energy Binding
 binding,Epson Projector Binding
 binding,Exec Binding
+binding,Fatek PLC Binding
 binding,Freeswitch Binding
 binding,FS20 Binding
 binding,Garadget Binding
@@ -39,6 +40,7 @@ binding,InsteonPLM Binding
 binding,Intertechno Binding
 binding,IPX800 Binding
 binding,IRTrans Binding
+binding,jointSPACE Binding
 binding,KNX Binding
 binding,Koubachi Binding
 binding,LCN Binding
