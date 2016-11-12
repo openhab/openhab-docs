@@ -54,6 +54,9 @@ openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
 
 Please see the [Karaf documentation](http://karaf.apache.org/manual/latest/#_commands_2) for more examples and details.
 
+## Config File
+
+The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab2/etc` (apt/deb-based setup).
 
 ## Defining what to log
 
@@ -132,7 +135,4 @@ In order to create a new log file following two areas needs to be added to the [
   log4j.appender.Demo.maxFileSize=10MB
   log4j.appender.Demo.maxBackupIndex=10
   ```
-
-## Config File
-
-The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab2/etc` (apt/deb-based setup).
+  
