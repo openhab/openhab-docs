@@ -21,6 +21,9 @@
               <directory>${basedir}/addons/bindings/</directory>
             </fileset>
             <fileset>
+              <directory>${basedir}/addons/voice/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/addons/uis/</directory>
             </fileset>
             <fileset>
@@ -295,8 +298,7 @@
                 if(name.contains('voice')) {
                 def voiceId =
                 it.name.replace('org.eclipse.smarthome.voice.', '').replace('org.openhab.voice.', '')
-                def simpleVoiceNameDir = new
-                File(voice.path, voiceId)
+                def simpleVoiceNameDir = new File(voice.path, voiceId)
                 it.renameTo(simpleVoiceNameDir)
                 def readme = new
                 File(simpleVoiceNameDir.path, 'README.md')
