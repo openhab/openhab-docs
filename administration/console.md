@@ -83,13 +83,15 @@ The Karaf session is ended by using the logout command:
 openhab> logout
 ```
 
-# Configuring the Console
+# Bind Console to all Interfaces
 
-By default due to security reasons openhab binds its shell to localhost. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in `org.apache.karaf.shell.cfg` config file. It can be found in the `runtime/etc/` folder (in case openHAB was installed via apt, the full path is: `/usr/share/openhab2/runtime/etc/`), replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces.
+By default openHAB binds its shell to localhost only due to obvious security reasons. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in the configuration file `org.apache.karaf.shell.cfg` under the openHAB `<userdata>/etc` path. Replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces. Please be aware, that the Karaf console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path). You should thereby change the default password.
 
-The above can be accomplished by the following command (you may need to adapt the path):
+The above can be accomplished by the following Linux shell command (on an apt/deb-based installation, you may need to adapt the path):
+
 ```
-sed -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /usr/share/openhab2/runtime/etc/org.apache.karaf.shell.cfg
+sudo sed -i -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
+sudo sed -i -e "s/openhab = habopen/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties
 ```
 
 -----
