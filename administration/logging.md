@@ -116,23 +116,22 @@ Per default all log entries are saved in the file `openhab.log` and event specif
 
 In order to create a new log file following two areas needs to be added to the [configuration file](#config-file):
 
-1. A new logger:
+**New logger:**
 
-  ```java
-  # Logger - Demo.log
-  log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
-  ```
+```java
+# Logger - Demo.log
+log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
+```
 
-2. A new file appender:
+**New file appender:**
 
-  ```java
-  # File appender - Demo.log
-  log4j.appender.Demo=org.apache.log4j.RollingFileAppender
-  log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
-  log4j.appender.Demo.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
-  log4j.appender.Demo.file=${openhab.logdir}/Demo.log
-  log4j.appender.Demo.append=true
-  log4j.appender.Demo.maxFileSize=10MB
-  log4j.appender.Demo.maxBackupIndex=10
-  ```
-  
+```java
+# File appender - Demo.log
+log4j.appender.Demo=org.apache.log4j.RollingFileAppender
+log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
+log4j.appender.Demo.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
+log4j.appender.Demo.file=${openhab.logdir}/Demo.log
+log4j.appender.Demo.append=true
+log4j.appender.Demo.maxFileSize=10MB
+log4j.appender.Demo.maxBackupIndex=10
+```
