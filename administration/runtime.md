@@ -42,8 +42,6 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Items
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:status <item>` | shows the current status of an item
 | `smarthome:update <item> <state>` | sends a status update for an item
 | `smarthome:send <item> <command>` | sends a command for an item
@@ -53,16 +51,12 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Discovery
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:discovery start <thingTypeUID!bindingID>` | runs a discovery on a given thing type or binding
 | `smarthome:discovery enableBackgroundDiscovery <PID>` | enables background discovery for the discovery service with the given PID
 | `smarthome:discovery disableBackgroundDiscovery <PID>` | disables background discovery for the discovery service with the given PID
 
 ### Inbox
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:inbox` | lists all current inbox entries
 | `smarthome:inbox listignored` | lists all ignored inbox entries
 | `smarthome:inbox approve <thingUID> <label>` | creates a thing for an inbox entry
@@ -71,15 +65,11 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Things
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:things list` | lists all things
 | `smarthome:things clear` | removes all managed things
 
 ### Links
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:links list` | lists all links
 | `smarthome:links addChannelLink <itemName> <channelUID>` | links an item with a channel
 | `smarthome:links removeChannelLink <itemName> <thingUID>` | unlinks an item with a channel
@@ -87,8 +77,6 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Audio
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:audio play [<sink>] <filename>` | plays a sound file from the `conf/sounds` folder through the optionally specified audio sink(s)
 | `smarthome:audio stream [<sink>] <url>` | streams the sound from the url through the optionally specified audio sink(s)
 | `smarthome:audio sources` | lists the audio sources
@@ -96,23 +84,16 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Voice
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:voice say <text>` | speaks a text on the default audio sink with the default TTS and voice
 | `smarthome:voice voices` | lists available voices of the active TTS services
 | `smarthome:voice interpret <command>` | interprets a human language command
 
 ### Automation
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:> <script to execute>` | Executes a script from the `conf/scripts` folder
 
 ### Firmware
 
-| Command | Description
-| :------ | :------ 
 | `smarthome:firmware list <thingTypeUID>` | Lists the available firmwares for a thing type.
 | `smarthome:firmware status <thingUID>` | lists the firmware status for a thing
 | `smarthome:firmware update <thingUID> <firmware version>` | updates the firmware for a thing
-
