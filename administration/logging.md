@@ -7,40 +7,33 @@ title: Logging
 
 # Logging in openHAB
 
-This chapter describes the logging functionality in openHAB:
-
-- [Looking at the log](#looking-at-the-log)
-- [Defining what to log](#defining-what-to-log)
-- [Create log entries in own rules](#create-log-entries-in-own-rules)
-- [Logging into a separate file](#logging-into-a-separate-file)
-- [Config file](#config-file)
-
-## Looking at the log
+This article describes the logging functionality in openHAB 2.
+Ths includes how to access logging information and configure logging for user-defined rules. 
 
 There are two ways to check log entries:
 
-1. In the log file stored in the **file system**
-2. During runtime in the **Karaf console**
+1. Through files stored on the **file system**
+2. During runtime in the **Karaf Console**
 
-### File System
+## File System
 
-Log files are written to the directory `userdata/logs` an can be accessed using standard OS tools for text files. The default installation of openHAB generates two log files:
+Log files are written to either `userdata/log` (manual setup) or `/var/log/openhab2` (apt/deb-based setup) and can be accessed using standard OS tools for text files. The default installation of openHAB generates two log files:
 
-- events.log
-- openhab.log
+- `events.log`
+- `openhab.log`
 
-### Karaf console
+## Karaf Console
 
 The [Karaf console](console.html) allows to monitor the log in realtime.
 
 The log shell comes with the following commands:
 
-- log:clear: clear the log
-- log:display: display the last log entries
-- log:display-exception: display the last exception from the log
-- log:get: show the log levels
-- log:set: set the log levels
-- log:tail: continuous display of the log entries
+- `log:clear`: clear the log
+- `log:display`: display the last log entries
+- `log:display-exception`: display the last exception from the log
+- `log:get`: show the log levels
+- `log:set`: set the log levels
+- `log:tail`: continuous display of the log entries
 
 For example, following command enables the realtime monitoring of the default log:
 
@@ -61,87 +54,85 @@ openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
 
 Please see the [Karaf documentation](http://karaf.apache.org/manual/latest/#_commands_2) for more examples and details.
 
+## Config File
+
+The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userdata/etc` folder (manual setup) or in `/var/lib/openhab2/etc` (apt/deb-based setup).
 
 ## Defining what to log
 
 In order to see the messages, logging needs to activated defining what should be logged and in which detail. This can be done in Karaf using the following console command:
 
-```
+```text
 log:set LEVEL package.subpackage
 ```
 
-The **what** is defined by package.subpackage and is in most cases a binding (like org.openhab.binding.sonos)
+The **what** is defined by `package.subpackage` and is in most cases a binding (like org.openhab.binding.sonos)
 
 The **detail** of logging is defined by one of the following levels:
 
-1. Error
-2. Warn
-3. Info
-4. Debug
+1. ERROR
+2. WARN
+3. INFO
+4. DEBUG
 
-The levels built a hierarchy with **Error** on the top and **Debug** on the bottom. So when setting the log level to **Debug**, all logs from levels 1-4 are shown.
+The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 1 to 4.
 
-Following example sets the logging for the ZWAVE binding to **Debug**
+Following example sets the logging for the Z-Wave binding to **DEBUG**
 
-```
+```text
 log:set DEBUG org.openhab.binding.zwave
 ```
 
-Note that the log levels set using the log:set commands are not persistent and will be lost upon restart. To configure those in a persistent way, the commands have to be added to the [configuration file](logging.html#Config-file).
+Note that the log levels set using the `log:set` commands are not persistent and will be lost upon restart. To configure those in a persistent way, the commands have to be added to the [configuration file](#config-file).
 
-## Create log entries in own rules
+## Create Log Entries in Rules
 
 It is also possible to create own log entries in rules. This is especially useful for debugging purposes.
 
-For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: **Demo**) and the text which should appear in the log:
+For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: `Demo`) and the text which should appear in the log:
 
-```
+```java
 logError("Demo","This is a log entry of type Error!")
 logWarn("Demo","This is a log entry of type Warn!")
 logInfo("Demo","This is a log entry of type Info!")
 logDebug("Demo","This is a log entry of type Debug!")
 ```
 
-In order to see the messages, logging for the message class has to be activated. The main package is predefined (org.eclipse.smarthome.model.script) and the subpackage needs to be concatenated:
+In order to see the messages, logging for the message class has to be activated. The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage needs to be concatenated:
 
-```
+```text
 log:set DEBUG org.eclipse.smarthome.model.script.Demo
 ```
 
-The output for the above log statement of type **Debug** is:
+The output for the above log statement of type **DEBUG** is:
 
 ```
 2016-06-04 16:28:39.482 [DEBUG] [.eclipse.smarthome.model.script.Demo] - This is a log entry of type DEBUG!
 ```
 
-## Logging into a separate file
+## Logging into Separate File
 
-Per default all log entries are saved in the file _openhab.log_ and event specific entries also in the file _events.log_. Additional files can be defined in order to write specifics logs to a separate place.
+Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`. Additional files can be defined in order to write specifics logs to a separate place.
 
-In order to create a new log file following two areas needs to be added to the [config file](#config-file):
+In order to create a new log file following two areas needs to be added to the [configuration file](#config-file):
 
 1. A new logger:
 
-```
-# Logger - Demo.log
-log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
-```
+  ```java
+  # Logger - Demo.log
+  log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
+  ```
 
 2. A new file appender:
 
-```
-# File appender - Demo.log
-log4j.appender.Demo=org.apache.log4j.RollingFileAppender
-log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
-log4j.appender.Demo.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
-log4j.appender.Demo.file=${openhab.logdir}/Demo.log
-log4j.appender.Demo.append=true
-log4j.appender.Demo.maxFileSize=10MB
-log4j.appender.Demo.maxBackupIndex=10
-```
-
-## Config file
-
-The config file for logging is **org.ops4j.pax.logging.cfg** and can be found in the **runtime/karaf/etc/** folder (in case openHAB was installed via apt, the full path is: /usr/share/openhab2/runtime/karaf/etc/)
-
-_Note:_  Currently the file org.ops4j.pax.logging.cfg will get overwritten with the default version on every update of openHAB. There is an [issue](https://github.com/openhab/openhab-distro/issues/225) on this.
+  ```java
+  # File appender - Demo.log
+  log4j.appender.Demo=org.apache.log4j.RollingFileAppender
+  log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
+  log4j.appender.Demo.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
+  log4j.appender.Demo.file=${openhab.logdir}/Demo.log
+  log4j.appender.Demo.append=true
+  log4j.appender.Demo.maxFileSize=10MB
+  log4j.appender.Demo.maxBackupIndex=10
+  ```
+  
