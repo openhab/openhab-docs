@@ -62,7 +62,7 @@ The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userd
 
 In order to see the messages, logging needs to activated defining what should be logged and in which detail. This can be done in Karaf using the following console command:
 
-```
+```text
 log:set LEVEL package.subpackage
 ```
 
@@ -79,7 +79,7 @@ The levels build a hierarchy with **ERROR** logging critical messages only and *
 
 Following example sets the logging for the Z-Wave binding to **DEBUG**
 
-```
+```text
 log:set DEBUG org.openhab.binding.zwave
 ```
 
@@ -91,7 +91,7 @@ It is also possible to create own log entries in rules. This is especially usefu
 
 For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: `Demo`) and the text which should appear in the log:
 
-```
+```java
 logError("Demo","This is a log entry of type Error!")
 logWarn("Demo","This is a log entry of type Warn!")
 logInfo("Demo","This is a log entry of type Info!")
@@ -100,7 +100,7 @@ logDebug("Demo","This is a log entry of type Debug!")
 
 In order to see the messages, logging for the message class has to be activated. The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage needs to be concatenated:
 
-```
+```text
 log:set DEBUG org.eclipse.smarthome.model.script.Demo
 ```
 
@@ -118,14 +118,14 @@ In order to create a new log file following two areas needs to be added to the [
 
 1. A new logger:
 
-  ```
+  ```java
   # Logger - Demo.log
   log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
   ```
 
 2. A new file appender:
 
-  ```
+  ```java
   # File appender - Demo.log
   log4j.appender.Demo=org.apache.log4j.RollingFileAppender
   log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
