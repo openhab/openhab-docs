@@ -64,7 +64,7 @@
 			</li>
 			<li><a href="{{docu}}/addons/voice.html">Voice Services</a>
 				<ul>
-					{% for binding in site.data.voice %}
+					{% for voice in site.data.voice %}
 					<li><a href="{{docu}}/addons/voice/{{ voice.id }}/readme.html">{{ voice.label }}</a></li>
 					{% endfor %}
 				</ul>

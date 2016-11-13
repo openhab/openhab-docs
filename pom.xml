@@ -245,7 +245,7 @@
                  	}
                  } else {
                  	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
-		                 description = line.trim()
+		                 description = line.trim().replace('\"', '\'')
                   		 break
 		        	}
                  }
@@ -318,7 +318,7 @@
                  	}
                  } else {
                  	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
-		                 description = line.trim()
+		                 description = line.trim().replace('\"', '\'')
                   		 break
 		        	}
                  }
