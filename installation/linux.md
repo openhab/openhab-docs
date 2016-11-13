@@ -75,13 +75,13 @@ Decide between two options:
   echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
   echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
   ```
-  
+
   Additionally, you need to add the openHAB 2 Snapshots repository key to your package manager:
-  
+
   ```shell
   wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
   ```
-  
+
   Note: CloudBees provides the openHAB 2 repositories through HTTPS.
   If your system fails at the next step, install the missing dependency: `sudo apt-get install apt-transport-https`
 
@@ -354,20 +354,77 @@ sudo rm -rf /opt/openhab2/
 sudo rm /lib/systemd/system/openhab2.service
 ```
 
-## File Locations
+### File Locations
 
-|                                  | Repository Installation  | Manual Installation (according to [guide](#manual-installation))  |
-|:--------------------------------:|:-------------------------|:------------------------------------------------------------------|
-| openHAB application              | `/usr/share/openhab2`    | `/opt/openhab2`                                                   |
-| Site configuration               | `/etc/openhab2`          | `/opt/openhab2/conf`                                              |
-| Log files                        | `/var/log/openhab2`      | `/opt/openhab2/userdata/logs`                                     |
-| Userdata like rrd4j databases    | `/var/lib/openhab2`      | `/opt/openhab2/userdata`                                          |
-| Service configuration            | `/etc/default/openhab2`  | (not preconfigured)                                               |
+|                                  | Repository Installation  | Manual Installation (according to [guide](#manual-installation)) |
+|:--------------------------------:|:-------------------------|:----------------------------------|
+| openHAB application              | `/usr/share/openhab2`    | `/opt/openhab2`                   |
+| Site configuration               | `/etc/openhab2`          | `/opt/openhab2/conf`              |
+| Log files                        | `/var/log/openhab2`      | `/opt/openhab2/userdata/logs`     |
+| Userdata like rrd4j databases    | `/var/lib/openhab2`      | `/opt/openhab2/userdata`          |
+| Service configuration            | `/etc/default/openhab2`  | (not preconfigured)               |
 
-## Network Sharing
+## Viewing Log Messages
+
+In order to get more insight on what your openHAB system is doing and to see occurring error messages, it is recommended to always have a look on the openHAB log files. These will tell you everything you might need to know. Execute the following command in one session or have both files separated in sessions side by side:
+
+* Package repository based installation:
+
+  ```shell
+  tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
+  ```
+
+* Manual installation:
+
+  ```shell
+  tail -f /opt/openhab2/userdata/logs/openhab.log -f /opt/openhab2/userdata/logs/events.log
+  ```
+
+You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
+
+With openHAB 2 you can also [use the Karaf console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
+
+## Recommended Additional Setup Steps
+
+The following is not directly related to the openHAB installation but rather recommended on a openHAB system.
+The need for these and the exact implementation on a specific system might differ from user to user.
+
+### Privileges for Common Peripherals
+
+An openHAB setup will often rely on hardware like a modem, tranceiver or adapter to interface with home automation hardware.
+Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi addon board connected to the serial port on its GPIOs.
+In order to allow openHAB to communicate with additional peripherals, it has to be added to corresponding Linux groups.
+The following example shows how to add Linux user `openhab` to the often needed groups `dialout` and `tty`.
+Additional groups may be needed, depending on your hardware and software setup.
+
+```shell
+sudo useradd openhab dialout
+sudo useradd openhab tty
+```
+
+Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.
+Therefor the following setting has to be added/adapted on your system in either `/etc/default/openhab2` or `/usr/share/openhab2/runtime/bin/setenv`:
+
+```shell
+EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyAMA0"
+```
+
+Please contact the community forum for more detailed information regarding individual hardware.
+
+### Java Network Permissions
+
+The Java Virtual Machine hosting openHAB is restricted in it's permissions to interact on network level for security reasons.
+Some openHAB addons, like the Network or AmazonDash bindings, need elevated permissions to work.
+If needed, grand these permissions by executing the following command:
+
+```shell
+setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' `realpath /usr/bin/java`
+```
+
+### Network Sharing
 
 openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/features/index.html) articles).
-Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a Samba network share is **highly recommended**.
+Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_(software)) network share is **highly recommended**.
 
 The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
 
@@ -458,7 +515,7 @@ sudo service smbd restart
 sudo systemctl restart smbd.service
 ```
 
-### Mounting Locally
+#### Mounting Locally
 
 After setting up and restarting Samba, check your connection to the shared folder and create a permanent mount.
 Check the network devices manager of your local operating system to find and access your openHAB host and share.
@@ -472,29 +529,3 @@ When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
 If everything went well, you are set and ready to start [configuring]({{base}}/features/index.html) your openHAB system.
-
-## Viewing Log Messages
-
-In order to get more insight on what your openHAB system is doing and to see occurring error messages, it is recommended to always have a look on the openHAB log files. These will tell you everything you might need to know. Execute the following command in one session or have both files separated in sessions side by side:
-
-* Package repository based installation:
-
-  ```shell
-  tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
-  ```
-
-* Manual installation:
-
-  ```shell
-  tail -f /opt/openhab2/userdata/logs/openhab.log -f /opt/openhab2/userdata/logs/events.log
-  ```
-
-You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
-
-With openHAB 2 you can also [use the Karaf console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
-
-Note: When starting openHAB 2 for the first time, you may see the following error in `openhab.log`, which is okay to occur once at first boot:
-```text
-2016-08-14 23:37:34.447 [ERROR] [.glassfish.hk2.osgi-resource-locator] - FrameworkEvent ERROR - org.glassfish.hk2.osgi-resource-locator
-org.osgi.framework.BundleException: Exception in org.apache.karaf.features.internal.service.FeaturesServiceImpl$3.end()
-```
