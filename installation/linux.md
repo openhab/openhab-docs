@@ -403,7 +403,7 @@ sudo useradd openhab tty
 ```
 
 Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.
-Therefor the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
+Therefore the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
 
 ```shell
 EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyAMA0"
