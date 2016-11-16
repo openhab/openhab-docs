@@ -29,6 +29,7 @@ layout: documentation
 | Add-on | Type | Reason
 |--------|------|------|
 | CalDAV | Binding | see [issue 4074](https://github.com/openhab/openhab/issues/4074) |
+| GCal | I/O | see [issue 4770](https://github.com/openhab/openhab/issues/4770) |
 | InsteonPLM | Binding | see [issue 3922](https://github.com/openhab/openhab/issues/3922) |
 | SagerCaster | Binding | Not following the architecture guidelines, see [issue 3754](https://github.com/openhab/openhab/issues/3754) |
 | Logging | Persistence | openHAB 2 does not use logback anymore |
