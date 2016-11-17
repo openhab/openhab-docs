@@ -398,8 +398,8 @@ The following example shows how to add Linux user `openhab` to the often needed 
 Additional groups may be needed, depending on your hardware and software setup.
 
 ```shell
-sudo useradd openhab dialout
-sudo useradd openhab tty
+sudo adduser openhab dialout
+sudo adduser openhab tty
 ```
 
 Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.
