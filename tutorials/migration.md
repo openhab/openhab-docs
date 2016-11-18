@@ -13,61 +13,12 @@ These instructions emphasize the text based procedures over the use of PaperUI a
 
 Note: In all of the other pages in this documentation, openHAB 2 is simply referred to as openHAB. In order to distinguish between the two versions in this, the current version is referred to as openHAB 2.
 
-## Table of Contents
+This page is structured as follows:
 
-[1. Preparation](#preparation)
+{::options toc_levels="2..4"/}
 
-[2. Backups](#backups)
-
-[3. Shutdown openHAB 1.x](#shutdown-openhab-1x)
-
-[4. Install openHAB 2](#install-openhab-2)
-
-[5. Prepare openHAB 2 for the Existing openHAB 1.x Configuration](#prepare-openhab-2-for-the-existing-openhab-1x-configuration)
-
-&nbsp;&nbsp;[5.1 Text Based](#text-based)
-
-&nbsp;&nbsp;[5.2 Karaf Console](#karaf-console)
-
-&nbsp;&nbsp;[5.3 PaperUI Approach](#paperui-approach)
-
-&nbsp;&nbsp;[5.4 Configure Add-ons](#configure-add-ons)
-
-&nbsp;&nbsp;[5.5 Installing Unofficially Supported openHAB 1.x Add-ons](#installing-unofficially-supported-openhab-1x-add-ons)
-
-&nbsp;&nbsp;[5.6 Final Add-ons Installation Steps](#installing-unofficially-supported-openhab-1x-add-ons)
-
-[6. Necessary Changes](#necessary-changes)
-
-&nbsp;&nbsp;[6.1 Items](#items)
-
-&nbsp;&nbsp;[6.2 Sitemap](#sitemap)
-
-&nbsp;&nbsp;[6.3 Rules](#rules)
-
-[7. Testing](#testing)
-
-[8. New Concepts: Things and Channels](#new-concepts-things-and-channels)
-
-[9. Retire openHAB 1.x](#retire-openhab-1x)
-
-[10. Migrating to openHAB 2 Bindings](#migrating-to-openhab-2-bindings)
-
-&nbsp;&nbsp;[10.1 Eclipse SmartHome Designer](#eclipse-smarthome-designer)
-
-&nbsp;&nbsp;[10.2 My.openHAB](#myopenhab)
-
-&nbsp;&nbsp;[10.3 Other Bindings](#other-bindings)
-
-[11. Managing the Inbox, Things, and Channels](#managing-the-inbox-things-and-channels)
-
-&nbsp;&nbsp;[11.1 Managing the Inbox using PaperUI](#managing-the-inbox-using-paperui)
-
-&nbsp;&nbsp;[11.2 Managing the Inbox Using the Karaf Console](#managing-the-inbox-using-the-karaf-console)
-
-&nbsp;&nbsp;[11.3 Linking Channels to Items](#managing-the-inbox-using-the-karaf-console)
-
-&nbsp;&nbsp;[11.4 Manually Creating Things](#manually-creating-things)
+* TOC
+{:toc}
 
 ##Preparation
 
