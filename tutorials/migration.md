@@ -137,7 +137,7 @@ as it will be more familiar and flexible.
 
 ###Text Based
 
-In your configurations folder for openHAB 2 (`/etc/openhab2/conf` on apt-get 
+In your configurations folder for openHAB 2 (`/etc/openhab2` on apt-get 
 installed instances) there is a new folder named `services`. In this folder you
 will find a file named `runtime.cfg`. This file contains global openHAB 2 
 parameters. Open this file for editing and you will find a number of parameters 
