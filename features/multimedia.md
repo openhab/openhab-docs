@@ -50,7 +50,7 @@ within DSL rules.
 
 ### Text-to-Speech
 
-In order to use text-to-speech, you need to install at least one [TTS service](../addons/voice.html).
+In order to use text-to-speech, you need to install at least one [TTS service]({{base}}/addons/voice.html).
 Once you have done so, you will find voices available in your system:
 
 ```

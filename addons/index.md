@@ -12,6 +12,7 @@ _Note_: If you are successfully using a 1.x add-on with the 2.0 runtime, which i
 | Add-on Type | Description |
 |-------------|----------------------|
 |[Bindings](bindings.html)| Bindings integrate physical hardware, external systems and web services in openHAB |
+|[Voice Services](voice.html)| Services that provide voice enabling features, such as text-to-speech, speech-to-text etc. |
 |[System Integration](io.html)| System integrations expose openHAB to an external system |
 |[User Interfaces](uis.html)| User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
 |[1.x Addons](1xaddons.html)| Add-ons from openHAB 1 (bindings, actions, persistence services, etc.) |
