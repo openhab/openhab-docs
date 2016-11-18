@@ -29,14 +29,14 @@ questions to ask and answer include:
 - Do you have or need to change your backup and configuration management 
 practices?
 - Have you wanted to migrate to a container (e.g. 
-[Docker](../installation/docker.html) or a virtual machine?
+[Docker]({{base}}/installation/docker.html) or a virtual machine)?
 - Do you want to start over fresh on a brand new OS install?
 
 Your answers to these and other similar questions will help guide you to 
 prepare your installation before you start the migration. For example, if you
 want to start using git to back up and configuration manage your openHAB 
 configurations, or if you are considering moving to 
-[Docker](../installation/docker.html) or a VM or starting over fresh (e.g. 
+[Docker]({{base}}/installation/docker.html) or a VM or starting over fresh (e.g. 
 [openHABian](https://github.com/ThomDietrich/openhabian)), now is a good time
 to start the process.
 
@@ -48,7 +48,7 @@ One major consideration is that at the time of this writing openHAB 2 does not
 implement authentication and authorization (i.e. no username and password). If
 you are relying upon port forwarding to access your openHAB server remotely
 instead of via a VPN, SSH tunneling, or [my.openhab](https://my.openhab.org/),
-we highly recommend [setting up a reverse proxy](../configuration/nginx.html).
+we highly recommend [setting up a reverse proxy]({{base}}/configuration/nginx.html).
 
 ##Backups
 
@@ -85,7 +85,7 @@ On manually installed systems follow your usual procedure for stopping openHAB
 
 ##Install openHAB 2
 
-Follow the instructions for your platform [here](../installation/index.html).
+Follow the instructions for your platform [here]({{base}}/installation/index.html).
 
 There are two choices to make: Beta or SNAPSHOT, and Offline or Online. Once 
 the final release of openHAB 2 is made, the Beta will turn into the latest 
@@ -118,11 +118,11 @@ installation guide for your platform and navigate to
 the server where openHAB 2 is running.
 
 Congratulations, you have a running openHAB 2! See 
-[Concepts](../concepts/index.html) and below for important differences between
+[Concepts]({{base}}/concepts/index.html) and below for important differences between
 openHAB 1.x and openHAB 2.
 
 Theoretically one should be able to just enable the 
-[openHAB 1.x Compatibility Layer](../developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution),
+[openHAB 1.x Compatibility Layer]({{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution),
 copy over the existing add-ons and config files and have it work. However, while 
 the compatibility layer is very good and very capable, this approach will 
 result in errors and end up being more work than the steps below. Therefore the
@@ -169,13 +169,13 @@ MQTT Binding start with "mqtt" in openhab.cfg so the name of the binding is
 "mqtt". For those bindings that have a 2.0 version, use the name followed by a 
 "1", for example, to use the 1.9 SNAPSHOT version of the Astro binding instead
 of the 2.0 version, use the name "astro1". You can find the list of 2.0 
-bindings [here](../addons/bindings.html).
+bindings [here]({{base}}/addons/bindings.html).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I 
-recommend "habmin". The list of UIs are [here](../addons/uis.html).
+recommend "habmin". The list of UIs are [here]({{base}}/addons/uis.html).
 - `action = ` - the list of action add-ons you used in openHAB 1.x.
 - `transformation = ` = the list of transformations you use. Unlike in openHAB 1,
 one must install transformations separately.
-- `voice = ` - see [here](../addons/voice.html)
+- `voice = ` - see [here]({{base}}/addons/voice.html)
 - `misc = ` - myopenhab, homekit, etc. Do not list myopenhab at this time, 
 instructions for it are below.
 
@@ -253,7 +253,7 @@ Log into the Karaf console with:
 
 Use `habopen` as the password.
 
-See the [Karaf Reference](../administration/console.html) for details about
+See the [Karaf Reference]({{base}}/administration/console.html) for details about
 navigating and using the console.
 
 Run the following command to see the list of add-on repositories currently 
@@ -352,7 +352,7 @@ openHAB 2. Make sure you include these in your installation as well.
 
 Skip this section if all the add-ons you need have been installed already.
 
-First check the [list of add-ons that are known not to work in openHAB 2](../addons/1xaddons.html#currently-incompatible-1x-add-ons)
+First check the [list of add-ons that are known not to work in openHAB 2]({{base}}/addons/1xaddons.html#currently-incompatible-1x-add-ons)
 and make sure yours is not among them.
 
 Next install the openHAB 1.x compatibility layer using the Karaf Console 
@@ -397,7 +397,7 @@ installing Astro this way.
 ###Final Add-ons Installation Steps
 
 openHAB 2 has a different 
-[folder layout](http://docs.openhab.org/installation/linux.html#file-locations).
+[folder layout]({{base}}/installation/linux.html#file-locations).
 Of particular node are the configuration folders and userdata folders. See the
 previous link for the location of these folders for your installtion.
 
@@ -448,7 +448,7 @@ Set the "Default Icon Format" to "Bitmap".
 
 Note that not all of the default icons that came with openHAB 1.x are avaialble 
 in the default set for openHAB 2. If you are missing an icon in your sitemap 
-that could be the cause. The fill list of openHAB 2 icons is [here](../addons/iconsets/classic/readme.html).
+that could be the cause. The full list of openHAB 2 icons is [here]({{base}}/addons/iconsets/classic/readme.html).
 
 Also, in openHAB 2 there is a new requirement for dynamic icons: there must be a 
 default. For example, if one has a bunch of Wunderground icons (e.g. 
@@ -511,7 +511,7 @@ there are no values in the database to restore the Items to when openHAB starts.
 - **Sitemap**: The most 
 common Sitemap issue will be missing icons. Browse through your sitemap 
 methodically and identify those entries that have a missing or wrong
-icon. Select an alternative from the [defaults](../addons/iconsets/classic/readme.html)
+icon. Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html)
 or copy the one you were using from openHAB 1.x to the conf/icons/classic folder.
 Both BasicUI and ClassicUI pull their icons from that folder. For a sitemap that
 most closely resembles your current sitemap I recommend using ClassicUI.
@@ -530,7 +530,7 @@ to edit and review your files.
 ## New Concepts: Things and Channels
 
 One of the new notions that people quickly come across when moving to openHAB 2 
-native bindings is that of a ["Thing"](../concepts/things.html). To understand 
+native bindings is that of a ["Thing"]({{base}}/concepts/things.html). To understand 
 what they are and how they relate to Items, we will compare them to how Items 
 are "bound" and configured in openHAB 1.x.
 
@@ -577,7 +577,7 @@ represents a configurable device/system/unit, which provides different
 functionality through a set of one or more Channels. Each Channel corresponds 
 exactly to one binding configuration string (stuff in { }) in openHAB 1.x. 
 
-Let's look at a concrete example. The [Yahoo Weather Binding](../addons/bindings/yahooweather/readme.html)
+Let's look at a concrete example. The [Yahoo Weather Binding]({{base}}/addons/bindings/yahooweather/readme.html)
 supports exactly one Thing which takes two parameters: a WOEID location and unit.
 
 Thus, as described in the Binding's readme one would manually define a Thing in
@@ -622,7 +622,7 @@ Channel ID into your Item's definition like the above.
 
 Finally, I will reiterate, Things and Channels only exist for 2.0 version bindings.
 Any 1.9 bindings still use the traditional binding configuration as described on 
-the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki) 
+the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki). 
 
 ##Retire openHAB 1.x
 
@@ -686,8 +686,8 @@ One is not required to use 2.0 version addi-ons with openHAB 2. It is highly
 recommended to do so as most cases where there is a 1.9 and a 2.0 add-on only the
 2.0 binding is undergoing continued development. On-the-other-hand, some of the
 2.0 bindings are currently lacking certain features their older version has (e.g.
-Astro). See the add-on's [wiki page](../addons/1xaddons.html)  and 
-[readme page](../addons/bindings.html) to compare and contrast the two versions.
+Astro). See the add-on's [wiki page]({{base}}/addons/1xaddons.html)  and 
+[readme page]({{base}}/addons/bindings.html) to compare and contrast the two versions.
 
 Identify an add-on where there is a 2.0 version that you want to migrate to. Begin
 by identifying those Items that use this binding. On Linux/OSX this can easily be
