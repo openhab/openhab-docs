@@ -477,9 +477,11 @@ used `default.sitemap` as your file name so you could skip the `?sitemap=` part
 you must now rename the file to `_default.sitemap` and change the very first
 line of the file to read `sitemap _default label="<sitemap name>`. 
 
-openHAB 2 only supports static webviews. The dynamic webview some 
-created with the Weather Binding in openHAB 1.x are not supported. Habpanel is an 
-excellent alternative approach.
+openHAB changes where the files for dynamic webviews like the one created for the
+Weather Binding in openHAB 1.x. Instead of the deeply buried `/usr/share/openhab/webapps`
+the files are placed in `<openHAB 2 conf>/html`. For example, if following the 
+1.x Weather Binding tutorial for a dynamic webview, one would create a 
+`<openHAB 2 conf>/html/weather` folder and put the `images` and layout folders there.o
 
 ### Rules
 One set of errors that will occur in rules that refer to the packages of openHAB
