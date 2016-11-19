@@ -194,7 +194,7 @@ file if there are any persistence add-ons.
 
 An example addons.cfg:
 
-~~~~
+~~~~bash
 # The base installation package of this openHAB instance (default is "standard")
 # Valid options:
 #   - minimal  : Installation only with dashboard, but no UIs or other addons
@@ -413,7 +413,7 @@ have to be fixed.
 
 Copy over your files in the following order:
 
-~~~~
+~~~~bash
 cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
 cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
 cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
@@ -481,7 +481,7 @@ indicates no result or an error.
 
 Finally, the `HSBType` state type can no longer be constructed using a `java.awt.Color` object, and there is no longer a `toColor()` method.  Use the following alternatives:
 
-~~~~
+~~~~java
 var HSBType hsb = HSBType::fromRGB(color.red, color.green, color.blue)
 var Color color = Color::getHSBColor(hsb.hue.floatValue / 360, hsb.saturation.floatValue / 100, hsb.brightness.floatValue / 100)
 ~~~~
@@ -542,7 +542,7 @@ some control point on a physical device or API. The
 [openHAB wiki](https://github.com/openhab/openhab/wiki) gives a nice examples of 
 how this looks:
 
-~~~~
+~~~~java
 Switch  Light_Floor        "Light at Floor"                { knx="1/0/15+0/0/15" }
 Switch  Presence           "I'm at home"                   { bluetooth="123456ABCD" }
 Switch  Doorbell           "Doorbell"                      { serial="/dev/usb/ttyUSB0" }
@@ -584,14 +584,14 @@ Thus, as described in the Binding's readme one would manually define a Thing in
 a .things file (located in conf/things) with the line:
 
 
-~~~~
+~~~~java
 Thing yahooweather:weather:berlin [ location="638242", unit="c" ]
 ~~~~
 
 As described in the Binding's readme, three Channels are supported: temperature,
 humidity, and pressure. Thus, rather than the old openHAB 1.x syntax:
 
-~~~~
+~~~~java
 // openHAB 1 Syntax
 Number Temperature   { yahooweather="woeid=638242,value=temperature,unit=c" }
 Number Humidity      { yahooweather="woeid=638242,value=humidity,unit=c" }
@@ -600,7 +600,7 @@ Number Humidity      { yahooweather="woeid=638242,value=humidity,unit=c" }
 with everything defined on in the { } part of the Item, we now merely reference 
 the Channels.
 
-~~~~
+~~~~java
 // openHAB 2 Syntax
 Number Temperature   { channel="yahooweather:weather:berlin#temperature" }
 Number Humidity      { channel="yahooweather:weather:berlin#humidity" }
@@ -697,7 +697,7 @@ done with the following command
 
 where `<binding>` is the string used in the binding config on the Item. For example:
 
-~~~~
+~~~~bash
 grep zwave /etc/openhab2/items/*
 grep astro /opt/openhab2/conf/items/*
 ~~~~
