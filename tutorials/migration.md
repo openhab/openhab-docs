@@ -20,7 +20,7 @@ This page is structured as follows:
 * TOC
 {:toc}
 
-##Preparation
+## Preparation
 
 Now is the time to consider and plan for your newly installed openHAB. Some 
 questions to ask and answer include:
@@ -50,7 +50,7 @@ you are relying upon port forwarding to access your openHAB server remotely
 instead of via a VPN, SSH tunneling, or [my.openhab](https://my.openhab.org/),
 we highly recommend [setting up a reverse proxy]({{base}}/configuration/nginx.html).
 
-##Backups
+## Backups
 
 The first step is to backup everything that you have modified in the existing 
 openHAB 1.x installation. If you installed using apt-get these files may include:
@@ -68,7 +68,7 @@ If you are on an operating system that does not support apt-get or performed a
 manual installation for some other reason simply backup the whole 
 `<openhab home>` directory.
 
-##Shutdown openhab 1.x
+## Shutdown openhab 1.x
 
 One cannot run openHAB 1.x and openHAB 2 at the same time on the same 
 machine with default settings. They both use the same networking ports and 
@@ -78,12 +78,14 @@ RFXCOM).
 On an apt-get installed openHAB 1.x running on a systemd based OS (Ubuntu 15+,
 Raspbian Jessy+) run:
 
-`sudo systemctl stop openhab.service`
+```bash
+sudo systemctl stop openhab.service
+```
 
 On manually installed systems follow your usual procedure for stopping openHAB 
 (e.g. `<ctrl>-c` in the window where start.sh or start.bat was run).
 
-##Install openHAB 2
+## Install openHAB 2
 
 Follow the instructions for your platform [here]({{base}}/installation/index.html).
 
@@ -108,9 +110,11 @@ have access to the internet all the time.
 If you plan on running openHAB 1.x as your primary while migrating make sure to
 disable openHAB 2 from starting automatically.
 
-`sudo systemctl disable openhab2.service`
+```bash
+sudo systemctl disable openhab2.service
+```
 
-##Prepare openHAB 2 for the Existing openHAB 1.x Configuration
+## Prepare openHAB 2 for the Existing openHAB 1.x Configuration
 
 Start your newly installed openHAB 2 instance per the instruction in the 
 installation guide for your platform and navigate to 
@@ -135,7 +139,7 @@ GUIs (i.e. PaperUI or Habmin 2). While all three approaches are presented below,
 the text based approach is the recommended one for those coming from openHAB 1.x 
 as it will be more familiar and flexible.
 
-###Text Based
+### Text Based
 
 In your configurations folder for openHAB 2 (`/etc/openhab2` on apt-get 
 installed instances) there is a new folder named `services`. In this folder you
@@ -194,7 +198,7 @@ file if there are any persistence add-ons.
 
 An example addons.cfg:
 
-~~~~bash
+```bash
 # The base installation package of this openHAB instance (default is "standard")
 # Valid options:
 #   - minimal  : Installation only with dashboard, but no UIs or other addons
@@ -241,15 +245,17 @@ voice =
 
 # A comma-separated list of miscellaneous services to install (e.g. "myopenhab")
 misc = myopenhab
-~~~~
+```
 
-###Karaf Console
+### Karaf Console
 
 Following the instructions above to populate `runtime.cfg` parameters.
 
 Log into the Karaf console with:
 
-`ssh openhab@localhost -p 8101`
+```bash
+ssh openhab@localhost -p 8101
+```
 
 Use `habopen` as the password.
 
@@ -259,28 +265,37 @@ navigating and using the console.
 Run the following command to see the list of add-on repositories currently 
 installed.
 
-`feature:repo-list`
+```bash
+feature:repo-list
+```
 
 ![result of running feature:repo-list](images/feature-list.png)
 
 The following command will give the list of available add-ons.
 
-`feature:list`
-
+```bash
+feature:list
+```
 ![result of running feature:list](images/feature-available.png)
 
 For each add-on you are using in openHAB 1.x, and for each transformation type
 you are using, install the corresponding add-on using:
 
-`feature:install <add-on name>`
+```bash
+feature:install <add-on name>
+```
 
 using the name from the list. For example, to install the Weather Binding run:
 
-`feature:install openhab-binding-weather`
+```bash
+feature:install openhab-binding-weather
+```
 
 To get a list of all currently installed items run:
 
-`feature:list | grep Started`
+```bash
+feature:list | grep Started
+```
 
 At this time only install add-ons that are 1.9.0 SNAPSHOT. The 2.0 add-ons will 
 be installed later.
@@ -288,7 +303,7 @@ be installed later.
 Note: if running in Docker, create `<openHAB home>/userdata/persistence` manually prior to 
 installing persistence add-ons.
 
-###PaperUI Approach
+### PaperUI Approach
 
 These instructions assume no edits have been made to `runtime.cfg` or 
 `addons.cfg` as described in the previous section.
@@ -322,14 +337,14 @@ UIs are currently capable of doing everything, you will end up with a mix of
 database and text based configuration. This is why we recommend not using 
 PaperUI for those migrating to openHAB 2 from openHAB 1.x.
 
-###Configure Add-ons
+### Configure Add-ons
 
 As bindings and other add-ons are installed, you can watch for errors in the 
 logs. Errors at this time may not be important but make note of those that did
 generate errors during installation for special attention later.
 
 Once a binding or add-on is installed, it will create a 
-`conf/services/<add-on name>.cfg` file. Unlike in openHAB 1.x where all the 
+`<openHAB 2 conf>/services/<add-on name>.cfg` file. Unlike in openHAB 1.x where all the 
 binding configurations are placed in the one openhab.cfg file, openHAB 2 has a
 separate .cfg file for each binding. Transfer the settings for each binding from
 openhab.cfg to its new .cfg file, removing the binding name from the parameter.
@@ -348,7 +363,7 @@ generate a new pin code for Nest).
 Unlike in openHAB 1.x, transformations are not automatically included in 
 openHAB 2. Make sure you include these in your installation as well.
 
-###Installing Unofficially Supported openHAB 1.x Add-ons
+### Installing Unofficially Supported openHAB 1.x Add-ons
 
 Skip this section if all the add-ons you need have been installed already.
 
@@ -373,7 +388,7 @@ installing.
 Now copy the add-on's jar files that you want to install to the `<openHAB conf>/addons` folder for 
 openHAB 2. For example:
 
-```
+```bash
 cp /usr/share/openhab/addons/org.openhab.binding.astro-1.8.3.jar /usr/share/openhab2/addons
 ```
 
@@ -385,7 +400,7 @@ Watch the logs for errors as they can be informative. For example, some Actions
 require a corresponding Binding be installed first. An example error of this 
 sort looks like:
 
-```
+```text
 2016-09-08 15:15:04.613 [WARN ] [org.apache.felix.fileinstall        ] - Error while starting bundle: file:/openhab/addons/org.openhab.action.astro-1.8.3.jar
 org.osgi.framework.BundleException: Could not resolve module: org.openhab.action.astro [210]
   Unresolved requirement: Import-Package: org.openhab.binding.astro.internal.calc
@@ -394,7 +409,7 @@ org.osgi.framework.BundleException: Could not resolve module: org.openhab.action
 Note, the above error is for illustration purposes. You should not be 
 installing Astro this way.
 
-###Final Add-ons Installation Steps
+### Final Add-ons Installation Steps
 
 openHAB 2 has a different 
 [folder layout]({{base}}/installation/linux.html#file-locations).
@@ -413,7 +428,7 @@ have to be fixed.
 
 Copy over your files in the following order:
 
-~~~~bash
+```bash
 cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
 cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
 cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
@@ -422,12 +437,12 @@ Copy any custom webviews from webapps tp <openHAB 2 conf>/html
 cp <openHAB 1.x conf>/configurations/items/* <openHAB 2 conf>/items/*
 cp <openHAB 1.x conf>/configurations/rules/* <openHAB 2 conf>/rules/*
 cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
-~~~~
+```
 
-##Necessary Changes
+## Necessary Changes
 
 
-###Items
+### Items
 
 As mentioned above, you must now manually install any Transformation engine your
 Items may use.
@@ -440,10 +455,10 @@ The **SCALE** transformation has evolved.
 `]minbound..maxbound]`) and also define open ranges`[minbound..]`
 
 
-###Sitemap
+### Sitemap
 
 If you use png icons, you must change the default icons from svg to png for
-ClassicUI and BasicUI. This can be done in PaperUI in `Configuration -> Service->BasicUI and ClassicUI`.
+ClassicUI and BasicUI. This can be done in PaperUI in `Configuration -> Service -> BasicUI and ClassicUI`.
 Set the "Default Icon Format" to "Bitmap".
 
 Note that not all of the default icons that came with openHAB 1.x are avaialble 
@@ -466,7 +481,7 @@ openHAB 2 only supports static webviews. The dynamic webview some
 created with the Weather Binding in openHAB 1.x are not supported. Habpanel is an 
 excellent alternative approach.
 
-###Rules
+### Rules
 One set of errors that will occur in rules that refer to the packages of openHAB
 core classes (e.g. org.openhabs.core.*). These classes have moved to 
 org.eclipse.smarthome.core.*. Furthermore, these classes as well as the Joda 
@@ -481,16 +496,16 @@ indicates no result or an error.
 
 Finally, the `HSBType` state type can no longer be constructed using a `java.awt.Color` object, and there is no longer a `toColor()` method.  Use the following alternatives:
 
-~~~~java
+```java
 var HSBType hsb = HSBType::fromRGB(color.red, color.green, color.blue)
 var Color color = Color::getHSBColor(hsb.hue.floatValue / 360, hsb.saturation.floatValue / 100, hsb.brightness.floatValue / 100)
-~~~~
+```
 
 Continue watching the logs as you move files over. There will likely be a number 
 of errors. Take note of them with plans to return and correct them if they 
 persist. 
 
-##Testing
+## Testing
 
 - **Items**: Watch `<openHAB 2 userdata>/logs/events.log` and methodically work through all
 of your Items activating and deactivating them one-by-one to verify the events
@@ -542,14 +557,14 @@ some control point on a physical device or API. The
 [openHAB wiki](https://github.com/openhab/openhab/wiki) gives a nice examples of 
 how this looks:
 
-~~~~java
+```java
 Switch  Light_Floor        "Light at Floor"                { knx="1/0/15+0/0/15" }
 Switch  Presence           "I'm at home"                   { bluetooth="123456ABCD" }
 Switch  Doorbell           "Doorbell"                      { serial="/dev/usb/ttyUSB0" }
 Contact Garage             "Garage is [MAP(en.map):%s]"    { zwave="21:command=sensor_binary,respond_to_basic=true" }
 String  Error_Ventilation  "Error in Ventilation %s"       { comfoair="error_message" }
 Number  DiningRoomTemp     "Maximum Away Temp. [%.1f °F]"  { nest="<[thermostats(Dining Room).away_temperature_high_f]" }
-~~~~
+```
 
 Every binding came up with its own syntax for this binding configuration and 
 while the rest of the item file had nice syntax checks and content assist when
@@ -584,27 +599,27 @@ Thus, as described in the Binding's readme one would manually define a Thing in
 a .things file (located in conf/things) with the line:
 
 
-~~~~java
+```java
 Thing yahooweather:weather:berlin [ location="638242", unit="c" ]
-~~~~
+```
 
 As described in the Binding's readme, three Channels are supported: temperature,
 humidity, and pressure. Thus, rather than the old openHAB 1.x syntax:
 
-~~~~java
+```java
 // openHAB 1 Syntax
 Number Temperature   { yahooweather="woeid=638242,value=temperature,unit=c" }
 Number Humidity      { yahooweather="woeid=638242,value=humidity,unit=c" }
-~~~~
+```
 
 with everything defined on in the { } part of the Item, we now merely reference 
 the Channels.
 
-~~~~java
+```java
 // openHAB 2 Syntax
 Number Temperature   { channel="yahooweather:weather:berlin#temperature" }
 Number Humidity      { channel="yahooweather:weather:berlin#humidity" }
-~~~~
+```
 
 As you can see, the Channel ID consists of the Thing's name, a "#" and the 
 Channel name.
@@ -624,33 +639,38 @@ Finally, I will reiterate, Things and Channels only exist for 2.0 version bindin
 Any 1.9 bindings still use the traditional binding configuration as described on 
 the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki). 
 
-##Retire openHAB 1.x
+## Retire openHAB 1.x
 
 Now that you have a fully running and tested openHAB 2 instance, now is the time to
 disable and remove openHAB 1.x. Stop openHAB 1.x if it is running:
 
-`sudo systemctl stop openhab.service`
+```bash
+sudo systemctl stop openhab.service
+```
 
 Next disable openHAB 1.x from starting as a service.
 
-`sudo systemctl disable openhab.service`
+```bash
+sudo systemctl disable openhab.service
+```
 
 Finally, enable openHAB 2 to start as a service.
 
-`sudo systemctl enable openhab2.service`
-
+```bash
+sudo systemctl enable openhab2.service
+```
 Back up your openHAB 1.x configurations and uninstall openHAB 1.x if desired.
 
-##Migrating to openHAB 2 Bindings
+## Migrating to openHAB 2 Bindings
 
-###Eclipse SmartHome Designer
+### Eclipse SmartHome Designer
 
 As mentioned above, there is a new Integrated Development Environment (IDE) for 
 openHAB 2 configurations, 
 [Eclipse SmartHome Designer](https://www.eclipse.org/smarthome/documentation/community/downloads.html).
 The old openHAB Designer is not compatible with openHAB 2.
 
-###My.openHAB
+### My.openHAB
 
 There is no 1.9 My.openHAB binding that is compatible with openHAB 2, only a
 native 2.0 binding. Furthermore, one can have only one openHAB instance linked to
@@ -680,7 +700,7 @@ should now show your system as being online and running openHAB 2.
 
 ![My.openHAB Account Menu](images/myopenhab-connected.png)
 
-###Other Bindings
+### Other Bindings
 
 One is not required to use 2.0 version addi-ons with openHAB 2. It is highly 
 recommended to do so as most cases where there is a 1.9 and a 2.0 add-on only the
@@ -693,14 +713,15 @@ Identify an add-on where there is a 2.0 version that you want to migrate to. Beg
 by identifying those Items that use this binding. On Linux/OSX this can easily be
 done with the following command
 
-`grep <binding> <openHAB 2 conf>/items/*`
-
+```bash
+grep <binding> <openHAB 2 conf>/items/*
+```
 where `<binding>` is the string used in the binding config on the Item. For example:
 
-~~~~bash
+```bash
 grep zwave /etc/openhab2/items/*
 grep astro /opt/openhab2/conf/items/*
-~~~~
+```
 
 Now comment out those Items to ensure there are no unexpected interactions between
 the old configurations and the new ones.
@@ -724,11 +745,13 @@ start to slowly appear in the Inbox. If left on its own this process can take fi
 minutes to an hour. However, one can press the scan button in PaperUI -> Inbox to
 speed this up. Or from the Karaf console one can run:
 
-`smarthome:discovery openhab-binding-<binding name>`
+```bash
+smarthome:discovery openhab-binding-<binding name>
+```
 
-##Managing the Inbox, Things, and Channels
+## Managing the Inbox, Things, and Channels
 
-###Managing the Inbox using PaperUI
+### Managing the Inbox using PaperUI
 
 In PaperUI, review the Items in the Inbox and accept those that should be included 
 in your configuration. You can press the eye icon to hide the Thing from the list 
@@ -736,11 +759,13 @@ if you never plan on including it, such as a dead zwave node. Once approved
 browsing to the Configuration -> Things menus and selecting the Thing from the list
 one can get the list of Channel IDs for that Thing. 
 
-###Managing the Inbox Using the Karaf Console
+### Managing the Inbox Using the Karaf Console
 
 In the Karaf console you can see everything in the Inbox with the command:
 
-`smarthome:inbox`
+```bash
+smarthome:inbox
+```
 
 ![Karaf console inbox listing](images/karaf-inbox.png)
 
@@ -749,21 +774,29 @@ NOTE: The screenshot above shows Ignored Inbox Items. New Items will not show
 
 To accept a Thing from the Inbox run:
 
-`smarthome:inbox approve <thingId>`
+```bash
+smarthome:inbox approve <thingId>
+```
 
 Once approved one can get the list of Channel IDs with the command:
 
-`smarthome:links list`
+```bash
+smarthome:links list
+```
 
 You can narrow down the list using grep:
 
-`smarthome:links list | grep <Thing ID>`
+```bash
+smarthome:links list | grep <Thing ID>
+```
 
 To ignore a Thing in the Inbox use the command:
 
-`smarthome:inbox ignore <thingId>`
+```bash
+smarthome:inbox ignore <thingId>
+```
 
-###Linking Channels to Items
+### Linking Channels to Items
 
 There is more than one way to link Channels to Items using PaperUI, Karaf console,
 and through the text configuration files. Only the text configuration files are 
@@ -774,18 +807,22 @@ Open your .items files where you commented out the Items that used the old versi
 of the binding. Replace the old binding's configuration with the Channel ID that
 Item represents. For example:
 
-`Switch S_L_Family "Family Room Lamp" <light> {zwave="10:command=switch_binary,respond_to_basic=true"}`
+```java
+Switch S_L_Family "Family Room Lamp" <light> {zwave="10:command=switch_binary,respond_to_basic=true"}
+```
 
 becomes
 
-`Switch S_L_Family "Family Room Lamp" <light> {channel="zwave:device:528f7aca:node10:switch_binary"}`
+```java
+Switch S_L_Family "Family Room Lamp" <light> {channel="zwave:device:528f7aca:node10:switch_binary"}
+```
 
 Congratulations, you are now using the 2.0 version of the binding. Assuming the 
 behaviors of the binding are the same, there should be no required changes to your
 Rules, Sitemaps, or Persitence. Test your Items each step of the way to verify 
 they are working.
 
-###Manually Creating Things
+### Manually Creating Things
 
 Not all 2.0 bindings support automatic discovery of Things or by their very nature
 require manual creation of Things. As with linking Channels to Items, there is 
