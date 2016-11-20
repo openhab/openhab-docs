@@ -26,7 +26,7 @@ max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.
 meteostick,Meteostick,"This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle. This is an RF receiver that can receive data directly from Davis weather devices (and others)"
 miele,Miele@home,"This binding integrates Miele@home appliances. Miele@home is a Zigbee based network to interconnect and control Miele appliances that are equipped with special modules. See [www.miele.de](http://www.miele.de) for the list of available appliances."
 milight,Milight,"The openHAB2 Milight binding allows to send commands to multiple Milight bridges."
-minecraft,Minecraft-Binding,"Binding integrating Minecraft with openHAB through the spigot plugin"
+minecraft,Minecraft,"This binding integrates Minecraft with openHAB through the [spigot plugin](https://github.com/ibaton/bukkit-openhab-plugin/releases/download/1.5/OHMinecraft.jar) ([sources](https://github.com/ibaton/bukkit-openhab-plugin/tree/master))."
 netatmo,Netatmo,"The Netatmo binding integrates the following Netatmo products :"
 network,Network,"This binding allows to check, whether a device is currently available on the network."
 oceanic,Oceanic,"This binding integrates the Oceanic water softener and management system (www.oceanic.be). The binding supports the Limex IQ and Limex Pro water softeners. The Oceanic systems are also distributed by Syr in Germany (www.syr.de). In order to integrate the Limex into openHAB, the optional CAN-Serial gateway has to be installed"
