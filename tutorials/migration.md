@@ -158,13 +158,12 @@ Next open for editing `addons.cfg`. This file contains parameters related to
 add-ons including allowing one to choose which add-ons to install. For now just
 set the following parameters:
 
-- `package = minimal` - minimal or standard are good choices here. Standard
-will include the standard UIs, though you can choose those individually later
-- `remote = true` - required for the installation of legacy 1.x and 
-experimental add-ons
+- `package = expert` - expert is good choices here. It will include the standard
+UIs, all transformation services and the 1.x compatibility layer,
+though you can choose your UIs and add-ons individually later.
+- `remote = true` - required for the installation of legacy 1.x add-ons
 - `legacy = true` - required to install the 1.9 version of an add-on for which 
 there is a 2.0 native version
-- `experimental = true` - required to install experimental add-ons
 - `binding = ` - a comma separated list of the bindings from openHAB 1.x that
 you use. If you are in doubt of the name of a binding, look in openhab.cfg for
 that binding's configurations. The first part of the tag in openhab.cfg will be
@@ -202,10 +201,12 @@ An example addons.cfg:
 # The base installation package of this openHAB instance (default is "standard")
 # Valid options:
 #   - minimal  : Installation only with dashboard, but no UIs or other addons
-#   - standard : Typical installation with all standards UIs
+#   - simple   : Setup for using openHAB purely through UIs - you need to expect MANY constraints in functionality!
+#   - standard : Default setup for normal users, best for textual setup
+#   - expert   : Setup for expoert users, especially for people migrating from openHAB 1.x
 #   - demo     : A demo setup which includes UIs, a few bindings, config files etc.
 #
-#package = standard
+package = standard
 
 # Access Remote Add-on Repositories
 # Defines whether the remote openHAB add-on repository should be used for browsing and installing add-ons.
@@ -214,16 +215,10 @@ An example addons.cfg:
 #
 remote = true
 
-# Include legacy 1.x bindings. If set to true, it also allows the installation of 1.x bindings for which there is
+# Include legacy 1.x bindings. If set to true, it also allows the installation of 1.x bindings for which there is 
 # already a 2.x version available (requires remote repo access, see above). (default is false)
 #
 legacy = true
-
-# Include experimental add-ons. If set to true, it also allows the installation of extensions that are not (yet) part
-# of the official distribution and need further testing (requires remote repo access, see above). (default is false)
-#
-experimental = true
-
 
 # A comma-separated list of bindings to install (e.g. "sonos,knx,zwave")
 binding = zwave,astro1,http,mqtt,nest,networkhealth,ntp

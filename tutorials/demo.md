@@ -23,7 +23,7 @@ You will find the following folders:
  - `userdata`: Here you will find all the data that is generated during runtime: log files, database files, etc. In theory this should be the only folder where openHAB needs write permission on.
  - `addons`: Here you can drop add-ons (or any other OSGi bundles) that you want to be deployed in your instance. These can be add-ons for openHAB 1.x and 2.x likewise. Note that all "normal" add-ons are already included in the openHAB distribution and all you need is to name them in your 'addons.cfg' file (see below). Hence the `addons` folder is mainly useful if you have received jars from other sources and want to install and test them.
 
-## Choosing Demo as a Base Package and further add-ons to be Installed
+## Choosing Demo as a Base Package and Further Add-ons to be Installed
 
 The demo package consists of example configuration files and samples of add-ons and UIs. In order to install the demo, you must edit the file 'conf/services/addons.cfg'.
 Uncomment the line `package=` and set it to `demo` as shown below:
@@ -32,15 +32,14 @@ Uncomment the line `package=` and set it to `demo` as shown below:
 # The base installation package of this openHAB instance (default is "standard")
 # Valid options:
 #   - minimal  : Installation only with dashboard, but no UIs or other addons
-#   - standard : Typical installation with all standards UIs
+#   - simple   : Setup for using openHAB purely through UIs - you need to expect MANY constraints in functionality!
+#   - standard : Default setup for normal users, best for textual setup
+#   - expert   : Setup for expoert users, especially for people migrating from openHAB 1.x
 #   - demo     : A demo setup which includes UIs, a few bindings, config files etc.
+#
 package = demo
-
 ...
 ```  
-
-_NOTE:_ As long as you have selected the `demo` package in `addons.cfg`, you are not able to uninstall any of the installed addons.
-So once you are ready to build your personal setup, don't forget to switch the base package back to `standard`.
 
 ## Starting the Runtime
 
