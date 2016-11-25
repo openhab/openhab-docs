@@ -158,7 +158,7 @@ Next open for editing `addons.cfg`. This file contains parameters related to
 add-ons including allowing one to choose which add-ons to install. For now just
 set the following parameters:
 
-- `package = expert` - expert is good choices here. It will include the standard
+- `package = expert` - expert is a good choice here. It will include the standard
 UIs, all transformation services and the 1.x compatibility layer,
 though you can choose your UIs and add-ons individually later.
 - `remote = true` - required for the installation of legacy 1.x add-ons
