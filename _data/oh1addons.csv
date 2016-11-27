@@ -22,11 +22,11 @@ binding,DMX OLA Binding
 binding,DSMR Binding
 binding,eBUS Binding
 binding,Ecobee Binding
+binding,Waterkotte Ecotouch Binding
 binding,Energenie Binding
 binding,EnOcean Binding
 binding,Enphase Energy Binding
 binding,Epson Projector Binding
-binding,Exec Binding
 binding,Fatek PLC Binding
 binding,Freeswitch Binding
 binding,FS20 Binding
@@ -74,6 +74,7 @@ binding,Swegon Ventilation Binding
 binding,TCP/UDP Binding
 binding,Tellstick Binding
 binding,Tinkerforge Binding
+binding,Universal Powerline Bus Binding
 binding,Weather Binding
 binding,WOL (Wake-on-LAN) Binding
 binding,XBMC Binding
