@@ -1,48 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1">
- {% include base.html %}
-<!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
-<title>{% if page.title != nil %}{{ page.title }} - {% endif %}openHAB - Empowering the Smart Home</title>
- 
-<!-- CSS -->
-<link href="{{base}}/css/materialize.css" type="text/css" rel="stylesheet"
-	media="screen,projection" />
-<link href="{{base}}/css/highlight.github.css" type="text/css" rel="stylesheet"
-    	media="screen,projection" />
-<link href="{{base}}/css/styles.css" rel="stylesheet" />
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  {% include base.html %}
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>{% if page.title != nil %}{{ page.title }} - {% endif %}openHAB - Empowering the Smart Home</title>
 
-<!-- Font -->
-<link href='https://fonts.googleapis.com/css?family=Lato:300,400,700'
-	rel='stylesheet' type='text/css' />
-    
+  <!-- CSS -->
+  <link href="{{base}}/css/materialize.css" type="text/css" rel="stylesheet"
+  media="screen,projection" />
+  <link href="{{base}}/css/highlight.github.css" type="text/css" rel="stylesheet"
+  media="screen,projection" />
+  <link href="{{base}}/css/styles.css" rel="stylesheet" />
+
+  <!-- Font -->
+  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700'
+  rel='stylesheet' type='text/css' />
 </head>
-<body class="{{ include.bodyClass }}">
-	<div id="header" class="navbar-fixed">
-		<nav role="navigation">
-			<div class="container">
-				<div class="nav-wrapper">
-					<a href="{{base}}/index.html"><img id="logo" src="/images/logo.png" /></a>
-					<a href="#" data-activates="nav-mobile" class="button-collapse"><i
-						class="mdi-navigation-menu"></i></a>
-					<ul class="right hide-on-med-and-down">
 
-                    <li><a href="{{base}}/tutorials">Tutorials</a></li>
-                    <li><a href="{{base}}/overview.html">User Manual</a></li>
-                    <li><a href="{{docu}}/developers">Developer Guide</a></li>
-					<li><a href="https://github.com/openhab/openhab-distro">GitHub</a></li>
-					</ul>
-					<ul id="nav-mobile" class="side-nav">
-                        <li><a href="{{base}}/index.html">Home</a></li>
-	                    <li><a href="{{base}}/tutorials">Tutorials</a></li>
-                        <li><a href="{{base}}/overview.html">User Manual</a></li>
-                        <li><a href="{{docu}}/developers">Developer Guide</a></li>
-						<li><a href="https://github.com/openhab/openhab-distro">GitHub</a></li>
-					</ul>
-				</div>
-			</div>
-		</nav>
-	</div>
+<body class="{{ include.bodyClass }}">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="{{base}}/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
+            <ul class="right hide-on-med-and-down">
+              <li><a href="{{base}}/tutorials">Tutorials</a></li>
+              <li><a href="{{base}}/overview.html">User Manual</a></li>
+              <li><a href="{{docu}}/developers">Developer Guide</a></li>
+              <li><a href="https://github.com/openhab/openhab-distro">GitHub</a></li>
+            </ul>
+            <ul id="nav-mobile" class="side-nav">
+              <li><a href="{{base}}/index.html">Home</a></li>
+              <li><a href="{{base}}/tutorials">Tutorials</a></li>
+              <li><a href="{{base}}/overview.html">User Manual</a></li>
+              <li><a href="{{docu}}/developers">Developer Guide</a></li>
+              <li><a href="https://github.com/openhab/openhab-distro">GitHub</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </div>
