@@ -1,56 +1,66 @@
 {% include base.html %} {% assign docu = base %}
 
 <ul class="nav">
-  <li><a href="{{docu}}/overview.html">Overview</a></li>
+  <li><a href="{{docu}}/introduction.html">Introduction</a></li>
   <li><a href="{{docu}}/concepts/index.html">Concepts</a>
     <ul>
       <li><a href="{{docu}}/concepts/index.html">Overview</a></li>
-      <li><a href="{{docu}}/concepts/items.html">Items</a></li>
       <li><a href="{{docu}}/concepts/things.html">Things</a></li>
+      <li><a href="{{docu}}/concepts/items.html">Items</a></li>
       <li><a href="{{docu}}/concepts/discovery.html">Inbox &amp; Discovery</a></li>
       <li><a href="{{docu}}/concepts/audio.html">Audio &amp; Voice</a></li>
     </ul>
   </li>
-  <li><a href="{{docu}}/installation/index.html">Installation</a>
+  <li><a href="{{docu}}/installation/index.html">Installation &amp; Setup</a>
     <ul>
       <li><a href="{{docu}}/installation/index.html">Overview</a></li>
+      <hr></hr>
       <li><a href="{{docu}}/installation/linux.html">Linux</a></li>
-      <li><a href="{{docu}}/installation/macosx.html">Mac OS X</a></li>
       <li><a href="{{docu}}/installation/windows.html">Windows</a></li>
-      <li><a href="{{docu}}/installation/docker.html">Docker</a></li>
+      <li><a href="{{docu}}/installation/macosx.html">Mac OS X</a></li>
+      <hr></hr>
       <li><a href="{{docu}}/installation/rasppi.html">Raspberry Pi</a></li>
       <li><a href="{{docu}}/installation/pine.html">PINE64</a></li>
+      <li><a href="{{docu}}/installation/openhabian.html">openHABian</a></li>
+      <li><a href="{{docu}}/installation/docker.html">Docker</a></li>
       <li><a href="{{docu}}/installation/synology.html">Synology</a></li>
+      <hr></hr>
       <li><a href="{{docu}}/installation/designer.html">openHAB Designer</a></li>
+      <li><a href="{{docu}}/installation/nginx.html">Authentication &amp; Encryption</a></li>
     </ul>
   </li>
-  <li><a href="{{docu}}/configuration/nginx.html">Configuration</a>
+  <li><a href="{{docu}}/configuration/index.html">Configuration</a>
     <ul>
-      <li><a href="{{docu}}/configuration/nginx.html">Reverse Proxy</a></li>
+      <li><a href="{{docu}}/configuration/index.html">Overview</a></li>
+      <hr></hr>
+      <li><a href="{{docu}}/configuration/things.html">Things</a></li>
+      <li><a href="{{docu}}/configuration/items.html">Items</a></li>
+      <li><a href="{{docu}}/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="{{docu}}/configuration/transform.html">Transformations</a></li>
+      <li><a href="{{docu}}/configuration/persistence.html">Persistence</a></li>
+      <li><a href="{{docu}}/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="{{docu}}/configuration/services.html">Services</a></li>
+      <hr></hr>
+      <li><a href="{{docu}}/configuration/paperui-config.html">Paper UI System Configuration</a></li>
+      <li><a href="{{docu}}/configuration/paperui-devices.html">Paper UI Device Configuration</a></li>
+      <li><a href="{{docu}}/configuration/rules-ng.html">Next-Gen Rules</a></li>
     </ul>
   </li>
   <li><a href="{{docu}}/administration/index.html">Administration</a>
     <ul>
       <li><a href="{{docu}}/administration/index.html">Overview</a></li>
-      <li><a href="{{docu}}/administration/console.html">Console</a></li>
-      <li><a href="{{docu}}/administration/logging.html">Logging</a></li>
-      <li><a href="{{docu}}/administration/bundles.html">Bundle Management</a></li>
+      <hr></hr>
+      <li><a href="{{docu}}/administration/console.html">Karaf Console</a></li>
       <li><a href="{{docu}}/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="{{docu}}/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="{{docu}}/administration/logging.html">Logging</a></li>
+      <hr></hr>
+      <li><a href="{{docu}}/administration/jsondb.html">JsonDB Storage</a></li>
     </ul>
   </li>
   <li><a href="{{docu}}/features/index.html">Features</a>
     <ul>
-      <li><a href="{{docu}}/features/index.html">Overview</a></li>
-      <li><a href="{{docu}}/features/items.html">Items</a></li>
-      <li><a href="{{docu}}/features/sitemap.html">Sitemaps</a></li>
-      <li><a href="{{docu}}/features/persistence.html">Persistence</a></li>
       <li><a href="{{docu}}/features/multimedia.html">Multimedia</a></li>
-      <li><a href="{{docu}}/features/automation/ruledsl.html">Automation</a>
-        <ul>
-          <li><a href="{{docu}}/features/automation/ruledsl.html">Textual Rules</a></li>
-          <li><a href="{{docu}}/features/automation/ngrules.html">Next-Gen Rules</a></li>
-        </ul>
-      </li>
     </ul>
   </li>
   <li><a href="{{docu}}/addons/index.html">Add-ons</a>
@@ -63,6 +73,7 @@
           {% endfor %}
         </ul>
       </li>
+      <li><a href="{{docu}}/addons/1xaddons.html">1.x Legacy Bindings &amp; Add-ons</a></li>
       <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
         <ul>
           {% for voice in site.data.voice %}
@@ -70,7 +81,7 @@
           {% endfor %}
         </ul>
       </li>
-      <li><a href="{{docu}}/addons/io.html">System Integrations</a>
+      <li><a href="{{docu}}/addons/io.html">3rd Party System Integrations</a>
         <ul>
           <li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>
           <li><a href="{{docu}}/addons/io/hueemulation/readme.html">Amazon Echo</a></li>
@@ -80,15 +91,17 @@
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
         <ul>
           <li><a href="{{docu}}/addons/uis.html">Overview</a></li>
-          <li><a href="{{docu}}/addons/uis/basic/readme.html">Basic UI</a></li>
-          <li><a href="{{docu}}/addons/uis/classic/readme.html">Classic UI</a></li>
+          <hr></hr>
           <li><a href="{{docu}}/addons/uis/paper/readme.html">Paper UI</a></li>
           <li><a href="{{docu}}/addons/uis/habmin/readme.html">HABmin</a></li>
+          <hr></hr>
+          <li><a href="{{docu}}/addons/uis/basic/readme.html">Basic UI</a></li>
           <li><a href="{{docu}}/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          <li><a href="{{docu}}/addons/uis/classic/readme.html">Classic UI</a></li>
+          <hr></hr>
           <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Classic Iconset</a></li>
         </ul>
       </li>
-      <li><a href="{{docu}}/addons/1xaddons.html">1.x Add-ons</a></li>
     </ul>
   </li>
   <li><a href="{{docu}}/appendix/contributing.html">Appendix</a>

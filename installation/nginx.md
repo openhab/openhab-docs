@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: NGINX Reverse Proxy
+title: Authentication and Encryption through NGINX Reverse Proxy
 ---
 
 {% include base.html %}
@@ -10,7 +10,7 @@ A reverse proxy simply directs client requests to the appropriate server. This m
 
 Running openHAB behind a reverse proxy allows you to access your openHAB runtime via port 80 (HTTP) and 443 (HTTPS). It also provides you a simple way of **protecting your server** with authentication and secure certificates.
 
-This page is structured as follows: 
+This page is structured as follows:
 
 {::options toc_levels="2..4"/}
 
@@ -66,7 +66,7 @@ After saving over the file but **before you commit** the changes to our server, 
 sudo nginx -t
 ```
 
-If you see that the test is successful, you can restart the NGINX service with... 
+If you see that the test is successful, you can restart the NGINX service with...
 
 ```shell
 sudo service nginx restart
@@ -185,7 +185,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
   Let's Encrypt needs to validate that the server has control of the domain, the most simple way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: */.well-known/acme-challenge*. Since the proxy only forwards traffic to the openHAB server, the server needs to be told to handle requests at this address differently.
 
-  First, **create a directory** that Certbot can be given access to: 
+  First, **create a directory** that Certbot can be given access to:
 
   ```shell
   sudo mkdir -p /var/www/mydomain
@@ -214,7 +214,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
   ```nginx
   		ssl_certificate                 /etc/letsencrypt/live/mydomain_or_myip/fullchain.pem;
   		ssl_certificate_key             /etc/letsencrypt/live/mydomain_or_myip/privkey.pem;
-  		add_header                      Strict-Transport-Security "max-age=31536000"; 
+  		add_header                      Strict-Transport-Security "max-age=31536000";
   ```
 
 ### Setting your NGINX Server to listen to the HTTPS port
@@ -252,7 +252,7 @@ server {
 server {
 	listen                          443 ssl;
 	server_name                     mydomain_or_myip;
-		
+
 	ssl_certificate                 /etc/letsencrypt/live/mydomain/fullchain.pem; # or /etc/ssl/openhab.crt
 	ssl_certificate_key             /etc/letsencrypt/live/mydomain/privkey.pem;   # or /etc/ssl/openhab.key
 	add_header                      Strict-Transport-Security "max-age=31536000"; # Remove if using self-signed and are having trouble.

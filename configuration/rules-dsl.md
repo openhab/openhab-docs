@@ -21,7 +21,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 
 ### File Location
 
-Rules are placed in the folder `${openhab.home}/conf/rules`. The [demo setup](../../tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
+Rules are placed in the folder `${openhab.home}/conf/rules`. The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules. All rules of a file share a common execution context, i.e. they can access and exchange variables with each other. It therefore makes sense to have different rule files for different use-cases or categories.
 
@@ -53,7 +53,7 @@ import java.net.URI
 
 A few default imports are already done, so classes from these packages do not need to be explicitly imported:
 
-```
+```java
 org.eclipse.smarthome.core.items
 org.eclipse.smarthome.core.persistence
 org.eclipse.smarthome.core.library.types
@@ -89,7 +89,7 @@ when
     ...
 then
     <SCRIPT_BLOCK>
-end    
+end
 ```
 
 A rule can have any number of trigger conditions, but must at least have one.
