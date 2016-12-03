@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: Features
+title: Configuration
 ---
 
 {% include base.html %}
 
-# Features
+# Configuration
 
 to be done...
