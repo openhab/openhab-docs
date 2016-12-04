@@ -26,8 +26,13 @@ Therefore, tutorials and help you may find on the internet for openHAB 1 **might
     - **Extendibility:** Your system should be capable of running additional software like an MQTT broker or a persistence and graphing software.
     - **Peripherals:** Depending on your home automation hardware, you will need additional peripheral devices such as a WiFi interface or a special USB radio module.
 
-  Many devices are suited to host a continuous installation of openHAB 2.
-  The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, experiences with many other devices can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
+Many devices are suited to host a continuous installation of openHAB 2.
+Experiences with different devices and environments can be found in the [community forum hardware section](https://community.openhab.org/c/hardware/server).
+
+The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular, especially as we offer a quick setup with [openHABian](openhabian.html).
+A popular alternative is [our solution for the Synology DiskStation](synology.html), which many users already own in their homes.
+
+The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB 2 experience on existing debian/ubuntu based Linux systems.
 
 ## Prerequisites
 

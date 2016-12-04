@@ -14,6 +14,5 @@ openHABian aims to provide a self-configuring Raspberry Pi system specific to th
 For further details, please have a look at:
 
 * [https://community.openhab.org/t/13379](https://community.openhab.org/t/13379)
-* [https://github.com/ThomDietrich/openhabian](https://github.com/ThomDietrich/openhabian)
 
 {% include contribution-wanted.html %}
