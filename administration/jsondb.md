@@ -1,9 +1,10 @@
 ---
 layout: documentation
+title: JsonDB Storage
 ---
 
 {% include base.html %}
 
-# Installation on a PINE A64
+# JsonDB Storage
 
 {% include contribution-wanted.html %}

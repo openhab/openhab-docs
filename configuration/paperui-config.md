@@ -1,9 +1,10 @@
 ---
 layout: documentation
+title: Paper UI System Configuration
 ---
 
 {% include base.html %}
 
-# Installation on a PINE A64
+# Paper UI System Configuration
 
 {% include contribution-wanted.html %}
