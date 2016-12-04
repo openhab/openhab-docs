@@ -37,15 +37,17 @@ openHAB may be unstable and slower executed by OpenJDK.
 
 > Oracle Java offers significant performance advantages over OpenJDK on ARM platforms, and will expand the range of Java applications that run well [on the Raspberry Pi].
 
-Check your current Java version by opening a console and typing "java -version":
+As for now, a pre-release Java 9 installation is not recommended and is not yet supported by openHAB 2.
+
+Check your current Java version by opening a console and typing `java -version`:
 
 ```text
-java version "1.8.0 73"
-Java(TM) SE Runtime Environment (build 1.8.0_73-b02)
-Java HotSpot(TM) 64-Bit Server VM (build 25.73-b02, mixed mode)
+java version "1.8.0_111"
+Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
+Java HotSpot(TM) Client VM (build 25.111-b14, mixed mode)
 ```
 
-If your output differs, please install Oracle Java 8.
+For best compatibility, the minimum revision 111 is recommeded but not needed.
 
 ## Setup variants
 
