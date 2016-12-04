@@ -14,18 +14,18 @@ Items have a **state** and are used through **events**.
 They can be **read from**, or **written to**, in order to interact with them.
 
 Items can be **bound to bindings** i.e. for reading the status of e.g. a bulb or for setting it.
-Read the [docs](http://docs.openhab.org/addons/bindings.html) page for the respective binding to get more information about possible connections and examples.
+Read the [docs]({{base}}/addons/bindings.html) page for the respective binding to get more information about possible connections and examples.
 
 There are two methods for defining items.
 If the binding supports it, PaperUI can do this.
 Otherwise items must be defined in one or more files in the `items` folder.
 Files here must have the extension `.items` but you can make as many `.items` files as you need/want however each item must be unique across them all.
-Refer to the [installation docs](http://docs.openhab.org/installation/index.html) to determine your specific installations folder structure.
+Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
 
 Groups are also defined in the `.items` files.
 Groups can be nested inside other groups, and items can be in none, one, or multiple groups.
 
-Typically items are defined using the [openHAB Designer](http://docs.openhab.org/installation/designer.html) by editing the items definition files.
+Typically items are defined using the [openHAB Designer]({{base}}/installation/designer.html) by editing the items definition files.
 Doing so you will have full IDE support like syntax checking, context assist etc.
 
 ## Item Syntax
@@ -69,7 +69,7 @@ If you want to change one of these values you can use any of four item types.
 * Set the brightness to a specific value (`Number` item)
 * Change the bulb's color (`Color` item)
 
-All available openHAB2 item types and their relevant commands can be viewed [here](http://docs.openhab.org/concepts/items.html).
+All available openHAB2 item types and their relevant commands can be viewed [here]({{base}}/concepts/items.html).
 
 ### Dimmers vs Switches
 While a Dimmer item can accept either On/Off, Increase/Decrease, or Percent updates, Dimmer items store their state as a Percent value.
@@ -92,13 +92,13 @@ When the Switch widget is used, it sends ON or OFF commands to the item, but the
 When the slider widget is used, it sends Percent commands to the item, which are used as the item's state.
 In the example above, if you move the Slider widget to 60%, move the Switch to OFF, and finally move the switch to ON, the item's state will be 100%.
 
-## Item names
+## Item Name
 The item name is the unique name of the item which is used in the .sitemap, .rule etc. files.
 The name must be unique across all item files.
 The name should only consist of letters, numbers and the underscore character.
 Spaces cannot be used.
 
-## Label text
+## Item Label
 The label text has two purposes.
 First, this text is used to display a description of the specific item (for example, in the sitemap).
 Second, it can be used to format or transform output from the item (for example, making DateTime output more readable).
@@ -241,7 +241,7 @@ FIRST_QUARTER=🌓 First Quarter
 ```
 
 ## Icons
-OpenHAB provides you a set of [basic icons](http://docs.openhab.org/addons/iconsets/classic/readme.html) by default.
+OpenHAB provides you a set of [basic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 However if you wish to use custom icons you need to place them inside the `conf/icons/classic/` folder.
 These icons will be used in all of the openHAB frontends.
 The images must be in .png or .svg format, and have a name with only small letters and a hyphen or underscore (if required).
@@ -249,7 +249,7 @@ The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you
 
 As an example, to use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>`.
 
-## Dynamic icons
+## Dynamic Icons
 You can dynamically change the icon depending on the item state.
 You have to provide a default file and one icon file per state with the states name append to the icons name.
 
@@ -280,7 +280,7 @@ You bind an item to a binding by adding a binding definition in curly brackets a
 Where _ns_ is the namespace for a certain binding like "network", "netatmo", "zwave" etc.
 Every binding defines what values must be given in the binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
-You must have a look at your [Bindings](http://docs.openhab.org/addons/bindings.html) configuration section to know what to use.
+You must have a look at your [Bindings]({{base}}/addons/bindings.html) configuration section to know what to use.
 Some typical examples are:
 
 ```xtend
@@ -304,7 +304,7 @@ For all other native openHAB2 bindings, configuration is done through a `binding
 ## Restore States
 When restarting your openHAB installation you may find there are times when your logs indicate some items are UNDEF.
 This is because, by default, item states are not persisted when openHAB restarts.
-To have your states persist across restarts you will need to install a [Persistence](http://docs.openhab.org/features/persistence.html) extension.
+To have your states persist across restarts you will need to install a [Persistence]({{base}}/configuration/persistence.html) extension.
 
 Specifically, you need to use a `restoreOnStartup` strategy for all your items.
 Then whatever state they were in before the restart will be restored automatically.
