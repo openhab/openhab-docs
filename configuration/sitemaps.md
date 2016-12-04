@@ -136,13 +136,11 @@ This provides the flexibility to present items in the way desired in your home a
 **General remarks on parameters:**
 
 * In the following definitions, parameters in `[square brackets]` are optional, parameters in front are considered more relevant.
-* Common parameters, also known from [items definition](items.html):
-  * `item` defines the name of the item you want to present (e.g. `Temperature`), [more details](items.html).
-  * `label` sets the textual description besides the preprocessed item data (e.g. "`Now [%s °C]`"), [more details](items.html).
-  * `icon` is the name of the icon file to show next to the element, [more details](items.html).
+* Common parameters, also known from [items definition](items.html#item-syntax):
+  * `item` defines the name of the item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
+  * `label` sets the textual description besides the preprocessed item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
+  * `icon` is the name of the icon file to show next to the element, [more details](items.html#icons).
 * Additional parameters like `mappings` or `valuecolor` are described below.
-
-<!-- TODO: turn links to article subheaders -->
 
 ### Element Type 'Frame'
 
@@ -166,9 +164,7 @@ Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 
 Presents data as normal text.
 Most item types can be used, the values can be prepared and reformatted by using string formatters and transformations.
-Please check with the documentation on the [item label](items.html) for details.
-
-<!--TODO: Link to items-labels -->
+Please check with the documentation on the [item label](items.html#item-label) for details.
 
 ![Presentation of the text element in BasicUI](images/sitemap_demo_text.png)
 
