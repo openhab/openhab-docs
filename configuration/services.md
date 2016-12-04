@@ -1,9 +1,10 @@
 ---
 layout: documentation
+title: Services
 ---
 
 {% include base.html %}
 
-# Installation on a PINE A64
+# Services
 
 {% include contribution-wanted.html %}

@@ -5,6 +5,13 @@ title: Persistence
 
 {% include base.html %}
 
-# Sitemaps
+# Persistence
 
-to be done...
+Persistence support stores item states over time (a time series).
+openHAB is not restricted to a single data store.
+Different stores can co-exist and be configured independently.
+For further details, please check:
+
+* [The openHAB 1.x wiki persistence article](https://github.com/openhab/openhab/wiki/Persistence)
+
+{% include contribution-wanted.html %}

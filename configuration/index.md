@@ -8,3 +8,5 @@ title: Configuration
 # Configuration
 
 to be done...
+
+{% include contribution-wanted.html %}
