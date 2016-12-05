@@ -16,59 +16,47 @@ import org.osgi.framework.ServiceReference;
 import org.osgi.framework.ServiceRegistration;
 
 /**
- * The {@link BasicRadioActivator} class is responsible to activate this module.
+ * A class used to customize the starting and stopping of our bundle. When the
+ * bundle is started and stopped, the start and stop methods of the
+ * BundleActivator interface are called.
  * 
- * This module registers the {@link BasicRadio} Service and sets its
- * currentElectricityProvider
- *
  * @author Kiril Atanasov - Initial contribution
  */
 public class BasicRadioActivator implements BundleActivator {
 
-    /**
-     * {@link #basicRadioServiceRegistration} is used to unregister the service
-     * when the bundle is stopped
-     */
-    private ServiceRegistration<ElectricityConsumer> basicRadioServiceRegistration;
+	/**
+	 * An object which is returned by the Framework when the bundle is
+	 * successfully registered as service.
+	 * <p>
+	 * It will be used in the {@link #stop(BundleContext)} method to unregister
+	 * this bundle.
+	 */
+	private ServiceRegistration<ElectricityConsumer> basicRadioServiceRegistration;
 
-    private BasicRadio basicRadioService;
+	/**
+	 * An instance of the {@link BasicRadio} class which will be registered as
+	 * service
+	 */
+	private BasicRadio basicRadioService;
 
-    @SuppressWarnings("unchecked")
-    @Override
-    public void start(BundleContext context) throws Exception {
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	@Override
+	public void start(BundleContext context) throws Exception {
+		// register the BasicRadio class as a service
+		basicRadioServiceRegistration = (ServiceRegistration<ElectricityConsumer>) context
+				.registerService(ElectricityConsumer.class.getName(), new BasicRadio(), null);
+		// getting the registered service from the registry
+		ServiceReference basicRadioServiceReference = basicRadioServiceRegistration.getReference();
+		basicRadioService = (BasicRadio) context.getService(basicRadioServiceReference);
+		// start the radio
+		basicRadioService.startConsuming();
+	}
 
-        /*
-         * registering BasicRadio as a service and saving the service
-         * registration in basicRadioServiceRegistration
-         */
-        basicRadioServiceRegistration = (ServiceRegistration<ElectricityConsumer>) context
-                .registerService(ElectricityConsumer.class.getName(), new BasicRadio(), null);
-
-        /*
-         * getting a reference to the service using the ServiceRegistration
-         * object
-         */
-        @SuppressWarnings("rawtypes")
-        ServiceReference basicRadioServiceReference = basicRadioServiceRegistration.getReference();
-
-        // getting the service using the service reference
-        basicRadioService = (BasicRadio) context.getService(basicRadioServiceReference);
-
-        // starting the BasicRadio
-        basicRadioService.start();
-
-    }
-
-    /**
-     * {@inheritDoc}
-     * <p>
-     * Stops the basicRadioService from broadcasting. Unregisters the
-     * basicRadioServiceRegistration
-     */
-    @Override
-    public void stop(BundleContext context) throws Exception {
-        basicRadioService.stop();
-        basicRadioServiceRegistration.unregister();
-    }
-
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		// stop the radio broadcasting
+		basicRadioService.stopConsuming();
+		// remove the service from the registry
+		basicRadioServiceRegistration.unregister();
+	}
 }

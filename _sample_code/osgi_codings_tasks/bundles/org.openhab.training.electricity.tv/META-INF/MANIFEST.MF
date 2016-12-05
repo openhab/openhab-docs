@@ -8,10 +8,11 @@ Bundle-License: http://www.eclipse.org/legal/epl-v10.html
 Bundle-SymbolicName: org.openhab.training.electricity.tv
 Import-Package: org.openhab.training.electricity.battery,
  org.openhab.training.electricity.consumer,
- org.openhab.training.electricity.dynamicconsumer,
+ org.openhab.training.electricity.consumer.dynamic,
  org.openhab.training.electricity.homenetwork,
  org.openhab.training.electricity.provider,
  org.osgi.framework,
  org.osgi.util.tracker,
  org.slf4j
-Bundle-Activator: org.openhab.training.electricity.tv.TVActivator
+Export-Package: org.openhab.training.electricity.tv
+Bundle-Activator: org.openhab.training.electricity.tv.TV

@@ -8,41 +8,55 @@
  */
 package org.openhab.training.electricity.battery;
 
+import org.openhab.training.electricity.battery.internal.BatteryActivator;
 import org.openhab.training.electricity.provider.ElectricityProvider;
 import org.openhab.training.electricity.provider.ElectricityProviderType;
+import org.osgi.framework.BundleActivator;
 
 /**
- * The class {@link Battery} is an {@link ElectricityProvider} which has a
- * limited amount of energy it can provide.
+ * Represents an {@link ElectricityProvider} which has a limited amount of
+ * energy it can provide.
+ * <p>
+ * As a regular java class, it can implement {@link ElectricityProvider} and
+ * {@link BundleActivator} at the same time but we prefer to create a separate
+ * {@link BatteryActivator} class. In that way the code logic would be easier to
+ * follow.
  * 
  * @author Kiril Atanasov - Initial contribution
  */
 public class Battery implements ElectricityProvider {
 
-    /** The amount of energy the Battery can provide */
-    protected int energyAmount = 20;
+	/** The amount of energy the Battery can provide */
+	protected int capacity = 20;
 
-    /**
-     * Checks if the {@link Battery} has enough energy to power a consumer,
-     * based on its consumption. The method is synchronized in case there are
-     * multiple consumers using the {@link Battery} service at the same time.
-     * 
-     * @param value
-     *            the amount of energy that is being demanded.
-     * @return true if the {@link Battery} can provide the demanded amount of
-     *         energy, false otherwise.
-     */
-    @Override
-    public synchronized boolean provide(int value) {
-        if (value >= 0 && value <= energyAmount) {
-            energyAmount -= value;
-            return true;
-        }
-        return false;
-    }
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * The method is synchronized in case there are multiple consumers using the
+	 * battery at the same time.
+	 */
 
-    @Override
-    public ElectricityProviderType getType() {
-        return ElectricityProviderType.BATTERY;
-    }
+	@Override
+	public synchronized boolean provide(int consumerConsumption) {
+		if (consumerConsumption >= 0 && consumerConsumption <= capacity) {
+			capacity -= consumerConsumption;
+			return true;
+		}
+		return false;
+	}
+
+	@Override
+	public ElectricityProviderType getType() {
+		return ElectricityProviderType.BATTERY;
+	}
+
+	@Override
+	public String toString() {
+		return "Battery";
+	}
+
+	@Override
+	public String getEnergy() {
+		return new Integer(capacity).toString();
+	}
 }

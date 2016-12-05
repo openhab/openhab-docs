@@ -12,18 +12,19 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- * A {@link TimeUtilities} is a class used for working with the system time.
+ * A class used for working with the system time.
  *
  * @author Kiril Atanasov - Initial Contribution
  */
 public class TimeUtilities {
+	
     /** The format that will be applied to the system time. */
     public final static String TIME_FORMAT = "HH:mm";
 
     /**
-     * Returns the system time in a format HH:MM
+     * Gets the current system time and formats it by the given {@link TimeUtilities#TIME_FORMAT}
      * 
-     * @return the system time in a format HH:MM
+     * @return the system time in a {@link TimeUtilities#TIME_FORMAT}
      */
     public static String getCurrentTimeStamp() {
         long timeInMiliseconds = System.currentTimeMillis();

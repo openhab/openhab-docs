@@ -9,4 +9,4 @@ Bundle-SymbolicName: org.openhab.training.helloosgi.modified
 Import-Package: org.openhab.training.utils,
  org.osgi.framework,
  org.slf4j
-Bundle-Activator: org.openhab.training.helloosgi.modified.HelloOSGiActivator
+Bundle-Activator: org.openhab.training.helloosgi.modified.HelloOSGiModifiedActivator

@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-Name: Battery DS
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-SymbolicName: org.openhab.training.electricity.battery.ds
+Import-Package: org.openhab.training.electricity.battery.ds,
+ org.openhab.training.electricity.provider,
+ org.osgi.framework,
+ org.slf4j;version="1.7.2"
+Export-Package: org.openhab.training.electricity.battery.ds
+Service-Component: OSGI-INF/*.xml

@@ -13,47 +13,44 @@ import java.util.List;
 import org.openhab.training.electricity.provider.ElectricityProvider;
 
 /**
- * An {@link ElectricityConsumer} can consume electricity from any
- * {@link ElectricityProvider} and display messages.
+ * A representation of electricity consumer which needs an
+ * {@link ElectricityProvider} to run.
  * 
  * @author Kiril Atanasov - Initial contribution
  */
 public interface ElectricityConsumer {
 
-    /**
-     * Starts the consumer by getting an {@link ElectricityProvider}. A message
-     * will be printed if the consumer is started. The message will be displayed
-     * as long as the used {@link ElectricityProvider} can provide enough
-     * energy.
-     */
-    void start();
+	/**
+	 * Starts the consumer.
+	 */
+	void startConsuming();
+	
+	/** Defines what to do when the consumer has enough energy */
+	void consume();
 
-    /**
-     * Stops the device and displays a message
-     */
-    void stop();
+	/**
+	 * Stops the consumer.
+	 */
+	void stopConsuming();
 
-    /**
-     * Sets a current provider from a list with available providers
-     * 
-     * @param electricityProvider
-     *            is the new {@link ElectricityProvider}, which the
-     *            {@link ElectricityConsumer} will be using
-     */
-    void setCurrentProvider(ElectricityProvider electricityProvider);
+	/**
+	 * Sets the current {@link ElectricityProvider}
+	 */
+	void setCurrentProvider(ElectricityProvider electricityProvider);
 
-    /**
-     * Returns a list with all available {@link ElectricityProvider}s
-     * 
-     * @return a list with all available {@link ElectricityProvider}s
-     */
-    List<ElectricityProvider> getAllAvailableProviders();
+	/**
+	 * @return all available {@link ElectricityProvider}s
+	 */
+	List<ElectricityProvider> getAllAvailableProviders();
 
-    /**
-     * Gets the {@link ElectricityProvider} that is in use.
-     * 
-     * @return the {@link ElectricityProvider} the {@link ElectricityConsumer}
-     *         is using at the moment.
-     */
-    public ElectricityProvider getCurrentElectricityProvider();
+	/**
+	 * @return the {@link ElectricityProvider} that is currently used.
+	 */
+	ElectricityProvider getCurrentElectricityProvider();
+
+	/**
+	 * Defines how the consumer handles the case when there are no external
+	 * providers available
+	 */
+	void handleExternalProvidersLack();
 }

@@ -9,29 +9,30 @@
 package org.openhab.training.electricity.provider;
 
 /**
- * An {@link ElectricityProvider} is a representation of electricity provider,
- * which can provide electricity to consumers.
+ * A representation of electricity provider, which can provide electricity to
+ * consumers.
  * 
  * @author Kiril Atanasov - Initial contribution
  */
 public interface ElectricityProvider {
 
-    /**
-     * Indicates whether an {@link ElectricityProvider} can provide enough
-     * energy to a consumer.
-     * 
-     * @param value
-     *            the energy consumption of the consumer
-     * @return true if the provider can satisfy the consumer's energy
-     *         requirements, false otherwise
-     */
-    boolean provide(int value);
+	/**
+	 * Indicates whether an {@link ElectricityProvider} can provide enough
+	 * energy to a consumer. And if it can, this method should care of the
+	 * discharging the provider.
+	 * 
+	 * @param consumerConsumption
+	 *            the energy consumption of the consumer
+	 * @return true if the provider can satisfy the consumer's energy
+	 *         requirements, false otherwise
+	 */
+	boolean provide(int consumerConsumption);
 
-    /**
-     * Returns the type of the {@link ElectricityProvider} from
-     * {@link ElectricityProviderType}.
-     * 
-     * @return the type of the {@link ElectricityProvider}.
-     */
-    ElectricityProviderType getType();
+	/**
+	 * Returns the type of the {@link ElectricityProvider}.
+	 */
+	ElectricityProviderType getType();
+	
+	/** Displays what is the current amount of energy that can be provided */
+	String getEnergy();
 }

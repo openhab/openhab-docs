@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="org.eclipse.pde.ui.EquinoxLauncher">
+<booleanAttribute key="append.args" value="true"/>
+<booleanAttribute key="automaticAdd" value="false"/>
+<booleanAttribute key="automaticValidate" value="true"/>
+<stringAttribute key="bootstrap" value=""/>
+<stringAttribute key="checked" value="[NONE]"/>
+<booleanAttribute key="clearConfig" value="false"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/RadioDS"/>
+<booleanAttribute key="default" value="true"/>
+<booleanAttribute key="default_auto_start" value="true"/>
+<intAttribute key="default_start_level" value="4"/>
+<booleanAttribute key="includeOptional" value="true"/>
+<booleanAttribute key="org.eclipse.jdt.launching.ATTR_USE_START_ON_FIRST_THREAD" value="true"/>
+<stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+<stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl} -consoleLog -console"/>
+<stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Declipse.ignoreApp=true -Dosgi.noShutdown=true -Dosgi.clean=true"/>
+<stringAttribute key="pde.version" value="3.3"/>
+<booleanAttribute key="show_selected_only" value="true"/>
+<stringAttribute key="target_bundles" value="ch.qos.logback.classic@default:default,ch.qos.logback.core@default:default,ch.qos.logback.slf4j@default:false,org.apache.felix.gogo.command@default:default,org.apache.felix.gogo.runtime@default:default,org.apache.felix.gogo.shell@default:default,org.eclipse.equinox.console@default:default,org.eclipse.equinox.ds@1:true,org.eclipse.equinox.event@default:default,org.eclipse.equinox.util@default:default,org.eclipse.osgi.services@default:default,org.eclipse.osgi@-1:true,org.slf4j.api@default:default"/>
+<booleanAttribute key="tracing" value="false"/>
+<booleanAttribute key="useCustomFeatures" value="false"/>
+<booleanAttribute key="useDefaultConfigArea" value="true"/>
+<stringAttribute key="workspace_bundles" value="org.openhab.training.electricity.consumer@default:default,org.openhab.training.electricity.homenetwork.ds@default:default,org.openhab.training.electricity.provider@default:default,org.openhab.training.electricity.radio.ds@default:default"/>
+</launchConfiguration>
