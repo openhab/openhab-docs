@@ -7,33 +7,32 @@ title: Raspberry Pi
 
 # Raspberry Pi
 
-Because of it's low price, it's small form factor and the low energy consumption, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB.
-Be sure to use a [Raspberry Pi Generation 2](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications) or newer.
+Because of it's low price, it's small form factor and the low energy consumption, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB 2.
 
 ![Raspberry Pi 2 Model B](https://www.raspberrypi.org/wp-content/uploads/2015/02/Pi_2_Model_B.png)
 
-## Introduction
+If you want to learn more about the possibilities of the Raspberry Pi and Linux in general, many tutorials can be found on the internet.
+These including the official [raspberrypi.org help articles](https://www.raspberrypi.org/help) or the technical in-detail articles at [eLinux.org](http://elinux.org/RPi_Tutorials).
 
-In this article you will find **suggestions** on how to configure a dedicated Raspberry Pi to run as openHAB server.
-Your personal preferences and needs may differ!
 
-There's no pre-configured image for openHAB yet.
-Setting up openHAB shouldn't be a problem following the instructions below.
+Recommended "[headless](https://en.wikipedia.org/wiki/Headless_computer)" hardware setup:
 
-If you get stuck at any point or want to learn more about the possibilities of the Raspberry Pi and Linux, many tutorials can be found on the internet, including:
-
-* The [raspberrypi.org help articles](https://www.raspberrypi.org/help).
-* Technical in-detail articles at [eLinux.org](http://elinux.org/RPi_Tutorials).
-
-## Recommended Setup
-
-You will need:
-
-* Raspberry Pi (Generation 2 or newer), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
-* SD card (8GB or more)
+* Raspberry Pi ([Generation 2 or newer](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications)), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
+* SD card (16GB recommended to support [wear-leveling](https://en.wikipedia.org/wiki/Wear_leveling))
 * Power supply
 * Ethernet connection
 
+## Recommended Setup
+
+We are proud to provide a preconfigured image for the Raspberry Pi, with the latest build of openHAB 2.0 and many useful other software components (like Samba, Grafana or Mosquitto) as optional setup steps.
+openHABian is based on Raspbian and under constant improvement.
+
+Check out more details about [openHABian, the hassle-free RPi image](openhabian.html).
+
+
+## Manual Setup
+
+If you want or need to set up openHAB on a Raspberry Pi by yourself, follow these recommendations.
 For the beginning, we recommend to [download](https://www.raspberrypi.org/downloads/raspbian) and [install](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) the latest Raspbian SD card image.
 You may choose the "Lite" version.
 
