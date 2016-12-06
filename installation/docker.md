@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Docker
 ---
 
 {% include base.html %}
@@ -56,7 +57,7 @@ then start with ``docker-compose up -d``
 **Accessing the console**
 
 ```
-docker exec -it openhab /openhab/runtime/bin/client 
+docker exec -it openhab /openhab/runtime/bin/client
 ```
 
 **Debug Mode**

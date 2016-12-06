@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: PINE A64
 ---
 
 {% include base.html %}

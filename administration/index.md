@@ -1,16 +1,14 @@
 ---
 layout: documentation
-title: Administration
+title: Advanced Functionality and Administrative Tasks
 ---
 
 {% include base.html %}
 
-# Overview
+# Advanced Functionality and Administrative Tasks
 
-As a base technology openHAB uses Karaf. [Apache Karaf](http://karaf.apache.org/) is a modern and polymorphic container able to host different kind of applications.
+As a base technology openHAB uses [Apache Karaf](http://karaf.apache.org), a modern and polymorphic container able to host different kinds of applications.
+The Karaf Console is a powerful too to interact with the core of your openHAB installation.
+Learn more about the advanced administrative capabilities of your openHAB installation in the sub-entries of this menu point.
 
-Therefore some of the administration tasks are performed in the [Karaf console](console.html):
-
-- [Logging](logging.html)
-- [Bundle Management](bundles.html)
-- [Runtime Commands](runtime.html)
+{% include contribution-wanted.html %}

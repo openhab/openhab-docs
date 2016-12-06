@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Contributing to openHAB
 ---
 
 {% include base.html %}
@@ -12,11 +13,11 @@ Use the table below to determine where your issue should be logged:
 
 Issue | Where to report
 ------|----------------
-Problems and feature requests for openHAB 1 addons | [openHAB](https://github.com/openhab/openhab/issues)
-Problems and feature requests for openHAB 2 addons | [openHAB2](https://github.com/openhab/openhab2/issues)
+Problems and feature requests for openHAB 1 add-ons | [openHAB](https://github.com/openhab/openhab/issues)
+Problems and feature requests for openHAB 2 add-ons | [openHAB2](https://github.com/openhab/openhab2/issues)
 Issues related to the runtime environment, IDE and packaging | [openHAB-distro](https://github.com/openhab/openhab-distro/issues)
 Issues related to the core openHAB bundles that are not from Eclipse SmartHome | [openHAB-core](https://github.com/kaikreuzer/openhab-core/issues)
-Issues related to Eclipse SmartHome addons and core runtime | [Eclipse SmartHome](https://github.com/eclipse/smarthome/issues)
+Issues related to Eclipse SmartHome add-ons and core runtime | [Eclipse SmartHome](https://github.com/eclipse/smarthome/issues)
 
 But do not worry - if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
 
@@ -44,4 +45,3 @@ general guidelines for the community as a whole:
   respond to an email you are potentially sending to a large number of
   people.  Please consider this before you update.  Also remember that
   nobody likes spam.
-
