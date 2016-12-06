@@ -4,11 +4,11 @@ layout: documentation
 
 {% include base.html %}
 
-# What is openHAB
+# About openHAB
 
-openHAB is __software__ for integrating different home automation systems and technologies into one single solution that allows over-arching automation rules, and that offers uniform user interfaces.
+openHAB is **software** for integrating different home automation systems and technologies into one single solution that allows over-arching automation rules, and that offers uniform user interfaces.
 
-But openHAB is also a __community__ of users, contributors and maintainers.
+But openHAB is also a **community** of users, contributors and maintainers.
 
 ## openHAB Structure
 
@@ -22,20 +22,17 @@ The structure of openHAB can be summarized this way:
 
 Add-ons can come from three different origins:
 
-* add-ons coming from the Eclipse SmartHome project, as Eclipse SmartHome is the base of openHAB 2,
-
-* add-ons coming from the openHAB version 1 package, as openHAB 2 includes a compatibility layer,
-
-* add-ons made for openHAB 2.
+* Add-ons coming from the Eclipse SmartHome project, as Eclipse SmartHome is the base of openHAB 2,
+* Add-ons coming from the openHAB version 1 package, as openHAB 2 includes a compatibility layer,
+* Add-ons made for openHAB 2.
 
 
 ## The openHAB Community
 
 openHAB is not only a solution but also a community.
 
-The center of this community is the [openHAB forum](https://community.openhab.org).
+The center of this community is the [openHAB community forum](https://community.openhab.org).
 
-If you have questions about the use of openHAB, before reporting an issue, or for comments and contributions about the documentation, please check the [openHAB forum](https://community.openhab.org) for solutions and help. More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds for your issue.
+If you have questions about the use of openHAB, before reporting an issue, or for comments and contributions about the documentation, please check the [openHAB community forum](https://community.openhab.org) for solutions and help. More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds for your issue.
 
-Rules about posting an issue and [contributions guidelines](appendix/contributing.html) are in the _Appendix_.
-
+Rules about posting an issue and [contributions guidelines](appendix/contributing.html) are in the *Appendix*.

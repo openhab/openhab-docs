@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: Mac OS X
 ---
 
 {% include base.html %}
@@ -100,4 +101,3 @@ openhab>
 >
 > Safari is supported by openHAB, but the fact is the browser used by the openHAB developer community - and by the owner of the ZWave plugin - is Google Chrome.
 > We recommend then Google Chrome, as openHAB 2 is in a beta phase.
-
