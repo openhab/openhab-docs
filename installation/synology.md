@@ -11,7 +11,7 @@ The [DiskStation by Synology](https://www.synology.com/en-us/dsm) is a famous NA
 We are proud to be able to provide an [openHAB Synology package](https://github.com/openhab/openhab-syno-spk).
 
 Download the latest SPK package:
-https://github.com/openhab/openhab-syno-spk/releases
+[Releases](https://github.com/openhab/openhab-syno-spk/releases)
 
 ## Installation
 
