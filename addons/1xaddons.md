@@ -7,24 +7,45 @@ layout: documentation
 
 {% include base.html %}
 
-## Compatible 1.x Add-ons
+# 1.x Add-ons
 
-| Addon | Description | Type |
-|-------|-------------|------|
-{% for addon in addons %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} | {{ addon.category }} |
-{% endfor %}
+Addons developed for the first version of openHAB can also be used with openHAB 2.0.
+Please be aware, that these bindings function and behave differently.
+For beginners it is recommended to resort to native 2.0 bindings if possible.
 
-> **Many 1.x add-ons STILL NEED TO BE TESTED and will probably work on openHAB 2**.
->
-> For the full list that exists for openHAB 1, please refer to:
-> 
-> * the right sidebar on the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki/Configuring-the-openHAB-runtime) for missing add-ons
-> * [this page](https://github.com/openhab/openhab/wiki/Actions) for missing actions
->
-> For information on how to test and add add-ons that are not yet included, please see the [compatibility layer documentation](/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution).
+## Compatible 1.x Actions
 
+| Add-on | Description | Type |
+|--------|-------------|------|
+{% for addon in addons %}{% if addon.category == "action" %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} | {{ addon.category }} |
+{% endif %}{% endfor %}
 
-## Currently Incompatible 1.x Add-ons:
+## Compatible 1.x Persistence Services
+
+| Add-on | Description | Type |
+|--------|-------------|------|
+{% for addon in addons %}{% if addon.category == "persistence" %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} | {{ addon.category }} |
+{% endif %}{% endfor %}
+
+## Compatible 1.x Bindings
+
+| Add-on | Description | Type |
+|--------|-------------|------|
+{% for addon in addons %}{% if addon.category == "binding" %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} | {{ addon.category }} |
+{% endif %}{% endfor %}
+
+## Further 1.x Add-ons
+
+Many more 1.x add-ons STILL NEED TO BE TESTED and will probably work on openHAB 2.
+For the full list that exists for openHAB 1, please refer to:
+
+* The right sidebar on the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki/Configuring-the-openHAB-runtime) for additional add-ons.
+* [This page](https://github.com/openhab/openhab/wiki/Actions) in the openHAB 1.x wiki for additional actions.
+
+For information on how to test and add add-ons that are not yet included, please see the [compatibility layer documentation](/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution).
+Experiences with add-ons may also be found in the [openHAB community forum](https://community.openhab.org).
+
+## Incompatible 1.x Add-ons
 
 | Add-on | Type | Reason
 |--------|------|------|
