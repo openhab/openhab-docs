@@ -27,7 +27,7 @@
       <li><a href="{{docu}}/installation/synology.html">Synology DiskStation</a></li>
       <li><a href="{{docu}}/installation/qnap.html">QNAP NAS</a></li>
       <hr />
-      <li><a href="{{docu}}/installation/designer.html">openHAB Designer</a></li>
+      <li><a href="{{docu}}/installation/designer.html">SmartHome Designer</a></li>
       <li><a href="{{docu}}/installation/nginx.html">Authentication &amp; HTTPS</a></li>
       <li><a href="https://my.openhab.org/docs">my.openHAB (external)</a></li>
     </ul>
@@ -56,6 +56,25 @@
   <li><a href="{{docu}}/addons/index.html">Add-ons</a>
     <ul>
       <li><a href="{{docu}}/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/addons/bindings.html">2.0 Bindings</a>
+        <!--
+        <ul>
+          {% for binding in site.data.bindings %}
+          <li><a href="{{docu}}/addons/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
+          {% endfor %}
+        </ul>
+        -->
+      </li>
+      <li><a href="{{docu}}/addons/1xaddons.html">1.x Bindings &amp; Add-ons</a></li>
+      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>
+          <li><a href="{{docu}}/addons/io/hueemulation/readme.html">Amazon Echo</a></li>
+          <li><a href="{{docu}}/addons/io/imperihome/readme.html">ImperiHome</a></li>
+          <li><a href="https://my.openhab.org/docs/ifttt">IFTTT (external)</a></li>
+        </ul>
+      </li>
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
         <ul>
           <li><a href="{{docu}}/addons/uis.html">Overview</a></li>
@@ -68,23 +87,6 @@
           <li><a href="{{docu}}/addons/uis/classic/readme.html">Classic UI</a></li>
           <hr />
           <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
-        </ul>
-      </li>
-      <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
-        <!--
-        <ul>
-          {% for binding in site.data.bindings %}
-          <li><a href="{{docu}}/addons/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
-          {% endfor %}
-        </ul>
-        -->
-      </li>
-      <li><a href="{{docu}}/addons/1xaddons.html">1.x Legacy Add-ons</a></li>
-      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
-        <ul>
-          <li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>
-          <li><a href="{{docu}}/addons/io/hueemulation/readme.html">Amazon Echo</a></li>
-          <li><a href="{{docu}}/addons/io/imperihome/readme.html">ImperiHome</a></li>
         </ul>
       </li>
       <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
