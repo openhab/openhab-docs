@@ -123,7 +123,7 @@ If everything went well, start openHAB and register it to be automatically execu
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
-You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://192.168.0.3:8080) at this point.
+You should be able to reach the openHAB 2 portal at [http://openhab-device:8080]() at this point.
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
@@ -233,7 +233,7 @@ sudo chown -hR openhab:openhab /opt/openhab2
 ```
 
 Everything is ready for a first test run.
-**Execute** openHAB and you should be able to reach the openHAB 2 Portal at [http://openhab-device:8080](http://192.168.0.3:8080) after a few minutes:
+**Execute** openHAB and you should be able to reach the openHAB 2 Portal at [http://openhab-device:8080]() after a few minutes:
 
 ```shell
 # execute as restricted user openhab:

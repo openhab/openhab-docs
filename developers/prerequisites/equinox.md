@@ -19,7 +19,7 @@ Equinox
 
 [Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core 4.x specification][OSGi-4.x] and one of the most widely used. It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse]. It provides a set of bundles, that implement various optional OSGi services.
 
-The openHAB bundles are deployed on Equinox runtime. Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process. Some of the bundles that you are going to use from Eclipse SmartHome**<sup>TM</sup>** and openHAB depend on Equinox bundles and this article will list some of the Equinox core bundles and the services that they provide. 
+The openHAB bundles are deployed on Equinox runtime. Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process. Some of the bundles that you are going to use from Eclipse SmartHome**<sup>TM</sup>** and openHAB depend on Equinox bundles and this article will list some of the Equinox core bundles and the services that they provide.
 
 ## II. Start Equinox Runtime from Eclipse
 
@@ -32,17 +32,16 @@ Then follow these steps:
 3. After you've been created a new configuration, select the bundles that you need from the workspace.
 4. Then make sure that the following bundles from the target platform are selected, otherwise the OSGi console will not be available:
 
-    org.apache.felix.gogo.runtime  
-    org.apache.felix.gogo.shell  
-    org.apache.felix.gogo.command  
+    org.apache.felix.gogo.runtime
+    org.apache.felix.gogo.shell
+    org.apache.felix.gogo.command
     org.eclipse.equinox.console
 
 5. Click on "Add Required Bundles". Eclipse will resolve all dependencies of the bundles listed above and include new bundles to the configuration.
 6. Click on "Validate Bundles" and make sure that "No problems were detected" is displayed.
 7. You can start Equinox with the "Run" button.
 
-<img src="images/runconfiguration.png" width="600"/>  
-Picture 1. Run Configurations dialog window  
+![Run Configurations dialog window](images/runconfiguration.png)
 
 If you use Eclipse for an IDE, this will be the easiest way to run your bundles in an Equinox runtime. If you do not have experience with writing OSGi bundles, go to our [coding tasks page](osgitasks.html).
 
@@ -50,13 +49,15 @@ If you use Eclipse for an IDE, this will be the easiest way to run your bundles 
 
 The **org.eclipse.osgi** bundle is the framework implementation of the Core Framework R4 specification in a standalone package.
 
-You can get it from your [Eclipse IDE installation for openHAB](../development/ide.html) (if you're using Windows, it should be located at *C: / Users / your.name / .p2 / pool / plugins / org.eclipse.osgi_3.x.x_xxxx.jar*).
+You can get it from your [Eclipse IDE installation for openHAB](../development/ide.html) (If you're using Windows, it should be located at `C:\Users\your.name\.p2\pool\plugins\org.eclipse.osgi_3.x.x_xxxx.jar`).
 
 1. Equinox versions before 3.8.0.M4.
 
 In some older version of Equinox, using the following command line:
 
-``` java -jar org.eclipse.osgi_3.x.x_xxxx.jar -console ```
+```shell
+java -jar org.eclipse.osgi_3.x.x_xxxx.jar -console
+```
 
 was enough to run it standalone.
 
@@ -64,17 +65,17 @@ was enough to run it standalone.
 
 Starting from Equinox 3.8.0.M4, it has a new console. So the command line above will probably not work. You need some additional bundles in order to run Equinox properly. There are different ways to add those bundles and one of them is given below:
 
- 1. After you have downloaded and installed Eclipse IDE for openHAB, find your .p2 repository and go to the *plugins* folder. (if you're using Windows, it should be located at *C: / Users / your.name / .p2 / pool / plugins*).
- 
- 2. Make sure that there is a *org.eclipse.osgi_3.x.x_xxxx.jar* in that folder.
+ 1. After you have downloaded and installed Eclipse IDE for openHAB, find your .p2 repository and go to the `plugins` folder. (if you're using Windows, it should be located at `C:\Users\your.name\.p2\pool\plugins`).
 
- 3. Create *configuration* folder in the *plugins*  folder.
+ 2. Make sure that there is a `org.eclipse.osgi_3.x.x_xxxx.jar` in that folder.
 
- 4. Inside the *configuration*  folder create a file *config.ini*.
+ 3. Create `configuration` folder in the `plugins` folder.
 
- 5. Save the following content in the *config.ini*  file:
+ 4. Inside the `configuration` folder create a file `config.ini`.
 
-```
+ 5. Save the following content in the `config.ini` file:
+
+```ini
     osgi.bundles=\  
     org.eclipse.core.runtime,\  
     org.eclipse.equinox.common,\  
@@ -82,7 +83,7 @@ Starting from Equinox 3.8.0.M4, it has a new console. So the command line above 
     org.eclipse.equinox.registry,\  
     org.eclipse.equinox.preferences,\  
     org.eclipse.core.contenttype,\  
-	org.eclipse.equinox.app,\  
+    org.eclipse.equinox.app,\  
     org.eclipse.equinox.console,\  
     org.apache.felix.gogo.runtime,\  
     org.apache.felix.gogo.shell,\  
@@ -94,15 +95,17 @@ Starting from Equinox 3.8.0.M4, it has a new console. So the command line above 
 
  6. Use the following command line to run Equinox:
 
-```java -jar org.eclipse.osgi_3.x.x_xxxx.jar -console -configuration configuration```
- 
+```shell
+java -jar org.eclipse.osgi_3.x.x_xxxx.jar -console -configuration configuration
+```
+
 ## IV. Commands
 
 Once you have Equinox running, you will see a prompt. Some of the basic
 osgi commands are:
 
 Command | Description
--------|-------
+--------|-------
 *help*  | Basic command that will list all available commands
 *install* [bundle URL] | Installs the bundle from the given URL
 *start* [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id
@@ -119,21 +122,21 @@ Another part of the Equinox project is the [Equinox Bundles][Equinox-Bundles] co
 
 Some of the core bundles are listed in the table below. Some or all of these bundles must be included in your runtime configuration, if you want to use the services that they provide.
 
- Name | Bundle Symbolic Name | Description 
- -------- | -------- | -------- 
-Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi R4 [Declarative Services](osgids.html) specification 
-Event Admin Service | org.eclipse.equinox.event | OSGi R4 [Event Admin](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model 
-Log Service | org.eclipse.equinox.log | This [LogService](https://osgi.org/javadoc/r4v42/org/osgi/service/log/LogService.html) provides a general-purpose message logger for the OSGi environment 
-Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles 
+ Name | Bundle Symbolic Name | Description
+ -------- | -------- | --------
+Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi R4 [Declarative Services](osgids.html) specification
+Event Admin Service | org.eclipse.equinox.event | OSGi R4 [Event Admin](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
+Log Service | org.eclipse.equinox.log | This [LogService](https://osgi.org/javadoc/r4v42/org/osgi/service/log/LogService.html) provides a general-purpose message logger for the OSGi environment
+Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles
 OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs.  
 
 Table 2. OSGi Bundles (Full list can be found at: <http://www.eclipse.org/equinox/bundles/>)
 
-## VI. p2 
+## VI. p2
 
 The [p2 project][p2] is a sub-project of [Equinox][Equinox] that focuses on provisioning technology for OSGi-based applications. Provisioning is the act of finding and installing new functionality and updating or removing existing functionality; it is distinct from building.
 
-Although p2 has a specific support for Equinox and [Eclipse][Eclipse], can be used as a general purpose provisioning infrastructure. 
+Although p2 has a specific support for Equinox and [Eclipse][Eclipse], can be used as a general purpose provisioning infrastructure.
 
 ### 1. Core Concepts
 
@@ -176,7 +179,7 @@ artifacts.jar
 content.jar
 site.xml
 ```
-Some of the most popular p2 repositories are [orbit p2 Repo](http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/)  and [Eclipse p2 Repo](http://download.eclipse.org/eclipse/updates/4.5).
+Some of the most popular p2 repositories are [orbit p2 Repo](http://download.eclipse.org/tools/orbit/downloads/drops/R20160221192158/)  and [Eclipse p2 Repo](http://download.eclipse.org/eclipse/updates).
 
 You can find information about the Eclipse SmartHome**<sup>TM</sup>** update sites at [this link](http://www.eclipse.org/smarthome/documentation/community/downloads.html).
 
@@ -188,7 +191,7 @@ You can find information about the Eclipse SmartHome**<sup>TM</sup>** update sit
 - <http://www.eclipse.org/equinox/framework/>
 - <http://www.eclipse.org/equinox/incubator/>   
 - [OSGiEquinoxExplained](https://eclipse.org/equinox/documents/eclipsist2007/EclipseSummitTurkey2007-OSGiEquinoxExplained.pdf)
-- <http://blog.idzona.com/2016/01/different-ways-to-start-the-eclipse-equinox-osgi-console.html> 
+- <http://blog.idzona.com/2016/01/different-ways-to-start-the-eclipse-equinox-osgi-console.html>
 - <https://bugs.eclipse.org/bugs/show_bug.cgi?id=371101>  
 - <http://www.eclipse.org/equinox/p2/>
 - <http://wiki.eclipse.org/Equinox_P2_Resolution>
@@ -196,7 +199,7 @@ You can find information about the Eclipse SmartHome**<sup>TM</sup>** update sit
 - <https://wiki.eclipse.org/Installable_Units>  
 - [Products and features](http://help.eclipse.org/mars/index.jsp?topic=%2Forg.eclipse.platform.doc.isv%2Fguide%2Fproduct_def.htm)   
 - [Dependency Management for the Eclipse Ecosystem, Eclipse p2, metadata and resolution, Daniel Le Berre, Pascal Rapicault,2009](https://hal.archives-ouvertes.fr/hal-00870855/document)  
-- [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)   
+- [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)
 
 [Equinox]: http://www.eclipse.org/equinox/
 [OSGi-4.x]: https://www.osgi.org/osgi-service-platform-release-4-downloads/
