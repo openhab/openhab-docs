@@ -2,7 +2,7 @@ id,label,description
 digitalstrom,digitalSTROM,"This binding integrates the [digitalSTROM-System](http://www.digitalstrom.de/)."
 fsinternetradio,FS Internet Radio,"This binding integrates internet radios based on the [Frontier Silicon chipset](http://www.frontier-silicon.com/)."
 hue,Philips Hue,"This binding integrates the [Philips Hue Lighting system](http://www.meethue.com)."
-lifx,LIFX,"This binding integrates the [LIFX LED Bulb](http://www.lifx.com/). All LIFX bulbs are directly connected to the WLAN and the binding communicates with them over a UDP protocol."
+lifx,LIFX,"This binding integrates the [LIFX LED Lights](http://www.lifx.com/). All LIFX lights are directly connected to the WLAN and the binding communicates with them over a UDP protocol."
 ntp,NTP,"The NTP binding is used for displaying the local date and time based update from an NTP server."
 sonos,Sonos,"This binding integrates the [Sonos Multi-Room Audio system](http://www.sonos.com)."
 wemo,Belkin Wemo,"This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/)."
