@@ -58,28 +58,13 @@
     <ul>
       <li><a href="{{docu}}/addons/index.html">Overview</a></li>
       <hr />
-      <li><a href="{{docu}}/addons/bindings.html">2.0 Bindings</a>
-        <!--
+      <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
         <ul>
           <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
           <hr />
           {% for binding in site.data.bindings %}
           <li><a href="{{docu}}/addons/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
           {% endfor %}
-        </ul>
-        -->
-      </li>
-      <li><a href="{{docu}}/addons/1xaddons.html">1.x Bindings &amp; Add-ons</a></li>
-      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
-        <ul>
-          <li><a href="{{docu}}/addons/io.html">Overview</a></li>
-          <hr />
-          <li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>
-          <li><a href="{{docu}}/addons/io/imperihome/readme.html">ImperiHome</a></li>
-          <li><a href="{{docu}}/addons/io/hueemulation/readme.html">Hue Emulation</a></li>
-          <li><a href="https://my.openhab.org/docs/ifttt">IFTTT (external)</a></li>
-          <hr />
-          <li><a href="{{docu}}/configuration/restdocs.html">openHAB REST API</a></li>
         </ul>
       </li>
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
@@ -96,6 +81,9 @@
           <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
         </ul>
       </li>
+      <li><a href="{{docu}}/addons/persistence.html">Persistence</a></li>
+      <li><a href="{{docu}}/addons/actions.html">Actions</a></li>
+      <li><a href="{{docu}}/addons/transformations.html">Transformations</a></li>
       <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
         <ul>
           <li><a href="{{docu}}/addons/voice.html">Overview</a></li>
@@ -103,6 +91,21 @@
           {% for voice in site.data.voice %}
           <li><a href="{{docu}}/addons/voice/{{ voice.id }}/readme.html">{{ voice.label }}</a></li>
           {% endfor %}
+        </ul>
+      </li>
+      <hr />
+      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="{{docu}}/addons/io.html">Overview</a></li>
+          <hr />
+          <li><a href="{{docu}}/addons/io/homekit/readme.html">HomeKit</a></li>
+          <li><a href="{{docu}}/addons/io/hueemulation/readme.html">Hue Emulation</a></li>
+          <li><a href="{{docu}}/addons/io/imperihome/readme.html">ImperiHome</a></li>
+          <li><a href="https://my.openhab.org/docs">my.openHAB (external)</a></li>
+          <li><a href="{{docu}}/configuration/restdocs.html">openHAB REST API</a></li>
+          <li><a href="{{docu}}/configuration/rules-ng.html">Rule Engine (Experimental)</a></li>
+          <hr />
+          <li><a href="https://my.openhab.org/docs/ifttt">IFTTT (external)</a></li>
         </ul>
       </li>
     </ul>
