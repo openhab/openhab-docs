@@ -1,10 +1,10 @@
 ---
 layout: documentation
-title: System Integration
+title: Miscellaneous Add-ons
 ---
 
 {% include base.html %}
 
-## System Integration
+# Miscellaneous Add-ons
 
 {% include contribution-wanted.html %}
