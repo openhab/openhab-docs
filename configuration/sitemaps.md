@@ -501,10 +501,10 @@ The given color names are agreed on between all openHAB UIs and are therefor you
 openHAB allows a set of icons to be assigned to the different states of an item and therefor to be presented in a sitemap.
 Please refer to the documentation on [item configuration](items.html) for details.
 
-![battery-0](iconsets/classic/icons/battery-0.png "battery-0")
-![battery-30](iconsets/classic/icons/battery-30.png "battery-30")
-![battery-60](iconsets/classic/icons/battery-60.png "battery-60")
-![battery-100](iconsets/classic/icons/battery-100.png "battery-100")
+![battery-0]({{base}}/addons/iconsets/classic/icons/battery-0.png "battery-0")
+![battery-30]({{base}}/addons/iconsets/classic/icons/battery-30.png "battery-30")
+![battery-60]({{base}}/addons/iconsets/classic/icons/battery-60.png "battery-60")
+![battery-100]({{base}}/addons/iconsets/classic/icons/battery-100.png "battery-100")
 
 ## Full Example
 
