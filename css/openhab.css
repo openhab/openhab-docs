@@ -1,0 +1,10 @@
+/* Style definitions specific to docs.openhab.org */
+
+.card .card-title {
+  color: #FF6600;
+  font-weight: 500;
+}
+
+.card .card-action a {
+  color: #039BE5;
+}
