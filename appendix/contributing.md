@@ -7,9 +7,16 @@ title: Contributing to openHAB
 
 # Contributing to openHAB
 
+openHAB is a community effort and everyone can take part in that.
+Be it by being an active developer, a one time bug reporter or by commenting on issues by others.
+Please the following guidelines.
+
 ## Reporting Issues
 
-Use the table below to determine where your issue or idea for improvement should be reported:
+Before reporting an issue, please check the [openHAB community forum](https://community.openhab.org) for solutions and help.
+More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds.
+
+When no solution was found, use the table below to determine where your issue should be reported:
 
 Issue | Where to report
 ------|----------------
@@ -21,11 +28,14 @@ Issues related to Eclipse SmartHome add-ons and core runtime | [Eclipse SmartHom
 
 But do not worry - if you are not clear, which category your issue belongs to - we will redirect you, if necessary.
 
+Please pay attention to the respective `CONTRIBUTING.md` file in all of these repositories.
+They include further details on how to report an issue or file a pull request.
+
 ## Community Guidelines
 
-We want to keep the openHAB community awesome, growing and collaborative. We
-need your help to keep it that way. To help with this we've come up with some
-general guidelines for the community as a whole:
+We want to keep the openHAB community awesome, growing and collaborative.
+We need your help to keep it that way.
+To help with this we've come up with some general guidelines for the community as a whole:
 
 * **Be nice:** Be courteous, respectful and polite to fellow community members: no
   regional, racial, gender, or other abuse will be tolerated. We like nice people
