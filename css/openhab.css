@@ -8,3 +8,7 @@
 .card .card-action a {
   color: #039BE5;
 }
+
+.card .card-action a:hover {
+  color: #039BE5;
+}
