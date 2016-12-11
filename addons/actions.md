@@ -7,6 +7,9 @@ title: Actions
 
 # Actions
 
+Actions are predefined methods for openHAB rules and scripts.
+They are automatically imported and can be used to execute openHAB specific operations or to send commands or data to hardware or services.
+
 ## Compatible 1.x Actions
 
 {% assign addons = site.data.oh1addons %}
