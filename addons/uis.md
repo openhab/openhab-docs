@@ -6,7 +6,7 @@ layout: documentation
 
 # UI Features
 
-| User Interface | Description   |
+| User-Interface | Description   |
 |----------------|---------------|
 | [Paper UI]({{docu}}/addons/uis/paper/readme.html) | The Paper UI is an AngularJS-based HTML5 web application in Material Design, designed for setup and administration purposes. |
 | [HABmin]({{docu}}/addons/uis/habmin/readme.html) | HABmin is a modern, professional and portable user interface for openHAB, providing both user and administrative functions. |

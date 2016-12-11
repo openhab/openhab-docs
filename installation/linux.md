@@ -424,7 +424,7 @@ setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' `realpath /usr/
 
 ### Network Sharing
 
-openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/features/index.html) articles).
+openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/configuration/index.html) articles).
 Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_(software)) network share is **highly recommended**.
 
 The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
@@ -529,4 +529,4 @@ Be sure to use the actual host name instead of `openhab-device`.
 When asked, authenticate with the username "openhab" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
-If everything went well, you are set and ready to start [configuring]({{base}}/features/index.html) your openHAB system.
+If everything went well, you are set and ready to start [configuring]({{base}}/configuration/index.html) your openHAB system.
