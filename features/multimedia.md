@@ -64,19 +64,23 @@ mactts:Kanya Kanya (th_TH)
 
 You can define a default TTS service and a default voice to use either by textual configuration in `conf/services/runtime.cfg` or in the Paper UI in `Configuration->System->Voice`.
 
-In order to say a text, you can enter
+In order to say a text, you can enter such a command on the console:
 
 ```
 openhab> smarthome:voice say Hello world!
 ```
 
-on the console or
+The default voice and default audio sink will be used.
+
+Or you can enter such commands within DSL rules: 
 
 ```
 say("Hello world!")
+say("Hello world!", "voicerss:enGB")
+say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
 ```
 
-within DSL rules.
+You can select a particular voice (second parameter) and a particular audio sink (third parameter). If no voice or no audio sink is provided, the default voice and default audio sink will be used.
 
 ### Speech-to-Text
 
@@ -90,11 +94,25 @@ Human language interpreters are meant to process prose that e.g. is a result of 
 There are two implementations available by default:
 
 | `rulehli` | Rule-based Interpreter | This mimicks the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.
-| `system` | Built-in Interpreter | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English and German and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.voice/src/main/java/org/eclipse/smarthome/core/voice/internal/text/StandardInterpreter.java#L37).
+| `system` | Built-in Interpreter | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.voice/src/main/java/org/eclipse/smarthome/core/voice/internal/text/StandardInterpreter.java#L37).
 
-To test the interpreter, you can use the command line (assuming you have an item called 'light'):
+To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):
 
 ```
 openhab> smarthome:voice interpret turn on the light
 ```
 
+The default human language interpreter will be used. In case of interpretation error, the error message will be said using the default voice and default audio sink.
+
+Or you can enter such commands within DSL rules: 
+
+```
+interpret("turn on the light")
+var String result = interpret("turn on the light", "system")
+result = interpret("turn on the light", "system", null)
+result = interpret(VoiceCommand.state, "system", "sonos:PLAY5:kitchen")
+```
+
+You can select a particular human language interpreter (second parameter) and a particular audio sink (third parameter). The audio sink parameter is used when the interpretation fails; in this case, the error message is said using the default voice and the provided audio sink. If the provided audio sink is set to null, the error message will not be said.
+If no human language interpreter or no audio sink is provided, the default human language interpreter and default audio sink will be used.
+The interpretation result is returned as a string. Note that this result is always a null string with the rule-based Interpreter (rulehli).
