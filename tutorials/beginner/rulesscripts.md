@@ -15,7 +15,7 @@ This part is not yet written.
 
 *I think this will become the longest section*
 
-*Don't forget to address JSR233 or other alternatives to the DSL that will be built into OH 2*
+*Don't forget to address JSR233 or other alternatives to the DSL that will be built into openHAB 2*
 
 * *Event driven development*
 
@@ -45,5 +45,3 @@ This part is not yet written.
 
 
 ---
-
-

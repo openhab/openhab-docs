@@ -24,7 +24,7 @@ Recommended "[headless](https://en.wikipedia.org/wiki/Headless_computer)" hardwa
 
 ## Recommended Setup
 
-We are proud to provide a preconfigured image for the Raspberry Pi, with the latest build of openHAB 2.0 and many useful software components (like Samba, Grafana or Mosquitto) as optional setup steps.
+We are proud to provide a preconfigured image for the Raspberry Pi, with the latest build of openHAB 2 and many useful software components (like Samba, Grafana or Mosquitto) as optional setup steps.
 openHABian is based on Raspbian and under constant improvement.
 
 Check out more details about [openHABian, the hassle-free RPi image](openhabian.html).

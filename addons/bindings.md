@@ -14,7 +14,7 @@ The following bindings are available to address a wide variety of systems and ha
 * TOC
 {:toc}
 
-## Native 2.0 Bindings
+## Native Bindings
 
 The following bindings can be installed and configured directly from within Paper UI or by any of the other installation methods.
 
@@ -29,9 +29,9 @@ The following bindings can be installed and configured directly from within Pape
 
 ## Legacy 1.x Bindings
 
-Bindings developed for the first version of openHAB can also be used with openHAB 2.0.
+Bindings developed for the first version of openHAB can also be used with openHAB 2.
 Please be aware, that these bindings function and behave differently.
-For beginners it is recommended to resort to native 2.0 bindings if possible.
+For beginners it is recommended to resort to native bindings if possible.
 
 To be able to see and install 1.x bindings needs to be activated in the system settings.
 
@@ -48,7 +48,7 @@ To be able to see and install 1.x bindings needs to be activated in the system s
 ### Further 1.x Bindings
 
 Many more 1.x bindings **still need testing** but will probably be working with openHAB 2.
-Experiences with 1.x bindings in openHAB 2.0 may also be found in the [openHAB community forum](https://community.openhab.org).
+Experiences with 1.x bindings in openHAB 2 may also be found in the [openHAB community forum](https://community.openhab.org).
 For a full list of existing openHAB 1.x bindings, please refer to:
 
 * The right sidebar on the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki/Configuring-the-openHAB-runtime).
