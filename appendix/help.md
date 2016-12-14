@@ -18,6 +18,6 @@ Join today and find answers for all details of openHAB:
 In the community forum you'll also find a list of recurring questions with short answers, commonly known as FAQs.
 Check there before posting your own questions and feel free to add questions and answers:
 
-* [openHAB 2.0 FAQs at community.openhab.org](https://community.openhab.org/t/frequently-asked-questions/17727)
+* [openHAB 2 FAQs at community.openhab.org](https://community.openhab.org/t/frequently-asked-questions/17727)
 
 {% include contribution-wanted.html %}
