@@ -1,13 +1,11 @@
 ---
 layout: documentation
-title: User Interfaces for Configuration
+title: Configuration though Paper UI
 ---
 
 {% include base.html %}
 
-# User Interfaces for Configuration
-
-## PaperUI
+# Configuration though Paper UI
 
 Please refer to the [Paper UI Addon documentation]({{docu}}/addons/uis/paper/readme.html).
 
@@ -28,13 +26,5 @@ Note that you still need to define your items, sitemaps, persistence configurati
 Here you can find a small screencast about the Paper UI:
 
 [![Paper UI](http://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
-
-## HABmin
-
-Please refer to the [HABmin Addon documentation]({{docu}}/addons/uis/habmin/readme.html).
-
-## HabPanel
-
-Please refer to the [HABPanel Addon documentation]({{docu}}/addons/uis/habpanel/readme.html).
 
 {% include contribution-wanted.html %}

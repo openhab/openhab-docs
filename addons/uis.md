@@ -14,6 +14,12 @@ layout: documentation
 | [HABPanel]({{docu}}/addons/uis/habpanel/readme.html) | HABPanel is a lightweight dashboard interface for openHAB. |
 | [Classic UI]({{docu}}/addons/uis/classic/readme.html) | The Classic UI is the original openHAB 1.x webui, designed for operating openHAB. |
 
+| App | Description          |
+|---------|----------------------|
+| [Android openHAB App]({{docu}}/addons/apps/android.html) | The native Android app to access openHAB on the go. |
+| [iOS openHAB App]({{docu}}/addons/apps/ios.html) | The native iOS app to access openHAB on the go. |
+
+
 | Iconset | Description          |
 |---------|----------------------|
 | [Classic Icons]({{docu}}/addons/iconsets/classic/readme.html) | This is a modernized version of the original icon set of openHAB 1. |
