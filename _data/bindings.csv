@@ -42,6 +42,7 @@ samsungtv,Samsung TV,"This binding integrates the [Samsung TV's](http://www.sams
 smaenergymeter,SMA Energy Meter,"This Binding is used to display the measured values of a SMA Energy Meter device. It shows purchased and grid feed-in power and energy."
 squeezebox,Logitech Squeezebox,"This binding integrates the [Logitech Media Server](http://www.mysqueezebox.com) and compatible Squeeze players."
 systeminfo,Systeminfo,"System information Binding provides operating system and hardware information including:"
+tellstick,Tellstick,"This is an openHAB binding for Tellstick devices produced by Telldus, a Swedish company based in Lund."
 tesla,Tesla,"This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com)."
 toon,Toon,"The Toon bindings shows among others current room temperature, setpoint, energy and gas usage information."
 urtsi,Somfy URTSI II,"The addressable Universal RTS Interface II (URTSI II) can be used to communicate between home automation or other third party systems and SOMFY’s RTS Motors and controls. It is capable of individual or group control, and can be operated via infrared remote, RS232 and RS485 serial communication. Once an input is activated, an RTS radio command is sent to the automated window treatment."
