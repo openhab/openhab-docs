@@ -83,6 +83,7 @@ binding,Weather Binding
 binding,WOL (Wake-on-LAN) Binding
 binding,XBMC Binding
 persistence,InfluxDB (v 1.0) Persistence
+persistence,GCal Persistence
 persistence,JDBC Persistence Apache Derby
 persistence,JDBC Persistence H2
 persistence,JDBC Persistence HSQLDB
