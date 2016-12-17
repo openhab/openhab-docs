@@ -32,7 +32,7 @@ Doing so you will have full IDE support like syntax checking, context assist etc
 Items are defined in the following syntax:
 
 ```xtend
-itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [{bindingconfig}]
+itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [["tag1", "tag2", ...]] [{bindingconfig}]
 ```
 
 Note: Parts in square brackets ([]) are optional.
@@ -40,7 +40,7 @@ Note: Parts in square brackets ([]) are optional.
 **Example:**
 
 ```xtend
-Number Sensor_Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gSensor) {knx="1/0/15+0/0/15"}
+Number Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The example above defines an item:
@@ -49,7 +49,8 @@ The example above defines an item:
 * with name `Sensor_Temperature`
 * formatting its output in format `%.1f °C` (See Formatting section for syntax explanation)
 * displaying icon `temperature`
-* belonging to groups `gTemperature` and `gSensor`
+* belonging to groups `gTemperature` and `gLivingRoom`
+* tagged as a thermostat ("TargetTemperature") for usage with I/O addons like `hueemulation`
 * bound to the openHAB binding `knx` with write group address `1/0/15` and listening group address `0/0/15`
 
 ## Item Types
