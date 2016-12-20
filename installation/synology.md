@@ -36,5 +36,6 @@ The configuration files are located at:
 |-------------|-----------------|
 | DS101j      | [1.8.3](https://github.com/openhab/openhab-syno-spk/releases/tag/1.8.3) |
 | DS209       | [1.8.3](https://github.com/openhab/openhab-syno-spk/releases/tag/1.8.3) or [2.0.0-beta3](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0-beta3) |
+| DS216+II    | [2.0.0-beta3](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0-beta3) |
 
 > Please complete the list accordingly, thank you!
