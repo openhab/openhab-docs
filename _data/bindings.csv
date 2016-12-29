@@ -21,6 +21,7 @@ hdpowerview,Hunter Douglas PowerView,"This is an openHAB binding for the [Hunter
 homematic,Homematic,"This is the binding for the [eQ-3 Homematic Solution](http://www.eq-3.de/)."
 ipp,IPP,"This binding integrates printers, which implement the Internet Printing protocol (IPP). This is the successor of the CUPS binding."
 keba,Keba,"This binding integrates the [Keba KeContact EV Charging Stations](http://www.keba.com)."
+kodi,Kodi,"[Kodi](https://kodi.tv) (formerly known as XBMC) is an free and open source (GPL) software media center for playing videos, music, pictures, games, and more."
 kostalinverter,Kostal inverter,"Scrapes the web interface of the inverter for the metrics of the supported channels below."
 lutron,Lutron,"This binding integrates with [Lutron](http://www.lutron.com) light control systems."
 max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/)."

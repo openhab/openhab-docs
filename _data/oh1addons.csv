@@ -15,6 +15,7 @@ action,XBMC Action
 action,XMPP Action
 binding,Alarm Decoder Binding
 binding,Anel Binding
+binding,Bticino Binding
 binding,CalDAV Binding (command)
 binding,CalDAV Binding (personal)
 binding,ComfoAir Binding
@@ -65,6 +66,8 @@ binding,Novelan Heatpump Binding
 binding,OpenEnergyMonitor Binding
 binding,OneWire Binding
 binding,OWServer Binding
+binding,Panasonic TV Binding
+binding,Plex Binding
 binding,Plugwise Binding
 binding,Visonic PowerMax Binding
 binding,RWE SmartHome Binding
@@ -83,7 +86,7 @@ binding,Weather Binding
 binding,WOL (Wake-on-LAN) Binding
 binding,XBMC Binding
 persistence,InfluxDB (v 1.0) Persistence
-persistence,GCal Persistence
+persistence,Google Calendar Presence Simulator
 persistence,JDBC Persistence Apache Derby
 persistence,JDBC Persistence H2
 persistence,JDBC Persistence HSQLDB
@@ -96,3 +99,4 @@ persistence,MapDB Persistence
 persistence,MQTT Persistence
 persistence,MySQL Persistence
 persistence,RRD4j Persistence
+misc,Google Calendar Scheduler
