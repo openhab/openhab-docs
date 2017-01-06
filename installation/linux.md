@@ -61,29 +61,19 @@ Decide between two options:
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Additionally, you need to add the openHAB 2 Bintray repository key to your package manager:
-
-  ```shell
-  wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
-  ```
-
 * **Snapshot Release**
 
-  Add the **openHAB 2 Snapshot repositories** to your systems apt sources list (will overwrite your existing `openhab2.list`):
+  Add the **openHAB 2 Unstable repositories** to your systems apt sources list (will overwrite your existing `openhab2.list`):
 
-  ```shell
-  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-offline/target/apt-repo/ /' | sudo tee /etc/apt/sources.list.d/openhab2.list
-  echo 'deb https://openhab.ci.cloudbees.com/job/openHAB-Distribution/ws/distributions/openhab-online/target/apt-repo/ /' | sudo tee --append /etc/apt/sources.list.d/openhab2.list
+   ```shell
+  echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
+  
+Additionally, you need to add the openHAB 2 Bintray repository key to your package manager:
 
-  Additionally, you need to add the openHAB 2 Snapshots repository key to your package manager:
-
-  ```shell
-  wget -qO - 'http://www.openhab.org/keys/public-key-snapshots.asc' | sudo apt-key add -
-  ```
-
-  Note: CloudBees provides the openHAB 2 repositories through HTTPS.
-  If your system fails at the next step, install the missing dependency: `sudo apt-get install apt-transport-https`
+```shell
+wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+```
 
 Scan the newly added repository and resynchronize the package index:
 
