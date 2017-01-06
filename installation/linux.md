@@ -63,7 +63,7 @@ Decide between two options:
 
 * **Snapshot Release**
 
-  Add the **openHAB 2 Unstable repositories** to your systems apt sources list (will overwrite your existing `openhab2.list`):
+  Add the **openHAB 2 Unstable repository** to your systems apt sources list (will overwrite your existing `openhab2.list`):
 
    ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
