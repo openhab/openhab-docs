@@ -7,7 +7,7 @@ title: openHAB 2 on Linux
 
 # openHAB 2 on Linux
 
-The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the focus on Debian/Ubuntu derivatives.
+The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the **focus on Debian/Ubuntu** derivatives.
 openHAB 2 can be set up and executed on other Linux distributions, the steps may slightly differ.
 
 All instructions can be executed in a terminal or remotely via SSH connection.
@@ -45,7 +45,7 @@ The manual installation through a platform independent archive file is suited fo
 Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-Choose between the latest Beta release or a Snapshot with all incoming contributions, rebuild on [every change](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
+Choose between the latest Beta release or a Snapshot with all incoming contributions, rebuild on [every change](https://bintray.com/openhab/apt-repo2/openhab2#release).
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
 The repository URLs will be stored in the file `/etc/apt/sources.list.d/openhab2.list`.
@@ -65,7 +65,7 @@ Decide between two options:
 
   Add the **openHAB 2 Unstable repository** to your systems apt sources list (will overwrite your existing `openhab2.list`):
 
-   ```shell
+  ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
   
