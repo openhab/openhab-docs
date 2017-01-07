@@ -342,13 +342,14 @@ sudo rm /lib/systemd/system/openhab2.service
 
 ### File Locations
 
-|                                  | Repository Installation  | Manual Installation (according to [guide](#manual-installation)) |
-|:--------------------------------:|:-------------------------|:----------------------------------|
-| openHAB application              | `/usr/share/openhab2`    | `/opt/openhab2`                   |
-| Site configuration               | `/etc/openhab2`          | `/opt/openhab2/conf`              |
-| Log files                        | `/var/log/openhab2`      | `/opt/openhab2/userdata/logs`     |
-| Userdata like rrd4j databases    | `/var/lib/openhab2`      | `/opt/openhab2/userdata`          |
-| Service configuration            | `/etc/default/openhab2`  | (not preconfigured)               |
+|                                  | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
+|:--------------------------------:|:---------------------------- |:----------------------------------|
+| openHAB application              | `/usr/share/openhab2`        | `/opt/openhab2`                   |
+| Additional addon files           | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
+| Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
+| Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
+| Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
+| Service configuration            | `/etc/default/openhab2`      | (not preconfigured)               |
 
 ## Viewing Log Messages
 
