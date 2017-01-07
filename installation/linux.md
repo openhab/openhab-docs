@@ -25,7 +25,7 @@ A lot of helpful articles can be found on the internet, for example:
 * "Learn the ways of Linux-fu, for free" interactively with exercises at [linuxjourney.com](https://linuxjourney.com).
 
 Linux file permissions is one of the biggest sources of issues, Linux novices run into.
-If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files, wrong permissions and/or the incorrect use of `sudo` are often the cause.
+If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
 Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions).
 
 ## Installation
@@ -45,17 +45,13 @@ The manual installation through a platform independent archive file is suited fo
 Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-Choose between the latest Beta release or a Snapshot with all incoming contributions, rebuild on [every change](https://bintray.com/openhab/apt-repo2/openhab2#release).
-As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
-
-The repository URLs will be stored in the file `/etc/apt/sources.list.d/openhab2.list`.
-Be careful to not have conflicting repositories in your sources list.
+As long as openHAB 2 is in it's development state you may choose between the latest *Beta* release or a *Snapshot* build. The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
 
 Decide between two options:
 
 * **Beta Release**
 
-  Add the **openHAB 2 Beta repository** to your systems apt sources list (will overwrite your existing `openhab2.list`):
+  Add the **openHAB 2 Beta Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
@@ -63,7 +59,7 @@ Decide between two options:
 
 * **Snapshot Release**
 
-  Add the **openHAB 2 Unstable repository** to your systems apt sources list (will overwrite your existing `openhab2.list`):
+  Add the **openHAB 2 Unstable Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
@@ -92,7 +88,7 @@ sudo apt-get install openhab2-online
 
 If everything went well, start openHAB and register it to be automatically executed at system startup:
 
-* Linux init systems based on **sysVinit** (e.g. Debian 7 / Ubuntu 14.x and earlier):
+* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
 
   ```shell
   sudo /etc/init.d/openhab2 start
@@ -101,7 +97,7 @@ If everything went well, start openHAB and register it to be automatically execu
   sudo update-rc.d openhab2 defaults
   ```
 
-* Linux init systems based on **systemd** (e.g. Debian 8 / Ubuntu 15.x and newer):
+* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
 
   ```shell
   sudo systemctl start openhab2.service
@@ -113,14 +109,14 @@ If everything went well, start openHAB and register it to be automatically execu
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
-You should be able to reach the openHAB 2 portal at [http://openhab-device:8080]() at this point.
+You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
 #### Upgrade
 
 To stay up to date with new releases, you should do regular upgrades.
-This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated constantly.
 
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
@@ -167,7 +163,7 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, take backup, then unistall and remove the repository:
+To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then unistall openHAB and remove the repository:
 
 ```shell
 sudo apt-get purge openhab2-offline
