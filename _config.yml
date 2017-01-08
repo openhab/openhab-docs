@@ -9,3 +9,7 @@ permalink: /404.html
 # Build settings
 markdown: kramdown
 exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]
+# Additional gems for sitemap generation
+gems:
+  - jekyll-sitemap
+  
