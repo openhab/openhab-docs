@@ -69,12 +69,6 @@ Before you can start, three decisions have to be made:
 
   Because openHAB 2 is still under heavy development, it is recommended for experienced users to use the latest snapshot.
 
-3. The distribution is available in two flavors:
-  - **Offline:** This package contains all available add-ons and allows installing them locally, i.e. completely offline.
-  - **Online:** This package only contains the core runtime and downloads any add-on from a remote repository.
-
-  We currently recommend to use the "offline" version and to update regularly.
-
 ## Installation
 
 Please follow the instructions in the installation article matching your platform.
