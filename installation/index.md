@@ -67,7 +67,7 @@ Before you can start, three decisions have to be made:
   - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
   - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on CloudBees](https://openhab.ci.cloudbees.com/job/openHAB-Distribution)).
 
-  Because openHAB 2 is still under heavy development, it is recommended for experienced users to use the latest snapshot.
+  Because openHAB 2 is still under development, it is recommended for experienced users to use the latest snapshot.
 
 ## Installation
 

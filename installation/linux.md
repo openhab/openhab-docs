@@ -50,7 +50,9 @@ First, add the openHAB 2 Bintray repository key to your package manager:
 ```shell
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 ```
-As long as openHAB 2 is in it's development state you may choose between the latest *Beta* release or a *Snapshot* build. The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
+
+As long as openHAB 2 is in it's development state you may choose between the latest *Beta* release or a *Snapshot* build.
+The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
 Decide between two options:
 
 * **Beta Release**
@@ -89,7 +91,7 @@ Decide between two options:
   sudo apt-get update
   ```
 
-  Now **install** openHAB with the following command:
+  Now install openHAB with the following command:
 
   ```shell
   sudo apt-get install openhab2
@@ -181,7 +183,7 @@ sudo systemctl start openhab2.service
 To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then unistall openHAB and remove the repository:
 
 ```shell
-sudo apt-get purge openhab2
+sudo apt-get purge openhab2*
 sudo rm /etc/apt/sources.list.d/openhab2.list
 ```
 
