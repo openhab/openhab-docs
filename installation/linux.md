@@ -97,11 +97,12 @@ Decide between two options:
   sudo apt-get install openhab2
   ```
 
-  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package. Optionally, you can also install the legacy add-ons package, which contains 1.x bindings for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
+  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package. 
+  Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
   ```shell
   sudo apt-get install openhab2-addons
-  sudo apt-get install openhab2-addons legacy
+  sudo apt-get install openhab2-addons-legacy
   ```
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup:
@@ -305,8 +306,8 @@ The output of `status` after a successful execution should be similar to:
 
 #### Installing add-ons
 
-When running a manual installation, is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
-Simply download the kar files (the latest builds can be found [here])(https://openhab.ci.cloudbees.com/job/openHAB-Distribution/) and move them to the `/opt/openhab2/addons` folder.
+When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
+Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
 
 #### Upgrade, Backup and Restore
