@@ -51,7 +51,7 @@ First, add the openHAB 2 Bintray repository key to your package manager:
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 ```
 
-As long as openHAB 2 is in it's development state you may choose between the latest *Beta* release or a *Snapshot* build.
+As long as openHAB 2 is in its development state you may choose between the latest *Beta* release or a *Snapshot* build.
 The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
 Decide between two options:
 
@@ -97,10 +97,11 @@ Decide between two options:
   sudo apt-get install openhab2
   ```
 
-  The lastest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the addons package:
+  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package. Optionally, you can also install the legacy add-ons package, which contains 1.x bindings for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
   ```shell
   sudo apt-get install openhab2-addons
+  sudo apt-get install openhab2-addons legacy
   ```
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup:
@@ -180,7 +181,7 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then unistall openHAB and remove the repository:
+To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then uninstall openHAB and remove the repository:
 
 ```shell
 sudo apt-get purge openhab2*
@@ -246,7 +247,7 @@ If the portal is not reachable by then, restart once.
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
-An important downside of the above methode is, that openHAB will be terminated, as soon as you close your terminal.
+An important downside of the above method is, that openHAB will be terminated, as soon as you close your terminal.
 To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal.
 
 A cleaner approach is to create a Linux service.
@@ -301,6 +302,12 @@ The output of `status` after a successful execution should be similar to:
    Active: active (running) since Thu 2016-08-14 01:16:00 GMT; 18h ago
      Docs: http://docs.openhab.org
 ```
+
+#### Installing add-ons
+
+When running a manual installation, is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
+Simply download the kar files (the latest builds can be found [here])(https://openhab.ci.cloudbees.com/job/openHAB-Distribution/) and move them to the `/opt/openhab2/addons` folder.
+
 
 #### Upgrade, Backup and Restore
 
@@ -358,7 +365,7 @@ sudo rm /lib/systemd/system/openhab2.service
 |                                  | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
 |:--------------------------------:|:---------------------------- |:----------------------------------|
 | openHAB application              | `/usr/share/openhab2`        | `/opt/openhab2`                   |
-| Additional addon files           | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
+| Additional add-on files          | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
 | Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
 | Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
 | Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
@@ -391,8 +398,8 @@ The need for these and the exact implementation on a specific system might diffe
 
 ### Privileges for Common Peripherals
 
-An openHAB setup will often rely on hardware like a modem, tranceiver or adapter to interface with home automation hardware.
-Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi addon board connected to the serial port on its GPIOs.
+An openHAB setup will often rely on hardware like a modem, transceiver or adapter to interface with home automation hardware.
+Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
 In order to allow openHAB to communicate with additional peripherals, it has to be added to corresponding Linux groups.
 The following example shows how to add Linux user `openhab` to the often needed groups `dialout` and `tty`.
 Additional groups may be needed, depending on your hardware and software setup.
@@ -415,7 +422,7 @@ Please contact the community forum for more detailed information regarding indiv
 ### Java Network Permissions
 
 The Java Virtual Machine hosting openHAB is restricted in it's permissions to interact on network level for security reasons.
-Some openHAB addons, like the Network or AmazonDash bindings, need elevated permissions to work.
+Some openHAB add-ons, like the Network or AmazonDash bindings, need elevated permissions to work.
 If needed, grand these permissions by executing the following command:
 
 ```shell
