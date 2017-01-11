@@ -45,8 +45,14 @@ The manual installation through a platform independent archive file is suited fo
 Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-As long as openHAB 2 is in it's development state you may choose between the latest *Beta* release or a *Snapshot* build. The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
+First, add the openHAB 2 Bintray repository key to your package manager:
 
+```shell
+wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+```
+
+As long as openHAB 2 is in its development state you may choose between the latest *Beta* release or a *Snapshot* build.
+The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
 Decide between two options:
 
 * **Beta Release**
@@ -57,6 +63,20 @@ Decide between two options:
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
+  Resynchronize the package index:
+
+  ```shell
+  sudo apt-get update
+  ```
+
+  Finally install openHAB2 as either an offline or online distribution. The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
+  
+  ```shell
+  sudo apt-get install openhab2-offline
+  # OR #
+  sudo apt-get install openhab2-online
+  ```
+
 * **Snapshot Release**
 
   Add the **openHAB 2 Unstable Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
@@ -64,29 +84,28 @@ Decide between two options:
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
-  
-Additionally, you need to add the openHAB 2 Bintray repository key to your package manager:
 
-```shell
-wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
-```
+  Resynchronize the package index:
 
-Scan the newly added repository and resynchronize the package index:
+  ```shell
+  sudo apt-get update
+  ```
 
-```shell
-sudo apt-get update
-```
+  Now install openHAB with the following command:
 
-Finally install openHAB 2 as either offline or online distribution.
-The **offline distribution** is full blown and comes with all add-ons, the **online distribution** will install additional add-ons on request from the internet.
+  ```shell
+  sudo apt-get install openhab2
+  ```
 
-```shell
-sudo apt-get install openhab2-offline
-# or
-sudo apt-get install openhab2-online
-```
+  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package. 
+  Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
-If everything went well, start openHAB and register it to be automatically executed at system startup:
+  ```shell
+  sudo apt-get install openhab2-addons
+  sudo apt-get install openhab2-addons-legacy
+  ```
+
+If everything went well, you can start openHAB and register it to be automatically executed at system startup:
 
 * Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
 
@@ -163,13 +182,10 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then unistall openHAB and remove the repository:
+To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then uninstall openHAB and remove the repository:
 
 ```shell
-sudo apt-get purge openhab2-offline
-# respectively
-sudo apt-get purge openhab2-online
-
+sudo apt-get purge openhab2*
 sudo rm /etc/apt/sources.list.d/openhab2.list
 ```
 
@@ -191,25 +207,24 @@ As openHAB 2 is still in an evolving state, the snapshot may be the **preferred 
 * **Beta Release**
 
   Download and extract the desired **offline or online** beta version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.b3.zip` as an example:
+  We will use `openhab-offline-2.0.0.b5.zip` as an example:
 
   ```shell
   cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-offline%2F2.0.0.b3%2Fopenhab-offline-2.0.0.b3.zip
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-offline%2F2.0.0.b5%2Fopenhab-offline-2.0.0.b5.zip
   sudo unzip openhab-download.zip -d /opt/openhab2
   rm openhab-download.zip
   ```
 
 * **Snapshot Release**
 
-  Download and extract the latest **offline or online** snapshot version of openHAB 2 as a **zip file** from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host.
-  We will use `openhab-offline-2.0.0-SNAPSHOT.zip` as an example:
+  Download and extract the latest snapshot version of openHAB 2 as a **zip file** from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host, for example:
 
   ```shell
   cd /tmp
-  wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip
-  sudo unzip openhab-offline-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-  rm openhab-offline-2.0.0-SNAPSHOT.zip
+  wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
+  sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
+  rm openhab-2.0.0-SNAPSHOT.zip
   ```
 
 The extracted openHAB files should belong to the earlier created openhab user. Execute:
@@ -233,7 +248,7 @@ If the portal is not reachable by then, restart once.
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
-An important downside of the above methode is, that openHAB will be terminated, as soon as you close your terminal.
+An important downside of the above method is, that openHAB will be terminated, as soon as you close your terminal.
 To work around that, a quick solution is, to execute openHAB in a detached [screen](https://www.howtoforge.com/linux_screen) terminal.
 
 A cleaner approach is to create a Linux service.
@@ -289,6 +304,12 @@ The output of `status` after a successful execution should be similar to:
      Docs: http://docs.openhab.org
 ```
 
+#### Installing add-ons
+
+When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
+Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
+
+
 #### Upgrade, Backup and Restore
 
 To stay up to date with new releases, you should do regular upgrades of your manual installation.
@@ -314,9 +335,9 @@ sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
 
 # download new version (please replace URL)
 cd /tmp
-wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip
-sudo unzip openhab-offline-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-rm openhab-offline-2.0.0-SNAPSHOT.zip
+wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
+sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
+rm openhab-2.0.0-SNAPSHOT.zip
 
 # restore configuration and userdata
 sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
@@ -345,7 +366,7 @@ sudo rm /lib/systemd/system/openhab2.service
 |                                  | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
 |:--------------------------------:|:---------------------------- |:----------------------------------|
 | openHAB application              | `/usr/share/openhab2`        | `/opt/openhab2`                   |
-| Additional addon files           | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
+| Additional add-on files          | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
 | Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
 | Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
 | Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
@@ -378,8 +399,8 @@ The need for these and the exact implementation on a specific system might diffe
 
 ### Privileges for Common Peripherals
 
-An openHAB setup will often rely on hardware like a modem, tranceiver or adapter to interface with home automation hardware.
-Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi addon board connected to the serial port on its GPIOs.
+An openHAB setup will often rely on hardware like a modem, transceiver or adapter to interface with home automation hardware.
+Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
 In order to allow openHAB to communicate with additional peripherals, it has to be added to corresponding Linux groups.
 The following example shows how to add Linux user `openhab` to the often needed groups `dialout` and `tty`.
 Additional groups may be needed, depending on your hardware and software setup.
@@ -402,7 +423,7 @@ Please contact the community forum for more detailed information regarding indiv
 ### Java Network Permissions
 
 The Java Virtual Machine hosting openHAB is restricted in it's permissions to interact on network level for security reasons.
-Some openHAB addons, like the Network or AmazonDash bindings, need elevated permissions to work.
+Some openHAB add-ons, like the Network or AmazonDash bindings, need elevated permissions to work.
 If needed, grand these permissions by executing the following command:
 
 ```shell
