@@ -60,8 +60,8 @@ The things requires the geolocation (latitude, longitude) for which the calculat
 Things:
 
 ```
-astro:sun:home  [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60]
-astro:moon:home [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60]
+astro:sun:home  [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60 ]
+astro:moon:home [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60 ]
 ```
 
 Items:
@@ -105,5 +105,15 @@ Available events:
     * **group** `apogee`
         * **event**: `APOGEE`
 
-**Note**: Offsets for each event group can be configured in the channel properties
+Offsets:
 
+*For each event group you can optionally configure an offset in the channel properties for the corresponding thing.*
+
+```
+astro:sun:home [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60 ] {
+    Channels:
+        Type rangeEvent : rise#event [
+            offset=-30
+        ]
+}
+```
