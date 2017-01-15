@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-Name: Time Event Sender
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhab.training.utils.sender
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: org.eclipse.osgi.framework.console,
+ org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.consumer.dynamic,
+ org.openhab.training.electricity.provider,
+ org.openhab.training.utils,
+ org.openhab.training.utils.sender,
+ org.osgi.framework,
+ org.osgi.service.cm,
+ org.osgi.service.component,
+ org.osgi.service.event,
+ org.slf4j
+Export-Package: org.openhab.training.utils.sender
+Service-Component: OSGI-INF/*.xml 
+Bundle-ActivationPolicy: lazy

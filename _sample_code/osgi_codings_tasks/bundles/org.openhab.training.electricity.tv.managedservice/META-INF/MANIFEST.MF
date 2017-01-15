@@ -1,0 +1,22 @@
+Manifest-Version: 1.0
+Bundle-Name: TV with Events
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-SymbolicName: org.openhab.training.electricity.tv.managedservice
+Import-Package: org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.consumer.dynamic,
+ org.openhab.training.electricity.provider,
+ org.openhab.training.electricity.tv.ds,
+ org.openhab.training.electricity.tv.events,
+ org.openhab.training.electricity.tv.managedservice,
+ org.openhab.training.utils.sender,
+ org.osgi.framework,
+ org.osgi.service.cm,
+ org.osgi.service.event,
+ org.osgi.util.tracker,
+ org.slf4j
+Export-Package: org.openhab.training.electricity.tv.managedservice
+Service-Component: OSGI-INF/tvmanagedservice.xml

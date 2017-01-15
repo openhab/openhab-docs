@@ -13,25 +13,30 @@ import org.osgi.framework.BundleContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * "The {@link HelloOSGiActivator} is used to print messages on the console,
- * when current bundle is started and stopped.
+/**A class used to customize the starting and stopping of our bundle.
+ * <p>
+ * The most straightforward way to control the life cycle of our bundle
+ * is to implement the org.osgi.framework.BundleActivator interface.
+ * When the bundle is started and stopped, the start and stop methods 
+ * of the BundleActivator interface are called. So we use them to
+ * print some messages on the console.
  *
  * @author Kiril Atanasov - Initial contribution
  */
 public class HelloOSGiActivator implements BundleActivator {
 
+	/** Used to display messages on the console */
     final static Logger logger = LoggerFactory.getLogger(HelloOSGiActivator.class);
 
     @Override
     public void start(BundleContext context) throws Exception {
-        // Prints welcome message ending with the system time in format HH:MM
+    	// Print a welcome message
         logger.info("HelloOSGi Bundle installed");
     }
 
     @Override
     public void stop(BundleContext context) throws Exception {
-        // Prints goodbye message ending with the system time in format HH:MM
+    	// Print a goodbye message
         logger.info("HelloOSGi Bundle uninstalled");
     }
 }

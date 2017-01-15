@@ -8,13 +8,35 @@
  */
 package org.openhab.training.electricity.provider;
 
-/**
- * The type of the {@link ElectricityProvider}.
- * 
- * @author Kiril Atanasov - Initial contribution
- */
 public enum ElectricityProviderType {
-    HOME_NETWORK,
-    BATTERY,
-    SOLAR_SOURCE;
+    
+    HOME_NETWORK {
+        @Override
+        public int getRating() {
+            return 1000;
+        }
+    },
+    
+    BATTERY {
+        @Override
+        public int getRating() {
+            return 500;
+        }
+    },
+    
+    INTERNAL_POWER_SOURCE {
+        @Override
+        public int getRating() {
+            return 250;
+        }
+    };
+	
+	/**
+	 * Returns the rating of the {@link ElectricityProvider}. It is used to
+	 * compare the providers when more than one is available. When two providers
+	 * are compared, the one with the bigger rating has a higher priority.
+	 * 
+	 * @return the {@link ElectricityProvider}'s rating
+	 */
+    public abstract int getRating();
  }

@@ -14,36 +14,50 @@ import org.openhab.training.electricity.provider.ElectricityProvider;
 import org.osgi.framework.BundleActivator;
 import org.osgi.framework.BundleContext;
 import org.osgi.framework.ServiceRegistration;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
- * HomeElectricityNetworkActivator starts the {@link HomeElectricityNetwork}
- * bundle.
+ * A class used to customize the starting and stopping of our bundle. When the
+ * bundle is started and stopped, the start and stop methods of the
+ * BundleActivator interface are called.
  * 
  * @author Kiril Atanasov - Initial contribution
  */
 public class HomeElectricityNetworkActivator implements BundleActivator {
 
-    /** is used to unregister the service, when it is stopped */
-    private ServiceRegistration<?> registration;
+	/** Used to display messages on the console */
+	protected final Logger logger = LoggerFactory.getLogger(this.getClass());
+	
+	/**
+	 * An object which is returned by the Framework when the bundle is
+	 * successfully registered as service.
+	 * <p>
+	 * It will be used in the {@link #stop(BundleContext)} method to unregister
+	 * this bundle.
+	 */
+	private ServiceRegistration<?> registration;
 
-    /**
-     * {@inheritDoc}
-     * <p>
-     * Registers the {@link HomeElectricityNetwork} service.
-     */
-    @Override
-    public void start(BundleContext context) throws Exception {
-        registration = context.registerService(ElectricityProvider.class.getName(), new HomeElectricityNetwork(), null);
-    }
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * In this case we use it to register the {@link HomeElectricityNetwork}
+	 * service.
+	 */
+	@Override
+	public void start(BundleContext context) throws Exception {
+		registration = context.registerService(ElectricityProvider.class.getName(), new HomeElectricityNetwork(), null);
+	}
 
-    /**
-     * {@inheritDoc}
-     * <p>
-     * Unregisters the {@link HomeElectricityNetwork} service.
-     */
-    @Override
-    public void stop(BundleContext context) throws Exception {
-        registration.unregister();
-    }
+	/**
+	 * {@inheritDoc}
+	 * <p>
+	 * In this case we use it to unregister the {@link HomeElectricityNetwork}
+	 * service.
+	 */
+	@Override
+	public void stop(BundleContext context) throws Exception {
+		registration.unregister();
+	}
 
 }
