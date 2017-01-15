@@ -98,6 +98,7 @@ The following element types can be used in a sitemap definition file.
 | Element                                                                     | Description                                                                                             |
 |-------------------------------------------|-----------------------------------------------------------|
 | [Frame](#element-type-frame)              | Area containing various other sitemap elements.
+| [Default](#element-type-default)          | Renders an item in the default UI representation specified by the type of the given item.
 | [Text](#element-type-text)                | Renders an item in a text representation.
 | [Group](#element-type-group)              | Concentrates all elements of a given group nested in one group element.
 | [Switch](#element-type-switch)            | Renders an item as a ON/OFF or multiple buttons switch.
@@ -156,6 +157,16 @@ Frames are used to create visually separated areas of items.
 
 ![Presentation of the frame element in BasicUI](images/sitemap_demo_frame.png)
 
+### Element Type 'Default'
+
+```xtend
+Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
+```
+
+Presents an item using the default UI representation specified by the type of the given item. E.g. a `Dimmer` item will be represented as if using a [Slider](#element-type-slider) element while a `Player` item will be rendered with the commonly known button controls (Previous/Pause/Play/Next).
+
+<!-- TODO: specify what the default representation for each item type is -->
+
 ### Element Type 'Text'
 
 ```xtend
@@ -174,7 +185,7 @@ Please check with the documentation on the [item label](items.html#item-label) f
 Group [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 ```
 
-The element will be clickable, revealing a new view showing all group items.
+The element will be clickable, revealing a new view showing all group items using the [Default](#element-type-default) element type.
 In addition, item groups may be configured to hold a value, just like with normal items.
 Please refer to the documentation on [items](items.html) for details.
 
