@@ -40,17 +40,17 @@ Note: Parts in square brackets ([]) are optional.
 **Example:**
 
 ```xtend
-Number Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number LivingRoom_Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The example above defines an item:
 
 * of type `Number`
-* with name `Sensor_Temperature`
+* with name `LivingRoom_Temperature`
 * formatting its output in format `%.1f °C` (See Formatting section for syntax explanation)
 * displaying icon `temperature`
 * belonging to groups `gTemperature` and `gLivingRoom`
-* tagged as a thermostat ("TargetTemperature") for usage with I/O addons like `hueemulation`
+* tagged as a thermostat ("TargetTemperature") for usage with I/O addons like [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html)
 * bound to the openHAB binding `knx` with write group address `1/0/15` and listening group address `0/0/15`
 
 ## Item Types
