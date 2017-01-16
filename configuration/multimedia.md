@@ -64,19 +64,20 @@ mactts:Kanya Kanya (th_TH)
 
 You can define a default TTS service and a default voice to use either by textual configuration in `conf/services/runtime.cfg` or in the Paper UI in `Configuration->System->Voice`.
 
-In order to say a text, you can enter such a command on the console or you can enter such commands within DSL rules:
+In order to say a text, you can enter such a command on the console (The default voice and default audio sink will be used):
 
-```text
+```
 openhab> smarthome:voice say Hello world!
 ```
 
-```java
+Alternatively you can execute such commands within DSL rules in the following way: 
+
+```
 say("Hello world!")
 say("Hello world!", "voicerss:enGB")
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
 ```
 
-The default voice and default audio sink will be used.
 You can select a particular voice (second parameter) and a particular audio sink (third parameter).
 If no voice or no audio sink is provided, the default voice and default audio sink will be used.
 
