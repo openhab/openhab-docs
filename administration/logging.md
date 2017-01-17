@@ -70,14 +70,16 @@ The **what** is defined by `package.subpackage` and is in most cases a binding (
 
 The **detail** of logging is defined by one of the following levels:
 
-0. OFF
-1. ERROR
-2. WARN
-3. INFO
-4. DEBUG
-5. TRACE
+1. DEFAULT
+2. OFF
+3. ERROR
+4. WARN
+5. INFO
+6. DEBUG
+7. TRACE
 
-The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 1 to 4, while **TRACE** adds further messages in addition to what **DEBUG** displays.
+The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 3 to 6, while **TRACE** adds further messages in addition to what **DEBUG** displays.
+Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
 Following example sets the logging for the Z-Wave binding to **DEBUG**
 
