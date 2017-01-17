@@ -70,10 +70,12 @@ The **what** is defined by `package.subpackage` and is in most cases a binding (
 
 The **detail** of logging is defined by one of the following levels:
 
+0. OFF
 1. ERROR
 2. WARN
 3. INFO
 4. DEBUG
+5. TRACE
 
 The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 1 to 4.
 
