@@ -24,7 +24,16 @@ org.eclipse.smarthome.basicui:enableIcons=true
 # Default: PNG
 org.eclipse.smarthome.basicui:iconType=svg
 ```
+Accessing Sitemaps:
 
+The Basis UI has a default layout showing all things and their corresponding items.  You may create your own sitemaps and access them through the basic UI in 2 ways.
+
+1. Set the default sitemap via the Paper UI vi Configuration -> Services -> Basic UI -> Configure, and set the Default Sitemap name.
+
+2. Passing the "sitemap" parameter to the URL used to access the OpenHAB server.
+  
+      Example: http://hostname:8080/basicui/app?sitemap=sitemapname
+  
 Screenshots:
 
 [![Screenshot 1](doc/screenshot-1.png)](doc/screenshot-1-full.png)
