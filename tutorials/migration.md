@@ -453,7 +453,7 @@ The **SCALE** transformation has evolved.
 ### Sitemap
 
 If you use png icons, you must change the default icons from svg to png for
-ClassicUI and BasicUI. This can be done in PaperUI in `Configuration -> Service -> BasicUI and ClassicUI`.
+ClassicUI and BasicUI. This can be done in PaperUI under Configuration -> Service -> BasicUI and ClassicUI.
 Set the "Default Icon Format" to "Bitmap".
 
 Note that not all of the default icons that came with openHAB 1.x are avaialble
@@ -464,13 +464,15 @@ Also, in openHAB 2 there is a new requirement for dynamic icons: there must be a
 default. For example, if one has a bunch of Wunderground icons (e.g.
 wunderground-chanceflurries.png) there mst be a `wunderground.png` icon as well.
 
-Note that the path to the Sitemap UIs have changed. If one goes
-to `http://<hostname>:8080` you will see a list of all the installed UIs,
-including the administration UIs. To get to ClassicUI the URL is
-`http://<hostname>:8080/classicui/app?sitemap=<your sitemap>`. If you previously
-used `default.sitemap` as your file name so you could skip the `?sitemap=` part
-you must now rename the file to `_default.sitemap` and change the very first
-line of the file to read `sitemap _default label="<sitemap name>`.
+Note that the URLs to the openHAB frontends have changed:
+
+* An overview of all installed UIs, including the administration UIs: [`http://<hostname>:8080`]()
+* The direct link to your Sitemap on BasicUI [`http://<hostname>:8080/basicui/app?sitemap=<your-sitemap>`]().
+* The direct link to your Sitemap on ClassicUI [`http://<hostname>:8080/classicui/app?sitemap=<your-sitemap>`]().
+* These and all further UIs can be accessed through the overview page.
+
+If you previously used `default.sitemap` as your file name, so you could skip the `?sitemap=...` part,
+you can now name it however you like and define the "Default Sitemap" via the PaperUI settings mentioned above. 
 
 openHAB changes where the files for dynamic webviews like the one created for the
 Weather Binding in openHAB 1.x. Instead of the deeply buried `/usr/share/openhab/webapps`
