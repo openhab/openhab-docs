@@ -26,7 +26,7 @@ org.eclipse.smarthome.basicui:iconType=svg
 ```
 Accessing Sitemaps:
 
-The Basis UI has a default layout showing all things and their corresponding items.  You may create your own sitemaps and access them through the basic UI in 2 ways.
+The Basic UI has a default layout showing all things and their corresponding items.  You may create your own sitemaps and access them through the basic UI in 2 ways.
 
 1. Set the default sitemap via the Paper UI vi Configuration -> Services -> Basic UI -> Configure, and set the Default Sitemap name.
 
