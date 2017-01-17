@@ -17,7 +17,7 @@ The console offers the option to:
 
 Accessing the console depends on the start mode of openHAB. The manually start using shell/batch script ends directly in the console.
 
-If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default Username/Password is **openhab/habopen**. Be aware, that the first connection attempt may take a few seconds longer.
+If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101. The default username/password is **openhab/habopen**. Be aware, that the first connection attempt may take a few seconds longer.
 
 ```
 ssh openhab@localhost -p 8101
@@ -38,7 +38,7 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 openhab>
 ```
 
-# Using the Console
+## Using the Console
 
 **Help** is listing all available commands:
 
@@ -83,11 +83,11 @@ The session is ended by using the logout command:
 openhab> logout
 ```
 
-# Bind Console to all Interfaces
+## Bind Console to all Interfaces
 
 By default openHAB binds its shell to localhost only due to obvious security reasons. If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in the configuration file `org.apache.karaf.shell.cfg` under the openHAB `<userdata>/etc` path. Replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces. Please be aware, that the console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path). You should thereby change the default password.
 
-The above can be accomplished by the following Linux shell command (on an apt/deb-based installation, you may need to adapt the path):
+The above can be accomplished by the following Linux shell command (on an apt/deb-based installation, you might need to adapt the path for other installations):
 
 ```
 sudo sed -i -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
