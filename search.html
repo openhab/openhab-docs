@@ -1,0 +1,42 @@
+---
+layout: intro
+title: openHAB 2 - Search Results
+---
+{% include base.html %}
+<h2>Search Results</h2>
+<div id="searchresults">
+<div id="gsearch"></div>
+<script>
+var myCallback = function() {
+  if (document.readyState == 'complete') {
+    google.search.cse.element.render(
+        {
+          div: "gsearch"
+         });
+  } else {
+    google.setOnLoadCallback(function() {
+        google.search.cse.element.render(
+            {
+              div: "gsearch"
+            });
+    }, true);
+  }
+};
+
+window.__gcse = {
+  parsetags: 'explicit',
+  callback: myCallback
+};
+  (function() {
+    var cx = '003707250976775348452:h9hxadbatfq';
+    var gcse = document.createElement('script');
+    gcse.type = 'text/javascript';
+    gcse.async = true;
+    gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(gcse, s);
+  })();
+</script>
+<gcse:searchresults-only linkTarget=""></gcse:searchresults-only>
+</div>
+</div>

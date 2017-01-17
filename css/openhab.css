@@ -12,3 +12,40 @@
 .card .card-action a:hover {
   color: #039BE5;
 }
+
+li.search:hover {
+   background-color: transparent;
+}
+
+.search-form-input  {
+  padding-left: 5px !important;
+  width: 100px;
+  width: 100px;
+  border: none !important; 
+  transition: 0.2s ease-in;
+}
+
+#searchform .search-form-input:focus {
+  width: 200px;
+}
+
+#searchresults td {
+   border: none;
+   padding: 0 8px 0 8px;
+}
+
+#searchresults .gsc-webResult .gsc-result {
+   padding: 0px;
+}
+
+#searchresults table {
+   margin-bottom: 10px;
+}
+
+#searchresults .gs-title {
+   height: 1.4em;
+}
+
+#searchresults input {
+   box-sizing: content-box;
+}
