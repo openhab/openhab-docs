@@ -21,13 +21,17 @@ openHAB has mainly two ways to be accessed:
 
 ### Webserver Ports
 
-openHAB has a built-in webserver, which listens on port 8080 for HTTP and 8443 for HTTPS requests. In general, it is advised to use HTTPS communication over HTTP.
+openHAB has a built-in webserver, which listens on port 8080 for HTTP and 8443 for HTTPS requests.
+In general, it is advised to use HTTPS communication over HTTP.
 
-The default ports 8080 and 8443 can be changed by setting the environment variables `OPENHAB_HTTP_PORT` resp. `OPENHAB_HTTPS_PORT`. In an apt installation, you would best do this in the file `/etc/defaults/openhab2`.
+The default ports 8080 and 8443 can be changed by setting the environment variables `OPENHAB_HTTP_PORT` resp. `OPENHAB_HTTPS_PORT`.
+In an apt installation, you would best do this in the file `/etc/defaults/openhab2`.
 
 ### SSL Certificates
 
-On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in `${USER_DATA}etc/keystore`). This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server. Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
+On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in `${USER_DATA}etc/keystore`).
+This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server.
+Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
 
 ## Authentication and Access Control
 
@@ -35,7 +39,8 @@ openHAB does not (yet) support restricting access through HTTP(S) for certain us
 
 **It is therefore vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!**
 
-If you want to limit access to only certain network interfaces, you can do so in the file `$OPENHAB_USERDATA/etc/org.ops4j.pax.web.cfg` by editing the `org.ops4j.pax.web.listening.addresses` parameter. Setting it to
+If you want to limit access to only certain network interfaces, you can do so in the file `$OPENHAB_USERDATA/etc/org.ops4j.pax.web.cfg` by editing the `org.ops4j.pax.web.listening.addresses` parameter.
+Setting it to
 
 ```
 org.ops4j.pax.web.listening.addresses = 127.0.0.1
@@ -45,15 +50,19 @@ will e.g. only allow requests through the local loopback interface.
 
 ## Options for Secure Remote Access
 
-Clearly, having remote access to your openHAB instance is something most users would not want to miss. There are different options to do so.
+Clearly, having remote access to your openHAB instance is something most users would not want to miss.
+There are different options to do so.
 
 ### VPN Connection
 
-The most secure option is probably to create a VPN connection to your home network. Doing so will allow you to access your openHAB instance in the same way as if you were at home. There are many different solutions for VPN, so we cannot give any specific advice here, what to use and how to set in up.
+The most secure option is probably to create a VPN connection to your home network.
+Doing so will allow you to access your openHAB instance in the same way as if you were at home.
+There are many different solutions for VPN, so we cannot give any specific advice here, what to use and how to set in up.
 
 ### myopenHAB Cloud Service
 
-You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel. openHAB will see these incoming requests as originating from the local loopback interface.
+You can use an [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance to which openHAB  creates a tunnel connection and which forwards all requests through this tunnel.
+openHAB will see these incoming requests as originating from the local loopback interface.
 
 The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](http://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
 
@@ -66,7 +75,7 @@ You just have to **replace *mydomain_or_myip*** with either an **internal or ext
 Running openHAB behind a reverse proxy allows you to access your openHAB runtime via port 80 (HTTP) and 443 (HTTPS).
 It also provides you a simple way of **protecting your server** with authentication and secure certificates.
 
-The good news is that [openHABian](openhabian) already comes with a preconfigured NGINX that can be used as a reverse proxy. For all others, please see the following chapters for a detailed description on how such a setup can be achieved.
+The good news is that [openHABian](openhabian) already offers the possibility to activate a preconfigured NGINX reverse proxy, which includes setting up authentication and a valid [Let's Encrypt](https://letsencrypt.org) certificate.
 
 #### Setting up NGINX
 
