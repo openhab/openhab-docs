@@ -28,7 +28,7 @@ Accessing Sitemaps:
 
 The Basic UI has a default layout showing all things and their corresponding items.  You may create your own sitemaps and access them through the basic UI in 2 ways.
 
-1. Set the default sitemap via the Paper UI vi Configuration -> Services -> Basic UI -> Configure, and set the Default Sitemap name.
+1. Set the default sitemap via the Paper UI via Configuration -> Services -> Basic UI -> Configure, and set the Default Sitemap name.
 
 2. Passing the "sitemap" parameter to the URL used to access the OpenHAB server.
   
