@@ -32,19 +32,17 @@ webaudio
 
 You can define the default audio sink either by textual configuration in `conf/services/runtime.cfg` or in the Paper UI in `Configuration->System->Audio`.
 
-In order to play a sound, you can use
+In order to play a sound, you can use the following command on the console:
 
 ```text
 openhab> smarthome:audio play doorbell.mp3
 ```
 
-on the console or
+Alternatively the [`playSound()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) can be used in DSL rules:
 
 ```java
 playSound("doorbell.mp3")
 ```
-
-within DSL rules.
 
 ## Voice
 
@@ -70,7 +68,7 @@ In order to say a text, you can enter such a command on the console (The default
 openhab> smarthome:voice say Hello world!
 ```
 
-Alternatively you can execute such commands within DSL rules in the following way: 
+Alternatively you can execute such commands within DSL rules by using the [`say()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-): 
 
 ```
 say("Hello world!")
@@ -105,7 +103,7 @@ openhab> smarthome:voice interpret turn on the light
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules:
+Again, such a command can also be entered within DSL rules (using the [`interpret()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-))
 
 ```java
 interpret("turn on the light")
