@@ -77,7 +77,7 @@ The **detail** of logging is defined by one of the following levels:
 4. DEBUG
 5. TRACE
 
-The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 1 to 4.
+The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 1 to 4, while **TRACE** adds further messages in addition to what **DEBUG** displays.
 
 Following example sets the logging for the Z-Wave binding to **DEBUG**
 
