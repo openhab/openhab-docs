@@ -11,23 +11,24 @@ The following instructions will guide you through the process of setting up open
 
 ## Prerequisites
 
-OpenHAB requires Java 8 to run correctly, we reccomend a version of 8_101 and higher. 
-To get the latest version, visit the [java website](https://www.java.com/en/download/).
+First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-The directory that openHAB is installed to **contains no spaces**, on this page, we will be using `C:\openhab` as an example.
+The directory that openHAB is installed to must **contain no spaces**.
+On this page, we will be using `C:\openhab` as an example.
 
 ## Installation
 
-The openHAB runtime is distributed using a platform-independent zip file. To install it, follow these simple steps:
+The openHAB runtime is distributed using a platform-independent zip file. 
+To install it, follow these simple steps:
 
 1. Choose between the [RC (Release client) version](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip) or the [latest snapshot version](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip) of openHAB2.
 
 2. Unzip the file in your chosen directory (e.g. `C:\openhab`)
 
-3. Start the server: Launch the runtime by executing the script `start.bat`.
+3. Start the server: Launch the runtime by executing the script `start.bat` and wait a while for it to start and complete.
 
-4. Point your browser to `http://localhost:8080` and you should be looking at the openHAB portal page. 
-  On this website, you can setup many of the [things]({{base}}/configuration/things.html) and [items]({{base}}/configuration/items.html) for your smart home.
+4. Point your browser to `http://localhost:8080`. You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html). 
+   When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
 
 ## Folder Structure
 
@@ -43,7 +44,7 @@ Assuming a successful install, you will now have various folders inside `C:\open
 ## Backup
 
 Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions). 
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openhab` folder. Which can be used anytime after a failure.
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openhab` folder. Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
 
