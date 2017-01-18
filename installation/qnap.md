@@ -13,7 +13,7 @@ Download the latest openHAB package for QNAP from [here](https://github.com/open
 ![AppCenter enabled](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20enabled.png)
 
 ## How to install
-1. Download the QPKG from the releases section here on GitHub.
+1. Download the QPKG from the [releases section over on GitHub](https://github.com/openhab/openhab-qnap-qpkg/releases).
 
 2. Create a directory for your addons, configurations and userdata, by
 
@@ -27,26 +27,26 @@ Download the latest openHAB package for QNAP from [here](https://github.com/open
 
 5. Open the "Install manually" dialog and choose the qpkg you have downloaded
 
-  ![AppCenter enabled](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20choose.png)
+  ![AppCenter choose](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20choose.png){:width="30%"}
 
 6. Confirm the installation 
 
-  ![AppCenter enabled](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20confirm.png)
+  ![AppCenter confirm](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20confirm.png){:width="30%"}
 
 7. Wait while the package is being installed
 
-  ![AppCenter enabled](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20installing.png)
+  ![AppCenter installing](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20installing.png){:width="30%"}
 
 8. When finished just close the dialog and wait for a while until openHAB has completly started.
 
-  ![AppCenter enabled](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20finished.png)
+  ![AppCenter finished](https://github.com/openhab/openhab-qnap-qpkg/raw/master/docs/QTS_4.2.0_AppCenter%20finished.png){:width="30%"}
 
-9. Access openHAB via ```http://<NAS_IP_or_DNS>:8090```
+9. Access openHAB via [http://NAS_IP_or_DNS_address:8090](#)
 
 ## How to uninstall
 1. Go to the "App Center" and remove the app like any other.
 2. If wanted/needed also remove "addons", "conf" and "userdata" from the your directory, eg. "openHAB2" share or "Public"/openHAB2
-  1. _REMEMBER_: If you have installed openHAB2 to ".qpkg" (see "How to install", section 2.3) then all files get removed directly!
+  * _REMEMBER_: If you have installed openHAB2 to ".qpkg" (see "How to install", section 2.3) then all files get removed directly!
 
 ## Known issues
 * Please check our issue tracker: https://github.com/openhab/openhab-distro/issues
