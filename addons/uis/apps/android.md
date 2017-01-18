@@ -9,18 +9,19 @@ title: Android openHAB App
 
 We provide a native Android app for openHAB.
 It uses the REST API of openHAB to render sitemaps of your openHAB installation.
-It also supports [my.openhab.org]() including push notifications.
+It also supports [myopenhab.org](http://www.myopenhab.org) including push notifications.
 The latest release version of the app is always available through Google Play.
 
 **Features:**
 
-* View your openHAB sitemaps
-* Control your openHAB items
+* View openHAB sitemaps
+* Control openHAB remotely
 * Multiple themes available
-* Thing discovery via app
+* Push notifications
 * Voice commands
-* Username/password or SSL client authentication
-* Definition of a default sitemap
+* Thing discovery via app
+* Support for Username/password or SSL client authentication
+* Selection of a default sitemap
 
 [![Download openHAB app on Google Play](images/google-play-badge.png){:width="250px"}](https://play.google.com/store/apps/details?id=org.openhab.habdroid)
 
