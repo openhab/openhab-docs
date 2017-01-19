@@ -28,13 +28,23 @@ Linux file permissions is one of the biggest sources of issues, Linux novices ru
 If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
 Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions).
 
-## Installation
+**Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-If you need to install Oracle Java 8, execute:
+
+A repository providing the latest Oracle Java 8 revision (above "101") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
+Follow the provided guides for either a [repository based](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) or a [PPA based](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html) installation.
+In short these are the commands to execute step-by-step on most systems:
 
 ```shell
-sudo apt-get update && sudo apt-get install oracle-java8-jdk
+echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
+echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
 ```
+
+## Installation
 
 openHAB 2 can be installed though a package repository or manually from file.
 The installation through a provided **package repository** (using `apt-get`) is **recommended** for end users.
@@ -69,8 +79,9 @@ Decide between two options:
   sudo apt-get update
   ```
 
-  Finally install openHAB2 as either an offline or online distribution. The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
-  
+  Finally install openHAB2 as either an offline or online distribution.
+  The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
+
   ```shell
   sudo apt-get install openhab2-offline
   # OR #
@@ -97,7 +108,7 @@ Decide between two options:
   sudo apt-get install openhab2
   ```
 
-  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package. 
+  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
   Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
   ```shell
@@ -227,7 +238,8 @@ As openHAB 2 is still in an evolving state, the snapshot may be the **preferred 
   rm openhab-2.0.0-SNAPSHOT.zip
   ```
 
-The extracted openHAB files should belong to the earlier created openhab user. Execute:
+The extracted openHAB files should belong to the earlier created openhab user.
+Execute:
 
 ```shell
 sudo chown -hR openhab:openhab /opt/openhab2
@@ -374,7 +386,9 @@ sudo rm /lib/systemd/system/openhab2.service
 
 ## Viewing Log Messages
 
-In order to get more insight on what your openHAB system is doing and to see occurring error messages, it is recommended to always have a look on the openHAB log files. These will tell you everything you might need to know. Execute the following command in one session or have both files separated in sessions side by side:
+In order to get more insight on what your openHAB system is doing and to see occurring error messages, it is recommended to always have a look on the openHAB log files.
+These will tell you everything you might need to know.
+Execute the following command in one session or have both files separated in sessions side by side:
 
 * Package repository based installation:
 
@@ -438,7 +452,8 @@ Because your openHAB installation most probably is stored on a remote device, be
 The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
 
 We will now guide you through the Samba network shares setup process.
-Start by installing Samba. Afterwards open it's configuration file in your favorite editor:
+Start by installing Samba.
+Afterwards open it's configuration file in your favorite editor:
 
 ```shell
 sudo apt-get install samba samba-common-bin
@@ -528,7 +543,8 @@ sudo systemctl restart smbd.service
 
 After setting up and restarting Samba, check your connection to the shared folder and create a permanent mount.
 Check the network devices manager of your local operating system to find and access your openHAB host and share.
-These might however not be auto-discovered. You can also manually connect:
+These might however not be auto-discovered.
+You can also manually connect:
 
 * **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
 * **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
