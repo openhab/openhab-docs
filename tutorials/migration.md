@@ -599,7 +599,7 @@ a .things file (located in conf/things) with the line:
 
 
 ```java
-Thing yahooweather:weather:berlin [ location="638242", unit="c" ]
+Thing yahooweather:weather:berlin [ location=638242 ]
 ```
 
 As described in the Binding's readme, three Channels are supported: temperature,
@@ -616,8 +616,8 @@ the Channels.
 
 ```java
 // openHAB 2 Syntax
-Number Temperature   { channel="yahooweather:weather:berlin#temperature" }
-Number Humidity      { channel="yahooweather:weather:berlin#humidity" }
+Number Temperature   { channel="yahooweather:weather:berlin:temperature" }
+Number Humidity      { channel="yahooweather:weather:berlin:humidity" }
 ```
 
 As you can see, the Channel ID consists of the Thing's name, a "#" and the
