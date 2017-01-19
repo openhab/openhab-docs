@@ -439,61 +439,37 @@ cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
 
 ### Items
 
-As mentioned above, you must now manually install any Transformation engine your
-Items may use.
+  * You must now manually install any Transformation engine your Items may use.
 
-The **SCALE** transformation has evolved.
- 
-- Old syntax that was `[minbound,maxbound]` has to be changed to
-`[minbound..maxbound]`.
-- Note that you now have the ability to exclude bounds from the ranges (e.g.
-`]minbound..maxbound]`) and also define open ranges`[minbound..]`
-
+  * The **SCALE** transformation has evolved.
+    * Old syntax that was `[minbound,maxbound]` has to be changed to `[minbound..maxbound]`.
+    * Note that you now have the ability to exclude bounds from the ranges (e.g. `]minbound..maxbound]`) and also define open ranges`[minbound..]`.
 
 ### Sitemap
 
-If you use png icons, you must change the default icons from svg to png for
-ClassicUI and BasicUI. This can be done in PaperUI under Configuration -> Service -> BasicUI and ClassicUI.
-Set the "Default Icon Format" to "Bitmap".
+  * Change the default icons to png for ClassicUI and BasicUI if migrating custom icons. This can be done in PaperUI under Configuration -> Service -> BasicUI and ClassicUI. Set the "Default Icon Format" to "Bitmap".
 
-Note that not all of the default icons that came with openHAB 1.x are avaialble
-in the default set for openHAB 2. If you are missing an icon in your sitemap
-that could be the cause. The full list of openHAB 2 icons is [here]({{base}}/addons/iconsets/classic/readme.html).
+  * Not all of the default icons that came with openHAB 1.x are available in the default set for openHAB 2. If you are missing an icon in your sitemap that could be the cause. The full list of openHAB 2 icons is [here]({{base}}/addons/iconsets/classic/readme.html).
 
-Also, in openHAB 2 there is a new requirement for dynamic icons: there must be a
-default. For example, if one has a bunch of Wunderground icons (e.g.
-wunderground-chanceflurries.png) there mst be a `wunderground.png` icon as well.
+  * Dynamic icons must have a default. For example, if one has a bunch of Wunderground icons (e.g. wunderground-chanceflurries.png) there must be a `wunderground.png` icon as well.
 
-Note that the URLs to the openHAB frontends have changed:
+  * The URLs to the openHAB frontends have changed:
+    * An overview of all installed UIs, including the administration UIs: [`http://<hostname>:8080`]()
+    * The direct link to your Sitemap on BasicUI [`http://<hostname>:8080/basicui/app?sitemap=<your-sitemap>`]().
+    * The direct link to your Sitemap on ClassicUI [`http://<hostname>:8080/classicui/app?sitemap=<your-sitemap>`]().
+    * These and all further UIs can be accessed through the overview page.
 
-* An overview of all installed UIs, including the administration UIs: [`http://<hostname>:8080`]()
-* The direct link to your Sitemap on BasicUI [`http://<hostname>:8080/basicui/app?sitemap=<your-sitemap>`]().
-* The direct link to your Sitemap on ClassicUI [`http://<hostname>:8080/classicui/app?sitemap=<your-sitemap>`]().
-* These and all further UIs can be accessed through the overview page.
+  * The default sitemap is configured through a parameter for BasicUI and ClassicUI instead of naming the sitemap `default.sitemap`.
 
-If you previously used `default.sitemap` as your file name, so you could skip the `?sitemap=...` part,
-you can now name it however you like and define the "Default Sitemap" via the PaperUI settings mentioned above. 
+  * Static webview files are now located in `<openhab 2 conf>/html` instead of  `/usr/share/openhab/webapps`
 
-openHAB changes where the files for dynamic webviews like the one created for the
-Weather Binding in openHAB 1.x. Instead of the deeply buried `/usr/share/openhab/webapps`
-the files are placed in `<openHAB 2 conf>/html`. For example, if following the
-1.x Weather Binding tutorial for a dynamic webview, one would create a
-`<openHAB 2 conf>/html/weather` folder and put the `images` and layout folders there.o
+  * The name of the sitemap (i.e. the word right after `sitemap` at the top of the file) must match the file name. For example the file named `myhome.sitemap` should start with `sitemap myhome`.
 
 ### Rules
-One set of errors that will occur in rules that refer to the packages of openHAB
-core classes (e.g. org.openhabs.core.*). These classes have moved to
-org.eclipse.smarthome.core.*. Furthermore, these classes as well as the Joda
-time classes no longer need to be imported.
-
-In addition, to test an Item to see if it is Undefined one tests against `NULL`
-instead of `Undefined`. For example `if(MyItem.state == Undefined)` becomes
-`if(MyItem.state == NULL)`. Note that `NULL` is not to be confused with `null`.
-`NULL` is only valid when testing an Item's state to see if it is undefined.
-`null` is used pretty much everywhere else to mean "no value" and usually
-indicates no result or an error.
-
-Finally, the `HSBType` state type can no longer be constructed using a `java.awt.Color` object, and there is no longer a `toColor()` method.  Use the following alternatives:
+  * All references to org.openhab.core.* in imports and class references should be removed. All of these classes are automatically included and have moved.
+  * import org.joda.time.* statements should also be removed.
+  * To test for Items with an Undefined state replace `if(MyItem.state == Undefined)` with `if(MyItem.state == NULL)`. Case matters. `NULL` is only valid when testing an Item's state to see if it is undefined. `null` is used pretty much everywhere else to mean "no value" and usually indicates no result or an error.
+  * The `HSBType` state type can no longer be constructed using a `java.awt.Color` object, and there is no longer a `toColor()` method.  Use the following alternatives:
 
 ```java
 var HSBType hsb = HSBType::fromRGB(color.red, color.green, color.blue)
