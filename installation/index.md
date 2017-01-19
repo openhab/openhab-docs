@@ -44,14 +44,14 @@ openHAB may be unstable and slower executed by OpenJDK.
 
 As for now, a pre-release Java 9 installation is not recommended and is not yet supported by openHAB 2.
 
-For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org), the minimum recommended Orcacle Java 8 revision is "111".
+For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org), the minimum recommended Orcacle Java 8 revision is "101".
 Attention: Most package managers serve an **older revision**.
 Check your current Java version by opening a command line console and typing `java -version`:
 
 ```text
-java version "1.8.0_111"
-Java(TM) SE Runtime Environment (build 1.8.0_111-b14)
-Java HotSpot(TM) Client VM (build 25.111-b14, mixed mode)
+java version "1.8.0_121"
+Java(TM) SE Runtime Environment (build 1.8.0_121-b13)
+Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
 ```
 
 ## Setup variants

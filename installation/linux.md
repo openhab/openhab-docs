@@ -31,7 +31,7 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 **Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
 
-A repository providing the latest Oracle Java 8 revision (above "111") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
+A repository providing the latest Oracle Java 8 revision (above "101") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
 Follow the provided guides for either a [repository based](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) or a [PPA based](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html) installation.
 In short these are the commands to execute step-by-step on most systems:
 
