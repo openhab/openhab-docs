@@ -42,6 +42,8 @@ openHAB may be unstable and slower executed by OpenJDK.
 
 > Oracle Java offers significant performance advantages over OpenJDK on ARM platforms, and will expand the range of Java applications that run well [on the Raspberry Pi].
 
+Also make sure to use the 32-bit version of the JVM, even on 64-bit operating systems. Serial connections won't work with a 64-bit JVM, so bindings like Z-Wave won't be working with it.
+
 As for now, a pre-release Java 9 installation is not recommended and is not yet supported by openHAB 2.
 
 For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org), the minimum recommended Orcacle Java 8 revision is "101".
