@@ -65,7 +65,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 * **Official Release**
 
-  Contains a stable release with tested features passed the test of time from the builds below.
+  The stable builds contain the latest official release with tested features.
   
   Add the **openHAB 2 Stable Repository** to your systems apt sources list:
 
@@ -85,7 +85,8 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 * **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
+  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons. 
+  These changes are often unstable, so you should use this branch only for testing or development purposes.
 
   Add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
@@ -105,7 +106,8 @@ Now install openHAB with the following command:
 sudo apt-get install openhab2
 ```
 
-When you choose to install an add-on, openHAB will download it from the internet on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
+When you choose to install an add-on, openHAB will download it from the internet on request.
+If you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
 Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
 ```shell
