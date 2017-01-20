@@ -109,6 +109,8 @@ HomeKit allows only a single pairing to be established with the bridge. This pai
 
 HomeKit requires a unique identifier for each accessory advertised by the bridge. This unique identifier is hashed from the Item's name. For that reason, it is important that the name of your Items exposed to HomeKit remain consistent.
 
+HomeKit listens on default port: 9124. IPv6 stack is preferred by default. If you have connection or detecting problems, try to prefer IPv4 stack. To prefer IPv4 stack, add this line to /etc/default/openhab2: ```_JAVA_OPTIONS="-Djava.net.preferIPv4Stack=true"```
+
 If you encounter any issues with the add-on and need support, it may be important to get detailed logs of your device's communication with openHAB. In order to get logs from the underlying library used to implement the HomeKit protocol, enable trace logging using the following command:
 
 ```openhab> log:set TRACE com.beowulfe.hap```
