@@ -61,60 +61,57 @@ First, add the openHAB 2 Bintray repository key to your package manager:
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 ```
 
-As long as openHAB 2 is in its development state you may choose between the latest *Beta* release or a *Snapshot* build.
-The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
-Decide between two options:
+Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
+
+* **Official Release**
+
+  Contains a stable release with tested features passed the test of time from the builds below.
+  
+  Add the **openHAB 2 Stable Repository** to your systems apt sources list:
+
+  ```shell
+  echo 'deb http://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  ```
 
 * **Beta Release**
 
-  Add the **openHAB 2 Beta Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
+  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+
+  Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Resynchronize the package index:
-
-  ```shell
-  sudo apt-get update
-  ```
-
-  Finally install openHAB2 as either an offline or online distribution.
-  The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
-
-  ```shell
-  sudo apt-get install openhab2-offline
-  # OR #
-  sudo apt-get install openhab2-online
-  ```
-
 * **Snapshot Release**
 
-  Add the **openHAB 2 Unstable Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
+  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
+
+  Add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Resynchronize the package index:
+Next, resynchronize the package index:
 
-  ```shell
-  sudo apt-get update
-  ```
+```shell
+sudo apt-get update
+```
 
-  Now install openHAB with the following command:
+Now install openHAB with the following command:
 
-  ```shell
-  sudo apt-get install openhab2
-  ```
+```shell
+sudo apt-get install openhab2
+```
 
-  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
-  Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
+When you choose to install an add-on, openHAB will download it from the internet on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
+Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
 
-  ```shell
-  sudo apt-get install openhab2-addons
-  sudo apt-get install openhab2-addons-legacy
-  ```
+```shell
+sudo apt-get install openhab2-addons
+sudo apt-get install openhab2-addons-legacy
+```
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup:
 
@@ -140,6 +137,7 @@ If everything went well, you can start openHAB and register it to be automatical
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
+If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.md)!
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
