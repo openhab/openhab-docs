@@ -6,7 +6,7 @@ layout: tutorial-beginner
 
 # Working with rules and scripts
 
-Now that we have the two items - "Presence_Mobile_John" aka "Johns mobile" and "Wallplug_FF_LR_TV" aka "TV wallplug LR" - we can create a simple rule.
+Now that we have the two items - "Presence_Mobile_John" aka "Johns mobile" and "Wallplug_FF_LR_TV" aka "Wallplug TV" - we can create a simple rule.
 Let's assume we want to turn on the wallplug (and give some juice to the connected TV) as soon as John's mobile comes online, turn it off again when the mobile goes offline (this would be a very basic "presence" rule).
 
 Rules are defined in the conf/rules directory. So we create the file default.rules there.
