@@ -5,6 +5,12 @@ title: Docker
 
 {% include base.html %}
 
+{::options toc_levels="2..4"/}
+
+# Docker Installation
+* TOC
+{:toc}
+
 # Why Docker?
 Docker is the most popular among a collection of tools that provide containerization. Containerization allows one to run a server in its own isolated environment without the overhead of running a full virtual machine.
 
@@ -196,10 +202,4 @@ Run `bundle:update <id>` where `<id>` is the ID of the addon as listed when you 
 Repeat step 2 for all bindings
 
 With this approach you can maintain the installation and configuration of OH in PaperUI or Habmin but must update everything individually.
-        -v /etc/timezone:/etc/timezone:ro \
-        -v /opt/openhab/conf:/openhab/conf \
-        -v /opt/openhab/userdata:/openhab/userdata \
-        -d \
-        --restart=always \
-        openhab/openhab:amd64-online
 
