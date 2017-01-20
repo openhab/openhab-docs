@@ -216,7 +216,7 @@ sudo adduser --system --no-create-home --group --disabled-login openhab
 ```
 
 We are going to download a platform independent archive file and extract it to the path `/opt/openhab2`.
-Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
+Choose between the latest Stable release or a Snapshot with all incoming contributions, created daily.
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
 * **Stable Release**
