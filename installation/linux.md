@@ -215,14 +215,25 @@ We are going to download a platform independent archive file and extract it to t
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
-* **Beta Release**
+* **Official Release**
 
-  Download and extract the desired **offline or online** beta version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.b5.zip` as an example:
+  Download and extract the latest offical version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro/2.0.0) to your host.
 
   ```shell
   cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-offline%2F2.0.0.b5%2Fopenhab-offline-2.0.0.b5.zip
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip
+  sudo unzip openhab-download.zip -d /opt/openhab2
+  rm openhab-download.zip
+  ```
+
+* **Beta/RC Release**
+
+  Download and extract the desired beta or release client version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
+  We will use `openhab-offline-2.0.0.RC1.zip` as an example:
+
+  ```shell
+  cd /tmp
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip
   sudo unzip openhab-download.zip -d /opt/openhab2
   rm openhab-download.zip
   ```
