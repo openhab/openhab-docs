@@ -66,6 +66,7 @@ openHAB will see these incoming requests as originating from the local loopback 
 
 The simplest way to get hold of such an openHAB Cloud is to register an account at [myopenHAB.org](http://www.myopenhab.org/), which is operated by the [openHAB Foundation](https://www.openhabfoundation.org/).
 
+{: #nginx-reverse-proxy}
 ### Running openHAB Behind a Reverse Proxy
 
 A reverse proxy simply directs client requests to the appropriate server.
