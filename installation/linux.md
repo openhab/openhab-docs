@@ -158,6 +158,22 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
+#### Changing Versions
+
+You may want to switch to a different repo, or an older (but more stable) version of openHAB.
+To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
+
+```shell
+sudo apt-get update
+apt-cache showpkg openhab2
+```
+
+Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install=[version]` command, for example:
+
+```shell
+sudo apt-get install openhab2=2.0.0-1
+```
+
 #### Backup and Restore
 
 To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
