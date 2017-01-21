@@ -116,7 +116,7 @@ sudo apt-get update
 sudo apt-get install git
 
 # download and link
-sudo git -C /opt/openhabian clone https://github.com/openhab/openhabian.git
+sudo git clone https://github.com/openhab/openhabian.git /opt/openhabian
 ln -s /opt/openhabian/openhabian-setup.sh /usr/local/bin/openhabian-config
 
 # execute
