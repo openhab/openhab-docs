@@ -29,6 +29,7 @@
 
 </head>
 
+
 <body class="{{ include.bodyClass }}">
   <div id="header" class="navbar-fixed">
     <nav role="navigation">
@@ -42,6 +43,12 @@
               <li><a href="{{docu}}/developers">Developer Guide</a></li>
               <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
               <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+              <li class="search"><span style="font-family: 'material-design-icons'">&#xe65f;</span></li>
+              <li class="search">
+                <form method="GET" id="searchform" class="search-form" action="/search">
+                  <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+                </form>
+              </li>
             </ul>
             <ul id="nav-mobile" class="side-nav">
               <li><a href="{{base}}/index.html">Home</a></li>
@@ -50,6 +57,11 @@
               <li><a href="{{docu}}/developers">Developer Guide</a></li>
               <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
               <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+              <li class="search">
+                <form method="GET" id="searchformmob" class="search-form" action="/search">
+                  <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+                </form>
+              </li>
             </ul>
           </div>
         </div>
