@@ -25,7 +25,13 @@ The latest release version of the app is always available through Google Play.
 
 [![Download openHAB app on Google Play](images/google-play-badge.png){:width="250px"}](https://play.google.com/store/apps/details?id=org.openhab.habdroid)
 
-![](images/android_01.png){:width="25%"} ![](images/android_02.png){:width="25%"}
+**Screenshots:**
 
-Please refer to the [openhab.android project](https://github.com/openhab/openhab.android) on GitHub for more technical details.
+<div class="row">
+  <div class="col s12 m5"><img src="images/android_01.png" alt="Demo Overview"></div>
+  <div class="col s12 m5"><img src="images/android_02.png" alt="Demo Widget Overview"></div>
+</div>
 
+**Help and technical details:**
+
+Please refer to the [openhab/android project on GitHub](https://github.com/openhab/openhab.android) for more details.
