@@ -61,13 +61,13 @@ First, add the openHAB 2 Bintray repository key to your package manager:
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 ```
 
-As long as openHAB 2 is in its development state you may choose between the latest *Beta* release or a *Snapshot* build.
+As long as openHAB 2 is in its development state you may choose between the latest *Stable* release or a *Snapshot* build.
 The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
 Decide between two options:
 
-* **Beta Release**
+* **Stable Release**
 
-  Add the **openHAB 2 Beta Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
+  Add the **openHAB 2 Stable Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
@@ -79,13 +79,17 @@ Decide between two options:
   sudo apt-get update
   ```
 
-  Finally install openHAB2 as either an offline or online distribution.
-  The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
-
+  Finally install openHAB 2 package.
+  
   ```shell
-  sudo apt-get install openhab2-offline
-  # OR #
-  sudo apt-get install openhab2-online
+  sudo apt-get install openhab2
+  ```
+  The openHAB 2 distribution will install additional add-ons from the internet on request.
+  You can optionally download and install the add-on or the legacy add-on packages using:
+  
+  ```shell
+  sudo apt-get install openhab2-addons
+  sudo apt-get install openhab2-addons-legacy
   ```
 
 * **Snapshot Release**
@@ -212,17 +216,17 @@ sudo adduser --system --no-create-home --group --disabled-login openhab
 ```
 
 We are going to download a platform independent archive file and extract it to the path `/opt/openhab2`.
-Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
+Choose between the latest Stable release or a Snapshot with all incoming contributions, created daily.
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
-* **Beta Release**
+* **Stable Release**
 
-  Download and extract the desired **offline or online** beta version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.b5.zip` as an example:
+  Download and extract the stable version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
+  We will use `openhab-2.0.0.RC1.zip` as an example:
 
   ```shell
   cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-offline%2F2.0.0.b5%2Fopenhab-offline-2.0.0.b5.zip
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip
   sudo unzip openhab-download.zip -d /opt/openhab2
   rm openhab-download.zip
   ```
@@ -382,6 +386,7 @@ sudo rm /lib/systemd/system/openhab2.service
 | Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
 | Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
 | Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
+| JSON Storage (UI based configs)  | `/var/lib/openhab2/jsondb`   | `/opt/openhab2/userdata/jsondb`   |
 | Service configuration            | `/etc/default/openhab2`      | (not preconfigured)               |
 
 ## Viewing Log Messages
