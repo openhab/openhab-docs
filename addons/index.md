@@ -4,13 +4,11 @@ layout: documentation
 
 {% include base.html %}
 
-## Add-ons / Extensions
+## Add-ons
 
 All add-ons for openHAB 2 are part of the distribution.
 This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible.
-Add-ons are ready to be installed through Paper UI ➜ Extensions.
-
-![extensions]({{base}}/configuration/images/paperui1.png)
+Add-ons can be easily installed through the Paper UI (menu entry "Add-ons").
 
 
 | Add-on Type | Description |
