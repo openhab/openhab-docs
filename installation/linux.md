@@ -107,13 +107,15 @@ sudo apt-get install openhab2
 ```
 
 When you choose to install an add-on, openHAB will download it from the internet on request.
-If you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
-Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
+If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
 
 ```shell
 sudo apt-get install openhab2-addons
-sudo apt-get install openhab2-addons-legacy
 ```
+
+Optionally, you may in addition install the legacy add-ons package `openhab2-addons-legacy`.
+This package contains 1.x bindings, for which there is already a 2.x version available.
+This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup:
 
