@@ -29,27 +29,34 @@ The following bindings can be installed and configured directly from within Pape
 
 ## 1.x Bindings
 
-Bindings developed for the first version of openHAB can also be used with openHAB 2. If there is already a 2.x binding version available, those are referred to as "Legacy 1.x Bindings", otherwise as regular add-ons.
-Please be aware, that these bindings function and behave differently, for example there is no autodiscovery function for openHAB2 things and openHAB2 channels are not available.
+Bindings developed for the first version of openHAB can also be used with openHAB 2.
+Please be aware, that these bindings function and behave differently.
+They do for example not support the auto-discovery feature of openHAB 2 and do not define [openHAB 2 things and channels]({{base}}/concepts/things.html).
 For beginners it is recommended to resort to native bindings if possible.
 
-To be able to see and install 1.x bindings one has to activate "Access Remote Repository" and "Include Legacy 1.x Bindings" in openHAB2 system settings.
+If there is already a openHAB 2 version of a binding available, old bindings are referred to as "Legacy 1.x Bindings".
+To be able to see and install legacy 1.x bindings, one has to activate "Include Legacy 1.x Bindings" through either Paper UI or `addons.cfg`.
 
-When using config examples for the openhab.cfg file from the [openHAB 1 wiki](https://github.com/openhab/openhab1-addons/wiki), those need to be split into individual binding config files for openHAB2:
+Configuration and usage of 1.x bindings is best done in configuration files.
+Binding configuration was done in the global `openhab.cfg` file under openHAB 1.x, which is **not** part of openHAB 2.
+When using config examples from the [openHAB 1 wiki](https://github.com/openhab/openhab1-addons/wiki), please be aware, that those need to be split into individual binding config files for openHAB2:
 
-After installing a Legacy or regular 1.x binding an individual `<binding_name>.cfg` file is created in the `/services` folder. If this file is not created automatically it needs to be added manually.
-The naming convention has to be: `<binding_name>.cfg` without the trailing "1" in the binding name grabbed from "PaperUI -> Add-Ons -> Bindings", for example the binding name from PaperUI for the MQTT binding is "binding-mqtt1-1.9.x", the config file you have to create is "mqtt.cfg".
-Next step is to remove the binding prefix name from the config lines in openhab.cfg and add the remaining part to the `<binding_name>.cfg` file, for example
+After installing a legacy or regular 1.x binding, an individual `<binding_name>.cfg` file is used in the `/services` folder.
+If this file is not available, please added it manually.
+The naming convention has to be `<binding_name>.cfg` without the trailing "1" in the binding name grabbed from "PaperUI -> Add-Ons -> Bindings", for example the binding name from PaperUI for the MQTT binding is "binding-mqtt1-1.9.x", the config file you have to create is "mqtt.cfg".
+Next step is to remove the binding prefix name from the config lines known from `openhab.cfg` and add the remaining part to the `<binding_name>.cfg` file, for example
 
-openhab.cfg:
+**openhab.cfg:**
 
-`mqtt:<broker>.url=<url>`
+```ini
+mqtt:<broker>.url=<url>
+```
 
-becomes
+**mqtt.cfg:**
 
-mqtt.cfg:
-
-`<broker>.url=<url>`
+```ini
+<broker>.url=<url>
+```
 
 ### Compatible 1.x Bindings
 
