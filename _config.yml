@@ -1,10 +1,11 @@
 # Site settings
-title: openHAB
-description: Open Source Smart Home Solution
+title: openHAB 2
+description: Empowering the Smart Home
 baseurl: "" # the subpath of your site, e.g. /blog/
 url: "http://docs.openhab.org" # the base hostname & protocol for your site
 twitter_username: openhab
 github_username:  openhab
+permalink: /404.html
 # Build settings
 markdown: kramdown
 exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]

@@ -21,6 +21,9 @@
               <directory>${basedir}/addons/bindings/</directory>
             </fileset>
             <fileset>
+              <directory>${basedir}/addons/voice/</directory>
+            </fileset>
+            <fileset>
               <directory>${basedir}/addons/uis/</directory>
             </fileset>
             <fileset>
@@ -88,6 +91,14 @@
                     <include>**/cfg/**</include>
                   </includes>
                 </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab-bundles/bindings</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
               </resources>
             </configuration>
           </execution>
@@ -129,6 +140,42 @@
                   <excludes>
                     <exclude>**/iconset/**</exclude>
                   </excludes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab-bundles/uis</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-voice-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/addons/voice</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/_repos/openhab2-addons/addons/voice</directory>
+                  <includes>
+                    <include>**/README.md</include>
+                    <include>**/doc/**</include>
+                    <include>**/cfg/**</include>
+                  </includes>
                 </resource>
               </resources>
             </configuration>
@@ -198,7 +245,7 @@
                  	}
                  } else {
                  	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
-		                 description = line.trim()
+		                 description = line.trim().replace('\"', '\'')
                   		 break
 		        	}
                  }
@@ -229,6 +276,56 @@
 				  def label = it['@description']
 				  if(category!='io' &amp;&amp; category!='transport')
                     addonList.append(category + ',' + label + '\n')
+                }
+              </source>
+            </configuration>
+          </execution>
+          <execution>
+            <id>rename-voice-files</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>execute</goal>
+            </goals>
+            <configuration>
+              <source>
+                def voice = new File(project.basedir, 'addons/voice')
+				def voiceList = new File(project.basedir, '_data/voice.csv')
+				voiceList.write("id,label,description\n")
+
+                voice.eachFile
+                {
+                def name = it.name
+                if(name.contains('voice')) {
+                def voiceId =
+                it.name.replace('org.eclipse.smarthome.voice.', '').replace('org.openhab.voice.', '')
+                def simpleVoiceNameDir = new File(voice.path, voiceId)
+                it.renameTo(simpleVoiceNameDir)
+                def readme = new
+                File(simpleVoiceNameDir.path, 'README.md')
+                if(readme.exists()) {
+                println readme
+                readme.renameTo(new File(simpleVoiceNameDir.path, 'readme.md'))
+                if(!readme.text.startsWith('---')) {
+                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                }
+                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').trim()
+				def description = ""
+				boolean firstHeadline = false
+				for(def line : readme.readLines()) {
+                 if(line.startsWith('#')) {
+                 	if(!firstHeadline) {
+                 		firstHeadline = true
+                 	}
+                 } else {
+                 	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		                 description = line.trim().replace('\"', '\'')
+                  		 break
+		        	}
+                 }
+                }
+                voiceList.append(voiceId + ',' + label + ',"' + description + '"\n')
+                }
+                }
                 }
               </source>
             </configuration>
@@ -276,9 +373,9 @@
                 uis.eachFile
                 {
                 def name = it.name
-                if(name.contains('smarthome.ui.') &amp;&amp; !name.contains('iconset')) {
+                if((name.contains('smarthome.ui.') || name.contains('openhab.ui.')) &amp;&amp; !name.contains('iconset')) {
                 def uiId =
-                it.name.replace('org.eclipse.smarthome.ui.', '')
+                it.name.replace('org.eclipse.smarthome.ui.', '').replace('org.openhab.ui.', '')
                 def simpleUiNameDir = new
                 File(uis.path, uiId)
                 it.renameTo(simpleUiNameDir)
@@ -287,6 +384,9 @@
                 if(readme.exists()) {
                 println readme
                 readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+                if(!readme.text.startsWith('---')) {
+                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                }
                 }
                 }
                 }

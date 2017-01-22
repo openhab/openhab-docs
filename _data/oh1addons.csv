@@ -2,54 +2,74 @@ category,label
 action,Ecobee Action
 action,Mail Action
 action,MiOS Action
+action,MQTT Action
+action,NotifyMyAndroid Action
 action,Pebble Action
 action,Prowl Action
 action,Pushover Action
+action,Pushsafer Action
+action,Satel Action
 action,Telegram Action
 action,Twitter Action
 action,XBMC Action
 action,XMPP Action
 binding,Alarm Decoder Binding
 binding,Anel Binding
+binding,Bticino Binding
 binding,CalDAV Binding (command)
 binding,CalDAV Binding (personal)
 binding,ComfoAir Binding
 binding,Denon Binding
 binding,DMX OLA Binding
+binding,DSMR Binding
 binding,eBUS Binding
 binding,Ecobee Binding
+binding,Waterkotte Ecotouch Binding
 binding,Energenie Binding
 binding,EnOcean Binding
 binding,Enphase Energy Binding
 binding,Epson Projector Binding
-binding,Exec Binding
+binding,Expire Binding
+binding,Fatek PLC Binding
 binding,Freeswitch Binding
+binding,Fritzbox Binding
+binding,Fritzbox TR064 Binding
 binding,FS20 Binding
 binding,Garadget Binding
 binding,GC100IR Binding
 binding,GPIO Binding
 binding,Heatmiser Binding
+binding,Horizon Binding
 binding,HTTP Binding
 binding,IHC Binding
 binding,InsteonPLM Binding
 binding,Intertechno Binding
+binding,IPX800 Binding
+binding,IRTrans Binding
+binding,jointSPACE Binding
 binding,KNX Binding
 binding,Koubachi Binding
 binding,LCN Binding
 binding,LGTV Binding
+binding,MochadX10 Binding
 binding,Milight Binding
 binding,MiOS Binding
 binding,Modbus Binding
 binding,MQTT Binding
+binding,OwnTracks (formerly MQTTitude) Binding
 binding,Chamberlain MyQ Binding
 binding,Neohub Binding
 binding,Nest Binding
+binding,Network UPS Tools Binding
 binding,Nibe Heatpump Binding
 binding,Nikobus Binding
-binding,Onkyo Binding
+binding,Novelan Heatpump Binding
 binding,OpenEnergyMonitor Binding
 binding,OneWire Binding
 binding,OWServer Binding
+binding,Panasonic TV Binding
+binding,Plex Binding
+binding,Plugwise Binding
 binding,Visonic PowerMax Binding
 binding,RWE SmartHome Binding
 binding,Samsung A/C Binding
@@ -57,14 +77,17 @@ binding,Sapp Binding
 binding,Satel Binding
 binding,Serial Binding
 binding,SNMP Binding
+binding,Souliss Binding
 binding,Swegon Ventilation Binding
 binding,TCP/UDP Binding
 binding,Tellstick Binding
 binding,Tinkerforge Binding
+binding,Universal Powerline Bus Binding
 binding,Weather Binding
 binding,WOL (Wake-on-LAN) Binding
 binding,XBMC Binding
 persistence,InfluxDB (v 1.0) Persistence
+persistence,Google Calendar Presence Simulator
 persistence,JDBC Persistence Apache Derby
 persistence,JDBC Persistence H2
 persistence,JDBC Persistence HSQLDB
@@ -77,4 +100,4 @@ persistence,MapDB Persistence
 persistence,MQTT Persistence
 persistence,MySQL Persistence
 persistence,RRD4j Persistence
-voice,Mary TTS
+misc,Google Calendar Scheduler

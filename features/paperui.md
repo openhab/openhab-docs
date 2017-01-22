@@ -1,3 +1,10 @@
+---
+layout: documentation
+title: PaperUI
+---
+
+{% include base.html %}
+
 # Paper UI
 
 The Paper UI is a new interface that helps setting up and configuring your openHAB instance.

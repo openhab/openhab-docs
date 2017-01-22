@@ -1,101 +1,82 @@
 ---
 layout: documentation
+title: Raspberry Pi
 ---
 
 {% include base.html %}
 
-# Installation on a Raspberry Pi
+# Raspberry Pi
 
-There’s no pre-configured image for openHAB, so installation is done the old fashioned way via a command line.
+Because of it's **low price**, it's **small form factor** and the **low energy consumption**, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB.
+It is favored amongst existing users and a recommended choice for newcomers.
 
-Start with the latest (full) Raspbian SD image (not the “lite” version, these don’t include the Java Virtual Machine). Get your network cable plugged in, then boot up, and navigate through SSH. Run:
+![Raspberry Pi 2 Model B](https://www.raspberrypi.org/wp-content/uploads/2015/02/Pi_2_Model_B.png)
 
-```
-sudo raspi-config
-```
+If you want to learn more about the possibilities of the Raspberry Pi and Linux in general, many tutorials can be found on the internet.
+These including the official [raspberrypi.org help articles](https://www.raspberrypi.org/help) or the in-detail articles at [eLinux.org](http://elinux.org/RPi_Tutorials).
 
-Expand the filesystem; and from the advanced menu, change the memory split to 16. When are done, restart, and as good practice, run a full update
 
-Install openHAB on Linux, see [Installation on Linux through APT](http://docs.openhab.org/installation/apt.html)
+Recommendations for a ["headless"](https://en.wikipedia.org/wiki/Headless_computer) hardware setup:
 
-Curiously, everything was installed as owned by “root”. We need to fix that with the following commands.
+* [Raspberry Pi 2 or newer](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
+* SD card (16GB or more to support [wear-leveling](https://en.wikipedia.org/wiki/Wear_leveling))
+* Steady power supply
+* Ethernet connection
+* *No connected display or keyboard needed*
 
-```
-sudo chown -hR openhab:openhab /etc/init.d/openhab2
-sudo chown -hR openhab:openhab /usr/share/openhab2
-```
+## Recommended Setup
 
-Next, we’ll install Samba and share the configuration and user folders – this will make it easier to install add-ons and change the sitemap remotely.
+We are proud to provide a **preconfigured image** for the Raspberry Pi, with the latest build of openHAB 2 and many useful software components (like Samba, Grafana or Mosquitto) as optional setup steps.
+**openHABian** is based on Raspbian and under constant improvement.
 
-```
-sudo apt-get install samba samba-common-bin
-sudo nano /etc/samba/smb.conf
-```
+Check out more details about [openHABian, the hassle-free RPi image](openhabian.html).
 
-Change the workgroup name if needed, but otherwise enable WINS support:
 
-```
-wins support = yes
-```
+## Manual Setup
 
-(you’ll need to uncomment the line, and change no to yes)
+If you want or need to set up openHAB on a Raspberry Pi by yourself, please follow these recommendations.
+For the beginning, we recommend to [download](https://www.raspberrypi.org/downloads/raspbian) and [install](https://www.raspberrypi.org/documentation/installation/installing-images/README.md) the latest Raspbian SD card image.
+You may choose the "Lite" version.
 
-then add the following to the share definitions section (scroll all the way down to the bottom of the long file):
+**Attention:**
+As of the November 2016 release, Raspbian has the SSH server disabled by default.
+You will have to enable it manually.
+For headless setup, SSH can be enabled by placing a file named 'ssh', without any extension, onto the boot partition of the SD card.
 
-```
-[openHAB Home]`
- comment= openHAB Home
- path=/usr/share/openhab
- browseable=Yes
- writeable=Yes
- only guest=no
- create mask=0777
- directory mask=0777
- public=no
-[openHAB Config]
- comment= openHAB Site Config
- path=/etc/openhab
- browseable=Yes
- writeable=Yes
- only guest=no
- create mask=0777
- directory mask=0777
- public=no
-```
+**Connecting:**
+Get your SD card and network cable plugged in and power up.
+Booting up takes up to 10 minutes.
+To connect with an SSH client (like [Putty](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md)), you need to know the IP address or hostname of your device.
+A standard Raspbian setup should be reachable either by the hostname "raspberrypi" or though the local domain name "raspberrypi.local".
+If you are not able to connect, check your routers web frontend for newly connected devices.
 
-Also commented out the Printers section. Made two shares, then the configuration files are actually stored separately to the add-ons.
+**First Steps:**
+Connected via SSH, execute the Raspbian configuration menu by running `sudo raspi-config`.
+Go through the following steps:
 
-Save and exit. We finally need to set a Samba password for the openhab user:
+* Expand the file system
+* Change your password
+* (Change the host name if you wish, e.g. "openhabpi")
+* From the advanced menu, change the memory split for the GPU to "16"
+* Restart
 
-```
-sudo smbpasswd -a openhab
+As a good practice, run a full upgrade and install packages you like or need (a set of helpful packages is given as an example):
+
+```shell
+sudo apt-get update
+sudo apt-get upgrade
+
+sudo apt-get install screen mc vim git htop
 ```
 
-Suggest “openhab” as the password just for ease of use, but it doesn’t really matter.
+**Note on Java:**
+Raspbian in the latest full version already includes Oracle Java 8.
+However, at the time of this writing, the installed revision is lower than the [recommended](index.html#prerequisites).
+Raspbian Lite comes without Java to begin with.
 
-The method of restarting Samba has changed in the latest Raspian. Here’s the updated instructions:
+Please refer to the Linux article for instructions on [how to install the latest revision of Oracle Java 8](linux.html).
 
-```
-sudo update-rc.d smbd enable
-sudo update-rc.d nmbd enable
-sudo service smbd restart
-```
+**Installation:**
+Finally install openHAB on your Raspberry Pi, just as it is described in the [openHAB 2 on Linux](linux.html) article:
 
-After restarting Samba (older installs use sudo service samba restart), test you can access the shared drive. It might not be auto-discovered on a Mac; but you can use the Finder -> Go -> Connect to Server and the address
-
-```
-smb://openhab@raspberrypi.local
-```
-
-Authenticate with username openhab and the chosen password, then open up both the shares to have a look around. Then should even be able to open http://raspberrypi.local:8080/ in the web browser, but then will be met with an error because don´t haven’t create a sitemap yet. That’s normal.
-
-error on first launch openHAB
-
-Now would be a good time to learn the command to tail the openHAB log so you can keep an eye on errors.
-
-```
-tail -f /var/log/openhab/openhab.log
-```
-
-Keep that running and open in a separate SSH window at all times.
-
+* [Package Repository based Installation on Linux](linux.html#package-repository-installation)

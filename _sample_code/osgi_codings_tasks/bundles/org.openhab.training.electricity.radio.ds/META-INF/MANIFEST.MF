@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-Name: Radio DS
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-SymbolicName: org.openhab.training.electricity.radio.ds
+Import-Package: org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.homenetwork.ds,
+ org.openhab.training.electricity.provider,
+ org.openhab.training.electricity.radio.ds,
+ org.osgi.framework,
+ org.slf4j
+Service-Component: OSGI-INF/*.xml
+Export-Package: org.openhab.training.electricity.radio.ds

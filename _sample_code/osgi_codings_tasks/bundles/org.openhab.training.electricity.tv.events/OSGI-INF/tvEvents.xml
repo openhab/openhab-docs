@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Copyright (c) 2014-2016 by the respective copyright holders. All rights 
+	reserved. This program and the accompanying materials are made available 
+	under the terms of the Eclipse Public License v1.0 which accompanies this 
+	distribution, and is available at http://www.eclipse.org/legal/epl-v10.html -->
+<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0"
+	name=" org.openhab.training.electricity.tv.events"
+	activate="startConsuming"
+	deactivate="stopConsuming"
+	modified="modified">
+	<service>
+		<provide interface="org.osgi.service.event.EventHandler"/>
+		<provide interface="org.openhab.training.electricity.consumer.ElectricityConsumer"/>
+	</service>
+	<implementation class="org.openhab.training.electricity.tv.events.TVEvents" />
+	<reference bind="providerAdded" cardinality="1..n"
+		interface="org.openhab.training.electricity.provider.ElectricityProvider"
+		name="ElectricityProvider" policy="dynamic" unbind="providerRemoved" />
+	<property name="event.topics" value="org/openhab/training/time"></property>
+</scr:component> 

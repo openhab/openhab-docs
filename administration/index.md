@@ -1,37 +1,14 @@
 ---
 layout: documentation
+title: Advanced Functionality and Administrative Tasks
 ---
 
 {% include base.html %}
 
-# Overview
+# Advanced Functionality and Administrative Tasks
 
-As a base technology openHAB uses Karaf (i.e. for bundle management). [Apache Karaf](http://karaf.apache.org/) is an open source implementation of the [OSGi](https://en.wikipedia.org/wiki/OSGi) Release 5 core framework specification.
+As a base technology openHAB uses [Apache Karaf](http://karaf.apache.org), a modern and polymorphic container able to host different kinds of applications.
+The Karaf Console is a powerful too to interact with the core of your openHAB installation.
+Learn more about the advanced administrative capabilities of your openHAB installation in the sub-entries of this menu point.
 
-Therefore following of the administration tasks are performed in the [Karaf console](console.html):
-
-- [Logging](logging.html)
-- [Bundle Management](bundles.html)
-
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<!-- The BRs are a very bad implementation of a bad work around in order to move the horicontal scroll bar to the bottom of the sreen -->
+{% include contribution-wanted.html %}

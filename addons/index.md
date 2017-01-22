@@ -4,14 +4,21 @@ layout: documentation
 
 {% include base.html %}
 
-## Available Add-ons
+## Add-ons / Extensions
 
-All optional add-ons for openHAB 2 are part of the distribution. This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible. 
-_Note_: If you are successfully using a 1.x add-on with the 2.0 runtime, which is not yet on this list, please create a PR for adding it!
+All add-ons for openHAB 2 are part of the distribution.
+This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible.
+Add-ons are ready to be installed through Paper UI ➜ Extensions.
+
+![extensions]({{base}}/configuration/images/paperui1.png)
+
 
 | Add-on Type | Description |
 |-------------|----------------------|
-|[Bindings](bindings.html)| Bindings integrate physical hardware, external systems and web services in openHAB |
-|[System Integration](io.html)| System integrations expose openHAB to an external system |
-|[User Interfaces](uis.html)| User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
-|[1.x Addons](1xaddons.html)| Add-ons from openHAB 1 (bindings, actions, persistence services, etc.) |
+| [Bindings](bindings.html) | Bindings integrate physical hardware, external systems and web services in openHAB |
+| [User Interfaces](uis.html) | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
+| [Persistence](persistence.html) | Persistence services allow openHAB to store time series data for history-based actions or statistics |
+| [Actions](actions.html) | Actions are predefined methods for openHAB rules and scripts |
+| [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for items |
+| [Voice Services](voice.html) | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc. |
+| [3rd Party System Integration](io.html) | Expose openHAB to external systems |

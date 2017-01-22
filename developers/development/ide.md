@@ -1,5 +1,6 @@
 ---
 layout: developersguide
+title: IDE setup
 ---
 
 {% include base.html %}
@@ -30,11 +31,11 @@ The Eclipse IDE is used for openHAB developments. The Eclipse Installer automati
 4. Expand the "Github.com/openHAB" entry, double click "openHAB Development" (the double click is important: The entry has to appear in the empty table at the bottom). Furthermore double-click all entries that you would want to have available in your workspace (you can select multiple/all of them). Make sure that all of them are listed in the table at the bottom and select "Next".
 5. Now provide an installation folder (don't use spaces in the path on Windows!) and your Github id (used to push your changesets to) and select "Next".
 6. The installation will now begin when pressing "Finish".
-7. Once it is done, you will see the Eclipse Welcome Screen, which you can close by clicking "Workbench" on the top right. You will see that the installer not only set up an Eclipse IDE instance for you, but also checked out all selected git repositories and imported all projects into the workspace. 
+7. Once it is done, you will see the Eclipse Welcome Screen, which you can close by clicking "Workbench" on the top right. You will see that the installer not only set up an Eclipse IDE instance for you, but also checked out all selected git repositories and imported all projects into the workspace.
 8. Your workspace should now fully compile and you can start the runtime by launching the "openHAB_Runtime" launch configuration.
 
 Note that you will find the sources in a subfolder called "git" within your selected installation folder. You can use any kind of git client here, if you do not want to use the git support from within the Eclipse IDE.
-If you want to push changes, you need to do so to your personal fork of the repository in order to create a pull request. You will find more details in the ["How to contribute"](../../../CONTRIBUTING.md) documentation.
+If you want to push changes, you need to do so to your personal fork of the repository in order to create a pull request. You will find more details in the ["How to contribute"](../contributing/contributing) documentation.
 
 ## Building, Running and Debugging
 
@@ -65,5 +66,3 @@ Add some text to the string and save the file. Now put a breakpoint on this line
 Debugging is done in the same way as running, but instead of Run as, select "Debug as > openHAB_Runtime". OpenHAB will launch, and the debugger will stop at the breakpoint, but our change won't be there. To fix this we need to let eclipse know that we've made changes to this binding.
 
 Right click on openHAB_Runtime.launch > Run as > Run configurations ... Go to the Plug-ins tab. Notice that under "Target Platform" org.eclipse.smarthome.binding.yahooweather is checked. But, under Workspace the same org.eclipse.smarthome.binding.yahooweather is not checked. Do so now. Try the debug session again. You should now see the modified code show up in the debugger.
-
-

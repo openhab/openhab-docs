@@ -1,10 +1,11 @@
 ---
 layout: documentation
+title: Bindings
 ---
 
 {% include base.html %}
 
-# List of available bindings
+# List of Available Bindings
 
 ## 2.0 Bindings
 {% assign bindings = site.data.bindings | sort: 'label.toLowerCase()' %}
@@ -86,7 +87,7 @@ layout: documentation
 | GoogleTTS | TTS engine |
 | MaryTTS | TTS engine |
 
-## Currently incompatible 1.x Add-ons:
+## Currently Incompatible 1.x Add-ons:
 
 | Add-on | Type | Reason
 |--------|------|------|

@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-Name: Basic Radio
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-SymbolicName: org.openhab.training.electricity.radio
+Import-Package: org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.homenetwork,
+ org.openhab.training.electricity.provider,
+ org.osgi.framework,
+ org.slf4j
+Bundle-Activator: org.openhab.training.electricity.radio.internal.BasicRadioActivator
+Export-Package: org.openhab.training.electricity.radio

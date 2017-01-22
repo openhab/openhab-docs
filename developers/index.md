@@ -1,5 +1,6 @@
 ---
 layout: developersguide
+title: Developer Guide
 ---
 
 
