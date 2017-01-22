@@ -47,7 +47,7 @@ sudo apt-get install oracle-java8-set-default
 ## Installation
 
 openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt-get`) is **recommended** for end users.
+The installation through a provided **package repository** (using `apt` / `apt-get`) is **recommended** for end users.
 The manual installation through a platform independent archive file is suited for users who know what they are doing and systems with a non-Debian distribution, not using the apt/deb package system.
 
 ### Package Repository Installation
@@ -61,60 +61,61 @@ First, add the openHAB 2 Bintray repository key to your package manager:
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
 ```
 
-As long as openHAB 2 is in its development state you may choose between the latest *Beta* release or a *Snapshot* build.
-The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), always including the latest changes to the openHAB 2 core and add-ons.
-Decide between two options:
+Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
+
+* **Official Release**
+
+  The stable builds contain the latest official release with tested features.
+  
+  Add the **openHAB 2 Stable Repository** to your systems apt sources list:
+
+  ```shell
+  echo 'deb http://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  ```
 
 * **Beta Release**
 
-  Add the **openHAB 2 Beta Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
+  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+
+  Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Resynchronize the package index:
-
-  ```shell
-  sudo apt-get update
-  ```
-
-  Finally install openHAB2 as either an offline or online distribution.
-  The **offline distribution** comes with all add-ons, the **online distribution** will install additional add-ons from the internet on request.
-
-  ```shell
-  sudo apt-get install openhab2-offline
-  # OR #
-  sudo apt-get install openhab2-online
-  ```
-
 * **Snapshot Release**
 
-  Add the **openHAB 2 Unstable Repository** to your systems apt sources list (will overwrite the existing `openhab2.list`):
+  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons. 
+  These changes are often unstable, so you should use this branch only for testing or development purposes.
+
+  Add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
   ```shell
   echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-  Resynchronize the package index:
+Next, resynchronize the package index:
 
-  ```shell
-  sudo apt-get update
-  ```
+```shell
+sudo apt-get update
+```
 
-  Now install openHAB with the following command:
+Now install openHAB with the following command:
 
-  ```shell
-  sudo apt-get install openhab2
-  ```
+```shell
+sudo apt-get install openhab2
+```
 
-  The latest snapshots will download add-ons on request, if you plan on disconnecting your machine from the internet then you will want to also install the add-ons package.
-  Optionally, you can also install the legacy add-ons package, which contains [1.x bindings]({{base}}/addons/bindings.html#legacy-1x-bindings) for compatibility (useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example):
+When you choose to install an add-on, openHAB will download it from the internet on request.
+If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
 
-  ```shell
-  sudo apt-get install openhab2-addons
-  sudo apt-get install openhab2-addons-legacy
-  ```
+```shell
+sudo apt-get install openhab2-addons
+```
+
+Optionally, you may in addition install the legacy add-ons package `openhab2-addons-legacy`.
+This package contains 1.x bindings, for which there is already a 2.x version available.
+This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup:
 
@@ -140,6 +141,7 @@ If everything went well, you can start openHAB and register it to be automatical
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
 You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
+If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.md)!
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
@@ -156,6 +158,22 @@ Upgrading is as easy as:
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
+```
+
+#### Changing Versions
+
+You may want to switch to a different repo, or an older (but more stable) version of openHAB.
+To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
+
+```shell
+sudo apt-get update
+apt-cache showpkg openhab2
+```
+
+Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install=[version]` command, for example:
+
+```shell
+sudo apt-get install openhab2=2.0.0-1
 ```
 
 #### Backup and Restore
@@ -215,14 +233,25 @@ We are going to download a platform independent archive file and extract it to t
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
-* **Beta Release**
+* **Official Release**
 
-  Download and extract the desired **offline or online** beta version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.b5.zip` as an example:
+  Download and extract the latest offical version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro/2.0.0) to your host.
 
   ```shell
   cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab-offline%2F2.0.0.b5%2Fopenhab-offline-2.0.0.b5.zip
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip
+  sudo unzip openhab-download.zip -d /opt/openhab2
+  rm openhab-download.zip
+  ```
+
+* **Beta/RC Release**
+
+  Download and extract the desired beta or release client version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
+  We will use `openhab-offline-2.0.0.RC1.zip` as an example:
+
+  ```shell
+  cd /tmp
+  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip
   sudo unzip openhab-download.zip -d /opt/openhab2
   rm openhab-download.zip
   ```
