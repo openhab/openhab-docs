@@ -47,7 +47,7 @@ sudo apt-get install oracle-java8-set-default
 ## Installation
 
 openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt-get`) is **recommended** for end users.
+The installation through a provided **package repository** (using `apt` / `apt-get`) is **recommended** for end users.
 The manual installation through a platform independent archive file is suited for users who know what they are doing and systems with a non-Debian distribution, not using the apt/deb package system.
 
 ### Package Repository Installation
