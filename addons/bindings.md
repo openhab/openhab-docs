@@ -27,13 +27,29 @@ The following bindings can be installed and configured directly from within Pape
 {% for binding in sorted_bindings %}| [{{ binding.label }}]({{base}}/addons/bindings/{{ binding.id }}/readme.html) | {{ binding.description }} |
 {% endfor %}
 
-## Legacy 1.x Bindings
+## 1.x Bindings
 
-Bindings developed for the first version of openHAB can also be used with openHAB 2.
-Please be aware, that these bindings function and behave differently.
+Bindings developed for the first version of openHAB can also be used with openHAB 2. If there is already a 2.x binding version available, those are referred to as "Legacy 1.x Bindings", otherwise as regular add-ons.
+Please be aware, that these bindings function and behave differently, f.e. there is no autodiscovery function for openHAB2 things and openHAB2 channels are not available.
 For beginners it is recommended to resort to native bindings if possible.
 
-To be able to see and install 1.x bindings needs to be activated in the system settings.
+To be able to see and install 1.x bindings one has to activate "Access Remote Repository" and "Include Legacy 1.x Bindings" in openHAB2 system settings.
+
+When using config examples for the openhab.cfg file from the [openHAB 1 wiki](https://github.com/openhab/openhab1-addons/wiki), those need to be splitted into individual binding config files for openHAB2:
+
+After installing a Legacy or regular 1.x binding an individual `<binding_name>.cfg` file is created in the `/services` folder. If this file is not created automatically it needs to be added manually.
+The naming convention has to be: `<binding_name>.cfg` without the trailing "1" in the binding name grabbed from "PaperUI -> Add-Ons -> Bindings", f.e. the binding name from PaperUI for the MQTT binding is "binding-mqtt1-1.9.x", the config file you have to create is "mqtt.cfg".
+Next step is to remove the binding prefix name from the config lines in openhab.cfg and add the remaining part to the `<binding_name>.cfg` file, f.e.
+
+openhab.cfg:
+
+`mqtt:<broker>.url=<url>`
+
+becomes
+
+mqtt.cfg:
+
+`<broker>.url=<url>`
 
 ### Compatible 1.x Bindings
 
