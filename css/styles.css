@@ -615,10 +615,10 @@ section.text table {
 
 }
 
-section.text table td {
+/*section.text table td {
     padding: 5px;
     border: 1px solid #CCC;
-}
+}*/
 
 table.striped tbody tr:nth-child(odd) {
   background-color: #f7f7f7;
