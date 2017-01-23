@@ -81,15 +81,17 @@ For the technically interested: The sitemap definition language is an
 
 ### Special Element 'sitemap'
 
-The `sitemap` element is **mandatory** in a sitemap definition.
-It will always be the first line and the following code block encloses the whole sitemap definition.
-The element states the name of the sitemap and the title of the main screen.
+The `sitemap` element is **mandatory** in a sitemap definition and has to be named after the sitemap file name.
+The element will always be the first line and the following code block encloses the whole sitemap definition.
 
 ```xtend
 sitemap <sitemapname> label="<title of the main screen>"
 ```
 
-(Please be aware, that the element `sitemap` is written with a lower case "s". Upper case "Sitemap" is not a valid syntax!)
+* `sitemapname` is always equal to the sitemaps file name, e.g. `demo.sitemap` -> "demo"
+* `label` is free text and will be shown as the title of the main screen.
+
+(Please be aware, that the element `sitemap` is written with a lower case "s".)
 
 ## Element Types
 
