@@ -18,6 +18,7 @@ layout: documentation
 |---------|----------------------|
 | [Android openHAB App]({{docu}}/addons/apps/android.html) | The native Android app to access openHAB on the go. |
 | [iOS openHAB App]({{docu}}/addons/apps/ios.html) | The native iOS app to access openHAB on the go. |
+| [Windows 10 openHAB App]({{docu}}/addons/apps/windows.html) | The native Windows 10 app to access openHAB on the go. |
 
 
 | Iconset | Description          |
