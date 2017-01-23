@@ -23,6 +23,8 @@ li.search:hover {
   width: 100px;
   border: none !important; 
   transition: 0.2s ease-in;
+  display: block;
+  margin: 17px 0 0 0;
 }
 
 .search-form ::-webkit-input-placeholder,
