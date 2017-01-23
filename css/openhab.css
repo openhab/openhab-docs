@@ -25,6 +25,12 @@ li.search:hover {
   transition: 0.2s ease-in;
 }
 
+.search-form ::-webkit-input-placeholder,
+.search-form ::-moz-placeholder,
+.search-form ::-ms-input-placeholder {
+    color: #fff;
+}
+
 #searchform .search-form-input:focus {
   width: 200px;
 }
