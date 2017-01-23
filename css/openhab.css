@@ -32,7 +32,7 @@ li.search:hover {
 }
 
 #searchform .search-form-input:focus {
-  width: 200px;
+   padding-right: 30px !important;
 }
 
 #searchresults td {
