@@ -27,6 +27,10 @@ li.search:hover {
   margin: 17px 0 0 0 !important;
 }
 
+.sticky .search-form-input {
+  margin: 9px 0 0 0 !important;
+}
+
 ::-webkit-input-placeholder {
   color: #fff;
 }
