@@ -24,13 +24,19 @@ li.search:hover {
   border: none !important; 
   transition: 0.2s ease-in;
   display: block;
-  margin: 17px 0 0 0;
+  margin: 17px 0 0 0 !important;
 }
 
-.search-form ::-webkit-input-placeholder,
-.search-form ::-moz-placeholder,
-.search-form ::-ms-input-placeholder {
-    color: #fff;
+::-webkit-input-placeholder {
+  color: #fff;
+}
+
+::-moz-placeholder {
+  color: #fff;
+}
+
+::-ms-input-placeholder{
+  color: #fff;
 }
 
 #searchform .search-form-input:focus {
@@ -56,4 +62,12 @@ li.search:hover {
 
 #searchresults input {
    box-sizing: content-box;
+}
+
+input.gsc-input {
+  box-shadow: none !important;
+}
+
+#querymob {
+  color: #000;
 }
