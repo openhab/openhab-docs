@@ -228,35 +228,35 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
 #### Using OpenSSL to Generate Self-Signed Certificates
 
-  OpenSSL is also packaged for most Linux distributions, installing it should be as simple as:
+OpenSSL is also packaged for most Linux distributions, installing it should be as simple as:
 
-  ```shell
-  sudo apt-get install openssl
-  ```
+```shell
+sudo apt-get install openssl
+```
 
-  Once complete, you need to create a directory where our certificates can be placed:
+Once complete, you need to create a directory where our certificates can be placed:
 
-  ```shell
-  sudo mkdir -p /etc/ssl/certs
-  ```
+```shell
+sudo mkdir -p /etc/ssl/certs
+```
 
-  Now OpenSSL can be told to generate a 2048 bit long RSA key and a certificate that is valid for a year:
+Now OpenSSL can be told to generate a 2048 bit long RSA key and a certificate that is valid for a year:
 
-  ```shell
-  sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/openhab.key -out /etc/ssl/openhab.crt
-  ```
+```shell
+sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/openhab.key -out /etc/ssl/openhab.crt
+```
 
-  You will be prompted for some information which you will need to fill out for the certificate, when it asks for a **Common Name**, you may enter your IP Address:
-  Common Name (e.g. server FQDN or YOUR name) []: xx.xx.xx.xx
+You will be prompted for some information which you will need to fill out for the certificate, when it asks for a **Common Name**, you may enter your IP Address:
+Common Name (e.g. server FQDN or YOUR name) []: xx.xx.xx.xx
 
 ##### Adding the Certificates to Your Proxy Server
 
-  The certificate and key should have been placed in `/etc/ssl/`. NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic. In the NGINX configuration, place the following underneath your server_name variable:
+The certificate and key should have been placed in `/etc/ssl/`. NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic. In the NGINX configuration, place the following underneath your server_name variable:
 
-  ```nginx
-  	ssl_certificate                 /etc/ssl/openhab.crt;
-  	ssl_certificate_key             /etc/ssl/openhab.key;
-  ```
+```nginx
+  ssl_certificate                 /etc/ssl/openhab.crt;
+  ssl_certificate_key             /etc/ssl/openhab.key;
+```
 
 #### Using Let's Encrypt to Generate Trusted Certificates
 
