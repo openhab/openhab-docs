@@ -20,7 +20,6 @@ li.search:hover {
 .search-form-input  {
   padding-left: 5px !important;
   width: 100px;
-  width: 100px;
   border: none !important; 
   transition: 0.2s ease-in;
   display: block;
@@ -31,15 +30,15 @@ li.search:hover {
   margin: 9px 0 0 0 !important;
 }
 
-::-webkit-input-placeholder {
+.search-form ::-webkit-input-placeholder {
   color: #fff;
 }
 
-::-moz-placeholder {
+.search-form ::-moz-placeholder {
   color: #fff;
 }
 
-::-ms-input-placeholder{
+.search-form ::-ms-input-placeholder{
   color: #fff;
 }
 
