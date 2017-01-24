@@ -23,10 +23,18 @@ li.search:hover {
   width: 100px;
   border: none !important; 
   transition: 0.2s ease-in;
+  display: block;
+  margin: 17px 0 0 0;
+}
+
+.search-form ::-webkit-input-placeholder,
+.search-form ::-moz-placeholder,
+.search-form ::-ms-input-placeholder {
+    color: #fff;
 }
 
 #searchform .search-form-input:focus {
-  width: 200px;
+   padding-right: 30px !important;
 }
 
 #searchresults td {
