@@ -264,7 +264,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
 Let's Encrypt is a service that allows anyone with a valid domain to automatically generate a trusted certificate, these certificates are usually accepted by a browser without any warnings.
 
-**Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure**
+##### Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure
 
 Let's Encrypt needs to validate that the server has control of the domain, the most simple way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: */.well-known/acme-challenge*.
 Since the proxy only forwards traffic to the openHAB server, the server needs to be told to handle requests at this address differently.
