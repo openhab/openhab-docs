@@ -249,7 +249,7 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
   You will be prompted for some information which you will need to fill out for the certificate, when it asks for a **Common Name**, you may enter your IP Address:
   Common Name (e.g. server FQDN or YOUR name) []: xx.xx.xx.xx
 
-  **Adding the Certificates to Your Proxy Server**
+##### Adding the Certificates to Your Proxy Server
 
   The certificate and key should have been placed in `/etc/ssl/`. NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic. In the NGINX configuration, place the following underneath your server_name variable:
 
@@ -260,52 +260,52 @@ If you need to use an internal or external IP to connect to openHAB, follow the 
 
 #### Using Let's Encrypt to Generate Trusted Certificates
 
-  **Skip this step if you have no domain name or have already followed the instructions for OpenSSL**
+**Skip this step if you have no domain name or have already followed the instructions for OpenSSL**
 
-  Let's Encrypt is a service that allows anyone with a valid domain to automatically generate a trusted certificate, these certificates are usually accepted by a browser without any warnings.
+Let's Encrypt is a service that allows anyone with a valid domain to automatically generate a trusted certificate, these certificates are usually accepted by a browser without any warnings.
 
-  **Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure**
+**Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure**
 
-  Let's Encrypt needs to validate that the server has control of the domain, the most simple way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: */.well-known/acme-challenge*.
-  Since the proxy only forwards traffic to the openHAB server, the server needs to be told to handle requests at this address differently.
+Let's Encrypt needs to validate that the server has control of the domain, the most simple way of doing this is using a **webroot plugin** to place a file on the server, and then access it using a specific url: */.well-known/acme-challenge*.
+Since the proxy only forwards traffic to the openHAB server, the server needs to be told to handle requests at this address differently.
 
-  First, **create a directory** that Certbot can be given access to:
+First, **create a directory** that Certbot can be given access to:
 
-  ```shell
-  sudo mkdir -p /var/www/mydomain
-  ```
+```shell
+sudo mkdir -p /var/www/mydomain
+```
 
-  Next add the new location parameter to your NGINX config, this should be **placed above the last brace** in the server setting:
+Next add the new location parameter to your NGINX config, this should be **placed above the last brace** in the server setting:
 
-  ```nginx
-  	location /.well-known/acme-challenge/ {
-  		root                            /var/www/mydomain;
-  	}
-  ```
+```nginx
+  location /.well-known/acme-challenge/ {
+    root                            /var/www/mydomain;
+  }
+```
 
-  **Using Certbot**
+##### Using Certbot
 
-  Certbot is a tool which simplifies the process of obtaining secure certificates.
-  The tool may not be packaged for some Linux distributions so installation instructions may vary, check out [their website](https://certbot.eff.org/) and follow the instructions **using the webroot mode**.
-  Don't forget to change the example domain to your own! An example of a valid certbot command (in this case for Debian Jessie) would be:
+Certbot is a tool which simplifies the process of obtaining secure certificates.
+The tool may not be packaged for some Linux distributions so installation instructions may vary, check out [their website](https://certbot.eff.org/) and follow the instructions **using the webroot mode**.
+Don't forget to change the example domain to your own! An example of a valid certbot command (in this case for Debian Jessie) would be:
 
-  ```shell
-  sudo certbot certonly --webroot -w /var/www/mydomain -d mydomain
-  ```
+```shell
+sudo certbot certonly --webroot -w /var/www/mydomain -d mydomain
+```
 
-  **Adding the Certificates to Your Proxy Server**
+##### Adding the Certificates to Your Proxy Server
 
-  The certificate and key should have been placed in `/etc/letsencrypt/live/mydomain_or_myip`.
-  NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic, using Strict Transport Security to prevent man-in-the-middle attacks.
-  In the NGINX configuration, place the following underneath your server_name variable:
+The certificate and key should have been placed in `/etc/letsencrypt/live/mydomain_or_myip`.
+NGINX needs to be told where these files are and then enable the reverse proxy to direct HTTPS traffic, using Strict Transport Security to prevent man-in-the-middle attacks.
+In the NGINX configuration, place the following underneath your server_name variable:
 
-  ```nginx
-  		ssl_certificate                 /etc/letsencrypt/live/mydomain_or_myip/fullchain.pem;
-  		ssl_certificate_key             /etc/letsencrypt/live/mydomain_or_myip/privkey.pem;
-  		add_header                      Strict-Transport-Security "max-age=31536000";
-  ```
+```nginx
+    ssl_certificate                 /etc/letsencrypt/live/mydomain_or_myip/fullchain.pem;
+    ssl_certificate_key             /etc/letsencrypt/live/mydomain_or_myip/privkey.pem;
+    add_header                      Strict-Transport-Security "max-age=31536000";
+```
 
-##### Setting Your NGINX Server to Listen to the HTTPS Port
+#### Setting Your NGINX Server to Listen to the HTTPS Port
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
 
@@ -318,7 +318,7 @@ You can check by going to https://mydomain_or_myip and confirming with your brow
 **These certificates expire within a few months** so it is important to run the updater in a cron expression (and also restart NGINX) as explained in the Certbot setup instructions.
 If you want to keep hold of a HTTP server for some reason, just add `listen 80;` and remove the Strict-Transport-Security line.
 
-##### Redirecting HTTP Traffic to HTTPS
+#### Redirecting HTTP Traffic to HTTPS
 
 You may want to redirect all HTTP traffic to HTTPS, you can do this by adding the following to the NGINX configuration.
 This will essentially replace the HTTP url with the HTTPS version!
