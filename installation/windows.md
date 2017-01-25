@@ -13,8 +13,11 @@ The following instructions will guide you through the process of setting up open
 
 First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-Add the `JAVA_HOME` System Environment Variable in Windows:
-Navigate to :arrow_right: Control Panel :arrow_right: System and Security :arrow_right: System :arrow_right: Advanced system settings :arrow_right: Environment variables :arrow_right: System variables and create a New System Variable based on your Java installation directory:
+Add the `JAVA_HOME` System Environment Variable in Windows. Navigate to:
+
+* Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+
+Create a New System Variable based on your Java installation directory:
 
 ![JAVA_HOME](http://imageshack.com/a/img921/5017/HZjFl6.png)
 
@@ -81,5 +84,3 @@ There is currently no automatic update script for Windows. To update manually, d
 ## Starting openHAB as a service
 
 (work in progress...)
-
-{% include contribution-wanted.html %}
