@@ -502,7 +502,8 @@ there are no values in the database to restore the Items to when openHAB starts.
 common Sitemap issue will be missing icons. Browse through your sitemap
 methodically and identify those entries that have a missing or wrong
 icon. Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html)
-or copy the one you were using from openHAB 1.x to the conf/icons/classic folder.
+or copy the ones you were using from openHAB 1.x to the conf/icons/classic folder. 
+Make sure that icon filenames are lowercase only.
 Both BasicUI and ClassicUI pull their icons from that folder. For a sitemap that
 most closely resembles your current sitemap I recommend using ClassicUI.
 
