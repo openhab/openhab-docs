@@ -99,14 +99,14 @@ Every interface has it's own strong points.
     <tr>
       <td>Define Rules</td>
       <td>✔️</td>
-      <td>✔️ (Experimental)</td>
-      <td>✔️ (Graphical)</td>
+      <td>✔️<br />(Experimental)</td>
+      <td>✔️<br />(Graphical)</td>
       <td>❌</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices</td>
-      <td>✔️ (not&nbsp;recommended)</td>
-      <td>✔️ (limited)</td>
+      <td>✔️<br />(Not&nbsp;Recommended)</td>
+      <td>✔️<br />(Limited)</td>
       <td>✔️</td>
       <td>❌</td>
     </tr>
