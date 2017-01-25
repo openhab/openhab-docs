@@ -14,7 +14,7 @@ openHAB is a system installed and executed by you, **running independently** fro
 You as the end-user have the **full control** over every aspect of your smart home.
 
 Every device connected to openHAB is functionally and logically different.
-In order to represent all of these, openHAB defines the following few base components with the given meaning:
+In order to represent all of these, openHAB defines the following few base components:
 
 * [Bindings]({{base}}/addons/bindings.html) - The numerous Add-ons to communicate with your devices
 * [Things](things.html) - Your devices represented in openHAB
@@ -23,7 +23,7 @@ In order to represent all of these, openHAB defines the following few base compo
 * [Sitemaps](sitemaps.html) - User-defined frontend interfaces to arrange Groups, Items and more
 * [Transformations](transform.html) - Helper functions to transform your data
 * [Persistence](persistence.html) - Services to store data over time
-* [Rules](rules-dsl.html) - Automation logic, the heart of your SmartHome!
+* [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
 
 The individual articles hold all details needed to understand the concepts behind these building bricks for your Smart Home.
 For more details on the base concept behind openHAB, please visit the [Concepts Overview page]({{base}}/concepts/index.html).
@@ -33,7 +33,7 @@ For more details on the base concept behind openHAB, please visit the [Concepts 
 openHAB provides different user interfaces to modify settings, manage your things and items, build rules and access the sitemap results.
 Every interface has it's own strong points.
 
-## Comparison
+### Comparison
 
 <table class="centered highlight">
   <thead>
@@ -85,13 +85,13 @@ Every interface has it's own strong points.
       <td>✔️</td>
       <td>❌</td>
       <td>❌</td>
-      <td>(HABPanel)</td>
+      <td>❌</td>
       <td>❌</td>
     </tr>
     <tr>
       <td>Access Sitemaps</td>
       <td>❌</td>
-      <td>✔️ (limited)</td>
+      <td>❌</td>
       <td>❌</td>
       <td>✔️</td>
       <td>❌</td>
@@ -132,7 +132,7 @@ Every interface has it's own strong points.
       <td>Modify openHAB Settings</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
+      <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
     </tr>
@@ -148,10 +148,10 @@ Every interface has it's own strong points.
 </table>
 
 {: #text-vs-ui}
-## Textual vs. Graphical Configuration
+### Textual vs. Graphical Configuration
 
 With openHAB 1.x the smart home configuration was done via configuration files only.
-One of the most visible additions to openHAB 2 was the adminstrative web interface Paper UI.
+One of the most visible additions to openHAB 2 is the adminstrative web interface Paper UI.
 
 Things and Items can either be defined and managed in configuration files or handled by Paper UI in a system-side database.
-Both methodes can be used side-by-side or even mixed, e.g. a Thing is discovered by Paper UI and connected Items are defined in a Items configuration file.
+Both methods can be used **side-by-side or even mixed**, e.g. a Thing is discovered by Paper UI and linked Items are defined in a `.items` configuration file.
