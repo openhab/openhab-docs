@@ -78,32 +78,6 @@ There is currently no automatic update script for Windows. To update manually, d
 
 ## Starting openHAB as a service
 
-In the Installation section, we used the `C:\openHAB2\start.bat` script to start openHAB 2.
-Instead of using this startup script, you can integrate openHAB 2 directly in your operating system as a native Windows Service service.
-
-Service Installation Steps:
-
-1. Start openHAB 2 using the `C:\openhab\start.bat` script and wait for it to load, giving you the `openhab>` prompt.
-
-2. openhab> `feature:install service-wrapper`.
-
-3. openhab> `wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"`.
-![Wrapper Install](http://imageshack.com/a/img921/6968/DeSTew.png)
-
-IMPORTANT: Edit now your `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file and modify the following line:
-`wrapper.java.classpath.1=%KARAF_HOME%/lib/boot/*.jar` (the default classpath is wrong as it is set to %KARAF_BASE%... change it to %KARAF_HOME%)
-
-4. Open up a new command prompt as an Administrator ! and issue the following command:
-`C:\openHAB2\userdata\bin\openHAB2-service.bat install`
-
-![Install Service](http://imageshack.com/a/img923/6505/xEWhcv.png)
-
-Check the service by running `services.msc` in a command prompt:
-
-![Win Services](http://imageshack.com/a/img923/2203/qbqwBD.png)
-
-5. All done!  The openHAB2 service is installed and it will come up every time you reboot your windows system.
-
-To manually manage your openHAB2 service from a command prompt: To start the openHAB2 Service: `net start openHAB2`. To stop the openHAB2 Service: `net stop openHAB2`
+(work in progress...)
 
 {% include contribution-wanted.html %}
