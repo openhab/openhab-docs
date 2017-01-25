@@ -245,7 +245,7 @@ FIRST_QUARTER=🌓 First Quarter
 OpenHAB provides you a set of [basic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 However if you wish to use custom icons you need to place them inside the `conf/icons/classic/` folder.
 These icons will be used in all of the openHAB frontends.
-The images must be in .png or .svg format, and have a filename with only lowercase characters and a hyphen or underscore (if required).
+The images must be in .png or .svg format, and have a name with only small letters and a hyphen or underscore (if required).
 The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files.
 
 As an example, to use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>`.
