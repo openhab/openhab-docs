@@ -13,8 +13,8 @@ The following instructions will guide you through the process of setting up open
 
 First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-Add the JAVA_HOME System Environment Variable in Windows: Navigate to
-`Control Panel\System and Security\System\Advanced system settings\Environment variables\System variables` and create a New System Variable based on your Java installation directory:
+Add the `JAVA_HOME` System Environment Variable in Windows:
+Navigate to :arrow_right: Control Panel :arrow_right: System and Security :arrow_right: System :arrow_right: Advanced system settings :arrow_right: Environment variables :arrow_right: System variables and create a New System Variable based on your Java installation directory:
 
 ![JAVA_HOME](http://imageshack.com/a/img921/5017/HZjFl6.png)
 
@@ -39,16 +39,19 @@ To install it, follow these simple steps:
 4. Point your browser to `http://localhost:8080`. You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html). 
    When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
 
-## Folder Structure
+### File Locations
 
-Assuming a successful install, you will now have various folders inside `C:\openhab`:
+Assuming a successful install, you will now have various folders inside `C:\openHAB2`:
 
-| Folder Path | Description                             
-|:----------- |:-----------
-| addons      | For adding new add-ons such as bindings
-| conf        | For textual configuration of openHAB
-| runtime     | Contains all the system files for openHAB
-| userdata    | Contains UI set configurations and settings for openHAB
+|                                  | Windows Installation         |
+|:--------------------------------:|:-----------------------------|
+| openHAB application              | `C:\openHAB2\runtime`        |
+| Additional add-on files          | `C:\openHAB2\addons`         |
+| Site configuration               | `C:\openHAB2\conf`           |
+| Log files                        | `C:\openHAB2\userdata\logs`  |
+| Userdata like rrd4j databases    | `C:\openHAB2\userdata`       |
+| Service configuration            | `C:\openHAB2\userdata\etc`   |
+
 
 ## Backup
 
@@ -65,7 +68,6 @@ There is currently no automatic update script for Windows. To update manually, d
  - `userdata\etc\all.policy`
  - `userdata\etc\branding.properties`
  - `userdata\etc\branding-ssh.properties`
- - `userdata\etc\config.properties`
  - `userdata\etc\distribution.info`
  - `userdata\etc\jre.properties`
  - `userdata\etc\profile.cfg`
