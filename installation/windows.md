@@ -5,7 +5,7 @@ title: Windows
 
 {% include base.html %}
 
-# openHAB on Windows
+# openHAB 2 on Windows
 
 The following instructions will guide you through the process of setting up openHAB 2.
 
@@ -13,38 +13,53 @@ The following instructions will guide you through the process of setting up open
 
 First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
+Add the `JAVA_HOME` System Environment Variable in Windows. Navigate to:
+
+* Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+
+Create a New System Variable based on your Java installation directory:
+
+![JAVA_HOME](http://imageshack.com/a/img921/5017/HZjFl6.png)
+
 The directory that openHAB is installed to must **contain no spaces**.
-On this page, we will be using `C:\openhab` as an example.
+On this page, we will be using `C:\openHAB2` as an example.
 
 ## Installation
 
 The openHAB runtime is distributed using a platform-independent zip file. 
 To install it, follow these simple steps:
 
-1. Choose between the [RC (Release client) version](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip) or the [latest snapshot version](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip) of openHAB2.
+1. Choose between the Stable Version [ ![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg) ](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip) or the latest Snapshot Version [ ![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg?version=2.1.0) ](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.1.0-SNAPSHOT.zip) of openHAB2.
 
-2. Unzip the file in your chosen directory (e.g. `C:\openhab`)
+2. Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
 
-3. Start the server: Launch the runtime by executing the script `start.bat` and wait a while for it to start and complete.
+![openHAB 2 Folders](http://imageshack.com/a/img924/8420/QHo9LU.png)
+
+3. Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
+
+![Karaf_Windows](http://imageshack.com/a/img921/5466/TOJADy.png)
 
 4. Point your browser to `http://localhost:8080`. You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html). 
    When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
 
-## Folder Structure
+### File Locations
 
-Assuming a successful install, you will now have various folders inside `C:\openhab`:
+Assuming a successful install, you will now have various folders inside `C:\openHAB2`:
 
-| Folder Path | Description                             
-|:----------- |:-----------
-| addons      | For adding new add-ons such as bindings
-| conf        | For textual configuration of openHAB
-| runtime     | Contains all the system files for openHAB
-| userdata    | Contains UI set configurations and settings for openHAB
+|                                  | Windows Installation         |
+|:--------------------------------:|:-----------------------------|
+| openHAB application              | `C:\openHAB2\runtime`        |
+| Additional add-on files          | `C:\openHAB2\addons`         |
+| Site configuration               | `C:\openHAB2\conf`           |
+| Log files                        | `C:\openHAB2\userdata\logs`  |
+| Userdata like rrd4j databases    | `C:\openHAB2\userdata`       |
+| Service configuration            | `C:\openHAB2\userdata\etc`   |
+
 
 ## Backup
 
 Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions). 
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openhab` folder. Which can be used any time after a failure.
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB2` folder. Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
 
@@ -56,7 +71,6 @@ There is currently no automatic update script for Windows. To update manually, d
  - `userdata\etc\all.policy`
  - `userdata\etc\branding.properties`
  - `userdata\etc\branding-ssh.properties`
- - `userdata\etc\config.properties`
  - `userdata\etc\distribution.info`
  - `userdata\etc\jre.properties`
  - `userdata\etc\profile.cfg`
@@ -69,4 +83,4 @@ There is currently no automatic update script for Windows. To update manually, d
 
 ## Starting openHAB as a service
 
-{% include contribution-wanted.html %}
+(work in progress...)
