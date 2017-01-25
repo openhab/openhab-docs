@@ -42,7 +42,6 @@ Every interface has it's own strong points.
       <th data-field="files">Textual Configuration</th>
       <th data-field="paperui">Paper UI</th>
       <th data-field="habmin">HABmin</th>
-      <th data-field="uis">other UIs</th>
       <th data-field="karaf">Karaf Console</th>
     </tr>
   </thead>
@@ -53,7 +52,6 @@ Every interface has it's own strong points.
       <td>❌</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
     <tr>
@@ -61,7 +59,6 @@ Every interface has it's own strong points.
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
     <tr>
@@ -69,7 +66,6 @@ Every interface has it's own strong points.
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
     <tr>
@@ -77,7 +73,6 @@ Every interface has it's own strong points.
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
     <tr>
@@ -86,20 +81,10 @@ Every interface has it's own strong points.
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
-      <td>❌</td>
-    </tr>
-    <tr>
-      <td>Access Sitemaps</td>
-      <td>❌</td>
-      <td>❌</td>
-      <td>❌</td>
-      <td>✔️</td>
-      <td>❌</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
@@ -110,14 +95,12 @@ Every interface has it's own strong points.
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
-      <td>❌</td>
     </tr>
     <tr>
       <td>Define Rules</td>
       <td>✔️</td>
       <td>✔️ (Experimental)</td>
       <td>✔️ (Graphical)</td>
-      <td>❌</td>
       <td>❌</td>
     </tr>
     <tr>
@@ -126,21 +109,18 @@ Every interface has it's own strong points.
       <td>✔️ (limited)</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>❌</td>
     </tr>
     <tr>
       <td>Modify openHAB Settings</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>❌</td>
       <td>✔️</td>
     </tr>
