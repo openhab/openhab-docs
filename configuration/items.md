@@ -261,30 +261,45 @@ FIRST_QUARTER=🌓 First Quarter
 OpenHAB provides a set of [basic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 However if you wish to use custom icons you need to place them inside the `conf/icons/classic/` folder.
 These icons will be used in all of the openHAB frontends.
-The images must be in `.png` or `.svg` format, and have a name with only small letters and a hyphen or underscore (if required).
-The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files.
 
-As an example, to use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>`.
+The images must be in `.png` or `.svg` format, consist of only lowercase letters, hyphens `-` or underscores `_` (if required).
+The PaperUI interface (or via the classicui.cfg or basicui.cfg files) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files by default.
+
+To use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>` in the Item definition.
 
 ## Dynamic Icons
 You can dynamically change the icon depending on the Item's state.
-You have to provide a default file and one icon file per state with the state's value appended to the icons name.
 
-Example:
+Dynamic icons must meet the following criteria:
 
-```text
-switch.svg
-switch-off.svg
-switch-on.svg
+* there must be a default icon
+* the name and state part of the icon must consist of all lower case letters, even if the State the icon matches includes uppercase letters
+* the icon selected is based on the mapped value used in the label (i.e. what gets returned by `[MAP(file.map):%s]`, not the Item's raw state.
+
+The name of dynamic icons must meet the following format:
+
 ```
+<name>[-<state>].<png or svg>
+```
+Where:
 
-If you want to use the dynamically items just use the image name without the added states.
+* `<name>` is the name of the icon set
+* `[-<state>]` is the state that particular icon maps to, the icon without the state part is the default
+* `<png or svg>` based on the format of the icon, use the default format as explained above
+
+For example:
+
+| switch.svg     | default, used when no other matching icon is found |
+| switch-off.svg | Matches OFF, or "off"                              |
+| switch-on.svg  | Matches ON, or "on"                                |
+
+To use the dynamic items just use the default icon name without the extension.
 
 ```xtend
 Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {somebinding:someconfig}
 ```
 
-One note of caution is the state used by the sitemap to select the proper icon is the transformed state. So when using a MAP in the label, the icon name must match the mapped state displayed on the sitemap, not the raw Item's state. To use the `Number Window` example from above, the icons for `Number Window` would be:
+As mentioned above, one note of caution is the state used by the sitemap to select the proper icon is the transformed state. So when using a MAP in the label, the icon name must match the mapped state displayed on the sitemap, not the raw Item's state. To use the `Number Window` example from above, the icons for `Number Window` would be:
 
 ```xtend
 window.png
