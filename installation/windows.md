@@ -71,6 +71,8 @@ There is currently no automatic update script for Windows. To update manually, d
  - `userdata\etc\all.policy`
  - `userdata\etc\branding.properties`
  - `userdata\etc\branding-ssh.properties`
+ - `userdata\etc\config.properties`
+ - `userdata\etc\custom.properties`
  - `userdata\etc\distribution.info`
  - `userdata\etc\jre.properties`
  - `userdata\etc\profile.cfg`
