@@ -1,39 +1,26 @@
 {% include base.html %}
-
-<!--
-<footer class="page-footer">
-  <div class="footer-copyright">
-    <div class="container center">
-      Copyright 2016 by the openHAB community
+{% comment %}<!-- Copyright message based on http://www.openhab.org -->{% endcomment %}
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m6">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB Foundation e.V.</a>
+        </div>
+        <div class="col s12 m6">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint">Imprint</a></li>
+               <li><a href="/privacy">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
     </div>
   </div>
 </footer>
--->
-
 <script src="{{base}}/js/jquery.min.js"></script>
 <script src="{{base}}/js/jquery.scrollme.min.js"></script>
 <script src="{{base}}/js/jquery.sticky.js"></script>
 <script src="{{base}}/js/materialize.js"></script>
 <script src="{{base}}/js/highlight.pack.js"></script>
 <script src="{{base}}/js/init.js"></script>
-<script>
-  window.twttr = (function(d, s, id) {
-    var js, fjs = d.getElementsByTagName(s)[0], t = window.twttr || {};
-    if (d.getElementById(id))
-    return t;
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://platform.twitter.com/widgets.js";
-    fjs.parentNode.insertBefore(js, fjs);
-
-    t._e = [];
-    t.ready = function(f) {
-      t._e.push(f);
-    };
-
-    return t;
-  }(document, "script", "twitter-wjs"));
-</script>
-
 </body>
 </html>

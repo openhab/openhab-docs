@@ -13,6 +13,8 @@
   color: #039BE5;
 }
 
+/* Search box and results */
+
 li.search:hover {
    background-color: transparent;
 }
@@ -20,7 +22,7 @@ li.search:hover {
 .search-form-input  {
   padding-left: 5px !important;
   width: 100px;
-  border: none !important; 
+  border: none !important;
   transition: 0.2s ease-in;
   display: block;
   margin: 17px 0 0 0 !important;
@@ -73,4 +75,23 @@ input.gsc-input {
 
 #querymob {
   color: #000;
+}
+
+/* Address (on imprint page) */
+address {
+  font-style: normal;
+}
+
+/* Footer line */
+footer {
+  font-size: 1rem;
+}
+footer .list-inline {
+  margin: 0;
+  list-style: none;
+}
+footer .list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
 }
