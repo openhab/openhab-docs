@@ -51,7 +51,7 @@ In this example we use "Switch" as the item's type. This results in a slider whi
 
 Feel free to choose an appropriate description for your item.
 
-**More information about available icons can bee found [here]({{base}}/configuration/items.html#icons)**
+**More information about available icons can be found [here]({{base}}/configuration/items.html#icons)**
 
 
 Now to the item-to-thing-channel link: the channel id is always visible in Paper UI when you edit a thing. As you can see in the screenshot from above where I linked the two channels of the network thing, I used the channel id of the "Online" channel in the definition above:
