@@ -78,6 +78,30 @@ It also provides you a simple way of **protecting your server** with authenticat
 
 The good news is that [openHABian](openhabian) already offers the possibility to activate a preconfigured NGINX reverse proxy, which includes setting up authentication and a valid [Let's Encrypt](https://letsencrypt.org) certificate.
 
+**Table of Content:**
+
+* [Setting up NGINX](#nginx-setup)
+  * [Installation](#nginx-setup-install)
+  * [Basic Configuration](#nginx-setup-config)
+* [Authentication with NGINX](#nginx-auth)
+  * [Creating the First User](#nginx-auth-user)
+  * [Referencing the File in the NGINX Configuration](#nginx-auth-file)
+  * [Adding or Removing users](#nginx-auth-users)
+* [Making Exceptions for Specific IP addresses](#nginx-satisfy)
+* [Setting up a Domain](#nginx-domain)
+* [Enabling HTTPS](#nginx-https)
+* [Using OpenSSL to Generate Self-Signed Certificates](#nginx-openssl)
+  * [Adding the Certificates to Your Proxy Server](#nginx-openssl-add)
+* [Using Let's Encrypt to Generate Trusted Certificates](#nginx-letsencrypt)
+  * [Setting up the NGINX Proxy Server to Handle the Certificate Generation Procedure](#nginx-letsencrypt-generation)
+  * [Using Certbot](#nginx-letsencrypt-certbot)
+  * [Adding the Certificates to Your Proxy Server](#nginx-letsencrypt-add)
+* [Setting Your NGINX Server to Listen to the HTTPS Port](#nginx-https-listen)
+* [Redirecting HTTP Traffic to HTTPS](#nginx-httpredirect)
+* [Putting it All Together](#nginx-summary)
+* [Additional HTTPS Security](#nginx-https-security)
+* [Further Reading](#nginx-further-reading)
+
 {: #nginx-setup}
 #### Setting up NGINX
 
@@ -320,7 +344,7 @@ In the NGINX configuration, place the following underneath your server_name vari
     add_header                      Strict-Transport-Security "max-age=31536000";
 ```
 
-{: #nginx-https}
+{: #nginx-https-listen}
 #### Setting Your NGINX Server to Listen to the HTTPS Port
 
 Regardless of the option you choose, make sure you change the port to listen in on HTTPS traffic.
