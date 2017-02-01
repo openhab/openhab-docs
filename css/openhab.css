@@ -13,6 +13,15 @@
   color: #039BE5;
 }
 
+/* Binding category initial visibility */
+
+.install-legacy {
+  display: none;
+}
+
+.install-manual {
+  display: none;
+}
 /* Search box and results */
 
 li.search:hover {

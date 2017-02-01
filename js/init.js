@@ -35,7 +35,7 @@ function initEffects() {
     hljs.initHighlightingOnLoad();
     
     // Striped Tables
-    $('section#documentation table').addClass('striped');
+    $('section#documentation table').not('.bordered').addClass('striped');
     
     // Linkable Headers
     $('body.documentation section#documentation h2, body.documentation section#documentation h3').click(function(event) {

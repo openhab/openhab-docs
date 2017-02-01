@@ -12,422 +12,633 @@
   <packaging>pom</packaging>
 
   <build>
-    <plugins>
-      <plugin>
-        <artifactId>maven-clean-plugin</artifactId>
-        <configuration>
-          <filesets>
-            <fileset>
-              <directory>${basedir}/addons/bindings/</directory>
-            </fileset>
-            <fileset>
-              <directory>${basedir}/addons/voice/</directory>
-            </fileset>
-            <fileset>
-              <directory>${basedir}/addons/uis/</directory>
-            </fileset>
-            <fileset>
-              <directory>${basedir}/addons/io/</directory>
-            </fileset>
-            <fileset>
-              <directory>${basedir}/addons/iconsets/</directory>
-            </fileset>
-            <fileset>
-              <directory>${basedir}/concepts/</directory>
-            </fileset>
-          </filesets>
-        </configuration>
-      </plugin>
-      <plugin>
-        <artifactId>maven-resources-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>copy-esh-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/concepts/</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
-                  <includes>
-                    <include>**/*.md</include>
-                    <include>**/*.png</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/docs/documentation/development</directory>
-                  <includes>
-                    <include>**/guidelines.md</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-binding-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/bindings/</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/binding</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/_repos/openhab-bundles/bindings</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-iconset-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/iconsets</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/icons/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-ui-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/uis</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                  <excludes>
-                    <exclude>**/iconset/**</exclude>
-                  </excludes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/_repos/openhab-bundles/uis</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-voice-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/voice</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/voice</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
-            <id>copy-io-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/addons/io</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-        </executions>
+	<plugins>
+	  <plugin>
+		<artifactId>maven-clean-plugin</artifactId>
+		<configuration>
+		  <filesets>
+			<fileset>
+			  <directory>${basedir}/addons/bindings/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/addons/voice/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/addons/uis/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/addons/io/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/addons/iconsets/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/concepts/</directory>
+			</fileset>
+		  </filesets>
+		</configuration>
 	  </plugin>
-      <plugin>
-        <groupId>org.codehaus.groovy.maven</groupId>
-        <artifactId>gmaven-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>rename-binding-files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def bindings = new File(project.basedir, 'addons/bindings')
+	  <plugin>
+		<artifactId>maven-resources-plugin</artifactId>
+		<executions>
+		  <execution>
+			<id>copy-esh-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/concepts/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
+				  <includes>
+					<include>**/*.md</include>
+					<include>**/*.png</include>
+				  </includes>
+				</resource>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/docs/documentation/development</directory>
+				  <includes>
+					<include>**/guidelines.md</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh1-binding-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/bindings/oh1/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab/bundles/binding</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh1-action-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/actions/oh1/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab/bundles/action</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh1-persistence-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/persistence/oh1/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab/bundles/persistence</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh2-binding-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/bindings/oh2/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab2-addons/addons/binding</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+				<resource>
+				  <directory>${basedir}/_repos/openhab-bundles/bindings</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-esh-binding-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/bindings/oh2/</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-iconset-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/iconsets</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/icons/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-ui-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/uis</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				  <excludes>
+					<exclude>**/iconset/**</exclude>
+				  </excludes>
+				</resource>
+				<resource>
+				  <directory>${basedir}/_repos/openhab-bundles/uis</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-voice-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/voice</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+				<resource>
+				  <directory>${basedir}/_repos/openhab2-addons/addons/voice</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh1-io-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/bundles/io</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab/bundles/io</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-oh2-io-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/addons/io/oh2</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		</executions>
+	  </plugin>
+	  <plugin>
+		<groupId>org.codehaus.groovy.maven</groupId>
+		<artifactId>gmaven-plugin</artifactId>
+		<executions>
+		  <execution>
+			<id>rename-binding-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
 				def bindingList = new File(project.basedir, '_data/bindings.csv')
-				bindingList.write("id,label,description\n")
+				bindingList.write("source,id,label,description\n")
 
-                bindings.eachFile
-                {
-                def name = it.name
-                if(name.contains('binding')) {
-                def bindingId =
-                it.name.replace('org.eclipse.smarthome.binding.', '').replace('org.openhab.binding.', '')
-                def simpleBindingNameDir = new
-                File(bindings.path, bindingId)
-                it.renameTo(simpleBindingNameDir)
-                def readme = new
-                File(simpleBindingNameDir.path, 'README.md')
-                if(readme.exists()) {
-                println readme
-                readme.renameTo(new File(simpleBindingNameDir.path, 'readme.md'))
-                if(!readme.text.startsWith('---')) {
-                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                }
-                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '').trim()
-				def description = ""
-				boolean firstHeadline = false
-				for(def line : readme.readLines()) {
-                 if(line.startsWith('#')) {
-                 	if(!firstHeadline) {
-                 		firstHeadline = true
-                 	}
-                 } else {
-                 	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
-		                 description = line.trim().replace('\"', '\'')
-                  		 break
-		        	}
-                 }
-                }
-                bindingList.append(bindingId + ',' + label + ',"' + description + '"\n')
-                }
-                }
-                }
-              </source>
-            </configuration>
-          </execution>
-          <execution>
-            <id>process-openhab1-addons</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def feature = new File(project.basedir, '_repos/openhab/features/openhab-addons/src/main/feature/feature.xml')
+				def sources = ['oh1', 'oh2']
+				sources.each { source ->
+
+					def bindings = new File(project.basedir, 'addons/bindings/'.concat(source))
+
+                	bindings.eachFile {
+                		def name = it.name
+                		if(name.contains('binding')) {
+                			def bindingId = it.name.replace('org.eclipse.smarthome.binding.', '').replace('org.openhab.binding.', '')
+                			def simpleBindingNameDir = new File(bindings.path, bindingId)
+                			it.renameTo(simpleBindingNameDir)
+                			def readme = new File(simpleBindingNameDir.path, 'README.md')
+                			if(readme.exists()) {
+                				println readme
+                				readme.renameTo(new File(simpleBindingNameDir.path, 'readme.md'))
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                				}
+                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '').trim()
+								def description = ""
+								boolean firstHeadline = false
+								for(def line : readme.readLines()) {
+                			 		if(line.startsWith('#')) {
+                			 			if(!firstHeadline) {
+                			 				firstHeadline = true
+                			 			}
+                			 		} else {
+                			 			if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		        			        		description = line.trim().replace('\"', '\'')
+                			  				break
+		        						}
+                			 		}
+                				}
+                				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '"\n')
+                			}
+                		}
+                	}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-action-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def actionList = new File(project.basedir, '_data/actions.csv')
+				actionList.write("source,id,label,description\n")
+
+				def sources = ['oh1']
+				sources.each { source ->
+
+					def actions = new File(project.basedir, 'addons/actions/'.concat(source))
+
+                	actions.eachFile {
+                		def name = it.name
+                		if(name.contains('action')) {
+                			def actionId = it.name.replace('org.openhab.action.', '')
+                			def simpleActionNameDir = new File(actions.path, actionId)
+                			it.renameTo(simpleActionNameDir)
+                			def readme = new File(simpleActionNameDir.path, 'README.md')
+                			if(readme.exists()) {
+                				println readme
+                				readme.renameTo(new File(simpleActionNameDir.path, 'readme.md'))
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                				}
+                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Actions', '').replace(' Action', '').trim()
+								def description = ""
+								boolean firstHeadline = false
+								for(def line : readme.readLines()) {
+                			 		if(line.startsWith('#')) {
+                			 			if(!firstHeadline) {
+                			 				firstHeadline = true
+                			 			}
+                			 		} else {
+                			 			if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		        			        		description = line.trim().replace('\"', '\'')
+                			  				break
+		        						}
+                			 		}
+                				}
+                				actionList.append(source + ',' + actionId + ',' + label + ',"' + description + '"\n')
+                			}
+                		}
+                	}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-persistence-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def persistenceList = new File(project.basedir, '_data/persistence.csv')
+				persistenceList.write("source,id,label,description\n")
+
+				def sources = ['oh1']
+				sources.each { source ->
+
+					def persistence = new File(project.basedir, 'addons/persistence/'.concat(source))
+
+                	persistence.eachFile {
+                		def name = it.name
+                		if(name.contains('persistence') &amp;&amp; !name.endsWith('.test')) {
+                			def persistenceId = it.name.replace('org.openhab.persistence.', '')
+                			def simplePersistenceNameDir = new File(persistence.path, persistenceId)
+                			it.renameTo(simplePersistenceNameDir)
+                			def readme = new File(simplePersistenceNameDir.path, 'README.md')
+                			if(readme.exists()) {
+                				println readme
+                				readme.renameTo(new File(simplePersistenceNameDir.path, 'readme.md'))
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+                				}
+                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Persistence', '').trim()
+								def description = ""
+								boolean firstHeadline = false
+								for(def line : readme.readLines()) {
+                			 		if(line.startsWith('#')) {
+                			 			if(!firstHeadline) {
+                			 				firstHeadline = true
+                			 			}
+                			 		} else {
+                			 			if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		        			        		description = line.trim().replace('\"', '\'')
+                			  				break
+		        						}
+                			 		}
+                				}
+                				persistenceList.append(source + ',' + persistenceId + ',' + label + ',"' + description + '"\n')
+                			}
+                		}
+                	}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>process-openhab1-addons</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def feature = new File(project.basedir, '_repos/openhab/features/openhab-addons/src/main/feature/feature.xml')
 				def addonList = new File(project.basedir, '_data/oh1addons.csv')
-				addonList.write("category,label\n")
+				addonList.write("category,id,label\n")
 
 				def root = new XmlParser().parse(feature)
 				root.feature.each {
 				  def name = it['@name'].substring(8)
 				  def category = name.substring(0,name.indexOf('-'))
+				  def id = name.substring(name.indexOf('-') + 1)
 				  def label = it['@description']
 				  if(category!='io' &amp;&amp; category!='transport')
-                    addonList.append(category + ',' + label + '\n')
-                }
-              </source>
-            </configuration>
-          </execution>
-          <execution>
-            <id>rename-voice-files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def voice = new File(project.basedir, 'addons/voice')
+					addonList.append(category + ',' + id + ',' + label + '\n')
+				}
+				feature = new File(project.basedir, '_repos/openhab/features/openhab-addons-legacy/src/main/feature/feature.xml')
+				addonList = new File(project.basedir, '_data/legacyaddons.csv')
+				addonList.write("category,id,label\n")
+
+				root = new XmlParser().parse(feature)
+				root.feature.each {
+				  def name = it['@name'].substring(8)
+				  def category = name.substring(0,name.indexOf('-'))
+				  def id = name.substring(name.indexOf('-') + 1)
+				  def label = it['@description']
+				  if(category!='io' &amp;&amp; category!='transport')
+					addonList.append(category + ',' + id + ',' + label + '\n')
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-voice-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def voice = new File(project.basedir, 'addons/voice')
 				def voiceList = new File(project.basedir, '_data/voice.csv')
 				voiceList.write("id,label,description\n")
 
-                voice.eachFile
-                {
-                def name = it.name
-                if(name.contains('voice')) {
-                def voiceId =
-                it.name.replace('org.eclipse.smarthome.voice.', '').replace('org.openhab.voice.', '')
-                def simpleVoiceNameDir = new File(voice.path, voiceId)
-                it.renameTo(simpleVoiceNameDir)
-                def readme = new
-                File(simpleVoiceNameDir.path, 'README.md')
-                if(readme.exists()) {
-                println readme
-                readme.renameTo(new File(simpleVoiceNameDir.path, 'readme.md'))
-                if(!readme.text.startsWith('---')) {
-                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                }
-                def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').trim()
+				voice.eachFile
+				{
+				def name = it.name
+				if(name.contains('voice')) {
+				def voiceId =
+				it.name.replace('org.eclipse.smarthome.voice.', '').replace('org.openhab.voice.', '')
+				def simpleVoiceNameDir = new File(voice.path, voiceId)
+				it.renameTo(simpleVoiceNameDir)
+				def readme = new
+				File(simpleVoiceNameDir.path, 'README.md')
+				if(readme.exists()) {
+				println readme
+				readme.renameTo(new File(simpleVoiceNameDir.path, 'readme.md'))
+				if(!readme.text.startsWith('---')) {
+					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+				}
+				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').trim()
 				def description = ""
 				boolean firstHeadline = false
 				for(def line : readme.readLines()) {
-                 if(line.startsWith('#')) {
-                 	if(!firstHeadline) {
-                 		firstHeadline = true
-                 	}
-                 } else {
-                 	if(firstHeadline &amp;&amp; line.trim().size() > 0) {
-		                 description = line.trim().replace('\"', '\'')
-                  		 break
-		        	}
-                 }
-                }
-                voiceList.append(voiceId + ',' + label + ',"' + description + '"\n')
-                }
-                }
-                }
-              </source>
-            </configuration>
-          </execution>
-          <execution>
-            <id>rename-iconset-files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def iconsets = new File(project.basedir, 'addons/iconsets')
+				 if(line.startsWith('#')) {
+					if(!firstHeadline) {
+						firstHeadline = true
+					}
+				 } else {
+					if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+						 description = line.trim().replace('\"', '\'')
+						 break
+					}
+				 }
+				}
+				voiceList.append(voiceId + ',' + label + ',"' + description + '"\n')
+				}
+				}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-iconset-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def iconsets = new File(project.basedir, 'addons/iconsets')
 
-                iconsets.eachFile
-                {
-                def name = it.name
-                if(name.contains('iconset')) {
-                def iconsetId =
-                it.name.replace('org.eclipse.smarthome.ui.iconset.', '')
-                def simpleIconsetNameDir = new
-                File(iconsets.path, iconsetId)
-                it.renameTo(simpleIconsetNameDir)
-                def readme = new
-                File(simpleIconsetNameDir.path, 'README.md')
-                if(readme.exists()) {
-                println readme
-                readme.renameTo(new File(simpleIconsetNameDir.path, 'readme.md'))
-                }
-                }
-                }
-              </source>
-            </configuration>
-          </execution>
-          <execution>
-            <id>rename-ui-files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def uis = new File(project.basedir, 'addons/uis')
+				iconsets.eachFile
+				{
+				def name = it.name
+				if(name.contains('iconset')) {
+				def iconsetId =
+				it.name.replace('org.eclipse.smarthome.ui.iconset.', '')
+				def simpleIconsetNameDir = new
+				File(iconsets.path, iconsetId)
+				it.renameTo(simpleIconsetNameDir)
+				def readme = new
+				File(simpleIconsetNameDir.path, 'README.md')
+				if(readme.exists()) {
+				println readme
+				readme.renameTo(new File(simpleIconsetNameDir.path, 'readme.md'))
+				}
+				}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-ui-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def uis = new File(project.basedir, 'addons/uis')
 
-                uis.eachFile
-                {
-                def name = it.name
-                if((name.contains('smarthome.ui.') || name.contains('openhab.ui.')) &amp;&amp; !name.contains('iconset')) {
-                def uiId =
-                it.name.replace('org.eclipse.smarthome.ui.', '').replace('org.openhab.ui.', '')
-                def simpleUiNameDir = new
-                File(uis.path, uiId)
-                it.renameTo(simpleUiNameDir)
-                def readme = new
-                File(simpleUiNameDir.path, 'README.md')
-                if(readme.exists()) {
-                println readme
-                readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
-                if(!readme.text.startsWith('---')) {
-                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                }
-                }
-                }
-                }
-              </source>
-            </configuration>
-          </execution>
-          <execution>
-            <id>rename-io-files</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>execute</goal>
-            </goals>
-            <configuration>
-              <source>
-                def uis = new File(project.basedir, 'addons/io')
+				uis.eachFile
+				{
+				def name = it.name
+				if((name.contains('smarthome.ui.') || name.contains('openhab.ui.')) &amp;&amp; !name.contains('iconset')) {
+				def uiId =
+				it.name.replace('org.eclipse.smarthome.ui.', '').replace('org.openhab.ui.', '')
+				def simpleUiNameDir = new
+				File(uis.path, uiId)
+				it.renameTo(simpleUiNameDir)
+				def readme = new
+				File(simpleUiNameDir.path, 'README.md')
+				if(readme.exists()) {
+				println readme
+				readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+				if(!readme.text.startsWith('---')) {
+					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+				}
+				}
+				}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>rename-io-files</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>execute</goal>
+			</goals>
+			<configuration>
+			  <source>
+				def uis = new File(project.basedir, 'addons/io')
 
-                uis.eachFile
-                {
-                def name = it.name
-                if(name.contains('org.openhab.io.')) {
-                def uiId =
-                it.name.replace('org.openhab.io.', '')
-                def simpleUiNameDir = new
-                File(uis.path, uiId)
-                it.renameTo(simpleUiNameDir)
-                def readme = new File(simpleUiNameDir.path, 'README.md')
-                if(readme.exists()) {
-                println readme
-                readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
-                if(!readme.text.startsWith('---')) {
-                	readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                }
-                }
-                }
-                }
-              </source>
-            </configuration>
-          </execution>
-        </executions>
-      </plugin>
-    </plugins>
+				uis.eachFile
+				{
+				def name = it.name
+				if(name.contains('org.openhab.io.')) {
+				def uiId =
+				it.name.replace('org.openhab.io.', '')
+				def simpleUiNameDir = new
+				File(uis.path, uiId)
+				it.renameTo(simpleUiNameDir)
+				def readme = new File(simpleUiNameDir.path, 'README.md')
+				if(readme.exists()) {
+				println readme
+				readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
+				if(!readme.text.startsWith('---')) {
+					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
+				}
+				}
+				}
+				}
+			  </source>
+			</configuration>
+		  </execution>
+		</executions>
+	  </plugin>
+	</plugins>
   </build>
 
 </project>
