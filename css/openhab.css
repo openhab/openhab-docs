@@ -84,7 +84,8 @@ address {
 
 /* Footer line */
 footer {
-  font-size: 1rem;
+  position: static;
+  font-size: 0.8em;
 }
 footer .list-inline {
   margin: 0;
