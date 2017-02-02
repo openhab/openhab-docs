@@ -58,7 +58,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       </td>
       <td>
         <p>
-        Many openHAB 1.x bindings have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.  All openHAB 1.x addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.  We need you help testing them so that they may be easily installed in a future distribution.  Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
+        Many openHAB 1.x bindings have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.  All openHAB 1.x addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.  We need your help testing them so that they may be easily installed in a future distribution.  Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
         </p>
       </td>
     </tr>
