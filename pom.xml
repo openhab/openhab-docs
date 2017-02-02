@@ -346,7 +346,7 @@
                 			 		}
                 				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\n---\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '"\n')
                 			}
@@ -398,7 +398,7 @@
                 			 		}
                 				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\n---\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				actionList.append(source + ',' + actionId + ',' + label + ',"' + description + '"\n')
                 			}
@@ -450,7 +450,7 @@
                 			 		}
                 				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\n---\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				persistenceList.append(source + ',' + persistenceId + ',' + label + ',"' + description + '"\n')
                 			}
