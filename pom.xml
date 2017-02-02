@@ -18,7 +18,13 @@
 		<configuration>
 		  <filesets>
 			<fileset>
+			  <directory>${basedir}/addons/actions/</directory>
+			</fileset>
+			<fileset>
 			  <directory>${basedir}/addons/bindings/</directory>
+			</fileset>
+			<fileset>
+			  <directory>${basedir}/addons/persistence/</directory>
 			</fileset>
 			<fileset>
 			  <directory>${basedir}/addons/voice/</directory>
@@ -259,7 +265,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/bundles/io</outputDirectory>
+			  <outputDirectory>${basedir}/bundles/io/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/io</directory>
@@ -324,9 +330,6 @@
                 			if(readme.exists()) {
                 				println readme
                 				readme.renameTo(new File(simpleBindingNameDir.path, 'readme.md'))
-                				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                				}
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '').trim()
 								def description = ""
 								boolean firstHeadline = false
@@ -341,6 +344,9 @@
                 			  				break
 		        						}
                 			 		}
+                				}
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\n---\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '"\n')
                 			}
@@ -376,9 +382,6 @@
                 			if(readme.exists()) {
                 				println readme
                 				readme.renameTo(new File(simpleActionNameDir.path, 'readme.md'))
-                				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                				}
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Actions', '').replace(' Action', '').trim()
 								def description = ""
 								boolean firstHeadline = false
@@ -393,6 +396,9 @@
                 			  				break
 		        						}
                 			 		}
+                				}
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\n---\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				actionList.append(source + ',' + actionId + ',' + label + ',"' + description + '"\n')
                 			}
@@ -428,9 +434,6 @@
                 			if(readme.exists()) {
                 				println readme
                 				readme.renameTo(new File(simplePersistenceNameDir.path, 'readme.md'))
-                				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-                				}
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Persistence', '').trim()
 								def description = ""
 								boolean firstHeadline = false
@@ -445,6 +448,9 @@
                 			  				break
 		        						}
                 			 		}
+                				}
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\n---\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				persistenceList.append(source + ',' + persistenceId + ',' + label + ',"' + description + '"\n')
                 			}
