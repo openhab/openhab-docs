@@ -434,7 +434,7 @@
                 			if(readme.exists()) {
                 				println readme
                 				readme.renameTo(new File(simplePersistenceNameDir.path, 'readme.md'))
-                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Persistence', '').trim()
+                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replaceFirst('\\s*Persistence\\s*$', '').trim()
 								def description = ""
 								boolean firstHeadline = false
 								for(def line : readme.readLines()) {
