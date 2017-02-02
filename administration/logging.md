@@ -30,7 +30,7 @@ The log shell comes with the following commands:
 
 - `log:clear`: clear the log
 - `log:display`: display the last log entries
-- `log:display-exception`: display the last exception from the log
+- `log:exception-display`: display the last exception from the log
 - `log:get`: show the log levels
 - `log:set`: set the log levels
 - `log:tail`: continuous display of the log entries
