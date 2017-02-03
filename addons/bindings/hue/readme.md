@@ -97,7 +97,7 @@ In this example **Bulb1** is a standard Philips HUE bulb (LCT001) which supports
 ### demo.things:
 
 ```
-Bridge hue:bridge:1 [ ipAddress="192.168.0.64" ] {
+Bridge hue:bridge:1 [ ipAddress="192.168.0.64" ] {  // ???
 	0210 bulb1 [ lightId="1" ]
 	0220 bulb2 [ lightId="2" ]
 }
