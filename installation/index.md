@@ -36,13 +36,16 @@ The previously mentioned [openHABian](openhabian.html) can also be used to kicks
 
 ## Prerequisites
 
-Make sure that you have an up to date version of the [Oracle Java Runtime Environment](https://java.com/en/download/manual.jsp) on your host system installed.
-A famous choice is OpenJDK, however, Oracle Java Version 8 is recommended for openHAB.
-openHAB may be unstable and slower executed by OpenJDK.
+Make sure that you have an up to date Java Runtime Environment (JRE) installed on your host system. The [Oracle JRE](https://java.com/en/download/manual.jsp)
+is recommended for openHAB. Alternative JRE implementations such as OpenJDK may be used, but there are some known limitations with other JREs depending on the platform and bindings used. Your milage may vary.
 
-> Oracle Java offers significant performance advantages over OpenJDK on ARM platforms, and will expand the range of Java applications that run well [on the Raspberry Pi].
+| JRE | Advantages | Disadvantages |
+| --- | --- | --- |
+| Oracle | Full openHAB support on all platforms | Not supported by some Linux distributions (packages may not be available, requiring manual installation) |
+| OpenJDK | Supported by most Linux distributions (packages typically available) | Performance issues on ARM platforms, compatibiltiy issues with certain bindings and certificates | 
+| Zulu Embedded | Optimized for ARM platforms, fully compliant with Java SE standard | Not available on all operating systems |
 
-Also make sure to use the 32-bit version of the JVM, even on 64-bit operating systems. Serial connections won't work with a 64-bit JVM, so bindings like Z-Wave won't be working with it.
+> Make sure to use the 32-bit version of the JVM for ARM platforms, even on 64-bit operating systems. Serial connections won't work with a 64-bit JVM, so bindings like Z-Wave won't be working with it.
 
 As for now, a pre-release Java 9 installation is not recommended and is not yet supported by openHAB 2.
 
