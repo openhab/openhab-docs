@@ -2,10 +2,7 @@
 layout: intro
 title: Imprint
 ---
-{% comment %}<!-- Based on http://www.openhab.org/imprint.html -->
-<div class="row">
-   <section class="col s12 m9 offset-m3">
-{% endcomment %}
+{% comment %}<!-- Based on http://www.openhab.org/imprint.html -->{% endcomment %}
 # Imprint
 
 ### This site is operated by
@@ -28,7 +25,3 @@ openHAB Foundation respects your desire for privacy. Please see our <a href="/pr
 ### Trademarks
 
 openHAB is a registered trademark of Kai Kreuzer in the EU, the US and other countries.
-{% comment %}
-  </section>
-</div>
-{% endcomment %}
