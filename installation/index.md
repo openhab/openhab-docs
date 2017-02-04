@@ -36,16 +36,18 @@ The previously mentioned [openHABian](openhabian.html) can also be used to kicks
 
 ## Prerequisites
 
-Make sure that you have an up to date Java Runtime Environment (JRE) installed on your host system. The [Oracle JRE](https://java.com/en/download/manual.jsp)
-is recommended for openHAB. Alternative JRE implementations such as OpenJDK may be used, but there are some known limitations with other JREs depending on the platform and bindings used. Your milage may vary.
+Make sure that you have an up to date Java platform installed on your host system. 
+Zulu is currently the recommended Java platform for openHAB, although Oracle Java is also suitable for most configurations.
+OpenJDK may be used, but it has some [known limitations](https://community.openhab.org/t/running-openhab-2-on-openjdk/21443/8?u=gatekeeper6838) with openHAB.
 
-| JRE | Advantages | Disadvantages |
+| Java Platform | Advantages | Disadvantages |
 | --- | --- | --- |
-| Oracle | Full openHAB support on all platforms | Not supported by some Linux distributions (packages may not be available, requiring manual installation) |
-| OpenJDK | Supported by most Linux distributions (packages typically available) | Performance issues on ARM platforms, compatibiltiy issues with certain bindings and certificates | 
-| Zulu Embedded | Optimized for ARM platforms, fully compliant with Java SE standard | Not available on all operating systems |
+| [Zulu](http://www.azul.com/downloads/zulu/) | Completely open source, [fully certified](https://www.azul.com/products/zulu/) Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](http://www.azul.com/downloads/zulu-embedded/) | Not available in most default distribution package repositories |
+| [Oracle Java](https://java.com/en/download/manual.jsp) | Full openHAB support on all platforms | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
+| [OpenJDK](http://openjdk.java.net/install/index.html) | Supported by many Linux distributions, packages typically available | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates | 
 
-> Make sure to use the 32-bit version of the JVM for ARM platforms, even on 64-bit operating systems. Serial connections won't work with a 64-bit JVM, so bindings like Z-Wave won't be working with it.
+> Make sure to use the 32-bit version of the JVM for ARM platforms, even on 64-bit operating systems. 
+> Serial connections won't work with a 64-bit JVM, preventing bindings like Z-Wave from functioning.
 
 As for now, a pre-release Java 9 installation is not recommended and is not yet supported by openHAB 2.
 
