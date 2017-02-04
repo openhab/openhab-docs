@@ -56,18 +56,7 @@
     <ul>
       <li><a href="{{docu}}/addons/index.html">Overview</a></li>
       <hr />
-      <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
-        <ul>
-          <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
-          <hr />
-          {% assign bindings = "" | split: "|" %}
-          {% for binding in site.data.bindings %}{% assign bindings = bindings | push: binding %}{% endfor %}
-          {% assign sorted_bindings = bindings | sort: "id" %}
-          {% for binding in sorted_bindings %}
-          <li><a href="{{docu}}/addons/bindings/{{ binding.id }}/readme.html">{{ binding.label }}</a></li>
-          {% endfor %}
-        </ul>
-      </li>
+      <li><a href="{{docu}}/addons/bindings.html">Bindings</a></li>
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
         <ul>
           <li><a href="{{docu}}/addons/uis.html">Overview</a></li>

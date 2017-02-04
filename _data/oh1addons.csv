@@ -1,104 +1,104 @@
-category,label
-action,Ecobee Action
-action,Mail Action
-action,MiOS Action
-action,MQTT Action
-action,NotifyMyAndroid Action
-action,Pebble Action
-action,Prowl Action
-action,Pushover Action
-action,Pushsafer Action
-action,Satel Action
-action,Telegram Action
-action,Twitter Action
-action,XBMC Action
-action,XMPP Action
-binding,Alarm Decoder Binding
-binding,Anel Binding
-binding,Bticino Binding
-binding,CalDAV Binding (command)
-binding,CalDAV Binding (personal)
-binding,ComfoAir Binding
-binding,Denon Binding
-binding,DMX OLA Binding
-binding,DSMR Binding
-binding,eBUS Binding
-binding,Ecobee Binding
-binding,Waterkotte Ecotouch Binding
-binding,Energenie Binding
-binding,EnOcean Binding
-binding,Enphase Energy Binding
-binding,Epson Projector Binding
-binding,Expire Binding
-binding,Fatek PLC Binding
-binding,Freeswitch Binding
-binding,Fritzbox Binding
-binding,Fritzbox TR064 Binding
-binding,FS20 Binding
-binding,Garadget Binding
-binding,GC100IR Binding
-binding,GPIO Binding
-binding,Heatmiser Binding
-binding,Horizon Binding
-binding,HTTP Binding
-binding,IHC Binding
-binding,InsteonPLM Binding
-binding,Intertechno Binding
-binding,IPX800 Binding
-binding,IRTrans Binding
-binding,jointSPACE Binding
-binding,KM200 Binding
-binding,KNX Binding
-binding,Koubachi Binding
-binding,LCN Binding
-binding,LGTV Binding
-binding,MochadX10 Binding
-binding,Milight Binding
-binding,MiOS Binding
-binding,Modbus Binding
-binding,MQTT Binding
-binding,OwnTracks (formerly MQTTitude) Binding
-binding,Chamberlain MyQ Binding
-binding,Neohub Binding
-binding,Nest Binding
-binding,Network UPS Tools Binding
-binding,Nibe Heatpump Binding
-binding,Nikobus Binding
-binding,Novelan Heatpump Binding
-binding,OpenEnergyMonitor Binding
-binding,OneWire Binding
-binding,OWServer Binding
-binding,Panasonic TV Binding
-binding,Plex Binding
-binding,Plugwise Binding
-binding,Visonic PowerMax Binding
-binding,RWE SmartHome Binding
-binding,Samsung A/C Binding
-binding,Sapp Binding
-binding,Satel Binding
-binding,Serial Binding
-binding,SNMP Binding
-binding,Souliss Binding
-binding,Swegon Ventilation Binding
-binding,TCP/UDP Binding
-binding,Tellstick Binding
-binding,Tinkerforge Binding
-binding,Universal Powerline Bus Binding
-binding,Weather Binding
-binding,WOL (Wake-on-LAN) Binding
-binding,XBMC Binding
-persistence,InfluxDB (v 1.0) Persistence
-persistence,Google Calendar Presence Simulator
-persistence,JDBC Persistence Apache Derby
-persistence,JDBC Persistence H2
-persistence,JDBC Persistence HSQLDB
-persistence,JDBC Persistence MariaDB
-persistence,JDBC Persistence MySQL
-persistence,JDBC Persistence PostgreSQL
-persistence,JDBC Persistence SQLite
-persistence,JPA Persistence
-persistence,MapDB Persistence
-persistence,MQTT Persistence
-persistence,MySQL Persistence
-persistence,RRD4j Persistence
-misc,Google Calendar Scheduler
+category,id,label
+action,ecobee,Ecobee Action
+action,mail,Mail Action
+action,mios,MiOS Action
+action,mqtt,MQTT Action
+action,nma,NotifyMyAndroid Action
+action,pebble,Pebble Action
+action,prowl,Prowl Action
+action,pushover,Pushover Action
+action,pushsafer,Pushsafer Action
+action,satel,Satel Action
+action,telegram,Telegram Action
+action,twitter,Twitter Action
+action,xbmc,XBMC Action
+action,xmpp,XMPP Action
+binding,alarmdecoder1,Alarm Decoder Binding
+binding,anel1,Anel Binding
+binding,bticino1,Bticino Binding
+binding,caldav-command1,CalDAV Binding (command)
+binding,caldav-personal1,CalDAV Binding (personal)
+binding,comfoair1,ComfoAir Binding
+binding,denon1,Denon Binding
+binding,dmx1,DMX OLA Binding
+binding,dsmr1,DSMR Binding
+binding,ebus1,eBUS Binding
+binding,ecobee1,Ecobee Binding
+binding,ecotouch1,Waterkotte Ecotouch Binding
+binding,energenie1,Energenie Binding
+binding,enocean1,EnOcean Binding
+binding,enphaseenergy1,Enphase Energy Binding
+binding,epsonprojector1,Epson Projector Binding
+binding,expire1,Expire Binding
+binding,fatekplc1,Fatek PLC Binding
+binding,freeswitch1,Freeswitch Binding
+binding,fritzbox1,Fritzbox Binding
+binding,fritzboxtr0641,Fritzbox TR064 Binding
+binding,fs201,FS20 Binding
+binding,garadget1,Garadget Binding
+binding,gc100ir1,GC100IR Binding
+binding,gpio,GPIO Binding
+binding,heatmiser1,Heatmiser Binding
+binding,horizon,Horizon Binding
+binding,http1,HTTP Binding
+binding,ihc1,IHC Binding
+binding,insteonplm1,InsteonPLM Binding
+binding,intertechno1,Intertechno Binding
+binding,ipx8001,IPX800 Binding
+binding,irtrans1,IRTrans Binding
+binding,jointspace1,jointSPACE Binding
+binding,km1001,KM200 Binding
+binding,knx1,KNX Binding
+binding,koubachi1,Koubachi Binding
+binding,lcn1,LCN Binding
+binding,lgtv1,LGTV Binding
+binding,mochadx101,MochadX10 Binding
+binding,milight1,Milight Binding
+binding,mios1,MiOS Binding
+binding,modbus1,Modbus Binding
+binding,mqtt1,MQTT Binding
+binding,mqttitude1,OwnTracks (formerly MQTTitude) Binding
+binding,myq1,Chamberlain MyQ Binding
+binding,neohub1,Neohub Binding
+binding,nest1,Nest Binding
+binding,networkupstools1,Network UPS Tools Binding
+binding,nibeheatpump1,Nibe Heatpump Binding
+binding,nikobus1,Nikobus Binding
+binding,novelanheatpump1,Novelan Heatpump Binding
+binding,openenergymonitor1,OpenEnergyMonitor Binding
+binding,onewire1,OneWire Binding
+binding,owserver1,OWServer Binding
+binding,panasonictv1,Panasonic TV Binding
+binding,plex1,Plex Binding
+binding,plugwise1,Plugwise Binding
+binding,powermax1,Visonic PowerMax Binding
+binding,rwesmarthome1,RWE SmartHome Binding
+binding,samsungac1,Samsung A/C Binding
+binding,sapp1,Sapp Binding
+binding,satel1,Satel Binding
+binding,serial1,Serial Binding
+binding,snmp1,SNMP Binding
+binding,souliss1,Souliss Binding
+binding,swegonventilation1,Swegon Ventilation Binding
+binding,tcp1,TCP/UDP Binding
+binding,tellstick1,Tellstick Binding
+binding,tinkerforge1,Tinkerforge Binding
+binding,upb1,Universal Powerline Bus Binding
+binding,weather1,Weather Binding
+binding,wol1,WOL (Wake-on-LAN) Binding
+binding,xbmc1,XBMC Binding
+persistence,influxdb,InfluxDB (v 1.0) Persistence
+persistence,gcal,Google Calendar Presence Simulator
+persistence,jdbc-derby,JDBC Persistence Apache Derby
+persistence,jdbc-h2,JDBC Persistence H2
+persistence,jdbc-hsqldb,JDBC Persistence HSQLDB
+persistence,jdbc-mariadb,JDBC Persistence MariaDB
+persistence,jdbc-mysql,JDBC Persistence MySQL
+persistence,jdbc-postgresql,JDBC Persistence PostgreSQL
+persistence,jdbc-sqlite,JDBC Persistence SQLite
+persistence,jpa,JPA Persistence
+persistence,mapdb,MapDB Persistence
+persistence,mqtt,MQTT Persistence
+persistence,mysql,MySQL Persistence
+persistence,rrd4j,RRD4j Persistence
+misc,gcal1,Google Calendar Scheduler

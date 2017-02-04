@@ -1,0 +1,10 @@
+category,id,label
+binding,astro1,Astro Binding (1.x)
+binding,exec1,Exec Binding (1.x)
+binding,homematic1,Homematic Binding (1.x)
+binding,netatmo1,Netatmo Binding (1.x)
+binding,networkhealth1,NetworkHealth Binding (1.x)
+binding,onkyo1,Onkyo Binding (1.x)
+binding,systeminfo1,System Info Binding (1.x)
+binding,urtsi1,Somfy URTSI II Binding (1.x)
+binding,zwave1,Z-Wave Binding (1.x)
