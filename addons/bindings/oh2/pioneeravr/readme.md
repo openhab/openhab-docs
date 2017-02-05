@@ -39,7 +39,7 @@ Configuration of serialAvr:
 Example:
 
 ```
-pioneeravr:ipAvr:vsx921IP [ address="192.168.1.25", tcpPort="23" ]
+pioneeravr:ipAvr:vsx921IP [ address="192.168.1.25", tcpPort=23 ]
 pioneeravr:serialAvr:vsx921Serial [ serialPort="COM9" ]
 ```
 
