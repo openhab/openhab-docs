@@ -38,7 +38,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
 
-<table id="actions-overview" class="bordered">
+<table id="actions-overview" class="bordered addon-table">
   <thead>
     <tr>
       <th data-field="label" width="20%">Name</th>

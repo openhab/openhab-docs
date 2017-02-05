@@ -794,3 +794,11 @@ body.documentation section#documentation h2:after, body.documentation section#do
 body.documentation section#documentation h2:hover:after, body.documentation section#documentation h3:hover:after, body.documentation section#documentation h4:hover:after, body.documentation section#documentation h5:hover:after {
 	visibility: visible;
 }
+
+body.documentation section#documentation .addon-table h4 {
+	margin: -100px 0px 0px 0px;
+}
+
+body.documentation section#documentation .addon-table td {
+	vertical-align: top;
+}

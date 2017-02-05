@@ -37,7 +37,7 @@ Persistence services enable the storage of item states over time.
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
 
-<table id="persistence-overview" class="bordered">
+<table id="persistence-overview" class="bordered addon-table">
   <thead>
     <tr>
       <th data-field="label" width="20%">Name</th>

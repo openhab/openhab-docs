@@ -81,7 +81,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
 
-<table id="bindings-overview" class="bordered">
+<table id="bindings-overview" class="bordered addon-table">
   <thead>
     <tr>
       <th data-field="label" width="20%">Name</th>
