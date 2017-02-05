@@ -31,6 +31,10 @@
   vertical-align: top;
 }
 
+.addon-table p {
+  margin: 0px 0px 0px !important;
+}
+
 /* add-on category initial visibility */
 
 .install-legacy {
