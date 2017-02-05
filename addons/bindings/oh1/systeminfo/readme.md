@@ -1,21 +1,19 @@
 ---
 layout: documentation
+title: System Information - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 ## System Information Binding
 
-The System Information binding provides operating system monitoring data, including:
-
-- System memory, swap, CPU, load average, uptime
-- Per-process memory, CPU
-- File system metrics
-- Network interface metrics
+The System Information binding provides operating system monitoring data, including system memory, swap, CPU, load average, uptime, per-process memory, per-process CPU, file system metrics and network interface metrics.
 
 The binding uses the Hyperic SIGAR API to access system information regardless of the underlying platform (Windows, Linux, OS X...). 
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/systeminfo/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/systeminfo/readme.html).
 
 ## Table of Contents
 

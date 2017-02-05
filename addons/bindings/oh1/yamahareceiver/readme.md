@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: Yamaha Receiver (1.x) - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -39,7 +42,7 @@ Tested Receivers:
 
 Please add your own successfully tested receiver to this list!
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/yamahareceiver/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/yamahareceiver/readme.html).
 
 ## Binding Configuration
 

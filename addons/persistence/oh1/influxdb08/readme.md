@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: InfluxDB (up to 0.8.x) - Persistence
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 

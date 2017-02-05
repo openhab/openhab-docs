@@ -1,9 +1,3 @@
----
-layout: documentation
----
-
-{% include base.html %}
-
 # openHAB Cloud Connector
 
 The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](http://www.myopenHAB.org), which is an instance of the

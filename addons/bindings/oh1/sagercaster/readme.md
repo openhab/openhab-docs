@@ -1,12 +1,15 @@
 ---
 layout: documentation
+title: Sager Weathercaster - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # Sager Weathercaster Binding
 
-The Sager Weathercaster is a scientific instrument for accurate prediction of the weather.
+The Sager Weathercaster is a scientific instrument for accurate prediction of the weather.  **This binding is currently incompatible with openHAB 2.**
 
 ## Limitations
 

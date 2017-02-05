@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: Freebox - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -29,7 +32,7 @@ And act on:
 - Windows printer sharing status (from v1.7)
 - Reboot
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/freebox/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/freebox/readme.html).
 
 ## Binding Configuration
 

@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: Horizon mediabox - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 

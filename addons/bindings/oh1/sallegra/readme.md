@@ -1,15 +1,17 @@
 ---
 layout: documentation
+title: Sallegra - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # Sallegra Binding
 
-The Sallegra binding supports the following devices:
+The Sallegra binding supports the Sallegra Dimmer DA-ET-4, Sallegra Relay R-ET-4 and Sallegra Input ADI-ET-8/8.
 
-* Sallegra Dimmer DA-ET-4, Sallegra Relay R-ET-4 and Sallegra Input ADI-ET-8/8 are currently supported
-* Syncs the openHAB status with the actual status on the Sallegra Module
+This binding syncs the openHAB status with the actual status on the Sallegra Module.
 
 ## Prerequisites
 

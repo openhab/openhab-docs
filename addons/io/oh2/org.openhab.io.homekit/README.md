@@ -1,9 +1,3 @@
----
-layout: documentation
----
-
-{% include base.html %}
-
 # HomeKit Add-on
 
 This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.

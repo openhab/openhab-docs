@@ -1,10 +1,15 @@
 ---
 layout: documentation
+title: XMPP - Actions
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # XMPP Actions
+
+This set of actions allows you to send a message to an XMPP user or multi-user chat, or send a message with an attachment to an XMPP user.
 
 ## Actions
 
@@ -33,9 +38,7 @@ The XMPP Action service can be configured in `services/xmpp.cfg`.
 
 Note: openHAB does not resolve SRV entries like other XMPP clients do, you have to setup the server details manually. Generally, if `joe@example.org` is your XMPP user ID and `xmpp.example.net` points to the server running the service, set `servername` to the actual server `xmpp.example.net`, the user name `username` to `joe` and `proxy` to the domain name part of your user ID `example.org`.
 
-
-### Configuration Example: Google
-
+## Example: Google
 
 ```
 servername=talk.google.com

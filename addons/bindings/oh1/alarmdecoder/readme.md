@@ -1,13 +1,15 @@
 ---
 layout: documentation
+title: Alarm Decoder - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # Alarm Decoder Binding
 
-The [Alarm Decoder](http://www.alarmdecoder.com) is a hardware adapter that interfaces with Ademco/Honeywell alarm panels. It acts
-essentially like a keypad, reading and writing messages on a serial bus that connects keypads with the main panel.
+The [Alarm Decoder](http://www.alarmdecoder.com) is a hardware adapter that interfaces with Ademco/Honeywell alarm panels. It acts essentially like a keypad, reading and writing messages on a serial bus that connects keypads with the main panel.
 
 There are several versions of the adapter available: 
 

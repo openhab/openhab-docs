@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: RFXCOM - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -34,7 +37,7 @@ The RFXCOM binding currently supports the following packet types:
 * Transmitter
 * Wind
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/rfxcom/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/rfxcom/readme.html).
 
 ## Table of Contents
 

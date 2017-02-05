@@ -1,15 +1,15 @@
 ---
 layout: documentation
+title: xPL - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # xPL Binding
 
-The xPL Bundle provides two packages :
-
-- Action to send messages over the xPL network
-- Bindings to grab xPL message values in items and send xPL commands
+The xPL binding grabs xPL message values in items and sends xPL commands.
 
 ## Prerequisites
 

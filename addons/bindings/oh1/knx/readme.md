@@ -1,10 +1,13 @@
 ---
 layout: documentation
+title: KNX - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
-# KNX Binding (1.x)
+# KNX Binding
 
 The openHAB KNX binding allows one to connect to [KNX Home Automation](http://www.knx.org/) installations. Switching lights on and off, activating your roller shutters or changing room temperatures are only some examples.
 

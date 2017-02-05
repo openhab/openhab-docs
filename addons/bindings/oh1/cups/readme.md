@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: CUPS - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -8,7 +11,7 @@ layout: documentation
 
 The openHAB CUPS binding allows interaction with printers and their print queues via a CUPS server.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/ipp/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/ipp/readme.html).
 
 ## Prerequisites
 

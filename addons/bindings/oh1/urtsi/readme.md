@@ -1,14 +1,17 @@
 ---
 layout: documentation
+title: Somfy URTSI II - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
-# Somfy URTSI II Binding (1.x)
+# Somfy URTSI II Binding
 
 This binding communicates with Somfy URTSI II devices over a serial connection.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/urtsi/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/urtsi/readme.html).
 
 ## Binding Configuration
 

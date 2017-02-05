@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: DSC PowerSeries Alarm System - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -16,7 +19,7 @@ The openHAB DSC Alarm binding provides connectivity to the DSC Alarm panel via a
 
 Additionally there is a DSC Alarm action bundle that can be installed along with the DSC Alarm binding.  The action provides the ability to send DSC Alarm commands directly to the DSC Alarm system using rules.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/dscalarm/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/dscalarm/readme.html).
 
 ## Binding Configuration
 

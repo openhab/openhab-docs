@@ -20,5 +20,5 @@ oh1,tinkerforge,TinkerForge,"The TinkerForge Action service provides direct inte
 oh1,twitter,Twitter,"Twitter can be used to 'tweet' notifications when certain events take place in openHAB."
 oh1,weather,Weather,"The Weather Action service provides meteorological information to your scripts and rules."
 oh1,xbmc,XBMC,"Sends notifications to the Kodi open source home theater software (formerly known as XBMC)."
-oh1,xmpp,XMPP,"* `sendXMPP(String to, String message)`: Sends a message to an XMPP user"
+oh1,xmpp,XMPP,"This set of actions allows you to send a message to an XMPP user or multi-user chat, or send a message with an attachment to an XMPP user."
 oh1,xpl,xPL,"This add-on provides xPL message sending on the network."

@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: Z-Wave - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -21,7 +24,7 @@ The openHAB Z-Wave binding allows you to connect to your Z-Wave wireless mesh ne
 
 <!-- /MarkdownTOC -->
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/zwave/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/zwave/readme.html).
 
 ## Prerequisites
 

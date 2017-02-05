@@ -1,6 +1,9 @@
 ---
 layout: documentation
+title: Network Time Protocol (NTP) - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -8,7 +11,7 @@ layout: documentation
 
 The [Network Time Protocol](https://en.wikipedia.org/wiki/Network_Time_Protocol) (NTP) Binding is used to query an NTP server you configure for the current time, within tens of milliseconds of accurary.  Items in openHAB will receive these updates.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/ntp/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/ntp/readme.html).
 
 ## Binding Configuration
 

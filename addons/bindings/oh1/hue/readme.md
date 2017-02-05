@@ -1,16 +1,21 @@
 ---
 layout: documentation
+title: Hue - Bindings
+source: external
 ---
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
 # Hue Binding
 
+This binding connects openHAB to your Philips Hue lighting system.
+
 Click the image below for a YouTube video demonstrating setup, configuration and a simple custom scene controller (openHAB 1, but still relevant to usage on openHAB 2).
 
 [![openHAB Hue binding](http://img.youtube.com/vi/Q4_LkXIRBWc/0.jpg)](http://www.youtube.com/watch?v=Q4_LkXIRBWc)
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/hue/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/hue/readme.html).
 
 ## Prerequisites
 
