@@ -795,10 +795,3 @@ body.documentation section#documentation h2:hover:after, body.documentation sect
 	visibility: visible;
 }
 
-body.documentation section#documentation .addon-table h4 {
-	margin: -100px 0px 0px 0px;
-}
-
-body.documentation section#documentation .addon-table td {
-	vertical-align: top;
-}

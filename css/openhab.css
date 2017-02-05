@@ -13,7 +13,25 @@
   color: #039BE5;
 }
 
-/* Binding category initial visibility */
+/* add-on tables */
+
+.addon-table h4 {
+  margin: 0px 0px 5px !important;
+}
+
+.addon-table h4:before {
+  content: none !important;
+}
+
+.addon-table h4:after {
+  content: none !important;
+}
+
+.addon-table td {
+  vertical-align: top;
+}
+
+/* add-on category initial visibility */
 
 .install-legacy {
   display: none;
