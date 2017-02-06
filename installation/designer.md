@@ -11,11 +11,8 @@ While your openHAB setup may run on a dedicated system, like a [Raspberry Pi](ra
 
 ## Setup
 
-* The latest version is available for download at: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
-* Get the designer for your plattform (Windows/OSX/Linux)
-* As the SmartHome Designer is still in development, consider selecting the nightly snapshots build
-
-![](images/smarthome-designer-05.png)
+* Get the latest "Release" version from: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
+* *As of 2017-01-01: The "Snapshot" build is currently not recommended for daily use*
 
 The downloaded `.zip` archive contains the Designer executable.
 
