@@ -1,7 +1,7 @@
 source,id,label,description
 oh1,akm868,AKM868,"This binding is for users coming from the proprietary homeautomation-system 'IP-Symcon'. If you have bought some hardware from them, you can use this binding to enable your AKM868 presence detection system."
 oh1,alarmdecoder,Alarm Decoder,"The [Alarm Decoder](http://www.alarmdecoder.com) is a hardware adapter that interfaces with Ademco/Honeywell alarm panels. It acts essentially like a keypad, reading and writing messages on a serial bus that connects keypads with the main panel."
-oh1,anel,Anel binding,"The Anel binding is for monitoring and controlling NET-PwrCtrl devices."
+oh1,anel,Anel NET-PwrCtrl,"Monitor and control Anel NET-PwrCtrl devices."
 oh1,asterisk,Asterisk,"The Asterisk binding is used to enable communication between openhab and the free and open source PBX solution [Asterisk](http://www.asterisk.org). This binding detects incoming phone calls or if someone makes a phone call. In combination with other bindings (e.g., the Samsung TV Binding) you can display caller IDs on your TV."
 oh1,astro,Astro,"The Astro binding is used for calculating many `DateTime` and positional values for sun and moon and for scheduling of events."
 oh1,autelis,Autelis,"Autelis manufactures a network enabled pool interface for many popular pool systems.  See the [Autelis website](http://www.autelis.com) and the [Autelis Command Protocol](http://www.autelis.com/wiki/index.php?title=Pool_Control_(PI)_HTTP_Command_Reference) for more information."
@@ -176,6 +176,7 @@ oh2,ipp,IPP,"This binding integrates printers, which implement the Internet Prin
 oh2,keba,Keba,"This binding integrates the [Keba KeContact EV Charging Stations](http://www.keba.com)."
 oh2,kodi,Kodi,"[Kodi](https://kodi.tv) (formerly known as XBMC) is an free and open source (GPL) software media center for playing videos, music, pictures, games, and more."
 oh2,kostalinverter,Kostal inverter,"Scrapes the web interface of the inverter for the metrics of the supported channels below."
+oh2,lgtvserial,LG TV control using serial protocol,"This binding can send some commands typically used by LG LCD TVs (and some used by projectors)."
 oh2,lutron,Lutron,"This binding integrates with [Lutron](http://www.lutron.com) light control systems."
 oh2,max,MAX!,"This is the binding for the [eQ-3 MAX! Home Solution](http://www.eq-3.de/)."
 oh2,meteostick,Meteostick,"This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle. This is an RF receiver that can receive data directly from Davis weather devices (and others)"
