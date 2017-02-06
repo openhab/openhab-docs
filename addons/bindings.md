@@ -108,7 +108,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
         {% endif %}
         <tr class="install-{{install}} source-{{binding.source}}">
           <td>
-            <h4><a href="{{base}}/addons/bindings/{{ binding.source }}/{{ binding.id }}/readme.html">{{ binding.label }}</a></h4>
+            <h4><a href="{{base}}/addons/bindings/{{binding.id}}{% if binding.source == 'oh1' %}1{% endif %}/readme.html">{{ binding.label }}</a></h4>
             <img src="{{base}}/images/tag-{{binding.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
           </td>
           <td>{{ binding.description | markdownify }}</td>
