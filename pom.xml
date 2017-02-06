@@ -324,7 +324,8 @@
                 		def name = it.name
                 		if(name.contains('binding')) {
                 			def bindingId = it.name.replace('org.eclipse.smarthome.binding.', '').replace('org.openhab.binding.', '')
-                			def simpleBindingNameDir = new File(bindings.path, bindingId)
+                			def target = new File(project.basedir, 'addons/bindings')
+                			def simpleBindingNameDir = new File(target.path, (source == 'oh1') ? bindingId + '1' : bindingId)
                 			it.renameTo(simpleBindingNameDir)
                 			def readme = new File(simpleBindingNameDir.path, 'README.md')
                 			if(readme.exists()) {
