@@ -346,7 +346,20 @@
                 			 		}
                 				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                					def front = [
+                						layout: "documentation",
+                						title: "${label} - Bindings",
+                						source: "external",
+                					]
+                					if(source == 'oh2') {
+                						front['redirect_from'] = "\n  - /addons/bindings/${bindingId}/readme.html"
+                					}
+                					def frontMatter = '---\n'
+                					front.each { key, value ->
+                						frontMatter = frontMatter + "${key}: ${value}\n"
+                					}
+                					readme.write(frontMatter + "\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                					// readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '"\n')
                 			}
