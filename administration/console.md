@@ -32,12 +32,13 @@ ssh -p 8101 openhab@localhost
 Password authentication
 Password:
 
-                          __  _____    ____
-  ____  ____  ___  ____  / / / /   |  / __ )
- / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
-/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
-\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
-    /_/                        2.0.0-SNAPSHOT
+                          __  _____    ____      
+  ____  ____  ___  ____  / / / /   |  / __ )     
+ / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  | 
+/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /      
+\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/     
+    /_/                        2.0.0
+                               Release Build   
 
 Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
