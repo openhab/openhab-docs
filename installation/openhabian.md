@@ -45,7 +45,8 @@ openHABian provides the configuration tool `openhabian-config` with the followin
 
 ![openHABian-config menu](images/openHABian-config.png)
 
-* Switch over openHAB to the *testing* or *unstable* [build branches](https://bintray.com/openhab/apt-repo2/openhab2)
+<!-- * Switch over openHAB to the *testing* or *unstable* [build branches](https://bintray.com/openhab/apt-repo2/openhab2) -->
+
 * Install and Setup an [Nginx reverse proxy](security.html#nginx-reverse-proxy) with password authentication and/or HTTPS access (incl. [Let's Encrypt](https://letsencrypt.org) certificate)
 * Open the [Karaf remote console]({{base}}/administration/console.html) to all interfaces
 * [KNXd](http://michlstechblog.info/blog/raspberry-pi-eibknx-ip-gateway-and-router-with-knxd) - KNX daemon
@@ -193,15 +194,30 @@ No. The Raspberry Pi image is based on [raspbian-ua-netinst](https://github.com/
 
 During and after the first boot of your Raspberry Pi, the green on-board LED will indicate the setup progress (no display needed):
 
-* `☼.☼....☼.☼....` - Steady "heartbeat": setup **successful**
-* `.☼.........☼☼☼` - Irregular blinking: setup in progress...
-* `☼.☼.☼.☼.☼.☼.☼.` - Fast blinking: error while setup, check `/var/log/raspbian-ua-netinst.log`
+* `❇️️ ❇️️    ❇️️ ❇️️     ` - Steady "heartbeat": setup **successful**
+* ` ❇️️         ❇️️❇️️❇️️ ` - Irregular blinking: setup in progress...
+* `❇️️ ❇️️ ❇️️ ❇️️ ❇️️ ❇️️ ❇️️` - Fast blinking: error while setup, check `/var/log/raspbian-ua-netinst.log`
 
 Besides that you should always be able to connect to the SSH console of your device.
 If the installation was successful, you will see the normal login screen.
 If the installation was *not* successful you will see a warning and further instructions:
 
 ![openHABian installation failed warning and instructions](images/openHABian-install-failed.png)
+
+If you are not able to SSH access your system after more than one hours, chances are high, that your hardware setup is the problem.
+Try using a steady power source and a reliable SD card.
+Restart the Setup process to rule out most other possible causes.
+
+Contact the [Community Forum thread](https://community.openhab.org/t/13379) if the problem persists.
+
+{: #switch-openhab-branch}
+#### Can I switch from openHAB 2 stable to the testing or unstable branch?
+
+openHABian installs the latest stable build of openHAB 2.
+If you want to switch over to the testing/beta or the snapshot release branch, please do so manually on the SSH/Linux console.
+Switching from stable to newer development releases might introduce changes and incompatiblities, so please be sure to make a full openHAB backup first!
+
+Check the Linux installation article for all needed details: [Linux: Changing Versions](http://docs.openhab.org/installation/linux.html#changing-versions) 
 
 {: #faq-other-platforms}
 #### Can I use openHABian on ...?
