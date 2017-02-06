@@ -377,7 +377,8 @@
                 		def name = it.name
                 		if(name.contains('action')) {
                 			def actionId = it.name.replace('org.openhab.action.', '')
-                			def simpleActionNameDir = new File(actions.path, actionId)
+                			def target = new File(project.basedir, 'addons/actions')
+                			def simpleActionNameDir = new File(target.path, actionId)
                 			it.renameTo(simpleActionNameDir)
                 			def readme = new File(simpleActionNameDir.path, 'README.md')
                 			if(readme.exists()) {
@@ -429,7 +430,8 @@
                 		def name = it.name
                 		if(name.contains('persistence') &amp;&amp; !name.endsWith('.test')) {
                 			def persistenceId = it.name.replace('org.openhab.persistence.', '')
-                			def simplePersistenceNameDir = new File(persistence.path, persistenceId)
+                			def target = new File(project.basedir, 'addons/persistence')
+                			def simplePersistenceNameDir = new File(target.path, persistenceId)
                 			it.renameTo(simplePersistenceNameDir)
                 			def readme = new File(simplePersistenceNameDir.path, 'README.md')
                 			if(readme.exists()) {
