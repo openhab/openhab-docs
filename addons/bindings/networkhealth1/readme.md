@@ -11,7 +11,7 @@ source: external
 
 This binding allows openHAB to check whether a device is currently available on the network.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/oh2/network/readme.html).
+There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/network/readme.html).
 
 ## Binding Configuration
 
