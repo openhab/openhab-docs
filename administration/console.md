@@ -16,14 +16,19 @@ The console offers the option to:
 ## Accessing the Console
 
 Accessing the console depends on the start mode of openHAB.
+
+### Started with Script
 The manually start using shell/batch script ends directly in the console.
 
-If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101.
+### Running as Service
+If openHAB runs a service, the console can be accessed using ssh from the openHAB host on localhost:8101. It is intentionally not available from remote hosts due to security concerns.
+
 The default username/password is **openhab/habopen**.
-Be aware, that the first connection attempt may take a few seconds longer.
+
+Be aware that the first connection attempt may take a few seconds longer. It may timeout waiting for authentication the first time.
 
 ```
-ssh openhab@localhost -p 8101
+ssh -p 8101 openhab@localhost
 Password authentication
 Password:
 
