@@ -207,5 +207,6 @@ oh2,urtsi,Somfy URTSI II,"The addressable Universal RTS Interface II (URTSI II) 
 oh2,vitotronic,Vitotronic,"Viessmann heating systems with Vitotronic has a optolink Interface for maintenance."
 oh2,wifiled,WiFi LED,"This binding is used to control LED stripes connected by WiFi. These devices are sold with different names, i.e. Magic Home LED, UFO LED, LED NET controller, etc."
 oh2,yamahareceiver,Yamahareceiver,"This binding connects openHAB with Yamaha Receivers of product line CX-A5000, RX-A30xx, RX-A20xx, RX-A10xx, RX-Vxxx, RX-Z7, DSP-Z7, RX-S600, HTR-xxxx."
+oh2,zoneminder,Zoneminder,"This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder). It also only offers access to a limited set of values, as well as a even more limited option to update values in ZoneMinder. It requires at least ZoneMinder 1.29 with API enabled (option 'OPT_USE_API' in ZoneMinder must be enabled). The option 'OPT_TRIGGERS' must be anabled to allow openHAB to trip the ForceAlarm in ZoneMinder."
 oh2,zwave,ZWave,"The ZWave binding supports an interface to a wireless Z-Wave home automation network."
 oh2,zway,Z-Way,"Z-Way is a software to configure and control a Z-Wave network. The software comes with a full stack from Z-Wave transceiver with certified firmware to a REST API on high level."
