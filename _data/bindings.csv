@@ -168,6 +168,7 @@ oh2,dscalarm,DSC Alarm,"This is an OpenHAB binding for a DSC PowerSeries Alarm S
 oh2,exec,Exec,"This binding integrates the possibility to execute arbitrary shell commands."
 oh2,feed,Feed,"This binding allows you to integrate feeds in the OpenHAB environment."
 oh2,freebox,Freebox,"This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation."
+oh2,gardena,Gardena,"This is the binding for [Gardena Smart Home](http://www.gardena.com/de/rasenpflege/smartsystem/)."
 oh2,globalcache,GlobalCache,"The [GlobalCache](http://www.globalcache.com) binding is used to enable communication between openHAB and GlobalCache [GC-100](http://www.globalcache.com/products/gc-100/) and [iTach](http://www.globalcache.com/products/itach/) family of devices.  Global Cache devices enable the control and automation of infrared, serial, and contact closure devices through an IP network (wired or wireless)."
 oh2,harmonyhub,Logitech Harmony Hub,"The Harmony Hub binding is used to enable communication between openHAB2 and multiple Logitech Harmony Hub devices. The API exposed by the Harmony Hub is relatively limited, but it does allow for reading the current activity as well as setting the activity and sending device commands."
 oh2,hdpowerview,Hunter Douglas PowerView,"This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](http://www.hunterdouglas.com/operating-systems/powerview-motorization/support) via the PowerView Hub."
