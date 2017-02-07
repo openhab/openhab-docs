@@ -38,7 +38,7 @@ function initEffects() {
     $('section#documentation table').not('.bordered').addClass('striped');
     
     // Linkable Headers
-    $('body.documentation section#documentation h2, body.documentation section#documentation h3').click(function(event) {
+    $('section#documentation h2, section#documentation h3, section#documentation h4, section#documentation h5').click(function(event) {
 		var id = $(event.target).attr('id');
 		window.location.hash = id;
 	});
