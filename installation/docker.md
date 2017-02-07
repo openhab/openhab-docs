@@ -73,7 +73,7 @@ mkdir /opt/openhab
 mkdir /opt/openhab/conf
 mkdir /opt/openhab/userdata
 mkdir /opt/openhab/addons
-chown 9001.9001 /opt/openhab -R
+chown -R openhab:openhab /opt/openhab
 ```
 
 ## Running the Container as a Service Managed by Docker
