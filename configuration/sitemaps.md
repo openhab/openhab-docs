@@ -148,14 +148,12 @@ This provides the flexibility to present items in the way desired in your home a
 ### Element Type 'Frame'
 
 ```xtend
-Frame [label="<labelname>"] [icon="<icon>"] [item=<item>] {
+Frame [label="<labelname>"] [icon="<icon>"] {
         [additional sitemap elements]
 }
 ```
 
 Frames are used to create visually separated areas of items.
-
-* `item` will provide data presented in the head of the frame, above all included elements.
 
 ![Presentation of the frame element in BasicUI](images/sitemap_demo_frame.png)
 
