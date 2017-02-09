@@ -66,7 +66,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 * **Official Release**
 
   The stable builds contain the latest official release with tested features.
-  
+
   Add the **openHAB 2 Stable Repository** to your systems apt sources list:
 
   ```shell
@@ -85,7 +85,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 * **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons. 
+  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
 
   Add the **openHAB 2 Unstable Repository** to your systems apt sources list:
@@ -470,7 +470,7 @@ Some openHAB add-ons, like the Network or AmazonDash bindings, need elevated per
 If needed, grand these permissions by executing the following command:
 
 ```shell
-setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' `realpath /usr/bin/java`
+setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr/bin/java)
 ```
 
 ### Network Sharing
