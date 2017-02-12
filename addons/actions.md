@@ -24,7 +24,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
         Some openHAB 1 actions have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.  
         All openHAB 1 addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.
         We need your help testing them so that they may be easily installed in a future distribution.
-        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and 
+        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
         also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
         </p>
       </td>
@@ -65,7 +65,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
         {% endif %}
         <tr class="install-{{install}} source-{{action.source}}">
           <td>
-            <h4><a href="{{base}}/addons/actions/{{action.id}}/readme.html">{{action.label}}</a></h4>
+            <h4><a href="{{base}}/addons/actions/{{action.id}}/readme.html">{% if action.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{action.id}}.png">{% else %}{{ action.label }}{% endif %}</a></h4>
             <img src="{{base}}/images/tag-{{action.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
           </td>
           <td>{{ action.description | markdownify }}</td>

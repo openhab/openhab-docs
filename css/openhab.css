@@ -35,6 +35,11 @@
   margin: 0px 0px 0px !important;
 }
 
+body.documentation section#documentation .content img.logo {
+  max-height: 60px;
+  max-width: 150px;
+}
+
 /* add-on category initial visibility */
 
 .install-legacy {
@@ -44,6 +49,7 @@
 .install-manual {
   display: none;
 }
+
 /* Search box and results */
 
 li.search:hover {

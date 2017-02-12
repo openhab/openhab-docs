@@ -12,5 +12,5 @@ layout: documentation
 
 | Voice Service | Description |
 |-------|----------------------|
-{% for voice in sorted_voices %}| [{{ voice.label }}]({{docu}}/addons/voice/{{ voice.id }}/readme.html) | {{ voice.description }} |
+{% for voice in sorted_voices %}| [{% if voice.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{voice.id}}.png">{% else %}{{ voice.label }}{% endif %}]({{docu}}/addons/voice/{{ voice.id }}/readme.html) | {{ voice.description }} |
 {% endfor %}
