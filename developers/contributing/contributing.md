@@ -44,8 +44,8 @@ else is working on the same thing.
 
 ### Create Issues...
 
-Any significant improvement should be documented as [a GitHub
-issue](https://github.com/openhab/openhab-distro/issues?labels=enhancement&page=1&state=open) before anybody
+Any significant improvement should be documented as a GitHub
+issue in the [appropriate repository](#the-repositories) before anybody
 starts working on it.
 
 ### ...but Check for Existing Issues First!
@@ -98,20 +98,14 @@ same commit so that a revert would remove all traces of the feature or fix.
 Commits that fix or close an issue should include a reference like `Closes #XXX`
 or `Fixes #XXX`, which will automatically close the issue when merged.
 
-Add your name to the AUTHORS file, but make sure the list is sorted and your
-name and email address match your git configuration. The AUTHORS file is
-regenerated occasionally from the git commit history, so a mismatch may result
-in your changes being overwritten.
-
 ### Merge Approval
 
-openHAB maintainers use LGTM (Looks Good To Me) in comments on the code review
-to indicate acceptance.
+openHAB maintainers use the [Github review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
 
-A change requires LGTMs from an absolute majority of the maintainers of each
-component affected. For example, if a change affects `docs/` and `distributions/`, it
-needs an absolute majority from the maintainers of `docs/` AND, separately, an
-absolute majority of the maintainers of `addons/`.
+A change requires approval from an absolute majority of the maintainers of each
+component affected. For example, if a change affects `addons/` and `features/`, it
+needs an absolute majority from the maintainers of `addons/` AND, separately, an
+absolute majority of the maintainers of `features/`.
 
 ### Sign your Work
 
@@ -165,6 +159,12 @@ then you just add a line to every git commit message:
     Signed-off-by: Joe Smith <joe.smith@email.com> (github: github_handle)
 
 using your real name (sorry, no pseudonyms or anonymous contributions.)
+
+If your commit contains code from others as well, please ensure that they certify the DCO as well and add them with an "Also-By" line to your commit message:
+
+    Also-by: Ted Nerd <ted.nerd@email.com> (github: github_handle_ted)
+    Also-by: Sue Walker <sue.walker@email.com> (github: github_handle_sue)
+    Signed-off-by: Joe Smith <joe.smith@email.com> (github: github_handle_joe)
 
 #### Small Patch Exception
 

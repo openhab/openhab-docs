@@ -5,13 +5,13 @@ title: Developing bindings
 
 {% include base.html %}
 
-# Developing a New Binding for openHAB 2
+# Developing a Binding for openHAB 2
 
 This page describes the necessary steps in order to implement a new binding for openHAB 2.
 
 _Note:_ Please note that in contrast to openHAB 1.x, openHAB 2 is based on the [Eclipse SmartHome](http://eclipse.org/smarthome/) project. So the APIs and concepts have changed, so please read this documentation carefully, if you are coming from openHAB 1.x development.
 
-For information about code style and naming conventions, please see the [guidelines of Eclipse SmartHome](https://www.eclipse.org/smarthome/documentation/development/guidelines.html).
+For information about code style and naming conventions, please see the [coding guidelines](guidelines).
 
 ## Choosing a Namespace
 
@@ -28,9 +28,16 @@ For the Eclipse SmartHome namespace: Choose the option "Eclipse SmartHome Extens
 
 Now switch in Eclipse and choose `File->Import->General->Existing Projects into Workspace`, enter the folder of the newly created skeleton as the root directory and press "Finish".
 
-This should give you an easy starting point for your developments. To learn about the internal structure and the concepts of a binding, please see the [Eclipse tutorial on binding development](https://www.eclipse.org/smarthome/documentation/development/bindings/how-to.html).
-
 _Note:_ Here you can find a [screencast of the binding skeleton creation](http://youtu.be/30nhm0yIcvA).
+
+## Implement the Binding
+
+The skeleton should give you an easy starting point for your developments.
+To learn about the internal structure and the concepts of a binding, please see the [Eclipse tutorial on binding development](https://www.eclipse.org/smarthome/documentation/development/bindings/how-to.html).
+
+Please especially note our [coding guidelines](guidelines), which must be respected for having pull requests approved.
+If you have any special dependencies of your code, please check the [library recommendations](https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html) at Eclipse SmartHome.
+This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
 
 ## Setup and Run the Binding
 
@@ -52,3 +59,17 @@ Number Berlin_Humidity          "Humidity in Berlin [%d %%]"        { channel="y
 The syntax for a channel link is `{ channel = "<binding-id>:<thing-type-id>:<thing-id>:<channel-id>" }`.
 
 If you start the openHAB runtime including the binding now (make sure that your binding is checked in the launch configuration dialog!), the code inside your `ThingHandler` implementation is executed.
+
+## Include the Binding in the Build and the Distro
+
+Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
+For the Maven build, please add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/addons/binding/pom.xml) at the alphabetically correct position.
+To have the binding being picked up by the distro, you furthermore need to add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position. If you have a dependency on some transport bundle (e.g. upnp, mdns or serial), make sure to add a line for this dependency as well (see the other bindings as an example).
+
+Before you create a pull request on Github, you should  now run
+
+```
+mvn clean install
+```
+
+from the repository root to ensure that the build works smoothly. If it does, it is time to [contribute your work](../contributing/contributing)!

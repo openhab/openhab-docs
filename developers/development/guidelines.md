@@ -7,8 +7,9 @@ title: Coding Guidelines
 
 # Coding Guidelines
 
-The following guidelines apply to all code of the Eclipse SmartHome project. They must be followed to ensure a consistent code base for easy readability and maintainability.
-Exceptions can certainly be made, but they should be discussed and approved by a project committer upfront.
+The following guidelines apply to all (Java) code of the openHAB project.
+They must be followed to ensure a consistent code base for easy readability and maintainability.
+Exceptions can certainly be made, but they should be discussed and approved by a project maintainer upfront.
 
 Note that this list also serves as a checklist for code reviews on pull requests. To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
@@ -28,7 +29,7 @@ Note that this list also serves as a checklist for code reviews on pull requests
 ## B. OSGi Bundles
 
 7. Every bundle must contain a Maven pom.xml with a version and artifact name that is in sync with the manifest entry. The pom.xml must reference the correct parent pom (which is usually in the parent folder).
-1. Every bundle must contain an [about.html](https://eclipse.org/legal/epl/about.php) file, providing license information. If there is a third-party software in the bundle, its licence information must be added to the bundle's about.html file. You can look at and use these two examples: [about.html without 3rd party licence information](https://github.com/openhab/openhab2-addons/blob/master/addons/ui/org.openhab.ui.cometvisu.php/about.html) and [about.html with 3rd party licence information](https://github.com/openhab/openhab2-addons/blob/master/addons/binding/org.openhab.binding.avmfritz/about.html). The date in the about.html files must be changed to the current.
+1. Every bundle must contain an about.html file, providing license information. If there is a third-party software in the bundle, its licence information must be added to the bundle's about.html file. You can look at and use these two examples: [about.html without 3rd party licence information](https://github.com/openhab/openhab2-addons/blob/master/addons/ui/org.openhab.ui.cometvisu.php/about.html) and [about.html with 3rd party licence information](https://github.com/openhab/openhab2-addons/blob/master/addons/binding/org.openhab.binding.avmfritz/about.html). The date in the about.html files must be changed to the current.
 1. Every bundle must contain a build.properties file, which lists all resources that should end up in the binary under `bin.includes`.
 1. The manifest must not contain any "Require-Bundle" entries. Instead, "Import-Package" must be used.
 1. The manifest must not export any internal package.
