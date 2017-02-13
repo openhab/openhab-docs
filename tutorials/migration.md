@@ -506,7 +506,6 @@ or copy the ones you were using from openHAB 1.x to the conf/icons/classic folde
 Both BasicUI and ClassicUI pull their icons from that folder. For details on custom icons make
 sure to check the icons section in the [Items]({{base}}/configuration/items.html#icons) documentation.
 One important change since openHAB 1.x is that icon filenames need to be lowercase only in openHAB 2.
-For a sitemap that most closely resembles your current sitemap I recommend using ClassicUI.
 
 Once you are satisfied that your new openHAB system is up and running take a
 deep breath and take a break. Let it run for a few days or a week and verify
