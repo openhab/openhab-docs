@@ -91,7 +91,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   The snapshot repository is hosted in openHAB's Artifactory instance. To use it, add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
   ```shell
-  echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
 Next, resynchronize the package index:
