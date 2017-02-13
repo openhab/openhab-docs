@@ -503,9 +503,10 @@ common Sitemap issue will be missing icons. Browse through your sitemap
 methodically and identify those entries that have a missing or wrong
 icon. Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html)
 or copy the ones you were using from openHAB 1.x to the conf/icons/classic folder. 
-Make sure that icon filenames are lowercase only.
-Both BasicUI and ClassicUI pull their icons from that folder. For a sitemap that
-most closely resembles your current sitemap I recommend using ClassicUI.
+Both BasicUI and ClassicUI pull their icons from that folder. For details on custom icons make
+sure to check the icons section in the [Items]({{base}}/configuration/items.html#icons) documentation.
+One important change since openHAB 1.x is that icon filenames need to be lowercase only in openHAB 2.
+For a sitemap that most closely resembles your current sitemap I recommend using ClassicUI.
 
 Once you are satisfied that your new openHAB system is up and running take a
 deep breath and take a break. Let it run for a few days or a week and verify
