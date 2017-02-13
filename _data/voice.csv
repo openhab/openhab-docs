@@ -1,4 +1,4 @@
-id,label,description,icon
-mactts,MacOS Text-to-Speech,"The MacOS Text-to-Speech (TTS) service uses the MacOS 'say' command for producing spoken text.",false
-marytts,Mary Text-to-Speech,"The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI.",false
-voicerss,VoiceRSS Text-to-Speech,"VoiceRSS is an Internet based TTS service hosted at http://api.voicerss.org.",true
+id,icon,label,description
+mactts,false,MacOS Text-to-Speech,"The MacOS Text-to-Speech (TTS) service uses the MacOS 'say' command for producing spoken text."
+marytts,false,Mary Text-to-Speech,"The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI."
+voicerss,true,VoiceRSS Text-to-Speech,"VoiceRSS is an Internet based TTS service hosted at http://api.voicerss.org."

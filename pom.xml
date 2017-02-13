@@ -313,7 +313,7 @@
 			<configuration>
 			  <source>
 				def bindingList = new File(project.basedir, '_data/bindings.csv')
-				bindingList.write("source,id,label,description,icon\n")
+				bindingList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1', 'oh2']
 				sources.each { source ->
@@ -350,7 +350,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '",' + icon + '\n')
+                				bindingList.append(source + ',' + bindingId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -367,7 +367,7 @@
 			<configuration>
 			  <source>
 				def actionList = new File(project.basedir, '_data/actions.csv')
-				actionList.write("source,id,label,description,icon\n")
+				actionList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1']
 				sources.each { source ->
@@ -404,7 +404,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				actionList.append(source + ',' + actionId + ',' + label + ',"' + description + '",' + icon + '\n')
+                				actionList.append(source + ',' + actionId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -421,7 +421,7 @@
 			<configuration>
 			  <source>
 				def persistenceList = new File(project.basedir, '_data/persistence.csv')
-				persistenceList.write("source,id,label,description,icon\n")
+				persistenceList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1']
 				sources.each { source ->
@@ -458,7 +458,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				persistenceList.append(source + ',' + persistenceId + ',' + label + ',"' + description + '",' + icon + '\n')
+                				persistenceList.append(source + ',' + persistenceId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -513,7 +513,7 @@
 			  <source>
 				def voice = new File(project.basedir, 'addons/voice')
 				def voiceList = new File(project.basedir, '_data/voice.csv')
-				voiceList.write("id,label,description,icon\n")
+				voiceList.write("id,icon,label,description\n")
 
 				voice.eachFile
 				{
@@ -547,7 +547,7 @@
 					}
 				 }
 				}
-				voiceList.append(voiceId + ',' + label + ',"' + description + '",' + icon + '\n')
+				voiceList.append(voiceId + ',' + icon + ',' + label + ',"' + description + '"\n')
 				}
 				}
 				}
