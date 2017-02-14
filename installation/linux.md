@@ -88,10 +88,11 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
 
-  Add the **openHAB 2 Unstable Repository** to your systems apt sources list:
+  The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
+  To use it, add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
   ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
 Next, resynchronize the package index:
