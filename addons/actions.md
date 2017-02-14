@@ -66,7 +66,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
         <tr class="install-{{install}} source-{{action.source}}">
           <td>
             <h4><a href="{{base}}/addons/actions/{{action.id}}/readme.html">{{action.label}}</a></h4>
-            <img src="{{base}}/images/tag-{{action.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
+            <img src="{{base}}/images/tag-install-{{install}}.svg">
           </td>
           <td>{{ action.description | markdownify }}</td>
         </tr>

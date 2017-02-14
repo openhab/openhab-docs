@@ -65,7 +65,7 @@ Persistence services enable the storage of item states over time.
         <tr class="install-{{install}} source-{{persist.source}}">
           <td>
             <h4><a href="{{base}}/addons/persistence/{{persist.id}}/readme.html">{{ persist.label }}</a></h4>
-            <img src="{{base}}/images/tag-{{persist.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
+            <img src="{{base}}/images/tag-install-{{install}}.svg">
           </td>
           <td>{{ persist.description | markdownify }}</td>
         </tr>
