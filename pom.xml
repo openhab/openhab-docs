@@ -313,7 +313,7 @@
 			<configuration>
 			  <source>
 				def bindingList = new File(project.basedir, '_data/bindings.csv')
-				bindingList.write("source,id,label,description\n")
+				bindingList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1', 'oh2']
 				sources.each { source ->
@@ -332,9 +332,10 @@
                 				println readme
                 				readme.renameTo(new File(simpleBindingNameDir.path, 'readme.md'))
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Binding', '').trim()
-								def description = ""
-								boolean firstHeadline = false
-								for(def line : readme.readLines()) {
+                				def icon = new File(project.basedir, 'images/addons/' + bindingId + '.png').exists()
+                				def description = ""
+                				boolean firstHeadline = false
+                				for(def line : readme.readLines()) {
                 			 		if(line.startsWith('#')) {
                 			 			if(!firstHeadline) {
                 			 				firstHeadline = true
@@ -349,7 +350,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				bindingList.append(source + ',' + bindingId + ',' + label + ',"' + description + '"\n')
+                				bindingList.append(source + ',' + bindingId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -366,7 +367,7 @@
 			<configuration>
 			  <source>
 				def actionList = new File(project.basedir, '_data/actions.csv')
-				actionList.write("source,id,label,description\n")
+				actionList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1']
 				sources.each { source ->
@@ -385,6 +386,7 @@
                 				println readme
                 				readme.renameTo(new File(simpleActionNameDir.path, 'readme.md'))
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Actions', '').replace(' Action', '').trim()
+                				def icon = new File(project.basedir, 'images/addons/' + actionId + '.png').exists()
 								def description = ""
 								boolean firstHeadline = false
 								for(def line : readme.readLines()) {
@@ -402,7 +404,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				actionList.append(source + ',' + actionId + ',' + label + ',"' + description + '"\n')
+                				actionList.append(source + ',' + actionId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -419,7 +421,7 @@
 			<configuration>
 			  <source>
 				def persistenceList = new File(project.basedir, '_data/persistence.csv')
-				persistenceList.write("source,id,label,description\n")
+				persistenceList.write("source,id,icon,label,description\n")
 
 				def sources = ['oh1']
 				sources.each { source ->
@@ -438,9 +440,10 @@
                 				println readme
                 				readme.renameTo(new File(simplePersistenceNameDir.path, 'readme.md'))
                 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replaceFirst('\\s*Persistence\\s*$', '').trim()
-								def description = ""
-								boolean firstHeadline = false
-								for(def line : readme.readLines()) {
+                				def icon = new File(project.basedir, 'images/addons/' + persistenceId + '.png').exists()
+                				def description = ""
+                				boolean firstHeadline = false
+                				for(def line : readme.readLines()) {
                 			 		if(line.startsWith('#')) {
                 			 			if(!firstHeadline) {
                 			 				firstHeadline = true
@@ -455,7 +458,7 @@
                 				if(!readme.text.startsWith('---')) {
                 					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
-                				persistenceList.append(source + ',' + persistenceId + ',' + label + ',"' + description + '"\n')
+                				persistenceList.append(source + ',' + persistenceId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
                 		}
                 	}
@@ -510,7 +513,7 @@
 			  <source>
 				def voice = new File(project.basedir, 'addons/voice')
 				def voiceList = new File(project.basedir, '_data/voice.csv')
-				voiceList.write("id,label,description\n")
+				voiceList.write("id,icon,label,description\n")
 
 				voice.eachFile
 				{
@@ -529,6 +532,7 @@
 					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
 				}
 				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').trim()
+				def icon = new File(project.basedir, 'images/addons/' + voiceId + '.png').exists()
 				def description = ""
 				boolean firstHeadline = false
 				for(def line : readme.readLines()) {
@@ -543,7 +547,7 @@
 					}
 				 }
 				}
-				voiceList.append(voiceId + ',' + label + ',"' + description + '"\n')
+				voiceList.append(voiceId + ',' + icon + ',' + label + ',"' + description + '"\n')
 				}
 				}
 				}

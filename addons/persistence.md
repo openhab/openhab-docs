@@ -23,7 +23,7 @@ Persistence services enable the storage of item states over time.
         Some openHAB 1 persistence services have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
         All openHAB 1 add-ons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.  
         We need your help testing them so that they may be easily installed in a future distribution.
-        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and 
+        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
         also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
         </p>
       </td>
@@ -64,7 +64,7 @@ Persistence services enable the storage of item states over time.
         {% endif %}
         <tr class="install-{{install}} source-{{persist.source}}">
           <td>
-            <h4><a href="{{base}}/addons/persistence/{{persist.id}}/readme.html">{{ persist.label }}</a></h4>
+            <h4><a href="{{base}}/addons/persistence/{{persist.id}}/readme.html">{% if persist.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{persist.id}}.png" title="{{ persist.label }}" alt="{{ persist.label }}" />{% else %}{{ persist.label }}{% endif %}</a></h4>
             <img src="{{base}}/images/tag-{{persist.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
           </td>
           <td>{{ persist.description | markdownify }}</td>
