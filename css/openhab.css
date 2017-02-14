@@ -35,9 +35,9 @@
   margin: 0px 0px 0px !important;
 }
 
-body.documentation section#documentation .content img.logo {
-  max-height: 60px;
-  max-width: 150px;
+.addon-table img.logo {
+  max-height: 60px !important;
+  max-width: 150px !important;
 }
 
 /* add-on category initial visibility */
