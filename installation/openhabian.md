@@ -76,17 +76,17 @@ Learn more about the Raspberry Pi as your platform for openHAB and about the req
 * [Download the latest "openHABianPi" SD card image file](https://github.com/ThomDietrich/openhabian/releases)
 * Write the image to your SD card ([instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
 * Insert the SD card into the Raspberry Pi, connect Ethernet and power
-* Wait up to **45 minutes** for openHABian to do it's magic
+* Wait approximately **45 minutes** for openHABian to do its magic
 * Enjoy! 🎉
 
-* The device will be available under it's IP or via the local DNS name `openhabianpi`
-* [Connect to the openHAB 2 portal](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpi:8080](http://openhabianpi:8080)
+* The device will be available under its IP or via the local DNS name `openhabianpi`
+* [Connect to the openHAB 2 dashboard](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpi:8080](http://openhabianpi:8080)
 * [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhab:habopen`
 * If you encounter any setup problem, [please continue here](#faq-successful)
 
 You can stop reading now.
 openHABian has installed and configured your openHAB system and you can start to use it right away.
-If you want to get in touch with the system or want to install one of the previously mentioned optional components, you can come back here later.
+If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.
 
 Ready for more?
 [Connect to your Raspberry Pi SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username and password `pi:raspberry`.
@@ -98,30 +98,29 @@ You will see the following welcome screen:
 
 ### Pine A64
 
-We are also providing a ready-to-use system image for the Pine A64.
-The image is based on the official [Ubuntu Base Image by longsleep](http://wiki.pine64.org/index.php/Pine_A64_Software_Release) and other than the Raspberry Pi image comes as a compressed 4GB file.
-After bootup, the latest version of openHAB 2 and the mentioned settings and tools are installed.
-All packages will be downloaded in their newest version and configured to work without further modifications.
+We also provide a ready-to-use system image for the Pine A64.
+The image is based on the official [Ubuntu Base Image by longsleep](http://wiki.pine64.org/index.php/Pine_A64_Software_Release), which comes as a compressed 4GB file.
+After boot-up the latest version of openHAB 2 and the featured settings and tools are installed.
+All packages are downloaded in their newest version and configured to work without further modifications.
 
-Learn more about the Pine A64 as your platform for openHAB and about the requirements over in our [Pine64 article](pine.html).
+Learn more about the Pine A64 as your platform for openHAB and about the requirements in our [Pine A64 article](pine.html).
 
 **Setup:**
 
-* [Download the latest "openHABianPine64" SD card image file](https://github.com/ThomDietrich/openhabian/releases) (note: the file is *xz* compressed)
-* Extract the compressed archive with your favorite program
+* [Download the latest "openHABianPine64" SD card image file](https://github.com/ThomDietrich/openhabian/releases) (Note: the file is *xz* compressed)
 * Write the image file to your SD card (e.g. with [Etcher](https://etcher.io)), depending on your environment you might need to extract the compressed image file first (e.g. with [WinRAR](http://www.rarlab.com/download.htm) or [7zip](http://www.7-zip.org))
 * Insert the SD card into the Pine A64, connect Ethernet and power ([See here for more details](http://wiki.pine64.org/index.php/Main_Page#Step_by_Step_Instructions))
-* Wait up to **15 minutes** for openHABian to do it's magic
+* Wait approximately **15 minutes** for openHABian to do its magic
 * Enjoy! 🎉
 
-* The device will be available under it's IP or via the local DNS name `openhabianpine64`
-* [Connect to the openHAB 2 portal](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpine64:8080](http://openhabianpine64:8080)
+* The device will be available under its IP or via the local DNS name `openhabianpine64`
+* [Connect to the openHAB 2 dashboard](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpine64:8080](http://openhabianpine64:8080)
 * [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhab:habopen`
 * If you encounter any setup problem, [please continue here](#faq-successful)
 
 You can stop reading now.
 openHABian has installed and configured your openHAB system and you can start to use it right away.
-If you want to get in touch with the system or want to install one of the previously mentioned optional components, you can come back here later.
+If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.
 
 Ready for more?
 [Connect to your Pine A64 SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username and password `pi:raspberry`.
@@ -129,7 +128,7 @@ You will see the following welcome screen:
 
 ![openHABian login screen](images/openHABian-SSH-MotD.png)
 
-➜ Continue at the ["First Steps"](#first-steps) chapter below!
+➜ Continue at the ["First Steps"](#first-steps) section below!
 
 ### Manual Setup
 
@@ -190,7 +189,7 @@ A lot of helpful articles can be found on the internet, for example:
 
 Regardless of if you want to copy some files or are on the search for a solution to a problem, sooner or later you'll have to know some Linux.
 Take a few minutes to study the above Tutorials and get to know the most basic commands and tools to be able to navigate on your Linux system, edit configurations, check the system state or look at log files.
-It's really not complicated and something that doesn't hurt on noes resumé.
+It's not complicated and something that doesn't hurt on ones résumé.
 
 {: #passwords}
 ### Changing your Passwords
