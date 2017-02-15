@@ -12,7 +12,7 @@ Just like known from other IDEs, the Designer allows to browse and edit the conf
 
 ## Network Preparations
 
-If your openHAB is set up on a different device or a dedicated system, the Designer can be installed and executed on your personal PC or Mac. The Designer needs to be able to access the configuration files on the remote openHAB host.
+If your openHAB instance is set up on a different device or a dedicated system, the Designer can be installed and executed on your personal PC or Mac. The Designer needs to be able to access the configuration files on the remote openHAB host.
 
 You have to have a [network share](https://en.wikipedia.org/wiki/Shared_resource) set up on the remote host and mounted on your local device.
 Steps needed to so are specific to the hosts operation system.
