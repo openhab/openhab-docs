@@ -123,7 +123,7 @@ openHABian has installed and configured your openHAB system and you can start to
 If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.
 
 Ready for more?
-[Connect to your Pine A64 SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username and password `pi:raspberry`.
+Connect to your Pine A64 SSH console using the username and password `ubuntu:ubuntu`.
 You will see the following welcome screen:
 
 ![openHABian login screen](images/openHABian-SSH-MotD.png)
