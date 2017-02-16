@@ -1,5 +1,6 @@
 source,id,icon,label,description
 oh1,astro,false,Astro,"With the Astro actions, you can calculate sunrise and sunset DataTime values in rules."
+oh1,ciscospark,false,Cisco Spark,"Cisco Spark can be used to message individuals are _rooms_ when certain events take place in openHAB."
 oh1,dscalarm,true,DSC Alarm,"This bundle exposes openHAB rule extensions to be used with the DSC Alarm Binding (1.x binding).  It allows the sending of DSC Alarm specific commands from within rules."
 oh1,ecobee,true,Ecobee,"The Ecobee Action bundle provides actions such as setting and clearing program holds, sending a text message to the thermostat's display, renaming a remote wireless sensor, and other functions that cannot be performed by setting object properties."
 oh1,harmonyhub,false,Logitech Harmony Hub,"* `harmonyPressButton(<device>, <command>)`"
