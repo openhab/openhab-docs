@@ -25,6 +25,7 @@ binding,dsmr1,DSMR Binding
 binding,ebus1,eBUS Binding
 binding,ecobee1,Ecobee Binding
 binding,ecotouch1,Waterkotte Ecotouch Binding
+binding,ekey1,ekey Binding
 binding,energenie1,Energenie Binding
 binding,enocean1,EnOcean Binding
 binding,enphaseenergy1,Enphase Energy Binding
@@ -70,6 +71,7 @@ binding,onewire1,OneWire Binding
 binding,owserver1,OWServer Binding
 binding,panasonictv1,Panasonic TV Binding
 binding,plex1,Plex Binding
+binding,piface1,Piface Binding
 binding,plugwise1,Plugwise Binding
 binding,powermax1,Visonic PowerMax Binding
 binding,rwesmarthome1,RWE SmartHome Binding
