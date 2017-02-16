@@ -41,7 +41,7 @@ The following features are provided by openHABian:
 * openHABian configuration tool including an updater
 * [Raspberry Pi specific](rasppi.html): Extend to the whole SD card, 16MB GPU memory split
 
-openHABian provides the configuration tool `openhabian-config` with the following optional settings and components:
+openHABian provides the configuration tool [`openhabian-config`](#first-steps) with the following optional settings and components:
 
 ![openHABian-config menu](images/openHABian-config.png)
 
@@ -73,7 +73,7 @@ Learn more about the Raspberry Pi as your platform for openHAB and about the req
 
 **Setup:**
 
-* [Download the latest "openHABianPi" SD card image file](https://github.com/ThomDietrich/openhabian/releases)
+* [Download the latest "openHABianPi" SD card image file](https://github.com/openhab/openhabian/releases)
 * Write the image to your SD card ([instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
 * Insert the SD card into the Raspberry Pi, connect Ethernet and power
 * Wait approximately **45 minutes** for openHABian to do its magic
@@ -107,7 +107,7 @@ Learn more about the Pine A64 as your platform for openHAB and about the require
 
 **Setup:**
 
-* [Download the latest "openHABianPine64" SD card image file](https://github.com/ThomDietrich/openhabian/releases) (Note: the file is *xz* compressed)
+* [Download the latest "openHABianPine64" SD card image file](https://github.com/openhab/openhabian/releases) (Note: the file is *xz* compressed)
 * Write the image file to your SD card (e.g. with [Etcher](https://etcher.io)), depending on your environment you might need to extract the compressed image file first (e.g. with [WinRAR](http://www.rarlab.com/download.htm) or [7zip](http://www.7-zip.org))
 * Insert the SD card into the Pine A64, connect Ethernet and power ([See here for more details](http://wiki.pine64.org/index.php/Main_Page#Step_by_Step_Instructions))
 * Wait approximately **15 minutes** for openHABian to do its magic
@@ -169,12 +169,12 @@ It is not only a menu with a set of options, it's also used in a special unatten
 
 Execute the "Update" function before anything else. The menu and the menu options will evolve over time and you should ensure to be up to date.
 
-All other menu entries should be self-explaining and a more details will be shown after selecting an option.
+All other menu entries should be self-explaining and more details are shown after selecting an option.
 
 ℹ - The actions behind menu entry 1-5 are already taken care of on a Raspberry Pi openHABian image installation.
 
 ⌨ - A quick note on menu navgation.
-Use the cursor keys to navigate, &lt;Enter&gt; to execute, &lt;Space&gt; to select and &lt;Tab&gt; to jump to the actions on the bottom of the screen.
+Use the cursor keys to navigate, &lt;Enter&gt; to execute, &lt;Space&gt; to select and &lt;Tab&gt; to jump to the actions on the bottom of the screen. Press &lt;Esc&gt; twice to exit the configuration tool.
 
 ### Linux Hints
 
