@@ -74,7 +74,7 @@ Learn more about the Raspberry Pi as your platform for openHAB and about the req
 **Setup:**
 
 * [Download the latest "openHABianPi" SD card image file](https://github.com/openhab/openhabian/releases)
-* Write the image to your SD card ([instructions](https://www.raspberrypi.org/documentation/installation/installing-images/README.md))
+* Write the image to your SD card (e.g. with [Etcher](https://etcher.io))
 * Insert the SD card into the Raspberry Pi, connect Ethernet and power
 * Wait approximately **45 minutes** for openHABian to do its magic
 * Enjoy! 🎉
@@ -89,7 +89,7 @@ openHABian has installed and configured your openHAB system and you can start to
 If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.
 
 Ready for more?
-[Connect to your Raspberry Pi SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username and password `pi:raspberry`.
+[Connect to your Raspberry Pi SSH console](https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md) using the username and password `openhabian:openhabian`.
 You will see the following welcome screen:
 
 ![openHABian login screen](images/openHABian-SSH-MotD.png)
@@ -98,7 +98,7 @@ You will see the following welcome screen:
 
 ### Pine A64
 
-We also provide a ready to use system image for the Pine A64.
+We provide a ready to use system image for the Pine A64.
 The image is based on the official [Ubuntu Base Image by longsleep](http://wiki.pine64.org/index.php/Pine_A64_Software_Release), which comes as a compressed 4GB file.
 After boot-up the latest version of openHAB 2 and the featured settings and tools are installed.
 All packages are downloaded in their newest version and configured to work without further modifications.
@@ -108,7 +108,7 @@ Learn more about the Pine A64 as your platform for openHAB and about the require
 **Setup:**
 
 * [Download the latest "openHABianPine64" SD card image file](https://github.com/openhab/openhabian/releases) (Note: the file is *xz* compressed)
-* Write the image file to your SD card (e.g. with [Etcher](https://etcher.io)), depending on your environment you might need to extract the compressed image file first (e.g. with [WinRAR](http://www.rarlab.com/download.htm) or [7zip](http://www.7-zip.org))
+* Write the image file to your SD card (e.g. with [Etcher](https://etcher.io))
 * Insert the SD card into the Pine A64, connect Ethernet and power ([See here for more details](http://wiki.pine64.org/index.php/Main_Page#Step_by_Step_Instructions))
 * Wait approximately **15 minutes** for openHABian to do its magic
 * Enjoy! 🎉
@@ -123,7 +123,7 @@ openHABian has installed and configured your openHAB system and you can start to
 If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.
 
 Ready for more?
-Connect to your Pine A64 SSH console using the username and password `ubuntu:ubuntu`.
+Connect to your Pine A64 SSH console using the username and password `openhabian:openhabian`.
 You will see the following welcome screen:
 
 ![openHABian login screen](images/openHABian-SSH-MotD.png)
@@ -133,16 +133,11 @@ You will see the following welcome screen:
 ### Manual Setup
 
 openHABian also supports general Debian/Ubuntu based systems on different platforms.
+Successful installations have been reported for the following platforms and environments:
 
-**Tested platforms and environments:**
-
-* Raspberry Pi Zero: https://community.openhab.org/t/oh-on-the-raspberry-pi-zero/10997/3
-
-
-> **Attention:**
-> openHABian usage on a custom existing system is supported but not yet widely tested.
-> Please be cautious and have a close look at the console output for errors.
-> Please report every error you see at the [openHABian Issue Tracker](https://github.com/openhab/openhabian/issues).
+* **Raspberry Pi Zero:** The RPi0 doesn't have an ethernet port thus is not compatible with the netinstaller method of the openHABianPi image.
+  Community member [*jtmoderate876* went the extra mile](https://community.openhab.org/t/oh-on-the-raspberry-pi-zero/10997/15).
+  After installing Raspbian, executing openHABian as described below was all that's needed. He's quite happy with the results. 
 
 Starting with a fresh installation of your operating system, install git, then clone the openHABian poject and finally execute the openHABian configuration tool.
 
@@ -160,6 +155,12 @@ sudo openhabian-config
 ```
 
 You'll see the openHABian configuration menu and can now run all desired actions, e.g. install the newest Oracle Java 8 revision or openHAB 2.
+
+> Attention:
+> openHABian usage on a custom system is supported but not yet widely tested.
+> Please be cautious and have a close look at the console output for errors.
+> Report every error you see to the [openHABian Issue Tracker](https://github.com/openhab/openhabian/issues).
+
 
 ## First Steps
 
@@ -208,7 +209,7 @@ openHABian is supposed to provide a ready-to-use openHAB base system. There are 
 {: #timezone-locale}
 ### Timezone and Locale
 
-To change the timezone for your openHABian system, is by issuing the follwing command.
+To change the timezone for your openHABian system execute the follwing commands:
 
 ```shell
 # List available timezones
@@ -221,7 +222,9 @@ sudo timedatectl set-timezone Europe/Berlin
 timedatectl
 ```
 
-Changing the locale of your system is done by the following commands. The first command configures the available languges, the second will define the default. You should leave Englisch as an available language, as not all packages provide error messages in e.g. German. 
+Changing the locale of your system is done by the below commands.
+The first command configures the available languges, the second will define the default.
+You should leave Englisch as an available language, as not all packages provide error messages in e.g. German.
 
 ```shell
 # List available locales
