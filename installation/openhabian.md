@@ -98,7 +98,7 @@ You will see the following welcome screen:
 
 ### Pine A64
 
-We also provide a ready-to-use system image for the Pine A64.
+We also provide a ready to use system image for the Pine A64.
 The image is based on the official [Ubuntu Base Image by longsleep](http://wiki.pine64.org/index.php/Pine_A64_Software_Release), which comes as a compressed 4GB file.
 After boot-up the latest version of openHAB 2 and the featured settings and tools are installed.
 All packages are downloaded in their newest version and configured to work without further modifications.
@@ -133,6 +133,11 @@ You will see the following welcome screen:
 ### Manual Setup
 
 openHABian also supports general Debian/Ubuntu based systems on different platforms.
+
+**Tested platforms and environments:**
+
+* Raspberry Pi Zero: https://community.openhab.org/t/oh-on-the-raspberry-pi-zero/10997/3
+
 
 > **Attention:**
 > openHABian usage on a custom existing system is supported but not yet widely tested.
@@ -190,6 +195,44 @@ A lot of helpful articles can be found on the internet, for example:
 Regardless of if you want to copy some files or are on the search for a solution to a problem, sooner or later you'll have to know some Linux.
 Take a few minutes to study the above Tutorials and get to know the most basic commands and tools to be able to navigate on your Linux system, edit configurations, check the system state or look at log files.
 It's not complicated and something that doesn't hurt on ones résumé.
+
+{: #further-config}
+### Further Configuration Steps
+
+openHABian is supposed to provide a ready-to-use openHAB base system. There are however a few things we can not decide for you.
+
+* **Timezone:** The default timezone openHABian is shipped with is "Europe/Berlin". You should change it to your location.
+* **Language:** The `locale` setting of the openHABian base system is set to "en_US.UTF-8". While this setting will not do any harm, you might prefer e.g. console errors in german or spanish. Change the locale settings acordingly. Be aware, that error solving might be easier when using the english error messages as search phrases.
+* **Passwords:** Relying on default passwords is a security concern you should care about!
+
+{: #timezone-locale}
+### Timezone and Locale
+
+To change the timezone for your openHABian system, is by issuing the follwing command.
+
+```shell
+# List available timezones
+timedatectl list-timezones
+
+# Set system timezone
+sudo timedatectl set-timezone Europe/Berlin
+
+# Check the result
+timedatectl
+```
+
+Changing the locale of your system is done by the following commands. The first command configures the available languges, the second will define the default. You should leave Englisch as an available language, as not all packages provide error messages in e.g. German. 
+
+```shell
+# List available locales
+cat /usr/share/i18n/SUPPORTED
+
+# Generate locales, set default
+/usr/sbin/locale-gen en_US.UTF-8 de_DE.UTF-8
+/usr/sbin/update-locale LANG=en_US.UTF-8
+```
+
+You will need to restart your system for the locale setting to take effect.
 
 {: #passwords}
 ### Changing your Passwords
