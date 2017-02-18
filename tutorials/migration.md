@@ -176,7 +176,7 @@ bindings [here]({{base}}/addons/bindings.html).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I
 recommend "habmin". The list of UIs are [here]({{base}}/addons/uis.html).
 - `action = ` - the list of action add-ons you used in openHAB 1.x.
-- `transformation = ` = the list of transformations you use. Unlike in openHAB 1,
+- `transformation = ` - the list of transformations you use. Unlike in openHAB 1,
 one must install transformations separately.
 - `voice = ` - see [here]({{base}}/addons/voice.html)
 - `misc = ` - myopenhab, homekit, etc. Do not list myopenhab at this time,
@@ -428,7 +428,7 @@ cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
 cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
 cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
 Copy any custom icons added from webapps/images to <openHAB 2 conf>/icons/classic
-Copy any custom webviews from webapps tp <openHAB 2 conf>/html
+Copy any custom webviews from webapps to <openHAB 2 conf>/html
 cp <openHAB 1.x conf>/configurations/items/* <openHAB 2 conf>/items/*
 cp <openHAB 1.x conf>/configurations/rules/* <openHAB 2 conf>/rules/*
 cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
