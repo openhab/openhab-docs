@@ -176,7 +176,7 @@ bindings [here]({{base}}/addons/bindings.html).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I
 recommend "habmin". The list of UIs are [here]({{base}}/addons/uis.html).
 - `action = ` - the list of action add-ons you used in openHAB 1.x.
-- `transformation = ` = the list of transformations you use. Unlike in openHAB 1,
+- `transformation = ` - the list of transformations you use. Unlike in openHAB 1,
 one must install transformations separately.
 - `voice = ` - see [here]({{base}}/addons/voice.html)
 - `misc = ` - myopenhab, homekit, etc. Do not list myopenhab at this time,
