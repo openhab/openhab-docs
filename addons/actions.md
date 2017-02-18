@@ -57,7 +57,7 @@ They are automatically imported and can be used to execute openHAB-specific oper
         	{% endif %}
           {% endfor %}
           {% for legacyaddon in legacyaddons %}
-            {% if legacyaddon.category == "binding" and legacyaddon.id contains action.id %}
+            {% if legacyaddon.category == "action" and legacyaddon.id contains action.id %}
         	  {% assign install = "legacy" %}
         	  {% break %}
         	{% endif %}

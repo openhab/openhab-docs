@@ -265,7 +265,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/bundles/io/oh1</outputDirectory>
+			  <outputDirectory>${basedir}/addons/io/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/io</directory>
@@ -274,6 +274,9 @@
 					<include>**/doc/**</include>
 					<include>**/cfg/**</include>
 				  </includes>
+				  <excludes>
+				  	<exclude>**/org.openhab.io.caldav/**</exclude>
+				  </excludes>
 				</resource>
 			  </resources>
 			</configuration>
@@ -625,26 +628,48 @@
 			</goals>
 			<configuration>
 			  <source>
-				def uis = new File(project.basedir, 'addons/io')
+				def ioList = new File(project.basedir, '_data/io.csv')
+				ioList.write("source,id,icon,label,description\n")
 
-				uis.eachFile
-				{
-				def name = it.name
-				if(name.contains('org.openhab.io.')) {
-				def uiId =
-				it.name.replace('org.openhab.io.', '')
-				def simpleUiNameDir = new
-				File(uis.path, uiId)
-				it.renameTo(simpleUiNameDir)
-				def readme = new File(simpleUiNameDir.path, 'README.md')
-				if(readme.exists()) {
-				println readme
-				readme.renameTo(new File(simpleUiNameDir.path, 'readme.md'))
-				if(!readme.text.startsWith('---')) {
-					readme.write("---\nlayout: documentation\n---\n\n{% include base.html %}\n\n" + readme.text)
-				}
-				}
-				}
+				def sources = ['oh1', 'oh2']
+				sources.each { source ->
+
+					def ios = new File(project.basedir, 'addons/io/'.concat(source))
+
+                	ios.eachFile {
+                		def name = it.name
+                		if(name.contains('io')) {
+                			def ioId = it.name.replace('org.openhab.io.', '')
+                			def target = new File(project.basedir, 'addons/io')
+                			def simpleIoNameDir = new File(target.path, ioId)
+                			it.renameTo(simpleIoNameDir)
+                			def readme = new File(simpleIoNameDir.path, 'README.md')
+                			if(readme.exists()) {
+                				println readme
+                				readme.renameTo(new File(simpleIoNameDir.path, 'readme.md'))
+                				def label = readme.readLines().find{it.startsWith('#')}.replace('#', '').replace(' Service', '').trim()
+                				def icon = new File(project.basedir, 'images/addons/' + ioId + '.png').exists()
+                				def description = ""
+                				boolean firstHeadline = false
+                				for(def line : readme.readLines()) {
+                			 		if(line.startsWith('#')) {
+                			 			if(!firstHeadline) {
+                			 				firstHeadline = true
+                			 			}
+                			 		} else {
+                			 			if(firstHeadline &amp;&amp; line.trim().size() > 0) {
+		        			        		description = line.trim().replace('\"', '\'')
+                			  				break
+		        						}
+                			 		}
+                				}
+                				if(!readme.text.startsWith('---')) {
+                					readme.write("---\nlayout: documentation\ntitle: ${label} - Services\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                				}
+                				ioList.append(source + ',' + ioId + ',' + icon + ',' + label + ',"' + description + '"\n')
+                			}
+                		}
+                	}
 				}
 			  </source>
 			</configuration>
