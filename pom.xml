@@ -347,8 +347,13 @@
 		        						}
                 			 		}
                 				}
+                				def toYaml = { '---\n' + it.collect{ /$it.key: $it.value/ }.join('\n') + '\n---\n' }
+                				def front = ['layout': 'documentation', 'title': "${label} - Bindings", 'source': 'external']
+                				if(source == 'oh1') {
+                					front['source'] = "https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.${bindingId}/README.md"
+                				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Bindings\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write(toYaml(front) + "&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				bindingList.append(source + ',' + bindingId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
@@ -401,8 +406,13 @@
 		        						}
                 			 		}
                 				}
+                				def toYaml = { '---\n' + it.collect{ /$it.key: $it.value/ }.join('\n') + '\n---\n' }
+                				def front = ['layout': 'documentation', 'title': "${label} - Actions", 'source': 'external']
+                				if(source == 'oh1') {
+                					front['source'] = "https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.${actionId}/README.md"
+                				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Actions\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write(toYaml(front) + "&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				actionList.append(source + ',' + actionId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
@@ -455,8 +465,13 @@
 		        						}
                 			 		}
                 				}
+                				def toYaml = { '---\n' + it.collect{ /$it.key: $it.value/ }.join('\n') + '\n---\n' }
+                				def front = ['layout': 'documentation', 'title': "${label} - Persistence", 'source': 'external']
+                				if(source == 'oh1') {
+                					front['source'] = "https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.${persistenceId}/README.md"
+                				}
                 				if(!readme.text.startsWith('---')) {
-                					readme.write("---\nlayout: documentation\ntitle: ${label} - Persistence\nsource: external\n---\n&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
+                					readme.write(toYaml(front) + "&lt;!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository --&gt;\n\n{% include base.html %}\n\n" + readme.text)
                 				}
                 				persistenceList.append(source + ',' + persistenceId + ',' + icon + ',' + label + ',"' + description + '"\n')
                 			}
