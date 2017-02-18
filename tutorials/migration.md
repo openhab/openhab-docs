@@ -428,7 +428,7 @@ cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
 cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
 cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
 Copy any custom icons added from webapps/images to <openHAB 2 conf>/icons/classic
-Copy any custom webviews from webapps tp <openHAB 2 conf>/html
+Copy any custom webviews from webapps to <openHAB 2 conf>/html
 cp <openHAB 1.x conf>/configurations/items/* <openHAB 2 conf>/items/*
 cp <openHAB 1.x conf>/configurations/rules/* <openHAB 2 conf>/rules/*
 cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
