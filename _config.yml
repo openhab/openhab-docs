@@ -11,4 +11,6 @@ exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]
 # Additional gems for sitemap generation
 gems:
   - jekyll-sitemap
-  
+  - jekyll-redirect-from
+whitelist:
+  - jekyll-redirect-from
