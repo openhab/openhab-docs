@@ -81,7 +81,7 @@ Learn more about the Raspberry Pi as your platform for openHAB and about the req
 
 * The device will be available under its IP or via the local DNS name `openhabianpi`
 * [Connect to the openHAB 2 dashboard](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpi:8080](http://openhabianpi:8080)
-* [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhab:habopen`
+* [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhabian:openhabian`
 * If you encounter any setup problem, [please continue here](#faq-successful)
 
 You can stop reading now.
@@ -115,7 +115,7 @@ Learn more about the Pine A64 as your platform for openHAB and about the require
 
 * The device will be available under its IP or via the local DNS name `openhabianpine64`
 * [Connect to the openHAB 2 dashboard](http://docs.openhab.org/configuration/packages.html) (available after a few more minutes): [http://openhabianpine64:8080](http://openhabianpine64:8080)
-* [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhab:habopen`
+* [Connect to the Samba network shares](http://docs.openhab.org/installation/linux.html#mounting-locally) with `openhabian:openhabian`
 * If you encounter any setup problem, [please continue here](#faq-successful)
 
 You can stop reading now.
@@ -179,7 +179,7 @@ All other menu entries should be self-explaining and more details are shown afte
 
 ℹ - The actions behind menu entry 1-5 are already taken care of on a Raspberry Pi openHABian image installation.
 
-⌨ - A quick note on menu navgation.
+⌨ - A quick note on menu navigation.
 Use the cursor keys to navigate, &lt;Enter&gt; to execute, &lt;Space&gt; to select and &lt;Tab&gt; to jump to the actions on the bottom of the screen. Press &lt;Esc&gt; twice to exit the configuration tool.
 
 ### Linux Hints
@@ -245,10 +245,10 @@ This is especially important of your system is accessible from outside your priv
 
 Here are the passwords in question, their default value and the way to change them:
 
-* User password needed for SSH or sudo (e.g. "pi:raspberry") : `passwd`
-* Samba share password (e.g. "openhab:habopen"): `sudo smbpasswd openhab`
-* Karaf remote console (e.g. "openhab:habopen"): Please see [here](http://docs.openhab.org/administration/console.html#bind-console-to-all-interfaces)
-* Nginx reverse proxy login (no default): Please see [here](http://docs.openhab.org/installation/security.html#adding-or-removing-users)
+* User password needed for SSH or sudo (e.g. "openhabian:openhabian") : `passwd`
+* Samba share password (e.g. "openhabian:openhabian"): `sudo smbpasswd openhabian`
+* Karaf remote console (e.g. "openhab:habopen"): Change via the openHABian menu
+* Nginx reverse proxy login (no default): Change via the openHABian menu, please see [here](http://docs.openhab.org/installation/security.html#adding-or-removing-users) for more
 
 ## FAQ and Troubleshooting
 
