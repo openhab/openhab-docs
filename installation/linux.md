@@ -118,7 +118,38 @@ Optionally, you may in addition install the legacy add-ons package `openhab2-add
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
-If everything went well, you can start openHAB and register it to be automatically executed at system startup. The most important commands to control openHAB running in the background as a system service are given below.
+If everything went well, you can start openHAB and register it to be automatically executed at system startup.
+
+* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+
+  ```shell
+  sudo /etc/init.d/openhab2 start
+  sudo /etc/init.d/openhab2 status
+  
+  sudo update-rc.d openhab2 defaults
+  ```
+
+* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+  ```shell
+  sudo systemctl start openhab2.service
+  sudo systemctl status openhab2.service
+  
+  sudo systemctl daemon-reload
+  sudo systemctl enable openhab2.service
+  ```
+
+The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
+
+You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
+If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
+
+![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
+
+#### Service Control
+
+openHAB will run as a service in the background.
+The most important commands to control the openHAB service are given below.
 
 * Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
 
@@ -130,7 +161,7 @@ If everything went well, you can start openHAB and register it to be automatical
   sudo /etc/init.d/openhab2 restart
   
   # Stop the openHAB background service
-  sudo /etc/init.d/openhab2 restart
+  sudo /etc/init.d/openhab2 stop
 
   # Make openHAB automatically start after booting the Linux host
   sudo update-rc.d openhab2 defaults
@@ -146,19 +177,12 @@ If everything went well, you can start openHAB and register it to be automatical
   sudo systemctl restart openhab2.service
   
   # Stop the openHAB background service
-  sudo systemctl restart openhab2.service
+  sudo systemctl stop openhab2.service
   
   # Make openHAB automatically start after booting the Linux host
   sudo systemctl daemon-reload
   sudo systemctl enable openhab2.service
   ```
-
-The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
-
-You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
-If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
-
-![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
 
 #### Upgrade
 
