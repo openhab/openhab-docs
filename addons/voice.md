@@ -7,7 +7,7 @@ layout: documentation
 # Available Voice Services
 
 {% assign voices = "" | split: "|" %}
-{% for voice in site.data.voice %}{% assign voices = voices | push: voice %}{% endfor %}
+{% for addon in site.data.addons %}{% if addon.type == "voice" %}{% assign voices = voices | push: addon %}{% endif %}{% endfor %}
 {% assign sorted_voices = voices | sort: "id" %}
 
 | Voice Service | Description |

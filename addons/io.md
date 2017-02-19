@@ -10,7 +10,7 @@ title: System Integration
 openHAB supports services that enable integration with various technologies that don't fall into other add-on categories.
 
 {% assign ios = "" | split: "|" %}
-{% for io in site.data.io %}{% assign ios = ios | push: io %}{% endfor %}
+{% for addon in site.data.addons %}{% if addon.type == "io" %}{% assign ios = ios | push: addon %}{% endif %}{% endfor %}
 {% assign sorted_ios = ios | sort: "id" %}
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
@@ -45,6 +45,34 @@ openHAB supports services that enable integration with various technologies that
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <td>
+        <h4><a href="{{base}}/configuration/restdocs.html">REST API</a></h4>
+      </td>
+      <td>
+        <p>
+        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items. 
+        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients). 
+        The REST API also supports server-push, so you can subscribe on change notification for certain resources.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <h4><a href="http://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
+      </td>
+      <td>
+        <p>
+        Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy. 
+        Just log in to your IFTTT account and activate the openHAB channel. 
+        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection. 
+        Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB. 
+        Only those items will be visible to IFTTT. 
+        You will also be able to send commands to those items from IFTTT Applets. 
+        Items will appear in myopenHAB and thus in IFTTT only after at least one state update has been received by myopenHAB from your runtime.
+        </p>
+      </td>
+    </tr>
     {% for io in sorted_ios %}
         {% assign install = "auto" %}
         {% if io.source == "oh1" %}
@@ -64,43 +92,14 @@ openHAB supports services that enable integration with various technologies that
         	{% endif %}
           {% endfor %}
         {% endif %}
-        <tr class="install-{{install}} source-{{io.source}}">
-          <td>
-            <h4><a href="{{base}}/addons/io/{{io.id}}/readme.html">{% if io.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{io.id}}.png" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
-            <img src="{{base}}/images/tag-install-{{install}}.svg">
-          </td>
-          <td>{{ io.description | markdownify }}</td>
-        </tr>
+    <tr class="install-{{install}} source-{{io.source}}">
+      <td>
+        <h4><a href="{{base}}/addons/io/{{io.id}}/readme.html">{% if io.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{io.id}}.png" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
+        <img src="{{base}}/images/tag-install-{{install}}.svg">
+      </td>
+      <td>{{ io.description | markdownify }}</td>
+    </tr>
     {% endfor %}
-        <tr>
-          <td>
-            <h4><a href="{{base}}/configuration/restdocs.html">REST API</a></h4>
-          </td>
-          <td>
-          	<p>
-          	The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items. 
-          	It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients). 
-          	The REST API also supports server-push, so you can subscribe on change notification for certain resources.
-          	</p>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <h4><a href="http://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
-          </td>
-          <td>
-          	<p>
-          	Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy. 
-          	Just log in to your IFTTT account and activate the openHAB channel. 
-          	You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection. 
-          	Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB. 
-          	Only those items will be visible to IFTTT. 
-          	You will also be able to send commands to those items from IFTTT Applets. 
-          	Items will appear in myopenHAB and thus in IFTTT only after at least one state update has been received by myopenHAB from your runtime.
-          	</p>
-          </td>
-        </tr>
-
  </tbody>
 </table>
 

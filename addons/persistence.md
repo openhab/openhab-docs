@@ -32,7 +32,7 @@ Persistence services enable the storage of item states over time.
 </table>
 
 {% assign persists = "" | split: "|" %}
-{% for persist in site.data.persistence %}{% assign persists = persists | push: persist %}{% endfor %}
+{% for addon in site.data.addons %}{% if addon.type == "persistence" %}{% assign persists = persists | push: addon %}{% endif %}{% endfor %}
 {% assign sorted_persists = persists | sort: "id" %}
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}

@@ -76,7 +76,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
 </table>
 
 {% assign bindings = "" | split: "|" %}
-{% for binding in site.data.bindings %}{% assign bindings = bindings | push: binding %}{% endfor %}
+{% for addon in site.data.addons %}{% if addon.type == "binding" %}{% assign bindings = bindings | push: addon %}{% endif %}{% endfor %}
 {% assign sorted_bindings = bindings | sort: "id" %}
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
