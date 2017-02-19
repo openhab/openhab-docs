@@ -118,23 +118,37 @@ Optionally, you may in addition install the legacy add-ons package `openhab2-add
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
-If everything went well, you can start openHAB and register it to be automatically executed at system startup:
+If everything went well, you can start openHAB and register it to be automatically executed at system startup. The most important commands to control openHAB running in the background as a system service are given below.
 
 * Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
 
   ```shell
-  sudo /etc/init.d/openhab2 start
+  # Learn about the current service status
   sudo /etc/init.d/openhab2 status
+  
+  # (Re-)Start openHAB (background service)
+  sudo /etc/init.d/openhab2 restart
+  
+  # Stop the openHAB background service
+  sudo /etc/init.d/openhab2 restart
 
+  # Make openHAB automatically start after booting the Linux host
   sudo update-rc.d openhab2 defaults
   ```
 
 * Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
 
   ```shell
-  sudo systemctl start openhab2.service
+  # Learn about the current service status
   sudo systemctl status openhab2.service
-
+  
+  # (Re-)Start openHAB (background service)
+  sudo systemctl restart openhab2.service
+  
+  # Stop the openHAB background service
+  sudo systemctl restart openhab2.service
+  
+  # Make openHAB automatically start after booting the Linux host
   sudo systemctl daemon-reload
   sudo systemctl enable openhab2.service
   ```
