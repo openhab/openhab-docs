@@ -15,7 +15,7 @@ openHAB supports services that enable integration with various technologies that
 {% assign oh1addons = site.data.oh1addons %}
 {% assign legacyaddons = site.data.legacyaddons %}
 
-<table id="ios-select" class="striped">
+<!-- selection not needed for now table id="ios-select" class="striped">
   <tbody>
     <tr>
       <td width="20%">
@@ -35,7 +35,7 @@ openHAB supports services that enable integration with various technologies that
       </td>
     </tr>
   </tbody>
-</table>
+</table -->
 
 <table id="ios-overview" class="bordered addon-table">
   <thead>
@@ -45,6 +45,33 @@ openHAB supports services that enable integration with various technologies that
     </tr>
   </thead>
   <tbody>
+    {% for io in sorted_ios %}
+        {% assign install = "auto" %}
+        {% if io.source == "oh1" %}
+          {% assign install = "manual" %}
+          {% for oh1addon in oh1addons %}
+          	{% capture category %}{% if oh1addon.category == 'misc' %}io{% else %}{{ oh1addon.category }}{% endif %}{% endcapture %}
+            {% if category == "io" and oh1addon.id contains io.id %}
+        	  {% assign install = "auto" %}
+        	  {% break %}
+        	{% endif %}
+          {% endfor %}
+          {% for legacyaddon in legacyaddons %}
+          	{% capture category %}{% if legacyaddon.category == 'misc' %}io{% else %}{{ legacyaddon.category }}{% endif %}{% endcapture %}
+            {% if category == "io" and legacyaddon.id contains io.id %}
+        	  {% assign install = "legacy" %}
+        	  {% break %}
+        	{% endif %}
+          {% endfor %}
+        {% endif %}
+    <tr class="install-{{install}} source-{{io.source}}">
+      <td>
+        <h4><a href="{{base}}/addons/io/{{io.id}}/readme.html">{% if io.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{io.id}}.png" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
+        <img src="{{base}}/images/tag-install-{{install}}.svg">
+      </td>
+      <td>{{ io.description | markdownify }}</td>
+    </tr>
+    {% endfor %}
     <tr>
       <td>
         <h4><a href="{{base}}/configuration/restdocs.html">REST API</a></h4>
@@ -73,33 +100,5 @@ openHAB supports services that enable integration with various technologies that
         </p>
       </td>
     </tr>
-    {% for io in sorted_ios %}
-        {% assign install = "auto" %}
-        {% if io.source == "oh1" %}
-          {% assign install = "manual" %}
-          {% for oh1addon in oh1addons %}
-          	{% capture category %}{% if oh1addon.category == 'misc' %}io{% else %}{{ oh1addon.category }}{% endif %}{% endcapture %}
-            {% if category == "io" and oh1addon.id contains io.id %}
-        	  {% assign install = "auto" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-          {% for legacyaddon in legacyaddons %}
-          	{% capture category %}{% if legacyaddon.category == 'misc' %}io{% else %}{{ legacyaddon.category }}{% endif %}{% endcapture %}
-            {% if category == "io" and legacyaddon.id contains io.id %}
-        	  {% assign install = "legacy" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-        {% endif %}
-    <tr class="install-{{install}} source-{{io.source}}">
-      <td>
-        <h4><a href="{{base}}/addons/io/{{io.id}}/readme.html">{% if io.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{io.id}}.png" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
-        <img src="{{base}}/images/tag-install-{{install}}.svg">
-      </td>
-      <td>{{ io.description | markdownify }}</td>
-    </tr>
-    {% endfor %}
  </tbody>
 </table>
-
