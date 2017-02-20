@@ -458,7 +458,7 @@ Additionally it's needed to allow the java environment to access the serial port
 Therefore the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
 
 ```shell
-EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyS2:/dev/ttyAMA0"
+EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyS2:/dev/ttyACM0:/dev/ttyAMA0"
 ```
 
 The shown device handlers are just the most common examples.
