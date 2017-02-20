@@ -157,7 +157,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 * `--name=openhab` : give the container a human remember able name
 * `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 * `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
-* `-v /etc/timezone:/etc/timezone:ro ` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
+* `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
 * `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (NOTE: you must create these folders on the host before running the container)
 * `-v /opt/openhab/userdata:/openhab/userdata` : location for logs, cache, persistence databases, etc.
 * `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via PaperUI or the Karaf Console
@@ -166,7 +166,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 * `--device=/dev/ttyUSB0` : location of my zwave controller, change and/or add more --device tags to pass all your devices needed by openHAB to the container
 * `--restart=always` : if the container crashes or the syetem reboots the container is restarted
 * `openhab/openhab:<version>-<architecture>` : name of the Docker Image
-* `debug` : You can start the container with the command ``docker run -it openhab/openhab debug`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
+* `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<architecture> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
 
 # Environment Variables
 
