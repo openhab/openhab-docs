@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Video Disk Recorder (VDR) - Bindings
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.vdr/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

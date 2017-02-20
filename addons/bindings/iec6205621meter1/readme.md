@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: IEC 62056-21 Meter - Bindings
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.iec6205621meter/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

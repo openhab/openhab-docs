@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Velleman k8055 USB IO Board - Bindings
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.k8055/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

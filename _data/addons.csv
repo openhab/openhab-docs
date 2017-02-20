@@ -253,7 +253,7 @@ oh1,persistence,mysql,false,MySQL,"This service allows you to persist state upda
 oh1,persistence,rrd4j,false,rrd4j,"The [rrd4j](https://github.com/rrd4j/rrd4j) Persistence service is based on a round-robin database."
 oh1,persistence,sense,false,Sen.Se,"This service allows you to feed item data to [Sen.Se web site](http://open.sen.se)."
 oh1,persistence,sitewhere,false,SiteWhere,"The [SiteWhere](http://www.sitewhere.org/) persistence service allows openHAB item states to be forwarded to a SiteWhere server instance running locally or in the cloud. Selected events from an openHAB instance can be stored in SiteWhere under a virtual device with hardware ID specified in the persistence provider implementation."
-oh1,io,dropbox,true,Dropbox Synchronization,"This service will synchronize files on your openHAB server, such as configuration and log files, to and/or from your Dropbox account."
+oh1,io,dropbox,true,Dropbox Synchronization,"This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account."
 oh1,io,gcal,true,Google Calendar Scheduler,"The Google Calendar Scheduler allows you to control items in openHAB at scheduled times in the future.  It will send commands to items or update the state of items when defined on one of your Google Calendars."
 oh2,io,homekit,false,HomeKit Add-on,"This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol."
 oh2,io,hueemulation,false,openHAB Hue Emulation,"Hue Emulation exposes openHAB items as Hue devices to other Hue HTTP API compatible applications like an Amazon Echo."

@@ -3,6 +3,7 @@ layout: documentation
 title: MAX! - Bindings
 source: external
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
@@ -73,8 +74,9 @@ In most cases no Things need to be defined manually. In case your Cube can't be 
 max.things:
 
 ```
-Bridge max:bridge:KEQ0565026 [ ipAddress="192.168.3.9", serialNumber="KEQ0565026" ]
-max:thermostat:KEQ0565026 [ serialNumber="KEQ0565123" ]
+Bridge max:bridge:KEQ0565026 [ ipAddress="192.168.3.9", serialNumber="KEQ0565026" ] {
+    Thing max:thermostat:KEQ0565026:KEQ0565123 [ serialNumber="KEQ0565123" ]
+}
 ```
 
 max.items:

@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Java Persistence API (JPA) - Persistence
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.jpa/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
