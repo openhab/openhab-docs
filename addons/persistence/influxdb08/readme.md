@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: InfluxDB (up to 0.8.x) - Persistence
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.influxdb08/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

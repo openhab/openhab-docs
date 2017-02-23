@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: Prowl - Actions
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.prowl/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

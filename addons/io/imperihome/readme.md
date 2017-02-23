@@ -1,3 +1,13 @@
+---
+layout: documentation
+title: ImperiHome integration service - Services
+source: external
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+{% include base.html %}
+
 # ImperiHome integration service
 
 This IO service exposes openHAB Items to the Evertygo [ImperiHome](http://www.evertygo.com/imperihome) dashboard app for Android and iOS.

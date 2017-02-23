@@ -1,3 +1,13 @@
+---
+layout: documentation
+title: HomeKit Add-on - Services
+source: external
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+{% include base.html %}
+
 # HomeKit Add-on
 
 This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.

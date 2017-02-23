@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: DSC PowerSeries Alarm System - Bindings
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.dscalarm/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

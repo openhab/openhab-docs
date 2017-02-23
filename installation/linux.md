@@ -118,14 +118,14 @@ Optionally, you may in addition install the legacy add-ons package `openhab2-add
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
-If everything went well, you can start openHAB and register it to be automatically executed at system startup:
+If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
 * Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
 
   ```shell
   sudo /etc/init.d/openhab2 start
   sudo /etc/init.d/openhab2 status
-
+  
   sudo update-rc.d openhab2 defaults
   ```
 
@@ -134,7 +134,7 @@ If everything went well, you can start openHAB and register it to be automatical
   ```shell
   sudo systemctl start openhab2.service
   sudo systemctl status openhab2.service
-
+  
   sudo systemctl daemon-reload
   sudo systemctl enable openhab2.service
   ```
@@ -145,6 +145,44 @@ You should be able to reach the openHAB 2 portal at [http://openhab-device:8080]
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
 
 ![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
+
+#### Service Control
+
+openHAB will run as a service in the background.
+The most important commands to control the openHAB service are given below.
+
+* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+
+  ```shell
+  # Learn about the current service status
+  sudo /etc/init.d/openhab2 status
+  
+  # (Re-)Start openHAB (background service)
+  sudo /etc/init.d/openhab2 restart
+  
+  # Stop the openHAB background service
+  sudo /etc/init.d/openhab2 stop
+
+  # Make openHAB automatically start after booting the Linux host
+  sudo update-rc.d openhab2 defaults
+  ```
+
+* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+  ```shell
+  # Learn about the current service status
+  sudo systemctl status openhab2.service
+  
+  # (Re-)Start openHAB (background service)
+  sudo systemctl restart openhab2.service
+  
+  # Stop the openHAB background service
+  sudo systemctl stop openhab2.service
+  
+  # Make openHAB automatically start after booting the Linux host
+  sudo systemctl daemon-reload
+  sudo systemctl enable openhab2.service
+  ```
 
 #### Upgrade
 
@@ -458,10 +496,10 @@ Additionally it's needed to allow the java environment to access the serial port
 Therefore the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
 
 ```shell
-EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyAMA0"
+EXTRA_JAVA_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/ttyUSB0:/dev/ttyS0:/dev/ttyS2:/dev/ttyACM0:/dev/ttyAMA0"
 ```
 
-The shown device handlers are just the three most common examples.
+The shown device handlers are just the most common examples.
 Please contact the community forum for more detailed information regarding individual hardware.
 
 ### Java Network Permissions

@@ -1,8 +1,9 @@
 ---
 layout: documentation
 title: TinkerForge - Actions
-source: external
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.tinkerforge/README.md
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}

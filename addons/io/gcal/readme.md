@@ -1,3 +1,13 @@
+---
+layout: documentation
+title: Google Calendar Scheduler - Services
+source: https://github.com/openhab/openhab1-addons/blob/master/bundles/io/org.openhab.io.gcal/README.md
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+{% include base.html %}
+
 # Google Calendar Scheduler
 
 The Google Calendar Scheduler allows you to control items in openHAB at scheduled times in the future.  It will send commands to items or update the state of items when defined on one of your Google Calendars.  

@@ -104,3 +104,4 @@ persistence,mqtt,MQTT Persistence
 persistence,mysql,MySQL Persistence
 persistence,rrd4j,RRD4j Persistence
 misc,gcal1,Google Calendar Scheduler
+misc,dropbox1,Dropbox Synchronization Service

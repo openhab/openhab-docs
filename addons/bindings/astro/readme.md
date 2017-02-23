@@ -3,6 +3,7 @@ layout: documentation
 title: Astro - Bindings
 source: external
 ---
+
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
@@ -123,7 +124,7 @@ astro:sun:home  [ geolocation="xx.xxxxxx,xx.xxxxxx", altitude=100, interval=60 ]
 astro:moon:home [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60 ]
 ```
 
-or optionally with an offset
+or optionally with an event offset
 
 ```
 astro:sun:home [ geolocation="xx.xxxxxx,xx.xxxxxx", altitude=100, interval=60 ] {
@@ -133,6 +134,20 @@ astro:sun:home [ geolocation="xx.xxxxxx,xx.xxxxxx", altitude=100, interval=60 ] 
         ]
 }
 astro:moon:home [ geolocation="xx.xxxxxx,xx.xxxxxx", interval=60 ]
+```
+
+or a datetime offset
+
+```
+astro:sun:home [ geolocation="xx.xxxxxx,xx.xxxxxx", altitude=100, interval=60 ] {
+    Channels:
+        Type start : rise#start [
+            offset=5
+        ]
+        Type end : rise#end [
+            offset=5
+        ]
+}
 ```
 
 Items:
