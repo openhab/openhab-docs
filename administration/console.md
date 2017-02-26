@@ -15,15 +15,26 @@ The console offers the option to:
 
 ## Accessing the Console
 
-Accessing the console depends on the start mode of openHAB.
-The manually start using shell/batch script ends directly in the console.
+Accessing the console depends on how openHAB was started.
+When started manually using shell or batch script, openHAB naturally transitions directly to the console.
+When started as a service, the console can be reached via local SSH.  
 
-If openHAB runs a service, the console can be accessed using ssh to the openHAB host on port 8101.
+To reach the console using SSH, use the following command to connect to the localhost interface, TCP port 8101 from the machine running openHAB.
+
+`ssh openhab@localhost -p 8101`
+
 The default username/password is **openhab/habopen**.
-Be aware, that the first connection attempt may take a few seconds longer.
 
+The first connection attempt triggers generation of the Karaf remote console key and will take a few seconds longer than subsequent attempts.
+On slower systems, such as Raspberry Pi or Pine64, SSH may even time out.
+If this happens, simply try connecting again until successful.
+
+By default, the console can only be reached from the machine running openHAB.
+To change this, see "Bind Console to All Interfaces," below.
+
+Here's an example of a successful SSH connection to console: 
 ```
-ssh openhab@localhost -p 8101
+openhab@openhab:~$ ssh -p 8101 openhab@localhost
 Password authentication
 Password:
 
