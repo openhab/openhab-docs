@@ -393,7 +393,7 @@ Simply download the kar files (the latest builds can be found [here](https://ope
 #### Upgrade, Backup and Restore
 
 To stay up to date with new releases, you should do regular upgrades of your manual installation.
-This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://openhab.jfrog.io/openhab/webapp/#/builds/openHAB-Distribution).
 
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
@@ -490,6 +490,12 @@ Additional groups may be needed, depending on your hardware and software setup.
 ```shell
 sudo adduser openhab dialout
 sudo adduser openhab tty
+```
+
+If you are looking to enable sound privileges for openHAB, it will also be necessary to add openHAB to the "audio" group.
+
+```shell
+sudo adduser openhab audio
 ```
 
 Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.

@@ -16,7 +16,7 @@ The definition of sitemaps happens declaratively in a file with a clear syntax, 
 A sitemap definition file is stored in the folder `<openhab_config>/sitemaps` and has to have the `.sitemap` filename extension.
 For easy editing, the [openHAB Designer]({{base}}/installation/designer.html) brings full IDE support for these files.
 
-The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/openhab-demo-resources/src/main/resources/sitemaps/demo.sitemap), which should let you easily understand possible elements and structures.
+The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap), which should let you easily understand possible elements and structures.
 It is recommended to use the `demo.sitemap` or another example sitemap as a starting point towards building a customized sitemap that fits your personal home setup.
 
 The following example illustrates what a typical sitemap definition might look like:
