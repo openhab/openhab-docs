@@ -21,7 +21,7 @@ When started as a service, the console can be reached via local SSH.
 
 To reach the console using SSH, use the following command to connect to the localhost interface, TCP port 8101 from the machine running openHAB.
 
-`ssh openhab@localhost -p 8101`
+`ssh -p 8101 openhab@localhost`
 
 The default username/password is **openhab/habopen**.
 
@@ -43,7 +43,8 @@ Password:
  / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
 / /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
 \____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
-    /_/                        2.0.0-SNAPSHOT
+    /_/                        2.0.0
+                               Release Build
 
 Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
