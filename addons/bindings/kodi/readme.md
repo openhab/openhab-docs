@@ -72,7 +72,7 @@ The Kodi thing supports the following channels:
 | mute                    | Switch       | Mute/unmute your playback |
 | volume                  | Dimmer       | Read or control the volume of your playback |
 | control                 | Player       | Control the Kodi player, e.g.  `PLAY`, `PAUSE`, `NEXT`, `PREVIOUS`, `FASTFORWARD`, `REWIND` |
-| stop                    | Switch       | Stops the Kodi player |
+| stop                    | Switch       | Write `ON` to this channel: Stops the Kodi player. If this channel is `ON`, the player is stopped, otherwise kodi is in another state (see control channel) |
 | title                   | String       | Title of the currently played song/movie/tv episode |
 | showtitle               | String       | Title of the currently played tv-show; empty for other types |
 | album                   | String       | Album name of the currently played song |
@@ -113,20 +113,20 @@ demo.sitemap
 sitemap demo label="myKodi"
 {
     Frame label="myKodi" {
-        Switch    item=HTPC_mute
-        Slider    item=HTPC_volume
-        Selection item=HTPC_control mappings=[PLAY='Play', PAUSE='Pause', NEXT='Next', PREVIOUSE'Previous', FFWARD='Fastforward', REWIND='Rewind']
-        Switch    item=HTPC_stop
-        Text      item=HTPC_title
-        Text      item=HTPC_showtitle
-        Text      item=HTPC_album
-        Text      item=HTPC_artist
-        Text      item=HTPC_playuri
-        Text      item=HTPC_notification
-        Text      item=HTPC_input
-        Text      item=HTPC_inputtext
-        Text      item=HTPC_systemcommand
-        Text      item=HTPC_mediatype
+        Switch    item=myKodi_mute
+        Slider    item=myKodi_volume
+        Selection item=myKodi_control mappings=[PLAY='Play', PAUSE='Pause', NEXT='Next', PREVIOUSE'Previous', FFWARD='Fastforward', REWIND='Rewind']
+        Switch    item=myKodi_stop
+        Text      item=myKodi_title
+        Text      item=myKodi_showtitle
+        Text      item=myKodi_album
+        Text      item=myKodi_artist
+        Text      item=myKodi_playuri
+        Text      item=myKodi_notification
+        Text      item=myKodi_input
+        Text      item=myKodi_inputtext
+        Selection item=myKodi_systemcommand mappings=[Shutdown='Herunterfahren', Suspend='Bereitschaft', Reboot='Neustart']
+        Text      item=myKodi_mediatype
     }
 }
 ```

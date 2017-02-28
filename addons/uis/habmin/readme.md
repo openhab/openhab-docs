@@ -1,6 +1,6 @@
 ---
 layout: documentation
-title: habmin - UI
+title: HABmin - UI
 source: external
 ---
 
@@ -8,17 +8,13 @@ source: external
 
 {% include base.html %}
 
-HABmin
-======
+# HABmin
 
-HABmin is a modern, professional and portable user interface for openHAB,
-providing both user and administrative functions (eg sitemaps for users, and configuration utilities
-to aid setup). 
+HABmin is a modern, professional and portable user interface for openHAB, providing both user and administrative functions (e.g., sitemaps for users, and configuration utilities to aid setup). 
 
-Features
-========
+## Features
 
-* **Responsive**. Should work well on all devices. Of course some functions may be removed or be difficult to use on small devices (eg the graphical rule editor).
+* **Responsive**. Should work well on all devices. Of course some functions may be removed or be difficult to use on small devices (e.g., the graphical rule editor).
 * **Theme-able**. Multiple themes are available - take your pick (currently 3 themes). If you want a different look, we're using [bootswatch](http://www.bootswatch.com) themes - vote for your favourite by [raising an issue](https://github.com/openhab/org.openhab.ui.habmin/issues/new).
 * **Charting**. Modern, fast charting of historical data.
 * **Graphical rule editor**. No need to learn rule syntax.
@@ -26,8 +22,7 @@ Features
 * Available as native app for **Android**.
 
 
-Screenshots
-===========
+## Screenshots
 
 The following images show a selection of screenshots. Note that the theme is user selectable, although most images are shown with a dark (*slate*) theme (except the mobile sitemap image).
 

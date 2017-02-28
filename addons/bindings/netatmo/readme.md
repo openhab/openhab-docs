@@ -1,6 +1,10 @@
 ---
 layout: documentation
+title: Netatmo - Bindings
+source: external
 ---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
@@ -83,9 +87,11 @@ Number Netatmo_Indoor_CO2 "CO2" <carbondioxide> { channel = "netatmo:NAMain:home
 **Supported types for the indoor module:**
 
 * Temperature
+* TemperatureTrend
 * Humidity
 * Co2
 * Pressure
+* PressureTrend
 * AbsolutePressure
 * Noise
 * WifiStatus
@@ -109,6 +115,7 @@ Number Netatmo_Outdoor_Temperature "Temperature" { channel = "netatmo:NAModule1:
 **Supported types for the outdoor module:**
 
 * Temperature
+* TemperatureTrend
 * Humidity
 * RfStatus
 * BatteryVP
@@ -154,6 +161,8 @@ Number Netatmo_Rain_Current "Rain [%.1f mm]" { channel = "netatmo:NAModule3:home
 **Supported types for the rain guage:**
 
 * Rain
+* Rain1
+* Rain24
 * RfStatus
 * BatteryVP
 * LastMessage

@@ -1,6 +1,10 @@
 ---
 layout: documentation
+title: Miele@home - Bindings
+source: external
 ---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 {% include base.html %}
 
