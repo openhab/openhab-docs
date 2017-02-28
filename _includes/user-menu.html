@@ -83,8 +83,8 @@
         <ul>
           <li><a href="{{docu}}/addons/voice.html">Overview</a></li>
           <hr />
-          {% for voice in site.data.voice %}
-          <li><a href="{{docu}}/addons/voice/{{ voice.id }}/readme.html">{{ voice.label }}</a></li>
+          {% for voice in site.voice %}
+          <li><a href="{{ voice.url }}">{{ voice.label }}</a></li>
           {% endfor %}
         </ul>
       </li>

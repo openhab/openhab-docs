@@ -20,5 +20,9 @@ git checkout master
 git pull
 git submodule update --recursive --remote
 
+cd ../openhab-distro
+git checkout master
+git pull
+
 cd ../..
 mvn clean package

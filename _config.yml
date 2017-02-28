@@ -7,8 +7,81 @@ twitter_username: openhab
 github_username:  openhab
 # Build settings
 markdown: kramdown
-exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md"]
+exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.groovy"]
 # Additional gems for sitemap generation
 gems:
   - jekyll-sitemap
-  
+collections:
+  actions:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  bindings:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  iconsets:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  io:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  persistence:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  transformations:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  uis:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+  voice:
+    output: true
+    permalink: /addons/:collection/:path:output_ext
+defaults:
+  -
+    scope:
+      path: ""
+      type: actions
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: bindings
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: iconsets
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: io
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: persistence
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: transformations
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: uis
+    values:
+      layout: documentation
+  -
+    scope:
+      path: ""
+      type: voice
+    values:
+      layout: documentation

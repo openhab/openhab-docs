@@ -4,7 +4,7 @@ layout: documentation
 
 {% include base.html %}
 
-## Add-ons
+# Add-ons
 
 All add-ons for openHAB 2 are part of the distribution.
 This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible.

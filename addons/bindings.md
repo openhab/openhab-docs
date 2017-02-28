@@ -15,7 +15,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       <td width="20%">
         <p>
           <input type="checkbox" class="filled-in" id="oh2-checkbox" checked="checked" />
-          <label for="oh2-checkbox"><img src="{{base}}/images/tag-oh2.svg"></label>
+          <label for="oh2-checkbox"><img src="{{base}}/images/tag-since-2x.svg"></label>
         </p>
       </td>
       <td>
@@ -30,7 +30,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       <td>
         <p>
           <input type="checkbox" class="filled-in" id="oh1-checkbox" checked="checked" />
-          <label for="oh1-checkbox"><img src="{{base}}/images/tag-oh1.svg"></label>
+          <label for="oh1-checkbox"><img src="{{base}}/images/tag-since-1x.svg"></label>
         </p>
       </td>
       <td>
@@ -65,7 +65,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       <td>
         <p>
         Many openHAB 1 bindings have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
-        All openHAB 1 addons can be downloaded in a <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">zip file</a>.
+        All openHAB 1 addons can be downloaded in a zip file <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">(1.9.0)</a>.
         We need your help testing them so that they may be easily installed in a future distribution.
         Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
         also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
@@ -75,12 +75,6 @@ Bindings connect your smart home's devices and technologies to openHAB.
   </tbody>
 </table>
 
-{% assign bindings = "" | split: "|" %}
-{% for addon in site.data.addons %}{% if addon.type == "binding" %}{% assign bindings = bindings | push: addon %}{% endif %}{% endfor %}
-{% assign sorted_bindings = bindings | sort: "id" %}
-{% assign oh1addons = site.data.oh1addons %}
-{% assign legacyaddons = site.data.legacyaddons %}
-
 <table id="bindings-overview" class="bordered addon-table">
   <thead>
     <tr>
@@ -89,27 +83,11 @@ Bindings connect your smart home's devices and technologies to openHAB.
     </tr>
   </thead>
   <tbody>
-    {% for binding in sorted_bindings %}
-        {% assign install = "auto" %}
-        {% if binding.source == "oh1" %}
-          {% assign install = "manual" %}
-          {% for oh1addon in oh1addons %}
-            {% if oh1addon.category == "binding" and oh1addon.id contains binding.id %}
-        	  {% assign install = "auto" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-          {% for legacyaddon in legacyaddons %}
-            {% if legacyaddon.category == "binding" and legacyaddon.id contains binding.id %}
-        	  {% assign install = "legacy" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-        {% endif %}
-        <tr class="install-{{install}} source-{{binding.source}}">
+    {% for binding in site.bindings %}
+        <tr class="install-{{binding.install}} since-{{binding.since}}">
           <td>
-            <h4><a href="{{base}}/addons/bindings/{{binding.id}}{% if binding.source == 'oh1' %}1{% endif %}/readme.html">{% if binding.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{binding.id}}.png" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
-            <img src="{{base}}/images/tag-{{binding.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
+            <h4><a href="{{binding.url}}">{% if binding.logo %}<img class="logo" src="{{base}}/{{binding.logo}}" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
+            <img src="{{base}}/images/tag-since-{{binding.since}}.svg"> <img src="{{base}}/images/tag-install-{{binding.install}}.svg">
           </td>
           <td>{{ binding.description | markdownify }}</td>
         </tr>

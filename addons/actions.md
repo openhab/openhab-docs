@@ -32,12 +32,6 @@ They are automatically imported and can be used to execute openHAB-specific oper
   </tbody>
 </table>
 
-{% assign actions = "" | split: "|" %}
-{% for addon in site.data.addons %}{% if addon.type == "action" %}{% assign actions = actions | push: addon %}{% endif %}{% endfor %}
-{% assign sorted_actions = actions | sort: "id" %}
-{% assign oh1addons = site.data.oh1addons %}
-{% assign legacyaddons = site.data.legacyaddons %}
-
 <table id="actions-overview" class="bordered addon-table">
   <thead>
     <tr>
@@ -46,27 +40,11 @@ They are automatically imported and can be used to execute openHAB-specific oper
     </tr>
   </thead>
   <tbody>
-    {% for action in sorted_actions %}
-        {% assign install = "auto" %}
-        {% if action.source == "oh1" %}
-          {% assign install = "manual" %}
-          {% for oh1addon in oh1addons %}
-            {% if oh1addon.category == "action" and oh1addon.id contains action.id %}
-        	  {% assign install = "auto" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-          {% for legacyaddon in legacyaddons %}
-            {% if legacyaddon.category == "action" and legacyaddon.id contains action.id %}
-        	  {% assign install = "legacy" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-        {% endif %}
-        <tr class="install-{{install}} source-{{action.source}}">
+    {% for action in site.actions %}
+        <tr class="install-{{action.install}} since-{{action.since}}">
           <td>
-            <h4><a href="{{base}}/addons/actions/{{action.id}}/readme.html">{% if action.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{action.id}}.png" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>
-            <img src="{{base}}/images/tag-{{action.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
+            <h4><a href="{{action.url}}">{% if action.logo %}<img class="logo" src="{{base}}/{{action.logo}}" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>
+            <img src="{{base}}/images/tag-since-{{action.since}}.svg"> <img src="{{base}}/images/tag-install-{{action.install}}.svg">
           </td>
           <td>{{ action.description | markdownify }}</td>
         </tr>

@@ -18,25 +18,25 @@
 		<configuration>
 		  <filesets>
 			<fileset>
-			  <directory>${basedir}/addons/actions/</directory>
+			  <directory>${basedir}/_actions/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/bindings/</directory>
+			  <directory>${basedir}/_bindings/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/persistence/</directory>
+			  <directory>${basedir}/_persistence/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/voice/</directory>
+			  <directory>${basedir}/_voice/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/uis/</directory>
+			  <directory>${basedir}/_uis/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/io/</directory>
+			  <directory>${basedir}/_io/</directory>
 			</fileset>
 			<fileset>
-			  <directory>${basedir}/addons/iconsets/</directory>
+			  <directory>${basedir}/_iconsets/</directory>
 			</fileset>
 			<fileset>
 			  <directory>${basedir}/concepts/</directory>
@@ -79,7 +79,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/bindings/oh1</outputDirectory>
+			  <outputDirectory>${basedir}/_bindings/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/binding</directory>
@@ -99,7 +99,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/actions/oh1</outputDirectory>
+			  <outputDirectory>${basedir}/_actions/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/action</directory>
@@ -119,7 +119,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/persistence/oh1</outputDirectory>
+			  <outputDirectory>${basedir}/_persistence/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/persistence</directory>
@@ -139,7 +139,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/bindings/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_bindings/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab2-addons/addons/binding</directory>
@@ -167,7 +167,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/bindings/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_bindings/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
@@ -187,7 +187,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/iconsets/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_iconsets/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
@@ -206,7 +206,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/uis/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_uis/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
@@ -237,7 +237,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/voice/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_voice/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
@@ -265,7 +265,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/io/oh1</outputDirectory>
+			  <outputDirectory>${basedir}/_io/oh1</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab/bundles/io</directory>
@@ -288,7 +288,7 @@
 			  <goal>copy-resources</goal>
 			</goals>
 			<configuration>
-			  <outputDirectory>${basedir}/addons/io/oh2</outputDirectory>
+			  <outputDirectory>${basedir}/_io/oh2</outputDirectory>
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
@@ -315,43 +315,6 @@
 			</goals>
 			<configuration>
 			  <source>${project.basedir}/process_addons.groovy</source>
-			</configuration>
-		  </execution>
-		  <execution>
-			<id>process-openhab1-features</id>
-			<phase>process-resources</phase>
-			<goals>
-			  <goal>execute</goal>
-			</goals>
-			<configuration>
-			  <source>
-				def feature = new File(project.basedir, '_repos/openhab/features/openhab-addons/src/main/feature/feature.xml')
-				def addonList = new File(project.basedir, '_data/oh1addons.csv')
-				addonList.write("category,id,label\n")
-
-				def root = new XmlParser().parse(feature)
-				root.feature.each {
-				  def name = it['@name'].substring(8)
-				  def category = name.substring(0,name.indexOf('-'))
-				  def id = name.substring(name.indexOf('-') + 1)
-				  def label = it['@description']
-				  if(category!='io' &amp;&amp; category!='transport')
-					addonList.append(category + ',' + id + ',' + label + '\n')
-				}
-				feature = new File(project.basedir, '_repos/openhab/features/openhab-addons-legacy/src/main/feature/feature.xml')
-				addonList = new File(project.basedir, '_data/legacyaddons.csv')
-				addonList.write("category,id,label\n")
-
-				root = new XmlParser().parse(feature)
-				root.feature.each {
-				  def name = it['@name'].substring(8)
-				  def category = name.substring(0,name.indexOf('-'))
-				  def id = name.substring(name.indexOf('-') + 1)
-				  def label = it['@description']
-				  if(category!='io' &amp;&amp; category!='transport')
-					addonList.append(category + ',' + id + ',' + label + '\n')
-				}
-			  </source>
 			</configuration>
 		  </execution>
 		</executions>
