@@ -16,28 +16,41 @@ The console offers the option to:
 ## Accessing the Console
 
 Accessing the console depends on how openHAB was started.
-When started manually using shell or batch script, openHAB naturally transitions directly to the console.
-When started as a service, the console can be reached via local SSH.  
+* When started in interactive mode using the provided command line scripts, openHAB naturally transitions directly to the console prompt.
+* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.
+In both cases the console can be reached via Secure Shell connection (SSH).
 
-To reach the console using SSH, use the following command to connect to the localhost interface, TCP port 8101 from the machine running openHAB.
+To reach the console using SSH, use the following command to connect to the localhost interface, TCP port 8101.
 
-`ssh -p 8101 openhab@localhost`
+`ssh -p 8101 openhab@localhost`  
+(Note that, by default, this will only work from the machine running openHAB.
+To change this, see [Bind Console to All Interfaces](bind-console-to-all-interfaces).)
 
-The default username/password is **openhab/habopen**.
+A security warning is expected upon the first connection:
 
-The first connection attempt triggers generation of the Karaf remote console key and will take a few seconds longer than subsequent attempts.
+```
+The authenticity of host '[localhost]:8101 ([127.0.0.1]:8101)' can't be established.
+RSA key fingerprint is SHA256:XjQxBPit+K5m3HuSsEUI/842NTCxLTu3EMGGBuQKNVg.
+Are you sure you want to continue connecting (yes/no)?
+```
+
+Enter `yes` to proceed.
+
+```
+Warning: Permanently added '[localhost]:8101' (RSA) to the list of known hosts.
+Password authentication
+Password:
+```
+
+The default username/password is **openhab/habopen**, so enter `habopen` here.
+
+The first successful connection triggers generation of the Karaf remote console key and will take a few seconds longer than subsequent attempts.
 On slower systems, such as Raspberry Pi or Pine64, SSH may even time out.
 If this happens, simply try connecting again until successful.
 
-By default, the console can only be reached from the machine running openHAB.
-To change this, see [Bind Console to All Interfaces](bind-console-to-all-interfaces).
+When successful, the console will appear:
 
-Here's an example of a successful SSH connection to console: 
 ```
-openhab@openhab:~$ ssh -p 8101 openhab@localhost
-Password authentication
-Password:
-
                           __  _____    ____
   ____  ____  ___  ____  / / / /   |  / __ )
  / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
@@ -50,7 +63,7 @@ Hit '<tab>' for a list of available commands
 and '[cmd] --help' for help on a specific command.
 Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 
-openhab>
+openhab> 
 ```
 
 ## Using the Console
