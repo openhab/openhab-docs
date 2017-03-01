@@ -100,19 +100,91 @@ The session is ended by using the logout command:
 openhab> logout
 ```
 
-## Bind Console to all Interfaces
+## Modifying the Console Settings
 
-By default openHAB binds its shell to localhost only due to obvious security reasons.
-If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address in the configuration file `org.apache.karaf.shell.cfg` under the openHAB `<userdata>/etc` path.
-Replace the `sshHost` IP "127.0.0.1" by "0.0.0.0" to bind to all available network interfaces.
-Please be aware, that the console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path).
-You should thereby change the default password.
+Changing the console password, interface, and port is described here.
 
-The above can be accomplished by the following Linux shell command (on an apt/deb-based installation, you might need to adapt the path for other installations):
+### Console Settings Files and Directories
+
+The pertinent files controlling console settings are:
+
+| File                       | Purpose                        |
+|----------------------------|--------------------------------|
+| org.apache.karaf.shell.cfg | Controls most console settings |
+| users.properties           | Stores console password        |
+
+The locations of these files will vary based on your platform and installation method.
+
+| Platform / Install Method | Settings File Directory                   |
+|---------------------------|-------------------------------------------|
+| Linux Package Install     | /var/lib/openhab2/etc/                    |
+| Linux Manual Install      | /opt/openhab2/userdata/etc/               |
+| Synology NAS              | /volume1/@appstore/openHAB2/userdata/etc/ |
+
+### Change the Password
+
+The password is contained in the **users.properties** file, located in one of the [directories above](#console-settings-files-and-directories).
+By default, line with the password contains the text `openhab = `, followed by the current password or password hash.
+
+#### Prior to Logging In
+
+Before logging in to the console for the first time, the default password is stored in cleartext.
+
+`openhab = habopen`, where `habopen` is the password.
+
+To change it, edit the file manually, replacing `habopen` with your new password.
+Alternately, run the following Linux shell command, which will perform the replacement for you.
+Substitute `securePassword` with your new password.
+Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
+
+`sudo sed -i -e "s/openhab = habopen/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties`
+
+#### After Logging In
+
+While logging in to the console for the first time, a unique cryptographic password hash replaces the previous cleartext password in the file.
 
 ```
-sudo sed -i -e "s/sshHost = 127.0.0.1/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
-sudo sed -i -e "s/openhab = habopen/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties
+openhab = {CRYPT}4AE1A0FD056BC0FD8231899EC4B2F9CA06AF0DEC895B2A3B0323F6FBC1C99776{CRYPT}
+```
+
+To change it, edit the file manually, replacing everything the `{CRYPT}` markers and everything between them with your new password.
+Alternately, run the following Linux shell command, which will perform the replacement for you.
+Substitute `securePassword` with your new password.
+Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
+
+```
+sed -i "s/openhab = .*,/openhab = securePassword,/g" /var/lib/openhab2/etc/users.properties
+```
+
+### Bind Console to All Interfaces
+
+The interface binding configuration is in the **org.apache.karaf.shell.cfg** file, located in one of the [directories above](#console-settings-files-and-directories).
+The `sshHost` entry controls the interface address to bind to.
+`sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
+If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
+Replace the `sshHost` IP `127.0.0.1` by `0.0.0.0` to bind to all available network interfaces.
+Please be aware, that the console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path).
+You should thereby [change the password][#change-the-password].
+
+The above can be accomplished by the following Linux shell command.
+Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
+
+```
+sudo sed -i -e "s/sshHost = .*/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
+```
+
+### Change the Port Number
+
+The SSH port configuration is in the **org.apache.karaf.shell.cfg** file, located in one of the [directories above](#console-settings-files-and-directories).
+The `sshPort` entry controls the port number.
+`sshPort = 8101` is the default, but can be changed to any available port with a text editor.
+
+Alternately, run the following Linux shell command, which will perform the replacement for you.
+Substitute `newPort` with your desired port number.
+Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
+
+```
+sudo sed -i -e "s/sshPort = .*/sshPort = newPort/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
 ```
 
 -----
