@@ -30,7 +30,7 @@ On slower systems, such as Raspberry Pi or Pine64, SSH may even time out.
 If this happens, simply try connecting again until successful.
 
 By default, the console can only be reached from the machine running openHAB.
-To change this, see "Bind Console to All Interfaces," below.
+To change this, see [Bind Console to All Interfaces](bind-console-to-all-interfaces).
 
 Here's an example of a successful SSH connection to console: 
 ```
