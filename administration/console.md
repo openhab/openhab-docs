@@ -18,8 +18,9 @@ The console offers the option to:
 The method to access the console depends on how openHAB was started.
 
 * When started in interactive mode using the provided command line scripts, openHAB naturally transitions directly to the console prompt.
-* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.  
-In both cases the console can be reached via Secure Shell connection (SSH).
+* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.
+
+In both cases, the console can be reached via Secure Shell connection (SSH).
 
 To reach the console using SSH, use the following command to connect to the localhost interface on TCP port 8101.
 
@@ -138,7 +139,7 @@ The locations of these files will vary based on your platform and installation m
 ### Changing the Password
 
 The password is contained in the **users.properties** file, located in one of the [directories above](#console-settings-files-and-directories).
-By default, line with the password contains the text `openhab = `, followed by the current password or password hash.
+By default, the line with the password contains the text `openhab = `, followed by the current password or password hash.
 
 #### ...Prior to Logging In
 
@@ -163,7 +164,7 @@ While logging in to the console for the first time, a unique cryptographic passw
 openhab = {CRYPT}4AE1A0FD056BC0FD8231899EC4B2F9CA06AF0DEC895B2A3B0323F6FBC1C99776{CRYPT}
 ```
 
-To change it, edit the file manually, replacing everything the `{CRYPT}` markers and everything between them with your new password.
+To change it, edit the file manually, replacing the `{CRYPT}` markers and everything between them with your new password.
 Alternately, run the following Linux shell command, which will perform the replacement for you.
 Substitute `securePassword` with your new password.
 Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
@@ -180,7 +181,7 @@ The `sshHost` entry controls the interface address to bind to.
 If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
 Replace the `sshHost` IP `127.0.0.1` by `0.0.0.0` to bind to all available network interfaces.
 Please be aware, that the console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path).
-You should thereby [change the password](#change-the-password).
+You should thereby [change the password](#changing-the-password).
 
 The above can be accomplished by the following Linux shell command.
 Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
