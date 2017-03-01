@@ -15,16 +15,17 @@ The console offers the option to:
 
 ## Accessing the Console
 
-Accessing the console depends on how openHAB was started.
+The method to access the console depends on how openHAB was started.
+
 * When started in interactive mode using the provided command line scripts, openHAB naturally transitions directly to the console prompt.
-* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.
+* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.  
 In both cases the console can be reached via Secure Shell connection (SSH).
 
-To reach the console using SSH, use the following command to connect to the localhost interface, TCP port 8101.
+To reach the console using SSH, use the following command to connect to the localhost interface on TCP port 8101.
 
 `ssh -p 8101 openhab@localhost`  
 (Note that, by default, this will only work from the machine running openHAB.
-To change this, see [Bind Console to All Interfaces](bind-console-to-all-interfaces).)
+To change this, see [Bind Console to All Interfaces](#bind-console-to-all-interfaces).)
 
 A security warning is expected upon the first connection:
 
@@ -42,7 +43,7 @@ Password authentication
 Password:
 ```
 
-The default username/password is **openhab/habopen**, so enter `habopen` here.
+The default username/password is **openhab/habopen**, so enter `habopen` at the password prompt.
 
 The first successful connection triggers generation of the Karaf remote console key and will take a few seconds longer than subsequent attempts.
 On slower systems, such as Raspberry Pi or Pine64, SSH may even time out.
@@ -126,7 +127,7 @@ The pertinent files controlling console settings are:
 | org.apache.karaf.shell.cfg | Controls most console settings |
 | users.properties           | Stores console password        |
 
-The locations of these files will vary based on your platform and installation method.
+The locations of these files will vary based on your platform and installation method:
 
 | Platform / Install Method | Settings File Directory                   |
 |---------------------------|-------------------------------------------|
@@ -134,14 +135,14 @@ The locations of these files will vary based on your platform and installation m
 | Linux Manual Install      | /opt/openhab2/userdata/etc/               |
 | Synology NAS              | /volume1/@appstore/openHAB2/userdata/etc/ |
 
-### Change the Password
+### Changing the Password
 
 The password is contained in the **users.properties** file, located in one of the [directories above](#console-settings-files-and-directories).
 By default, line with the password contains the text `openhab = `, followed by the current password or password hash.
 
-#### Prior to Logging In
+#### ...Prior to Logging In
 
-Before logging in to the console for the first time, the default password is stored in cleartext.
+Before logging in to the console for the first time, the default console user/password is stored in cleartext.
 
 `openhab = habopen`, where `habopen` is the password.
 
@@ -150,9 +151,11 @@ Alternately, run the following Linux shell command, which will perform the repla
 Substitute `securePassword` with your new password.
 Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
 
-`sudo sed -i -e "s/openhab = habopen/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties`
+```
+sudo sed -i -e "s/openhab = habopen/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties
+```
 
-#### After Logging In
+#### ...After Logging In
 
 While logging in to the console for the first time, a unique cryptographic password hash replaces the previous cleartext password in the file.
 
@@ -177,7 +180,7 @@ The `sshHost` entry controls the interface address to bind to.
 If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
 Replace the `sshHost` IP `127.0.0.1` by `0.0.0.0` to bind to all available network interfaces.
 Please be aware, that the console will now be accessible from all devices and is only secured by the password defined in `users.properties` (same path).
-You should thereby [change the password][#change-the-password].
+You should thereby [change the password](#change-the-password).
 
 The above can be accomplished by the following Linux shell command.
 Depending on your system, you may have to substitute [another directory](#console-settings-files-and-directories) at the end of the command.
