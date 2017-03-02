@@ -1,9 +1,9 @@
 ---
 id: habpanel
-label: Configuration
-title: Configuration - UI
+label: HABPanel
+title: HABPanel - UI
 type: ui
-description: "Unlike Basic UI and other interfaces, HABPanel doesn't use pre-configured sitemaps."
+description: "HABPanel is a lightweight dashboard interface for openHAB."
 since: 2x
 install: auto
 ---
@@ -12,8 +12,7 @@ install: auto
 
 {% include base.html %}
 
-HABPanel
-========
+# HABPanel
 
 HABPanel is a lightweight dashboard interface for openHAB.
 
