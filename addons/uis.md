@@ -1,5 +1,6 @@
 ---
 layout: documentation
+title: User Interfaces
 ---
 
 {% include base.html %}

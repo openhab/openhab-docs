@@ -57,17 +57,18 @@
     <ul>
       <li><a href="{{docu}}/addons/index.html">Overview</a></li>
       <hr />
-      <li><a href="{{docu}}/addons/bindings.html">Bindings</a></li>
+      <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
+        </ul>
+      </li>
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
         <ul>
           <li><a href="{{docu}}/addons/uis.html">Overview</a></li>
           <hr />
-          <li><a href="{{docu}}/addons/uis/paper/readme.html">Paper UI</a></li>
-          <li><a href="{{docu}}/addons/uis/habmin/readme.html">HABmin</a></li>
-          <hr />
-          <li><a href="{{docu}}/addons/uis/basic/readme.html">Basic UI</a></li>
-          <li><a href="{{docu}}/addons/uis/habpanel/readme.html">HABPanel</a></li>
-          <li><a href="{{docu}}/addons/uis/classic/readme.html">Classic UI</a></li>
+          {% for ui in site.uis %}
+          <li><a href="{{ ui.url }}">{{ ui.label }}</a></li>
+          {% endfor %}
           <hr />
           <li><a href="{{docu}}/addons/uis/apps/android.html">Android openHAB App</a></li>
           <li><a href="{{docu}}/addons/uis/apps/ios.html">iOS openHAB App</a></li>
@@ -76,20 +77,47 @@
           <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
         </ul>
       </li>
-      <li><a href="{{docu}}/addons/persistence.html">Persistence</a></li>
-      <li><a href="{{docu}}/addons/actions.html">Actions</a></li>
+      <li><a href="{{docu}}/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="{{docu}}/addons/persistence.html">Overview</a></li>
+          <hr />
+          {% for persistence in site.persistence %}
+          <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="{{docu}}/addons/actions.html">Overview</a></li>
+          <hr />
+          {% for action in site.actions %}
+          <li><a href="{{ action.url }}">{{ action.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
       <li><a href="{{docu}}/addons/transformations.html">Transformations</a></li>
       <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
         <ul>
           <li><a href="{{docu}}/addons/voice.html">Overview</a></li>
           <hr />
-          {% for voice in site.data.voice %}
-          <li><a href="{{docu}}/addons/voice/{{ voice.id }}/readme.html">{{ voice.label }}</a></li>
+          {% for voice in site.voice %}
+          <li><a href="{{ voice.url }}">{{ voice.label }}</a></li>
           {% endfor %}
         </ul>
       </li>
       <hr />
-      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a></li>
+      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="{{docu}}/addons/io.html">Overview</a></li>
+          <hr />
+          {% for io in site.io %}
+          <li><a href="{{ io.url }}">{{ io.label }}</a></li>
+          {% endfor %}
+          <hr />
+          <li><a href="{{base}}/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
     </ul>
   </li>
   <li><a href="{{docu}}/administration/index.html">Advanced Functionality</a>

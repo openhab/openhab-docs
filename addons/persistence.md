@@ -31,12 +31,6 @@ Persistence services enable the storage of item states over time.
   </tbody>
 </table>
 
-{% assign persists = "" | split: "|" %}
-{% for addon in site.data.addons %}{% if addon.type == "persistence" %}{% assign persists = persists | push: addon %}{% endif %}{% endfor %}
-{% assign sorted_persists = persists | sort: "id" %}
-{% assign oh1addons = site.data.oh1addons %}
-{% assign legacyaddons = site.data.legacyaddons %}
-
 <table id="persistence-overview" class="bordered addon-table">
   <thead>
     <tr>
@@ -45,29 +39,13 @@ Persistence services enable the storage of item states over time.
     </tr>
   </thead>
   <tbody>
-    {% for persist in sorted_persists %}
-        {% assign install = "auto" %}
-        {% if persist.source == "oh1" %}
-          {% assign install = "manual" %}
-          {% for oh1addon in oh1addons %}
-            {% if oh1addon.category == "persistence" and oh1addon.id contains persist.id %}
-        	  {% assign install = "auto" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-          {% for legacyaddon in legacyaddons %}
-            {% if legacyaddon.category == "persistence" and legacyaddon.id contains persist.id %}
-        	  {% assign install = "legacy" %}
-        	  {% break %}
-        	{% endif %}
-          {% endfor %}
-        {% endif %}
-        <tr class="install-{{install}} source-{{persist.source}}">
+    {% for persistence in site.persistence %}
+        <tr class="install-{{persistence.install}} since-{{persistence.since}}">
           <td>
-            <h4><a href="{{base}}/addons/persistence/{{persist.id}}/readme.html">{% if persist.icon == 'true' %}<img class="logo" src="{{base}}/images/addons/{{persist.id}}.png" title="{{ persist.label }}" alt="{{ persist.label }}" />{% else %}{{ persist.label }}{% endif %}</a></h4>
-            <img src="{{base}}/images/tag-{{persist.source}}.svg"> <img src="{{base}}/images/tag-install-{{install}}.svg">
+            <h4><a href="{{persistence.url}}">{% if persistence.logo %}<img class="logo" src="{{base}}/{{persistence.logo}}" title="{{ persistence.label }}" alt="{{ persistence.label }}" />{% else %}{{ persistence.label }}{% endif %}</a></h4>
+            <img src="{{base}}/images/tag-since-{{persistence.since}}.svg"> <img src="{{base}}/images/tag-install-{{persistence.install}}.svg">
           </td>
-          <td>{{ persist.description | markdownify }}</td>
+          <td>{{ persistence.description | markdownify }}</td>
         </tr>
     {% endfor %}
  </tbody>
