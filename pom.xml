@@ -27,6 +27,9 @@
 			  <directory>${basedir}/_persistence/</directory>
 			</fileset>
 			<fileset>
+			  <directory>${basedir}/_transformations/</directory>
+			</fileset>
+			<fileset>
 			  <directory>${basedir}/_voice/</directory>
 			</fileset>
 			<fileset>
@@ -171,6 +174,26 @@
 			  <resources>
 				<resource>
 				  <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
+				  <includes>
+					<include>**/README.md</include>
+					<include>**/doc/**</include>
+					<include>**/cfg/**</include>
+				  </includes>
+				</resource>
+			  </resources>
+			</configuration>
+		  </execution>
+		  <execution>
+			<id>copy-esh-transform-docs</id>
+			<phase>process-resources</phase>
+			<goals>
+			  <goal>copy-resources</goal>
+			</goals>
+			<configuration>
+			  <outputDirectory>${basedir}/_transformations/oh2</outputDirectory>
+			  <resources>
+				<resource>
+				  <directory>${basedir}/_repos/smarthome/extensions/transform</directory>
 				  <includes>
 					<include>**/README.md</include>
 					<include>**/doc/**</include>

@@ -99,7 +99,15 @@
           {% endfor %}
         </ul>
       </li>
-      <li><a href="{{docu}}/addons/transformations.html">Transformations</a></li>
+      <li><a href="{{docu}}/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="{{docu}}/addons/transformations.html">Overview</a></li>
+          <hr />
+          {% for transformation in site.transformations %}
+          <li><a href="{{ transformation.url }}">{{ transformation.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
       <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
         <ul>
           <li><a href="{{docu}}/addons/voice.html">Overview</a></li>

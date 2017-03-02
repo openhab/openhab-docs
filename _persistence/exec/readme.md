@@ -5,8 +5,8 @@ title: Exec - Persistence
 type: persistence
 description: "This service allows you to execute commands in the underlying OS to persist item states. It could be used to, for example, call the original `rrdtool` CLI tool."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.exec/README.md
-since: 1x
-install: manual
+since: 2x
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
