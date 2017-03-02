@@ -13,13 +13,8 @@ install: auto
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 # ZWave Binding
+
 The ZWave binding supports an interface to a wireless Z-Wave home automation network. 
 
 ZWave is a wireless home automation protocol with reliable two way communications between nodes. It supports a mesh network where mains powered nodes can route messages between nodes that could otherwise not communicate with each other. The network supports hop distances of up to four hops.

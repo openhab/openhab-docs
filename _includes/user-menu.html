@@ -60,6 +60,10 @@
       <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
         <ul>
           <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
+          <hr />
+          {% for binding in site.bindings %}
+          <li><a href="{{ binding.url }}">{{ binding.label }}</a></li>
+          {% endfor %}
         </ul>
       </li>
       <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
