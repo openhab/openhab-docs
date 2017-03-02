@@ -70,7 +70,10 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     def feature_id = (source == 'oh1' && (type == 'binding' || type == 'io')) ? id + '1' : id
                     def feature = features.find { it.key.startsWith("openhab-${type}-${feature_id}") }?.value
                     if (feature == null) {
-                        feature = features["openhab-misc-${feature_id}"] ?: ['install': 'manual']
+                        feature = features["openhab-misc-${feature_id}"] ?: features["openhab-transformation-${feature_id}"]
+                    }
+                    if (feature == null) {
+                        feature = ['install': 'manual']
                     }
                     front = front + feature
                     def toYaml = { '---\n' + it.collect{ /$it.key: $it.value/ }.join('\n') + '\n---\n\n' }
@@ -87,6 +90,7 @@ def process_addon_files = { features ->
     process_addon_type(features, ['oh1'],      , 'action',      'actions',      ' - Actions',     [' Actions', ' Action'],  ['org.openhab.action.']                                  )
     process_addon_type(features, ['oh1'],      , 'persistence', 'persistence',  ' - Persistence', ['\\s*Persistence\\s*$'], ['org.openhab.persistence.']                             )
     process_addon_type(features, ['oh1', 'oh2'], 'io',          'io',           ' - Services',    [' Service'],             ['org.openhab.io.','org.eclipse.smarthome.io']           )
+    process_addon_type(features,        ['oh2'], 'transform', 'transformations', ' - Transformations', [' Transformation Service'], ['org.eclipse.smarthome.transform.']        )
     process_addon_type(features,        ['oh2'], 'voice',       'voice',        ' - Voice',       [:],                      ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
     process_addon_type(features,        ['oh2'], 'iconset',     'iconsets',     ' - Icon Sets',   [:],                      ['org.eclipse.smarthome.ui.iconset.']                    )
     process_addon_type(features,        ['oh2'], 'ui',          'uis',          ' - UI',          [:],                      ['org.openhab.ui.','org.eclipse.smarthome.ui.']          )
