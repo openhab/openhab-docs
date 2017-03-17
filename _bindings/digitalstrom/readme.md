@@ -13,12 +13,6 @@ install: auto
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 # digitalSTROM Binding
 
   This binding integrates the [digitalSTROM-System](http://www.digitalstrom.de/).

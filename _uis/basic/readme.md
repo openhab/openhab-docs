@@ -12,12 +12,6 @@ install: auto
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 ## Basic UI
 
 The Basic UI is a web interface based on Material Design Lite from Google.

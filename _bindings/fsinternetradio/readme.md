@@ -13,12 +13,6 @@ install: auto
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 # FS Internet Radio Binding
 
 This binding integrates internet radios based on the [Frontier Silicon chipset](http://www.frontier-silicon.com/).

@@ -13,12 +13,6 @@ install: auto
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 # YahooWeather Binding
 
 This binding uses the [Yahoo Weather service](https://developer.yahoo.com/weather/) for providing current weather information.

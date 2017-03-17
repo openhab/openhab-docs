@@ -12,12 +12,6 @@ install: manual
 
 {% include base.html %}
 
----
-layout: documentation
----
-
-{% include base.html %}
-
 # Classic Icon Set
 
 This is a modernized version of the original icon set of openHAB 1.<br/><br/>
