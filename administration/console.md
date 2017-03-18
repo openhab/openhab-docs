@@ -146,11 +146,11 @@ sudo sed -i -e "s/openhab = .*,/openhab = securePassword/g" /var/lib/openhab2/et
 ```
 
 Depending on your system, you may have to [change the directory](#console-settings-files-and-directories) at the end of the command.
-While logging in to the console for the first time, a unique cryptographic password hash replaces the previous clear text password in the file.
+Please restart openHAB for the changes to take effect. The clear text password will be replaced by a unique cryptographic password hash.
 
 ### Bind Console to All Interfaces
 
-The network interface configuration is defined in the file `org.apache.karaf.shell.cfg` file, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
+The network interface configuration is defined in the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
 The `sshHost` entry controls the interface address to bind to.
 `sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
 If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
@@ -167,7 +167,7 @@ sudo sed -i -e "s/sshHost = .*/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.ap
 
 ### Change the Port Number
 
-The SSH port configuration is done through the file `org.apache.karaf.shell.cfg` file, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
+The SSH port configuration is done through the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
 The `sshPort` entry controls the port number.
 `sshPort = 8101` is the default, but can be changed to any available port per your choosing.
 
