@@ -139,6 +139,25 @@ The table below summarises the channels available in the controller. These provi
 
 ### Device Channels
 
+### Device attributes
+
+This section provides a summary of the device attributes that are displayed in the user interface.
+
+####Using Security
+This indicates that the device is currently securely included in the network and that some classes are handled securely. This will only be true if secure inclusion has been successfully completed.
+ 
+#### Routing
+This flag indicates that the device participates in routing. This means that the device is capable of routing messages, and has the resources to maintain a routing table. It doesn’t necessarily mean that the device will act as a router in the mesh network which is not possible for battery devices.
+ 
+#### Listening
+This flag indicates that the device is permanently listening to messages from other devices. This is normally true for mains powered devices, however battery devices do not permanently listen to reduce power consumption. A device that is not permanently listening will experience some latency when the controller wants to send messages to it as it will be mostly sleeping – when it wakes up it will send a WAKEUP message to the controller to alert it that it is able to receive for a few seconds. Note that this doesn’t impact messages from the device which can be sent at any time.
+ 
+#### Frequently Listening
+This flag indicates that the device supports FLiRS and listens for received messages periodically. A FLiRS device will periodically wake into a low power receive mode to listen for a beam signal – this can occur every 200ms, or every 1 second. If the device receives the beam signal during this low power wakeup, it will fully wake up its receiver so that it can receive the incoming message. This is normally used for devices that are battery operated, but need to have near constant communications with the controller and is commonly used on locks.
+ 
+#### Beaming
+Beaming is a related to FLiRS devices and indicates that the device is able to send a beaming signal to wake up a FLiRS device. The last node in a route to a FLiRS device needs to support Beaming to wake up the FLiRS device.
+ 
 
 ## Initialisation
 
