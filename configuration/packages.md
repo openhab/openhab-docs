@@ -77,3 +77,10 @@ This includes:
 - MAP transformation service as this is heavily used by the sample files
 - Sample configurations files `demo.items`, `demo.things`,  `demo.sitemap`, `demo.rules`, `demo.script`, `rrd4j.persist`, `de.map` and `en.map` for use with the MAP transformation
 
+# Changing Initial Package Selection
+
+It is common to have initially selected one package (e.g. Demo or Simple) during installation and to later want to go back and change to another (e.g. Standard). To avoid redoing the installation again from scratch, do the following:
+
+1. Remove the config file `/var/lib/openhab2/etc/org.openhab.addons.cfg` which was first created by your initial package selection 
+2. Specify the new package like you would do if you were doing a headless install (see above) in the file `/etc/openhab2/services/addons.cfg`
+3. Restart openhab
