@@ -141,7 +141,7 @@ A cron expression takes the form of six or optionally seven fields:
 
 for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06).
 
-You may also use [CronMaker](http://www.cronmaker.com/) to generate cron expressions.
+You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
 ### System-based Triggers
 
