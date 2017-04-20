@@ -125,13 +125,11 @@ A good naming schema can be advised.
 The label text has two purposes.
 First, this text is used to display a description of the specific Item (for example, in the Sitemap).
 
-Secondly, the label also includes the value displaying definition for the Item's state.
-This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
+Secondly, the label also includes the value displaying definition for the Item's state. This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
 
 ### State
 
-The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
-The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
+The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more. The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
 
 #### State Formatting
 
@@ -347,40 +345,52 @@ This relation can be exploited in sitemaps or in automation rules.
 #### Group Types
 
 Group Items can also be used to easily determine one or more Items with a defined value or can be used to calculate a value depending on all values within the Group.
-Please note that this can only be used if all Items in the Group have compatible types.
+Please note that this can only be used if all Items in the Group have compatible types (otherwise the calculated state will most likely be `UNDEF`.
+
 The format for this is:
 
 ```xtend
 Group:itemtype:function  itemname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
 ```
 
-By default, if no function is provided to the group, the Group uses OR.
-So for a Group of switches the Group state will be ON if any of the members states are ON.
-But this means that once one Item in the group has its state change to ON, the Group's state gets set.
-Each subsequent Item that changes state to ON will not trigger "myGroup changed" because the Group isn't changing.
+As an example consider a group of switches:
+
+```xtend
+Group:Switch:OR(ON,OFF)  mySwitches
+```
+
+The state of the `mySwitches` group will be ON if any of the members states are ON.
+But this means that once one Item in the group has its state changed to ON, the group's state gets set.
+Each subsequent Item that changes state to ON will not trigger "mySwitches changed" because the group isn't changing.
 
 This is not a bug, it is the expected and designed behavior.
-Because the Group state is an aggregate, every change in the Item members does not necessarily result in a change to the Group's state.
-But, this also means that any single change to a member of the Group will result in multiple updates to the aggregate state of the Group.
+Because the group state is an aggregate, every change in the Item members does not necessarily result in a change to the group's state.
+
+If you omit the type or function definitions for a group the following behavior is used:
+
+If there is a type but no function like in the example below,
+
+```xtend
+Group:Switch  mySwitches
+```
+
+the function `EQUAL` (Equality) will be used.
+
+If you omit the type AND the function the group state will NOT be influcenced by its members, i.e. such a group is only useful for grouping items in GUIs.
 
 Group functions can be any of the following:
 
-| Function             | Description
-|:---------------------|:-----------
-| AND(value1, value2)  | This does a logical 'AND' operation. Only if all Items are of 'value1' this is returned, otherwise the 'value2' is returned.
-| AVG                  | Calculates the numeric average over all Item values of decimal type.
-| MAX                  | This calculates the maximum value of all Item values of decimal type.
-| MIN                  | This calculates the minimum value of all Item values of decimal type.
-| NAND(value1, value2) | This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa.
-| NOR(value1, value2)  | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa.
-| OR(value1, value2)   | Does a logical 'OR' operation. If at least one Item is of 'value1' this is returned, otherwise the 'value2' is returned.
-| SUM                  | Calculates the sum of all Items in the group.
-
-An example of this would be:
-
-```xtend
-Group:Contact:OR(OPEN,CLOSED)  gMotionSensors  (All)
-```
+| Function            | Description
+|:--------------------|:-----------
+| EQUAL               | Default, if no function is specified. (a type for the group MUST be set). If ALL members have state X the group state will be X, otherwise it is UNDEF.
+| AND(value1, value2) | This does a logical 'AND' operation. Only if all items are of 'value1' this is returned, otherwise the 'value2' is returned.
+| AVG                 | Calculates the numeric average over all item values of decimal type.
+| MAX                 | This calculates the maximum value of all item values of decimal type.
+| MIN                 | This calculates the minimum value of all item values of decimal type.
+| NAND(value1, value2)| This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa.
+| NOR(value1, value2) | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa.
+| OR(value1, value2)  | Does a logical 'OR' operation. If at least one item is of 'value1' this is returned, otherwise the 'value2' is returned.
+| SUM                 | Calculates the sum of all items in the group.
 
 ### Tagging
 
