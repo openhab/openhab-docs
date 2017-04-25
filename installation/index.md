@@ -33,7 +33,7 @@ The [Raspberry Pi](rasppi.html) as a minimal sufficient device is quite popular,
 A popular alternative is [our solution for the Synology DiskStation](synology.html), which many users already own in their homes.
 The previously mentioned [openHABian](openhabian.html) can also be used to kickstart your openHAB 2 experience on existing debian/ubuntu based Linux systems.
 
-Please check the menu to the left for for all available options.
+Please check the menu to the left for all available options.
 
 ## Prerequisites
 
@@ -75,11 +75,9 @@ Before you can start, three decisions have to be made:
   - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
   - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on CloudBees](https://openhab.ci.cloudbees.com/job/openHAB-Distribution)).
 
-  Because openHAB 2 is still under development, it is recommended for experienced users to use the latest snapshot.
-
 ## Installation
 
-Please follow the instructions in the installation article matching your platform.
+Please follow the instructions in the installation article matching your platform (see the menu to the left).
 
 ## Additional Steps
 
