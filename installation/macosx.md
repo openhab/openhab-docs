@@ -5,20 +5,15 @@ title: Mac OS X
 
 {% include base.html %}
 
+<!-- Note to authors: If you revise this article, please consider adapting the Markdown style -->
+
 # Installation on Mac OS X
 
-Warnings
-=====
+Please follow these step to get openHAB up and running. You have the choice to use the current stable version or the latest snapshot build.
 
-In this chapter, we have chosen to download the latest nighty build, as openHAB 2 is in a beta phase:
-
-Installing openHAB
-=========
-
-To do this :
-
-* Go to the following site (it contains the latest version) : [https://openhab.ci.cloudbees.com/job/openHAB-Distribution](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
-* Click on the link: `openhab-2.0.0-SNAPSHOT.zip`, to download it in your "download" folder.
+* Download the openHAB distribution as the platform independent `zip` archive, provided at:
+  * Current stable build (recommended): [Download `openhab-2.x.x.zip` here](https://bintray.com/openhab/mvn/openhab-distro/_latestVersion)
+  * Latest snapshot/nightly build: [Download `openhab-2.x.x-SNAPSHOT.zip` here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
 * Open the terminal window.
 * Choose a folder name to host your install. The directory will be created in your home folder. Be aware that the path to this folder, and the name of the folder itself, __must not contain any space character__ in order to prevent this classical cause of crash. The name chosen here is `openHAB`.
 * Use the `ls` command in order to check that your directory does not exists yet.
@@ -80,7 +75,7 @@ Launching the openHAB runtime...
  / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  | 
 / /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /      
 \____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/     
-    /_/                        2.0.0-SNAPSHOT
+    /_/                        2.0.0 ...
 
 
 Hit '<tab>' for a list of available commands
@@ -90,12 +85,11 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 openhab>
 ```
 
-* Without closing the terminal, open your favorite web browser and type the following url : http://localhost:8080, you should see the openHab welcome screen.
+* Without closing the terminal, open your favorite web browser and type the following url : http://localhost:8080, you should see the openHAB welcome screen.
 
 ![](images/Accueil_Openhab_2.png)
 
 
 > **Which browser should I use?**
 >
-> Safari is supported by openHAB, but the fact is the browser used by the openHAB developer community - and by the owner of the ZWave plugin - is Google Chrome.
-> We recommend then Google Chrome, as openHAB 2 is in a beta phase.
+> Safari is supported by openHAB but Google Chrome is recommended (due to the fact it's used by the openHAB developer community and by the owner of the ZWave plugin)
