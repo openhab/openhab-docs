@@ -73,3 +73,21 @@ mvn clean install
 ```
 
 from the repository root to ensure that the build works smoothly. If it does, it is time to [contribute your work](../contributing/contributing)!
+
+### Static code analysis
+
+The Build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices. Information about the checks can be found [here](https://github.com/openhab/static-code-analysis#esh-guidelines-covered).
+
+The tool will generate an idividual report for each binding that you can find in `.../your_binding_directory/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `../openhab2-addons/target/summary_report.html`. The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info). If any error is found within your code the Maven build will end with failure. You will receive detailed information (path to the file, line and message) listing all problems with Prioriry 1 on the console:
+
+```
+...
+[ERROR] Failed to execute goal org.openhab.tools:static-code-analysis:0.0.4:report (default) on project org.openhab.binding.example: Code Analysis Tool has found 1 error(s)!
+[ERROR] Please fix the errors and rerun the build.
+[ERROR] Errors list:
+[ERROR] ERROR found by checkstyle: .binding.example.test/about.html:0 Missing about.html file.
+[ERROR] Detailed report can be found at: file////path_to_openhab/openhab2-addons/addons/binding/org.openhab.binding.example/target/code-analysis/report.html
+...
+```
+
+Please fix all the Priority 1 issues and all issues with Priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask). Re-run the build to confirm that the checks are passing.
