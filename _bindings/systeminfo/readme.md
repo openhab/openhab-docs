@@ -251,9 +251,9 @@ Number Sensor_CPUVoltage             { channel="systeminfo:computer:work:sensors
 Number Sensor_FanSpeed               { channel="systeminfo:computer:work:sensors#fanSpeed" }
 
 /* Process information*/
-Number Process_load                  { channel="systeminfo:computer:SvilenV-L540:process#load" }
-Number Process_used                  { channel="systeminfo:computer:SvilenV-L540:process#used" }
-String Process_name                  { channel="systeminfo:computer:SvilenV-L540:process#name" }
-Number Process_threads               { channel="systeminfo:computer:SvilenV-L540:process#threads" }
-String Process_path                  { channel="systeminfo:computer:SvilenV-L540:process#path" }
+Number Process_load                  { channel="systeminfo:computer:work:process#load" }
+Number Process_used                  { channel="systeminfo:computer:work:process#used" }
+String Process_name                  { channel="systeminfo:computer:work:process#name" }
+Number Process_threads               { channel="systeminfo:computer:work:process#threads" }
+String Process_path                  { channel="systeminfo:computer:work:process#path" }
 ```
