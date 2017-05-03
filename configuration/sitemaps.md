@@ -129,7 +129,7 @@ Number Heating_Preset
 ```xtend
 // part of the sitemap
 Text item=Temperature label="Now [%s °C]"
-Switch item=Heating_Preset icon="thermostat" mappings=[1="Off", 2="Low", 2="Swedish Sauna"]
+Switch item=Heating_Preset icon="thermostat" mappings=[1="Off", 2="Low", 3="Swedish Sauna"]
 ```
 
 This example illustrates, that a "Number" data type item can be rendered as a Text element (with customizable formatting) or as a Switch element (with multiple labeled buttons).
