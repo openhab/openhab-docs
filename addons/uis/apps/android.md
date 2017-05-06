@@ -34,8 +34,16 @@ The latest release version of the app is always available through Google Play.
 
 **Getting Started:**
 
-When first installed the app is in demo mode. To connect the android app to your openhab server, first navigate to Settings and uncheck the Demo mode option.
-Then set the openHAB URL to the URL of your server. For example: `http://192.168.1.3:8080`. The display will now be determined by the sitemaps defined on your server. 
+When first installed the app is in demo mode. To connect it to your openHAB server, first navigate to Settings and uncheck the Demo mode option.
+Then set the openHAB URL to the URL of your openHAB server; depending on your setup, the URL might look like one of the following examples:
+* `http://192.168.1.3:8080` (IP address)
+* `http://openhabian:8080` (local dns)
+* `http://openhabian.local:8080` (local dns)
+
+Once the URL is set correctly, the display of the app will be determined by the sitemaps defined on your server. 
+
+The option to set a remote URL allows the app to be used when the user is away from home. There are a number of 
+strategies available to provide [secure remote access]({{base}}/installation/security.html) to your openHAB server.
 
 **Help and technical details:**
 
