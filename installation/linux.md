@@ -7,8 +7,7 @@ title: openHAB 2 on Linux
 
 # openHAB 2 on Linux
 
-The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the **focus on Debian/Ubuntu** derivatives.
-openHAB 2 can be set up and executed on other Linux distributions, the steps may slightly differ.
+The following instructions will guide you through the process of setting up openHAB 2 and recommended packages for both .DEB (Ubuntu, Debian etc.) and .RPM (RedHat, CentOS, Fedora etc.) Linux systems.
 
 All instructions can be executed in a terminal or remotely via SSH connection.
 
@@ -31,6 +30,13 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 **Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
 
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
+
 A repository providing the latest Oracle Java 8 revision (above "101") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
 Follow the provided guides for either a [repository based](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) or a [PPA based](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html) installation.
 In short these are the commands to execute step-by-step on most systems:
@@ -44,16 +50,49 @@ sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
 
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+To get the latest version go to the [Oracle Java 8 JRE Downloads Page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
+You then need to accept the license agreement, copy the download link of the appropriate Linux .rpm package and then finally paste it place of "[Download Link Here]" below:
+
+```shell
+cd ~
+wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" "[Download Link Here]"
+```
+
+You can then install the downloaded package with:
+
+```shell
+sudo yum localinstall jdk-8u60-linux-x64.rpm
+```
+
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
+
 ## Installation
 
 openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt` / `apt-get`) is **recommended** for end users.
-The manual installation through a platform independent archive file is suited for users who know what they are doing and systems with a non-Debian distribution, not using the apt/deb package system.
+The installation through a provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is **recommended** for end users.
+The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
 ### Package Repository Installation
 
-Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
+Installation through a package repository is the recommended choice. You can select the appropriate installation instructions by expanding from the apt or yum instructions.
 Alternatively resort to the [manual installation approach](#manual-installation).
+
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
 
 First, add the openHAB 2 Bintray repository key to your package manager:
 
@@ -114,30 +153,83 @@ If you plan on disconnecting your machine from the internet, then you will want 
 sudo apt-get install openhab2-addons
 ```
 
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+**Note:** The RPM files within the cannot currently be GPG signed or checked, only continue if you're happy installing without GPG verification.
+
+The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents:
+
+```text
+[openHAB-Snapshots]
+name=openHAB 2.x.x Snapshots
+baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
+enabled=1
+gpgcheck=0
+repo_gpgcheck=0
+gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public 
+```
+
+Currently, only snapshots of the RPM packages exist. The stable releases will be added to Bintray later.
+
+Now install openHAB with the following command, please note that for systems that support it `dnf` can be used instead of yum:
+
+```shell
+sudo yum install openhab2
+```
+
+When you choose to install an add-on, openHAB will download it from the internet on request.
+If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
+
+```shell
+sudo yum install openhab2-addons
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
+
 Optionally, you may in addition install the legacy add-ons package `openhab2-addons-legacy`.
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
-* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
 
-  ```shell
-  sudo /etc/init.d/openhab2 start
-  sudo /etc/init.d/openhab2 status
+Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
+
+{% include collapsible/body.html %}
+
+```shell
+sudo /etc/init.d/openhab2 start
+sudo /etc/init.d/openhab2 status
+
+sudo update-rc.d openhab2 defaults
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+{% include collapsible/body.html %}
+
+```shell
+sudo systemctl start openhab2.service
+sudo systemctl status openhab2.service
   
-  sudo update-rc.d openhab2 defaults
-  ```
+sudo systemctl daemon-reload
+sudo systemctl enable openhab2.service
+```
 
-* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
-  ```shell
-  sudo systemctl start openhab2.service
-  sudo systemctl status openhab2.service
-  
-  sudo systemctl daemon-reload
-  sudo systemctl enable openhab2.service
-  ```
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
@@ -151,7 +243,12 @@ If you're new to openHAB, then you should checkout the [beginner's tutorial]({{b
 openHAB will run as a service in the background.
 The most important commands to control the openHAB service are given below.
 
-* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
+
+{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
@@ -167,7 +264,12 @@ The most important commands to control the openHAB service are given below.
   sudo update-rc.d openhab2 defaults
   ```
 
-* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
@@ -184,13 +286,23 @@ The most important commands to control the openHAB service are given below.
   sudo systemctl enable openhab2.service
   ```
 
-#### Upgrade
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
+
+#### Upgrade/Downgrading
 
 To stay up to date with new releases, you should do regular upgrades.
 This is especially important if you are working with the latest snapshot as changes and fixes are incorporated constantly.
 
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
+
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
 
 Upgrading is as easy as:
 
@@ -199,7 +311,7 @@ sudo apt-get update
 sudo apt-get upgrade
 ```
 
-#### Changing Versions
+*Changing Versions*
 
 You may want to switch to a different repo, or an older (but more stable) version of openHAB.
 To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
@@ -209,11 +321,42 @@ sudo apt-get update
 apt-cache showpkg openhab2
 ```
 
-Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install=[version]` command, for example:
+Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install openhab2=[version]` command, for example:
 
 ```shell
 sudo apt-get install openhab2=2.0.0-1
 ```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+Upgrading is as easy as: (you can use `dnf` instead of `yum` for systems that support it)
+
+```shell
+sudo yum upgrade
+```
+
+*Changing Versions*
+
+You may want to switch to a different version of openHAB.
+To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
+
+```shell
+rpm -q openhab2
+```
+
+Once you know which version you want, you can upgrade/downgrade to it by using the `yum install openhab2-[version]` command, for example:
+
+```shell
+sudo yum install openhab2=2.0.0-1
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
 #### Backup and Restore
 
@@ -250,12 +393,34 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then uninstall openHAB and remove the repository:
+To uninstall openHAB 2 and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
+
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
 
 ```shell
 sudo apt-get purge openhab2*
 sudo rm /etc/apt/sources.list.d/openhab2.list
 ```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+```shell
+sudo yum remove openhab2*
+sudo rm /etc/yum.repos.d/openHAB.repo
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
 ### Manual Installation
 
