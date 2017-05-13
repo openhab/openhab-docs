@@ -94,10 +94,11 @@ Apt Based Systems
 
 {% include collapsible/body.html %}
 
-First, add the openHAB 2 Bintray repository key to your package manager:
+First, add the openHAB 2 Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
 ```shell
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+sudo apt-get install apt-transport-https
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
@@ -109,7 +110,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   Add the **openHAB 2 Stable Repository** to your systems apt sources list:
 
   ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
 * **Beta Release**
@@ -119,7 +120,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
   ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
 * **Snapshot Release**
@@ -131,7 +132,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   To use it, add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
   ```shell
-  echo 'deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+  echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
 Next, resynchronize the package index:
@@ -289,7 +290,7 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 {% include collapsible/item-end.html %}
 {% include collapsible/end.html %}
 
-#### Upgrade/Downgrading
+#### Changing Versions
 
 To stay up to date with new releases, you should do regular upgrades.
 This is especially important if you are working with the latest snapshot as changes and fixes are incorporated constantly.
@@ -310,8 +311,6 @@ Upgrading is as easy as:
 sudo apt-get update
 sudo apt-get upgrade
 ```
-
-*Changing Versions*
 
 You may want to switch to a different repo, or an older (but more stable) version of openHAB.
 To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
@@ -340,8 +339,6 @@ Upgrading is as easy as: (you can use `dnf` instead of `yum` for systems that su
 sudo yum upgrade
 ```
 
-*Changing Versions*
-
 You may want to switch to a different version of openHAB.
 To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
 
@@ -352,7 +349,7 @@ rpm -q openhab2
 Once you know which version you want, you can upgrade/downgrade to it by using the `yum install openhab2-[version]` command, for example:
 
 ```shell
-sudo yum install openhab2=2.0.0-1
+sudo yum install openhab2-2.0.0-1
 ```
 
 {% include collapsible/item-end.html %}

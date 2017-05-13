@@ -1,7 +1,9 @@
 section.text ul.collapsible {
-  margin-bottom: 20px
+  margin-bottom: 20px;
 }
-
+.collapsible-header{
+white-space: nowrap;
+}
 .collapsible-body {
   margin-top: 20px;
 }
