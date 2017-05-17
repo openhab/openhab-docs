@@ -35,7 +35,8 @@ The latest release version of the app is always available through Google Play.
 **Getting Started:**
 
 When first installed the app is in demo mode. To connect it to your openHAB server, first navigate to Settings and uncheck the Demo mode option.
-Then set the openHAB URL to the URL of your openHAB server; depending on your setup, the URL might look like one of the following examples:
+Normally, after unchecking the demo mode, the app will be able to use multicast dns to autodetect to your openHAB server if it is on the same network.
+You also have the open to manually set the server URL in the settings. The URL might look like one of the following examples:
 * `http://192.168.1.3:8080` (IP address)
 * `http://openhabian:8080` (local dns)
 * `http://openhabian.local:8080` (local dns)
