@@ -34,17 +34,21 @@ The latest release version of the app is always available through Google Play.
 
 **Getting Started:**
 
-When first installed the app is in demo mode. To connect it to your openHAB server, first navigate to Settings and uncheck the Demo mode option.
-Normally, after unchecking the demo mode, the app will be able to use multicast dns to autodetect to your openHAB server if it is on the same network.
-You also have the open to manually set the server URL in the settings. The URL might look like one of the following examples:
-* `http://192.168.1.3:8080` (IP address)
-* `http://openhabian:8080` (local dns)
-* `http://openhabian.local:8080` (local dns)
+When first installed the app is in "Demo Mode".
+To connect it to your own openHAB server, first navigate to Settings and uncheck the "Demo Mode" option.
+Normally, after unchecking the Demo Mode, the app will be able to use multicast DNS to autodetect to your openHAB server if it is on the same network.
+
+You also have the option to manually set the server URL in the settings.
+Please enter the base URL to your openHAB server as you would enter it in the browser to reach the openHAB dashboard.
+The URL might look like one of the following examples.
+
+* IP address: `http://192.168.1.3:8080`
+* Local DNS name: `http://openhabianpi:8080` respectively `http://openhabianpi.local:8080` (depending on your network)
 
 Once the URL is set correctly, the display of the app will be determined by the sitemaps defined on your server. 
 
-The option to set a remote URL allows the app to be used when the user is away from home. There are a number of 
-strategies available to provide [secure remote access]({{base}}/installation/security.html) to your openHAB server.
+The option to set a "Remote URL" allows the app to be used when you are away from home.
+There are a number of strategies available to provide [secure remote access]({{base}}/installation/security.html) to your openHAB server.
 
 **Help and technical details:**
 
