@@ -48,5 +48,6 @@ The configuration files are located at:
 | DS216+II    | [2.0.0.009-SNAPSHOT-DSM6](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0.009-SNAPSHOT-DSM6) |
 | DS216play   | [2.0.0.001-DSM6](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0.001-DSM6) |
 | DS916+      | [2.0.0.001-DSM6](https://github.com/openhab/openhab-syno-spk/releases/tag/2.0.0.001-DSM6) |
+| DS214play   | [2.1.0.004-SNAPSHOT-DSM6](https://github.com/openhab/openhab-syno-spk/releases/tag/2.1.0.004-SNAPSHOT-DSM6) |
 
 > Please complete the list accordingly, thank you!
