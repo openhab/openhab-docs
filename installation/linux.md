@@ -101,7 +101,7 @@ sudo apt-get install apt-transport-https
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
-* **Official Release**
+* **Stable Release**
 
   The stable builds contain the latest official release with tested features.
 
@@ -111,9 +111,9 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
   echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
   ```
 
-* **Beta Release**
+* **Testing Release**
 
-  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+  The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
   Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
@@ -123,7 +123,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 * **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and includes the latest changes to the openHAB 2 core and add-ons.
+  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
 
   The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
@@ -162,15 +162,15 @@ Yum or Dnf Based Systems
 **Note:** The RPM files cannot currently be GPG signed or checked, only continue if you're happy installing without GPG verification.
 
 The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
-You may add all three to the same file, but make sure the desired repo is is set to `enabled=0`:
+You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
 
-* **Official Release**
+* **Stable Release**
 
   The stable builds contain the latest official release with tested features.
 
   ```text
-  [openHAB-Release]
-  name=openHAB 2.x.x Release
+  [openHAB-Stable]
+  name=openHAB 2.x.x Stable
   baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
   gpgcheck=0
   repo_gpgcheck=0
@@ -178,9 +178,9 @@ You may add all three to the same file, but make sure the desired repo is is set
   enabled=1
   ```
 
-* **Beta/RC Release**
+* **Testing Release**
 
-  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+  The beta or release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
   ```text
   [openHAB-Testing]
@@ -194,7 +194,7 @@ You may add all three to the same file, but make sure the desired repo is is set
 
 * **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and includes the latest changes to the openHAB 2 core and add-ons.
+  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
 
   ```text
