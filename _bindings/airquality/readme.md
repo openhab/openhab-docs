@@ -5,6 +5,7 @@ title: Air Quality - Bindings
 type: binding
 description: "This binding uses the [AQIcn.org service](http://aqicn.org) for providing air quality information for any location worldwide."
 since: 2x
+logo: images/addons/airquality.png
 install: auto
 ---
 

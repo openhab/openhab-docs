@@ -5,6 +5,7 @@ title: D-Link Smart Home - Bindings
 type: binding
 description: "A binding for D-Link Smart Home devices."
 since: 2x
+logo: images/addons/dlinksmarthome.png
 install: auto
 ---
 

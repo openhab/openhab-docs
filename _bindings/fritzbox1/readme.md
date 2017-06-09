@@ -6,6 +6,7 @@ type: binding
 description: "This binding can be configured in the `services/fritzbox.cfg` file."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.fritzbox/README.md
 since: 1x
+logo: images/addons/fritzbox.png
 install: auto
 ---
 

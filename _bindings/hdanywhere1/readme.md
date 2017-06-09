@@ -6,6 +6,7 @@ type: binding
 description: "[HDanywhere](http://www.hdanywhere.co.uk) is a manufacturer of multiroom/distributed audio/video equipment. This binding supports their V3 of the Multiroom+ HDMI matrix running firmware V1.2(20131222). These matrices support the highest HD resolutions, including 1080p 3D & 4K, use a single Cat5e/6/7 wiring structure with reliable performance up to 100m, have IR passback to allow you to select and control what you watch from every room and are fully compatible with universal remote controls."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.hdanywhere/README.md
 since: 1x
+logo: images/addons/hdanywhere.png
 install: manual
 ---
 

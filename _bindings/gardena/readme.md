@@ -5,6 +5,7 @@ title: Gardena - Bindings
 type: binding
 description: "This is the binding for [Gardena Smart Home](http://www.gardena.com/de/rasenpflege/smartsystem/)."
 since: 2x
+logo: images/addons/gardena.png
 install: auto
 ---
 

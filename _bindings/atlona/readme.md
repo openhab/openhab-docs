@@ -5,6 +5,7 @@ title: Atlona - Bindings
 type: binding
 description: "This binding integrates Atlona AT-UHD-PRO3 HdBaseT matrix switches [Atlona AT-UHD-PRO3 HdBaseT matrix switches](http://www.atlona.com) into your openHAB installation."
 since: 2x
+logo: images/addons/atlona.png
 install: auto
 ---
 

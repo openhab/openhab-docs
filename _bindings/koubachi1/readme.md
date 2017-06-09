@@ -6,6 +6,7 @@ type: binding
 description: "The [Koubachi](http://www.koubachi.com) Services help everybody without a green thumb to be a perfect gardener. All plants can be registered on their really nice website (or through iPhone/iPad App) to tell you when and how to care for your plants. Furthermore they offer a dedicated hardware, the WIFI Plant Sensor. This wireless device measures vital parameters and determines the vitality of your plants."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.koubachi/README.md
 since: 1x
+logo: images/addons/koubachi.png
 install: auto
 ---
 

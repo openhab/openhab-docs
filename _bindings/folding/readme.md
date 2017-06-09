@@ -5,6 +5,7 @@ title: Folding@home - Bindings
 type: binding
 description: "Binding for the [Folding@home](https://folding.stanford.edu/) distributed computing"
 since: 2x
+logo: images/addons/folding.png
 install: auto
 ---
 
