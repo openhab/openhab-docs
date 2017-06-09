@@ -50,7 +50,6 @@ sudo apt-get install oracle-java8-installer
 sudo apt-get install oracle-java8-set-default
 ```
 
-
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
@@ -71,7 +70,6 @@ You can then install the downloaded package with:
 ```shell
 sudo yum localinstall jdk-8u60-linux-x64.rpm
 ```
-
 
 {% include collapsible/item-end.html %}
 {% include collapsible/end.html %}
@@ -125,7 +123,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 * **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
+  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and includes the latest changes to the openHAB 2 core and add-ons.
   These changes are often unstable, so you should use this branch only for testing or development purposes.
 
   The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
@@ -161,21 +159,53 @@ Yum or Dnf Based Systems
 
 {% include collapsible/body.html %}
 
-**Note:** The RPM files within the cannot currently be GPG signed or checked, only continue if you're happy installing without GPG verification.
+**Note:** The RPM files cannot currently be GPG signed or checked, only continue if you're happy installing without GPG verification.
 
-The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents:
+The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
+You may add all three to the same file, but make sure the desired repo is is set to `enabled=0`:
 
-```text
-[openHAB-Snapshots]
-name=openHAB 2.x.x Snapshots
-baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
-enabled=1
-gpgcheck=0
-repo_gpgcheck=0
-gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public 
-```
+* **Official Release**
 
-Currently, only snapshots of the RPM packages exist. The stable releases will be added to Bintray later.
+  The stable builds contain the latest official release with tested features.
+
+  ```text
+  [openHAB-Release]
+  name=openHAB 2.x.x Release
+  baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
+  gpgcheck=0
+  repo_gpgcheck=0
+  gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
+  enabled=1
+  ```
+
+* **Beta/RC Release**
+
+  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+
+  ```text
+  [openHAB-Testing]
+  name=openHAB 2.x.x Testing
+  baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
+  gpgcheck=0
+  repo_gpgcheck=0
+  gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
+  enabled=1
+  ```
+
+* **Snapshot Release**
+
+  The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and includes the latest changes to the openHAB 2 core and add-ons.
+  These changes are often unstable, so you should use this branch only for testing or development purposes.
+
+  ```text
+  [openHAB-Snapshots]
+  name=openHAB 2.x.x Snapshots
+  baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
+  gpgcheck=0
+  repo_gpgcheck=0
+  gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public 
+  enabled=1
+  ```
 
 Now install openHAB with the following command, please note that for systems that support it `dnf` can be used instead of yum:
 
