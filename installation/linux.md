@@ -393,11 +393,15 @@ To make a backup of your openHAB 2 system, you need to retain your configuration
 # stop openhab instance (here: systemd service)
 sudo systemctl stop openhab2.service
 
+# prepare backup folder, replace by your desired destination
+BACKUPDIR="/srv/openhab2-backup/openhab2-backup-$(date +%Y%m%d_%H%M%S)"
+mkdir -p $BACKUPDIR
+
 # backup current installation with settings
-TIMESTAMP=`date +%Y%m%d_%H%M%S`;
-mkdir  ~/openhab2-backup-$TIMESTAMP
-cp -arv /etc/openhab2 ~/openhab2-backup-$TIMESTAMP/conf
-cp -arv /var/lib/openhab2 ~/openhab2-backup-$TIMESTAMP/userdata
+cp -arv /etc/openhab2 "$BACKUPDIR/conf"
+cp -arv /var/lib/openhab2 "$BACKUPDIR/userdata"
+rm -rf "$BACKUPDIR/userdata/cache"
+rm -rf "$BACKUPDIR/userdata/tmp"
 
 # restart openhab instance
 sudo systemctl start openhab2.service
@@ -410,9 +414,10 @@ Maybe you will need to delete the existing data first.
 # stop openhab instance (here: systemd service)
 sudo systemctl stop openhab2.service
 
-# restore data
-sudo cp -arv ~/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
-sudo cp -arv ~/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+# restore data and fix permissions
+sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
+sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+sudo chown -R openhab /var/lib/openhab2
 
 # restart openhab instance
 sudo systemctl start openhab2.service
