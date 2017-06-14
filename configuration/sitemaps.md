@@ -339,7 +339,7 @@ The image has to be available on a reachable website or webserver without passwo
 It's also possible to place an image in the `html` folder under your configuration folder.
 The file will be available under the "static" route, [http://<my.openHAB.device>:8080/static/image.png](http://127.0.0.1:8080/static).
 
-* `item` can refer to a String item whose state is an URL to an image.  Some clients may not (yet) consider `item`.
+* `item` can refer to either an Image item whose state is the raw data of the image, or a String item whose state is an URL to an image.  Some clients may not (yet) consider `item`.
 * `url` is the default URL from which to retrieve the image, if there is no associated item or if the associated item's state is not an URL.
 * `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
 
