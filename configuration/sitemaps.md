@@ -285,7 +285,7 @@ Adds a time-series chart object for displaying logged data.
 * `service` sets the persistence service to use.
   If no service is set, openHAB will use the first queryable persistence service it finds.
   Therefore, for an installation with only a single persistence service, this is not required.
-* `period` is the length of the time axis of the chart. Valid values are `h, 4h, 8h, 12h, D, 3D, W, 2W, M, 2M, 4M or Y`.
+* `period` is the length of the time axis of the chart. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 * `begin` / `end` represent the beginning and end of the time axis of the chart.
   Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
 
@@ -310,7 +310,6 @@ Currently, the only alternative is to use the rrd4j provider to render the graph
 
  * When using rrd4j persistence, you must use the `everyMinute` (60 seconds) logging strategy otherwise rrd4j thinks that there is no data and will not properly draw the charts
  * When using chart:provider=rrd4j, the `service=<service>` is ignored and only the persistence service rrd4j is used
- * Despite the chart refresh option, charts do not appear to refresh properly according to this setting
  * The visibility of multiple chart objects can be toggled to simulate changing the chart period, and the non-visible chart widgets are NOT generated behind the scenes until it becomes visible
  * When charting a group of items make sure every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart
 
