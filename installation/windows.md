@@ -173,7 +173,7 @@ net start "openHAB2"
  - Logging in with an ssh client to the console (see info below)
 
 6. How to login to openHAB console when using a Windows service:
- - Install a SSH Client application e.g. [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+ - Install a SSH Client application e.g. [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/), [Xshell 5](https://www.netsarang.com/products/xsh_overview.html) etc
  - Setup a session with the following parameters:
 ```
 Host: 127.0.0.1
