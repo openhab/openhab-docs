@@ -87,7 +87,7 @@ There is currently no automatic update script for Windows. To update manually, d
 
 To install the openHAB process as a service in Windows in order to be able to launch it automatically and run it in the background, follow these steps:
 
-1. Complete the [prerequisites]({{base}}/installation/windows.html#prerequisites) and regular [installation]({{base}}/installation/windows.html#installation) steps, including the package selection
+1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
 2. Issue the following 2 commands in your openHAB console:
 ```
 feature:install service-wrapper
@@ -173,7 +173,7 @@ net start "openHAB2"
  - Logging in with an ssh client to the console (see info below)
 
 6. How to login to openHAB console when using a Windows service:
- - Install a SSH Client application (e.g. ![Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+ - Install a SSH Client application e.g. [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
  - Setup a session with the following parameters:
 ```
 Host: 127.0.0.1
