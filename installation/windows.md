@@ -33,11 +33,11 @@ To install it, follow these simple steps:
 
 2. Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
 
-![openHAB 2 Folders](http://imageshack.com/a/img924/8420/QHo9LU.png)
+![openHAB 2 Folders](images/openHAB_2_Folders.png)
 
 3. Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
 
-![Karaf_Windows](http://imageshack.com/a/img921/5466/TOJADy.png)
+![Karaf_Windows](images/Karaf_Windows.png)
 
 4. Point your browser to `http://localhost:8080`. You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html). 
    When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
@@ -93,9 +93,9 @@ To install the openHAB process as a service in Windows in order to be able to la
 feature:install service-wrapper
 wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
 ```
-![Wrapper Install_Windows](http://imageshack.com/a/img922/1700/teZEiW.jpg)
+![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
-3. Modify the file `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` and using a text editor, replace all existing content with:
+3. Shutdown the currently running OH2 instance and modify the file `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` and using a text editor, replace all existing content with:
 ```
 #********************************************************************
 # Change this first setting to match your OH2 installation directory !
@@ -162,14 +162,14 @@ wrapper.ntservice.interactive=false
 C:\openHAB2\userdata\bin\openHAB2-service.bat install
 net start "openHAB2"
 ```
-![Admin cmd](http://imagizer.imageshack.us/a/img922/2261/Uqqykw.jpg)
-![Service Install](http://imagizer.imageshack.us/a/img923/4633/Dr5vOp.jpg)
+![Admin cmd](images/Admin_CMD.jpg)
+![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
 5. Your openHAB Windows service is now installed and running.  Validate proper operations by:
 
  - Browsing to `http://localhost:8080`
  - Verifying that the Windows Service is running and set to Automatic Startup type.  Use `services.msc` and find the `openHAB2` service.
-![Windows Service](http://imageshack.com/a/img923/5776/5l8PFK.jpg)
+![Windows Service](images/Windows_Service.jpg)
  - Logging in with an ssh client to the console (see info below)
 
 6. How to login to openHAB console when using a Windows service:
@@ -181,7 +181,7 @@ Port: 8101
 Username: openhab
 Password: habopen
 ```
-![SSH Connection 1](http://imageshack.com/a/img923/6088/xCwFmJ.jpg)
-![SSH Connection 2](http://imageshack.com/a/img924/811/Rl7Bpp.jpg)
-![SSH Connection 3](http://imageshack.com/a/img923/8652/ijXw6z.jpg)
-![SSH Connection 4](http://imageshack.com/a/img922/7899/zUIDvQ.jpg)
+![SSH Connection 1](images/SSH_Connection_1.jpg)
+![SSH Connection 2](images/SSH_Connection_2.jpg)
+![SSH Connection 3](images/SSH_Connection_3.jpg)
+![SSH Connection 4](images/SSH_Connection_4.jpg)
