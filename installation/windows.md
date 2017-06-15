@@ -85,4 +85,100 @@ There is currently no automatic update script for Windows. To update manually, d
 
 ## Starting openHAB as a service
 
-(work in progress...)
+To install the openHAB process as a service in Windows in order to be able to launch it automatically and run it in the background, follow these steps:
+
+1. Complete the regular [installation]({{base}}/installation/windows.html#installation) steps, including the package selection
+2. Issue the following 2 commands in your openHAB console:
+```
+feature:install service-wrapper
+wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
+```
+![Wrapper Install_Windows](http://imageshack.com/a/img922/1700/teZEiW.jpg)
+
+3. Modify the file `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` and using a text editor, replace all existing content with:
+```
+#********************************************************************
+# Change this first setting to match your OH2 installation directory !
+#********************************************************************
+set.default.OPENHAB_HOME=C:\openHAB2
+
+# Wrapper Properties
+set.default.KARAF_HOME=%OPENHAB_HOME%\runtime
+set.default.KARAF_BASE=%OPENHAB_HOME%\userdata
+set.default.KARAF_DATA=%OPENHAB_HOME%\userdata
+set.default.KARAF_ETC=%OPENHAB_HOME%\userdata\etc
+set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
+
+# Java Application
+wrapper.working.dir=%KARAF_BASE%
+wrapper.java.command=%JAVA_HOME%/bin/java
+wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
+wrapper.java.classpath.1=%KARAF_HOME%/lib/boot/*.jar
+wrapper.java.classpath.2=%KARAF_DATA%/lib/wrapper/*.jar
+wrapper.java.library.path.1=%KARAF_DATA%/lib/wrapper/
+
+# Java Parameters
+wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
+wrapper.java.additional.2=-Dkaraf.base="%KARAF_BASE%"
+wrapper.java.additional.3=-Dkaraf.data="%KARAF_DATA%"
+wrapper.java.additional.4=-Dkaraf.etc="%KARAF_ETC%"
+wrapper.java.additional.5=-Dcom.sun.management.jmxremote
+wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
+wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
+wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%/jre/lib/endorsed;%JAVA_HOME%/lib/endorsed;%KARAF_HOME%/lib/endorsed"
+wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext;%JAVA_HOME%/lib/ext;%KARAF_HOME%/lib/ext"
+wrapper.java.additional.10=-Dopenhab.home="%OPENHAB_HOME%"
+wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
+wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
+wrapper.java.additional.13=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_HOME%\logs"
+wrapper.java.additional.15=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
+wrapper.java.additional.16=-Dorg.osgi.service.http.port=8080
+wrapper.java.additional.17=-Dorg.osgi.service.http.port.secure=8443
+wrapper.java.maxmemory=512
+
+# Wrapper Logging Properties
+wrapper.console.format=PM
+wrapper.console.loglevel=INFO
+wrapper.logfile=%OPENHAB_HOME%\userdata\logs\wrapper.log
+wrapper.logfile.format=LPTM
+wrapper.logfile.loglevel=INFO
+wrapper.logfile.maxsize=10m
+wrapper.logfile.maxfiles=5
+wrapper.syslog.loglevel=NONE
+
+# Wrapper Windows Properties
+wrapper.console.title=openHAB2
+wrapper.ntservice.name=openHAB2
+wrapper.ntservice.displayname=openHAB2
+wrapper.ntservice.description=openHAB 2 Service
+wrapper.ntservice.dependency.1=
+wrapper.ntservice.starttype=AUTO_START
+wrapper.ntservice.interactive=false
+```
+
+4. Open an elevated command prompt and type the following commands:
+`C:\openHAB2\userdata\bin\openHAB2-service.bat install`
+`net start "openHAB2"`
+![Admin cmd](http://imagizer.imageshack.us/a/img922/2261/Uqqykw.jpg)
+![Service Install](http://imagizer.imageshack.us/a/img923/4633/Dr5vOp.jpg)
+
+5. Your openHAB Windows service is now installed and running.  Validate proper operations by:
+a) Browsing to `http://localhost:8080`
+b) Verifying that the Windows Service is running and set to Automatic Startup type.  Use `services.msc` and find the `openHAB2` service.
+![Windows Service](http://imageshack.com/a/img923/5776/5l8PFK.jpg)
+c) Logging in with an ssh client to the console (see info below)
+
+6. How to login to openHAB console when using a Windows service:
+a) Install a SSH Client application (e.g. ![Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+b) Setup a session with the following parameters:
+```
+Host: 127.0.0.1
+Port: 8101
+Username: openhab
+Password: habopen
+```
+![SSH Connection 1](http://imageshack.com/a/img923/6088/xCwFmJ.jpg)
+![SSH Connection 2](http://imageshack.com/a/img924/811/Rl7Bpp.jpg)
+![SSH Connection 3](http://imageshack.com/a/img923/8652/ijXw6z.jpg)
+![SSH Connection 4](http://imageshack.com/a/img922/7899/zUIDvQ.jpg)
