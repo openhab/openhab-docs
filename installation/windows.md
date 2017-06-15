@@ -140,7 +140,7 @@ wrapper.java.maxmemory=512
 # Wrapper Logging Properties
 wrapper.console.format=PM
 wrapper.console.loglevel=INFO
-wrapper.logfile=%OPENHAB_HOME%\userdata\logs\wrapper.log
+wrapper.logfile=%OPENHAB_HOME%\logs\wrapper.log
 wrapper.logfile.format=LPTM
 wrapper.logfile.loglevel=INFO
 wrapper.logfile.maxsize=10m
