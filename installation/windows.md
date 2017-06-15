@@ -87,7 +87,7 @@ There is currently no automatic update script for Windows. To update manually, d
 
 To install the openHAB process as a service in Windows in order to be able to launch it automatically and run it in the background, follow these steps:
 
-1. Complete the regular [installation]({{base}}/installation/windows.html#installation) steps, including the package selection
+1. Complete the [prerequisites]({{base}}/installation/windows.html#prerequisites) and regular [installation]({{base}}/installation/windows.html#installation) steps, including the package selection
 2. Issue the following 2 commands in your openHAB console:
 ```
 feature:install service-wrapper
@@ -158,20 +158,23 @@ wrapper.ntservice.interactive=false
 ```
 
 4. Open an elevated command prompt and type the following commands:
-`C:\openHAB2\userdata\bin\openHAB2-service.bat install`
-`net start "openHAB2"`
+```
+C:\openHAB2\userdata\bin\openHAB2-service.bat install
+net start "openHAB2"
+```
 ![Admin cmd](http://imagizer.imageshack.us/a/img922/2261/Uqqykw.jpg)
 ![Service Install](http://imagizer.imageshack.us/a/img923/4633/Dr5vOp.jpg)
 
 5. Your openHAB Windows service is now installed and running.  Validate proper operations by:
-a) Browsing to `http://localhost:8080`
-b) Verifying that the Windows Service is running and set to Automatic Startup type.  Use `services.msc` and find the `openHAB2` service.
+
+ - Browsing to `http://localhost:8080`
+ - Verifying that the Windows Service is running and set to Automatic Startup type.  Use `services.msc` and find the `openHAB2` service.
 ![Windows Service](http://imageshack.com/a/img923/5776/5l8PFK.jpg)
-c) Logging in with an ssh client to the console (see info below)
+ - Logging in with an ssh client to the console (see info below)
 
 6. How to login to openHAB console when using a Windows service:
-a) Install a SSH Client application (e.g. ![Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
-b) Setup a session with the following parameters:
+ - Install a SSH Client application (e.g. ![Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+ - Setup a session with the following parameters:
 ```
 Host: 127.0.0.1
 Port: 8101
