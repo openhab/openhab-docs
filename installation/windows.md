@@ -97,16 +97,20 @@ wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 
 
 3. Shutdown the currently running OH2 instance and modify the file `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` and using a text editor, replace all existing content with:
 ```
-#********************************************************************
-# Change this first setting to match your OH2 installation directory !
-#********************************************************************
+#**************************************************************************
+# Change only this first setting to match your OH2 installation directory !
+#**************************************************************************
 set.default.OPENHAB_HOME=C:\openHAB2
 
 # Wrapper Properties
-set.default.KARAF_HOME=%OPENHAB_HOME%\runtime
-set.default.KARAF_BASE=%OPENHAB_HOME%\userdata
-set.default.KARAF_DATA=%OPENHAB_HOME%\userdata
-set.default.KARAF_ETC=%OPENHAB_HOME%\userdata\etc
+set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
+set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
+set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
+set.default.OPENHAB_LOGDIR=%OPENHAB_HOME%\logs
+set.default.KARAF_HOME=%OPENHAB_RUNTIME%
+set.default.KARAF_BASE=%OPENHAB_USERDATA%
+set.default.KARAF_DATA=%OPENHAB_USERDATA%
+set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
 set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
 
 # Java Application
