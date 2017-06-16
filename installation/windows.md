@@ -85,7 +85,8 @@ To update manually, download a later version of the openHAB distribution zip fil
 4. Copy and paste the new `userdata` folder over your existing install, when prompted **do not overwrite existing files**
 5. Copy and paste the new `runtime` folder over your existing install, when prompted **overwrite all existing files**
 
-## Starting openHAB as a service
+## Starting openHAB as a Service
+
 By installing the openHAB process as a service in Windows, you can:
 
 * Launch it automatically upon system startup
@@ -93,111 +94,113 @@ By installing the openHAB process as a service in Windows, you can:
 
 **Windows Service Installation Steps**
 
-* Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
-* Issue the following two commands in your openHAB console:
+1.  Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
 
-```shell
-feature:install service-wrapper
-wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
-```
+2.  Issue the following two commands in your openHAB console:
+    ```shell
+    feature:install service-wrapper
+    wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
+    ```
 
-![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
+    ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
-* Shutdown the openHAB instance by typing `logout` in the currently running console.
-* Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters, using one for the following methods:
-  * Download the [sample `openHAB2-wrapper.conf`](openHAB2-wrapper.conf) and place it in the `C:\openHAB2\userdata\etc\` directory (overwrite existing `openHAB2-wrapper.conf` file), or
-  * Modify the existing `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file using a text editor and copying the content below
+3.  Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-In either case, adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
+4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters, using one for the following methods:
+    * Download the [sample `openHAB2-wrapper.conf`](openHAB2-wrapper.conf) and place it in the `C:\openHAB2\userdata\etc\` directory (overwrite existing `openHAB2-wrapper.conf` file), or
+    * Modify the existing `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file using a text editor and copying the content below
 
-```conf
-#*****************************************
-# openHAB installation directory
-# Adapt this first setting to your system
-#*****************************************
-set.default.OPENHAB_HOME=C:\openHAB2
+    In either case, adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
-# Wrapper Properties
-set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
-set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
-set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
-set.default.OPENHAB_LOGDIR=%OPENHAB_HOME%\logs
-set.default.KARAF_HOME=%OPENHAB_RUNTIME%
-set.default.KARAF_BASE=%OPENHAB_USERDATA%
-set.default.KARAF_DATA=%OPENHAB_USERDATA%
-set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
-set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
+    ```conf
+    #*****************************************
+    # openHAB installation directory
+    # Adapt this first setting to your system
+    #*****************************************
+    set.default.OPENHAB_HOME=C:\openHAB2
 
-# Java Application
-wrapper.working.dir=%KARAF_BASE%
-wrapper.java.command=%JAVA_HOME%/bin/java
-wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
-wrapper.java.classpath.1=%KARAF_HOME%/lib/boot/*.jar
-wrapper.java.classpath.2=%KARAF_DATA%/lib/wrapper/*.jar
-wrapper.java.library.path.1=%KARAF_DATA%/lib/wrapper/
+    # Wrapper Properties
+    set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
+    set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
+    set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
+    set.default.OPENHAB_LOGDIR=%OPENHAB_HOME%\logs
+    set.default.KARAF_HOME=%OPENHAB_RUNTIME%
+    set.default.KARAF_BASE=%OPENHAB_USERDATA%
+    set.default.KARAF_DATA=%OPENHAB_USERDATA%
+    set.default.KARAF_ETC=%OPENHAB_USERDATA%\etc
+    set.default.PATH=%PATH%;%KARAF_BASE%\lib;%KARAF_HOME%\lib
 
-# Java Parameters
-wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
-wrapper.java.additional.2=-Dkaraf.base="%KARAF_BASE%"
-wrapper.java.additional.3=-Dkaraf.data="%KARAF_DATA%"
-wrapper.java.additional.4=-Dkaraf.etc="%KARAF_ETC%"
-wrapper.java.additional.5=-Dcom.sun.management.jmxremote
-wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
-wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
-wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%/jre/lib/endorsed;%JAVA_HOME%/lib/endorsed;%KARAF_HOME%/lib/endorsed"
-wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext;%JAVA_HOME%/lib/ext;%KARAF_HOME%/lib/ext"
-wrapper.java.additional.10=-Dopenhab.home="%OPENHAB_HOME%"
-wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
-wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
-wrapper.java.additional.13=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
-wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_HOME%\logs"
-wrapper.java.additional.15=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
-wrapper.java.additional.16=-Dorg.osgi.service.http.port=8080
-wrapper.java.additional.17=-Dorg.osgi.service.http.port.secure=8443
-wrapper.java.maxmemory=512
+    # Java Application
+    wrapper.working.dir=%KARAF_BASE%
+    wrapper.java.command=%JAVA_HOME%/bin/java
+    wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
+    wrapper.java.classpath.1=%KARAF_HOME%/lib/boot/*.jar
+    wrapper.java.classpath.2=%KARAF_DATA%/lib/wrapper/*.jar
+    wrapper.java.library.path.1=%KARAF_DATA%/lib/wrapper/
 
-# Wrapper Logging Properties
-wrapper.console.format=PM
-wrapper.console.loglevel=INFO
-wrapper.logfile=%OPENHAB_HOME%\logs\wrapper.log
-wrapper.logfile.format=LPTM
-wrapper.logfile.loglevel=INFO
-wrapper.logfile.maxsize=10m
-wrapper.logfile.maxfiles=5
-wrapper.syslog.loglevel=NONE
+    # Java Parameters
+    wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
+    wrapper.java.additional.2=-Dkaraf.base="%KARAF_BASE%"
+    wrapper.java.additional.3=-Dkaraf.data="%KARAF_DATA%"
+    wrapper.java.additional.4=-Dkaraf.etc="%KARAF_ETC%"
+    wrapper.java.additional.5=-Dcom.sun.management.jmxremote
+    wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
+    wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
+    wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%/jre/lib/endorsed;%JAVA_HOME%/lib/endorsed;%KARAF_HOME%/lib/endorsed"
+    wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext;%JAVA_HOME%/lib/ext;%KARAF_HOME%/lib/ext"
+    wrapper.java.additional.10=-Dopenhab.home="%OPENHAB_HOME%"
+    wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
+    wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
+    wrapper.java.additional.13=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
+    wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_HOME%\logs"
+    wrapper.java.additional.15=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
+    wrapper.java.additional.16=-Dorg.osgi.service.http.port=8080
+    wrapper.java.additional.17=-Dorg.osgi.service.http.port.secure=8443
+    wrapper.java.maxmemory=512
 
-# Wrapper Windows Properties
-wrapper.console.title=openHAB2
-wrapper.ntservice.name=openHAB2
-wrapper.ntservice.displayname=openHAB2
-wrapper.ntservice.description=openHAB 2 Service
-wrapper.ntservice.dependency.1=
-wrapper.ntservice.starttype=AUTO_START
-wrapper.ntservice.interactive=false
-```
+    # Wrapper Logging Properties
+    wrapper.console.format=PM
+    wrapper.console.loglevel=INFO
+    wrapper.logfile=%OPENHAB_HOME%\logs\wrapper.log
+    wrapper.logfile.format=LPTM
+    wrapper.logfile.loglevel=INFO
+    wrapper.logfile.maxsize=10m
+    wrapper.logfile.maxfiles=5
+    wrapper.syslog.loglevel=NONE
 
-* Open an elevated command prompt and type the following commands:
+    # Wrapper Windows Properties
+    wrapper.console.title=openHAB2
+    wrapper.ntservice.name=openHAB2
+    wrapper.ntservice.displayname=openHAB2
+    wrapper.ntservice.description=openHAB 2 Service
+    wrapper.ntservice.dependency.1=
+    wrapper.ntservice.starttype=AUTO_START
+    wrapper.ntservice.interactive=false
+    ```
 
-```text
-C:\openHAB2\userdata\bin\openHAB2-service.bat install
-net start "openHAB2"
-```
+5.  Open an elevated command prompt and type the following commands:
 
-![Admin cmd](images/Admin_CMD.jpg)
-![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
+    ```text
+    C:\openHAB2\userdata\bin\openHAB2-service.bat install
+    net start "openHAB2"
+    ```
 
-Your openHAB Windows service is now installed and running.
-Validate proper operations by:
+    ![Admin cmd](images/Admin_CMD.jpg)
 
-* Browsing to `http://localhost:8080`
-* Verifying that the Windows Service is running and set to Automatic Startup type.
-  Use `services.msc` and find the `openHAB2` service.
-  ![Windows Service](images/Windows_Service.jpg)
-* Logging in with an SSH client to the console (see info below)
+    ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
-How to login to openHAB console when using a Windows service:
+6.  Your openHAB Windows service is now installed and running.
+    Validate proper operations by:
 
-* Install a SSH Client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+    * Browsing to [http://localhost:8080](http://localhost:8080)
+    * Verifying that the Windows Service is running and set to Automatic Startup type.
+      Use `services.msc` and find the `openHAB2` service.
+      ![Windows Service](images/Windows_Service.jpg)
+    * Logging in with an SSH client to the console (see info below)
+
+### Connecting to the openHAB console
+
+* Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 * Setup a session with the following parameters:
 
 * Host: 127.0.0.1
