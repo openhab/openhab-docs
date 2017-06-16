@@ -6,7 +6,7 @@ type: binding
 description: "The senseBox binding integrates environment data from the [senseBox](https://sensebox.de/)"
 since: 2x
 logo: images/addons/sensebox.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

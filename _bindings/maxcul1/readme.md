@@ -6,7 +6,7 @@ type: binding
 description: "The aim of this binding is to allow the connection from openHAB to MAX! devices (wall thermostat/radiator valves) using the [CUL USB dongle](http://busware.de/tiki-index.php?page=CUL) rather than the MAX!Cube. This should allow greater control over the devices than the cube offers as all interaction is handled manually."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.maxcul/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
