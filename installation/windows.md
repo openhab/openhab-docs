@@ -13,7 +13,8 @@ The following instructions will guide you through the process of setting up open
 
 First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
 
-Add the `JAVA_HOME` System Environment Variable in Windows. Navigate to:
+Add the `JAVA_HOME` System Environment Variable in Windows.
+Navigate to:
 
 * Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
 
@@ -26,21 +27,20 @@ On this page, we will be using `C:\openHAB2` as an example.
 
 ## Installation
 
-The openHAB runtime is distributed using a platform-independent zip file. 
+The openHAB runtime is distributed using a platform-independent zip file.
 To install it, follow these simple steps:
 
-1. Choose between the Stable Version [ ![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg) ](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip) or the latest Snapshot Version [ ![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg?version=2.1.0) ](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.1.0-SNAPSHOT.zip) of openHAB2.
+1.  Choose between the Stable Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg)](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip) or the latest Snapshot Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg?version=2.1.0)](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.1.0-SNAPSHOT.zip) of openHAB2.
 
-2. Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
+2.  Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
+    ![openHAB 2 Folders](images/openHAB_2_Folders.png)
 
-![openHAB 2 Folders](images/openHAB_2_Folders.png)
+3.  Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
+    ![Karaf_Windows](images/Karaf_Windows.png)
 
-3. Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
-
-![Karaf_Windows](images/Karaf_Windows.png)
-
-4. Point your browser to `http://localhost:8080`. You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html). 
-   When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
+4.  Point your browser to `http://localhost:8080`.
+    You should be looking at the openHAB [package selection page]({{base}}/configuration/packages.html).
+    When you've selected an appropriate package, this page will contain the [UI]({{base}}/addons/uis.html) selection screen.
 
 ### File Locations
 
@@ -58,29 +58,31 @@ Assuming a successful install, you will now have various folders inside `C:\open
 
 ## Backup
 
-Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions). 
-When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB2` folder. Which can be used any time after a failure.
+Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
+When you have a setup that you are happy with, it would be a good idea to make a backup of the whole `C:\openHAB2` folder.
+Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
 
-There is currently no automatic update script for Windows. To update manually, download a later version of the openHAB distribution zip file and follow these steps:
+There is currently no automatic update script for Windows.
+To update manually, download a later version of the openHAB distribution zip file and follow these steps:
 
 1. Stop the openHAB process if it is currently running.
 2. Backup openHAB as described above.
 3. Delete the following files from your existing install:
- - `userdata\etc\all.policy`
- - `userdata\etc\branding.properties`
- - `userdata\etc\branding-ssh.properties`
- - `userdata\etc\config.properties`
- - `userdata\etc\custom.properties`
- - `userdata\etc\distribution.info`
- - `userdata\etc\jre.properties`
- - `userdata\etc\profile.cfg`
- - `userdata\etc\startup.properties`
- - Any file in `userdata\etc` that starts with `org.apache.karaf`
- - The `userdata\cache` folder
- - The `userdata\tmp` folder
-4. Copy and paste the new `userdata` folder over your existing install, when prompted **do not overwrite existing files**.
+   - `userdata\etc\all.policy`
+   - `userdata\etc\branding.properties`
+   - `userdata\etc\branding-ssh.properties`
+   - `userdata\etc\config.properties`
+   - `userdata\etc\custom.properties`
+   - `userdata\etc\distribution.info`
+   - `userdata\etc\jre.properties`
+   - `userdata\etc\profile.cfg`
+   - `userdata\etc\startup.properties`
+   - Any file in `userdata\etc` that starts with `org.apache.karaf`
+   - The `userdata\cache` folder
+   - The `userdata\tmp` folder
+4. Copy and paste the new `userdata` folder over your existing install, when prompted **do not overwrite existing files**
 5. Copy and paste the new `runtime` folder over your existing install, when prompted **overwrite all existing files**
 
 ## Starting openHAB as a service
@@ -89,26 +91,26 @@ By installing the openHAB process as a service in Windows, you can:
 * Launch it automatically upon system startup
 * Run it in the background
 
-** Windows Service Installation Steps **
-1. Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
-2. Issue the following two commands in your openHAB console:
+**Windows Service Installation Steps**
 
-```
+* Complete the [prerequisites](#prerequisites) and regular [installation](#installation) steps, including the package selection
+* Issue the following two commands in your openHAB console:
+
+```shell
 feature:install service-wrapper
 wrapper:install --name "openHAB2" --display "openHAB2" --description "openHAB 2 Service"
 ```
 
 ![Wrapper Install_Windows](images/Wrapper_Install_Windows.jpg)
 
-3. Shutdown the openHAB instance by typing `logout` in the currently running console.
-
-4. Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters, using one for the following methods:
-* Download the [sample `openHAB2-wrapper.conf`](openHAB2-wrapper.conf) and place it in the `C:\openHAB2\userdata\etc\` directory (overwrite existing `openHAB2-wrapper.conf` file), or
-* Modify the existing `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file using a text editor and copying the content below
+* Shutdown the openHAB instance by typing `logout` in the currently running console.
+* Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters, using one for the following methods:
+  * Download the [sample `openHAB2-wrapper.conf`](openHAB2-wrapper.conf) and place it in the `C:\openHAB2\userdata\etc\` directory (overwrite existing `openHAB2-wrapper.conf` file), or
+  * Modify the existing `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file using a text editor and copying the content below
 
 In either case, adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
-```
+```conf
 #*****************************************
 # openHAB installation directory
 # Adapt this first setting to your system
@@ -174,9 +176,9 @@ wrapper.ntservice.starttype=AUTO_START
 wrapper.ntservice.interactive=false
 ```
 
-5. Open an elevated command prompt and type the following commands:
+* Open an elevated command prompt and type the following commands:
 
-```
+```text
 C:\openHAB2\userdata\bin\openHAB2-service.bat install
 net start "openHAB2"
 ```
@@ -184,23 +186,24 @@ net start "openHAB2"
 ![Admin cmd](images/Admin_CMD.jpg)
 ![Wrapper_Start_Windows](images/Wrapper_Start_Windows.jpg)
 
-6. Your openHAB Windows service is now installed and running.  Validate proper operations by:
+Your openHAB Windows service is now installed and running.
+Validate proper operations by:
 
- - Browsing to `http://localhost:8080`
- - Verifying that the Windows Service is running and set to Automatic Startup type.  Use `services.msc` and find the `openHAB2` service.
-![Windows Service](images/Windows_Service.jpg)
- - Logging in with an ssh client to the console (see info below)
+* Browsing to `http://localhost:8080`
+* Verifying that the Windows Service is running and set to Automatic Startup type.
+  Use `services.msc` and find the `openHAB2` service.
+  ![Windows Service](images/Windows_Service.jpg)
+* Logging in with an SSH client to the console (see info below)
 
-7. How to login to openHAB console when using a Windows service:
- - Install a SSH Client application e.g. [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/), [Xshell 5](https://www.netsarang.com/products/xsh_overview.html) etc
- - Setup a session with the following parameters:
+How to login to openHAB console when using a Windows service:
 
-```
-Host: 127.0.0.1
-Port: 8101
-Username: openhab
-Password: habopen
-```
+* Install a SSH Client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+* Setup a session with the following parameters:
+
+* Host: 127.0.0.1
+* Port: 8101
+* Username: `openhab`
+* Password: `habopen`
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
 ![SSH Connection 2](images/SSH_Connection_2.jpg)
