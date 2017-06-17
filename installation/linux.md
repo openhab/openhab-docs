@@ -171,6 +171,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   name=openHAB 2.x.x Stable
   baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
   gpgcheck=1
+  repo_gpgcheck=1
   gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
   enabled=1
   ```
@@ -184,6 +185,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   name=openHAB 2.x.x Testing
   baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
   gpgcheck=1
+  repo_gpgcheck=1
   gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
   enabled=1
   ```
@@ -198,6 +200,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   name=openHAB 2.x.x Snapshots
   baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
   gpgcheck=1
+  repo_gpgcheck=1
   gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public 
   enabled=1
   ```
