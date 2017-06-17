@@ -7,10 +7,16 @@ title: Items
 
 # Items
 
-openHAB uses a strict separation between the physical world and the application, which is built around the notion of "Items" (also called the virtual layer).
-Items represent functionality that is used by the application (mainly user interfaces or automation logic).
+In openHAB "Items" represent all properties and capabilities of the user’s home automation.
 
-This page is structured as follows:
+While a device or service might be quite specific, Items are unified substitutions inside the openHAB world.
+Items can be Strings, Numbers, Switches or one of a few other basic Item types, a programmer can rightly compare Item Types with base variable types of a programming language.
+
+One unique feature of openHAB Items (in comparison to normal variables) is the possibility to connect them to the outside world (via Bindings, more about that later).
+An Item does not simply hold a certain information (e.g., "No Error", 3.141, OFF), the information is synchronized with the real world in both ways.
+
+But let's not get ahead of ourselves.
+The rest of this page contains all details regarding Items and is structured as follows:
 
 {::options toc_levels="2..4"/}
 
@@ -19,56 +25,65 @@ This page is structured as follows:
 
 ## Introduction
 
-Items have a **state** and changes and updates to that **state** generates **events** which can trigger automation.
-They can be **read from**, or **written to**, in order to interact with them.
+Items are basic data types and have a *state* which can be *read from*, or *written to*, in order to interact with them.
 
-Items can be **bound to bindings** and **linked to channels**.
-For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer channel can set the brightness of the light.
-Read the [docs]({{base}}/addons/bindings.html) page for the respective binding to get more information about possible connections and examples.
+Items can be *bound to Bindings* or *linked to Channels*.
+For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer Channel can set the brightness of the light bulb.
+Read the [docs page for the respective Binding]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
 
-There are two methods for defining items.
-The first is through PaperUI if the binding supports it.
-Generally all 2.x version bindings can be configured through PaperUI.
+There are two methods for defining Items:
 
-The second is by manually editing text `.items` files in the `items` folder.
-Files here must have the extension `.items` and you can make as many `.items` files as you need/want; however, each Item must be unique across them all.
-Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
-Generally 1.x version bindings can only be bound to Items through `.items` files.
+1.  The first is through PaperUI.
+    Generally all 2.x version Bindings can be configured through PaperUI.
+    Other 1.x and legacy Bindings do not offer this path.
 
-Groups are also defined in the `.items` files.
+2.  The second method is through text `.items` files in the `items` folder.
+    Files here must have the extension `.items` and you can create as many `.items` files as you need/want - however, each Item must be unique across them all.
+    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
+    Generally 1.x version Bindings can only be bound to Items through `.items` files.
+    2.x Bindings can also be used with this method
+
+**Groups** are also defined in the `.items` files.
 Groups are a special type of Item that allows one to create a set of Items which are all treated as one unit.
-Groups can be nested inside other groups, and Items can be in none, one, or multiple groups.
+Items can be in none, one, or multiple groups and groups can be nested inside other groups.
 
-Typically Items are defined using the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) by editing the items definition files.
+**Assumptions for PaperUI:**
+The following content will discuss details of item definition on the example of `.items` files.
+
+**Editor Recommendation:**
+It's recommended to edit `.items` files using the [Eclipse SmartHome Designer]({{base}}/installation/designer.html).
 Doing so you will have full IDE support like syntax checking, context assist, etc.
 
 ## Item Definition and Syntax
 
-Items are defined in the following syntax:
-
-```xtend
-itemtype itemname ["labeltext"] [<iconname>] [(group1, group2, ...)] [["tag1", "tag2", ...]] [{bindingconfig}]
-```
-
-Parts in square brackets ([]) are optional.
-
+Items are defined in the following syntax.
 The parts of an Item must be defined in this order.
-
-**Example:**
+Besides the `itemtype` and `itemname` all parts are optional.
 
 ```xtend
-Number LivingRoom_Temperature "The Temperature is [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+itemtype itemname "labeltext" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 ```
 
-The example above defines an item:
 
-* of type `Number`
-* with name `LivingRoom_Temperature`
-* formatting its output in format `%.1f °C` (See Formatting section for syntax explanation)
-* displaying icon `temperature`
-* belonging to groups `gTemperature` and `gLivingRoom`
-* tagged as a thermostat ("TargetTemperature") for usage with I/O addons like [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html)
-* bound to the openHAB binding `knx` with write group address `1/0/15` and listening group address `0/0/15`
+**Examples:**
+
+```xtend
+Number BathRoom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
+Switch Kitchen_Light "Kitchen Light OnOff" {mqtt="<[...], >[...]" }
+String BedRoom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
+
+Number LivingRoom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+```
+
+The last example above defines an Item with the following parts:
+
+* Item type `Number`
+* Item name `LivingRoom_Temperature`
+* Item value formatted in a way which will produce for example "21.5 °C" as its output
+* Item displaying icon with the name `temperature`
+* Item belongs to groups `gTemperature` and `gLivingRoom`
+* Item is tagged as a thermostat ("TargetTemperature")
+* Item is bound to the openHAB Binding `knx` with binding specific settings
 
 The remainder of this article describes the Item definition parts in more detail.
 
@@ -102,7 +117,7 @@ Item:
 Dimmer  Light_FF_Office  "Dimmer [%d %%]"  {milight="bridge01;3;brightness"}
 ```
 
-sitemap:
+Sitemap:
 
 ```xtend
 Switch  item=Light_FF_Office
@@ -123,7 +138,7 @@ Spaces and special characters cannot be used.
 ### Label
 
 The label text has two purposes.
-First, this text is used to display a description of the specific item (for example, in the sitemap).
+First, this text is used to display a description of the specific Item (for example, in the Sitemap).
 Second, it can be used to format or transform the Item's state (for example, making DateTime output more readable).
 The state and format of the state is contained inside `[ ]` in the label.
 See Formatting below for more details.
@@ -141,8 +156,8 @@ Formatting is done applying [Java formatter class syntax](http://docs.oracle.com
 ```
 
 Only the leading '%' and the trailing 'conversion' are mandatory.
-The **argument_index$** must be used if you want to convert the value of the item several times within the label text or if the item has more than one value.
-Look at the DateTime and Call item in the following example.
+The **argument_index$** must be used if you want to convert the value of the Item several times within the label text or if the Item has more than one value.
+Look at the DateTime and Call Item in the following example.
 
 ```xtend
 Number    MyTemperature  "The Temperature is [%.1f] °C"   { someBinding:somevalue }
@@ -182,7 +197,7 @@ NULL=unknown
 -=unknown
 ```
 
-Next we define two items.
+Next we define two Items.
 One showing the raw value as it is provided from our sensor and one with transformed value.
 
 ```xtend
@@ -242,14 +257,14 @@ For example:
 | switch-off.svg | Matches OFF, or "off"                              |
 | switch-on.svg  | Matches ON, or "on"                                |
 
-To use the dynamic items just use the default icon name without the extension.
+To use the dynamic Items just use the default icon name without the extension.
 
 ```xtend
 Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {somebinding:someconfig}
 ```
 
-As mentioned above, one note of caution is the state used by the sitemap to select the proper icon is the transformed state.
-So when using a MAP in the label, the icon name must match the mapped state displayed on the sitemap, not the raw Item's state.
+As mentioned above, one note of caution is the state used by the Sitemap to select the proper icon is the transformed state.
+So when using a MAP in the label, the icon name must match the mapped state displayed on the Sitemap, not the raw Item's state.
 To use the `Number Window` example from above, the icons for `Number Window` would be:
 
 ```xtend
@@ -268,12 +283,12 @@ window-closed.png
 
 ### Groups
 
-The Item type _Group_ is used to define a Group in which you can nest/collect other items, including other Groups.
+The Item type *Group* is used to define a Group in which you can nest/collect other Items, including other Groups.
 You don't need Groups, but they are a great help for your openHAB configuration.
 Groups are supported in `sitemaps`, `rules`, `functions`, the `bindingname.cfg` files, and more places.
-In all these places you can either write every single applicable item, i.e. All temperature sensors, or if you have grouped your items, you just use this group instead.
+In all these places you can either write every single applicable Item, i.e. All temperature sensors, or if you have grouped your Items, you just use this group instead.
 
-On the sitemap, a Group can be included as an Item which is useful to, for example, present a single switch to control multiple lights, or as a Group in which case the sitemap will generate a subframe to display all the members of the Group using their default display parameters.
+On the Sitemap, a Group can be included as an Item which is useful to, for example, present a single switch to control multiple lights, or as a Group in which case the Sitemap will generate a subframe to display all the members of the Group using their default display parameters.
 
 A Group's state is an aggregation of the states of all its members.
 Sending a command to a Group will cause that command to be forwarded to all the Group's members.
@@ -303,8 +318,8 @@ To give an example: the Item `Sensor_Temperature` only exists once in the group 
 
 #### Group Types
 
-Group items can also be used to easily determine one or more Items with a defined value or can be used to calculate a value depending on all values within the Group.
-Please note that this can only be used if all items in the Group have compatible types.
+Group Items can also be used to easily determine one or more Items with a defined value or can be used to calculate a value depending on all values within the Group.
+Please note that this can only be used if all Items in the Group have compatible types.
 The format for this is:
 
 ```xtend
@@ -324,14 +339,14 @@ Group functions can be any of the following:
 
 | Function             | Description
 |:---------------------|:-----------
-| AND(value1, value2)  | This does a logical 'AND' operation. Only if all items are of 'value1' this is returned, otherwise the 'value2' is returned.
-| AVG                  | Calculates the numeric average over all item values of decimal type.
-| MAX                  | This calculates the maximum value of all item values of decimal type.
-| MIN                  | This calculates the minimum value of all item values of decimal type.
+| AND(value1, value2)  | This does a logical 'AND' operation. Only if all Items are of 'value1' this is returned, otherwise the 'value2' is returned.
+| AVG                  | Calculates the numeric average over all Item values of decimal type.
+| MAX                  | This calculates the maximum value of all Item values of decimal type.
+| MIN                  | This calculates the minimum value of all Item values of decimal type.
 | NAND(value1, value2) | This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa.
 | NOR(value1, value2)  | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa.
-| OR(value1, value2)   | Does a logical 'OR' operation. If at least one item is of 'value1' this is returned, otherwise the 'value2' is returned.
-| SUM                  | Calculates the sum of all items in the group.
+| OR(value1, value2)   | Does a logical 'OR' operation. If at least one Item is of 'value1' this is returned, otherwise the 'value2' is returned.
+| SUM                  | Calculates the sum of all Items in the group.
 
 An example of this would be:
 
@@ -350,24 +365,24 @@ Tags are only of interest if an add-on or integration README explicitly discusse
 
 As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding Configs and 2.x Channel Linking.
 
-When you install a binding through PaperUI it will automatically create a `.cfg` file in `conf/services/` for the appropriate binding.
-Inside these files are a predefined set of variables which are required for the binding to operate.
+When you install a Binding through PaperUI it will automatically create a `.cfg` file in `conf/services/` for the appropriate Binding.
+Inside these files are a predefined set of variables which are required for the Binding to operate.
 In many cases you will need to view and edit these to suit your system.
 These variables can hold IP addresses, API keys, user names, passwords etc.
 These are all in plain text, so be careful who you share these with if some data is sensitive.
 
 #### 1.x Binding Configs
 
-The 1.x binding config defines from where the Item gets it values, and where a given value/command should be sent.
+The 1.x Binding config defines from where the Item gets it values, and where a given value/command should be sent.
 
-You bind an Item to a binding by adding a binding definition in curly brackets at the end of the Item definition
+You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition
 
 ```xtend
 { nh="192.168.1.123:80" }
 ```
 
-Where _ns_ is the namespace for a certain binding like "network", "netatmo", "zwave" etc.
-Every binding defines what values must be given in the binding configuration string.
+Where *ns* is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
+Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
 You must have a look at your [Bindings]({{base}}/addons/bindings.html) configuration section to know what to use.
 Some typical examples are:
@@ -379,22 +394,22 @@ Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, 
 Contact Garage             "Garage is [MAP(en.map):%s]     { zwave="21:command=sensor_binary,respond_to_basic=true" }
 ```
 
-If you need to use legacy openHAB 1.x bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
+If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
 After downloading the legacy .jar files, they need to be placed in the `/addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `/conf/services/` and paste the appropriate binding configuration into this.
-For all other native openHAB2 bindings, configuration is done through a `bindingname.cfg` file in the same location.
+If further configuration is required then you will need to create an `openhab.cfg` file in `/conf/services/` and paste the appropriate Binding configuration into this.
+For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
 
 #### 2.x Binding Configs
-The 2.x bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
-Unlike with 1.x version bindings which each define their own format for the binding config that is defined on the Item itself, 2.x bindings define those parameters in a Thing.
+The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
+Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels and Items are linked to one or more Channels.
 
-Some bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in PaperUI.
+Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in PaperUI.
 Once accepted it will appear under Configuration > Things.
 
-Other bindings support defining Things in a .things file.
+Other Bindings support defining Things in a `.things` file.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define things for a given binding.
+See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define Things for a given Binding.
 
 ##### PaperUI Linking
 
@@ -404,7 +419,7 @@ First create the Item in PaperUI under Configuration Items.
 
 Next navigate to the Thing that has the Channel to link to the Item.
 
-Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked items."
+Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
 
 Select the Item from the list and press "Link".
 
@@ -412,9 +427,9 @@ Select the Item from the list and press "Link".
 
 One can also link an Item with a Channel using the `.items` file.
 To discover the Channel ID to link to an Item browse to that Thing in PaperUI.
-All of the channels that Thing support appear at the bottom of the Thing's page.
+All of the Channels that Thing support appear at the bottom of the Thing's page.
 
-Linking an Item to a channel is of the form:
+Linking an Item to a Channel is of the form:
 
 ```xtend
 { channel="channel id" }
@@ -431,11 +446,11 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:c
 
 ## Restore States
 
-When restarting your openHAB installation you may find there are times when your logs indicate some items are UNDEF.
-This is because, by default, item states are not persisted when openHAB restarts.
+When restarting your openHAB installation you may find there are times when your logs indicate some Items are UNDEF.
+This is because, by default, Item states are not persisted when openHAB restarts.
 To have your states persist across restarts you will need to install a [Persistence]({{base}}/configuration/persistence.html) extension.
 
-Specifically, you need to use a `restoreOnStartup` strategy for all your items.
+Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
 Then whatever state they were in before the restart will be restored automatically.
 
 ```xtend
@@ -444,7 +459,7 @@ Strategies {
 }
 
 Items {
-    // persist all items on every change and restore them from the MapDB at startup
+    // persist all Items on every change and restore them from the MapDB at startup
     * : strategy = everyChange, restoreOnStartup
 }
 ```
