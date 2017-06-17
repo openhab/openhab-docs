@@ -159,8 +159,6 @@ Yum or Dnf Based Systems
 
 {% include collapsible/body.html %}
 
-**Note:** The RPM files cannot currently be GPG signed or checked, only continue if you're happy installing without GPG verification.
-
 The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
 You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
 
@@ -172,8 +170,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   [openHAB-Stable]
   name=openHAB 2.x.x Stable
   baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
-  gpgcheck=0
-  repo_gpgcheck=0
+  gpgcheck=1
   gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
   enabled=1
   ```
@@ -186,8 +183,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   [openHAB-Testing]
   name=openHAB 2.x.x Testing
   baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
-  gpgcheck=0
-  repo_gpgcheck=0
+  gpgcheck=1
   gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab 
   enabled=1
   ```
@@ -201,8 +197,7 @@ You may add all three to the same file, but make sure the desired repo is is set
   [openHAB-Snapshots]
   name=openHAB 2.x.x Snapshots
   baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
-  gpgcheck=0
-  repo_gpgcheck=0
+  gpgcheck=1
   gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public 
   enabled=1
   ```
