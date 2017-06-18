@@ -1,0 +1,64 @@
+{
+  "name": "openhab-docs",
+  "version": "0.0.0",
+  "description": "(this npm package file is currently only used for remark-lint)",
+  "main": "index.html",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openhab/openhab-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhab/openhab-docs/issues"
+  },
+  "homepage": "https://github.com/openhab/openhab-docs#readme",
+  "scripts": {
+    "lint-md": "remark ."
+  },
+  "dependencies": {
+    "remark-cli": "^3.0.1",
+    "remark-lint-code-block-style": "^1.0.0",
+    "remark-lint-fenced-code-flag": "^1.0.0",
+    "remark-lint-list-item-indent": "^1.0.0",
+    "remark-lint-no-tabs": "^1.0.0",
+    "remark-lint-sentence-newline": "^2.0.0",
+    "remark-lint-unordered-list-marker-style": "^1.0.0",
+    "remark-preset-lint-consistent": "^2.0.0",
+    "remark-preset-lint-recommended": "^2.0.0"
+  },
+  "remarkConfig": {
+    "plugins": [
+      [
+        "remark-preset-lint-recommended",
+        true
+      ],
+      [
+        "remark-preset-lint-consistent",
+        true
+      ],
+      [
+        "remark-lint-list-item-indent",
+        "mixed"
+      ],
+      [
+        "remark-lint-fenced-code-flag",
+        true
+      ],
+      [
+        "remark-lint-no-tabs",
+        true
+      ],
+      [
+        "remark-lint-unordered-list-marker-style",
+        "*"
+      ],
+      [
+        "remark-lint-code-block-style",
+        "fenced"
+      ],
+      [
+        "remark-lint-sentence-newline",
+        true
+      ]
+    ]
+  }
+}

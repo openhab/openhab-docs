@@ -2,6 +2,7 @@ _site
 .sass-cache
 .jekyll-metadata
 .vagrant
+node_modules
 project.pbxproj
 *.xcworkspacedata
 *.xcscmblueprint
