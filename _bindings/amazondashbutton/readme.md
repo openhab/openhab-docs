@@ -101,7 +101,7 @@ __ Caution:__  You have to be aware that other Amazon devices might pop up in yo
 ```
 rule "Dash button pressed"
     when
-        Channel "amazondashbutton:dashbutton:ac-63-be-xx-xx-xx:press" triggered
+        Channel "amazondashbutton:dashbutton:ac63bexxxxxx:press" triggered
     then
         println("The Dash button has been pressed")
 end
