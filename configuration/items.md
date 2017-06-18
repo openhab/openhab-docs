@@ -74,7 +74,7 @@ The last example above defines an Item with the following parts:
 
 * Item type `Number`
 * Item name `LivingRoom_Temperature`
-* Item value formatted in a way which will produce for example "21.5 °C" as its output
+* Item state formatted in a way which will produce for example "21.5 °C" as its output
 * Item displaying icon with the name `temperature`
 * Item belongs to groups `gTemperature` and `gLivingRoom`
 * Item is tagged as a thermostat ("TargetTemperature")
@@ -84,7 +84,7 @@ The remainder of this article describes the Item definition parts in more detail
 
 ### Types
 
-The Item type defines which kind of values can be stored in that Item and which commands can be sent to it.
+The Item type defines which kind of state can be stored in that Item and which commands can be sent to it, e.g. String, Number or binary Switch.
 They are comparable with basic variable data types in programming languages.
 
 Each Item type has been optimized for certain components in your smart home.
@@ -128,12 +128,12 @@ First, this text is used to display a description of the specific Item (for exam
 Secondly, the label also includes the value displaying definition for the Item's state.
 This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
 
-### Value
+### State
 
-The value part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
-The value definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
+The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
+The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
 
-#### Value Formatting
+#### State Formatting
 
 Formatting is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax), therefore the syntax is
 
@@ -159,7 +159,7 @@ Value: Lorem ipsum
 Last Update: Sun 15:26
 ```
 
-### Value Transformations
+### State Transformations
 
 Another possibility in label texts is to use a transformation.
 They are used for example to translate a status into another language or convert technical value into human readable ones.
@@ -464,6 +464,29 @@ Number  Netatmo_Indoor_CO2 "CO2"                           { channel="netatmo:NA
 Number  Azimuth            "Azimuth"                       { channel="astro:sun:home:position#azimuth" }
 Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:command=sensor_binary,respond_to_basic=true" }
 ```
+
+#### Multi Binding/Channel Linkage
+
+One Item can be linked to multiple Bindings and/or Channels.
+Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.
+
+```java
+Switch Office_PC { nh="192.168.3.203", wol="192.168.0.2" }
+Number Temperature { mysensors="24;1;V_TEMP", expire="5m,-999" }
+```
+
+The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
+The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html) where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
+
+**Exception `autoupdate`:**
+
+`autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
+This way, the Item is always unchanged unless you explicitly post an *update* to the item.
+
+```java
+Switch Garage_Gate { binding="xxx",autoupdate="false"}
+```
+
 
 ## Restore States
 
