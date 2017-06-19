@@ -204,11 +204,10 @@ By installing the openHAB process as a service in Windows, you can:
 
 * Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 * Setup a session with the following parameters:
-
-* Host: 127.0.0.1
-* Port: 8101
-* Username: `openhab`
-* Password: `habopen`
+  * Host: 127.0.0.1
+  * Port: 8101
+  * Username: `openhab`
+  * Password: `habopen`
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
 ![SSH Connection 2](images/SSH_Connection_2.jpg)
