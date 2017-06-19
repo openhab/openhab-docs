@@ -125,7 +125,7 @@ By installing the openHAB process as a service in Windows, you can:
     set.default.OPENHAB_CONF=%OPENHAB_HOME%\conf
     set.default.OPENHAB_RUNTIME=%OPENHAB_HOME%\runtime
     set.default.OPENHAB_USERDATA=%OPENHAB_HOME%\userdata
-    set.default.OPENHAB_LOGDIR=%OPENHAB_HOME%\logs
+    set.default.OPENHAB_LOGDIR=%OPENHAB_USERDATA%\logs
     set.default.KARAF_HOME=%OPENHAB_RUNTIME%
     set.default.KARAF_BASE=%OPENHAB_USERDATA%
     set.default.KARAF_DATA=%OPENHAB_USERDATA%
@@ -154,7 +154,7 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
     wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
     wrapper.java.additional.13=-Dopenhab.userdata="%OPENHAB_HOME%\userdata"
-    wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_HOME%\logs"
+    wrapper.java.additional.14=-Dopenhab.logdir="%OPENHAB_USERDATA%\logs"
     wrapper.java.additional.15=-Dfelix.cm.dir="%OPENHAB_HOME%\userdata\config"
     wrapper.java.additional.16=-Dorg.osgi.service.http.port=8080
     wrapper.java.additional.17=-Dorg.osgi.service.http.port.secure=8443
@@ -163,7 +163,7 @@ By installing the openHAB process as a service in Windows, you can:
     # Wrapper Logging Properties
     wrapper.console.format=PM
     wrapper.console.loglevel=INFO
-    wrapper.logfile=%OPENHAB_HOME%\logs\wrapper.log
+    wrapper.logfile=%OPENHAB_USERDATA%\logs\wrapper.log
     wrapper.logfile.format=LPTM
     wrapper.logfile.loglevel=INFO
     wrapper.logfile.maxsize=10m
