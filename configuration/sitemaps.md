@@ -12,6 +12,13 @@ Sitemaps are used to select and prepare these elements in order to compose a use
 including [BasicUI]({{base}}/addons/uis/basic/readme.html),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
+This page is structured as follows:
+
+{::options toc_levels="2..4"/}
+
+* TOC
+{:toc}
+
 The definition of sitemaps happens declaratively in a file with a clear syntax, described below.
 A sitemap definition file is stored in the folder `<openhab_config>/sitemaps` and has to have the `.sitemap` filename extension.
 For easy editing, the [openHAB Designer]({{base}}/installation/designer.html) brings full IDE support for these files.
