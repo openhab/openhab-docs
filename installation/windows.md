@@ -9,6 +9,13 @@ title: Windows
 
 The following instructions will guide you through the process of setting up openHAB 2.
 
+This page is structured as follows:
+
+{::options toc_levels="2..4"/}
+
+* TOC
+{:toc}
+
 ## Prerequisites
 
 First, be sure to check that your system has the necessary [prerequisites]({{base}}/installation/index.html#prerequisites).
