@@ -20,7 +20,7 @@ Navigate to:
 
 Create a New System Variable based on your Java installation directory:
 
-![JAVA_HOME](http://imageshack.com/a/img921/5017/HZjFl6.png)
+![JAVA_HOME](images/JAVA_HOME.png)
 
 The directory that openHAB is installed to must **contain no spaces**.
 On this page, we will be using `C:\openHAB2` as an example.
