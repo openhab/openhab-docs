@@ -33,9 +33,11 @@ To install it, follow these simple steps:
 1.  Choose between the Stable Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg)](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip) or the latest Snapshot Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg?version=2.1.0)](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.1.0-SNAPSHOT.zip) of openHAB2.
 
 2.  Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
+
     ![openHAB 2 Folders](images/openHAB_2_Folders.png)
 
 3.  Start the server: Launch the runtime by executing the script `C:\openHAB2\start.bat` and wait a while for it to start and complete.
+
     ![Karaf_Windows](images/Karaf_Windows.png)
 
 4.  Point your browser to `http://localhost:8080`.
@@ -106,17 +108,17 @@ By installing the openHAB process as a service in Windows, you can:
 
 3.  Shutdown the openHAB instance by typing `logout` in the currently running console.
 
-4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters, using one for the following methods:
-    * Download the [sample `openHAB2-wrapper.conf`](openHAB2-wrapper.conf) and place it in the `C:\openHAB2\userdata\etc\` directory (overwrite existing `openHAB2-wrapper.conf` file), or
-    * Modify the existing `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` file using a text editor and copying the content below
+4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters.
 
-    In either case, adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
+    * Copy all the config text from the below section and paste it in your `openHAB2-wrapper.conf`, replacing all existing content.
+    * Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
-    #*****************************************
-    # openHAB installation directory
-    # Adapt this first setting to your system
-    #*****************************************
+    #*******************************************************
+    # openHAB2-wrapper.conf for Windows Service Installation
+    #*******************************************************
+    
+    # openHAB installation dir (Adapt this first setting to your system)
     set.default.OPENHAB_HOME=C:\openHAB2
 
     # Wrapper Properties
