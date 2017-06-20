@@ -72,7 +72,12 @@ In this example our component needs a [LogService](https://osgi.org/javadoc/r4v4
 
 ### 1. Service Component Description
 
-This is the XML component description. This file is located in the *OSGI-INF* folder and is named *consumer.xml*:
+This is the XML component description. This file is located in the *OSGI-INF* folder and is named *consumer.xml*.
+
+    Note! Please keep in mind that the Service Component Description might be
+    automatically generated using SCR Annotations like @Component, @Reference,
+    @Activate, @Deacticate and etc that are supported e.g. in Apache Felix. Currently
+    these annotations are not used in the openHAB project, so please ignore examples where they are used.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -101,8 +106,8 @@ This is the XML component description. This file is located in the *OSGI-INF* f
 Let's take a look at some settings, that we can apply:
 
 - **immediate**:
-    - *true* - the component is activated as soon as all dependencies are satisfied;
-    - *false* - the component has lazy activation. The activation of the component is delayed until the service is requested. This is the default value;
+    - *true* - the component is activated as soon as all dependencies are satisfied. Adding this option will ensure that the component will be activated right after the bundle is activated and the component is satisfied;
+    - *false* - the component has lazy activation. The activation of the component is delayed(lazy activation) until the service is requested. This is the default value;
 - **cardinality**:
     - *1..1* - single service reference, that is mandatory. If your referenced service gets inactive, DS deactivates your service component as well (default value);
     - *0..1* - single service reference(not mandatory). You have to be aware that you might not have your reference resolved, your component can live with the absence;
@@ -262,7 +267,6 @@ The component **configuration is satisfied** when:
 
  - component is **enabled**;
  - all the **component references are satisfied**. A reference is satisfied when the reference specifies optional cardinality or there is at least one target service for the reference.
-
 If the component has lazy initialization (the component is *delayed*), it is moved to the REGISTERED state and it is waiting to be activated, when the service is requested (see Fig.2).  
 Otherwise (the component is *immediate*) as soon as its dependencies are satisfied, the component is activated (see Fig.1).
 
@@ -290,7 +294,22 @@ For more information - [OSGi 4.2 Compendium Specifiaction, Chapter 112.5 Compone
 
 If you want to practice, what you have learned so far, you can try out our [OSGi Coding tasks](osgitasks.html). In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.
 
-## VIII. Further Reading
+## VIII. Troubleshooting
+
+If you are new to Declarative Services and you don't know how to troubleshoot, maybe we can help you. We will give you a few tips what might have gone wrong. Some of the steps below depend on your development IDE and the OSGi Container that you use. Mind that most of the tips below are specific to Eclipse IDE and Equinox as the OSGi Runtime. You might review again the [Equinox commands](equinox.html#iv-commands) before you continue:
+
+- make sure that your Component Description (the XML file) contains the necessary information to provide or reference service (see the examples above);
+- make sure that your Component Description is placed in the OSGI-INF folder;
+- [Eclipse IDE only] make sure that no warnings are displayed in the Component Description file (a warning might indicate that some of the class names that you have used are not correct !);
+- open the bundle manifest file (located in META-INF/MANIFEST.MF) and check if your Component Description is added in the "Service-Component" header (it can be added as "OSGI-INF/*.xml or "OSGI-INF/component.xml");
+- [Eclipse IDE only] open the build.properties file and make sure that the Component Description is added in the bin.includes entry (it can be added as "OSGI-INF/" or "OSGI-INF/component.xml"). If it is not included in the build.properties file, it will not end in the .jar file that will be deployed in the Equinox runtime and SCR will be not able to find it;
+- Start the runtime and check the log. Do you see any Errors like "MESSAGE [SCR] Error while trying to bind reference"? Read the error message and proceed accordingly.
+- Make sure that the bundle that is providing the service is in "ACTIVE" state, if it is not, start it manually with the "start id" command, where id is the id of the bundle;
+- [Equinox only] While the runtime is running type the "services" command and search if your service is registered. In case it is not registered, most probably you have missed some of the steps above :);
+- [Equinox only] While the runtime is running type "ls -c id", where id is the id of the bundle that is providing the service. This will give detailed information about the services that are registered by this bundle, read the information if the component is satisfied carefully;
+- Is your service in use? In case it is not and you are not seeing it registered, the component might have lazy activation policy(this is the default policy). Add "immediate=true" in your Component Definition if you like to change the activation policy.  
+
+## XIX. Further Reading
 
 - [*OSGi Service Platform Service Compendium, Release 4, Version 4.2,
 August 2009*](https://osgi.org/download/r4v42/r4.cmpn.pdf)  

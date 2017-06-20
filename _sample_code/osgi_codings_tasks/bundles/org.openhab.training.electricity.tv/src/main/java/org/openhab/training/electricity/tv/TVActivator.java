@@ -16,7 +16,7 @@ import org.osgi.framework.ServiceRegistration;
 /**
  * The class {@link TVActivator} is responsible for the activation of this
  * bundle.
- * 
+ *
  * @author Kiril Atanasov - Initial contribution
  */
 public class TVActivator implements BundleActivator {
@@ -49,7 +49,7 @@ public class TVActivator implements BundleActivator {
         tracker.open();
 
         // The TV is starting to consume power from the providers
-        tracker.getTV().start();
+        tracker.getTV().startConsuming();
 
     }
 
@@ -61,7 +61,7 @@ public class TVActivator implements BundleActivator {
      */
     @Override
     public void stop(BundleContext context) throws Exception {
-        tracker.getTV().stop();
+        tracker.getTV().stopConsuming();
         tvServiceRegistration.unregister();
         tracker.close();
     }
