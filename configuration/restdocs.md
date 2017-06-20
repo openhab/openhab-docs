@@ -15,6 +15,6 @@ The REST API also supports server-push, so you can subscribe yourself on change 
 For further details, please check:
 
 * [The openHAB 1.x wiki REST API article](https://github.com/openhab/openhab/wiki/REST-API)
-* The interactive REST API documentation in your local installation, available through the openHAB 2 portal page (installable "Misc" extension)
+* The interactive REST API documentation in your local installation, available through the openHAB 2 portal page (e.g. `http://%SERVER_IPADDR%:8080/%UI_TYPE%/index.html#/extensions` then choose "Misc" extension), then you'll see the document at http://%SERVER_IPADDR%:8080/doc/index.html
 
 {% include contribution-wanted.html %}
