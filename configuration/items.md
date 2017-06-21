@@ -125,11 +125,13 @@ A good naming schema can be advised.
 The label text has two purposes.
 First, this text is used to display a description of the specific Item (for example, in the Sitemap).
 
-Secondly, the label also includes the value displaying definition for the Item's state. This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
+Secondly, the label also includes the value displaying definition for the Item's state.
+This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
 
 ### State
 
-The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more. The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
+The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
+The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
 
 #### State Formatting
 
