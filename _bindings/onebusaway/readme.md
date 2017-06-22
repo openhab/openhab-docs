@@ -5,6 +5,7 @@ title: OneBusAway - Bindings
 type: binding
 description: "[OneBusAway](https://onebusaway.org/) is an open source, real-time, transit-information service.  This binding allows you to get events based on transit arrival and departures, so you can create rules to do something based on that data."
 since: 2x
+logo: images/addons/onebusaway.png
 install: auto
 ---
 

@@ -5,6 +5,7 @@ title: ZigBee - Bindings
 type: binding
 description: "The ZigBee binding supports an interface to a wireless ZigBee home automation network."
 since: 2x
+logo: images/addons/zigbee.png
 install: auto
 ---
 

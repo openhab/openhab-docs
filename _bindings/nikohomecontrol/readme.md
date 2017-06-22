@@ -5,6 +5,7 @@ title: Niko Home Control - Bindings
 type: binding
 description: "The Niko Home Control binding integrates with a [Niko Home Control](http://www.nikohomecontrol.be/) system through a Niko Home Control IP-interface."
 since: 2x
+logo: images/addons/nikohomecontrol.png
 install: auto
 ---
 
