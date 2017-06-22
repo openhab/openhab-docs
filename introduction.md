@@ -33,6 +33,6 @@ openHAB is not only a solution but also a community.
 
 The center of this community is the [openHAB community forum](https://community.openhab.org).
 
-If you have questions about the use of openHAB, before reporting an issue, or for comments and contributions about the documentation, please check the [openHAB community forum](https://community.openhab.org) for solutions and help. More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds for your issue.
+If you have questions about the use of openHAB, before reporting an issue, or for comments and contributions to the documentation, please check the [openHAB community forum](https://community.openhab.org) for solutions and help. More people will see your issue when it is posted in the forum and community members may be able to help you find known solutions/workarounds for your issue.
 
 Rules about posting an issue and [contributions guidelines](appendix/contributing.html) are in the *Appendix*.
