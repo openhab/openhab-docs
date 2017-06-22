@@ -6,6 +6,7 @@ type: action
 description: "The TinkerForge Action service provides direct interaction with some of the TinkerForge devices."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.tinkerforge/README.md
 since: 1x
+logo: images/addons/tinkerforge.png
 install: manual
 ---
 

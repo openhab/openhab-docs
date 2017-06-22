@@ -5,6 +5,7 @@ title: SleepIQ - Bindings
 type: binding
 description: "This binding integrates with the SleepIQ system from Select Comfort for Sleep Number beds."
 since: 2x
+logo: images/addons/sleepiq.png
 install: auto
 ---
 

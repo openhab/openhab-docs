@@ -5,6 +5,7 @@ title: Windcentrale - Bindings
 type: binding
 description: "This Binding is used to display the details of a Windcentrale windmill."
 since: 2x
+logo: images/addons/windcentrale.png
 install: auto
 ---
 

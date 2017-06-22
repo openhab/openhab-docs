@@ -6,6 +6,7 @@ type: binding
 description: "[TinkerForge](http://www.tinkerforge.com) is a system of open source hardware building blocks that allows you to combine sensor and actuator blocks by plug and play. You can create your individual hardware system by choosing the necessary building blocks for your project and combine it with other home automation products."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.tinkerforge/README.md
 since: 1x
+logo: images/addons/tinkerforge.png
 install: auto
 ---
 
