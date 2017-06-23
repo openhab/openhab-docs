@@ -27,7 +27,8 @@ A rule file can contain multiple rules. All rules of a file share a common execu
 
 ### Execution
 
-Rules go into effect as soon as they are saved.  You may want to check the openhab.log file for error messages after creating a new rule.
+Rules go into effect as soon as they are saved.
+You may want to check the openhab.log file for error messages after creating a new rule.
 
 ### IDE Support
 
@@ -95,8 +96,6 @@ then
     <SCRIPT_BLOCK>
 end
 ```
-
-Note that the rule name must match the filename of the rule, minus the extension ".rules"
 
 A rule can have any number of trigger conditions, but must at least have one.
 The _SCRIPT_BLOCK_ contains the code that should be executed, when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
