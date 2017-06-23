@@ -4,12 +4,12 @@ layout: documentation
 
 # Things
 
-Things are the entities that can physically be added to a system and which can potentially provide many functionalities in one. It is important to note that things do not have to be devices, but they can also represent a web service or any other manageable source of information and functionality.
-From a user perspective, they are relevant for the setup and configuration process, but not for the operation.
+Things are the entities that can physically be added to a system and which can potentially provide many functionalities in one. It is important to note that things do not have to be devices.  They can represent a web service or any other manageable source of information and functionality as well.
+From a user perspective, they are relevant for the setup and configuration process, but not for operation.
 
 Things can have configuration properties, which can be optional or mandatory. Such properties can be basic information like an IP address, an access token for a web service or a device specific configuration that alters its behavior.
 
-Things provide "channels", which represent the different functions they provide. Channels are linked to items, where such links are the glue between the virtual and the physical layer. Once such a link is established, a thing reacts on events sent for an item that is linked to one of its channels. Likewise, it actively sends out events for items linked to its channels.
+Things provide "channels", which represent the different functions they provide. Channels are linked to items, where these links are the glue between the virtual and the physical layer. Once a link is established, a thing reacts on events sent to an item that is linked to one of its channels. Likewise, a thing actively sends out events for items linked to its channels.
 
 A special type of thing is a "bridge". Bridges are things that need to be added to the system in order to gain access to other things. A typical example of a bridge is an IP gateway for some non-IP based home automation system. 
 
@@ -22,13 +22,13 @@ Each thing has a status object, which helps to identify possible problems with t
 
 | Status        | Description |
 |---------------|-------------|
-| UNINITIALIZED | This is the initial status of a thing, when it is added or the framework is being started. This status is also assigned, if the initializing process failed or the binding is not available. Commands, which are sent to channels will not be processed. |
-| INITIALIZING  | This state is assigned while the binding initializes the thing. It depends on the binding how long the initializing process takes. Commands, which are sent to channels will not be processed. |
-| UNKNOWN       | The handler is fully initialized but due to the nature of the represented device/service it cannot really tell yet whether the thing is ONLINE or OFFLINE. Therefore the thing potentially might be working correctly already and may or may not process commands. But the framework is allowed to send commands, because some radio-based devices may go ONLINE if a command is sent to them. The handler should take care to switch the thing to ONLINE or OFFLINE as soon as possible. |
+| UNINITIALIZED | This is the initial status of a thing, when it is added or the framework is being started. This status is also assigned if the initializing process failed or the binding is not available. Commands which are sent to the thing's channels will not be processed. |
+| INITIALIZING  | This state is assigned while the binding initializes the thing. It depends on the binding as to how much time the initializing process takes. Commands which are sent to channels will not be processed. |
+| UNKNOWN       | The handler is fully initialized, but due to the nature of the represented device/service, openHAB cannot really tell yet whether the thing is ONLINE or OFFLINE. Therefore the thing potentially might be working correctly already and may or may not process commands. But the framework is allowed to send commands, because some radio-based devices may go ONLINE if a command is sent to them. The handler should take care to switch the thing to ONLINE or OFFLINE as soon as possible. |
 | ONLINE        | The device/service represented by a thing is assumed to be working correctly and can process commands. |
-| OFFLINE       | The device/service represented by a thing is assumed to be not working correctly and may not process commands. But the framework is allowed to send commands, because some radio-based devices may go back to ONLINE, if a command is sent to them. |
-| REMOVING      | The device/service represented by a thing should be removed, but the binding did not confirm the deletion yet. Some bindings need to communicate with the device to unpair it from the system. Thing is probably not working and commands can not be processed. |
-| REMOVED       | This status indicates that the device/service represented by a thing was removed from the external system after the REMOVING was initiated by the framework. Usually this status is an intermediate status because the thing gets removed from the database after this status was assigned. |
+| OFFLINE       | The device/service represented by a thing is assumed to be not working correctly and may not process commands. But the framework is allowed to send commands, because some radio-based devices may go back to ONLINE if a command is sent to them. |
+| REMOVING      | The device/service represented by a thing should be removed, but the binding has not confirmed the deletion yet. Some bindings need to communicate with the device to unpair it from the system. The thing is probably not working and commands can not be processed. |
+| REMOVED       | This status indicates that the device/service represented by a thing was removed from the external system after the REMOVING was initiated by the framework. Usually this status is an intermediate status because the thing gets removed from the database after this status is assigned. |
 
 The statuses UNINITIALIZED, INITIALIZING and REMOVING are set by the framework, where as the statuses UNKNOWN, ONLINE and OFFLINE are assigned from a binding. 
 
