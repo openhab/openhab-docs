@@ -7,6 +7,19 @@ title: Mac OS X
 
 # Installation on Mac OS X
 
+This page is structured as follows:
+
+{::options toc_levels="2..4"/}
+
+* TOC
+{:toc}
+
+If you're unfamilar with using the Mac OS terminal, then feel free to follow the many guides on the internet. For example:
+
+[Macworld: How to use Terminal on mac](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
+
+## Installation
+
 openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unziping it into a unique folder.
 First, make sure that your system meets the [prerequisites](index.html#prerequisites).
 
@@ -50,7 +63,7 @@ addons		runtime		start.sh	start_debug.sh
 
 If you see something similar to the above, then you're all set to launch openHAB for the first time.
 
-# Launching openHAB
+## Launching openHAB
 
 From inside openHAB's root directory (e.g. `~/openhab/), run openHAB's startup script by using the following command.
 
@@ -83,15 +96,15 @@ Without closing the terminal, open your favorite web browser and type the follow
 
 ![](images/Accueil_Openhab_2.png)
 
-# Updating to another version
+## Updating to another version
 
 openHAB can use a script to update to any other version, or from stable to snapshot and visa-versa.
 
-## Versions 2.1.0 and newer
+### Versions 2.1.0 and newer
 
 From versions 2.1.0 above, openHAB is distributed with the update script included. 
 This script should be called from within openHAB's root directory. 
-Assuming the openHAB directory is in `/opt/openhab`, simply run the following commands to update to the next major version of openHAB:
+Assuming the openHAB directory is in `~/openhab`, simply run the following commands to update to the next major version of openHAB:
 
 ```bash
 cd ~/openhab
@@ -105,7 +118,7 @@ Just append "-SNAPSHOT" to the target version, e.g.:
 sudo runtime/bin/update 2.2.0-SNAPSHOT
 ```
 
-## Older Versions
+### Older Versions
 
 If you're using a version earlier than 2.1.0, then you can use the following commands in Terminal to download the script and run it. 
 Assuming the openHAB directory is in `~/openhab` simply run the following commands to update to the next major version of openHAB:
