@@ -584,21 +584,11 @@ The output of `status` after a successful execution should be similar to:
 When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
 Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
+#### Backup and Restore
 
-#### Upgrade, Backup and Restore
+We recommend a backup before each upgrade, or before any major change to a configuration. To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
 
-To stay up to date with new releases, you should do regular upgrades of your manual installation.
-This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://openhab.jfrog.io/openhab/webapp/#/builds/openHAB-Distribution).
-
-Your personal configuration will be retained on upgrades.
-We still recommend a backup before each upgrade.
-
-To upgrade your manual installation, you simply need to replace the openHAB runtime files.
-Make sure to first **stop your openHAB instance**.
-
-To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
-
-The following shell commands will create a backup, install the newest openHAB 2 version and restore settings:
+The following shell commands will create a backup:
 
 ```shell
 # stop openhab instance (here: systemd service)
@@ -607,13 +597,11 @@ sudo systemctl stop openhab2.service
 # backup current installation with settings
 TIMESTAMP=`date +%Y%m%d_%H%M%S`;
 sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
+```
 
-# download new version (please replace URL)
-cd /tmp
-wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
-sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-rm openhab-2.0.0-SNAPSHOT.zip
+You may restore these files by moving them back into your openhab folder:
 
+```shell
 # restore configuration and userdata
 sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
 sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
@@ -624,6 +612,42 @@ sudo chown -hR openhab:openhab /opt/openhab2
 # restart openhab instance
 sudo systemctl start openhab2.service
 ```
+
+#### Upgrade
+
+To stay up to date with new releases, you should do regular upgrades of your manual installation.
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://openhab.jfrog.io/openhab/webapp/#/builds/openHAB-Distribution).
+
+openHAB uses a script to update to any other version, or from stable to snapshot and visa-versa.
+Your personal configuration will be retained on upgrades, but you should **stop openHAB** and perform a backup first.
+
+* **Versions 2.1.0 and newer**
+
+  From versions 2.1.0 above, openHAB is distributed with the update script included. 
+  This script should be called from within openHAB's root directory. 
+  Assuming the openHAB directory is in `/opt/openhab`, simply run the following commands to update to the next major version of openHAB:
+
+  ```bash
+  cd /opt/openhab
+  sudo runtime/bin/update
+  ```
+
+  You may also change to openHAB's more frequent, but less stable snapshot builds. 
+  Just append "-SNAPSHOT" to the target version, e.g.:
+
+  ```bash
+  sudo runtime/bin/update 2.2.0-SNAPSHOT
+  ```
+
+* **Older Versions**
+
+  If you're using a version earlier than 2.1.0, then you can use the following commands in Terminal to download the script and run it. 
+  Assuming the openHAB directory is in `/opt/openhab`:
+
+  ```bash
+  cd /opt/openhab
+  sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)"
+  ```
 
 #### Uninstall
 
