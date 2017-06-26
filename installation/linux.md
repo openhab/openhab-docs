@@ -595,16 +595,16 @@ The following shell commands will create a backup:
 sudo systemctl stop openhab2.service
 
 # backup current installation with settings
-TIMESTAMP=`date +%Y%m%d_%H%M%S`;
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
 ```
 
-You may restore these files by moving them back into your openhab folder:
+You may restore these files by moving them back into your openhab folder, where `20170626_201143` is an example of the timestamp set on  the folder earlier:
 
 ```shell
 # restore configuration and userdata
-sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
-sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-20170626_201143/conf /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-20170626_201143/userdata /opt/openhab2/
 
 # fix permissions
 sudo chown -hR openhab:openhab /opt/openhab2
