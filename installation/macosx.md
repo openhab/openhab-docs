@@ -5,69 +5,63 @@ title: Mac OS X
 
 {% include base.html %}
 
-<!-- Note to authors: If you revise this article, please consider adapting the Markdown style -->
-
 # Installation on Mac OS X
 
-Please follow these step to get openHAB up and running. You have the choice to use the current stable version or the latest snapshot build.
+openHAB is packaged as a platform independent `zip` archive. Installation is as simple as unziping it into a unique folder.
+First, make sure that your system meets the [prerequisites](index.html#prerequisites).
 
-* Download the openHAB distribution as the platform independent `zip` archive, provided at:
-  * Current stable build (recommended): [Download `openhab-2.x.x.zip` here](https://bintray.com/openhab/mvn/openhab-distro/_latestVersion)
-  * Latest snapshot/nightly build: [Download `openhab-2.x.x-SNAPSHOT.zip` here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
-* Open the terminal window.
-* Choose a folder name to host your install. The directory will be created in your home folder. Be aware that the path to this folder, and the name of the folder itself, __must not contain any space character__ in order to prevent this classical cause of crash. The name chosen here is `openHAB`.
-* Use the `ls` command in order to check that your directory does not exists yet.
+You have the choice to use the current stable version or the latest snapshot build:
 
-```
-cal:~ callas$ ls
-Desktop			Movies
-Documents		Music
-Downloads		Pictures
-Library			Public
-```
+* **Stable** 
+  
+  The stable builds have undergone testing, it is the recomended version to download.
+  Download the latest `openhab-2.x.x.zip` [here](https://bintray.com/openhab/mvn/openhab-distro/_latestVersion).
 
-* Move the downloaded file. Assuming that you have downloaded the file in your download folder, the command will be:
+* **Snapshot (Unstable)**
+  
+  Snapshots are built daily, and contain the latest changes to openHAB's source code. 
+  These changes haven't undergone the same amount of testing as the stable releases, so only use them if you **need** a new feature.
+  Download the latest `openhab-2.x.x-SNAPSHOT.zip` [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
+  
+The following instructions are performed in a terminal window. At first launch of the terminal, you will be inside your home directory.
 
-```
-cal:~ admin$ mv Downloads/openhab-2 openhab
-```
-
-* Use the "ls" command in order to check that your directory exists now.
+Choose a folder name to host your install. Be aware that the path to this folder **must not contain any spaces**. 
+The path chosen here is `openhab`.
 
 ```
-cal:~ callas$ ls
-Desktop			Movies	Public
-Documents		Music
-Downloads		openhab
-Library			Pictures
+mkdir openhab
+cd openhab
 ```
 
-* Move inside the `openhab` folder using the "cd" command.
+Next, unzip the file downloaded earlier. 
+Assuming that you have downloaded the **stable** build to your download folder, the command will be:
 
-```
-cal:~ callas$ cd openhab/
+```sh
+unzip ../Downloads/openhab-2.x.x.zip -d .
 ```
 
-* Use the "ls" command in order to check what is inside.
+Check that the zip extraction was successful by using the `ls` command in order to check the contents of the folder.
 
-```
-cal:openhab admin$ ls
+```bash
+user:openhab $ ls
 LICENSE.TXT	conf		start.bat	start_debug.bat	userdata
 addons		runtime		start.sh	start_debug.sh
 ```
 
+If you see something similar to the above, then you're all set to launch openHAB for the first time.
 
-Launching openHAB for the first time
-====================================
+# Launching openHAB
 
-We are going to launch openHAB for the first time, in order to check that our install is successful.
+From inside openHAB's root directory (e.g. `~/openhab/), run openHAB's startup script by using the following command.
 
-* In the terminal window, type ./start.sh
+```bash
+./start.sh
+```
 
-* Messages are displayed, wait until the "openhab>" prompt appears.
+The first run may take a while to process, wait until the "openhab>" prompt appears, for example:
 
 ```
-cal:openhab admin$ ./start.sh
+user:openhab $ sudo ./start.sh
 Launching the openHAB runtime...
 
                           __  _____    ____      
@@ -85,11 +79,38 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 openhab>
 ```
 
-* Without closing the terminal, open your favorite web browser and type the following url : http://localhost:8080, you should see the openHAB welcome screen.
+Without closing the terminal, open your favorite web browser and type the following url : http://localhost:8080, you should see the openHAB welcome screen, and you're all set to [using openHAB]({{base}}/tutorials/beginner/1sttimesetup.html).
 
 ![](images/Accueil_Openhab_2.png)
 
+# Updating to another version
 
-> **Which browser should I use?**
->
-> Safari is supported by openHAB but Google Chrome is recommended (due to the fact it's used by the openHAB developer community and by the owner of the ZWave plugin)
+openHAB can use a script to update to any other version, or from stable to snapshot and visa-versa.
+
+## Versions 2.1.0 and newer
+
+From versions 2.1.0 above, openHAB is distributed with the update script included. 
+This script should be called from within openHAB's root directory. 
+Assuming the openHAB directory is in `/opt/openhab`, simply run the following commands to update to the next major version of openHAB:
+
+```bash
+cd ~/openhab
+sudo runtime/bin/update
+```
+
+You may also change to openHAB's more frequent, but less stable snapshot builds. 
+Just append "-SNAPSHOT" to the target version, e.g.:
+
+```bash
+sudo runtime/bin/update 2.2.0-SNAPSHOT
+```
+
+## Older Versions
+
+If you're using a version earlier than 2.1.0, then you can use the following commands in Terminal to download the script and run it. 
+Assuming the openHAB directory is in `~/openhab` simply run the following commands to update to the next major version of openHAB:
+
+```bash
+cd ~/openhab
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)"
+```
