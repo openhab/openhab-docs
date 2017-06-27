@@ -13,7 +13,7 @@ The [Eclipse IoT Marketplace](https://marketplace.eclipse.org/taxonomy/term/4988
 
 Install the market integration from Add-ons → Misc → Eclipse IoT Market.
 
-![iot marketplae addon](images/eclipseiotmarket_addons.png)
+![iot marketplace addon](images/eclipseiotmarket_addons.png)
 
 ## Usage
 
