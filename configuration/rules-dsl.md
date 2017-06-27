@@ -151,6 +151,7 @@ Currently, you schedule rules to be executed either at system startup or shutdow
 System started
 System shuts down
 ```
+These system-based triggers work as expected.  Rules using the 'System started' trigger execute when openHAB starts.  Rules using the 'System shuts down' trigger execute as openHAB shuts down.  Additionally, rules using the 'System Started' trigger will execute when changes or additions to rules files are recognized by openHAB.  This is normal behavior and should be anticipated when writing rules using these triggers.
 
 ## Scripts
 
