@@ -42,15 +42,15 @@ Choose a folder name to host your install. Be aware that the path to this folder
 The path chosen here is `openhab`.
 
 ```
-mkdir openhab
-cd openhab
+mkdir ~/openhab
+cd ~/openhab
 ```
 
 Next, unzip the file downloaded earlier. 
 Assuming that you have downloaded the **stable** build to your download folder, the command will be:
 
 ```sh
-unzip ../Downloads/openhab-2.x.x.zip -d .
+unzip ~/Downloads/openhab-2.x.x.zip -d .
 ```
 
 Check that the zip extraction was successful by using the `ls` command in order to check the contents of the folder.
