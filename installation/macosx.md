@@ -96,19 +96,25 @@ Without closing the terminal, open your favorite web browser and type the follow
 
 ![](images/Accueil_Openhab_2.png)
 
-## Updating to another version
+## Updating openHAB
 
 openHAB can use a script to update to any other version, or from stable to snapshot and visa-versa.
 
-### Versions 2.1.0 and newer
+### Versions 2.1.0 and Above
 
-From versions 2.1.0 above, openHAB is distributed with the update script included. 
+From version 2.1.0, openHAB is distributed with the update script included. 
 This script should be called from within openHAB's root directory. 
 Assuming the openHAB directory is in `~/openhab`, simply run the following commands to update to the next major version of openHAB:
 
 ```bash
 cd ~/openhab
 sudo runtime/bin/update
+```
+
+You can also specify any version as a parameter. For example, to switch back to 2.0.0:
+  
+```bash
+sudo runtime/bin/update 2.0.0
 ```
 
 You may also change to openHAB's more frequent, but less stable snapshot builds. 
@@ -125,5 +131,5 @@ Assuming the openHAB directory is in `~/openhab` simply run the following comman
 
 ```bash
 cd ~/openhab
-sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)"
+sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
 ```
