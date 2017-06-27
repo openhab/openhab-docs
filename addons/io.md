@@ -66,7 +66,7 @@ openHAB supports services that enable integration with various technologies that
       </td>
       <td>
         <p>
-        The <a href="https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title">Eclipse IoT Marketplace</a> hosts third-party add-ons that can be browsed and installed to openHAB through this integration.
+        The [Eclipse IoT Marketplace](https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title) hosts third-party add-ons that can be browsed and installed to openHAB through this integration.
         </p>
       </td>
     </tr>

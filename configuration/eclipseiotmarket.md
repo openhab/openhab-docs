@@ -39,7 +39,7 @@ org.eclipse.smarthome.marketplace:bindings=false
 # whether to show rule templates from the marketplace (default is true)
 org.eclipse.smarthome.marketplace:ruletemplates=true
 
-# possible values for maturiy are
+# possible values for maturity are
 # 0 = Alpha
 # 1 = Beta
 # 2 = Production/Stable
