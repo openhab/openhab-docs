@@ -62,6 +62,16 @@ openHAB supports services that enable integration with various technologies that
     </tr>
     <tr>
       <td>
+        <h4><a href="{{base}}/configuration/eclipseiotmarket.html"><img class="logo" src="{{base}}/images/addons/eclipseiotmarketplace.png" title="Eclipse IoT Marketplace" alt="Eclipse IoT Marketplace" /></a></h4>
+      </td>
+      <td>
+        <p>
+        The <a href="https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title">Eclipse IoT Marketplace</a> hosts third-party add-ons that can be browsed and installed to openHAB through this integration.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
         <h4><a href="http://www.myopenhab.org/" target="_blank"><img class="logo" src="{{base}}/images/addons/ifttt.png" title="IFTTT" alt="IFTTT" /></a></h4>
       </td>
       <td>
