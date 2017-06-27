@@ -621,15 +621,21 @@ This is especially important if you are working with the latest snapshot as chan
 openHAB uses a script to update to any other version, or from stable to snapshot and visa-versa.
 Your personal configuration will be retained on upgrades, but you should **stop openHAB** and perform a backup first.
 
-* **Versions 2.1.0 and newer**
+* **Versions 2.1.0 and Above**
 
-  From versions 2.1.0 above, openHAB is distributed with the update script included. 
+  From version 2.1.0, openHAB is distributed with the update script included. 
   This script should be called from within openHAB's root directory. 
   Assuming the openHAB directory is in `/opt/openhab`, simply run the following commands to update to the next major version of openHAB:
 
   ```bash
   cd /opt/openhab
   sudo runtime/bin/update
+  ```
+  
+  You can also specify any version as a parameter. For example, to switch back to 2.0.0:
+  
+  ```bash
+  sudo runtime/bin/update 2.0.0
   ```
 
   You may also change to openHAB's more frequent, but less stable snapshot builds. 
@@ -646,7 +652,7 @@ Your personal configuration will be retained on upgrades, but you should **stop 
 
   ```bash
   cd /opt/openhab
-  sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)"
+  sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
   ```
 
 #### Uninstall
