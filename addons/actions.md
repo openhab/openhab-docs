@@ -10,6 +10,13 @@ title: Actions
 Actions are predefined methods that are called from openHAB rules and scripts.
 They are automatically imported and can be used to execute openHAB-specific operations or to send commands or data to external hardware or services. There are a set of built in core Actions and optional installable Actions.
 
+The page is structured as follows:
+
+{::options toc_levels="2..4"/}
+
+* TOC
+{:toc}
+
 ## Core Actions
 
 The following Actions are a core part of openHAB and do not need to be separately installed.
