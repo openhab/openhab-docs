@@ -16,7 +16,7 @@ The following Actions are a core part of openHAB and do not need to be separatel
 
 ### Event Bus Actions
 
-* `sendCommand(String itemName, String commandString)`: Sends the given command to the spcified Item to the event bus.
+* `sendCommand(String itemName, String commandString)`: Sends the given command to the specified Item to the event bus.
 * `postUpdate(String itemName, String commandString)`: Sends the given status update to the specified Item to the event bus.
 
 When the result of the commandString is to cause some action (e.g. turn on a light, change a thermostat to a new temperature, etc.) then use sendCommand. When interacting with widgets on the user interfaces commands are sent to the Items.
@@ -26,7 +26,6 @@ When the result of the commandString is to change the state of an Item without c
 As a general rule, is better to call `MyItem.sendCommand(command)` and `MyItem.postUpdate(command)` where possible because the Item methods are able to handle a wider variety of commands appropriately. The Actions are best reserved for use in cases where the Item's name is determined at runtime.
 
 * `Map<Item, State> storeStates(Item item1, Item item2, ... Item itemn)`: Returns a `Map<Item, State>` with the current state of each Item. All members of Groups are put into the Map but not the Group's state itself.
-
 * `restoreStates(Map<Item, State> statesMap)`: Restores the items' states from the map. If the saved state can be interpreted as a command (ON/OFF/etc.), a command is sent to the Item. Otherwise an update is sent to the Item.
 
 ### Audio Actions
@@ -52,9 +51,9 @@ To get a list of available voices use `say -v ?` and to get a list of devices us
 
 `logText` can be a compete String, constructed through concatination, or through arguments.
 
-**Complete String Example:** `logInfo("Garage", "This is a complete String")`
-**Concatination Example:** `logDebug("Lighting", "This is a string concatination:" + Light.name)`
-**Arguments Example:** `logWarn("Alarm", "The {} window has been open for {} hours!", Window.name, timeOpen)`
+* **Complete String Example:** `logInfo("Garage", "This is a complete String")`
+* **Concatination Example:** `logDebug("Lighting", "This is a string concatination:" + Light.name)`
+* **Arguments Example:** `logWarn("Alarm", "The {} window has been open for {} hours!", Window.name, timeOpen)`
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
 
@@ -71,8 +70,8 @@ One can configure whether specific log entries are logged out and where they get
 
 `createTimer(AbstractInstant instant, Procedure procedure)`: schedules a block of code to execute at a future time
 
-`instant` is usually a `DateTime` calculated using the built in variable `now`.
-`procedure` is the block of code and is defined using lambda notation (i.e. square brackets)
+* `instant` is usually a `DateTime` calculated using the built in variable `now`.
+* `procedure` is the block of code and is defined using lambda notation (i.e. square brackets)
 
 For example:
 
