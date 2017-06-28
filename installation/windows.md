@@ -78,7 +78,7 @@ To update manually, download a later version of the openHAB distribution zip fil
 
 1. Stop the openHAB process if it is currently running.
 2. Backup openHAB as described above.
-3. Delete the following files from your existing install:
+3. Delete the following files and folders from your existing install:
    - `userdata\etc\all.policy`
    - `userdata\etc\branding.properties`
    - `userdata\etc\branding-ssh.properties`
@@ -86,13 +86,15 @@ To update manually, download a later version of the openHAB distribution zip fil
    - `userdata\etc\custom.properties`
    - `userdata\etc\distribution.info`
    - `userdata\etc\jre.properties`
+   - `userdata\etc\org.ops4j.pax.url.mvn.cfg`
    - `userdata\etc\profile.cfg`
    - `userdata\etc\startup.properties`
+   - `userdata\etc\version.properties`
    - Any file in `userdata\etc` that starts with `org.apache.karaf`
    - The `userdata\cache` folder
    - The `userdata\tmp` folder
-4. Copy and paste the new `userdata` folder over your existing install, when prompted **do not overwrite existing files**
-5. Copy and paste the new `runtime` folder over your existing install, when prompted **overwrite all existing files**
+   - The `runtime` folder
+4. Copy and paste the contents of the zip file over your existing install, when prompted **do not overwrite existing files**
 
 ## Starting openHAB as a Service
 
