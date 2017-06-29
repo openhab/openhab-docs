@@ -348,7 +348,7 @@ apt-cache showpkg openhab2
 Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install openhab2=[version]` command, for example:
 
 ```shell
-sudo apt-get install openhab2=2.0.0-1
+sudo apt-get install openhab2=2.1.0-1
 ```
 
 {% include collapsible/item-end.html %}
@@ -374,7 +374,7 @@ rpm -q openhab2
 Once you know which version you want, you can upgrade/downgrade to it by using the `yum install openhab2-[version]` command, for example:
 
 ```shell
-sudo yum install openhab2-2.0.0-1
+sudo yum install openhab2-2.1.0-1
 ```
 
 {% include collapsible/item-end.html %}
@@ -466,37 +466,22 @@ As openHAB 2 is still in an evolving state, the snapshot may be the **preferred 
 
 * **Official Release**
 
-  Download and extract the latest offical version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro/2.0.0) to your host.
+  Download and extract the latest offical stable version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host:
 
   ```shell
   cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip
+  wget -O openhab-download.zip https://bintray.com/... # Insert download link here
   sudo unzip openhab-download.zip -d /opt/openhab2
   rm openhab-download.zip
   ```
 
 * **Beta/RC Release**
 
-  Download and extract the desired beta or release client version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.RC1.zip` as an example:
-
-  ```shell
-  cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip
-  sudo unzip openhab-download.zip -d /opt/openhab2
-  rm openhab-download.zip
-  ```
+  If available, beta or release candidate builds of openHAB 2 can also be downloaded from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) and extracted to your host as shown above.
 
 * **Snapshot Release**
 
-  Download and extract the latest snapshot version of openHAB 2 as a **zip file** from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host, for example:
-
-  ```shell
-  cd /tmp
-  wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
-  sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-  rm openhab-2.0.0-SNAPSHOT.zip
-  ```
+  Download and extract the latest snapshot version of openHAB 2 from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host. The process is analogue to above.
 
 The extracted openHAB files should belong to the earlier created openhab user.
 Execute:
