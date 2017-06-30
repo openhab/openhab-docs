@@ -149,7 +149,7 @@ Two system-based triggers are provided as described in the table below:
 
 Trigger  |  Description
 ---------|-------------
-System started | Rules using the 'System started' trigger exeucte when openHAB starts and when changes or additions to *any* rule are recognized by openHab.  This is normal behaivor and should be anticipated when writing rules using this trigger.
+System started | Rules using the 'System started' trigger exeucte when openHAB starts and when changes or additions to *any* rule are recognized by openHAB.  This is normal behaivor and should be anticipated when writing rules using this trigger.
 System shuts down| Rules using the 'System shuts down' trigger execute when openHAB shuts down.
 
 ## Scripts
