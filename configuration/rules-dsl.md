@@ -149,8 +149,23 @@ Two system-based triggers are provided as described in the table below:
 
 Trigger  |  Description
 ---------|-------------
-System started | Rules using the 'System started' trigger exeucte when openHAB starts and when changes or additions to *any* rule are recognized by openHAB.  This is normal behaivor and should be anticipated when writing rules using this trigger.
+System started | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file.
 System shuts down| Rules using the 'System shuts down' trigger execute when openHAB shuts down.
+
+You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
+
+Example: 
+
+```java
+rule "Speedtest init"
+when
+    System started
+then
+    createTimer(now.plusSeconds(30)) [|
+        if (Speedtest_Summary.state == NULL || Speedtest_Summary.state == "") Speedtest_Summary.postUpdate("unknown")
+    ]
+end
+```
 
 ## Scripts
 
