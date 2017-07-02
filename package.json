@@ -32,10 +32,12 @@
   },
   "dependencies": {
     "remark-cli": "^3.0.1",
+    "remark-lint-blockquote-indentation": "^1.0.0",
     "remark-lint-code-block-style": "^1.0.0",
     "remark-lint-fenced-code-flag": "^1.0.0",
     "remark-lint-list-item-indent": "^1.0.0",
     "remark-lint-maximum-line-length": "^1.0.0",
+    "remark-lint-no-blockquote-without-caret": "^1.0.0",
     "remark-lint-no-missing-blank-lines": "^1.0.0",
     "remark-lint-no-tabs": "^1.0.0",
     "remark-lint-ordered-list-marker-value": "^1.0.0",
@@ -64,8 +66,16 @@
         "mixed"
       ],
       [
+        "remark-lint-blockquote-indentation",
+        2
+      ],
+      [
         "remark-lint-maximum-line-length",
         240
+      ],
+      [
+        "remark-lint-no-blockquote-without-caret",
+        true
       ],
       [
         "remark-lint-no-missing-blank-lines",
@@ -74,15 +84,15 @@
         }
       ],
       [
+        "remark-lint-no-tabs",
+        true
+      ],
+      [
         "remark-lint-code-block-style",
         "fenced"
       ],
       [
         "remark-lint-fenced-code-flag",
-        true
-      ],
-      [
-        "remark-lint-no-tabs",
         true
       ],
       [

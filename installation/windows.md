@@ -13,7 +13,7 @@ This page is structured as follows:
 
 {::options toc_levels="2..4"/}
 
-* TOC
+- TOC
 {:toc}
 
 ## Prerequisites
@@ -23,7 +23,7 @@ First, be sure to check that your system has the necessary [prerequisites]({{bas
 Add the `JAVA_HOME` System Environment Variable in Windows.
 Navigate to:
 
-* Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
+- Control Panel ➡️ System and Security ➡️ System ➡️ Advanced System Settings ➡️ Environment Variables ➡️ System Variables
 
 Create a New System Variable based on your Java installation directory:
 
@@ -64,7 +64,6 @@ Assuming a successful install, you will now have various folders inside `C:\open
 | Userdata like rrd4j databases    | `C:\openHAB2\userdata`       |
 | Service configuration            | `C:\openHAB2\userdata\etc`   |
 
-
 ## Backup
 
 Make sure that you make regular backups of the **conf** and **userdata** folders, you can zip and unzip these folders too and from openHAB installations (even across most versions).
@@ -76,32 +75,35 @@ Which can be used any time after a failure.
 There is currently no automatic update script for Windows.
 To update manually, download a later version of the openHAB distribution zip file and follow these steps:
 
-1. Stop the openHAB process if it is currently running.
-2. Backup openHAB as described above.
-3. Delete the following files and folders from your existing install:
-   - `userdata\etc\all.policy`
-   - `userdata\etc\branding.properties`
-   - `userdata\etc\branding-ssh.properties`
-   - `userdata\etc\config.properties`
-   - `userdata\etc\custom.properties`
-   - `userdata\etc\distribution.info`
-   - `userdata\etc\jre.properties`
-   - `userdata\etc\org.ops4j.pax.url.mvn.cfg`
-   - `userdata\etc\profile.cfg`
-   - `userdata\etc\startup.properties`
-   - `userdata\etc\version.properties`
-   - Any file in `userdata\etc` that starts with `org.apache.karaf`
-   - The `userdata\cache` folder
-   - The `userdata\tmp` folder
-   - The `runtime` folder
-4. Copy and paste the contents of the zip file over your existing install, when prompted **do not overwrite existing files**
+1.  Stop the openHAB process if it is currently running.
+
+2.  Backup openHAB as described above.
+
+3.  Delete the following files and folders from your existing install:
+    - `userdata\etc\all.policy`
+    - `userdata\etc\branding.properties`
+    - `userdata\etc\branding-ssh.properties`
+    - `userdata\etc\config.properties`
+    - `userdata\etc\custom.properties`
+    - `userdata\etc\distribution.info`
+    - `userdata\etc\jre.properties`
+    - `userdata\etc\org.ops4j.pax.url.mvn.cfg`
+    - `userdata\etc\profile.cfg`
+    - `userdata\etc\startup.properties`
+    - `userdata\etc\version.properties`
+    - Any file in `userdata\etc` that starts with `org.apache.karaf`
+    - The `userdata\cache` folder
+    - The `userdata\tmp` folder
+    - The `runtime` folder
+
+4.  Copy and paste the contents of the zip file over your existing install, when prompted **do not overwrite existing files**
 
 ## Starting openHAB as a Service
 
 By installing the openHAB process as a service in Windows, you can:
 
-* Launch it automatically upon system startup
-* Run it in the background
+- Launch it automatically upon system startup
+- Run it in the background
 
 **Windows Service Installation Steps**
 
@@ -119,14 +121,14 @@ By installing the openHAB process as a service in Windows, you can:
 
 4.  Update the newly created `C:\openHAB2\userdata\etc\openHAB2-wrapper.conf` to include all necessary parameters.
 
-    * Copy all the config text from the below section and paste it in your `openHAB2-wrapper.conf`, replacing all existing content.
-    * Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
+    - Copy all the config text from the below section and paste it in your `openHAB2-wrapper.conf`, replacing all existing content.
+    - Adapt the first entry (`OPENHAB_HOME`) to match your openHAB installation directory.
 
     ```conf
     #*******************************************************
     # openHAB2-wrapper.conf for Windows Service Installation
     #*******************************************************
-    
+
     # openHAB installation dir (Adapt this first setting to your system)
     set.default.OPENHAB_HOME=C:\openHAB2
 
@@ -203,22 +205,29 @@ By installing the openHAB process as a service in Windows, you can:
 6.  Your openHAB Windows service is now installed and running.
     Validate proper operations by:
 
-    * Browsing to [http://localhost:8080](http://localhost:8080)
-    * Verifying that the Windows Service is running and set to Automatic Startup type.
-      Use `services.msc` and find the `openHAB2` service.
-      ![Windows Service](images/Windows_Service.jpg)
-    * Logging in with an SSH client to the console (see info below)
+    -   Browsing to [http://localhost:8080](http://localhost:8080)
+
+    -   Verifying that the Windows Service is running and set to Automatic Startup type.
+        Use `services.msc` and find the `openHAB2` service.
+
+        ![Windows Service](images/Windows_Service.jpg)
+
+    -   Logging in with an SSH client to the console (see info below)
 
 ### Connecting to the openHAB console
 
-* Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
-* Setup a session with the following parameters:
-  * Host: 127.0.0.1
-  * Port: 8101
-  * Username: `openhab`
-  * Password: `habopen`
+-   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
+
+-   Setup a session with the following parameters:
+    - Host: 127.0.0.1
+    - Port: 8101
+    - Username: `openhab`
+    - Password: `habopen`
 
 ![SSH Connection 1](images/SSH_Connection_1.jpg)
+
 ![SSH Connection 2](images/SSH_Connection_2.jpg)
+
 ![SSH Connection 3](images/SSH_Connection_3.jpg)
+
 ![SSH Connection 4](images/SSH_Connection_4.jpg)
