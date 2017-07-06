@@ -145,11 +145,26 @@ You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [Fre
 
 ### System-based Triggers
 
-Currently, you schedule rules to be executed either at system startup or shutdown. Note that newly added or modified startup rules are executed once, even if openHAB is already up and running. They are simply executed once as soon as the system is aware of them. Here's the syntax for system triggers:
+Two system-based triggers are provided as described in the table below:
+
+Trigger  |  Description
+---------|-------------
+System started | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file.
+System shuts down| Rules using the 'System shuts down' trigger execute when openHAB shuts down.
+
+You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
+
+Example: 
 
 ```java
-System started
-System shuts down
+rule "Speedtest init"
+when
+    System started
+then
+    createTimer(now.plusSeconds(30)) [|
+        if (Speedtest_Summary.state == NULL || Speedtest_Summary.state == "") Speedtest_Summary.postUpdate("unknown")
+    ]
+end
 ```
 
 ## Scripts
