@@ -12,7 +12,8 @@ Just like known from other IDEs, the Designer allows to browse and edit the conf
 
 ## Network Preparations
 
-If your openHAB instance is set up on a different device or a dedicated system, the Designer can be installed and executed on your personal PC or Mac. The Designer needs to be able to access the configuration files on the remote openHAB host.
+If your openHAB instance is set up on a different device or a dedicated system, the Designer can be installed and executed on your personal PC or Mac.
+The Designer needs to be able to access the configuration files on the remote openHAB host.
 
 You have to have a [network share](https://en.wikipedia.org/wiki/Shared_resource) set up on the remote host and mounted on your local device.
 Steps needed to so are specific to the hosts operation system.
@@ -23,28 +24,28 @@ If you are using [openHABian](openhabian.html), the needed set of network shares
 
 ## Setup
 
-* Get the latest version from: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds) (*Note:* the "Snapshot" build is currently not recommended for daily use)
+- Get the latest version from: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
+  (*Note:* the "Snapshot" build is currently not recommended for daily use)
 
 The downloaded `.zip` archive contains the Designer executable.
 
-* **Windows**: Extract the archive to a path of your choosing, e.g. `C:\designer`
-* **Linux**: Extract the archive to a path of your choosing, e.g. `/opt/designer`
-* **Max OSX**: Extract the archive to your applications folder
+- **Windows**: Extract the archive to a path of your choosing, e.g. `C:\designer`
+- **Linux**: Extract the archive to a path of your choosing, e.g. `/opt/designer`
+- **Max OSX**: Extract the archive to your applications folder
 
 ## First Launch
 
-After launching the Designer executable, you will see an empty configuration file pane on the top left:
+After launching the Designer executable you will see an empty configuration file pane on the top left.
 
-![](images/smarthome-designer-10.png)
+  ![SmartHome Designer standard view](images/smarthome-designer-10.png)
 
-* Click on the "select a configuration folder" icon at the top right of the configuration window
-* Navigate to your openHAB configuration folder (containing `items`, `rules`, ...)
+Click on the "Select a configuration folder" icon at the top right of the configuration window and navigate to your openHAB configuration folder (containing `items`, `rules`, ...).
 
-![](images/smarthome-designer-15.png)
+  ![SmartHome Designer configuration folder selection](images/smarthome-designer-15.png)
 
-* The configuration pane should now list the different configuration folders:
+The configuration pane should now list the different configuration folders:
 
-![](images/smarthome-designer-20.png)
+  ![SmartHome Designer standard view with loaded configuration](images/smarthome-designer-20.png)
 
 ## Usage
 
@@ -53,6 +54,3 @@ Changes are automatically loaded by the openHAB runtime.
 More details about the syntax of the different configuration files can be found in the [Configuration]({{base}}/configuration/index.html) chapter.
 
 Hint: Press `<Ctrl + N>` to create a new file.
-
-
-
