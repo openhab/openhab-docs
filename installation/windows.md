@@ -145,11 +145,11 @@ By installing the openHAB process as a service in Windows, you can:
 
     # Java Application
     wrapper.working.dir=%KARAF_BASE%
-    wrapper.java.command=%JAVA_HOME%/bin/java
+    wrapper.java.command=%JAVA_HOME%\bin\java
     wrapper.java.mainclass=org.apache.karaf.wrapper.internal.service.Main
-    wrapper.java.classpath.1=%KARAF_HOME%/lib/boot/*.jar
-    wrapper.java.classpath.2=%KARAF_DATA%/lib/wrapper/*.jar
-    wrapper.java.library.path.1=%KARAF_DATA%/lib/wrapper/
+    wrapper.java.classpath.1=%KARAF_HOME%\lib\boot\*.jar
+    wrapper.java.classpath.2=%KARAF_DATA%\lib\wrapper\*.jar
+    wrapper.java.library.path.1=%KARAF_DATA%\lib\wrapper\
 
     # Java Parameters
     wrapper.java.additional.1=-Dkaraf.home="%KARAF_HOME%"
@@ -159,8 +159,8 @@ By installing the openHAB process as a service in Windows, you can:
     wrapper.java.additional.5=-Dcom.sun.management.jmxremote
     wrapper.java.additional.6=-Dkaraf.startLocalConsole=false
     wrapper.java.additional.7=-Dkaraf.startRemoteShell=true
-    wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%/jre/lib/endorsed;%JAVA_HOME%/lib/endorsed;%KARAF_HOME%/lib/endorsed"
-    wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%/jre/lib/ext;%JAVA_HOME%/lib/ext;%KARAF_HOME%/lib/ext"
+    wrapper.java.additional.8=-Djava.endorsed.dirs="%JAVA_HOME%\jre\lib\endorsed;%JAVA_HOME%\lib\endorsed;%KARAF_HOME%\lib\endorsed"
+    wrapper.java.additional.9=-Djava.ext.dirs="%JAVA_HOME%\jre\lib\ext;%JAVA_HOME%\lib\ext;%KARAF_HOME%\lib\ext"
     wrapper.java.additional.10=-Dopenhab.home="%OPENHAB_HOME%"
     wrapper.java.additional.11=-Dopenhab.conf="%OPENHAB_HOME%\conf"
     wrapper.java.additional.12=-Dopenhab.runtime="%OPENHAB_HOME%\runtime"
