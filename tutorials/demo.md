@@ -14,7 +14,7 @@ Make sure that you have a [JDK 8]({{base}}/installation/index.html#prerequisites
 
 ## Installation
 
-openHAB comes as a [platform independent zip file](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab-offline/target/openhab-offline-2.0.0-SNAPSHOT.zip), which you only need to extract to some folder.
+openHAB comes as a [platform independent zip file](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.2.0-SNAPSHOT.zip), which you only need to extract to some folder.
 
 You will find the following folders:
 
