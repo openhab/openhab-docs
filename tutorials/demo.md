@@ -4,6 +4,8 @@ layout: intro
 
 {% include base.html %}
 
+**(201707) This page is deprecated. See [Beginner's Tutorial](http://docs.openhab.org/tutorials/beginner/index.html).**
+
 # Quick Start with a Demo Setup
 
 The 'Demo' is a quick and easy way to see the user interface for a virtual home and examples of the different widget types that exist.
