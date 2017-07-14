@@ -24,6 +24,7 @@ In order to represent all of these, openHAB defines the following few base compo
 * [Transformations](transform.html) - Helper functions to transform your data
 * [Persistence](persistence.html) - Services to store data over time
 * [Rules](rules-dsl.html) - Automation logic, the "smart" in your Smart Home!
+* [JSR223 Scripting](jsr223.html) - Define rules and other runtime objects using [Javascript](http://openjdk.java.net/projects/nashorn/), [Jython](http://www.jython.org) or [Groovy](http://www.groovy-lang.org/).
 
 The individual articles hold all details needed to understand the concepts behind these building bricks for your Smart Home.
 For more details on the base concept behind openHAB, please visit the [Concepts Overview page]({{base}}/concepts/index.html).
