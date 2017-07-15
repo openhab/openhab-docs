@@ -492,7 +492,8 @@ Number Temperature { mysensors="24;1;V_TEMP", expire="5m,-999" }
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html) where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
+The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
+where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 ##### Exception `autoupdate`
 
