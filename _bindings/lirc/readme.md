@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates infrared transceivers through [LIRC](http://www.lirc.org) or [WinLIRC](http://winlirc.sourceforge.net)."
 since: 2x
 logo: images/addons/lirc.png
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
@@ -40,6 +40,7 @@ ExecStart=/usr/sbin/lircd --nodaemon --driver=default --device=/dev/lirc0 --list
 [Install]
 WantedBy=multi-user.target
 ```
+
 By default, LIRC will listen on IP address 0.0.0.0 (any available IP address) and port 8765. If you would
 rather run LIRC on a specific port or IP address, you can use `--listen=192.168.1.100:9001` instead.
 
@@ -59,6 +60,7 @@ Bridge lirc:bridge:local [ host="192.168.1.120", port="9001" ] {
     Thing remote Samsung [ remote="Samsung" ]
 }
 ```
+
 Bridge:
 * **host**: IP address or hostname of the LIRC server. Defaults to localhost
 * **port**: The port number the LIRC server is listening on. Defaults to 8765
@@ -67,12 +69,14 @@ Remote:
 * **remote**: The name of the remote as known by LIRC
 
 ### Items
+
 ```xtend
 String Remote_AVReceiver { channel="lirc:remote:local:Onkyo_RC_799M:transmit" }
 String Remote_TV { channel="lirc:remote:local:Samsung:transmit" }
 ```
 
 ### Rules
+
 ```xtend
 rule "LIRC Test"
 when
@@ -90,7 +94,7 @@ end
 
 This binding currently supports following channels:
 
-| Channel Type ID | Item Type    | Description  |
-|-----------------|------------------------|--------------|
-| event | Trigger | Triggers when a button is pressed. |
-| transmit | String | Used to transmit IR commands to LIRC. |
+| Channel Type ID | Item Type    | Description                           |
+|-----------------|--------------|---------------------------------------|
+| event           | Trigger      | Triggers when a button is pressed.    |
+| transmit        | String       | Used to transmit IR commands to LIRC. |
