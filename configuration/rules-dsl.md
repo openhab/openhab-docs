@@ -21,9 +21,14 @@ On this page you will learn how to leverage its functionality to do *real* home 
 
 ### File Location
 
-Rules are placed in the folder `${openhab.home}/conf/rules`. The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
+Rules are placed in the folder `${openhab.home}/rules`. The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules. All rules of a file share a common execution context, i.e. they can access and exchange variables with each other. It therefore makes sense to have different rule files for different use-cases or categories.
+
+### Execution
+
+Rules go into effect as soon as they are saved.
+You may want to check the openhab.log file for error messages after creating a new rule.
 
 ### IDE Support
 
