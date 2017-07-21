@@ -29,51 +29,8 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 
 **Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-
-{% include collapsible/start.html %}
-{% include collapsible/heading.html %}
-
-Apt Based Systems
-
-{% include collapsible/body.html %}
-
-A repository providing the latest Oracle Java 8 revision (above "101") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
-Follow the provided guides for either a
-[repository based](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) or a [PPA based](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html) installation.
-In short these are the commands to execute step-by-step on most systems:
-
-```shell
-echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
-echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-sudo apt-get install oracle-java8-set-default
-```
-
-{% include collapsible/item-end.html %}
-{% include collapsible/heading.html %}
-
-Yum or Dnf Based Systems
-
-{% include collapsible/body.html %}
-
-To get the latest version go to the [Oracle Java 8 JRE Downloads Page](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html).
-You then need to accept the license agreement, copy the download link of the appropriate Linux .rpm package and then finally paste it in place of "URL-HERE" below:
-
-```shell
-cd ~
-wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" "URL-HERE"
-```
-
-You can then install the downloaded package with:
-
-```shell
-sudo yum localinstall jdk-8u60-linux-x64.rpm
-```
-
-{% include collapsible/item-end.html %}
-{% include collapsible/end.html %}
+You may want to install Zulu [as a package](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
+Alternatively, Zulu embedded can be installed for small systems either from the same package repository as above or [manually](http://www.azul.com/downloads/zulu-embedded/). 
 
 ## Installation
 
