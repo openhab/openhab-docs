@@ -146,9 +146,6 @@ Now install openHAB with the following command:
 sudo apt-get install openhab2
 ```
 
-**Note:** Apt will try to install Java 8 on your system if it does not detect a Java package.
-If you have installed one manually and want to continue without installing a package, add `--no-install-recommends` after `install`.
-
 When you choose to install an add-on, openHAB will download it from the internet on request.
 If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
 
