@@ -7,8 +7,7 @@ title: openHAB 2 on Linux
 
 # openHAB 2 on Linux
 
-The following instructions will guide you through the process of setting up openHAB 2 and recommended packages on a Linux system, with the **focus on Debian/Ubuntu** derivatives.
-openHAB 2 can be set up and executed on other Linux distributions, the steps may slightly differ.
+The following instructions will guide you through the process of setting up openHAB 2 and recommended packages for both .DEB (Ubuntu, Debian etc.) and .RPM (RedHat, CentOS, Fedora etc.) Linux systems.
 
 All instructions can be executed in a terminal or remotely via SSH connection.
 
@@ -16,13 +15,13 @@ This page is structured as follows:
 
 {::options toc_levels="2..4"/}
 
-* TOC
+- TOC
 {:toc}
 
 If you are unfamiliar with Linux, SSH and the Linux console or if you want to improve your skills, read up on these important topics.
 A lot of helpful articles can be found on the internet, for example:
 
-* "Learn the ways of Linux-fu, for free" interactively with exercises at [linuxjourney.com](https://linuxjourney.com).
+- "Learn the ways of Linux-fu, for free" interactively with exercises at [linuxjourney.com](https://linuxjourney.com).
 
 Linux file permissions is one of the biggest sources of issues, Linux novices run into.
 If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
@@ -30,70 +29,73 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 
 **Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
+You may want to install Zulu, a fully certified Java build [as a package](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
 
-A repository providing the latest Oracle Java 8 revision (above "101") is being maintained by the [Webupd8 Team](https://launchpad.net/~webupd8team/+archive/ubuntu/java).
-Follow the provided guides for either a [repository based](http://www.webupd8.org/2012/09/install-oracle-java-8-in-ubuntu-via-ppa.html) or a [PPA based](http://www.webupd8.org/2014/03/how-to-install-oracle-java-8-in-debian.html) installation.
-In short these are the commands to execute step-by-step on most systems:
+Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](http://www.azul.com/downloads/zulu-embedded/).
+If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
 
-```shell
-echo "deb http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee /etc/apt/sources.list.d/webupd8team-java.list
-echo "deb-src http://ppa.launchpad.net/webupd8team/java/ubuntu xenial main" | sudo tee -a /etc/apt/sources.list.d/webupd8team-java.list
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys EEA14886
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-sudo apt-get install oracle-java8-set-default
-```
+When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
+
+**Note:** Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9. 
 
 ## Installation
 
 openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt` / `apt-get`) is **recommended** for end users.
-The manual installation through a platform independent archive file is suited for users who know what they are doing and systems with a non-Debian distribution, not using the apt/deb package system.
+The installation through a provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is **recommended** for end users.
+The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
 ### Package Repository Installation
 
-Installation through a package repository is the recommended choice on Debian/Ubuntu derivatives.
+Installation through a package repository is the recommended choice. You can select the appropriate installation instructions by expanding from the apt or yum instructions.
 Alternatively resort to the [manual installation approach](#manual-installation).
 
-First, add the openHAB 2 Bintray repository key to your package manager:
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
+
+First, add the openHAB 2 Bintray repository key to your package manager and allow Apt to use the HTTPS Protocol:
 
 ```shell
 wget -qO - 'https://bintray.com/user/downloadSubjectPublicKey?username=openhab' | sudo apt-key add -
+sudo apt-get install apt-transport-https
 ```
 
 Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
-* **Official Release**
+-   **Stable Release**
 
-  The stable builds contain the latest official release with tested features.
+    The stable builds contain the latest official release with tested features.
 
-  Add the **openHAB 2 Stable Repository** to your systems apt sources list:
+    Add the **openHAB 2 Stable Repository** to your systems apt sources list:
 
-  ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
-  ```
+    ```shell
+    echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+    ```
 
-* **Beta Release**
+-   **Testing Release**
 
-  The beta builds come out less frequently, but will contain new features that are currently in the testing phase.
+    The beta and release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
 
-  Add the **openHAB 2 Beta Repository** to your systems apt sources list:
+    Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
-  ```shell
-  echo 'deb http://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
-  ```
+    ```shell
+    echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+    ```
 
-* **Snapshot Release**
+-   **Snapshot Release**
 
-  The snapshot build is created [almost daily](https://bintray.com/openhab/apt-repo2/openhab2#release), and includes the latest changes to the openHAB 2 core and add-ons.
-  These changes are often unstable, so you should use this branch only for testing or development purposes.
+    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    These changes are often unstable, so you should use this branch only for testing or development purposes.
 
-  The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
-  To use it, add the **openHAB 2 Unstable Repository** to your systems apt sources list:
+    The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
+    To use it, add the **openHAB 2 Unstable Repository** to your systems apt sources list:
 
-  ```shell
-  echo 'deb http://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
-  ```
+    ```shell
+    echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg unstable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+    ```
 
 Next, resynchronize the package index:
 
@@ -114,52 +116,136 @@ If you plan on disconnecting your machine from the internet, then you will want 
 sudo apt-get install openhab2-addons
 ```
 
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+The RPM repo information should be defined inside a file, make a new file at `/etc/yum.repos.d/openhab.repo` with the following contents depending on your choice of release.
+You may add all three to the same file, but make sure the desired repo is is set to `enabled=1`:
+
+-   **Stable Release**
+
+    The stable builds contain the latest official release with tested features.
+
+    ```text
+    [openHAB-Stable]
+    name=openHAB 2.x.x Stable
+    baseurl=https://dl.bintray.com/openhab/rpm-repo2/stable
+    gpgcheck=1
+    gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    enabled=1
+    ```
+
+-   **Testing Release**
+
+    The beta or release candidate builds come out less frequently, but will contain new features that are currently in the testing phase.
+
+    ```text
+    [openHAB-Testing]
+    name=openHAB 2.x.x Testing
+    baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
+    gpgcheck=1
+    gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
+    enabled=1
+    ```
+
+-   **Snapshot Release**
+
+    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    These changes are often unstable, so you should use this branch only for testing or development purposes.
+
+    ```text
+    [openHAB-Snapshots]
+    name=openHAB 2.x.x Snapshots
+    baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/unstable
+    gpgcheck=1
+    gpgkey=https://openhab.jfrog.io/openhab/api/gpg/key/public
+    enabled=1
+    ```
+
+Now install openHAB with the following command, please note that for systems that support it `dnf` can be used instead of yum:
+
+```shell
+sudo yum install openhab2
+```
+
+When you choose to install an add-on, openHAB will download it from the internet on request.
+If you plan on disconnecting your machine from the internet, then you will want to also install the add-ons package.
+
+```shell
+sudo yum install openhab2-addons
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
+
 Optionally, you may in addition install the legacy add-ons package `openhab2-addons-legacy`.
 This package contains 1.x bindings, for which there is already a 2.x version available.
 This might be useful if you're [coming from openHAB 1.x]({{base}}/tutorials/migration.html) for example.
 
 If everything went well, you can start openHAB and register it to be automatically executed at system startup.
 
-* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
 
-  ```shell
-  sudo /etc/init.d/openhab2 start
-  sudo /etc/init.d/openhab2 status
-  
-  sudo update-rc.d openhab2 defaults
-  ```
+Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
 
-* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+{% include collapsible/body.html %}
 
-  ```shell
-  sudo systemctl start openhab2.service
-  sudo systemctl status openhab2.service
-  
-  sudo systemctl daemon-reload
-  sudo systemctl enable openhab2.service
-  ```
+```shell
+sudo /etc/init.d/openhab2 start
+sudo /etc/init.d/openhab2 status
+
+sudo update-rc.d openhab2 defaults
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+{% include collapsible/body.html %}
+
+```shell
+sudo systemctl start openhab2.service
+sudo systemctl status openhab2.service
+
+sudo systemctl daemon-reload
+sudo systemctl enable openhab2.service
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
 The first start may take **up to 15 minutes**, this is a good time to reward yourself with hot coffee or a freshly brewed tea!
 
-You should be able to reach the openHAB 2 portal at [http://openhab-device:8080](http://openhab-device:8080) at this point.
+You should be able to reach the openHAB 2 Dashboard at [http://openhab-device:8080]() at this point.
 If you're new to openHAB, then you should checkout the [beginner's tutorial]({{base}}/tutorials/beginner/1sttimesetup.html)!
 
-![The openHAB 2 portal page](images/Accueil_Openhab_2.png)
+![The openHAB 2 Dashboard page](images/Accueil_Openhab_2.png)
 
 #### Service Control
 
 openHAB will run as a service in the background.
 The most important commands to control the openHAB service are given below.
 
-* Linux init systems based on **sysVinit** (e.g. Debian 7, Ubuntu 14.x, Raspbian Wheezy and earlier):
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **sysVinit** (e.g. Ubuntu 14.x, Debian Wheezy and older):
+
+{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
   sudo /etc/init.d/openhab2 status
-  
+
   # (Re-)Start openHAB (background service)
   sudo /etc/init.d/openhab2 restart
-  
+
   # Stop the openHAB background service
   sudo /etc/init.d/openhab2 stop
 
@@ -167,24 +253,32 @@ The most important commands to control the openHAB service are given below.
   sudo update-rc.d openhab2 defaults
   ```
 
-* Linux init systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and newer):
+
+{% include collapsible/body.html %}
 
   ```shell
   # Learn about the current service status
   sudo systemctl status openhab2.service
-  
+
   # (Re-)Start openHAB (background service)
   sudo systemctl restart openhab2.service
-  
+
   # Stop the openHAB background service
   sudo systemctl stop openhab2.service
-  
+
   # Make openHAB automatically start after booting the Linux host
   sudo systemctl daemon-reload
   sudo systemctl enable openhab2.service
   ```
 
-#### Upgrade
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
+
+#### Changing Versions
 
 To stay up to date with new releases, you should do regular upgrades.
 This is especially important if you are working with the latest snapshot as changes and fixes are incorporated constantly.
@@ -192,14 +286,19 @@ This is especially important if you are working with the latest snapshot as chan
 Your personal configuration will be retained on upgrades.
 We still recommend a backup before each upgrade.
 
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
+
 Upgrading is as easy as:
 
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
 ```
-
-#### Changing Versions
 
 You may want to switch to a different repo, or an older (but more stable) version of openHAB.
 To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
@@ -209,11 +308,40 @@ sudo apt-get update
 apt-cache showpkg openhab2
 ```
 
-Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install=[version]` command, for example:
+Once you know which version you want, you can upgrade/downgrade to it by using the `apt-get install openhab2=[version]` command, for example:
 
 ```shell
-sudo apt-get install openhab2=2.0.0-1
+sudo apt-get install openhab2=2.1.0-1
 ```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+Upgrading is as easy as: (you can use `dnf` instead of `yum` for systems that support it)
+
+```shell
+sudo yum upgrade
+```
+
+You may want to switch to a different version of openHAB.
+To do this, simply select the repo as in the [installation instructions above](#package-repository-installation), then find the version by bringing a list of all versions available to install:
+
+```shell
+rpm -q openhab2
+```
+
+Once you know which version you want, you can upgrade/downgrade to it by using the `yum install openhab2-[version]` command, for example:
+
+```shell
+sudo yum install openhab2-2.1.0-1
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
 #### Backup and Restore
 
@@ -223,11 +351,15 @@ To make a backup of your openHAB 2 system, you need to retain your configuration
 # stop openhab instance (here: systemd service)
 sudo systemctl stop openhab2.service
 
+# prepare backup folder, replace by your desired destination
+BACKUPDIR="/srv/openhab2-backup/openhab2-backup-$(date +%Y%m%d_%H%M%S)"
+mkdir -p $BACKUPDIR
+
 # backup current installation with settings
-TIMESTAMP=`date +%Y%m%d_%H%M%S`;
-mkdir  ~/openhab2-backup-$TIMESTAMP
-cp -arv /etc/openhab2 ~/openhab2-backup-$TIMESTAMP/conf
-cp -arv /var/lib/openhab2 ~/openhab2-backup-$TIMESTAMP/userdata
+cp -arv /etc/openhab2 "$BACKUPDIR/conf"
+cp -arv /var/lib/openhab2 "$BACKUPDIR/userdata"
+rm -rf "$BACKUPDIR/userdata/cache"
+rm -rf "$BACKUPDIR/userdata/tmp"
 
 # restart openhab instance
 sudo systemctl start openhab2.service
@@ -240,9 +372,10 @@ Maybe you will need to delete the existing data first.
 # stop openhab instance (here: systemd service)
 sudo systemctl stop openhab2.service
 
-# restore data
-sudo cp -arv ~/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
-sudo cp -arv ~/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+# restore data and fix permissions
+sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
+sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
+sudo chown -R openhab /var/lib/openhab2
 
 # restart openhab instance
 sudo systemctl start openhab2.service
@@ -250,12 +383,34 @@ sudo systemctl start openhab2.service
 
 #### Uninstall
 
-To uninstall openHAB 2 and get rid of all related files managed by the apt package manager, make a backup, then uninstall openHAB and remove the repository:
+To uninstall openHAB 2 and get rid of all related files managed by the package manager, make a backup, then uninstall openHAB and remove the repository:
+
+{% include collapsible/start.html %}
+{% include collapsible/heading.html %}
+
+Apt Based Systems
+
+{% include collapsible/body.html %}
 
 ```shell
 sudo apt-get purge openhab2*
 sudo rm /etc/apt/sources.list.d/openhab2.list
 ```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/heading.html %}
+
+Yum or Dnf Based Systems
+
+{% include collapsible/body.html %}
+
+```shell
+sudo yum remove openhab2*
+sudo rm /etc/yum.repos.d/openHAB.repo
+```
+
+{% include collapsible/item-end.html %}
+{% include collapsible/end.html %}
 
 ### Manual Installation
 
@@ -272,41 +427,26 @@ We are going to download a platform independent archive file and extract it to t
 Choose between the latest Beta release or a Snapshot with all incoming contributions, created daily.
 As openHAB 2 is still in an evolving state, the snapshot may be the **preferred choice**.
 
-* **Official Release**
+-   **Official Release**
 
-  Download and extract the latest offical version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro/2.0.0) to your host.
+    Download and extract the latest offical stable version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host:
 
-  ```shell
-  cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0%2Fopenhab-2.0.0.zip
-  sudo unzip openhab-download.zip -d /opt/openhab2
-  rm openhab-download.zip
-  ```
+    ```shell
+    cd /tmp
+    wget -O openhab-download.zip https://bintray.com/... # Insert download link here
+    sudo unzip openhab-download.zip -d /opt/openhab2
+    rm openhab-download.zip
+    ```
 
-* **Beta/RC Release**
+-   **Beta/RC Release**
 
-  Download and extract the desired beta or release client version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host.
-  We will use `openhab-offline-2.0.0.RC1.zip` as an example:
+    If available, beta or release candidate builds of openHAB 2 can also be downloaded from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) and extracted to your host as shown above.
 
-  ```shell
-  cd /tmp
-  wget -O openhab-download.zip https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.0.0.RC1%2Fopenhab-2.0.0.RC1.zip
-  sudo unzip openhab-download.zip -d /opt/openhab2
-  rm openhab-download.zip
-  ```
+-   **Snapshot Release**
 
-* **Snapshot Release**
+    Download and extract the latest snapshot version of openHAB 2 from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host. The process is analogue to above.
 
-  Download and extract the latest snapshot version of openHAB 2 as a **zip file** from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host, for example:
-
-  ```shell
-  cd /tmp
-  wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
-  sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-  rm openhab-2.0.0-SNAPSHOT.zip
-  ```
-
-The extracted openHAB files should belong to the earlier created openhab user.
+The extracted openHAB files should belong to the earlier created `openhab` user.
 Execute:
 
 ```shell
@@ -314,7 +454,7 @@ sudo chown -hR openhab:openhab /opt/openhab2
 ```
 
 Everything is ready for a first test run.
-**Execute** openHAB and you should be able to reach the openHAB 2 Portal at [http://openhab-device:8080]() after a few minutes:
+**Execute** openHAB and you should be able to reach the openHAB 2 Dashboard at [http://openhab-device:8080]() after a few minutes:
 
 ```shell
 # execute as restricted user openhab:
@@ -389,39 +529,27 @@ The output of `status` after a successful execution should be similar to:
 When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
 Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
+#### Backup and Restore
 
-#### Upgrade, Backup and Restore
+We recommend a backup before each upgrade, or before any major change to a configuration. To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
 
-To stay up to date with new releases, you should do regular upgrades of your manual installation.
-This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://oss.jfrog.org/webapp/#/builds/openHAB-Distribution).
-
-Your personal configuration will be retained on upgrades.
-We still recommend a backup before each upgrade.
-
-To upgrade your manual installation, you simply need to replace the openHAB runtime files.
-Make sure to first **stop your openHAB instance**.
-
-To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
-
-The following shell commands will create a backup, install the newest openHAB 2 version and restore settings:
+The following shell commands will create a backup:
 
 ```shell
 # stop openhab instance (here: systemd service)
 sudo systemctl stop openhab2.service
 
 # backup current installation with settings
-TIMESTAMP=`date +%Y%m%d_%H%M%S`;
+TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
 sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
+```
 
-# download new version (please replace URL)
-cd /tmp
-wget https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.0.0-SNAPSHOT.zip
-sudo unzip openhab-2.0.0-SNAPSHOT.zip -d /opt/openhab2
-rm openhab-2.0.0-SNAPSHOT.zip
+You may restore these files by moving them back into your openhab folder, where `20170626_201143` is an example of the timestamp set on  the folder earlier:
 
+```shell
 # restore configuration and userdata
-sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/conf /opt/openhab2/
-sudo cp -arv /opt/openhab2-backup-$TIMESTAMP/userdata /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-20170626_201143/conf /opt/openhab2/
+sudo cp -arv /opt/openhab2-backup-20170626_201143/userdata /opt/openhab2/
 
 # fix permissions
 sudo chown -hR openhab:openhab /opt/openhab2
@@ -429,6 +557,48 @@ sudo chown -hR openhab:openhab /opt/openhab2
 # restart openhab instance
 sudo systemctl start openhab2.service
 ```
+
+#### Upgrade
+
+To stay up to date with new releases, you should do regular upgrades of your manual installation.
+This is especially important if you are working with the latest snapshot as changes and fixes are incorporated [constantly](https://openhab.jfrog.io/openhab/webapp/#/builds/openHAB-Distribution).
+
+openHAB uses a script to update to any other version, or from stable to snapshot and visa-versa.
+Your personal configuration will be retained on upgrades, but you should **stop openHAB** and perform a backup first.
+
+-   **Versions 2.1.0 and Above**
+
+    From version 2.1.0, openHAB is distributed with the update script included.
+    This script should be called from within openHAB's root directory.
+    Assuming the openHAB directory is in `/opt/openhab`, simply run the following commands to update to the next major version of openHAB:
+
+    ```bash
+    cd /opt/openhab
+    sudo runtime/bin/update
+    ```
+
+    You can also specify any version as a parameter. For example, to switch back to 2.0.0:
+
+    ```bash
+    sudo runtime/bin/update 2.0.0
+    ```
+
+    You may also change to openHAB's more frequent, but less stable snapshot builds.
+    Just append "-SNAPSHOT" to the target version, e.g.:
+
+    ```bash
+    sudo runtime/bin/update 2.2.0-SNAPSHOT
+    ```
+
+-   **Older Versions**
+
+    If you're using a version earlier than 2.1.0, then you can use the following commands in Terminal to download the script and run it.
+    Assuming the openHAB directory is in `/opt/openhab`:
+
+    ```bash
+    cd /opt/openhab
+    sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
+    ```
 
 #### Uninstall
 
@@ -458,13 +628,13 @@ In order to get more insight on what your openHAB system is doing and to see occ
 These will tell you everything you might need to know.
 Execute the following command in one session or have both files separated in sessions side by side:
 
-* Package repository based installation:
+- Package repository based installation:
 
   ```shell
   tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
   ```
 
-* Manual installation:
+- Manual installation:
 
   ```shell
   tail -f /opt/openhab2/userdata/logs/openhab.log -f /opt/openhab2/userdata/logs/events.log
@@ -492,6 +662,12 @@ sudo adduser openhab dialout
 sudo adduser openhab tty
 ```
 
+If you are looking to enable sound privileges for openHAB, it will also be necessary to add openHAB to the "audio" group.
+
+```shell
+sudo adduser openhab audio
+```
+
 Additionally it's needed to allow the java environment to access the serial port of the connected peripheral.
 Therefore the following setting has to be added/adapted on your system in file `/etc/default/openhab2`:
 
@@ -515,7 +691,8 @@ setcap 'cap_net_raw,cap_net_admin=+eip cap_net_bind_service=+ep' $(realpath /usr
 ### Network Sharing
 
 openHAB depends on configuration files and folders with custom content (details in [Configuration]({{base}}/configuration/index.html) articles).
-Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important, therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_(software)) network share is **highly recommended**.
+Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important.
+Therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_%28software%29) network share is **highly recommended**.
 
 The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
 
@@ -540,46 +717,45 @@ Next, add the desired share configurations to the end of the file:
 
 <!-- TODO: Limit to configuration folder??? -->
 
-* Package repository based installation:
+-   Package repository based installation:
 
-  ```ini
-  [openHAB2-userdata]
-    comment=openHAB2 userdata
-    path=/var/lib/openhab2
-    browseable=Yes
-    writeable=Yes
-    only guest=no
-    public=no
-    create mask=0777
-    directory mask=0777
+    ```ini
+    [openHAB2-userdata]
+      comment=openHAB2 userdata
+      path=/var/lib/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
 
-  [openHAB2-conf]
-    comment=openHAB2 site configuration
-    path=/etc/openhab2
-    browseable=Yes
-    writeable=Yes
-    only guest=no
-    public=no
-    create mask=0777
-    directory mask=0777
-  ```
+    [openHAB2-conf]
+      comment=openHAB2 site configuration
+      path=/etc/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
+    ```
 
-* Manual installation:
+-   Manual installation:
 
-  ```ini
-  [openHAB-files]
-    comment=openHAB2
-    path=/opt/openhab2
-    browseable=Yes
-    writeable=Yes
-    only guest=no
-    public=no
-    create mask=0777
-    directory mask=0777
-  ```
+    ```ini
+    [openHAB-files]
+      comment=openHAB2
+      path=/opt/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
+    ```
 
 Save and close the samba configuration file.
-
 
 The shares are configured to be not open for guests nor to the public.
 Let's activate the "openhab" user as a samba user and set his password (e.g. "habopen"):
@@ -614,8 +790,8 @@ Check the network devices manager of your local operating system to find and acc
 These might however not be auto-discovered.
 You can also manually connect:
 
-* **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
-* **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
+- **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
+- **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
 
 Be sure to use the actual host name instead of `openhab-device`.
 When asked, authenticate with the username "openhab" and the chosen password.

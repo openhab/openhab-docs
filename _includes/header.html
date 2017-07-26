@@ -9,13 +9,15 @@
   <title>{% if page.title != nil %}{{ page.title }} - {% endif %}openHAB 2 - Empowering the Smart Home</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="{{base}}/css/materialize.css" media="screen,projection" />
-  <link rel="stylesheet" href="{{base}}/css/highlight.github.css" media="screen,projection" />
-  <link rel="stylesheet" href="{{base}}/css/styles.css" />
-  <link rel="stylesheet" href="{{base}}/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="{{base}}/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="{{base}}/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="{{base}}/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="{{base}}/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="{{base}}/css/collapsible.css" />
 
   <!-- Font -->
-  <link href='https://fonts.googleapis.com/css?family=Lato:300,400,700' rel='stylesheet' type='text/css' />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
   <script>
@@ -27,7 +29,6 @@
   ga('set', 'anonymizeIp', true);
   ga('send', 'pageview');
   </script>
-
 </head>
 
 
@@ -37,34 +38,34 @@
       <div class="container">
         <div class="nav-wrapper">
           <a href="{{base}}/index.html"><img id="logo" src="/images/logo.png" /></a>
-          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-            <ul class="right hide-on-med-and-down">
-              <li><a href="{{base}}/tutorials">Tutorials</a></li>
-              <li><a href="{{base}}/introduction.html">User Manual</a></li>
-              <li><a href="{{docu}}/developers">Developer Guide</a></li>
-              <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
-              <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
-              <li class="search"><span style="font-family: 'material-design-icons'">&#xe65f;</span></li>
-              <li class="search">
-                <form method="GET" id="searchform" class="search-form" action="/search">
-                  <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
-                </form>
-              </li>
-            </ul>
-            <ul id="nav-mobile" class="side-nav">
-              <li><a href="{{base}}/index.html">Home</a></li>
-              <li><a href="{{base}}/tutorials">Tutorials</a></li>
-              <li><a href="{{base}}/introduction.html">User Manual</a></li>
-              <li><a href="{{docu}}/developers">Developer Guide</a></li>
-              <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
-              <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
-              <li class="search">
-                <form method="GET" id="searchformmob" class="search-form" action="/search">
-                  <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
-                </form>
-              </li>
-            </ul>
-          </div>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="{{base}}/tutorials">Tutorials</a></li>
+            <li><a href="{{base}}/introduction.html">User Manual</a></li>
+            <li><a href="{{docu}}/developers">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="{{base}}/index.html">Home</a></li>
+            <li><a href="{{base}}/tutorials">Tutorials</a></li>
+            <li><a href="{{base}}/introduction.html">User Manual</a></li>
+            <li><a href="{{docu}}/developers">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
         </div>
-      </nav>
-    </div>
+      </div>
+    </nav>
+  </div>

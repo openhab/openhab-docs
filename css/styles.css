@@ -203,6 +203,7 @@ section hr {
 
 section .icon-large {
 	font-size: 6rem;
+	color: #222;
 }
 
 /* Landing Page: Hero */
@@ -582,7 +583,7 @@ section.text ol {
 
 section.text code {
 	padding: 0.1em 0.2em;
-	background: #f7f7f7;
+	background: #f3f3f3;
 	border-radius: 3px;
 	font-size: 1.0rem;
 	font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
@@ -590,7 +591,7 @@ section.text code {
 
 section.text pre {
 	border-radius: 3px;
-	background-color: #f7f7f7;
+	/* background-color: #f7f7f7; */
 	padding: 15px;
 }
 
@@ -649,7 +650,7 @@ section.text ul.nav > li > a:hover {
 
 /* First Level Menu Links */
 section.text ul.nav li a:after {
-    font-family: "Material-Design-Icons";
+    font-family: "Material Icons";
     speak: none;
     font-style: normal;
     font-weight: normal;
@@ -664,7 +665,7 @@ section.text ul.nav li a:after {
 
 /* First level menu with sub nav */
 section.text ul.nav li a.has-submenu:after {
-    content: "\e89e";
+    content: "keyboard_arrow_down";
 }
 
 /* Active first level menu link */
@@ -679,7 +680,7 @@ section.text ul.nav li.active a:after {
 
 /* First level menu with sub nav opened */
 section.text ul.nav li.active.open a:after {
-    content: "\e89d";
+    content: "keyboard_arrow_up";
 }
 
 /* All second level menu links */
@@ -700,13 +701,13 @@ section.text ul.nav li.active.open ul li a:after {
 
 /* Second level menu with sub nav */
 section.text ul.nav li.active.open ul li a.has-submenu:after {
-    content: "\e89e";
+    content: "keyboard_arrow_down";
     display: inline;
 }
 
 /* Second level menu with sub nav opened */
 section.text ul.nav li.active.open ul li.open a.has-submenu:after {
-    content: "\e89d";
+    content: "keyboard_arrow_up";
 }
 
 /* Active second level menu link */
@@ -776,7 +777,7 @@ body.documentation section#documentation h2:before, body.documentation section#d
 }
 
 body.documentation section#documentation h2:after, body.documentation section#documentation h3:after, body.documentation section#documentation h4:after, body.documentation section#documentation h5:after {
-	font-family: "Material-Design-Icons";
+	font-family: "Material Icons";
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -785,7 +786,7 @@ body.documentation section#documentation h2:after, body.documentation section#do
 	text-rendering: auto;
 	-webkit-font-smoothing: antialiased;
 	vertical-align: middle;
-	content: "\e70d";
+	content: "link";
 	margin-left: 10px;
 	visibility: hidden;
 	cursor: pointer;

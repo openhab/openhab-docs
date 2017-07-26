@@ -28,7 +28,7 @@ The tasks are divided in several sections:
 * TOC
 {:toc}
 
-Sample implementations of the tasks will be added in the [openHAB docs repo](https://github.com/openhab/openhab-docs/tree/gh-pages/_sample_code/osgi_codings_tasks/bundles).
+Sample implementations are present in the [openHAB docs repo](https://github.com/openhab/openhab-docs/tree/gh-pages/_sample_code/osgi_codings_tasks/bundles).
 
 ### I. Writing basic OSGi bundle
 
@@ -57,8 +57,8 @@ Sample implementations of the tasks will be added in the [openHAB docs repo](htt
 
 3. Create an `org.openhab.training.electricity.consumer` bundle, which contains an 
 interface `ElectricityConsumer` with methods:
-	- `void start()` - starts the device and displays a message on the console. If the device requires a provider (it is not energy independent), this method can set the current provider. After the device is started it should try to consume electricity equal to the device consumption from the current provider at fixed interval from 5 seconds and display a message on the console, which provider is in use at the moment; 
-	- `void stop()` - stops the device and displays message on the console. The device should not consume electricity anymore. The device should stop, if the current provider is discharged;
+	- `void startConsuming()` - starts the device and displays a message on the console. If the device requires a provider (it is not energy independent), this method can set the current provider. After the device is started it should try to consume electricity equal to the device consumption from the current provider at fixed interval from 5 seconds and display a message on the console, which provider is in use at the moment; 
+	- `void stopConsuming()` - stops the device and displays message on the console. The device should not consume electricity anymore. The device should stop, if the current provider is discharged;
 	- `void setCurrentProvider(ElectricityProvider)` - sets a current provider from a list with available providers;
 	- `List<ElectricityProvider> getAllAvailableProviders()` - returns a list with available providers (a provider is available, when it is registered in the *Service Registry* and has more charge, than the device consumption).
 4. Create an `org.openhab.training.electricity.radio` bundle, which:
@@ -120,12 +120,16 @@ interface `ElectricityConsumer` with methods:
 1. Implement the [*ManagedService*][ManagedService] interface in the `org.openhab.training.electricity.tv.events` bundle and:
 	- add a configuration to the `TV` class with property "autoSleep" and value a timestamp (hh:mm);
 	- modify the method that listens for events with topic "time" to stop the bundle, when the "autoSleep" property is equal to the "time" topic.
-2. Create another implementation of the `ElectricityProvider` interface (`RechargableBattery`) in an `org.openhab.training.electricity.rechargablebattery` bundle that:
+
+2. Create another implementation of the `ElectricityProvider` interface (`RechargableBattery`) in an `org.openhab.training.electricity.rechargeablebattery` bundle that:
 	- has a  finite charge (e.g `int capacity = 30`);
 	- implements the *ManagedService* interface. After this modification, it should be possible to change the charge of a battery with a `setCharge(int capacity)` method;
-	- when the battery is recharged (the configuration of the battery is changed), the consumers must be notified about the change.
 
-      Hint! Read about the [ConfigurationAdmin](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html) service and how you can use it to change the configuration of a ManagedService. You might want to implement additional bundle that is using the ConfigurationAdmin service to change the configuration of the battery to perform a quick test.
+    Hint! Read about the [ConfigurationAdmin](https://osgi.org/javadoc/r4v42/org/osgi/service/cm/ConfigurationAdmin.html) service and how you can use it to change the configuration of a ManagedService. You might want to implement additional bundle that is using the ConfigurationAdmin service to change the configuration of the battery to perform a quick test.
+
+    Hint! Install `org.eclipse.equinox.cm` bundle in order to use *ConfigurationAdmin* service.
+
+3. Create a `org.openhab.training.electricity.recharger` bundle that will wait 10 seconds after it is activated and will recharge a rechargeable battery if it is registered as a service.
 
 ### VII. Console Commands
 

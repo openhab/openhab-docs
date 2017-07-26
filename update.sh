@@ -18,7 +18,11 @@ git pull
 cd ../openhab-bundles
 git checkout master
 git pull
-git submodule update --recursive --remote
+git submodule update --recursive --remote --init
+
+cd ../openhab-distro
+git checkout master
+git pull
 
 cd ../..
 mvn clean package

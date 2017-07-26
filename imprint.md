@@ -10,8 +10,8 @@ title: Imprint
 <address>
 <p>openHAB Foundation e.V.<br />Kollwitzweg 10<br />64372 Ober-Ramstadt</p>
 </address>
-<p><i class="mdi-communication-phone"></i> +49 (6154) 603-9765</p>
-<p><i class="mdi-communication-email"></i> <a href="mailto:info@openhabfoundation.org">info@openhabfoundation.org</a></p>
+<p><i class="material-icons">phone</i> +49 (6154) 603-9765</p>
+<p><i class="material-icons">email</i> <a href="mailto:info@openhabfoundation.org">info@openhabfoundation.org</a></p>
 
 ### Executive Board
 

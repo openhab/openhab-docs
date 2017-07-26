@@ -11,11 +11,14 @@ Eclipse SmartHome now comes with an initial version of a next-generation rule en
 
 > Note: If you use it, this is at your own risk. Especially, you should not expect any documentation besides what is available on the [Eclipse SmartHome website](https://www.eclipse.org/smarthome/documentation/features/rules.html).
 
-In order to install it you need to:
+## Installation
 
-- Enable remote repository access of your runtime as well as enabling experimental features. You can do so in the Paper UI under `Configuration->System->Extension Management`:
-![enable experimental](images/experimental.png)
-- Install the rule engine from `Extensions->Misc-> Rule Engine (Experimental)`:
-![rule engine](images/ruleengine.png)
-- When you now refresh your browser, you will see a `Rules` menu appearing in the main menu of the Paper UI:
-![rule ui](images/ruleui.png)
+Install the rule engine from Add-ons → Misc → Rule Engine (Experimental).
+
+![rule engine addon](images/rules_ng_addons.png)
+
+## Usage
+
+When you now refresh your browser, you will see a `Rules` menu appearing in the main menu of the Paper UI.
+
+![new rule](images/rules_ng_new_rule.png)

@@ -11,6 +11,7 @@
                <li><a href="/imprint.html">Imprint</a></li>
                <li><a href="/privacy.html">Privacy Policy</a></li>
                <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
             </ul>
         </div>
     </div>
@@ -19,20 +20,20 @@
 <script src="{{base}}/js/jquery.min.js"></script>
 <script src="{{base}}/js/jquery.scrollme.min.js"></script>
 <script src="{{base}}/js/jquery.sticky.js"></script>
-<script src="{{base}}/js/materialize.js"></script>
-<script src="{{base}}/js/highlight.pack.js"></script>
+<script src="{{base}}/js/materialize.min.js"></script>
 <script src="{{base}}/js/init.js"></script>
+<script src="{{base}}/js/functions.js"></script>
 
 <script>
 $(document).ready(function () {
 
     $('#oh2-checkbox').change(function () {
-        if (this.checked) $('.source-oh2').show('slow');
+        if (this.checked) $('.since-2x').show('slow');
         else $('.source-oh2').hide('slow');
     });
 
     $('#oh1-checkbox').change(function () {
-        if (this.checked) $('.source-oh1').show('slow');
+        if (this.checked) $('.since-1x').show('slow');
         else $('.source-oh1').hide('slow');
     });
 
