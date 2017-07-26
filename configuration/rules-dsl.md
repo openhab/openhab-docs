@@ -195,7 +195,7 @@ To be able to do something useful with the scripts, openHAB provides access to
 Combining these features, you can easily write code like:
 
 ```java
-    if(Temperature.state < 20) {
+    if (Temperature.state < 20) {
         sendCommand(Heating, ON)
     }
 ```
@@ -206,6 +206,19 @@ Besides the implicitly available variables for items and commands/states, rules 
 
 - Every rule that has at least one command event trigger, will have the variable `receivedCommand` available, which can be used inside the execution block.
 - Every rule that has at least one status change event trigger, will have the variable `previousState` available, which can be used inside the execution block.
+
+### Early returns
+
+It is possible to return early from a rule, not executing the rest of the statements like this:
+
+```java
+if (Temperature.state > 20) {
+	return;
+}
+sendCommand(Heating, ON)
+```
+
+Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
 
 ### Concurrency Guard
 
