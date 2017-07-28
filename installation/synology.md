@@ -55,11 +55,13 @@ If your NAS cannot connect to the internet, the installer will tell you to downl
 
 ## Configuration
 
-The location of the configuration files varies depending if a shared folder named ```public``` exists.The public folder is created automatically after your Synology NAS is first set up for certain models.
+The location of configuration files by openHAB differs depending on wether or not a shared folder named `public` exists: 
+
+* with public share folder: `/volume1/public/openHAB2/conf/`
+* without public share folder: `/volume1/@appstore/openHAB2/conf/`
+
+For certain Synology models the `public` folder is created automatically during the first setup.
 The administrator can also create a public shared folder if desired.
-Synology does not document what models will automatically create a public folder.
+
+Synology does not document which models will automatically create a public folder.
 See [DiskStation Manager - Shared Folder](https://www.synology.com/en-us/knowledgebase/DSM/help/DSM/AdminCenter/file_share_desc)
-
-If a public shared folder exists, the openHAB install script will place configuration files are located at ```/volume1/public/openHAB2/conf/```
-
-If no public shared folder exists, the openHAB install script will place configuration files are located at ```/volume1/@appstore/openHAB2/conf/```
