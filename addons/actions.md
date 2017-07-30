@@ -95,6 +95,29 @@ The Timer object supports the following methods:
 * `hasTerminated`: returns true if the code has run and completed
 * `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
 
+### Thing Status Action
+
+`getThingStatusInfo(String thingUID)`: Gets status information of the given thing identified by `thingUID`.
+
+The result is of type `ThingStatusInfo`.
+It contains [Thing Status]({{base}}/concepts/things.html), [Status Details]({{base}}/concepts/things.html) and [Status Description]({{base}}/concepts/things.html).
+Refer to [Thing Status API]({{base}}/concepts/things.html) for how to get those information.
+If you just want to know the status, you can use `thingStatusInfo.getStatus().toString()` and the result will be one of the values in [Thing Status]({{base}}/concepts/things.html).
+
+> If the thing is removed or it's not added yet, it'll return null.
+
+For example:
+
+```java
+var thingStatusInfo = getThingStatusInfo("zwave:device:c5155aa4:node2")
+
+if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONLINE")) {
+    logInfo("ThingStatus", "The thing is online.")
+} else {
+    logError("ThingStatus", "The thing is offline or doesn't exist.")
+}
+```
+
 ## Installable Actions
 
 <table id="actions-select" class="striped">
