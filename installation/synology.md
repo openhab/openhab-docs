@@ -19,10 +19,6 @@ If you see the following error you are likely using OpenJDK:
 java.security.NoSuchAlgorithmException: EC KeyPairGenerator not available
 ```
 
-The easiest way to install Java is to include the [PC-Loadletter Repo](http://packages.pcloadletter.co.uk/).
-Download [Java8 SE](http://www.oracle.com/technetwork/java/embedded/index.html) [(latest ARMv6)](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the public folder of your NAS.
-Then start the installation of Java8 SE.
-
 The easiest way to install Java is to install the Synology Java8 package from Package Center.
 After installation, OpenJDK will be used by default and must be upgraded.
 To upload Oracle JDK to Java8, click the Install Java / Upgrade Java button and then follow the onscreen instructions.
@@ -32,7 +28,7 @@ The filename and format of the uploaded file will be checked before installation
 If there is not a Java8 package in the Package Center, your machine may not be supported by the [Synology package](https://www.synology.com/en-us/dsm/packages/Java8).
 
 The best option for older unsupported Synology models such as **PowerPC** and **ARJava SEM** is to include the *PC-Loadletter* Repo.
-[Download Java SE](http://tinyurl.com/javaembed) (Java Cryptography Extension if required) and put them in the *public* folder of your NAS.
+[Download Java SE](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/index.html) [(latest ARMv6)](http://www.oracle.com/technetwork/java/embedded/embedded-se/downloads/javase-embedded-downloads-2209751.html) [(Java Cryptography Extension if required)](http://www.oracle.com/technetwork/java/javase/downloads/jce8-download-2133166.html) and put them in the *public* folder of your NAS.
 Then start the installation of Java8 SE.
 
 *Note that it may be necessary to rename the downloaded file to match the name the Loadletter utility expects which may be an older version than what is currently available.*
