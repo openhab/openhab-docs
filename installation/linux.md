@@ -346,6 +346,33 @@ sudo yum install openhab2-2.1.0-1
 #### Backup and Restore
 
 To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
+As of version 2.2.0, you can use openHAB's scripts for storing your configuration in a zip file.
+By default, the script saves the zip file in `/var/lib/openhab2/backups` for automatic installs and `openhab2/backups` for manual installs.
+You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
+
+```shell
+cd $OPENHAB_HOME
+
+sudo ./runtime/bin/backup
+## OR ##
+sudo ./runtime/bin/backup /path/to/backups/folder/myBackup.zip
+```
+
+To restore from these generated files:
+
+```shell
+cd $OPENHAB_HOME
+
+sudo ./runtime/bin/restore $OPENHAB_BACKUPS/myBackup.zip
+```
+
+If you're unsure how to use the above files, just use `--help` or `-h`:
+
+```shell
+./runtime/bin/backup --help
+```
+
+Otherwise, you may do this manually by:
 
 ```shell
 # stop openhab instance (here: systemd service)
@@ -365,8 +392,8 @@ rm -rf "$BACKUPDIR/userdata/tmp"
 sudo systemctl start openhab2.service
 ```
 
-If you later want to restore settings, just replace them.
-Maybe you will need to delete the existing data first.
+If you later want to restore these manual settings, just replace them.
+You may want to delete the existing data first.
 
 ```shell
 # stop openhab instance (here: systemd service)
@@ -620,6 +647,7 @@ sudo rm /lib/systemd/system/openhab2.service
 | Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
 | Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
 | Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
+| Backups folder                   | `/var/lib/openhab2/backups`  | `/opt/openhab2/backups`           |
 | Service configuration            | `/etc/default/openhab2`      | (not preconfigured)               |
 
 ## Viewing Log Messages
