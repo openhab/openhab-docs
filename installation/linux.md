@@ -351,25 +351,21 @@ By default, the script saves the zip file in `/var/lib/openhab2/backups` for aut
 You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
 
 ```shell
-cd $OPENHAB_HOME
-
-sudo ./runtime/bin/backup
+sudo $OPENHAB_RUNTIME/bin/backup
 ## OR ##
-sudo ./runtime/bin/backup /path/to/backups/folder/myBackup.zip
+sudo $OPENHAB_RUNTIME/bin/backup /path/to/backups/folder/myBackup.zip
 ```
 
 To restore from these generated files:
 
 ```shell
-cd $OPENHAB_HOME
-
-sudo ./runtime/bin/restore $OPENHAB_BACKUPS/myBackup.zip
+sudo $OPENHAB_RUNTIME/bin/restore $OPENHAB_BACKUPS/myBackup.zip
 ```
 
 If you're unsure how to use the above files, just use `--help` or `-h`:
 
 ```shell
-./runtime/bin/backup --help
+$OPENHAB_RUNTIME/bin/backup --help
 ```
 
 Otherwise, you may do this manually by:
