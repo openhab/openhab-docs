@@ -179,7 +179,7 @@ Please check with the documentation on the [item label](items.html#item-label) f
 ### Element Type 'Group'
 
 ```perl
-Group [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
+Group item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 ```
 
 The element will be clickable, revealing a new view showing all group items using the [Default](#element-type-default) element type.
