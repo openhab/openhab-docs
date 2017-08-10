@@ -9,3 +9,7 @@ project.pbxproj
 *.xcuserstate
 addons/uis/habmin/node_modules
 addons/uis/habmin/target
+
+# IntelliJ
+*.iml
+.idea
