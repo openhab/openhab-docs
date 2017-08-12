@@ -182,8 +182,8 @@ end
 ## Causing effects on items
 
 Rules come to life by generating events to cause something else to happen, to cause effects. For example, change the state of an item or switch on a light at sunset. The two most common commands that can change item values or states within rules are `sendCommand` and `postUpdate`. The full syntax to use them is: 
-* `MyItem.postUpdate("new state")`
-* `MyItem.sendCommand("new state")`
+* `MyItem.postUpdate(new_state)`
+* `MyItem.sendCommand(new_state)`
 
 A `postUpdate` is used to change the status of an item without causing any further action. `postUpdate` is used to update openHAB Items to reflect any status changes that may be caused by other means (physically switch on a light) or to indicate state changes that do not require a corresponding action. A `sendCommand` will cause a change in status and trigger potential actions. 
 
@@ -191,36 +191,36 @@ It is important to understand that they act slightly different and interact in s
 
 ### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
 
-`MyItem.sendCommand("new state")` and `myItem.postUpdate("new state")` are the preferred syntax. These are methods of objects that can a variety of types, depending on the items, while the Actions `sendCommand ("MyItem", "new state")` and `postUpdate ("MyItem", "new state")` can only accept strings as arguments. The reasons lie within Java, the object-oriented program languages on which openHab and its items, rules, etc are built. Java and the Rules DSL have two basic types, primitives and objects. Whenever there is a type after a `var` or a `val` statement with lower-case first letter (e.g., `var int` or `var boolean`) we are dealing with a primitive type. Whenever the `val` and `var` are followed with type in upper-case (e.g., `var String`, `var Number`), the type is an object. This means that items are objects. Objects are more complex than simple variables and have methods associated with them that enable interaction with objects, as for example changing the state of an item. The syntax `Myitem.sendCommand` or `Myitem.postUpdate` ensures that the most appropriate and best method to convert/type the `new state` into the structure that is needed by the object (here `myItem`). 
+`MyItem.sendCommand(new_state)` and `MyItem.postUpdate(new_state)` are the preferred syntax. These are methods of objects that can a variety of types, depending on the items, while the Actions `sendCommand ("MyItem", "new_state")` and `postUpdate ("MyItem", "new_state")` can only accept strings as arguments. The reasons lie within Java, the object-oriented program language on which openHAB and its items, rules, etc are built. Java and the Rules DSL have two basic types, primitives and objects. Whenever there is a type after a `var` or a `val` statement with lower-case first letter (e.g., `var int` or `var boolean`) we are dealing with a primitive type. Whenever the `val` and `var` are followed with type in upper-case (e.g., `var String`, `var Number`), the type is an object. This means that items are objects. Objects are more complex than simple variables and have methods associated with them that enable interaction with objects, as for example changing the state of an item. The syntax `Myitem.sendCommand` or `Myitem.postUpdate` ensures that the most appropriate and best method to convert/type the `new state` into the structure that is needed by the object (here `myItem`). 
 
-The alternative syntax, `sendCommand(MyItem, state_or_value)` applies only a set of generic methods, which are not able to accommodate all cases of conversion that may be necessary to make sure that `new state` can be applied to `myItem`. 
+The alternative syntax, `sendCommand(MyItem, "new_state")` applies only a set of generic methods, which are not able to accommodate all cases of conversion that may be necessary to make sure that `new_state` can be applied to `myItem`. 
 
-For example, if `state_or_value` is typed as a primitive (e.g., `var int my_number = 3`) and myItem is of the type Dimmer (note the capitalized ‘D’ denoting an object: 
+For example, if `new_state` is typed as a primitive (e.g., `var int my_number = 3`) and myItem is of the type Dimmer (note the capitalized ‘D’ denoting an object: 
 * the following command ***will fail***: ~~sendCommand(MyItem, my_number)~~. 
 * However, the following command **will work**: `MyItem.sendCommand(my_number)`. 
 
-And as for the answer which one to use, the easiest way is to remember that the syntax that will create the most stable code is the one in the column labeled “specific”: `MyItem.postUpdate("new state")` or `MyItem.sendCommand("new state")`. It provides by far the best option for avoiding most problems. This syntax ensures that any conversion (typing) of the `new state` is done in a way that is most suitable for `myItem`. As this may, however, not always be possible, here a more nuanced guidance:
+And as for the answer which one to use, the easiest way is to remember that the syntax that will create the most stable code is the one in the column labeled “specific”: `MyItem.postUpdate("new_state")` or `MyItem.sendCommand("new_state")`. It provides by far the best option for avoiding most problems. This syntax ensures that any conversion (typing) of the `new_state` is done in a way that is most suitable for `myItem`. As this may, however, not always be possible, here a more nuanced guidance:
 * Actions: may be used when all you have is the name of the Item as a String instead of a reference to the actual Item itself (e.g. when the name of the Item to receive an update or command was calculated in the Rule by building up a String).
 * Methods: are preferable when you have the reference to the Item directly because its name is hard coded or the Item was pulled out of a Group.
 
 ### Details:
 
-As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of Inheritance. However, inheritance only applies to Objects and does **not** apply to primitives. Inheritance allows one to take an existing Object type, called a Class, and adding to it to make it into something different, but it still can do everything the existing Object could do. This “something different” becomes a Child of the original Class. The top level base Class for all Objects in Java and the Rules DSL is called Object. The Child can be treated as if it were the parent because everything the parent can do the child can do too.
+As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. However, inheritance only applies to Objects and does **not** apply to primitives. Inheritance allows one to take an existing Object type, called a Class, and adding to it to make it into something different, but it still can do everything the existing Object could do. This “something different” becomes a Child of the original Class. The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. The Child can be treated as if it were the parent because everything the parent can do the child can do too.
 
 In addition to other useful things, Object implements a method called `toString`. And since Object is the parent of all Objects, that means all Classes also implement a `toString` method. _But primitives do not inherit from Object. They don't inherit from anything and they don't have any methods at all which includes toString._
 
-The `sendCommand` is a generic action and therefore, by definition, needs to be able to work with all Item types. A closer look reveals that this action only supports two arguments: String, String, because all Objects will support the conversion `toString`. But a Primitive is not an object and has no `toString` (in fact a Primitive has no methods at all), as a consequence in almost all cases it cannot convert the primitive value to a String and the use of `sendCommand(MyItem, primitive)`, with the use of a primitive as the second argument, will fail. 
+The `sendCommand` is a generic action and therefore, by definition, needs to be able to work with all Item types. A closer look reveals that this action only supports two arguments: String, String, because all Objects will support the conversion `toString`. If the action sendCommand (MyItem,"new_state") is called, the Rules DSL will automatically use the `MyItem.toString` method to convert MyItem into a string and will attempt to do so with the secodn argument if `new_state` is not already a string. However, if the second argument is a Primitive, and not an Object, by definition it does not carry a method `toString` (in fact a Primitive has no methods at all) and Rules DSL will not be able to cast `new_state` as a string. As a consequence in almost all cases it cannot convert the primitive value to a String and the use of `sendCommand(MyItem, primitive)`, with the use of a primitive as the second argument, will fail. 
 
 The different syntax for the generic and the objective-specific differs and is given in the table below:
 
 Generic | Specific
 -----------|-----------
-`postUpdate(MyItem, "new state")` | `MyItem.postUpdate(" new state")`
-`sendCommand(MyItem, "new state")` | `MyItem.sendCommand("new state")`
+`postUpdate(MyItem, "new_state")` | `MyItem.postUpdate(new_state)`
+`sendCommand(MyItem, "new_state")` | `MyItem.sendCommand(new_state)`
 
 With regard to the `sendCommand` method on the Items, here the `sendCommand` method is defined by the class for that Item which allows the class to create `sendCommand` methods that take different types of data. For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` methods. Each of these separate methods is individually written to handle all of these different types of Objects and primitives unlike the Action which can only handle Strings.
 
-In a nutshell, using the syntax `MyItem.sendCommand("new state")` or `MyItem.sendUpdate("new state")` will help avoid many problems that the generic method may cause.
+In a nutshell, using the syntax `MyItem.sendCommand(new_state)` or `MyItem.sendUpdate(new_state)` will help avoid many problems that the generic method may cause.
 
 
 ## Scripts
