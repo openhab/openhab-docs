@@ -164,7 +164,7 @@ http://notepad-plus-plus.org/news/notepad-6.2-release-udl2.html
 - Download the UDL2-Files (openHAB-`*`.xml) from [openhab-samples](https://github.com/thefrip/openhab-samples)
 - Install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files)
 
-### vi
+### Vim
 
 #### Installing the syntax-files
 
@@ -182,11 +182,11 @@ curl -L -o ~/.vim/ftdetect/openhab.vim https://github.com/cyberkov/openhab-vim/r
 
 - Download the syntax files from [openhab-vim](https://github.com/cyberkov/openhab-vim)
 - Place them in your home directory under `~/.vim/`
-- Start vim with an openHAB configuration file and it should work.
+- Start Vim with an openHAB configuration file and it should work.
 
 ### nano
 
-Nano is a common editor in linux systems
+Nano is a common editor in Linux systems
 
 #### Installing the syntax-files
 
