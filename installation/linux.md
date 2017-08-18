@@ -694,7 +694,7 @@ openHAB depends on configuration files and folders with custom content (details 
 Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important.
 Therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_%28software%29) network share is **highly recommended**.
 
-The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) software does also depend on a mounted share to access the openHAB configuration files.
+The [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#eclipse-smarthome-designer) software does also depend on a mounted share to access the openHAB configuration files.
 
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba.
