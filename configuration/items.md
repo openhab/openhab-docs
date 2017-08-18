@@ -20,7 +20,7 @@ The rest of this page contains all details regarding Items and is structured as 
 
 {::options toc_levels="2..4"/}
 
-* TOC
+- TOC
 {:toc}
 
 ## Introduction
@@ -56,13 +56,13 @@ Items are defined in the following syntax.
 The parts of an Item must be defined in this order.
 Besides the `itemtype` and `itemname` all parts are optional.
 
-```xtend
+```java
 itemtype itemname "labeltext" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 ```
 
 **Examples:**
 
-```xtend
+```java
 Number BathRoom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
 Switch Kitchen_Light "Kitchen Light OnOff" {mqtt="<[...], >[...]" }
 String BedRoom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
@@ -72,13 +72,13 @@ Number LivingRoom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperatu
 
 The last example above defines an Item with the following parts:
 
-* Item type `Number`
-* Item name `LivingRoom_Temperature`
-* Item state formatted in a way which will produce for example "21.5 °C" as its output
-* Item displaying icon with the name `temperature`
-* Item belongs to groups `gTemperature` and `gLivingRoom`
-* Item is tagged as a thermostat ("TargetTemperature")
-* Item is bound to the openHAB Binding `knx` with binding specific settings
+- Item type `Number`
+- Item name `LivingRoom_Temperature`
+- Item state formatted in a way which will produce for example "21.5 °C" as its output
+- Item displaying icon with the name `temperature`
+- Item belongs to groups `gTemperature` and `gLivingRoom`
+- Item is tagged as a thermostat ("TargetTemperature")
+- Item is bound to the openHAB Binding `knx` with binding specific settings
 
 The remainder of this article describes the Item definition parts in more detail.
 
@@ -98,13 +98,13 @@ See the following example:
 
 Item:
 
-```xtend
+```java
 Dimmer Office_Light "Dimmer [%d %%]" {milight="bridge01;3;brightness"}
 ```
 
 Sitemap:
 
-```xtend
+```perl
 Switch item=Office_Light
 Slider item=Office_Light
 ```
@@ -137,7 +137,7 @@ The state definition is part of the Item Label definition and contained inside s
 
 Formatting is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax), therefore the syntax is
 
-```xtend
+```java
 [%[argument_index$][flags][width][.precision]conversion]
 ```
 
@@ -145,7 +145,7 @@ Only the leading '%' and the trailing 'conversion' are mandatory.
 The **argument_index$** must be used if you want to convert the value of the Item several times within the label text or if the Item has more than one value.
 Look at the DateTime and Call Item in the following example.
 
-```xtend
+```java
 Number    MyTemperature  "The Temperature is [%.1f] °C"   { someBinding:somevalue }
 String    MyString       "Value: [%s]"                    { someBinding:somevalue }
 DateTime  MyLastUpdate   "Last Update: [%1$ta %1$tR]"     { someBinding:somevalue }
@@ -186,7 +186,7 @@ NULL=unknown
 Next we define two Items.
 One showing the raw value as it is provided from our sensor and one with transformed value.
 
-```xtend
+```java
 Number WindowRaw          "Window is [%d]"                  { someBinding:somevalue }
 Number WindowTransformed  "Window is [MAP(window.map):%s]"  { someBinding:somevalue }
 ```
@@ -211,23 +211,29 @@ FIRST_QUARTER=🌓 First Quarter
 
 The icon name is used to reference an image presented next to an Item, e.g. in BasicUI.
 
-OpenHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
+openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 Additional icons can be placed under `icons/classic/` inside the openHAB configuration folder.
 
 Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
 
-* `png` or `svg` format (see below)
-* Only lowercase letters, numbers and underscores `_`
-* Hyphens `-` are used for Dynamic Icons (see below), hyphens are not allowed as part of the filename
-* *No* uppercase letters or special characters.
-* Examples:
-  * Allowed: `switch.svg`, `power_meter.png`, `error2.svg`
-  * Not allowed: `PC_Monitor.svg`, `power-meter.png`, `tür⇔.svg`
+-   `png` or `svg` file format
 
-The PaperUI interface (or the configuration files `classicui.cfg`/`basicui.cfg`) allows to define whether you use Vector (.svg) or Bitmap (.png) icon files.
-Only one or the other setting is allowed, in which case the other is ignored.
+-   Only lowercase letters, numbers and underscores (`_`)
 
-To use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>` in the Item definition.
+-   No uppercase letters or special characters.
+
+-   Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+
+-   Examples:
+    - Good: `switch.svg`, `power_meter.png`, `error2.svg`
+    - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+
+**Bitmaps or Vector Graphics:**
+openHAB can work with either Bitmap (`.png`) or Vector (`.svg`) icon files.
+The format used needs to be configured for the individual interfaces (e.g. BasicUI).
+It is thereby important to decide on one format beforehand, vector graphics are recommended.
+The setting can be done via PaperUI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
+Images in the respective other format will be ignored.
 
 Predefined icons from the default icon set can be replaced.
 
@@ -246,29 +252,31 @@ To give an example:
 
 Dynamic icon families must meet the following criteria:
 
-* there must be a default icon
-* the state part of the icon must consist of all lower case letters (even if the state of the Item includes uppercase letters)
-* the icon selected is based on the mapped value used in the label (i.e. what gets returned by `[MAP(file.map):%s]`, not the Item's raw state.
+-   there must be a default icon
+
+-   the state part of the icon must consist of all lower case letters
+    (even if the state of the Item includes uppercase letters)
+
+-   the icon selected is based on the mapped value used in the label
+    (i.e. what gets returned by `[MAP(file.map):%s]`, not the Item's raw state.
 
 The name of dynamic icons must meet the following format:
 
-```shell
-<name>[-<state>].<png or svg>
+```java
+<name>-<state>.<png or svg>
 ```
 
-* `<name>` is the name of the icon set
-* `[-<state>]` is the state that particular icon maps to, the icon without the state part is the default
-* `<png or svg>` based on the format of the icon, use the default format as explained above.
-
+- `<name>` is the name of the icon set
+- `-<state>` is the state that particular icon maps to, the icon without the state part is the default
+- `<png or svg>` based on the format of the icon, use the default format as explained above.
 
 To use the dynamic Items the default icon name without state and extension is used.
 
-```xtend
+```java
 Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {somebinding:someconfig}
 ```
 
 **State Matching Rule:**
-
 For Number Items openHAB will use the equal or next lowest state icon that can be found.
 For a dimmer light (0 - 100%), you might provide icons as in the example:
 
@@ -280,24 +288,19 @@ For a dimmer light (0 - 100%), you might provide icons as in the example:
 | `dimmer-75.svg`  | bright light icon (75% up to 100%)                 |
 
 **Warning about the Influence of Transformations:**
-
 As mentioned above, the state used by the Sitemap to select the proper icon is the transformed state.
 When using a MAP in the label, the icon name must match the mapped state displayed on the Sitemap, not the raw Item's state.
 To use the `Number Window` example from above, the icons for `Number Window` would be:
 
-```xtend
-window.png
-window-1.png
-window-0.png
-```
+- `window.png`
+- `window-1.png`
+- `window-0.png`
 
 and the icons for `Number WindowTransformed` would be:
 
-```xtend
-window.png
-window-open.png
-window-closed.png
-```
+- `window.png`
+- `window-open.png`
+- `window-closed.png`
 
 ### Groups
 
@@ -307,7 +310,7 @@ Groups are supported in Sitemaps, Automation Rules and other areas of openHAB.
 
 A simple example Group definition is:
 
-```xtend
+```java
 Group Temperatures
 ```
 
@@ -323,14 +326,14 @@ Items can be in none, one, or multiple groups, groups can be nested inside other
 Groups can be nested inside each other.
 This functionality is commonly used to define hierarchies of Items from different perspectives.
 
-* Regional perspective: e.g. Stories of a Building → Corridors on that story → Rooms along the corridor ...
-* Data perspective: e.g. Room temperatures, power consumption, all lights in the Building, ....
-* Maintenance perspective: e.g. Error states, Battery health, ...
-* and so on ...
+- Regional perspective: e.g. Stories of a Building → Corridors on that story → Rooms along the corridor ...
+- Data perspective: e.g. Room temperatures, power consumption, all lights in the Building, ....
+- Maintenance perspective: e.g. Error states, Battery health, ...
+- and so on ...
 
 Let's look at the example below:
 
-```xtend
+```java
 Group gAll
 Group gRoom        (gAll)
 Group gLivingRoom  (gRoom)
@@ -351,13 +354,13 @@ Please note that this can only be used if all Items in the Group have compatible
 
 The format for this is:
 
-```xtend
+```java
 Group:itemtype:function  itemname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
 ```
 
 As an example consider a group of switches:
 
-```xtend
+```java
 Group:Switch:OR(ON,OFF)  mySwitches
 ```
 
@@ -372,27 +375,27 @@ If you omit the type or function definitions for a group the following behavior 
 
 If there is a type but no function like in the example below,
 
-```xtend
+```java
 Group:Switch  mySwitches
 ```
 
 the function `EQUAL` (Equality) will be used.
 
-If you omit the type AND the function the group state will NOT be influcenced by its members, i.e. such a group is only useful for grouping items in GUIs.
+If you omit the type AND the function the group state will NOT be influenced by its members, i.e. such a group is only useful for grouping items in GUIs.
 
 Group functions can be any of the following:
 
-| Function            | Description
-|:--------------------|:-----------
-| EQUAL               | Default, if no function is specified. (a type for the group MUST be set). If ALL members have state X the group state will be X, otherwise it is UNDEF.
-| AND(value1, value2) | This does a logical 'AND' operation. Only if all items are of 'value1' this is returned, otherwise the 'value2' is returned.
-| AVG                 | Calculates the numeric average over all item values of decimal type.
-| MAX                 | This calculates the maximum value of all item values of decimal type.
-| MIN                 | This calculates the minimum value of all item values of decimal type.
-| NAND(value1, value2)| This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa.
-| NOR(value1, value2) | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa.
-| OR(value1, value2)  | Does a logical 'OR' operation. If at least one item is of 'value1' this is returned, otherwise the 'value2' is returned.
-| SUM                 | Calculates the sum of all items in the group.
+| Function             | Description |
+|:---------------------|:-----------|
+| EQUAL                | Default, if no function is specified. (a type for the group MUST be set). If ALL members have state X the group state will be X, otherwise it is UNDEF. |
+| AND(value1, value2)  | This does a logical 'AND' operation. Only if all items are of 'value1' this is returned, otherwise the 'value2' is returned. |
+| AVG                  | Calculates the numeric average over all item values of decimal type. |
+| MAX                  | This calculates the maximum value of all item values of decimal type. |
+| MIN                  | This calculates the minimum value of all item values of decimal type. |
+| NAND(value1, value2) | This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa. |
+| NOR(value1, value2)  | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa. |
+| OR(value1, value2)   | Does a logical 'OR' operation. If at least one item is of 'value1' this is returned, otherwise the 'value2' is returned. |
+| SUM                  | Calculates the sum of all items in the group. |
 
 ### Tagging
 
@@ -417,7 +420,7 @@ The 1.x Binding configuration defines from where the Item gets it values, and wh
 
 You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition:
 
-```xtend
+```java
 { ns="192.168.1.123:80" }
 ```
 
@@ -427,11 +430,11 @@ That can be the id of a sensor, an ip or mac address or anything else.
 You must have a look at your [Bindings]({{base}}/addons/bindings.html) configuration section to know what to use.
 Some typical examples are:
 
-```xtend
+```java
 Switch Phone_Mobile        "My Mobile Phone"               { nh="192.168.1.123:80" }
 Number Netatmo_Indoor_CO2  "CO2 [%d]"                      { netatmo="00:00:00:00:00:00#Co2" }
 Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, type=position, property=azimuth" }
-Contact Garage             "Garage is [MAP(en.map):%s]     { zwave="21:command=sensor_binary,respond_to_basic=true" }
+Contact Garage             "Garage is [MAP(en.map):%s]"    { zwave="21:command=sensor_binary,respond_to_basic=true" }
 ```
 
 If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
@@ -440,6 +443,7 @@ If further configuration is required then you will need to create an `openhab.cf
 For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
 
 #### 2.x Binding Configs
+
 The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels and Items are linked to one or more Channels.
@@ -470,7 +474,7 @@ In PaperUI select a Thing to learn about all Channels the Thing support.
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
 Some examples:
 
-```xtend
+```java
 Switch  Phone_Mobile       "My Mobile Phone"               { channel="network:device:devicename:online" }
 Number  Netatmo_Indoor_CO2 "CO2"                           { channel="netatmo:NAMain:home:inside:Co2" }
 Number  Azimuth            "Azimuth"                       { channel="astro:sun:home:position#azimuth" }
@@ -488,17 +492,17 @@ Number Temperature { mysensors="24;1;V_TEMP", expire="5m,-999" }
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html) where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
+The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
+where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
-**Exception `autoupdate`:**
+##### Exception `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
 This way, the Item is always unchanged unless you explicitly post an *update* to the item.
 
 ```java
-Switch Garage_Gate { binding="xxx",autoupdate="false"}
+Switch Garage_Gate { binding="xxx", autoupdate="false"}
 ```
-
 
 ## Restore States
 
@@ -509,7 +513,7 @@ To have your states persist across restarts you will need to install a [Persiste
 Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
 Then whatever state they were in before the restart will be restored automatically.
 
-```xtend
+```java
 Strategies {
     default = everyUpdate
 }

@@ -6,7 +6,7 @@ type: binding
 description: "The Plugwise binding adds support to openHAB for [Plugwise](https://www.plugwise.com) ZigBee devices using the Stick."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.plugwise/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -18,10 +18,12 @@ install: auto
 This binding integrates pulseaudio devices.
 
 ## Supported Things
+
 The Pulseaudio bridge is required as a "bridge" for accessing any other Pulseaudio devices.
 
 You need a running pulseaudio server whith module module-cli-protocol-tcp loaded and accessible by the server 
 which runs your openHAB instance. The following pulseaudio devices are supported:
+
  * Sink
  * Source
  * Sink-Input
@@ -52,4 +54,5 @@ All devices support some of the following channels:
 | routeToSink | String | Shows the sink a sink-input is currently routed to |
 
 ## Full Example
+
 t.b.d.

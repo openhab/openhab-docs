@@ -9,7 +9,7 @@ github_username:  openhab
 markdown: kramdown
 exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.groovy", "update.sh", "Vagrantfile"]
 # Additional gems for sitemap generation
-gems:
+plugins:
   - jekyll-sitemap
 collections:
   actions:

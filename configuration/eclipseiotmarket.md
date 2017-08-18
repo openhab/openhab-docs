@@ -25,10 +25,12 @@ To filter the view to show only third-party add-ons from the marketplace, you ca
 
 Simply use the install/uninstall buttons to add or remove add-ons from your installation.
 
-**Attention:** Please note that after a system upgrade the installed add-ons are lost and you will need to re-install them.
-This behavior will be changed in future.
+Alternatively add-ons can be installed right from the catalog on the [Eclipse Marketplace website](https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title).
+Drag the "Install" button from the web page to your add-ons page of the Paper UI to initiate installation.
 
-As an alternative installation method, you can browse the catalog on the [Eclipse Marketplace website](https://marketplace.eclipse.org/taxonomy/term/4988%2C4396/title) and use the "Drag to Install" feature by dragging the "Install" button from the web page to your add-ons page of the Paper UI.
+**Attention:**
+Please note that after a system upgrade the installed add-ons are lost and you will need to re-install them.
+This behavior will be changed in future.
 
 ## Configuration
 
