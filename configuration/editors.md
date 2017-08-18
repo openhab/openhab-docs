@@ -93,7 +93,7 @@ mcedit is an editor which comes with mc (Midnight Commander).
 
 #### Installing the syntax-files
 
-- download copy the syntax-files to */usr/share/mc/syntax/*
+- Download copy the syntax-files to */usr/share/mc/syntax/*
 - <https://groups.google.com/forum/#!searchin/openhab/syntax$20highlighting%7Csort:relevance/openhab/zJrfTDjahbc/r8GcpKDgr1cJ>
 
 - insert the following lines to the file *Syntax* in */usr/share/mc/syntax/*
@@ -181,8 +181,8 @@ curl -L -o ~/.vim/ftdetect/openhab.vim https://github.com/cyberkov/openhab-vim/r
 ##### Manual installation
 
 - Download the syntax files from [openhab-vim](https://github.com/cyberkov/openhab-vim)
-- place them in your home directory under `~/.vim/`
-- start vim with an openHAB configuration file and it should work.
+- Place them in your home directory under `~/.vim/`
+- Start vim with an openHAB configuration file and it should work.
 
 ### nano
 
@@ -191,7 +191,7 @@ Nano is a common editor in linux systems
 #### Installing the syntax-files
 
 - Download the syntax file openhab.nanorc from [openhabnano](https://github.com/airix1/openhabnano) repository
-- place them in your nanorc directory ie: `~/.nano` or `/usr/share/nano`. Then simply include the openhab.nanorc file in your `~/.nanorc` or `/etc/nanorc` file ie:
+- Place them in your nanorc directory ie: `~/.nano` or `/usr/share/nano`. Then simply include the openhab.nanorc file in your `~/.nanorc` or `/etc/nanorc` file ie:
 
 ```shell
 
