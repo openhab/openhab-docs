@@ -90,31 +90,9 @@ Hint: Press `<Ctrl + N>` to create a new file.
 
 mcedit is an editor which comes with mc (Midnight Commander).
 
-
 #### Installing the syntax-files
 
-- Download copy the syntax-files to */usr/share/mc/syntax/*
-- <https://groups.google.com/forum/#!searchin/openhab/syntax$20highlighting%7Csort:relevance/openhab/zJrfTDjahbc/r8GcpKDgr1cJ>
-
-- insert the following lines to the file *Syntax* in */usr/share/mc/syntax/*
-```shell
-    file ..\*\\.(items)$ openHAB\sItems 
-    include openhab-items.syntax  
-     
-    file ..\*\\.(sitemap)$ openHAB\sSitemap 
-    include openhab-sitemap.syntax
-     
-    file ..\*\\.(persist)$ openHAB\sPersistence
-    include openhab-persist.syntax
-     
-    file ..\*\\.(rules)$ openHAB\sRules
-    include openhab-rules.syntax 
-```
-- edit the Debian-line from
-`file (rules|rocks)$ Debian\srules`
-to 
-`file (rocks)$ Debian\srules`
-because it interferes with openHABs rules-files.
+- Navigate to [openhab-mcedit](https://github.com/CWempe/openhab-mcedit) and follow the instructions in the repos readme file.
 
 ### Notepad++
 
