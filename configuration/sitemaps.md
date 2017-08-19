@@ -485,6 +485,8 @@ Please take note, that other colors can be used.
 It is generally expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but a UI may only accept internally defined colors or work with a special theme.
 The given color names are agreed on between all openHAB UIs and are therefor your safest choice.
 
+Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for valuecolor. Until resolved you can use the corresponding HTML code (e.g. '#008000') instead.
+
 | Color Name  | Preview and RGB Color Code              |
 |-------------|-----------------------------------------|
 | maroon      | *`► #800000`*{: style="color: #800000"} |
