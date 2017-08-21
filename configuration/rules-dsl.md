@@ -213,7 +213,7 @@ As this may, however, not always be possible, here a more nuanced guidance:
 
 As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. However, inheritance only applies to Objects and does **not** apply to primitives. Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. This “something different” becomes a Child of the original Class. The Child still can do everything the existing Object could do. The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. The Child can be treated as if it were the parent because everything the parent can do the child can do too.
 
-In addition to other useful things, teh calss `Object` implements a method called `toString`. And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. _However primitives do not inherit from Object. They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
+In addition to other useful things, the class `Object` implements a method called `toString`. And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. _However primitives do not inherit from Object. They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
 
 The `sendCommand` is a generic action and therefore, by definition, needs to be able to work with all Item types. Action only supports two String arguments as all Objects will support the conversion `toString`. If the Action `sendCommand (MyItem, new_state)` is called, the Rules DSL will automatically use the `MyItem.toString` method to convert MyItem into a String. It will also attempt to do so with the second argument if `new_state` is not already a String. However, if the second argument is a primitive, and not an Object it does not carry a method `toString`. Thus, Rules DSL will not be able to cast `new_state` as a String. As a consequence, the use of `sendCommand(MyItem, primitive)`, with the use of a primitive as the second argument, will almost always fail. 
 
@@ -221,8 +221,8 @@ The different syntax for the generic and the objective-specific differs and is g
 
 Generic (Action) | Specific (Method)
 -----------|-----------
-`postUpdate(MyItem, "new_state")` | `MyItem.postUpdate(new_state)`
-`sendCommand(MyItem, "new_state")` | `MyItem.sendCommand(new_state)`
+`postUpdate(MyItem, new_state)` | `MyItem.postUpdate(new_state)`
+`sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)`
 
 By invoking the method `sendCommand` method from Items (`MyTimes.send Command()`) the Item will use the `sendCommand` method that is suitable to make the necessary type conversions. For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` methods. Each of these separate methods is individually written to handle all of these different types of Objects. MyItem will automatically apply the method that corresponds to the argument type.
 
