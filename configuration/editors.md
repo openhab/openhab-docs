@@ -5,12 +5,12 @@ title: Editors
 
 {% include base.html %}
 
-# Editors - Different ways to power up your textual configuration
+# Editors - Different Ways to Simplify Your Textual Configuration
 
-There are several existing solutions, that can help you configuring your openHAB instance in a textual way.
-Mainly there are two bigger projects for this. 
-_Eclipse Smart Home - Designer_ as a standalone editor and _openhab-vscode_ as an extension for the Visual Studio Code open source editor.
-Additionally there some syntax highligting solutions existing for other text editors.
+Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.
+There are two bigger projects for this. 
+_Eclipse Smart Home - Designer_ as a standalone editor and _openHAB VS Code_ as an extension for the Visual Studio Code open source editor.
+Additionally some syntax highlighting solutions for other text editors are presented in the _Others_ section.
 This documentation page can give you some guidance in choosing the right one for you and setting it up.
 
 {::options toc_levels="2"/}
@@ -18,23 +18,29 @@ This documentation page can give you some guidance in choosing the right one for
 * TOC
 {:toc}
 
-## openhab-vscode
+## openHAB VS Code Extension
 
-openhab-vscode is an extension for the [Visual Studio Code](https://code.visualstudio.com) editor.
+openHAB VS Code is an extension for the [Visual Studio Code](https://code.visualstudio.com) editor.
 
-### Manual Installation
+  ![openHAB VS Code Extension alternative installation](images/vscode_demo.gif)
 
-1. Download the latest release from <https://github.com/openhab/openhab-vscode/releases>
-2. Open command line in the same folder you downloaded the extension
-3. Type the following command:
-    ```
-    code --install-extension openhab-0.0.2.vsix
-    ```
+### Installation
+
+1. Download the latest release from [openhab-vscode](https://github.com/openhab/openhab-vscode/releases)
+2. Install the extension with one of the following methods
+    - Open command line in the same folder you downloaded the extension
+      Type the following command:
+      ```shell
+        code --install-extension openhab-0.0.2.vsix
+      ```
+    - Go to the extensions area and install the extension like showed in the screenshot:
+      ![openHAB VS Code Extension alternative installation](images/vscode_alternative_install.png)
+
 Currently openhab-vscode isn't yet listed in [Microsoft Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode), but the contributors are working on it already.
 
 [Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/master/README.md "GitHub Repo for the VS Code Extension")
 
-## Eclipse Smarthome Designer
+## Eclipse SmartHome Designer
 
 The Eclipse SmartHome Designer is a specialized version of the [Eclipse](http://www.eclipse.org) IDE for openHAB.
 Just like known from other IDEs, the Designer allows to browse and edit the configuration files of your openHAB setup, with the advantage of syntax highlighting, syntax checking and autocompletion.
@@ -84,105 +90,26 @@ More details about the syntax of the different configuration files can be found 
 
 Hint: Press `<Ctrl + N>` to create a new file.
 
-## Others
+## Other Syntax Highlightng Solutions
+
+The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality like the two tools above.
 
 ### mcedit
 
-mcedit is an editor which comes with mc (Midnight Commander).
-
-#### Installing the syntax-files
-
-- Navigate to [openhab-mcedit](https://github.com/CWempe/openhab-mcedit) and follow the instructions in the repos readme file.
+mcedit is an editor which comes with mc (Midnight Commander). You can find the syntax files and installation instructions on [openhab-mcedit](https://github.com/CWempe/openhab-mcedit).
 
 ### Notepad++
 
-Notepad++ Version 6.2 or above is required to support UDL2 (User Defined Language v2).
-
-#### Comments
-
-```shell
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"# Comments
-color brightgreen "//.*"
-color brightgreen start="/\*" end="\*/"
-color brightgreen start="/\*\*" end="\*/"
-```
-http://notepad-plus-plus.org/news/notepad-6.2-release-udl2.html
-
-#### How to import UDL2-files?
-
-- Download the UDL2-Files (openHAB-`*`.xml) from [openhab-samples](https://github.com/thefrip/openhab-samples)
-- Install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files)
+Notepad++ is a free source code editor for Windows. Version 6.2 or above is required. You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
 
 ### Vim
 
-#### Installing the syntax-files
+Vim is a text editor in Linux systems.  You can find the syntax file and installation instructions on [openhab-vim](https://github.com/cyberkov/openhab-vim).
 
-##### Automatic installation
+### Nano
 
-Paste the following code into a commandline
-
-```shell
-mkdir -p ~/.vim/{ftdetect,syntax} && \
-curl -L -o ~/.vim/syntax/openhab.vim https://github.com/cyberkov/openhab-vim/raw/master/syntax/openhab.vim && \
-curl -L -o ~/.vim/ftdetect/openhab.vim https://github.com/cyberkov/openhab-vim/raw/master/ftdetect/openhab.vim
-```
-
-##### Manual installation
-
-- Download the syntax files from [openhab-vim](https://github.com/cyberkov/openhab-vim)
-- Place them in your home directory under `~/.vim/`
-- Start Vim with an openHAB configuration file and it should work.
-
-### nano
-
-Nano is a common editor in Linux systems
-
-#### Installing the syntax-files
-
-- Download the syntax file openhab.nanorc from [openhabnano](https://github.com/airix1/openhabnano) repository
-- Place them in your nanorc directory ie: `~/.nano` or `/usr/share/nano`. Then simply include the openhab.nanorc file in your `~/.nanorc` or `/etc/nanorc` file ie:
-
-```shell
-
-## Openhab
-
-include /usr/share/nano/openhab.nanorc
-```
+Nano is a common editor in Linux systems. You can find the syntax file and installation instructions on [openhabnano](https://github.com/airix1/openhabnano).
 
 ### Textwrangler
 
-Textwrangler is a text and code editor for MAC OS X.
-
-#### Manual installation
-
-- Download the syntax file from [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler/blob/master/openhab.plist) repository
-- Copy the file openhab.plist into `~/Library/Application Support/TextWrangler/Language Modules`
+Textwrangler is a text and code editor for MAC OS X. You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
