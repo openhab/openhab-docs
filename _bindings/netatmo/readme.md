@@ -107,6 +107,10 @@ Number Netatmo_Indoor_CO2 "CO2" <carbondioxide> { channel = "netatmo:NAMain:home
 * Location
 * TimeStamp
 * LastStatusStore
+* MinTemp
+* MaxTemp
+* DateMinTemp
+* DateMaxTemp
  
 ### Weather Station Outdoor module
 
@@ -130,6 +134,10 @@ Number Netatmo_Outdoor_Temperature "Temperature" { channel = "netatmo:NAModule1:
 * DewpointDepression
 * LastMessage
 * LowBattery
+* MinTemp
+* MaxTemp
+* DateMinTemp
+* DateMaxTemp
 
 ### Weather Station Additional Indoor module
 
@@ -141,9 +149,10 @@ Number Netatmo_Indoor2_Temperature "Temperature" { channel = "netatmo:NAModule4:
 
 **Supported types for the additional indoor module:**
 
-* Co2
 * Temperature
+* TemperatureTrend
 * Humidity
+* Co2
 * RfStatus
 * BatteryVP
 * TimeStamp
@@ -153,6 +162,10 @@ Number Netatmo_Indoor2_Temperature "Temperature" { channel = "netatmo:NAModule4:
 * DewpointDepression
 * LastMessage
 * LowBattery
+* MinTemp
+* MaxTemp
+* DateMinTemp
+* DateMaxTemp
 
 ### Rain
 
@@ -198,6 +211,9 @@ Number Netatmo_Wind_Strength "Wind Strength [%.0f KPH]" { channel = "netatmo:NAM
 * LastStatusStore
 * WifiStatus
 * Location
+* ConnectedBoiler
+* LastPlugSeen
+* LastBilan
 
 ### Thermostat Module
 

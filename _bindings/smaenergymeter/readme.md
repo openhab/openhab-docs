@@ -41,4 +41,5 @@ Usually no manual configuration is required, as the multicast IP address and the
 - **energyOut** Grid feed-in energy [kWh]
 
 ## Full example
+
 N/A
