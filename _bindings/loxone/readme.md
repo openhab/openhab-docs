@@ -5,6 +5,7 @@ title: Loxone - Bindings
 type: binding
 description: "This binding integrates [Loxone Miniserver](https://www.loxone.com/enen/products/miniserver-extensions/) with [openHAB](http://www.openhab.org/). Miniserver is represented as a [Thing](http://docs.openhab.org/configuration/things.html). Miniserver controls, that are visible in the Loxone [UI](https://www.loxone.com/enen/kb/user-interface-configuration/), are exposed as openHAB channels."
 since: 2x
+logo: images/addons/loxone.png
 install: auto
 ---
 

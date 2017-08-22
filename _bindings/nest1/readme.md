@@ -7,7 +7,7 @@ description: "[Nest Labs](https://nest.com/) developed/acquired the Wi-Fi enable
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.nest/README.md
 since: 1x
 logo: images/addons/nest.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

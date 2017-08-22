@@ -6,6 +6,7 @@ type: binding
 description: "[OwnTracks](http://owntracks.org), formerly known as _MQTTitude_, was developed as a replacement for the old Google Latitude service. However it is slightly different (better) in that all your location data is private - i.e. there is no 3rd party server somewhere collecting and storing your data. Instead each time your device publishes its location, it is sent to an [MQTT](http://mqtt.org/) broker of your choice."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.mqttitude/README.md
 since: 1x
+logo: images/addons/mqttitude.png
 install: auto
 ---
 
