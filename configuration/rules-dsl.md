@@ -159,7 +159,7 @@ You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [Fre
 Two system-based triggers are provided as described in the table below:
 
 | Trigger           |  Description |
-| ------------------|--------------|
+|-------------------|--------------|
 | System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file. |
 | System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down. |
 
@@ -181,37 +181,40 @@ end
 
 ## Manipulating Item States
 
-Rules are often designed to manipulate the state of Items, for example switching lights on or off. 
-Two commands can change the value or state of an Item within rules: `sendCommand` and `postUpdate`. 
-The full syntax is: 
-* `MyItem.postUpdate(new_state)`
-* `MyItem.sendCommand(new_state)`
+Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
+Two commands can change the value or state of an Item within rules:
 
-A `postUpdate` changes the status of an item without causing any further action. 
-This can be used to reflect changes that may be caused by other means (physically switch on a light). 
-A `sendCommand` will cause a change in status and trigger potential actions. 
+- `MyItem.postUpdate(<new_state>)` - Change the status of an Item without causing any implicit actions. Can be used to reflect changes that may be caused by other means.
+- `MyItem.sendCommand(<new_state>)` - Change the status of an Item and trigger potential further actions, e.g. send a command to the linked device/binding.
 
-`sendCommand` and `postUpdate` interact in different ways with (event-based rule triggers)[{{base}}/configuration/rules-dsl.html#event-based-triggers]. 
-The following table summarizes the interactions between commands and triggers:
+In relation to [event-based rule triggers]({{base}}/configuration/rules-dsl.html#event-based-triggers) the manipulator commands `sendCommand` and `postUpdate` act differently.
+The following table summarizes the impact of the two manipulator commands on the rule execution due to the used trigger:
 
-Command | trigger: received update | trigger: received command
---------|--------|--------
-postUpdate | fires | -
-sendCommand | - |fires
+| Command \ Rule Trigger   | `received update` | `received command` | `changed` |
+|--------------------------|-------------------|--------------------|-----------|
+| postUpdate               | ⚡ rule fires      | ❌                 | (depends) |
+| sendCommand              | ❌                | ⚡ rule fires       | (depends) |
+| *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
 
+**Beware:**
+Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
+{: #sendcommand-method-vs-action}
 ### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
 
-Using the methods`MyItem.sendCommand(new_state)` and `MyItem.postUpdate(new_state)` is often preferable. 
-These are methods of Objects that can accept a variety of types. 
-Contrary, the Actions `sendCommand ("MyItem", "new_state")` and `postUpdate ("MyItem", "new_state")` can only accept strings as arguments. 
-The reasons lie within Java, the object-oriented program language on which openHAB is built. 
-Java and the Rules DSL have two basic types, primitives and Objects. 
-A lower case letter after a `var` or a `val` statement, for example `var int`, indicates a primitive type. 
-An upper case letter after a `val` and `var` statement, for example `var Number` indicates an Object. 
-Objects are more complex than primitives. 
+Using the methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)` is often preferable.
+These are methods of Objects that can accept a variety of types.
+
+Contrary, the Actions `sendCommand(MyItem, "<new_state>")` and `postUpdate(MyItem, "<new_state>")` can only accept strings as arguments.
+
+The reasons lie within Java, the object-oriented programming language on which openHAB is built.
+Java and the Rules DSL have two basic types, primitives and Objects.
+A lower case letter data type after a `var` or a `val` statement, for example `var int`, indicates a primitive type. 
+An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object. 
+Objects are more complex than primitives.
+
 Objects have methods associated that among others can make many necessary type conversions. 
-Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` can in most cases convert `new state` into a type that Object `myItem` can apply. 
+Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` can in most cases convert `new_state` into a type that Object `myItem` can apply. 
 
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty. 
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer: 
@@ -222,12 +225,16 @@ Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will cre
 It provides by far the best option for avoiding most problems. 
 This syntax ensures that any conversion (typing) of the `new_state` is done in a way that is most suitable for `myItem`. 
 
-However, Actions are useful when only the name of the Item as a String is available. 
-For example, if the name of the Item to receive an update or command was calculated in the Rule by building up a String.
-Methods are preferable when the reference to the Item is directly is available. 
-For example, if it is hard coded or the Item was retreived from a Group.
+**Exception:**
+Actions are useful when the name of the Item is only available as a String. 
+For example, if the name of the Item to receive an update or command was calculated in the Rule by building up a String:
 
-### Details:
+```java
+val int index = 5
+sendCommand("My_Lamp_" + index, ON)
+```
+
+#### Details:
 
 As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
 However, inheritance only applies to Objects and does **not** apply to primitives. 
@@ -250,10 +257,10 @@ As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive
 
 The different syntax for the generic and the objective-specific differs and is given in the table below:
 
-Generic (Action) | Specific (Method)
------------|-----------
-`postUpdate(MyItem, new_state)` | `MyItem.postUpdate(new_state)`
-`sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)`
+| Generic (Action)                 | Specific (Method)               |
+|----------------------------------|---------------------------------|
+| `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
+| `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
 
 `MyTimes.sendCommand()`, however, will use the `sendCommand` method that is suitable to make the necessary type conversions.
 For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
@@ -261,7 +268,6 @@ Each of these separate methods is individually written to handle all of these di
 MyItem will automatically apply the method that corresponds to the argument type.
 
 In a nutshell, using the syntax `MyItem.sendCommand(new_state)` or `MyItem.sendUpdate(new_state)` will help avoid many problems.
-
 
 ## Scripts
 
@@ -280,18 +286,20 @@ To be able to do something useful with the scripts, openHAB provides access to
 Combining these features, you can easily write code like:
 
 ```java
-    if (Temperature.state < 20) {
-        sendCommand(Heating, ON)
-    }
+if (Temperature.state < 20) {
+    Heating.sendCommand(ON)
+}
 ```
 
+{: #implicit-variables}
 ### Implicit Variables inside the Execution Block
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
-- Every rule that has at least one command event trigger, will have the variable `receivedCommand` available, which can be used inside the execution block.
-- Every rule that has at least one status change event trigger, will have the variable `previousState` available, which can be used inside the execution block.
+- `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
+- `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
 
+{: #return}
 ### Early returns
 
 It is possible to return early from a rule, not executing the rest of the statements like this:
@@ -300,7 +308,7 @@ It is possible to return early from a rule, not executing the rest of the statem
 if (Temperature.state > 20) {
 	return;
 }
-sendCommand(Heating, ON)
+Heating.sendCommand(ON)
 ```
 
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
