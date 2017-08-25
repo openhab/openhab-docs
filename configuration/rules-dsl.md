@@ -179,7 +179,30 @@ end
 ```
 
 
-## Manipulating Item States
+## Scripts
+
+The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
+
+The syntax is very similar to Java, but has many nice features that allows writing concise code.
+It is especially powerful in handling collections.
+What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.
+
+To be able to do something useful with the scripts, openHAB provides access to
+
+- all defined items, so that you can easily access them by their name
+- all enumerated states/commands, e.g. `ON, OFF, DOWN, INCREASE` etc.
+- all [standard actions](https://github.com/openhab/openhab/wiki/Actions) to make something happen
+
+Combining these features, you can easily write code like:
+
+```java
+if (Temperature.state < 20) {
+    Heating.sendCommand(ON)
+}
+```
+
+{: #manipulating-item-states}
+### Manipulating Item States
 
 Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
 Two commands can change the value or state of an Item within rules:
@@ -200,7 +223,7 @@ The following table summarizes the impact of the two manipulator commands on the
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
 {: #sendcommand-method-vs-action}
-### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
+#### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
 
 Using the methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)` is often preferable.
 These are methods of Objects that can accept a variety of types.
@@ -232,63 +255,6 @@ For example, if the name of the Item to receive an update or command was calcula
 ```java
 val int index = 5
 sendCommand("My_Lamp_" + index, ON)
-```
-
-#### Details:
-
-As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
-However, inheritance only applies to Objects and does **not** apply to primitives. 
-Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. 
-This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do. 
-The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. 
-
-In addition to other useful things, the class `Object` implements a method called `toString`. 
-And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. 
-_However primitives do not inherit from Object. 
-They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
-
-The `sendCommand` is a generic action and needs to be able to work with all Item types. 
-Actions only support two String arguments as all Objects will support the conversion `toString`. 
-`sendCommand (MyItem, new_state)` will automatically use the `MyItem.toString` method to convert MyItem into a String. 
-It will also attempt to do so with the second argument if `new_state` is not already a String. 
-However, if the second argument is a primitive, and not an Object, it does not carry a method `toString`. 
-Thus, Rules DSL will not be able to cast `new_state` as a String. 
-As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive as the second argument, will almost always fail. 
-
-The different syntax for the generic and the objective-specific differs and is given in the table below:
-
-| Generic (Action)                 | Specific (Method)               |
-|----------------------------------|---------------------------------|
-| `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
-| `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
-
-`MyTimes.sendCommand()`, however, will use the `sendCommand` method that is suitable to make the necessary type conversions.
-For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
-Each of these separate methods is individually written to handle all of these different types of Objects. 
-MyItem will automatically apply the method that corresponds to the argument type.
-
-In a nutshell, using the syntax `MyItem.sendCommand(new_state)` or `MyItem.sendUpdate(new_state)` will help avoid many problems.
-
-## Scripts
-
-The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
-
-The syntax is very similar to Java, but has many nice features that allows writing concise code.
-It is especially powerful in handling collections.
-What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.
-
-To be able to do something useful with the scripts, openHAB provides access to
-
-- all defined items, so that you can easily access them by their name
-- all enumerated states/commands, e.g. `ON, OFF, DOWN, INCREASE` etc.
-- all [standard actions](https://github.com/openhab/openhab/wiki/Actions) to make something happen
-
-Combining these features, you can easily write code like:
-
-```java
-if (Temperature.state < 20) {
-    Heating.sendCommand(ON)
-}
 ```
 
 {: #implicit-variables}
