@@ -5,12 +5,10 @@ title: Editors
 
 {% include base.html %}
 
+{: #headache}
 # Editors - Different Ways to Simplify Your Textual Configuration
 
 Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.
-There are two bigger projects for this. 
-_Eclipse Smart Home - Designer_ as a standalone editor and _openHAB VS Code_ as an extension for the Visual Studio Code open source editor.
-Additionally some syntax highlighting solutions for other text editors are presented in the _Other Syntax Highlighting Solutions_ section.
 This documentation page can give you some guidance in choosing the right one for you and setting it up.
 
 {::options toc_levels="2"/}
@@ -90,7 +88,7 @@ More details about the syntax of the different configuration files can be found 
 
 Hint: Press `<Ctrl + N>` to create a new file.
 
-## Other Syntax Highlighting Solutions
+## Other Editor Integrations
 
 The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality like the two tools above.
 
