@@ -182,7 +182,7 @@ then
 end
 ```
 
-
+{: #scripts}
 ## Scripts
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
@@ -306,6 +306,7 @@ then
 end
 ```
 
+{: #logging}
 ### Logging
 
 You can emit log messages from your rules to aid debugging.
@@ -331,12 +332,13 @@ then the logger you would have to configure to have your messages appearing in t
 log:set DEBUG org.eclipse.smarthome.model.script.kitchen
 ```
 
+{: #using-state-of-items-in-rules}
 ## Using the States of Items in Rules
 
 Rules often interact with Items based on some conditions. 
 General operation in rules that involve Items are
-- to react to changes in item states, described in (section on triggers)[link to section on triggers] 
-- to change the item state, described in described in (section on changing items states)[link to section on sendCommand]
+- to react to changes in item states, described in [section on triggers]({{base}}/configuration/rules-dsl.html#rule-triggers) 
+- to change the item state, described in described in [section on changing items states]({{base}}/configuration/rules-dsl.html#manipulating-item-states)
 - to calculate other values from Item states 
 - to  compare Item states against other values 
 While the first two option are described elsewhere, the last two are the basis of this chapter.
@@ -344,7 +346,7 @@ While the first two option are described elsewhere, the last two are the basis o
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
 To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
-For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the [openHab documentation for items](http://docs.openhab.org/concepts/items.html). 
+For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the [openHab documentation for items]({{base}}/concepts/items.html). 
 
 Conversely, to use the result of a calculation in a rule that intends to change the state of an item will require the data type used for calculation and how to cast it into a type the item can accept as a modification of its state.
 
@@ -360,15 +362,15 @@ Therefore the following are all valid commands one can send to a Color Item:
 - `MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))`
 
 An alternative way to command or update the state of an item is through the use of specially formatted strings. 
-The section in the [item documentation on formatting](http://docs.openhab.org/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
+The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
 Methods used to update or command items can use as their argument either the appropriate object or an appropriately formatted string. 
 
-
+{: #retrieving-item-states}
 ### Retrieving Item States
 
 Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
 For example, even though a Color Item will accept OnOffType, IncreaseDecreaseType, PercentType, and HSBType, but will only return an HSBType. 
-For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the section on [items in the openHAB documentation](http://docs.openhab.org/concepts/items.html).
+For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the section on [items in the openHAB documentation]({{base}}/concepts/items.html).
 
 Groups can be declared with any Item type and the internal state of the Group will match that type. 
 For example, Group:Switch will return an OnOffType for its state.
@@ -376,12 +378,13 @@ For example, Group:Switch will return an OnOffType for its state.
 Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
 There are two ways to discover these methods:
 
-- Use the [Eclipse SmartHome Designer](http://docs.openhab.org/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
+- Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type (e.g. the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods which would be called without the "get" part in name as in `(MyColorItem.state as HSBType).red)`, which retrieves the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
 
+{: #conversions}
 ### Working with Item States: Conversions
 
-*Reminder:* For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation](http://docs.openhab.org/concepts/items.html).
+*Reminder:* For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).
 
 Below a _non-exhaustive_ list of some more common conversions
 
@@ -399,8 +402,6 @@ The following code can be used to send an RGB value to a Color Item.
 ```java
 import java.awt.Color
 
-...
-
 // in rule body
 val newColor = new Color(red, blue, green) // where red, blue, and green are ints between 0 and 255
 MyColorItem.sendCommand(new HSBType(newColor))
@@ -410,7 +411,7 @@ When individual color values from a HSBType as a PercentType are retrieved, it w
 Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
 
 ```java
-... 
+
 //Example for conversion to 8-bit representation
 // In rule body
 val red = (MyColorItem.state as HSBType).red * 255
@@ -639,11 +640,9 @@ MyItem will automatically apply the method that corresponds to the argument type
 
 In a nutshell, using the syntax `MyItem.sendCommand(new_state)` or `MyItem.sendUpdate(new_state)` will help avoid many problems.
 
-
 ## Rule Examples
 
 Below some examples for common rules:
-
 
 ```java
 var Number counter
