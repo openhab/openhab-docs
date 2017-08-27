@@ -5,7 +5,6 @@ title: Editors
 
 {% include base.html %}
 
-{: #headache}
 # Editors - Different Ways to Simplify Your Textual Configuration
 
 Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.
@@ -13,9 +12,10 @@ This documentation page can give you some guidance in choosing the right one for
 
 {::options toc_levels="2"/}
 
-* TOC
+- TOC
 {:toc}
 
+{: #openhab-vscode}
 ## openHAB VS Code Extension
 
 openHAB VS Code is an extension for the [Visual Studio Code](https://code.visualstudio.com) editor.
@@ -38,6 +38,7 @@ Currently openhab-vscode isn't yet listed in [Microsoft Visual Studio Marketplac
 
 [Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/master/README.md "GitHub Repo for the VS Code Extension")
 
+{: #esh-designer}
 ## Eclipse SmartHome Designer
 
 The Eclipse SmartHome Designer is a specialized version of the [Eclipse](http://www.eclipse.org) IDE for openHAB.
@@ -88,26 +89,34 @@ More details about the syntax of the different configuration files can be found 
 
 Hint: Press `<Ctrl + N>` to create a new file.
 
+{: #others}
 ## Other Editor Integrations
 
 The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality like the two tools above.
 
 ### mcedit
 
-mcedit is an editor which comes with mc (Midnight Commander). You can find the syntax files and installation instructions on [openhab-mcedit](https://github.com/CWempe/openhab-mcedit).
+mcedit is an editor which comes with mc (Midnight Commander).
+You can find the syntax files and installation instructions on [openhab-mcedit](https://github.com/CWempe/openhab-mcedit).
 
+{: #notepadpp}
 ### Notepad++
 
-Notepad++ is a free source code editor for Windows. Version 6.2 or above is required. You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
+Notepad++ is a free source code editor for Windows.
+Version 6.2 or above is required.
+You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
 
 ### Vim
 
-Vim is a text editor in Linux systems.  You can find the syntax file and installation instructions on [openhab-vim](https://github.com/cyberkov/openhab-vim).
+Vim is a text editor in Linux systems.
+You can find the syntax file and installation instructions on [openhab-vim](https://github.com/cyberkov/openhab-vim).
 
 ### Nano
 
-Nano is a common editor in Linux systems. You can find the syntax file and installation instructions on [openhabnano](https://github.com/airix1/openhabnano).
+Nano is a common editor in Linux systems.
+You can find the syntax file and installation instructions on [openhabnano](https://github.com/airix1/openhabnano).
 
 ### Textwrangler
 
-Textwrangler is a text and code editor for MAC OS X. You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
+Textwrangler is a text and code editor for MAC OS X.
+You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
