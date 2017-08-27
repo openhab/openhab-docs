@@ -159,7 +159,7 @@ You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [Fre
 Two system-based triggers are provided as described in the table below:
 
 | Trigger           |  Description |
-| ------------------|--------------|
+|-------------------|--------------|
 | System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file. |
 | System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down. |
 
@@ -178,6 +178,7 @@ then
 end
 ```
 
+
 ## Scripts
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
@@ -195,18 +196,76 @@ To be able to do something useful with the scripts, openHAB provides access to
 Combining these features, you can easily write code like:
 
 ```java
-    if (Temperature.state < 20) {
-        sendCommand(Heating, ON)
-    }
+if (Temperature.state < 20) {
+    Heating.sendCommand(ON)
+}
 ```
 
+{: #manipulating-item-states}
+### Manipulating Item States
+
+Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
+Two commands can change the value or state of an Item within rules:
+
+- `MyItem.postUpdate(<new_state>)` - Change the status of an Item without causing any implicit actions. Can be used to reflect changes that may be caused by other means.
+- `MyItem.sendCommand(<new_state>)` - Change the status of an Item and trigger potential further actions, e.g. send a command to the linked device/binding.
+
+In relation to [event-based rule triggers]({{base}}/configuration/rules-dsl.html#event-based-triggers) the manipulator commands `sendCommand` and `postUpdate` act differently.
+The following table summarizes the impact of the two manipulator commands on the rule execution due to the used trigger:
+
+| Command \ Rule Trigger   | `received update` | `received command` | `changed` |
+|--------------------------|-------------------|--------------------|-----------|
+| postUpdate               | ⚡ rule fires      | ❌                 | (depends) |
+| sendCommand              | ❌                | ⚡ rule fires       | (depends) |
+| *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
+
+**Beware:**
+Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
+
+{: #sendcommand-method-vs-action}
+#### MyItem.sendCommand("new state") versus sendCommand(MyItem, "new state")
+
+Using the methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)` is often preferable.
+These are methods of Objects that can accept a variety of types.
+
+Contrary, the Actions `sendCommand(MyItem, "<new_state>")` and `postUpdate(MyItem, "<new_state>")` can only accept strings as arguments.
+
+The reasons lie within Java, the object-oriented programming language on which openHAB is built.
+Java and the Rules DSL have two basic types, primitives and Objects.
+A lower case letter data type after a `var` or a `val` statement, for example `var int`, indicates a primitive type. 
+An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object. 
+Objects are more complex than primitives.
+
+Objects have methods associated that among others can make many necessary type conversions. 
+Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` can in most cases convert `new_state` into a type that Object `myItem` can apply. 
+
+The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty. 
+For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer: 
+* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~. 
+* However, the following command **will work**: `MyItem.sendCommand(new_state)`. 
+
+Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code. 
+It provides by far the best option for avoiding most problems. 
+This syntax ensures that any conversion (typing) of the `new_state` is done in a way that is most suitable for `myItem`. 
+
+**Exception:**
+Actions are useful when the name of the Item is only available as a String. 
+For example, if the name of the Item to receive an update or command was calculated in the Rule by building up a String:
+
+```java
+val int index = 5
+sendCommand("My_Lamp_" + index, ON)
+```
+
+{: #implicit-variables}
 ### Implicit Variables inside the Execution Block
 
 Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:
 
-- Every rule that has at least one command event trigger, will have the variable `receivedCommand` available, which can be used inside the execution block.
-- Every rule that has at least one status change event trigger, will have the variable `previousState` available, which can be used inside the execution block.
+- `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
+- `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
 
+{: #return}
 ### Early returns
 
 It is possible to return early from a rule, not executing the rest of the statements like this:
@@ -215,7 +274,7 @@ It is possible to return early from a rule, not executing the rest of the statem
 if (Temperature.state > 20) {
 	return;
 }
-sendCommand(Heating, ON)
+Heating.sendCommand(ON)
 ```
 
 Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.
