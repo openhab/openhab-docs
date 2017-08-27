@@ -47,7 +47,7 @@ There are two methods for defining Items:
 The following content will discuss details of item definition on the example of `.items` files.
 
 **Editor Recommendation:**
-It's recommended to edit `.items` files using the [Eclipse SmartHome Designer]({{base}}/installation/designer.html).
+It's recommended to edit `.items` files using the [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#eclipse-smarthome-designer).
 Doing so you will have full IDE support like syntax checking, context assist, etc.
 
 ## Item Definition and Syntax

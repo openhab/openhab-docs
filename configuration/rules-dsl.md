@@ -30,7 +30,7 @@ It therefore makes sense to have different rule files for different use-cases or
 
 ### IDE Support
 
-The [Eclipse SmartHome Designer]({{base}}/installation/designer.html) offers support for rules building.
+The [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#eclipse-smarthome-designer) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
 
