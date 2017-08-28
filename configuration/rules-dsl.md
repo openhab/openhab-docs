@@ -335,25 +335,16 @@ log:set DEBUG org.eclipse.smarthome.model.script.kitchen
 {: #using-state-of-items-in-rules}
 ## Using the States of Items in Rules
 
-Rules often interact with Items based on some conditions. 
-General operation in rules that involve Items are
-- to react to changes in item states, described in [section on triggers]({{base}}/configuration/rules-dsl.html#rule-triggers) 
-- to change the item state, described in described in [section on changing items states]({{base}}/configuration/rules-dsl.html#manipulating-item-states)
-- to calculate other values from Item states 
-- to  compare Item states against other values 
-While the first two option are described elsewhere, the last two are the basis of this chapter.
+Often it is desired to calculate other values from Item states or to compare Item states against other values 
 
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
+A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html). 
 To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
-For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the [openHab documentation for items]({{base}}/concepts/items.html). 
+Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
 
-Conversely, to use the result of a calculation in a rule that intends to change the state of an item will require the data type used for calculation and how to cast it into a type the item can accept as a modification of its state.
-
-This section differentiates between command type and state type. For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
-For example the “Switch” can accept the “Command Type” labeled “OnOff”. 
-Thus the state type is referred to as “OnOffType” in the second part of the introduction to items linked above. 
-
+This section differentiates between command type and state type. 
+For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
 For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType. 
 Therefore the following are all valid commands one can send to a Color Item:
 - `MyColorItem.sendCommand(ON)`
@@ -363,30 +354,29 @@ Therefore the following are all valid commands one can send to a Color Item:
 
 An alternative way to command or update the state of an item is through the use of specially formatted strings. 
 The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
-Methods used to update or command items can use as their argument either the appropriate object or an appropriately formatted string. 
-
-{: #retrieving-item-states}
-### Retrieving Item States
 
 Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
-For example, even though a Color Item will accept OnOffType, IncreaseDecreaseType, PercentType, and HSBType, but will only return an HSBType. 
-For a complete and up-to-date list of what item types are currently allowed in OpenHAB and the command types each item can accept see the section on [items in the openHAB documentation]({{base}}/concepts/items.html).
+The Color Item from the example above will accept various command types, but will only return an HSBType. 
 
 Groups can be declared with any Item type and the internal state of the Group will match that type. 
-For example, Group:Switch will return an OnOffType for its state.
+For example, `Group:Switch` will return an OnOffType for its state.
 
 Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
 There are two ways to discover these methods:
 
 - Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
-- Look at the JavaDocs for the given type (e.g. the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods which would be called without the "get" part in name as in `(MyColorItem.state as HSBType).red)`, which retrieves the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
+- Look at the JavaDocs for the given type.
+For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
+Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
+They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
 
 {: #conversions}
 ### Working with Item States: Conversions
 
-*Reminder:* For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).
+*Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
 
-Below a _non-exhaustive_ list of some more common conversions
+Below a **non-exhaustive** list of some more common conversions. 
+The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.
 
 #### Conversion of Item.state to String
 
@@ -426,13 +416,14 @@ OpenClosedType is an Enumeration.
 One can convert from Open and Closed to 1 and 0 with code similar to:
 
 ```java
-val contactNum = if(MyContactItem.state == OPEN) 1 else 0
+val contactNum = if (MyContactItem.state == OPEN) 1 else 0
 ```
 
 #### DateTime Item
 
 A DateTime Item carries a **DateTimeType**.
-DateTimeType presents the biggest challenge when converting and performing calculations. The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`. 
+DateTimeType presents the biggest challenge when converting and performing calculations. 
+The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`. 
 However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
 
 The lowest common denominator when working with time is to get at the epoch value. 
@@ -473,7 +464,7 @@ val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
 val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
 ```
 
-Both Joda DateTime as well as DateTimeType (primarily through the calendar data member) provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
+Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
 For some examples:
 
 ```java
@@ -491,9 +482,9 @@ val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_O
 #### Dimmer Item
 
 A Dimmer Item carries a **PercentType**.
-PercentType can be cast to and treated like a java.lang.Number. 
-Number represents any type of numerical value. 
-The Rules language supports doing comparisons with Numbers and doing math with Numbers and the Number supports methods for getting primitive versions of that number if needed.
+PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value. 
+The Rules language supports doing mathematical and logical operations with Numbers
+The Number Object supports methods for getting primitive versions of that Number if needed.
 
 ```java
 // to convert a hex_code (a number expressed in hexadecimals) to a Number type 
@@ -515,12 +506,14 @@ val float dimAsFloat = dimVal.floatValue
 // to convert an integer_value to hex_code string
 var String hex = Long.toHexString(integer_value);
 ```
-Additional conversions that migt be useful are listed below under NumberItem
+
+Additional conversions that might be useful are listed below under NumberItem
 
 #### Location Item
 
 A Location Items carries a **PointType**.
-A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. Here are a few examples:
+A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. 
+Here are a few examples:
 
 ```java
 // Creation
@@ -553,6 +546,8 @@ var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).
 
 ```
 
+Other useful conversions can be found under Dimmer Item.
+
 One warning comes with DecimalType. 
 The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4). 
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
@@ -571,7 +566,7 @@ State Type | Commands
 These types can be convert from Open and Closed to 1 and 0 with code similar to the OpenClosedType
 
 ```java
-val Playing = if(MyPlayerItem.state == PLAY) 1 else 0
+val int Playing = if (MyPlayerItem.state == PLAY) 1 else 0
 ```
 
 #### PointType
@@ -637,8 +632,6 @@ Using the method `MyTimes.sendCommand()` that is owned by MyItem will use the `s
 For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
 Each of these separate methods is individually written to handle all of these different types of Objects. 
 MyItem will automatically apply the method that corresponds to the argument type.
-
-In a nutshell, using the syntax `MyItem.sendCommand(new_state)` or `MyItem.sendUpdate(new_state)` will help avoid many problems.
 
 ## Rule Examples
 
