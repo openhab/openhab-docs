@@ -261,6 +261,309 @@ val int index = 5
 sendCommand("My_Lamp_" + index, ON)
 ```
 
+{: #using-state-of-items-in-rules}
+### Using the States of Items in Rules
+
+Often it is desired to calculate other values from Item states or to compare Item states against other values 
+
+In openHAB, every item carries a state.
+The state of an Item is an Object itself and can be accessed with `MyItem.state`.
+A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html). 
+To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
+Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
+
+This section differentiates between command type and state type. 
+For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
+For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType. 
+Therefore the following are all valid commands one can send to a Color Item:
+- `MyColorItem.sendCommand(ON)`
+- `MyColorItem.sendCommand(INCREASE)`
+- `MyColorItem.sendCommand(new PercentType(50))`
+- `MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))`
+
+An alternative way to command or update the state of an item is through the use of specially formatted strings. 
+The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
+
+Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
+The Color Item from the example above will accept various command types, but will only return an HSBType. 
+
+Groups can be declared with any Item type and the internal state of the Group will match that type. 
+For example, `Group:Switch` will return an OnOffType for its state.
+
+Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
+There are two ways to discover these methods:
+
+- Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
+- Look at the JavaDocs for the given type.
+For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
+Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
+They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
+
+{: #conversions}
+#### Working with Item States: Conversions
+
+*Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
+
+Below a **non-exhaustive** list of some more common conversions. 
+The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.
+
+##### Conversion of Item.state to String
+
+All Item states can be converted into a string by invoking `MyItem.state.toString`. 
+
+##### Color Item
+
+A Color Item stores an **HSBType**.
+The HSB stands for Hue, Saturation, and Brightness. 
+Often one has the desired color as an RGB values (Red, Green, Blue). 
+The following code can be used to send an RGB value to a Color Item. 
+
+```java
+import java.awt.Color
+
+// in rule body
+val newColor = new Color(red, blue, green) // where red, blue, and green are ints between 0 and 255
+MyColorItem.sendCommand(new HSBType(newColor))
+```
+
+When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
+Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
+
+```java
+
+//Example for conversion to 8-bit representation
+// In rule body
+val red = (MyColorItem.state as HSBType).red * 255
+val green = (MyColorItem.state as HSBType).green * 255
+val blue = (MyColorItem.state as HSBType).blue * 255
+```
+
+##### Contact Item
+
+A Contact Item carries a  OpenClosedType.
+OpenClosedType is an Enumeration. 
+One can convert from Open and Closed to 1 and 0 with code similar to:
+
+```java
+val contactNum = if (MyContactItem.state == OPEN) 1 else 0
+```
+
+##### DateTime Item
+
+A DateTime Item carries a **DateTimeType**.
+DateTimeType presents the biggest challenge when converting and performing calculations. 
+The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`. 
+However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
+
+The lowest common denominator when working with time is to get at the epoch value. 
+Epoch is the number of milliseconds that has passed since 1 January 1970 GMT and stored in a `long`. 
+With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and visa versa.
+
+```java
+// Get epoch from DateTimeType
+val Number epoch = (MyDateTimeItem.state as DateTimeType).calendar.timeInMillis
+
+// Get epoch from Joda DateTime
+val Number nowEpoch = now.millis
+
+// Convert DateTimeType to Joda DateTime
+val joda = new DateTime((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)
+
+// Convert Joda DateTime to DateTimeType
+val calendar = java.util.Calendar::getInstance
+calendar.timeInMillis = now.millis
+val dtt = new DateTimeType(calendar)
+```
+
+In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item. 
+Here an option to do so utilizing SimpleDateFormat:
+
+```java
+import java.text.SimpleDateFormat
+import java.util.Date
+
+// Convert epoch to a human readable
+val SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
+val String timestampString = sdf.format(new Date(timestampEpoch))
+
+// Convert human readable time stamp to DateTimeType
+val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
+
+//convert state from Item of DateTimeType into a string
+val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
+```
+
+Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
+For some examples:
+
+```java
+// See if DateTimeType is before Joda DateTime
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)) ...
+
+// See if DateTimeType is after Joda DateTime
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis))...
+
+// Get the hour in the day from a DateTimeType
+val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_OF_DAY)
+// See the Calendar javadocs for the full set of parameters available
+```
+
+##### Dimmer Item
+
+A Dimmer Item carries a **PercentType**.
+PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value. 
+The Rules language supports doing mathematical and logical operations with Numbers
+The Number Object supports methods for getting primitive versions of that Number if needed.
+
+```java
+// to convert a hex_code (a number expressed in hexadecimals) to a Number type 
+val dimVal =  Integer.parseInt(hex_code, 16) as Number
+//for very large_hex_codes use
+val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
+
+//to get state as Number
+val dimVal = MyDimmerItem.state as Number
+
+if(dimVal > 50)...
+
+val newDimVal = dimVal + 10
+
+val int dimAsInt = dimVal.intValue
+
+val float dimAsFloat = dimVal.floatValue
+
+// to convert an integer_value to hex_code string
+var String hex = Long.toHexString(integer_value);
+```
+
+Additional conversions that might be useful are listed below under NumberItem
+
+##### Location Item
+
+A Location Items carries a **PointType**.
+A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. 
+Here are a few examples:
+
+```java
+// Creation
+val location = new PointType(new DecimalType(50.12345), new DecimalType(10.12345))
+// Creation from String; ATTENTION: do not add space after comma
+val PointType home = new PointType("12.121212,123.123123")
+
+// Saving to an Item
+Device_Coordinates.postUpdate(location)
+
+// Loading from an Item
+val PointType location = Device_Coordinates.state as PointType
+```
+
+##### Number Item
+
+A Number Items carries a **DecimalType**. 
+A DecimalType is also a java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
+
+Here some other commonly needed conversions:
+```java
+//convert integer_number to string containing hex_code
+var String hex_code = Long.toHexString(integer_number);
+
+//convert hex_code to Number type
+var MyNumber = Integer.parseInt(hex_code, 16) as Number
+//use the following for large_hex_code
+var MyNumber = Long.parseLong(hex, 16) as Number
+
+// coverting hex_code into DecimalType
+var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
+
+```
+
+Other useful conversions can be found under Dimmer Item.
+
+One warning comes with DecimalType. 
+The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4). 
+To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
+
+##### Player Item
+
+The Player item allows to control players (e.g. audio players) with commands such as Play, Pause, Next, Previous, Rewind and Fastforward.
+The Player Item carries three types with predefined commands 
+
+State Type | Commands
+------------------|------------------
+**PlayPauseType** | PLAY, PAUSE
+**RewindFastforwardType** | REWIND, FASTFORWARD
+**NextPreviousType** | NEXT, PREVIOUS
+
+These types can be convert from Open and Closed to 1 and 0 with code similar to the OpenClosedType
+
+```java
+val int Playing = if (MyPlayerItem.state == PLAY) 1 else 0
+```
+
+##### PointType
+
+See Location item
+
+##### Rollershutter Item
+
+See Dimmer
+In addition to the command types of the item type Dimmer, the Rollershutter item accepts the StopMoveType with the commands STOP and MOVE
+
+##### String Item
+
+To convert the state of an Item that carries a StringType, the method toString can be invoked.
+
+```java
+val stateAsString = MyStringItem.state.toString
+```
+
+In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
+```
+val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
+```
+
+##### Switch Item
+
+See Contact Item.
+
+
+#### Deeper Dive
+
+While interacting with Item states, care must be taken to understand the difference between Objects and primitives. 
+As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
+However, inheritance only applies to Objects and does **not** apply to primitives; examples for primitives are `integer` and `boolean`.
+Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. 
+This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do. 
+The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. 
+
+In addition to other useful things, the class `Object` implements a method called `toString`. 
+And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. 
+_However primitives do not inherit from Object. 
+They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
+
+Objects are typically equipped with many more type conversion methods, while primitives do not support any type conversion. 
+This distinction is very relevant when trying to use the result of a calculation and apply it to an Item state.
+The `sendCommand` is a generic action and needs to be able to work with all Item types. 
+Actions only support two String arguments as all Objects will support the conversion `toString`. 
+`sendCommand (MyItem, new_state)` will automatically use the `MyItem.toString` method to convert MyItem into a String. 
+It will also attempt to do so with the second argument if `new_state` is not already a String. 
+However, if the second argument is a primitive, and not an Object, it does not carry a method `toString`. 
+Thus, Rules DSL will not be able to cast `new_state` as a String. 
+As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive as the second argument, will almost always fail. 
+
+The different syntax for the generic and the objective-specific differs and is given in the table below:
+
+| Generic (Action)                 | Specific (Method)               |
+|----------------------------------|---------------------------------|
+| `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
+| `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
+
+The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
+Using the method `MyTimes.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
+For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
+Each of these separate methods is individually written to handle all of these different types of Objects. 
+MyItem will automatically apply the method that corresponds to the argument type.
+
 {: #implicit-variables}
 ### Implicit Variables inside the Execution Block
 
@@ -331,307 +634,6 @@ then the logger you would have to configure to have your messages appearing in t
 ```text
 log:set DEBUG org.eclipse.smarthome.model.script.kitchen
 ```
-
-{: #using-state-of-items-in-rules}
-## Using the States of Items in Rules
-
-Often it is desired to calculate other values from Item states or to compare Item states against other values 
-
-In openHAB, every item carries a state.
-The state of an Item is an Object itself and can be accessed with `MyItem.state`.
-A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html). 
-To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
-Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
-
-This section differentiates between command type and state type. 
-For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
-For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType. 
-Therefore the following are all valid commands one can send to a Color Item:
-- `MyColorItem.sendCommand(ON)`
-- `MyColorItem.sendCommand(INCREASE)`
-- `MyColorItem.sendCommand(new PercentType(50))`
-- `MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))`
-
-An alternative way to command or update the state of an item is through the use of specially formatted strings. 
-The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
-
-Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
-The Color Item from the example above will accept various command types, but will only return an HSBType. 
-
-Groups can be declared with any Item type and the internal state of the Group will match that type. 
-For example, `Group:Switch` will return an OnOffType for its state.
-
-Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
-There are two ways to discover these methods:
-
-- Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
-- Look at the JavaDocs for the given type.
-For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
-Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
-They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
-
-{: #conversions}
-### Working with Item States: Conversions
-
-*Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
-
-Below a **non-exhaustive** list of some more common conversions. 
-The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.
-
-#### Conversion of Item.state to String
-
-All Item states can be converted into a string by invoking `MyItem.state.toString`. 
-
-#### Color Item
-
-A Color Item stores an **HSBType**.
-The HSB stands for Hue, Saturation, and Brightness. 
-Often one has the desired color as an RGB values (Red, Green, Blue). 
-The following code can be used to send an RGB value to a Color Item. 
-
-```java
-import java.awt.Color
-
-// in rule body
-val newColor = new Color(red, blue, green) // where red, blue, and green are ints between 0 and 255
-MyColorItem.sendCommand(new HSBType(newColor))
-```
-
-When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
-Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
-
-```java
-
-//Example for conversion to 8-bit representation
-// In rule body
-val red = (MyColorItem.state as HSBType).red * 255
-val green = (MyColorItem.state as HSBType).green * 255
-val blue = (MyColorItem.state as HSBType).blue * 255
-```
-
-#### Contact Item
-
-A Contact Item carries a  OpenClosedType.
-OpenClosedType is an Enumeration. 
-One can convert from Open and Closed to 1 and 0 with code similar to:
-
-```java
-val contactNum = if (MyContactItem.state == OPEN) 1 else 0
-```
-
-#### DateTime Item
-
-A DateTime Item carries a **DateTimeType**.
-DateTimeType presents the biggest challenge when converting and performing calculations. 
-The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`. 
-However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
-
-The lowest common denominator when working with time is to get at the epoch value. 
-Epoch is the number of milliseconds that has passed since 1 January 1970 GMT and stored in a `long`. 
-With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and visa versa.
-
-```java
-// Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).calendar.timeInMillis
-
-// Get epoch from Joda DateTime
-val Number nowEpoch = now.millis
-
-// Convert DateTimeType to Joda DateTime
-val joda = new DateTime((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)
-
-// Convert Joda DateTime to DateTimeType
-val calendar = java.util.Calendar::getInstance
-calendar.timeInMillis = now.millis
-val dtt = new DateTimeType(calendar)
-```
-
-In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item. 
-Here an option to do so utilizing SimpleDateFormat:
-
-```java
-import java.text.SimpleDateFormat
-import java.util.Date
-
-// Convert epoch to a human readable
-val SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSSZ")
-val String timestampString = sdf.format(new Date(timestampEpoch))
-
-// Convert human readable time stamp to DateTimeType
-val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
-
-//convert state from Item of DateTimeType into a string
-val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
-```
-
-Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
-For some examples:
-
-```java
-// See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)) ...
-
-// See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis))...
-
-// Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_OF_DAY)
-// See the Calendar javadocs for the full set of parameters available
-```
-
-#### Dimmer Item
-
-A Dimmer Item carries a **PercentType**.
-PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value. 
-The Rules language supports doing mathematical and logical operations with Numbers
-The Number Object supports methods for getting primitive versions of that Number if needed.
-
-```java
-// to convert a hex_code (a number expressed in hexadecimals) to a Number type 
-val dimVal =  Integer.parseInt(hex_code, 16) as Number
-//for very large_hex_codes use
-val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
-
-//to get state as Number
-val dimVal = MyDimmerItem.state as Number
-
-if(dimVal > 50)...
-
-val newDimVal = dimVal + 10
-
-val int dimAsInt = dimVal.intValue
-
-val float dimAsFloat = dimVal.floatValue
-
-// to convert an integer_value to hex_code string
-var String hex = Long.toHexString(integer_value);
-```
-
-Additional conversions that might be useful are listed below under NumberItem
-
-#### Location Item
-
-A Location Items carries a **PointType**.
-A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. 
-Here are a few examples:
-
-```java
-// Creation
-val location = new PointType(new DecimalType(50.12345), new DecimalType(10.12345))
-
-// Saving to an Item
-Device_Coordinates.postUpdate(location)
-
-// Loading from an Item
-val PointType location = Device_Coordinates.state as PointType
-```
-
-#### Number Item
-
-A Number Items carries a **DecimalType**. 
-A DecimalType is also a java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
-
-Here some other commonly needed conversions:
-```java
-//convert integer_number to string containing hex_code
-var String hex_code = Long.toHexString(integer_number);
-
-//convert hex_code to Number type
-var MyNumber = Integer.parseInt(hex_code, 16) as Number
-//use the following for large_hex_code
-var MyNumber = Long.parseLong(hex, 16) as Number
-
-// coverting hex_code into DecimalType
-var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
-
-```
-
-Other useful conversions can be found under Dimmer Item.
-
-One warning comes with DecimalType. 
-The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4). 
-To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
-
-#### Player Item
-
-The Player item allows to control players (e.g. audio players) with commands such as Play, Pause, Next, Previous, Rewind and Fastforward.
-The Player Item carries three types with predefined commands 
-
-State Type | Commands
-------------------|------------------
-**PlayPauseType** | PLAY, PAUSE
-**RewindFastforwardType** | REWIND, FASTFORWARD
-**NextPreviousType** | NEXT, PREVIOUS
-
-These types can be convert from Open and Closed to 1 and 0 with code similar to the OpenClosedType
-
-```java
-val int Playing = if (MyPlayerItem.state == PLAY) 1 else 0
-```
-
-#### PointType
-
-See Location item
-
-#### Rollershutter Item
-
-See Dimmer
-In addition to the command types of the item type Dimmer, the Rollershutter item accepts the StopMoveType with the commands STOP and MOVE
-
-#### String Item
-
-To convert the state of an Item that carries a StringType, the method toString can be invoked.
-
-```java
-val stateAsString = MyStringItem.state.toString
-```
-
-In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
-```
-val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
-```
-
-#### Switch Item
-
-See Contact Item.
-
-
-### Deeper Dive
-
-While interacting with Item states, care must be taken to understand the difference between Objects and primitives. 
-As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
-However, inheritance only applies to Objects and does **not** apply to primitives; examples for primitives are `integer` and `boolean`.
-Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. 
-This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do. 
-The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. 
-
-In addition to other useful things, the class `Object` implements a method called `toString`. 
-And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. 
-_However primitives do not inherit from Object. 
-They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
-
-Objects are typically equipped with many more type conversion methods, while primitives do not support any type conversion. 
-This distinction is very relevant when trying to use the result of a calculation and apply it to an Item state.
-The `sendCommand` is a generic action and needs to be able to work with all Item types. 
-Actions only support two String arguments as all Objects will support the conversion `toString`. 
-`sendCommand (MyItem, new_state)` will automatically use the `MyItem.toString` method to convert MyItem into a String. 
-It will also attempt to do so with the second argument if `new_state` is not already a String. 
-However, if the second argument is a primitive, and not an Object, it does not carry a method `toString`. 
-Thus, Rules DSL will not be able to cast `new_state` as a String. 
-As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive as the second argument, will almost always fail. 
-
-The different syntax for the generic and the objective-specific differs and is given in the table below:
-
-| Generic (Action)                 | Specific (Method)               |
-|----------------------------------|---------------------------------|
-| `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
-| `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
-
-The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
-Using the method `MyTimes.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
-For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
-Each of these separate methods is individually written to handle all of these different types of Objects. 
-MyItem will automatically apply the method that corresponds to the argument type.
 
 ## Rule Examples
 
