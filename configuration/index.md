@@ -43,7 +43,7 @@ Every interface has it's own strong points.
       <th data-field="files">Textual Configuration</th>
       <th data-field="paperui">Paper UI</th>
       <th data-field="habmin">HABmin</th>
-      <th data-field="karaf">Karaf Console</th>
+      <th data-field="karaf">Console</th>
     </tr>
   </thead>
 
