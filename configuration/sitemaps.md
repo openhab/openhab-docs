@@ -21,7 +21,7 @@ This page is structured as follows:
 
 The definition of Sitemaps happens declaratively in a file with a clear syntax, described below.
 A Sitemap definition file is stored in the folder `<openhab_config>/sitemaps` and has to have the `.sitemap` filename extension.
-For easy editing, the [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#eclipse-smarthome-designer) brings full IDE support for these files.
+For easy editing, the [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer) brings full IDE support for these files.
 
 The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap),
 which should let you easily understand possible elements and structures.
