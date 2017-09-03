@@ -47,7 +47,7 @@ There are two methods for defining Items:
 The following content will discuss details of item definition on the example of `.items` files.
 
 **Editor Recommendation:**
-It's recommended to edit `.items` files using the [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer).
+It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 Doing so you will have full IDE support like syntax checking, context assist, etc.
 
 ## Item Definition and Syntax
@@ -118,7 +118,20 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 The Item name is the unique identified of the Item.
 The name should only consist of letters, numbers and the underscore character.
 Spaces and special characters cannot be used.
-A good naming schema can be advised.
+
+**Style Guide:**
+It is advised to follow a predefined naming scheme.
+The officially recommended scheme is used throughout this documentation and builds on a hierarchy idea.
+Floor or room names can be abbreviated to reduce overall name length.
+
+Every word of the Item name starts with a uppercase letter.
+Words are separated by an underscore character, except for logically belonging words.
+
+Examples:
+
+- "`BathRoom_WaschingMachine_Power`" for the used power of a washing machine in a single floor apartment bathroom
+- "`GF_LR_Heating_Setpoint`" for the Groundfloor Livingroom set temperature
+- "`Heating_Mode`" for the overall heating mode of the house/apartment
 
 ### Label
 
@@ -131,7 +144,7 @@ This part is contained inside "`[ ]`" in the label and can be left out to not di
 ### State
 
 The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
-The state definition is part of the Item Label definition and contained inside square brackets ()"`[ ]`").
+The state definition is part of the Item Label definition and contained inside square brackets "`[ ]`").
 
 #### State Formatting
 
@@ -291,8 +304,12 @@ Groups are supported in Sitemaps, Automation Rules and other areas of openHAB.
 A simple example Group definition is:
 
 ```java
-Group Temperatures
+Group gGroundFloorTemperatures
 ```
+
+**Style Guide:**
+To differentiate between single Items and Item groups it is recommended to name Groups with a prepended "g".
+Furthermore single words are joined with uppercase first letters and without underscores.
 
 **Group State:**
 A Group also has a state.
@@ -388,7 +405,7 @@ Tags are only of interest if an add-on or integration README explicitly discusse
 
 As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding Configs and 2.x Channel Linking.
 
-When you install a Binding through PaperUI it will automatically create a `.cfg` file in `conf/services/` for the appropriate Binding.
+When you install a Binding through PaperUI it will automatically create a `.cfg` file in `$OPENHAB_CONF/services/` for the appropriate Binding.
 Inside these files are a predefined set of variables which are required for the Binding to operate.
 In many cases you will need to view and edit these to suit your system.
 These variables can hold IP addresses, API keys, user names, passwords etc.
@@ -418,8 +435,8 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    { zwave="21:command=s
 ```
 
 If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-After downloading the legacy .jar files, they need to be placed in the `/addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `/conf/services/` and paste the appropriate Binding configuration into this.
+After downloading the legacy .jar files, they need to be placed in the `addons/` folder.
+If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this.
 For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
 
 #### 2.x Binding Configs
