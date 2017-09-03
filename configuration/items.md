@@ -82,7 +82,7 @@ The last example above defines an Item with the following parts:
 
 The remainder of this article describes the Item definition parts in more detail.
 
-### Types
+### Type
 
 The Item type defines which kind of state can be stored in that Item and which commands can be sent to it, e.g. String, Number or binary Switch.
 They are comparable with basic variable data types in programming languages.
@@ -256,9 +256,6 @@ Dynamic icon families must meet the following criteria:
 
 -   the state part of the icon must consist of all lower case letters
     (even if the state of the Item includes uppercase letters)
-
--   the icon selected is based on the mapped value used in the label
-    (i.e. what gets returned by `[MAP(file.map):%s]`, not the Item's raw state.
 
 The name of dynamic icons must meet the following format:
 
