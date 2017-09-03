@@ -239,39 +239,37 @@ Predefined icons from the default icon set can be replaced.
 
 #### Dynamic Icons
 
-An icon can consist of an icon family, from which one icon is dynamically selected depending on the Item's state.
-The state related part of an icon is appended to the icon name after the special hyphen delimiter.
+Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
 
+The state related part of an icon is appended to the icon name after the special hyphen delimiter.
 To give an example:
 
-| File name        | Description                                        |
-|:-----------------|:---------------------------------------------------|
-| `switch.svg`     | default, used when no other matching icon is found |
-| `switch-off.svg` | Matches `OFF` or "off" state                       |
-| `switch-on.svg`  | Matches `ON` or "on" state                         |
+| File name        | Description                                             |
+|:-----------------|:--------------------------------------------------------|
+| `switch-off.svg` | Matches `OFF` or "off" state                            |
+| `switch-on.svg`  | Matches `ON` or "on" state                              |
+| `switch.svg`     | Default icon, used when no other matching icon is found |
 
-Dynamic icon families must meet the following criteria:
+Dynamic icon sets can consist of as many icon files as needed.
+Each set must meet the following criteria:
 
--   there must be a default icon
+- A default icon is mandatory.
+- The state information in the icon name must consist of all lower case letters (even if the state of the Item includes uppercase letters).
+- The state name has to reflect the Item value state. [Transformations](transform.html) applied to the Item value for the sake of better visual representation have no influence on icon selection. 
 
--   the state part of the icon must consist of all lower case letters
-    (even if the state of the Item includes uppercase letters)
-
+**Syntax:**
 The name of dynamic icons must meet the following format:
 
 ```java
 <name>-<state>.<png or svg>
 ```
 
-- `<name>` is the name of the icon set
-- `-<state>` is the state that particular icon maps to, the icon without the state part is the default
-- `<png or svg>` based on the format of the icon, use the default format as explained above.
+- `<name>` is the name of the icon set.
+- `-<state>` is the Item state that particular icon maps to.
+- `<png or svg>` can be either file extension and depends on your UI settings.
 
-To use the dynamic Items the default icon name without state and extension is used.
-
-```java
-Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {somebinding:someconfig}
-```
+**Usage:**
+The default icon name without state and extension is added to the Item or Sitemap element definiton.
 
 **State Matching Rule:**
 For Number Items openHAB will use the equal or next lowest state icon that can be found.
@@ -283,21 +281,6 @@ For a dimmer light (0 - 100%), you might provide icons as in the example:
 | `dimmer-0.svg`   | off light icon (0%)                                |
 | `dimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
 | `dimmer-75.svg`  | bright light icon (75% up to 100%)                 |
-
-**Warning about the Influence of Transformations:**
-As mentioned above, the state used by the Sitemap to select the proper icon is the transformed state.
-When using a MAP in the label, the icon name must match the mapped state displayed on the Sitemap, not the raw Item's state.
-To use the `Number Window` example from above, the icons for `Number Window` would be:
-
-- `window.png`
-- `window-1.png`
-- `window-0.png`
-
-and the icons for `Number WindowTransformed` would be:
-
-- `window.png`
-- `window-open.png`
-- `window-closed.png`
 
 ### Groups
 
