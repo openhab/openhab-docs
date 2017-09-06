@@ -251,8 +251,8 @@ Switch item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC One"
 Selection item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<mapping definition>"]
 ```
 
-The Selection element type allows to select from different settings, similar to a Switch with multiple states.
-The Selection renders the options as lines in a menu shown as a dropdown menu or a modal dialog prompt, depending on your user interface.
+The Selection element type renders the options as a dropdown menu or as a modal dialog prompt, depending on the user interface.
+The element type is in its use cases similar to a Switch with multiple states but has the advantage that the main UI stays clean and more options can be offered.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
 
