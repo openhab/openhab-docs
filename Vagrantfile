@@ -1,12 +1,14 @@
 
 $script = <<SCRIPT
 sudo apt-get update
-sudo apt-get install -y build-essential git nodejs python-software-properties
+sudo apt-get install -y build-essential nodejs python-software-properties
+sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt-add-repository -y ppa:brightbox/ruby-ng
 sudo apt-get update
-sudo apt-get install -y ruby2.2 ruby2.2-dev
+sudo apt-get install -y git ruby2.2 ruby2.2-dev
 sudo gem install directory_watcher
 sudo gem install github-pages -V --no-ri --no-rdoc
+#sudo apt-get install -y maven
 SCRIPT
 
 Vagrant.configure("2") do |config|

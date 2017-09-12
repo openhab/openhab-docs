@@ -10,6 +10,13 @@ project.pbxproj
 addons/uis/habmin/node_modules
 addons/uis/habmin/target
 
+# Update process
+_repos/smarthome
+_repos/openhab-distro
+_repos/openhab1-addons
+_repos/openhab2-addons
+_repos/openhab-bundles
+
 # IntelliJ
 *.iml
 .idea
