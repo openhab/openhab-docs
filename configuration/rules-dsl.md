@@ -321,8 +321,10 @@ The following code can be used to send an RGB value to a Color Item.
 ```java
 import java.awt.Color
 
-// in rule body
+// Create item
 val newColor = new Color(red, blue, green) // where red, blue, and green are ints between 0 and 255
+
+//Saving to an Item
 MyColorItem.sendCommand(new HSBType(newColor))
 ```
 
@@ -416,23 +418,23 @@ The Rules language supports doing mathematical and logical operations with Numbe
 The Number Object supports methods for getting primitive versions of that Number if needed.
 
 ```java
+//Loading from an Item
+val dimVal = MyDimmerItem.state as Number
+//as integer
+val int dimAsInt = dimVal.intValue
+// as float
+val float dimAsFloat = dimVal.floatValue
+```
+
+If the conversion from or into hexadecimal values is necessary, the following examples may be useful:
+
+```java
 // to convert a hex_code (a number expressed in hexadecimals) to a Number type 
 val dimVal =  Integer.parseInt(hex_code, 16) as Number
 //for very large_hex_codes use
 val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
 
-//to get state as Number
-val dimVal = MyDimmerItem.state as Number
-
-if(dimVal > 50)...
-
-val newDimVal = dimVal + 10
-
-val int dimAsInt = dimVal.intValue
-
-val float dimAsFloat = dimVal.floatValue
-
-// to convert an integer_value to hex_code string
+// and here an additional example to convert an integer_value to hex_code string
 var String hex = Long.toHexString(integer_value);
 ```
 
@@ -450,9 +452,6 @@ val location = new PointType(new DecimalType(50.12345), new DecimalType(10.12345
 // Creation from String; ATTENTION: do not add space after comma
 val PointType home = new PointType("12.121212,123.123123")
 
-// Saving to an Item
-Device_Coordinates.postUpdate(location)
-
 // Loading from an Item
 val PointType location = Device_Coordinates.state as PointType
 ```
@@ -463,6 +462,7 @@ A Number Items carries a **DecimalType**.
 A DecimalType is also a java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
 
 Here some other commonly needed conversions:
+
 ```java
 //convert integer_number to string containing hex_code
 var String hex_code = Long.toHexString(integer_number);
@@ -474,7 +474,6 @@ var MyNumber = Long.parseLong(hex, 16) as Number
 
 // coverting hex_code into DecimalType
 var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
-
 ```
 
 Other useful conversions can be found under Dimmer Item.
@@ -494,9 +493,10 @@ State Type | Commands
 **RewindFastforwardType** | REWIND, FASTFORWARD
 **NextPreviousType** | NEXT, PREVIOUS
 
-These types can be convert from Open and Closed to 1 and 0 with code similar to the OpenClosedType
+These types can be convert from Open and Closed to 1 and 0 with code similar to the Contact Item (OpenClosedType)
 
 ```java
+//Loading from an Item
 val int Playing = if (MyPlayerItem.state == PLAY) 1 else 0
 ```
 
@@ -514,17 +514,26 @@ In addition to the command types of the item type Dimmer, the Rollershutter item
 To convert the state of an Item that carries a StringType, the method toString can be invoked.
 
 ```java
+//Loading from an Item
 val stateAsString = MyStringItem.state.toString
 ```
 
 In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using
+
 ```
+//Loading hexvalue from string
 val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 ```
 
 ##### Switch Item
 
-See Contact Item.
+A Switch Item carries a OnOffType.
+OnOffType is an Enumeration. 
+One can convert from ON and OFF to 1 and 0 with code similar to:
+
+```java
+val SwitchNum = if (MySwitchItem.state == ON) 1 else 0
+```
 
 
 #### Deeper Dive
