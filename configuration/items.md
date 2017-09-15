@@ -115,110 +115,83 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 
 ### Name
 
-The Item name is the unique identified of the Item.
+The Item name is the unique identifier of the Item.
 The name should only consist of letters, numbers and the underscore character.
 Spaces and special characters cannot be used.
 
-**Style Guide:**
-It is advised to follow a predefined naming scheme.
-The officially recommended scheme is used throughout this documentation and builds on a hierarchy idea.
-Floor or room names can be abbreviated to reduce overall name length.
+It is advised to follow a consistent naming scheme to be able to handle growing setups.
+The officially recommended scheme is used throughout this documentation and builds on a hierarchical idea.
+A physical or logical top-down approach while naming an Item will ensure the comprehension of its meaning.
 
-Every word of the Item name starts with a uppercase letter.
-Words are separated by an underscore character, except for logically belonging words.
+A good Item name is self-explanatory and already suggests an Item type.
+The following table contains a few examples:
 
-Examples:
+| Example Item Name                 | Interpretation (assumed Item type, example value) |
+|-----------------------------------|---------------------------------------------------|
+| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
+| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
+| "`GF_BR_WaschingMachine_Power`"   | Electric power used by the washing machine in the ground floor bathroom (Number, e.g. 100W) |
+| "`Lighting_Scene`"                | Overall lighting scene of the house/apartment (String, e.g. Party) |
+| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on a smartphone detection (Switch, e.g. Offline) |
 
-- "`BathRoom_WaschingMachine_Power`" for the used power of a washing machine in a single floor apartment bathroom
-- "`GF_LR_Heating_Setpoint`" for the Groundfloor Livingroom set temperature
-- "`Heating_Mode`" for the overall heating mode of the house/apartment
+The following naming style guide is recommended:
+
+- Item name words build a physical or logical hierarchy
+- Every word of the Item name starts with an uppercase letter
+- Words are separated by an underscore character, except for logically belonging words
+- Words like the names of recurring rooms or appliances can be abbreviated to reduce overall name length
+- Please see the Groups section for special recommendations for Group Items
+
+[Group](#groups) is a special Item type to nest and/or combine Items.
+Just as with single Items the demand for a speaking self-explanatory name should be met.
+Two naming schemes are established for Group names:
+
+1. Use of plural word forms where possible, otherwise the word "Group" can be appended for clearness
+2. Prepending a lowercase "g"
+
+| Example Group Name                        | Interpretation |
+|-------------------------------------------|----------------|
+| "`Batteries`" or "`gBattery`"             | Combining Group for all device battery states |
+| "`Maintenance_Group`" or "`gMaintenance`" | Logical summary of all maintenance related Items and Groups |
+| "`Livingroom`" or "`gLR`"                 | Nesting group for all devices belonging to the living room |
+| "`Livingroom_Lights`" or "`gLR_Light`"    | Combination of all living room lights |
 
 ### Label
 
 The label text has two purposes.
 First, this text is used to display a description of the specific Item (for example, in the Sitemap).
 
-Secondly, the label also includes the value displaying definition for the Item's state.
-This part is contained inside "`[ ]`" in the label and can be left out to not display the state of an Item.
+Secondly, the label also includes the state/value displaying definition for the Item's state.
+This part is contained inside square brackets (`[]`) in the second half of the label and can be left out to not display the state of an Item.
 
 ### State
 
 The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
-The state definition is part of the Item Label definition and contained inside square brackets "`[ ]`").
-
-#### State Formatting
+The state definition is part of the Item label definition and contained inside square brackets.
 
 Formatting is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax), therefore the syntax is
 
-```java
+```text
 [%[argument_index$][flags][width][.precision]conversion]
 ```
 
-Only the leading '%' and the trailing 'conversion' are mandatory.
-The **argument_index$** must be used if you want to convert the value of the Item several times within the label text or if the Item has more than one value.
-Look at the DateTime and Call Item in the following example.
+Only the square brackets, the leading '%' and the trailing 'conversion' are mandatory.
+A few examples are given below:
 
 ```java
-Number    MyTemperature  "The Temperature is [%.1f] °C"   { someBinding:somevalue }
-String    MyString       "Value: [%s]"                    { someBinding:somevalue }
-DateTime  MyLastUpdate   "Last Update: [%1$ta %1$tR]"     { someBinding:somevalue }
+Number    MyTemperature  "Temperature [%.1f °C]"     {someBinding:somevalue} // e.g. "23.5 °C"
+String    MyString       "Value [%s]"                {someBinding:somevalue} // e.g. "Lorem ipsum"
+DateTime  MyLastUpdate   "Last Update [%1$ta %1$tR]" {someBinding:somevalue} // e.g. "Sun 15:26"
 ```
 
-The output would look like this:
+#### State Transformations
 
-```text
-Temperature 23.2 °C
-Value: Lorem ipsum
-Last Update: Sun 15:26
-```
+Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language or convert technical values into human readable information.
 
-### State Transformations
+**Example:**
+Translation of a technical Binding output, e.g., "CLOSED" can be translated to the Spanish translation "cerrado"
 
-Another possibility in label texts is to use a transformation.
-They are used for example to translate a status into another language or convert technical value into human readable ones.
-To do this you have to create a .map file in your `transform` folder.
-These files are typical key/value pair files.
-
-```text
-key1=value1
-key2=value2
-...
-```
-
-Let's make a small example to illustrate this function.
-If you have a sensor which returns the number 0 for a closed window and 1 for an open window, you can transform these values into the words "opened" or "closed".
-Create a map file named `window.map` for example and add the desired keys and values.
-
-```text
-0=closed
-1=opened
-NULL=unknown
--=unknown
-```
-
-Next we define two Items.
-One showing the raw value as it is provided from our sensor and one with transformed value.
-
-```java
-Number WindowRaw          "Window is [%d]"                  { someBinding:somevalue }
-Number WindowTransformed  "Window is [MAP(window.map):%s]"  { someBinding:somevalue }
-```
-
-The output will be:
-
-```text
-Window is 1
-Window is opened
-```
-
-Transform files use UTF-8 encoding, so Unicode symbols will also work.
-
-```text
-ARIES=♈ Aries
-TAURUS=♉ Taurus
-WAXING_CRESCENT=🌑→🌓 Waxing Crescent
-FIRST_QUARTER=🌓 First Quarter
-```
+Please refer to the article on [Transformations](transform.html) for more usage details and a list of available transformation services.
 
 ### Icons
 
@@ -297,38 +270,33 @@ For a dimmer light (0 - 100%), you might provide icons as in the example:
 
 ### Groups
 
-The *Group* is a special Item Type.
-It is used to define a category or collection in which you can nest/collect other Items or other Groups.
-Groups are supported in Sitemaps, Automation Rules and other areas of openHAB.
-
-A simple example Group definition is:
+The Group is a special Item type.
+It is used to define a category or collection in which you can nest and/or combine other Items or Groups.
+The general syntax for groups follows the syntax for Items:
 
 ```java
-Group gGroundFloorTemperatures
+Group  groupname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
 ```
 
-**Style Guide:**
-To differentiate between single Items and Item groups it is recommended to name Groups with a prepended "g".
-Furthermore single words are joined with uppercase first letters and without underscores.
-
-**Group State:**
-A Group also has a state.
-The Group's state is an aggregation of the states of all its members.
-Sending a command to a Group will cause that command to be forwarded to all the Group's members.
-
-Items can be in none, one, or multiple groups, groups can be nested inside other groups.
+Single Items can be in none or multiple groups and a group can be nested inside other groups.
 
 #### Nested Groups
 
 Groups can be nested inside each other.
 This functionality is commonly used to define hierarchies of Items from different perspectives.
 
-- Regional perspective: e.g. Stories of a Building → Corridors on that story → Rooms along the corridor ...
-- Data perspective: e.g. Room temperatures, power consumption, all lights in the Building, ....
-- Maintenance perspective: e.g. Error states, Battery health, ...
-- and so on ...
+-   Vertical/Physical/Location perspective
+    - e.g. Floors of a house → Rooms on that floor → An appliance in that room...
 
-Let's look at the example below:
+-   Horizontal/Logical/Context/Function perspective
+    - e.g. All lights, All room temperatures, Combined power consumption, ....
+    - Maintenance Group → All battery states → All battery states in percentage / volt
+
+-   and so on ...
+
+These relation can be exploited in sitemaps or in automation rules to browse Items or to apply computations and updates on Items.
+
+**Nested Groups example:**
 
 ```java
 Group gAll
@@ -337,62 +305,54 @@ Group gLivingRoom  (gRoom)
 Group gSensor      (gAll)
 Group gTemperature (gSensor)
 
-Number Sensor_Temperature  "Temperature [%.1f °C]"  <temperature>  (gTemperature)  {knx="1/0/15+0/0/15"}
+Number Sensor_Temperature  "Temperature [%.1f °C]"  <temperature>  (gLivingRoom, gTemperature)  {knx="1/0/15+0/0/15"}
 ```
 
-The Item `Sensor_Temperature` is a member of the Group `gTemperature`, which is itself a member of the Group `gSensor`, which is a member of the Group `All`.
-
-This relation can be exploited in sitemaps or in automation rules.
+The Item `Sensor_Temperature` is a member of two Groups.
+The Group `gTemperature` is itself a member of the Group `gSensor`, which is a member of the Group `All`.
 
 #### Group Types
 
-Group Items can also be used to easily determine one or more Items with a defined value or can be used to calculate a value depending on all values within the Group.
-Please note that this can only be used if all Items in the Group have compatible types (otherwise the calculated state will most likely be `UNDEF`.
+A Group Item can also have a state.
+The Group's state is generated depending on the states of all its member Items.
+Sending a command to a Group will cause that command to be forwarded to all Group members.
 
-The format for this is:
-
-```java
-Group:itemtype:function  itemname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
-```
-
-As an example consider a group of switches:
+The general syntax for groups with a specific aggregation type and function is:
 
 ```java
-Group:Switch:OR(ON,OFF)  mySwitches
+Group[:itemtype[:function]]  groupname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
 ```
 
-The state of the `mySwitches` group will be ON if any of the members states are ON.
-But this means that once one Item in the group has its state changed to ON, the group's state gets set.
-Each subsequent Item that changes state to ON will not trigger "mySwitches changed" because the group isn't changing.
+- If the aggregation function is omitted, the function `EQUAL` will be used.
+- If the aggregation function and itemtype are omitted, no group state will be aggregated from member Items.
 
-This is not a bug, it is the expected and designed behavior.
-Because the group state is an aggregate, every change in the Item members does not necessarily result in a change to the group's state.
-
-If you omit the type or function definitions for a group the following behavior is used:
-
-If there is a type but no function like in the example below,
+**Example:**
 
 ```java
-Group:Switch  mySwitches
+Group:Switch:OR(ON,OFF) Lights
 ```
 
-the function `EQUAL` (Equality) will be used.
-
-If you omit the type AND the function the group state will NOT be influenced by its members, i.e. such a group is only useful for grouping items in GUIs.
+The state of the group will be `ON` as soon as any of the member lights are turned on.
+The behavior follows the given "OR" function known from [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).
 
 Group functions can be any of the following:
 
-| Function             | Description |
-|:---------------------|:-----------|
-| EQUAL                | Default, if no function is specified. (a type for the group MUST be set). If ALL members have state X the group state will be X, otherwise it is UNDEF. |
-| AND(value1, value2)  | This does a logical 'AND' operation. Only if all items are of 'value1' this is returned, otherwise the 'value2' is returned. |
-| AVG                  | Calculates the numeric average over all item values of decimal type. |
-| MAX                  | This calculates the maximum value of all item values of decimal type. |
-| MIN                  | This calculates the minimum value of all item values of decimal type. |
-| NAND(value1, value2) | This does a logical 'NAND' operation. The value is 'calculated' by the normal 'AND' operation and than negated by returning the opposite value. E.g. when the 'AND' operation calculates the value1 the value2 will be returned and vice versa. |
-| NOR(value1, value2)  | This does a logical 'NOR' operation. The value is 'calculated' by the normal 'OR' operation and than negated by returning the opposite value. E.g. when the 'OR' operation calculates the value1 the value2 will be returned and vice versa. |
-| OR(value1, value2)   | Does a logical 'OR' operation. If at least one item is of 'value1' this is returned, otherwise the 'value2' is returned. |
-| SUM                  | Calculates the sum of all items in the group. |
+| Function               | Description |
+|------------------------|-------------|
+| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise it is `UNDEF`. |
+| `AND(value1, value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `OR(value1, value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `NAND(value1, value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
+| `NOR(value1, value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
+| `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
+| `MAX`                  | This calculates the maximum value of all Item states of decimal type. |
+| `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
+| `SUM`                  | Calculates the sum of all Item states in the Group. |
+
+Because the group state is an aggregation of multiple Item states, not every Item state change results in a change to the group state.
+
+Note that aggregation functions can only be used on compatible Item types.
+Incompatible Item types within one Group might result in the invalid aggregation result `UNDEF`.
 
 ### Tagging
 
