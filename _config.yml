@@ -1,4 +1,4 @@
-# Site settings
+# Yekyll site settings
 title: openHAB 2
 description: Empowering the Smart Home
 baseurl: "" # the subpath of your site, e.g. /blog/
