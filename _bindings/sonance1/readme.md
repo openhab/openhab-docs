@@ -6,7 +6,7 @@ type: binding
 description: "This binding integrates with [Sonance DSP Amplifiers](http://www.sonance.com/electronics/amplifiers/dsp). It supports all three models (DSP 2-150, DSP 8-130 and DSP 2-750) but for now it's only tested with the DSP 8-130.  For each group you can enable or disable sound (toggle mute) or set the volume."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.sonance/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
