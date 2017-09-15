@@ -68,7 +68,7 @@
           <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
           <hr />
           {% for binding in site.bindings %}
-          <li><a href="{{ binding.url }}">{{ binding.label }}</a></li>
+          <li><a href="{{ binding.url }}">{{ binding.label }} &nbsp; <small>({{ binding.since }})</small></a></li>
           {% endfor %}
         </ul>
       </li>
