@@ -24,9 +24,9 @@ It uses the REST API of openHAB to render sitemaps of your openHAB installation.
 **Screenshots:**
 
 <div class="row">
-  <div class="col s12 m5"><img src="images/ios_01.png" alt="Demo Main Menu"></div>
-  <div class="col s12 m5"><img src="images/ios_02.png" alt="Demo Widget Overview"></div>
-  <div class="col s12 m5"><img src="images/ios_03.png" alt="Settings"></div>
+  <div class="col s12 m5"><img src="images/ios01.png" alt="Demo Main Menu"></div>
+  <div class="col s12 m5"><img src="images/ios02.png" alt="Demo Widget Overview"></div>
+  <div class="col s12 m5"><img src="images/ios03.png" alt="Settings"></div>
 </div>
 
 **Installation and setup:**
@@ -37,18 +37,18 @@ The latest release version of the app is always available through the Apple App 
 
 Upon first installation, the iOS openHAB app is set up to demo mode. This allows
 you to explore the possibilities of an openHAB installation, but to view and control
-your own devices you'll need to connect to your own openHAB instance. If you haven't
-yet installed and configured your openHAB instance, see the [openHAB installation](http://docs.openhab.org/installation/index.html)
-pages for more details.
+your own devices you'll need to connect to your own openHAB server. If you haven't
+yet installed and configured openHAB, see the [openHAB installation](http://docs.openhab.org/installation/index.html) pages for 
+more details.
 
 To connect your iOS app to your openHAB server, navigate to the settings page, then
 disable the "Demo mode" checkbox. In the local URL field, enter either your server's
 IP address (It should look something like 'http://192.168.1.125:8080/') or, if available,
 your server's name (For openHABian, try 'http://openhabianpi.local:8080/').
 
-To access your openHAB server remotely, you'll need to configure myopenHAB. First, get
-set up at [myopenhab](http://www.myopenhab.org). Once you have your username and password, enter them in the appropriate fields. Under
-the Remote URL field, enter 'https://myopenhab.org/'
+To access your openHAB server remotely, you'll need to configure myopenHAB. First, create
+an account at [myopenhab](http://www.myopenhab.org). Once you have your username and password, enter them in the appropriate 
+fields. Under the Remote URL field, enter 'https://myopenhab.org/'
 
 **Help and resources:**
 
