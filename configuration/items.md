@@ -13,7 +13,7 @@ While a device or service might be quite specific, Items are unified substitutio
 Items can be Strings, Numbers, Switches or one of a few other basic Item types, a programmer can rightly compare Item Types with base variable types of a programming language.
 
 One unique feature of openHAB Items (in comparison to normal variables) is the possibility to connect them to the outside world (via Bindings, more about that later).
-An Item does not simply hold a certain information (e.g., "No Error", 3.141, OFF), the information is synchronized with the real world in both ways.
+An Item does not simply hold a certain information (e.g., "No Error", 3.141 or OFF), the information is synchronized with the real world in both ways.
 
 But let's not get ahead of ourselves.
 The rest of this page contains all details regarding Items and is structured as follows:
@@ -215,9 +215,7 @@ DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:2
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language or convert technical values into human readable information.
 
-**Example:**
-
-Translation of a technical Binding output, e.g., "CLOSED" can be translated to the Spanish translation "cerrado":
+To give an example, the technical raw state "CLOSED" can be translated to the Spanish "cerrado":
 
 ```java
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
@@ -240,17 +238,13 @@ Additional icons can be placed in `$OPENHAB_CONF/icons/classic/` inside the open
 
 Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
 
--   `png` or `svg` file format
-
--   Only lowercase letters, numbers and underscores (`_`)
-
--   No uppercase letters or special characters
-
--   Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
-
--   Examples:
-    - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-    - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+- `png` or `svg` file format
+- Only lowercase letters, numbers and underscores (`_`)
+- No uppercase letters or special characters
+- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+- Examples:
+  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
+  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`.png`) or Vector (`.svg`) icon files.
@@ -275,6 +269,8 @@ To give an example:
 | `myswitch-off.svg`     | Matches `OFF` or "off" state                            |
 | `myswitch-on.svg`      | Matches `ON` or "on" state                              |
 | `myswitch.svg`         | Default icon, used when no other matching icon is found |
+
+| File name              | Description                                             |
 |------------------------|---------------------------------------------------------|
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                |
 | `myerror.svg`          | Default icon, used when Item in any other state         |
@@ -380,10 +376,10 @@ Group state functions can be any of the following:
 | Function               | Description |
 |------------------------|-------------|
 | `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise it is `UNDEF`. |
-| `AND(value1, value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `OR(value1, value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `NAND(value1, value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
-| `NOR(value1, value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
+| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
+| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
 | `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
 | `MAX`                  | This calculates the maximum value of all Item states of decimal type. |
 | `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
