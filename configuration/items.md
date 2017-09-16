@@ -33,8 +33,8 @@ Read the [docs page for the respective Binding]({{base}}/addons/bindings.html) t
 
 There are two methods for defining Items:
 
-1.  The first is through PaperUI.
-    Generally all 2.x version Bindings can be configured through PaperUI.
+1.  The first is through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+    Generally all 2.x version Bindings can be configured through Paper UI.
     Other 1.x and legacy Bindings do not offer this path.
 
 2.  The second method is through text `.items` files in the `items` folder.
@@ -43,7 +43,7 @@ There are two methods for defining Items:
     Generally 1.x version Bindings can only be bound to Items through `.items` files.
     2.x Bindings can also be used with this method
 
-**Assumptions for PaperUI:**
+**Assumptions for Paper UI:**
 The following content will discuss details of item definition on the example of `.items` files.
 
 **Editor Recommendation:**
@@ -57,31 +57,33 @@ The parts of an Item must be defined in this order.
 Besides the `itemtype` and `itemname` all parts are optional.
 
 ```java
-itemtype itemname "labeltext" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
+itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 ```
 
 **Examples:**
 
 ```java
-Number BathRoom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
+Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
 Switch Kitchen_Light "Kitchen Light OnOff" {mqtt="<[...], >[...]" }
-String BedRoom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
+String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
 
-Number LivingRoom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
 The last example above defines an Item with the following parts:
 
-- Item type `Number`
-- Item name `LivingRoom_Temperature`
-- Item state formatted in a way which will produce for example "21.5 °C" as its output
-- Item displaying icon with the name `temperature`
-- Item belongs to groups `gTemperature` and `gLivingRoom`
-- Item is tagged as a thermostat ("TargetTemperature")
-- Item is bound to the openHAB Binding `knx` with binding specific settings
+- Item [type](#type) `Number`
+- Item [name](#name) `Livingroom_Temperature`
+- Item [label](#label) "Temperature"
+- Item [state formatted](#state-presentation) in a way which will produce for example "21.5 °C" as its output
+- Item [icon](#icons) with the name `temperature`
+- Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
+- Item is [tagged](#tags) as a thermostat ("TargetTemperature")
+- Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings
 
 The remainder of this article describes the Item definition parts in more detail.
 
+{: #type}
 ### Type
 
 The Item type defines which kind of state can be stored in that Item and which commands can be sent to it, e.g. String, Number or binary Switch.
@@ -96,15 +98,13 @@ All available openHAB2 Item types and their relevant commands can be viewed here
 While a Dimmer Item can accept either On/Off, Increase/Decrease, or Percent updates or command, a Dimmer Item stores its state as a Percent value.
 See the following example:
 
-Item:
-
 ```java
+//demo.items
 Dimmer Office_Light "Dimmer [%d %%]" {milight="bridge01;3;brightness"}
 ```
 
-Sitemap:
-
-```perl
+```javascript
+//demo.sitemap
 Switch item=Office_Light
 Slider item=Office_Light
 ```
@@ -113,6 +113,7 @@ When the Switch widget is used, it sends ON or OFF commands to the Item which ar
 When the Slider widget is used, it sends Percent commands (values between 0 and 100) to the Item, which are used as the Item's state.
 In the example above, if you move the Slider widget to 60%, move the Switch to OFF, and finally move the switch to ON, the Item's state will be 100%.
 
+{: #name}
 ### Name
 
 The Item name is the unique identifier of the Item.
@@ -156,46 +157,73 @@ Two naming schemes are established for Group names:
 | "`Livingroom`" or "`gLR`"                 | Nesting group for all devices belonging to the living room |
 | "`Livingroom_Lights`" or "`gLR_Light`"    | Combination of all living room lights |
 
+{: #label}
 ### Label
 
-The label text has two purposes.
-First, this text is used to display a description of the specific Item (for example, in the Sitemap).
+The label text is used to describe the Item in a human readable way.
+Graphical UIs will display the label when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) through a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Some IO services (e.g. the Amazon Alexa skill) also use the label to match external commands to specific Items.
 
-Secondly, the label also includes the state/value displaying definition for the Item's state.
-This part is contained inside square brackets (`[]`) in the second half of the label and can be left out to not display the state of an Item.
+In textual configuration the label is given in in quotes next to the optional state presentation part in square brackets (see below).
+The label for the Item in the following example is "Temperature":
 
-### State
-
-The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
-The state definition is part of the Item label definition and contained inside square brackets.
-
-Formatting is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax), therefore the syntax is
-
-```text
-[%[argument_index$][flags][width][.precision]conversion]
+```java
+Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-Only the square brackets, the leading '%' and the trailing 'conversion' are mandatory.
+{: #state}
+### State
+
+The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
+A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
+
+<!-- TODO add a complete description about the actual state of an Item, e.g. Initialization, UNDEF, Binding etc. -->
+
+{: #state-presentation}
+#### State Presentation
+
+The Item definition determines the Item's textual state presentation, e.g., regarding formatting, decimal places, unit display and more.
+The state presentation is part of the Item label definition and contained inside square brackets.
+The state presentation for the Item in the following example is "`%.1f °C`":
+
+```java
+Number Livingroom_Temperature "Temperature [%.1f °C]"
+```
+
+If no state presentation and no square brackets are given, the Item will not provide a textual presentation of it's internal state (i.e. in UIs no state is shown).
+This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
+
+Formatting of the presentation is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax).
+
+If square brackets are given, the leading `%` and the trailing formatter conversion are mandatory.
+Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    MyTemperature  "Temperature [%.1f °C]"     {someBinding:somevalue} // e.g. "23.5 °C"
-String    MyString       "Value [%s]"                {someBinding:somevalue} // e.g. "Lorem ipsum"
-DateTime  MyLastUpdate   "Last Update [%1$ta %1$tR]" {someBinding:somevalue} // e.g. "Sun 15:26"
+String    My_String       "Value [%s]"                {someBinding:...} // e.g. "Lorem ipsum"
+Number    My_Temperature  "Temperature [%.1f °C]"     {someBinding:...} // e.g. "23.5 °C"
+DateTime  My_LastUpdate   "Last Update [%1$ta %1$tR]" {someBinding:...} // e.g. "Sun 15:26"
 ```
 
-#### State Transformations
+{: #state-transformation}
+#### State Transformation
 
 Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language or convert technical values into human readable information.
 
 **Example:**
-Translation of a technical Binding output, e.g., "CLOSED" can be translated to the Spanish translation "cerrado"
+
+Translation of a technical Binding output, e.g., "CLOSED" can be translated to the Spanish translation "cerrado":
+
+```java
+Contact LR_Window "Ventana del salón [MAP(window_esp.map):%s]" {someBinding:...}
+```
 
 Please refer to the article on [Transformations](transform.html) for more usage details and a list of available transformation services.
 
+{: #icons}
 ### Icons
 
-The icon name is used to reference an image presented next to an Item, e.g. in BasicUI.
+The icon name is used to reference an image presented next to an Item, e.g. in Basic UI.
 
 openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 Additional icons can be placed under `icons/classic/` inside the openHAB configuration folder.
@@ -216,13 +244,14 @@ Custom Icons must abide to the following file name restrictions to be accepted b
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`.png`) or Vector (`.svg`) icon files.
-The format used needs to be configured for the individual interfaces (e.g. BasicUI).
+The format used needs to be configured for the individual interfaces (e.g. Basic UI).
 It is thereby important to decide on one format beforehand, vector graphics are recommended.
-The setting can be done via PaperUI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
+The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
 Images in the respective other format will be ignored.
 
 Predefined icons from the default icon set can be replaced.
 
+{: #icons-dynamic}
 #### Dynamic Icons
 
 Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
@@ -241,7 +270,7 @@ Each set must meet the following criteria:
 
 - A default icon is mandatory.
 - The state information in the icon name must consist of all lower case letters (even if the state of the Item includes uppercase letters).
-- The state name has to reflect the Item value state. [Transformations](transform.html) applied to the Item value for the sake of better visual representation have no influence on icon selection. 
+- The state name has to reflect the Item value state. [Transformations](transform.html) applied to the Item value for the sake of better visual representation have no influence on icon selection.
 
 **Syntax:**
 The name of dynamic icons must meet the following format:
@@ -268,6 +297,7 @@ For a dimmer light (0 - 100%), you might provide icons as in the example:
 | `dimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
 | `dimmer-75.svg`  | bright light icon (75% up to 100%)                 |
 
+{: #groups}
 ### Groups
 
 The Group is a special Item type.
@@ -275,7 +305,7 @@ It is used to define a category or collection in which you can nest and/or combi
 The general syntax for groups follows the syntax for Items:
 
 ```java
-Group  groupname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
+Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
 Single Items can be in none or multiple groups and a group can be nested inside other groups.
@@ -294,24 +324,25 @@ This functionality is commonly used to define hierarchies of Items from differen
 
 -   and so on ...
 
-These relation can be exploited in sitemaps or in automation rules to browse Items or to apply computations and updates on Items.
+These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to browse Items or to apply computations and updates on Items.
 
 **Nested Groups example:**
 
 ```java
 Group gAll
 Group gRoom        (gAll)
-Group gLivingRoom  (gRoom)
+Group gLivingroom  (gRoom)
 Group gSensor      (gAll)
 Group gTemperature (gSensor)
 
-Number Sensor_Temperature  "Temperature [%.1f °C]"  <temperature>  (gLivingRoom, gTemperature)  {knx="1/0/15+0/0/15"}
+Number Sensor_Temperature  "Temperature [%.1f °C]"  <temperature>  (gLivingroom, gTemperature)  {knx="1/0/15+0/0/15"}
 ```
 
 The Item `Sensor_Temperature` is a member of two Groups.
 The Group `gTemperature` is itself a member of the Group `gSensor`, which is a member of the Group `All`.
 
-#### Group Types
+{: #group-type}
+#### Group Type and State
 
 A Group Item can also have a state.
 The Group's state is generated depending on the states of all its member Items.
@@ -320,22 +351,13 @@ Sending a command to a Group will cause that command to be forwarded to all Grou
 The general syntax for groups with a specific aggregation type and function is:
 
 ```java
-Group[:itemtype[:function]]  groupname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
+Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
 - If the aggregation function is omitted, the function `EQUAL` will be used.
-- If the aggregation function and itemtype are omitted, no group state will be aggregated from member Items.
+- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
 
-**Example:**
-
-```java
-Group:Switch:OR(ON,OFF) Lights
-```
-
-The state of the group will be `ON` as soon as any of the member lights are turned on.
-The behavior follows the given "OR" function known from [Boolean algebra](https://en.wikipedia.org/wiki/Boolean_algebra).
-
-Group functions can be any of the following:
+Group state functions can be any of the following:
 
 | Function               | Description |
 |------------------------|-------------|
@@ -349,23 +371,41 @@ Group functions can be any of the following:
 | `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
 | `SUM`                  | Calculates the sum of all Item states in the Group. |
 
-Because the group state is an aggregation of multiple Item states, not every Item state change results in a change to the group state.
+Boolean group state functions additionally return a number representing the count of member Items of value 'value1'.
+
+Because the group state is an aggregation of multiple Item states, not every Item state change results in a change of the group state.
 
 Note that aggregation functions can only be used on compatible Item types.
 Incompatible Item types within one Group might result in the invalid aggregation result `UNDEF`.
 
-### Tagging
+**Examples:**
+
+```java
+Group:Number             Lights       "Active Lights [%d]"              // e.g. "2"
+Group:Switch:OR(ON, OFF) Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" //e.g. "21.3 °C"
+```
+
+The first two group aggregations equally compute the number of active lights and store them as group state.
+Additionally, the second group is of type switch and follows the given OR function.
+The state of the group will be `ON` as soon as any of the member lights are turned on.
+Other than the first group, the second can also be commanded to turn all lights ON and OFF with a simple switch command.
+The third example groups combines all room temperatures and the group state represents the average of those.
+
+{: #tags}
+### Tags
 
 Tagging is a new feature under development.
+
 Tags are used by some I/O add-ons, see [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) for more details.
+Tags are only of interest if the documentation for a specific add-on or integration explicitly discusses their usage.
 
-Tags are only of interest if an add-on or integration README explicitly discusses their usage.
-
+{: #binding}
 ### Binding Configuration
 
-As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding Configs and 2.x Channel Linking.
+As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding configuration and 2.x Channel Linking.
 
-When you install a Binding through PaperUI it will automatically create a `.cfg` file in `$OPENHAB_CONF/services/` for the appropriate Binding.
+When you install a Binding through Paper UI it will automatically create a `.cfg` file in `$OPENHAB_CONF/services/` for the appropriate Binding.
 Inside these files are a predefined set of variables which are required for the Binding to operate.
 In many cases you will need to view and edit these to suit your system.
 These variables can hold IP addresses, API keys, user names, passwords etc.
@@ -394,29 +434,29 @@ Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, 
 Contact Garage             "Garage is [MAP(en.map):%s]"    { zwave="21:command=sensor_binary,respond_to_basic=true" }
 ```
 
-If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
+If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
 After downloading the legacy .jar files, they need to be placed in the `addons/` folder.
 If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this.
 For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
 
-#### 2.x Binding Configs
+#### 2.x Binding Configuration
 
 The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels and Items are linked to one or more Channels.
 
-Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in PaperUI.
+Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in Paper UI.
 Once accepted it will appear under Configuration > Things.
 
 Other Bindings support defining Things in a `.things` file.
 
 See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define Things for a given Binding.
 
-##### PaperUI Linking
+##### Paper UI Linking
 
-One can link an Item with a Channel using PaperUI.
+One can link an Item with a Channel using Paper UI.
 
-1. First create the Item in PaperUI under Configuration Items.
+1. First create the Item in Paper UI under Configuration Items.
 2. Next navigate to the Thing that has the Channel to link to the Item.
 3. Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
 4. Select the Item from the list and press "Link".
@@ -424,9 +464,9 @@ One can link an Item with a Channel using PaperUI.
 ##### Text File Linking
 
 One can also link an Item with a Channel using the `.items` file.
-Information about available Channels and options can be found in the Binding readme or discovered via PaperUI.
+Information about available Channels and options can be found in the Binding readme or discovered via Paper UI.
 
-In PaperUI select a Thing to learn about all Channels the Thing support.
+In Paper UI select a Thing to learn about all Channels the Thing support.
 
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
 Some examples:
