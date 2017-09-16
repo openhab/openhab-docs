@@ -53,7 +53,7 @@ Doing so you will have full IDE support like syntax checking, context assist, et
 ## Item Definition and Syntax
 
 Items are defined in the following syntax.
-The parts of an Item must be defined in this order.
+All parts of the Item definition must be given in the order shown.
 Besides the `itemtype` and `itemname` all parts are optional.
 
 ```java
@@ -63,14 +63,14 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 **Examples:**
 
 ```java
-Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
-Switch Kitchen_Light "Kitchen Light OnOff" {mqtt="<[...], >[...]" }
-String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
+Switch Kitchen_Light "Kitchen Light" {mqtt="<[...], >[...]" }
+String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
+Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
 Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
-The last example above defines an Item with the following parts:
+The last example defines an Item with the following parts:
 
 - Item [type](#type) `Number`
 - Item [name](#name) `Livingroom_Temperature`
@@ -86,13 +86,16 @@ The remainder of this article describes the Item definition parts in more detail
 {: #type}
 ### Type
 
-The Item type defines which kind of state can be stored in that Item and which commands can be sent to it, e.g. String, Number or binary Switch.
-They are comparable with basic variable data types in programming languages.
+The Item type defines which kind of state can be stored in that Item and which commands it accepts.
+Examples are the binary Switch (accepting ON/OFF commands) or the Number type (accepting any rational number).
+Item types are comparable with basic variable data types in programming languages.
 
 Each Item type has been optimized for certain components in your smart home.
-This optimization is reflected in the data types, and command types.
+This optimization is reflected in the data and command types.
 
-All available openHAB2 Item types and their relevant commands can be viewed here: [Item Types]({{base}}/concepts/items.html).
+All available Item types and their relevant commands are listed under Concepts, see: [Item Types Overview]({{base}}/concepts/items.html)
+
+<!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
 
 **Dimmer vs. Switch:**
 While a Dimmer Item can accept either On/Off, Increase/Decrease, or Percent updates or command, a Dimmer Item stores its state as a Percent value.
@@ -113,10 +116,12 @@ When the Switch widget is used, it sends ON or OFF commands to the Item which ar
 When the Slider widget is used, it sends Percent commands (values between 0 and 100) to the Item, which are used as the Item's state.
 In the example above, if you move the Slider widget to 60%, move the Switch to OFF, and finally move the switch to ON, the Item's state will be 100%.
 
+-->
+
 {: #name}
 ### Name
 
-The Item name is the unique identifier of the Item.
+The Item name is the unique identifier of an Item.
 The name should only consist of letters, numbers and the underscore character.
 Spaces and special characters cannot be used.
 
@@ -200,9 +205,9 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-String    My_String       "Value [%s]"                {someBinding:...} // e.g. "Lorem ipsum"
-Number    My_Temperature  "Temperature [%.1f °C]"     {someBinding:...} // e.g. "23.5 °C"
-DateTime  My_LastUpdate   "Last Update [%1$ta %1$tR]" {someBinding:...} // e.g. "Sun 15:26"
+Number    Livingroom_Temperature   "Temperature [%.1f °C]"     // e.g. "23.5 °C"
+String    Livingroom_TV_Channel    "Now Playing [%s]"          // e.g. "Lorem ipsum"
+DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:26"
 ```
 
 {: #state-transformation}
@@ -215,7 +220,7 @@ Transformations can be used in the state part of an Item, to translate the raw s
 Translation of a technical Binding output, e.g., "CLOSED" can be translated to the Spanish translation "cerrado":
 
 ```java
-Contact LR_Window "Ventana del salón [MAP(window_esp.map):%s]" {someBinding:...}
+Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 ```
 
 Please refer to the article on [Transformations](transform.html) for more usage details and a list of available transformation services.
@@ -224,9 +229,14 @@ Please refer to the article on [Transformations](transform.html) for more usage 
 ### Icons
 
 The icon name is used to reference an image presented next to an Item, e.g. in Basic UI.
+The following example shows the usage of the "switch" icon:
+
+```java
+Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
+```
 
 openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
-Additional icons can be placed under `icons/classic/` inside the openHAB configuration folder.
+Additional icons can be placed in `$OPENHAB_CONF/icons/classic/` inside the openHAB configuration folder.
 
 Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
 
@@ -234,12 +244,12 @@ Custom Icons must abide to the following file name restrictions to be accepted b
 
 -   Only lowercase letters, numbers and underscores (`_`)
 
--   No uppercase letters or special characters.
+-   No uppercase letters or special characters
 
 -   Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
 
 -   Examples:
-    - Good: `switch.svg`, `power_meter.png`, `error2.svg`
+    - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
     - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
@@ -249,28 +259,32 @@ It is thereby important to decide on one format beforehand, vector graphics are 
 The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
 Images in the respective other format will be ignored.
 
-Predefined icons from the default icon set can be replaced.
+Predefined icons from the default icon set can be substituted by placing equally named files in the custom icons folder.
 
 {: #icons-dynamic}
 #### Dynamic Icons
 
 Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
+Just as single icons, user-defined dynamic icon sets can be provided via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
 The state related part of an icon is appended to the icon name after the special hyphen delimiter.
 To give an example:
 
-| File name        | Description                                             |
-|:-----------------|:--------------------------------------------------------|
-| `switch-off.svg` | Matches `OFF` or "off" state                            |
-| `switch-on.svg`  | Matches `ON` or "on" state                              |
-| `switch.svg`     | Default icon, used when no other matching icon is found |
+| File name              | Description                                             |
+|------------------------|---------------------------------------------------------|
+| `myswitch-off.svg`     | Matches `OFF` or "off" state                            |
+| `myswitch-on.svg`      | Matches `ON` or "on" state                              |
+| `myswitch.svg`         | Default icon, used when no other matching icon is found |
+|------------------------|---------------------------------------------------------|
+| `myerror-no_fault.svg` | Matches `NO_FAULT` state                                |
+| `myerror.svg`          | Default icon, used when Item in any other state         |
 
 Dynamic icon sets can consist of as many icon files as needed.
 Each set must meet the following criteria:
 
-- A default icon is mandatory.
-- The state information in the icon name must consist of all lower case letters (even if the state of the Item includes uppercase letters).
-- The state name has to reflect the Item value state. [Transformations](transform.html) applied to the Item value for the sake of better visual representation have no influence on icon selection.
+- A default icon is mandatory (no specific state part).
+- The state information in the icon name must consist of all lowercase letters.
+- The state name has to reflect the Item value state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
 
 **Syntax:**
 The name of dynamic icons must meet the following format:
@@ -279,23 +293,27 @@ The name of dynamic icons must meet the following format:
 <name>-<state>.<png or svg>
 ```
 
-- `<name>` is the name of the icon set.
-- `-<state>` is the Item state that particular icon maps to.
-- `<png or svg>` can be either file extension and depends on your UI settings.
+- `<name>` - the name of the icon set
+- `-<state>` - the Item state that particular icon maps to
+- `<png or svg>` - bitmaps or vector graphic icon file extension (see above)
 
 **Usage:**
-The default icon name without state and extension is added to the Item or Sitemap element definiton.
+The default icon name without state and extension is added to the Item or Sitemap element definition.
+
+```java
+Switch Livingroom_Light "Livingroom Ceiling Light" <myswitch>
+```
 
 **State Matching Rule:**
 For Number Items openHAB will use the equal or next lowest state icon that can be found.
-For a dimmer light (0 - 100%), you might provide icons as in the example:
+For a dimmable light (0-100%), you might provide icons as in the example:
 
-| File name        | Description                                        |
-|:-----------------|:---------------------------------------------------|
-| `dimmer.svg`     | default icon (used in the undefined state)         |
-| `dimmer-0.svg`   | off light icon (0%)                                |
-| `dimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
-| `dimmer-75.svg`  | bright light icon (75% up to 100%)                 |
+| File name          | Description                                        |
+|--------------------|----------------------------------------------------|
+| `mydimmer.svg`     | default icon (used in undefined states)            |
+| `mydimmer-0.svg`   | off light icon (0%)                                |
+| `mydimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
+| `mydimmer-75.svg`  | bright light icon (75% up to 100%)                 |
 
 {: #groups}
 ### Groups
@@ -329,17 +347,17 @@ These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.h
 **Nested Groups example:**
 
 ```java
-Group gAll
-Group gRoom        (gAll)
-Group gLivingroom  (gRoom)
-Group gSensor      (gAll)
-Group gTemperature (gSensor)
+Group House
+Group Rooms        (House)
+Group Livingroom   (Rooms)
+Group Sensors      (House)
+Group Temperatures (Sensors)
 
-Number Sensor_Temperature  "Temperature [%.1f °C]"  <temperature>  (gLivingroom, gTemperature)  {knx="1/0/15+0/0/15"}
+Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
-The Item `Sensor_Temperature` is a member of two Groups.
-The Group `gTemperature` is itself a member of the Group `gSensor`, which is a member of the Group `All`.
+The Item `Livingroom_Temperature` is a member of two Groups.
+The Group `Temperatures` is itself a member of the Group `Sensors`, which is a member of the Group `House`.
 
 {: #group-type}
 #### Group Type and State
@@ -371,7 +389,7 @@ Group state functions can be any of the following:
 | `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
 | `SUM`                  | Calculates the sum of all Item states in the Group. |
 
-Boolean group state functions additionally return a number representing the count of member Items of value 'value1'.
+Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
 Because the group state is an aggregation of multiple Item states, not every Item state change results in a change of the group state.
 
@@ -418,7 +436,7 @@ The 1.x Binding configuration defines from where the Item gets it values, and wh
 You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition:
 
 ```java
-{ ns="192.168.1.123:80" }
+Switch Phone_Mobile {ns="192.168.1.123:80"}
 ```
 
 Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
@@ -428,10 +446,10 @@ You must have a look at your [Bindings]({{base}}/addons/bindings.html) configura
 Some typical examples are:
 
 ```java
-Switch Phone_Mobile        "My Mobile Phone"               { nh="192.168.1.123:80" }
-Number Netatmo_Indoor_CO2  "CO2 [%d]"                      { netatmo="00:00:00:00:00:00#Co2" }
-Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, type=position, property=azimuth" }
-Contact Garage             "Garage is [MAP(en.map):%s]"    { zwave="21:command=sensor_binary,respond_to_basic=true" }
+Switch Phone_Mobile        "My Mobile Phone"                 {nh="192.168.1.123:80"}
+Number Netatmo_Indoor_CO2  "CO2 [%d]"                        {netatmo="00:00:00:00:00:00#Co2"}
+Number Azimuth             "Azimuth [%d]"                    {astro="planet=sun, type=position, property=azimuth"}
+Contact Garage_Door        "Garage door is [MAP(en.map):%s]" {zwave="21:command=sensor_binary,respond_to_basic=true"}
 ```
 
 If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
@@ -472,10 +490,10 @@ Linking an Item to a Channel is of the form `{channel="channel id"}`.
 Some examples:
 
 ```java
-Switch  Phone_Mobile       "My Mobile Phone"               { channel="network:device:devicename:online" }
-Number  Netatmo_Indoor_CO2 "CO2"                           { channel="netatmo:NAMain:home:inside:Co2" }
-Number  Azimuth            "Azimuth"                       { channel="astro:sun:home:position#azimuth" }
-Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:command=sensor_binary,respond_to_basic=true" }
+Switch  Phone_Mobile       "My Mobile Phone"               {channel="network:device:devicename:online"}
+Number  Netatmo_Indoor_CO2 "CO2"                           {channel="netatmo:NAMain:home:inside:Co2"}
+Number  Azimuth            "Azimuth"                       {channel="astro:sun:home:position#azimuth"}
+Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:command=sensor_binary,respond_to_basic=true"}
 ```
 
 #### Multi Binding/Channel Linkage
@@ -484,8 +502,8 @@ One Item can be linked to multiple Bindings and/or Channels.
 Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.
 
 ```java
-Switch Office_PC { nh="192.168.3.203", wol="192.168.0.2" }
-Number Temperature { mysensors="24;1;V_TEMP", expire="5m,-999" }
+Switch Office_PC {nh="192.168.3.203", wol="192.168.0.2"}
+Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
@@ -498,8 +516,10 @@ where the mysensors Binding will update temperature readings regularly but the e
 This way, the Item is always unchanged unless you explicitly post an *update* to the item.
 
 ```java
-Switch Garage_Gate { binding="xxx", autoupdate="false"}
+Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
+
+<!-- TODO: This should be part of a separate Item state chapter -->
 
 ## Restore States
 
