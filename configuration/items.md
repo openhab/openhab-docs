@@ -436,6 +436,10 @@ A Light in a typical home setup can be represented either by a Switch, Dimmer or
 To be able to specifically interact with the light device, e.g. via a natural voice command, the nature of the Item as a Light needs to be known.
 This can be achieved by adding the "Lighting" tag.
 
+```java
+Switch Livingroom_Light "Livingroom Ceiling Light" ["Lighting"]
+```
+
 Tagging is still a new feature and only some specific I/O add-ons are using it.
 Tags are only of interest, if the documentation for a specific add-on or integration explicitly discusses their usage.
 
