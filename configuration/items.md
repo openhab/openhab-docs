@@ -428,10 +428,18 @@ The third example groups combines all room temperatures and the group state repr
 {: #tags}
 ### Tags
 
-Tagging is a new feature under development.
+Tags added to an Item definition characterize a specific nature of the Item beyond it's basic Item type.
+Tags can then be used by add-ons to interact with Items in context-sensitive ways.
 
-Tags are used by some I/O add-ons, see [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) for more details.
-Tags are only of interest if the documentation for a specific add-on or integration explicitly discusses their usage.
+To give an example:
+A Light in a typical home setup can be represented either by a Switch, Dimmer or Color Item.
+To be able to specifically interact with the light device, e.g. via a natural voice command, the nature of the Item as a Light needs to be known.
+This can be achieved by adding the "Lighting" tag.
+
+Tagging is still a new feature and only some specific I/O add-ons are using it.
+Tags are only of interest, if the documentation for a specific add-on or integration explicitly discusses their usage.
+
+See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
