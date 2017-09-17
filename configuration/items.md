@@ -87,13 +87,32 @@ The remainder of this article describes the Item definition parts in more detail
 ### Type
 
 The Item type defines which kind of state can be stored in that Item and which commands it accepts.
-Examples are the binary Switch (accepting ON/OFF commands) or the Number type (accepting any rational number).
 Item types are comparable with basic variable data types in programming languages.
-
 Each Item type has been optimized for certain components in your smart home.
 This optimization is reflected in the data and command types.
 
-All available Item types and their relevant commands are listed under Concepts, see: [Item Types Overview]({{base}}/concepts/items.html)
+Available Item types are:
+
+| Item Name      | Description | Command Types |
+|----------------|-------------|---------------|
+| Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
+| Contact        | Item storing status of e.g. door/window contacts | OpenClose |
+| DateTime       | Stores date and time | - |
+| Dimmer         | Item carrying a percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
+| Group          | Item to nest other items / collect them in groups | - |
+| Image          | Holds the binary data of an image | - |
+| Location       | Stores GPS coordinates | Point |
+| Number         | Stores values in number format | Decimal |
+| Player         | Allows to control players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter  | Typically used for blinds | UpDown, StopMove, Percent |
+| String         | Stores texts | String |
+| Switch         | Typically used for lights (on/off) | OnOff |
+
+More details about all available Item types and their relevant commands are listed under Concepts, see:
+[Item Types Overview]({{base}}/concepts/items.html)
+
+To learn about the technical internals of the individual Item types, please refer to:
+[Javadoc on Generic Item and its subclasses](https://eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/items/GenericItem.html)
 
 <!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
 
