@@ -266,7 +266,7 @@ Custom Icons must abide to the following file name restrictions to be accepted b
   - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
-openHAB can work with either Bitmap (`.png`) or Vector (`.svg`) icon files.
+openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
 The format used needs to be configured for the individual interfaces (e.g. Basic UI).
 It is thereby important to decide on one format beforehand, vector graphics are recommended.
 The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
@@ -280,55 +280,58 @@ Predefined icons from the default icon set can be substituted by placing equally
 Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
 Just as single icons, user-defined dynamic icon sets can be provided via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
-The state related part of an icon is appended to the icon name after the special hyphen delimiter.
-To give an example:
+The state related part of an icon is appended to the icon name after the special hyphen delimiter:
 
-| File name              | Description                                             |
-|------------------------|---------------------------------------------------------|
-| `myswitch-off.svg`     | Matches `OFF` or "off" state                            |
-| `myswitch-on.svg`      | Matches `ON` or "on" state                              |
-| `myswitch.svg`         | Default icon, used when no other matching icon is found |
-
-| File name              | Description                                             |
-|------------------------|---------------------------------------------------------|
-| `myerror-no_fault.svg` | Matches `NO_FAULT` state                                |
-| `myerror.svg`          | Default icon, used when Item in any other state         |
-
-Dynamic icon sets can consist of as many icon files as needed.
-Each set must meet the following criteria:
-
-- A default icon is mandatory (no specific state part).
-- The state information in the icon name must consist of all lowercase letters.
-- The state name has to reflect the Item value state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
-
-**Syntax:**
-The name of dynamic icons must meet the following format:
-
-```java
-<name>-<state>.<png or svg>
+```perl
+<name>-<state>.<extension>
 ```
 
 - `<name>` - the name of the icon set
 - `-<state>` - the Item state that particular icon maps to
-- `<png or svg>` - bitmaps or vector graphic icon file extension (see above)
+- `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
-**Usage:**
+Dynamic icon sets can consist of as many state-specific icon files as needed.
+Each set must meet the following criteria:
+
+- A default icon is mandatory (no specified state part)
+- The file name must follow the naming restrictions given for [icons](#icons) in general
+- The state name has to reflect the Item's raw state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection
+- The state in the icon name must be given in lowercase letters
+
+**Usage example:**
 The default icon name without state and extension is added to the Item or Sitemap element definition.
+The following example shows the typical usage:
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <myswitch>
+String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]" <myerror>
 ```
 
-**State Matching Rule:**
-For Number Items openHAB will use the equal or next lowest state icon that can be found.
+On filesystem the following icon files could be provided by the user for those Items:
+
+| File name              | Description                                                        |
+|------------------------|--------------------------------------------------------------------|
+| `myswitch-off.svg`     | Matches `OFF` or "off" state                                       |
+| `myswitch-on.svg`      | Matches `ON` or "on" state                                         |
+| `myswitch.svg`         | Default icon, used when no matching icon is found (e.g. `UNDEF`)   |
+
+| File name              | Description                                                        |
+|------------------------|--------------------------------------------------------------------|
+| `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
+| `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
+
+Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific items.
+
+**Number State Matching Rule:**
+For Number Items the equal or next lowest state icon that can be found will be used.
 For a dimmable light (0-100%), you might provide icons as in the example:
 
-| File name          | Description                                        |
-|--------------------|----------------------------------------------------|
-| `mydimmer.svg`     | default icon (used in undefined states)            |
-| `mydimmer-0.svg`   | off light icon (0%)                                |
-| `mydimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
-| `mydimmer-75.svg`  | bright light icon (75% up to 100%)                 |
+| File name          | Description                                          |
+|--------------------|------------------------------------------------------|
+| `mydimmer.svg`     | Default icon (used in undefined states)              |
+| `mydimmer-0.svg`   | Matches the turned off light (0%)                    |
+| `mydimmer-1.svg`   | Matches any dimmed light between 1% up to 74%        |
+| `mydimmer-75.svg`  | Matches the bright light state from 75% to full 100% |
 
 {: #groups}
 ### Groups
