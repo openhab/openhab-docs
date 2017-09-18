@@ -68,7 +68,14 @@
           <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
           <hr />
           {% for binding in site.bindings %}
-          <li><a href="{{ binding.url }}">{{ binding.label }}</a></li>
+            {% if binding.install == "auto" %}
+              <li>
+                <a href="{{ binding.url }}">
+                  <!-- {{ binding.label }}&nbsp;<small>({{ binding.since | replace:'1x','since&nbsp;1.x' | replace:'2x','since&nbsp;2.x' }})</small> -->
+                  {{ binding.label }}
+                </a>
+              </li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
