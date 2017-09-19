@@ -50,15 +50,20 @@ The following content will discuss details of item definition on the example of 
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 Doing so you will have full IDE support like syntax checking, context assist, etc.
 
+{: #syntax}
 ## Item Definition and Syntax
 
-Items are defined in the following syntax.
-All parts of the Item definition must be given in the order shown.
-Besides the `itemtype` and `itemname` all parts are optional.
+Items are defined in the following syntax:
 
 ```java
 itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 ```
+
+- All parts must be given in the order shown
+- Parts `itemtype` and `itemname` are manadatory
+- All other parts are optional
+- In between the parts one or more spaces or tabs are allowed
+- One Item definition can span over multiple lines
 
 **Examples:**
 
@@ -78,7 +83,7 @@ The last example defines an Item with the following parts:
 - Item [state formatted](#state-presentation) in a way which will produce for example "21.5 °C" as its output
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
-- Item is [tagged](#tags) as a thermostat ("TargetTemperature")
+- Item is [tagged](#tags) as a thermostat with the ability to control a target temperature ("TargetTemperature")
 - Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings
 
 The remainder of this article describes the Item definition parts in more detail.
