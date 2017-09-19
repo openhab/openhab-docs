@@ -7,13 +7,14 @@ title: Items
 
 # Items
 
-In openHAB "Items" represent all properties and capabilities of the user’s home automation.
+In openHAB Items represent all properties and capabilities of the user’s home automation.
 
 While a device or service might be quite specific, Items are unified substitutions inside the openHAB world.
-Items can be Strings, Numbers, Switches or one of a few other basic Item types, a programmer can rightly compare Item Types with base variable types of a programming language.
+Items can be Strings, Numbers, Switches or one of a few other basic [Item types](#type).
+A programmer can compare Item types with base variable data types of a programming language.
 
-One unique feature of openHAB Items (in comparison to normal variables) is the possibility to connect them to the outside world (via Bindings, more about that later).
-An Item does not simply hold a certain information (e.g., "No Error", 3.141 or OFF), the information is synchronized with the real world in both ways.
+A unique feature of openHAB Items is the immediate option to connect them to the outside world via [Bindings](#binding).
+An Item does not simply hold a certain information (e.g., `OFF`, 3.141 or "No Error"), the information is synchronized with the real world in both ways.
 
 But let's not get ahead of ourselves.
 The rest of this page contains all details regarding Items and is structured as follows:
@@ -25,30 +26,30 @@ The rest of this page contains all details regarding Items and is structured as 
 
 ## Introduction
 
-Items are basic data types and have a *state* which can be *read from*, or *written to*, in order to interact with them.
-
-Items can be *bound to Bindings* or *linked to Channels*.
-For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer Channel can set the brightness of the light bulb.
-Read the [docs page for the respective Binding]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
+Items are basic data types and have a state which can be read from, or written to.
+Items can be linked to a [Binding](#binding) channel for interaction with the outside world.
+For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer channel can set the brightness of the light bulb.
 
 There are two methods for defining Items:
 
-1.  The first is through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
     Other 1.x and legacy Bindings do not offer this path.
 
-2.  The second method is through text `.items` files in the `items` folder.
+2.  Through text `.items` files in the `items` folder.
     Files here must have the extension `.items` and you can create as many `.items` files as you need/want - however, each Item must be unique across them all.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
-    Generally 1.x version Bindings can only be bound to Items through `.items` files.
-    2.x Bindings can also be used with this method
+
+Generally 1.x version Bindings can only be bound to Items through `.items` files.
+2.x Bindings can be used both ways.
 
 **Assumptions for Paper UI:**
 The following content will discuss details of item definition on the example of `.items` files.
+While the way of defining an Item through the graphical interactive Paper UI is different, the elements and their nature of the Item definition are identical.
 
 **Editor Recommendation:**
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
-Doing so you will have full IDE support like syntax checking, context assist, etc.
+Doing so you will have full IDE support with features like syntax checking, context assist, etc.
 
 {: #syntax}
 ## Item Definition and Syntax
@@ -153,7 +154,7 @@ It is advised to follow a consistent naming scheme to be able to handle growing 
 The officially recommended scheme is used throughout this documentation and builds on a hierarchical idea.
 A physical or logical top-down approach while naming an Item will ensure the comprehension of its meaning.
 
-A good Item name is self-explanatory and already suggests an Item type.
+A good Item name is self-explanatory and already suggests its Item type and interaction options.
 The following table contains a few examples:
 
 | Example Item Name                 | Interpretation (assumed Item type, example value) |
@@ -166,15 +167,14 @@ The following table contains a few examples:
 
 The following naming style guide is recommended:
 
-- Item name words build a physical or logical hierarchy
+- Words build a physical or logical hierarchy
 - Every word of the Item name starts with an uppercase letter
 - Words are separated by an underscore character, except for logically belonging words
 - Words like the names of recurring rooms or appliances can be abbreviated to reduce overall name length
-- Please see the Groups section for special recommendations for Group Items
 
 [Group](#groups) is a special Item type to nest and/or combine Items.
 Just as with single Items the demand for a speaking self-explanatory name should be met.
-Two naming schemes are established for Group names:
+Two naming schemes are established in the community for Group names:
 
 1. Use of plural word forms where possible, otherwise the word "Group" can be appended for clearness
 2. Prepending a lowercase "g"
@@ -232,6 +232,7 @@ A few examples are given below:
 Number    Livingroom_Temperature   "Temperature [%.1f °C]"     // e.g. "23.5 °C"
 String    Livingroom_TV_Channel    "Now Playing [%s]"          // e.g. "Lorem ipsum"
 DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:26"
+Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
 ```
 
 {: #state-transformation}
@@ -303,7 +304,7 @@ Each set must meet the following criteria:
 - The state name has to reflect the Item's raw state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection
 - The state in the icon name must be given in lowercase letters
 
-**Usage example:**
+**Usage Example:**
 The default icon name without state and extension is added to the Item or Sitemap element definition.
 The following example shows the typical usage:
 
@@ -343,44 +344,51 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 
 The Group is a special Item type.
 It is used to define a category or collection in which you can nest and/or combine other Items or Groups.
-The general syntax for groups follows the syntax for Items:
+Single Items can be in none or multiple groups and a group can be nested inside other groups.
+The general syntax for Group Items follows the syntax for Items:
 
 ```java
 Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-Single Items can be in none or multiple groups and a group can be nested inside other groups.
+Groups can be nested inside each other, Items can be added to all of them.
+This functionality is commonly used to define hierarchies of Items from different perspectives, like:
 
-#### Nested Groups
+-   Location/Vertical/Physical perspective:
+    - Floors in your house → Rooms on that floor → An appliance in that room...
 
-Groups can be nested inside each other.
-This functionality is commonly used to define hierarchies of Items from different perspectives.
+-   Functional/Horizontal/Logical/Context perspective:
+    - Maintenance Group → All battery states → Individual battery states in percentage
+    - Further examples: All lights, All room temperatures, Combined power consumption, ...
 
--   Vertical/Physical/Location perspective
-    - e.g. Floors of a house → Rooms on that floor → An appliance in that room...
+These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
--   Horizontal/Logical/Context/Function perspective
-    - e.g. All lights, All room temperatures, Combined power consumption, ....
-    - Maintenance Group → All battery states → All battery states in percentage / volt
-
--   and so on ...
-
-These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to browse Items or to apply computations and updates on Items.
-
-**Nested Groups example:**
+**Example:**
 
 ```java
+// Overarching group
 Group House
-Group Rooms        (House)
-Group Livingroom   (Rooms)
+// Location perspective
+Group GroundFloor  (House)
+Group Livingroom   (GroundFloor)
+// Functional perspective
 Group Sensors      (House)
 Group Temperatures (Sensors)
 
+// Example Item
 Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
-The Item `Livingroom_Temperature` is a member of two Groups.
-The Group `Temperatures` is itself a member of the Group `Sensors`, which is a member of the Group `House`.
+The example shows an Item which supposedly stores the temperature of the living room called `Livingroom_Temperature`.
+
+From a **location perspective**, you may have a group called `Livingroom`.
+With the `Livingroom_Temperature` being added to the `Livingroom` group, it also belongs to the `GroundFloor` and `House` groups.
+
+From a **functional perspective**, the Living room temperature can also be seen as one of many temperatures in the automation setup.
+Therefore the addition to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
+
+Using nested group hierarchies such as these allows a rule to, e.g., iterate through all sensors on the ground floor for maintenance actions.
+The rule will be clean and short and it doesn't need to be updated when a new item were to be added to the `Temperatures` group.
 
 {: #group-type}
 #### Group Type and State
@@ -456,15 +464,26 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 {: #binding}
 ### Binding Configuration
 
-As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding configuration and 2.x Channel Linking.
+Each Item can be bound to a Binding to receive or trigger external changes.
+The binding of an Item is given in the last part of the Item definition:
+ 
+```java
+Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
+```
 
-When you install a Binding through Paper UI it will automatically create a `.cfg` file in `$OPENHAB_CONF/services/` for the appropriate Binding.
-Inside these files are a predefined set of variables which are required for the Binding to operate.
+Navigate to the list of [currently available Bindings]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
+
+There are two ways to bind/link a device to an Item, 1.x Binding configuration or 2.x Channel Linking.
+
+<!-- TODO: Everything below was not yet revised -->
+
+#### 1.x Binding Configuration
+
+When you install a Binding, some of them will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
+Inside these files are predefined variables which are required for the Binding to operate.
 In many cases you will need to view and edit these to suit your system.
 These variables can hold IP addresses, API keys, user names, passwords etc.
 These are all in plain text, so be careful who you share these with if some data is sensitive.
-
-#### 1.x Binding Configuration
 
 The 1.x Binding configuration defines from where the Item gets it values, and where a given value/command should be sent.
 
