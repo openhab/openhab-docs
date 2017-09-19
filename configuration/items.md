@@ -10,13 +10,13 @@ title: Items
 In openHAB "Items" represent all properties and capabilities of the user’s home automation.
 
 While a device or service might be quite specific, Items are unified substitutions inside the openHAB world.
-Items can be Strings, Numbers, Switches or one of a few other basic Item types, a programmer can rightly compare Item Types with base variable types of a programming language.
+Items can be Strings, Numbers, Switches or one of a few other basic Item types, and a programmer can compare Item Types with base variable types of a programming language.
 
-One unique feature of openHAB Items (in comparison to normal variables) is the possibility to connect them to the outside world (via Bindings, more about that later).
-An Item does not simply hold a certain information (e.g., "No Error", 3.141, OFF), the information is synchronized with the real world in both ways.
+One unique feature of openHAB Items (in comparison to normal variables) is the ability to connect them to the outside world (via Bindings - more about that later).
+An Item does not simply hold information (e.g., "No Error", 3.141, OFF), the information is synchronized with the real world in both ways.
 
 But let's not get ahead of ourselves.
-The rest of this page contains all details regarding Items and is structured as follows:
+The rest of this page contains details regarding Items and is structured as follows:
 
 {::options toc_levels="2..4"/}
 
@@ -28,7 +28,7 @@ The rest of this page contains all details regarding Items and is structured as 
 Items are basic data types and have a *state* which can be *read from*, or *written to*, in order to interact with them.
 
 Items can be *bound to Bindings* or *linked to Channels*.
-For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer Channel can set the brightness of the light bulb.
+For example, an Item bound to a sensor receives updated sensor readings, and an Item linked to a light's dimmer Channel can set the brightness of the light bulb.
 Read the [docs page for the respective Binding]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
 
 There are two methods for defining Items:
@@ -37,14 +37,14 @@ There are two methods for defining Items:
     Generally all 2.x version Bindings can be configured through PaperUI.
     Other 1.x and legacy Bindings do not offer this path.
 
-2.  The second method is through text `.items` files in the `items` folder.
-    Files here must have the extension `.items` and you can create as many `.items` files as you need/want - however, each Item must be unique across them all.
+2.  The second method is through text `.items` files in the `$CONFIG/items` folder.
+    Files here must have the extension `.items`, and you can create as many `.items` files as you need/want; each Item must be unique across them all.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
     Generally 1.x version Bindings can only be bound to Items through `.items` files.
     2.x Bindings can also be used with this method
 
 **Assumptions for PaperUI:**
-The following content will discuss details of item definition on the example of `.items` files.
+The following section covers the details of item definition using the example of `.items` files.
 
 **Editor Recommendation:**
 It's recommended to edit `.items` files using the [Eclipse SmartHome Designer]({{base}}/installation/designer.html).
@@ -52,9 +52,9 @@ Doing so you will have full IDE support like syntax checking, context assist, et
 
 ## Item Definition and Syntax
 
-Items are defined in the following syntax.
+Items are defined using the following syntax.
 The parts of an Item must be defined in this order.
-Besides the `itemtype` and `itemname` all parts are optional.
+The `itemtype` and `itemname` fields are mandatory.  All other fields are optional.
 
 ```xtend
 itemtype itemname "labeltext" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
@@ -70,17 +70,17 @@ String BedRoom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:
 Number LivingRoom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
-The last example above defines an Item with the following parts:
+The last example above defines an Item with the following fields:
 
 * Item type `Number`
 * Item name `LivingRoom_Temperature`
-* Item state formatted in a way which will produce for example "21.5 °C" as its output
-* Item displaying icon with the name `temperature`
+* Item state formatted to display Celsius temperature to one tenth of a degree, for example "21.5 °C"
+* Item icon with the name `temperature`
 * Item belongs to groups `gTemperature` and `gLivingRoom`
 * Item is tagged as a thermostat ("TargetTemperature")
-* Item is bound to the openHAB Binding `knx` with binding specific settings
+* Item is bound to the openHAB Binding `knx` with binding-specific settings
 
-The remainder of this article describes the Item definition parts in more detail.
+The remainder of this article describes the Item definition fields in more detail.
 
 ### Types
 
@@ -116,7 +116,7 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 ### Name
 
 The Item name is the unique identified of the Item.
-The name should only consist of letters, numbers and the underscore character.
+The name must only consist of letters, numbers and the underscore character.
 Spaces and special characters cannot be used.
 A good naming schema can be advised.
 
@@ -161,9 +161,9 @@ Last Update: Sun 15:26
 
 ### State Transformations
 
-Another possibility in label texts is to use a transformation.
-They are used for example to translate a status into another language or convert technical value into human readable ones.
-To do this you have to create a .map file in your `transform` folder.
+Transformations can be thought of this way - whenever openHAB encounters a value you have specified, it substitutes a second value you have specified.
+A transformation could be used to translate a status which is reported in one language into another language, or it could be used to convert a technical value into a human readable one.
+To make use of this functionality, you have to create a .map file in your `$CONFIG/transform` folder.
 These files are typical key/value pair files.
 
 ```text
@@ -172,8 +172,8 @@ key2=value2
 ...
 ```
 
-Let's make a small example to illustrate this function.
-If you have a sensor which returns the number 0 for a closed window and 1 for an open window, you can transform these values into the words "opened" or "closed".
+Here is a small example that illustrates how to use this function.
+If you have a sensor which returns the number 0 for a closed window and 1 for an open window; the `.map` file below transforms these values into the words "opened" or "closed".  You can then use these words to display the status of the window in a way that can be easily understood.
 Create a map file named `window.map` for example and add the desired keys and values.
 
 ```text
@@ -183,8 +183,8 @@ NULL=unknown
 -=unknown
 ```
 
-Next we define two Items.
-One showing the raw value as it is provided from our sensor and one with transformed value.
+Next we define two Items in a `.items` file in our `$CONFIG/items` folder - 
+one showing the raw value as it is provided from our sensor and one with transformed value.
 
 ```xtend
 Number WindowRaw          "Window is [%d]"                  { someBinding:somevalue }
@@ -214,7 +214,7 @@ The icon name is used to reference an image presented next to an Item, e.g. in B
 OpenHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
 Additional icons can be placed under `icons/classic/` inside the openHAB configuration folder.
 
-Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
+Custom Icons must conform to the following file name restrictions to be accepted by openHAB:
 
 * `png` or `svg` format (see below)
 * Only lowercase letters, numbers and underscores `_`
@@ -224,8 +224,8 @@ Custom Icons must abide to the following file name restrictions to be accepted b
   * Allowed: `switch.svg`, `power_meter.png`, `error2.svg`
   * Not allowed: `PC_Monitor.svg`, `power-meter.png`, `tür⇔.svg`
 
-The PaperUI interface (or the configuration files `classicui.cfg`/`basicui.cfg`) allows to define whether you use Vector (.svg) or Bitmap (.png) icon files.
-Only one or the other setting is allowed, in which case the other is ignored.
+The PaperUI interface (or the configuration files `classicui.cfg`/`basicui.cfg`) allows you to define whether you use Vector (.svg) or Bitmap (.png) icon files.
+Only one setting is allowed.  If two settings are configured, the second one is ignored.
 
 To use a custom icon called `heatpump.svg` the correct syntax is `<heatpump>` in the Item definition.
 
@@ -236,7 +236,7 @@ Predefined icons from the default icon set can be replaced.
 An icon can consist of an icon family, from which one icon is dynamically selected depending on the Item's state.
 The state related part of an icon is appended to the icon name after the special hyphen delimiter.
 
-To give an example:
+Example:
 
 | File name        | Description                                        |
 |:-----------------|:---------------------------------------------------|
@@ -257,11 +257,11 @@ The name of dynamic icons must meet the following format:
 ```
 
 * `<name>` is the name of the icon set
-* `[-<state>]` is the state that particular icon maps to, the icon without the state part is the default
+* `[-<state>]` is the state that particular icon maps to; the icon without the state suffix is the default
 * `<png or svg>` based on the format of the icon, use the default format as explained above.
 
 
-To use the dynamic Items the default icon name without state and extension is used.
+To use dynamic Items, the default icon name without state and extension must be used.
 
 ```xtend
 Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {somebinding:someconfig}
@@ -270,16 +270,16 @@ Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  <switch>  {some
 **State Matching Rule:**
 
 For Number Items openHAB will use the equal or next lowest state icon that can be found.
-For a dimmer light (0 - 100%), you might provide icons as in the example:
+For a dimmer light (0 - 100%), you might provide icons as in the example below:
 
 | File name        | Description                                        |
 |:-----------------|:---------------------------------------------------|
 | `dimmer.svg`     | default icon (used in the undefined state)         |
 | `dimmer-0.svg`   | off light icon (0%)                                |
-| `dimmer-1.svg`   | dimmed light icon (1% up to 74%)                   |
-| `dimmer-75.svg`  | bright light icon (75% up to 100%)                 |
+| `dimmer-1.svg`   | dimmed light icon (1% to 74%, inclusive)           |
+| `dimmer-75.svg`  | bright light icon (75% to 100%, inclusive)         |
 
-**Warning about the Influence of Transformations:**
+**Warning About The Influence of Transformations:**
 
 As mentioned above, the state used by the Sitemap to select the proper icon is the transformed state.
 When using a MAP in the label, the icon name must match the mapped state displayed on the Sitemap, not the raw Item's state.
@@ -354,8 +354,8 @@ The format for this is:
 Group:itemtype:function  itemname  ["labeltext"]  [<iconname>]  [(group1, group2, ...)]
 ```
 
-By default, if no function is provided to the group, the Group uses OR.
-So for a Group of switches the Group state will be ON if any of the members states are ON.
+By default, if no function is provided to the group, the Group uses the logical OR function.
+For example, if a Group of switches does not have a defined function, the Group state will be ON if any of the members' states are ON.
 But this means that once one Item in the group has its state change to ON, the Group's state gets set.
 Each subsequent Item that changes state to ON will not trigger "myGroup changed" because the Group isn't changing.
 
@@ -393,11 +393,11 @@ Tags are only of interest if an add-on or integration README explicitly discusse
 
 As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding Configs and 2.x Channel Linking.
 
-When you install a Binding through PaperUI it will automatically create a `.cfg` file in `conf/services/` for the appropriate Binding.
+When you install a Binding through PaperUI it will automatically create a `.cfg` file in `$CONFIG/services/` for the appropriate Binding.
 Inside these files are a predefined set of variables which are required for the Binding to operate.
-In many cases you will need to view and edit these to suit your system.
+In many cases you will need to edit these to suit your system.
 These variables can hold IP addresses, API keys, user names, passwords etc.
-These are all in plain text, so be careful who you share these with if some data is sensitive.
+These are all in plain text, so be careful who you share these with if they contain sensitive data.
 
 #### 1.x Binding Configuration
 
@@ -422,9 +422,9 @@ Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, 
 Contact Garage             "Garage is [MAP(en.map):%s]     { zwave="21:command=sensor_binary,respond_to_basic=true" }
 ```
 
-If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-After downloading the legacy .jar files, they need to be placed in the `/addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `/conf/services/` and paste the appropriate Binding configuration into this.
+If you need to use legacy openHAB 1.x Bindings, enable this feature through the PaperUI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
+After downloading the legacy .jar files, they need to be placed in the `$CONFIG/addons/` folder.
+If further configuration is required then you will need to create an `openhab.cfg` file in the `/$CONFIG/services/` directory and paste the appropriate Binding configuration into this file.
 For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
 
 #### 2.x Binding Configs
@@ -432,12 +432,12 @@ The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concept
 Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels and Items are linked to one or more Channels.
 
-Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in PaperUI.
-Once accepted it will appear under Configuration > Things.
+Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in PaperUI.
+Once accepted the Thing will appear under Configuration > Things in the PaperUI.
 
-Other Bindings support defining Things in a `.things` file.
+Other Bindings support defining Things in a `.things` file which is located in the `$CONFIG/things` directory.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define Things for a given Binding.
+See the [Bindings]({{base}}/addons/bindings.html) configuration section for information on how to discover or manually define Things for a given Binding.
 
 ##### PaperUI Linking
 
@@ -445,7 +445,7 @@ One can link an Item with a Channel using PaperUI.
 
 1. First create the Item in PaperUI under Configuration Items.
 2. Next navigate to the Thing that has the Channel to link to the Item.
-3. Click on the expand icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
+3. Click on the "expand" icon to the right of the Channel to link to the Item and press the `+` next to "Linked Items."
 4. Select the Item from the list and press "Link".
 
 ##### Text File Linking
@@ -455,7 +455,7 @@ Information about available Channels and options can be found in the Binding rea
 
 In PaperUI select a Thing to learn about all Channels the Thing support.
 
-Linking an Item to a Channel is of the form `{channel="channel id"}`.
+The syntax used to link an Item to a Channel is of the form `{channel="channel id"}`.
 Some examples:
 
 ```xtend
@@ -467,8 +467,8 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:c
 
 #### Multi Binding/Channel Linkage
 
-One Item can be linked to multiple Bindings and/or Channels.
-Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.
+A single Item can be linked to multiple Bindings and/or Channels.
+Commands and Updates from and to these Items will be mixed/combined and can be used in interesting ways.
 
 ```java
 Switch Office_PC { nh="192.168.3.203", wol="192.168.0.2" }
@@ -490,12 +490,12 @@ Switch Garage_Gate { binding="xxx",autoupdate="false"}
 
 ## Restore States
 
-When restarting your openHAB installation you may find there are times when your logs indicate some Items are UNDEF.
+When restarting your openHAB installation you may find there are times when your logs indicate some Items are undefined, as indicated by the notation, "UNDEF".
 This is because, by default, Item states are not persisted when openHAB restarts.
 To have your states persist across restarts you will need to install a [Persistence]({{base}}/configuration/persistence.html) extension.
 
-Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
-Then whatever state they were in before the restart will be restored automatically.
+Once you have installed a Persistence extension, you will need to define a `restoreOnStartup` strategy for all your Items.
+Then whatever state Items were in before the restart will be restored automatically.
 
 ```xtend
 Strategies {
