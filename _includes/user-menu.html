@@ -69,12 +69,9 @@
           <hr />
           {% for binding in site.bindings %}
             {% if binding.install == "auto" %}
-              <li>
-                <a href="{{ binding.url }}">
-                  <!-- {{ binding.label }}&nbsp;<small>({{ binding.since | replace:'1x','since&nbsp;1.x' | replace:'2x','since&nbsp;2.x' }})</small> -->
-                  {{ binding.label }}
-                </a>
-              </li>
+              <li><a href="{{ binding.url }}">{{ binding.label }}</a></li>
+            {% elsif binding.id == page.id and page.install == "manual" or page.install == "legacy" %}
+              <li><a href="{{ binding.url }}">{{ binding.label }} <small>(legacy/manual)</small></a></li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -99,7 +96,9 @@
           <li><a href="{{docu}}/addons/persistence.html">Overview</a></li>
           <hr />
           {% for persistence in site.persistence %}
-          <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
+            {% if persistence.install == "auto" or persistence.id == page.id and page.install == "manual" %}
+              <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
@@ -108,7 +107,9 @@
           <li><a href="{{docu}}/addons/actions.html">Overview</a></li>
           <hr />
           {% for action in site.actions %}
-          <li><a href="{{ action.url }}">{{ action.label }}</a></li>
+            {% if action.install == "auto" or  action.id == page.id and page.install == "manual" %}
+              <li><a href="{{ action.url }}">{{ action.label }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
