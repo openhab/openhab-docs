@@ -13,7 +13,7 @@ While a device or service might be quite specific, Items are unified substitutio
 Items can be Strings, Numbers, Switches or one of a few other basic [Item types](#type).
 A programmer can compare Item types with base variable data types of a programming language.
 
-A unique feature of openHAB Items is the immediate option to connect them to the outside world via [Bindings](#binding).
+A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
 An Item does not simply hold a certain information (e.g., `OFF`, 3.141 or "No Error"), the information is synchronized with the real world in both ways.
 
 But let's not get ahead of ourselves.
