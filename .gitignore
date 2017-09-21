@@ -9,7 +9,7 @@ project.pbxproj
 *.xcuserstate
 
 # Update process
-_external_resources
+.external-resources
 
 # IntelliJ
 *.iml

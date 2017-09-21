@@ -53,7 +53,7 @@ These are copied from the source code repositories and some files are generated 
 - `concepts`
 
 The generation/update of these files can be triggered through `bash update-external-resources.sh` in the repo root.
-The process will create a temporary folder `_external_resources`, which is only used by the update script and can be ignored.
+The process will create a temporary folder `.external-resources`, which is only used by the update script and can be ignored.
 
 ## About the `_addons_*` Folders
 

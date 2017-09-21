@@ -18,9 +18,9 @@ if [ ! -f "$(dirname $0)/CNAME" ]; then
   echo "I'm confused and don't know where I am. Exiting." >&2
   exit 1
 fi
-resourcefolder=$(dirname $0)/_external-resources
+resourcefolder=$(dirname $0)/.external-resources
 mkdir -p "$resourcefolder"
-echo -e "# About\n\nUsed to temporarly store repository clones from related openHAB projects for `update-external-resources.sh`." > "$resourcefolder"
+echo -e "# About\n\nUsed to temporarly store repository clones from related openHAB projects for `update-external-resources.sh`." > "$resourcefolder"/README.md
 
 # Prerequisites
 if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
@@ -28,7 +28,7 @@ if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
   exit 1
 fi
 
-echo_process "Updating the base openhab-docs repo... "
+echo_process "Updating the base openhab-docs repo... (skipping)"
 #git pull
 
 # Parameters: $1=name, $2=GitHub project
@@ -52,4 +52,5 @@ pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
 
+echo_process "Executing Maven 'mvn clean package'... "
 mvn clean package

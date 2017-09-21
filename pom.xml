@@ -57,14 +57,14 @@
               <outputDirectory>${basedir}/concepts/</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/docs/documentation/concepts</directory>
+                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/concepts</directory>
                   <includes>
                     <include>**/*.md</include>
                     <include>**/*.png</include>
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/docs/documentation/development</directory>
+                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/development</directory>
                   <includes>
                     <include>**/guidelines.md</include>
                   </includes>
@@ -82,7 +82,7 @@
               <outputDirectory>${basedir}/_addons_bindings/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab1-addons/bundles/binding</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -102,7 +102,7 @@
               <outputDirectory>${basedir}/_addons_actions/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab1-addons/bundles/action</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/action</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -122,7 +122,7 @@
               <outputDirectory>${basedir}/_addons_persistence/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab1-addons/bundles/persistence</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/persistence</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -142,7 +142,7 @@
               <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab2-addons/addons/binding</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -150,7 +150,7 @@
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab-bundles/bindings</directory>
+                  <directory>${basedir}/.external-resources/openhab-bundles/bindings</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -170,7 +170,7 @@
               <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/extensions/binding</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -190,7 +190,7 @@
               <outputDirectory>${basedir}/_addons_transformations/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/extensions/transform</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/transform</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -210,7 +210,7 @@
               <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/extensions/ui/iconset</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/ui/iconset</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
@@ -229,7 +229,7 @@
               <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/extensions/ui</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/ui</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -240,7 +240,7 @@
                   </excludes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab-bundles/uis</directory>
+                  <directory>${basedir}/.external-resources/openhab-bundles/uis</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -260,7 +260,7 @@
               <outputDirectory>${basedir}/_addons_voices/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/smarthome/extensions/voice</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/voice</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -268,7 +268,7 @@
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab2-addons/addons/voice</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/voice</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -288,7 +288,7 @@
               <outputDirectory>${basedir}/_addons_io/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab1-addons/bundles/io</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/io</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -311,7 +311,7 @@
               <outputDirectory>${basedir}/_addons_io/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_external_resources/openhab2-addons/addons/io</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/io</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
