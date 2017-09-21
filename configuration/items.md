@@ -14,10 +14,10 @@ Items can be Strings, Numbers, Switches or one of a few other basic [Item types]
 A programmer can compare Item types with base variable data types of a programming language.
 
 A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
-An Item does not simply store information that is set in a program  (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may be set by actions that take place in your home.
+An Item does not simply store information that is set by softwarem  (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may be set by actions that take place in your home.
 
 But let's not get ahead of ourselves.
-The rest of this page contains all details regarding Items and is structured as follows:
+The rest of this page contains details regarding Items and is structured as follows:
 
 {::options toc_levels="2..4"/}
 
@@ -34,22 +34,22 @@ There are two methods for defining Items:
 
 1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
-    Other 1.x and legacy Bindings do not offer this path.
+    (Note that 1.x and legacy Bindings do not offer this option)
 
-2.  Through text `.items` files in the `items` folder.
-    Files here must have the extension `.items` and you can create as many `.items` files as you need/want - however, each Item must be unique across them all.
-    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
+2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
+    Files here must have the extension `.items`; you may create as many `.items` files as needed.  However, each Item must be unique across all `.items` files.
+    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
 
 Generally 1.x version Bindings can only be bound to Items through `.items` files.
-2.x Bindings can be used both ways.
+2.x Bindings may be configured using either method described above.
 
 **Assumptions for Paper UI:**
-The following content will discuss details of item definition on the example of `.items` files.
-While the way of defining an Item through the graphical interactive Paper UI is different, the elements and their nature of the Item definition are identical.
+The examples below assume that the user is using a text editor to create a `.items` file.
+While the way of defining an Item using the graphical, interactive Paper UI is different, the elements and the nature of an Item definition are identical using either method.
 
 **Editor Recommendation:**
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
-Doing so you will have full IDE support with features like syntax checking, context assist, etc.
+Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
 
 {: #syntax}
 ## Item Definition and Syntax
