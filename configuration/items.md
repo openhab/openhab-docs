@@ -14,7 +14,7 @@ Items can be Strings, Numbers, Switches or one of a few other basic [Item types]
 A programmer can compare Item types with base variable data types of a programming language.
 
 A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
-An Item does not simply hold a certain information (e.g., `OFF`, 3.141 or "No Error"), the information is synchronized with the real world in both ways.
+An Item does not simply store information that is set in a program  (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may be set by actions that take place in your home.
 
 But let's not get ahead of ourselves.
 The rest of this page contains all details regarding Items and is structured as follows:
