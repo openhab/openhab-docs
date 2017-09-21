@@ -235,8 +235,8 @@ A lower case letter data type after a `var` or a `val` statement, for example `v
 An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object.
 Objects are more complex than primitives.
 
-Objects have methods associated that among others can make many necessary type conversions.
-Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` can in most cases convert `new_state` into a type that Object `myItem` can apply.
+Objects have special methods that can make many necessary type conversions automatically.
+Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in most cases, convert `new_state` into a type that Object `myItem` can apply.
 
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
 For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
@@ -303,18 +303,18 @@ end
 {: #transformations}
 ### Transformations
 
-openHAB [Transformation services]({{base}}/addons/transformations.html) can also be used in rules to **transform/translate/convert data**.
+openHAB [Transformation services]({{base}}/addons/transformations.html) may also be used in rules to transform/translate/convert data.
 The general syntax is as follows:
 
 ```java
-transform("<transformation-identifier>", "<transf. expression or transf. file name>", "<input-data or variable>")
+transform("<transformation-identifier>", "<transf. expression or transf. file name>", <input-data or variable>)
 ```
 
 - `<transformation-identifier>` - Shorthand identifier of the transformation service
 - `<transf. expression or transf. file name>` - Transformation service specific
 - `<input-data or variable>` - The data to transform, MUST be of data type *String*
 
-The following shows three examples:
+Examples:
 
 ```java
 var condition = transform("MAP", "window_esp.map", "CLOSED")
