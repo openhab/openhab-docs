@@ -29,6 +29,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
             println name
             if (! name.contains(type) || name.endsWith('.test')) {
                 println "[INFO] Skip."
+                it.deleteDir()
             } else {
                 def id = it.name
                 for (pkg in pkgremoves) {
@@ -96,6 +97,11 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
             }
             println "\n"
         }
+        def temp_folder = new File(project.basedir, "_${collection}/".concat(source))
+        if (temp_folder.list().length > 0) {
+            println "[WARNING] Folder not empty after processing."
+        }
+        temp_folder.deleteDir()
     }
 }
 
