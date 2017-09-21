@@ -7,38 +7,41 @@ title: openHAB REST API
 
 # openHAB REST API
 
-Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspects of the openHAB system can be accessed by other programs.  
-This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke  actions that change the state of Items. 
-Interactions with the REST API are based on the http protocol and therefore can exchange among different computer systems. 
-The information available from the API includes Items and their state, installed bindings, sitemap information, and much more. 
-The REST API provides an interface that can only be accessed programmatically.
-However, from a technical perspective it is very easy to use. 
-Be aware that the REST API is not automatically installed in openHAB. 
-After installation, the REST APT is accessible through the openHAB dashboard.
+Through the openHAB [REST API](https://en.wikipedia.org/wiki/REST_API) most aspects of the openHAB system can be readily accessed by other programs.  
+This includes for example, the access to all data related to Items, Things and Bindings as well as the capabilities to invoke actions that can change the state of Items or influence the behavior of other elements of openHAB. 
+Interactions with the REST API are based on the http protocol. 
 Access over the Internet to the REST API is possible, but this represents a significant security risk. 
 Users are encouraged to [ensure safe and secure connections](http://docs.openhab.org/installation/security.html). 
+Be aware that the documentation of the REST API may not be automatically installed, but once installed it is accessible through the openHAB dashboard. 
 
 ## REST API Examples
 
+- Retrieve openHAB data from external applications
+- Inject data and trigger events in openHAB from external applications (for example, some motion detectors or surveillance cameras)
+- Inspect openHAB Bindings/Things or Items, learn about current states, parameters or problems
+- Interacting with openHAB from other programs; many programming languages and automation tools can easily make use of REST API
 - Using third party software on cell phones, such as tasker to [open your garage door](https://community.openhab.org/t/triggering-items-using-openhab-2s-rest-api-from-tasker/14027)
-- Interacting with openHAB via other programs; many computer languages can easily make use of REST APIs
-- Accessing of information from devices that support http communication
-- Updating Item states through external devices that are capable of sending http commands (for example, some motion detectors or surveillance cameras)
 
-The openHAB REST API frontend is very intuitive and excellently documented.
+The openHAB REST API is excellently documented with detailled use instructions.
 It would vastly exceed this space to present all possible examples.
-Nevertheless, here is an example that switches an item of the Switch Type (such as a lamp) on and off.
-- Switching ```My_Item``` OFF: 
+Nevertheless, here is some examples using [curl](https://en.wikipedia.org/wiki/CURL), a common command line tool available for many platforms:
+- Switching ```My_Item``` OFF by issuing an http [POST](https://en.wikipedia.org/wiki/POST_(HTTP)) request: 
 
 ```java
 curl -X POST --header "Content-Type: text/plain" --header "Accept: application/json" -d "OFF" "http://ip_openHAB_host:8080/rest/items/My_Item"
 ``` 
 
-- Switching ```My_Item``` ON: 
+- Retrieving a list of all Items and Groups by issuing a GET request: 
 
 ```java
-curl -X POST --header "Content-Type: text/plain" --header "Accept: application/json" -d "ON" "http://ip_openHAB_host:8080/rest/items/My_Item"
+curl -X GET --header "Accept: application/json" "http://ip_openHAB_host:8080/rest/items?recursive=false"
 ``` 
+
+- Retrieving a list of all sitemaps by issuing a GET request:
+
+```java
+curl -X GET --header "Accept: application/json" "http://192.168.1.35:8080/rest/sitemaps"
+```
 
 The commands above have been copied from the REST API documentation for illustration. 
 All available commands will be displayed in the REST API documentation as a response to the button "Try me out" (may require some user input for mandatory fields).  
