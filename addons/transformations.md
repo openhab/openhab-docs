@@ -41,7 +41,7 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
 
 2.  Rules
 
-    Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to **transform/translate/convert data**.
+    Transformations can also be [used in rules]({{base}}/configuration/rules-dsl.html#transformations) to transform/translate/convert data.
     The following shows three examples:
 
     ```java
@@ -50,8 +50,8 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
 
-For the sake of simple examples, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
-More details regarding the shown and other Transformation services can be found in the individual transformation articles linked below.
+To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
+More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
 
 ## Available Transformations
 
