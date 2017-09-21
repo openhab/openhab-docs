@@ -17,7 +17,7 @@ Transformations are used to translate between technical and human-readable value
     </tr>
   </thead>
   <tbody>
-    {% for transformation in site.transformations %}
+    {% for transformation in site.addons_transformations %}
     <tr class="install-{{transformation.install}} since-{{transformation.since}}">
       <td>
         <h4><a href="{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>

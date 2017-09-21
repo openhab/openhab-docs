@@ -178,7 +178,7 @@ recommend "habmin". The list of UIs are [here]({{base}}/addons/uis.html).
 - `action = ` - the list of action add-ons you used in openHAB 1.x.
 - `transformation = ` - the list of transformations you use. Unlike in openHAB 1,
 one must install transformations separately.
-- `voice = ` - see [here]({{base}}/addons/voice.html)
+- `voice = ` - see [here]({{base}}/addons/voices.html)
 - `misc = ` - myopenhab, homekit, etc. Do not list myopenhab at this time,
 instructions for it are below.
 

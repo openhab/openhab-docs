@@ -18,5 +18,5 @@ Add-ons can be easily installed through the Paper UI (menu entry "Add-ons").
 | [Persistence](persistence.html) | Persistence services allow openHAB to store time series data for history-based actions or statistics |
 | [Actions](actions.html) | Actions are predefined methods for openHAB rules and scripts |
 | [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for items |
-| [Voice Services](voice.html) | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc. |
+| [Voice Services](voices.html) | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc. |
 | [3rd Party System Integration](io.html) | Expose openHAB to external systems |

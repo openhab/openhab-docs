@@ -12,76 +12,76 @@ exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.gr
 plugins:
   - jekyll-sitemap
 collections:
-  actions:
+  addons_actions:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  bindings:
+  addons_bindings:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  iconsets:
+  addons_iconsets:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  io:
+  addons_io:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  persistence:
+  addons_persistence:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  transformations:
+  addons_transformations:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  uis:
+  addons_uis:
     output: true
     permalink: /addons/:collection/:path:output_ext
-  voice:
+  addons_voices:
     output: true
     permalink: /addons/:collection/:path:output_ext
 defaults:
   -
     scope:
       path: ""
-      type: actions
+      type: addons_actions
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: bindings
+      type: addons_bindings
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: iconsets
+      type: addons_iconsets
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: io
+      type: addons_io
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: persistence
+      type: addons_persistence
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: transformations
+      type: addons_transformations
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: uis
+      type: addons_uis
     values:
-      layout: documentation
+      loyout: addons
   -
     scope:
       path: ""
-      type: voice
+      type: addons_voices
     values:
-      layout: documentation
+      loyout: addons
