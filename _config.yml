@@ -42,46 +42,46 @@ defaults:
       path: ""
       type: addons_actions
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_bindings
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_iconsets
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_io
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_persistence
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_transformations
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_uis
     values:
-      loyout: addons
+      layout: addon
   -
     scope:
       path: ""
       type: addons_voices
     values:
-      loyout: addons
+      layout: addon
