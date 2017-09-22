@@ -52,5 +52,7 @@ pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
 
-echo_process "Executing Maven 'mvn clean package'... "
-mvn clean package
+echo_process "Running Maven Clean Plugin... "
+mvn clean
+echo_process "Running Maven Package Plugin... "
+mvn package
