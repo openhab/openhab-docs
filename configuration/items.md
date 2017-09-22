@@ -210,7 +210,6 @@ A analogy can be drawn between the state of an Item and the value of a variable 
 #### Item State
 
 This section provides information about what a user can expect regarding the behavior of the state of an Item
-<!-- TODO: It would be great to have an Item state diagram similar to the one on this page (docs.openhab.org/concepts/things.html)
 
 -  Items are created with a state of `NULL`.  The Item will remain in this state until it has been acted upon
 -  Subsequent to the creation of an Item, operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item 
