@@ -178,7 +178,6 @@ then
 end
 ```
 
-
 ## Scripts
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
@@ -232,28 +231,28 @@ Contrary, the Actions `sendCommand(MyItem, "<new_state>")` and `postUpdate(MyIte
 
 The reasons lie within Java, the object-oriented programming language on which openHAB is built.
 Java and the Rules DSL have two basic types, primitives and Objects.
-A lower case letter data type after a `var` or a `val` statement, for example `var int`, indicates a primitive type. 
-An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object. 
+A lower case letter data type after a `var` or a `val` statement, for example `var int`, indicates a primitive type.
+An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object.
 Objects are more complex than primitives.
 
-Objects have methods associated that among others can make many necessary type conversions. 
-Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` can in most cases convert `new_state` into a type that Object `myItem` can apply. 
+Objects have special methods that can perform many necessary type conversions automatically.
+Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in most cases, convert `new_state` into a type that Object `myItem` can apply.
 
-The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty. 
-For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer: 
-* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~. 
-* However, the following command **will work**: `MyItem.sendCommand(new_state)`. 
+The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
+For example, if `new_state` is typed as a primitive (e.g., `var int new_state = 3`) and myItem is of the Object type Dimmer:
+* the following command ***will fail***: ~~sendCommand(MyItem, new_state)~~.
+* However, the following command **will work**: `MyItem.sendCommand(new_state)`.
 
-Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code. 
-It provides by far the best option for avoiding most problems. 
-This syntax ensures that any conversion (typing) of the `new_state` is done in a way that is most suitable for `myItem`. 
+Using `MyItem.postUpdate(new_state)` or `MyItem.sendCommand(new_state)` will create the most stable code.
+It provides by far the best option for avoiding most problems.
+This syntax ensures that any conversion (typing) of the `new_state` is done in a way that is most suitable for `myItem`.
 
 **Exception:**
-Actions are useful when the name of the Item is only available as a String. 
+Actions are useful when the name of the Item is only available as a String.
 For example, if the name of the Item to receive an update or command was calculated in the Rule by building up a String:
 
 ```java
-val int index = 5
+val index = 5
 sendCommand("My_Lamp_" + index, ON)
 ```
 
@@ -300,6 +299,30 @@ then
     }
 end
 ```
+
+{: #transformations}
+### Transformations
+
+openHAB [Transformation services]({{base}}/addons/transformations.html) may also be used in rules to transform/translate/convert data.
+The general syntax is as follows:
+
+```java
+transform("<transformation-identifier>", "<transf. expression or transf. file name>", <input-data or variable>)
+```
+
+- `<transformation-identifier>` - Shorthand identifier of the transformation service
+- `<transf. expression or transf. file name>` - Transformation service specific
+- `<input-data or variable>` - The data to transform, MUST be of data type *String*
+
+Examples:
+
+```java
+var condition = transform("MAP", "window_esp.map", "CLOSED")
+var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
+```
+
+For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
 
 ### Logging
 
