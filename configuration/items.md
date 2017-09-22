@@ -92,9 +92,9 @@ The remainder of this article provides additional information regarding Item def
 {: #type}
 ### Type
 
-The Item type defines which kind of state can be stored in that Item and which commands it accepts.
-Item types are comparable with basic variable data types in programming languages.
-Each Item type has been optimized for certain components in your smart home.
+The Item type defines what kind of state can be stored in that Item and which commands the Item will accept.
+Item types are comparable to basic variable data types in programming languages.
+Each Item type has been optimized for a particular kind of component in your smart home.
 This optimization is reflected in the data and command types.
 
 Available Item types are:
@@ -102,25 +102,27 @@ Available Item types are:
 | Item Name      | Description | Command Types |
 |----------------|-------------|---------------|
 | Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact        | Item storing status of e.g. door/window contacts | OpenClose |
+| Contact        | Status of contacts, e.g. door/window contacts | OpenClose |
 | DateTime       | Stores date and time | - |
-| Dimmer         | Item carrying a percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
+| Dimmer         | Percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
 | Group          | Item to nest other items / collect them in groups | - |
-| Image          | Holds the binary data of an image | - |
-| Location       | Stores GPS coordinates | Point |
-| Number         | Stores values in number format | Decimal |
-| Player         | Allows to control players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter  | Typically used for blinds | UpDown, StopMove, Percent |
+| Image          | Binary data of an image | - |
+| Location       | GPS coordinates | Point |
+| Number         | Values in number format | Decimal |
+| Player         | Allows control of players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter  | Roller shutter Item, typically used for blinds | UpDown, StopMove, Percent |
 | String         | Stores texts | String |
-| Switch         | Typically used for lights (on/off) | OnOff |
+| Switch         | Switch Item, typically used for lights (on/off) | OnOff |
 
-More details about all available Item types and their relevant commands are listed under Concepts, see:
+More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
 
 To learn about the technical internals of the individual Item types, please refer to:
 [Javadoc on Generic Item and its subclasses](https://eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/items/GenericItem.html)
 
 <!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
+
+Example:
 
 **Dimmer vs. Switch:**
 While a Dimmer Item can accept either On/Off, Increase/Decrease, or Percent updates or command, a Dimmer Item stores its state as a Percent value.
