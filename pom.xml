@@ -14,28 +14,28 @@
         <configuration>
           <filesets>
             <fileset>
-              <directory>${basedir}/_actions/</directory>
+              <directory>${basedir}/_addons_actions/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_bindings/</directory>
+              <directory>${basedir}/_addons_bindings/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_persistence/</directory>
+              <directory>${basedir}/_addons_persistence/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_transformations/</directory>
+              <directory>${basedir}/_addons_transformations/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_voice/</directory>
+              <directory>${basedir}/_addons_voices/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_uis/</directory>
+              <directory>${basedir}/_addons_uis/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_io/</directory>
+              <directory>${basedir}/_addons_io/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_iconsets/</directory>
+              <directory>${basedir}/_addons_iconsets/</directory>
             </fileset>
             <fileset>
               <directory>${basedir}/concepts/</directory>
@@ -57,14 +57,14 @@
               <outputDirectory>${basedir}/concepts/</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/docs/documentation/concepts</directory>
+                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/concepts</directory>
                   <includes>
                     <include>**/*.md</include>
                     <include>**/*.png</include>
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/docs/documentation/development</directory>
+                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/development</directory>
                   <includes>
                     <include>**/guidelines.md</include>
                   </includes>
@@ -79,10 +79,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_bindings/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_bindings/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab1-addons/bundles/binding</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -99,10 +99,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_actions/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_actions/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab1-addons/bundles/action</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/action</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -119,10 +119,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_persistence/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_persistence/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab1-addons/bundles/persistence</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/persistence</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -139,10 +139,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_bindings/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/binding</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -150,7 +150,7 @@
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_repos/openhab-bundles/bindings</directory>
+                  <directory>${basedir}/.external-resources/openhab-bundles/bindings</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -167,10 +167,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_bindings/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/binding</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/binding</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -187,10 +187,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_transformations/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_transformations/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/transform</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/transform</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -207,10 +207,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_iconsets/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/ui/iconset</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/ui/iconset</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
@@ -226,10 +226,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_uis/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/ui</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/ui</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -240,7 +240,7 @@
                   </excludes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_repos/openhab-bundles/uis</directory>
+                  <directory>${basedir}/.external-resources/openhab-bundles/uis</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -257,10 +257,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_voice/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_voices/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/smarthome/extensions/voice</directory>
+                  <directory>${basedir}/.external-resources/smarthome/extensions/voice</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -268,7 +268,7 @@
                   </includes>
                 </resource>
                 <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/voice</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/voice</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -285,10 +285,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_io/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_io/oh1</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab1-addons/bundles/io</directory>
+                  <directory>${basedir}/.external-resources/openhab1-addons/bundles/io</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -308,10 +308,10 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_io/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_io/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/_repos/openhab2-addons/addons/io</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/io</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>

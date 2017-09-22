@@ -14,11 +14,13 @@ echo_process() { echo -e "\e[1;94m$(timestamp)\e[0m $*"; }
 
 # Switch to the script folder
 cd $(dirname $0) || exit 1
-resourcefolder=$(dirname $0)/_repos
-if [ ! -d "$resourcefolder" ]; then
-  echo "The temporary resource folder '$resourcefolder' couldn't be found. Please create if the location is correct. Exiting."
+if [ ! -f "$(dirname $0)/CNAME" ]; then
+  echo "I'm confused and don't know where I am. Exiting." >&2
   exit 1
 fi
+resourcefolder=$(dirname $0)/.external-resources
+mkdir -p "$resourcefolder"
+echo -e "# About\n\nUsed to temporarly store repository clones from related openHAB projects for `update-external-resources.sh`." > "$resourcefolder"/README.md
 
 # Prerequisites
 if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
@@ -26,7 +28,7 @@ if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
   exit 1
 fi
 
-echo_process "Updating the base openhab-docs repo... "
+echo_process "Updating the base openhab-docs repo... (skipping)"
 #git pull
 
 # Parameters: $1=name, $2=GitHub project
@@ -50,4 +52,7 @@ pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
 
-mvn clean package
+echo_process "Running Maven Clean Plugin... "
+mvn clean
+echo_process "Running Maven Package Plugin... "
+mvn package

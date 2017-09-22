@@ -8,11 +8,11 @@ def collect_feature_xml = { features, xml, attrs ->
 }
 
 def collect_features = { features ->
-    collect_feature_xml(features, '_repos/openhab-distro/features/addons-esh/src/main/feature/feature.xml',              ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '_repos/openhab-distro/features/addons/src/main/feature/feature.xml',                  ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '_repos/openhab2-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '_repos/openhab1-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '1x'])
-    collect_feature_xml(features, '_repos/openhab1-addons/features/openhab-addons-legacy/src/main/feature/feature.xml',  ['install': 'legacy', 'since': '1x'])
+    collect_feature_xml(features, '.external-resources/openhab-distro/features/addons-esh/src/main/feature/feature.xml',              ['install': 'auto',   'since': '2x'])
+    collect_feature_xml(features, '.external-resources/openhab-distro/features/addons/src/main/feature/feature.xml',                  ['install': 'auto',   'since': '2x'])
+    collect_feature_xml(features, '.external-resources/openhab2-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '2x'])
+    collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '1x'])
+    collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons-legacy/src/main/feature/feature.xml',  ['install': 'legacy', 'since': '1x'])
 }
 
 def process_addon_type = { features, sources, type, collection, suffix, lblremoves, pkgremoves ->
@@ -29,6 +29,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
             println name
             if (! name.contains(type) || name.endsWith('.test')) {
                 println "[INFO] Skip."
+                it.deleteDir()
             } else {
                 def id = it.name
                 for (pkg in pkgremoves) {
@@ -96,19 +97,24 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
             }
             println "\n"
         }
+        def temp_folder = new File(project.basedir, "_${collection}/".concat(source))
+        if (temp_folder.list().length > 0) {
+            println "[WARNING] Folder not empty after processing."
+        }
+        temp_folder.deleteDir()
     }
 }
 
 def process_addon_files = { features ->
-    //                 features, sources,        type,          collection,        suffix,               lblremoves,                  pkgremoves
-    process_addon_type(features, ['oh1', 'oh2'], 'binding',     'bindings',        ' - Bindings',        [' Binding'],                ['org.openhab.binding.','org.eclipse.smarthome.binding.'])
-    process_addon_type(features, ['oh1'],        'action',      'actions',         ' - Actions',         [' Actions', ' Action'],     ['org.openhab.action.']                                  )
-    process_addon_type(features, ['oh1'],        'persistence', 'persistence',     ' - Persistence',     ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
-    process_addon_type(features, ['oh1', 'oh2'], 'io',          'io',              ' - Services',        [' Service'],                ['org.openhab.io.','org.eclipse.smarthome.io']           )
-    process_addon_type(features,        ['oh2'], 'transform',   'transformations', ' - Transformations', [' Transformation Service'], ['org.eclipse.smarthome.transform.']                     )
-    process_addon_type(features,        ['oh2'], 'voice',       'voice',           ' - Voice',           [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
-    process_addon_type(features,        ['oh2'], 'iconset',     'iconsets',        ' - Icon Sets',       [:],                         ['org.eclipse.smarthome.ui.iconset.']                    )
-    process_addon_type(features,        ['oh2'], 'ui',          'uis',             ' - UI',              [:],                         ['org.openhab.ui.','org.eclipse.smarthome.ui.']          )
+    //                 features, sources,        type,          collection,               suffix,               lblremoves,                  pkgremoves
+    process_addon_type(features, ['oh1', 'oh2'], 'binding',     'addons_bindings',        ' - Bindings',        [' Binding'],                ['org.openhab.binding.','org.eclipse.smarthome.binding.'])
+    process_addon_type(features, ['oh1'],        'action',      'addons_actions',         ' - Actions',         [' Actions', ' Action'],     ['org.openhab.action.']                                  )
+    process_addon_type(features, ['oh1'],        'persistence', 'addons_persistence',     ' - Persistence',     ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
+    process_addon_type(features, ['oh1', 'oh2'], 'io',          'addons_io',              ' - Services',        [' Service'],                ['org.openhab.io.','org.eclipse.smarthome.io']           )
+    process_addon_type(features,        ['oh2'], 'transform',   'addons_transformations', ' - Transformations', [' Transformation Service'], ['org.eclipse.smarthome.transform.']                     )
+    process_addon_type(features,        ['oh2'], 'voice',       'addons_voices',          ' - Voices',          [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
+    process_addon_type(features,        ['oh2'], 'iconset',     'addons_iconsets',        ' - Icon Sets',       [:],                         ['org.eclipse.smarthome.ui.iconset.']                    )
+    process_addon_type(features,        ['oh2'], 'ui',          'addons_uis',             ' - UI',              [:],                         ['org.openhab.ui.','org.eclipse.smarthome.ui.']          )
 }
 
 def features = [:]
