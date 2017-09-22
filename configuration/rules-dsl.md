@@ -235,7 +235,7 @@ A lower case letter data type after a `var` or a `val` statement, for example `v
 An upper case letter data type after a `val` and `var` statement, for example `var Number` indicates an Object.
 Objects are more complex than primitives.
 
-Objects have special methods that can make many necessary type conversions automatically.
+Objects have special methods that can perform many necessary type conversions automatically.
 Using `Myitem.sendCommand(new_state)` or `Myitem.postUpdate(new_state)` will, in most cases, convert `new_state` into a type that Object `myItem` can apply.
 
 The Action `sendCommand(MyItem, new_state)` does not provide the same flexibilty.
