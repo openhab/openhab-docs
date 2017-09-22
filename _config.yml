@@ -14,28 +14,28 @@ plugins:
 collections:
   addons_actions:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/actions/:path:output_ext
   addons_bindings:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/bindings/:path:output_ext
   addons_iconsets:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/iconsets/:path:output_ext
   addons_io:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/io/:path:output_ext
   addons_persistence:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/persistence/:path:output_ext
   addons_transformations:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/transformations/:path:output_ext
   addons_uis:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/uis/:path:output_ext
   addons_voices:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/voices/:path:output_ext
 defaults:
   -
     scope:
