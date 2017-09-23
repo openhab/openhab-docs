@@ -206,8 +206,6 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
 A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
 
-<!-- TODO: It would be great to add a state diagram for Items
-
 {: #item-state}
 #### Item State
 
