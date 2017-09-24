@@ -219,8 +219,8 @@ Example - The state of a Switch may change from `NULL` to `ON` or `OFF`
 -  A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 -  An Item may be assigned a particular state as part of the execution of a [Rule]({{base}}/configuration/rules-dsl.html).
-See, particularly, [Manipulating Item States]({{base}}/configuration/rules-dsl.html#Manipulating Item States)
--  The state of an Item after an openHAB startup will depend upon whether the user has configured [Persistence]({{base}}/configuration/persistence.html) or has created a set of ["System started"](https://github.com/openhab/openhab1-addons/wiki/Persistence#Startup Behavior) rules
+See, particularly, [Manipulating Item States]({{base}}/configuration/rules-dsl.html#manipulating-item-states)
+-  The state of an Item after an openHAB startup will depend upon whether the user has configured [Persistence]({{base}}/configuration/persistence.html) or has created a set of ["System started"]({{base}/concepts/things.html#status-transitions) rules
 
 *N.B.*  Many openHAB users find that it can be very useful to use Persistence and "System started" rules so that their systems behaves in a predictable way after an openHAB restart.
 
