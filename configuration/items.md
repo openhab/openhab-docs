@@ -181,11 +181,11 @@ Examples:
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
-Three schemes are recommended for Group names:
+Two schemes are recommended for Group names:
 
-1. Use a plural word form (e.g. Batteries)
-2. Append "_Group" to the name (e.g. Maintenance_Group)
-3. Prepend a lowercase "g" to the name (e.g. gBattery)
+1. Use a plural word form (e.g. Batteries) where possible.
+Otherwise the word "Group" may be appended for clarity.
+2. Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation |
 |-------------------------------------------|----------------|
