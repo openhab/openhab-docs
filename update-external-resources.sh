@@ -20,7 +20,7 @@ if [ ! -f "$(dirname $0)/CNAME" ]; then
 fi
 resourcefolder=$(dirname $0)/.external-resources
 mkdir -p "$resourcefolder"
-echo -e "# About\n\nUsed to temporarly store repository clones from related openHAB projects for `update-external-resources.sh`." > "$resourcefolder"/README.md
+echo -e "# About\n\nUsed to temporarily store repository clones from related openHAB projects for 'update-external-resources.sh'." > "$resourcefolder/README.md"
 
 # Prerequisites
 if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
@@ -48,6 +48,9 @@ pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git"
 pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git"
 pull_or_clone_repo "openhab2-addons" "openhab/openhab2-addons.git"
 pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
+pull_or_clone_repo "openhabian" "openhab/openhabian.git"
+pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git"
+pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git"
 
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init

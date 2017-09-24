@@ -7,7 +7,7 @@ twitter_username: openhab
 github_username:  openhab
 # Build settings
 markdown: kramdown
-exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.groovy", "update.sh", "Vagrantfile"]
+exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.groovy", "update-external-resources.sh", "Vagrantfile"]
 # Additional gems for sitemap generation
 plugins:
   - jekyll-sitemap
@@ -21,10 +21,10 @@ collections:
   addons_iconsets:
     output: true
     permalink: /addons/iconsets/:path:output_ext
-  addons_io:
+  addons_ios:
     output: true
-    permalink: /addons/io/:path:output_ext
-  addons_persistence:
+    permalink: /addons/ios/:path:output_ext
+  addons_persistences:
     output: true
     permalink: /addons/persistence/:path:output_ext
   addons_transformations:
@@ -58,13 +58,13 @@ defaults:
   -
     scope:
       path: ""
-      type: addons_io
+      type: addons_ios
     values:
       layout: addon
   -
     scope:
       path: ""
-      type: addons_persistence
+      type: addons_persistences
     values:
       layout: addon
   -

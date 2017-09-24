@@ -5,7 +5,7 @@ title: Configuration though HABmin
 
 {% include base.html %}
 
-# Configuration though HABmin
+# Configuration through HABmin
 
 HABmin is a modern, professional and portable user interface for openHAB,
 providing both user and administrative functions (eg sitemaps for users, and configuration utilities

@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title: System Integration
+title: System Integrations
 ---
 
 {% include base.html %}
 
-# System Integration
+# System Integrations
 
 openHAB supports services that enable integration with various technologies that don't fall into other add-on categories.
 
@@ -39,8 +39,9 @@ openHAB supports services that enable integration with various technologies that
     </tr>
   </thead>
   <tbody>
-    {% for io in site.addons_io %}
-    <tr class="install-{{io.install}} since-{{io.since}}">
+    {% for io in site.addons_ios %}
+    <!-- <tr class="install-{{io.install}} since-{{io.since}}"> -->
+    <tr>
       <td>
         <h4><a href="{{io.url}}">{% if io.logo %}<img class="logo" src="{{base}}/{{io.logo}}" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
         <img src="{{base}}/images/tag-install-{{io.install}}.svg">

@@ -53,6 +53,7 @@
       <li><a href="{{docu}}/configuration/packages.html">Initial Setup Packages</a></li>
       <li><a href="{{docu}}/configuration/paperui.html">Paper UI</a></li>
       <li><a href="{{docu}}/configuration/habmin.html">HABmin</a></li>
+      <li><a href="{{docu}}/configuration/habpanel.html">HABPanel</a></li>
       <li><a href="{{docu}}/configuration/rules-ng.html">Rules (Experimental)</a></li>
       <li><a href="{{docu}}/configuration/editors.html">Editors</a></li>
       <hr />
@@ -95,7 +96,7 @@
         <ul>
           <li><a href="{{docu}}/addons/persistence.html">Overview</a></li>
           <hr />
-          {% for persistence in site.addons_persistence %}
+          {% for persistence in site.addons_persistences %}
             {% if persistence.install == "auto" or persistence.id == page.id and page.install == "manual" %}
               <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
             {% endif %}
@@ -136,7 +137,7 @@
         <ul>
           <li><a href="{{docu}}/addons/io.html">Overview</a></li>
           <hr />
-          {% for io in site.addons_io %}
+          {% for io in site.addons_ios %}
           <li><a href="{{ io.url }}">{{ io.label }}</a></li>
           {% endfor %}
           <hr />
