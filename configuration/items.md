@@ -148,45 +148,51 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 {: #name}
 ### Name
 
-The Item name is the unique identifier of an Item.
-The name should only consist of letters, numbers and the underscore character.
-Spaces and special characters cannot be used.
+The Item name is used to uniquely identify an Item.
+The name must be unique across all `.items` files in your openHAB configuration.
+The only characters permitted in an Item name are letters, numbers and the underscore character.
+Spaces and special characters are not permitted.
+A good Item name is self-explanatory and hints at its Item type and interaction options.
+A good hierarchical arrangement allows you to create common-sense groupings of Items.
+Names may be organized by function, and/or location.
 
-It is advised to follow a consistent naming scheme to be able to handle growing setups.
-The officially recommended scheme is used throughout this documentation and builds on a hierarchical idea.
-A physical or logical top-down approach while naming an Item will ensure the comprehension of its meaning.
-
-A good Item name is self-explanatory and already suggests its Item type and interaction options.
-The following table contains a few examples:
-
-| Example Item Name                 | Interpretation (assumed Item type, example value) |
-|-----------------------------------|---------------------------------------------------|
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
-| "`GF_BR_WaschingMachine_Power`"   | Electric power used by the washing machine in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house/apartment (String, e.g. Party) |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on a smartphone detection (Switch, e.g. Offline) |
+Users are advised to establish and follow a consistent naming scheme for Items.
+You may wish to think of a logical naming hierarchy that makes sense to you and apply that consistently in your openHAB installation.
+Having a well thought out naming scheme can be especially important as your installation grows.
+An Item naming scheme with a physical or logical top-down will ensure you can easily identify the function or purpose of the Item, especially over time.
 
 The following naming style guide is recommended:
 
 - Words build a physical or logical hierarchy
 - Every word of the Item name starts with an uppercase letter
-- Words are separated by an underscore character, except for logically belonging words
-- Words like the names of recurring rooms or appliances can be abbreviated to reduce overall name length
+- Words should be separated by an underscore character, except for words that logically belong together
+- Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
+(Example: Bathroom = BR)
 
-[Group](#groups) is a special Item type to nest and/or combine Items.
-Just as with single Items the demand for a speaking self-explanatory name should be met.
-Two naming schemes are established in the community for Group names:
+Examples:
 
-1. Use of plural word forms where possible, otherwise the word "Group" can be appended for clearness
-2. Prepending a lowercase "g"
+| Item Name                         | Interpretation (assumed Item type, example value) |
+|-----------------------------------|---------------------------------------------------|
+| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
+| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
+| "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party) |
+| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline) |
 
-| Example Group Name                        | Interpretation |
+[Group](#groups) is a special Item type that may be used to nest or combine Items.
+Users are encouraged to apply the style guide above to group names as well as Item names.
+Three schemes are recommended for Group names:
+
+1. Use a plural word form (e.g. Batteries)
+2. Append "_Group" to the name (e.g. Maintenance_Group)
+3. Prepend a lowercase "g" to the name (e.g. gBattery)
+
+| Group Name                                | Interpretation |
 |-------------------------------------------|----------------|
-| "`Batteries`" or "`gBattery`"             | Combining Group for all device battery states |
-| "`Maintenance_Group`" or "`gMaintenance`" | Logical summary of all maintenance related Items and Groups |
-| "`Livingroom`" or "`gLR`"                 | Nesting group for all devices belonging to the living room |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Combination of all living room lights |
+| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items |
+| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items |
+| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room |
+| "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
 ### Label
@@ -468,7 +474,7 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 
 Each Item can be bound to a Binding to receive or trigger external changes.
 The binding of an Item is given in the last part of the Item definition:
- 
+
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
 ```
