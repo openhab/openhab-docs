@@ -10,7 +10,7 @@ title: Editors
 Currently there are several existing solutions, that can help you configuring your openHAB instance in a textual way.
 This documentation page can give you some guidance in choosing the right one for you and setting it up.
 
-{::options toc_levels="2"/}
+{::options toc_levels="2..4"/}
 
 - TOC
 {:toc}
