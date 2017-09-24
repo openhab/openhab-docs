@@ -6,6 +6,9 @@
   <version>2.0.0-SNAPSHOT</version>
   <name>openHAB Documentation</name>
   <packaging>pom</packaging>
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
   <build>
     <plugins>
       <plugin>
@@ -20,7 +23,7 @@
               <directory>${basedir}/_addons_bindings/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_addons_persistence/</directory>
+              <directory>${basedir}/_addons_persistences/</directory>
             </fileset>
             <fileset>
               <directory>${basedir}/_addons_transformations/</directory>
@@ -32,7 +35,7 @@
               <directory>${basedir}/_addons_uis/</directory>
             </fileset>
             <fileset>
-              <directory>${basedir}/_addons_io/</directory>
+              <directory>${basedir}/_addons_ios/</directory>
             </fileset>
             <fileset>
               <directory>${basedir}/_addons_iconsets/</directory>
@@ -119,7 +122,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_persistence/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_persistences/oh1</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab1-addons/bundles/persistence</directory>
@@ -246,6 +249,10 @@
                     <include>**/doc/**</include>
                     <include>**/cfg/**</include>
                   </includes>
+                  <excludes>
+                    <exclude>**/cordova/**</exclude>
+                    <exclude>**/src/**</exclude>
+                  </excludes>
                 </resource>
               </resources>
             </configuration>
@@ -285,7 +292,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_io/oh1</outputDirectory>
+              <outputDirectory>${basedir}/_addons_ios/oh1</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab1-addons/bundles/io</directory>
@@ -308,7 +315,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_io/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_ios/oh2</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab2-addons/addons/io</directory>
@@ -319,6 +326,73 @@
                   </includes>
                 </resource>
               </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-openhabian-install-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/installation</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhabian/docs</directory>
+                  <includes>
+                    <include>openhabian.md</include>
+                    <include>images/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-habpanel-config-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/configuration</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-bundles/uis/org.openhab.ui.habpanel/docs</directory>
+                  <includes>
+                    <include>habpanel.md</include>
+                    <include>images/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+        </executions>
+      </plugin>
+      <plugin>
+        <groupId>com.coderplus.maven.plugins</groupId>
+        <artifactId>copy-rename-maven-plugin</artifactId>
+        <version>1.0</version>
+        <executions>
+          <execution>
+            <id>copy-oh-mycroft-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-mycroft/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/_addons_ios/ext/mycroft-skill/readme.md</destinationFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-oh-alexa-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-alexa/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/_addons_ios/ext/alexa-skill/readme.md</destinationFile>
             </configuration>
           </execution>
         </executions>

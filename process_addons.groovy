@@ -18,7 +18,7 @@ def collect_features = { features ->
 def process_addon_type = { features, sources, type, collection, suffix, lblremoves, pkgremoves ->
     sources.each { source ->
         println "--------------------------------------------------"
-        println "Processing: " + collection + "/" + source + "\n"
+        println "Processing: _" + collection + "/" + source + "\n"
         def files = new File(project.basedir, "_${collection}/".concat(source))
         if (! files.exists()) {
             println "No resources found."
@@ -27,7 +27,8 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
         files.eachFile {
             def name = it.name
             println name
-            if (! name.contains(type) || name.endsWith('.test')) {
+            if (! name.contains(type)) println "[WARN] Addon package name doesn't contain '${type}'."
+            if (name.endsWith('.test')) {
                 println "[INFO] Skip."
                 it.deleteDir()
             } else {
@@ -43,7 +44,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     println "[WARNING] No README.md found."
                 } else {
                     readme.renameTo(new File(simpleNameDir.path, 'readme.md'))
-                    println readme
+                    //println readme
                     def label = readme.readLines().find{it.startsWith('#')}
                     if (label == null) {
                         println "[WARNING] No level 1 header found."
@@ -95,7 +96,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                     readme.write(toYaml(front) + '<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->\n\n{% include base.html %}\n\n' + readme.text)
                 }
             }
-            println "\n"
+            print "\n"
         }
         def temp_folder = new File(project.basedir, "_${collection}/".concat(source))
         if (temp_folder.list().length > 0) {
@@ -106,17 +107,21 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
 }
 
 def process_addon_files = { features ->
-    //                 features, sources,        type,          collection,               suffix,               lblremoves,                  pkgremoves
-    process_addon_type(features, ['oh1', 'oh2'], 'binding',     'addons_bindings',        ' - Bindings',        [' Binding'],                ['org.openhab.binding.','org.eclipse.smarthome.binding.'])
-    process_addon_type(features, ['oh1'],        'action',      'addons_actions',         ' - Actions',         [' Actions', ' Action'],     ['org.openhab.action.']                                  )
-    process_addon_type(features, ['oh1'],        'persistence', 'addons_persistence',     ' - Persistence',     ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
-    process_addon_type(features, ['oh1', 'oh2'], 'io',          'addons_io',              ' - Services',        [' Service'],                ['org.openhab.io.','org.eclipse.smarthome.io']           )
-    process_addon_type(features,        ['oh2'], 'transform',   'addons_transformations', ' - Transformations', [' Transformation Service'], ['org.eclipse.smarthome.transform.']                     )
-    process_addon_type(features,        ['oh2'], 'voice',       'addons_voices',          ' - Voices',          [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
-    process_addon_type(features,        ['oh2'], 'iconset',     'addons_iconsets',        ' - Icon Sets',       [:],                         ['org.eclipse.smarthome.ui.iconset.']                    )
-    process_addon_type(features,        ['oh2'], 'ui',          'addons_uis',             ' - UI',              [:],                         ['org.openhab.ui.','org.eclipse.smarthome.ui.']          )
+    //                 features, sources,               type,          collection,               suffix,                       lblremoves,                  pkgremoves
+    process_addon_type(features, ['oh1'],               'action',      'addons_actions',         ' - Actions',                 [' Actions', ' Action'],     ['org.openhab.action.']                                  )
+    process_addon_type(features, ['oh1', 'oh2'],        'binding',     'addons_bindings',        ' - Bindings',                [' Binding'],                ['org.openhab.binding.','org.eclipse.smarthome.binding.'])
+    process_addon_type(features,        ['oh2'],        'iconset',     'addons_iconsets',        ' - Icon Sets',               [:],                         ['org.eclipse.smarthome.ui.iconset.']                    )
+    process_addon_type(features, ['oh1', 'oh2', 'ext'], 'io',          'addons_ios',             ' - System Integrations',     [' Service'],                ['org.openhab.io.','org.eclipse.smarthome.io']           )
+    process_addon_type(features, ['oh1'],               'persistence', 'addons_persistences',    ' - Persistence Services',    ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
+    process_addon_type(features,        ['oh2'],        'transform',   'addons_transformations', ' - Transformation Services', [' Transformation Service'], ['org.eclipse.smarthome.transform.']                     )
+    process_addon_type(features,        ['oh2'],        'ui',          'addons_uis',             ' - UIs',                     [:],                         ['org.openhab.ui.','org.eclipse.smarthome.ui.']          )
+    process_addon_type(features,        ['oh2'],        'voice',       'addons_voices',          ' - Voices',                  [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
 }
 
+if (! new File(project.basedir, ".external-resources").exists()) {
+    println "\n\n[WARNING] Folder '.external-resources' missing. Please use the update script to run all steps in order. Exiting.\n\n"
+    return
+}
 def features = [:]
 collect_features(features)
 process_addon_files(features)
