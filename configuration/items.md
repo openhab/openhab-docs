@@ -246,9 +246,10 @@ Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
 {: #state-transformation}
 #### State Transformation
 
-Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language or convert technical values into human readable information.
+Transformations can be used to change predetermined raw values into the values you establish in a `.map` file located in the `$OPENHAB_CONF/transform` directory.
+Some uses of the transformation function could be to translate text into another language, or to convert technical values into human readable information.
 
-To give an example, the technical raw state "CLOSED" can be translated to the Spanish "cerrado":
+In the example below, the entry `[MAP(window_esp.map):%s]` causes the output of the `Contact` Item to be translated from "CLOSED", to the Spanish "cerrado":
 
 ```java
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
