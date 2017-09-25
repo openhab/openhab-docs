@@ -197,11 +197,11 @@ Otherwise the word "Group" may be appended for clarity.
 {: #label}
 ### Label
 
-The label text is used to describe the Item in a human readable way.
-Graphical UIs will display the label when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) through a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
-Some IO services (e.g. the Amazon Alexa skill) also use the label to match external commands to specific Items.
+Label text is used to describe an Item in a human-readable way.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
-In textual configuration the label is given in in quotes next to the optional state presentation part in square brackets (see below).
+In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
 The label for the Item in the following example is "Temperature":
 
 ```java
