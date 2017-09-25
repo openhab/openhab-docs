@@ -260,69 +260,79 @@ Please refer to the article on [Transformations](transform.html) for more usage 
 {: #icons}
 ### Icons
 
-The icon name is used to reference an image presented next to an Item, e.g. in Basic UI.
-The following example shows the usage of the "switch" icon:
+The icon name is used by openHAB to select the image to display next to an Item name when using one of openHAB's UIs, e.g. Basic UI.
+The icon name appears between angle brackets "<>".
+In the example below, the "switch" icon has been selected for use with the Item named, "Livingroom Ceiling Light":
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
 openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
-Additional icons can be placed in `$OPENHAB_CONF/icons/classic/` inside the openHAB configuration folder.
+Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
-Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
+The following guidelines apply to user-added icon files:
 
-- `png` or `svg` file format
-- Only lowercase letters, numbers and underscores (`_`)
-- No uppercase letters or special characters
+- Only `png` or `svg` file formats may be used
+- Icon filenames may include lowercase letters, numbers and underscores (`_`)
+- Uppercase letters and special characters are prohibited
 - Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
-- Examples:
+- Example filenames:
   - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
   - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
-The format used needs to be configured for the individual interfaces (e.g. Basic UI).
-It is thereby important to decide on one format beforehand, vector graphics are recommended.
-The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
-Images in the respective other format will be ignored.
+The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
+Experience has shown that it is best to choose only one format; vector graphics are recommended.
+The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg` located in `$OPENHAB_CONF/services`.
+Note that image files in formats other than `png` and `svg` will be ignored.
 
-Predefined icons from the default icon set can be substituted by placing equally named files in the custom icons folder.
+Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
 {: #icons-dynamic}
 #### Dynamic Icons
 
-Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
-Just as single icons, user-defined dynamic icon sets can be provided via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
+Some icons are dynamically selected by openHAB depending on the Item's state.
+For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
+Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
+A third icon file, `switch`, is required as well.
+This icon file matches when none of the other icon files match the Item state (e.g. when the Item is in an undefined state).
 
-The state related part of an icon is appended to the icon name after the special hyphen delimiter:
+Dynamic icon filenames follow the pattern below:
 
 ```perl
 <name>-<state>.<extension>
 ```
 
 - `<name>` - the name of the icon set
-- `-<state>` - the Item state that particular icon maps to
+- `-<state>` - the Item state the icon maps to (e.g. "ON" or "OFF", "OPEN" or "CLOSED")
 - `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
-Dynamic icon sets can consist of as many state-specific icon files as needed.
+Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
-- A default icon is mandatory (no specified state part)
-- The file name must follow the naming restrictions given for [icons](#icons) in general
-- The state name has to reflect the Item's raw state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection
-- The state in the icon name must be given in lowercase letters
+- A default icon is mandatory.
+The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
+- Icon filenames must follow the naming restrictions given for [icons](#icons),above
+- The state name must reflect the Item's raw state.
+[Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
+For example, if you use a transform file to change a `contact` output from "CLOSED" to "CERADO", the icon filename must be `contact-closed.<extension>`
+- The state portion of the icon name must be in lowercase letters
 
-**Usage Example:**
-The default icon name without state and extension is added to the Item or Sitemap element definition.
-The following example shows the typical usage:
+
+**Example:**
+
+The user defines the "Livingroom_Light" and "Livingroom_Light_Connection" Items:
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <myswitch>
 String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]" <myerror>
 ```
 
-On filesystem the following icon files could be provided by the user for those Items:
+Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific items.  The icon matches "myerror"; the match is not based upon the contents of the `error.map` file
+
+On the filesystem, the following icon files are provided by the user:
 
 | File name              | Description                                                        |
 |------------------------|--------------------------------------------------------------------|
@@ -335,7 +345,7 @@ On filesystem the following icon files could be provided by the user for those I
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
 
-Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific items.
+
 
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
@@ -347,6 +357,8 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 | `mydimmer-0.svg`   | Matches the turned off light (0%)                    |
 | `mydimmer-1.svg`   | Matches any dimmed light between 1% up to 74%        |
 | `mydimmer-75.svg`  | Matches the bright light state from 75% to full 100% |
+
+Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
 {: #groups}
 ### Groups
