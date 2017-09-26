@@ -133,3 +133,30 @@ Assuming the openHAB directory is in `~/openhab` simply run the following comman
 cd ~/openhab
 sudo sh -c "$(curl -fsSL https://raw.githubusercontent.com/openhab/openhab-distro/master/distributions/openhab/src/main/resources/bin/update)" -- 2.1.0
 ```
+
+## Backup and Restore
+
+To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
+As of version 2.2.0, you can use openHAB's scripts for storing your configuration in a zip file. From the terminal:
+By default, the script saves the zip file in `/var/lib/openhab2/backups` for automatic installs and `openhab2/backups` for manual installs.
+You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
+
+```shell
+sudo $OPENHAB_RUNTIME/bin/backup
+## OR ##
+sudo $OPENHAB_RUNTIME/bin/backup /path/to/backups/folder/myBackup.zip
+```
+
+To restore from these generated files:
+
+```shell
+cd $OPENHAB_HOME
+
+sudo $OPENHAB_RUNTIME/bin/restore $OPENHAB_BACKUPS/myBackup.zip
+```
+
+If you're unsure how to use the above files, just use `--help` or `-h`:
+
+```shell
+$OPENHAB_RUNTIME/bin/backup --help
+```

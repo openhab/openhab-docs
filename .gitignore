@@ -7,5 +7,10 @@ project.pbxproj
 *.xcworkspacedata
 *.xcscmblueprint
 *.xcuserstate
-addons/uis/habmin/node_modules
-addons/uis/habmin/target
+
+# Update process
+.external-resources
+
+# IntelliJ
+*.iml
+.idea

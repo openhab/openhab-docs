@@ -257,8 +257,8 @@ To generate a trusted certificate, you need to own a domain. To acquire your own
 Encrypting the communication between client and the server is important because it protects against eavesdropping and possible forgery.
 The following options are available depending if you have a valid domain:
 
-If you have a **valid domain and can change the DNS** to point towards your IP, follow the [instructions for Let's Encrypt](#using-lets-encrypt-to-generate-trusted-certificates)
-If you need to use an internal or external IP to connect to openHAB, follow the [instructions for OpenSSL](#using-openssl-to-generate-self-signed-certificates)
+If you have a **valid domain and can change the DNS** to point towards your IP, follow the [instructions for Let's Encrypt](#nginx-letsencrypt)
+If you need to use an internal or external IP to connect to openHAB, follow the [instructions for OpenSSL](#nginx-openssl)
 
 {: #nginx-openssl}
 #### Using OpenSSL to Generate Self-Signed Certificates
@@ -421,7 +421,7 @@ server {
 
 To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) provides a tool for testing your domain against ideal settings (Make sure you check "Do not show the results on the boards" if you dont want your domain seen).
 
-This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#enabling-https), **but you need to follow at least one of them first**.
+This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#nginx-https), **but you need to follow at least one of them first**.
 
 First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: this will take a few minutes to complete:**
 

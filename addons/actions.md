@@ -82,7 +82,7 @@ One can configure whether specific log entries are logged out and where they get
 
 For example:
 
-```java
+```javascript
 var Timer myTimer = createTimer(now.plusMinutes(5), [|
     logInfo("rules", "Timer activated")
 ])
@@ -150,7 +150,7 @@ if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONL
     </tr>
   </thead>
   <tbody>
-    {% for action in site.actions %}
+    {% for action in site.addons_actions %}
         <tr class="install-{{action.install}} since-{{action.since}}">
           <td>
             <h4><a href="{{action.url}}">{% if action.logo %}<img class="logo" src="{{base}}/{{action.logo}}" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>

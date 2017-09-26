@@ -561,13 +561,14 @@ section.text p, section.text table, section.text ul,
 }
 
 section.text ul {
-	margin-bottom: 5px;
+	margin-bottom: 20px;
 	margin-left: 40px;
 	list-style-position: outside;
 }
 
-section.text ul#markdown-toc {
-    margin-bottom: 20px;
+section.text ul ul {
+	margin-bottom: 3px;
+	margin-left: 20px;
 }
 
 section.text ul li {
@@ -592,7 +593,8 @@ section.text code {
 section.text pre {
 	border-radius: 3px;
 	/* background-color: #f7f7f7; */
-	padding: 15px;
+	/* padding: 15px; */
+	line-height: 1.2;
 }
 
 section.text pre code {
@@ -731,6 +733,11 @@ section.text ul.nav hr, section.text div.content hr {
 
 body.documentation .container {
     width: auto;
+}
+
+body.documentation section#documentation .container {
+    padding-left: 10px;
+    padding-right: 20px;
 }
 
 body.documentation .content-wrapper {
