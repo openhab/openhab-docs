@@ -114,6 +114,7 @@ There are different categories of rule triggers:
 - **Item**(-Event)-based triggers: They react on events on the openHAB event bus, i.e. commands and status updates for items
 - **Time**-based triggers: They react at special times, e.g. at midnight, every hour, etc.
 - **System**-based triggers: They react on certain system statuses.
+- **Thing**-based triggers: They react on thing status, i.e. change from ONLINE to OFFLINE.
 
 Here are the details for each category:
 
@@ -181,6 +182,29 @@ then
     ]
 end
 ```
+
+{: #thing-based-triggers}
+### Thing-based Triggers
+
+You can listen for status updates or status changes (an update might leave the status unchanged).
+You can decide whether you want to catch only a specific status or any.
+Here is the syntax for all these cases (parts in square brackets are optional):
+
+```java
+Thing <thingUID> received update [<status>]
+Thing <thingUID> changed [from <status>] [to <status>]
+```
+
+The status used in the trigger and the script is a string (no quotes).
+You can find all the possible values for status from [Thing Status]({{base}}/concepts/things.html).
+And refer to [Thing Status Action]({{base}}/addons/actions.html) to find how to get thing status in the script.
+
+The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
+You can find it from PaperUI or from Karaf remote console.
+For example, one z-wave device can be "zwave:device:c5155aa4:node14".
+
+> Note: You need to use quotes around `thingUID` if it contains special characters such as ':'.
+> The parser will not recognize the whole text correctly without quotes.
 
 {: #scripts}
 ## Scripts
