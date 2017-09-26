@@ -363,26 +363,24 @@ Just as with regular icons, user-defined dynamic icon sets may be configured via
 {: #groups}
 ### Groups
 
-The Group is a special Item type.
-It is used to define a category or collection in which you can nest and/or combine other Items or Groups.
-Single Items can be in none or multiple groups and a group can be nested inside other groups.
-The general syntax for Group Items follows the syntax for Items:
+The Group is a special Item type that can be used to define a category or collection into which you can combine other Items or Groups.
+An Item may be put into one or more groups, and groups may be nested inside other groups.
+The general syntax for Group Items is as follows:
 
 ```java
 Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-Groups can be nested inside each other, Items can be added to all of them.
-This functionality is commonly used to define hierarchies of Items from different perspectives, like:
+The Group item is commonly used to define hierarchies of Items from different perspectives.  For example:
 
--   Location/Vertical/Physical perspective:
+-   Location perspective:
     - Floors in your house → Rooms on that floor → An appliance in that room...
 
--   Functional/Horizontal/Logical/Context perspective:
+-   Function perspective:
     - Maintenance Group → All battery states → Individual battery states in percentage
-    - Further examples: All lights, All room temperatures, Combined power consumption, ...
+    - Further examples: all lights, all room temperatures, combined power consumption
 
-These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
+These relationships can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
 **Example:**
 
@@ -400,25 +398,27 @@ Group Temperatures (Sensors)
 Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
-The example shows an Item which supposedly stores the temperature of the living room called `Livingroom_Temperature`.
+The example shows an Item which stores the temperature of the living room called `Livingroom_Temperature`.
 
 From a **location perspective**, you may have a group called `Livingroom`.
-With the `Livingroom_Temperature` being added to the `Livingroom` group, it also belongs to the `GroundFloor` and `House` groups.
+When you add `Livingroom_Temperature` to the `Livingroom` group, `Livingroom_Temperature` is automatically added to the `GroundFloor` and `House` groups.
+This is because `Livingroom` is a member of the `GroundFloor` group, and `GroundFloor` is a member of the  `House` group.
 
 From a **functional perspective**, the Living room temperature can also be seen as one of many temperatures in the automation setup.
-Therefore the addition to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
+Therefore the addition of `Livingroom_Temperature` to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
 
-Using nested group hierarchies such as these allows a rule to, e.g., iterate through all sensors on the ground floor for maintenance actions.
-The rule will be clean and short and it doesn't need to be updated when a new item were to be added to the `Temperatures` group.
+Using nested group hierarchies such as these allows a rule to iterate through all sensors on the ground floor for maintenance actions, for example.
+Because of the hierarchical structure of your group items, the rule will be clean and short.
+Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
 
 {: #group-type}
 #### Group Type and State
 
+As you are now aware, an Item can have a state (e.g. "ON", "OFF").
 A Group Item can also have a state.
-The Group's state is generated depending on the states of all its member Items.
-Sending a command to a Group will cause that command to be forwarded to all Group members.
+The Group's state is determined by the state of all its Items, and the aggregation function specified in the group definition.
 
-The general syntax for groups with a specific aggregation type and function is:
+The general syntax for groups with a specific item type and aggregation function is:
 
 ```java
 Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
@@ -427,18 +427,18 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 - If the aggregation function is omitted, the function `EQUAL` will be used.
 - If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
 
-Group state functions can be any of the following:
+Group state aggregation functions can be any of the following:
 
 | Function               | Description |
 |------------------------|-------------|
-| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise it is `UNDEF`. |
+| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
 | `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
 | `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
 | `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
 | `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
-| `MAX`                  | This calculates the maximum value of all Item states of decimal type. |
-| `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
+| `MAX`                  | Calculates the maximum value of all Item states of decimal type. |
+| `MIN`                  | Calculates the minimum value of all Item states of decimal type. |
 | `SUM`                  | Calculates the sum of all Item states in the Group. |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
@@ -446,7 +446,7 @@ Boolean group state functions additionally return a number representing the coun
 Because the group state is an aggregation of multiple Item states, not every Item state change results in a change of the group state.
 
 Note that aggregation functions can only be used on compatible Item types.
-Incompatible Item types within one Group might result in the invalid aggregation result `UNDEF`.
+Incompatible Item types within a Group may result in the invalid aggregation result `UNDEF`.
 
 **Examples:**
 
@@ -456,11 +456,14 @@ Group:Switch:OR(ON, OFF) Lights       "Active Lights [%d]"              // e.g. 
 Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" //e.g. "21.3 °C"
 ```
 
-The first two group aggregations equally compute the number of active lights and store them as group state.
-Additionally, the second group is of type switch and follows the given OR function.
-The state of the group will be `ON` as soon as any of the member lights are turned on.
-Other than the first group, the second can also be commanded to turn all lights ON and OFF with a simple switch command.
-The third example groups combines all room temperatures and the group state represents the average of those.
+The first two examples above compute the number of active lights and store them as group state.
+However, the second group is of type switch and has an aggregation function of OR.
+This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
+
+Groups do not only aggregate information from individual member Items.  They can also accept commands.
+Sending a command to a Group causes the command to be sent to all Group members.
+An example of this is shown by the second group above; sending an `ON` or `OFF` command turns all lights in the group ON or OFF with a single operation.
+The third example computes the average temperature of all room temperature Items in the group.
 
 {: #tags}
 ### Tags
