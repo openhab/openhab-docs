@@ -468,20 +468,20 @@ The third example computes the average temperature of all room temperature Items
 {: #tags}
 ### Tags
 
-Tags added to an Item definition characterize a specific nature of the Item beyond it's basic Item type.
+Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond it's basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
 
-To give an example:
-A Light in a typical home setup can be represented either by a Switch, Dimmer or Color Item.
-To be able to specifically interact with the light device, e.g. via a natural voice command, the nature of the Item as a Light needs to be known.
-This can be achieved by adding the "Lighting" tag.
+Example:
+A Light in a typical home setup can be represented by a Switch, a Dimmer or a Color Item.
+To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" ["Lighting"]
 ```
 
-Tagging is still a new feature and only some specific I/O add-ons are using it.
-Tags are only of interest, if the documentation for a specific add-on or integration explicitly discusses their usage.
+Tagging is a new feature and only a few I/O add-ons have implemented it.
+The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
+Tags will be ignored if no Items in the openHAB installation support it.
 
 See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) documentation for more details.
 
