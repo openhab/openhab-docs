@@ -397,7 +397,7 @@ Video url="http://demo.openhab.org/Hue.m4v"
 
 ```perl
 Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
-[period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm]
+[period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm] [legend=true/false]
 ```
 
 Adds a time-series chart object for displaying logged data.
@@ -412,6 +412,10 @@ Therefore, for an installation with only a single persistence service, this is n
 
 -   `begin` / `end` represent the beginning and end of the time axis of the Chart.
 Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
+
+-   `legend` is used to show or to hide the chart legend.
+    Valid values are `true` (always show the legend) and `false` (never show the legend).
+    If this parameter is not set, the legend is hidden if there is only one chart series.
 
 <!-- TODO: This paragraph needs an update -->
 
