@@ -6,7 +6,7 @@ type: binding
 description: "The openHAB DMX binding can control DMX devices like RGB LED strips, dimmers"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.dmx/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

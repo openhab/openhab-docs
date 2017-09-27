@@ -73,6 +73,24 @@
             </configuration>
           </execution>
           <execution>
+            <id>copy-esh-csv</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_data/</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/smarthome/docs/_data</directory>
+                  <includes>
+                    <include>*.csv</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
             <id>copy-oh1-binding-docs</id>
             <phase>process-resources</phase>
             <goals>

@@ -3,7 +3,7 @@ id: withings
 label: Withings
 title: Withings - Bindings
 type: binding
-description: "The Withings binding allows openHAB to synchronize data from the official Withings API to items. The following body measure types are supported: diastolic blood pressure, fat free mass, fat mass weight, fat ratio, heart pulse, height, systolic blood pressure, weight."
+description: "The Withings binding allows openHAB to synchronize data from the official"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.withings/README.md
 since: 1x
 install: manual

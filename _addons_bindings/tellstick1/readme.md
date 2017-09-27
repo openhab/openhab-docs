@@ -7,7 +7,7 @@ description: "This binding is tested against Tellstick DUO, it should also work 
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.tellstick/README.md
 since: 1x
 logo: images/addons/tellstick.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

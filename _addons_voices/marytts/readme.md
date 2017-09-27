@@ -1,7 +1,7 @@
 ---
 id: marytts
 label: Mary Text-to-Speech
-title: Mary Text-to-Speech - Voice
+title: Mary Text-to-Speech - Voices
 type: voice
 description: "The Mary Text-to-Speech (TTS) service is a pure Java implementation of a TTS service, which uses the [MaryTTS](http://mary.dfki.de/) project of DFKI."
 since: 2x

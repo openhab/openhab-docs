@@ -27,14 +27,15 @@ The thing type ids are defined according to the lighting devices defined for Zig
 |--------------------------|------------------|------------|
 | Dimmable Light           | 0x0100           | 0100       |
 | Colour Temperature Light | 0x0220           | 0220       |
-
+| Extended Colour Light    | 0x0210           | 0210       |
 
 The following matrix lists the capabilities (channels) for each of the supported lighting device types:
 
-| Thing type  | On/Off | Brightness | Color | Color Temperature |
-|-------------|:------:|:----------:|:-----:|:-----------------:|   
-|  0100       |    X   |     X      |       |                   |
-|  0220       |    X   |     X      |       |          X        |
+| Thing type  | Brightness | Color | Color Temperature |
+|-------------|:----------:|:-----:|:-----------------:|   
+|  0100       |     X      |       |                   |
+|  0220       |     X      |       |          X        |
+|  0210       |            |   X   |          X        |
 
 ## Thing Configuration
 
@@ -44,12 +45,19 @@ The devices require only a single (integer) parameter, which is their instance i
 
 ## Channels
 
-All devices support the `brightness` channel, while the white spectrum bulbs additionally also support the `color_temperature` channel (refer to the matrix above).
+The dimmable bulbs support the `brightness` channel.
+The white spectrum bulbs additionally also support the `color_temperature` channel. 
+
+Full color bulbs support the `color_temperature` and `color` channels.
+Brightness can be changed with the `color` channel.
+
+Refer to the matrix above.
 
 | Channel Type ID   | Item Type | Description                                 |
 |-------------------|-----------|---------------------------------------------|
 | brightness        | Dimmer    | The brightness of the bulb in percent       |
 | color_temperature | Dimmer    | color temperature from 0%=cold to 100%=warm |
+| color             | Color     | full color                                  |
 
 ## Full Example
 
@@ -58,14 +66,18 @@ demo.things:
 ```
 Bridge tradfri:gateway:mygateway [ host="192.168.0.177", code="EHPW5rIJKyXFgjH3" ] {
     0100 myDimmableBulb [ id=65537 ]    
-    0220 myColorTempBulb [ id=65538 ]    
+    0220 myColorTempBulb [ id=65538 ]
+    0210 myColorBulb [ id=65539 ]
 }
 ```
 
 demo.items:
 
 ```
-Dimmer Light { channel="tradfri:0100:mygateway:myDimmableBulb:brightness" } 
+Dimmer Light1 { channel="tradfri:0100:mygateway:myDimmableBulb:brightness" }
+Dimmer Light2_Brightness { channel="tradfri:0220:mygateway:myColorTempBulb:brightness" }
+Dimmer Light2_ColorTemperature { channel="tradfri:0220:mygateway:myColorTempBulb:color_temperature" }
+Color ColorLight { channel="tradfri:0210:mygateway:myColorBulb:color" } 
 ```
 
 demo.sitemap:
@@ -74,7 +86,10 @@ demo.sitemap:
 sitemap demo label="Main Menu"
 {
     Frame {
-        Slider item=Light label="Brightness [%.1f %%]"
+        Slider item=Light1 label="Light1 Brightness [%.1f %%]"
+        Slider item=Light2_Brightness label="Light2 Brightness [%.1f %%]"
+        Slider item=Light2_ColorTemperature label="Light2 Color Temperature [%.1f %%]"
+        Colorpicker item=ColorLight label="Color"
     }
 }
 ```

@@ -1,7 +1,7 @@
 ---
 id: mactts
 label: MacOS Text-to-Speech
-title: MacOS Text-to-Speech - Voice
+title: MacOS Text-to-Speech - Voices
 type: voice
 description: "The MacOS Text-to-Speech (TTS) service uses the MacOS 'say' command for producing spoken text."
 since: 2x

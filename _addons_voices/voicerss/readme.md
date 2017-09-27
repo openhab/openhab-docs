@@ -1,7 +1,7 @@
 ---
 id: voicerss
 label: VoiceRSS Text-to-Speech
-title: VoiceRSS Text-to-Speech - Voice
+title: VoiceRSS Text-to-Speech - Voices
 type: voice
 description: "VoiceRSS is an Internet based TTS service hosted at http://api.voicerss.org."
 since: 2x
