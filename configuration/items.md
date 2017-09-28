@@ -488,16 +488,17 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 {: #binding}
 ### Binding Configuration
 
-Each Item can be bound to a Binding to receive or trigger external changes.
-The binding of an Item is given in the last part of the Item definition:
+Items that interact with the outside world must be associated with a Binding in order to reflect the status of the realworld Thing being measured or monitored.
+Associating a Binding with an Item is also required in order to trigger external changes (e.g. to turn a light ON or OFF).
+The binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{/*binding parts*/}` in the example below}:
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
 ```
 
-Navigate to the list of [currently available Bindings]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
+See "[currently available Bindings]({{base}}/addons/bindings.html)" for more information.
 
-There are two ways to bind/link a device to an Item, 1.x Binding configuration or 2.x Channel Linking.
+Users should note that there are significant differences between how Items are associated with Things between 1.x Binding configuration and 2.x Channel Linking.
 
 <!-- TODO: Everything below was not yet revised -->
 
