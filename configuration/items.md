@@ -213,16 +213,39 @@ This section provides information about what a user can expect regarding the beh
 
 -  Items are created with a state of `NULL`.
 The Item will remain in this state until it has been acted upon
--  Subsequent to the creation of an Item, operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item 
+-  Subsequent to the creation of an Item, operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item
 -  Once an Item is being used, its state will depend upon the Thing to which it is linked, or upon the specifics of the Binding that created the Item.
 Example - The state of a Switch may change from `NULL` to `ON` or `OFF`
 -  A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 -  An Item may be assigned a particular state as part of the execution of a [Rule]({{base}}/configuration/rules-dsl.html).
 See, particularly, [Manipulating Item States]({{base}}/configuration/rules-dsl.html#manipulating-item-states)
--  The state of an Item after an openHAB startup will depend upon whether the user has configured [Persistence]({{base}}/configuration/persistence.html) or has created a set of ["System started"]({{base}/concepts/things.html#status-transitions) rules
+
 
 *N.B.*  Many openHAB users find that it can be very useful to use Persistence and "System started" rules so that their systems behaves in a predictable way after an openHAB restart.
+
+## Restoring States
+
+The state of an Item after an openHAB startup will depend upon whether the user has configured [Persistence]({{base}}/configuration/persistence.html) and has created a set of ["System started"]({{base}/concepts/things.html#status-transitions) rules.
+If you have not configured Persistence, you may find there are times after an openHAB startup when your logs indicate some Items are `UNDEF` or undefined.
+This is because, by default, Item states are not persisted when openHAB restarts.
+To have your states persist across restarts you will need to install a Persistence extension.
+
+Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
+Then whatever state Items were in before the restart will be restored automatically.
+
+Example:
+
+```java
+Strategies {
+    default = everyUpdate
+}
+
+Items {
+    // persist all Items on every change and restore them at startup
+    * : strategy = everyChange, restoreOnStartup
+}
+```
 
 {: #state-presentation}
 #### State Presentation
@@ -482,7 +505,7 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 
 Each Item can be bound to a Binding to receive or trigger external changes.
 The binding of an Item is given in the last part of the Item definition:
- 
+
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
 ```
@@ -588,25 +611,4 @@ This way, the Item is always unchanged unless you explicitly post an *update* to
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
-
-<!-- TODO: This should be part of a separate Item state chapter -->
-
-## Restore States
-
-When restarting your openHAB installation you may find there are times when your logs indicate some Items are UNDEF.
-This is because, by default, Item states are not persisted when openHAB restarts.
-To have your states persist across restarts you will need to install a [Persistence]({{base}}/configuration/persistence.html) extension.
-
-Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
-Then whatever state they were in before the restart will be restored automatically.
-
-```java
-Strategies {
-    default = everyUpdate
-}
-
-Items {
-    // persist all Items on every change and restore them from the MapDB at startup
-    * : strategy = everyChange, restoreOnStartup
-}
 ```
