@@ -488,31 +488,25 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 {: #binding}
 ### Binding Configuration
 
-Items that interact with the outside world must be associated with a Binding in order to reflect the status of the realworld Thing being measured or monitored.
-Associating a Binding with an Item is also required in order to trigger external changes (e.g. to turn a light ON or OFF).
+One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
+See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available bindings.
+This capability of interacting with real-world things is enabled through the association of bindings with Items.
+Once a binding is associated with an Item, the state of a thing is reflected in various openHAB UIs (e.g., you can see if a light is ON or OFF).
+Additionally, you have the opportunity to interact with that thing through its Item, if interaction is supported by the binding (e.g., you can command the light to turn ON or turn OFF).
+
 The binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{/*binding parts*/}` in the example below}:
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
 ```
 
-See "[currently available Bindings]({{base}}/addons/bindings.html)" for more information.
-
-Users should note that there are significant differences between how Items are associated with Things between 1.x Binding configuration and 2.x Channel Linking.
+Users should note that there are significant differences between how Items are associated with Things between 1.x Binding configuration and 2.x Channel Linking. These are described below.
 
 <!-- TODO: Everything below was not yet revised -->
 
 #### 1.x Binding Configuration
 
-When you install a Binding, some of them will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
-Inside these files are predefined variables which are required for the Binding to operate.
-In many cases you will need to view and edit these to suit your system.
-These variables can hold IP addresses, API keys, user names, passwords etc.
-These are all in plain text, so be careful who you share these with if some data is sensitive.
-
-The 1.x Binding configuration defines from where the Item gets it values, and where a given value/command should be sent.
-
-You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition:
+To bind an Item to a Binding, you add a Binding definition in curly brackets at the end of the Item definition:
 
 ```java
 Switch Phone_Mobile {ns="192.168.1.123:80"}
@@ -521,37 +515,46 @@ Switch Phone_Mobile {ns="192.168.1.123:80"}
 Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
 Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
-You must have a look at your [Bindings]({{base}}/addons/bindings.html) configuration section to know what to use.
-Some typical examples are:
+The information required for each binding is specified in the configuration information provided for each of the available [Bindings]({{base}}/addons/bindings.html).
+
+
+Examples:
 
 ```java
-Switch Phone_Mobile        "My Mobile Phone"                 {nh="192.168.1.123:80"}
+Switch Phone_Mobile        "My Mobile Phone"                 {ns="192.168.1.123:80"}
 Number Netatmo_Indoor_CO2  "CO2 [%d]"                        {netatmo="00:00:00:00:00:00#Co2"}
 Number Azimuth             "Azimuth [%d]"                    {astro="planet=sun, type=position, property=azimuth"}
 Contact Garage_Door        "Garage door is [MAP(en.map):%s]" {zwave="21:command=sensor_binary,respond_to_basic=true"}
 ```
 
-If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-After downloading the legacy .jar files, they need to be placed in the `addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this.
-For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
+In some cases, you will need to use legacy openHAB 1.x bindings with your openHAB 2.0 installation.
+In this case, you will need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
+You can then download the legacy .jar file and placed it in the `$OPENHAB_CFG/addons/` folder.
+If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this file.
+For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the `OPENHAB_CFG/services/` directory (substitute the name of your binding for `bindingname` above).
+
+Some bindings will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
+Inside these files are predefined variables which are required for the Binding to operate.
+In many cases you will need to view and edit these to suit your system.
+These variables can hold IP addresses, API keys, user names, passwords etc.
+These are all in plain text, so be careful who you share these with if some data is sensitive.
 
 #### 2.x Binding Configuration
 
-The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
-Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
-Each Thing has one or more Channels and Items are linked to one or more Channels.
+openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
+Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
+Each Thing has one or more Channels, and Items are linked to one or more Channels.
 
-Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in Paper UI.
-Once accepted it will appear under Configuration > Things.
+Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
+Once accepted, the new Thing will appear under Configuration > Things.
 
-Other Bindings support defining Things in a `.things` file.
+Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define Things for a given Binding.
+See the [Bindings]({{base}}/addons/bindings.html) configuration section for more information on how to discover or manually define Things for a given Binding.
 
 ##### Paper UI Linking
 
-One can link an Item with a Channel using Paper UI.
+As described above, you can link an Item with a Channel using the Paper UI.
 
 1. First create the Item in Paper UI under Configuration Items.
 2. Next navigate to the Thing that has the Channel to link to the Item.
@@ -560,13 +563,14 @@ One can link an Item with a Channel using Paper UI.
 
 ##### Text File Linking
 
-One can also link an Item with a Channel using the `.items` file.
+You may also link an Item with a Channel using the `.items` file located in the `OPENHAB_CFBG/items/` folder.
 Information about available Channels and options can be found in the Binding readme or discovered via Paper UI.
 
-In Paper UI select a Thing to learn about all Channels the Thing support.
+In Paper UI select a Thing to learn about Channels it supports.
 
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
-Some examples:
+
+Examples:
 
 ```java
 Switch  Phone_Mobile       "My Mobile Phone"               {channel="network:device:devicename:online"}
@@ -577,8 +581,10 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:co
 
 #### Multi Binding/Channel Linkage
 
-One Item can be linked to multiple Bindings and/or Channels.
-Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.
+An Item may be linked to multiple Bindings and/or Channels.
+Commands and Updates from and to these Items will be combined, and can be used in interesting ways.
+
+Example:
 
 ```java
 Switch Office_PC {nh="192.168.3.203", wol="192.168.0.2"}
@@ -586,36 +592,16 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
+The second example shows a common use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 ##### Exception `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
-This way, the Item is always unchanged unless you explicitly post an *update* to the item.
+This way, the Item is unchanged unless you explicitly post an *update* to the item.
+
+Example:
 
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
-```
-
-<!-- TODO: This should be part of a separate Item state chapter -->
-
-## Restore States
-
-When restarting your openHAB installation you may find there are times when your logs indicate some Items are UNDEF.
-This is because, by default, Item states are not persisted when openHAB restarts.
-To have your states persist across restarts you will need to install a [Persistence]({{base}}/configuration/persistence.html) extension.
-
-Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
-Then whatever state they were in before the restart will be restored automatically.
-
-```java
-Strategies {
-    default = everyUpdate
-}
-
-Items {
-    // persist all Items on every change and restore them from the MapDB at startup
-    * : strategy = everyChange, restoreOnStartup
-}
 ```
