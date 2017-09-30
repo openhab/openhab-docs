@@ -163,10 +163,13 @@ An Item naming scheme with a physical or logical top-down will ensure you can ea
 
 The following naming style guide is recommended:
 
-- Words build a physical or logical hierarchy
-- Every word of the Item name starts with an uppercase letter
-- Words should be separated by an underscore character, except for words that logically belong together
-- Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
+-   Words build a physical or logical hierarchy
+
+-   Every word of the Item name starts with an uppercase letter
+
+-   Words should be separated by an underscore character, except for words that logically belong together
+
+-   Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
 (Example: Bathroom = BR)
 
 Examples:
@@ -183,9 +186,10 @@ Examples:
 Users are encouraged to apply the style guide above to group names as well as Item names.
 Two schemes are recommended for Group names:
 
-1. Use a plural word form (e.g. Batteries) where possible.
+1.  Use a plural word form (e.g. Batteries) where possible.
 Otherwise the word "Group" may be appended for clarity.
-2. Prepend a lowercase "g" to the name (e.g. gBattery)
+
+2.  Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation |
 |-------------------------------------------|----------------|
@@ -273,13 +277,19 @@ Users may add their own icons in either `png` or `svg` format in the openHAB ico
 
 The following guidelines apply to user-added icon files:
 
-- Only `png` or `svg` file formats may be used
-- Icon filenames may include lowercase letters, numbers and underscores (`_`)
-- Uppercase letters and special characters are prohibited
-- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
-- Example filenames:
-  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+-   Only `png` or `svg` file formats may be used
+
+-   Icon filenames may include lowercase letters, numbers and underscores (`_`)
+
+-   Uppercase letters and special characters are prohibited
+
+-   Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+Example filenames:
+
+-   Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
+
+-   Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
@@ -312,16 +322,18 @@ Dynamic icon filenames follow the pattern below:
 Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
-- A default icon is mandatory.
+-   A default icon is mandatory.
 The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
-- Icon filenames must follow the naming restrictions given for [icons](#icons),above
-- The state name must reflect the Item's raw state.
+
+-   Icon filenames must follow the naming restrictions given for [icons](#icons),above
+
+-   The state name must reflect the Item's raw state.
 [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
 For example, if you use a transform file to change a `contact` output from "CLOSED" to "CERADO", the icon filename must be `contact-closed.<extension>`
-- The state portion of the icon name must be in lowercase letters
 
+-   The state portion of the icon name must be in lowercase letters
 
-**Example:**
+Example:
 
 The user defines the "Livingroom_Light" and "Livingroom_Light_Connection" Items:
 
@@ -345,9 +357,7 @@ On the filesystem, the following icon files are provided by the user:
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
 
-
-
-**Number State Matching Rule:**
+Number State Matching Rule:
 For Number Items the equal or next lowest state icon that can be found will be used.
 For a dimmable light (0-100%), you might provide icons as in the example:
 
@@ -516,7 +526,6 @@ Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zw
 Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
 The information required for each binding is specified in the configuration information provided for each of the available [Bindings]({{base}}/addons/bindings.html).
-
 
 Examples:
 
