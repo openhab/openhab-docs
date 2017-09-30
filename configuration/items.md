@@ -209,18 +209,16 @@ A analogy can be drawn between the state of an Item and the value of a variable 
 {: #item-state}
 #### Item State
 
-This section provides information about what a user can expect regarding the behavior of the state of an Item
+This section provides information about what a user can expect regarding the behavior of the state of an Item.
 
--  Items are created with a state of `NULL`.
-The Item will remain in this state until it has been acted upon
--  Subsequent to the creation of an Item, operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item
--  Once an Item is being used, its state will depend upon the Thing to which it is linked, or upon the specifics of the Binding that created the Item.
-Example - The state of a Switch may change from `NULL` to `ON` or `OFF`
--  A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
+- Items are created with a state of `NULL`.
+
+- Operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item
+
+- An Item's state may also be set through a Binding which may be reacting to changes in the real world.
+
+- A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
--  An Item may be assigned a particular state as part of the execution of a [Rule]({{base}}/configuration/rules-dsl.html).
-See, particularly, [Manipulating Item States]({{base}}/configuration/rules-dsl.html#manipulating-item-states)
-
 
 *N.B.*  Many openHAB users find that it can be very useful to use Persistence and "System started" rules so that their systems behaves in a predictable way after an openHAB restart.
 
