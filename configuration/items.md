@@ -211,39 +211,16 @@ A analogy can be drawn between the state of an Item and the value of a variable 
 
 This section provides information about what a user can expect regarding the behavior of the state of an Item.
 
-- Items are created with a state of `NULL`.
+-   Items are created with a state of `NULL`.
 
-- Operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item
+-   Operations in openHAB such as a user interacting with the Item using the `Basic UI`, or a Binding updating the state of an Item will change the state of the Item
 
-- An Item's state may also be set through a Binding which may be reacting to changes in the real world.
+-   An Item's state may also be set through a Binding which may be reacting to changes in the real world.
 
-- A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
+-   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
 *N.B.*  Many openHAB users find that it can be very useful to use Persistence and "System started" rules so that their systems behaves in a predictable way after an openHAB restart.
-
-## Restoring States
-
-The state of an Item after an openHAB startup will depend upon whether the user has configured [Persistence]({{base}}/configuration/persistence.html) and has created a set of ["System started"]({{base}/concepts/things.html#status-transitions) rules.
-If you have not configured Persistence, you may find there are times after an openHAB startup when your logs indicate some Items are `UNDEF` or undefined.
-This is because, by default, Item states are not persisted when openHAB restarts.
-To have your states persist across restarts you will need to install a Persistence extension.
-
-Specifically, you need to use a `restoreOnStartup` strategy for all your Items.
-Then whatever state Items were in before the restart will be restored automatically.
-
-Example:
-
-```java
-Strategies {
-    default = everyUpdate
-}
-
-Items {
-    // persist all Items on every change and restore them at startup
-    * : strategy = everyChange, restoreOnStartup
-}
-```
 
 {: #state-presentation}
 #### State Presentation
