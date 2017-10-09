@@ -37,7 +37,8 @@ There are two methods for defining Items:
     (Note that 1.x and legacy Bindings do not offer this option)
 
 2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
-    Files here must have the extension `.items`; you may create as many `.items` files as needed.  However, each Item must be unique across all `.items` files.
+    Files here must have the extension `.items`; you may create as many `.items` files as needed.
+    However, each Item must be unique across all `.items` files.
     Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
 
 Generally 1.x version Bindings can only be bound to Items through `.items` files.
@@ -152,6 +153,7 @@ The Item name is used to uniquely identify an Item.
 The name must be unique across all `.items` files in your openHAB configuration.
 The only characters permitted in an Item name are letters, numbers and the underscore character.
 Spaces and special characters are not permitted.
+
 A good Item name is self-explanatory and hints at its Item type and interaction options.
 A good hierarchical arrangement allows you to create common-sense groupings of Items.
 Names may be organized by function, and/or location.
@@ -184,11 +186,10 @@ Examples:
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
-Two schemes are recommended for Group names:
+Two naming schemes are established in the community for Group names:
 
 1.  Use a plural word form (e.g. Batteries) where possible.
-Otherwise the word "Group" may be appended for clarity.
-
+    Otherwise the word "Group" may be appended for clarity.
 2.  Prepend a lowercase "g" to the name (e.g. gBattery)
 
 | Group Name                                | Interpretation |
@@ -264,10 +265,9 @@ Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
 {: #state-transformation}
 #### State Transformation
 
-Transformations can be used to change predetermined raw values into the values you establish in a `.map` file located in the `$OPENHAB_CONF/transform` directory.
-Some uses of the transformation function could be to translate text into another language, or to convert technical values into human readable information.
+Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
 
-In the example below, the entry `[MAP(window_esp.map):%s]` causes the output of the `Contact` Item to be translated from "CLOSED", to the Spanish "cerrado":
+In the example below, the entry `MAP(window_esp.map)` causes the output of the `Contact` Item to be translated from "CLOSED", to the Spanish "cerrado":
 
 ```java
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
@@ -291,24 +291,18 @@ Users may add their own icons in either `png` or `svg` format in the openHAB ico
 
 The following guidelines apply to user-added icon files:
 
--   Only `png` or `svg` file formats may be used
-
--   Icon filenames may include lowercase letters, numbers and underscores (`_`)
-
--   Uppercase letters and special characters are prohibited
-
--   Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
-Example filenames:
-
--   Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-
--   Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
-
+- Only `png` or `svg` file formats may be used
+- Icon filenames may include lowercase letters, numbers and underscores (`_`)
+- Uppercase letters and special characters are prohibited
+- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+- Example filenames:
+  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
+  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
 The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
-Experience has shown that it is best to choose only one format; vector graphics are recommended.
+It is thereby important to decide on one format beforehand; vector graphics are recommended.
 The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg` located in `$OPENHAB_CONF/services`.
 Note that image files in formats other than `png` and `svg` will be ignored.
 
@@ -337,17 +331,16 @@ Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
 -   A default icon is mandatory.
-The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
+    The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
 
--   Icon filenames must follow the naming restrictions given for [icons](#icons),above
+-   Icon filenames must follow the naming restrictions given for [icons](#icons) above
 
 -   The state name must reflect the Item's raw state.
-[Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
-For example, if you use a transform file to change a `contact` output from "CLOSED" to "CERADO", the icon filename must be `contact-closed.<extension>`
+    [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
 
 -   The state portion of the icon name must be in lowercase letters
 
-Example:
+**Example:**
 
 The user defines the "Livingroom_Light" and "Livingroom_Light_Connection" Items:
 
@@ -371,7 +364,7 @@ On the filesystem, the following icon files are provided by the user:
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
 
-Number State Matching Rule:
+**Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
 For a dimmable light (0-100%), you might provide icons as in the example:
 
@@ -397,10 +390,10 @@ Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 
 The Group item is commonly used to define hierarchies of Items from different perspectives.  For example:
 
--   Location perspective:
+-   Location-oriented or physical perspective:
     - Floors in your house → Rooms on that floor → An appliance in that room...
 
--   Function perspective:
+-   Functional or logical perspective:
     - Maintenance Group → All battery states → Individual battery states in percentage
     - Further examples: all lights, all room temperatures, combined power consumption
 
