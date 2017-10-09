@@ -46,21 +46,31 @@ After that, it's as easy as:
 
 ## Automatically Generated Parts
 
-Please note that a few parts MUST NOT BE MANUALLY EDITED!
+Please note that a few parts of this repository MUST NOT BE MANUALLY EDITED!
 These are copied from the source code repositories and some files are generated from them. These files/folders are:
 
-```
-_source/_data
-_source/concepts
-_source/addons/bindings
-_source/addons/iconsets
-_source/addons/io
-_source/addons/uis
-```
+- `addons_*`
+- `concepts`
 
-The generation/update of these files can be triggered through `mvn clean package` in the repo root.
-Please note that this repository works with sub-modules, so if you want to run this Maven generation, you should check out the repository recursively:
+The generation/update of these files can be triggered through `bash update-external-resources.sh` in the repo root.
+The process will create a temporary folder `.external-resources`, which is only used by the update script and can be ignored.
 
-```
-git clone --recursive https://github.com/openhab/openhab-docs
-```
+## About the `_addons_*` Folders
+
+See [Jekyll Collections](https://jekyllrb.com/docs/collections/) for general details.
+The folders represent collections of the different Addons types.
+
+If you are here to help improve one of the contained READMEs, read carefully.
+These files are mere copies of files in other repositories and will be overwritten on a regular basis.
+Please find the original repository and add your contribution there.
+
+At the time of this writing, the folders are automatically created and updated by the toolchain
+
+- `update-external-resources.sh` → `pom.xml` → `process_addons.groovy`
+
+Configuration of the collections happens through `_config.yml`.
+The most important setting you need to be aware of, is, that all files in collections are mapped to certain paths:
+
+- e.g. `_addons_bindings\astro\readme.md` → http://docs.openhab.org/addons/bindings/astro/readme.html
+
+Check the mentioned files for more details.

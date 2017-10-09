@@ -218,7 +218,21 @@ Number Livingroom_Temperature "Temperature [%.1f °C]"
 The state of an Item depends on the Item type, the Channel bound to the Item, and internal or external events.
 A analogy can be drawn between the state of an Item and the value of a variable in a computer program.
 
-<!-- TODO add a complete description about the actual state of an Item, e.g. Initialization, UNDEF, Binding etc. -->
+{: #item-state}
+#### Item State
+
+This section provides information about what a user can expect regarding the behavior of the state of an Item.
+
+-   Items are created with a state of `NULL`
+
+-   Operations in openHAB such as a user interacting with the Item using the Basic UI, or a Binding updating the state of an Item will change the state of the Item
+
+-   An Item's state may also be set through a Binding which may be reacting to changes in the real world
+
+-   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
+The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
+
+*N.B.*  Many openHAB users find that it can be very useful to use [Persistence]({{base}}/addons/persistence.html) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #state-presentation}
 #### State Presentation

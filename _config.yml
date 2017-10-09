@@ -12,76 +12,76 @@ exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.gr
 plugins:
   - jekyll-sitemap
 collections:
-  actions:
+  addons_actions:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  bindings:
+    permalink: /addons/actions/:path:output_ext
+  addons_bindings:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  iconsets:
+    permalink: /addons/bindings/:path:output_ext
+  addons_iconsets:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  io:
+    permalink: /addons/iconsets/:path:output_ext
+  addons_io:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  persistence:
+    permalink: /addons/io/:path:output_ext
+  addons_persistence:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  transformations:
+    permalink: /addons/persistence/:path:output_ext
+  addons_transformations:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  uis:
+    permalink: /addons/transformations/:path:output_ext
+  addons_uis:
     output: true
-    permalink: /addons/:collection/:path:output_ext
-  voice:
+    permalink: /addons/uis/:path:output_ext
+  addons_voices:
     output: true
-    permalink: /addons/:collection/:path:output_ext
+    permalink: /addons/voices/:path:output_ext
 defaults:
   -
     scope:
       path: ""
-      type: actions
+      type: addons_actions
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: bindings
+      type: addons_bindings
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: iconsets
+      type: addons_iconsets
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: io
+      type: addons_io
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: persistence
+      type: addons_persistence
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: transformations
+      type: addons_transformations
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: uis
+      type: addons_uis
     values:
-      layout: documentation
+      layout: addon
   -
     scope:
       path: ""
-      type: voice
+      type: addons_voices
     values:
-      layout: documentation
+      layout: addon

@@ -67,14 +67,11 @@
         <ul>
           <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
           <hr />
-          {% for binding in site.bindings %}
+          {% for binding in site.addons_bindings %}
             {% if binding.install == "auto" %}
-              <li>
-                <a href="{{ binding.url }}">
-                  <!-- {{ binding.label }}&nbsp;<small>({{ binding.since | replace:'1x','since&nbsp;1.x' | replace:'2x','since&nbsp;2.x' }})</small> -->
-                  {{ binding.label }}
-                </a>
-              </li>
+              <li><a href="{{ binding.url }}">{{ binding.label }}</a></li>
+            {% elsif binding.id == page.id and page.install == "manual" or page.install == "legacy" %}
+              <li><a href="{{ binding.url }}">{{ binding.label }} <small>(legacy/manual)</small></a></li>
             {% endif %}
           {% endfor %}
         </ul>
@@ -83,13 +80,13 @@
         <ul>
           <li><a href="{{docu}}/addons/uis.html">Overview</a></li>
           <hr />
-          {% for ui in site.uis %}
+          {% for ui in site.addons_uis %}
           <li><a href="{{ ui.url }}">{{ ui.label }}</a></li>
           {% endfor %}
           <hr />
-          <li><a href="{{docu}}/addons/uis/apps/android.html">Android openHAB App</a></li>
-          <li><a href="{{docu}}/addons/uis/apps/ios.html">iOS openHAB App</a></li>
-          <li><a href="{{docu}}/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <li><a href="{{docu}}/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="{{docu}}/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="{{docu}}/addons/uis/apps/windows.html">Windows 10 App</a></li>
           <hr />
           <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
         </ul>
@@ -98,8 +95,10 @@
         <ul>
           <li><a href="{{docu}}/addons/persistence.html">Overview</a></li>
           <hr />
-          {% for persistence in site.persistence %}
-          <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
+          {% for persistence in site.addons_persistence %}
+            {% if persistence.install == "auto" or persistence.id == page.id and page.install == "manual" %}
+              <li><a href="{{ persistence.url }}">{{ persistence.label }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
@@ -107,8 +106,10 @@
         <ul>
           <li><a href="{{docu}}/addons/actions.html">Overview</a></li>
           <hr />
-          {% for action in site.actions %}
-          <li><a href="{{ action.url }}">{{ action.label }}</a></li>
+          {% for action in site.addons_actions %}
+            {% if action.install == "auto" or  action.id == page.id and page.install == "manual" %}
+              <li><a href="{{ action.url }}">{{ action.label }}</a></li>
+            {% endif %}
           {% endfor %}
         </ul>
       </li>
@@ -116,16 +117,16 @@
         <ul>
           <li><a href="{{docu}}/addons/transformations.html">Overview</a></li>
           <hr />
-          {% for transformation in site.transformations %}
+          {% for transformation in site.addons_transformations %}
           <li><a href="{{ transformation.url }}">{{ transformation.label }}</a></li>
           {% endfor %}
         </ul>
       </li>
-      <li><a href="{{docu}}/addons/voice.html">Voice Services</a>
+      <li><a href="{{docu}}/addons/voices.html">Voice Services</a>
         <ul>
-          <li><a href="{{docu}}/addons/voice.html">Overview</a></li>
+          <li><a href="{{docu}}/addons/voices.html">Overview</a></li>
           <hr />
-          {% for voice in site.voice %}
+          {% for voice in site.addons_voices %}
           <li><a href="{{ voice.url }}">{{ voice.label }}</a></li>
           {% endfor %}
         </ul>
@@ -135,7 +136,7 @@
         <ul>
           <li><a href="{{docu}}/addons/io.html">Overview</a></li>
           <hr />
-          {% for io in site.io %}
+          {% for io in site.addons_io %}
           <li><a href="{{ io.url }}">{{ io.label }}</a></li>
           {% endfor %}
           <hr />

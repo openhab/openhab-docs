@@ -51,8 +51,8 @@ The Designer needs to be able to access the configuration files on the remote op
 
 You have to have a [network share](https://en.wikipedia.org/wiki/Shared_resource) set up on the remote host and mounted on your local device.
 Steps needed to so are specific to the hosts operation system.
-How to setup and use Samba on a Linux system is described in the [Linux article](linux.html#network-sharing).
-If you are using [openHABian](openhabian.html), the needed set of network shares is already configured for you, you just need to mount them locally.
+How to setup and use Samba on a Linux system is described in the [Linux article]({{base}}/installation/linux.html#network-sharing).
+If you are using [openHABian]({{base}}/installation/openhabian.html), the needed set of network shares is already configured for you, you just need to mount them locally.
 
 *Attention Windows users:* Directly accessing network shares (UNC paths) is not supported. Please be sure to mount the network share to a drive letter prior to using the SmartHome Designer.
 
