@@ -25,9 +25,10 @@ openHAB offers a variety of frontends for user interaction, from administrative 
 
 ## Iconsets
 
-Basic UI, Classic UI and all apps present a graphical user interface as defined in [Sitemaps]({{base}}/configuration/sitemaps.html) by the help of [Items]({{base}}/configuration/items.html).
-Each Item respectively each Sitemap element may be assoziated with an icon visible next to it.
-The Classic Icons Set is currently the only set of icons provided.
+Basic UI, Classic UI and all openHAB apps present a graphical user interface as defined in [Sitemaps]({{base}}/configuration/sitemaps.html), with the help of [Items]({{base}}/configuration/items.html).
+Each Item as well as each Sitemap element may be associated with an icon visible next to it.
+Currently only the Classic Icon Set is provided.
+
 Addition of personal icons and customization of the existing ones is supported and encouraged.
 See the instructions about [Custom Icons and Custom Dynamic Icons]({{base}}/configuration/items.html#icons) for more details.
 
