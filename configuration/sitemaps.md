@@ -383,7 +383,7 @@ An embedded or protected video is not supported.
 
 - `item` can refer to a String Item whose state is an URL to a video.    Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video, if there is no associated Item or if the associated item's state is not an URL.
-- `encoding` can stay left empty for auto selection, for an MJPEG video please set the "mjpeg" encoding explicitly.
+- `encoding` can stay left empty for auto selection, but please set it explicitly to "mjpeg" for an MJPEG video and to "HLS" for a HTTP Live Streaming playlist (file with .m3u8 extension).
 
 **Example:**
 
