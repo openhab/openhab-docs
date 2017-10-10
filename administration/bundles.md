@@ -46,3 +46,20 @@ openhab> bundle:list
 ...
 209 | Active   |  80 | 2.0.0.b3              | Network Binding
 ```
+
+## Naming Convention For Bundles
+
+Bundles are named according to the following convention.
+
+```java
+<prefix>-<type>-<id>
+```
+
+where
+
+- **prefix** is ALWAYS "openhab" 
+- **type** is the add-on type, e.g. "binding" or "ui"
+- **id** is the identifier for this bundle
+  (It is also the id that you would have to use openHAB 1.x in addons.cfg, e.g. "hue", "map", etc.)
+
+  This is used for example to assign them the correct features for the karaf console or to sort them in different tabs within the Paper UI.
