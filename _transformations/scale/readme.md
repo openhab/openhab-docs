@@ -29,14 +29,16 @@ The file is expected to exist in the `transform` directory, and should follow th
 ## Example
 
 The following example shows how to break down numeric UV values into fixed UV index categories.
+We have an example UV sensor that sends us numeric values from `0` to `100`, which we then want to scale into the *UV Index* range.
+For further Information on the UV Index take a look at [Wikipedia](https://en.wikipedia.org/wiki/Ultraviolet_index).
 
-example item:
+Example item:
 
 ```java
 Number Uv_Sensor_Level "UV Level [SCALE(uvindex.scale):%s]"
 ```
 
-uvindex.scale in transform folder:
+Uvindex.scale in transform folder:
 
 ```python
 ..3]=1
@@ -50,6 +52,7 @@ Each value the item receives, will be categorized to one of the five given range
 Values **lower than or equal to 3** are catched with `..3]=1`.
 Greater values are catched in ranges with 2 values as criteria.
 The only condition here is that the received value has to be lower than or equal to `100` in our example, since we haven't defined other cases yet.
+If **none** of the configured conditions matches the given value, the response will be empty.
 
 Please note that all ranges for values above **3** are opened with a `]`.
 So the border values (3, 6, 8 and 10) are always transformed to the lower range, since the `]`excludes the given critera.
