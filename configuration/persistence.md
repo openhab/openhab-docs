@@ -14,7 +14,7 @@ This is called persistence.
 Persistence can have several important uses.
 For example, persistence allows an openHAB system to restore itself to the state it was in prior to a restart (if you have configured it to do so).
 Persistence may also be used to store values that are subsequently displayed in a graph.
-(For an excellent graphing tutorial see [InfluxDB+Grafana persistence and graphing](https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761)
+(For an excellent graphing tutorial see [InfluxDB+Grafana persistence and graphing](https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761).
 
 openHAB persists item states in a database, and most popular databases are supported.
 You may have more that one persistence add-on loaded, and each of these may be configured independently.
@@ -39,12 +39,12 @@ Scroll down to "Persistence", and select your Default Service from the drop-down
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
-## configuration
+## Configuration
 
 You can choose how your persistence service operates, which item states it persists, and under what conditions it persists them.
 These things and more are configured in a file named `<persistenceservice>.persist`, where "persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`).
 This folder is located in `$OPENHAB_CONF/persistence`.
-The configuration defines persistence "strategies" which are very similar to [triggers]({{base}}/configuration/rules-dls.html#rule-triggers) in openHAB rules.
+The configuration defines persistence "strategies" which are very similar to [triggers]({{base}}/configuration/rules-dsl.html#rule-triggers) in openHAB rules.
 These strategies may be used to persist an item state when some bus event has occurred (e.g. an item state has been updated or changed), or on a schedule or at a specific time of day (e.g. through a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger).
 
 Persistence configuration files consist of several sections:
@@ -172,7 +172,9 @@ Here is the full list of available persistence extensions:
 These extensions use the default persistence service that is configured as the default persistence service.  (Refer to Default Persistence Service above to configure this.)
 
 Note that you can specify that a different persistence service be used with a particular extension.
-Do this by appending a String as an optional additional parameter at the end of the extension (e.g. "rrd4j" or "sense")
+Do this by appending a String as an optional additional parameter at the end of the extension (e.g. "rrd4j" or "sense").
+
+<!-- TODO:Add an example of this.  I assume it is as simple as adding .rrd4j to the end of one of these, but this should be verified before being published. -->
 
 ### Date and Time extensions
 
@@ -240,5 +242,3 @@ The script waits for five seconds and then touches all `*.rules` files (except `
 This causes openHAB to reload all rules (openHAB automatically reloads rules when their creation date/time changes).
 Other rules files may be added on new lines.
 Note - you will have to experiment to find the appropriate sleep value for your specific system.
-
-{% include contribution-wanted.html %}
