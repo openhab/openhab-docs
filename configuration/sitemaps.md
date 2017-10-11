@@ -7,9 +7,8 @@ title: Sitemaps
 
 # Sitemaps
 
-In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects of the user's home automation setup.
-Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various frontends,
-including [BasicUI]({{base}}/addons/uis/basic/readme.html),
+In openHAB, a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent the physical or logical objects in a user's home.
+You use a sitemap to create a user-oriented presentation of your home for various openHAB user interfaces including [BasicUI]({{base}}/addons/uis/basic/readme.html),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
 This page is structured as follows:
@@ -48,7 +47,7 @@ sitemap demo label="My home automation" {
 
 <!-- Note to author: If you update this example, remember to copy it to the end of the article as well! -->
 
-This textual UI configuration will produce a user interface similar to this:
+This example produces a user interface similar to this:
 ![Presentation of the example in BasicUI](images/sitemap_demo_fullexample.png)
 
 <!-- Note to author: The files to create all screenshots can be found at the end of the article! -->
