@@ -7,12 +7,238 @@ title: Persistence
 
 # Persistence
 
-Persistence support stores item states over time (a time series).
-openHAB is not restricted to a single data store.
-Different stores can co-exist and be configured independently.
-For further details, please check:
+## Introduction
 
-- The list of supported [Persistence Services]({{base}}/addons/persistence.html)
-- [The openHAB 1.x wiki persistence article](https://github.com/openhab/openhab/wiki/Persistence)
+openHAB has the ability to save item states according to rules you have configured.
+This is called persistence.
+Persistence can have several important uses.
+For example, persistence allows an openHAB system to restore itself to the state it was in prior to a restart (if you have configured it to do so).
+Persistence may also be used to store values that are subsequently displayed in a graph.
+(For an excellent graphing tutorial see [InfluxDB+Grafana persistence and graphing](https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761)
+
+openHAB persists item states in a database, and most popular databases are supported.
+You may have more that one persistence add-on loaded, and each of these may be configured independently.
+Examples of available persistence add-ons include relational databases, NoSQL databases, round-robin databases, Internet-of-Things (IoT) cloud services, simple log files, etc.
+All of these options are available in openHAB, and they are all configured in the same way.
+Note that the type of database(s) you use for persistence may be influenced by your requirements for exporting data (e.g. IoT services or log files), or your requirement to make queries against the database to retrieve historical data (e.g. MySQL and MongoDB).
+A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
+
+## Persistence Add-on Configuration
+
+Each persistence add-on you install will need to be configured.
+Please refer to the specific [on-line documentation]({{base}}/addons/persistence.html) for your selected persistence add-on for configuration instructions.
+
+## Default Persistence Service
+
+You may install more than one persistence add-on.
+Therefore, it is important to select a default persistence service.
+You should do this even if you have only one persistence add-on installed.
+
+To select a default persistence service, in paperUI, select Configuration and then System from the side menu.
+Scroll down to "Persistence", and select your Default Service from the drop-down list.
+Note that you must first install a persistence add-on before you make this selection.
+Be sure to save your choice once you have selected your default service.
+
+## configuration
+
+You can choose how your persistence service operates, which item states it persists, and under what conditions it persists them.
+These things and more are configured in a file named `<persistenceservice>.persist`, where "persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`).
+This folder is located in `$OPENHAB_CONF/persistence`.
+The configuration defines persistence "strategies" which are very similar to [triggers]({{base}}/configuration/rules-dls.html#rule-triggers) in openHAB rules.
+These strategies may be used to persist an item state when some bus event has occurred (e.g. an item state has been updated or changed), or on a schedule or at a specific time of day (e.g. through a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger).
+
+Persistence configuration files consist of several sections:
+
+### Strategies section
+
+This section allows you to define strategies and to declare a set of default strategies to use for this persistence service.  The syntax is as follows:
+
+```java
+Strategies {
+  <strategyName1> : "cronexpression1>"
+  <strategyName2> : "cronexpression2>"
+  ...
+
+  default = <strategyNameX>, <strategyNameY>
+}
+```
+
+Note that the `Strategies` section must be included, and that it must define a default, or the persistence service will not work.
+
+The following strategies are defined internally in openHAB for your convenience:
+
+- everyChange: persist the item state whenever its state has changed
+- everyUpdate: persist the item state whenever its state has been updated, even if it did not change
+- restoreOnStartup: load and initialize the last persisted item state on openHAB startup (if the item state is undefined (`UNDEF`)).  This strategy is extremely useful for items that are not updated through a Thing with a Binding to something in the real world.
+
+### Items section
+
+This section defines which items should be persisted with which strategy.
+The syntax is as follows:
+
+```java
+Items {
+    <itemlist1 [-> "<alias1>"] : [strategy = <strategy1>, <strategy2>, ...]
+    <itemlist2> [-> "<alias2>"] : [strategy = <strategyX>, <strategyY>, ...]
+    ...
+
+}
+```
+
+where `<itemlist>` is a comma-separated list consisting of one or more of the following options:
+
+- `*` - this line should apply to all items in the system
+- `<itemName>` a single item identified by its name. This item can be a group item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
+- `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
+
+A valid persistence configuration file might look like this:
+
+```java
+// persistence strategies have a name and a definition and are referred to in the "Items" section
+Strategies {
+        everyHour : "0 0 * * * ?"
+        everyDay  : "0 0 0 * * ?"
+
+        // if no strategy is specified for an item entry below, the default list will be used
+       default = everyChange
+}
+
+/*
+ * Each line in this section defines for which item(s) which strategy(ies) should be applied.
+ * You can list single items, use "*" for all items or "groupitem*" for all members of a group
+ * item (excl. the group item itself).
+ */
+Items {
+        // persist all items once a day and on every change and restore them from the db at startup
+        * : strategy = everyChange, everyDay, restoreOnStartup
+
+        // additionally, persist all temperature and weather values every hour
+        Temperature*, Weather* : strategy = everyHour
+}
+```
+
+## Restoring Item States on restart
+
+When restarting your openHAB installation you may find there are times when your logs indicate some Items have the state, `UNDEF`.
+This is because, by default, item states are not persisted when openHAB restarts - even if you have installed a persistence add-on.
+In order for items to be persisted across openHAB restarts, you must define a `restoreOnStartup` strategy for all your items.
+Then, whatever state they were in before the restart will be restored automatically.
+The following example persists all items on every change and restores them at startup:
+
+```java
+Strategies {
+  default = everyUpdate
+}
+
+Items {
+  * : strategy = everyChange, restoreOnStartup
+}
+```
+
+## Persistence Extensions in Scripts and rules
+
+To make use of persisted states inside scripts and rules, a few useful extensions have been defined on items.
+In contrast to an action (which is a function that can be called anywhere in a script or rule), an extension is a function that is only available like a method on a certain type.
+This means that the persistence extensions are available like methods on all items.
+
+<!-- TODO: Reword the above section to replace the word "like" with something that is more clear-->
+
+Example:
+
+The statement
+
+`Temperature.historicState(now.minusDays(1))`
+
+will return the state of the item "Temperature" from 24 hours ago.
+You can easily imagine that you can implement very powerful rules using this feature.
+
+Here is the full list of available persistence extensions:
+
+```java
+<item>.persist - Persists the current state
+<item>.lastUpdate - Query for the last update timestamp of a given item.
+<item>.historicState(AbstractInstant) - Retrieves the historic item at a certain point in time
+<item>.changedSince(AbstractInstant) - Checks if the state of the item has (ever) changed since a certain point in time
+<item>.updatedSince(AbstractInstant) - Checks if the state of the item has been updated since a certain point in time
+<item>.maximumSince(AbstractInstant) - Gets the Item with the maximum value (state) since a certain point in time
+<item>.minimumSince(AbstractInstant) - Gets the Item with the minimum value (state) since a certain point in time
+<item>.averageSince(AbstractInstant) - Gets the average value of the state of a given item since a certain point in time.
+<item>.deltaSince(AbstractInstant) - Gets the difference value of the state of a given item since a certain point in time.
+<item>.previousState() - Retrieves the previous item (returns HistoricItem).
+<item>.previousState(true) - Retrieves the previous item, skips items with equal state values and searches the first item with state not equal the current state (returns HistoricItem).
+<item>.sumSince(AbstractInstant) - Retrieves the sum of the previous states since a certain point in time. (OpenHab 1.8)
+```
+
+These extensions use the default persistence service that is configured as the default persistence service.  (Refer to Default Persistence Service above to configure this.)
+
+Note that you can specify that a different persistence service be used with a particular extension.
+Do this by appending a String as an optional additional parameter at the end of the extension (e.g. "rrd4j" or "sense")
+
+### Date and Time extensions
+
+A number of date and time calculations have been made available in openHAB through incorporation of [Jodatime](http://joda-time.sourceforge.net/).
+This makes it very easy to perform actions based upon time.
+Here are some examples:
+
+```java
+Lights.changedSince(now.minusMinutes(2).minusSeconds(30))
+Temperature.maximumSince(now.toDateMidnight)
+Temperature.minimumSince(parse("2012-01-01"))
+PowerMeter.historicState(now.toDateMidnight.withDayOfMonth(1))
+```
+
+The "now" variable can be used for relative time expressions, while "parse()" can define absolute dates and times.
+See the [Jodatime documentation](http://joda-time.sourceforge.net/api-release/org/joda/time/format/ISODateTimeFormat.html#dateTimeParser()) for information on accepted formats for string parsing.
+
+## Startup Behavior
+
+Persistence services and the rule engine are started in parallel.
+Because of this, it is possible that, during an openHAB startup, rules will execute before item states used by those rules have been restored.
+(In this case, those unrestored items have an "undefined" state when the rule is executed.)
+Therefore, rules that rely on persisted item states may not work consistently.
+
+### Workaround 1
+
+A workaround which helps in some cases is to create an item e.g. "delayed_start" that is set to "OFF" at startup and to "ON" some time later (when it can be assumed that persistence has restored all items.
+You then write a rule that restores items from your persistence service after the delay has completed.
+The time of the delay must be determined by experimentation.
+How long you need to wait before changing your "delayed_start" item from "OFF" to "ON" depends upon the size of your home automation project and the performance of your platform.
+
+<!-- TODO: Need a code example for Workaround 1. -->
+
+### Workaround 2
+
+Create `$OPENHAB_CONF/rules/refresh.rules` with the following content (This rule runs only once when openHAB starts):
+
+```sh
+var boolean reloadOnce = Temperature
+rule "Refresh rules after persistence service has started"
+  when System started
+then
+  if(reloadOnce)
+    executeCommandLine("$OPENHAB_CONF/rules/rules_refresh.sh")
+  else
+    println("reloadOnce is false")
+  reloadOnce = false
+end
+```
+
+Create a refresh script `$OPENHAB_CONF/rules_refresh.sh` and make it execuitable (`chmod +x rules_refresh.sh`):
+
+```sh
+#This script is called by openHAB after the persistence service has started
+sleep 5
+cd [full_path_to_openhab_config_directory]/rules
+RULES=`find *.rules |grep -v refresh.rules
+for f in $RULES
+do
+  touch $f
+done
+```
+
+The script waits for five seconds and then touches all `*.rules` files (except `refresh.rules`).
+This causes openHAB to reload all rules (openHAB automatically reloads rules when their creation date/time changes).
+Other rules files may be added on new lines.
+Note - you will have to experiment to find the appropriate sleep value for your specific system.
 
 {% include contribution-wanted.html %}
