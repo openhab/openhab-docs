@@ -18,13 +18,13 @@ This page is structured as follows:
 - TOC
 {:toc}
 
-Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
-Sitemaps follow the syntax described below.
+The definition of Sitemaps happens declaratively in a file with a clear syntax, described below.
+A Sitemap definition file is stored in the folder `$OPENHAB_CONF/sitemaps` and has to have the `.sitemap` filename extension.
+For easy editing, profit from the IDE support of the [openHAB supporting editors]({{base}}/configuration/editors.html).
 
-For easy editing of sitemap definition files, we suggest you consider using the [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer), which provides full IDE support for these files including, among other functions, syntax checking and auto-complete.
-
-The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
-You may find it useful to use this file, or another example sitemap as a starting point towards building a Sitemap that fits your personal home setup.
+The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap),
+which should let you easily understand possible elements and structures.
+It is recommended to use this demo file or another example Sitemap as a starting point towards building a customized Sitemap that fits your personal home setup.
 
 The following example illustrates what a typical Sitemap definition might look like:
 
@@ -484,7 +484,7 @@ Please take note, that other colors can be used.
 It is generally expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but a UI may only accept internally defined colors or work with a special theme.
 The given color names are agreed on between all openHAB UIs and are therefor your safest choice.
 
-Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for valuecolor.
+Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for `valuecolor`.
 Until resolved you can use the corresponding HTML code (e.g. '#008000') instead.
 
 | Color Name  | Preview and RGB Color Code              |
