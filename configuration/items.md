@@ -235,6 +235,25 @@ The Binding may also set the state to `UNDEF` if an error exists in the binding 
 
 *N.B.*  Many openHAB users find that it can be very useful to use [Persistence]({{base}}/addons/persistence.html) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
+{: #command-vs-status}
+#### Command vs. Status
+
+Users should bear in mind the difference between an Item used to send a command to a Thing, and an Item that reflects the status of a real-world Thing in the UI.
+This distinction may seem obvious, but it can be a little confusing when an Item appears not to reflect the correct status of a Thing.
+
+For example, let's say you have a Switch Item that is used to turn on a light.  You insert this Item into a [sitemap]({{base}}/configuration/sitemaps).
+You call up the sitemap and switch on the light using the UI.  The switch icon changes from red to green, but you notice that the light does not turn on.
+What happened?
+Perhaps the Switch physical device is faulty or perhaps the device lost communications with your network.
+In any case, the UI performed correctly - it reflected the fact that you sent a command to the Switch Item.
+What the UI did not do is convey the status of the device being switched.
+Of course, this is the correct.
+As of this point, you do not have any Item in your sitemap that would do this.
+If it is critical that you know that the light came on, you could install a sensor that monitors light level.
+You could then, through the appropriate Binding, reflect light level changes through a Thing to an Item.
+Then you add the light-level Item to your UI.
+Now when you send the Switch Item command, and you see a corresponding increase in light level in the room, you know for sure that your command has been received and acted upon, because you have a return status Item in your UI.
+
 {: #state-presentation}
 #### State Presentation
 
