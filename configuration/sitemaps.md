@@ -106,22 +106,22 @@ sitemap <sitemapname> label="<title of the main screen>" {
 
 ## Element Types
 
-The following element types can be used in a Sitemap definition file.
+The following element types may be used in a Sitemap definition file.
 
 | Element                                   | Description                                               |
 |-------------------------------------------|-----------------------------------------------------------|
 | [Chart](#element-type-chart)              | Adds a time-series chart object for [persisted](persistence.html) data. |
 | [Colorpicker](#element-type-colorpicker)  | Allows the user to choose a color from a color wheel. |
 | [Default](#element-type-default)          | Renders an Item in the default UI representation specified by the type of the given item. |
-| [Frame](#element-type-frame)              | Area containing various other Sitemap elements. |
+| [Frame](#element-type-frame)              | Establishes an area containing various other Sitemap elements. |
 | [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
 | [Image](#element-type-image)              | Renders an image given by an URL. |
 | [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
 | [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
-| [Slider](#element-type-slider)            | A value is presented in a progress bar like slider. |
+| [Slider](#element-type-slider)            | Presents a value in a progress-bar-like slider. |
 | [Switch](#element-type-switch)            | Renders an Item as a ON/OFF or multi-button switch. |
-| [Text](#element-type-text)                | Renders an Item in a text representation. |
-| [Video](#element-type-video)              | Displays a video stream given a direct URL. |
+| [Text](#element-type-text)                | Renders an Item in as text. |
+| [Video](#element-type-video)              | Displays a video stream, given a direct URL. |
 | [Webview](#element-type-webview)          | Displays the content of a webpage. |
 
 <!-- TODO: check for new element types -->
@@ -130,23 +130,27 @@ The following element types can be used in a Sitemap definition file.
 Data presented by Sitemap elements will almost always originate from a referenced item.
 Each Item is of a certain Item type, for example `Switch`, `Number` or `String`.
 
-While not all combinations are meaningful, items of one datatype can be linked to different Sitemap element types.
+While not all combinations are meaningful, items of one datatype may be linked to different Sitemap element types.
 This provides the flexibility to present items in the way desired in your home automation user interface.
+
+<!-- TODO: an example of the above would be useful here -->
 
 **General remarks on parameters:**
 
 -   In the following definitions, parameters in `[square brackets]` are optional.
 
--   Parameters must be supplied in the order described.
+-   Parameters must be supplied in the order shown.
 
 -   Common parameters, also known from [items definition](items.html#item-syntax):
     - `item` defines the name of the Item you want to present (e.g. `Temperature`), [more details](items.html#item-name).
-    - `label` sets the textual description besides the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
-    - `icon` is the name of the icon file to show next to the element, [more details](items.html#icons).
+    - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
+    - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
 
--   Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
+-   When an Item is defined, you have the opportunity to assign a label and/or an icon at that point.
+If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
+However, setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
--   Additional parameters like `mappings` or `valuecolor` are described below.
+-   Additional parameters such as `mappings` and `valuecolor` are described below.
 
 ### Element Type 'Frame'
 
@@ -156,7 +160,7 @@ Frame [label="<labelname>"] [icon="<icon>"] {
 }
 ```
 
-Frames are used to create visually separated areas of items.
+Frames are used to visually separate areas of items when the items are viewed in a UI.
 
 **Example:**
 
@@ -176,7 +180,7 @@ Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 ```
 
 Presents an Item using the default UI representation specified by the type of the given Item.
-E.g., a `Dimmer` Item will be represented as if using a [Slider](#element-type-slider) element while a `Player` Item will be rendered with the commonly known player button controls (Previous/Pause/Play/Next).
+E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
 
 <!-- TODO: specify what the default representation for each Item type is -->
 
@@ -187,8 +191,8 @@ Text [item=<itemname>] [label="<labelname>"] [icon="<iconname>"]
 ```
 
 Presents data as normal text.
-Most Item types can be used, the values can be prepared and reformatted by using string formatters and transformations.
-Please check with the documentation on the [item label](items.html#item-label) for details.
+Most Item types can be used; the values can be prepared and reformatted by using string formatters and transformations.
+Please refer to the documentation on [item labels](items.html#item-label) for details.
 
 **Example:**
 
@@ -204,15 +208,15 @@ Text item=Temperature label="Livingroom [%.1f °C]" icon="temperature"
 Group item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 ```
 
-The element will be clickable, revealing a new view showing all group items using the [Default](#element-type-default) element type.
-In addition, Item groups may be configured to hold a value, just like with normal items.
+Clicking on a Group element will reveal a new view showing all group items using the [Default](#element-type-default) element type.
+In addition, Item groups may be configured to hold a value, just as with normal items.
 Please refer to the documentation on [Item groups](items.html#groups) for details.
 
 - `item` refers to the name of the Item group to be presented.
 
 **Attention:**
-There is no way to override the parameters, change the default element type, change the order, use dynamic tags, or insert other elements (e.g. Chart, Image, Webview, etc) in the subframe generated by using the Group element.
-Please see the Blocks section above for how to create a custom subframe with full control over its contents and appearance.
+There is no way to override the parameters, change the default element type, change the order, use dynamic tags, or insert other elements (e.g. Chart, Image, Webview, etc) in the subframe generated by the Group element.
+Please see the Blocks section above for information on how to create a custom subframe with full control over its contents and appearance.
 
 **Example:**
 
@@ -233,7 +237,7 @@ A Switch will present a discrete state Item and allow changing of it's value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
-  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given several labeled buttons are rendered.
+  Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several labeled buttons will be rendered.
 
 **Examples:**
 
@@ -252,7 +256,7 @@ Selection item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<
 ```
 
 The Selection element type renders the options as a dropdown menu or as a modal dialog prompt, depending on the user interface.
-The element type is in its use cases similar to a Switch with multiple states but has the advantage that the main UI stays clean and more options can be offered.
+The element type is, in its use cases, similar to a Switch with multiple states but has the advantage that the main UI stays clean, and more options can be offered.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
 
@@ -270,11 +274,13 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
-A special Switch-like element to increase or decrease the value of an item.
+A special Switch-like element that may be used to increase or decrease the value of an item.
 The element is often used to gradually change a number item.
 
+<!-- TODO: The sentence above is not clear and needs to be rewritten. -->
+
 - `minValue` and `maxValue` limit the possible range of the value (both included in the range).
-- `step` defines the change in value one button press will cause.
+- `step` defines how much the value will change when the button is pressed one time.
 
 **Example:**
 
@@ -296,7 +302,7 @@ This type presents a value as a user-adjustable control which slides from left (
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
 -   `switchSupport` is a parameter without an assignment (Classic UI only!).
-    If specified, a short press on the "up" or "down" buttons switch the item "on" or "off" completely.
+    If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
 
 **Example:**
 
@@ -313,7 +319,7 @@ Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequ
 ```
 
 This element provides the ability to select a color.
-Upon clicking the middle button, a color wheel will be presented.
+When the user clicks on the middle button, a color wheel will appear.
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
@@ -334,8 +340,8 @@ Colorpicker item=LR_LEDLight_Color label="LED Light Color" icon="colorwheel"
 Webview item=<itemname> [label="<labelname>"] [icon="<iconname>"] url="<url>" [height=<heightvalue>]
 ```
 
-The content of a webpage will be presented live on your user interface besides other Sitemap elements.
-Please be aware, that Webview elements are not usable by all user interface options.
+The content of a webpage will be presented live on your user interface next to other Sitemap elements.
+Please be aware that Webview elements are not usable by all user interface options.
 
 - `height` is the number of element rows to fill.
 
@@ -354,12 +360,12 @@ Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labeln
 ```
 
 This element type is able to present an image.
-The image has to be available on a reachable website or webserver without password or access token.
-It's also possible to place an image in the `html` folder under your configuration folder.
+The image must be available on a reachable website or webserver without password or access token.
+It's also possible to place an image in the `$OPENHAB_CONF/html` folder.
 The file will be available under the "static" route, [http://<my.openHAB.device>:8080/static/image.png](http://127.0.0.1:8080/static).
 
-- `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL to an image. Some clients may not (yet) consider `item`.
-- `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not an URL.
+- `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
+- `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
 - `refresh` is the refresh period of the image in milliseconds ("60000" for minutely updates).
 
 **Example:**
@@ -376,14 +382,14 @@ Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/feature
 Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encoding="<video encoding>"]
 ```
 
-Allows to integrate a video presentation into a your Sitemap.
-Not all video encodings (formats) are supported, you may need to transcode your video.
-The video has to be reachable directly via URL.
-An embedded or protected video is not supported.
+Allows you to display a video as part of your Sitemap.
+Note: not all video encodings (formats) are supported; you may need to transcode your video.
+The video must be reachable directly via URL.
+An embedded and/or protected video are not supported.
 
-- `item` can refer to a String Item whose state is an URL to a video.    Some clients may not (yet) consider `item`.
-- `url` is the default URL from which to retrieve the video, if there is no associated Item or if the associated item's state is not an URL.
-- `encoding` can stay left empty for auto selection, for an MJPEG video please set the "mjpeg" encoding explicitly.
+- `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
+- `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
+- `encoding` may be left empty for auto selection.  but please set it explicitly to "mjpeg" for an MJPEG video, or to "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).
 
 **Example:**
 
@@ -400,17 +406,19 @@ Chart [item=<itemname>] [icon="<iconname>"] [label="<labelname>"] [refresh=xxxx]
 [period=xxxx] [service="<service>"] [begin=yyyyMMddHHmm] [end=yyyyMMddHHmm] [legend=true/false]
 ```
 
-Adds a time-series chart object for displaying logged data.
+Adds a time-series chart object for the display of logged data.
 
 -   `refresh` defines the refresh period of the Image (in milliseconds).
 
 -   `service` sets the persistence service to use.
-If no service is set, openHAB will use the first queryable persistence service it finds.
+If no service is specified, openHAB will use the first queryable persistence service it finds.
 Therefore, for an installation with only a single persistence service, this is not required.
 
--   `period` is the length of the time axis of the Chart. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
+<!-- TODO: Is this statement correct?  Isn't there a default persistence setting in paperUI? -->
 
--   `begin` / `end` represent the beginning and end of the time axis of the Chart.
+-   `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
+
+-   `begin` / `end` sets the beginning and end of the time axis.
 Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).
 
 -   `legend` is used to show or to hide the chart legend.
@@ -426,14 +434,14 @@ Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for e
 -->
 
 **Other options to look out for:**
-The Chart element type is a good way to present time series quickly.
+The Chart element type is a good way to present time series data quickly.
 For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. [Grafana](http://grafana.org)).
 See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, you must use the `everyMinute` (60 seconds) logging strategy otherwise rrd4j thinks that there is no data and will not properly draw the charts.
-- The visibility of multiple Chart objects can be toggled to simulate changing the Chart period, and the non-visible Chart widgets are NOT generated behind the scenes until it becomes visible.
+- When using rrd4j persistence, you must use the `everyMinute` (60 seconds) logging strategy.  Otherwise rrd4j thinks that there is no data and will not properly draw the charts.
+- The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
 
 <!-- TODO: This paragraph needs an update -->
