@@ -463,7 +463,7 @@ Please note that Switch and Selection are input-only element types.
 In other words, they only accept commands.
 For more information, see [Commands vs. Status]({{base}}/configuration/items.md#command-vs-status) in the [Items]({{base}}/configuration/items.md) article.
 
-General mapping syntax:
+Mapping syntax:
 
 ```perl
 mappings=[value_1="description_1", value_2="description_2", ...]
@@ -493,24 +493,34 @@ This limits the possible input values, which is yet another often occurring use 
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a dynamic icon, depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/items.md#icons-dynamic), depending on certain Item states.
 A few practical use cases are:
 
-- Show a battery warning if the voltage level of a device is below 30%.
-- Hide further control elements for the TV if it is turned off.
-- Highlight a value with a warning color if it is outside accepted limits.
-- Present a special icon, depending on the state of an item.
+- Show a battery warning if the voltage level of a device is below 30%
+- Hide further control elements for the TV if it is turned off
+- Highlight a value with a warning color if it is outside accepted limits
+- Present a special icon, depending on the state of an item (a [dynamic icon]({{base/items.md#icons-dynamic}}))
 
 ### Visibility
 
-To dynamically show or hide an item, the `visibility` parameter is used.
-By default, an Item is visible if the `visibility` parameter is not provided.
+The `visibility` parameter is used to dynamically show or hide an Item.
+If the parameter is not provided, the default is to display the Item.
+
+Visibility syntax:
 
 ```perl
 visibility=[item_name operator value, item_name operator value, ... ]
 ```
 
-The format of the `visibility` parameter is given above, let's also look at a few examples:
+Valid comparison operators are:
+
+- equal to `==`, unequal to `!=`
+- smaller or equal to `<=`, bigger or equal to`>=`
+- smaller than `<`, bigger than `>`
+
+Expressions are evaluated from left to right.
+
+Examples:
 
 ```perl
 visibility=[Battery_Level<30]
@@ -519,29 +529,33 @@ visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
 If any one of the comparisons is evaluated as `true`, the Item will be visible, otherwise it will be hidden.
-It is important to note, that it is not possible to decide visibility on more than one condition at the same time.
-The third example might be the visibility of a sprinkler control.
+It is important to note that visibility may only be determined based on one condition at a time.
+
+The third example might control the visibility of a lawn sprinkler control.
 The control will be visible if it is Morning *OR* if it is Afternoon *OR* if the temperature is above 19°C.
-To achieve more complex conditions, you will benefit from defining a helper Item and a rule to set it.
+To achieve more complex conditions, you will benefit from defining a helper Item and a [rule]({{base}}/configuration/rules-dsl.md) to set it.
 
-Valid comparison operators are:
-
-- equal to `==`, unequal to `!=`
-- smaller or equal to `<=`, bigger or equal to`>=`.
-- smaller than `<`, bigger than `>`
+<!-- TODO: Provide an example for the statement above or remove it.  It is not that helpful as it is now for people who are just getting aquainted with sitemaps -->
 
 ### Label and Value Colors
 
 Colors can be used to emphasize an items label or its value based on conditions.
+Colors may be assigned to either the label or the value associated with an Item.
+
+Label and Value Color Syntax:
 
 ```perl
 labelcolor=[item_name operator value = "color", ... ]
 valuecolor=[item_name operator value = "color", ... ]
 ```
 
-The general format of the `labelcolor` and `valuecolor` parameters is given above.
-The comparison operators are the same as for the mappings parameter.
-Let's have a look at a few examples:
+Note that `item_name` and `operator` are both optional.
+If `item_name` is not provided, the Item name will default to the current Item.
+If an operator is not specified, the operator will default to `==`.
+
+The comparison operators for `labelcolor` and `valuecolor` are the same as for the visibility parameter.
+
+Examples:
 
 ```perl
 Text item=Weather valuecolor=[Temperature<=4="blue"]
@@ -550,16 +564,16 @@ Text item=Temperature valuecolor=[Last_Update=="Uninitialized"="gray",
                                   >=25="orange", >=15="green", 0="white", <15="blue"]
 ```
 
-In the first example, the `Weather` Item is colored blue (label and value) if the `Temperature` is below or equal to 4°C.
+In the first example, the `Weather` Item is blue (label and value) if the `Temperature` is at or below 4°C.
 
-Expressions will be evaluated from left to right.
-The first condition returning `true` will decide on the color.
-Looking at the second example, you will see, that the given five expressions are ordered in the only meaningful combination.
+The order in which expressions are listed is important.
+Note that expressions are evaluated from left to right, and the first matching expression determines the color.
+Looking at the second example, you will see that the order of the expressions is set so that the first match, left-to-right gives the correct result.
+If the order was reversed, color assignment would not work properly.
 
-`item_name` and `operator` are both optional.
-If not provided, the Item name will default to the current Item and operator will default to `==`.
-In the second example, this is shown by leaving out Temperature and by not giving a comparison operator in the expression `0="white"`.
-The following three lines are totally equal and valid:
+In the second example, the effect of omitting the `item_name` and `operator` parameters is shown by omitting `Temperature` and by omitting the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
+
+The following three lines are equivalent, and all of them are valid:
 
 ```perl
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"]
@@ -569,13 +583,7 @@ Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"
 
 ![Presentation of the color parameters in BasicUI](images/sitemap_demo_colors.png)
 
-Below you can find a list of standard colors and their respective RGB color code.
-Please take note, that other colors can be used.
-It is generally expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but a UI may only accept internally defined colors or work with a special theme.
-The given color names are agreed on between all openHAB UIs and are therefor your safest choice.
-
-Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for `valuecolor`.
-Until resolved you can use the corresponding HTML code (e.g. '#008000') instead.
+Below is a list of standard colors and their respective RGB color codes.
 
 | Color Name  | Preview and RGB Color Code              |
 |-------------|-----------------------------------------|
@@ -596,6 +604,13 @@ Until resolved you can use the corresponding HTML code (e.g. '#008000') instead.
 | black       | *`► #000000`*{: style="color: #000000"} |
 | silver      | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
 | gray        | *`► #808080`*{: style="color: #808080"} |
+
+Please take note that colors other than those listed in the list above may be used.
+Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
+The color names above are agreed on between all openHAB UIs and are therefor your safest choice.
+
+Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for `valuecolor`.
+Until resolved you may use the corresponding HTML code (e.g. '#008000') instead.
 
 ### Icons
 
