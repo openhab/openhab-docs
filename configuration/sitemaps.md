@@ -7,8 +7,8 @@ title: Sitemaps
 
 # Sitemaps
 
-In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects of the user's home automation setup.
-Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various frontends,
+In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.
+Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs),
 including [BasicUI]({{base}}/addons/uis/basic/readme.html),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
@@ -19,13 +19,13 @@ This page is structured as follows:
 - TOC
 {:toc}
 
-The definition of Sitemaps happens declaratively in a file with a clear syntax, described below.
-A Sitemap definition file is stored in the folder `$OPENHAB_CONF/sitemaps` and has to have the `.sitemap` filename extension.
-For easy editing, profit from the IDE support of the [openHAB supporting editors]({{base}}/configuration/editors.html).
+Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
+Sitemaps follow the syntax described in this article.
 
-The openHAB runtime comes with a demo configuration package containing a [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap),
-which should let you easily understand possible elements and structures.
-It is recommended to use this demo file or another example Sitemap as a starting point towards building a customized Sitemap that fits your personal home setup.
+For easy editing of sitemap definition files, we suggest you use [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer), which provides full IDE support for these files including, among other functions, syntax checking and auto-complete.
+
+The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
+You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.
 
 The following example illustrates what a typical Sitemap definition might look like:
 
