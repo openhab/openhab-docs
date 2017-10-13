@@ -90,8 +90,8 @@ Xtext Domain Specific Language and the sitemap file model can be found [here](ht
 
 ### Special Element 'sitemap'
 
-The `sitemap` element is **mandatory** in a Sitemap definition and has to be named after the Sitemap file name.
-The element will always be the first line and the following code block encloses the whole Sitemap definition.
+The `sitemap` element is **mandatory** in a Sitemap definition.
+This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.
 
 ```perl
 sitemap <sitemapname> label="<title of the main screen>" {
@@ -99,10 +99,10 @@ sitemap <sitemapname> label="<title of the main screen>" {
 }
 ```
 
-- `sitemapname` is always equal to the Sitemaps file name, e.g. `demo.sitemap` -> "demo"
+- `sitemapname` shall always be equal to the Sitemaps file name, e.g. the `sitemapname` in a sitemap file named `demo.sitemap` must be "demo"
 - `label` is free text and will be shown as the title of the main screen.
 
-(Please be aware, that the element `sitemap` is written with a lower case "s".)
+(Note that the element `sitemap` is written with a lower case "s".)
 
 ## Element Types
 
