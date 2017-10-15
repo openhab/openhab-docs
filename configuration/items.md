@@ -241,8 +241,10 @@ The Binding may also set the state to `UNDEF` if an error exists in the binding 
 Users should bear in mind the difference between an Item used to send a command to a Thing, and an Item that reflects the status of a real-world Thing in the UI.
 This distinction may seem obvious, but it can be a little confusing when an Item appears not to reflect the correct status of a Thing.
 
-For example, let's say you have a Switch Item that is used to turn on a light.  You insert this Item into a [sitemap]({{base}}/configuration/sitemaps).
-You call up the sitemap and switch on the light using the UI.  The switch icon changes from red to green, but you notice that the light does not turn on.
+For example, let's say you have a Switch Item that is used to turn on a light.
+You insert this Item into a [sitemap]({{base}}/configuration/sitemaps).
+You call up the sitemap and switch on the light using the UI.
+The switch icon changes from red to green, but you notice that the light does not turn on.
 What happened?
 Perhaps the Switch physical device is faulty or perhaps the device lost communications with your network.
 In any case, the UI performed correctly - it reflected the fact that you sent a command to the Switch Item.
@@ -298,8 +300,8 @@ Please refer to the article on [Transformations](transform.html) for more usage 
 ### Icons
 
 The icon name is used by openHAB to select the image to display next to an Item name when using one of openHAB's UIs, e.g. Basic UI.
-The icon name appears between angle brackets "<>".
-In the example below, the "switch" icon has been selected for use with the Item named, "Livingroom Ceiling Light":
+The icon name appears between angle brackets "&lt;&gt;".
+In the example below, the "switch" icon has been selected:
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
@@ -322,8 +324,8 @@ The following guidelines apply to user-added icon files:
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
 The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
 It is thereby important to decide on one format beforehand; vector graphics are recommended.
-The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg` located in `$OPENHAB_CONF/services`.
-Note that image files in formats other than `png` and `svg` will be ignored.
+The setting can changed via Paper UI for most user interfaces, please check the user interface documentation if in doubt.
+Note that image files with the wrong file ending will be ignored.
 
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
@@ -333,7 +335,7 @@ Users may substitute their own icon for an icon from the default icon set by pla
 Some icons are dynamically selected by openHAB depending on the Item's state.
 For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
 Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
-A third icon file, `switch`, is required as well.
+A third default icon file, `switch`, is required as well.
 This icon file matches when none of the other icon files match the Item state (e.g. when the Item is in an undefined state).
 
 Dynamic icon filenames follow the pattern below:
@@ -368,8 +370,6 @@ Switch Livingroom_Light "Livingroom Ceiling Light" <myswitch>
 String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]" <myerror>
 ```
 
-Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific items.  The icon matches "myerror"; the match is not based upon the contents of the `error.map` file
-
 On the filesystem, the following icon files are provided by the user:
 
 | File name              | Description                                                        |
@@ -382,6 +382,8 @@ On the filesystem, the following icon files are provided by the user:
 |------------------------|--------------------------------------------------------------------|
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
+
+Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific icons - the icon selection considers "myerror", not the contents of the `error.map` file.
 
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
@@ -407,7 +409,8 @@ The general syntax for Group Items is as follows:
 Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-The Group item is commonly used to define hierarchies of Items from different perspectives.  For example:
+The Group item is commonly used to define hierarchies of Items from different perspectives.
+For example:
 
 -   Location-oriented or physical perspective:
     - Floors in your house → Rooms on that floor → An appliance in that room...
@@ -437,8 +440,8 @@ Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures
 The example shows an Item which stores the temperature of the living room called `Livingroom_Temperature`.
 
 From a **location perspective**, you may have a group called `Livingroom`.
-When you add `Livingroom_Temperature` to the `Livingroom` group, `Livingroom_Temperature` is automatically added to the `GroundFloor` and `House` groups.
-This is because `Livingroom` is a member of the `GroundFloor` group, and `GroundFloor` is a member of the  `House` group.
+When you add `Livingroom_Temperature` to the `Livingroom` group, `Livingroom_Temperature` is automatically part of the `GroundFloor` and `House` groups.
+This is because `Livingroom` is a member of the `GroundFloor` group, and `GroundFloor` is a member of the `House` group.
 
 From a **functional perspective**, the Living room temperature can also be seen as one of many temperatures in the automation setup.
 Therefore the addition of `Livingroom_Temperature` to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
@@ -460,8 +463,8 @@ The general syntax for groups with a specific item type and aggregation function
 Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-- If the aggregation function is omitted, the function `EQUAL` will be used.
-- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
+- If the aggregation function is omitted, the function `EQUAL` will be used
+- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items
 
 Group state aggregation functions can be any of the following:
 
@@ -496,9 +499,10 @@ The first two examples above compute the number of active lights and store them 
 However, the second group is of type switch and has an aggregation function of OR.
 This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
 
-Groups do not only aggregate information from individual member Items.  They can also accept commands.
+Groups do not only aggregate information from individual member Items, they can also accept commands.
 Sending a command to a Group causes the command to be sent to all Group members.
-An example of this is shown by the second group above; sending an `ON` or `OFF` command turns all lights in the group ON or OFF with a single operation.
+An example of this is shown by the second group above; sending a single `ON` or `OFF` command to that group turns all lights in the group on or off.
+
 The third example computes the average temperature of all room temperature Items in the group.
 
 {: #tags}
@@ -525,18 +529,20 @@ See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
-See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available bindings.
-This capability of interacting with real-world things is enabled through the association of bindings with Items.
-Once a binding is associated with an Item, the state of a thing is reflected in various openHAB UIs (e.g., you can see if a light is ON or OFF).
-Additionally, you have the opportunity to interact with that thing through its Item, if interaction is supported by the binding (e.g., you can command the light to turn ON or turn OFF).
+See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available Bindings.
+This capability of interacting with real-world things is enabled through the association of Bindings with Items.
 
-The binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{/*binding parts*/}` in the example below}:
+Once an Item is associated with a Binding, the state of one aspect of a device is reflected in openHAB (e.g., you can see if a light is on or off in one of the user interfaces).
+Additionally, you have the opportunity to interact with a device through its Items, if interaction is supported for that aspect of the device (e.g., you can command the light to turn ON or turn OFF).
+
+The Binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{channel="..."}` in the example below:
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
+Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
-Users should note that there are significant differences between how Items are associated with Things between 1.x Binding configuration and 2.x Channel Linking. These are described below.
+Users should note that there are significant differences between how Items are associated with devices between 1.x Binding configuration and 2.x Channel linking.
+These are described below.
 
 <!-- TODO: Everything below was not yet revised -->
 
