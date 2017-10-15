@@ -324,7 +324,8 @@ The following guidelines apply to user-added icon files:
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
 The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
 It is thereby important to decide on one format beforehand; vector graphics are recommended.
-The setting can changed via Paper UI for most user interfaces, please check the user interface documentation if in doubt.
+The setting can be changed via Paper UI for most user interfaces.
+Please check the user interface documentation if in doubt.
 Note that image files with the wrong file ending will be ignored.
 
 Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
