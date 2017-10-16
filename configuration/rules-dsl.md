@@ -627,7 +627,7 @@ If a rule triggers on UI events it may be necessary to guard against concurrency
 ```javascript
 import java.util.concurrent.locks.ReentrantLock
 
-ReentrantLock lock  = new ReentrantLock()
+val ReentrantLock lock  = new ReentrantLock()
 
 rule ConcurrentCode
 when
