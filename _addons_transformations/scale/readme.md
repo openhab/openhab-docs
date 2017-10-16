@@ -17,9 +17,14 @@ install: auto
 Transform a given input by matching it between limits of ranges.
 The input string must be in numerical format.
 
-The file is expected to exist in the `transform` directory, and should follow the format given in the table below.
+The file is expected to exist in the `transform` directory and its ending has to be `.scale`.
+It should follow the format given in the table below.
 
-| scale expression | returns XYZ when the given value is |
+Range expressions always contain two parts.
+The range to scale on, which is located *left* from the equality sign and the corresponding output string on the right of it.
+A range consists of two bounds. Both are optional, the range is then open. Both bounds can be inclusive or exclusive.
+
+| Scale Expression | Returns XYZ when the given Value is |
 |--------------------|--------|
 | `[12..23]=XYZ` | `between (or equal to) 12 and 23` |
 | `]12..23[=XYZ` | `between 12 and 23 (12 and 23 are excluded in this case.)` |
@@ -56,5 +61,3 @@ If **none** of the configured conditions matches the given value, the response w
 
 Please note that all ranges for values above **3** are opened with a `]`.
 So the border values (3, 6, 8 and 10) are always transformed to the lower range, since the `]`excludes the given critera.
-
-With the different expression formats you could add an additional range to our example from above and catch sensor values above 100 with `]100..=6` for example.
