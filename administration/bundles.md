@@ -57,9 +57,21 @@ Bundles are named according to the following convention.
 
 where
 
-- **prefix** is ALWAYS "openhab" 
+- **prefix** is the first element to categorize the bundle.
+For addons this is often `openhab` or `esh`. 
 - **type** is the add-on type, e.g. "binding" or "ui"
 - **id** is the identifier for this bundle
 
 The naming convention has many effects you may haven't noticed before, but used already.
 For example in the Paper UI the *sorted tabs* for all bindings are generated automatically based on the bundle naming.
+
+In many places (e.g. logging) you will also have the **package namespace** as an identifier.
+You can find it as the *Symbolic name* of the bundle with the following command:
+
+```text
+openhab> bundle:list -s
+ ID | State    | Lvl | Version                | Name                        | Symbolic name
+-----------------------------------------------------------------------------------------------------------------------
+...
+209 | Active   |  80 | 2.1.0                  | Network Binding             | org.openhab.binding.network
+```
