@@ -13,7 +13,7 @@ The [Karaf console](#console) offers various commands to manage bundles. Most of
 
 The _bundle:list_ command returns a list of all currently installed bundles including their version.
 
-```python
+```text
 openhab> bundle:list
 START LEVEL 100 , List Threshold: 50
  ID | State    | Lvl | Version               | Name
@@ -31,7 +31,7 @@ START LEVEL 100 , List Threshold: 50
 
 Stoping a bundle is done with the command _stop_ and the ID of the bundle:
 
-```python
+```text
 openhab> bundle:stop 209
 openhab> bundle:list
 ...
@@ -40,7 +40,7 @@ openhab> bundle:list
 
 The _start_ command works accordingly:
 
-```python
+```text
 openhab> bundle:start 209
 openhab> bundle:list
 ...
@@ -51,7 +51,7 @@ openhab> bundle:list
 
 Bundles are named according to the following convention.
 
-```java
+```text
 <prefix>-<type>-<id>
 ```
 
