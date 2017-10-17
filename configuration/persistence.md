@@ -7,20 +7,12 @@ title: Persistence
 
 # Persistence
 
-## Introduction
-
-openHAB has the ability to save item states according to rules you have configured.
-This is called persistence.
-Persistence can have several important uses.
-For example, persistence allows an openHAB system to restore itself to the state it was in prior to a restart (if you have configured it to do so).
-Persistence may also be used to store values that are subsequently displayed in a graph.
-(For an excellent graphing tutorial see [InfluxDB+Grafana persistence and graphing](https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761).
+openHAB can store data over time; this is known as persistence.
+The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
 
 openHAB persists item states in a database, and most popular databases are supported.
 You may have more that one persistence add-on loaded, and each of these may be configured independently.
-Examples of available persistence add-ons include relational databases, NoSQL databases, round-robin databases, Internet-of-Things (IoT) cloud services, simple log files, etc.
-All of these options are available in openHAB, and they are all configured in the same way.
-Note that the type of database(s) you use for persistence may be influenced by your requirements for exporting data (e.g. IoT services or log files), or your requirement to make queries against the database to retrieve historical data (e.g. MySQL and MongoDB).
+
 A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
 
 ## Persistence Add-on Configuration
@@ -34,18 +26,16 @@ You may install more than one persistence add-on.
 Therefore, it is important to select a default persistence service.
 You should do this even if you have only one persistence add-on installed.
 
-To select a default persistence service, in paperUI, select Configuration and then System from the side menu.
+To select a default persistence service, in paper UI, select Configuration and then System from the side menu.
 Scroll down to "Persistence", and select your Default Service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
 ## Configuration
 
-You can choose how your persistence service operates, which item states it persists, and under what conditions it persists them.
-These things and more are configured in a file named `<persistenceservice>.persist`, where "persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`).
-This folder is located in `$OPENHAB_CONF/persistence`.
-The configuration defines persistence "strategies" which are very similar to [triggers]({{base}}/configuration/rules-dsl.html#rule-triggers) in openHAB rules.
-These strategies may be used to persist an item state when some bus event has occurred (e.g. an item state has been updated or changed), or on a schedule or at a specific time of day (e.g. through a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger).
+Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence` ("persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`)).
+
+Strategies may be used to persist an Item state when some event has occurred (e.g. an Item state has been updated or changed), on a time schedule, or at a specific time of day (e.g. through a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger).
 
 Persistence configuration files consist of several sections:
 
@@ -56,20 +46,15 @@ This section allows you to define strategies and to declare a set of default str
 ```java
 Strategies {
   <strategyName1> : "cronexpression1>"
-  <strategyName2> : "cronexpression2>"
   ...
-
-  default = <strategyNameX>, <strategyNameY>
 }
 ```
 
-Note that the `Strategies` section must be included, and that it must define a default, or the persistence service will not work.
-
-The following strategies are defined internally in openHAB for your convenience:
+The following strategies are defined internally:
 
 - everyChange: persist the item state whenever its state has changed
 - everyUpdate: persist the item state whenever its state has been updated, even if it did not change
-- restoreOnStartup: load and initialize the last persisted item state on openHAB startup (if the item state is undefined (`UNDEF`)).  This strategy is extremely useful for items that are not updated through a Thing with a Binding to something in the real world.
+- restoreOnStartup: load and initialize the last persisted item state on openHAB startup (if the item state is undefined (`UNDEF`)).  See below.
 
 ### Items section
 
