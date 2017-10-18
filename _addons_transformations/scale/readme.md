@@ -17,11 +17,11 @@ install: auto
 Transform a given input by matching it between limits of ranges.
 The input string must be in numerical format.
 
-The file is expected to exist in the `transform` directory and its ending has to be `.scale`.
+The file is expected to exist in the `transform` configuration directory and its ending has to be `.scale`.
 It should follow the format given in the table below.
 
 Range expressions always contain two parts.
-The range to scale on, which is located *left* from the equality sign and the corresponding output string on the right of it.
+The range to scale on, which is located left from the equality sign and the corresponding output string on the right of it.
 A range consists of two bounds. Both are optional, the range is then open. Both bounds can be inclusive or exclusive.
 
 | Scale Expression | Returns XYZ when the given Value is |
@@ -60,4 +60,4 @@ The only condition here is that the received value has to be lower than or equal
 If **none** of the configured conditions matches the given value, the response will be empty.
 
 Please note that all ranges for values above **3** are opened with a `]`.
-So the border values (3, 6, 8 and 10) are always transformed to the lower range, since the `]`excludes the given critera.
+So the border values (3, 6, 8 and 10) are always transformed to the lower range, since the `]` excludes the given critera.
