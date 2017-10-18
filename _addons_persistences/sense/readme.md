@@ -1,7 +1,7 @@
 ---
 id: sense
 label: Sen.Se
-title: Sen.Se - Persistence
+title: Sen.Se - Persistence Services
 type: persistence
 description: "This service allows you to feed item data to [Sen.Se web site](http://open.sen.se)."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.sense/README.md

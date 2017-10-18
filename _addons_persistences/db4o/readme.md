@@ -1,7 +1,7 @@
 ---
 id: db4o
 label: db4o
-title: db4o - Persistence
+title: db4o - Persistence Services
 type: persistence
 description: "db4o is a pure Java object database, which uses a simple database file for persistence."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.db4o/README.md

@@ -1,7 +1,7 @@
 ---
 id: basic
 label: Basic UI
-title: Basic UI - UI
+title: Basic UI - UIs
 type: ui
 description: "The Basic UI is a web interface based on Material Design Lite from Google."
 since: 2x

@@ -1,7 +1,7 @@
 ---
 id: rrd4j
 label: rrd4j
-title: rrd4j - Persistence
+title: rrd4j - Persistence Services
 type: persistence
 description: "The [rrd4j](https://github.com/rrd4j/rrd4j) Persistence service is based on a round-robin database."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.rrd4j/README.md

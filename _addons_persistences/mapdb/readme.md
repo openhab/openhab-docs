@@ -1,7 +1,7 @@
 ---
 id: mapdb
 label: mapdb
-title: mapdb - Persistence
+title: mapdb - Persistence Services
 type: persistence
 description: "The [mapdb](http://www.mapdb.org/) Persistence Service is based on simple key-value store that only saves the last value. The intention is to use this for `restoreOnStartup` items because all other persistence options have their drawbacks if values are only needed for reload.  They:"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.mapdb/README.md

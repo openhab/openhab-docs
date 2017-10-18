@@ -1,7 +1,7 @@
 ---
 id: jpa
 label: Java Persistence API (JPA)
-title: Java Persistence API (JPA) - Persistence
+title: Java Persistence API (JPA) - Persistence Services
 type: persistence
 description: "This service allows you to persist state updates using a SQL or NoSQL database through the [Java Persistence API](https://en.wikipedia.org/wiki/Java_Persistence_API).  The service uses an abstraction layer that theoretically allows it to support many available SQL or NoSQL databases."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.jpa/README.md

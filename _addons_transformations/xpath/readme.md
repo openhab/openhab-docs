@@ -1,7 +1,7 @@
 ---
 id: xpath
 label: XPath
-title: XPath - Transformations
+title: XPath - Transformation Services
 type: transform
 description: "Transform XML input using an [XPath expression](https://www.w3.org/TR/xpath/#section-Expressions)."
 since: 2x

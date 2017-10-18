@@ -1,7 +1,7 @@
 ---
 id: imperihome
 label: ImperiHome integration service
-title: ImperiHome integration service - Services
+title: ImperiHome integration service - System Integrations
 type: io
 description: "This IO service exposes openHAB Items to the Evertygo [ImperiHome](http://www.evertygo.com/imperihome) dashboard app for Android and iOS."
 since: 2x

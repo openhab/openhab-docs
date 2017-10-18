@@ -1,7 +1,7 @@
 ---
 id: influxdb
 label: InfluxDB (0.9 and newer)
-title: InfluxDB (0.9 and newer) - Persistence
+title: InfluxDB (0.9 and newer) - Persistence Services
 type: persistence
 description: "This service allows you to persist and query states using the [InfluxDB](http://influxdb.org) time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as [Grafana](http://grafana.org/)."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.influxdb/README.md

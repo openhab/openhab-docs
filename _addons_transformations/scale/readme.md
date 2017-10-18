@@ -1,7 +1,7 @@
 ---
 id: scale
 label: Scale
-title: Scale - Transformations
+title: Scale - Transformation Services
 type: transform
 description: "Transform the input by matching it between limits of ranges in a scale file.  The input string must be in numerical format."
 since: 2x

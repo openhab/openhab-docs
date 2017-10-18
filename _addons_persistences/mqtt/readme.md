@@ -1,7 +1,7 @@
 ---
 id: mqtt
 label: MQTT
-title: MQTT - Persistence
+title: MQTT - Persistence Services
 type: persistence
 description: "This service allows you to feed item states to an MQTT broker using the openHAB persistence strategies.  The destination broker, topic and messages are configurable."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.mqtt/README.md

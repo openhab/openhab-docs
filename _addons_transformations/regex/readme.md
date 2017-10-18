@@ -1,7 +1,7 @@
 ---
 id: regex
 label: RegEx
-title: RegEx - Transformations
+title: RegEx - Transformation Services
 type: transform
 description: "Given a source string and a regular expression, use the regular expression to yield a transformed string."
 since: 2x

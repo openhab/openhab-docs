@@ -1,7 +1,7 @@
 ---
 id: habpanel
 label: HABPanel
-title: HABPanel - UI
+title: HABPanel - UIs
 type: ui
 description: "HABPanel is a lightweight dashboard interface for openHAB."
 since: 2x
@@ -46,16 +46,16 @@ otherwise, the local browser's storage will be used only until you save a new pa
 
 ## Screenshots
 
-![](doc/screenshot0.png)
+![](docs/images/habpanel_screenshot0.png)
 
-![](doc/screenshot1.png)
+![](docs/images/habpanel_screenshot1.png)
 
-![](doc/screenshot2.png)
+![](docs/images/habpanel_screenshot2.png)
 
-![](doc/screenshot3.png)
+![](docs/images/habpanel_screenshot3.png)
 
-![](doc/screenshot4.png)
+![](docs/images/habpanel_screenshot4.png)
 
-![](doc/screenshot5.png)
+![](docs/images/habpanel_screenshot5.png)
 
-![](doc/screenshot6.png)
+![](docs/images/habpanel_screenshot6.png)

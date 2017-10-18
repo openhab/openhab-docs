@@ -1,7 +1,7 @@
 ---
 id: dropbox
 label: Dropbox Synchronization
-title: Dropbox Synchronization - Services
+title: Dropbox Synchronization - System Integrations
 type: io
 description: "This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/io/org.openhab.io.dropbox/README.md

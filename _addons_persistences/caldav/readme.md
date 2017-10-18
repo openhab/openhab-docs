@@ -1,7 +1,7 @@
 ---
 id: caldav
 label: CalDAV
-title: CalDAV - Persistence
+title: CalDAV - Persistence Services
 type: persistence
 description: "This binding can be used to connect through the CalDAV Interface to calendars."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.caldav/README.md

@@ -1,7 +1,7 @@
 ---
 id: javascript
 label: JavaScript
-title: JavaScript - Transformations
+title: JavaScript - Transformation Services
 type: transform
 description: "Transform an input to an output using JavaScript."
 since: 2x

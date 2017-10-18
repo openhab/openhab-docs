@@ -1,7 +1,7 @@
 ---
 id: sitewhere
 label: SiteWhere
-title: SiteWhere - Persistence
+title: SiteWhere - Persistence Services
 type: persistence
 description: "The [SiteWhere](http://www.sitewhere.org/) persistence service allows openHAB item states to be forwarded to a SiteWhere server instance running locally or in the cloud. Selected events from an openHAB instance can be stored in SiteWhere under a virtual device with hardware ID specified in the persistence provider implementation."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.sitewhere/README.md

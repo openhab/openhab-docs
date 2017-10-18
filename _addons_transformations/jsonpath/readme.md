@@ -1,7 +1,7 @@
 ---
 id: jsonpath
 label: JsonPath
-title: JsonPath - Transformations
+title: JsonPath - Transformation Services
 type: transform
 description: "Extract an element of a JSON string using a [JsonPath expression](https://github.com/jayway/JsonPath#jayway-jsonpath)."
 since: 2x

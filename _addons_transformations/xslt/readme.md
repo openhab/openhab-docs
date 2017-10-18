@@ -1,7 +1,7 @@
 ---
 id: xslt
 label: XSLT
-title: XSLT - Transformations
+title: XSLT - Transformation Services
 type: transform
 description: "Transform input using the XML Stylesheet Language for Transformations (XSLT)."
 since: 2x

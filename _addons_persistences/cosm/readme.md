@@ -1,7 +1,7 @@
 ---
 id: cosm
 label: Xively (formerly Cosm)
-title: Xively (formerly Cosm) - Persistence
+title: Xively (formerly Cosm) - Persistence Services
 type: persistence
 description: "This service allows you to feed item states to the [Xively IoT Platform](https://www.xively.com/)."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.cosm/README.md

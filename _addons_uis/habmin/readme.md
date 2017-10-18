@@ -1,7 +1,7 @@
 ---
 id: habmin
 label: HABmin
-title: HABmin - UI
+title: HABmin - UIs
 type: ui
 description: "HABmin is a modern, professional and portable user interface for openHAB, providing both user and administrative functions (e.g., sitemaps for users, and configuration utilities to aid setup)."
 since: 2x

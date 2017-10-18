@@ -1,7 +1,7 @@
 ---
 id: openhabcloud
 label: openHAB Cloud Connector
-title: openHAB Cloud Connector - Services
+title: openHAB Cloud Connector - System Integrations
 type: io
 description: "The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote [openHAB Cloud](https://github.com/openhab/openhab-cloud/blob/master/README.md) instance, such as [myopenHAB.org](http://www.myopenHAB.org), which is an instance of the"
 since: 2x

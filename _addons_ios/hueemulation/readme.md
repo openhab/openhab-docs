@@ -1,7 +1,7 @@
 ---
 id: hueemulation
 label: openHAB Hue Emulation
-title: openHAB Hue Emulation - Services
+title: openHAB Hue Emulation - System Integrations
 type: io
 description: "Hue Emulation exposes openHAB items as Hue devices to other Hue HTTP API compatible applications like an Amazon Echo."
 since: 2x

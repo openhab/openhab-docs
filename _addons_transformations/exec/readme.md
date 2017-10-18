@@ -1,7 +1,7 @@
 ---
 id: exec
 label: Exec
-title: Exec - Transformations
+title: Exec - Transformation Services
 type: transform
 description: "Execute an external program, substituting the placeholder `%s` in the given command line with the input value, and returning the output of the external program."
 since: 2x

@@ -1,7 +1,7 @@
 ---
 id: homekit
 label: HomeKit Add-on
-title: HomeKit Add-on - Services
+title: HomeKit Add-on - System Integrations
 type: io
 description: "This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol."
 since: 2x

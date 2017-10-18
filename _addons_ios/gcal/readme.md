@@ -1,7 +1,7 @@
 ---
 id: gcal
 label: Google Calendar Scheduler
-title: Google Calendar Scheduler - Services
+title: Google Calendar Scheduler - System Integrations
 type: io
 description: "The Google Calendar Scheduler allows you to control items in openHAB at scheduled times in the future.  It will send commands to items or update the state of items when defined on one of your Google Calendars."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/io/org.openhab.io.gcal/README.md

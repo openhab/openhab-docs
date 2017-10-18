@@ -1,7 +1,7 @@
 ---
 id: paper
 label: Paper UI
-title: Paper UI - UI
+title: Paper UI - UIs
 type: ui
 description: "The Paper UI is an HTML5 web application. The Paper UI implements Google's Material Design and is responsive, so that it smoothly renders on different screen sizes. All modern browsers (Safari, Chrome, Firefox) besides the Internet Explorer are supported in their newest version. The Internet Explorer is mainly lacking support for SSE."
 since: 2x
