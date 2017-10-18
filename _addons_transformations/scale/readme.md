@@ -24,12 +24,12 @@ Range expressions always contain two parts.
 The range to scale on, which is located left from the equality sign and the corresponding output string on the right of it.
 A range consists of two bounds. Both are optional, the range is then open. Both bounds can be inclusive or exclusive.
 
-| Scale Expression | Returns XYZ when the given Value is |
-|--------------------|--------|
-| `[12..23]=XYZ` | `between (or equal to) 12 and 23` |
-| `]12..23[=XYZ` | `between 12 and 23 (12 and 23 are excluded in this case.)` |
-| `..23]=XYZ` | `lower than or equal to 23` |
-| `]12..=XYZ` | `greater than 12` |
+| Scale Expression | Returns XYZ when the given Value is                        |
+|------------------|------------------------------------------------------------|
+| `[12..23]=XYZ`   | `between (or equal to) 12 and 23`                          |
+| `]12..23[=XYZ`   | `between 12 and 23 (12 and 23 are excluded in this case.)` |
+| `[..23]=XYZ`     | `lower than or equal to 23`                                |
+| `]12..]=XYZ`     | `greater than 12`                                          |
 
 ## Example
 
@@ -46,7 +46,7 @@ Number Uv_Sensor_Level "UV Level [SCALE(uvindex.scale):%s]"
 Uvindex.scale in transform folder:
 
 ```python
-..3]=1
+[..3]=1
 ]3..6]=2
 ]6..8]=3
 ]8..10]=4
