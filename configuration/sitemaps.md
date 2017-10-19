@@ -119,19 +119,19 @@ The following element types may be used in a Sitemap definition file.
 | [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
 | [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
 | [Slider](#element-type-slider)            | Presents a value in a progress-bar-like slider. |
-| [Switch](#element-type-switch)            | Renders an Item as a ON/OFF or multi-button switch. |
-| [Text](#element-type-text)                | Renders an Item in as text. |
+| [Switch](#element-type-switch)            | Renders an Item as an ON/OFF or multi-button switch. |
+| [Text](#element-type-text)                | Renders an Item as text. |
 | [Video](#element-type-video)              | Displays a video stream, given a direct URL. |
 | [Webview](#element-type-webview)          | Displays the content of a webpage. |
 
 <!-- TODO: check for new element types -->
 
 **Choosing the right element type:**
-Data presented by Sitemap elements will almost always originate from a referenced item.
+Data presented by Sitemap elements will almost always originate from a referenced [Item}({{base}}/configuration/items.md).
 Each Item is of a certain Item type, for example `Switch`, `Number` or `String`.
 
-While not all combinations are meaningful, items of one datatype may be linked to different Sitemap element types.
-This provides the flexibility to present items in the way desired in your home automation user interface.
+While not all combinations are meaningful, Items of one datatype may be linked to different Sitemap element types.
+This provides the flexibility to present Items in the way desired in your home automation user interface.
 
 <!-- TODO: an example of the above would be useful here -->
 
@@ -148,7 +148,7 @@ This provides the flexibility to present items in the way desired in your home a
 
 -   When an Item is defined, you have the opportunity to assign a label and/or an icon at that point.
 If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
-However, setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
+Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
 -   Additional parameters such as `mappings` and `valuecolor` are described below.
 
