@@ -31,11 +31,13 @@ A range consists of two bounds. Both are optional, the range is then open. Both 
 | `[..23]=XYZ`     | `lower than or equal to 23`                                |
 | `]12..]=XYZ`     | `greater than 12`                                          |
 
+These expressions are evaluated from top to bottom.
+The first range that includes the value is selected.
+
 ## Example
 
 The following example shows how to break down numeric UV values into fixed UV index categories.
-We have an example UV sensor that sends us numeric values from `0` to `100`, which we then want to scale into the *UV Index* range.
-For further Information on the UV Index take a look at [Wikipedia](https://en.wikipedia.org/wiki/Ultraviolet_index).
+We have an example UV sensor that sends numeric values from `0` to `100`, which we then want to scale into the [UV Index](https://en.wikipedia.org/wiki/Ultraviolet_index) range.
 
 Example item:
 
@@ -43,7 +45,7 @@ Example item:
 Number Uv_Sensor_Level "UV Level [SCALE(uvindex.scale):%s]"
 ```
 
-Uvindex.scale in transform folder:
+Referenced scale file `uvindex.scale` in the `transform` folder::
 
 ```python
 [..3]=1
@@ -54,7 +56,7 @@ Uvindex.scale in transform folder:
 ```
 
 Each value the item receives, will be categorized to one of the five given ranges.
-Values **lower than or equal to 3** are catched with `..3]=1`.
+Values **lower than or equal to 3** are catched with `[..3]=1`.
 Greater values are catched in ranges with 2 values as criteria.
 The only condition here is that the received value has to be lower than or equal to `100` in our example, since we haven't defined other cases yet.
 If **none** of the configured conditions matches the given value, the response will be empty.
