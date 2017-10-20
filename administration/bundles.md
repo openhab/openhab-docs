@@ -13,7 +13,7 @@ The [Karaf console](#console) offers various commands to manage bundles. Most of
 
 The _bundle:list_ command returns a list of all currently installed bundles including their version.
 
-```
+```text
 openhab> bundle:list
 START LEVEL 100 , List Threshold: 50
  ID | State    | Lvl | Version               | Name
@@ -31,7 +31,7 @@ START LEVEL 100 , List Threshold: 50
 
 Stoping a bundle is done with the command _stop_ and the ID of the bundle:
 
-```
+```text
 openhab> bundle:stop 209
 openhab> bundle:list
 ...
@@ -40,9 +40,38 @@ openhab> bundle:list
 
 The _start_ command works accordingly:
 
-```
+```text
 openhab> bundle:start 209
 openhab> bundle:list
 ...
 209 | Active   |  80 | 2.0.0.b3              | Network Binding
+```
+
+## Naming Convention For Bundles
+
+Bundles are named according to the following convention.
+
+```text
+<prefix>-<type>-<id>
+```
+
+where
+
+- **prefix** is the first element to categorize the bundle.
+For addons this is often `openhab` or `esh`. 
+- **type** is the add-on type, e.g. "binding" or "ui"
+- **id** is the identifier for this bundle
+
+The naming convention has many effects you may haven't noticed before, but used already.
+For example in the Paper UI the *sorted tabs* for all bindings are generated automatically based on the bundle naming.
+
+In many places (e.g. logging) you will also have the **package namespace** as an identifier.
+You can find it as the *Symbolic name* of the bundle with the following command:
+
+```text
+openhab> bundle:list -s
+ ID | State    | Lvl | Version                | Name                        | Symbolic name
+-----------------------------------------------------------------------------------------------------------------------
+...
+209 | Active   |  80 | 2.1.0                  | Network Binding             | org.openhab.binding.network
 ```
