@@ -673,7 +673,7 @@ Explanation:
 Group:Number:AVG Temperatures <heating>
 Number Demo_LivingroomTemperature "Livingroom [21.0 °C]" <temperature> (Temperatures)
 Number Demo_BedroomTemperature "Bedroom [19.5 °C]" <temperature> (Temperatures)
-Number Demo_KitchenTemperature "Kitchen [20.3 °C]" <temperature> (Temperatures)
+Number Demo_KitchenTemperature "Kitchen [20.5 °C]" <temperature> (Temperatures)
 Location Demo_Location "Location [48.858377,2.294486,66.0]"
 
 Number Demo_TV_Channel
