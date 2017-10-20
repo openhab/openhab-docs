@@ -116,6 +116,7 @@ The following element types can be used in a Sitemap definition file.
 | [Frame](#element-type-frame)              | Area containing various other Sitemap elements. |
 | [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
 | [Image](#element-type-image)              | Renders an image given by an URL. |
+| [MapView](#element-type-mapview)          | Displays an OSM map based on a given Location Item. |
 | [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
 | [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
 | [Slider](#element-type-slider)            | A value is presented in a progress bar like slider. |
@@ -447,6 +448,24 @@ List item=<itemname> [label="<labelname>"] [icon="<iconname>"] [separator=""]
 Splits a String Item at each separator into multiple rows.
 -->
 
+### Element Type 'MapView'
+ 
+```perl
+Mapview [item=<itemname>] [label="<labelname>"] [icon="<iconname>"] [height=<heightvalue>]
+```
+
+Displays an OSM map based on a given Location Item.
+ 
+- `height` is the number of element rows to fill.
+ 
+**Example:**
+ 
+```perl
+Mapview item=Demo_Location height=5
+```
+ 
+![Presentation of the MapView element in BasicUI](images/sitemap_demo_mapview.png)
+
 ## Mappings
 
 Mappings is an optional parameter for the [Switch](#element-type-switch) and [Selection](#element-type-selection) element types.
@@ -655,6 +674,7 @@ Group:Number:AVG Temperatures <heating>
 Number Demo_LivingroomTemperature "Livingroom [21.0 °C]" <temperature> (Temperatures)
 Number Demo_BedroomTemperature "Bedroom [19.5 °C]" <temperature> (Temperatures)
 Number Demo_KitchenTemperature "Kitchen [20.3 °C]" <temperature> (Temperatures)
+Location Demo_Location "Location [48.858377,2.294486,66.0]"
 
 Number Demo_TV_Channel
 Color Demo_Color
@@ -714,6 +734,9 @@ sitemap demo label="My home automation" {
     }
     Frame {
         Text item=Temperature label="Livingroom [22.0 °C]" icon="temperature" labelcolor=[!=1="blue"] valuecolor=[!=1="green"]
+    }
+    Frame {
+        Mapview item=Demo_Location height=5
     }
 }
 -->
