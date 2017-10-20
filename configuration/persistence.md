@@ -11,11 +11,11 @@ openHAB can store data over time; this is known as persistence.
 The data may be retrieved at a later time, for example to restore your system after startup, or to prepare graphs for display on a UI.
 
 openHAB persists Item states in a database, and most popular databases are supported.
-You may have more that one persistence add-on loaded, and each of these may be configured independently.
+You may have more than one persistence add-on loaded, and each of these may be configured independently.
 
 A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
 
-## Persistence Add-on Configuration
+## Add-on Configuration
 
 Each persistence add-on you install will need to be configured.
 Please refer to the specific [on-line documentation]({{base}}/addons/persistence.html) for your selected persistence add-on for configuration instructions.
@@ -31,7 +31,7 @@ Scroll down to "Persistence", and select your Default Service from the drop-down
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
-## Configuration
+## Item Persistence Configuration
 
 Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence` ("persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`)).
 
@@ -46,9 +46,13 @@ This section allows you to define strategies and to declare a set of default str
 ```java
 Strategies {
   <strategyName1> : "cronexpression1>"
+
+  default = everyChange
   ...
 }
 ```
+
+If no strategy is specified in an `itemlist` as described in the Items section below, the `default` strategy will be applied. The `default` parameter is optional and may be omitted.
 
 The following strategies are defined internally:
 
@@ -63,12 +67,15 @@ The syntax is as follows:
 
 ```java
 Items {
-    <itemlist1 [-> "<alias1>"] : [strategy = <strategy1>, <strategy2>, ...]
+    <itemlist1> [-> "<alias1>"] : [strategy = <strategy1>, <strategy2>, ...]
     <itemlist2> [-> "<alias2>"] : [strategy = <strategyX>, <strategyY>, ...]
     ...
 
 }
 ```
+
+Note that you may omit the `strategy` portion of the `itemlist` so long as you have provided a `default` strategy in the `Strategies` section.
+In this case, the default strategy will be applied.
 
 where `<itemlist>` is a comma-separated list consisting of one or more of the following options:
 
@@ -139,20 +146,40 @@ You can easily imagine that you can implement very powerful rules using this fea
 
 Here is the full list of available persistence extensions:
 
-```java
-<item>.persist - Persists the current state
-<item>.lastUpdate - Query for the last update timestamp of a given Item.
-<item>.historicState(AbstractInstant) - Retrieves the historic Item at a certain point in time
-<item>.changedSince(AbstractInstant) - Checks if the state of the Item has (ever) changed since a certain point in time
-<item>.updatedSince(AbstractInstant) - Checks if the state of the Item has been updated since a certain point in time
-<item>.maximumSince(AbstractInstant) - Gets the Item with the maximum value (state) since a certain point in time
-<item>.minimumSince(AbstractInstant) - Gets the Item with the minimum value (state) since a certain point in time
-<item>.averageSince(AbstractInstant) - Gets the average value of the state of a given Item since a certain point in time.
-<item>.deltaSince(AbstractInstant) - Gets the difference value of the state of a given Item since a certain point in time.
-<item>.previousState() - Retrieves the previous Item (returns HistoricItem).
-<item>.previousState(true) - Retrieves the previous Item, skips items with equal state values and searches the first Item with state not equal the current state (returns HistoricItem).
-<item>.sumSince(AbstractInstant) - Retrieves the sum of the previous states since a certain point in time. (OpenHab 1.8)
-```
+- <item>.persist - Persists the current state
+
+
+- <item>.lastUpdate - Query for the last update timestamp of a given Item.
+
+
+- <item>.historicState(AbstractInstant) - Retrieves the historic Item at a certain point in time
+
+
+- <item>.changedSince(AbstractInstant) - Checks if the state of the Item has (ever) changed since a certain point in time
+
+
+- <item>.updatedSince(AbstractInstant) - Checks if the state of the Item has been updated since a certain point in time
+
+
+- <item>.maximumSince(AbstractInstant) - Gets the Item with the maximum value (state) since a certain point in time
+
+
+- <item>.minimumSince(AbstractInstant) - Gets the Item with the minimum value (state) since a certain point in time
+
+
+- <item>.averageSince(AbstractInstant) - Gets the average value of the state of a given Item since a certain point in time
+
+
+- <item>.deltaSince(AbstractInstant) - Gets the difference value of the state of a given Item since a certain point in time
+
+
+- <item>.previousState() - Retrieves the previous Item (returns HistoricItem)
+
+
+- <item>.previousState(true) - Retrieves the previous Item, skips items with equal state values and searches the first Item with state not equal the current state (returns HistoricItem)
+
+
+- <item>.sumSince(AbstractInstant) - Retrieves the sum of the previous states since a certain point in time. (OpenHab 1.8)
 
 These extensions use the default persistence service that is configured as the default persistence service.  (Refer to Default Persistence Service above to configure this.)
 
