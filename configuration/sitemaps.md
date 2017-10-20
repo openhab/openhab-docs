@@ -116,7 +116,7 @@ The following element types can be used in a Sitemap definition file.
 | [Frame](#element-type-frame)              | Area containing various other Sitemap elements. |
 | [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
 | [Image](#element-type-image)              | Renders an image given by an URL. |
-| [MapView](#element-type-mapview)           | Displays an OSM map based on a given Location Item. |
+| [MapView](#element-type-mapview)          | Displays an OSM map based on a given Location Item. |
 | [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
 | [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
 | [Slider](#element-type-slider)            | A value is presented in a progress bar like slider. |
