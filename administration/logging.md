@@ -22,6 +22,10 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 - `events.log`
 - `openhab.log`
 
+For Synology packages you will find the log files here:
+
+- `/volume1/@appstore/openHAB2/userdata/logs/`
+
 ## Karaf Console
 
 The [Karaf console](console.html) allows to monitor the log in realtime.
