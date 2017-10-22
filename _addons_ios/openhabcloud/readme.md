@@ -66,3 +66,4 @@ Alternatively, you can configure the settings in the file `conf/services/openhab
 #expose=
 ```
 
+The exposed items will show up in myopenhab after they receive an update in thier state.
