@@ -17,50 +17,60 @@ A complete list of supported persistence add-ons may be found in the [persistenc
 
 ## Add-on Configuration
 
-Each persistence add-on you install will need to be configured.
 Please refer to the specific [on-line documentation]({{base}}/addons/persistence.html) for your selected persistence add-on for configuration instructions.
 
 ## Default Persistence Service
 
-You may install more than one persistence add-on.
-Therefore, it is important to select a default persistence service.
+It is important to select a default persistence service.
 You should do this even if you have only one persistence add-on installed.
 
 To select a default persistence service, in paper UI, select Configuration and then System from the side menu.
-Scroll down to "Persistence", and select your Default Service from the drop-down list.
+Scroll down to "Persistence", and select your default service from the drop-down list.
 Note that you must first install a persistence add-on before you make this selection.
 Be sure to save your choice once you have selected your default service.
 
-## Item Persistence Configuration
+## Persistence Configuration
 
-Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence` ("persistenceservice" is replaced by the name of your add-on (e.g. `rrd4j.persist`)).
+Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence` (Replace "persistenceservice" with the name of your persistence add-on (e.g. `rrd4j.persist`)).
 
-Strategies may be used to persist an Item state when some event has occurred (e.g. an Item state has been updated or changed), on a time schedule, or at a specific time of day (e.g. through a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger).
+### Persistence Triggers
 
-Persistence configuration files consist of several sections:
+The persistence of an Item's state may be triggered when that Item changes state or when the Item is updated (even if its state did not change).
+Persistence may also be triggered by a time-related event (see Cron Persistence Triggers below).
 
-### Strategies section
+### Strategies
 
-This section allows you to define strategies and to declare a set of default strategies to use for this persistence service.  The syntax is as follows:
+This section allows you to define one or more `Strategies` that will be applied to `Items` (you specifiy the `Items` in the `Items` section).
+This section also defines a default strategy.
+The syntax is as follows:
 
 ```java
 Strategies {
   <strategyName1> : "cronexpression1>"
-
+  <strategyName2> : "cronexpression2"
+  ...
   default = everyChange
   ...
 }
 ```
 
-If no strategy is specified in an `itemlist` as described in the Items section below, the `default` strategy will be applied. The `default` parameter is optional and may be omitted.
+The `default` parameter assigns a strategy to be used if one is not specified in the `Items` section below.
+The `default` parameter may be omitted from the `Strategies` section, but only if a strategy is provided in each line of the `Items` section.
 
-The following strategies are defined internally:
+#### Predefined Strategies
+
+The following strategies are defined internally and may be used in place of `strategyName` above:
 
 - everyChange: persist the Item state whenever its state has changed
 - everyUpdate: persist the Item state whenever its state has been updated, even if it did not change
-- restoreOnStartup: load and initialize the last persisted Item state on openHAB startup (if the Item state is undefined (`UNDEF`)).  See below.
+- restoreOnStartup: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).  See below.
 
-### Items section
+#### Cron Persistence Triggers
+openHAB uses [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/quick-start.html) for time-related cron events.
+In the `Strategies` syntax example above, "cronexpression" is a Quartz cron-like expression.
+See the  [Quartz cron tutorial](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger) for examples of valid time-related trigger expressions.
+
+### Items
 
 This section defines which items should be persisted with which strategy.
 The syntax is as follows:
@@ -74,14 +84,13 @@ Items {
 }
 ```
 
-Note that you may omit the `strategy` portion of the `itemlist` so long as you have provided a `default` strategy in the `Strategies` section.
-In this case, the default strategy will be applied.
-
 where `<itemlist>` is a comma-separated list consisting of one or more of the following options:
 
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
 - `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
+
+Note: if the `strategy` portion of the `itemlist` is omitted, the `default` strategy specified in the `Strategies` section will be applied.
 
 A valid persistence configuration file might look like this:
 
