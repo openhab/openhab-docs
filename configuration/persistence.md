@@ -15,9 +15,7 @@ You may have more than one persistence add-on loaded, and each of these may be c
 
 A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
 
-## Add-on Configuration
-
-Please refer to the specific [on-line documentation]({{base}}/addons/persistence.html) for your selected persistence add-on for configuration instructions.
+Please refer to the [available persistence service add-on]({{base}}/addons/persistence.html) documentation for your selected persistence add-on for configuration instructions.
 
 ## Default Persistence Service
 
@@ -31,7 +29,10 @@ Be sure to save your choice once you have selected your default service.
 
 ## Persistence Configuration
 
-Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence` (Replace "persistenceservice" with the name of your persistence add-on (e.g. `rrd4j.persist`)).
+The information below allows you to determine which Item states are persisted, when they are persisted, and where they are stored.
+
+Persistence Strategies are configured in a file named `<persistenceservice>.persist`, stored in `$OPENHAB_CONF/persistence`.
+Replace "persistenceservice" with the name of your persistence add-on (e.g. `rrd4j.persist`).
 
 ### Persistence Triggers
 
@@ -40,13 +41,12 @@ Persistence may also be triggered by a time-related event (see Cron Persistence 
 
 ### Strategies
 
-This section allows you to define one or more `Strategies` that will be applied to `Items` (you specifiy the `Items` in the `Items` section).
-This section also defines a default strategy.
+This section allows you to name and define one or more `Strategies` and to select a default strategy.
 The syntax is as follows:
 
 ```java
 Strategies {
-  <strategyName1> : "cronexpression1>"
+  <strategyName1> : "cronexpression1"
   <strategyName2> : "cronexpression2"
   ...
   default = everyChange
@@ -56,19 +56,19 @@ Strategies {
 
 The `default` parameter assigns a strategy to be used if one is not specified in the `Items` section below.
 The `default` parameter may be omitted from the `Strategies` section, but only if a strategy is provided in each line of the `Items` section.
+If the `strategy` portion of the `itemlist` is omitted in the `Items` section, the `default` strategy specified in the `Strategies` section will be applied.
 
 #### Predefined Strategies
 
 The following strategies are defined internally and may be used in place of `strategyName` above:
 
-- everyChange: persist the Item state whenever its state has changed
-- everyUpdate: persist the Item state whenever its state has been updated, even if it did not change
-- restoreOnStartup: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).  See below.
+- `everyChange`: persist the Item state whenever its state has changed
+- `everyUpdate`: persist the Item state whenever its state has been updated, even if it did not change
+- `restoreOnStartup`: load and initialize the last persisted state of the Item on openHAB startup (if the Item state is undefined (`UNDEF`)).
 
 #### Cron Persistence Triggers
 openHAB uses [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/quick-start.html) for time-related cron events.
-In the `Strategies` syntax example above, "cronexpression" is a Quartz cron-like expression.
-See the  [Quartz cron tutorial](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/crontrigger) for examples of valid time-related trigger expressions.
+See the [Rules article]({{base}}/rules-dsl.html#time-based-triggers) for more information.
 
 ### Items
 
@@ -90,12 +90,23 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
 - `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
 
-Note: if the `strategy` portion of the `itemlist` is omitted, the `default` strategy specified in the `Strategies` section will be applied.
+The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
+Assume the `Strategies` section contains the line:
+```java
+  default = everyChange
+```
+then the following section,
+```java
+Items {
+    GF_Hall_Light
+}
+```
+will cause the state of `GF_Hall_Light` to be persisted on every change.
 
-A valid persistence configuration file might look like this:
+Below you will find a complete example persistence configuration file:
 
 ```java
-// persistence strategies have a name and a definition and are referred to in the "Items" section
+// persistence strategies have a name and definition and are referred to in the "Items" section
 Strategies {
         everyHour : "0 0 * * * ?"
         everyDay  : "0 0 0 * * ?"
@@ -110,15 +121,15 @@ Strategies {
  * Item (excl. the group Item itself).
  */
 Items {
-        // persist all items once a day and on every change and restore them from the db at startup
-        * : strategy = everyChange, everyDay, restoreOnStartup
+        // persist the Item state of Heating_Mode and Notifications_Active on every change and restore them from the db at startup
+        Heating_Mode, Notifications_Active: strategy = everyChange, restoreOnStartup
 
         // additionally, persist all temperature and weather values every hour
         Temperature*, Weather* : strategy = everyHour
 }
 ```
 
-## Restoring Item States on restart
+## Restoring Item States on Restart
 
 When restarting your openHAB installation you may find there are times when your logs indicate some Items have the state, `UNDEF`.
 This is because, by default, Item states are not persisted when openHAB restarts - even if you have installed a persistence add-on.
@@ -136,7 +147,7 @@ Items {
 }
 ```
 
-## Persistence Extensions in Scripts and rules
+## Persistence Extensions in Scripts and Rules
 
 To make use of persisted states inside scripts and rules, a few useful extensions have been defined on items.
 In contrast to an action (which is a function that can be called anywhere in a script or rule), an extension is a function that is only available like a method on a certain type.
@@ -197,7 +208,7 @@ Do this by appending a String as an optional additional parameter at the end of 
 
 <!-- TODO:Add an example of this.  I assume it is as simple as adding .rrd4j to the end of one of these, but this should be verified before being published. -->
 
-### Date and Time extensions
+### Date and Time Extensions
 
 A number of date and time calculations have been made available in openHAB through incorporation of [Jodatime](http://joda-time.sourceforge.net/).
 This makes it very easy to perform actions based upon time.
