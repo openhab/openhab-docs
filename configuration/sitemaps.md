@@ -112,7 +112,7 @@ The following element types may be used in a Sitemap definition file.
 |-------------------------------------------|-----------------------------------------------------------|
 | [Chart](#element-type-chart)              | Adds a time-series chart object for [persisted](persistence.html) data. |
 | [Colorpicker](#element-type-colorpicker)  | Allows the user to choose a color from a color wheel. |
-| [Default](#element-type-default)          | Renders an Item in the default UI representation specified by the type of the given item. |
+| [Default](#element-type-default)          | Renders an Item in the default UI representation specified by the type of the given Item. |
 | [Frame](#element-type-frame)              | Establishes an area containing various other Sitemap elements. |
 | [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
 | [Image](#element-type-image)              | Renders an image given by an URL. |
@@ -146,7 +146,7 @@ This provides the flexibility to present Items in the way desired in your home a
     - `label` sets the textual description displayed next to the preprocessed Item data (e.g. "`Now [%s °C]`"), [more details](items.html#item-label).
     - `icon` chooses the name of the icon file to show next to the element, [more details](items.html#icons).
 
--   When an Item is defined, you have the opportunity to assign a label and/or an icon at that point.
+-   When an [Item]({{base}}/configuration/items.html) is defined, you have the opportunity to assign a label and/or an icon at that point.
 If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
 Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
@@ -389,7 +389,7 @@ An embedded and/or protected video are not supported.
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
-- `encoding` may be left empty for auto selection.  but please set it explicitly to "mjpeg" for an MJPEG video, or to "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).
+- `encoding` should be set to "mjpeg" for an MJPEG video, or "HLS" for an HTTP Live Streaming playlist (file with .m3u8 extension).  If you omit the `encoding` parameter, openHAB will attempt to automatically select the correct format.
 
 **Example:**
 
@@ -459,10 +459,6 @@ Splits a String Item at each separator into multiple rows.
 
 Mappings is an optional parameter for the [Switch](#element-type-switch) and [Selection](#element-type-selection) element types.
 
-Please note that Switch and Selection are input-only element types.
-In other words, they only accept commands.
-For more information, see [Commands vs. Status]({{base}}/configuration/items.md#command-vs-status) in the [Items]({{base}}/configuration/items.md) article.
-
 Mapping syntax:
 
 ```perl
@@ -485,7 +481,9 @@ Imagine your TV is part of your openHAB setup.
 Its power state is represented by a binary Switch Item.
 Its channel number is a discrete number Item that may only be set to one of three states.
 By using a Switch or Selection element with a mappings array, you can replace these meaningless values with user-friendly descriptions for display on the user interface.
-Using this mapping, the power state of the TV, instead of saying "ON" and "OFF" would more accurately display "on" and "standby".
+
+
+This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
 
 In the third and forth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
@@ -513,14 +511,12 @@ visibility=[item_name operator value, item_name operator value, ... ]
 ```
 
 Valid comparison operators are:
-
 - equal to `==`, unequal to `!=`
 - smaller or equal to `<=`, bigger or equal to`>=`
 - smaller than `<`, bigger than `>`
-
 Expressions are evaluated from left to right.
 
-Examples:
+**Examples:**
 
 ```perl
 visibility=[Battery_Level<30]
@@ -531,8 +527,6 @@ visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 If any one of the comparisons is evaluated as `true`, the Item will be visible, otherwise it will be hidden.
 It is important to note that visibility may only be determined based on one condition at a time.
 
-The third example might control the visibility of a lawn sprinkler control.
-The control will be visible if it is Morning *OR* if it is Afternoon *OR* if the temperature is above 19°C.
 To achieve more complex conditions, you will benefit from defining a helper Item and a [rule]({{base}}/configuration/rules-dsl.md) to set it.
 
 <!-- TODO: Provide an example for the statement above or remove it.  It is not that helpful as it is now for people who are just getting aquainted with sitemaps -->
@@ -555,7 +549,7 @@ If an operator is not specified, the operator will default to `==`.
 
 The comparison operators for `labelcolor` and `valuecolor` are the same as for the visibility parameter.
 
-Examples:
+**Examples:**
 
 ```perl
 Text item=Weather valuecolor=[Temperature<=4="blue"]
