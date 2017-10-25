@@ -95,10 +95,10 @@ docker run \
         -d \
         --user=<uid> \
         --restart=always \
-        openhab/openhab:<version>-<architecture>
+        openhab/openhab:<version>-<architecture>-<distributions>
 ```
 
-Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB and `<arch>` is the architecture of your system.
+Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB, `<architecture>` is the architecture of your system and `<distributions>` is the base system (debian or alpine).
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
@@ -138,14 +138,14 @@ ExecStart=/usr/bin/docker run --name=%n --net=host \
   -v /opt/openhab/.java:/openhab/.java \
   --device=/dev/ttyUSB0 \
   --user=<uid> \
-  openhab/openhab:<version>-<architecture>
+  openhab/openhab:<version>-<architecture>-<distributions>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB and `<arch>` is the architecture of your system.
+Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB, `<architecture>` is the architecture of your system and `<distributions>` is the base system (debian or alpine).
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
@@ -169,8 +169,8 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 - `--user=<uid>` : sets the user that runs the processes inside the container to match the uid passed, makes sure the `openhab` user can read and write to all needed files
 - `--device=/dev/ttyUSB0` : location of my zwave controller, change and/or add more --device tags to pass all your devices needed by openHAB to the container
 - `--restart=always` : if the container crashes or the system reboots the container is restarted
-- `openhab/openhab:<version>-<architecture>` : name of the Docker Image
-- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<architecture> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
+- `openhab/openhab:<version>-<architecture>-<distributions>` : name of the Docker Image
+- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<architecture>-<distributions> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
 
 ## Environment Variables
 
@@ -208,10 +208,10 @@ rm -rf /opt/openhab/userdata/tmp
 Pull down the latest image:
 
 ```bash
-docker pull openhab/openhab:<version>-<architecture>
+docker pull openhab/openhab:<version>-<architecture>-<distributions>
 ```
 
-where `<version>` is the version of openHAB and `<arch>` is your architecture.
+where `<version>` is the version of openHAB, `<architecture>` is your architecture and `<distributions>` is the base system (debian or alpine).
 
 Restart the container using the full command above.
 
