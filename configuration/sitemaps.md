@@ -361,8 +361,7 @@ Image [item=<itemname>] [icon="<iconname>"] url="<url of image>" [label="<labeln
 
 This element type is able to present an image.
 The image must be available on a reachable website or webserver without password or access token.
-It's also possible to place an image in the `$OPENHAB_CONF/html` folder.
-The file will be available under the "static" route, [http://<my.openHAB.device>:8080/static/image.png](http://127.0.0.1:8080/static).
+Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, http://<my.openHAB.device>:8080/static/YourImageFile.png.
 
 - `item` can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the image, if there is no associated Item or if the associated item's state is not a URL.
@@ -512,8 +511,8 @@ visibility=[item_name operator value, item_name operator value, ... ]
 
 Valid comparison operators are:
 - equal to `==`, unequal to `!=`
-- smaller or equal to `<=`, bigger or equal to`>=`
-- smaller than `<`, bigger than `>`
+- less than or equal to `<=`, greater than or equal to`>=`
+- less than `<`, greater than `>`
 Expressions are evaluated from left to right.
 
 **Examples:**
@@ -536,7 +535,7 @@ To achieve more complex conditions, you will benefit from defining a helper Item
 Colors can be used to emphasize an items label or its value based on conditions.
 Colors may be assigned to either the label or the value associated with an Item.
 
-Label and Value Color Syntax:
+**Label and Value Color Syntax:**
 
 ```perl
 labelcolor=[item_name operator value = "color", ... ]
@@ -551,29 +550,32 @@ The comparison operators for `labelcolor` and `valuecolor` are the same as for t
 
 **Examples:**
 
-```perl
-Text item=Weather valuecolor=[Temperature<=4="blue"]
-                  labelcolor=[Temperature<=4="blue"]
-Text item=Temperature valuecolor=[Last_Update=="Uninitialized"="gray",
-                                  >=25="orange", >=15="green", 0="white", <15="blue"]
-```
-
-In the first example, the `Weather` Item is blue (label and value) if the `Temperature` is at or below 4°C.
-
-The order in which expressions are listed is important.
-Note that expressions are evaluated from left to right, and the first matching expression determines the color.
-Looking at the second example, you will see that the order of the expressions is set so that the first match, left-to-right gives the correct result.
-If the order was reversed, color assignment would not work properly.
-
-In the second example, the effect of omitting the `item_name` and `operator` parameters is shown by omitting `Temperature` and by omitting the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
-
-The following three lines are equivalent, and all of them are valid:
+The following three lines are equivalent.
 
 ```perl
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[==22="green"]
 Text item=Temperature labelcolor=[>0="blue"] valuecolor=[Temperature==22="green"]
 ```
+
+The line below illustrates the importance of operator order:
+
+```perl
+Text item=Temperature valuecolor=[Last_Update=="Uninitialized"="gray",
+                                  >=25="orange", >=15="green", 0="white", <15="blue"]
+```
+
+Note that expressions are evaluated from left to right; the first matching expression determines the color.
+If the order of the expressions was reversed, the color assignment would not work properly.
+Note also, the effect of omitting `Temperature` and the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
+
+The two lines below show that `item_name` may be omitted, in which case, the name from the previous line will be used:
+
+```perl
+Text item=Weather valuecolor=[Temperature<=4="blue"]
+                  labelcolor=[Temperature<=4="blue"]
+```
+The `Weather` Item will be blue (label and value) if `Temperature` is less than or equal to 4°C.
 
 ![Presentation of the color parameters in BasicUI](images/sitemap_demo_colors.png)
 
