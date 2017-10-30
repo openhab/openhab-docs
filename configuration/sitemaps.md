@@ -116,6 +116,7 @@ The following element types may be used in a Sitemap definition file.
 | [Frame](#element-type-frame)              | Establishes an area containing various other Sitemap elements. |
 | [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
 | [Image](#element-type-image)              | Renders an image given by an URL. |
+| [Mapview](#element-type-mapview)          | Displays an OSM map based on a given Location Item. |
 | [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
 | [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
 | [Slider](#element-type-slider)            | Presents a value in a progress-bar-like slider. |
@@ -352,6 +353,24 @@ Webview url="http://www.openhab.org" height=5
 ```
 
 ![Presentation of the Webview element in BasicUI](images/sitemap_demo_webview.png)
+
+### Element Type 'Mapview'
+ 
+```perl
+Mapview [item=<itemname>] [label="<labelname>"] [icon="<iconname>"] [height=<heightvalue>]
+```
+
+Displays an [OSM](https://www.openstreetmap.org) map based on a given Location Item.
+ 
+- `height` is the number of element rows to fill.
+ 
+**Example:**
+ 
+```perl
+Mapview item=Demo_Location height=5
+```
+ 
+![Presentation of the Mapview element in BasicUI](images/sitemap_demo_mapview.png)
 
 ### Element Type 'Image'
 
@@ -678,11 +697,14 @@ Explanation:
 
 -   Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
 
-<!-- Note to author: The screenshot was created in BasicUI with the following items and Sitemap file content:
+<!-- Note to author: 
+- The screenshot were created with chrome mobile developer tools on a page width of 529px
+ -The screenshots were created in BasicUI with the following items and Sitemap file content:
 Group:Number:AVG Temperatures <heating>
 Number Demo_LivingroomTemperature "Livingroom [21.0 °C]" <temperature> (Temperatures)
 Number Demo_BedroomTemperature "Bedroom [19.5 °C]" <temperature> (Temperatures)
-Number Demo_KitchenTemperature "Kitchen [20.3 °C]" <temperature> (Temperatures)
+Number Demo_KitchenTemperature "Kitchen [20.5 °C]" <temperature> (Temperatures)
+Location Demo_Location "Location [48.858377,2.294486,66.0]"
 
 Number Demo_TV_Channel
 Color Demo_Color
@@ -742,6 +764,9 @@ sitemap demo label="My home automation" {
     }
     Frame {
         Text item=Temperature label="Livingroom [22.0 °C]" icon="temperature" labelcolor=[!=1="blue"] valuecolor=[!=1="green"]
+    }
+    Frame {
+        Mapview item=Demo_Location height=5
     }
 }
 -->
