@@ -274,11 +274,6 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
-A special Switch-like element that may be used to increase or decrease the value of an item.
-The element is often used to gradually change a number item.
-
-<!-- TODO: The sentence above is not clear and needs to be rewritten. -->
-
 - `minValue` and `maxValue` limit the possible range of the value (both included in the range).
 - `step` defines how much the value will change when the button is pressed one time.
 
@@ -524,11 +519,14 @@ visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
 If any one of the comparisons is evaluated as `true`, the Item will be visible, otherwise it will be hidden.
-It is important to note that visibility may only be determined based on one condition at a time.
+It is important to note that visibility may be determined based on only one condition at a time.
+If any one of the comparisons is evaluated as `true`, then the Item will be visible.
+Otherwise it will be hidden.
 
-To achieve more complex conditions, you will benefit from defining a helper Item and a [rule]({{base}}/configuration/rules-dsl.md) to set it.
-
-<!-- TODO: Provide an example for the statement above or remove it.  It is not that helpful as it is now for people who are just getting aquainted with sitemaps -->
+In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
+Combining multiple conditions, for example Morning *AND* above 19 °C is not supported.
+To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional Item that is set by a Rule.
+Rules have a rich set of features that can support more involved scenarios.
 
 ### Label and Value Colors
 
