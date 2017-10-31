@@ -150,10 +150,8 @@ Items {
 ## Persistence Extensions in Scripts and Rules
 
 To make use of persisted states inside scripts and rules, a few useful extensions have been defined on items.
-In contrast to an action (which is a function that can be called anywhere in a script or rule), an extension is a function that is only available like a method on a certain type.
-This means that the persistence extensions are available like methods on all items.
-
-<!-- TODO: Reword the above section to replace the word "like" with something that is more clear-->
+Note that these extensions are only available to be applied to Items.
+They are not generally available for use in Scripts or Rules.
 
 Example:
 
@@ -166,45 +164,44 @@ You can easily imagine that you can implement very powerful rules using this fea
 
 Here is the full list of available persistence extensions:
 
-- <item>.persist - Persists the current state
+- <item>.persist - Persists the current State of the Item
 
 
-- <item>.lastUpdate - Query for the last update timestamp of a given Item.
+- <item>.lastUpdate - Queries for the last update timestamp of a given Item.
 
 
-- <item>.historicState(AbstractInstant) - Retrieves the historic Item at a certain point in time
+- <item>.historicState(AbstractInstant) - Retrieves the State of an Item at a certain point in time
 
 
-- <item>.changedSince(AbstractInstant) - Checks if the state of the Item has (ever) changed since a certain point in time
+- <item>.changedSince(AbstractInstant) - Checks if the State of the Item has (ever) changed since a certain point in time
 
 
 - <item>.updatedSince(AbstractInstant) - Checks if the state of the Item has been updated since a certain point in time
 
 
-- <item>.maximumSince(AbstractInstant) - Gets the Item with the maximum value (state) since a certain point in time
+- <item>.maximumSince(AbstractInstant) - Gets the maximum value of the State of a persisted Item since a certain point in time
 
 
-- <item>.minimumSince(AbstractInstant) - Gets the Item with the minimum value (state) since a certain point in time
+- <item>.minimumSince(AbstractInstant) - Gets the minimum value of the State of a persisted Item since a certain point in time
 
 
-- <item>.averageSince(AbstractInstant) - Gets the average value of the state of a given Item since a certain point in time
+- <item>.averageSince(AbstractInstant) - Gets the average value of the State of a persisted Item since a certain point in time
 
 
-- <item>.deltaSince(AbstractInstant) - Gets the difference value of the state of a given Item since a certain point in time
+- <item>.deltaSince(AbstractInstant) - Gets the difference in value of the State of a given Item since a certain point in time
 
 
-- <item>.previousState() - Retrieves the previous Item (returns HistoricItem)
+- <item>.previousState() - Gets the previous State of a persisted Item (returns HistoricItem)
 
 
-- <item>.previousState(true) - Retrieves the previous Item, skips items with equal state values and searches the first Item with state not equal the current state (returns HistoricItem)
+- <item>.previousState(true) - Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem)
 
 
-- <item>.sumSince(AbstractInstant) - Retrieves the sum of the previous states since a certain point in time. (OpenHab 1.8)
+- <item>.sumSince(AbstractInstant) - Gets the sum of the previous States of a persisted Item since a certain point in time. (OpenHab 1.8)
 
-These extensions use the default persistence service that is configured as the default persistence service.  (Refer to Default Persistence Service above to configure this.)
-
-Note that you can specify that a different persistence service be used with a particular extension.
-Do this by appending a String as an optional additional parameter at the end of the extension (e.g. "rrd4j" or "sense").
+These extensions use the default persistence service.
+(Refer to 'Default Persistence Service' above to configure this.)
+You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension (e.g. "rrd4j" or "sense").
 
 <!-- TODO:Add an example of this.  I assume it is as simple as adding .rrd4j to the end of one of these, but this should be verified before being published. -->
 
@@ -226,15 +223,15 @@ See the [Jodatime documentation](http://joda-time.sourceforge.net/api-release/or
 
 ## Startup Behavior
 
-Persistence services and the rule engine are started in parallel.
-Because of this, it is possible that, during an openHAB startup, rules will execute before Item states used by those rules have been restored.
-(In this case, those unrestored items have an "undefined" state when the rule is executed.)
-Therefore, rules that rely on persisted Item states may not work consistently.
+Persistence services and the Rule engine are started in parallel.
+Because of this, it is possible that, during an openHAB startup, Rules will execute before Item states used by those Rules have been restored.
+(In this case, those unrestored Items have an "undefined" state when the Rule is executed.)
+Therefore, Rules that rely on persisted Item states may not work correctly on a consistent basis.
 
 ### Workaround 1
 
-A workaround which helps in some cases is to create an Item e.g. "delayed_start" that is set to "OFF" at startup and to "ON" some time later (when it can be assumed that persistence has restored all items.
-You then write a rule that restores items from your persistence service after the delay has completed.
+A workaround which helps in some cases is to create an Item e.g. "delayed_start" that is set to "OFF" at startup and to "ON" some time later (when it can be assumed that persistence has restored all items).
+You can then write a Rule that restores Items from your persistence service after the delay has completed.
 The time of the delay must be determined by experimentation.
 How long you need to wait before changing your "delayed_start" Item from "OFF" to "ON" depends upon the size of your home automation project and the performance of your platform.
 
