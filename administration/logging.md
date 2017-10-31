@@ -8,7 +8,7 @@ title: Logging
 # Logging in openHAB
 
 This article describes the logging functionality in openHAB 2.
-Ths includes how to access logging information and configure logging for user-defined rules. 
+Ths includes how to access logging information and configure logging for user-defined rules.
 
 There are two ways to check log entries:
 
@@ -91,27 +91,29 @@ Note that the log levels set using the `log:set` commands are not persistent and
 
 ## Create Log Entries in Rules
 
-It is also possible to create own log entries in rules. This is especially useful for debugging purposes.
+There are times, especially when troubleshooting, when it can be helpful to create special rules that log specific variables or the State of Items.
+When using log entries in this way, it is important to set the appropriate log level in your rule.
 
-For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: `Demo`) and the text which should appear in the log:
+For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage, in this example, `heating-control.rules`, and the text which should appear in the log:
 
 ```java
-logError("Demo","This is a log entry of type Error!")
-logWarn("Demo","This is a log entry of type Warn!")
-logInfo("Demo","This is a log entry of type Info!")
-logDebug("Demo","This is a log entry of type Debug!")
+logError("heating-control.rules","This is a log entry of type Error!")
+logWarn("heating-control.rules","This is a log entry of type Warn!")
+logInfo("heating-control.rules","This is a log entry of type Info!")
+logDebug("heating-control.rules","This is a log entry of type Debug!")
 ```
 
-In order to see the messages, logging for the message class has to be activated. The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage needs to be concatenated:
+In order to see the messages, logging for the message class has to be activated.
+The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage should be appended to the end of the main package as shown in the example below:
 
 ```text
-log:set DEBUG org.eclipse.smarthome.model.script.Demo
+logInfo("heating-control.rules", "Bedroom 1 Temperature - Measured: %1$.1f°C Target: %2$.1f°C Min: %3$.1f°C State: %4$s", BR1_Temp.state,BR1_Tgt_Temp.state ,BR1_Min_Temp.state ,BR1_Temp_State.state)
 ```
 
-The output for the above log statement of type **DEBUG** is:
+The output of the above log statement, which is of type **Info** is:
 
 ```
-2016-06-04 16:28:39.482 [DEBUG] [.eclipse.smarthome.model.script.Demo] - This is a log entry of type DEBUG!
+2016-06-04 16:28:39.482 [INFO] [.eclipse.smarthome.model.script.heating-control.rules] Bedroom 1 Temperature-  Measured: 21.3°C Target: 22.5°C Min: 15.9°C
 ```
 
 ## Logging into Separate File
