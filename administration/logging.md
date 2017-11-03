@@ -104,18 +104,18 @@ logInfo("heating-control.rules","This is a log entry of type Info!")
 logDebug("heating-control.rules","This is a log entry of type Debug!")
 ```
 
-In order to see the messages, logging for the message class has to be activated.
-The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage should be appended to the end of the main package as shown in the example below:
+The main package is predefined (`.e.model.script`) and the subpackage should be appended to the end of the main package as shown in the example below:
 
 ```text
-logInfo("heating-control.rules", "Bedroom 1 Temperature - Measured: %1$.1f°C Target: %2$.1f°C Min: %3$.1f°C State: %4$s", BR1_Temp.state,BR1_Tgt_Temp.state ,BR1_Min_Temp.state ,BR1_Temp_State.state)
+logInfo("heating-control.rules", "Bedroom 1 Temperature - Measured: %1$.1f°C Target: %2$.1f°C ", BR1_Temp.state,BR1_Tgt_Temp.state,)
 ```
 
 The output of the above log statement, which is of type **Info** is:
 
 ```
-2016-06-04 16:28:39.482 [INFO] [.eclipse.smarthome.model.script.heating-control.rules] Bedroom 1 Temperature-  Measured: 21.3°C Target: 22.5°C Min: 15.9°C
+2016-06-04 16:28:39.482 [INFO] [.e.model.script.heating-control.rules] Bedroom 1 Temperature-  Measured: 21.3°C Target: 22.5°C Min: 15.9°C
 ```
+Note that, in the example above, both numbers and strings have been included, and also note that formatting has been applied to the data represented in the Item State.
 
 ## Logging into Separate File
 
