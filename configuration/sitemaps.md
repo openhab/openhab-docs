@@ -567,16 +567,6 @@ Note that expressions are evaluated from left to right; the first matching expre
 If the order of the expressions was reversed, the color assignment would not work properly.
 Note also, the effect of omitting `Temperature` and the comparison operator in the expression `0="white"` (as compared to `==0="white"`).
 
-The two lines below show that `item_name` may be omitted, in which case, the name from the previous line will be used:
-
-```perl
-Text item=Weather valuecolor=[Temperature<=4="blue"]
-                  labelcolor=[Temperature<=4="blue"]
-```
-The `Weather` Item will be blue (label and value) if `Temperature` is less than or equal to 4°C.
-
-![Presentation of the color parameters in BasicUI](images/sitemap_demo_colors.png)
-
 Below is a list of standard colors and their respective RGB color codes.
 
 | Color Name  | Preview and RGB Color Code              |
