@@ -19,24 +19,23 @@ This documentation page can give you some guidance in choosing the right one for
 ## openHAB VS Code Extension
 
 openHAB VS Code is an extension for the [Visual Studio Code](https://code.visualstudio.com) editor.
+You can find it in the [Microsoft Visual Studio Marketplace](https://marketplace.visualstudio.com/items?itemName=openhab.openhab).
 
-  ![openHAB VS Code Extension alternative installation](images/vscode_demo.gif)
+  ![openHAB VS Code Extension demo](images/vscode_demo.gif)
 
 ### Installation
 
-1. Download the latest release from [openhab-vscode](https://github.com/openhab/openhab-vscode/releases)
-2. Install the extension with one of the following methods
-    - Open command line in the same folder you downloaded the extension
-      Type the following command:
-      ```shell
-        code --install-extension openhab-0.0.2.vsix
-      ```
-    - Go to the extensions area and install the extension like showed in the screenshot:
-      ![openHAB VS Code Extension alternative installation](images/vscode_alternative_install.png)
-
-Currently openhab-vscode isn't yet listed in [Microsoft Visual Studio Marketplace](https://marketplace.visualstudio.com/vscode), but the contributors are working on it already.
+1. Open the extension sidebar. ![openHAB VS Code Extension alternative installation](images/vscode_extensiontab_icon.png)
+2. Search for openHAB and install the extension.
 
 [Visit the Extensions GitHub Page for further Informations](https://github.com/openhab/openhab-vscode/blob/master/README.md "GitHub Repo for the VS Code Extension")
+
+### Rule Validation
+
+This extension has the ability to check rules and validate them through a so called `Language Server`.
+(If youn want to know more about this in general look [here](https://langserver.org/).)
+The validation needs a running openHAB installation in your environment and can be activated with some simple steps.
+You can find all important information in the extensions [readme file](https://github.com/openhab/openhab-vscode#validating-the-rules).
 
 {: #esh-designer}
 ## Eclipse SmartHome Designer
