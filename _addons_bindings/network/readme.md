@@ -161,10 +161,10 @@ Things support the following channels:
 
 ## Full Example
 
-demo.Things:
+demo.things:
 
 ```xtend
-network:pingdevice:devicename [ hostname="192.168.0.42" ]
+Thing network:pingdevice:devicename [ hostname="192.168.0.42" ]
 ```
 
 demo.items:
