@@ -91,8 +91,9 @@ Note that the log levels set using the `log:set` commands are not persistent and
 
 ## Create Log Entries in Rules
 
-There are times, especially when troubleshooting, when it can be helpful to create special rules that log specific variables or the State of Items.
-When using log entries in this way, it is important to set the appropriate log level in your rule.
+There are times, especially when troubleshooting rules, when it can be helpful to log specific variables or the State of Items.
+When using log entries in this way, it is an option to set the appropriate log level in your rule.
+You might use this, for example, so that you can quickly identify different log entries, e.g. `Info` or `Warn`.
 
 For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage, in this example, `heating-control.rules`, and the text which should appear in the log:
 
