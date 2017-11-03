@@ -485,7 +485,7 @@ This limits the possible input values, which is yet another often occurring use 
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/items.md#icons-dynamic), depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/items.md#icons-dynamic}}), depending on certain Item states.
 A few practical use cases are:
 
 - Show a battery warning if the voltage level of a device is below 30%
