@@ -92,15 +92,19 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 
 The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
 Assume the `Strategies` section contains the line:
+
 ```java
   default = everyChange
 ```
+
 then the following section,
+
 ```java
 Items {
     GF_Hall_Light
 }
 ```
+
 will cause the state of `GF_Hall_Light` to be persisted on every change.
 
 Below you will find a complete example persistence configuration file:
@@ -164,19 +168,20 @@ You can easily imagine that you can implement very powerful rules using this fea
 
 Here is the full list of available persistence extensions:
 
-|Persistence Extension                   |Description|
-|`<item>.persist`                        |Persists the current State of the Item|
-|`<item>.lastUpdate`                     |Queries for the last update timestamp of a given Item|
-|`<item>.historicState(AbstractInstant)` |Retrieves the State of an Item at a certain point in time|
-|`<item>.changedSince(AbstractInstant)`  |Checks if the State of the Item has (ever) changed since a certain point in time|
-|`<item>.updatedSince(AbstractInstant)`  |Checks if the state of the Item has been updated since a certain point in time|
-|`<item>.maximumSince(AbstractInstant)`  |Gets the maximum value of the State of a persisted Item since a certain point in time|
-|`<item>.minimumSince(AbstractInstant)`  |Gets the minimum value of the State of a persisted Item since a certain point in time|
-|`<item>.averageSince(AbstractInstant)`  |Gets the average value of the State of a persisted Item since a certain point in time|
-|`<item>.deltaSince(AbstractInstant)`    |Gets the difference in value of the State of a given Item since a certain point in time|
-|`<item>.previousState()`                |Gets the previous State of a persisted Item (returns HistoricItem)|
-|`<item>.previousState(true)`            |Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem)|
-|`<item>.sumSince(AbstractInstant)`      |Gets the sum of the previous States of a persisted Item since a certain point in time. (OpenHab 1.8)|
+| Persistence Extension                   | Description |
+|-----------------------------------------|-------------|
+| `<item>.persist`                        | Persists the current State of the Item |
+| `<item>.lastUpdate`                     | Queries for the last update timestamp of a given Item |
+| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time |
+| `<item>.changedSince(AbstractInstant)`  | Checks if the State of the Item has (ever) changed since a certain point in time |
+| `<item>.updatedSince(AbstractInstant)`  | Checks if the state of the Item has been updated since a certain point in time |
+| `<item>.maximumSince(AbstractInstant)`  | Gets the maximum value of the State of a persisted Item since a certain point in time |
+| `<item>.minimumSince(AbstractInstant)`  | Gets the minimum value of the State of a persisted Item since a certain point in time |
+| `<item>.averageSince(AbstractInstant)`  | Gets the average value of the State of a persisted Item since a certain point in time |
+| `<item>.deltaSince(AbstractInstant)`    | Gets the difference in value of the State of a given Item since a certain point in time |
+| `<item>.previousState()`                | Gets the previous State of a persisted Item (returns HistoricItem) |
+| `<item>.previousState(true)`            | Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem) |
+| `<item>.sumSince(AbstractInstant)`      | Gets the sum of the previous States of a persisted Item since a certain point in time |
 
 These extensions use the default persistence service.
 (Refer to 'Default Persistence Service' above to configure this.)
