@@ -1,0 +1,1 @@
+Sitemap: http://docs.openhab.org/2.1.0/sitemap.xml

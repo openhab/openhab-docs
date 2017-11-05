@@ -1,0 +1,90 @@
+{
+  "name": "openhab-docs",
+  "version": "0.0.0",
+  "description": "(this npm package file is currently only used for remark-lint)",
+  "//": "",
+  "//": "A few usage notes:",
+  "//": "remark-lint is a Linter for Markdown files. With this file in place",
+  "//": "you can check all *.md files against the Markdown Style Guide of",
+  "//": "this project.",
+  "//": "",
+  "//": "Before you can start you need to install Node.js. Afterwards execute",
+  "//": "'npm install' to install all dependancies as defined in this file.",
+  "//": "The style check can be executed in the following ways:",
+  "//": "  1. From the console: 'npm run-script lint-md'",
+  "//": "  2. Inside the Atom editor with the linter-markdown package:",
+  "//": "     https://atom.io/packages/linter-markdown",
+  "//": "",
+  "main": "index.html",
+  "license" : "EPL-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openhab/openhab-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhab/openhab-docs/issues"
+  },
+  "homepage": "https://github.com/openhab/openhab-docs#readme",
+  "scripts": {
+    "lint-md": "remark ."
+  },
+  "dependencies": {
+    "remark-cli": "^3.0.1",
+    "remark-preset-lint-consistent": "^2.0.0",
+    "remark-preset-lint-markdown-style-guide": "^1.0.0",
+    "remark-preset-lint-recommended": "^2.0.0",
+    "remark-lint-code-block-style": "^1.0.0",
+    "remark-lint-fenced-code-flag": "^1.0.0",
+    "remark-lint-list-item-indent": "^1.0.0",
+    "remark-lint-maximum-line-length": "^1.0.0",
+    "remark-lint-no-missing-blank-lines": "^1.0.0",
+    "remark-lint-no-tabs": "^1.0.0",
+    "remark-lint-unordered-list-marker-style": "^1.0.0"
+  },
+  "remarkConfig": {
+    "plugins": [
+      [
+        "remark-preset-lint-consistent",
+        true
+      ],
+      [
+        "remark-preset-lint-recommended",
+        true
+      ],
+      [
+        "remark-preset-lint-markdown-style-guide",
+        true
+      ],
+      [
+        "remark-lint-list-item-indent",
+        "mixed"
+      ],
+      [
+        "remark-lint-maximum-line-length",
+        240
+      ],
+      [
+        "remark-lint-no-missing-blank-lines",
+        {
+          "exceptTightLists": true
+        }
+      ],
+      [
+        "remark-lint-code-block-style",
+        "fenced"
+      ],
+      [
+        "remark-lint-fenced-code-flag",
+        true
+      ],
+      [
+        "remark-lint-no-tabs",
+        true
+      ],
+      [
+        "remark-lint-unordered-list-marker-style",
+        "-"
+      ]
+    ]
+  }
+}
