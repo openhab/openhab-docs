@@ -91,31 +91,38 @@ Note that the log levels set using the `log:set` commands are not persistent and
 
 ## Create Log Entries in Rules
 
-There are times, especially when troubleshooting rules, when it can be helpful to log specific variables or the State of Items.
-When using log entries in this way, it is an option to set the appropriate log level in your rule.
-You might use this, for example, so that you can quickly identify different log entries, e.g. `Info` or `Warn`.
+There are times, especially when troubleshooting rules, when it can be helpful to write information and variable or Item State values to the log.
 
-For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage, in this example, `heating-control.rules`, and the text which should appear in the log:
+For each log level there is an corresponding command for creating log entries.
+You may use these log levels to filter or better differentiate the generated logging output.
+The logging commands require two parameters: the subpackage, in the examples below `heating-control.rules`, and the text which should appear in the log:
 
 ```java
-logError("heating-control.rules","This is a log entry of type Error!")
-logWarn("heating-control.rules","This is a log entry of type Warn!")
-logInfo("heating-control.rules","This is a log entry of type Info!")
-logDebug("heating-control.rules","This is a log entry of type Debug!")
+logError("heating-control.rules", "This is a log entry of type Error!")
+logWarn("heating-control.rules", "This is a log entry of type Warn!")
+logInfo("heating-control.rules", "This is a log entry of type Info!")
+logDebug("heating-control.rules", "This is a log entry of type Debug!")
 ```
 
-The main package is predefined (`.e.model.script`) and the subpackage should be appended to the end of the main package as shown in the example below:
+The main package of all script/rules based log entries is predefined as `org.eclipse.smarthome.model.script`.
+The chosen subpackage is appended to the end of the main package.
+It can be useful for filtering or package-based log level settings.
+
+Examples for typical logging lines found in rules:
 
 ```text
-logInfo("heating-control.rules", "Bedroom 1 Temperature - Measured: %1$.1f°C Target: %2$.1f°C ", BR1_Temp.state,BR1_Tgt_Temp.state,)
+logInfo("heating-control.rules", "Heating mode set to normal")
+logError("heating-control.rules", "Heating control failed while in mode " + Heating_Mode.state)
+logDebug("heating-control.rules", "Bedroom: Temperature: %1$.1f°C, Mode %2$s", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
 ```
 
-The output of the above log statement, which is of type **Info** is:
+The generated logging line of the last log statement above is for example:
 
 ```
-2016-06-04 16:28:39.482 [INFO] [.e.model.script.heating-control.rules] Bedroom 1 Temperature-  Measured: 21.3°C Target: 22.5°C Min: 15.9°C
+2016-06-04 16:28:39.482 [DEBUG] [.e.model.script.heating-control.rules] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
-Note that, in the example above, both numbers and strings have been included, and also note that formatting has been applied to the data represented in the Item State.
+
+Note that, in the last example, inclusion and formatting of values was done using the [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
 
 ## Logging into Separate File
 
