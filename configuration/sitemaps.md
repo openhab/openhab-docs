@@ -22,7 +22,8 @@ This page is structured as follows:
 Sitemaps are text files with the `.sitemap` extension, and are stored in the `$OPENHAB_CONF/sitemaps` directory.
 Sitemaps follow the syntax described in this article.
 
-For easy editing of sitemap definition files, we suggest you use [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer), which provides full IDE support for these files including, among other functions, syntax checking and auto-complete.
+For easy editing of sitemap definition files, we suggest to use on of the [openHAB supporting editors]({{base}}/configuration/editors.html).
+Those provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
 The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
 You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.
@@ -355,21 +356,21 @@ Webview url="http://www.openhab.org" height=5
 ![Presentation of the Webview element in BasicUI](images/sitemap_demo_webview.png)
 
 ### Element Type 'Mapview'
- 
+
 ```perl
 Mapview [item=<itemname>] [label="<labelname>"] [icon="<iconname>"] [height=<heightvalue>]
 ```
 
 Displays an [OSM](https://www.openstreetmap.org) map based on a given Location Item.
- 
+
 - `height` is the number of element rows to fill.
- 
+
 **Example:**
- 
+
 ```perl
 Mapview item=Demo_Location height=5
 ```
- 
+
 ![Presentation of the Mapview element in BasicUI](images/sitemap_demo_mapview.png)
 
 ### Element Type 'Image'
@@ -518,7 +519,7 @@ A few practical use cases are:
 - Show a battery warning if the voltage level of a device is below 30%
 - Hide further control elements for the TV if it is turned off
 - Highlight a value with a warning color if it is outside accepted limits
-- Present a special icon, depending on the state of an item (a [dynamic icon]({{base/items.md#icons-dynamic}}))
+- Present a special icon, depending on the state of an item (a [dynamic icon]({{base}}/items.md#icons-dynamic}}))
 
 ### Visibility
 
@@ -697,7 +698,7 @@ Explanation:
 
 -   Further examples for defining Sitemaps can be found in our [openHAB-Samples](https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions) section.
 
-<!-- Note to author: 
+<!-- Note to author:
 - The screenshot were created with chrome mobile developer tools on a page width of 529px
  -The screenshots were created in BasicUI with the following items and Sitemap file content:
 Group:Number:AVG Temperatures <heating>
