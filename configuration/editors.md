@@ -25,6 +25,7 @@ You can find it in the [Microsoft Visual Studio Marketplace](https://marketplace
 
 ### Installation
 
+0. Install [Visual Studio Code](https://code.visualstudio.com/Download) if not yet available.
 1. Open the extension sidebar. ![openHAB VS Code Extension alternative installation](images/vscode_extensiontab_icon.png)
 2. Search for openHAB and install the extension.
 
