@@ -23,7 +23,7 @@ Sitemaps are text files with the `.sitemap` extension, and are stored in the `$O
 Sitemaps follow the syntax described in this article.
 
 For easy editing of sitemap definition files, we suggest to use on of the [openHAB supporting editors]({{base}}/configuration/editors.html).
-Those provide full IDE support for sitemap files, including syntax checking and auto-completion.
+These provide full IDE support for sitemap files, including syntax checking and auto-completion.
 
 The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named [`demo.sitemap`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap).
 You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.
