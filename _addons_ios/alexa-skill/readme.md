@@ -28,14 +28,14 @@ Currently supported are the English (U.S.), English (U.K.), and German language.
 
 ### Requirements
 
-* [openHAB Cloud Connector](http://docs.openhab.org/addons/io/openhabcloud/readme.html) configured using myopenHAB.org
+* [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org
 * Amazon account
 * Amazon Echo, Amazon Echo Dot or compatible Alexa speaker or solution (e.g. [Reverb](https://reverb.ai/))
 
 ### 1. Item Configuration
 
-Items are exposed to Alexa through the use of tags which follow the [HomeKit](http://docs.openhab.org/addons/io/homekit/readme.html) binding tagging syntax.
-See the [Hue Emulation](http://docs.openhab.org/addons/io/hueemulation/readme.html) and [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) documentation for details about tagging and available tags.
+Items are exposed to Alexa through the use of tags which follow the [HomeKit](http://docs.openhab.org/addons/ios/homekit/readme.html) binding tagging syntax.
+See the [Hue Emulation](http://docs.openhab.org/addons/ios/hueemulation/readme.html) and [HomeKit Add-on](http://docs.openhab.org/addons/ios/homekit/readme.html) documentation for details about tagging and available tags.
 
 * **Items via .items - File**
 
@@ -103,7 +103,7 @@ Here are some example voice commands:
 ### Additional Comments
 
 * Thermostats are created by adding the items of a thermostat to a group which has the tag "Thermostat" which follows the HomeKit binding configuration. 
-See [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) for more information on how to configure thermostats.
+See [HomeKit Add-on](http://docs.openhab.org/addons/ios/homekit/readme.html) for more information on how to configure thermostats.
 * Channels which are tagged "CurrentTemperature" but NOT part of a thermostat group will be exposed as a Temperature item in Alexa and can be asked what their current value is ("Alex what is the upstairs temperature? ")
 * By default all temperatures are in Celsius, for Fahrenheit add the tag `Fahrenheit` to the thermostat group item (which should also be tagged with `Thermostat`).
 For standalone temperature channels, add it directly to the item.
