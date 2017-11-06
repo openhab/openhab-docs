@@ -49,7 +49,7 @@ openhab> bundle:list
 
 ## Naming Convention For Bundles
 
-Bundles are named according to the following convention.
+Bundles are named according to the following convention:
 
 ```text
 <prefix>-<type>-<id>
@@ -58,11 +58,11 @@ Bundles are named according to the following convention.
 where
 
 - **prefix** is the first element to categorize the bundle.
-For addons this is often `openhab` or `esh`. 
+  For addons this is often `openhab` or `esh`. 
 - **type** is the add-on type, e.g. "binding" or "ui"
 - **id** is the identifier for this bundle
 
-The naming convention has many effects you may haven't noticed before, but used already.
+The naming convention has many effects you may not have noticed before, but used already.
 For example in the Paper UI the *sorted tabs* for all bindings are generated automatically based on the bundle naming.
 
 In many places (e.g. logging) you will also have the **package namespace** as an identifier.
