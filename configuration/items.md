@@ -13,11 +13,11 @@ While a device or service might be quite specific, Items are unified substitutio
 Items can be Strings, Numbers, Switches or one of a few other basic [Item types](#type).
 A programmer can compare Item types with base variable data types of a programming language.
 
-A unique feature of openHAB Items is the immediate option to connect them to the outside world via [Bindings](#binding).
-An Item does not simply hold a certain information (e.g., `OFF`, 3.141 or "No Error"), the information is synchronized with the real world in both ways.
+A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
+An Item does not simply store information that is set by software (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may also be set by actions that take place in your home.
 
 But let's not get ahead of ourselves.
-The rest of this page contains all details regarding Items and is structured as follows:
+The rest of this page contains details regarding Items and is structured as follows:
 
 {::options toc_levels="2..4"/}
 
@@ -34,37 +34,38 @@ There are two methods for defining Items:
 
 1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
-    Other 1.x and legacy Bindings do not offer this path.
+    (Note that 1.x and legacy Bindings do not offer this option)
 
-2.  Through text `.items` files in the `items` folder.
-    Files here must have the extension `.items` and you can create as many `.items` files as you need/want - however, each Item must be unique across them all.
-    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installations folder structure.
+2.  Through text `.items` files located in the `$OPENHAB_CONF/items` folder.
+    Files here must have the extension `.items`; you may create as many `.items` files as needed.
+    However, each Item must be unique across all `.items` files.
+    Refer to the [installation docs]({{base}}/installation/index.html) to determine your specific installation's folder structure.
 
 Generally 1.x version Bindings can only be bound to Items through `.items` files.
-2.x Bindings can be used both ways.
+2.x Bindings may be configured using either method described above.
 
 **Assumptions for Paper UI:**
-The following content will discuss details of item definition on the example of `.items` files.
-While the way of defining an Item through the graphical interactive Paper UI is different, the elements and their nature of the Item definition are identical.
+The examples below assume that the user is using a text editor to create a `.items` file.
+While the way of defining an Item using the graphical, interactive Paper UI is different, the elements and the nature of an Item definition are identical using either method.
 
 **Editor Recommendation:**
 It's recommended to edit `.items` files using one of the [openHAB supporting editors]({{base}}/configuration/editors.html).
-Doing so you will have full IDE support with features like syntax checking, context assist, etc.
+Doing so will provide you with full IDE support including features such as syntax checking, and context assistance.
 
 {: #syntax}
 ## Item Definition and Syntax
 
-Items are defined in the following syntax:
+Items are defined using the following syntax:
 
 ```java
 itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
 ```
 
-- All parts must be given in the order shown
-- Parts `itemtype` and `itemname` are manadatory
-- All other parts are optional
-- In between the parts one or more spaces or tabs are allowed
-- One Item definition can span over multiple lines
+- Fields must be entered in the order shown
+- `itemtype` and `itemname` are manadatory
+- All other fields are optional
+- Fields may be separated by one or more spaces, or tabs
+- An Item definition may span multiple lines
 
 **Examples:**
 
@@ -76,25 +77,25 @@ Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channe
 Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
 
-The last example defines an Item with the following parts:
+The last example above defines an Item with the following fields:
 
 - Item [type](#type) `Number`
 - Item [name](#name) `Livingroom_Temperature`
 - Item [label](#label) "Temperature"
-- Item [state formatted](#state-presentation) in a way which will produce for example "21.5 °C" as its output
+- Item [state formatted](#state-presentation) to display temperature in Celsius to one-tenth of a degree -  for example, "21.5 °C"
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
-- Item is [tagged](#tags) as a thermostat with the ability to control a target temperature ("TargetTemperature")
-- Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings
+- Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("TargetTemperature")
+- Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
-The remainder of this article describes the Item definition parts in more detail.
+The remainder of this article provides additional information regarding Item definition fields.
 
 {: #type}
 ### Type
 
-The Item type defines which kind of state can be stored in that Item and which commands it accepts.
-Item types are comparable with basic variable data types in programming languages.
-Each Item type has been optimized for certain components in your smart home.
+The Item type defines what kind of state can be stored in that Item and which commands the Item will accept.
+Item types are comparable to basic variable data types in programming languages.
+Each Item type has been optimized for a particular kind of component in your smart home.
 This optimization is reflected in the data and command types.
 
 Available Item types are:
@@ -102,25 +103,27 @@ Available Item types are:
 | Item Name      | Description | Command Types |
 |----------------|-------------|---------------|
 | Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact        | Item storing status of e.g. door/window contacts | OpenClose |
+| Contact        | Status of contacts, e.g. door/window contacts | OpenClose |
 | DateTime       | Stores date and time | - |
-| Dimmer         | Item carrying a percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
+| Dimmer         | Percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
 | Group          | Item to nest other items / collect them in groups | - |
-| Image          | Holds the binary data of an image | - |
-| Location       | Stores GPS coordinates | Point |
-| Number         | Stores values in number format | Decimal |
-| Player         | Allows to control players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter  | Typically used for blinds | UpDown, StopMove, Percent |
+| Image          | Binary data of an image | - |
+| Location       | GPS coordinates | Point |
+| Number         | Values in number format | Decimal |
+| Player         | Allows control of players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter  | Roller shutter Item, typically used for blinds | UpDown, StopMove, Percent |
 | String         | Stores texts | String |
-| Switch         | Typically used for lights (on/off) | OnOff |
+| Switch         | Switch Item, typically used for lights (on/off) | OnOff |
 
-More details about all available Item types and their relevant commands are listed under Concepts, see:
+More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
 
 To learn about the technical internals of the individual Item types, please refer to:
 [Javadoc on Generic Item and its subclasses](https://eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/items/GenericItem.html)
 
 <!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
+
+Example:
 
 **Dimmer vs. Switch:**
 While a Dimmer Item can accept either On/Off, Increase/Decrease, or Percent updates or command, a Dimmer Item stores its state as a Percent value.
@@ -146,54 +149,64 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 {: #name}
 ### Name
 
-The Item name is the unique identifier of an Item.
-The name should only consist of letters, numbers and the underscore character.
-Spaces and special characters cannot be used.
+The Item name is used to uniquely identify an Item.
+The name must be unique across all `.items` files in your openHAB configuration.
+The only characters permitted in an Item name are letters, numbers and the underscore character.
+Spaces and special characters are not permitted.
 
-It is advised to follow a consistent naming scheme to be able to handle growing setups.
-The officially recommended scheme is used throughout this documentation and builds on a hierarchical idea.
-A physical or logical top-down approach while naming an Item will ensure the comprehension of its meaning.
+A good Item name is self-explanatory and hints at its Item type and interaction options.
+A good hierarchical arrangement allows you to create common-sense groupings of Items.
+Names may be organized by function, and/or location.
 
-A good Item name is self-explanatory and already suggests its Item type and interaction options.
-The following table contains a few examples:
-
-| Example Item Name                 | Interpretation (assumed Item type, example value) |
-|-----------------------------------|---------------------------------------------------|
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
-| "`GF_BR_WaschingMachine_Power`"   | Electric power used by the washing machine in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house/apartment (String, e.g. Party) |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on a smartphone detection (Switch, e.g. Offline) |
+Users are advised to establish and follow a consistent naming scheme for Items.
+You may wish to think of a logical naming hierarchy that makes sense to you and apply that consistently in your openHAB installation.
+Having a well thought out naming scheme can be especially important as your installation grows.
+An Item naming scheme with a physical or logical top-down will ensure you can easily identify the function or purpose of the Item, especially over time.
 
 The following naming style guide is recommended:
 
-- Words build a physical or logical hierarchy
-- Every word of the Item name starts with an uppercase letter
-- Words are separated by an underscore character, except for logically belonging words
-- Words like the names of recurring rooms or appliances can be abbreviated to reduce overall name length
+-   Words build a physical or logical hierarchy
 
-[Group](#groups) is a special Item type to nest and/or combine Items.
-Just as with single Items the demand for a speaking self-explanatory name should be met.
+-   Every word of the Item name starts with an uppercase letter
+
+-   Words should be separated by an underscore character, except for words that logically belong together
+
+-   Names that reoccur frequently, such as the names of rooms or appliances, may be abbreviated to reduce overall name length.
+(Example: Bathroom = BR)
+
+Examples:
+
+| Item Name                         | Interpretation (assumed Item type, example value) |
+|-----------------------------------|---------------------------------------------------|
+| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
+| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
+| "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party) |
+| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline) |
+
+[Group](#groups) is a special Item type that may be used to nest or combine Items.
+Users are encouraged to apply the style guide above to group names as well as Item names.
 Two naming schemes are established in the community for Group names:
 
-1. Use of plural word forms where possible, otherwise the word "Group" can be appended for clearness
-2. Prepending a lowercase "g"
+1.  Use a plural word form (e.g. Batteries) where possible.
+    Otherwise the word "Group" may be appended for clarity.
+2.  Prepend a lowercase "g" to the name (e.g. gBattery)
 
-| Example Group Name                        | Interpretation |
+| Group Name                                | Interpretation |
 |-------------------------------------------|----------------|
-| "`Batteries`" or "`gBattery`"             | Combining Group for all device battery states |
-| "`Maintenance_Group`" or "`gMaintenance`" | Logical summary of all maintenance related Items and Groups |
-| "`Livingroom`" or "`gLR`"                 | Nesting group for all devices belonging to the living room |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Combination of all living room lights |
+| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items |
+| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items |
+| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room |
+| "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
 ### Label
 
-The label text is used to describe the Item in a human readable way.
-Graphical UIs will display the label when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) through a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
-Some IO services (e.g. the Amazon Alexa skill) also use the label to match external commands to specific Items.
+Label text is used to describe an Item in a human-readable way.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
-In textual configuration the label is given in in quotes next to the optional state presentation part in square brackets (see below).
+In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
 The label for the Item in the following example is "Temperature":
 
 ```java
@@ -221,6 +234,27 @@ This section provides information about what a user can expect regarding the beh
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
 *N.B.*  Many openHAB users find that it can be very useful to use [Persistence]({{base}}/addons/persistence.html) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+
+{: #command-vs-status}
+#### Command vs. Status
+
+Users should bear in mind the difference between an Item used to send a command to a Thing, and an Item that reflects the status of a real-world Thing in the UI.
+This distinction may seem obvious, but it can be a little confusing when an Item appears not to reflect the correct status of a Thing.
+
+For example, let's say you have a Switch Item that is used to turn on a light.
+You insert this Item into a [sitemap]({{base}}/configuration/sitemaps).
+You call up the sitemap and switch on the light using the UI.
+The switch icon changes from red to green, but you notice that the light does not turn on.
+What happened?
+Perhaps the Switch physical device is faulty or perhaps the device lost communications with your network.
+In any case, the UI performed correctly - it reflected the fact that you sent a command to the Switch Item.
+What the UI did not do is convey the status of the device being switched.
+Of course, this is the correct.
+As of this point, you do not have any Item in your sitemap that would do this.
+If it is critical that you know that the light came on, you could install a sensor that monitors light level.
+You could then, through the appropriate Binding, reflect light level changes through a Thing to an Item.
+Then you add the light-level Item to your UI.
+Now when you send the Switch Item command, and you see a corresponding increase in light level in the room, you know for sure that your command has been received and acted upon, because you have a return status Item in your UI.
 
 {: #state-presentation}
 #### State Presentation
@@ -252,9 +286,9 @@ Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
 {: #state-transformation}
 #### State Transformation
 
-Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language or convert technical values into human readable information.
+Transformations can be used in the state part of an Item, to translate the raw state of an Item into another language, or to convert technical values into human readable information.
 
-To give an example, the technical raw state "CLOSED" can be translated to the Spanish "cerrado":
+In the example below, the entry `MAP(window_esp.map)` causes the output of the `Contact` Item to be translated from "CLOSED", to the Spanish "cerrado":
 
 ```java
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
@@ -265,69 +299,79 @@ Please refer to the article on [Transformations](transform.html) for more usage 
 {: #icons}
 ### Icons
 
-The icon name is used to reference an image presented next to an Item, e.g. in Basic UI.
-The following example shows the usage of the "switch" icon:
+The icon name is used by openHAB to select the image to display next to an Item name when using one of openHAB's UIs, e.g. Basic UI.
+The icon name appears between angle brackets "&lt;&gt;".
+In the example below, the "switch" icon has been selected:
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
 openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
-Additional icons can be placed in `$OPENHAB_CONF/icons/classic/` inside the openHAB configuration folder.
+Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
-Custom Icons must abide to the following file name restrictions to be accepted by openHAB:
+The following guidelines apply to user-added icon files:
 
-- `png` or `svg` file format
-- Only lowercase letters, numbers and underscores (`_`)
-- No uppercase letters or special characters
+- Only `png` or `svg` file formats may be used
+- Icon filenames may include lowercase letters, numbers and underscores (`_`)
+- Uppercase letters and special characters are prohibited
 - Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
-- Examples:
+- Example filenames:
   - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
   - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
-The format used needs to be configured for the individual interfaces (e.g. Basic UI).
-It is thereby important to decide on one format beforehand, vector graphics are recommended.
-The setting can be done via Paper UI or inside the configuration files `classicui.cfg` and `basicui.cfg`.
-Images in the respective other format will be ignored.
+The format should match the display capabilities of the user interfaces in use (e.g. Basic UI).
+It is thereby important to decide on one format beforehand; vector graphics are recommended.
+The setting can be changed via Paper UI for most user interfaces.
+Please check the user interface documentation if in doubt.
+Note that image files with the wrong file ending will be ignored.
 
-Predefined icons from the default icon set can be substituted by placing equally named files in the custom icons folder.
+Users may substitute their own icon for an icon from the default icon set by placing a file in the `$OPENHAB_CONF/icons/classic/` folder with the same filename as the name of the icon being substituted.
 
 {: #icons-dynamic}
 #### Dynamic Icons
 
-Some icons come in icon sets, from which one icon is dynamically selected depending on the Item's state.
-Just as single icons, user-defined dynamic icon sets can be provided via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
+Some icons are dynamically selected by openHAB depending on the Item's state.
+For example, a "switch" icon may appear to be green when the Item is "ON" and red when the item is "OFF.
+Behind the scenes, openHAB is actually selecting two different icon files depending upon the Item state - `switch-on` or `switch-off`.
+A third default icon file, `switch`, is required as well.
+This icon file matches when none of the other icon files match the Item state (e.g. when the Item is in an undefined state).
 
-The state related part of an icon is appended to the icon name after the special hyphen delimiter:
+Dynamic icon filenames follow the pattern below:
 
 ```perl
 <name>-<state>.<extension>
 ```
 
 - `<name>` - the name of the icon set
-- `-<state>` - the Item state that particular icon maps to
+- `-<state>` - the Item state the icon maps to (e.g. "ON" or "OFF", "OPEN" or "CLOSED")
 - `<extension>` - bitmap (`png`) or vector graphic (`svg`) icon file extension ([see above](#icons))
 
-Dynamic icon sets can consist of as many state-specific icon files as needed.
+Dynamic icon sets may consist of as many state-specific icon files as needed.
 Each set must meet the following criteria:
 
-- A default icon is mandatory (no specified state part)
-- The file name must follow the naming restrictions given for [icons](#icons) in general
-- The state name has to reflect the Item's raw state. [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection
-- The state in the icon name must be given in lowercase letters
+-   A default icon is mandatory.
+    The default icon filename is the name of the icon without a hyphen or state (e.g. `switch.svg`)
 
-**Usage Example:**
-The default icon name without state and extension is added to the Item or Sitemap element definition.
-The following example shows the typical usage:
+-   Icon filenames must follow the naming restrictions given for [icons](#icons) above
+
+-   The state name must reflect the Item's raw state.
+    [Transformations](#state-transformation) applied in the state presentation definition of the Item have no influence on icon selection.
+
+-   The state portion of the icon name must be in lowercase letters
+
+**Example:**
+
+The user defines the "Livingroom_Light" and "Livingroom_Light_Connection" Items:
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" <myswitch>
 String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]" <myerror>
 ```
 
-On filesystem the following icon files could be provided by the user for those Items:
+On the filesystem, the following icon files are provided by the user:
 
 | File name              | Description                                                        |
 |------------------------|--------------------------------------------------------------------|
@@ -340,7 +384,7 @@ On filesystem the following icon files could be provided by the user for those I
 | `myerror-no_fault.svg` | Matches `NO_FAULT` state                                           |
 | `myerror.svg`          | Default icon, used when Item in other state (e.g. `CONNECT_ERROR`) |
 
-Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific items.
+Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific icons - the icon selection considers "myerror", not the contents of the `error.map` file.
 
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
@@ -353,29 +397,30 @@ For a dimmable light (0-100%), you might provide icons as in the example:
 | `mydimmer-1.svg`   | Matches any dimmed light between 1% up to 74%        |
 | `mydimmer-75.svg`  | Matches the bright light state from 75% to full 100% |
 
+Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
+
 {: #groups}
 ### Groups
 
-The Group is a special Item type.
-It is used to define a category or collection in which you can nest and/or combine other Items or Groups.
-Single Items can be in none or multiple groups and a group can be nested inside other groups.
-The general syntax for Group Items follows the syntax for Items:
+The Group is a special Item type that can be used to define a category or collection into which you can combine other Items or Groups.
+An Item may be put into one or more groups, and groups may be nested inside other groups.
+The general syntax for Group Items is as follows:
 
 ```java
 Group groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-Groups can be nested inside each other, Items can be added to all of them.
-This functionality is commonly used to define hierarchies of Items from different perspectives, like:
+The Group item is commonly used to define hierarchies of Items from different perspectives.
+For example:
 
--   Location/Vertical/Physical perspective:
+-   Location-oriented or physical perspective:
     - Floors in your house → Rooms on that floor → An appliance in that room...
 
--   Functional/Horizontal/Logical/Context perspective:
+-   Functional or logical perspective:
     - Maintenance Group → All battery states → Individual battery states in percentage
-    - Further examples: All lights, All room temperatures, Combined power consumption, ...
+    - Further examples: all lights, all room temperatures, combined power consumption
 
-These relations can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
+These relationships can be exploited in [Sitemaps]({{base}}/configuration/sitemaps.html) or in [automation rules]({{base}}/configuration/rules-dsl.html) to navigate through the hierarchically organized Items or to perform computations and updates on subsets of similar Items.
 
 **Example:**
 
@@ -393,45 +438,47 @@ Group Temperatures (Sensors)
 Number Livingroom_Temperature "Temperature [%.1f °C]" (Livingroom, Temperatures)
 ```
 
-The example shows an Item which supposedly stores the temperature of the living room called `Livingroom_Temperature`.
+The example shows an Item which stores the temperature of the living room called `Livingroom_Temperature`.
 
 From a **location perspective**, you may have a group called `Livingroom`.
-With the `Livingroom_Temperature` being added to the `Livingroom` group, it also belongs to the `GroundFloor` and `House` groups.
+When you add `Livingroom_Temperature` to the `Livingroom` group, `Livingroom_Temperature` is automatically part of the `GroundFloor` and `House` groups.
+This is because `Livingroom` is a member of the `GroundFloor` group, and `GroundFloor` is a member of the `House` group.
 
 From a **functional perspective**, the Living room temperature can also be seen as one of many temperatures in the automation setup.
-Therefore the addition to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
+Therefore the addition of `Livingroom_Temperature` to a functional group called `Temperatures`, which itself belongs to the `Sensors` group, seems reasonable.
 
-Using nested group hierarchies such as these allows a rule to, e.g., iterate through all sensors on the ground floor for maintenance actions.
-The rule will be clean and short and it doesn't need to be updated when a new item were to be added to the `Temperatures` group.
+Using nested group hierarchies such as these allows a rule to iterate through all sensors on the ground floor for maintenance actions, for example.
+Because of the hierarchical structure of your group items, the rule will be clean and short.
+Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
 
 {: #group-type}
 #### Group Type and State
 
+As you are now aware, an Item can have a state (e.g. "ON", "OFF").
 A Group Item can also have a state.
-The Group's state is generated depending on the states of all its member Items.
-Sending a command to a Group will cause that command to be forwarded to all Group members.
+The Group's state is determined by the state of all its Items, and the aggregation function specified in the group definition.
 
-The general syntax for groups with a specific aggregation type and function is:
+The general syntax for groups with a specific item type and aggregation function is:
 
 ```java
 Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-- If the aggregation function is omitted, the function `EQUAL` will be used.
-- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
+- If the aggregation function is omitted, the function `EQUAL` will be used
+- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items
 
-Group state functions can be any of the following:
+Group state aggregation functions can be any of the following:
 
 | Function               | Description |
 |------------------------|-------------|
-| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise it is `UNDEF`. |
+| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
 | `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
 | `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
 | `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
 | `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
-| `MAX`                  | This calculates the maximum value of all Item states of decimal type. |
-| `MIN`                  | This calculates the minimum value of all Item states of decimal type. |
+| `MAX`                  | Calculates the maximum value of all Item states of decimal type. |
+| `MIN`                  | Calculates the minimum value of all Item states of decimal type. |
 | `SUM`                  | Calculates the sum of all Item states in the Group. |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
@@ -439,7 +486,7 @@ Boolean group state functions additionally return a number representing the coun
 Because the group state is an aggregation of multiple Item states, not every Item state change results in a change of the group state.
 
 Note that aggregation functions can only be used on compatible Item types.
-Incompatible Item types within one Group might result in the invalid aggregation result `UNDEF`.
+Incompatible Item types within a Group may result in the invalid aggregation result `UNDEF`.
 
 **Examples:**
 
@@ -449,59 +496,60 @@ Group:Switch:OR(ON, OFF) Lights       "Active Lights [%d]"              // e.g. 
 Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" //e.g. "21.3 °C"
 ```
 
-The first two group aggregations equally compute the number of active lights and store them as group state.
-Additionally, the second group is of type switch and follows the given OR function.
-The state of the group will be `ON` as soon as any of the member lights are turned on.
-Other than the first group, the second can also be commanded to turn all lights ON and OFF with a simple switch command.
-The third example groups combines all room temperatures and the group state represents the average of those.
+The first two examples above compute the number of active lights and store them as group state.
+However, the second group is of type switch and has an aggregation function of OR.
+This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
+
+Groups do not only aggregate information from individual member Items, they can also accept commands.
+Sending a command to a Group causes the command to be sent to all Group members.
+An example of this is shown by the second group above; sending a single `ON` or `OFF` command to that group turns all lights in the group on or off.
+
+The third example computes the average temperature of all room temperature Items in the group.
 
 {: #tags}
 ### Tags
 
-Tags added to an Item definition characterize a specific nature of the Item beyond it's basic Item type.
+Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond it's basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
 
-To give an example:
-A Light in a typical home setup can be represented either by a Switch, Dimmer or Color Item.
-To be able to specifically interact with the light device, e.g. via a natural voice command, the nature of the Item as a Light needs to be known.
-This can be achieved by adding the "Lighting" tag.
+Example:
+A Light in a typical home setup can be represented by a Switch, a Dimmer or a Color Item.
+To be able to interact with the light device via a natural voice command, for example, the fact that the Item is a light can be established by adding the "Lighting" tag as shown below.
 
 ```java
 Switch Livingroom_Light "Livingroom Ceiling Light" ["Lighting"]
 ```
 
-Tagging is still a new feature and only some specific I/O add-ons are using it.
-Tags are only of interest, if the documentation for a specific add-on or integration explicitly discusses their usage.
+Tagging is a new feature and only a few I/O add-ons have implemented it.
+The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
+Tags will be ignored if no Items in the openHAB installation support it.
 
 See the [Hue Emulation]({{base}}/addons/io/hueemulation/readme.html) or [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
 
-Each Item can be bound to a Binding to receive or trigger external changes.
-The binding of an Item is given in the last part of the Item definition:
+One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
+See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available Bindings.
+This capability of interacting with real-world things is enabled through the association of Bindings with Items.
+
+Once an Item is associated with a Binding, the state of one aspect of a device is reflected in openHAB (e.g., you can see if a light is on or off in one of the user interfaces).
+Additionally, you have the opportunity to interact with a device through its Items, if interaction is supported for that aspect of the device (e.g., you can command the light to turn ON or turn OFF).
+
+The Binding of an Item is given in the last part of the Item definition between curly brackets e.g. `{channel="..."}` in the example below:
 
 ```java
-Number Livingroom_Temperature "Temperature [%.1f °C]" {/*Binding part*/}
+Number Livingroom_Temperature "Temperature [%.1f °C]" {channel="..."}
 ```
 
-Navigate to the list of [currently available Bindings]({{base}}/addons/bindings.html) to get more information about possible connections and examples.
-
-There are two ways to bind/link a device to an Item, 1.x Binding configuration or 2.x Channel Linking.
+Users should note that there are significant differences between how Items are associated with devices between 1.x Binding configuration and 2.x Channel linking.
+These are described below.
 
 <!-- TODO: Everything below was not yet revised -->
 
 #### 1.x Binding Configuration
 
-When you install a Binding, some of them will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
-Inside these files are predefined variables which are required for the Binding to operate.
-In many cases you will need to view and edit these to suit your system.
-These variables can hold IP addresses, API keys, user names, passwords etc.
-These are all in plain text, so be careful who you share these with if some data is sensitive.
-
-The 1.x Binding configuration defines from where the Item gets it values, and where a given value/command should be sent.
-
-You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition:
+To bind an Item to a Binding, you add a Binding definition in curly brackets at the end of the Item definition:
 
 ```java
 Switch Phone_Mobile {ns="192.168.1.123:80"}
@@ -510,37 +558,45 @@ Switch Phone_Mobile {ns="192.168.1.123:80"}
 Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
 Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
-You must have a look at your [Bindings]({{base}}/addons/bindings.html) configuration section to know what to use.
-Some typical examples are:
+The information required for each binding is specified in the configuration information provided for each of the available [Bindings]({{base}}/addons/bindings.html).
+
+Examples:
 
 ```java
-Switch Phone_Mobile        "My Mobile Phone"                 {nh="192.168.1.123:80"}
+Switch Phone_Mobile        "My Mobile Phone"                 {ns="192.168.1.123:80"}
 Number Netatmo_Indoor_CO2  "CO2 [%d]"                        {netatmo="00:00:00:00:00:00#Co2"}
 Number Azimuth             "Azimuth [%d]"                    {astro="planet=sun, type=position, property=azimuth"}
 Contact Garage_Door        "Garage door is [MAP(en.map):%s]" {zwave="21:command=sensor_binary,respond_to_basic=true"}
 ```
 
-If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
-After downloading the legacy .jar files, they need to be placed in the `addons/` folder.
-If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this.
-For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the same location.
+In some cases, you will need to use legacy openHAB 1.x bindings with your openHAB 2.0 installation.
+In this case, you will need to enable this feature through the Paper UI menu by turning on "Include Legacy 1.x Bindings" found at `/configuration/services/configure extension management/`.
+You can then download the legacy .jar file and placed it in the `$OPENHAB_CFG/addons/` folder.
+If further configuration is required then you will need to create an `openhab.cfg` file in `$OPENHAB_CONF/services/` and paste the appropriate Binding configuration into this file.
+For all other native openHAB2 Bindings, configuration is done through a `bindingname.cfg` file in the `OPENHAB_CFG/services/` directory (substitute the name of your binding for `bindingname` above).
+
+Some bindings will automatically create a `.cfg` file in `$OPENHAB_CONF/services/`.
+Inside these files are predefined variables which are required for the Binding to operate.
+In many cases you will need to view and edit these to suit your system.
+These variables can hold IP addresses, API keys, user names, passwords etc.
+These are all in plain text, so be careful who you share these with if some data is sensitive.
 
 #### 2.x Binding Configuration
 
-The 2.x Bindings introduce the concept of [Things and Channels]({{base}}/concepts/things.html).
-Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
-Each Thing has one or more Channels and Items are linked to one or more Channels.
+openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
+Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
+Each Thing has one or more Channels, and Items are linked to one or more Channels.
 
-Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in Paper UI.
-Once accepted it will appear under Configuration > Things.
+Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
+Once accepted, the new Thing will appear under Configuration > Things.
 
-Other Bindings support defining Things in a `.things` file.
+Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section to know how to discover or manually define Things for a given Binding.
+See the [Bindings]({{base}}/addons/bindings.html) configuration section for more information on how to discover or manually define Things for a given Binding.
 
 ##### Paper UI Linking
 
-One can link an Item with a Channel using Paper UI.
+As described above, you can link an Item with a Channel using the Paper UI.
 
 1. First create the Item in Paper UI under Configuration Items.
 2. Next navigate to the Thing that has the Channel to link to the Item.
@@ -549,13 +605,14 @@ One can link an Item with a Channel using Paper UI.
 
 ##### Text File Linking
 
-One can also link an Item with a Channel using the `.items` file.
+You may also link an Item with a Channel using the `.items` file located in the `OPENHAB_CFBG/items/` folder.
 Information about available Channels and options can be found in the Binding readme or discovered via Paper UI.
 
-In Paper UI select a Thing to learn about all Channels the Thing support.
+In Paper UI select a Thing to learn about Channels it supports.
 
 Linking an Item to a Channel is of the form `{channel="channel id"}`.
-Some examples:
+
+Examples:
 
 ```java
 Switch  Phone_Mobile       "My Mobile Phone"               {channel="network:device:devicename:online"}
@@ -566,8 +623,10 @@ Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:co
 
 #### Multi Binding/Channel Linkage
 
-One Item can be linked to multiple Bindings and/or Channels.
-Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.
+An Item may be linked to multiple Bindings and/or Channels.
+Commands and Updates from and to these Items will be combined, and can be used in interesting ways.
+
+Example:
 
 ```java
 Switch Office_PC {nh="192.168.3.203", wol="192.168.0.2"}
@@ -575,15 +634,16 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a prominent use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
+The second example shows a common use case for the [expire Binding](http://docs.openhab.org/addons/bindings/expire1/readme.html)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 ##### Exception `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
-This way, the Item is always unchanged unless you explicitly post an *update* to the item.
+This way, the Item is unchanged unless you explicitly post an *update* to the item.
+
+Example:
 
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
-```
 ```
