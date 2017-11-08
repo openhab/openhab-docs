@@ -116,13 +116,13 @@ logError("heating-control.rules", "Heating control failed while in mode " + Heat
 logDebug("heating-control.rules", "Bedroom: Temperature: %1$.1f°C, Mode %2$s", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
 ```
 
-The generated logging line of the last log statement above is for example:
+An example output of the last log statement above is:
 
 ```
 2016-06-04 16:28:39.482 [DEBUG] [.e.model.script.heating-control.rules] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
 
-Note that, in the last example, inclusion and formatting of values was done using the [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
+Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
 
 ## Logging into Separate File
 
