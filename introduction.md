@@ -12,7 +12,7 @@ But openHAB is also a **community** of users, contributors and maintainers.
 
 ## openHAB Structure
 
-openHAB 2 is an open-source solution based on the [Eclipse SmartHome](https://eclipse.org/smarthome/) framework. It is fully written in Java and uses [Apache Karaf](http://karaf.apache.org/) together with [Eclipse Equinox](https://www.eclipse.org/equinox/) as an OSGi runtime and bundles this with [Jetty](https://www.eclipse.org/jetty/) as an HTTP server.
+openHAB 2 is an open-source solution based on the [Eclipse SmartHome](https://eclipse.org/smarthome/) framework. It is written in Java and uses [Apache Karaf](http://karaf.apache.org/) together with [Eclipse Equinox](https://www.eclipse.org/equinox/) as an OSGi runtime and bundles this with [Jetty](https://www.eclipse.org/jetty/) as an HTTP server.
 
 openHAB is highly modular software, which means that the base installation (the "runtime") can be extended through different kinds of "add-ons", either to communicate with new home automation solution, or to offer a new kind of user interface.
 
