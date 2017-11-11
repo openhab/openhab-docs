@@ -67,7 +67,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
         Many openHAB 1 bindings have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
         All openHAB 1 addons can be downloaded in a zip file <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">(1.9.0)</a>.
         We need your help testing them so that they may be easily installed in a future distribution.
-        Please see the <a href="{{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
+        Please see the <a href="{{root}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
         also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
         </p>
       </td>
@@ -86,7 +86,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
     {% for binding in site.bindings %}
         <tr class="install-{{binding.install}} since-{{binding.since}}">
           <td>
-            <h4><a href="{{binding.url}}">{% if binding.logo %}<img class="logo" src="{{base}}/{{binding.logo}}" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
+            <h4><a href="{{base}}{{binding.url}}">{% if binding.logo %}<img class="logo" src="{{base}}/{{binding.logo}}" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
             <img src="{{base}}/images/tag-since-{{binding.since}}.svg"> <img src="{{base}}/images/tag-install-{{binding.install}}.svg">
           </td>
           <td>{{ binding.description | markdownify }}</td>

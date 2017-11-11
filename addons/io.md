@@ -42,7 +42,7 @@ openHAB supports services that enable integration with various technologies that
     {% for io in site.io %}
     <tr class="install-{{io.install}} since-{{io.since}}">
       <td>
-        <h4><a href="{{io.url}}">{% if io.logo %}<img class="logo" src="{{base}}/{{io.logo}}" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
+        <h4><a href="{{base}}{{io.url}}">{% if io.logo %}<img class="logo" src="{{base}}/{{io.logo}}" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
         <img src="{{base}}/images/tag-install-{{io.install}}.svg">
       </td>
       <td>{{ io.description | markdownify }}</td>
@@ -54,8 +54,8 @@ openHAB supports services that enable integration with various technologies that
       </td>
       <td>
         <p>
-        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items. 
-        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients). 
+        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items.
+        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients).
         The REST API also supports server-push, so you can subscribe on change notification for certain resources.
         </p>
       </td>
@@ -76,12 +76,12 @@ openHAB supports services that enable integration with various technologies that
       </td>
       <td>
         <p>
-        Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy. 
-        Just log in to your IFTTT account and activate the openHAB channel. 
-        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection. 
-        Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB. 
-        Only those items will be visible to IFTTT. 
-        You will also be able to send commands to those items from IFTTT Applets. 
+        Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy.
+        Just log in to your IFTTT account and activate the openHAB channel.
+        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection.
+        Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB.
+        Only those items will be visible to IFTTT.
+        You will also be able to send commands to those items from IFTTT Applets.
         Items will appear in myopenHAB and thus in IFTTT only after at least one state update has been received by myopenHAB from your runtime.
         </p>
       </td>

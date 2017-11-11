@@ -130,7 +130,7 @@ The Timer object supports the following methods:
     {% for action in site.actions %}
         <tr class="install-{{action.install}} since-{{action.since}}">
           <td>
-            <h4><a href="{{action.url}}">{% if action.logo %}<img class="logo" src="{{base}}/{{action.logo}}" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>
+            <h4><a href="{{base}}{{action.url}}">{% if action.logo %}<img class="logo" src="{{base}}/{{action.logo}}" title="{{ action.label }}" alt="{{ action.label }}" />{% else %}{{ action.label }}{% endif %}</a></h4>
             <img src="{{base}}/images/tag-since-{{action.since}}.svg"> <img src="{{base}}/images/tag-install-{{action.install}}.svg">
           </td>
           <td>{{ action.description | markdownify }}</td>
