@@ -1,4 +1,5 @@
-{% assign base = '' %}
+{% assign root = '' %}
+{% assign base = site.baseurl %}
 {% comment %} <!--Disabled since the base in docs.openhab.org can only be '/'-->
 {% assign depth = page.url | split: '/' | size | minus: 1 %}
 {% if    depth == 0 %}{% assign base = '.' %}
