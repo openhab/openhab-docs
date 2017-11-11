@@ -1,7 +1,7 @@
 # Site settings
 title: openHAB 2
 description: Empowering the Smart Home
-baseurl: "/2.1.0" # the subpath of your site, e.g. /blog
+baseurl: "/v2.1.0" # the subpath of your site, e.g. /blog
 url: "http://docs.openhab.org" # the base hostname & protocol for your site
 twitter_username: openhab
 github_username:  openhab
