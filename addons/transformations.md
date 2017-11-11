@@ -68,7 +68,7 @@ Be aware that a transformation service just as any other openHAB add-on needs to
     {% for transformation in site.addons_transformations %}
     <tr class="install-{{transformation.install}} since-{{transformation.since}}">
       <td>
-        <h4><a href="{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>
+        <h4><a href="{{base}}{{transformation.url}}">{% if transformation.logo %}<img class="logo" src="{{base}}/{{transformation.logo}}" title="{{ transformation.label }}" alt="{{ transformation.label }}" />{% else %}{{ transformation.label }}{% endif %}</a></h4>
         <img src="{{base}}/images/tag-install-{{transformation.install}}.svg">
       </td>
       <td>{{ transformation.description | markdownify }}</td>
