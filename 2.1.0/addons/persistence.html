@@ -7,6 +7,7 @@
   
 
 
+
   <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
   <title>Persistence - openHAB 2 - Empowering the Smart Home</title>
 
@@ -42,9 +43,9 @@
           <a href="/2.1.0/index.html"><img id="logo" src="/images/logo.png" /></a>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search"><i class="material-icons">search</i></li>
@@ -56,9 +57,9 @@
           </ul>
           <ul id="nav-mobile" class="side-nav">
             <li><a href="/2.1.0/index.html">Home</a></li>
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search">
@@ -78,7 +79,9 @@
     <div class="side-nav-wrapper">
       
 
- 
+
+
+
 
 <ul class="nav">
   <li><a href="/2.1.0/introduction.html">Introduction</a></li>
@@ -801,14 +804,24 @@
 </ul>
 
     </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/2.1.0/../addons/persistence.html">v2.2.0-SNAPSHOT</a></li>
+      <li><a href="/2.1.0/addons/persistence.html">v2.1.0<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
     <div class="content">
-      <div id="versioning" class="row valign-wrapper">
-        <div class="col s12 right-align">
-          <a class="waves-effect waves-light btn grey lighten-2" href="https://docs.openhab.org/addons/persistence.html" title="You are currently browsing the 2.1.0 stable version of the openHAB documentation.">
-            Show v2.2.0-SNAPSHOT version<i class="material-icons right">chevron_right</i>
-          </a>
-        </div>
-      </div>
       
 <h1 id="persistence">Persistence</h1>
 
@@ -847,7 +860,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/caldav/readme.html">CalDAV</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/caldav/readme.html">CalDAV</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This binding can be used to connect through the CalDAV Interface to calendars.</p>
@@ -856,7 +869,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to feed item states to the <a href="https://www.xively.com/">Xively IoT Platform</a>.</p>
@@ -865,7 +878,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/db4o/readme.html">db4o</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/db4o/readme.html">db4o</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>db4o is a pure Java object database, which uses a simple database file for persistence.</p>
@@ -874,7 +887,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to persist state updates using the <a href="https://aws.amazon.com/dynamodb/">Amazon DynamoDB</a> database. Query functionality is also fully supported.</p>
@@ -883,7 +896,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/exec/readme.html">Exec</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/exec/readme.html">Exec</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to execute commands in the underlying OS to persist item states. It could be used to, for example, call the original <code class="highlighter-rouge">rrdtool</code> CLI tool.</p>
@@ -892,7 +905,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/influxdb/readme.html"><img class="logo" src="/2.1.0/images/addons/influxdb.png" title="InfluxDB (0.9 and newer)" alt="InfluxDB (0.9 and newer)" /></a></h4>
+            <h4><a href="/2.1.0/addons/persistence/influxdb/readme.html"><img class="logo" src="/2.1.0/images/addons/influxdb.png" title="InfluxDB (0.9 and newer)" alt="InfluxDB (0.9 and newer)" /></a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>This service allows you to persist and query states using the <a href="http://influxdb.org">InfluxDB</a> time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as <a href="http://grafana.org/">Grafana</a>.</p>
@@ -901,7 +914,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to persist and query states using the <a href="http://influxdb.org">InfluxDB</a> time series database. The persisted values can be queried from within openHAB. There also are nice tools on the web for visualizing InfluxDB time series, such as <a href="http://grafana.org/">Grafana</a>.</p>
@@ -910,7 +923,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/jdbc/readme.html">JDBC</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/jdbc/readme.html">JDBC</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>This service writes and reads item states to and from a number of relational database systems that support <a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">Java Database Connectivity (JDBC)</a>.  This service allows you to persist state updates using one of several different underlying database services. It is designed for a maximum of scalability, to store very large amounts of data and still over the years not lose its speed.</p>
@@ -919,7 +932,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>This service allows you to persist state updates using a SQL or NoSQL database through the <a href="https://en.wikipedia.org/wiki/Java_Persistence_API">Java Persistence API</a>.  The service uses an abstraction layer that theoretically allows it to support many available SQL or NoSQL databases.</p>
@@ -928,7 +941,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/mapdb/readme.html">mapdb</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/mapdb/readme.html">mapdb</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>The <a href="http://www.mapdb.org/">mapdb</a> Persistence Service is based on simple key-value store that only saves the last value. The intention is to use this for <code class="highlighter-rouge">restoreOnStartup</code> items because all other persistence options have their drawbacks if values are only needed for reload.  They:</p>
@@ -937,7 +950,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/mongodb/readme.html">MongoDB</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/mongodb/readme.html">MongoDB</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to persist state updates using the MongoDB database.  It supports writing information to a MongoDB document store, as well as querying from it.</p>
@@ -946,7 +959,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/mqtt/readme.html"><img class="logo" src="/2.1.0/images/addons/mqtt.png" title="MQTT" alt="MQTT" /></a></h4>
+            <h4><a href="/2.1.0/addons/persistence/mqtt/readme.html"><img class="logo" src="/2.1.0/images/addons/mqtt.png" title="MQTT" alt="MQTT" /></a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>This service allows you to feed item states to an MQTT broker using the openHAB persistence strategies.  The destination broker, topic and messages are configurable.</p>
@@ -955,7 +968,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/mysql/readme.html">MySQL</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/mysql/readme.html">MySQL</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>This service allows you to persist state updates using the <a href="https://www.mysql.com/">MySQL</a> database. Note that other SQL databases need a separate service due to incompatibilities between different SQL databases.</p>
@@ -964,7 +977,7 @@
     
         <tr class="install-auto since-1x">
           <td>
-            <h4><a href="/addons/persistence/rrd4j/readme.html">rrd4j</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/rrd4j/readme.html">rrd4j</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-auto.svg" />
           </td>
           <td><p>The <a href="https://github.com/rrd4j/rrd4j">rrd4j</a> Persistence service is based on a round-robin database.</p>
@@ -973,7 +986,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/sense/readme.html">Sen.Se</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/sense/readme.html">Sen.Se</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>This service allows you to feed item data to <a href="http://open.sen.se">Sen.Se web site</a>.</p>
@@ -982,7 +995,7 @@
     
         <tr class="install-manual since-1x">
           <td>
-            <h4><a href="/addons/persistence/sitewhere/readme.html">SiteWhere</a></h4>
+            <h4><a href="/2.1.0/addons/persistence/sitewhere/readme.html">SiteWhere</a></h4>
             <img src="/2.1.0/images/tag-since-1x.svg" /> <img src="/2.1.0/images/tag-install-manual.svg" />
           </td>
           <td><p>The <a href="http://www.sitewhere.org/">SiteWhere</a> persistence service allows openHAB item states to be forwarded to a SiteWhere server instance running locally or in the cloud. Selected events from an openHAB instance can be stored in SiteWhere under a virtual device with hardware ID specified in the persistence provider implementation.</p>
@@ -995,6 +1008,7 @@
     </div>
   </div>
 </section>
+
 
 
 

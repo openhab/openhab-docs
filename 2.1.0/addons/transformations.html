@@ -7,6 +7,7 @@
   
 
 
+
   <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
   <title>Transformations - openHAB 2 - Empowering the Smart Home</title>
 
@@ -42,9 +43,9 @@
           <a href="/2.1.0/index.html"><img id="logo" src="/images/logo.png" /></a>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search"><i class="material-icons">search</i></li>
@@ -56,9 +57,9 @@
           </ul>
           <ul id="nav-mobile" class="side-nav">
             <li><a href="/2.1.0/index.html">Home</a></li>
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search">
@@ -78,7 +79,9 @@
     <div class="side-nav-wrapper">
       
 
- 
+
+
+
 
 <ul class="nav">
   <li><a href="/2.1.0/introduction.html">Introduction</a></li>
@@ -801,14 +804,24 @@
 </ul>
 
     </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/2.1.0/../addons/transformations.html">v2.2.0-SNAPSHOT</a></li>
+      <li><a href="/2.1.0/addons/transformations.html">v2.1.0<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
     <div class="content">
-      <div id="versioning" class="row valign-wrapper">
-        <div class="col s12 right-align">
-          <a class="waves-effect waves-light btn grey lighten-2" href="https://docs.openhab.org/addons/transformations.html" title="You are currently browsing the 2.1.0 stable version of the openHAB documentation.">
-            Show v2.2.0-SNAPSHOT version<i class="material-icons right">chevron_right</i>
-          </a>
-        </div>
-      </div>
       
 <h1 id="transformations">Transformations</h1>
 
@@ -825,7 +838,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/exec/readme.html">Exec</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/exec/readme.html">Exec</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Execute an external program, substituting the placeholder <code class="highlighter-rouge">%s</code> in the given command line with the input value, and returning the output of the external program.</p>
@@ -834,7 +847,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/javascript/readme.html">JavaScript</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/javascript/readme.html">JavaScript</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Transform an input to an output using JavaScript.</p>
@@ -843,7 +856,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/jsonpath/readme.html">JsonPath</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/jsonpath/readme.html">JsonPath</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Extract an element of a JSON string using a <a href="https://github.com/jayway/JsonPath#jayway-jsonpath">JsonPath expression</a>.</p>
@@ -852,7 +865,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/map/readme.html">Map</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/map/readme.html">Map</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Transforms the input by mapping it to another string. It expects the mappings to be read from a file which is stored under the <code class="highlighter-rouge">transform</code> folder.</p>
@@ -861,7 +874,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/regex/readme.html">RegEx</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/regex/readme.html">RegEx</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Given a source string and a regular expression, use the regular expression to yield a transformed string.</p>
@@ -870,7 +883,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/scale/readme.html">Scale</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/scale/readme.html">Scale</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Transform the input by matching it between limits of ranges in a scale file.  The input string must be in numerical format.</p>
@@ -879,7 +892,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/xpath/readme.html">XPath</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/xpath/readme.html">XPath</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Transform XML input using an <a href="https://www.w3.org/TR/xpath/#section-Expressions">XPath expression</a>.</p>
@@ -888,7 +901,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/transformations/xslt/readme.html">XSLT</a></h4>
+        <h4><a href="/2.1.0/addons/transformations/xslt/readme.html">XSLT</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Transform input using the XML Stylesheet Language for Transformations (XSLT).</p>
@@ -901,6 +914,7 @@
     </div>
   </div>
 </section>
+
 
 
 
