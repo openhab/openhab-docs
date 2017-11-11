@@ -4,13 +4,13 @@ This repository contains the documentation for openHAB.
 
 The result is available at [http://docs.openhab.org/](http://docs.openhab.org/)
 
-# Contributing to the Documentation
+## Contributing to the Documentation
 
 The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 Please read the [contribution guidelines](CONTRIBUTING.md) for details.
 
-## Prerequisites
+### Prerequisites
 
 Our documentation is built with Jekyll and served through Github Pages.
 
@@ -19,11 +19,11 @@ Please see the [Jekyll installation instructions](https://jekyllrb.com/docs/inst
 
 An alternative for a local setup is a virtual machine provided by Vagrant.
 
-## Serving the Documentation locally
+### Serving Locally
 
 Once you have Jekyll installed and the repository checked out, simply run
 
-```
+```shell
 jekyll serve
 ```
 
@@ -31,7 +31,7 @@ from within the repository root folder and point your browser to [`http://localh
 This will give you a preview of the documentation in the same way as it will appear on docs.openhab.org once your PR is merged.
 Changes to the markdown files will automatically be taken into account as Jekyll re-generates the pages on the fly.
 
-### Alternative: Vagrant VM
+### Serving via Vagrant VM
 
 You can also have a virtual machine serving a Jekyll and webserver instance for you, without changing your base system or being limited by it.
 The virtual machine will run in the background, process your changes to the source and presenting the results on your hosts [`http://localhost:4000`](http://localhost:4000).
@@ -71,6 +71,20 @@ At the time of this writing, the folders are automatically created and updated b
 Configuration of the collections happens through `_config.yml`.
 The most important setting you need to be aware of, is, that all files in collections are mapped to certain paths:
 
-- e.g. `_addons_bindings\astro\readme.md` → http://docs.openhab.org/addons/bindings/astro/readme.html
+- e.g. `_addons_bindings\astro\readme.md` → [docs.openhab.org/addons/bindings/astro/readme.html](http://docs.openhab.org/addons/bindings/astro/readme.html)
 
 Check the mentioned files for more details.
+
+## Documentation Versioning
+
+Just as openHAB is released in versions, the documentation website provides fixed versions of the documentation articles, e.g., [docs.openhab.org/2.1.0/installation/linux.html](http://docs.openhab.org/2.1.0/installation/linux.html)
+
+Please see [this issue](https://github.com/openhab/openhab-docs/issues/520#issuecomment-339741820) for all details regarding the current implementation.
+In short, the following has to be considered:
+
+- Versions like "v2.1.0" are marked by git tags.
+- Based on tags branches like "v2.1.0-patch" are created, to include later discovered changes (like fixed links).
+- The intended base folder for the version needs to be set in `_config.yml`, e.g. `baseurl: "/2.1.0"`.
+- New versions have to be added to the dropdown menu shown on the resulting website, configured in `_includes/versioning.html`.
+- The version branch has to be generated with jekyll, the resulting content goes into the version folder identical to the above set baseurl. Execute e.g. `jekyll build -d path/to/checked-out/gh-pages-branch/2.1.0/`
+- The generated static page files under, e.g., `2.1.0/` need to be committed to `gh-pages` for GitHub Pages to pick them up and include in the generated page.
