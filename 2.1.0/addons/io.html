@@ -7,6 +7,7 @@
   
 
 
+
   <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
   <title>System Integration - openHAB 2 - Empowering the Smart Home</title>
 
@@ -42,9 +43,9 @@
           <a href="/2.1.0/index.html"><img id="logo" src="/images/logo.png" /></a>
           <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
           <ul class="right hide-on-med-and-down">
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search"><i class="material-icons">search</i></li>
@@ -56,9 +57,9 @@
           </ul>
           <ul id="nav-mobile" class="side-nav">
             <li><a href="/2.1.0/index.html">Home</a></li>
-            <li><a href="/2.1.0/tutorials">Tutorials</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
             <li><a href="/2.1.0/introduction.html">User Manual</a></li>
-            <li><a href="/developers">Developer Guide</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
             <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
             <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search">
@@ -78,7 +79,9 @@
     <div class="side-nav-wrapper">
       
 
- 
+
+
+
 
 <ul class="nav">
   <li><a href="/2.1.0/introduction.html">Introduction</a></li>
@@ -801,14 +804,24 @@
 </ul>
 
     </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/2.1.0/../addons/io.html">v2.2.0-SNAPSHOT</a></li>
+      <li><a href="/2.1.0/addons/io.html">v2.1.0<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
     <div class="content">
-      <div id="versioning" class="row valign-wrapper">
-        <div class="col s12 right-align">
-          <a class="waves-effect waves-light btn grey lighten-2" href="https://docs.openhab.org/addons/io.html" title="You are currently browsing the 2.1.0 stable version of the openHAB documentation.">
-            Show v2.2.0-SNAPSHOT version<i class="material-icons right">chevron_right</i>
-          </a>
-        </div>
-      </div>
       
 <h1 id="system-integration">System Integration</h1>
 
@@ -847,7 +860,7 @@
     
     <tr class="install-auto since-1x">
       <td>
-        <h4><a href="/addons/io/dropbox/readme.html"><img class="logo" src="/2.1.0/images/addons/dropbox.png" title="Dropbox Synchronization" alt="Dropbox Synchronization" /></a></h4>
+        <h4><a href="/2.1.0/addons/io/dropbox/readme.html"><img class="logo" src="/2.1.0/images/addons/dropbox.png" title="Dropbox Synchronization" alt="Dropbox Synchronization" /></a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account.</p>
@@ -856,7 +869,7 @@
     
     <tr class="install-auto since-1x">
       <td>
-        <h4><a href="/addons/io/gcal/readme.html"><img class="logo" src="/2.1.0/images/addons/gcal.png" title="Google Calendar Scheduler" alt="Google Calendar Scheduler" /></a></h4>
+        <h4><a href="/2.1.0/addons/io/gcal/readme.html"><img class="logo" src="/2.1.0/images/addons/gcal.png" title="Google Calendar Scheduler" alt="Google Calendar Scheduler" /></a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>The Google Calendar Scheduler allows you to control items in openHAB at scheduled times in the future.  It will send commands to items or update the state of items when defined on one of your Google Calendars.</p>
@@ -865,7 +878,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/io/homekit/readme.html">HomeKit Add-on</a></h4>
+        <h4><a href="/2.1.0/addons/io/homekit/readme.html">HomeKit Add-on</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>This is an add-on that exposes your openHAB system as a bridge over the HomeKit protocol.</p>
@@ -874,7 +887,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></h4>
+        <h4><a href="/2.1.0/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>Hue Emulation exposes openHAB items as Hue devices to other Hue HTTP API compatible applications like an Amazon Echo.</p>
@@ -883,7 +896,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/io/imperihome/readme.html">ImperiHome integration service</a></h4>
+        <h4><a href="/2.1.0/addons/io/imperihome/readme.html">ImperiHome integration service</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>This IO service exposes openHAB Items to the Evertygo <a href="http://www.evertygo.com/imperihome">ImperiHome</a> dashboard app for Android and iOS.</p>
@@ -892,7 +905,7 @@
     
     <tr class="install-auto since-2x">
       <td>
-        <h4><a href="/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></h4>
+        <h4><a href="/2.1.0/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></h4>
         <img src="/2.1.0/images/tag-install-auto.svg" />
       </td>
       <td><p>The openHAB Cloud Connector allows connecting the local openHAB runtime to a remote <a href="https://github.com/openhab/openhab-cloud/blob/master/README.md">openHAB Cloud</a> instance, such as <a href="http://www.myopenHAB.org">myopenHAB.org</a>, which is an instance of the</p>
@@ -905,8 +918,8 @@
       </td>
       <td>
         <p>
-        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items. 
-        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients). 
+        The REST API can be used to integrate openHAB with other systems, as it allows read access to items and item states, as well as status updates or the sending of commands for items.
+        It gives access to sitemaps, so that it is the interface to be used by remote user interfaces (e.g. fat clients or JavaScript-based web clients).
         The REST API also supports server-push, so you can subscribe on change notification for certain resources.
         </p>
       </td>
@@ -927,12 +940,12 @@
       </td>
       <td>
         <p>
-        Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy. 
-        Just log in to your IFTTT account and activate the openHAB channel. 
-        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection. 
-        Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB. 
-        Only those items will be visible to IFTTT. 
-        You will also be able to send commands to those items from IFTTT Applets. 
+        Activating <a href="https://ifttt.com" target="_blank">IFTTT</a> integration is easy.
+        Just log in to your IFTTT account and activate the openHAB channel.
+        You will be forwarded to the <a href="http://www.myopenhab.org/" target="_blank">myopenHAB website</a> to authorize the IFTTT channel connection.
+        Before you start creating IFTTT recipes you need to make sure that you have your runtime configured to expose certain items to myopenHAB.
+        Only those items will be visible to IFTTT.
+        You will also be able to send commands to those items from IFTTT Applets.
         Items will appear in myopenHAB and thus in IFTTT only after at least one state update has been received by myopenHAB from your runtime.
         </p>
       </td>
@@ -943,6 +956,7 @@
     </div>
   </div>
 </section>
+
 
 
 
