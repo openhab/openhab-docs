@@ -10,7 +10,12 @@ sudo apt-get update
 sudo apt-get install -y git ruby2.2 ruby2.2-dev
 sudo gem install directory_watcher bundler
 sudo gem install github-pages -V --no-ri --no-rdoc
-#sudo apt-get install -y maven
+## For update-external-resources.sh
+# sudo apt-get install -y maven
+## For update-code-checkers.sh
+# curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+# sudo apt-get install -y nodejs
+# sudo apt-get install -y linkchecker
 rm -rf /srv/website/_site
 SCRIPT
 
