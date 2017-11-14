@@ -99,7 +99,14 @@ docker run \
         openhab/openhab:<version>-<architecture>-<distributions>
 ```
 
-Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<gid>` is the group ID number for the `openhab` user, `<version>` is the version of openHAB, `<architecture>` is the architecture of your system and `<distributions>` is the base system (debian or alpine).
+Where 
+
+- `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, 
+- `<gid>` is the group ID number for the `openhab` user, 
+- `<version>` is the version of openHAB, 
+- `<architecture>` is the architecture of your system and 
+- `<distributions>` is the base system (debian or alpine).
+
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
