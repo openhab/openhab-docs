@@ -132,8 +132,8 @@ The pertinent files controlling console settings are stored under `$OPENHAB_USER
 
 The exact locations of these files will vary based on your platform and installation method, e.g. `/var/lib/openhab2/etc/` or `openhab2/userdata/etc/`.
 
-Be aware that the these files may get overwritten when upgrading openHAB, so to add custom parameters or overwrite the default values, you can change the configuration file `services/runtime.cfg` in
-the openHAB configuration directory instead, e.g. `/etc/openhab2/services/runtime.cfg`.
+Be aware that the these files may get overwritten when upgrading openHAB, so to add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory
+instead, e.g. `/etc/openhab2/services/runtime.cfg`.
 
 ### Changing the Password
 
@@ -154,7 +154,7 @@ Please restart openHAB for the changes to take effect. The clear text password w
 ### Bind Console to All Interfaces
 
 The network interface configuration is defined in the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
-As this file may get overwritten when upgrading openHAB, you can change this parameter in the `services/runtime.cfg` file in openHAB's configuration directory, e.g. `/etc/openhab2/services/runtime.cfg`.
+As this file may get overwritten when upgrading openHAB, you can change this parameter in the `runtime.cfg` file which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
 
 The `sshHost` entry controls the interface address to bind to.
 `sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
