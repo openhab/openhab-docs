@@ -43,7 +43,7 @@ openHAB supports services that enable integration with various technologies that
     <!-- <tr class="install-{{io.install}} since-{{io.since}}"> -->
     <tr>
       <td>
-        <h4><a href="{{io.url}}">{% if io.logo %}<img class="logo" src="{{base}}/{{io.logo}}" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
+        <h4><a href="{{base}}{{io.url}}">{% if io.logo %}<img class="logo" src="{{base}}/{{io.logo}}" title="{{ io.label }}" alt="{{ io.label }}" />{% else %}{{ io.label }}{% endif %}</a></h4>
         <img src="{{base}}/images/tag-install-{{io.install}}.svg">
       </td>
       <td>{{ io.description | markdownify }}</td>

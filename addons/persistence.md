@@ -42,7 +42,7 @@ Persistence services enable the storage of item states over time.
     {% for persistence in site.addons_persistences %}
         <tr class="install-{{persistence.install}} since-{{persistence.since}}">
           <td>
-            <h4><a href="{{persistence.url}}">{% if persistence.logo %}<img class="logo" src="{{base}}/{{persistence.logo}}" title="{{ persistence.label }}" alt="{{ persistence.label }}" />{% else %}{{ persistence.label }}{% endif %}</a></h4>
+            <h4><a href="{{base}}{{persistence.url}}">{% if persistence.logo %}<img class="logo" src="{{base}}/{{persistence.logo}}" title="{{ persistence.label }}" alt="{{ persistence.label }}" />{% else %}{{ persistence.label }}{% endif %}</a></h4>
             <img src="{{base}}/images/tag-since-{{persistence.since}}.svg"> <img src="{{base}}/images/tag-install-{{persistence.install}}.svg">
           </td>
           <td>{{ persistence.description | markdownify }}</td>
