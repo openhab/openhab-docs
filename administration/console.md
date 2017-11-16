@@ -132,8 +132,8 @@ The pertinent files controlling console settings are stored under `$OPENHAB_USER
 
 The exact locations of these files will vary based on your platform and installation method, e.g. `/var/lib/openhab2/etc/` or `openhab2/userdata/etc/`.
 
-Be aware that the these files may get overwritten when upgrading openHAB, so to add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory
-instead, e.g. `/etc/openhab2/services/runtime.cfg`.
+Be aware that the these files may get overwritten when upgrading openHAB.
+To add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
 
 ### Changing the Password
 
