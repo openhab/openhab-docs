@@ -58,8 +58,7 @@ If you are using [openHABian]({{base}}/installation/openhabian.html), the needed
 
 ### Setup
 
-- Get the latest version from: [Eclipse SmartHome Designer Downloads](https://github.com/eclipse/smarthome/blob/master/docs/documentation/community/downloads.md#designer-builds)
-  (*Note:* the "Snapshot" build is currently not recommended for daily use)
+- Get the latest version from: [Eclipse SmartHome Designer Downloads](https://www.eclipse.org/smarthome/documentation/community/downloads.html#binary-artifacts).
 
 The downloaded `.zip` archive contains the Designer executable.
 
