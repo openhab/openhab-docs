@@ -11,8 +11,8 @@ It provides uniform user interfaces, and a common approach to automation rules a
 
 ## Getting Started
 
-We highly recommend that you read the next article titled [Concepts]({{base}}/concepts/index.html).
-This article introduces a number of important ideas that will help you as you install and begin to configure openHAB for the first time.
+We highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html).
+It introduces a number of important ideas that will help you as you install and begin to configure openHAB for the first time.
 
 openHAB runs on many popular platforms including Linux, Windows and Mac OSx.
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
