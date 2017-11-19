@@ -68,7 +68,7 @@ The following strategies are defined internally and may be used in place of `str
 
 #### Cron Persistence Triggers
 openHAB uses [Quartz](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/quick-start.html) for time-related cron events.
-See the [Rules article]({{base}}/rules-dsl.html#time-based-triggers) for more information.
+See the [Rules article]({{base}}/configuration/rules-dsl.html#time-based-triggers) for more information.
 
 ### Items
 
