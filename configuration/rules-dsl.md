@@ -206,6 +206,40 @@ For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 > Note: You need to use quotes around `thingUID` if it contains special characters such as ':'.
 > The parser will not recognize the whole text correctly without quotes.
 
+{: #channel-based-triggers}
+### Channel-based Triggers
+
+You can listen for triggers from specific *trigger channels* that are provided by some addons.
+You can decide whether you want to catch only a specific trigger or any.
+Here is the syntax for all these cases (parts in square brackets are optional):
+
+```java
+Channel "<triggerChannel>" triggered [<triggerEvent>]
+```
+
+`triggerChannel` is the identifier for this specific channel.
+For example, the [Amazon Dash Button Binding]({{base}}/addons/bindings/amazondashbutton/readme.html#channels) provides the "press" trigger channel.
+This channel will be triggered, when a press is detected for a dash button.
+For a deeper dive into trigger channels you can take a look at the [Astro Binding]({{base}}/addons/bindings/astro/readme.html#trigger-channels).
+You can find a big variety of possible channels and events.
+
+When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
+There is no generic list of possible values for `triggerEvent`, since this is depending on the specific implementation in a binding.
+
+Example:
+
+```java
+rule "Do stuff on sunrise"
+when
+    Channel "astro:sun:home:rise#event" triggered START
+then
+    ...
+end
+```
+
+> Note: You need to use quotes around `triggerChannel` if it contains special characters such as ':'.
+> The parser will not recognize the whole text correctly without quotes.
+
 {: #scripts}
 ## Scripts
 
