@@ -91,6 +91,8 @@ To update manually, download a later version of the openHAB distribution zip fil
     - `userdata\etc\profile.cfg`
     - `userdata\etc\startup.properties`
     - `userdata\etc\version.properties`
+    - `userdata\etc\system.properties`
+    - `userdata\etc\custom.system.properties`
     - Any file in `userdata\etc` that starts with `org.apache.karaf`
     - The `userdata\cache` folder
     - The `userdata\tmp` folder
