@@ -132,6 +132,9 @@ The pertinent files controlling console settings are stored under `$OPENHAB_USER
 
 The exact locations of these files will vary based on your platform and installation method, e.g. `/var/lib/openhab2/etc/` or `openhab2/userdata/etc/`.
 
+Be aware that the these files may get overwritten when upgrading openHAB.
+To add custom parameters or overwrite the default values, you can change the configuration file `runtime.cfg` which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
+
 ### Changing the Password
 
 The password is stored in the file `users.properties`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
@@ -151,19 +154,22 @@ Please restart openHAB for the changes to take effect. The clear text password w
 ### Bind Console to All Interfaces
 
 The network interface configuration is defined in the file `org.apache.karaf.shell.cfg`, located in the `etc` directory as [mentioned above](#console-settings-files-and-directories).
+As this file may get overwritten when upgrading openHAB, you can change this parameter in the `runtime.cfg` file which can be found in the `$OPENHAB_CONF/services` directory, e.g. `/etc/openhab2/services/runtime.cfg`.
+
 The `sshHost` entry controls the interface address to bind to.
 `sshHost = 127.0.0.1` (localhost) is the default due to obvious security reasons.
 If you are on a local network or you are fully aware of all risks of exposing your system to the public, you can change the bind address.
 Replace the `sshHost` IP `127.0.0.1` by `0.0.0.0` to bind to all available network interfaces.
 Please be aware, that the console will now be accessible from all devices in your subnet and is only secured by the password defined in `users.properties` (same path).
 You should thereby [change the password](#changing-the-password).
+Depending on your network configuration the console may also be exposed to the public internet, so check your routing and firewall configuration.
 
-The above can be accomplished by the following Linux shell command.
-Depending on your system, you may have to substitute [the directory](#console-settings-files-and-directories) at the end of the command.
+To enable binding to all interfaces, uncomment the line
 
-```shell
-sudo sed -i -e "s/sshHost = .*/sshHost = 0.0.0.0/g" /var/lib/openhab2/etc/org.apache.karaf.shell.cfg
-```
+```#org.apache.karaf.shell:sshHost = 0.0.0.0```
+
+in `services/runtime.cfg`.
+ 
 
 ### Change the Port Number
 
