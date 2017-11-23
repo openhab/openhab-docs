@@ -613,9 +613,6 @@ Please take note that colors other than those listed in the list above may be us
 Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
 The color names above are agreed on between all openHAB UIs and are therefor your safest choice.
 
-Please note that there currently is a [known issue with the iOS app](https://github.com/openhab/openhab.ios/issues/112) where named colors (e.g. 'green') do not work for `valuecolor`.
-Until resolved you may use the corresponding HTML code (e.g. '#008000') instead.
-
 ### Icons
 
 openHAB allows a set of icons to be assigned to the different states of an Item and therefor to be presented in a Sitemap.
