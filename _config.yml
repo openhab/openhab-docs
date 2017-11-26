@@ -2,7 +2,7 @@
 title: openHAB 2
 description: Empowering the Smart Home
 baseurl: "" # the subpath of the generated content, e.g. "" or "/v2.1.0"
-url: "http://docs.openhab.org" # the base hostname & protocol for your site
+url: "https://docs.openhab.org" # the base hostname & protocol for your site
 twitter_username: openhab
 github_username:  openhab
 # Build settings
