@@ -46,16 +46,16 @@ otherwise, the local browser's storage will be used only until you save a new pa
 
 ## Screenshots
 
-![](docs/images/habpanel_screenshot0.png)
+![](doc/images/habpanel_screenshot0.png)
 
-![](docs/images/habpanel_screenshot1.png)
+![](doc/images/habpanel_screenshot1.png)
 
-![](docs/images/habpanel_screenshot2.png)
+![](doc/images/habpanel_screenshot2.png)
 
-![](docs/images/habpanel_screenshot3.png)
+![](doc/images/habpanel_screenshot3.png)
 
-![](docs/images/habpanel_screenshot4.png)
+![](doc/images/habpanel_screenshot4.png)
 
-![](docs/images/habpanel_screenshot5.png)
+![](doc/images/habpanel_screenshot5.png)
 
-![](docs/images/habpanel_screenshot6.png)
+![](doc/images/habpanel_screenshot6.png)

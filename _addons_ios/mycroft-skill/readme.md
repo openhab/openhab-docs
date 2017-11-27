@@ -37,7 +37,7 @@ then trigger installation of needed dependencies:
 
 ```shell
 cd ~/.mycroft/skills
-git clone https://github.com/mortommy/mycroft-skill-openhab skill-openhab
+git clone https://github.com/openhab/openhab-mycroft.git skill-openhab
 workon mycroft
 cd skill-openhab
 pip install -r requirements.txt
