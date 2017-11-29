@@ -1,4 +1,10 @@
-# Introduction
+# openHAB 2.x Documentation Project
+
+![](https://img.shields.io/badge/markdown_errors-0-orange.svg)
+[![](https://img.shields.io/badge/linkchecker_errors-89-red.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
+[![](https://img.shields.io/badge/linkchecker_warnings-421-yellow.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
+
+## Introduction
 
 This repository contains the documentation for openHAB.
 
@@ -19,7 +25,7 @@ Please see the [Jekyll installation instructions](https://jekyllrb.com/docs/inst
 
 An alternative for a local setup is a virtual machine provided by Vagrant.
 
-### Serving Locally
+### Serving locally
 
 Once you have Jekyll installed and the repository checked out, simply run
 
