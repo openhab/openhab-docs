@@ -15,7 +15,7 @@ It can be helpful to know up front that these two views exist as you are learnin
 ## Things, Channels, Items and Links
 
 **Things** are the entities that can be physically added to a system.
-These Things may provide more than just one function (for example, a thermostat may allow you to set the room temperature and also turn on a fan).
+Things may provide more than one function (for example, a z-wave multi-sensor may provide a motion detector and also measure room temperature).
 It is important to note that Things do not have to be physical devices; they can also represent a web service or any other manageable source of information and functionality.
 
 Things provide their functionality through a set of **Channels**.
