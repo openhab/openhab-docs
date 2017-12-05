@@ -40,7 +40,7 @@ It uses [Apache Karaf](http://karaf.apache.org/) together with [Eclipse Equinox]
 [Jetty](https://www.eclipse.org/jetty/) is used as an HTTP server.
 
 openHAB is highly modular software that can be extended through "Add-ons".
-Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Thing.
+Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things.
 Add-ons may come from the openHAB 2 distribution, the Eclipse SmartHome project Extensions, or from the openHAB 1 distribution.
 
 The overall architecture of openHAB is shown in the figure below:
