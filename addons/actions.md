@@ -64,6 +64,28 @@ To get a list of available voices use `say -v ?` and to get a list of devices us
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
 
+### Notification actions
+
+Notification actions may be placed in `rules` to send alerts to mobile devices registered with <https://myopenhab.org>.  Three different actions are available:
+
+- 'sendNotification(<your myopenHAB user email here>, <message>)': Sends a notification containing 'message' to device(s) registered with your myopenHAB email address at <https://myopenhab.org>
+- 'sendBroadcastNotification(<message>)': Sends a notification containing 'message' to *all* devices of *all* users of your myopenHAB.org account
+- 'sendLogNotification(<message>)': Sends a log notification containing 'message' to the `notifications` list at myopenHAB.org.  Notifications are NOT sent to any registered devices
+
+#### example
+
+The following example sends a notification through the myopenHAB app to 'user@email.com' containing the message, "A notification action has occurred", when the Demo_Item receives any command.
+
+```java
+rule "pingMe"
+
+when
+  Item Demo_Item received command
+then
+  sendNotification("user@email.com","A notification action has occurred")
+end
+```
+
 ### HTTP Actions
 
 * `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
