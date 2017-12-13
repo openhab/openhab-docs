@@ -68,11 +68,11 @@ One can configure whether specific log entries are logged out and where they get
 
 Notification actions may be placed in `rules` to send alerts to mobile devices registered with <https://myopenhab.org>.  Three different actions are available:
 
-- 'sendNotification(<your myopenHAB user email here>, <message>)': Sends a notification containing 'message' to device(s) registered with your myopenHAB email address at <https://myopenhab.org>
-- 'sendBroadcastNotification(<message>)': Sends a notification containing 'message' to *all* devices of *all* users of your myopenHAB.org account
-- 'sendLogNotification(<message>)': Sends a log notification containing 'message' to the `notifications` list at myopenHAB.org.  Notifications are NOT sent to any registered devices
+- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message' to device(s) registered with your myopenHAB email address at <https://myopenhab.org>
+- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users of your myopenHAB.org account
+- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at myopenHAB.org.  Notifications are NOT sent to any registered devices
 
-#### example
+**Example**
 
 The following example sends a notification through the myopenHAB app to 'user@email.com' containing the message, "A notification action has occurred", when the Demo_Item receives any command.
 
