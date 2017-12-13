@@ -74,15 +74,17 @@ Notification actions may be placed in `rules` to send alerts to mobile devices r
 
 **Example**
 
-The following example sends a notification through the myopenHAB app to 'user@email.com' containing the message, "A notification action has occurred", when the Demo_Item receives any command.
+The following example sends a notification once per minute to the myopenHAB app running on your mobile device.
+This rule can be useful when testing notification actions.
 
 ```java
 rule "pingMe"
 
 when
-  Item Demo_Item received command
+  // Every 1 minute...
+  Time cron "0 0/1 * * * ?"
 then
-  sendNotification("user@email.com","A notification action has occurred")
+  sendNotification("user@email.com","pingMe test notification")
 end
 ```
 
