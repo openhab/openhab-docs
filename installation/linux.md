@@ -269,6 +269,9 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
   # Stop the openHAB background service
   sudo systemctl stop openhab2.service
+  
+  # Get the service log since the last boot
+  sudo journalctl -u openhab2.service -b
 
   # Make openHAB automatically start after booting the Linux host
   sudo systemctl daemon-reload
@@ -277,6 +280,25 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
 {% include collapsible/item-end.html %}
 {% include collapsible/end.html %}
+
+#### Command Line Interface (CLI)
+
+After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/logging.html#karaf-console)).
+To use the shortcuts in a terminal, simply type `openhab-cli` followed by the command. For example:
+
+```shell
+Usage:  openhab-cli command [options]
+
+Possible commands:
+  start [--debug]     -- Starts openHAB in the terminal.
+  stop                -- Stops any running instance of openHAB.
+  status              -- Checks to see if openHAB is running.
+  console             -- Opens the openHAB console.
+  backup [filename]   -- Stores the current configuration of openHAB.
+  restore filename    -- Restores the openHAB configuration from a backup.
+  showlogs            -- Displays the log messages of openHAB.
+  info                -- Displays distribution information.
+```
 
 #### Changing Versions
 
@@ -342,67 +364,6 @@ sudo yum install openhab2-2.1.0-1
 
 {% include collapsible/item-end.html %}
 {% include collapsible/end.html %}
-
-#### Backup and Restore
-
-To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
-As of version 2.2.0, you can use openHAB's scripts for storing your configuration in a zip file.
-By default, the script saves the zip file in `/var/lib/openhab2/backups` for automatic installs and `openhab2/backups` for manual installs.
-You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
-
-```shell
-sudo $OPENHAB_RUNTIME/bin/backup
-## OR ##
-sudo $OPENHAB_RUNTIME/bin/backup /path/to/backups/folder/myBackup.zip
-```
-
-To restore from these generated files:
-
-```shell
-sudo $OPENHAB_RUNTIME/bin/restore $OPENHAB_BACKUPS/myBackup.zip
-```
-
-If you're unsure how to use the above files, just use `--help` or `-h`:
-
-```shell
-$OPENHAB_RUNTIME/bin/backup --help
-```
-
-Otherwise, you may do this manually by:
-
-```shell
-# stop openhab instance (here: systemd service)
-sudo systemctl stop openhab2.service
-
-# prepare backup folder, replace by your desired destination
-BACKUPDIR="/srv/openhab2-backup/openhab2-backup-$(date +%Y%m%d_%H%M%S)"
-mkdir -p $BACKUPDIR
-
-# backup current installation with settings
-cp -arv /etc/openhab2 "$BACKUPDIR/conf"
-cp -arv /var/lib/openhab2 "$BACKUPDIR/userdata"
-rm -rf "$BACKUPDIR/userdata/cache"
-rm -rf "$BACKUPDIR/userdata/tmp"
-
-# restart openhab instance
-sudo systemctl start openhab2.service
-```
-
-If you later want to restore these manual settings, just replace them.
-You may want to delete the existing data first.
-
-```shell
-# stop openhab instance (here: systemd service)
-sudo systemctl stop openhab2.service
-
-# restore data and fix permissions
-sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/conf/* /etc/openhab2/
-sudo cp -arv /srv/openhab2-backup/openhab2-backup-20160131_235959/userdata/* /var/lib/openhab2/
-sudo chown -R openhab /var/lib/openhab2
-
-# restart openhab instance
-sudo systemctl start openhab2.service
-```
 
 #### Uninstall
 
@@ -552,35 +513,6 @@ The output of `status` after a successful execution should be similar to:
 When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
 Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
-#### Backup and Restore
-
-We recommend a backup before each upgrade, or before any major change to a configuration. To make a backup of your openHAB 2 system, you need to retain your configuration and userdata files.
-
-The following shell commands will create a backup:
-
-```shell
-# stop openhab instance (here: systemd service)
-sudo systemctl stop openhab2.service
-
-# backup current installation with settings
-TIMESTAMP="$(date +%Y%m%d_%H%M%S)"
-sudo mv /opt/openhab2 /opt/openhab2-backup-$TIMESTAMP
-```
-
-You may restore these files by moving them back into your openhab folder, where `20170626_201143` is an example of the timestamp set on  the folder earlier:
-
-```shell
-# restore configuration and userdata
-sudo cp -arv /opt/openhab2-backup-20170626_201143/conf /opt/openhab2/
-sudo cp -arv /opt/openhab2-backup-20170626_201143/userdata /opt/openhab2/
-
-# fix permissions
-sudo chown -hR openhab:openhab /opt/openhab2
-
-# restart openhab instance
-sudo systemctl start openhab2.service
-```
-
 #### Upgrade
 
 To stay up to date with new releases, you should do regular upgrades of your manual installation.
@@ -645,6 +577,31 @@ sudo rm /lib/systemd/system/openhab2.service
 | Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
 | Backups folder                   | `/var/lib/openhab2/backups`  | `/opt/openhab2/backups`           |
 | Service configuration            | `/etc/default/openhab2`      | (not preconfigured)               |
+
+## Backup and Restore
+
+It is recommended to make a backup of your configuration before *any* major change.
+To make a backup of openHAB2, you need to retain your configuration and userdata files.
+openHAB comes with scripts for storing your configuration in a zip file which is saved in `/var/lib/openhab2/backups` for automatic installs and `openhab2/backups` for manual installs.
+You can change the default path by setting the $OPENHAB_BACKUPS environment variable.
+
+```shell
+sudo $OPENHAB_RUNTIME/bin/backup
+## OR ##
+sudo $OPENHAB_RUNTIME/bin/backup /path/to/backups/folder/myBackup.zip
+```
+
+To restore from these generated files:
+
+```shell
+sudo $OPENHAB_RUNTIME/bin/restore $OPENHAB_BACKUPS/myBackup.zip
+```
+
+If you're unsure how to use the above files, just use `--help` or `-h`:
+
+```shell
+$OPENHAB_RUNTIME/bin/backup --help
+```
 
 ## Viewing Log Messages
 
