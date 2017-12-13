@@ -22,6 +22,8 @@ The method to access the console depends on how openHAB was started.
 
 The simplest way of accessing the console is by running the `client` (or `client.bat` for windows) script located in `$OPENHAB_RUNTIME/bin/`. Linux package based installations can also use the command `openhab-cli console`.
 
+The default username/password is **openhab:habopen**, so enter `habopen` at the password prompt.
+
 ### Connecting via SSH
 
 The console can also be reached via secure shell connection ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)).
