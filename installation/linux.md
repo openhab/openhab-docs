@@ -283,7 +283,7 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
 #### Command Line Interface (CLI)
 
-After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/logging.html#karaf-console)).
+After installing openHAB, a shortcut named `openhab-cli` provides access to the openHAB specific commands (such as [backup, restore](#backup-and-restore), and [console]({{base}}/administration/console.html)).
 To use the shortcuts in a terminal, simply type `openhab-cli` followed by the command. For example:
 
 ```shell
