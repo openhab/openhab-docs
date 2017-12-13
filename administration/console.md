@@ -20,7 +20,11 @@ The method to access the console depends on how openHAB was started.
 * When started in interactive mode using the provided command line scripts, openHAB naturally transitions directly to the console prompt.
 * When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.
 
-In both cases, the console can be reached via secure shell connection ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)).
+The simplest way of accessing the console is by running the `client` (or `client.bat` for windows) script located in `$OPENHAB_RUNTIME/bin/`. Linux package based installations can also use the command `openhab-cli console`.
+
+### Connecting via SSH
+
+The console can also be reached via secure shell connection ([SSH](https://en.wikipedia.org/wiki/Secure_Shell)).
 
 To reach the console using SSH, use the following command to connect to the localhost interface on TCP port 8101:
 
@@ -55,6 +59,22 @@ The first successful connection triggers generation of the Karaf remote console 
 *Note:* On slower systems, such as Raspberry Pi or Pine64, this first SSH connection may even time out.
 If this happens, simply try connecting again until successful.
 
+If openHAB is removed and reinstalled, then further attempts by SSH may bring the following error:
+
+```text
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+```
+
+This is normal, since a new instance of openHAB will generate a new identification. The warning should also come with instruction on how to resume access to the console through SSH. e.g. by using the command:
+
+```shell
+ssh-keygen -f "/home/<username>/.ssh/known_hosts" -R [localhost]:8101
+```
+
+## Using the Console
+
 After successful connection and authentication, the console will appear:
 
 ```text
@@ -63,7 +83,7 @@ After successful connection and authentication, the console will appear:
  / __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
 / /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
 \____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
-    /_/                        2.0.0
+    /_/                        2.2.0
                                Release Build
 
 Hit '<tab>' for a list of available commands
@@ -72,8 +92,6 @@ Hit '<ctrl-d>' or type 'system:shutdown' or 'logout' to shutdown openHAB.
 
 openhab>
 ```
-
-## Using the Console
 
 The command `help` is listing all available commands or describes a specific subsystem/command:
 
