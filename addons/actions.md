@@ -86,6 +86,8 @@ then
 end
 ```
 
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopehnab.org website](http://www.myopenhab.org).
+
 ### HTTP Actions
 
 - `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
