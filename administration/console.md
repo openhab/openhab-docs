@@ -17,10 +17,9 @@ The console offers the option to:
 
 The method to access the console depends on how openHAB was started.
 
-* When started in interactive mode using the provided command line scripts, openHAB naturally transitions directly to the console prompt.
-* When started as a service (e.g. when installed from our package repository), openHAB is running as a background process.
-
-The simplest way of accessing the console is by running the `client` (or `client.bat` for windows) script located in `$OPENHAB_RUNTIME/bin/`. Linux package based installations can also use the command `openhab-cli console`.
+* When started in interactive mode using the provided command line scripts (e.g. `start.sh` or `start.bat`), openHAB naturally transitions directly to the console prompt.
+* When started as a service (i.e. when openHAB is running as a background process), access to the console is given by running the `$OPENHAB_RUNTIME/bin/client` (`client.bat` for Windows) script or by [connecting via SSH](#connecting-via-ssh).
+Linux package based installations can also use the command `openhab-cli console`.
 
 The default username/password is **openhab:habopen**, so enter `habopen` at the password prompt.
 
@@ -60,20 +59,6 @@ The first successful connection triggers generation of the Karaf remote console 
 
 *Note:* On slower systems, such as Raspberry Pi or Pine64, this first SSH connection may even time out.
 If this happens, simply try connecting again until successful.
-
-If openHAB is removed and reinstalled, then further attempts by SSH may bring the following error:
-
-```text
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-@ WARNING: REMOTE HOST IDENTIFICATION HAS CHANGED! @
-@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-```
-
-This is normal, since a new instance of openHAB will generate a new identification. The warning should also come with instruction on how to resume access to the console through SSH. e.g. by using the command:
-
-```shell
-ssh-keygen -f "/home/<username>/.ssh/known_hosts" -R [localhost]:8101
-```
 
 ## Using the Console
 
