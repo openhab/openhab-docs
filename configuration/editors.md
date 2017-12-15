@@ -17,10 +17,10 @@ This documentation page can give you some guidance in choosing the right one for
 
 ### Network Preparations
 
-The editors need to be able to access the configuration files on the remote openHAB host.
+Any editors used to configure openHAB need to be able to access the configuration files on the remote openHAB host.
 
-You have to have a [network share](https://en.wikipedia.org/wiki/Shared_resource) set up on the remote host and mounted on your local computer.
-The required steps to do so are specific to the host operation system.
+This can be achieved by using a [network share](https://en.wikipedia.org/wiki/Shared_resource) set up on the remote host and mounted on your local computer.
+The steps required to set up a [network share](https://en.wikipedia.org/wiki/Shared_resource) on your local host computer are specific to the host operation system.
 How to setup and use Samba on a Linux system is described in the [Linux article]({{base}}/installation/linux.html#network-sharing).
 If you are using [openHABian]({{base}}/installation/openhabian.html), the network shares are readily configured for you, you only need to mount them locally.
 
