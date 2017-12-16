@@ -434,7 +434,7 @@
               <goal>copy</goal>
             </goals>
             <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab-bundles/openhab-core/blob/master/bundles/org.openhab.ui.homebuilder/USAGE.md</sourceFile>
+              <sourceFile>${basedir}/.external-resources/openhab-bundles/openhab-core/bundles/org.openhab.ui.homebuilder/USAGE.md</sourceFile>
               <destinationFile>${basedir}/configuration/homebuilder.md</destinationFile>
             </configuration>
           </execution>
