@@ -61,7 +61,7 @@ Restart mycroft for the changes to take effect.
 ### openHAB Item Configuration
 
 Items are exposed to openHAB skill for Mycroft through the use of tags.
-See the [Hue Emulation](http://docs.openhab.org/addons/io/hueemulation/readme.html) and [HomeKit Add-on](http://docs.openhab.org/addons/io/homekit/readme.html) documentation for details about tagging and available tags.
+See the [Hue Emulation](http://docs.openhab.org/addons/ios/hueemulation/readme.html) and [HomeKit Add-on](http://docs.openhab.org/addons/ios/homekit/readme.html) documentation for details about tagging and available tags.
 
 * **Items via .items - File**
 
@@ -110,34 +110,33 @@ Switch Kitchen_Light_A2 "Kitchen LEDs"                    ["Lighting"] {channel=
 
 Each item tag supports different command, here is the summary:
 
-
- | Tag					| Key word   	|  Commands				|
- |----------------------|---------------|-----------------------|
- | Switchable			| turn		 	| 	on, off				|
- |						| switch	 	|	on, off				|
- |						| put		 	|	on, off				|
- | 						| what's		|	status				|
- |						|				|						|
- | Lighting				| turn		 	| 	on, off				|
- |						| switch	 	|	on, off				|
- |						| put		 	|	on, off				|
- |						| dim		 	|						|
- |						| dim by	 	|	value in percentage	|
- |						| brighten 		|						|
- |						| brighten by	|	value in percentage	|
- |						|				|						|
- | Thermostat			| adjust to		|	values in degrees	|
- |						| regulate to	|	values in degrees	|
- |						| tune to		|	values in degrees	|
- |						| decrease by	|	values in degrees	|
- |						| increase by	|	values in degrees	|
- |						| what's		|	adjusted to			|
- |						| what's		|	regulated to		|
- |						| what's		|	tuned to			|
- |						|				|						|
- | CurrentHumidity		| what's		|	humidity			|
- |						|				|						|
- | CurrentTemperature	| what's		|	temperature			|
+| Tag                    | Key word    | Commands            |
+|------------------------|-------------|---------------------|
+| `Switchable`           | turn        | on, off             |
+|                        | switch      | on, off             |
+|                        | put         | on, off             |
+|                        | what's      | status              |
+|                        |             |                     |
+| `Lighting`             | turn        | on, off             |
+|                        | switch      | on, off             |
+|                        | put         | on, off             |
+|                        | dim         |                     |
+|                        | dim by      | value in percentage |
+|                        | brighten    |                     |
+|                        | brighten by | value in percentage |
+|                        |             |                     |
+| `Thermostat`           | adjust to   | values in degrees   |
+|                        | regulate to | values in degrees   |
+|                        | tune to     | values in degrees   |
+|                        | decrease by | values in degrees   |
+|                        | increase by | values in degrees   |
+|                        | what's      | adjusted to         |
+|                        | what's      | regulated to        |
+|                        | what's      | tuned to            |
+|                        |             |                     |
+| `CurrentHumidity`      | what's      | humidity            |
+|                        |             |                     |
+| `CurrentTemperature`   | what's      | temperature         |
 
 With references to the above item definitions, here are an examples of working commands:
 
