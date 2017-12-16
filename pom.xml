@@ -410,6 +410,17 @@
         <version>1.0</version>
         <executions>
           <execution>
+            <id>copy-oh-homebuilder-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-bundles/openhab-core/blob/master/bundles/org.openhab.ui.homebuilder/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/configuration/homebuilder.md</destinationFile>
+            </configuration>
+          </execution>
+          <execution>
             <id>copy-oh-mycroft-docs</id>
             <phase>process-resources</phase>
             <goals>
