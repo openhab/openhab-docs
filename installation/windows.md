@@ -218,6 +218,9 @@ By installing the openHAB process as a service in Windows, you can:
 
 ### Connecting to the openHAB console
 
+You can connect to openHAB's console using the the `C:\openHAB2\runtime\bin\client.bat` script on the local machine. 
+Alternatively, you can use a standard SSH client:
+
 -   Install an SSH client application, e.g., [Putty](https://www.chiark.greenend.org.uk/~sgtatham/putty/latest.html), [KiTTY](http://kitty.9bis.net/) or [Xshell 5](https://www.netsarang.com/products/xsh_overview.html)
 
 -   Setup a session with the following parameters:
