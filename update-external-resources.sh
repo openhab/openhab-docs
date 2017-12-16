@@ -7,20 +7,20 @@ set -e
 
 # Helper functions
 timestamp() { date +"%F_%T_%Z"; }
-echo_process() { echo -e "\e[1;94m$(timestamp)\e[0m $*"; }
+echo_process() { echo -e "\\e[1;94m$(timestamp)\\e[0m $*"; }
 
 # Log everything to a file
 #exec &> >(tee -a "update-docs-$(date +%Y-%m-%d_%H%M%S).log")
 
 # Switch to the script folder
-cd $(dirname $0) || exit 1
+cd "$(dirname $0)" || exit 1
 if [ ! -f "$(dirname $0)/CNAME" ]; then
   echo "I'm confused and don't know where I am. Exiting." >&2
   exit 1
 fi
-resourcefolder=$(dirname $0)/.external-resources
+resourcefolder=$(dirname "$0")/.external-resources
 mkdir -p "$resourcefolder"
-echo -e "# About\n\nUsed to temporarily store repository clones from related openHAB projects for 'update-external-resources.sh'." > "$resourcefolder/README.md"
+echo -e "# About\\n\\nUsed to temporarily store repository clones from related openHAB projects for 'update-external-resources.sh'." > "$resourcefolder/README.md"
 
 # Prerequisites
 if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
@@ -33,13 +33,14 @@ echo_process "Updating the base openhab-docs repo... (skipping)"
 
 # Parameters: $1=name, $2=GitHub project
 pull_or_clone_repo() {
-  echo_process "Updating or Cloning the '$1' repo... "
   if [ -d "$resourcefolder/$1" ]; then
+    echo_process "Updating the '$1' repo... "
     git -C "$resourcefolder/$1" checkout master
     git -C "$resourcefolder/$1" pull
   else
+    echo_process "Cloning the '$1' repo... "
     mkdir "$resourcefolder/$1"
-    git clone https://github.com/$2 "$resourcefolder/$1"
+    git clone "https://github.com/$2" "$resourcefolder/$1"
   fi
 }
 
@@ -51,6 +52,7 @@ pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
 pull_or_clone_repo "openhabian" "openhab/openhabian.git"
 pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git"
 pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git"
+pull_or_clone_repo "openhab.android" "openhab/openhab.android.git"
 
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init

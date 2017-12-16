@@ -23,6 +23,7 @@ This is the recommended package for the normal user. It contains the most common
 
 This package thus installs:
 
+- [Home Builder](homebuilder.html){:target="_blank"} as a getting-started generator for your home
 - [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, including item access
 - [Basic UI](../addons/uis/basic/readme.html){:target="_blank"} as the new modern web UI for mobile devices
 - [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for (e.g. wall-mounted) tablets

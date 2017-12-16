@@ -27,9 +27,9 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
         files.eachFile {
             def name = it.name
             println name
-            if (! name.contains(type)) println "[WARN] Addon package name doesn't contain '${type}'."
+            if (! name.contains(type)) log.warn("Addon package name doesn't contain '${type}'.")
             if (name.endsWith('.test')) {
-                println "[INFO] Skip."
+                log.info("Skip.")
                 it.deleteDir()
             } else {
                 def id = it.name
@@ -41,13 +41,13 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                 it.renameTo(simpleNameDir)
                 def readme = new File(simpleNameDir.path, 'README.md')
                 if (! readme.exists()) {
-                    println "[WARNING] No README.md found."
+                    log.warn("No README.md found.")
                 } else {
                     readme.renameTo(new File(simpleNameDir.path, 'readme.md'))
                     //println readme
                     def label = readme.readLines().find{it.startsWith('#')}
                     if (label == null) {
-                        println "[WARNING] No level 1 header found."
+                        log.warn("No level 1 header found.")
                         label = id
                     } else {
                         label = label.replace('#', '')
@@ -57,7 +57,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                         label = label.trim()
                     }
                     def logo = new File(project.basedir, 'images/addons/' + id + '.png').exists()
-                    if (! logo) println "[INFO] No logo found."
+                    if (! logo) log.info("No logo found.")
                     def description = ""
                     boolean firstHeadline = false
                     for (def line : readme.readLines()) {
@@ -100,7 +100,7 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
         }
         def temp_folder = new File(project.basedir, "_${collection}/".concat(source))
         if (temp_folder.list().length > 0) {
-            println "[WARNING] Folder not empty after processing."
+            log.warn("Folder not empty after processing.")
         }
         temp_folder.deleteDir()
     }
@@ -119,7 +119,9 @@ def process_addon_files = { features ->
 }
 
 if (! new File(project.basedir, ".external-resources").exists()) {
-    println "\n\n[WARNING] Folder '.external-resources' missing. Please use the update script to run all steps in order. Exiting.\n\n"
+    println "\n"
+    log.warn("Folder '.external-resources' missing. Please use the update script to run all steps in order. Exiting.")
+    println "\n"
     return
 }
 def features = [:]

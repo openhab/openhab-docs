@@ -402,6 +402,24 @@
               </resources>
             </configuration>
           </execution>
+          <execution>
+            <id>copy-android-images</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/addons/uis/apps</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/${basedir}/.external-resources/openhab.android/docs</directory>
+                  <includes>
+                    <include>images/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
@@ -409,6 +427,28 @@
         <artifactId>copy-rename-maven-plugin</artifactId>
         <version>1.0</version>
         <executions>
+          <execution>
+            <id>copy-oh-homebuilder-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-bundles/openhab-core/bundles/org.openhab.ui.homebuilder/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/configuration/homebuilder.md</destinationFile>
+            </configuration>
+          </execution>
+          <execution>
+            <id>copy-oh-android-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab.android/docs/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/addons/uis/apps/android.md</destinationFile>
+            </configuration>
+          </execution>
           <execution>
             <id>copy-oh-mycroft-docs</id>
             <phase>process-resources</phase>
