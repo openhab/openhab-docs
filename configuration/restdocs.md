@@ -44,7 +44,17 @@ curl -X GET --header "Accept: application/json" "http://192.168.1.35:8080/rest/s
 ```
 
 The commands above have been copied from the REST API documentation for illustration. 
+
+## REST API documentation
+
+The REST API documentation is available on your openHAB installation as a custom user interface.
+
+You can add it by opening the PaperUI interace, clicking "Add-ons", selecting "Misc". You will see an addon called "REST Documentation" that can be easily installed.
+
+On the welcome screen of openHAB, you will now see a new interface called "REST API" where you can easily see the documentation of the REST API and test it!
+
 All available commands will be displayed in the REST API documentation as a response to the button "Try me out" (may require some user input for mandatory fields).  
+
 
 ## Additional Considerations
 
