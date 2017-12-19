@@ -64,29 +64,14 @@ To get a list of available voices use `say -v ?` and to get a list of devices us
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
 
-### Notification actions
+### Cloud Notification Actions
 
-Notification actions may be placed in `rules` to send alerts to mobile devices registered with <https://myopenhab.org>.  Three different actions are available:
+Notification actions may be placed in Rules to send alerts to mobile devices registered with an [openHAB Cloud instance](https://github.com/openhab/openhab-cloud) such as [myopenHAB.org](https://myopenhab.org).
+Three different actions are available:
 
-- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message' to device(s) registered with your myopenHAB email address at <https://myopenhab.org>
-- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users of your myopenHAB.org account
-- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at myopenHAB.org.  Notifications are NOT sent to any registered devices
-
-**Example**
-
-The following example sends a notification once per minute to the myopenHAB app running on your mobile device.
-This rule can be useful when testing notification actions.
-
-```java
-rule "pingMe"
-
-when
-  // Every 1 minute...
-  Time cron "0 0/1 * * * ?"
-then
-  sendNotification("user@email.com","pingMe test notification")
-end
-```
+- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message'
+- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users
+- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
 
 For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopehnab.org website](http://www.myopenhab.org).
 
