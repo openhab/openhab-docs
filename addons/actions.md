@@ -131,6 +131,8 @@ if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONL
 
 ## Installable Actions
 
+The following actions are available as installable add-ons.
+
 <table id="actions-select" class="striped">
   <tbody>
     <tr>
