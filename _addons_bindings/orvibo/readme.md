@@ -3,7 +3,7 @@ id: orvibo
 label: Orvibo
 title: Orvibo - Bindings
 type: binding
-description: "This binding integrates Orvibo devices that communicate using UDP. Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future."
+description: "This binding integrates Orvibo devices that communicate using UDP."
 since: 2x
 logo: images/addons/orvibo.png
 install: auto
@@ -15,11 +15,12 @@ install: auto
 
 # Orvibo Binding
 
-This binding integrates Orvibo devices that communicate using UDP. Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future.
+This binding integrates Orvibo devices that communicate using UDP.
+Primarily this was designed for S20 Wifi Sockets but other products using the same protocol may be implemented in future.
 
 ## Supported Things
 
-* S20 Wifi Sockets
+*   S20 Wifi Sockets
 
 ## Discovery
 
@@ -32,10 +33,8 @@ This binding does not require any special configuration.
 ## Thing Configuration
 
 This is optional, it is recommended to let the binding discover and add Orvibo devices.
- 
-To manually configure an S20 Thing you must specify its deviceId (MAC address). 
- 
-In the thing file, this looks e.g. like
+To manually configure an S20 Thing you must specify its deviceId (MAC address).
+In the thing file, this looks like:
 
 ```
 Thing orvibo:s20:mysocket [ deviceId="AABBCCDDEEFF"]
@@ -45,11 +44,9 @@ Thing orvibo:s20:mysocket [ deviceId="AABBCCDDEEFF"]
 
 ### S20:
 
-|Channel | Description | Example  |
-|------- | -------- | ---- |
-|power	 | Current power state of switch | orvibo:s20:mysocket:power |
-
-
+| Channel | Description                   | Example                   |
+|---------|-------------------------------|---------------------------|
+| power   | Current power state of switch | orvibo:s20:mysocket:power |
 
 ## Items:
 
@@ -59,13 +56,13 @@ Switch MySwitch              "Switch state [%s]"  { channel="orvibo:s20:mysocket
 
 ## Example Sitemap
 
-Using the above things channels and items 
+Using the above things channels and items
 Sitemap:
 
 ```
 sitemap demo label="Main Menu" {
         Frame  {
-                Switch item=MySwitch 
+                Switch item=MySwitch
         }
 }
 ```
