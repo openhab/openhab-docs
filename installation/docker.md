@@ -87,6 +87,7 @@ If using docker to manage the service, run the following command:
 docker run \
         --name openhab \
         --net=host \
+        --tty \
         -v /etc/localtime:/etc/localtime:ro \
         -v /etc/timezone:/etc/timezone:ro \
         -v /opt/openhab/conf:/openhab/conf \
@@ -137,7 +138,7 @@ After=docker.service
 
 [Service]
 Restart=always
-ExecStart=/usr/bin/docker run --name=%n --net=host \
+ExecStart=/usr/bin/docker run --name=%n --net=host --tty \
   -v /etc/localtime:/etc/localtime:ro \
   -v /etc/timezone:/etc/timezone:ro \
   -v /opt/openhab/conf:/openhab/conf \
@@ -168,6 +169,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
+- `--tty` : allocate a pseudo-TTY, required by the Karaf Console
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
 - `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (NOTE: you must create these folders on the host before running the container)
