@@ -636,6 +636,7 @@ Besides the implicitly available variables for items and commands/states, rules 
 
 - `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
 - `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
+- `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
 
 {: #return}
 ### Early returns
