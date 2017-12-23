@@ -19,7 +19,8 @@ The installation is done on the "Add-ons" page in the left menu.
 
 You can scroll down and have a look at lots of bindings available for openHAB!
 
-Let's start with the "Network Binding", as this binding can be used in every setup from the start and will show you the basic configuration possibilities. With the network binding, you can define some of your network devices as things in order to use them in a rule for example, or just to see if they are online or offline and for how long.
+Let's start with the "Network Binding", as this binding can be used in every setup from the start and will show you the basic configuration possibilities. With the network binding, you can define some of your network devices as things in order to use them in a rule for example, or just to see if they are on- or offline and their response time.
+
 Scroll down or use the "Search" field to find the "Network Binding". Click on install, the binding will be downloaded and installed automatically.
 
 ![](images/picture_06.jpg)
@@ -69,7 +70,7 @@ So we'll link both channels of the "John's Mobile" thing now by clicking the rad
 
 ![](images/picture_14.jpg)
 
-For most of the bindings each thing can be configured further by clicking the pen-icon. There you can edit the name again, chose a location (this is important for the "Control" menu item later) and, of course, change binding realted options. With the network binding for example, you can also change the IP address, the timeout, the refresh interval etc.
+For most of the bindings each thing can be configured further by clicking the pen-icon. There you can change the name, chose a location (this is important for the "Control" menu item later) and, of course, change binding related options. With the network binding for example, you can also change the IP address, the timeout, the refresh interval etc.
 
 ![](images/picture_15.jpg)
 
@@ -98,7 +99,7 @@ The difference to the network binding is, that we have to configure the Zwave co
 ![](images/picture_18.jpg)
 
 openHAB immediately starts discovering Zwave things via the Zwave controller and shows them in the inbox - if they already have been included! If this is a completely new Zwave controller, you'll have to include your Zwave things first.
-To set the controller into incusion mode, press the "+" icon again. Please refer to the manual of you Zwave device in order to find out how the inclusion works there (most of the time it's pressing thetamper button thrice).
+To set the controller into incusion mode, press the "+" icon again. Please refer to the manual of your Zwave device in order to find out how the inclusion works there (most of the time it's pressing the tamper button three times very quickly).
 
 Let's assume we bought a new wallplug and included it, it's "Node 30". For a simple sitemap and rule example on the next page, we'll configure this thing now:
 
@@ -108,7 +109,7 @@ Let's assume we bought a new wallplug and included it, it's "Node 30". For a sim
 
 ![](images/picture_21.jpg)
 
-Basically we gave the thing a name ("Wallplug TV", please note the naming convention mentioned above!) and linked the "Switch" channel. Now we can see the wallplug (and the Zwave controller) on the "Control" page, too. It's switch is currently turned off:
+Basically we gave the thing a name ("Wallplug TV") and linked the "Switch" channel. Now we can see the wallplug (and the Zwave controller) on the "Control" page, too. It's switch is currently turned off:
 
 ![](images/picture_22.jpg)
 

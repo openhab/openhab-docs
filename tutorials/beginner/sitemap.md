@@ -54,7 +54,7 @@ Feel free to choose an appropriate description for your item.
 **More information about available icons can be found [here]({{base}}/configuration/items.html#icons)**
 
 
-Now to the item-to-thing-channel link: the channel id is always visible in Paper UI when you edit a thing. As you can see in the screenshot from above where I linked the two channels of the network thing, I used the channel id of the "Online" channel in the definition above:
+Now to the item-to-thing-channel link: the channel id is always visible in Paper UI when you edit a thing. As you can see in the screenshot from above where we linked the two channels of the network thing, we used the channel id of the "Online" channel in the definition above:
 
 ```bash
 network:device:192_168_1_103:online
@@ -62,9 +62,9 @@ network:device:192_168_1_103:online
 
 _Again, for most of the bindings this is the way of adding an item in the .items file:_
 
-_browse to your Paper UI, go to "Configuration -> Things", click on the thing you want to add, find the channel of the thing you want to add, copy the channel id and use it in your .items file_
+_Browse to your Paper UI, go to "Configuration -> Things", click on the thing you want to add, find the channel of the thing you want to add, copy the channel id and use it in your .items file_
 
-To see the status of the wallplug, you have to add it to default.items too. First you have to look for the channel id in Paper UI:
+To see the status of the wallplug, you have to add it to default.items too. First we have to look for the channel id in Paper UI:
 
 ![](images/picture_23.jpg)
 
