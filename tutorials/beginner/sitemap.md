@@ -8,14 +8,18 @@ layout: tutorial-beginner
 
 Controlling your things via Paper UI is nice, but currently you can sort them only by editing the "Location" in the thing configuration. If you want to create your own view you can use a so called "sitemap" which can be displayed in the Basic UI (you remember, it was automatically installed at the beginning).
 
-But before that, you have to create an items file. Both the items and the sitemap files are edited in your editor of choice. The files' location is in the "conf" directory of openHAB:
+But before that, you have to create an items file.
+Both the items and the sitemap files are edited in your editor of choice.
+The files' location is in the `$OPENHAB_CONF` directory, which is different on different operating systems.
+See the linux installation instructions for the [file locations]({{base}}/installation/linux.html#file-locations) specific to linux, or the Windows [file locations]({{base}}/installation/windows.html#file-locations) specific to Windows.
+Mac OSx files are located in the same place as Linux files.
 
 ```bash
 conf/items    <-- *.items files
 conf/sitemaps <-- *.sitemap files
 ```
 
-After a fresh installation these directories are empty (except for the readme files), so you have to create a file there. We'll use "default.items" as the items file and "default.sitemap" as the sitemap file in this tutorial. 
+After a fresh installation these directories are empty (except for the readme files), so you have to create a file there. We'll use "default.items" as the items file and "default.sitemap" as the sitemap file in this tutorial.
 
 **In fact, you can have multiple .items files to sort your items logically, for example lamps.items, contacts.items, network.items etc.**
 **As long as the file extension is .items, it's definitions will be loaded in openHAB. The same applies to .sitemap and .rules files as well**
