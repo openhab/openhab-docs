@@ -12,33 +12,26 @@ Two log files are going to interest us.
 
 To find them:
 
-* open the finder,
-* navigate to your home folder,
-* navigate inside the openHAB folder,
-* navigate inside the userdata folder,
-* navigate inside the logs folder
+- open the finder,
+- navigate to your home folder,
+- navigate inside the openHAB folder,
+- navigate inside the userdata folder,
+- navigate inside the logs folder
 
 <!-- ![](images/log-folders.png) -->
 
-* Inside the logs folder, double-click on the `openhab.log` file. The file will be displayed inside the console application.
+- Inside the logs folder, double-click on the `openhab.log` file. The file will be displayed inside the console application.
 
 <!-- ![](images/log-screen.png) -->
 
+The console will display the messages as soon as they will be logged.
+Keep this window somewhere in order to take a look inside when it is needed.
+We will use it to check the Z-Wave dialogs.
 
-> The console will display the messages as soon as they will be logged. Keep this window somewhere in order to take a look inside when it is needed.
->
-> We will use it to check the Z-Wave dialogs.
->
-> A "clean" startup looks this way in the log file :
->
-```
+A "clean" startup looks this way in the log file :
+
+```java
 2016-05-09 21:29:33.195 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /ui
 2016-05-09 21:29:33.252 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at /start
 2016-05-09 21:29:33.567 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Serial port is initialized
 ```
-
-
-
-
-
-
