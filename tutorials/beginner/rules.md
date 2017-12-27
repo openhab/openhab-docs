@@ -9,7 +9,8 @@ layout: tutorial-beginner
 Now that we have the two items - "Presence_Mobile_John" aka "Johns mobile" and "Wallplug_FF_LR_TV" aka "TV wallplug LR" - we can create a simple rule.
 Let's assume we want to turn on the wallplug (and give some juice to the connected TV) as soon as John's mobile comes online, turn it off again when the mobile goes offline (this would be a very basic "presence" rule).
 
-Rules are defined in the conf/rules directory. So we create the file default.rules there.
+Rules are defined in the conf/rules directory.
+So we create the file default.rules there.
 
 ```bash
 conf/rules/default.rules
@@ -17,10 +18,10 @@ conf/rules/default.rules
 
 You can create as many .rules files as you want - this eases the overview of different rules/situations. For example:
 
-* presence.rules for the presence detection
-* alarm.rules for your alarm actions
-* tv.rules for rules specific for your SmartTV
-* and so on
+- presence.rules for the presence detection
+- alarm.rules for your alarm actions
+- tv.rules for rules specific for your SmartTV
+- and so on
 
 For now, we edit the default.rules
 
@@ -40,13 +41,13 @@ then
 end
 ```
 
-The rule syntax in this example is very easy: 
+The rule syntax in this example is very easy:
 
 ```bash
 rule "rule name (should be unique for logging purposes)"
 when
-  <TRIGGER CONDITION1> or 
-  <TRIGGER_CONDITION2> or 
+  <TRIGGER CONDITION1> or
+  <TRIGGER_CONDITION2> or
   <TRIGGER_CONDITION3>
   ...
 then
@@ -56,9 +57,9 @@ end
 
 The trigger conditions can be one of the following:
 
-* Item triggers - just like in the example above. If the state of an item changes, do something
-* Time triggers - do something at a specified time
-* System triggers - do something after a system event happened, i.e. openHAB was started or is shut down
+- Item triggers - just like in the example above. If the state of an item changes, do something
+- Time triggers - do something at a specified time
+- System triggers - do something after a system event happened, i.e. openHAB was started or is shut down
 
 **More information on rules can be found [in the rules section of the user manual!]({{base}}/configuration/rules-dsl.html)**
 
@@ -68,8 +69,8 @@ The execution block in the example only consists of the "sendCommand" command, w
 ItemName.sendCommand(STATE)
 ```
 
-Once the mobile comes online, the wallplug will turn on, As soon as it goes offline, it will turn off. Just as simple as that :)
-
+Once the mobile comes online, the wallplug will turn on, As soon as it goes offline, it will turn off.
+Just as simple as that :)
 
 ---
 

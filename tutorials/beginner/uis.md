@@ -6,23 +6,24 @@ layout: tutorial-beginner
 
 # OpenHAB 2 UIs
 
-OpenHAB 2 offers different UIs in its standard configuration: the _Paper UI_, the _Basic UI_ and the _Classic UI_ (this has to be installed manually from within Paper UI or via config file).
+OpenHAB 2 offers different UIs in its standard configuration: the *Paper UI*, the *Basic UI* and the *Classic UI* (this has to be installed manually from within Paper UI or via config file).
 
 ## The Paper UI
 
 The Paper UI is a new interface that helps setting up and configuring your openHAB instance.
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
 
-- Add-on management: Easily install or uninstall openHAB add-ons
+-   Add-on management: Easily install or uninstall openHAB add-ons
 ![](images/picture_05.jpg)
 
-- Thing discovery: See devices and services found on your network and add them to your setup.
+-   Thing discovery: See devices and services found on your network and add them to your setup.
 ![](images//picture_09.jpg)
 
-- Linking items to channels: Instead of adding a binding configuration to your item file, you can directly link Thing channels to your items.
+-   Linking items to channels: Instead of adding a binding configuration to your item file, you can directly link Thing channels to your items.
 ![](images//picture_21.jpg)
 
-Note that you still need to define your items, sitemaps, persistence configurations and rules in the according configuration files (as done in openHAB 1). Such functionality will be added bit by bit to the Paper UI only.
+Note that you still need to define your items, sitemaps, persistence configurations and rules in the according configuration files (as done in openHAB 1).
+Such functionality will be added bit by bit to the Paper UI only.
 
 All these aspects are explained in the rest of this tutorial.
 
@@ -36,9 +37,9 @@ The Basic UI is a web interface based on Material Design Lite from Google. This 
 
 The UIs features are:
 
-* Responsive layout suitable for various screen sizes
-* AJAX navigation
-* Live update<sup>1</sup>
+- Responsive layout suitable for various screen sizes
+- AJAX navigation
+- Live update<sup>1</sup>
 
 <sup>1</sup>: as for now, only control states and icons are updated. Visibility changes require a page reload.
 
