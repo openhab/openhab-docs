@@ -98,7 +98,7 @@ ItemType item=ItemName label="Description of the item shown on the webpage"
 
 where ItemType and ItemName must be the same as defined in default.items
 
-One last thing to do is setting the default sitemap for the "Basic UI" via "Paper UI". Browse to "Configuration -> Services" in Paper UI and click the "Configure" button of Paper UI
+One last thing to do is setting the default sitemap for the "Basic UI" via "Paper UI". Browse to "Configuration -> Services" in Paper UI and click the "Configure" button of Basic UI
 
 ![](images/picture_24.jpg)
 
