@@ -177,9 +177,9 @@ rule "Speedtest init"
 when
     System started
 then
-    createTimer(now.plusSeconds(30)) [|
+    createTimer(now.plusSeconds(30), [|
         if (Speedtest_Summary.state == NULL || Speedtest_Summary.state == "") Speedtest_Summary.postUpdate("unknown")
-    ]
+    ])
 end
 ```
 
