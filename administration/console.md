@@ -150,7 +150,7 @@ Alternately, run the following Linux shell command, which will perform the repla
 Substitute `securePassword` with your desired password.
 
 ```shell
-sudo sed -i -e "s/openhab = .*,/openhab = securePassword/g" /var/lib/openhab2/etc/users.properties
+sudo sed -i -e "s/openhab = .*,/openhab = securePassword,/g" /var/lib/openhab2/etc/users.properties
 ```
 
 Depending on your system, you may have to [change the directory](#console-settings-files-and-directories) at the end of the command.
