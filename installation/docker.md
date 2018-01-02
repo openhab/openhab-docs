@@ -146,7 +146,8 @@ ExecStart=/usr/bin/docker run --name=%n --net=host --tty \
   -v /opt/openhab/addons:/openhab/addons \
   -v /opt/openhab/.java:/openhab/.java \
   --device=/dev/ttyUSB0 \
-  --user=<uid> \
+  -e USER_ID=<uid_of_openhab> \
+  -e GROUP_ID=<gid_of_openhab> \
   openhab/openhab:<version>-<architecture>-<distributions>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
