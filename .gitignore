@@ -14,3 +14,6 @@ project.pbxproj
 # IntelliJ
 *.iml
 .idea
+
+#vscode
+.vscode
