@@ -44,7 +44,8 @@ openhab> log:tail
 20:38:20.463 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'ON'.
 20:38:21.444 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Mirror' with value 'ON'.
 ```
-An useful functionality is that also filters can be applied:
+
+A useful functionality is that filters can be applied:
 
 ```
 openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
@@ -66,7 +67,7 @@ In order to see the messages, logging needs to activated defining what should be
 log:set LEVEL package.subpackage
 ```
 
-The **what** is defined by `package.subpackage` and is in most cases a binding (like org.openhab.binding.sonos)
+The **what** is defined by `package.subpackage` and is in most cases a binding (like `org.openhab.binding.zwave`)
 
 The **detail** of logging is defined by one of the following levels:
 
