@@ -20,8 +20,8 @@ Follow the instructions shown if a new version is announced when opening the adm
 1.  Download the QPKG from the [releases section over on GitHub](https://github.com/openhab/openhab-qnap-qpkg/releases).
 
 2.  Create a directory for your addons, configurations and userdata, by either
-    - Creating a share called "openHAB2" (recommended)
-    - Creating a folder called "openHAB2" inside the "Public" share
+    - Creating a share called "openHAB" (recommended)
+    - Creating a folder called "openHAB" inside the "Public" share
     - Not creating any of them and therefore using `.qpkg/openHAB2/distribution` for all data (for testing or demonstration)
 
 3.  Go to your NAS's App Center and make sure you have got "JRE" (for x86-CPU based NAS) or "JRE_ARM" (for ARM-CPU based NAS) installed.
