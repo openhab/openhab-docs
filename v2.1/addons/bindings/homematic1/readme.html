@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Homematic - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/addons/bindings/homematic1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../addons/bindings/homematic1/readme.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/addons/bindings/homematic1/readme.html">v2.2</a></li>
+      <li><a href="/v2.1/addons/bindings/homematic1/readme.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="homematic-binding">Homematic Binding</h1>
+
+<p>This is the binding for the <a href="http://www.eq-3.de/">eQ-3 Homematic Solution</a>.
+This binding allows you to integrate, view, control and configure all Homematic devices in the openHAB environment.</p>
+
+<ul>
+  <li>RF and WIRED devices are supported</li>
+  <li>CCU/Homegear variables with synchronisation</li>
+  <li>execute programs on the CCU/Homegear</li>
+  <li>flexible converter framework which converts every datapoint of all devices</li>
+  <li>fast and lightweight BIN-RPC communication.</li>
+  <li>quick metadata and value sync with TclRega scripts. If you start openHAB or reload a item file, it only takes some seconds and all items have their states.</li>
+  <li>local cache of all metadata and values to prevent unnecessary CCU/Homegear calls.</li>
+  <li>alive validation, if no event is received within a specified time, the binding restarts.</li>
+  <li>action to send messages to a Homematic remote control with a display</li>
+  <li>HomematicIP support.  HomematicIP is disabled by default, because if you don’t have HM-IP devices, the binding still communicates with BIN-RPC. If you enable HM-IP support, the binding uses XML-RPC. In the binding configuration, set <code class="highlighter-rouge">homematicIP.enabled=true</code>.</li>
+  <li><a href="https://www.homegear.eu">Homegear</a> support including variables and programs (Homegear scripts). With Homegear you can control HomeMatic devices without a CCU, <a href="http://www.eq-3.de/max-heizungssteuerung.html">MAX! devices</a> without a cube and Philips hue devices, more to come!  <strong>Note:</strong> You need at least 0.5.8 of Homegear.</li>
+  <li>BATTERY_TYPE datapoint. Show the type of the battery for every battery-powered Homematic device.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String ... { homematic="address=KEQxxxxxxxx, channel=0, parameter=BATTERY_TYPE" }
+</code></pre></div></div>
+
+<ul>
+  <li>CCU group support. You can group together for example some thermostats and call group datapoints.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number ... {homematic="address=INT0000001, channel=1, parameter=SET_TEMPERATURE“}
+</code></pre></div></div>
+
+<p><strong>Note:</strong> The CCU does not send updates to a group! If you change the temperature manually, you have to write a rule to update the group:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var Timer thermostatChangedTimer = null
+
+rule "Some Thermostat changed"
+when
+   Item thermostat_l changed or
+   Item thermostat_2 changed or
+   Item thermostat_3 changed
+then
+   if (thermostatChangedTimer != null) {
+       thermostatChangedTimer.cancel;
+       thermostatChangedTimer = null;
+   }
+
+   // reschedule timer to cover latest change
+   thermostatChangedTimer = createTimer(now.plusSeconds(20)) [|      
+       sendCommand(thermostat_group, thermostat_1.state)
+   ]
+end
+</code></pre></div></div>
+
+<ul>
+  <li>Remote control display is now driven via RPC (formerly TclRega script)</li>
+  <li>Many small optimizations</li>
+  <li><a href="http://www.homematic-inside.de/software/cuxdaemon">CUxD</a> Support</li>
+  <li>XML-RPC removed</li>
+  <li>Stand alone actions, use reload_datapoints, reload_variables and reload_rssi without a device binding</li>
+  <li>RSSI_DEVICE and RSSI_PEER datapoint. Show the <a href="http://en.wikipedia.org/wiki/Received_signal_strength_indication">RSSI</a> values from RF devices.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number RSSI_Livingroom_Device   "RSSI device light livingroom [%d dbm]"   { homematic="address=xxxxxxxx, channel=0, parameter=RSSI_DEVICE" }
+Number RSSI_Livingroom_Peer     "RSSI peer light livingroom [%d dbm]"     { homematic="address=xxxxxxxx, channel=0, parameter=RSSI_PEER" }
+</code></pre></div></div>
+
+<p>If you are using Homegear, the values are always up to date. The values from a CCU are fetched during startup. If you want to refresh the CCU values, you need the RELOAD_RSSI action:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Reload_Rssi   { homematic="action=reload_rssi" }
+</code></pre></div></div>
+
+<p>Just send a ON command to the Switch and the RSSI values are updated.</p>
+
+<h3 id="requirements">Requirements</h3>
+
+<p>CCU1, CCU2, <a href="http://homegear.eu">Homegear</a> or <a href="http://www.lxccu.com">lxccu</a></p>
+
+<p>These ports are used by the binding:</p>
+
+<ul>
+  <li>TclRegaScript (required): 8181</li>
+  <li>RF components (required): 2001</li>
+  <li>WIRED components (optional): 2000</li>
+</ul>
+
+<p>The CCU firewall must be configured to ‘full access’ for the Remote Homematic-Script API.</p>
+
+<p>There is also a binding specifically for openHAB 2 <a href="http://docs.openhab.org/addons/bindings/homematic/readme.html">here</a>.</p>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>This binding can be configured in the file <code class="highlighter-rouge">services/homematic.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>host</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>Hostname / IP address of the Homematic CCU</td>
+    </tr>
+    <tr>
+      <td>callback.host</td>
+      <td> </td>
+      <td style="text-align: center">No</td>
+      <td>Hostname / IP address for the callback server (optional, default is auto-discovery). This is normally the IP / hostname of the local host (but not “localhost” or “127.0.0.1”).</td>
+    </tr>
+    <tr>
+      <td>callback.port</td>
+      <td>9123</td>
+      <td style="text-align: center">No</td>
+      <td>Port number for the callback server.</td>
+    </tr>
+    <tr>
+      <td>alive.interval</td>
+      <td>300</td>
+      <td style="text-align: center">No</td>
+      <td>the interval in seconds to check if the communication with the CCU is still alive. If no message receives from the CCU, the binding restarts.</td>
+    </tr>
+    <tr>
+      <td>reconnect.interval</td>
+      <td> </td>
+      <td style="text-align: center">No</td>
+      <td>the interval in seconds to reconnect to the Homematic server (optional, default is disabled). If you have no sensors which sends messages in regular intervals and/or you have low communication, the <code class="highlighter-rouge">alive.interval</code> may restart the connection to the Homematic server too often.  The <code class="highlighter-rouge">reconnect.interval</code> disables the <code class="highlighter-rouge">alive.interval</code> and reconnects after a fixed period of time. Think in hours when configuring (one hour = 3600)</td>
+    </tr>
+    <tr>
+      <td>homematicIP.enabled</td>
+      <td>false</td>
+      <td style="text-align: center">No</td>
+      <td>Enables CCU2 HomematicIP support.  HomematicIP does currently not support BIN-RPC. Therefore it’s disabled by default, because if you don’t have HM-IP devices, the binding still communicates with BIN-RPC. If you enable HM-IP support, the binding uses XML-RPC.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>Available parameters:</p>
+
+<ul>
+  <li>address: (datapoint) formerly id, the address of the datapoint, e.g KEQ0048285</li>
+  <li>channel: (datapoint) the channel number, e.g. 5</li>
+  <li>parameter: (datapoint) the name of the datapoint, e.g. PRESS_SHORT, LEVEL, …</li>
+  <li>variable: (variable) the name of the CCU variable</li>
+  <li>program: (program) the name of the CCU program</li>
+  <li><a href="#forceupdate">forceUpdate</a>: (datapoint, variable) if true, the new value is always sent to the CCU even it’s equal the current value</li>
+  <li>action: (datapoint, variable, program) execute a action, RELOAD_VARIABLES, RELOAD_DATAPOINTS or RELOAD_RSSI</li>
+  <li><a href="#delay">delay</a>: (datapoint, variable) delays transmission of a command to the Homematic server (in seconds), eg. 3.5</li>
+</ul>
+
+<h3 id="datapoint-examples">Datapoint Examples</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer Light_Livingroom "Livingroom [%d %%]" &lt;slider&gt; {homematic="address=JEQ0123456, channel=1, parameter=LEVEL"}
+Switch Remote_Key_01 "Remote Key 01" {homematic="address=KEQ0012345, channel=1, parameter=PRESS_SHORT"}
+Rollershutter Kitchen_Window  "Kitchen Window [%d %%]" &lt;rollershutter&gt; {homematic="address=KEQ0012345, channel=1, parameter=LEVEL"}
+</code></pre></div></div>
+
+<p>For a window contact, you need a map too:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String Bath_Window "Bath_Window [MAP(window.map):%s]"      &lt;contact&gt;   {homematic="address=KEQ0123456, channel=1, parameter=STATE"}
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CLOSED=closed
+OPEN=open
+TILTED=tilted
+undefined=unknown
+</code></pre></div></div>
+
+<p>A documentation which device is proving which datapoint, please check the documentation from EQ3:
+<a href="http://www.eq-3.de/Downloads/eq3/download%20bereich/hm_web_ui_doku/HM_Script_Teil_4_Datenpunkte_1_503.pdf">Datapoints for CCU1</a>, <a href="http://www.eq-3.de/Downloads/eq3/download%20bereich/hm_web_ui_doku/hm_devices_Endkunden.pdf">Datapoints for CCU2</a></p>
+
+<p>To get the address from Homegear:</p>
+
+<ol>
+  <li><code class="highlighter-rouge">sudo homegear -r</code></li>
+  <li><code class="highlighter-rouge">families select 0</code></li>
+  <li><code class="highlighter-rouge">devices select central</code></li>
+  <li><code class="highlighter-rouge">peers list</code></li>
+</ol>
+
+<p>The result should be a table similar to this one, the address needed for OpenHAB is the serial number column in this table:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>         ID │ Name                      │  Address │ Serial Number │ Type │ Type String               │ Firmware │ Config Pending │ Unreach
+────────────┼───────────────────────────┼──────────┼───────────────┼──────┼───────────────────────────┼──────────┼────────────────┼────────
+            │                           │          │               │      │                           │          │                │        
+          1 │ Hutschiene                │   3840A6 │    MEQ0023488 │ 0061 │              HM-LC-Sw4-DR │      2.4 │             No │      No
+────────────┴───────────────────────────┴──────────┴───────────────┴──────┴───────────────────────────┴──────────┴────────────────┴────────
+</code></pre></div></div>
+
+<p>Suitable combinations of channel and parameter name for your device connected via Homegear can be found at <a href="https://www.homegear.eu/index.php/XML_RPC_Device_Reference">device reference page</a>.</p>
+
+<h3 id="program-examples">Program examples</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// binds to the Homematic program 'Testprogram'. 
+// if you send a ON Command to the Switch, the program starts on the CCU
+Switch Prog_Testprogram {homematic="program=Testprogram"}
+</code></pre></div></div>
+
+<h3 id="variable-examples">Variable Examples</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// binds to a boolean variable named Holidaymode on the CCU
+Switch Var_Holidaymode {homematic="variable=Holidaymode"}
+
+// binds to the INDEX of a valuelist variable (e.g with the values 10;20;30;40;50)
+// shows 0 for 10, 1 for 20 ...
+Number Var_Autoshade_height "Autoshade height index [%d]" {homematic="variable=Autoshade Height"}
+
+// binds to the VALUE of a valuelist variable (e.g with the values 10;20;30;40;50)
+// shows 10, 20 ...
+String Var_Autoshade_height "Autoshade height [%s %%]" {homematic="variable=Autoshade Height"}
+</code></pre></div></div>
+
+<p><img src="https://farm8.staticflickr.com/7387/13816901335_29ff085daa_z.jpg" alt="" /></p>
+
+<h4 id="sitemap-for-valuelist-variables">Sitemap for valuelist variables</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// if you bound the item to the INDEX with a Number Item
+Selection item= Var_Autoshade_height mappings=[0="10", 1="20", 2="30", 3="40", 4="50"]
+
+// if you bound the item to the VALUE with a String Item
+Selection item= Var_Autoshade_height mappings=[10="10", 20="20", 30="30", 40="40", 50="50"]
+</code></pre></div></div>
+
+<h3 id="variabledatapoint-sync">Variable/Datapoint sync</h3>
+
+<p>The CCU only sends a message if a datapoint of a device has changed. There is (currently) no way to receive a event automatically when a variable has changed. But there is a solution … variable sync.
+This is done with the help of the ‘Virtual remote control’ feature of the CCU. The CCU supports 50 virtual remote control channels and you can use one of them for variable sync.</p>
+
+<p>Here is an example:</p>
+
+<p>Connect to the CCU WebGui, go to devices, search a free ‘Virtual remote control (wireless)’ and name it as you want. In my example i use channel 1 with the name ‘VK_Reload_Variable’:
+<img src="https://farm4.staticflickr.com/3707/13817224654_64b980399a_z.jpg" alt="" /></p>
+
+<p>Now you need an item:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Reload_Variables {homematic="address=BidCoS-RF, channel=1, parameter=PRESS_SHORT, action=RELOAD_VARIABLES"}
+</code></pre></div></div>
+
+<p>The key is the action attribute. The binding reloads all variables and publishes only changes to openHAB if the Switch receives ON. You can do this for example in a rule with a cron trigger to sync the variables in certain intervals. Or you do a manual reload from an App, GreenT, …</p>
+
+<p>If you want to do a reload immediately when a variable changes, you have to write (click together) a program on the CCU. The if condition checks all the variables you want if they have changed, the Activity is only one: send ‘Button press short’ to the previously bound ‘Virtual remote control’, in my example ‘VK_Reload_Variable’.
+<img src="https://farm8.staticflickr.com/7375/13817522003_80e40386f9_o.png" alt="" /></p>
+
+<p>Thats it … if a variable (in my example Holidaymode) changes, the program starts and sends the ‘button press short’ to the ‘Virtual remote control’. This event is published from the CCU to the binding and sends ON to the item with the action attribute. The binding reloads all variables and publishes the changes to openHAB.</p>
+
+<p>The same you can do with the action RELOAD_DATAPOINTS to reload all datapoints. This is normally not necessary but recommended from time to time. The binding has a local cache of all metadata and values of the CCU. In case openHAB misses an event (event not received correctly, network problem, …), this local cache and of course your items get stale and needs to be updated. With the action RELOAD_DATAPOINTS you can do this.</p>
+
+<p>In this example i use channel 2 of the ‘Virtual remote control’</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Reload_Datapoints {homematic="address=BidCoS-RF, channel=2, parameter=PRESS_SHORT, action=RELOAD_DATAPOINTS"}
+</code></pre></div></div>
+
+<p>Just send ON to this Switch and all datapoints refreshes. Only changes are published to openHAB!</p>
+
+<p>You can also use a standalone action without a device binding</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Reload_Datapoints {homematic="action=RELOAD_DATAPOINTS"}
+</code></pre></div></div>
+
+<p>Example: reload all datapoints every 6 hours</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "Reload datapoints"
+when 
+    Time cron "0 0 0/6 * * ?"   // every 6 hours
+then
+	sendCommand(Reload_Datapoints, ON)
+end
+
+</code></pre></div></div>
+
+<h3 id="forceupdate">forceUpdate</h3>
+
+<p>As mentioned earlier, the binding manages a local cache of all metadata and values of the CCU. Lets say you have a rule which is doing something and updates an item bound to a Homematic device. The value is send to the CCU, the CCU sends it to the device and sends back an event to the binding which updates the item. If the new value (State) of an item is the same as the previous value, all this is unnecessary! The default behavior of the binding is to check if a value has changed and only send changed values to the CCU.</p>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rollershutter Kitchen_Window  "Kitchen Window [%d %%]" &lt;rollershutter&gt; {homematic="address=KEQ0012345, channel=1, parameter=LEVEL"}
+</code></pre></div></div>
+
+<p>If the Rollershutter is down and you send a DOWN to this item, the binding recognize this and does nothing. You can override this with the attribute forceUpdate in the binding.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rollershutter Kitchen_Window  "Kitchen Window [%d %%]" &lt;rollershutter&gt; {homematic="address=KEQ0012345, channel=1, parameter=LEVEL, forceUpdate=true"}
+</code></pre></div></div>
+
+<p>Now, if the Rollershutter is down and you send a DOWN to this item, the binding sends the value to the CCU. You hear the click of the relay in the Homematic device and nothing happens, because the Rollershutter is already down.
+In some situations it may be useful to always send the value to the CCU.</p>
+
+<h3 id="delay">Delay</h3>
+
+<p>You can delay the transmission of a command to the Homematic server for a datapoint or variable. If a command is executed, the command is delayed for the configured time and then executed. If a new command is executed within the delay of the previous command, the previous command is deleted and the new is delayed. This is useful to filter many commands and send only the last to the Homematic server.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Light "Light"  {homematic="address=KEQxxxxxx, channel=1, parameter=STATE, delay=3.5"}
+</code></pre></div></div>
+
+<p>If you send a ON to the Switch, the command is delayed for 3.5 seconds. If you send ON, OFF, ON, OFF and each command is within the delay, only the last OFF is sent.</p>
+
+<h2 id="service-alerts">Service alerts</h2>
+
+<p>Homematic has two service alerts, unreach and config_pending. For every device, these two datapoints are available at channel 0 and you can bind it to an item. So here is a example which displays the number of unreach devices. But only those which are really unreached. The same you can do with config pending (also in the example) and if the device is battery powered, you can also bind LOWBAT to see if the battery is low.</p>
+
+<h4 id="items">Items</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group:Number:SUM Unreached     "Unreached devices [%d]"
+Group:Number:SUM ConfigPending "Devices with config pending [%d]"
+
+Number Rollershutter_Kitchen_Unreach "Rollershutter Kitchen unreached" (Unreached) {homematic="address=KEQxxxxx, channel=0, parameter=UNREACH"}
+Number Light_Livingroom_Unreach      "Light Livingroom unreached"      (Unreached) {homematic="address=JEQxxxxx, channel=0, parameter=UNREACH"}
+
+Number Rollershutter_Kitchen_Pending "Rollershutter Kitchen config pending" (ConfigPending) {homematic="address=KEQxxxxx, channel=0, parameter=CONFIG_PENDING"}
+Number Light_Livingroom_Pending      "Light Livingroom config pending"      (ConfigPending) {homematic="address=JEQxxxxx, channel=0, parameter=CONFIG_PENDING"}
+</code></pre></div></div>
+
+<h4 id="sitemap">Sitemap</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap homematic label="Example" {  
+  Frame label="Status" {
+		Text item=Unreached labelcolor=[Unreached&gt;0="red"] valuecolor=[&gt;0="red"]
+		Text item=Rollershutter_Kitchen_Unreach labelcolor=[Rollershutter_Kitchen_Unreach==1="red"] visibility=[Rollershutter_Kitchen_Unreach&gt;0]
+		Text item=Light_Livingroom_Unreach labelcolor=[Light_Livingroom_Unreach==1="red"] visibility=[Light_Livingroom_Unreach&gt;0]
+
+		Text item=ConfigPending labelcolor=[Unreached&gt;0="red"] valuecolor=[&gt;0="red"]
+		Text item=Rollershutter_Kitchen_Pending labelcolor=[Rollershutter_Kitchen_Pending==1="red"] visibility=[Rollershutter_Kitchen_Pending&gt;0]
+		Text item=Light_Livingroom_Pending labelcolor=[Light_Livingroom_Pending==1="red"] visibility=[Light_Livingroom_Pending&gt;0]
+  }
+}
+</code></pre></div></div>
+
+<h2 id="device-confirmation-list">Device Confirmation List</h2>
+
+<p>These devices have been tested so far and confirmed as working:</p>
+
+<h3 id="rf">RF</h3>
+
+<ul>
+  <li>HM-CC-RT-DN (Electronic Wireless Radiator Thermostat)</li>
+  <li>HM-CC-TC (Electronic Wireless Radiator Thermostat)</li>
+  <li>HM-TC-IT-WM-W-EU (Wireless Room Thermostat)</li>
+  <li>HM-ES-PMSw1-Pl (Wireless Switch Actuator 1-channel with power metering, plug adapter)</li>
+  <li>HM-WDS10-TH-O (Outside radio-controlled temperature humidity sensor OTH)</li>
+  <li>HM-WDS40-TH-I (Inside radio-controlled temperature humidity sensor IT)</li>
+  <li>HM-WDS30-T-O (Outside radio-controlled temperature sensor )</li>
+  <li>HM-WDS100-C6-O (Radio-controlled weather data sensor OC3)</li>
+  <li>HM-RC-19-B (Radio remote control 19 button)</li>
+  <li>HM-PBI-4-FM (Radio push-button interface, 4 channel flush-mount)</li>
+  <li>HM-LC-Sw4-PCB (Switching actuator, PCB version)</li>
+  <li>HM-LC-Sw4-WM (Switch actuator for wall mounting)</li>
+  <li>HM-LC-Dim1T-FM (Radio-controlled dimming actuator 1-channel trailing edge flush-mount)</li>
+  <li>HM-LC-Dim1T-Pl (Radio-controlled socket adapter dimming actuator 1-channel trailing edge)</li>
+  <li>HM-LC-Dim1T-CV (Radio-controlled dimming actuator 1-channel trailing edge ceiling void mount)</li>
+  <li>HM-LC-Dim1PWM-CV (Dimming actuator PWM DC-LED, Dropped Ceiling</li>
+  <li>HM-LC-Sw1-Ba-PCB (Switch 1 channel PCB Version, low voltage)</li>
+  <li>HM-LC-Sw1-Pl (Radio-controlled socket adapter switch actuator 1-channel trailing edge)</li>
+  <li>HM-LC-Sw1-FM (Switch-/blind actuators flush-mount)</li>
+  <li>HM-LC-Sw1-SM (Switch-/blind actuators flush-mount)</li>
+  <li>HM-LC-Sw2-FM (Switch-/blind actuators flush-mount)</li>
+  <li>HM-LC-Sw1PBU-FM (Radio-controlled switching actuator for brand switch systems, 1-channel flush-mount)</li>
+  <li>HM-LC-Sw4-Ba-PCB (Switch 4 channel PCB Version, low voltage)</li>
+  <li>HM-LC-Sw4-SM (Switch actuator surface-mount)</li>
+  <li>HM-LC-Sw4-DR (Radio-controlled switch actuator 4-channel, for mounting on DIN rails)</li>
+  <li>HM-LC-Bl1-FM (Switch-/blind actuators flush-mount)</li>
+  <li>HM-LC-Bl1-SM (Blind actuators surface-mount)</li>
+  <li>HM-LC-Bl1PBU-FM (Radio-controlled blind actuator for brand switch systems, 1-channel flush-mount)</li>
+  <li>HM-OU-LED16 (Radio-controlled 16 channel LED Display + push button)</li>
+  <li>HM-RC-4-2 (Remote control 4 channels)</li>
+  <li>HM-Sen-MDIR-O (Wireless infrared motion detector outdoor)</li>
+  <li>HM-Sec-RHS (Radio-controlled window rotary handle sensor)</li>
+  <li>HM-Sec-Key-S (KeyMatic)</li>
+  <li>HM-Sec-Win (WinMatic)</li>
+  <li>HM-Sec-MDIR (Wireless motion detector)</li>
+  <li>HM-Sec-SC (Radio-controlled shutter contact)</li>
+  <li>HM-Sec-SC-2 (Radio-controlled shutter contact)</li>
+  <li>HM-Sec-TiS (Tilt-sensor contact)</li>
+  <li>HM-SCI-3-FM (Radio shutter contact interface 3-channel, flush-mount)</li>
+  <li>HM-CC-VD (Radio-controlled valve drive)</li>
+  <li>HM-PB-6-WM55 (Wireless push button 6 channel)</li>
+  <li>HM-RC-12 (Radio remote control 12 button)</li>
+  <li>HM-RC-Key3 (KeyMatic remote control)</li>
+  <li>HM-PB-4Dis-WM (Radio push-button 4-gang with display)</li>
+  <li>HM-Sec-SD (Radio-controlled smoke detector)</li>
+  <li>ZEL STG RM FFK (a HM-Sec-SC-2 from Rotomatic)</li>
+  <li>HM-Sec-SCo (Radio-controlled shutter contact optical)</li>
+</ul>
+
+<h3 id="wired">Wired</h3>
+
+<ul>
+  <li>HMW-Sen-SC-12-FM (RS485 12-channel shutter contact for flush mounting)</li>
+  <li>HMW-Sen-SC-12-DR (RS485 12-channel shutter contact for mounting on DIN rails)</li>
+  <li>HMW-IO-12-Sw7-DR (RS485 I/O module 12 inputs 7 switch outputs for mounting on DIN rails)</li>
+  <li>HMW-LC-Dim1L-DR (Switch/dimming actuator, blind actuator Wired bus for mounting on DIN rails)</li>
+  <li>HMW-IO-12-Sw14-DR (RS485 I/O-Modul 12 inputs 14 switch output for mounting on DIN rails)</li>
+</ul>
+
+<h3 id="max-devices-via-homegear"><a href="http://www.eq-3.de/max-heizungssteuerung.html">MAX! devices</a> (via <a href="https://www.homegear.eu">Homegear</a>)</h3>
+
+<ul>
+  <li>BC-SC-Rd-WM (Radio-controlled shutter contact)</li>
+  <li>BC-SC-Rd-WM-2 (Radio-controlled shutter contact)</li>
+  <li>BC-RT-TRX-CyG-3 (Electronic Wireless Radiator Thermostat)</li>
+</ul>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="short--long_press-events-of-push-buttons-do-not-occur-on-the-event-bus">SHORT &amp; LONG_PRESS events of push buttons do not occur on the event bus</h3>
+
+<p>It seems buttons like the HM-PB-2-WM55 do just send these kind of events to the CCU if they are mentioned in a CCU program. A simple workaround to make them send these events is, to create a program (rule inside the CCU) that does just have a “When” part and no “Then” part, in this “When” part each channel needs to be mentioned at least once.</p>
+
+<p>As the  HM-PB-2-WM55 for instance has two channels, it is enough to mention the SHORT_PRESS event of channel 1 &amp; 2. The LONG_PRESS events will work automatically as they are part of the same channels.</p>
+
+<p>After the creation of this program, the button device will receive configuration data from the CCU which have to be accepted by pressing the config-button at the back of the device.</p>
+
+<h3 id="install_test">INSTALL_TEST</h3>
+
+<p>If a button is still not working and you do not see any PRESS_LONG / SHORT in your log file (loglevel DEBUG), it could be because of enabled security. Try to disable security of your buttons in the HomeMatic Web GUI and try again. If you can’t disable security try to use key INSTALL_TEST which gets updated to ON for each key press</p>
+
+<h3 id="no-binx-signature--badrequestexception-binsystemmulticall">No BinX signature / BadRequestException Binsystem.multicall</h3>
+
+<p>If you change the communication mode in services/homematic.cfg (<code class="highlighter-rouge">rpc</code> property), one of these exceptions may appear if you restart openHAB:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rpc=bin -&gt; No BinX signature
+rpc=xml -&gt; BadRequestException: Binsystem.multicall
+</code></pre></div></div>
+
+<p>The binding registers itself with the CCU at startup with the specified communication mode. If you shutdown openHAB (or kill it) and the binding can not unregister successfully from the CCU, the CCU still sends messages. It does this for about three minutes, if there is no answer, it gives up. If you start openHAB in this period of time with another communication mode, these exceptions occur.</p>
+
+<p>Just wait untill the exceptions disappear and restart openHAB. This happens only after switching the communication mode.</p>
+
+<h3 id="debugging-and-tracing">Debugging and Tracing</h3>
+
+<p>Enable <code class="highlighter-rouge">DEBUG</code> or <code class="highlighter-rouge">TRACE</code> for the logger named <code class="highlighter-rouge">org.openhab.binding.homematic</code>.</p>
+
+<h3 id="cant-find-datapointconfig">Can’t find DatapointConfig</h3>
+
+<p>I assume, the binding is installed.</p>
+
+<ul>
+  <li>In the openHab logfile there must be a entry like this:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>HomematicConfig[host=...,callbackHost=...,callbackPort=...,aliveInterval=...,rpc=bin]
+</code></pre></div></div>
+
+<p>If this entry does not exist, there is a problem in your <code class="highlighter-rouge">services/homematic.cfg</code> file. A common problem is a space in front of the config properties.</p>
+
+<ul>
+  <li>
+    <p>If ‘Can’t find DatapointConfig’ still exists, switch the binding to DEBUG mode, start openHab and wait for or trigger an event from the device. Now you see the datapoints for every event. Compare your binding in your item file with the datapoint config from the event.</p>
+  </li>
+  <li>
+    <p>If the message still occurs, there might be an unsupported datapoint. Switch the binding to TRACE mode, start openHab, create a issue in the openHab forums and post the logfile and your item file. If you don’t want the files to be public, you can send them directly to me at gerrieg.openhab@icloud.com</p>
+  </li>
+</ul>
+
+<h3 id="video">Video</h3>
+
+<p><a href="http://www.youtube.com/watch?v=F0ImuuIPjYk"><img src="http://img.youtube.com/vi/F0ImuuIPjYk/0.jpg" alt="HomeMatic Binding" /></a></p>
+
+<ul>
+  <li>
+    <p><a href="Homematic-Binding-Examples#howto-use-homematic-door-contact-sensors">How to use homematic door contact sensors</a></p>
+  </li>
+  <li><a href="Homematic-Binding-Examples#howto-use-homematic-window-contact-sensors">How to use homematic window contact sensors</a></li>
+  <li><a href="Homematic-Binding-Examples#howto-read-homematic-heater-valve-state">How to read Homematic heater valve state</a></li>
+  <li><a href="Homematic-Binding-Examples#howto-configure-homematic-light-switch">How to configure Homematic light switch</a></li>
+  <li><a href="Homematic-Binding-Examples#how-to-configure-homematic-temperature-and-humidity-sensor">How to configure Homematic temperature and humidity sensor</a></li>
+  <li><a href="Homematic-Binding-Examples#how-to-configure-homematic-motion-and-brightness-sensors">How to configure Homematic motion and brightness sensors</a></li>
+  <li><a href="Homematic-Binding-Examples#how-to-control-a-homematic-roller-shutter-with-an-enocean-rocker">How to control a homematic roller shutter with an EnOcean Rocker</a></li>
+  <li><a href="Homematic-Binding-Examples#how-to-control-a-homematic-dimmer-with-an-enocean-rocker-onoff-profile">How to control a homematic dimmer with an EnOcean Rocker (OnOff Profile)</a></li>
+</ul>
+
+<h3 id="how-to-use-homematic-door-contact-sensors">How to use homematic door contact sensors</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* OLD Configuration */
+Contact corFrontDoor "Front Door [%s]" &lt;frontdoor&gt; (gRCor, gLock) { homematic="HEQ0358465:1#STATE" }
+
+/* New Configuration */
+Contact corFrontDoor "Front Door [%s]" &lt;frontdoor&gt; (gRCor, gLock) {homematic="address=HEQ0358465, channel=1, parameter=STATE" }
+
+Text item=corFrontDoor
+</code></pre></div></div>
+
+<h3 id="how-to-use-homematic-window-contact-sensors">How to use homematic window contact sensors</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number lrWindowRight "Window Right [MAP(contact.map):%d]" &lt;contact&gt; (gRLvng) { homematic="IEQ0203214:1#STATE" }
+Text item=lrWindowRight
+</code></pre></div></div>
+
+<p>transform/contact.map:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0=CLOSED
+1=TILTED
+2=OPEN
+-=UNKNOWN
+</code></pre></div></div>
+
+<h3 id="how-to-read-homematic-heater-valve-state">How to read Homematic heater valve state</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer lrHeaterRight "Heater Right [%d %%]" &lt;heating&gt; (gRLvng)  { homematic="IEQ0537568:1#VALVE_STATE" }
+Text item=lrHeaterRight
+</code></pre></div></div>
+
+<h3 id="how-to-use-homematic-temperature-regulator">How to use Homematic temperature regulator</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number lrTempSet "Target Temperature [%d °C]" &lt;temperature&gt; (gRLvng, gRBed) { homematic="IEQ0053616:2#SETPOINT" }
+Setpoint item=lrTempSet step=0.5 minValue=15 maxValue=30
+</code></pre></div></div>
+
+<h3 id="how-to-configure-homematic-light-switch">How to configure Homematic light switch</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch brLightCeil "Ceiling" (gRBed, gLight) { homematic="IEQ0001542:1#STATE" }
+Switch item=brLightCeil
+</code></pre></div></div>
+
+<h3 id="how-to-configure-homematic-temperature-and-humidity-sensor">How to configure Homematic temperature and humidity sensor</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number lrTemp "Current Temp [%.1f °C]" &lt;temperature&gt; (gRLvng, gWthrDta) { homematic="IEQ0053616:1#TEMPERATURE" }
+Number lrHumid "Humidity [%d %%]" &lt;waterdrop&gt; (gRLvng, gWthrDta) { homematic="IEQ0053616:1#HUMIDITY" }
+
+Text item=lrTemp
+Text item=lrHumid
+</code></pre></div></div>
+
+<h3 id="how-to-configure-homematic-motion-and-brightness-sensors">How to configure Homematic motion and brightness sensors</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* OLD Configuration */
+Switch corMotion "Motion Detected" (gRCor) { homematic="GEQ0128171:1#MOTION" }
+Number corBright "Brightness [%.1f %%]" (gRCor) { homematic="GEQ0128171:1#BRIGHTNESS" }
+
+/* New Configuration */
+Switch corMotion "Motion Detected" (gRCor) {homematic="address=GEQ0128171, channel=1, parameter=MOTION" }
+Number corBright "Brightness [%.1f %%]" (gRCor) {homematic="address=GEQ0128171, channel=1, parameter=BRIGHTNESS" }
+
+Switch item=corMotion
+Text item=corBright
+</code></pre></div></div>
+
+<p>I don’t like that the motion switch is “writeable”. Maybe someone can post a proper rendering object for the motion detector.</p>
+
+<h3 id="how-to-control-a-homematic-roller-shutter-with-an-enocean-rocker">How to control a homematic roller shutter with an EnOcean Rocker</h3>
+
+<p>Item</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rollershutter Blinds_Left &lt;rollershutter&gt; (Shutters) {homematic="id=JEQXXXXXX, channel=1, parameter=LEVEL", enocean="{id=00:00:00:00, eep=F6:02:01}"}
+</code></pre></div></div>
+
+<h3 id="how-to-control-a-homematic-dimmer-with-an-enocean-rocker-onoff-profile">How to control a homematic dimmer with an EnOcean Rocker (OnOff Profile)</h3>
+
+<p>Item:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer Lights_Left &lt;lights&gt; (Lights) {homematic="id=GEQXXXXXX, channel=2, parameter=LEVEL", enocean="{id=00:00:00:00, channel=A, eep=F6:02:01}"}}
+</code></pre></div></div>
+
+<h2 id="homematic-configuration-xml-file">Homematic Configuration XML File</h2>
+
+<p>To be able to configure the converter and available parameter of a homematic device, xml files are used. They are optional, not necessary. Some devices don’t work properly without (rollershutter).</p>
+
+<p>There is one device per file.</p>
+
+<p>The config file have to be included inside the distribution (org.openhab.binding.homematic/src/main/resources/devices) and they have to be instatiated at the HomematicBinding constructor.</p>
+
+<p>A better and easier way of adding these files is always welcome!</p>
+
+<h3 id="structure">Structure</h3>
+
+<p>Each file has one device element. Each device has several channel elements (the channel name is ignored at the moment).</p>
+
+<p>Each channel contains multiple parameters, which are the same value as you would configure in your item config (e.g. LEVEL, STATE, TEMPERATURE etc).</p>
+
+<p>The parameter of a device can be found in the http://www.eq-3.de/Downloads/PDFs/Dokumentation_und_Tutorials/HM_Script_Teil_4_Datenpunkte_1_503.pdf (or newer versions of that file).</p>
+
+<p>For each parameter there can be a number of converters for a homematic type (like PercentType, OpenClosedType, etc). The converter is given by FQN (full qualified name).</p>
+
+<h2 id="available-converter">Available Converter</h2>
+
+<ul>
+  <li>BooleanOnOffConverter.java</li>
+  <li>BooleanOpenCloseConverter.java</li>
+  <li>BrightnessConverter.java</li>
+  <li>BrightnessIntegerDecimalConverter.java</li>
+  <li>DoubleDecimalConverter.java</li>
+  <li>DoubleOnOffConverter.java</li>
+  <li>DoublePercentageConverter.java</li>
+  <li>DoubleUpDownConverter.java</li>
+  <li>IntegerDecimalConverter.java</li>
+  <li>IntegerOnOffConverter.java</li>
+  <li>IntegerOpenClosedConverter.java</li>
+  <li>IntegerPercentageOnOffConverter.java</li>
+  <li>IntegerPercentageOpenClosedConverter.java</li>
+  <li>IntegerPercentConverter.java</li>
+  <li>InvertedBooleanOpenCloseConverter.java</li>
+  <li>InvertedDoubleOpenClosedConverter.java</li>
+  <li>InvertedDoublePercentageConverter.java</li>
+  <li>InvertedDoubleUpDownConverter.java</li>
+  <li>NegativeBooleanOnOffConverter.java</li>
+  <li>StateCommandConverter.java</li>
+  <li>TemperatureConverter.java</li>
+</ul>
+
+<p>These converters can also be given at the item config with parameter “converter”.</p>
+
+<h3 id="xml-schema">XML Schema</h3>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;schema</span> <span class="na">xmlns=</span><span class="s">"http://www.w3.org/2001/XMLSchema"</span> <span class="na">targetNamespace=</span><span class="s">"http://www.example.org/device"</span> <span class="na">xmlns:tns=</span><span class="s">"http://www.example.org/device"</span> <span class="na">elementFormDefault=</span><span class="s">"qualified"</span><span class="nt">&gt;</span>
+
+    <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"device"</span> <span class="na">type=</span><span class="s">"tns:DeviceType"</span><span class="nt">&gt;&lt;/element&gt;</span>
+
+    <span class="nt">&lt;complexType</span> <span class="na">name=</span><span class="s">"DeviceType"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;element</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="na">type=</span><span class="s">"tns:ChannelType"</span><span class="nt">&gt;&lt;/element&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"string"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"type"</span> <span class="na">type=</span><span class="s">"string"</span> <span class="nt">/&gt;</span>
+    <span class="nt">&lt;/complexType&gt;</span>
+
+    <span class="nt">&lt;complexType</span> <span class="na">name=</span><span class="s">"ChannelType"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;element</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="na">name=</span><span class="s">"parameter"</span> <span class="na">type=</span><span class="s">"tns:ParameterType"</span><span class="nt">&gt;&lt;/element&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/attribute&gt;</span>
+    <span class="nt">&lt;/complexType&gt;</span>
+
+    <span class="nt">&lt;complexType</span> <span class="na">name=</span><span class="s">"ParameterType"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;element</span> <span class="na">maxOccurs=</span><span class="s">"unbounded"</span> <span class="na">type=</span><span class="s">"tns:ConverterType"</span> <span class="nt">/&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"name"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/attribute&gt;</span>
+    <span class="nt">&lt;/complexType&gt;</span>
+
+    <span class="nt">&lt;complexType</span> <span class="na">name=</span><span class="s">"ConverterType"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;sequence&gt;</span>
+            <span class="nt">&lt;element</span> <span class="na">name=</span><span class="s">"className"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;simpleType&gt;</span>
+                    <span class="nt">&lt;restriction</span> <span class="na">base=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/restriction&gt;</span>
+                <span class="nt">&lt;/simpleType&gt;</span>
+            <span class="nt">&lt;/element&gt;</span>
+        <span class="nt">&lt;/sequence&gt;</span>
+        <span class="nt">&lt;attribute</span> <span class="na">name=</span><span class="s">"forType"</span> <span class="na">type=</span><span class="s">"string"</span><span class="nt">&gt;&lt;/attribute&gt;</span>
+    <span class="nt">&lt;/complexType&gt;</span>
+<span class="nt">&lt;/schema&gt;</span>
+</code></pre></div></div>
+
+<h2 id="example">Example</h2>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;device</span> <span class="na">name=</span><span class="s">"HM-LC-Bl1PBU-FM"</span> <span class="na">type=</span><span class="s">"rollershutter"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;channel</span> <span class="na">name=</span><span class="s">"0"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"UNREACH"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;converter</span> <span class="na">forType=</span><span class="s">"OnOffType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;className&gt;</span>org.openhab.binding.homematic.internal.converter.state.BooleanOnOffConverter<span class="nt">&lt;/className&gt;</span>
+            <span class="nt">&lt;/converter&gt;</span>
+        <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;/channel&gt;</span>
+    <span class="nt">&lt;channel</span> <span class="na">name=</span><span class="s">"1"</span><span class="nt">&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"LEVEL"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;converter</span> <span class="na">forType=</span><span class="s">"PercentType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;className&gt;</span>org.openhab.binding.homematic.internal.converter.state.InvertedDoublePercentageConverter<span class="nt">&lt;/className&gt;</span>
+            <span class="nt">&lt;/converter&gt;</span>
+            <span class="nt">&lt;converter</span> <span class="na">forType=</span><span class="s">"OpenClosedType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;className&gt;</span>org.openhab.binding.homematic.internal.converter.state.InvertedDoubleOpenClosedConverter<span class="nt">&lt;/className&gt;</span>
+            <span class="nt">&lt;/converter&gt;</span>
+            <span class="nt">&lt;converter</span> <span class="na">forType=</span><span class="s">"UpDownType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;className&gt;</span>org.openhab.binding.homematic.internal.converter.state.InvertedDoubleUpDownConverter<span class="nt">&lt;/className&gt;</span>
+            <span class="nt">&lt;/converter&gt;</span>
+        <span class="nt">&lt;/parameter&gt;</span>
+        <span class="nt">&lt;parameter</span> <span class="na">name=</span><span class="s">"STOP"</span><span class="nt">&gt;</span>
+            <span class="nt">&lt;converter</span> <span class="na">forType=</span><span class="s">"OnOffType"</span><span class="nt">&gt;</span>
+                <span class="nt">&lt;className&gt;</span>org.openhab.binding.homematic.internal.converter.state.NegativeBooleanOnOffConverter<span class="nt">&lt;/className&gt;</span>
+            <span class="nt">&lt;/converter&gt;</span>
+        <span class="nt">&lt;/parameter&gt;</span>
+    <span class="nt">&lt;/channel&gt;</span>
+<span class="nt">&lt;/device&gt;</span>
+</code></pre></div></div>
+
+<h2 id="hardware">Hardware</h2>
+
+<h3 id="controller">Controller</h3>
+
+<p>The controller “speaks” with the HomeMatic devices through the properiatry wireless protocol of HomeMatic.</p>
+
+<h4 id="ccu-1">CCU 1</h4>
+
+<p>The best supported hardware so far for HomeMatic is the CCU 1.</p>
+
+<h4 id="ccu-2">CCU 2</h4>
+
+<p>The second version (beginning with mid 2013) should work in most circumstances, but is not as widely used as the first version. 
+We need testers here: If you own a CCU2, please try out the latest 1.4.0 nightly releases!</p>
+
+<h4 id="lan-adapter">LAN Adapter</h4>
+
+<p>One of the cheaper alternatives is to use the <a href="http://www.eq-3.de/produkt-detail-zentralen-und-gateways/items/hm-cfg-lan.html">HomeMatic LAN Adapter</a>.</p>
+
+<p>The LAN Adapter <em><strong>requires</strong></em> the BidCos-Service running and listening on a specific port in your LAN. As of this writing the BidCos-Service is only available for Microsoft Windows. If you want to run the BidCos-Service ‘<em>natively</em>’ (through Qemu) on Linux without messing around with <a href="http://www.winehq.org">Wine</a> follow these step by step instructions.</p>
+
+<ol>
+  <li>
+    <p>Install QEMU (If you are running OpenHAB on i386/amd64)</p>
+
+    <p>In order to run the BidCos-Service daemon ‘rfd’ under linux you need to install the QEMU arm emulation. If you are using Debian you have to install at least the package qemu-system-arm.</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> apt-get install qemu
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Download the latest CCU 2 firmware from <a href="http://www.eq-3.de/software.html">eQ-3 homepage</a></p>
+  </li>
+  <li>
+    <p>Extract the downloaded firmware e.g. HM-CCU2-2.7.8.tar.gz</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir /tmp/firmware
+ <span class="nb">tar </span>xvzf HM-CCU2-2.7.8.tar.gz <span class="nt">-C</span> /tmp/firmware
+</code></pre></div>    </div>
+
+    <p>You should now have three files under the directory /tmp/firmware</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> rootfs.ubi    <span class="o">(</span>&lt;<span class="nt">--</span> this is the firmware inside a UBIFS iamge<span class="o">)</span>
+ uImage
+ update_script
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Create an 256 MiB emulated NAND flash with 2KiB NAND page size</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> modprobe nandsim <span class="nv">first_id_byte</span><span class="o">=</span>0x20 <span class="nv">second_id_byte</span><span class="o">=</span>0xaa <span class="nv">third_id_byte</span><span class="o">=</span>0x00 <span class="nv">fourth_id_byte</span><span class="o">=</span>0x15
+</code></pre></div>    </div>
+
+    <p>You should see a newly created MTD device <em>/dev/mtd0</em> (assume that you do not have other MTD devices)</p>
+  </li>
+  <li>
+    <p>Copy the contents of the UBIFS image <em>rootfs.ubi</em> to the emulated MTD device</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> dd <span class="k">if</span><span class="o">=</span>rootfs.ubi <span class="nv">of</span><span class="o">=</span>/dev/mtd0 <span class="nv">bs</span><span class="o">=</span>2048
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Load UBI kernel module and attach the MTD device mtd0</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> modprobe ubi <span class="nv">mtd</span><span class="o">=</span>0,2048
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Mount the UBIFS image</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir /mnt/ubifs
+ mount <span class="nt">-t</span> ubifs /dev/ubi0_0 /mnt/ubifs
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Copy the required files to run the BidCos-Service from the UBIFS image</p>
+
+    <div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code> mkdir <span class="nt">-p</span> /etc/eq3-rfd /opt/eq3-rfd/bin /opt/eq3-rfd/firmware
+ <span class="nb">cd</span> /mnt/ubifs
+ cp /mnt/ubifs/bin/rfd /opt/eq3-rfd/bin
+ cp /mnt/ubifs/etc/config_templates/rfd.conf /etc/eq3-rfd/bidcos.conf
+ cp <span class="nt">-r</span> /mnt/ubifs/firmware/<span class="k">*</span> /opt/eq3-rfd/firmware/
+</code></pre></div>    </div>
+
+    <p>List the dependencies for rfd binary</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> qemu-arm -L /mnt/ubifs /mnt/ubifs/lib/ld-linux.so.3 --list /mnt/ubifs/bin/rfd
+</code></pre></div>    </div>
+
+    <p>You should see an output like this</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> libpthread.so.0 =&gt; /lib/libpthread.so.0 (0xf67a7000)
+ libelvutils.so =&gt; /lib/libelvutils.so (0xf6786000)
+ libhsscomm.so =&gt; /lib/libhsscomm.so (0xf6733000)
+ libxmlparser.so =&gt; /lib/libxmlparser.so (0xf6725000)
+ libXmlRpc.so =&gt; /lib/libXmlRpc.so (0xf66fc000)
+ libLanDeviceUtils.so =&gt; /lib/libLanDeviceUtils.so (0xf66d2000)
+ libUnifiedLanComm.so =&gt; /lib/libUnifiedLanComm.so (0xf66bf000)
+ libstdc++.so.6 =&gt; /usr/lib/libstdc++.so.6 (0xf65e8000)
+ libm.so.6 =&gt; /lib/libm.so.6 (0xf6542000)
+ libc.so.6 =&gt; /lib/libc.so.6 (0xf63f7000)
+ libgcc_s.so.1 =&gt; /lib/libgcc_s.so.1 (0xf63ce000)
+ /lib/ld-linux.so.3 =&gt; /mnt/ubifs/lib/ld-linux.so.3 (0xf6fd7000)
+</code></pre></div>    </div>
+
+    <p>Copy all the listed libs from /mnt/ubifs to there respective folder at /opt/eq3-rfd</p>
+  </li>
+  <li>
+    <p>Create a system user and adjust permissions</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code> adduser --system --home /opt/eq3-rfd --shell /bin/false --no-create-home --group bidcos
+ chown -R bidcos:bidcos /opt/eq3-rfd
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Edit and adjust the BidCos-Service configuration bidcos.conf</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># TCP Port for XmlRpc connections
+Listen Port = 2001
+    
+# Log Level: 1=DEBUG, 2=WARNING, 3=INFO, 4=NOTICE, 5=WARNING, 6=ERROR
+Log Level = 3
+    
+# If set to 1 the AES keys are stored in a file. Highly recommended.
+Persist Keys = 1
+    
+Address File = /etc/eq3-rfd/ids
+Key File = /etc/eq3-rfd/keys
+Device Files Dir = /etc/eq3-rfd/devices
+
+# These path are relative to QEMU_LD_PREFIX
+Device Description Dir = /firmware/rftypes
+Firmware Dir = /firmware
+Replacemap File = /firmware/rftypes/replaceMap/rfReplaceMap.xml
+
+# Logging
+Log Destination = File
+Log Filename = /var/log/eq3-rfd/bidcos.log
+
+[Interface 0]
+Type = Lan Interface
+Serial Number = &lt;HomeMatic ID e.g. JEQ0707164&gt;
+Encryption Key = &lt;your encryption key&gt;
+</code></pre></div>    </div>
+  </li>
+  <li>
+    <p>Start the BidCos-Service daemon ‘rfd’</p>
+
+    <p>The BidCos-Service daemon ‘rfd’ can now be started with the following command</p>
+
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>qemu-arm -L /opt/eq3-rfd /opt/eq3-rfd/bin/rfd -f /etc/eq3-rfd/bidcos.conf
+</code></pre></div>    </div>
+  </li>
+</ol>
+
+<h4 id="cul">CUL</h4>
+
+<p>The other cheaper alternative is the CUL stick. The CUL is an USB stick that can be used as a wireless transceiver. It ca be programmed to be used with a hughe amount of wireless protocols, under which you can find the homemtic protocol as well.
+Since the CUL is not natively supported by the binding, you need a program to translate the CUL data to the CCU XML RPC interface: <a href="http://www.homegear.eu">Homegear</a></p>
+
+<p>We have reports from users that succesfully use both for their homemtic devices. Apparently security is still not supported.</p>
+
+<h1 id="there-are-two-admin-items-available-to-gather-more-information-about-devices-in-the-ccu">There are two admin items available to gather more information about devices in the CCU</h1>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>For devices not supported by the homematic binding, we needed a mechanism to get all available information about them. To make it easy for the user there exist two virtual items, the admin items.</p>
+
+<h1 id="admin-items">Admin Items</h1>
+
+<p>There are two admin items available in the homematic binding.</p>
+
+<h2 id="dump-unconfigured-devices">Dump unconfigured devices</h2>
+
+<p>This is mainly intended to give users an idea on how to configure their devices. It will print out various information about all devices that are not configured (say exist in an items file).</p>
+
+<p>In future we try to print out a fully working items file line to be just copied into your file and done.</p>
+
+<h3 id="example-1">Example</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String AdminDumpUnconfigured "something" &lt;rollershutter&gt; {homematic="admin=DUMP_UNCONFIGURED_DEVICES"}
+</code></pre></div></div>
+
+<h3 id="use-the-admin-items">Use the Admin Items</h3>
+
+<p>If you are looking for a specific device info, please make sure that it does not exist in your items files.</p>
+
+<ul>
+  <li>add a new device with with the admin item (see above)</li>
+  <li>send the following command (e.g. through OSGI console or through XMPP) to OpenHAB:
+ <code class="highlighter-rouge">openhab send AdminDumpUnconfigured list</code></li>
+  <li>Copy the information from the logfile and attach it to the new device request</li>
+</ul>
+
+<h2 id="how-to-create-a-new-device-request">How to create a new Device Request</h2>
+
+<p>We need as much as possible information about a device to support it. The best starting point is of course to copy the device dump gathered with the help of the “Dump unconfigured devices” admin item.
+If the device is an sensor we would like to have the log line where it prints out the new value received from it. E.g. if you have a button, please press it and copy the log line appearing. Or if it is a sensor, please wait until the sensor sends an update to the CCU, that will be written into the logfile as well.</p>
+
+<p>With this information, please add a new issue of type / template device request.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

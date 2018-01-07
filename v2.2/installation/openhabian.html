@@ -1,0 +1,1704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHABian - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/installation/openhabian.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../installation/openhabian.html">latest version</a></li>
+      <li><a href="/v2.2/installation/openhabian.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/installation/openhabian.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      
+<!-- Attention authors: If you want to improve or enhance this article, please go to: -->
+<!--   * https://github.com/openhab/openhabian/issues -->
+<!--   * https://github.com/openhab/openhabian/blob/master/docs/openhabian.md -->
+
+<h1 id="openhabian---hassle-free-openhab-setup">openHABian - Hassle-free openHAB Setup</h1>
+
+<p>The Raspberry Pi and other small single-board computers are quite famous platforms for openHAB.
+However, setting up a fully working Linux system with all recommended packages and openHAB recommendations is a <strong>boring task</strong> taking quite some time and <strong>Linux newcomers</strong> shouldn’t worry about these technical details.</p>
+
+<p style="text-align: center; font-size: 1.2em; font-style: italic;"><q>A home automation enthusiast doesn't have to be a Linux enthusiast!</q></p>
+
+<p>openHABian aims to provide a <strong>self-configuring</strong> Linux system setup specific to the needs of every openHAB user.
+To that end, the project provides two things:</p>
+
+<ul>
+  <li>Complete <strong>SD-card images pre-configured with openHAB</strong> and many other openHAB- and Hardware-specific preparations for the Raspberry Pi and the Pine A64</li>
+  <li>The openHABian Configuration Tool to set up and configure openHAB and many related things on any Debian/Ubuntu based system</li>
+</ul>
+
+<h4 id="table-of-content">Table of Content</h4>
+
+<ul id="markdown-toc">
+  <li><a href="#features" id="markdown-toc-features">Features</a></li>
+  <li><a href="#quick-start" id="markdown-toc-quick-start">Quick Start</a>    <ul>
+      <li><a href="#raspberry-pi" id="markdown-toc-raspberry-pi">Raspberry Pi</a></li>
+      <li><a href="#pine-a64" id="markdown-toc-pine-a64">Pine A64</a></li>
+      <li><a href="#manual-setup" id="markdown-toc-manual-setup">Manual Setup</a></li>
+      <li><a href="#wifi-setup" id="markdown-toc-wifi-setup">Wi-Fi based Setup Notes</a></li>
+    </ul>
+  </li>
+  <li><a href="#openhabian-config" id="markdown-toc-openhabian-config">openHABian Configuration Tool</a>    <ul>
+      <li><a href="#linux-hints" id="markdown-toc-linux-hints">Linux Hints</a></li>
+      <li><a href="#further-config" id="markdown-toc-further-config">Further Configuration Steps</a></li>
+    </ul>
+  </li>
+  <li><a href="#optional-components" id="markdown-toc-optional-components">Optional Components</a></li>
+  <li><a href="#faq-and-troubleshooting" id="markdown-toc-faq-and-troubleshooting">FAQ and Troubleshooting</a></li>
+</ul>
+
+<h2 id="features">Features</h2>
+
+<p>The following features are provided by the openHABian images out of the box:</p>
+
+<ul>
+  <li>Hassle-free setup without a display or keyboard, connected via <a href="#wifi-setup">Ethernet or Wi-Fi</a></li>
+  <li>openHAB 2 in the latest stable version</li>
+  <li>Zulu Embedded OpenJDK Java 8 (<a href="http://zulu.org/zulu-community/zulurelnotes">newest revision</a>)</li>
+  <li><a href="#openhabian-config">openHABian Configuration Tool</a> including updater functionality</li>
+  <li>openHAB Log Viewer (based on <a href="https://github.com/mthenw/frontail">frontail</a>)</li>
+  <li>Samba file sharing with <a href="http://docs.openhab.org/installation/linux.html#mounting-locally">pre-configured to use shares</a></li>
+  <li>Useful Linux packages pre-installed, including <code class="highlighter-rouge">vim, mc, screen, htop, ...</code></li>
+  <li>Login information screen, powered by <a href="https://github.com/OutsideIT/FireMotD">FireMotD</a></li>
+  <li>Customized Bash shell experience</li>
+  <li>Customized vim settings, including <a href="https://github.com/cyberkov/openhab-vim">openHAB syntax highlighting</a></li>
+  <li>Customized nano settings, including <a href="https://github.com/airix1/openhabnano">openHAB syntax highlighting</a></li>
+  <li>Version control for <code class="highlighter-rouge">/etc</code> by the help of <a href="http://etckeeper.branchable.com">etckeeper</a> (git)</li>
+  <li><a href="rasppi.html">Raspberry Pi specific</a>: Extend to the whole SD card, 16MB GPU memory split</li>
+</ul>
+
+<p>Additionally the <strong>openHABian Configuration Tool</strong> <a href="#openhabian-config"><code class="highlighter-rouge">openhabian-config</code></a> is included and provides the following optional settings and components:</p>
+
+<p><img src="images/openHABian-config.png" alt="openHABian-config menu" /></p>
+
+<ul>
+  <li>Switch over to the latest openHAB 2 <a href="http://docs.openhab.org/installation/linux.html#changing-versions"><em>unstable/SNAPSHOT</em> build</a></li>
+  <li>Install and Setup a <a href="security.html#nginx-reverse-proxy">reverse proxy</a> with password authentication and/or HTTPS access (incl. <a href="https://letsencrypt.org">Let’s Encrypt</a> certificate) for self-controlled remote access</li>
+  <li>Set up a Wi-Fi connection</li>
+  <li>Bind the <a href="/v2.2/administration/console.html">openHAB remote console</a> to all interfaces</li>
+  <li>Easily install and preconfigure <a href="#optional-components">Optional Components</a> of your choice</li>
+  <li>… and many more</li>
+  <li>Raspberry Pi specific:
+    <ul>
+      <li>Prepare the serial port for the use with extension boards like Razberry, SCC, Enocean Pi, …</li>
+      <li>Move the system partition to an external USB stick or drive</li>
+    </ul>
+  </li>
+  <li>Pine A64 specific:
+    <ul>
+      <li>Longsleep’s <a href="https://github.com/longsleep/build-pine64-image/tree/master/simpleimage/platform-scripts">platform scripts</a></li>
+      <li>Assign <a href="https://github.com/openhab/openhabian/issues/158#issuecomment-309067739">fixed MAC address to eth0</a></li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="quick-start">Quick Start</h2>
+
+<p>Here you’ll find supported and tested installation platforms and instructions.</p>
+
+<h3 id="raspberry-pi">Raspberry Pi</h3>
+
+<p><strong>Flash, plug, wait, enjoy:</strong>
+The provided image is based on the <a href="https://www.raspberrypi.org/downloads/raspbian">Raspbian Lite</a> standard system.
+On first boot the system will set up openHAB and the mentioned settings and tools.
+All packages will be downloaded in their newest version and configured to work without further modifications.
+The whole process will take a few minutes, then openHAB and all other needed tools to get started will be ready to use without further configuration steps.
+openHABian is designed as a headless system, you will not need a display or a keyboard.</p>
+
+<p>Learn more about the Raspberry Pi as your platform for openHAB and about the requirements over in our <a href="rasppi.html">Raspberry Pi article</a>.</p>
+
+<p><strong>Setup:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/openhab/openhabian/releases">Download the latest “openHABianPi” SD card image file</a> (Note: the file is <em>xz</em> compressed)</li>
+  <li>Write the image to your SD card (e.g. with <a href="https://etcher.io">Etcher</a>, able to directly work with <em>xz</em> files)</li>
+  <li>Insert the SD card into the Raspberry Pi, connect Ethernet (<a href="#wifi-setup">Wi-Fi supported</a>) and power</li>
+  <li>Wait approximately <strong>15-45 minutes</strong> for openHABian to do its magic</li>
+  <li>
+    <p>Enjoy! 🎉</p>
+  </li>
+  <li>The device will be available under its IP or via the local DNS name <code class="highlighter-rouge">openhabianpi</code></li>
+  <li><a href="http://docs.openhab.org/configuration/packages.html">Connect to the openHAB 2 dashboard</a>: <a href="http://openhabianpi:8080">http://openhabianpi:8080</a></li>
+  <li><a href="http://docs.openhab.org/installation/linux.html#mounting-locally">Connect to the Samba network shares</a> with username <code class="highlighter-rouge">openhabian</code> and password <code class="highlighter-rouge">openhabian</code></li>
+  <li>Connect to the openHAB Log Viewer (frontail): <a href="http://openhabianpi:9001">http://openhabianpi:9001</a></li>
+  <li>If you encounter any setup problem, <a href="#successful">please continue here</a></li>
+</ul>
+
+<p>You can stop reading now.
+openHABian has installed and configured your openHAB system and you can start to use it right away.
+If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.</p>
+
+<p>Ready for more?
+<a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md">Connect to your Raspberry Pi SSH console</a> using the username <code class="highlighter-rouge">openhabian</code> and password <code class="highlighter-rouge">openhabian</code>.
+You will see the following welcome screen:</p>
+
+<p><img src="images/openHABian-SSH-MotD.png" alt="openHABian login screen" /></p>
+
+<p>➜ Continue at the <a href="#openhabian-config">“openHABian Configuration Tool”</a> chapter below!</p>
+
+<h3 id="pine-a64">Pine A64</h3>
+
+<p>We provide a ready to use system image for the Pine A64.
+The image is based on the official <a href="http://wiki.pine64.org/index.php/Pine_A64_Software_Release">Ubuntu Base Image by longsleep</a>.
+On first boot the system will set up openHAB and the mentioned settings and tools.
+All packages are downloaded in their newest version and configured to work without further modifications.
+The whole process will take a few minutes, then openHAB and all other needed tools to get started will be ready to use without further configuration steps.
+openHABian is designed as a headless system, you will not need a display or a keyboard.</p>
+
+<p>Learn more about the Pine A64 as your platform for openHAB and about the requirements in our <a href="pine.html">Pine A64 article</a>.</p>
+
+<p><em>Attention:</em> Unstable behavior has been reported when using the Pine64 with and without a display connected to HDMI.
+Read about the details in <a href="https://github.com/longsleep/build-pine64-image/issues/51">this discussion</a>.
+As a workaround, please be sure to not have am HDMI display connected during the installation of openHABian.</p>
+
+<p><strong>Setup:</strong></p>
+
+<ul>
+  <li><a href="https://github.com/openhab/openhabian/releases">Download the latest “openHABianPine64” SD card image file</a> (Note: the file is <em>xz</em> compressed)</li>
+  <li>Write the image file to your SD card (e.g. with <a href="https://etcher.io">Etcher</a>, able to directly work with <em>xz</em> files)</li>
+  <li>Insert the SD card into the Pine A64, connect Ethernet (<a href="#wifi-setup">Wi-Fi supported</a>) and power (<a href="http://wiki.pine64.org/index.php/Main_Page#Step_by_Step_Instructions">See here for more details</a>)</li>
+  <li>Wait approximately <strong>15-45 minutes</strong> for openHABian to do its magic</li>
+  <li>
+    <p>Enjoy! 🎉</p>
+  </li>
+  <li>The device will be available under its IP or via the local DNS name <code class="highlighter-rouge">openhabianpine64</code></li>
+  <li><a href="http://docs.openhab.org/configuration/packages.html">Connect to the openHAB 2 dashboard</a>: <a href="http://openhabianpine64:8080">http://openhabianpine64:8080</a></li>
+  <li><a href="http://docs.openhab.org/installation/linux.html#mounting-locally">Connect to the Samba network shares</a> with username <code class="highlighter-rouge">openhabian</code> and password <code class="highlighter-rouge">openhabian</code></li>
+  <li>Connect to the openHAB Log Viewer (frontail): <a href="http://openhabianpine64:9001">http://openhabianpine64:9001</a></li>
+  <li>If you encounter any setup problem, <a href="#successful">please continue here</a></li>
+</ul>
+
+<p>You can stop reading now.
+openHABian has installed and configured your openHAB system and you can start to use it right away.
+If you want to get in touch with the system or want to install one of the previously mentioned optional features, you can come back here later.</p>
+
+<p>Ready for more?
+Connect to your Pine A64 <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md">SSH console</a> using the username <code class="highlighter-rouge">openhabian</code> and password <code class="highlighter-rouge">openhabian</code>.
+You will see the following welcome screen:</p>
+
+<p><img src="images/openHABian-SSH-MotD.png" alt="openHABian login screen" /></p>
+
+<p>➜ Continue at the <a href="#openhabian-config">“openHABian Configuration Tool”</a> section below!</p>
+
+<h3 id="manual-setup">Manual Setup</h3>
+
+<p>openHABian also supports general Debian/Ubuntu based systems on different platforms.
+Starting with a fresh installation of your operating system, install git, then clone the openHABian project and finally execute the openHABian configuration tool:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># install git</span>
+<span class="nb">sudo </span>apt-get update
+<span class="nb">sudo </span>apt-get install git
+
+<span class="c"># download and link</span>
+<span class="nb">sudo </span>git clone https://github.com/openhab/openhabian.git /opt/openhabian
+<span class="nb">sudo </span>ln <span class="nt">-s</span> /opt/openhabian/openhabian-setup.sh /usr/local/bin/openhabian-config
+
+<span class="c"># execute</span>
+<span class="nb">sudo </span>openhabian-config
+</code></pre></div></div>
+
+<p>You’ll see the openHABian configuration menu and can now select all desired actions.
+The “Manual/Fresh Setup” submenu entry is the right place for you. Execute all entries one after the other to get the full openHABian experience:</p>
+
+<p><img src="images/openHABian-menu-freshsetup.png" alt="openHABian-config menu fresh setup" /></p>
+
+<blockquote>
+  <p>Attention:
+openHABian usage on a custom system is supported and should be safe.
+Still some routines might not work for you.
+Please be cautious and have a close look at the console output for errors.
+Report problems you encounter to the <a href="https://github.com/openhab/openhabian/issues">openHABian Issue Tracker</a>.</p>
+</blockquote>
+
+<h3 id="wifi-setup">Wi-Fi based Setup Notes</h3>
+
+<p>If you own a RPi3, a RPi0W, a Pine A64, or a compatible Wi-Fi dongle you can set up and use openHABian purely via Wi-Fi.
+For the setup on Wi-Fi, you’ll need to make your SSID and password known to the system before the first boot.
+Additionally to the setup instructions given above, the following steps are needed:</p>
+
+<ul>
+  <li>Flash the system image to your micro SD card as described, do not remove the SD card yet</li>
+  <li>Access the first SD card partition from the file explorer of your choice (e.g. Windows file explorer)</li>
+  <li>Open the file <code class="highlighter-rouge">openhabian.conf</code> in a text editor</li>
+  <li>Uncomment and fill in <code class="highlighter-rouge">wifi_ssid="My Wi-Fi SSID"</code> and <code class="highlighter-rouge">wifi_psk="password123"</code></li>
+  <li>Save, Unmount, Insert, Boot</li>
+  <li>Continue with the instructions for the Raspberry Pi or Pine A64</li>
+</ul>
+
+<h2 id="openhabian-config">openHABian Configuration Tool</h2>
+
+<p>The following instructions are oriented at the Raspberry Pi openHABian setup but are transferable to all openHABian environments.</p>
+
+<p>Once connected to the command line console of your system, please execute the openHABian configuration tool by typing the following command.
+(Hint: sudo executes a command with elevated rights and will hence ask for your password: <code class="highlighter-rouge">openhabian</code>).</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>openhabian-config
+</code></pre></div></div>
+
+<p><img src="images/openHABian-config.png" alt="openHABian-config menu" /></p>
+
+<p>The configuration tool is the heart of openHABian.
+It is not only a menu with a set of options, it’s also used in a special unattended mode inside the ready to use images.</p>
+
+<p>⌨ - A quick note on menu navigation.
+Use the cursor keys to navigate, &lt;Enter&gt; to execute, &lt;Space&gt; to select and &lt;Tab&gt; to jump to the actions on the bottom of the screen. Press &lt;Esc&gt; twice to exit the configuration tool.</p>
+
+<h3 id="linux-hints">Linux Hints</h3>
+
+<p>If you are unfamiliar with Linux, SSH and the Linux console or if you want to improve your skills, read up on these important topics.
+A lot of helpful articles can be found on the internet, for example:</p>
+
+<ul>
+  <li>“Learn the ways of Linux-fu, for free” interactively with exercises at <a href="https://linuxjourney.com">linuxjourney.com</a>.</li>
+  <li>The official Raspberry Pi help articles over at <a href="https://www.raspberrypi.org/help">raspberrypi.org</a></li>
+  <li>“Now what?”, Tutorial on the Command line console at <a href="http://linuxcommand.org/index.php">LinuxCommand.org</a></li>
+</ul>
+
+<p><em>The good news:</em> openHABian helps you to stay away from Linux - <em>The bad news:</em> Not for long…</p>
+
+<p>Regardless of if you want to copy some files or are on the search for a solution to a problem, sooner or later you’ll have to know some Linux.
+Take a few minutes to study the above Tutorials and get to know the most basic commands and tools to be able to navigate on your Linux system, edit configurations, check the system state or look at log files.
+It’s not complicated and something that doesn’t hurt on ones résumé.</p>
+
+<h3 id="further-config">Further Configuration Steps</h3>
+
+<p>openHABian is supposed to provide a ready-to-use openHAB base system. There are however a few things we can not decide for you.</p>
+
+<ul>
+  <li><strong>Time Zone:</strong> The time zone of your openHABian system will be determined based on your internet connection. In some cases you might have to adjust that setting.</li>
+  <li><strong>Language:</strong> The <code class="highlighter-rouge">locale</code> setting of the openHABian base system is set to “en_US.UTF-8”. While this setting will not do any harm, you might prefer e.g. console errors in German or Spanish. Change the locale settings accordingly. Be aware, that error solving might be easier when using the English error messages as search phrases.</li>
+  <li><strong>Passwords:</strong> Relying on default passwords is a security concern you should care about! The openHABian system is preconfigured with a few passwords you should change to ensure the security of your system. This is especially important of your system is accessible from outside your private subnet.</li>
+</ul>
+
+<p>All of these settings <strong>can easily be changed</strong> via the openHABian Configuration Tool.</p>
+
+<p>Here are the passwords in question, their default “username:password” value and the way to change them:</p>
+
+<ul id="passwords">
+  <li>User password needed for SSH or sudo (e.g. “openhabian:openhabian”) : <code class="highlighter-rouge">passwd</code></li>
+  <li>Samba share password (e.g. “openhabian:openhabian”): <code class="highlighter-rouge">sudo smbpasswd openhabian</code></li>
+  <li>openHAB remote console (e.g. “openhab:habopen”): Change via the openHABian menu</li>
+  <li>Nginx reverse proxy login (no default): Change via the openHABian menu, please see <a href="http://docs.openhab.org/installation/security.html#adding-or-removing-users">here</a> for more</li>
+</ul>
+
+<h2 id="optional-components">Optional Components</h2>
+
+<p>openHABian comes with a number of additional routines to quickly install and set up home automation related software.
+You’ll find all of these in the <a href="#openhabian-config">openHABian Configuration Tool</a></p>
+
+<ul>
+  <li><a href="http://www.amanda.org/">Amanda Network Backup</a> - A built-in backup solution for your valuables. Please continue reading <a href="https://github.com/openhab/openhabian/blob/master/docs/openhabian-amanda.md">here</a></li>
+  <li><a href="https://github.com/mthenw/frontail">frontail</a> - openHAB Log Viewer accessible from <a href="http://openHABianPi:9001">http://openHABianPi:9001</a></li>
+  <li><a href="https://github.com/kubawolanin/generator-openhab">openHAB Generator</a> - Allows you to create <a href="http://docs.openhab.org/configuration/items.html">Items</a>, <a href="http://docs.openhab.org/configuration/sitemaps.html">Sitemap</a> and <a href="http://docs.openhab.org/addons/uis/habpanel/readme.html">HABPanel</a> dashboard for your home in no time</li>
+  <li><a href="https://nodered.org">Node-RED</a> - “Flow-based programming for the Internet of Things”, with preinstalled <a href="https://flows.nodered.org/node/node-red-contrib-openhab2">openHAB2</a> and <a href="https://flows.nodered.org/node/node-red-contrib-bigtimer">BigTimer</a> add-ons. Accessible from <a href="http://openHABianPi:1880">http://openHABianPi:1880</a></li>
+  <li><a href="http://michlstechblog.info/blog/raspberry-pi-eibknx-ip-gateway-and-router-with-knxd">KNXd</a> - KNX daemon running at <code class="highlighter-rouge">224.0.23.12:3671/UDP</code></li>
+  <li><a href="https://www.homegear.eu/index.php/Main_Page">Homegear</a> - Homematic control unit emulation</li>
+  <li><a href="http://mosquitto.org">Eclipse Mosquitto</a> - Open Source MQTT v3.1/v3.1.1 Broker</li>
+  <li><a href="http://owfs.org/index.php?page=owserver_protocol">OWServer</a> - 1wire control system</li>
+  <li><a href="https://community.openhab.org/t/influxdb-grafana-persistence-and-graphing/13761/1">Grafana</a> - persistence and graphing available from <a href="http://openHABianPi:3000">http://openHABianPi:3000</a></li>
+</ul>
+
+<h2 id="faq-and-troubleshooting">FAQ and Troubleshooting</h2>
+
+<p>For openHABian related questions and further details, please have a look at the main discussion thread in the Community Forum:</p>
+
+<ul>
+  <li><a href="https://community.openhab.org/t/13379">https://community.openhab.org/t/13379</a></li>
+</ul>
+
+<p>If you want to get involved, you found a bug, or just want to see what’s planned for the future, come visit our Issue Tracker:</p>
+
+<ul>
+  <li><a href="https://github.com/openhab/openhabian/issues">https://github.com/openhab/openhabian/issues</a></li>
+</ul>
+
+<h4 id="changelog">Where can I find a changelog for openHABian?</h4>
+
+<p>The official changelog announcements are posted <a href="https://community.openhab.org/t/13379/1">here</a> and <a href="https://github.com/openhab/openhabian/releases">here</a>, be sure to check these out regularly.
+If you want to stay in touch with all the latest code changes under the hood, see the <a href="https://github.com/openhab/openhabian/commits/master">commit history</a> for openHABian.
+You’ll also see added commits when executing the “Update” function within the openHABian Configuration Tool.</p>
+
+<h4 id="successful">Did my Installation succeed? What to do in case of a problem?</h4>
+
+<p><strong>A note on patience:</strong>
+Remember to stay calm.
+The openHABian setup will take 15 up to 45 minutes to complete all steps.
+This time highly depends on your device’s performance, your internet connection and sometimes even on the load of external servers.</p>
+
+<!--
+##### LED Indication (RPi only)
+
+During and after the first boot of your Raspberry Pi, the green on-board LED will indicate the setup progress (no display needed):
+
+* `❇️️ ❇️️    ❇️️ ❇️️     ` - Steady "heartbeat": setup **successful**
+* ` ❇️️         ❇️️❇️️❇️️ ` - Irregular blinking: setup in progress...
+* `❇️️ ❇️️ ❇️️ ❇️️ ❇️️ ❇️️ ❇️️` - Fast blinking: error while setup
+-->
+
+<p><strong>RPi note:</strong>
+The progress indication via the <strong>green Raspberry Pi LED</strong> is currently not possible and hence not part of the openHABian v1.3 image.
+We will re-add the functionality as soon as the underlying issue is resolved.</p>
+
+<h5 id="openhab-dashboard">openHAB Dashboard</h5>
+
+<p>After the installation of openHABian was successful, you should be able to access the openHAB dashboard:</p>
+
+<ul>
+  <li>Raspberry Pi image setup: <a href="http://openhabianpi:8080">http://openhabianpi:8080</a></li>
+  <li>Pine A64 image setup: <a href="http://openhabianpine64:8080">http://openhabianpine64:8080</a></li>
+  <li>In any case: <a href="http://your-device-hostname:8080">http://your-device-hostname:8080</a> or <a href="http://192.168.0.2:8080">http://192.168.0.2:8080</a> (replace name/IP)</li>
+</ul>
+
+<h5 id="ssh-progress-report">SSH Progress Report</h5>
+
+<p>It is always possible to <a href="https://www.raspberrypi.org/documentation/remote-access/ssh/windows.md">connect to the SSH console</a> of your device (after a few minutes of boot up time).
+During the setup process you’ll be redirected to the live progress report of the setup.
+The report can also be checked for errors after the installation finished by executing: <code class="highlighter-rouge">cat /boot/first-boot.log</code></p>
+
+<p>The progress of a successful installation will look similar to the following:</p>
+
+<p><img src="images/openHABian-install-log.png" alt="openHABian installation log" /></p>
+
+<p>Wait till the log tells you that the setup was “successful”, then reconnect to the device.</p>
+
+<h5 id="ssh-login-screen">SSH Login Screen</h5>
+
+<p>If the installation was <strong>successful</strong> you will see the normal login screen as shown in the first screenshot.
+If the installation was <strong>not successful</strong> you will see a warning and further instructions as shown in the second screenshot.</p>
+
+<div class="row">
+  <div class="col s12 m5"><img src="images/openHABian-SSH-MotD.png" alt="openHABian installation successful" title="openHABian installation successful" /></div>
+  <div class="col s12 m5 offset-m2"><img src="images/openHABian-install-failed.png" alt="openHABian installation failed warning and instructions" title="openHABian installation failed warning and instructions" /></div>
+</div>
+
+<h5 id="what-next">What Next?</h5>
+
+<p>After your first setup is done, you might want to generate <a href="http://docs.openhab.org/configuration/items.html">Items</a>, <a href="http://docs.openhab.org/configuration/sitemaps.html">Sitemap</a> and <a href="http://docs.openhab.org/addons/uis/habpanel/readme.html">HABPanel</a> dashboard for your home.
+Simply log in to your Raspberry PI with SSH and type <code class="highlighter-rouge">openhab-generator</code>. It will run a Yeoman-based <a href="https://github.com/kubawolanin/generator-openhab">openHAB Generator</a> tool asking for your house structure (e.g. number of floors, rooms and devices).</p>
+
+<p>If you are not able to access your system via the openHAB dashboard or SSH after more than one hour, chances are high that your hardware setup is the problem.
+Try using a steady power source and a reliable SD card, double check the network connection.
+Restart the Setup process to rule out most other possible causes.</p>
+
+<p>Contact the <a href="https://community.openhab.org/t/13379">openHABian community forum thread</a> if the problem persists.</p>
+
+<h4 id="switch-openhab-branch">Can I switch from openHAB 2 stable to the testing or unstable branch?</h4>
+
+<p>openHABian installs the latest stable build of openHAB 2.
+If you want to switch over to the snapshot release branch, please do so via the openHABian Configuration Tool.
+Switching from stable to newer development releases might introduce changes and incompatibilities, so please be sure to make a full openHAB backup first!</p>
+
+<p>Check the Linux installation article for all needed details: <a href="http://docs.openhab.org/installation/linux.html#changing-versions">Linux: Changing Versions</a></p>
+
+<h4 id="headache">Where is the graphical user interface?</h4>
+
+<p>You’ve just installed openHABian and are confused.
+No fancy login screen, no windows, no mouse support. What did I get into?</p>
+
+<p>You are not the first one to get confused about the <strong>intended use case of openHABian</strong> or most other solutions based on a Raspberry Pi.
+Maybe it helps to not think of the RPi as a PC as we know it.
+It is not (necessarily) build to be used with a keyboard and display.
+You already own a <strong>powerful PC or Mac</strong> which you should benefit from.
+It would be a shame to have a powerful computer at your fingertips and then have to <strong>restrict yourself</strong> to a very limited graphical frontend on another device, wouldn’t you agree?</p>
+
+<p>The intended use case of a lot of these small SBCs is to sit in a corner and provide a service reliably 24/7.
+You’ll find that most solutions for the RPi are characterized by this.</p>
+
+<p>Moving on.
+What <em>we</em> actually want and what openHABian is aimed for is a <strong>dedicated headless system</strong> to <strong>reliably execute openHAB</strong> and to <strong>expose all interfaces</strong> needed to interact and configure it (PaperUI, BasicUI, HABPanel, openHAB LogViewer, Samba Network Shares, openHABian Configuration Tool, SSH).
+If you know how to work with these interfaces, you are set for a way better experience than the alternatives.
+The main challenge is to <strong>get used to the Linux command line</strong>, not even a GUI (like Pixel, see below) will relieve you from that in the long run.
+If you are not willing to teach yourself a few fundamental Linux skills you will not become happy with any Linux system and should resort to a e.g. Windows machine.
+However as you are willing to tinker with smart home technology, I’m sure you are ready to <strong>teach yourself new stuff</strong> and expand your experience.</p>
+
+<p><strong>If</strong> the above didn’t convince you, execute the following commands to get the graphical user interface <a href="https://www.raspberrypi.org/blog/introducing-pixel">Pixel</a> installed.
+You have been warned, if there came any warranty with openHABian to begin with, it would end here.</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>apt install raspberrypi-ui-mods
+<span class="nb">sudo </span>reboot
+</code></pre></div></div>
+
+<p>After the reboot, connect via SSH and type the following command to start a VNC server to connect to:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>vncserver <span class="nt">-randr</span> 1280x800
+</code></pre></div></div>
+
+<h4 id="faq-other-platforms">Can I use openHABian on …?</h4>
+
+<p>openHABian is restricted to Debian/Ubuntu based systems.
+If your operating system is based on these or if your Hardware supports one, your chances are high openHABian can be used.
+Check out the <a href="#manual-setup">Manual Setup</a> instructions for guidance.</p>
+
+<p>Differences between systems can still be a problem, so please check the <a href="https://community.openhab.org/t/13379">openHABian community forum thread</a> or the <a href="https://github.com/openhab/openhabian/issues">Issue Tracker</a> for more information.
+Do not hesitate to ask!</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

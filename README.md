@@ -83,14 +83,14 @@ Check the mentioned files for more details.
 
 ## Documentation Versioning
 
-Just as openHAB is released in versions, the documentation website provides fixed versions of the documentation articles, e.g., [docs.openhab.org/2.1.0/installation/linux.html](http://docs.openhab.org/v2.1.0/installation/linux.html)
+Just as openHAB is released in versions, the documentation website provides fixed versions of the documentation articles, e.g., [docs.openhab.org/v2.1/installation/linux.html](http://docs.openhab.org/v2.1/installation/linux.html)
 
 Please see [this issue](https://github.com/openhab/openhab-docs/issues/520#issuecomment-339741820) for all details regarding the current implementation.
 In short, the following has to be considered:
 
-- Versions like "v2.1.0" are marked by git tags.
-- Based on tags branches like "v2.1.0-patch" are created, to include later discovered changes (like fixed links).
-- The intended base folder for the version needs to be set in `_config.yml`, e.g. `baseurl: "/v2.1.0"`.
+- Versions like "2.1.0" are marked by git tags.
+- Based on tags branches like "2.1-patch" are created, to include later discovered changes (like fixed links).
+- The intended base folder for the version needs to be set in `_config.yml`, e.g. `baseurl: "/v2.1"`.
 - New versions have to be added to the dropdown menu shown on the resulting website, configured in `_includes/versioning.html`.
-- The version branch has to be generated with jekyll, the resulting content goes into the version folder identical to the above set baseurl. Execute e.g. `jekyll build -d path/to/checked-out/gh-pages-branch/v2.1.0/`
-- The generated static page files under, e.g., `v2.1.0/` need to be committed to `gh-pages` for GitHub Pages to pick them up and include in the generated page.
+- The version branch has to be generated with jekyll, the resulting content goes into the version folder identical to the above set baseurl. Execute e.g. `jekyll build -d path/to/checked-out/gh-pages-branch/v2.1/`
+- The generated static page files under, e.g., `v2.1/` need to be committed to `gh-pages` for GitHub Pages to pick them up and include in the generated page.

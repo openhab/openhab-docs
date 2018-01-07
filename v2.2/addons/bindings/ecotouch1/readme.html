@@ -1,0 +1,2239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>EcoTouch - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/ecotouch1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/ecotouch1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/ecotouch1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="ecotouch-binding">EcoTouch Binding</h1>
+
+<p>The openHAB EcoTouch binding allows interaction with a heat pump.</p>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>Make sure the display unit of the heat pump is connected to the network and
+that the network settings are configured. By default, the heat pump uses DHCP.</p>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>The binding can be configured in the file <code class="highlighter-rouge">services/ecotouch.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ip</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>ip or DNS name of the heat pump</td>
+    </tr>
+    <tr>
+      <td>username</td>
+      <td>waterkotte</td>
+      <td style="text-align: center">No</td>
+      <td>username for login</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td>waterkotte</td>
+      <td style="text-align: center">No</td>
+      <td>password for login</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>NOTE: Since Waterkotte Display software version 1.6.xx, the username/password
+default value is <code class="highlighter-rouge">waterkotte</code>. Prior to that, the username default was <code class="highlighter-rouge">admin</code>
+and the password default was <code class="highlighter-rouge">wtkadmin</code>.</p>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>The binding configuration format is simple and looks like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ecotouch="&lt;eventType&gt;"
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">&lt;eventType&gt;</code> is one of the following values:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Description</th>
+      <th><code class="highlighter-rouge">&lt;eventType&gt;</code></th>
+      <th>ItemClass</th>
+      <th>Write</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Außentemperatur</td>
+      <td>temperature_outside</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Außentemperatur gemittelt über 1h</td>
+      <td>temperature_outside_1h</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Außentemperatur gemittelt über 24h</td>
+      <td>temperature_outside_24h</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Quelleneintrittstemperatur</td>
+      <td>temperature_source_in</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Geo only</td>
+    </tr>
+    <tr>
+      <td>Quellenaustrittstemperatur</td>
+      <td>temperature_source_out</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Geo only</td>
+    </tr>
+    <tr>
+      <td>Umgebungstemperatur</td>
+      <td>temperature_surrounding</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Air only</td>
+    </tr>
+    <tr>
+      <td>Verdampfungstemperatur</td>
+      <td>temperature_evaporation</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sauggastemperatur</td>
+      <td>temperature_suction</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Geo only</td>
+    </tr>
+    <tr>
+      <td>Sauggas</td>
+      <td>temperature_suction_air</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Air only</td>
+    </tr>
+    <tr>
+      <td>Ölsumpf</td>
+      <td>temperature_sump</td>
+      <td>number</td>
+      <td> </td>
+      <td>Ai1 Air only</td>
+    </tr>
+    <tr>
+      <td>Verdampfungsdruck</td>
+      <td>pressure_evaporation</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Temperatur Rücklauf Soll</td>
+      <td>temperature_return_set</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Temperatur Rücklauf</td>
+      <td>temperature_return</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Temperatur Vorlauf</td>
+      <td>temperature_flow</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Kondensationstemperatur</td>
+      <td>temperature_condensation</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Kondensationsdruck</td>
+      <td>pressure_condensation</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Speichertemperatur</td>
+      <td>temperature_storage</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Raumtemperatur</td>
+      <td>temperature_room</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Raumtemperatur gemittelt über 1h</td>
+      <td>temperature_room_1h</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Warmwassertemperatur</td>
+      <td>temperature_water</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pooltemperatur</td>
+      <td>temperature_pool</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Solarkollektortemperatur</td>
+      <td>temperature_solar</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Solarkreis Vorlauf</td>
+      <td>temperature_solar_flow</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Ventilöffnung elektrisches Expansionsventil %</td>
+      <td>position_expansion_valve</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>elektrische Leistung Verdichter</td>
+      <td>power_compressor</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>abgegebene thermische Heizleistung der Wärmepumpe</td>
+      <td>power_heating</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>abgegebene thermische KälteLeistung der Wärmepumpe</td>
+      <td>power_cooling</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>COP Heizleistung</td>
+      <td>cop_heating</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>COP Kälteleistung</td>
+      <td>cop_cooling</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aktuelle Heizkreistemperatur</td>
+      <td>temperature_heating_return</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Geforderte Temperatur im Heizbetrieb</td>
+      <td>temperature_heating_set</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwertvorgabe Heizkreistemperatur</td>
+      <td>temperature_heating_set2</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Aktuelle Kühlkreistemperatur</td>
+      <td>temperature_cooling_return</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Geforderte Temperatur im Kühlbetrieb</td>
+      <td>temperature_cooling_set</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwertvorgabe Kühlbetrieb</td>
+      <td>temperature_cooling_set2</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwert Warmwassertemperatur</td>
+      <td>temperature_water_set</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwertvorgabe Warmwassertemperatur</td>
+      <td>temperature_water_set2</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwert Poolwassertemperatur</td>
+      <td>temperature_pool_set</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Sollwertvorgabe Poolwassertemperatur</td>
+      <td>temperature_pool_set2</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>geforderte Verdichterleistung</td>
+      <td>compressor_power</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>% Heizungsumwälzpumpe</td>
+      <td>percent_heat_circ_pump</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>% Quellenpumpe</td>
+      <td>percent_source_pump</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>% Leistung Verdichter</td>
+      <td>percent_compressor</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Heizkurve - Norm-Aussen-Temp (Auslegungstemp)</td>
+      <td>nviNormAussen</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Heizkurve - Temp Heizkreis bei Auslegungstemp</td>
+      <td>nviHeizkreisNorm</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Heizkurve - Temp Heizgrenze</td>
+      <td>nviTHeizgrenze</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Heizkurve - Temp Heizkreis Heizgrenze</td>
+      <td>nviTHeizgrenzeSoll</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Heizkurve - max. VL-Temp</td>
+      <td>maxVLTemp</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Kühlen Einschalt-Aussentemp</td>
+      <td>coolEnableTemp</td>
+      <td>number</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>geforderte Kühltemperatur</td>
+      <td>nviSollKuehlen</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Firmware-Version Regler</td>
+      <td>version_controller</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Build-Nr. Regler</td>
+      <td>version_controller_build</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Bios-Version Regler</td>
+      <td>version_bios</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Datum: Tag</td>
+      <td>date_day</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Datum: Monat</td>
+      <td>date_month</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Datum: Jahr</td>
+      <td>date_year</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Uhrzeit: Stunde</td>
+      <td>time_hour</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Uhrzeit: Minute</td>
+      <td>time_minute</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Betriebsstunden Verdichter 1</td>
+      <td>operating_hours_compressor1</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Betriebsstunden Verdichter 2</td>
+      <td>operating_hours_compressor2</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Betriebsstunden Heizungsumwälzpumpe</td>
+      <td>operating_hours_circulation_pump</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Betriebsstunden Quellenpumpe</td>
+      <td>operating_hours_source_pump</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Betriebsstunden Solarkreis</td>
+      <td>operating_hours_solar</td>
+      <td>number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Handabschaltung Heizbetrieb</td>
+      <td>enable_heating</td>
+      <td>switch</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Handabschaltung Kühlbetrieb</td>
+      <td>enable_cooling</td>
+      <td>switch</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Handabschaltung Warmwasserbetrieb</td>
+      <td>enable_warmwater</td>
+      <td>switch</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Handabschaltung Pool_Heizbetrieb</td>
+      <td>enable_pool</td>
+      <td>switch</td>
+      <td>yes</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status der Wärmepumpenkomponenten</td>
+      <td>state</td>
+      <td>number</td>
+      <td> </td>
+      <td>State as a number, see below for possible mapping.</td>
+    </tr>
+    <tr>
+      <td>Status Quellenpumpe</td>
+      <td>state_sourcepump</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Heizungsumwälzpumpe</td>
+      <td>state_heatingpump</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Freigabe Regelung EDV / Magnetventil</td>
+      <td>state_evd</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Verdichter 1</td>
+      <td>state_compressor1</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Verdichter 2</td>
+      <td>state_compressor2</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status externer Wärmeerzeuger</td>
+      <td>state_extheater</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Alarmausgang</td>
+      <td>state_alarm</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Motorventil Kühlbetrieb</td>
+      <td>state_cooling</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Motorventil Warmwasser</td>
+      <td>state_water</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Motorventil Pool</td>
+      <td>state_pool</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status Solarbetrieb</td>
+      <td>state_solar</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status 4-Wege-Ventil</td>
+      <td>state_cooling4way</td>
+      <td>switch</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Temperaturanpassung für die Heizung -2,0 / +2,0</td>
+      <td>adapt_heating</td>
+      <td>number</td>
+      <td>yes</td>
+      <td>-2 bis +2 (0,5)—&gt; 0 bis 8</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Heizungspumpe</td>
+      <td>manual_heatingpump</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A) H= manuell ein (Handschaltung), 0= aus, A= Automatik</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Quellenpumpe</td>
+      <td>manual_sourcepump</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Solarpumpe 1</td>
+      <td>manual_solarpump1</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Solarpumpe 2</td>
+      <td>manual_solarpump2</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Speicherladepumpe</td>
+      <td>manual_tankpump</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Brauchwasserventil</td>
+      <td>manual_valve</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Poolventil</td>
+      <td>manual_poolvalve</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Kühlventil</td>
+      <td>manual_coolvalve</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Vierwegeventil</td>
+      <td>manual_4wayvalve</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+    <tr>
+      <td>Handschaltung Multiausgang Ext.</td>
+      <td>manual_multiext</td>
+      <td> </td>
+      <td>yes</td>
+      <td>(H-0-A)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="mappings">Mappings</h3>
+
+<p>Heatpump event type “state” can be mapped to strings. Different heatpump models seem to have slightly different state values.
+Mappings for the Ai1 Geo have been copied from <a href="http://www.haustechnikdialog.de/Forum/t/173357/Waterkotte-via-Ethernet-OpenHAB-und-Android-App?page=6">here</a>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State</th>
+      <th>Ai1 Geo</th>
+      <th>Ai1 Air</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>aus</td>
+      <td>aus</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>nur Solepumpe 1</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>nur Heizkreispumpe 2</td>
+      <td>Standby</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>unbekannt</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>7</td>
+      <td>unbekannt</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>10</td>
+      <td> </td>
+      <td>Heizbetrieb</td>
+    </tr>
+    <tr>
+      <td>15</td>
+      <td>Heizbetrieb</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>131</td>
+      <td>Naturkühlung</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>256</td>
+      <td>Vorlauf Warmwasser</td>
+      <td>Vorlauf Warmwasser</td>
+    </tr>
+    <tr>
+      <td>258</td>
+      <td>Nachlauf Warmwasser</td>
+      <td>Nachlauf Warmwasser</td>
+    </tr>
+    <tr>
+      <td>259</td>
+      <td>unbekannt 259 vor WW Bereitung</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>263</td>
+      <td>unbekannt 263 vor WW Bereitung</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>266</td>
+      <td> </td>
+      <td>Warmwasserbereitung</td>
+    </tr>
+    <tr>
+      <td>271</td>
+      <td>Warmwasserbereitung</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="items-examples">Items examples</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Waterkotte EcoTouch heat pump DEMO */
+Group Heatpump
+Group Heatpump_outside
+Group Heatpump_source
+Group Heatpump_control
+Group Heatpump_water
+Group Heatpump_heating
+Group Heatpump_power
+Group Heatpump_state
+Number Chart_Period "Chart Period"
+Number HeatPump_Temperature_3   "Wärmepumpe Außentemperatur [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_outside) { ecotouch="temperature_outside" }
+Number HeatPump_Temperature_4   "Wärmepumpe Außentemperatur 1h [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_outside) { ecotouch="temperature_outside_1h" }
+Number HeatPump_Temperature_5   "Wärmepumpe Außentemperatur 24h [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_outside) { ecotouch="temperature_outside_24h" }
+Number HeatPump_Temperature_6   "Wärmepumpe Quelleneintrittstemperatur [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_source) { ecotouch="temperature_source_in" }
+Number HeatPump_Temperature_7   "Wärmepumpe Quellenaustrittstemperatur [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_source) { ecotouch="temperature_source_out" }
+Number HeatPump_Temperature_8   "Wärmepumpe Vorlauf [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_control) { ecotouch="temperature_flow" }
+Number HeatPump_Temperature_9   "Wärmepumpe Rücklauf [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_control) { ecotouch="temperature_return" }
+Number HeatPump_Temperature_10   "Wärmepumpe Rücklauf Soll [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_control) { ecotouch="temperature_return_set" }
+Number HeatPump_Temperature_11   "Wärmepumpe Warmwasser Ist [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_water) { ecotouch="temperature_water" }
+Number HeatPump_Temperature_12   "Wärmepumpe Warmwasser Soll [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_water) { ecotouch="temperature_water_set" }
+Number HeatPump_Temperature_13   "Wärmepumpe Warmwasser Soll2 [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_water) { ecotouch="temperature_water_set2" }
+Number HeatPump_Temperature_14   "Wärmepumpe Heizung Ist [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_heating) { ecotouch="temperature_heating_return" }
+Number HeatPump_Temperature_15   "Wärmepumpe Heizung Soll [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_heating) { ecotouch="temperature_heating_set" }
+Number HeatPump_Temperature_16   "Wärmepumpe Heizung Soll2 [%.1f °C]"   &lt;temperature&gt; (Heatpump,Heatpump_heating) { ecotouch="temperature_heating_set2" }
+Number HeatPump_power_1   "Wärmepumpe elektrische Leistung [%.1f kW]"   &lt;energy&gt; (Heatpump,Heatpump_power) { ecotouch="power_compressor" }
+Number HeatPump_power_2   "Wärmepumpe thermische Leistung [%.1f kW]"   &lt;energy&gt; (Heatpump,Heatpump_power) { ecotouch="power_heating" }
+Number HeatPump_state            "Wärmepumpe Status [%i]"   &lt;settings&gt; (Heatpump) { ecotouch="state" }
+Number HeatPump_state_sourcepump "Wärmepumpe Status Quellenpumpe [%i]"   &lt;settings&gt; (Heatpump,Heatpump_state) { ecotouch="state_sourcepump" }
+Number HeatPump_state_heatingpump "Wärmepumpe Status Heizungsumwälzpumpe [%i]"   &lt;settings&gt; (Heatpump,Heatpump_state) { ecotouch="state_heatingpump" }
+Number HeatPump_state_compressor1 "Wärmepumpe Status Kompressor [%i]"   &lt;settings&gt; (Heatpump,Heatpump_state) { ecotouch="state_compressor1" }
+Number HeatPump_state_water      "Wärmepumpe Status Motorventil Warmwasser[%i]"   &lt;settings&gt; (Heatpump,Heatpump_state) { ecotouch="state_water" }
+</code></pre></div></div>
+
+<h3 id="sitemap-examples">Sitemap examples</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Frame label="Waterkotte" {
+            Text item=HeatPump_Temperature_3 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_outside period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_outside period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_outside period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_6 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_source period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_source period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_source period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_7 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_source period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_source period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_source period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_8 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_control period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_control period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_control period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_9 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_control period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_control period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_control period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_10 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_control period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_control period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_control period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_11 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_water period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_water period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_water period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_12 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_water period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_water period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_water period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_13 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_water period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_water period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_water period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_14 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_heating period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_heating period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_heating period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_15 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_heating period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_heating period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_heating period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_Temperature_16 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_heating period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_heating period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_heating period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_power_1 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_power period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_power period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_power period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+            Text item=HeatPump_power_2 {
+                    Frame {
+                            Switch item=Chart_Period label="Chart Period" mappings=[0="Hour", 1="Day", 2="Week"]
+                            Chart item=Heatpump_power period=h refresh=60000 visibility=[Chart_Period==0, Chart_Period=="Uninitialized"]
+                            Chart item=Heatpump_power period=D refresh=60000 visibility=[Chart_Period==1]
+                            Chart item=Heatpump_power period=W refresh=60000 visibility=[Chart_Period==2]
+                    }
+            }
+    }
+</code></pre></div></div>
+
+<h3 id="gallery">Gallery</h3>
+
+<p>The following charts are created via the rrd4j chart and heatpump bundle.</p>
+
+<p><img src="https://github.com/sibbi77/openhab/wiki/images/binding-ecotouch_chart1.png" alt="outside temperature" /></p>
+
+<p><img src="https://github.com/sibbi77/openhab/wiki/images/binding-ecotouch_chart2.png" alt="power consumption" /></p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

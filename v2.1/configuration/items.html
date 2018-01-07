@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Items - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/configuration/items.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../configuration/items.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/configuration/items.html">v2.2</a></li>
+      <li><a href="/v2.1/configuration/items.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      
+<h1 id="items">Items</h1>
+
+<p>In openHAB “Items” represent all properties and capabilities of the user’s home automation.</p>
+
+<p>While a device or service might be quite specific, Items are unified substitutions inside the openHAB world.
+Items can be Strings, Numbers, Switches or one of a few other basic Item types, a programmer can rightly compare Item Types with base variable types of a programming language.</p>
+
+<p>One unique feature of openHAB Items (in comparison to normal variables) is the possibility to connect them to the outside world (via Bindings, more about that later).
+An Item does not simply hold a certain information (e.g., “No Error”, 3.141, OFF), the information is synchronized with the real world in both ways.</p>
+
+<p>But let’s not get ahead of ourselves.
+The rest of this page contains all details regarding Items and is structured as follows:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#introduction" id="markdown-toc-introduction">Introduction</a></li>
+  <li><a href="#item-definition-and-syntax" id="markdown-toc-item-definition-and-syntax">Item Definition and Syntax</a>    <ul>
+      <li><a href="#types" id="markdown-toc-types">Types</a></li>
+      <li><a href="#name" id="markdown-toc-name">Name</a></li>
+      <li><a href="#label" id="markdown-toc-label">Label</a></li>
+      <li><a href="#state" id="markdown-toc-state">State</a>        <ul>
+          <li><a href="#state-formatting" id="markdown-toc-state-formatting">State Formatting</a></li>
+        </ul>
+      </li>
+      <li><a href="#state-transformations" id="markdown-toc-state-transformations">State Transformations</a></li>
+      <li><a href="#icons" id="markdown-toc-icons">Icons</a>        <ul>
+          <li><a href="#dynamic-icons" id="markdown-toc-dynamic-icons">Dynamic Icons</a></li>
+        </ul>
+      </li>
+      <li><a href="#groups" id="markdown-toc-groups">Groups</a>        <ul>
+          <li><a href="#nested-groups" id="markdown-toc-nested-groups">Nested Groups</a></li>
+          <li><a href="#group-types" id="markdown-toc-group-types">Group Types</a></li>
+        </ul>
+      </li>
+      <li><a href="#tagging" id="markdown-toc-tagging">Tagging</a></li>
+      <li><a href="#binding-configuration" id="markdown-toc-binding-configuration">Binding Configuration</a>        <ul>
+          <li><a href="#1x-binding-configuration" id="markdown-toc-1x-binding-configuration">1.x Binding Configuration</a></li>
+          <li><a href="#2x-binding-configs" id="markdown-toc-2x-binding-configs">2.x Binding Configs</a></li>
+          <li><a href="#multi-bindingchannel-linkage" id="markdown-toc-multi-bindingchannel-linkage">Multi Binding/Channel Linkage</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="#restore-states" id="markdown-toc-restore-states">Restore States</a></li>
+</ul>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>Items are basic data types and have a <em>state</em> which can be <em>read from</em>, or <em>written to</em>, in order to interact with them.</p>
+
+<p>Items can be <em>bound to Bindings</em> or <em>linked to Channels</em>.
+For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light’s dimmer Channel can set the brightness of the light bulb.
+Read the <a href="/v2.1/addons/bindings.html">docs page for the respective Binding</a> to get more information about possible connections and examples.</p>
+
+<p>There are two methods for defining Items:</p>
+
+<ol>
+  <li>
+    <p>The first is through PaperUI.
+Generally all 2.x version Bindings can be configured through PaperUI.
+Other 1.x and legacy Bindings do not offer this path.</p>
+  </li>
+  <li>
+    <p>The second method is through text <code class="highlighter-rouge">.items</code> files in the <code class="highlighter-rouge">items</code> folder.
+Files here must have the extension <code class="highlighter-rouge">.items</code> and you can create as many <code class="highlighter-rouge">.items</code> files as you need/want - however, each Item must be unique across them all.
+Refer to the <a href="/v2.1/installation/index.html">installation docs</a> to determine your specific installations folder structure.
+Generally 1.x version Bindings can only be bound to Items through <code class="highlighter-rouge">.items</code> files.
+2.x Bindings can also be used with this method</p>
+  </li>
+</ol>
+
+<p><strong>Assumptions for PaperUI:</strong>
+The following content will discuss details of item definition on the example of <code class="highlighter-rouge">.items</code> files.</p>
+
+<p><strong>Editor Recommendation:</strong>
+It’s recommended to edit <code class="highlighter-rouge">.items</code> files using the <a href="/v2.1/installation/designer.html">Eclipse SmartHome Designer</a>.
+Doing so you will have full IDE support like syntax checking, context assist, etc.</p>
+
+<h2 id="item-definition-and-syntax">Item Definition and Syntax</h2>
+
+<p>Items are defined in the following syntax.
+The parts of an Item must be defined in this order.
+Besides the <code class="highlighter-rouge">itemtype</code> and <code class="highlighter-rouge">itemname</code> all parts are optional.</p>
+
+<pre><code class="language-xtend">itemtype itemname "labeltext" &lt;iconname&gt; (group1, group2, ...) ["tag1", "tag2", ...] {bindingconfig}
+</code></pre>
+
+<p><strong>Examples:</strong></p>
+
+<pre><code class="language-xtend">Number BathRoom_WaschingMachine_Power "Power [%.0f W]" &lt;energy&gt; (gPower) {channel="homematic:HG-HM-ES-PMSw1-Pl:ccu:LEQ1275872:2#POWER"}
+Switch Kitchen_Light "Kitchen Light OnOff" {mqtt="&lt;[...], &gt;[...]" }
+String BedRoom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:PLAY3:RINCON_C5E93734496A0A400:currenttitle"}
+
+Number LivingRoom_Temperature "Temperature [%.1f °C]" &lt;temperature&gt; (gTemperature, gLivingRoom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
+</code></pre>
+
+<p>The last example above defines an Item with the following parts:</p>
+
+<ul>
+  <li>Item type <code class="highlighter-rouge">Number</code></li>
+  <li>Item name <code class="highlighter-rouge">LivingRoom_Temperature</code></li>
+  <li>Item state formatted in a way which will produce for example “21.5 °C” as its output</li>
+  <li>Item displaying icon with the name <code class="highlighter-rouge">temperature</code></li>
+  <li>Item belongs to groups <code class="highlighter-rouge">gTemperature</code> and <code class="highlighter-rouge">gLivingRoom</code></li>
+  <li>Item is tagged as a thermostat (“TargetTemperature”)</li>
+  <li>Item is bound to the openHAB Binding <code class="highlighter-rouge">knx</code> with binding specific settings</li>
+</ul>
+
+<p>The remainder of this article describes the Item definition parts in more detail.</p>
+
+<h3 id="types">Types</h3>
+
+<p>The Item type defines which kind of state can be stored in that Item and which commands can be sent to it, e.g. String, Number or binary Switch.
+They are comparable with basic variable data types in programming languages.</p>
+
+<p>Each Item type has been optimized for certain components in your smart home.
+This optimization is reflected in the data types, and command types.</p>
+
+<p>All available openHAB2 Item types and their relevant commands can be viewed here: <a href="/v2.1/concepts/items.html">Item Types</a>.</p>
+
+<p><strong>Dimmer vs. Switch:</strong>
+While a Dimmer Item can accept either On/Off, Increase/Decrease, or Percent updates or command, a Dimmer Item stores its state as a Percent value.
+See the following example:</p>
+
+<p>Item:</p>
+
+<pre><code class="language-xtend">Dimmer Office_Light "Dimmer [%d %%]" {milight="bridge01;3;brightness"}
+</code></pre>
+
+<p>Sitemap:</p>
+
+<pre><code class="language-xtend">Switch item=Office_Light
+Slider item=Office_Light
+</code></pre>
+
+<p>When the Switch widget is used, it sends ON or OFF commands to the Item which are mapped to 100% and 0%, respectively.
+When the Slider widget is used, it sends Percent commands (values between 0 and 100) to the Item, which are used as the Item’s state.
+In the example above, if you move the Slider widget to 60%, move the Switch to OFF, and finally move the switch to ON, the Item’s state will be 100%.</p>
+
+<h3 id="name">Name</h3>
+
+<p>The Item name is the unique identified of the Item.
+The name should only consist of letters, numbers and the underscore character.
+Spaces and special characters cannot be used.
+A good naming schema can be advised.</p>
+
+<h3 id="label">Label</h3>
+
+<p>The label text has two purposes.
+First, this text is used to display a description of the specific Item (for example, in the Sitemap).</p>
+
+<p>Secondly, the label also includes the value displaying definition for the Item’s state.
+This part is contained inside “<code class="highlighter-rouge">[ ]</code>” in the label and can be left out to not display the state of an Item.</p>
+
+<h3 id="state">State</h3>
+
+<p>The state part of the Item definition determines the Item value presentation, e.g., regarding formatting, decimal places, unit display and more.
+The state definition is part of the Item Label definition and contained inside square brackets ()”<code class="highlighter-rouge">[ ]</code>”).</p>
+
+<h4 id="state-formatting">State Formatting</h4>
+
+<p>Formatting is done applying <a href="http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax">Java formatter class syntax</a>, therefore the syntax is</p>
+
+<pre><code class="language-xtend">[%[argument_index$][flags][width][.precision]conversion]
+</code></pre>
+
+<p>Only the leading ‘%’ and the trailing ‘conversion’ are mandatory.
+The <strong>argument_index$</strong> must be used if you want to convert the value of the Item several times within the label text or if the Item has more than one value.
+Look at the DateTime and Call Item in the following example.</p>
+
+<pre><code class="language-xtend">Number    MyTemperature  "The Temperature is [%.1f] °C"   { someBinding:somevalue }
+String    MyString       "Value: [%s]"                    { someBinding:somevalue }
+DateTime  MyLastUpdate   "Last Update: [%1$ta %1$tR]"     { someBinding:somevalue }
+</code></pre>
+
+<p>The output would look like this:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Temperature 23.2 °C
+Value: Lorem ipsum
+Last Update: Sun 15:26
+</code></pre></div></div>
+
+<h3 id="state-transformations">State Transformations</h3>
+
+<p>Another possibility in label texts is to use a transformation.
+They are used for example to translate a status into another language or convert technical value into human readable ones.
+To do this you have to create a .map file in your <code class="highlighter-rouge">transform</code> folder.
+These files are typical key/value pair files.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>key1=value1
+key2=value2
+...
+</code></pre></div></div>
+
+<p>Let’s make a small example to illustrate this function.
+If you have a sensor which returns the number 0 for a closed window and 1 for an open window, you can transform these values into the words “opened” or “closed”.
+Create a map file named <code class="highlighter-rouge">window.map</code> for example and add the desired keys and values.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>0=closed
+1=opened
+NULL=unknown
+-=unknown
+</code></pre></div></div>
+
+<p>Next we define two Items.
+One showing the raw value as it is provided from our sensor and one with transformed value.</p>
+
+<pre><code class="language-xtend">Number WindowRaw          "Window is [%d]"                  { someBinding:somevalue }
+Number WindowTransformed  "Window is [MAP(window.map):%s]"  { someBinding:somevalue }
+</code></pre>
+
+<p>The output will be:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Window is 1
+Window is opened
+</code></pre></div></div>
+
+<p>Transform files use UTF-8 encoding, so Unicode symbols will also work.</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ARIES=♈ Aries
+TAURUS=♉ Taurus
+WAXING_CRESCENT=🌑→🌓 Waxing Crescent
+FIRST_QUARTER=🌓 First Quarter
+</code></pre></div></div>
+
+<h3 id="icons">Icons</h3>
+
+<p>The icon name is used to reference an image presented next to an Item, e.g. in BasicUI.</p>
+
+<p>OpenHAB provides a set of <a href="/v2.1/addons/iconsets/classic/readme.html">classic icons</a> by default.
+Additional icons can be placed under <code class="highlighter-rouge">icons/classic/</code> inside the openHAB configuration folder.</p>
+
+<p>Custom Icons must abide to the following file name restrictions to be accepted by openHAB:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">png</code> or <code class="highlighter-rouge">svg</code> format (see below)</li>
+  <li>Only lowercase letters, numbers and underscores <code class="highlighter-rouge">_</code></li>
+  <li>Hyphens <code class="highlighter-rouge">-</code> are used for Dynamic Icons (see below), hyphens are not allowed as part of the filename</li>
+  <li><em>No</em> uppercase letters or special characters.</li>
+  <li>Examples:
+    <ul>
+      <li>Allowed: <code class="highlighter-rouge">switch.svg</code>, <code class="highlighter-rouge">power_meter.png</code>, <code class="highlighter-rouge">error2.svg</code></li>
+      <li>Not allowed: <code class="highlighter-rouge">PC_Monitor.svg</code>, <code class="highlighter-rouge">power-meter.png</code>, <code class="highlighter-rouge">tür⇔.svg</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>The PaperUI interface (or the configuration files <code class="highlighter-rouge">classicui.cfg</code>/<code class="highlighter-rouge">basicui.cfg</code>) allows to define whether you use Vector (.svg) or Bitmap (.png) icon files.
+Only one or the other setting is allowed, in which case the other is ignored.</p>
+
+<p>To use a custom icon called <code class="highlighter-rouge">heatpump.svg</code> the correct syntax is <code class="highlighter-rouge">&lt;heatpump&gt;</code> in the Item definition.</p>
+
+<p>Predefined icons from the default icon set can be replaced.</p>
+
+<h4 id="dynamic-icons">Dynamic Icons</h4>
+
+<p>An icon can consist of an icon family, from which one icon is dynamically selected depending on the Item’s state.
+The state related part of an icon is appended to the icon name after the special hyphen delimiter.</p>
+
+<p>To give an example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">File name</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">switch.svg</code></td>
+      <td style="text-align: left">default, used when no other matching icon is found</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">switch-off.svg</code></td>
+      <td style="text-align: left">Matches <code class="highlighter-rouge">OFF</code> or “off” state</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">switch-on.svg</code></td>
+      <td style="text-align: left">Matches <code class="highlighter-rouge">ON</code> or “on” state</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Dynamic icon families must meet the following criteria:</p>
+
+<ul>
+  <li>there must be a default icon</li>
+  <li>the state part of the icon must consist of all lower case letters (even if the state of the Item includes uppercase letters)</li>
+  <li>the icon selected is based on the mapped value used in the label (i.e. what gets returned by <code class="highlighter-rouge">[MAP(file.map):%s]</code>, not the Item’s raw state.</li>
+</ul>
+
+<p>The name of dynamic icons must meet the following format:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;name&gt;[-&lt;state&gt;].&lt;png or svg&gt;
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;name&gt;</code> is the name of the icon set</li>
+  <li><code class="highlighter-rouge">[-&lt;state&gt;]</code> is the state that particular icon maps to, the icon without the state part is the default</li>
+  <li><code class="highlighter-rouge">&lt;png or svg&gt;</code> based on the format of the icon, use the default format as explained above.</li>
+</ul>
+
+<p>To use the dynamic Items the default icon name without state and extension is used.</p>
+
+<pre><code class="language-xtend">Switch  Light_FrontDoor  "Front Door light is [MAP(en.map):%s]"  &lt;switch&gt;  {somebinding:someconfig}
+</code></pre>
+
+<p><strong>State Matching Rule:</strong></p>
+
+<p>For Number Items openHAB will use the equal or next lowest state icon that can be found.
+For a dimmer light (0 - 100%), you might provide icons as in the example:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">File name</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">dimmer.svg</code></td>
+      <td style="text-align: left">default icon (used in the undefined state)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">dimmer-0.svg</code></td>
+      <td style="text-align: left">off light icon (0%)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">dimmer-1.svg</code></td>
+      <td style="text-align: left">dimmed light icon (1% up to 74%)</td>
+    </tr>
+    <tr>
+      <td style="text-align: left"><code class="highlighter-rouge">dimmer-75.svg</code></td>
+      <td style="text-align: left">bright light icon (75% up to 100%)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Warning about the Influence of Transformations:</strong></p>
+
+<p>As mentioned above, the state used by the Sitemap to select the proper icon is the transformed state.
+When using a MAP in the label, the icon name must match the mapped state displayed on the Sitemap, not the raw Item’s state.
+To use the <code class="highlighter-rouge">Number Window</code> example from above, the icons for <code class="highlighter-rouge">Number Window</code> would be:</p>
+
+<pre><code class="language-xtend">window.png
+window-1.png
+window-0.png
+</code></pre>
+
+<p>and the icons for <code class="highlighter-rouge">Number WindowTransformed</code> would be:</p>
+
+<pre><code class="language-xtend">window.png
+window-open.png
+window-closed.png
+</code></pre>
+
+<h3 id="groups">Groups</h3>
+
+<p>The <em>Group</em> is a special Item Type.
+It is used to define a category or collection in which you can nest/collect other Items or other Groups.
+Groups are supported in Sitemaps, Automation Rules and other areas of openHAB.</p>
+
+<p>A simple example Group definition is:</p>
+
+<pre><code class="language-xtend">Group Temperatures
+</code></pre>
+
+<p><strong>Group State:</strong>
+A Group also has a state.
+The Group’s state is an aggregation of the states of all its members.
+Sending a command to a Group will cause that command to be forwarded to all the Group’s members.</p>
+
+<p>Items can be in none, one, or multiple groups, groups can be nested inside other groups.</p>
+
+<h4 id="nested-groups">Nested Groups</h4>
+
+<p>Groups can be nested inside each other.
+This functionality is commonly used to define hierarchies of Items from different perspectives.</p>
+
+<ul>
+  <li>Regional perspective: e.g. Stories of a Building → Corridors on that story → Rooms along the corridor …</li>
+  <li>Data perspective: e.g. Room temperatures, power consumption, all lights in the Building, ….</li>
+  <li>Maintenance perspective: e.g. Error states, Battery health, …</li>
+  <li>and so on …</li>
+</ul>
+
+<p>Let’s look at the example below:</p>
+
+<pre><code class="language-xtend">Group gAll
+Group gRoom        (gAll)
+Group gLivingRoom  (gRoom)
+Group gSensor      (gAll)
+Group gTemperature (gSensor)
+
+Number Sensor_Temperature  "Temperature [%.1f °C]"  &lt;temperature&gt;  (gTemperature)  {knx="1/0/15+0/0/15"}
+</code></pre>
+
+<p>The Item <code class="highlighter-rouge">Sensor_Temperature</code> is a member of the Group <code class="highlighter-rouge">gTemperature</code>, which is itself a member of the Group <code class="highlighter-rouge">gSensor</code>, which is a member of the Group <code class="highlighter-rouge">All</code>.</p>
+
+<p>This relation can be exploited in sitemaps or in automation rules.</p>
+
+<h4 id="group-types">Group Types</h4>
+
+<p>Group Items can also be used to easily determine one or more Items with a defined value or can be used to calculate a value depending on all values within the Group.
+Please note that this can only be used if all Items in the Group have compatible types (otherwise the calculated state will most likely be <code class="highlighter-rouge">UNDEF</code>.</p>
+
+<p>The format for this is:</p>
+
+<pre><code class="language-xtend">Group:itemtype:function  itemname  ["labeltext"]  [&lt;iconname&gt;]  [(group1, group2, ...)]
+</code></pre>
+
+<p>As an example consider a group of switches:</p>
+
+<pre><code class="language-xtend">Group:Switch:OR(ON,OFF)  mySwitches
+</code></pre>
+
+<p>The state of the <code class="highlighter-rouge">mySwitches</code> group will be ON if any of the members states are ON.
+But this means that once one Item in the group has its state changed to ON, the group’s state gets set.
+Each subsequent Item that changes state to ON will not trigger “mySwitches changed” because the group isn’t changing.</p>
+
+<p>This is not a bug, it is the expected and designed behavior.
+Because the group state is an aggregate, every change in the Item members does not necessarily result in a change to the group’s state.</p>
+
+<p>If you omit the type or function definitions for a group the following behavior is used:</p>
+
+<p>If there is a type but no function like in the example below,</p>
+
+<pre><code class="language-xtend">Group:Switch  mySwitches
+</code></pre>
+
+<p>the function <code class="highlighter-rouge">EQUAL</code> (Equality) will be used.</p>
+
+<p>If you omit the type AND the function the group state will NOT be influcenced by its members, i.e. such a group is only useful for grouping items in GUIs.</p>
+
+<p>Group functions can be any of the following:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: left">Function</th>
+      <th style="text-align: left">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: left">EQUAL</td>
+      <td style="text-align: left">Default, if no function is specified. (a type for the group MUST be set). If ALL members have state X the group state will be X, otherwise it is UNDEF.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AND(value1, value2)</td>
+      <td style="text-align: left">This does a logical ‘AND’ operation. Only if all items are of ‘value1’ this is returned, otherwise the ‘value2’ is returned.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">AVG</td>
+      <td style="text-align: left">Calculates the numeric average over all item values of decimal type.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MAX</td>
+      <td style="text-align: left">This calculates the maximum value of all item values of decimal type.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">MIN</td>
+      <td style="text-align: left">This calculates the minimum value of all item values of decimal type.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NAND(value1, value2)</td>
+      <td style="text-align: left">This does a logical ‘NAND’ operation. The value is ‘calculated’ by the normal ‘AND’ operation and than negated by returning the opposite value. E.g. when the ‘AND’ operation calculates the value1 the value2 will be returned and vice versa.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">NOR(value1, value2)</td>
+      <td style="text-align: left">This does a logical ‘NOR’ operation. The value is ‘calculated’ by the normal ‘OR’ operation and than negated by returning the opposite value. E.g. when the ‘OR’ operation calculates the value1 the value2 will be returned and vice versa.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">OR(value1, value2)</td>
+      <td style="text-align: left">Does a logical ‘OR’ operation. If at least one item is of ‘value1’ this is returned, otherwise the ‘value2’ is returned.</td>
+    </tr>
+    <tr>
+      <td style="text-align: left">SUM</td>
+      <td style="text-align: left">Calculates the sum of all items in the group.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="tagging">Tagging</h3>
+
+<p>Tagging is a new feature under development.
+Tags are used by some I/O add-ons, see <a href="/v2.1/addons/io/hueemulation/readme.html">Hue Emulation</a> for more details.</p>
+
+<p>Tags are only of interest if an add-on or integration README explicitly discusses their usage.</p>
+
+<h3 id="binding-configuration">Binding Configuration</h3>
+
+<p>As mentioned above, there are two ways to bind/link a device to an Item: 1.x Binding Configs and 2.x Channel Linking.</p>
+
+<p>When you install a Binding through PaperUI it will automatically create a <code class="highlighter-rouge">.cfg</code> file in <code class="highlighter-rouge">conf/services/</code> for the appropriate Binding.
+Inside these files are a predefined set of variables which are required for the Binding to operate.
+In many cases you will need to view and edit these to suit your system.
+These variables can hold IP addresses, API keys, user names, passwords etc.
+These are all in plain text, so be careful who you share these with if some data is sensitive.</p>
+
+<h4 id="1x-binding-configuration">1.x Binding Configuration</h4>
+
+<p>The 1.x Binding configuration defines from where the Item gets it values, and where a given value/command should be sent.</p>
+
+<p>You bind an Item to a Binding by adding a Binding definition in curly brackets at the end of the Item definition:</p>
+
+<pre><code class="language-xtend">{ ns="192.168.1.123:80" }
+</code></pre>
+
+<p>Where “ns” is the namespace for a certain Binding like “network”, “netatmo”, “zwave” etc.
+Every Binding defines what values must be given in the Binding configuration string.
+That can be the id of a sensor, an ip or mac address or anything else.
+You must have a look at your <a href="/v2.1/addons/bindings.html">Bindings</a> configuration section to know what to use.
+Some typical examples are:</p>
+
+<pre><code class="language-xtend">Switch Phone_Mobile        "My Mobile Phone"               { nh="192.168.1.123:80" }
+Number Netatmo_Indoor_CO2  "CO2 [%d]"                      { netatmo="00:00:00:00:00:00#Co2" }
+Number Azimuth             "Azimuth [%d]"                  { astro="planet=sun, type=position, property=azimuth" }
+Contact Garage             "Garage is [MAP(en.map):%s]     { zwave="21:command=sensor_binary,respond_to_basic=true" }
+</code></pre>
+
+<p>If you need to use legacy openHAB 1.x Bindings then you need to enable this feature through the PaperUI menu by turning on “Include Legacy 1.x Bindings” found at <code class="highlighter-rouge">/configuration/services/configure extension management/</code>.
+After downloading the legacy .jar files, they need to be placed in the <code class="highlighter-rouge">/addons/</code> folder.
+If further configuration is required then you will need to create an <code class="highlighter-rouge">openhab.cfg</code> file in <code class="highlighter-rouge">/conf/services/</code> and paste the appropriate Binding configuration into this.
+For all other native openHAB2 Bindings, configuration is done through a <code class="highlighter-rouge">bindingname.cfg</code> file in the same location.</p>
+
+<h4 id="2x-binding-configs">2.x Binding Configs</h4>
+<p>The 2.x Bindings introduce the concept of <a href="/v2.1/concepts/things.html">Things and Channels</a>.
+Unlike with 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
+Each Thing has one or more Channels and Items are linked to one or more Channels.</p>
+
+<p>Some Bindings support automatic discovery of Things in which case discovered Things will appear in the Inbox in PaperUI.
+Once accepted it will appear under Configuration &gt; Things.</p>
+
+<p>Other Bindings support defining Things in a <code class="highlighter-rouge">.things</code> file.</p>
+
+<p>See the <a href="/v2.1/addons/bindings.html">Bindings</a> configuration section to know how to discover or manually define Things for a given Binding.</p>
+
+<h5 id="paperui-linking">PaperUI Linking</h5>
+
+<p>One can link an Item with a Channel using PaperUI.</p>
+
+<ol>
+  <li>First create the Item in PaperUI under Configuration Items.</li>
+  <li>Next navigate to the Thing that has the Channel to link to the Item.</li>
+  <li>Click on the expand icon to the right of the Channel to link to the Item and press the <code class="highlighter-rouge">+</code> next to “Linked Items.”</li>
+  <li>Select the Item from the list and press “Link”.</li>
+</ol>
+
+<h5 id="text-file-linking">Text File Linking</h5>
+
+<p>One can also link an Item with a Channel using the <code class="highlighter-rouge">.items</code> file.
+Information about available Channels and options can be found in the Binding readme or discovered via PaperUI.</p>
+
+<p>In PaperUI select a Thing to learn about all Channels the Thing support.</p>
+
+<p>Linking an Item to a Channel is of the form <code class="highlighter-rouge">{channel="channel id"}</code>.
+Some examples:</p>
+
+<pre><code class="language-xtend">Switch  Phone_Mobile       "My Mobile Phone"               { channel="network:device:devicename:online" }
+Number  Netatmo_Indoor_CO2 "CO2"                           { channel="netatmo:NAMain:home:inside:Co2" }
+Number  Azimuth            "Azimuth"                       { channel="astro:sun:home:position#azimuth" }
+Contact Garage             "Garage is [MAP(en.map):%s]"    { channel="zwave:21:command=sensor_binary,respond_to_basic=true" }
+</code></pre>
+
+<h4 id="multi-bindingchannel-linkage">Multi Binding/Channel Linkage</h4>
+
+<p>One Item can be linked to multiple Bindings and/or Channels.
+Commands and Updates from and to these will be mixed/combined and can be used in interesting ways.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Switch</span> <span class="n">Office_PC</span> <span class="o">{</span> <span class="n">nh</span><span class="o">=</span><span class="s">"192.168.3.203"</span><span class="o">,</span> <span class="n">wol</span><span class="o">=</span><span class="s">"192.168.0.2"</span> <span class="o">}</span>
+<span class="n">Number</span> <span class="n">Temperature</span> <span class="o">{</span> <span class="n">mysensors</span><span class="o">=</span><span class="s">"24;1;V_TEMP"</span><span class="o">,</span> <span class="n">expire</span><span class="o">=</span><span class="s">"5m,-999"</span> <span class="o">}</span>
+</code></pre></div></div>
+
+<p>The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
+The second example shows a prominent use case for the <a href="http://docs.openhab.org/addons/bindings/expire1/readme.html">expire Binding</a> where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.</p>
+
+<p><strong>Exception <code class="highlighter-rouge">autoupdate</code>:</strong></p>
+
+<p><code class="highlighter-rouge">autoupdate="false"</code> is a special instruction which keeps the current state of the item, even if a <em>command</em> has been received.
+This way, the Item is always unchanged unless you explicitly post an <em>update</em> to the item.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Switch</span> <span class="n">Garage_Gate</span> <span class="o">{</span> <span class="n">binding</span><span class="o">=</span><span class="s">"xxx"</span><span class="o">,</span><span class="n">autoupdate</span><span class="o">=</span><span class="s">"false"</span><span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="restore-states">Restore States</h2>
+
+<p>When restarting your openHAB installation you may find there are times when your logs indicate some Items are UNDEF.
+This is because, by default, Item states are not persisted when openHAB restarts.
+To have your states persist across restarts you will need to install a <a href="/v2.1/configuration/persistence.html">Persistence</a> extension.</p>
+
+<p>Specifically, you need to use a <code class="highlighter-rouge">restoreOnStartup</code> strategy for all your Items.
+Then whatever state they were in before the restart will be restored automatically.</p>
+
+<pre><code class="language-xtend">Strategies {
+    default = everyUpdate
+}
+
+Items {
+    // persist all Items on every change and restore them from the MapDB at startup
+    * : strategy = everyChange, restoreOnStartup
+}
+</code></pre>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

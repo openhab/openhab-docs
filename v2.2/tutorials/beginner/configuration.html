@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/tutorials/beginner/configuration.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li>Tutorial (Beginner)</li>
+  <ul>
+    <li><a href="/v2.2/tutorials/beginner/index.html">Overview</a></li>
+    <li><a href="/v2.2/tutorials/beginner/1sttimesetup.html">First-time setup</a></li>
+    <li><a href="/v2.2/tutorials/beginner/uis.html">User Interfaces</a></li>
+    <li><a href="/v2.2/tutorials/beginner/configuration.html">Configuring openHAB and installing add-ons</a></li>
+    <li><a href="/v2.2/tutorials/beginner/sitemap.html">Creating a sitemap</a></li>
+    <li><a href="/v2.2/tutorials/beginner/rules.html">Working with rules</a></li>
+    <li><a href="/v2.2/tutorials/beginner/logs.html">Looking to the logs</a></li>
+    <li><a href="/v2.2/tutorials/beginner/persistence.html">Working with persistence</a></li>
+  </ul>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="configuration-of-openhab">Configuration of openHAB</h1>
+
+<p>We left at the <a href="/v2.2/tutorials/beginner/1sttimesetup.html">start page</a> before showing you the differences of the UIs.
+Now click on the “PAPER UI” link and you will be taken to the “Inbox”.
+The inbox is the place where you can discover/add new “things” (i.e. Zwave devices, Hue lamps, network devices and so on).</p>
+
+<p><img src="images/picture_04.jpg" alt="" /></p>
+
+<p>In order to be able to add new things, at first you must install the corresponding binding for that type of thing.
+I.e. if you want to control your Zwave devices, you have to install the Zwave binding.
+If you want to control your Hue lamps, you have to install the Hue binding etc.</p>
+
+<p>The installation is done on the “Add-ons” page in the left menu.</p>
+
+<p><img src="images/picture_05.jpg" alt="" /></p>
+
+<p>You can scroll down and have a look at lots of bindings available for openHAB!</p>
+
+<p>Let’s start with the “Network Binding”, as this binding can be used in every setup from the start and will show you the basic configuration possibilities.
+With the network binding, you can define some of your network devices as things in order to use them in a rule for example, or just to see if they are online or offline and for how long.
+Scroll down or use the “Search” field to find the “Network Binding”.
+Click on install, the binding will be downloaded and installed automatically.</p>
+
+<p><img src="images/picture_06.jpg" alt="" /></p>
+
+<p><img src="images/picture_07.jpg" alt="" /></p>
+
+<p>Now that the binding is installed, switch back to the “Inbox”.
+If you click the “+”-button, you now are able to choose the binding which you want to use for discovering new things.
+Because we only installed the network binding so far, it’s the only binding to choose.</p>
+
+<p><img src="images/picture_08.jpg" alt="" /></p>
+
+<p>As soon as you click on “Network Binding”, the binding will start an automatic discovery of all (reachable) network devices in the same subnet as your openHAB installation resides in via ICMP (ping).</p>
+
+<p><img src="images/picture_09.jpg" alt="" /></p>
+
+<p>The discovered “things” are now displayed in the inbox, and you can decide what to do next:</p>
+
+<ul>
+  <li>add the device as a thing by clicking the check icon</li>
+  <li>ignore the device by clicking the crossed-out-eye icon</li>
+  <li>delete the device by clicking the trashcan icon</li>
+</ul>
+
+<p>The difference between ignoring and deleting discovered things is as follows:</p>
+
+<ul>
+  <li>if you ignore a thing, it disappears from the visible inbox. If you decide to add it at a later time, you can do so by scrolling to the bottom of the inbox and click the “SHOW IGNORED” button.</li>
+  <li>if you delete the thing, it won’t be visible in the inbox any more. But if you start a new discovery process later, the thing will reappear.</li>
+</ul>
+
+<p>In this example, we click on the check icon of the thing with the IP address 192.168.1.103.
+Let’s assume this is John’s mobile phone which we want to use for presence detection.
+We change the (automatically added during the discovery) name of the thing on the next page to “John’s Mobile” and click on the “ADD AS THING” button.
+<em>Please note: if your network devices use a DHCP server to obtain ther IP addresses automatically, please make sure to define a DHCP reservation for a device which you want to use in openHAB.
+Otherwise it’s IP address may change in the future and your thing definiton won’t work any more.
+Information about how to define a DHCP reservation can be normally be found in the manual of your network router.</em></p>
+
+<p><img src="images/picture_10.jpg" alt="" /></p>
+
+<p>Before we proceed, let’s change one of the default system settings of openHAB to ease up the following processes.
+You will see why in a moment.
+Go to “Configuration -&gt; System” via the menu on the left.
+Here you can find the basic system properties of your openHAB installation.
+Scroll down to “Item linking”, activate the “Simple Mode” slider and click the “SAVE” button which appears afterwards.
+You will notice afterwards that the “Items” menu item will be gone.</p>
+
+<p><img src="images/picture_11.jpg" alt="" /></p>
+
+<p>Now back to your recently added thing.
+Go to the “Configuration -&gt; Things” page, there you will find your network device thing, including the name “John’s Mobile” which we defined above.</p>
+
+<p><img src="images/picture_12.jpg" alt="" /></p>
+
+<p>You can already see the status, “ONLINE”, of the thing, so it’s currently reachable by openHAB.
+If you click on the name, you’ll get to the next page showing the available channels of the thing.
+Channels represent the different functions the items provide.
+In this case you can see two channels: “Online” and “Time”, the description below it says it all :)</p>
+
+<p><img src="images/picture_13.jpg" alt="" /></p>
+
+<p>What is very important: the channels are not “linked” after the thing discovery.
+Linking means to create an openHAB “item” which represents the state of a channel of a thing.
+Because we activated the “Simple Mode” before, this can be done automatically by clicking the corresponding radio button left to the channel. Otherwise you have to define the name of the item yourself.</p>
+
+<p>So we’ll link both channels of the “John’s Mobile” thing now by clicking the radio buttons.</p>
+
+<p><img src="images/picture_14.jpg" alt="" /></p>
+
+<p>For most of the bindings each thing can be configured further by clicking the pen-icon.
+There you can edit the name again, chose a location (this is important for the “Control” menu item later) and, of course, change binding realated options.
+With the network binding for example, you can also change the IP address, the timeout, the refresh interval etc.</p>
+
+<p><img src="images/picture_15.jpg" alt="" /></p>
+
+<p>You can save changed values by clicking the check icon at the top.</p>
+
+<p>Now that we linked the two channels in the previous step, we can have a look at the “Control” menu item at the top left.
+On the “Control” page you can see all your linked items.
+So far we added only one thing (“John’s Mobile”) and linked it’s two channels, so that’s all we see:</p>
+
+<p><img src="images/picture_16.jpg" alt="" /></p>
+
+<p>Items which are linked to channels of the same thing are displayed together, represented by the thing’s name.
+Here you can see the state of the “Online” and the “Time” channel.
+John’s mobile is online, and the ping time is 10ms.
+As you can see in the screenshot with the configuration parameters of the thing above, the refresh interval is set to 60000ms by default.
+This means that openHAB pings the device every 60 seconds.
+If you want to set a lower value there, feel free.</p>
+
+<p><strong>These are the basics to configure openHAB via Paper UI, meaning that the process is pretty much the same with other bindings.</strong></p>
+
+<p>To demonstrate that, we’ll proceed and install the Zwave binding in order to add Zwave things to openHAB.</p>
+
+<p><strong>If you do not own a Zwave controller you won’t be able to follow the next steps - however, this is a demonstration about how to install and configure add-ons. As mentioned before, the pure procedure to install and configure add-ons is mostly the same with other addons.</strong></p>
+
+<p><strong>More information about the Zwave binding and the other available bindings can be found <a href="/v2.2/addons/bindings.html">on the bindings page of the user manual</a>!</strong></p>
+
+<p>The installation is just like the example with the network binding above.
+Use the “Add-ons” menu item, search for the “Zwave” binding, click “INSTALL” and go directly to the “Inbox” afterwards.
+There, we click the “+” icon again and can now choose between the “Network Binding” and the “Zwave Binding”.</p>
+
+<p><img src="images/picture_17.jpg" alt="" /></p>
+
+<p>The difference to the network binding is, that we have to configure the Zwave controller first.
+So we are taken directly to the Zwave controller config page after clicking on the”Zwave Binding” link.
+Here we configure the port and basic settings and click the check icon afterwards.</p>
+
+<p><img src="images/picture_18.jpg" alt="" /></p>
+
+<p>openHAB immediately starts discovering Zwave things via the Zwave controller and shows them in the inbox - if they already have been included! If this is a completely new Zwave controller, you’ll have to include your Zwave things first.
+To set the controller into incusion mode, press the “+” icon again.
+Please refer to the manual of you Zwave device in order to find out how the inclusion works there (most of the time it’s pressing thetamper button thrice).</p>
+
+<p>Let’s assume we bought a new wallplug and included it, it’s “Node 30”.
+For a simple sitemap and rule example on the next page, we’ll configure this thing now:</p>
+
+<p><img src="images/picture_19.jpg" alt="" /></p>
+
+<p><img src="images/picture_20.jpg" alt="" /></p>
+
+<p><img src="images/picture_21.jpg" alt="" /></p>
+
+<p>Basically we gave the thing a name (“Wallplug TV”, please note the naming convention mentioned above!) and linked the “Switch” channel.
+Now we can see the wallplug (and the Zwave controller) on the “Control” page, too. It’s switch is currently turned off:</p>
+
+<p><img src="images/picture_22.jpg" alt="" /></p>
+
+<p>If you activate the slider of the wallplug, it will start routing power :)</p>
+
+<p><strong>You first action with openHAB!</strong></p>
+
+<p><a href="/v2.2/tutorials/beginner/sitemap.html">On the next page</a>, we will define a sitemap to create your own view of things an items.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+
