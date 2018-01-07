@@ -3,7 +3,7 @@
 
 $script = <<SCRIPT
 sudo apt-get update
-sudo apt-get install -y build-essential nodejs python-software-properties zlib1g-dev
+sudo apt-get install -y build-essential nodejs python-software-properties zlib1g-dev dos2unix
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo apt-add-repository -y ppa:brightbox/ruby-ng
 sudo apt-get update

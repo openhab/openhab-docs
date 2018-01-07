@@ -412,7 +412,7 @@
               <outputDirectory>${basedir}/addons/uis/apps</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/${basedir}/.external-resources/openhab.android/docs</directory>
+                  <directory>${basedir}/${basedir}/.external-resources/openhab-android/docs</directory>
                   <includes>
                     <include>images/*.png</include>
                   </includes>
@@ -445,7 +445,7 @@
               <goal>copy</goal>
             </goals>
             <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab.android/docs/USAGE.md</sourceFile>
+              <sourceFile>${basedir}/.external-resources/openhab-android/docs/USAGE.md</sourceFile>
               <destinationFile>${basedir}/addons/uis/apps/android.md</destinationFile>
             </configuration>
           </execution>
