@@ -86,7 +86,7 @@ If no voice or no audio sink is provided, the default voice and default audio si
 Although there are already interfaces defined in openHAB for speech-to-text, up to now there is no add-on available for this functionality.
 So the only choice that is available right now is to use the Android voice recognition feature that is built into the openHAB Android app.
 
-The Android app is [not yet adapted to the openHAB 2 voice features](https://github.com/openhab/openhab.android/issues/242).
+The Android app is [not yet adapted to the openHAB 2 voice features](https://github.com/openhab/openhab-android/issues/242).
 To still use the voice feature you will need to have a String item with the name "VoiceCommand" defined, to which the app sends any recognized text as a string command.
 
 ### Human Language Interpreter
