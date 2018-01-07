@@ -1,16 +1,20 @@
 ---
 layout: documentation
-title: iOS openHAB App
+title: iOS App
 ---
 
 {% include base.html %}
 
-# iOS openHAB App
+# iOS App
 
 <!-- https://developer.apple.com/app-store/marketing/guidelines/de/#downloadOnAppstore -->
 
-We provide a native iOS app for openHAB, compatible with iPhone and iPad.
+The openHAB iOS application is a native client for openHAB, compatible with iPhone and iPad.
 It uses the REST API of openHAB to render sitemaps of your openHAB installation for a natural iOS feeling.
+
+<a href="https://itunes.apple.com/us/app/openhab/id492054521">
+  <img alt="Download on the App Store" src="images/download-on-the-app-store.png" width="240px">
+</a>
 
 ## Features
 
@@ -30,8 +34,6 @@ It uses the REST API of openHAB to render sitemaps of your openHAB installation 
 
 The latest release version of the app is always available through the Apple App Store.
 
-[![Download openHAB app on the App Store](images/download-on-the-app-store.png)](https://itunes.apple.com/us/app/openhab/id492054521)
-
 The app will start in Demo mode by default.
 A demo home automation setup is shown.
 This allows you to explore the possibilities of a typical openHAB installation.
@@ -46,6 +48,6 @@ The openHAB app will henceforth first try connecting to the local URL, then fall
 
 ## Help and Resources
 
-If your question or problem isn't covered here in the documentation pages, check the [openHAB Community Forum](https://community.openhab.org). 
+If your question or problem isn't covered here in the documentation pages, check the [openHAB Community Forum](https://community.openhab.org).
 
 Also, please refer to the [openhab.ios project](https://github.com/openhab/openhab.ios) on GitHub for more technical details.

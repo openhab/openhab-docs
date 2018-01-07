@@ -393,7 +393,7 @@
               <outputDirectory>${basedir}/configuration</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-bundles/uis/org.openhab.ui.habpanel/docs</directory>
+                  <directory>${basedir}/.external-resources/openhab-bundles/uis/org.openhab.ui.habpanel/doc</directory>
                   <includes>
                     <include>habpanel.md</include>
                     <include>images/*.png</include>
@@ -412,7 +412,7 @@
               <outputDirectory>${basedir}/addons/uis/apps</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/${basedir}/.external-resources/openhab-android/docs</directory>
+                  <directory>${basedir}/.external-resources/openhab-android/docs</directory>
                   <includes>
                     <include>images/*.png</include>
                   </includes>

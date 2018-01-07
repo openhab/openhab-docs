@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title: Windows 10 openHAB App
+title: Windows 10 App
 ---
 
 {% include base.html %}
 
-# Windows 10 openHAB App
+# Windows 10 App
 
 We provide a native Windows 10 app for openHAB, compatible with Windows laptops, desktops, tablets and phones (Xbox, Raspberry Pi and Holographic coming soon).
 It uses the REST API of openHAB to render sitemaps of your openHAB installation.
