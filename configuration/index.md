@@ -133,5 +133,8 @@ Every interface has it's own strong points.
 With openHAB 1.x the smart home configuration was done via configuration files only.
 One of the most visible additions to openHAB 2 is the adminstrative web interface Paper UI.
 
-Things and Items can either be defined and managed in configuration files or handled by Paper UI in a system-side database.
+Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database]({{base}}/administration/jsondb.html).
+
 Both methods can be used **side-by-side or even mixed**, e.g. a Thing is discovered by Paper UI and linked Items are defined in a `.items` configuration file.
+
+Configuration done in files will be synced to the database but configuration done in the database will not be written to files.
