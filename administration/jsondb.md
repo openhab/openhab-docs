@@ -6,20 +6,24 @@ title: JsonDB Storage
 {% include base.html %}
 
 # JsonDB Storage
+
 openHAB stores configuration information in JSON (JavaScript Object Notation) formatted (structured) text files located in the `OPENHAB_USERDATA/jsondb/` directory.
 
 ## Storage Scope
+
 All configuration information regarding _**Items, Links, and Things**_ which are defined via the User Interfaces (Paper UI, HABmin, REST) or via internal openHAB services.
 
 Note: The JSON DB does NOT store information for manually configured Items, Links, or Things, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab2/items/`).
 
 ## Storage Purpose
+
 The JSON DB Storage can be used for:
 - Backup: Maintains a copy of your configurations in the `OPENHAB_USERDATA/jsondb/backup` directory
 - Troubleshooting: Allows the user to interact with the configurations that were automatically generated via the UIs
 - Advanced administration: Gives the possibility to manually define configuration parameters within the `*.json` files
 
 ## Storage Use
+
 openHAB writes the `*.json` files everytime a change is made via the User Interfaces.
 openHAB _**reads only once the `*.json` files at startup**_.  So, if you edit them manually, you should restart openHAB.
 
