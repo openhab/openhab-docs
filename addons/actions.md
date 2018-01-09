@@ -64,17 +64,6 @@ To get a list of available voices use `say -v ?` and to get a list of devices us
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
 
-### Cloud Notification Actions
-
-Notification actions may be placed in Rules to send alerts to mobile devices registered with an [openHAB Cloud instance](https://github.com/openhab/openhab-cloud) such as [myopenHAB.org](https://myopenhab.org).
-Three different actions are available:
-
-- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message'
-- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users
-- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
-
-For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopehnab.org website](http://www.myopenhab.org).
-
 ### HTTP Actions
 
 - `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
@@ -128,6 +117,28 @@ if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONL
     logError("ThingStatus", "The thing is offline or doesn't exist.")
 }
 ```
+
+## Cloud Notification Actions
+
+Notification actions may be placed in Rules to send alerts to mobile devices registered with an [openHAB Cloud instance](https://github.com/openhab/openhab-cloud) such as [myopenHAB.org](https://myopenhab.org).
+Three different actions are available:
+
+- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message'
+- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users
+- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
+
+**Example**
+
+```javascript
+rule "Front Door Notification"
+when
+  Item Apartment_FrontDoor changed to OPEN
+then
+  send Notification("me@email.com", "Front door was opened!")
+end
+```
+
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopehnab.org website](http://www.myopenhab.org).
 
 ## Installable Actions
 
