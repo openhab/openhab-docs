@@ -1,0 +1,2126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Modbus - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/modbus1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/modbus1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/modbus1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/modbus1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="modbus-binding">Modbus Binding</h1>
+
+<p>The binding supports both TCP and Serial slaves. RTU, ASCII and BIN variants of Serial Modbus are supported.</p>
+
+<p>The binding can act as</p>
+
+<ul>
+  <li>Modbus TCP Client (that is, as modbus master), querying data from Modbus TCP servers (that is, modbus slaves).</li>
+  <li>Modbus serial master, querying data from modbus serial slaves</li>
+</ul>
+
+<p>The Modbus binding polls the slaves with an configurable poll period. openHAB commands are translated to write requests.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- You can generate TOC with https://github.com/ekalinin/github-markdown-toc and running the following command (and stripping out some of the too detailed ones)-->
+<!-- cat bundles/binding/org.openhab.binding.modbus/README.md | ./gh-md-toc -  -->
+<ul>
+  <li><a href="#modbus-binding">Modbus Binding</a>
+    <ul>
+      <li><a href="#table-of-contents">Table of Contents</a></li>
+      <li><a href="#binding-configuration">Binding Configuration</a>
+        <ul>
+          <li><a href="#global-configuration">Global configuration</a></li>
+          <li><a href="#configuration-parameters-specific-to-each-slave">Configuration parameters specific to each slave</a></li>
+          <li><a href="#advanced-connection-parameters">Advanced connection parameters</a></li>
+        </ul>
+      </li>
+      <li><a href="#item-configuration">Item Configuration</a>
+        <ul>
+          <li><a href="#simple-format">Simple format</a></li>
+          <li><a href="#extended-format">Extended format</a></li>
+          <li><a href="#item-configuration-examples">Item configuration examples</a></li>
+        </ul>
+      </li>
+      <li><a href="#details">Details</a>
+        <ul>
+          <li><a href="#modbus-functions-supported">Modbus functions supported</a></li>
+          <li><a href="#comment-on-addressing">Comment on addressing</a></li>
+          <li><a href="#many-modbus-binding-slaves-for-single-physical-slave">Many modbus binding slaves for single physical slave</a></li>
+          <li><a href="#read-and-write-functions-modbus-slave-type">Read and write functions (modbus slave type)</a></li>
+          <li><a href="#register-interpretation-valuetype-on-read--write">Register interpretation (valuetype) on read &amp; write</a></li>
+        </ul>
+      </li>
+      <li><a href="#config-examples">Config Examples</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a>
+        <ul>
+          <li><a href="#enable-verbose-logging">Enable verbose logging</a></li>
+        </ul>
+      </li>
+      <li><a href="#for-developers">For developers</a>
+        <ul>
+          <li><a href="#testing-serial-implementation">Testing serial implementation</a></li>
+          <li><a href="#testing-tcp-implementation">Testing TCP implementation</a></li>
+          <li><a href="#writing-data">Writing data</a></li>
+          <li><a href="#troubleshooting-1">Troubleshooting</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>This binding can be configured in the file <code class="highlighter-rouge">services/modbus.cfg</code>.</p>
+
+<h3 id="global-configuration">Global configuration</h3>
+
+<p>Most of config parameters are related to specific slaves, but some are global and thus affect all slaves.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>poll</td>
+      <td>200</td>
+      <td style="text-align: center">No</td>
+      <td><strong>Poll period (optional)</strong><br /> Frequency of polling Modbus slaves. Note that the value is in milliseconds! For example, <code class="highlighter-rouge">poll=1000</code> makes the binding poll Modbus slaves once per second.</td>
+    </tr>
+    <tr>
+      <td>writemultipleregisters</td>
+      <td>false</td>
+      <td style="text-align: center">No</td>
+      <td><strong>Function code to use when writing holding registers (optional)</strong><br />Binding can be configured to use FC 16 (<em>Write Multiple Holding Registers</em>) over FC 6 (<em>Write Single Holding Register</em>) when writing holding register items (see above).  This is optional and default is <code class="highlighter-rouge">false</code>. For example, <code class="highlighter-rouge">writemultipleregisters=true</code> makes the binding to use FC16 when writing holding registers.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="configuration-parameters-specific-to-each-slave">Configuration parameters specific to each slave</h3>
+
+<p>The slaves are configured using key value pairs in openHAB config file. Each slave (identified by the slave name) in the config corresponds to a single modbus read request. Note that it might be necessary to define many “slaves” in openHAB configuration to read all data from a single physical modbus slave.</p>
+
+<p>The configuration parameters have the following pattern:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;slave-type&gt;.&lt;slave-name&gt;.&lt;slave-parameter-name&gt;=&lt;slave-parameter-value&gt;
+</code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;slave-type&gt;</code> can be either “tcp” or “serial” depending on the type of this Modbus slave</li>
+  <li><code class="highlighter-rouge">&lt;slave-name&gt;</code> is unique name per slave you are connecting to. Used in openHAB configuration to refer to the slave.</li>
+  <li><code class="highlighter-rouge">&lt;slave-parameter-name&gt;</code> identifies the parameter to configure</li>
+  <li><code class="highlighter-rouge">&lt;slave-parameter-value&gt;</code> is the value of the parameter</li>
+</ul>
+
+<p>Valid slave parameters are</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>connection</td>
+      <td>mandatory</td>
+      <td>Connection string for the slave.<br /><br /><strong>TCP slaves</strong> use the form <code class="highlighter-rouge">host_ip[:port]</code> e.g. <code class="highlighter-rouge">192.168.1.55</code> or <code class="highlighter-rouge">192.168.1.55:511</code>. If you omit port, default <code class="highlighter-rouge">502</code> will be used.<br /><br />For <strong>serial connections</strong> use the form <code class="highlighter-rouge">port:[:baud:[dataBits:[parity:[stopBits:[encoding]]]]]</code>, e.g. <code class="highlighter-rouge">/dev/ttyS0:38400:8:none:1:rtu</code> (read from <code class="highlighter-rouge">/dev/ttyS0</code> using baud rate of 38400, 8 databits, no parity, 1 stopbits, and rtu encoding. Another minimal example is <code class="highlighter-rouge">/dev/ttyS0:38400</code> where all optional parameters except baud rate will get their default values.<br /><br /><code class="highlighter-rouge">port</code> refers to COM port name on Windows and serial device path in *nix. Optionally one can configure one or more of the serial parameters: baud (default <code class="highlighter-rouge">9600</code>), dataBits (default <code class="highlighter-rouge">8</code>), parity (default <code class="highlighter-rouge">none</code>), stopBits (default <code class="highlighter-rouge">1</code>), encoding (default <code class="highlighter-rouge">ascii</code>). <br />Options for the optional serial parameters are as follows: parity={<code class="highlighter-rouge">even</code>, <code class="highlighter-rouge">odd</code>}; encoding={<code class="highlighter-rouge">ascii</code>, <code class="highlighter-rouge">rtu</code>, <code class="highlighter-rouge">bin</code>}.</td>
+    </tr>
+    <tr>
+      <td>id</td>
+      <td>optional</td>
+      <td>slave id, default <code class="highlighter-rouge">1</code>. Also known as <em>Address</em>, <em>Station address</em>, or <em>Unit identifier</em>, see <a href="https://en.wikipedia.org/wiki/Modbus">Wikipedia</a> and <a href="http://www.simplymodbus.ca/index.html">simplymodbus</a> articles for more information</td>
+    </tr>
+    <tr>
+      <td>type</td>
+      <td>mandatory</td>
+      <td>object type. Dictates the function codes used for read and write. See below for more information. Can be either <code class="highlighter-rouge">coil</code>, <code class="highlighter-rouge">discrete</code>, <code class="highlighter-rouge">holding</code>, or <code class="highlighter-rouge">input</code>.</td>
+    </tr>
+    <tr>
+      <td>start</td>
+      <td>optional</td>
+      <td>address of first coil/discrete input/register to read. Default is 0. The address is directly passed to the corresponding Modbus request, and thus is zero-based. See below for more information on the addressing.</td>
+    </tr>
+    <tr>
+      <td>length</td>
+      <td>mandatory</td>
+      <td>number of <em>data items</em> to read. <em>Data items</em> here refers to registers, coils or discrete inputs depending on the slave type. For example, if the goal is to read one item with <code class="highlighter-rouge">valuetype=int32</code>, one needs to read two registers (2 * 16bit = 32bit), thus <code class="highlighter-rouge">length = 2</code>. If three coils are of interest, one should specify <code class="highlighter-rouge">length = 3</code></td>
+    </tr>
+    <tr>
+      <td>valuetype</td>
+      <td>optional</td>
+      <td>tells how interpret the register data. For details, consult <a href="#register-interpretation-valuetype-on-read--write">Register interpretation (valuetype) on read &amp; write</a>.</td>
+    </tr>
+    <tr>
+      <td>updateunchangeditems</td>
+      <td>optional</td>
+      <td><em>*Since 1.9.0</em>. <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. Controls whether the binding sends an update event on every successful poll (<code class="highlighter-rouge">true</code>) or only if the state of the item actually changes (<code class="highlighter-rouge">false</code>).  Default is <code class="highlighter-rouge">false</code>. When polling many items with high poll frequency, setting this parameter to <code class="highlighter-rouge">true</code> may cause significant CPU usage.</td>
+    </tr>
+    <tr>
+      <td>postundefinedonreaderror</td>
+      <td>optional</td>
+      <td><strong>Since 1.9.0</strong>. <code class="highlighter-rouge">true</code> or <code class="highlighter-rouge">false</code>. Controls whether the binding sends <code class="highlighter-rouge">Undefined</code> (<code class="highlighter-rouge">UnDefType.UNDEF</code>) to the items associated with this slave when a read error occurs. Here read error refers to connection issues (cannot establish connection), I/O error (e.g. uninterrupted connection, unexpected EOF), <a href="http://www.simplymodbus.ca/exceptions.htm">modbus protocol exceptions</a> (e.g. “Illegal data address”), or response transaction id not matching the request. Note that when <code class="highlighter-rouge">updateunchangeditems</code> is enabled, the <code class="highlighter-rouge">Undefined</code> is sent only once on errors, unless the slave recovers from the error.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="advanced-connection-parameters">Advanced connection parameters</h3>
+
+<p>Since 1.9.0, <code class="highlighter-rouge">connection</code> parameter can take additional colon (<code class="highlighter-rouge">:</code>) separated parameters:</p>
+
+<ul>
+  <li>For TCP slave the new format for connection parameter is: <code class="highlighter-rouge">host_ip[:port[:interTransactionDelayMillis[:reconnectAfterMillis[:interConnectDelayMillis[:connectMaxTries[:connectTimeout]]]]]]</code>.</li>
+  <li>For the serial slaves the new format is: <code class="highlighter-rouge">port[:baud[:dataBits[:parity[:stopBits[:encoding[:interTransactionDelayMillis[:receiveTimeoutMillis[:flowControlIn[:flowControlOut]]]]]]]]</code>.</li>
+</ul>
+
+<p>Explanation of these new parameters</p>
+
+<ul>
+  <li><code class="highlighter-rouge">interTransactionDelayMillis</code>: Time to wait between consecutive modbus transactions (to the same host or serial device), in milliseconds. Each modbus transaction corresponds to read or write operation. Default 35 for serial slaves and 60 for tcp slaves.</li>
+  <li><code class="highlighter-rouge">reconnectAfterMillis</code>: Time after which connection is disconnected and re-established, in milliseconds. Default 0 (closes connection after every transaction).</li>
+  <li><code class="highlighter-rouge">interConnectDelayMillis</code>: Time to wait between consecutive connection attempts (to the same host or ip), in milliseconds. Default 0.</li>
+  <li><code class="highlighter-rouge">connectMaxTries</code>: Maximum tries when establishing connection. Default 3.</li>
+  <li><code class="highlighter-rouge">connectTimeout</code>: Maximum time to wait for connection establishment, in milliseconds. Default is zero which corresponds to infinite/OS default.</li>
+  <li><code class="highlighter-rouge">receiveTimeoutMillis</code>: Maximum time to wait for a single “read operation” (sequence of bytes) before giving up, in milliseconds. Default 1500.</li>
+  <li><code class="highlighter-rouge">flowControlIn</code>: Flow control for the input data. Default <code class="highlighter-rouge">none</code>. Valid values: <code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">xon/xoff in</code>, <code class="highlighter-rouge">rts/cts in</code>.</li>
+  <li><code class="highlighter-rouge">flowControlOut</code>: Flow control for the output data. Default <code class="highlighter-rouge">none</code>. Valid values: <code class="highlighter-rouge">none</code>, <code class="highlighter-rouge">xon/xoff out</code>, <code class="highlighter-rouge">rts/cts out</code>.</li>
+</ul>
+
+<p>Most important of these is the <code class="highlighter-rouge">interTransactionDelayMillis</code> which ensures that Modbus RTU (serial) has enough “silent time” between the transactions, as required by the Modbus/RTU protocol. Furthermore it ensures that modbus slave (applies to both tcp and serial slaves) is not spammed with too many transactions, for example some PLC devices might not be able to handle many requests coming in a short time window.</p>
+
+<p>These new parameters have conservative defaults, meaning that they should work for most users. In some cases when extreme performance is required (e.g. poll period below 10ms), one might want to decrease the delay parameters, especially <code class="highlighter-rouge">interTransactionDelayMillis</code>. With some slower devices on might need to increase the values.</p>
+
+<p>With low baud rates and/or long read requests (that is, large <code class="highlighter-rouge">length</code> parameter is modbus slave definition), <a href="https://community.openhab.org/t/connection-pooling-in-modbus-binding/5246/205">there might be need to increase <code class="highlighter-rouge">receiveTimeoutMillis</code> to something larger</a>, e.g. <code class="highlighter-rouge">5000</code>.</p>
+
+<p>Examples:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">serial.serialslave1.connection=/dev/ttyS0:38400:8:none:1:rtu:150</code> connect to serial slave using with <code class="highlighter-rouge">interTransactionDelayMillis</code> of 150ms</li>
+  <li><code class="highlighter-rouge">tcp.tcpslave1.connection=192.168.1.100:502:0</code> connect to tcp slave with no <code class="highlighter-rouge">interTransactionDelayMillis</code></li>
+</ul>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>ModbusBindingProvider provides binding for openHAB Items.</p>
+
+<p>The item configuration has two formats: simple and extended.</p>
+
+<h3 id="simple-format">Simple format</h3>
+
+<p>Simple item configuration format looks like the below:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch MySwitch "My Modbus Switch" (ALL) {modbus="slave1:5"}
+</code></pre></div></div>
+
+<p>where <code class="highlighter-rouge">slave1</code> is the name of the slave in openhab configuration, and <code class="highlighter-rouge">5</code> is the reference to the coil, discrete input, input register or holding register.</p>
+
+<p>The index <code class="highlighter-rouge">5</code> is expressed relative to the slave <code class="highlighter-rouge">start</code> parameter and <code class="highlighter-rouge">valueType</code> parameter to determine which bits are used when interpreting the value. See also <a href="#Comment-on-addressing">Comment on addressing</a> and <a href="#Register-interpretation-(valuetype)-on-read-&amp;-write">Register interpretation (valuetype) on read &amp; write</a> for more details on this.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch MySwitch "My Modbus Switch" (ALL) {modbus="slave1:&lt;6:&gt;7"}
+</code></pre></div></div>
+
+<p>In this case data is read from “index 6”, while data is written to “index 7”.</p>
+
+<h3 id="extended-format">Extended format</h3>
+
+<p>In addition to simple format, a new configuration syntax was introduced in version 1.10.0.</p>
+
+<p>This gives more freedom to the user. Among other things it enables</p>
+<ul>
+  <li>specify transformation to use on read/write</li>
+  <li>mark item as read-only (received openHAB commands are not processed)</li>
+  <li>mark item as write-only (polled data do not change the item state)</li>
+  <li>overriding <code class="highlighter-rouge">valueType</code> per-item basis (allows to read many registers at once and then interpret them using different value types)</li>
+  <li>processing only certain commands (on write)</li>
+  <li>processing only certain state updates (on read) based on value</li>
+</ul>
+
+<p>The extended format looks like:</p>
+
+<p>(for read)</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;</span><span class="nn">[slaveName:readIndex:trigger=TRIGGER, transformation=TRANSFORMATION, valueType=VALUETYPE]</span>
+</code></pre></div></div>
+
+<p>(for write)</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&gt;</span><span class="nn">[slaveName:writeIndex:trigger=TRIGGER, transformation=TRANSFORMATION, valueType=VALUETYPE]</span>
+</code></pre></div></div>
+
+<p>Read and write entries can be combined, and there can be zero or more read/write entries. All the keyword arguments after index are optional. Defaults are such that they correspond to binding behaviour currently. Multiple read/write definitions can be specified with commas (whitespace allowed as well).</p>
+
+<p>Example of having multiple entries:</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">&lt;</span><span class="nn">[slaveName:0]</span><span class="err">,</span> <span class="err">&gt;</span><span class="nn">[slaveName:0]</span><span class="err">,</span> <span class="err">&gt;</span><span class="nn">[slaveName:1]</span>
+</code></pre></div></div>
+
+<p>The above item config would read from “index 0”, and write to both “index 0” and “index 1”.</p>
+
+<p>Similar to simple configuration syntax, place the configuration string in <code class="highlighter-rouge">modbus</code> parameter of the item. For example,</p>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Switch</span> <span class="err">MySwitch</span> <span class="err">"My</span> <span class="err">Modbus</span> <span class="err">Switch"</span> <span class="err">(ALL)</span> <span class="err">{</span><span class="py">modbus</span><span class="p">=</span><span class="s">"&lt;[slaveName:0], &gt;[slaveName:0], &gt;[slaveName:1]"}</span>
+</code></pre></div></div>
+
+<p>Explanation of different keyword arguments</p>
+<ul>
+  <li><code class="highlighter-rouge">trigger</code>: a string matching command (write definitions) or state (read definitions). If the command/state does not match the trigger value, the command/state is not processed by this write/read definition.</li>
+  <li>use <code class="highlighter-rouge">*</code> to process all (overrides slave’s <code class="highlighter-rouge">updateunchangeditems</code>)</li>
+  <li>use <code class="highlighter-rouge">CHANGED</code> (case-insensitive) with read entries to handle only changed values (similar to slave setting <code class="highlighter-rouge">updateunchangeditems=false</code>).</li>
+  <li>use <code class="highlighter-rouge">default</code> (case-insensitive) to handle all or just the changed values, depending on slave <code class="highlighter-rouge">updateunchangeditems</code> parameter</li>
+  <li>if omitted, uses <code class="highlighter-rouge">default</code>.</li>
+  <li><code class="highlighter-rouge">transformation</code>: transformation to use interpreting the result.</li>
+  <li>use <code class="highlighter-rouge">default</code> (case-insensitive) to communicate that no transformation is done and value should be passed as is</li>
+  <li>use <code class="highlighter-rouge">SERVICE(ARG)</code> to refer to transformation service.</li>
+  <li>any other value than the above types will be interpreted as static text, in which case the actual content of the command/polled value is ignored.</li>
+  <li>if omitted, uses <code class="highlighter-rouge">default</code>.</li>
+  <li><code class="highlighter-rouge">valueType</code>: valueType to use when interpreting the register</li>
+  <li>use <code class="highlighter-rouge">default</code> (case-insensitive) to refer to slave definition’s valueType</li>
+  <li>if omitted, uses <code class="highlighter-rouge">default</code>. Allows to poll the data only once with a single request, and then interpret pieces of data with the correct value type.</li>
+</ul>
+
+<p>The transformations can convert to string representing command and state types of the item. You can also always use numbers (that is, <code class="highlighter-rouge">DecimalType</code>), <code class="highlighter-rouge">ON</code>/<code class="highlighter-rouge">OFF</code> and <code class="highlighter-rouge">OPEN</code>/<code class="highlighter-rouge">CLOSED</code>. The transformation can be quoted in case of special characters (e.g. <code class="highlighter-rouge">=</code> or <code class="highlighter-rouge">,</code>). One can use java-like escaping inside the quotes for complex transformations such as regular expressions (e.g. <code class="highlighter-rouge">\"</code>).</p>
+
+<h3 id="item-configuration-examples">Item configuration examples</h3>
+
+<h4 id="single-coilregister-per-item">Single coil/register per item</h4>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Switch</span> <span class="err">MySwitch</span> <span class="err">"My</span> <span class="err">Modbus</span> <span class="err">Switch"</span> <span class="err">(ALL)</span> <span class="err">{</span><span class="py">modbus</span><span class="p">=</span><span class="s">"slave1:5"}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>This binds MySwitch to modbus slave defined as “slave1” in <code class="highlighter-rouge">modbus.cfg</code> reading/writing to the coil (5 + slave’s <code class="highlighter-rouge">start</code> index). The <code class="highlighter-rouge">5</code> is called item read index.</li>
+  <li>If the slave is read-only, that is the <code class="highlighter-rouge">type</code> is <code class="highlighter-rouge">input</code> or <code class="highlighter-rouge">discrete</code>, the binding ignores any write commands.</li>
+  <li>if the slave1 refers to registers, and after parsing using the registers as rules defined by the <code class="highlighter-rouge">valuetype</code>, zero value is considered as <code class="highlighter-rouge">OFF</code>, everything else as <code class="highlighter-rouge">ON</code>.</li>
+</ul>
+
+<h4 id="separate-index-for-reading-and-writing">Separate index for reading and writing</h4>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="err">Switch</span> <span class="err">MySwitch</span> <span class="err">"My</span> <span class="err">Modbus</span> <span class="err">Switch"</span> <span class="err">(ALL)</span> <span class="err">{</span><span class="py">modbus</span><span class="p">=</span><span class="s">"slave1:&lt;6:&gt;7"}</span>
+</code></pre></div></div>
+
+<ul>
+  <li>In this case index 6 is used for reading while and commands are put to index 7.</li>
+</ul>
+
+<h4 id="index-and-value-types">Index and value types</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number MyCounterH "My Counter high [%d]" (All) {modbus="slave3:0"}
+</code></pre></div></div>
+
+<p>this reads counter 1 high word when valuetype=<code class="highlighter-rouge">int8</code> or <code class="highlighter-rouge">uint8</code></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number MyCounterL "My Counter low [%d]" (All) {modbus="slave3:1"}
+</code></pre></div></div>
+
+<p>this reads counter 1 low word when valuetype=<code class="highlighter-rouge">int8</code> or <code class="highlighter-rouge">uint8</code></p>
+
+<h4 id="32bit-floating-point-value-numbers">32bit floating point value numbers</h4>
+
+<p>When using a float32 value you must use [%f] in item description.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number MyCounter "My Counter [%f]" (All) {modbus="slave5:0"}`
+</code></pre></div></div>
+
+<p>The above reads two registers, starting from index 0 (plus slave offset <code class="highlighter-rouge">start</code>).</p>
+
+<h4 id="read-only-items">Read-only items</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number NumberItem "Number [%.1f]" &lt;temperature&gt; {modbus="&lt;[slave1:0]"}
+</code></pre></div></div>
+
+<h4 id="write-only-items">Write-only items</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number NumberItem "Number [%.1f]" &lt;temperature&gt; {modbus="&gt;[slave1:0]"}
+</code></pre></div></div>
+
+<h4 id="set-coil-to-1-on-any-command">Set coil to 1 on any command</h4>
+
+<p>(inspired by <a href="https://github.com/openhab/openhab1-addons/issues/4745">[Modbus] Coil reset only after item update to ON (OFF excepted) #4745</a>)</p>
+
+<p>Reads from index 0, writes to index 1. All writes (no matter what command) are converted to 1.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number NumberItem "Number [%.1f]" &lt;temperature&gt; {modbus="&lt;[slave1:0], &gt;[slave1:1:transformation=ON]"}
+</code></pre></div></div>
+
+<h4 id="js-transformation-scaling">JS transformation (scaling)</h4>
+
+<p>This example multiplies the DecimalType commands by 10 when writing to modbus, and divides the values by 10 when reading from modbus.</p>
+
+<p>default.items:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number NumberItem "Number [%.1f]" &lt;temperature&gt; {modbus="&gt;[slave1:0:transformation=JS(multiply10.js)], &lt;[slave1:0:transformation=JS(divide10.js)]"}
+</code></pre></div></div>
+
+<p>transform/multiply10.js:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Wrap everything in a function
+(function(i) {
+    return Math.round(parseFloat(i, 10) * 10);
+})(input)
+// input variable contains data passed by openhab
+</code></pre></div></div>
+
+<p>transform/divide10.js:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Wrap everything in a function
+(function(i) {
+    return parseFloat(i) / 10;
+})(input)
+// input variable contains data passed by openhab
+</code></pre></div></div>
+
+<h4 id="rollershutter">Rollershutter</h4>
+
+<p>(inspired by <a href="https://github.com/openhab/openhab1-addons/pull/4654">[modbus] enhance modbus binding for rollershutter items #4654</a>)</p>
+
+<p>This is an example how different Rollershutter commands can be written to MODBUS.</p>
+
+<p>Roller shutter position is read from register 0, UP(=1)/DOWN(=-1) commands are written to register 1, and MOVE(=1)/STOP(=0) commands are written to register 2.</p>
+
+<p>default.items:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Rollershutter RollershutterItem "Roller shutter position [%.1f]" &lt;temperature&gt; {modbus="&lt;[slave1:0], &gt;[slave1:1:trigger=UP, transformation=1], &gt;[slave1:1:trigger=DOWN, transformation=-1], &gt;[slave1:2:trigger=MOVE, transformation=1], &gt;[slave1:2:trigger=STOP, transformation=0]"}
+</code></pre></div></div>
+
+<p>default.sitemap:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap demo label="Main Menu" {
+    Switch item=RollershutterItem label="Roller shutter [(%d)]" mappings=[UP="up", STOP="X", DOWN="down"]
+}
+</code></pre></div></div>
+
+<h2 id="details">Details</h2>
+
+<h3 id="modbus-functions-supported">Modbus functions supported</h3>
+
+<h4 id="supported-modbus-object-types">Supported Modbus object types</h4>
+
+<p>Modbus binding allows to connect to multiple Modbus slaves. The binding supports following Modbus <em>object types</em></p>
+
+<ul>
+  <li>coils, also known as <em>digital out (DO)</em> (read &amp; write)</li>
+  <li>discrete inputs, also known as <em>digital in (DI)</em> (read)</li>
+  <li>input registers (read)</li>
+  <li>holding registers (read &amp; write)</li>
+</ul>
+
+<p>Binding can be configured to interpret values stored in the 16bit registers in different ways, e.g. as signed or unsigned integer.</p>
+
+<p>For more information on these object types, please consult <a href="https://en.wikipedia.org/wiki/Modbus">Modbus wikipedia article</a>.</p>
+
+<h4 id="read-and-write-functions">Read and write functions</h4>
+
+<p>Modbus specification has different operations for reading and writing different object types. These types of operations are identified by <em>function code</em>. Some devices support only certain function codes.</p>
+
+<p>For more background information, please consult <a href="https://en.wikipedia.org/wiki/Modbus">Modbus wikipedia article</a>.</p>
+
+<p>The binding uses following function codes when communicating with the slaves:</p>
+
+<ul>
+  <li>read coils: function code (FC) 1 (<em>Read Coils</em>)</li>
+  <li>write coil: FC 5  (<em>Write Single Coil</em>)</li>
+  <li>read discrete inputs: FC 2 (<em>Read Discrete Inputs</em>)</li>
+  <li>read input registers: FC 4 (<em>Read Input Registers</em>)</li>
+  <li>read holding registers: FC 3 (<em>Read Multiple Holding Registers</em>)</li>
+  <li>write holding register: FC 6 (<em>Write Single Holding Register</em>), OR  FC 16 (<em>Write Multiple Holding Registers</em>) (see note on <code class="highlighter-rouge">writemultipleregisters</code> configuration parameter below)</li>
+</ul>
+
+<h3 id="comment-on-addressing">Comment on addressing</h3>
+
+<p><a href="https://en.wikipedia.org/wiki/Modbus#Coil.2C_discrete_input.2C_input_register.2C_holding_register_numbers_and_addresses">Modbus Wikipedia article</a> summarizes this excellently:</p>
+
+<blockquote>
+  <p>In the traditional standard, [entity] numbers for those entities start with a digit, followed by a number of four digits in range 1–9,999:</p>
+</blockquote>
+
+<blockquote>
+  <ul>
+    <li>coils numbers start with a zero and then span from 00001 to 09999</li>
+    <li>discrete input numbers start with a one and then span from 10001 to 19999</li>
+    <li>input register numbers start with a three and then span from 30001 to 39999</li>
+    <li>holding register numbers start with a four and then span from 40001 to 49999</li>
+  </ul>
+</blockquote>
+
+<blockquote>
+  <p>This translates into [entity] addresses between 0 and 9,998 in data frames.</p>
+</blockquote>
+
+<p>The openHAB modbus binding uses data frame entity addresses when referring to modbus entities. That is, the entity address configured in modbus binding is passed to modbus protocol frame as-is. For example, modbus slave definition with <code class="highlighter-rouge">start=3</code>, <code class="highlighter-rouge">length=2</code> and <code class="highlighter-rouge">type=holding</code> will read modbus entities with the following numbers 40004 and 40005.</p>
+
+<h3 id="many-modbus-binding-slaves-for-single-physical-slave">Many modbus binding slaves for single physical slave</h3>
+
+<p>One needs to configure as many modbus slaves to openHAB as there are corresponding modbus requests. For example, in order to poll status of <code class="highlighter-rouge">coil</code> and <code class="highlighter-rouge">holding</code> items from a single [physical] modbus slave, two separate modbus slave definitions need to be configured in the <code class="highlighter-rouge">modbus.cfg</code>. For example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>serial.slave1.connection=/dev/pts/8:38400:8:none:1:rtu
+serial.slave1.type=coil
+serial.slave1.length=3
+
+serial.slave2.connection=/dev/pts/8:38400:8:none:1:rtu
+serial.slave2.type=holding
+serial.slave2.length=5
+</code></pre></div></div>
+
+<p>Please note that the binding requires that all slaves connecting to the same serial port share the same connection parameters (e.g. baud-rate, parity, ..). In particular are different parameter settings considered bad practice, because they can confuse the instances (slaves) on the modbus.  For additional information, see <a href="https://community.openHAB.org/t/connection-pooling-in-modbus-binding/5246/161?u=ssalonen">this discussion</a> in the community forums.</p>
+
+<p>Similarly, one must have identical connection parameters for all tcp slaves connecting to same host+port.</p>
+
+<h3 id="read-and-write-functions-modbus-slave-type">Read and write functions (modbus slave type)</h3>
+
+<p>Modbus read functions</p>
+
+<ul>
+  <li><code class="highlighter-rouge">type=coil</code> uses function 1 “Read Coil Status”</li>
+  <li><code class="highlighter-rouge">type=discrete</code> uses function 2 “Read Input Status” (readonly inputs)</li>
+  <li><code class="highlighter-rouge">type=holding</code> uses function 3, “Read Holding Registers”</li>
+  <li><code class="highlighter-rouge">type=input</code> uses function 4 “Read Input Register” (readonly-registers eG analogue inputs)</li>
+</ul>
+
+<p>Modbus write functions</p>
+
+<ul>
+  <li><code class="highlighter-rouge">type=coil</code> uses function 5 “Write Single Coil”</li>
+  <li><code class="highlighter-rouge">type=holding</code> uses function 6 “Write Single Register”, or function 16 “Write Multiple registers” when <code class="highlighter-rouge">writemultipleregisters</code> is <code class="highlighter-rouge">true</code></li>
+</ul>
+
+<p>See also <a href="http://www.simplymodbus.ca">simplymodbus.ca</a> and <a href="https://en.wikipedia.org/wiki/Modbus#Supported_function_codes">wikipedia article</a>.</p>
+
+<h3 id="register-interpretation-valuetype-on-read--write">Register interpretation (valuetype) on read &amp; write</h3>
+
+<p>Note that this section applies to register elements only (<code class="highlighter-rouge">holding</code> or <code class="highlighter-rouge">input</code> type)</p>
+
+<h4 id="read">Read</h4>
+
+<p>When the binding interprets and converts polled input registers (<code class="highlighter-rouge">input</code>) or holding registers (<code class="highlighter-rouge">holding</code>) to openHAB items, the process goes like this:</p>
+
+<ul>
+  <li>
+    <ol>
+      <li>register(s) are first parsed to a number (see below for the details, exact logic depends on <code class="highlighter-rouge">valuetype</code>)</li>
+    </ol>
+  </li>
+  <li>2a. if the item is Switch or Contact: zero is converted CLOSED / OFF. Other numbers are converted to OPEN / ON.</li>
+  <li>2b. if the item is Number: the value is used as is</li>
+  <li>
+    <ol>
+      <li>transformation is done to the value, if configured. The transformation output (string) is parsed to state using item’s accepted state types (e.g. number, or CLOSED/OPEN).</li>
+    </ol>
+  </li>
+</ul>
+
+<p>Polled registers from the Modbus slave are converted to openHAB state. The exact conversion logic depends on <code class="highlighter-rouge">valuetype</code> as described below.</p>
+
+<p>Note that <em>first register</em> refers to register with address <code class="highlighter-rouge">start</code> (as defined in the slave definition), <em>second register</em> refers to register with address <code class="highlighter-rouge">start + 1</code> etc. The <em>index</em> refers to item read index, e.g. item <code class="highlighter-rouge">Switch MySwitch "My Modbus Switch" (ALL) {modbus="slave1:5"}</code> has 5 as read index.</p>
+
+<p><code class="highlighter-rouge">valuetype=bit</code>:</p>
+
+<ul>
+  <li>a single bit is read from the registers</li>
+  <li>indices between 0…15 (inclusive) represent bits of the first register</li>
+  <li>indices between 16…31 (inclusive) represent bits of the second register, etc.</li>
+  <li>index 0 refers to the least significant bit of the first register</li>
+  <li>index 1 refers to the second least significant bit of the first register, etc.</li>
+</ul>
+
+<p>(Note that updating a bit in a holding type register will NOT work as expected across Modbus, the whole register gets rewritten. Best to use a read-only mode, such as Contact item.  Input type registers are by definition read-only.)</p>
+
+<p><code class="highlighter-rouge">valuetype=int8</code>:</p>
+
+<ul>
+  <li>a byte (8 bits) from the registers is interpreted as signed integer</li>
+  <li>index 0 refers to low byte of the first register, 1 high byte of first register</li>
+  <li>index 2 refers to low byte of the second register, 3 high byte of second register, etc.</li>
+  <li>it is assumed that each high and low byte is encoded in most significant bit first order</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=uint8</code>:</p>
+
+<ul>
+  <li>same as <code class="highlighter-rouge">int8</code> except values are interpreted as unsigned integers</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=int16</code>:</p>
+
+<ul>
+  <li>register with index (counting from zero) is interpreted as 16 bit signed integer.</li>
+  <li>it is assumed that each register is encoded in most significant bit first order</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=uint16</code>:</p>
+
+<ul>
+  <li>same as <code class="highlighter-rouge">int16</code> except values are interpreted as unsigned integers</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=int32</code>:</p>
+
+<ul>
+  <li>registers (2 index) and ( 2 *index + 1) are interpreted as signed 32bit integer.</li>
+  <li>it assumed that the first register contains the most significant 16 bits</li>
+  <li>it is assumed that each register is encoded in most significant bit first order</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=uint32</code>:</p>
+
+<ul>
+  <li>same as <code class="highlighter-rouge">int32</code> except values are interpreted as unsigned integers</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=float32</code>:</p>
+
+<ul>
+  <li>registers (2 index) and ( 2 *index + 1) are interpreted as signed 32bit floating point number.</li>
+  <li>it assumed that the first register contains the most significant 16 bits</li>
+  <li>it is assumed that each register is encoded in most significant bit first order</li>
+</ul>
+
+<h5 id="word-swapped-valuetypes-new-since-190">Word Swapped valuetypes (New since 1.9.0)</h5>
+
+<p>The MODBUS specification defines each 16bit word to be encoded as Big Endian,
+but there is no specification on the order of those words within 32bit or larger data types.
+The net result is that when you have a master and slave that operate with the same
+Endian mode things work fine, but add a device with a different Endian mode and it is
+very hard to correct. To resolve this the binding supports a second set of valuetypes
+that have the words swapped.</p>
+
+<p>If you get strange values using the <code class="highlighter-rouge">int32</code>, <code class="highlighter-rouge">uint32</code> or <code class="highlighter-rouge">float32</code> valuetypes then just try the <code class="highlighter-rouge">int32_swap</code>, <code class="highlighter-rouge">uint32_swap</code> or <code class="highlighter-rouge">float32_swap</code> valuetype, depending upon what your data type is.</p>
+
+<p><code class="highlighter-rouge">valuetype=int32_swap</code>:</p>
+
+<ul>
+  <li>registers (2 index) and ( 2 *index + 1) are interpreted as signed 32bit integer.</li>
+  <li>it assumed that the first register contains the least significant 16 bits</li>
+  <li>it is assumed that each register is encoded in most significant bit first order (Big Endian)</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=uint32_swap</code>:</p>
+
+<ul>
+  <li>same as <code class="highlighter-rouge">int32_swap</code> except values are interpreted as unsigned integers</li>
+</ul>
+
+<p><code class="highlighter-rouge">valuetype=float32_swap</code>:</p>
+
+<ul>
+  <li>registers (2 index) and ( 2 *index + 1) are interpreted as signed 32bit floating point number.</li>
+  <li>it assumed that the first register contains the least significant 16 bits</li>
+  <li>it is assumed that each register is encoded in most significant bit first order (Big Endian)</li>
+</ul>
+
+<h5 id="extra-notes">Extra notes</h5>
+
+<ul>
+  <li><code class="highlighter-rouge">valuetypes</code> smaller than one register (less than 16 bits) actually read the whole register, and finally extract single bit from the result.</li>
+</ul>
+
+<h4 id="write">Write</h4>
+
+<p>When the binding processes openHAB command (e.g. sent by <code class="highlighter-rouge">sendCommand</code> as explained <a href="https://github.com/openhab/openhab1-addons/wiki/Actions">here</a>), the process goes as follows</p>
+
+<ol>
+  <li>it is checked whether the associated item is bound to holding register. If not, command is ignored.</li>
+  <li>command goes through transformation, if configured. No matter what commands the associated item accepts, the transformation can always output number (DecimalType), OPEN/CLOSED (OpenClosedType) and ON/OFF (OnOffType).</li>
+  <li>command is converted to 16bit integer (in <a href="https://www.cs.cornell.edu/~tomf/notes/cps104/twoscomp.html">two’s complement format</a>). See below for details.</li>
+  <li>the 16bits are written to the register with address <code class="highlighter-rouge">start</code> (as defined in the slave definition)</li>
+</ol>
+
+<p>Conversion rules for converting command to 16bit integer</p>
+
+<ul>
+  <li>UP, ON, OPEN commands that are converter to number 1</li>
+  <li>DOWN, OFF, CLOSED commands are converted to number 0</li>
+  <li>Decimal commands are truncated as 32 bit integer (in 2’s complement representation), and then the least significant 16 bits of this integer are extracted.</li>
+  <li>INCREASE, DECREASE: see below</li>
+</ul>
+
+<p>Other commands are not supported.</p>
+
+<p><strong>Note: The way Decimal commands are handled currently means that it is probably not useful to try to use Decimal commands with non-16bit <code class="highlighter-rouge">valuetype</code>s.</strong></p>
+
+<p>Converting INCREASE and DECREASE commands to numbers is more complicated</p>
+
+<p>(After 1.10.0)</p>
+
+<ol>
+  <li>Most recently polled state (as it has gone through the read transformations etc.) of this item is acquired</li>
+  <li>add/subtract <code class="highlighter-rouge">1</code> from the state. If the state is not a number, the whole command is ignored.</li>
+</ol>
+
+<p>(Before 1.10.0)</p>
+
+<ol>
+  <li>Register matching (<code class="highlighter-rouge">start</code> + read index) is interpreted as unsigned 16bit integer. Previous polled register value is used</li>
+  <li>add/subtract <code class="highlighter-rouge">1</code> from the integer</li>
+</ol>
+
+<p><strong>Note (before 1.10.0): note that INCREASE and DECREASE ignore valuetype when using the previously polled value. Thus, it is not recommended to use INCREASE and DECREASE commands with other than <code class="highlighter-rouge">valuetype=uint16</code></strong></p>
+
+<h4 id="modbus-rtu-over-tcp">Modbus RTU over TCP</h4>
+
+<p>Some devices uses modbus RTU over TCP. This is usually Modbus RTU encapsulation in an ethernet packet. So, those devices does not work with Modbus TCP binding since it is Modbus with a special header. Also Modbus RTU over TCP is not supported by Openhab Modbus Binding. But there is a workaround: you can use a Virtual Serial Port Server, to emulate a COM Port and Bind it with OpenHab unsing Modbus Serial.</p>
+
+<h2 id="config-examples">Config Examples</h2>
+
+<p>Please take a look at <a href="https://github.com/openhab/openhab1-addons/wiki/Samples-Binding-Config">Samples-Binding-Config page</a> or examine to the following examples.</p>
+
+<ul>
+  <li>Minimal construction in modbus.cfg for TCP connections will look like:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># read 10 coils starting from address 0
+tcp.slave1.connection=192.168.1.50
+tcp.slave1.length=10
+tcp.slave1.type=coil
+</code></pre></div></div>
+
+<ul>
+  <li>Minimal construction in modbus.cfg for serial connections will look like:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># read 10 coils starting from address 0
+serial.slave1.connection=/dev/ttyUSB0
+tcp.slave1.length=10
+tcp.slave1.type=coil
+</code></pre></div></div>
+
+<ul>
+  <li>More complex setup could look like</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># Poll values very 300ms = 0.3 seconds
+poll=300
+
+# Connect to modbus slave at 192.168.1.50, port 502
+tcp.slave1.connection=192.168.1.50:502
+# use slave id 41 in requests
+tcp.slave1.id=41
+# read 32 coils (digital outputs) starting from address 0
+tcp.slave1.start=0
+tcp.slave1.length=32
+tcp.slave1.type=coil
+</code></pre></div></div>
+
+<ul>
+  <li>Another example where coils, discrete inputs (<code class="highlighter-rouge">discrete</code>) and input registers (<code class="highlighter-rouge">input</code>) are polled from modbus tcp slave at <code class="highlighter-rouge">192.168.6.180</code>.</li>
+</ul>
+
+<blockquote>
+  <p>(original example description:)
+example for an moxa e1214 module in simple io mode
+6 output switches starting from modbus address 0 and
+6 inputs from modbus address 10000 (the function 2 implizits the modbus 10000 address range)
+you only read 6 input bits and say start from 0
+the moxa manual ist not right clear in this case</p>
+</blockquote>
+
+<div class="language-ini highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="py">poll</span><span class="p">=</span><span class="s">300</span>
+
+<span class="c"># Query coils from 192.168.6.180
+</span><span class="py">tcp.slave1.connection</span><span class="p">=</span><span class="s">192.168.6.180:502</span>
+<span class="py">tcp.slave1.id</span><span class="p">=</span><span class="s">1</span>
+<span class="py">tcp.slave1.start</span><span class="p">=</span><span class="s">0</span>
+<span class="py">tcp.slave1.length</span><span class="p">=</span><span class="s">6</span>
+<span class="py">tcp.slave1.type</span><span class="p">=</span><span class="s">coil</span>
+
+<span class="c"># Query discrete inputs from 192.168.6.180
+</span><span class="py">tcp.slave2.connection</span><span class="p">=</span><span class="s">192.168.6.180:502</span>
+<span class="py">tcp.slave2.id</span><span class="p">=</span><span class="s">1</span>
+<span class="py">tcp.slave2.start</span><span class="p">=</span><span class="s">0</span>
+<span class="py">tcp.slave2.length</span><span class="p">=</span><span class="s">6</span>
+<span class="py">tcp.slave2.type</span><span class="p">=</span><span class="s">discrete</span>
+
+<span class="c"># Query input registers from 192.168.6.180
+</span><span class="py">tcp.slave3.connection</span><span class="p">=</span><span class="s">192.168.6.180:502</span>
+<span class="py">tcp.slave3.id</span><span class="p">=</span><span class="s">1</span>
+<span class="py">tcp.slave3.start</span><span class="p">=</span><span class="s">17</span>
+<span class="py">tcp.slave3.length</span><span class="p">=</span><span class="s">2</span>
+<span class="py">tcp.slave3.type</span><span class="p">=</span><span class="s">input</span>
+
+<span class="c"># Query holding registers from 192.168.6.181
+# Holding registers matching addresses 33 and 34 are read
+</span><span class="py">tcp.slave4.connection</span><span class="p">=</span><span class="s">192.168.6.181:502</span>
+<span class="py">tcp.slave4.id</span><span class="p">=</span><span class="s">1</span>
+<span class="py">tcp.slave4.start</span><span class="p">=</span><span class="s">33</span>
+<span class="py">tcp.slave4.length</span><span class="p">=</span><span class="s">2</span>
+<span class="py">tcp.slave4.type</span><span class="p">=</span><span class="s">holding</span>
+
+<span class="c"># Query 2 input registers from 192.168.6.181. 
+# Interpret the two registers as single 32bit floating point number
+</span><span class="py">tcp.slave5.connection</span><span class="p">=</span><span class="s">192.168.6.181:502</span>
+<span class="py">tcp.slave5.id</span><span class="p">=</span><span class="s">1</span>
+<span class="py">tcp.slave5.start</span><span class="p">=</span><span class="s">10</span>
+<span class="py">tcp.slave5.length</span><span class="p">=</span><span class="s">2</span>
+<span class="py">tcp.slave5.type</span><span class="p">=</span><span class="s">input</span>
+<span class="py">tcp.slave5.valuetype</span><span class="p">=</span><span class="s">float32</span>
+</code></pre></div></div>
+
+<p>Above we used the same modbus gateway with ip 192.168.6.180 multiple times 
+on different modbus address ranges and modbus functions.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<h3 id="enable-verbose-logging">Enable verbose logging</h3>
+
+<p>Enable <code class="highlighter-rouge">DEBUG</code> or <code class="highlighter-rouge">TRACE</code> (even more verbose) logging for the loggers named:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">net.wimpi.modbus</code></li>
+  <li><code class="highlighter-rouge">org.openhab.binding.modbus</code></li>
+</ul>
+
+<h2 id="for-developers">For developers</h2>
+
+<h3 id="testing-serial-implementation">Testing serial implementation</h3>
+
+<p>You can use test serial slaves without any hardware on linux using these steps:</p>
+
+<ol>
+  <li>Set-up virtual null modem emulator using <a href="https://github.com/freemed/tty0tty">tty0tty</a></li>
+  <li>Download <a href="http://www.modbusdriver.com/diagslave.html">diagslave</a> and start modbus serial slave up using this command:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./diagslave -m rtu -a 1 -b 38400 -d 8 -s 1 -p none -4 10 /dev/pts/7
+</code></pre></div></div>
+
+<ol>
+  <li>Configure openHAB’s modbus slave to connect to <code class="highlighter-rouge">/dev/pts/8</code>:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>xxx.connection=/dev/pts/8:38400:8:none:1:rtu
+</code></pre></div></div>
+
+<ol>
+  <li>Modify <code class="highlighter-rouge">start.sh</code> or <code class="highlighter-rouge">start_debug.sh</code> to include the unconventional port name by adding the following argument to <code class="highlighter-rouge">java</code>:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>-Dgnu.io.rxtx.SerialPorts=/dev/pts/8
+</code></pre></div></div>
+
+<p>Naturally this is not the same thing as the real thing but helps to identify simple issues.</p>
+
+<h3 id="testing-tcp-implementation">Testing TCP implementation</h3>
+
+<ol>
+  <li>Download <a href="http://www.modbusdriver.com/diagslave.html">diagslave</a> and start modbus tcp server (slave) using this command:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>./diagslave -m tcp -a 1 -p 55502
+</code></pre></div></div>
+
+<ol>
+  <li>Configure openHAB’s modbus slave to connect to <code class="highlighter-rouge">127.0.0.1:55502</code>:</li>
+</ol>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tcp.slave1.connection=127.0.0.1:55502
+</code></pre></div></div>
+
+<h3 id="writing-data">Writing data</h3>
+
+<p>See this <a href="https://community.openhab.org/t/something-is-rounding-my-float-values-in-sitemap/13704/32?u=ssalonen">community post</a> explaining how <code class="highlighter-rouge">pollmb</code> and <code class="highlighter-rouge">diagslave</code> can be used to debug modbus communication.</p>
+
+<h3 id="troubleshooting-1">Troubleshooting</h3>
+
+<p>To troubleshoot, you might be asked to update to latest development version. You can find the “snapshot” or development version from <a href="https://openhab.ci.cloudbees.com/job/openHAB1-Addons/lastSuccessfulBuild/artifact/bundles/binding/org.openhab.binding.modbus/target/">Cloudbees CI</a>.</p>
+
+<p>With modbus binding before 1.9.0, it strongly recommended to try out with the latest development version since many bugs were fixed in 1.9.0. Furthermore, error logging is enhanced in this new version.</p>
+
+<p>If the problem persists in the new version, it is recommended to try to isolate to issue using minimal configuration. Easiest would be to have a fresh openHAB installation, and configure it minimally (if possible, single modbus slave in <code class="highlighter-rouge">modbus.cfg</code>, single item, no rules etc.). This helps the developers and community to debug the issue.</p>
+
+<p>Problems can be communicated via <a href="https://community.openhab.org">community.openhab.org</a>. Please use the search function to find out existing reports of the same issue.</p>
+
+<p>It helps greatly to document the issue in detail (especially how to reproduce the issue), and attach the related <a href="#enable-verbose-debug-logging">verbose logs</a>. Try to keep interaction minimal during this test; for example, if the problem occurs with modbus read alone, do not touch the the switch items in openHAB sitemap (would trigger write).</p>
+
+<p>For attaching the logs to a community post, the <a href="http://pastebin.com/">pastebin.com</a> service is strongly recommended to keep the thread readable. It is useful to store the logs from openHAB startup, and let it run for a while.</p>
+
+<p>Remember to attach configuration lines from modbus.cfg, item definitions related to modbus binding, and any relevant rules (if any). You can use <a href="http://pastebin.com/">pastebin.com</a> for this purpose as well.</p>
+
+<p>To summarize, here are the recommended steps in case of errors</p>
+
+<ol>
+  <li>Update to latest development version; especially if you are using modbus binding version before 1.9.0</li>
+  <li>isolate the issue using minimal configuration, and enable verbose logging (see above)</li>
+  <li>record logs and configuration to <a href="http://pastebin.com/">pastebin.com</a>.</li>
+</ol>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

@@ -176,9 +176,9 @@ bindings [here]({{base}}/addons/bindings.html).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I
 recommend "habmin". The list of UIs are [here]({{base}}/addons/uis.html).
 - `action = ` - the list of action add-ons you used in openHAB 1.x.
-- `transformation = ` = the list of transformations you use. Unlike in openHAB 1,
+- `transformation = ` - the list of transformations you use. Unlike in openHAB 1,
 one must install transformations separately.
-- `voice = ` - see [here]({{base}}/addons/voice.html)
+- `voice = ` - see [here]({{base}}/addons/voices.html)
 - `misc = ` - myopenhab, homekit, etc. Do not list myopenhab at this time,
 instructions for it are below.
 
@@ -428,7 +428,7 @@ cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
 cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
 cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
 Copy any custom icons added from webapps/images to <openHAB 2 conf>/icons/classic
-Copy any custom webviews from webapps tp <openHAB 2 conf>/html
+Copy any custom webviews from webapps to <openHAB 2 conf>/html
 cp <openHAB 1.x conf>/configurations/items/* <openHAB 2 conf>/items/*
 cp <openHAB 1.x conf>/configurations/rules/* <openHAB 2 conf>/rules/*
 cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
@@ -502,9 +502,10 @@ there are no values in the database to restore the Items to when openHAB starts.
 common Sitemap issue will be missing icons. Browse through your sitemap
 methodically and identify those entries that have a missing or wrong
 icon. Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html)
-or copy the one you were using from openHAB 1.x to the conf/icons/classic folder.
-Both BasicUI and ClassicUI pull their icons from that folder. For a sitemap that
-most closely resembles your current sitemap I recommend using ClassicUI.
+or copy the ones you were using from openHAB 1.x to the conf/icons/classic folder. 
+Both BasicUI and ClassicUI pull their icons from that folder. For details on custom icons make
+sure to check the icons section in the [Items]({{base}}/configuration/items.html#icons) documentation.
+One important change since openHAB 1.x is that icon filenames need to be lowercase only in openHAB 2.
 
 Once you are satisfied that your new openHAB system is up and running take a
 deep breath and take a break. Let it run for a few days or a week and verify

@@ -1,0 +1,526 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>OSGi Declarative Services - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/developers/prerequisites/osgids.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/developers">Overview</a></li>
+  <li><a href="/v2.1/developers/contributing/contributing">Contributing</a></li>
+  <li><a href="/v2.1/developers/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="/v2.1/developers/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="/v2.1/developers/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="/v2.1/developers/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="/v2.1/developers/prerequisites/osgitasks.html">Coding tasks</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/developers/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="/v2.1/developers/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="/v2.1/developers/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/developers/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="/v2.1/developers/development/ide.html">IDE Setup</a></li>
+      <li><a href="/v2.1/developers/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="/v2.1/developers/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="/v2.1/developers/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/developers/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="/v2.1/developers/development/evolution.html">Technical Differences</a></li>
+      <li><a href="/v2.1/developers/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="declarative-services">Declarative Services</h1>
+
+<h2 class="no_toc" id="table-of-contents">Table of contents</h2>
+
+<ul id="markdown-toc">
+  <li><a href="#i-introduction" id="markdown-toc-i-introduction">I. Introduction</a></li>
+  <li><a href="#ii-declarative-services" id="markdown-toc-ii-declarative-services">II. Declarative Services</a></li>
+  <li><a href="#iii-advantages" id="markdown-toc-iii-advantages">III. Advantages</a></li>
+  <li><a href="#iv-example---reference-service" id="markdown-toc-iv-example---reference-service">IV. Example - Reference Service</a></li>
+  <li><a href="#v-example---provide-service" id="markdown-toc-v-example---provide-service">V. Example - Provide Service</a></li>
+  <li><a href="#vi-component-types" id="markdown-toc-vi-component-types">VI. Component types</a></li>
+  <li><a href="#vii-component-lifecycle" id="markdown-toc-vii-component-lifecycle">VII. Component Lifecycle</a></li>
+  <li><a href="#viii-troubleshooting" id="markdown-toc-viii-troubleshooting">VIII. Troubleshooting</a></li>
+  <li><a href="#xix-further-reading" id="markdown-toc-xix-further-reading">XIX. Further Reading</a></li>
+</ul>
+
+<h2 id="i-introduction">I. Introduction</h2>
+
+<p>The OSGi Declarative Services functionality is part of the <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi 4.2 Compendium Specification</a> and allows you to define and consume services via metadata (XML) without any dependency in your source code to the OSGi framework.</p>
+
+<h2 id="ii-declarative-services">II. Declarative Services</h2>
+
+<p>In the <a href="osgi.html">OSGi Overview article</a> we have mentioned that a bundle can register, unregister, get and unget services from a central point - the Service Registry. In order to simplify the usage of services the <a href="https://www.osgi.org/about-us/">OSGi Alliance</a> has developed a model of managing services dynamically called <em>Declarative Services</em>. In order to understand this model, we will have to first explain a few terms, used below:</p>
+
+<ul>
+  <li><strong>Declarative Services Container</strong> (we will use the shorthand <strong>DS</strong>) - a module that is managing the <a href="#vii-component-lifecycle">lifecycle</a> of a <em>service component</em> dynamically. It activates and deactivates different components, basing its decisions on the information contained in the <em>component description</em>;</li>
+  <li><strong>Service Component</strong> (or also <strong>component</strong>) - an object whose lifecycle is managed, usually by a component framework such as Declarative Services (DS). A component may publish itself as an OSGi service or consume OSGi services. A component can refer to a number of services;</li>
+  <li><strong>Component Description</strong> - The declaration of a component. It is contained
+within an XML document in a bundle. (Source: <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi Service Platform Service Compendium Chapter 112.1</a>).</li>
+</ul>
+
+<h3 id="1-ds-container">1. DS container</h3>
+
+<p>In order to use the Declarative Services functionality you have to start a bundle with an implementation of the DS container. In <a href="http://www.eclipse.org/equinox/">Equinox</a> (the reference implementation of OSGi that is used in openHAB) this bundle is called <code class="highlighter-rouge">org.eclipse.equinox.ds</code>.</p>
+
+<p>When a bundle that contains a component is added to the framework, DS reads its component description (the XML file). If the conditions, described in this file are fulfilled (you will understand more about this in the next chapters), the DS activates the component (more on the that in the <a href="#vii-component-lifecycle">component lifecycle</a> chapter). More importantly, after some of the requirements are not met anymore, the DS container deactivates the component. This ensures that service components are managed dynamically.</p>
+
+<h3 id="2-components">2. Components</h3>
+
+<p>It is important to understand the difference between a <em>component</em> and a <em>service</em>. A component is a normal Java class, that can reference services and provide services. What makes a component specific is that it is declared in a XML file and is managed completely by DS. That means that DS instantiates the component, calls method on this component and manages the lifecycle of a component.</p>
+
+<p>A component requires the following artifacts in a bundle:</p>
+
+<ul>
+  <li><strong>XML description</strong> of the component;</li>
+  <li><strong>Service-Component manifest header</strong>, which contains the location of the XML description;</li>
+  <li>An <strong>implementation class</strong> that is specified in the component description.</li>
+</ul>
+
+<p>In the examples below we will take a look over more details.</p>
+
+<p>For more detailed definition - <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi Service Platform Service Compendium Chapter 112.1</a>.</p>
+
+<h3 id="3-component-description">3. Component Description</h3>
+
+<p>The component description is a XML document that contains the <em>service component description</em> . The syntax of this document is described in <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">Component Description Schema, OSGi 4.2 Compendium 112.10</a>. The  document contains basic information like the component name, component dependencies and services that are implemented by the component. It also describes, how the DS will handle changes in some of the referenced services and how the service will be activated (<a href="https://www.osgi.org/developer/design/lazy-start/">lazy</a> or not). We will provide some examples below, that cover the most common use cases.</p>
+
+<h2 id="iii-advantages">III. Advantages</h2>
+
+<p>For the user of the service it is from no importance, if the service was registered with the <a href="https://osgi.org/javadoc/r4v43/core/org/osgi/framework/BundleContext.html#registerService(java.lang.Class,%20S,%20java.util.Dictionary)">low level API</a> or with Declarative Services. However the using of Declarative Services has the following advantages:</p>
+
+<ul>
+  <li><strong>they are declarative</strong> - it is not needed to write explicit code to register and get services. This means that a lot of boilerplate code can be removed and the developer can concentrate on the business logic;</li>
+  <li><strong>DS container manages the creation of instances</strong> - whenever the conditions, described in the <em>component description</em>, are satisfied <em>DS</em> will instantiate the service for us. When the instances are not needed anymore, <em>DS</em> will remove the references to them;</li>
+  <li><strong>components are not initialized until a service is requested</strong> - this is called <a href="https://www.osgi.org/developer/design/lazy-start/">lazy initialization</a> and it is the default behavior;</li>
+  <li><strong>a component has a lifecycle, that is bound to the defining bundle’s lifecycle</strong> - more information can be found in the chapter <a href="#vii-component-lifecycle">component lifecycle</a>.</li>
+</ul>
+
+<p>Components have two most common use cases (which are combined very often):</p>
+
+<ul>
+  <li>a component can <a href="#iv-example---reference-service">use services</a> from other components;</li>
+  <li>a component can <a href="#v-example---provide-service">publish itself as an OSGi service</a>.</li>
+</ul>
+
+<h2 id="iv-example---reference-service">IV. Example - Reference Service</h2>
+
+<p>In this example our component needs a <a href="https://osgi.org/javadoc/r4v42/org/osgi/service/log/LogService.html">LogService</a>. We will use DS to inject an implementation of this service in our class.</p>
+
+<h3 id="1-service-component-description">1. Service Component Description</h3>
+
+<p>This is the XML component description. This file is located in the <em>OSGI-INF</em> folder and is named <em>consumer.xml</em>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Note! Please keep in mind that the Service Component Description might be
+automatically generated using SCR Annotations like @Component, @Reference,
+@Activate, @Deacticate and etc that are supported e.g. in Apache Felix. Currently
+these annotations are not used in the openHAB project, so please ignore examples where they are used.
+</code></pre></div></div>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;scr:component</span> <span class="na">xmlns:scr=</span><span class="s">"http://www.osgi.org/xmlns/scr/v1.1.0"</span> <span class="na">name=</span><span class="s">"com.example.consumer"</span> <span class="na">immediate=</span><span class="s">"true"</span><span class="nt">&gt;</span>
+   <span class="c">&lt;!-- name = the component name must be unique
+        immediate = optional parameter that specifies if the component has immediate activation. Options are true or false              
+   --&gt;</span>
+   <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">"com.example.consumer.MyServiceImpl"</span><span class="nt">/&gt;</span> 
+   <span class="c">&lt;!--The fully qualified name of the implemenation class--&gt;</span>
+   <span class="c">&lt;!--Here we declare references to other services, which we want to use in our implementation class. 
+        bind = method in the implementation class which is called when the referenced services gets active
+        unbind = method in the implementation class which is called when the referenced services gets inactive
+        cardinality = regarding the cardinality of your reference DS handles the lifecycle of your servive as well
+        policy = this reference can be handled as static or dynamic
+    --&gt;</span>
+   <span class="nt">&lt;reference</span> 
+        <span class="na">interface=</span><span class="s">"org.osgi.service.log.LogService"</span>
+        <span class="na">bind=</span><span class="s">"setLog"</span>
+        <span class="na">unbind=</span><span class="s">"unsetLog"</span>
+        <span class="na">cardinality=</span><span class="s">"1..1"</span>
+        <span class="na">policy=</span><span class="s">"static"</span>
+    <span class="nt">/&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span> 
+</code></pre></div></div>
+
+<p>Let’s take a look at some settings, that we can apply:</p>
+
+<ul>
+  <li><strong>immediate</strong>:
+    <ul>
+      <li><em>true</em> - the component is activated as soon as all dependencies are satisfied. Adding this option will ensure that the component will be activated right after the bundle is activated and the component is satisfied;</li>
+      <li><em>false</em> - the component has lazy activation. The activation of the component is delayed(lazy activation) until the service is requested. This is the default value;</li>
+    </ul>
+  </li>
+  <li><strong>cardinality</strong>:
+    <ul>
+      <li><em>1..1</em> - single service reference, that is mandatory. If your referenced service gets inactive, DS deactivates your service component as well (default value);</li>
+      <li><em>0..1</em> - single service reference(not mandatory). You have to be aware that you might not have your reference resolved, your component can live with the absence;</li>
+      <li><em>0..n</em> - multiple service references (not mandatory). The referenced service can be implemented multiple times, so they are added to a list in your component implementation;</li>
+      <li><em>1..n</em> = like the above, but mandatory;</li>
+    </ul>
+  </li>
+  <li><strong>policy</strong>:
+    <ul>
+      <li><em>static</em> - the default policy. Component configuration are deactivated every time, when a reference with static policy becomes unavailable. This causes the activating and deactivating of the component. It can be very expensive, when we have multiple bound services, or when a service is often unregistered and re-registered;</li>
+      <li><em>dynamic</em> - with this policy the component is not deactivated, when a referenced service is changed. It is slightly more complex, as the component implementation has to properly handle changes in the set of bound services.</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="2-implementation-class">2. Implementation Class</h3>
+
+<p>Most of the bundles will require access to other services. A component may be used to inject the service in the bundle through the <code class="highlighter-rouge">bind()</code> and <code class="highlighter-rouge">unbind()</code> methods called on the component instance (the implementation class). In the component description above, we have set that our <code class="highlighter-rouge">bind()</code> method is named <code class="highlighter-rouge">setLog()</code>, so now we can inspect an instance of the <em>LogService</em> provided by the DS. The <code class="highlighter-rouge">activate()</code> and <code class="highlighter-rouge">deactivate()</code> methods are called from DS, when the component configuration is activated and deactivated (more about <a href="osgids.html#activaiton">activation</a>):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">consumer</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.osgi.framework.BundleContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.osgi.service.log.LogService</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">MyServiceImpl</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="n">LogService</span> <span class="n">log</span><span class="o">;</span>
+
+    <span class="kd">public</span> <span class="nf">MyServiceImpl</span><span class="o">()</span> <span class="o">{</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">activate</span><span class="o">(</span><span class="n">BundleContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bundle is activated!"</span><span class="o">);</span>
+        <span class="c1">// No specific action is needed here in this case</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">deactivate</span><span class="o">(</span><span class="n">BundleContext</span> <span class="n">context</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Bundle is deactivated!"</span><span class="o">);</span>
+        <span class="c1">// No specific action is needed here in this case</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">setLog</span><span class="o">(</span><span class="n">LogService</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="n">l</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Log service is available!"</span><span class="o">);</span>
+        <span class="c1">// We store a reference to the LogService !</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">unsetLog</span><span class="o">(</span><span class="n">LogService</span> <span class="n">l</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">log</span> <span class="o">=</span> <span class="kc">null</span><span class="o">;</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Log service isn`t available anymore!"</span><span class="o">);</span>
+        <span class="c1">// We have to clean up after ourselves, when the reference is not needed anymore !</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="3-service-component-header">3. Service-Component Header</h3>
+
+<ul>
+  <li>The purpose of the <em>Service-Component</em> header in the MANIFEST.MF file is to show the DS container, where the component description is located. According to the OSGi specification, such resources must be placed in the <em>OSGI-INF</em> folder:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Consumer Example
+Bundle-SymbolicName: com.example.consumer
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.osgi.framework,
+ org.osgi.service.log
+Service-Component: OSGI-INF/consumer.xml
+</code></pre></div></div>
+
+<p>Notice that we have also included this header as well:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+Service-Component: OSGI-INF/*.xml
+...
+</code></pre></div></div>
+
+<h2 id="v-example---provide-service">V. Example - Provide Service</h2>
+
+<p>Very often you will have to register a service, that implements an interface defined in the framework (e.g <a href="https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventHandler.html"><em>EventHandler</em></a>) or interface, that you have defined. An interface allows you to change the implementation easily or register multiple implementations in the Service Registry.<br />
+We will use DS to register an implementation of the EventHandler service in the OSGi Service Registry.</p>
+
+<h3 id="1-component-description">1. Component Description</h3>
+<p>This is how the component description may look like. This file is located in the <em>OSGI-INF</em> folder and is named <em>provider.xml</em>. We are providing some service specific properties as well (the property with name <code class="highlighter-rouge">event.topics</code>). The usage of this property is desrcribed in the <a href="https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventConstants.html#EVENT_TOPIC">API documentation</a>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;scr:component</span> <span class="na">name=</span><span class="s">"com.example.handler"</span> <span class="na">xmlns:scr=</span><span class="s">"http://www.osgi.org/xmlns/scr/v1.1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">"com.example.HandlerImpl"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"event.topics"</span><span class="nt">&gt;</span>some/topic<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;service&gt;</span>
+        <span class="nt">&lt;provide</span> <span class="na">interface=</span><span class="s">"org.osgi.service.event.EventHandler"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span>
+</code></pre></div></div>
+
+<h3 id="2-implementation-class-1">2. Implementation Class</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">provider</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.Event</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.EventHandler</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">HandlerImpl</span> <span class="kd">implements</span> <span class="n">EventHandler</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">String</span> <span class="n">topic</span> <span class="o">=</span> <span class="n">event</span><span class="o">.</span><span class="na">getTopic</span><span class="o">();</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"Received event with topic: "</span> <span class="o">+</span> <span class="n">topic</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="3-service-component-header-1">3. Service-Component Header</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Provider Example
+Bundle-SymbolicName: com.example.provider
+Bundle-Version: 1.0.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.osgi.service.event
+Service-Component: OSGI-INF/provider.xml
+</code></pre></div></div>
+
+<h2 id="vi-component-types">VI. Component types</h2>
+
+<p>A component lifecycle depends of the type of the component. Three type of components are defined:</p>
+
+<ul>
+  <li><strong>immediate</strong> - with <code class="highlighter-rouge">immediate</code> attribute set to <code class="highlighter-rouge">true</code> - see the <a href="#service-component-description">example component description</a>;</li>
+  <li><strong>delayed</strong> - with <code class="highlighter-rouge">immediate</code> attribute set to <code class="highlighter-rouge">false</code>;</li>
+  <li><strong>factory</strong> - we will not discuss the lifecycle of this type in this article. You can find information in the <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi 4.2 Compendium Specifiaction, Chapter 112.2.4 Factory Component</a>.</li>
+</ul>
+
+<h2 id="vii-component-lifecycle">VII. Component Lifecycle</h2>
+
+<p>A component goes through several states in his lifecycle:</p>
+
+<ul>
+  <li><strong>UNSATISFIED</strong> - initial state of the Service Component, after the bundle is started;</li>
+  <li><strong>REGISTERED</strong> - temporary state. Only <em>delayed</em> components go through this state;</li>
+  <li><strong>ACTIVE</strong> - the component is active and component instance is created.</li>
+</ul>
+
+<p><img src="images/immediatecomponent.png" width="320" height="200" /><br />
+Fig.1 Immediate component lifecycle</p>
+
+<p><img src="images/delayedcomponent.png" width="400" height="200" /><br />
+Fig.2 Delayed component lifecycle</p>
+
+<h3 id="1-states">1. States</h3>
+
+<p>Like described above, the component lifecycle depends on the lifecycle of the bundle, that includes the component. Component must be enabled before it can be used.</p>
+
+<p>A component is <strong>enabled</strong>, when the component’s bundle is <strong>started</strong> and <strong>disabled</strong>, when the bundle is <strong>stopped</strong>.</p>
+
+<p>After the Component is enabled, it is moved to the UNSATISFIED state. The next step is to satisfy the component configuration.</p>
+
+<p>The component <strong>configuration is satisfied</strong> when:</p>
+
+<ul>
+  <li>component is <strong>enabled</strong>;</li>
+  <li>all the <strong>component references are satisfied</strong>. A reference is satisfied when the reference specifies optional cardinality or there is at least one target service for the reference.
+If the component has lazy initialization (the component is <em>delayed</em>), it is moved to the REGISTERED state and it is waiting to be activated, when the service is requested (see Fig.2).<br />
+Otherwise (the component is <em>immediate</em>) as soon as its dependencies are satisfied, the component is activated (see Fig.1).</li>
+</ul>
+
+<h3 id="2-activaiton">2. Activaiton</h3>
+
+<p>Activation consists of following steps:</p>
+
+<ul>
+  <li>load the implementation class;</li>
+  <li>create component instance;</li>
+  <li>bind target services (<code class="highlighter-rouge">bind()</code> method is called);</li>
+  <li>call the <code class="highlighter-rouge">activate()</code> method, if present.</li>
+</ul>
+
+<p>After the activation, the component is in ACTIVE state. From this state the component can go back to the <em>REGISTERED</em> state (or to the <em>UNSATISFIED</em> state), if the component configuration becomes unsatisfied.</p>
+
+<h3 id="3-deactivation">3. Deactivation</h3>
+
+<p>Deactivation consists of the following actions:</p>
+
+<ul>
+  <li>the <code class="highlighter-rouge">deactivate</code> method is called, if present;</li>
+  <li>unbind target services (<code class="highlighter-rouge">unbind()</code> method is called);</li>
+  <li>release all references to the component instance.</li>
+</ul>
+
+<p>For more information - <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi 4.2 Compendium Specifiaction, Chapter 112.5 Component Life Cycle</a>.</p>
+
+<p>If you want to practice, what you have learned so far, you can try out our <a href="osgitasks.html">OSGi Coding tasks</a>. In chapter IV. there are tasks, that are using OSGi DS. It is recommended to start from the beginning (chapter I.), as the tasks are related between each other.</p>
+
+<h2 id="viii-troubleshooting">VIII. Troubleshooting</h2>
+
+<p>If you are new to Declarative Services and you don’t know how to troubleshoot, maybe we can help you. We will give you a few tips what might have gone wrong. Some of the steps below depend on your development IDE and the OSGi Container that you use. Mind that most of the tips below are specific to Eclipse IDE and Equinox as the OSGi Runtime. You might review again the <a href="equinox.html#iv-commands">Equinox commands</a> before you continue:</p>
+
+<ul>
+  <li>make sure that your Component Description (the XML file) contains the necessary information to provide or reference service (see the examples above);</li>
+  <li>make sure that your Component Description is placed in the OSGI-INF folder;</li>
+  <li>[Eclipse IDE only] make sure that no warnings are displayed in the Component Description file (a warning might indicate that some of the class names that you have used are not correct !);</li>
+  <li>open the bundle manifest file (located in META-INF/MANIFEST.MF) and check if your Component Description is added in the “Service-Component” header (it can be added as “OSGI-INF/*.xml or “OSGI-INF/component.xml”);</li>
+  <li>[Eclipse IDE only] open the build.properties file and make sure that the Component Description is added in the bin.includes entry (it can be added as “OSGI-INF/” or “OSGI-INF/component.xml”). If it is not included in the build.properties file, it will not end in the .jar file that will be deployed in the Equinox runtime and SCR will be not able to find it;</li>
+  <li>Start the runtime and check the log. Do you see any Errors like “MESSAGE [SCR] Error while trying to bind reference”? Read the error message and proceed accordingly.</li>
+  <li>Make sure that the bundle that is providing the service is in “ACTIVE” state, if it is not, start it manually with the “start id” command, where id is the id of the bundle;</li>
+  <li>[Equinox only] While the runtime is running type the “services” command and search if your service is registered. In case it is not registered, most probably you have missed some of the steps above :);</li>
+  <li>[Equinox only] While the runtime is running type “ls -c id”, where id is the id of the bundle that is providing the service. This will give detailed information about the services that are registered by this bundle, read the information if the component is satisfied carefully;</li>
+  <li>Is your service in use? In case it is not and you are not seeing it registered, the component might have lazy activation policy(this is the default policy). Add “immediate=true” in your Component Definition if you like to change the activation policy.</li>
+</ul>
+
+<h2 id="xix-further-reading">XIX. Further Reading</h2>
+
+<ul>
+  <li><a href="https://osgi.org/download/r4v42/r4.cmpn.pdf"><em>OSGi Service Platform Service Compendium, Release 4, Version 4.2,
+August 2009</em></a></li>
+  <li><a href="http://www.vogella.com/tutorials/OSGiServices/article.html#declarativeservices">Lars Vogel - Declarative services</a></li>
+  <li><a href="http://www.eclipsezone.com/eclipse/forums/t97690.rhtml">Getting Started with OSGi: Declarative Services</a></li>
+  <li><a href="http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services">http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services</a></li>
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

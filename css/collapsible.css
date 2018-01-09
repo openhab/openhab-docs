@@ -1,0 +1,17 @@
+section.text ul.collapsible {
+  margin-bottom: 20px;
+}
+.collapsible-header{
+white-space: nowrap;
+}
+.collapsible-body {
+  margin-top: 20px;
+}
+.collapsible-body p {
+  padding-bottom: 0;
+  padding-top: 0;
+}
+.collapsible-body div[class*='language-']{
+  padding-left: 2rem;
+  padding-right: 2rem;
+}

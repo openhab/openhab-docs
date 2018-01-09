@@ -1,0 +1,2198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Sitemaps - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/configuration/sitemaps.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../configuration/sitemaps.html">latest version</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/configuration/sitemaps.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      
+<h1 id="sitemaps">Sitemaps</h1>
+
+<p>In openHAB a collection of <a href="/v2.2/concepts/things.html">Things</a> and <a href="/v2.2/concepts/items.html">Items</a> represent physical or logical objects in the user’s home automation setup.
+Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs),
+including <a href="/v2.2/addons/uis/basic/readme.html">BasicUI</a>,
+the <a href="https://play.google.com/store/apps/details?id=org.openhab.habdroid">Android openHAB app</a> and others.</p>
+
+<p>This page is structured as follows:</p>
+
+<ul id="markdown-toc">
+  <li><a href="#concepts" id="markdown-toc-concepts">Concepts</a>    <ul>
+      <li><a href="#special-element-sitemap" id="markdown-toc-special-element-sitemap">Special Element ‘sitemap’</a></li>
+    </ul>
+  </li>
+  <li><a href="#element-types" id="markdown-toc-element-types">Element Types</a>    <ul>
+      <li><a href="#element-type-frame" id="markdown-toc-element-type-frame">Element Type ‘Frame’</a></li>
+      <li><a href="#element-type-default" id="markdown-toc-element-type-default">Element Type ‘Default’</a></li>
+      <li><a href="#element-type-text" id="markdown-toc-element-type-text">Element Type ‘Text’</a></li>
+      <li><a href="#element-type-group" id="markdown-toc-element-type-group">Element Type ‘Group’</a></li>
+      <li><a href="#element-type-switch" id="markdown-toc-element-type-switch">Element Type ‘Switch’</a></li>
+      <li><a href="#element-type-selection" id="markdown-toc-element-type-selection">Element Type ‘Selection’</a></li>
+      <li><a href="#element-type-setpoint" id="markdown-toc-element-type-setpoint">Element Type ‘Setpoint’</a></li>
+      <li><a href="#element-type-slider" id="markdown-toc-element-type-slider">Element Type ‘Slider’</a></li>
+      <li><a href="#element-type-colorpicker" id="markdown-toc-element-type-colorpicker">Element Type ‘Colorpicker’</a></li>
+      <li><a href="#element-type-webview" id="markdown-toc-element-type-webview">Element Type ‘Webview’</a></li>
+      <li><a href="#element-type-mapview" id="markdown-toc-element-type-mapview">Element Type ‘Mapview’</a></li>
+      <li><a href="#element-type-image" id="markdown-toc-element-type-image">Element Type ‘Image’</a></li>
+      <li><a href="#element-type-video" id="markdown-toc-element-type-video">Element Type ‘Video’</a></li>
+      <li><a href="#element-type-chart" id="markdown-toc-element-type-chart">Element Type ‘Chart’</a></li>
+    </ul>
+  </li>
+  <li><a href="#mappings" id="markdown-toc-mappings">Mappings</a></li>
+  <li><a href="#dynamic-sitemaps" id="markdown-toc-dynamic-sitemaps">Dynamic Sitemaps</a>    <ul>
+      <li><a href="#visibility" id="markdown-toc-visibility">Visibility</a></li>
+      <li><a href="#label-and-value-colors" id="markdown-toc-label-and-value-colors">Label and Value Colors</a></li>
+      <li><a href="#icons" id="markdown-toc-icons">Icons</a></li>
+    </ul>
+  </li>
+  <li><a href="#full-example" id="markdown-toc-full-example">Full Example</a></li>
+  <li><a href="#further-notes-and-comparison-details" id="markdown-toc-further-notes-and-comparison-details">Further notes and comparison details</a></li>
+</ul>
+
+<p>Sitemaps are text files with the <code class="highlighter-rouge">.sitemap</code> extension, and are stored in the <code class="highlighter-rouge">$OPENHAB_CONF/sitemaps</code> directory.
+Sitemaps follow the syntax described in this article.</p>
+
+<p>For easy editing of sitemap definition files, we suggest to use on of the <a href="/v2.2/configuration/editors.html">openHAB supporting editors</a>.
+These provide full IDE support for sitemap files, including syntax checking and auto-completion.</p>
+
+<p>The openHAB runtime distribution comes with a demo configuration package containing a sitemap file named <a href="https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/sitemaps/demo.sitemap"><code class="highlighter-rouge">demo.sitemap</code></a>.
+You may find it useful to use this file as a starting point in creating a sitemap that fits your personal home setup.</p>
+
+<p>The following example illustrates what a typical Sitemap definition might look like:</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">sitemap</span> <span class="nv">demo</span> <span class="nv">label</span><span class="o">=</span><span class="s">"My home automation"</span> <span class="p">{</span>
+    <span class="nv">Frame</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Date"</span> <span class="p">{</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Date</span>
+    <span class="p">}</span>
+    <span class="nv">Frame</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Demo"</span> <span class="p">{</span>
+        <span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Lights</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"light"</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_Temperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Livingroom [%.1f °C]"</span>
+        <span class="nv">Group</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Heating</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_Multimedia_Summary</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Multimedia [%s]"</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"video"</span> <span class="p">{</span>
+            <span class="nv">Selection</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Channel</span> <span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="o">=</span><span class="s">"off"</span><span class="p">,</span> <span class="mi">1</span><span class="o">=</span><span class="s">"DasErste"</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="s">"BBC One"</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="s">"Cartoon Network"</span><span class="p">]</span>
+            <span class="nv">Slider</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Volume</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<!-- Note to author: If you update this example, remember to copy it to the end of the article as well! -->
+
+<p>This textual UI configuration will produce a user interface similar to this:
+<img src="images/sitemap_demo_fullexample.png" alt="Presentation of the example in BasicUI" /></p>
+
+<!-- Note to author: The files to create all screenshots can be found at the end of the article! -->
+
+<p>A full explanation for this example can be found <a href="#full-example">at the end of this article</a>.</p>
+
+<h2 id="concepts">Concepts</h2>
+
+<p><strong>Elements:</strong>
+Sitemaps are composed by arranging various user interface elements.
+A set of different element types supports a user-friendly and clear presentation.
+The example above contains <code class="highlighter-rouge">Frame</code>, <code class="highlighter-rouge">Text</code> and <code class="highlighter-rouge">Switch</code> elements among others.
+Elements present information, allow interaction and are highly configurable based on the system state.
+One line of Sitemap element definition produces one corresponding UI element.
+As shown in the example, each element generates a descriptive text next to an icon on the left side and a status and/or interaction elements on the right.</p>
+
+<p><strong>Parameters:</strong>
+A certain set of parameters can be configured to customize the presentation of an element.
+In the shown example <code class="highlighter-rouge">item</code>, <code class="highlighter-rouge">label</code> and <code class="highlighter-rouge">valuecolor</code> are parameters.
+Almost all parameters are optional, some are however needed to result in a meaningful user interface.
+To avoid very long or unstructured lines of element definition, parameters can be broken down to multiple code lines.</p>
+
+<p><strong>Blocks:</strong>
+By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
+The <code class="highlighter-rouge">Frame</code> element type is often used in combination with element blocks.
+Frames are used to visually distinguish multiple elements of the same topic on one interface page.
+When using code blocks behind other element types such as <code class="highlighter-rouge">Text</code>, <code class="highlighter-rouge">Group</code> or <code class="highlighter-rouge">Switch</code>, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
+In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
+These are indicated by the “&gt;” control icon on the right of an element.</p>
+
+<p><strong>Dependencies:</strong>
+A typical sitemap contains dozens of individual elements.
+A system state and possible interactions are however often closely dependent.
+openHAB supports these dependencies by providing parameters for dynamic behavior.
+Be sure to check out the <a href="#dynamic-sitemaps">Dynamic Sitemaps</a> chapter.</p>
+
+<p>For the technically interested: The Sitemap definition language is an
+Xtext Domain Specific Language and the sitemap file model can be found <a href="https://github.com/eclipse/smarthome/blob/master/bundles/model/org.eclipse.smarthome.model.sitemap/src/org/eclipse/smarthome/model/Sitemap.xtext">here</a>.</p>
+
+<h3 id="special-element-sitemap">Special Element ‘sitemap’</h3>
+
+<p>The <code class="highlighter-rouge">sitemap</code> element is <strong>mandatory</strong> in a Sitemap definition.
+This element shall be the first line in the sitemap file, and the following code block comprises the entire Sitemap definition.</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">sitemap</span> <span class="sr">&lt;sitemapname&gt;</span> <span class="nv">label</span><span class="o">=</span><span class="s">"&lt;title of the main screen&gt;"</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nv">all</span> <span class="nv">sitemap</span> <span class="nv">elements</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">sitemapname</code> shall always be equal to the Sitemaps file name, e.g. the <code class="highlighter-rouge">sitemapname</code> in a sitemap file named <code class="highlighter-rouge">demo.sitemap</code> must be “demo”</li>
+  <li><code class="highlighter-rouge">label</code> is free text and will be shown as the title of the main screen.</li>
+</ul>
+
+<p>(Note that the element <code class="highlighter-rouge">sitemap</code> is written with a lower case “s”.)</p>
+
+<h2 id="element-types">Element Types</h2>
+
+<p>The following element types may be used in a Sitemap definition file.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Element</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="#element-type-chart">Chart</a></td>
+      <td>Adds a time-series chart object for <a href="persistence.html">persisted</a> data.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-colorpicker">Colorpicker</a></td>
+      <td>Allows the user to choose a color from a color wheel.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-default">Default</a></td>
+      <td>Renders an Item in the default UI representation specified by the type of the given Item.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-frame">Frame</a></td>
+      <td>Establishes an area containing various other Sitemap elements.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-group">Group</a></td>
+      <td>Concentrates all elements of a given group in a nested block.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-image">Image</a></td>
+      <td>Renders an image given by an URL.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-mapview">Mapview</a></td>
+      <td>Displays an OSM map based on a given Location Item.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-selection">Selection</a></td>
+      <td>Provides a dropdown or modal popup presenting values to choose from for an Item.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-setpoint">Setpoint</a></td>
+      <td>Renders a value between an increase and a decrease buttons.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-slider">Slider</a></td>
+      <td>Presents a value in a progress-bar-like slider.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-switch">Switch</a></td>
+      <td>Renders an Item as an ON/OFF or multi-button switch.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-text">Text</a></td>
+      <td>Renders an Item as text.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-video">Video</a></td>
+      <td>Displays a video stream, given a direct URL.</td>
+    </tr>
+    <tr>
+      <td><a href="#element-type-webview">Webview</a></td>
+      <td>Displays the content of a webpage.</td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- TODO: check for new element types -->
+
+<p><strong>Choosing the right element type:</strong>
+Data presented by Sitemap elements will almost always originate from a referenced [Item}(/v2.2/configuration/items.md).
+Each Item is of a certain Item type, for example <code class="highlighter-rouge">Switch</code>, <code class="highlighter-rouge">Number</code> or <code class="highlighter-rouge">String</code>.</p>
+
+<p>While not all combinations are meaningful, Items of one datatype may be linked to different Sitemap element types.
+This provides the flexibility to present Items in the way desired in your home automation user interface.</p>
+
+<!-- TODO: an example of the above would be useful here -->
+
+<p><strong>General remarks on parameters:</strong></p>
+
+<ul>
+  <li>
+    <p>In the following definitions, parameters in <code class="highlighter-rouge">[square brackets]</code> are optional.</p>
+  </li>
+  <li>
+    <p>Parameters must be supplied in the order shown.</p>
+  </li>
+  <li>Common parameters, also known from <a href="items.html#item-syntax">items definition</a>:
+    <ul>
+      <li><code class="highlighter-rouge">item</code> defines the name of the Item you want to present (e.g. <code class="highlighter-rouge">Temperature</code>), <a href="items.html#item-name">more details</a>.</li>
+      <li><code class="highlighter-rouge">label</code> sets the textual description displayed next to the preprocessed Item data (e.g. “<code class="highlighter-rouge">Now [%s °C]</code>”), <a href="items.html#item-label">more details</a>.</li>
+      <li><code class="highlighter-rouge">icon</code> chooses the name of the icon file to show next to the element, <a href="items.html#icons">more details</a>.</li>
+    </ul>
+  </li>
+  <li>
+    <p>When an <a href="/v2.2/configuration/items.html">Item</a> is defined, you have the opportunity to assign a label and/or an icon at that point.
+If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
+Setting a value for <code class="highlighter-rouge">label</code> or <code class="highlighter-rouge">icon</code> of a Sitemap element will override the values defined for the linked Item.</p>
+  </li>
+  <li>Additional parameters such as <code class="highlighter-rouge">mappings</code> and <code class="highlighter-rouge">valuecolor</code> are described below.</li>
+</ul>
+
+<h3 id="element-type-frame">Element Type ‘Frame’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Frame</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;icon&gt;"</span><span class="p">]</span> <span class="p">{</span>
+    <span class="p">[</span><span class="nv">additional</span> <span class="nv">sitemap</span> <span class="nv">elements</span><span class="p">]</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Frames are used to visually separate areas of items when the items are viewed in a UI.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Frame</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Demo"</span> <span class="p">{</span>
+    <span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Lights</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"light"</span>
+    <span class="sr">//</span><span class="c1"># and so on...</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_frame.png" alt="Presentation of the Frame element in BasicUI" /></p>
+
+<h3 id="element-type-default">Element Type ‘Default’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Default</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Presents an Item using the default UI representation specified by the type of the given Item.
+E.g., a <code class="highlighter-rouge">Dimmer</code> Item will be represented as a <a href="#element-type-slider">Slider</a> element while a <code class="highlighter-rouge">Player</code> Item will be rendered with player button controls (Previous/Pause/Play/Next).</p>
+
+<!-- TODO: specify what the default representation for each Item type is -->
+
+<h3 id="element-type-text">Element Type ‘Text’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Text</span> <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span><span class="p">]</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Presents data as normal text.
+Most Item types can be used; the values can be prepared and reformatted by using string formatters and transformations.
+Please refer to the documentation on <a href="items.html#item-label">item labels</a> for details.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Temperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Livingroom [%.1f °C]"</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"temperature"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_text.png" alt="Presentation of the Text element in BasicUI" /></p>
+
+<h3 id="element-type-group">Element Type ‘Group’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Group</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Clicking on a Group element will reveal a new view showing all group items using the <a href="#element-type-default">Default</a> element type.
+In addition, Item groups may be configured to hold a value, just as with normal items.
+Please refer to the documentation on <a href="items.html#groups">Item groups</a> for details.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">item</code> refers to the name of the Item group to be presented.</li>
+</ul>
+
+<p><strong>Attention:</strong>
+There is no way to override the parameters, change the default element type, change the order, use dynamic tags, or insert other elements (e.g. Chart, Image, Webview, etc) in the subframe generated by the Group element.
+Please see the Blocks section above for information on how to create a custom subframe with full control over its contents and appearance.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Group</span> <span class="nv">item</span><span class="o">=</span><span class="nv">gTemperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Room Temperatures [%.1f °C]"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_group.png" alt="Presentation of the Group element in BasicUI" /></p>
+
+<h3 id="element-type-switch">Element Type ‘Switch’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">mappings</span><span class="o">=</span><span class="s">"&lt;mapping definition&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Switches are one of the more common elements of a typical Sitemap.
+A Switch will present a discrete state Item and allow changing of it’s value.
+Note that Switch elements can be rendered differently on the user interface, based on the Item type and the <code class="highlighter-rouge">mappings</code> parameter.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mappings</code> comes as an array of value-to-string translations, <a href="#mappings">documented further down</a>.
+Without the mappings parameter, user interfaces will present an On/Off Switch, if mappings are given, several labeled buttons will be rendered.</li>
+</ul>
+
+<p><strong>Examples:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_CeilingLight</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Ceiling Light"</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"light"</span>
+<span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Channel</span> <span class="nv">label</span><span class="o">=</span><span class="s">"TV Channel"</span> <span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="o">=</span><span class="s">"DasErste"</span><span class="p">,</span> <span class="mi">1</span><span class="o">=</span><span class="s">"BBC One"</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="s">"Cartoon Network"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_switch1.png" alt="Presentation of the On/Off Switch element in BasicUI" />
+<img src="images/sitemap_demo_switch2.png" alt="Presentation of the multi-state Switch element in BasicUI" /></p>
+
+<h3 id="element-type-selection">Element Type ‘Selection’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Selection</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">mappings</span><span class="o">=</span><span class="s">"&lt;mapping definition&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>The Selection element type renders the options as a dropdown menu or as a modal dialog prompt, depending on the user interface.
+The element type is, in its use cases, similar to a Switch with multiple states but has the advantage that the main UI stays clean, and more options can be offered.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">mappings</code> comes as an array of value-to-string translations, <a href="#mappings">documented further down</a>.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Selection</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Channel</span> <span class="nv">label</span><span class="o">=</span><span class="s">"TV Channel"</span> <span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="o">=</span><span class="s">"DasErste"</span><span class="p">,</span> <span class="mi">1</span><span class="o">=</span><span class="s">"BBC One"</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="s">"Cartoon Network"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_selection.png" alt="Presentation of the Selection element in BasicUI" /></p>
+
+<h3 id="element-type-setpoint">Element Type ‘Setpoint’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Setpoint</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="nv">minValue</span><span class="o">=&lt;</span><span class="nv">min</span> <span class="nv">value</span><span class="o">&gt;</span> <span class="nv">maxValue</span><span class="o">=&lt;</span><span class="nv">max</span> <span class="nv">value</span><span class="o">&gt;</span> <span class="nv">step</span><span class="o">=&lt;</span><span class="nv">step</span> <span class="nv">value</span><span class="o">&gt;</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">minValue</code> and <code class="highlighter-rouge">maxValue</code> limit the possible range of the value (both included in the range).</li>
+  <li><code class="highlighter-rouge">step</code> defines how much the value will change when the button is pressed one time.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Setpoint</span> <span class="nv">item</span><span class="o">=</span><span class="nv">KI_Temperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Kitchen [%.1f °C]"</span> <span class="nv">minValue</span><span class="o">=</span><span class="mf">4.5</span> <span class="nv">maxValue</span><span class="o">=</span><span class="mi">30</span> <span class="nv">step</span><span class="o">=</span><span class="mf">0.5</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_setpoint.png" alt="Presentation of the Setpoint element in BasicUI" /></p>
+
+<h3 id="element-type-slider">Element Type ‘Slider’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Slider</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">sendFrequency</span><span class="o">=</span><span class="s">"frequency"</span><span class="p">]</span> <span class="p">[</span><span class="nv">switchSupport</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This type presents a value as a user-adjustable control which slides from left (0) to right (100).</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">sendFrequency</code> is used to distinguish between long and short button presses in the classic (web) frontend.
+This parameter defines the interval in milliseconds for sending increase/decrease requests.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">switchSupport</code> is a parameter without an assignment (Classic UI only!).
+If specified, a short press on the “up” or “down” button switches the item “on” or “off” (0 or 100) respectively.</p>
+  </li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Slider</span> <span class="nv">item</span><span class="o">=</span><span class="nv">KI_Temperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Kitchen"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_slider.png" alt="Presentation of the Slider element in BasicUI" /></p>
+
+<h3 id="element-type-colorpicker">Element Type ‘Colorpicker’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Colorpicker</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">sendFrequency</span><span class="o">=</span><span class="s">""</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This element provides the ability to select a color.
+When the user clicks on the middle button, a color wheel will appear.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">sendFrequency</code> is used to distinguish between long and short button presses in the classic (web) frontend.
+This parameter defines the interval in milliseconds for sending increase/decrease requests.</li>
+</ul>
+
+<!-- TODO: This paragraph needs an update. What are the left and the right buttons for? -->
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Colorpicker</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_LEDLight_Color</span> <span class="nv">label</span><span class="o">=</span><span class="s">"LED Light Color"</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"colorwheel"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_colorpicker.png" alt="Presentation of the Colorpicker element in BasicUI" /></p>
+
+<h3 id="element-type-webview">Element Type ‘Webview’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Webview</span> <span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="nv">url</span><span class="o">=</span><span class="s">"&lt;url&gt;"</span> <span class="p">[</span><span class="nv">height</span><span class="o">=</span><span class="sr">&lt;heightvalue&gt;</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>The content of a webpage will be presented live on your user interface next to other Sitemap elements.
+Please be aware that Webview elements are not usable by all user interface options.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">height</code> is the number of element rows to fill.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Webview</span> <span class="nv">url</span><span class="o">=</span><span class="s">"http://www.openhab.org"</span> <span class="nv">height</span><span class="o">=</span><span class="mi">5</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_webview.png" alt="Presentation of the Webview element in BasicUI" /></p>
+
+<h3 id="element-type-mapview">Element Type ‘Mapview’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Mapview</span> <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span><span class="p">]</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">height</span><span class="o">=</span><span class="sr">&lt;heightvalue&gt;</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Displays an <a href="https://www.openstreetmap.org">OSM</a> map based on a given Location Item.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">height</code> is the number of element rows to fill.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Mapview</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Demo_Location</span> <span class="nv">height</span><span class="o">=</span><span class="mi">5</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_mapview.png" alt="Presentation of the Mapview element in BasicUI" /></p>
+
+<h3 id="element-type-image">Element Type ‘Image’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Image</span> <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="nv">url</span><span class="o">=</span><span class="s">"&lt;url of image&gt;"</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">refresh</span><span class="o">=</span><span class="nv">xxxx</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>This element type is able to present an image.
+The image must be available on a reachable website or webserver without password or access token.
+Alternatively, the image file (e.g. YourImageFile.png) may be stored locally in the $OPENHAB_CONF/html folder, and will be accessible through the static route, http://<my.openHAB.device>:8080/static/YourImageFile.png.</my.openHAB.device></p>
+
+<ul>
+  <li><code class="highlighter-rouge">item</code> can refer to either an Image Item whose state is the raw data of the image, or a String Item whose state is an URL that points to an image. Some clients may not (yet) consider <code class="highlighter-rouge">item</code>.</li>
+  <li><code class="highlighter-rouge">url</code> is the default URL from which to retrieve the image, if there is no associated Item or if the associated item’s state is not a URL.</li>
+  <li><code class="highlighter-rouge">refresh</code> is the refresh period of the image in milliseconds (“60000” for minutely updates).</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Image</span> <span class="nv">url</span><span class="o">=</span><span class="s">"https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_image.png" alt="Presentation of the Image element in BasicUI" /></p>
+
+<h3 id="element-type-video">Element Type ‘Video’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Video</span> <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="nv">url</span><span class="o">=</span><span class="s">"&lt;url of video to embed&gt;"</span> <span class="p">[</span><span class="nv">encoding</span><span class="o">=</span><span class="s">"&lt;video encoding&gt;"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Allows you to display a video as part of your Sitemap.
+Note: not all video encodings (formats) are supported; you may need to transcode your video.
+The video must be reachable directly via URL.
+An embedded and/or protected video are not supported.</p>
+
+<ul>
+  <li><code class="highlighter-rouge">item</code> can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider <code class="highlighter-rouge">item</code>.</li>
+  <li><code class="highlighter-rouge">url</code> is the default URL from which to retrieve the video if there is no associated Item or if the associated item’s state is not a URL.</li>
+  <li><code class="highlighter-rouge">encoding</code> should be set to “mjpeg” for an MJPEG video, or “HLS” for an HTTP Live Streaming playlist (file with .m3u8 extension).  If you omit the <code class="highlighter-rouge">encoding</code> parameter, openHAB will attempt to automatically select the correct format.</li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Video</span> <span class="nv">url</span><span class="o">=</span><span class="s">"http://demo.openhab.org/Hue.m4v"</span>
+</code></pre></div></div>
+
+<p><img src="images/sitemap_demo_video.png" alt="Presentation of the Video element in BasicUI" /></p>
+
+<h3 id="element-type-chart">Element Type ‘Chart’</h3>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Chart</span> <span class="p">[</span><span class="nv">item</span><span class="o">=</span><span class="sr">&lt;itemname&gt;</span><span class="p">]</span> <span class="p">[</span><span class="nv">icon</span><span class="o">=</span><span class="s">"&lt;iconname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">label</span><span class="o">=</span><span class="s">"&lt;labelname&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">refresh</span><span class="o">=</span><span class="nv">xxxx</span><span class="p">]</span>
+<span class="p">[</span><span class="nv">period</span><span class="o">=</span><span class="nv">xxxx</span><span class="p">]</span> <span class="p">[</span><span class="nv">service</span><span class="o">=</span><span class="s">"&lt;service&gt;"</span><span class="p">]</span> <span class="p">[</span><span class="nv">begin</span><span class="o">=</span><span class="nv">yyyyMMddHHmm</span><span class="p">]</span> <span class="p">[</span><span class="nv">end</span><span class="o">=</span><span class="nv">yyyyMMddHHmm</span><span class="p">]</span> <span class="p">[</span><span class="nv">legend</span><span class="o">=</span><span class="nv">true</span><span class="o">/</span><span class="nv">false</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Adds a time-series chart object for the display of logged data.</p>
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">refresh</code> defines the refresh period of the Image (in milliseconds).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">service</code> sets the persistence service to use.
+If no service is specified, openHAB will use the first queryable persistence service it finds.
+Therefore, for an installation with only a single persistence service, this is not required.</p>
+  </li>
+</ul>
+
+<!-- TODO: Is this statement correct?  Isn't there a default persistence setting in paperUI? -->
+
+<ul>
+  <li>
+    <p><code class="highlighter-rouge">period</code> is the scale of the time axis. Valid values are <code class="highlighter-rouge">h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y</code>.</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">begin</code> / <code class="highlighter-rouge">end</code> sets the beginning and end of the time axis.
+Valid values are in the format: “yyyyMMddHHmm” (yyyy = year, MM = month, dd = day, HH = hour (0-23), mm = minutes).</p>
+  </li>
+  <li>
+    <p><code class="highlighter-rouge">legend</code> is used to show or to hide the chart legend.
+Valid values are <code class="highlighter-rouge">true</code> (always show the legend) and <code class="highlighter-rouge">false</code> (never show the legend).
+If this parameter is not set, the legend is hidden if there is only one chart series.</p>
+  </li>
+</ul>
+
+<!-- TODO: This paragraph needs an update -->
+
+<p>Visit <a href="https://github.com/openhab/openhab/wiki/Charts">Charts</a> in the Wiki for examples.</p>
+
+<!-- TODO
+![Presentation of the Chart element in BasicUI](images/sitemap_demo_chart.png)
+-->
+
+<p><strong>Other options to look out for:</strong>
+The Chart element type is a good way to present time series data quickly.
+For more sophisticated diagrams, openHAB supports the integration of outside sources like most logging and graphing solutions (e.g. <a href="http://grafana.org">Grafana</a>).
+See this <a href="https://community.openhab.org/t/13761/1">Tutorial</a> for more details.</p>
+
+<p><strong>Technical constraints and details:</strong></p>
+
+<ul>
+  <li>When using rrd4j persistence, you must use the <code class="highlighter-rouge">everyMinute</code> (60 seconds) logging strategy.  Otherwise rrd4j thinks that there is no data and will not properly draw the charts.</li>
+  <li>The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.</li>
+  <li>When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.</li>
+</ul>
+
+<!-- TODO: This paragraph needs an update -->
+
+<!-- TODO: Element type list is not supported and throws NPE in BasicUI
+### Element Type 'List'
+
+```perl
+List item=<itemname> [label="<labelname>"] [icon="<iconname>"] [separator=""]
+```
+Splits a String Item at each separator into multiple rows.
+-->
+
+<h2 id="mappings">Mappings</h2>
+
+<p>Mappings is an optional parameter for the <a href="#element-type-switch">Switch</a> and <a href="#element-type-selection">Selection</a> element types.</p>
+
+<p>Mapping syntax:</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="nv">value_1</span><span class="o">=</span><span class="s">"description_1"</span><span class="p">,</span> <span class="nv">value_2</span><span class="o">=</span><span class="s">"description_2"</span><span class="p">,</span> <span class="o">...</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Examples:</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="nv">ON</span><span class="o">=</span><span class="s">"on"</span><span class="p">,</span> <span class="nv">OFF</span><span class="o">=</span><span class="s">"standby"</span><span class="p">]</span>
+<span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="o">=</span><span class="s">"DasErste"</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="s">"BBC One"</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="s">"Cartoon Network"</span><span class="p">]</span>
+
+<span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="nv">OFF</span><span class="o">=</span><span class="s">"All heaters off"</span><span class="p">]</span>
+<span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">15</span><span class="o">=</span><span class="s">"Gone"</span><span class="p">,</span> <span class="mi">19</span><span class="o">=</span><span class="s">"Chilly"</span><span class="p">,</span> <span class="mi">21</span><span class="o">=</span><span class="s">"Cozy"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>As you can see, different Item data types are accepted as mappings values.
+The first two lines show very typical use cases.
+Imagine your TV is part of your openHAB setup.
+Its power state is represented by a binary Switch Item.
+Its channel number is a discrete number Item that may only be set to one of three states.
+By using a Switch or Selection element with a mappings array, you can replace these meaningless values with user-friendly descriptions for display on the user interface.</p>
+
+<p>This mapping changes the displayed power state of the TV from “ON” and “OFF” to the more accurate terms, “on” and “standby”.
+Similarly, mapping above changes the numbers “1”, “2”, and “3” to “DasErste”, “BBC One”, and “Cartoon Network” respectively.</p>
+
+<p>In the third and forth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
+This limits the possible input values, which is yet another often occurring use case for mappings.</p>
+
+<h2 id="dynamic-sitemaps">Dynamic Sitemaps</h2>
+
+<p>All Sitemap elements can be configured to be hidden, color highlighted or to have a <a href="/v2.2/items.md#icons-dynamic">dynamic icon</a>, depending on certain Item states.
+A few practical use cases are:</p>
+
+<ul>
+  <li>Show a battery warning if the voltage level of a device is below 30%</li>
+  <li>Hide further control elements for the TV if it is turned off</li>
+  <li>Highlight a value with a warning color if it is outside accepted limits</li>
+  <li>Present a special icon, depending on the state of an item (a <a href="/v2.2/items.md#icons-dynamic">dynamic icon</a>)</li>
+</ul>
+
+<h3 id="visibility">Visibility</h3>
+
+<p>The <code class="highlighter-rouge">visibility</code> parameter is used to dynamically show or hide an Item.
+If the parameter is not provided, the default is to display the Item.</p>
+
+<p>Visibility syntax:</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">visibility</span><span class="o">=</span><span class="p">[</span><span class="nv">item_name</span> <span class="nv">operator</span> <span class="nv">value</span><span class="p">,</span> <span class="nv">item_name</span> <span class="nv">operator</span> <span class="nv">value</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>Valid comparison operators are:</p>
+<ul>
+  <li>equal to <code class="highlighter-rouge">==</code>, unequal to <code class="highlighter-rouge">!=</code></li>
+  <li>less than or equal to <code class="highlighter-rouge">&lt;=</code>, greater than or equal to<code class="highlighter-rouge">&gt;=</code></li>
+  <li>less than <code class="highlighter-rouge">&lt;</code>, greater than <code class="highlighter-rouge">&gt;</code>
+Expressions are evaluated from left to right.</li>
+</ul>
+
+<p><strong>Examples:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">visibility</span><span class="o">=</span><span class="p">[</span><span class="nv">Battery_Level</span><span class="o">&lt;</span><span class="mi">30</span><span class="p">]</span>
+<span class="nv">visibility</span><span class="o">=</span><span class="p">[</span><span class="nv">TV_Power</span><span class="o">==</span><span class="nv">ON</span><span class="p">]</span>
+<span class="nv">visibility</span><span class="o">=</span><span class="p">[</span><span class="nv">Day_Time</span><span class="o">==</span><span class="s">"Morning"</span><span class="p">,</span> <span class="nv">Day_Time</span><span class="o">==</span><span class="s">"Afternoon"</span><span class="p">,</span> <span class="nv">Temperature</span><span class="o">&gt;</span><span class="mi">19</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>If any one of the comparisons is evaluated as <code class="highlighter-rouge">true</code>, the Item will be visible, otherwise it will be hidden.
+It is important to note that visibility may be determined based on only one condition at a time.
+If any one of the comparisons is evaluated as <code class="highlighter-rouge">true</code>, then the Item will be visible.
+Otherwise it will be hidden.</p>
+
+<p>In the third example above, a control for a lawn sprinkler will be visible if it is Morning, <em>OR</em> if it is Afternoon, <em>OR</em> if the temperature is above 19 °C.
+Combining multiple conditions, for example Morning <em>AND</em> above 19 °C is not supported.
+To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional Item that is set by a Rule.
+Rules have a rich set of features that can support more involved scenarios.</p>
+
+<h3 id="label-and-value-colors">Label and Value Colors</h3>
+
+<p>Colors can be used to emphasize an items label or its value based on conditions.
+Colors may be assigned to either the label or the value associated with an Item.</p>
+
+<p><strong>Label and Value Color Syntax:</strong></p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">labelcolor</span><span class="o">=</span><span class="p">[</span><span class="nv">item_name</span> <span class="nv">operator</span> <span class="nv">value</span> <span class="o">=</span> <span class="s">"color"</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+<span class="nv">valuecolor</span><span class="o">=</span><span class="p">[</span><span class="nv">item_name</span> <span class="nv">operator</span> <span class="nv">value</span> <span class="o">=</span> <span class="s">"color"</span><span class="p">,</span> <span class="o">...</span> <span class="p">]</span>
+</code></pre></div></div>
+
+<p>Note that <code class="highlighter-rouge">item_name</code> and <code class="highlighter-rouge">operator</code> are both optional.
+If <code class="highlighter-rouge">item_name</code> is not provided, the Item name will default to the current Item.
+If an operator is not specified, the operator will default to <code class="highlighter-rouge">==</code>.</p>
+
+<p>The comparison operators for <code class="highlighter-rouge">labelcolor</code> and <code class="highlighter-rouge">valuecolor</code> are the same as for the visibility parameter.</p>
+
+<p><strong>Examples:</strong></p>
+
+<p>The following three lines are equivalent.</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Temperature</span> <span class="nv">labelcolor</span><span class="o">=</span><span class="p">[</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">=</span><span class="s">"blue"</span><span class="p">]</span> <span class="nv">valuecolor</span><span class="o">=</span><span class="p">[</span><span class="mi">22</span><span class="o">=</span><span class="s">"green"</span><span class="p">]</span>
+<span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Temperature</span> <span class="nv">labelcolor</span><span class="o">=</span><span class="p">[</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">=</span><span class="s">"blue"</span><span class="p">]</span> <span class="nv">valuecolor</span><span class="o">=</span><span class="p">[</span><span class="o">==</span><span class="mi">22</span><span class="o">=</span><span class="s">"green"</span><span class="p">]</span>
+<span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Temperature</span> <span class="nv">labelcolor</span><span class="o">=</span><span class="p">[</span><span class="o">&gt;</span><span class="mi">0</span><span class="o">=</span><span class="s">"blue"</span><span class="p">]</span> <span class="nv">valuecolor</span><span class="o">=</span><span class="p">[</span><span class="nv">Temperature</span><span class="o">==</span><span class="mi">22</span><span class="o">=</span><span class="s">"green"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>The line below illustrates the importance of operator order:</p>
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Temperature</span> <span class="nv">valuecolor</span><span class="o">=</span><span class="p">[</span><span class="nv">Last_Update</span><span class="o">==</span><span class="s">"Uninitialized"</span><span class="o">=</span><span class="s">"gray"</span><span class="p">,</span>
+                                  <span class="o">&gt;=</span><span class="mi">25</span><span class="o">=</span><span class="s">"orange"</span><span class="p">,</span> <span class="o">&gt;=</span><span class="mi">15</span><span class="o">=</span><span class="s">"green"</span><span class="p">,</span> <span class="mi">0</span><span class="o">=</span><span class="s">"white"</span><span class="p">,</span> <span class="o">&lt;</span><span class="mi">15</span><span class="o">=</span><span class="s">"blue"</span><span class="p">]</span>
+</code></pre></div></div>
+
+<p>Note that expressions are evaluated from left to right; the first matching expression determines the color.
+If the order of the expressions was reversed, the color assignment would not work properly.
+Note also, the effect of omitting <code class="highlighter-rouge">Temperature</code> and the comparison operator in the expression <code class="highlighter-rouge">0="white"</code> (as compared to <code class="highlighter-rouge">==0="white"</code>).</p>
+
+<p>Below is a list of standard colors and their respective RGB color codes.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Color Name</th>
+      <th>Preview and RGB Color Code</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>maroon</td>
+      <td><em style="color: #800000"><code class="highlighter-rouge">► #800000</code></em></td>
+    </tr>
+    <tr>
+      <td>red</td>
+      <td><em style="color: #ff0000"><code class="highlighter-rouge">► #ff0000</code></em></td>
+    </tr>
+    <tr>
+      <td>orange</td>
+      <td><em style="color: #ffa500"><code class="highlighter-rouge">► #ffa500</code></em></td>
+    </tr>
+    <tr>
+      <td>olive</td>
+      <td><em style="color: #808000"><code class="highlighter-rouge">► #808000</code></em></td>
+    </tr>
+    <tr>
+      <td>yellow</td>
+      <td><em style="color: #ffff00"><code class="highlighter-rouge">► #ffff00</code></em></td>
+    </tr>
+    <tr>
+      <td>purple</td>
+      <td><em style="color: #800080"><code class="highlighter-rouge">► #800080</code></em></td>
+    </tr>
+    <tr>
+      <td>fuchsia</td>
+      <td><em style="color: #ff00ff"><code class="highlighter-rouge">► #ff00ff</code></em></td>
+    </tr>
+    <tr>
+      <td>white</td>
+      <td><em style="color: #ffffff"><code class="highlighter-rouge">► #ffffff</code></em></td>
+    </tr>
+    <tr>
+      <td>lime</td>
+      <td><em style="color: #00ff00"><code class="highlighter-rouge">► #00ff00</code></em></td>
+    </tr>
+    <tr>
+      <td>green</td>
+      <td><em style="color: #008000"><code class="highlighter-rouge">► #008000</code></em></td>
+    </tr>
+    <tr>
+      <td>navy</td>
+      <td><em style="color: #000080"><code class="highlighter-rouge">► #000080</code></em></td>
+    </tr>
+    <tr>
+      <td>blue</td>
+      <td><em style="color: #0000ff"><code class="highlighter-rouge">► #0000ff</code></em></td>
+    </tr>
+    <tr>
+      <td>teal</td>
+      <td><em style="color: #008080"><code class="highlighter-rouge">► #008080</code></em></td>
+    </tr>
+    <tr>
+      <td>aqua</td>
+      <td><em style="color: #00ffff"><code class="highlighter-rouge">► #00ffff</code></em></td>
+    </tr>
+    <tr>
+      <td>black</td>
+      <td><em style="color: #000000"><code class="highlighter-rouge">► #000000</code></em></td>
+    </tr>
+    <tr>
+      <td>silver</td>
+      <td><em style="color: #c0c0c0"><code class="highlighter-rouge">► #c0c0c0</code></em></td>
+    </tr>
+    <tr>
+      <td>gray</td>
+      <td><em style="color: #808080"><code class="highlighter-rouge">► #808080</code></em></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Please take note that colors other than those listed in the list above may be used.
+Generally, you can expected that valid HTML colors will be accepted (e.g. “green”, “lightgrey”, “#334455”), but note that a UI may only accept internally defined colors, or work with a special theme.
+The color names above are agreed on between all openHAB UIs and are therefor your safest choice.</p>
+
+<h3 id="icons">Icons</h3>
+
+<p>openHAB allows a set of icons to be assigned to the different states of an Item and therefor to be presented in a Sitemap.
+Please refer to the documentation on <a href="items.html">Item configuration</a> for details.</p>
+
+<p><img src="/v2.2/addons/iconsets/classic/icons/battery-0.png" alt="battery-0" title="battery-0" />
+<img src="/v2.2/addons/iconsets/classic/icons/battery-30.png" alt="battery-30" title="battery-30" />
+<img src="/v2.2/addons/iconsets/classic/icons/battery-60.png" alt="battery-60" title="battery-60" />
+<img src="/v2.2/addons/iconsets/classic/icons/battery-100.png" alt="battery-100" title="battery-100" /></p>
+
+<h2 id="full-example">Full Example</h2>
+
+<p><img src="images/sitemap_demo_fullexample.png" alt="Presentation of the example in BasicUI" /></p>
+
+<!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
+
+<div class="language-perl highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">sitemap</span> <span class="nv">demo</span> <span class="nv">label</span><span class="o">=</span><span class="s">"My home automation"</span> <span class="p">{</span>
+    <span class="nv">Frame</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Date"</span> <span class="p">{</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Date</span>
+    <span class="p">}</span>
+    <span class="nv">Frame</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Demo"</span> <span class="p">{</span>
+        <span class="nv">Switch</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Lights</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"light"</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_Temperature</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Livingroom [%.1f °C]"</span>
+        <span class="nv">Group</span> <span class="nv">item</span><span class="o">=</span><span class="nv">Heating</span>
+        <span class="nv">Text</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_Multimedia_Summary</span> <span class="nv">label</span><span class="o">=</span><span class="s">"Multimedia [%s]"</span> <span class="nv">icon</span><span class="o">=</span><span class="s">"video"</span> <span class="p">{</span>
+            <span class="nv">Selection</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Channel</span> <span class="nv">mappings</span><span class="o">=</span><span class="p">[</span><span class="mi">0</span><span class="o">=</span><span class="s">"off"</span><span class="p">,</span> <span class="mi">1</span><span class="o">=</span><span class="s">"DasErste"</span><span class="p">,</span> <span class="mi">2</span><span class="o">=</span><span class="s">"BBC One"</span><span class="p">,</span> <span class="mi">3</span><span class="o">=</span><span class="s">"Cartoon Network"</span><span class="p">]</span>
+            <span class="nv">Slider</span> <span class="nv">item</span><span class="o">=</span><span class="nv">LR_TV_Volume</span>
+        <span class="p">}</span>
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
+
+<p>Explanation:</p>
+
+<ul>
+  <li>
+    <p>The Sitemap “demo” with the shown title “My home automation” is defined.</p>
+  </li>
+  <li>
+    <p>One first Frame with a date stamp is shown.</p>
+  </li>
+  <li>
+    <p>Another Frame with a visual label “Demo” is presented, containing:</p>
+
+    <ul>
+      <li>
+        <p>A Switch for the Item “Lights”</p>
+      </li>
+      <li>
+        <p>A Text element showing a temperature in a given format</p>
+      </li>
+      <li>
+        <p>A Group element. Upon clicking the element, a new view containing all “Heating” Items will be shown.</p>
+      </li>
+      <li>
+        <p>Another Text element showing a “Multimedia” summary, e.g. “Currently playing”.
+The element is additionally the host for a nested block.
+By clicking in the element, a new view with two elements is presented:</p>
+        <ul>
+          <li>A Selection presenting four options in a modal dialog prompt</li>
+          <li>A Slider to set the volume (e.g. 0-100%)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<!-- Note to author: If you update this example, remember to copy it to the beginning of this article as well! -->
+
+<h2 id="further-notes-and-comparison-details">Further notes and comparison details</h2>
+
+<ul>
+  <li>
+    <p>String comparisons are case sensitive, so <code class="highlighter-rouge">==ON</code> is not the same a <code class="highlighter-rouge">==on</code>.</p>
+  </li>
+  <li>
+    <p>DateTime comparisons are relative to the current time and specified in seconds.
+So the expression <code class="highlighter-rouge">Lights_On_Time &gt; 300</code> will return true if the DateTime Item is set to a value that’s newer than the past 5 minutes (300 seconds).</p>
+  </li>
+  <li>
+    <p>Further examples for defining Sitemaps can be found in our <a href="https://github.com/openhab/openhab/wiki/Samples-Sitemap-Definitions">openHAB-Samples</a> section.</p>
+  </li>
+</ul>
+
+<!-- Note to author:
+- The screenshot were created with chrome mobile developer tools on a page width of 529px
+ -The screenshots were created in BasicUI with the following items and Sitemap file content:
+Group:Number:AVG Temperatures <heating>
+Number Demo_LivingroomTemperature "Livingroom [21.0 °C]" <temperature> (Temperatures)
+Number Demo_BedroomTemperature "Bedroom [19.5 °C]" <temperature> (Temperatures)
+Number Demo_KitchenTemperature "Kitchen [20.5 °C]" <temperature> (Temperatures)
+Location Demo_Location "Location [48.858377,2.294486,66.0]"
+
+Number Demo_TV_Channel
+Color Demo_Color
+
+
+sitemap demo label="My home automation" {
+        Frame label="Date" {
+                Text item=Date label="Today [Monday, 01. Aug. 2016]"
+        }
+        Frame label="Demo" {
+                Switch item=Lights icon="light" mappings=[OFF="All Off"]
+                Text item=Temperature label="Livingroom [21.3 °C]" icon="temperature" valuecolor=[>25="orange",>15="green",<=15="blue"]
+                Group item=Heating
+                Text item=Multimedia_Summary label="Multimedia" icon="video" {
+                        Selection item=TV_Channel mappings=[0="off", 1="DasErste", 2="BBC One", 3="Cartoon Network"]
+                        Slider item=Volume
+                }
+        }
+
+        Text label="The following elements are for screenshots. The screen was at this width:"
+        Text label="---------------------------------------------------------------------------------------"
+    Frame {
+        Text item=Temperature label="Livingroom [21.3 °C]" icon="temperature"
+    }
+    Frame {
+        Switch item=Livingroom_Light_OnOff label="Ceiling Light" icon="light"
+    }
+    Frame {
+        Switch item=Demo_TV_Channel label="TV Channel" icon="television" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
+    }
+    Frame {
+        Selection item=Demo_TV_Channel label="TV Channel" icon="television" mappings=[0="DasErste", 1="BBC One", 2="Cartoon Network"]
+    }
+    Frame {
+        Setpoint item=Demo_KitchenTemperature
+    }
+    Frame {
+        Slider item=Demo_KitchenTemperature switchSupport
+    }
+    Frame {
+        Colorpicker item=Demo_Color label="LED Light Color" icon="colorwheel"
+    }
+    //Frame {
+    //    Chart item=Demo_KitchenTemperature label="Test" period=h refresh=600
+    //}
+    Frame {
+        Group item=gHeatAct label="Room Temperatures [%.1f °C]"
+    }
+    Frame {
+        Image url="https://raw.githubusercontent.com/wiki/openhab/openhab/images/features.png"
+    }
+    Frame {
+        Video url="http://demo.openhab.org/Hue.m4v"
+    }
+    Frame {
+        Webview url="http://www.openhab.org" height=5
+    }
+    Frame {
+        Text item=Temperature label="Livingroom [22.0 °C]" icon="temperature" labelcolor=[!=1="blue"] valuecolor=[!=1="green"]
+    }
+    Frame {
+        Mapview item=Demo_Location height=5
+    }
+}
+-->
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

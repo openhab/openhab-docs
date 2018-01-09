@@ -7,85 +7,90 @@ title: Bindings
 
 # Bindings
 
-The following bindings are available to address a wide variety of systems and hardware.
+Bindings connect your smart home's devices and technologies to openHAB.
 
-{::options toc_levels="2..3"/}
+<table id="bindings-select" class="striped">
+  <tbody>
+    <tr>
+      <td width="20%">
+        <p>
+          <input type="checkbox" class="filled-in" id="oh2-checkbox" checked="checked" />
+          <label for="oh2-checkbox"><img src="{{base}}/images/tag-since-2x.svg"></label>
+        </p>
+      </td>
+      <td>
+        <p>
+        Bindings developed for openHAB 2 use the <a href="https://www.eclipse.org/smarthome/" target="_blank">Eclipse SmartHome</a> APIs.
+        They support <a href="{{base}}/concepts/things.html">things and channels</a>, and many support automatic discovery of things.
+        These newer bindings can be the easiest to use.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <input type="checkbox" class="filled-in" id="oh1-checkbox" checked="checked" />
+          <label for="oh1-checkbox"><img src="{{base}}/images/tag-since-1x.svg"></label>
+        </p>
+      </td>
+      <td>
+        <p>
+        Most bindings developed for openHAB 1 can also be used in openHAB 2.
+        These bindings are connected directly to <a href="{{base}}/concepts/items.html">items</a> by editing text files.  
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <input type="checkbox" class="filled-in" id="legacy-checkbox" />
+          <label for="legacy-checkbox"><img src="{{base}}/images/tag-install-legacy.svg"></label>
+        </p>
+      </td>
+      <td>
+        <p>
+        A binding is considered legacy when another binding obsoletes it.
+        For many openHAB 1 bindings, there is a new openHAB 2 binding to replace it.
+        In order to install legacy bindings, enable "Include Legacy 1.x Bindings" through either the Paper UI or in the file <code>services/addons.cfg</code>.
+        </p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <input type="checkbox" class="filled-in" id="manual-checkbox" />
+          <label for="manual-checkbox"><img src="{{base}}/images/tag-install-manual.svg"></label>
+        </p>
+      </td>
+      <td>
+        <p>
+        Many openHAB 1 bindings have not yet completed validation for inclusion in the distribution; however, they may indeed work properly under openHAB 2.
+        All openHAB 1 addons can be downloaded in a zip file <a href="https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F1.9.0%2Fopenhab-1.9.0-addons.zip">(1.9.0)</a>.
+        We need your help testing them so that they may be easily installed in a future distribution.
+        Please see the <a href="{{root}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution">compatibility layer documentation</a> and
+        also search the <a href="https://community.openhab.org">openHAB community forum</a> for the latest information and steps for manual installation.
+        </p>
+      </td>
+    </tr>
+  </tbody>
+</table>
 
-* TOC
-{:toc}
-
-## Native Bindings
-
-The following bindings can be installed and configured directly from within Paper UI or by any of the other installation methods.
-
-{% assign bindings = "" | split: "|" %}
-{% for binding in site.data.bindings %}{% assign bindings = bindings | push: binding %}{% endfor %}
-{% assign sorted_bindings = bindings | sort: "id" %}
-
-| Binding | Description |
-|---------|-------------|
-{% for binding in sorted_bindings %}| [{{ binding.label }}]({{base}}/addons/bindings/{{ binding.id }}/readme.html) | {{ binding.description }} |
-{% endfor %}
-
-## 1.x Bindings
-
-Bindings developed for the first version of openHAB can also be used with openHAB 2.
-Please be aware, that these bindings **function and behave differently**.
-They do not support the auto-discovery feature of openHAB 2 and do not define [openHAB 2 things and channels]({{base}}/concepts/things.html).
-For beginners it is **recommended** to resort to native bindings if possible.
-
-If there is already an openHAB 2 version of a binding available, old bindings are referred to as "Legacy 1.x Bindings".
-To be able to see and install legacy 1.x bindings, one has to activate "Include Legacy 1.x Bindings" through either Paper UI or `addons.cfg`.
-
-#### Configuration
-
-1.x bindings, which are not yet revised for openHAB 2, have to be configured through text based files.
-
-Under openHAB 1.x configuration of bindings was done in the global `openhab.cfg` file.
-This file is **not** part of openHAB 2 and will not be taken into consideration.
-When using config examples from the [openHAB 1 wiki](https://github.com/openhab/openhab1-addons/wiki) or other openHAB 1.x oriented sources, please be aware, that those need to be split into individual binding config files for openHAB2.
-
-After installing a legacy or regular 1.x binding, an individual `<binding_name>.cfg` file is created in the `/services` folder.
-If such a file is not available, please add it manually.
-The naming convention has to be `<binding_name>.cfg` without the trailing "1" in the name of some bindings grabbed from "PaperUI -> Add-Ons -> Bindings", for example the binding name from PaperUI for the MQTT binding is "binding-mqtt1-1.9.x", the config file you have to create is `mqtt.cfg`.
-Next step is to remove the binding prefix name from the config lines known from `openhab.cfg` and add the remaining part to the `<binding_name>.cfg` file, for example
-
-**openhab.cfg:**
-
-```ini
-mqtt:<broker>.url=<url>
-```
-
-**mqtt.cfg:**
-
-```ini
-<broker>.url=<url>
-```
-
-### Compatible 1.x Bindings
-
-{% assign addons = site.data.oh1addons %}
-{% assign infos = site.data.oh1addons_infos %}
-
-| Binding | Description |
-|---------|-------------|
-{% for addon in addons %}{% if addon.category == "binding" %}{% assign description = "" %}{% assign wiki_url = "" %}{% for info in infos %}{% if info.label == addon.label %}{% assign description = info.description %}{% assign wiki_url = info.wiki_url %}{% endif %}{% endfor %}|  {% if wiki_url != "" %}[{{ addon.label }}]({{ wiki_url }}){% else %}{{ addon.label }}{% endif %} | {{ description }} |
-{% endif %}{% endfor %}
-
-### Further 1.x Bindings
-
-Many more 1.x bindings **still need testing** but will probably be working with openHAB 2.
-Experiences with 1.x bindings in openHAB 2 may also be found in the [openHAB community forum](https://community.openhab.org).
-For a full list of existing openHAB 1.x bindings, please refer to:
-
-* The right sidebar on the [openHAB 1.x wiki](https://github.com/openhab/openhab/wiki/Configuring-the-openHAB-runtime).
-
-For information on how to test and add bindings to the above list, please see the [compatibility layer documentation]({{base}}/developers/development/compatibilitylayer.html#how-to-use-openhab-1x-add-ons-that-are-not-part-of-the-distribution).
-
-### Incompatible 1.x Bindings
-
-| Binding         | Reason |
-|-----------------|--------|
-| CalDAV          | See [issue 4074](https://github.com/openhab/openhab/issues/4074) |
-| InsteonPLM      | See [issue 3922](https://github.com/openhab/openhab/issues/3922) |
-| SagerCaster     | Not following the architecture guidelines, see [issue 3754](https://github.com/openhab/openhab/issues/3754) |
+<table id="bindings-overview" class="bordered addon-table">
+  <thead>
+    <tr>
+      <th data-field="label" width="20%">Name</th>
+      <th data-field="description">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% for binding in site.addons_bindings %}
+        <tr class="install-{{binding.install}} since-{{binding.since}}">
+          <td>
+            <h4><a href="{{base}}{{binding.url}}">{% if binding.logo %}<img class="logo" src="{{base}}/{{binding.logo}}" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
+            <img src="{{base}}/images/tag-since-{{binding.since}}.svg"> <img src="{{base}}/images/tag-install-{{binding.install}}.svg">
+          </td>
+          <td>{{ binding.description | markdownify }}</td>
+        </tr>
+    {% endfor %}
+ </tbody>
+</table>

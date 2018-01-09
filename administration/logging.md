@@ -8,7 +8,7 @@ title: Logging
 # Logging in openHAB
 
 This article describes the logging functionality in openHAB 2.
-Ths includes how to access logging information and configure logging for user-defined rules. 
+Ths includes how to access logging information and configure logging for user-defined rules.
 
 There are two ways to check log entries:
 
@@ -30,7 +30,7 @@ The log shell comes with the following commands:
 
 - `log:clear`: clear the log
 - `log:display`: display the last log entries
-- `log:display-exception`: display the last exception from the log
+- `log:exception-display`: display the last exception from the log
 - `log:get`: show the log levels
 - `log:set`: set the log levels
 - `log:tail`: continuous display of the log entries
@@ -44,7 +44,8 @@ openhab> log:tail
 20:38:20.463 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Ceiling' with value 'ON'.
 20:38:21.444 [DEBUG] [thome.io.rest.core.item.ItemResource] - Received HTTP POST request at 'items/Light_FF_Bath_Mirror' with value 'ON'.
 ```
-An useful functionality is that also filters can be applied:
+
+A useful functionality is that filters can be applied:
 
 ```
 openhab> log:tail org.eclipse.smarthome.io.rest.core.item.ItemResource
@@ -66,7 +67,7 @@ In order to see the messages, logging needs to activated defining what should be
 log:set LEVEL package.subpackage
 ```
 
-The **what** is defined by `package.subpackage` and is in most cases a binding (like org.openhab.binding.sonos)
+The **what** is defined by `package.subpackage` and is in most cases a binding (like `org.openhab.binding.zwave`)
 
 The **detail** of logging is defined by one of the following levels:
 
@@ -91,28 +92,38 @@ Note that the log levels set using the `log:set` commands are not persistent and
 
 ## Create Log Entries in Rules
 
-It is also possible to create own log entries in rules. This is especially useful for debugging purposes.
+There are times, especially when troubleshooting rules, when it can be helpful to write information and variable or Item State values to the log.
 
-For each log level there is an corresponding command for creating log entries. These commands require two parameters: the subpackage (here: `Demo`) and the text which should appear in the log:
+For each log level there is an corresponding command for creating log entries.
+You may use these log levels to filter or better differentiate the generated logging output.
+The logging commands require two parameters: the subpackage, in the examples below `heating-control.rules`, and the text which should appear in the log:
 
 ```java
-logError("Demo","This is a log entry of type Error!")
-logWarn("Demo","This is a log entry of type Warn!")
-logInfo("Demo","This is a log entry of type Info!")
-logDebug("Demo","This is a log entry of type Debug!")
+logError("heating-control.rules", "This is a log entry of type Error!")
+logWarn("heating-control.rules", "This is a log entry of type Warn!")
+logInfo("heating-control.rules", "This is a log entry of type Info!")
+logDebug("heating-control.rules", "This is a log entry of type Debug!")
 ```
 
-In order to see the messages, logging for the message class has to be activated. The main package is predefined (`org.eclipse.smarthome.model.script`) and the subpackage needs to be concatenated:
+The main package of all script/rules based log entries is predefined as `org.eclipse.smarthome.model.script`.
+The chosen subpackage is appended to the end of the main package.
+It can be useful for filtering or package-based log level settings.
+
+Examples for typical logging lines found in rules:
 
 ```text
-log:set DEBUG org.eclipse.smarthome.model.script.Demo
+logInfo("heating-control.rules", "Heating mode set to normal")
+logError("heating-control.rules", "Heating control failed while in mode " + Heating_Mode.state)
+logDebug("heating-control.rules", "Bedroom: Temperature: %1$.1f°C, Mode %2$s", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
 ```
 
-The output for the above log statement of type **DEBUG** is:
+An example output of the last log statement above is:
 
 ```
-2016-06-04 16:28:39.482 [DEBUG] [.eclipse.smarthome.model.script.Demo] - This is a log entry of type DEBUG!
+2016-06-04 16:28:39.482 [DEBUG] [.e.model.script.heating-control.rules] Bedroom: Temperature 21.3°C, Mode NORMAL
 ```
+
+Note that, in the last example above, inclusion and formatting of values is done using [Java Formatter String Syntax](https://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html).
 
 ## Logging into Separate File
 

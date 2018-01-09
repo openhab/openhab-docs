@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Developing bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/developers/development/bindings.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/developers">Overview</a></li>
+  <li><a href="/v2.2/developers/contributing/contributing">Contributing</a></li>
+  <li><a href="/v2.2/developers/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="/v2.2/developers/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="/v2.2/developers/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="/v2.2/developers/prerequisites/configadmin.html">Configuration Admin</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgitasks.html">Coding tasks</a></li>
+          <li><a href="/v2.2/developers/prerequisites/eventadmin.html">Event Admin</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/developers/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="/v2.2/developers/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="/v2.2/developers/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/ide.html">IDE Setup</a></li>
+      <li><a href="/v2.2/developers/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="/v2.2/developers/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="/v2.2/developers/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/evolution.html">Technical Differences</a></li>
+      <li><a href="/v2.2/developers/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="developing-a-binding-for-openhab-2">Developing a Binding for openHAB 2</h1>
+
+<p>This page describes the necessary steps in order to implement a new binding for openHAB 2.</p>
+
+<p><em>Note:</em> Please note that in contrast to openHAB 1.x, openHAB 2 is based on the <a href="http://eclipse.org/smarthome/">Eclipse SmartHome</a> project. So the APIs and concepts have changed, so please read this documentation carefully, if you are coming from openHAB 1.x development.</p>
+
+<p>For information about code style and naming conventions, please see the <a href="guidelines">coding guidelines</a>.</p>
+
+<h2 id="choosing-a-namespace">Choosing a Namespace</h2>
+
+<p>As a first step, you need to decide in which namespace you want to develop your binding - assuming that you want to contribute it back to the community, you have two options:</p>
+
+<ul>
+  <li>You can choose <code class="highlighter-rouge">org.eclipse.smarthome</code>, if you want to directly contribute it to the Eclipse SmartHome project. The advantage of this option is that you make it available to a wider audience as your binding will also be available for other solutions than openHAB that are based on Eclipse SmartHome. The disadvantage is that the contribution process is stricter as it involves intellectual property checks and in general makes it harder or even impossible to include third-party libraries with copy-left licenses such as LGPL or code that you have written by reverse engineering some protocol.</li>
+  <li>You can choose <code class="highlighter-rouge">org.openhab</code>, if you want it to be used for openHAB only. This is the better option, if your binding is not interesting for other solutions, requires special libraries or has technical dependencies on openHAB specific things (although this should be avoided as much as possible).</li>
+</ul>
+
+<h2 id="creating-a-skeleton">Creating a Skeleton</h2>
+
+<p>For the openHAB namespace: Choose the option “openHAB 2 Add-ons” in <a href="ide.html">your IDE setup</a>, and go ahead and create a skeleton for your binding. For this, go into your git repository under <code class="highlighter-rouge">git/openhab2-addons/addons/binding</code> and call the script <code class="highlighter-rouge">create_openhab_binding_skeleton.sh</code> with a single parameter, which is your binding name in camel case (e.g. ‘ACMEProduct’ or ‘SomeSystem’). When prompted, enter your name as author and hit “Y” to start the skeleton generation.</p>
+
+<p>For the Eclipse SmartHome namespace: Choose the option “Eclipse SmartHome Extensions” in <a href="ide.html">your IDE setup</a>, and go ahead and create a skeleton for your binding. For this, go to <code class="highlighter-rouge">git/smarthome/tools/archetype</code>and run <code class="highlighter-rouge">mvn install</code> in order to install the archetype definition in your local Maven repo. Now go to <code class="highlighter-rouge">git/smarthome/extensions/binding</code> and call the script <code class="highlighter-rouge">create_esh_binding_skeleton.sh</code> with a single parameter, which is your binding name in camel case (e.g. ‘ACMEProduct’ or ‘SomeSystem’). When prompted, enter your name as author and hit “Y” to start the skeleton generation.</p>
+
+<p>Now switch in Eclipse and choose <code class="highlighter-rouge">File-&gt;Import-&gt;General-&gt;Existing Projects into Workspace</code>, enter the folder of the newly created skeleton as the root directory and press “Finish”.</p>
+
+<p><em>Note:</em> Here you can find a <a href="http://youtu.be/30nhm0yIcvA">screencast of the binding skeleton creation</a>.</p>
+
+<h2 id="implement-the-binding">Implement the Binding</h2>
+
+<p>The skeleton should give you an easy starting point for your developments.
+To learn about the internal structure and the concepts of a binding, please see the <a href="https://www.eclipse.org/smarthome/documentation/development/bindings/how-to.html">Eclipse tutorial on binding development</a>.</p>
+
+<p>Please especially note our <a href="guidelines">coding guidelines</a>, which must be respected for having pull requests approved.
+If you have any special dependencies of your code, please check the <a href="https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html">library recommendations</a> at Eclipse SmartHome.
+This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.</p>
+
+<h2 id="setup-and-run-the-binding">Setup and Run the Binding</h2>
+
+<p>To setup the binding you need to configure at least one <em>Thing</em> and link an <em>Item</em> to it. In your workspace in <code class="highlighter-rouge">demo-resources/src/main/resources/things</code>, you can define and configure <em>Things</em> in file with a <code class="highlighter-rouge">*.things</code> extensions. The following file defines a thing for the Yahoo Weather binding:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>yahooweather:weather:berlin     [ location="638242" ]
+</code></pre></div></div>
+
+<p>In this example a <em>Thing</em> of the <em>ThingType</em> <code class="highlighter-rouge">yahooweather:weather</code> is defined with a configuration for the location.</p>
+
+<p>Next you need to create <em>Items</em> and link them to the <em>Channel</em> of your binding. Here is the example of the Yahoo Weather binding:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Berlin_Temperature       "Temperature in Berlin [%.1f °C]"   { channel="yahooweather:weather:berlin:temperature" }
+Number Berlin_Humidity          "Humidity in Berlin [%d %%]"        { channel="yahooweather:weather:berlin:humidity" }
+</code></pre></div></div>
+
+<p>The syntax for a channel link is <code class="highlighter-rouge">{ channel = "&lt;binding-id&gt;:&lt;thing-type-id&gt;:&lt;thing-id&gt;:&lt;channel-id&gt;" }</code>.</p>
+
+<p>If you start the openHAB runtime including the binding now (make sure that your binding is checked in the launch configuration dialog!), the code inside your <code class="highlighter-rouge">ThingHandler</code> implementation is executed.</p>
+
+<h2 id="include-the-binding-in-the-build-and-the-distro">Include the Binding in the Build and the Distro</h2>
+
+<p>Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
+For the Maven build, please add a new line in the <a href="https://github.com/openhab/openhab2-addons/blob/master/addons/binding/pom.xml">binding pom.xml</a> at the alphabetically correct position.
+To have the binding being picked up by the distro, you furthermore need to add it to the <a href="https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml">feature.xml</a>, again at the alphabetically correct position. If you have a dependency on some transport bundle (e.g. upnp, mdns or serial), make sure to add a line for this dependency as well (see the other bindings as an example).</p>
+
+<p>Before you create a pull request on Github, you should  now run</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mvn clean install
+</code></pre></div></div>
+
+<p>from the repository root to ensure that the build works smoothly. If it does, it is time to <a href="../contributing/contributing">contribute your work</a>!</p>
+
+<h3 id="static-code-analysis">Static code analysis</h3>
+
+<p>The Build includes <a href="https://github.com/openhab/static-code-analysis">Tooling for static code analysis</a> that will validate your code against the openHAB Coding Guidelines and some additional best practices. Information about the checks can be found <a href="https://github.com/openhab/static-code-analysis#esh-guidelines-covered">here</a>.</p>
+
+<p>The tool will generate an idividual report for each binding that you can find in <code class="highlighter-rouge">.../your_binding_directory/target/code-analysis/report.html</code> file and a report for the whole build that contains links to the individual reports in the <code class="highlighter-rouge">../openhab2-addons/target/summary_report.html</code>. The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info). If any error is found within your code the Maven build will end with failure. You will receive detailed information (path to the file, line and message) listing all problems with Prioriry 1 on the console:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>...
+[ERROR] Failed to execute goal org.openhab.tools:static-code-analysis:0.0.4:report (default) on project org.openhab.binding.example: Code Analysis Tool has found 1 error(s)!
+[ERROR] Please fix the errors and rerun the build.
+[ERROR] Errors list:
+[ERROR] ERROR found by checkstyle: .binding.example.test/about.html:0 Missing about.html file.
+[ERROR] Detailed report can be found at: file////path_to_openhab/openhab2-addons/addons/binding/org.openhab.binding.example/target/code-analysis/report.html
+...
+</code></pre></div></div>
+
+<p>Please fix all the Priority 1 issues and all issues with Priority 2 and 3 that are relevant (if you have any doubt don’t hesitate to ask). Re-run the build to confirm that the checks are passing.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+
+<script>
+  var host = "docs.openhab.org";
+  if (!(window.location.host.startsWith("127.0.0.1")) && (host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+

@@ -1,0 +1,1956 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>DSC PowerSeries Alarm System - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/dscalarm1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System <small>(legacy/manual)</small></a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/dscalarm1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/dscalarm1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/dscalarm1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="dsc-powerseries-alarm-system-binding">DSC PowerSeries Alarm System Binding</h1>
+
+<p>This binding mintors and controls the DSC PowerSeries Alarm System, utilizing the EyezOn Envisalink 3/2DS interface or the DSC IT-100 RS-232 interface.</p>
+
+<blockquote>
+  <p>Note: if you are using the DSC Alarm Binding 2.0 for OpenHab2 please follow the documentation here: <a href="https://github.com/openhab/openhab2-addons/tree/master/addons/binding/org.openhab.binding.dscalarm">https://github.com/openhab/openhab2-addons/tree/master/addons/binding/org.openhab.binding.dscalarm</a></p>
+</blockquote>
+
+<p>The DSC PowerSeries Alarm System is a popular do-it-yourself home security system, which can be monitored and controlled remotely through a standard web-browser or mobile device.</p>
+
+<p>The openHAB DSC Alarm binding provides connectivity to the DSC Alarm panel via a TCP socket connection to the EyesOn Envisalink 3/2DS interface or a RS-232 serial connection to the DSC IT-100 interface.</p>
+
+<p>Additionally there is a DSC Alarm action bundle that can be installed along with the DSC Alarm binding.  The action provides the ability to send DSC Alarm commands directly to the DSC Alarm system using rules.</p>
+
+<p>There is also a binding specifically for openHAB 2 <a href="http://docs.openhab.org/addons/bindings/oh2/dscalarm/readme.html">here</a>.</p>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>This binding can be configured in the file <code class="highlighter-rouge">services/dscalarm.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>deviceType</td>
+      <td><code class="highlighter-rouge">it100</code> (default for serial connection) or <code class="highlighter-rouge">envisalink</code> (default for tcp connection)</td>
+      <td style="text-align: center">No</td>
+      <td>DSC Alarm interface device type</td>
+    </tr>
+    <tr>
+      <td>serialPort</td>
+      <td> </td>
+      <td style="text-align: center">if connecting via serial port</td>
+      <td>Valid values are e.g. COM1 for Windows and /dev/ttyS0 or /dev/ttyUSB0 for Linux. Leave undefined if not connecting by serial port.</td>
+    </tr>
+    <tr>
+      <td>baud</td>
+      <td> </td>
+      <td style="text-align: center">No</td>
+      <td>DSC Alarm baud rate for serial connections. Valid values are 9600 (default), 19200, 38400, 57600, and 115200. Leave undefined if using default.</td>
+    </tr>
+    <tr>
+      <td>ip</td>
+      <td> </td>
+      <td style="text-align: center">if connecting via network</td>
+      <td>DSC Alarm IP address for a TCP connection. Leave undefined if not connecting by network connection.</td>
+    </tr>
+    <tr>
+      <td>tcpPort</td>
+      <td>4025</td>
+      <td style="text-align: center">No</td>
+      <td>DSC Alarm TCP port for a TCP connection to either an EyezOn Envisalink on 4025 (default) or a TCP serial server to IT-100. Leave undefined if not connecting by network connection.</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td> </td>
+      <td style="text-align: center"> </td>
+      <td>DSC Alarm password for logging into the EyezOn Envisalink 3/2DS interface.</td>
+    </tr>
+    <tr>
+      <td>usercode</td>
+      <td> </td>
+      <td style="text-align: center"> </td>
+      <td>DSC Alarm user code for logging certain DSC Alarm commands.</td>
+    </tr>
+    <tr>
+      <td>pollPeriod</td>
+      <td>1</td>
+      <td style="text-align: center">No</td>
+      <td>DSC Alarm poll period. Amount of time elapsed in minutes between poll commands sent to the DSC Alarm. Valid values are 1-15.</td>
+    </tr>
+    <tr>
+      <td>suppressAcknowledgementMsgs</td>
+      <td>false</td>
+      <td style="text-align: center">No</td>
+      <td>Suppress Acknowledgement Messages. Set to <code class="highlighter-rouge">true</code> to suppress the display of Acknowledgement messages, such as the Command Acknowledge message after a poll command is sent.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The primary setting will be the IP address of the EyezOn Envisalink 3/2DS interface or the serial port name of the DSC IT-100.  The <em>password</em>, <em>usercode</em>, <em>baud</em>, <em>pollPeriod</em>, and <em>suppressAcknowledgementMsgs</em> settings are optional.  The <em>deviceType</em> and <em>tcpPort</em> settings are used to connect to an IT-100 interface through a TCP/IP serial server.  If these settings are not set, the binding will resort to the system defaults.</p>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>In order to bind to the DSC Alarm system you can add items to an item file using the following format:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>dscalarm="DSCAlarmDeviceType:&lt;partitionID&gt;:&lt;zoneID&gt;:DSCAlarmItemType"
+
+</code></pre></div></div>
+
+<p>The DSCAlarmDeviceType indicates one of four device types of the DSC Alarm System.  They consist of the following:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>DSC Alarm Device Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>panel</td>
+      <td>The basic representation of the DSC Alarm System.</td>
+    </tr>
+    <tr>
+      <td>partition</td>
+      <td>Represents a controllable area within a DSC Alarm system.</td>
+    </tr>
+    <tr>
+      <td>zone</td>
+      <td>Represents a physical device such as a door, window, or motion sensor.</td>
+    </tr>
+    <tr>
+      <td>keypad</td>
+      <td>Represents the central administrative unit.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The parameters <em>partitionID</em> and <em>zoneID</em> will depend on the DSC Alarm device type.  A DSC Alarm device type of ‘partition’ requires a <em>partitionID</em> in the range 1-8, which will depend on how your DSC Alarm system is configured.  A DSC Alarm device type of ‘zone’ requires <em>zoneID</em> in the range 1-64, as well as the <em>partitionID</em>.</p>
+
+<p>The DSCAlarmItemType maps the binding to an openHAB item type.  Here are the supported DSC Alarm Item Types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>DSC Alarm Item Type</th>
+      <th>openHAB Item Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>panel_connection</td>
+      <td>Number</td>
+      <td>Panel connection status.</td>
+    </tr>
+    <tr>
+      <td>panel_message</td>
+      <td>String</td>
+      <td>Event messages received from the DSC Alarm system.</td>
+    </tr>
+    <tr>
+      <td>panel_system_error</td>
+      <td>String</td>
+      <td>DSC Alarm system error.</td>
+    </tr>
+    <tr>
+      <td>panel_time</td>
+      <td>DateTime</td>
+      <td>DSC Alarm system time and date.</td>
+    </tr>
+    <tr>
+      <td>panel_time_stamp</td>
+      <td>Switch</td>
+      <td>Turn DSC Alarm message time stamping ON/OFF.</td>
+    </tr>
+    <tr>
+      <td>panel_time_broadcast</td>
+      <td>Switch</td>
+      <td>Turn DSC Alarm time broadcasting ON/OFF.</td>
+    </tr>
+    <tr>
+      <td>panel_fire_key_alarm</td>
+      <td>Switch</td>
+      <td>A fire key alarm has happened.</td>
+    </tr>
+    <tr>
+      <td>panel_panic_key_alarm</td>
+      <td>Switch</td>
+      <td>A panic key alarm has happened.</td>
+    </tr>
+    <tr>
+      <td>panel_aux_key_alarm</td>
+      <td>Switch</td>
+      <td>An auxiliary key alarm has happened.</td>
+    </tr>
+    <tr>
+      <td>panel_aux_input_alarm</td>
+      <td>Switch</td>
+      <td>An auxiliary input alarm has happened.</td>
+    </tr>
+    <tr>
+      <td>panel_trouble_led</td>
+      <td>Switch</td>
+      <td>The panel trouble LED is on.</td>
+    </tr>
+    <tr>
+      <td>panel_service_required</td>
+      <td>Switch</td>
+      <td>Service is required on the panel.</td>
+    </tr>
+    <tr>
+      <td>panel_ac_trouble</td>
+      <td>Switch</td>
+      <td>The panel has lost AC power.</td>
+    </tr>
+    <tr>
+      <td>panel_telephone_trouble</td>
+      <td>Switch</td>
+      <td>Telephone line fault.</td>
+    </tr>
+    <tr>
+      <td>panel_ftc_trouble</td>
+      <td>Switch</td>
+      <td>Failure to communicate with monitoring station.</td>
+    </tr>
+    <tr>
+      <td>panel_zone_fault</td>
+      <td>Switch</td>
+      <td>There is a fault condition on a zone/sensor.</td>
+    </tr>
+    <tr>
+      <td>panel_zone_tamper</td>
+      <td>Switch</td>
+      <td>There is a tamper condition on a zone/sensor.</td>
+    </tr>
+    <tr>
+      <td>panel_time_low_battery</td>
+      <td>Switch</td>
+      <td>There is a low battery condition on a zone/sensor.</td>
+    </tr>
+    <tr>
+      <td>panel_time_loss</td>
+      <td>Switch</td>
+      <td>Loss of time on the panel.</td>
+    </tr>
+    <tr>
+      <td>panel_trouble_message</td>
+      <td>String</td>
+      <td>Displays any trouble messages the panel might send.</td>
+    </tr>
+    <tr>
+      <td>partition_status</td>
+      <td>String</td>
+      <td>A partitions current status.</td>
+    </tr>
+    <tr>
+      <td>partition_arm_mode</td>
+      <td>Number</td>
+      <td>A partitions current arm mode. The possible values are:<br />0=disarmed<br />1=armed away<br />2=armed stay<br />3=away no delay<br />4=stay no delay</td>
+    </tr>
+    <tr>
+      <td>partition_armed</td>
+      <td>Switch</td>
+      <td>A partition has been armed.</td>
+    </tr>
+    <tr>
+      <td>partition_entry_delay</td>
+      <td>Switch</td>
+      <td>A partition is in entry delay mode.</td>
+    </tr>
+    <tr>
+      <td>partition_exit_delay</td>
+      <td>Switch</td>
+      <td>A partition is in exit delay mode.</td>
+    </tr>
+    <tr>
+      <td>partition_in_alarm</td>
+      <td>Switch</td>
+      <td>A partition is in alarm.</td>
+    </tr>
+    <tr>
+      <td>partition_opening_closing_mode</td>
+      <td>String</td>
+      <td>Displays the opening/closing mode of a partition.</td>
+    </tr>
+    <tr>
+      <td>zone_general_status</td>
+      <td>Contact</td>
+      <td>A zones general (open/closed) status.</td>
+    </tr>
+    <tr>
+      <td>zone_alarm_status</td>
+      <td>String</td>
+      <td>A zones alarm status.</td>
+    </tr>
+    <tr>
+      <td>zone_tamper_status</td>
+      <td>String</td>
+      <td>A zones tamper status.</td>
+    </tr>
+    <tr>
+      <td>zone_fault_status</td>
+      <td>String</td>
+      <td>A zones fault status.</td>
+    </tr>
+    <tr>
+      <td>zone_bypass_mode</td>
+      <td>Number</td>
+      <td>A zones bypass mode.</td>
+    </tr>
+    <tr>
+      <td>zone_in_alarm</td>
+      <td>Switch</td>
+      <td>A zone is in alarm.</td>
+    </tr>
+    <tr>
+      <td>zone_tamper</td>
+      <td>Switch</td>
+      <td>A zone tamper condition has happened.</td>
+    </tr>
+    <tr>
+      <td>zone_fault</td>
+      <td>Switch</td>
+      <td>A zone fault condition has happened.</td>
+    </tr>
+    <tr>
+      <td>zone_tripped</td>
+      <td>Switch</td>
+      <td>A zone has tripped.</td>
+    </tr>
+    <tr>
+      <td>keypad_ready_led</td>
+      <td>Number</td>
+      <td>Keypad Ready LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_armed_led</td>
+      <td>Number</td>
+      <td>Keypad Armed LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_memory_led</td>
+      <td>Number</td>
+      <td>Keypad Memory LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_bypass_led</td>
+      <td>Number</td>
+      <td>Keypad Bypass LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_trouble_led</td>
+      <td>Number</td>
+      <td>Keypad Trouble LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_program_led</td>
+      <td>Number</td>
+      <td>Keypad Program LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_fire_led</td>
+      <td>Number</td>
+      <td>Keypad Fire LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_backlight_led</td>
+      <td>Number</td>
+      <td>Keypad Backlight LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+    <tr>
+      <td>keypad_ac_led</td>
+      <td>Number</td>
+      <td>Keypad AC LED Status. The values are:<br />0=OFF<br />1=ON<br />2=Flashing</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The following is an example of an item file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group DSCAlarm
+Group DSCAlarmPanel (DSCAlarm)
+Group DSCAlarmPartitions (DSCAlarm)
+Group DSCAlarmZones (DSCAlarm)
+Group DSCAlarmKeypads (DSCAlarm)
+
+/* DSC Alarm Items */
+
+/* DSC Alarm Panel Items */
+Number PANEL_CONNECTION "Panel Connected: [%d]" (DSCAlarmPanel) {dscalarm="panel:panel_connection"}
+Number PANEL_COMMAND "Panel Commands" (DSCAlarmPanel) {dscalarm="panel:panel_command"}
+String PANEL_MESSAGE "Panel Message: [%s]" &lt;"shield-1"&gt; (DSCAlarmPanel) {dscalarm="panel:panel_message"}
+String PANEL_SYSTEM_ERROR "Panel System Error: [%s]" &lt;"shield-1"&gt; (DSCAlarmPanel) {dscalarm="panel:panel_system_error"}
+
+Switch PANEL_TROUBLE_LED "Panel Trouble LED" &lt;warning&gt; (DSCAlarmPanel) {dscalarm="panel:panel_trouble_led"}
+Switch PANEL_SERVICE_REQUIRED &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_service_required"}
+Switch PANEL_AC_TROUBLE &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_ac_trouble"}
+Switch PANEL_TELEPHONE_TROUBLE &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_telephone_trouble"}
+Switch PANEL_FTC_TROUBLE &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_ftc_trouble"}
+Switch PANEL_ZONE_FAULT &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_zone_fault"}
+Switch PANEL_ZONE_TAMPER &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_zone_tamper"}
+Switch PANEL_ZONE_LOW_BATTERY &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_zone_low_battery"}
+Switch PANEL_TIME_LOSS &lt;yellowLED&gt; (DSCAlarmPanel) {dscalarm="panel:panel_time_loss"}
+String PANEL_TROUBLE_MESSAGE "Panel Trouble Message: [%s]" &lt;"shield-1"&gt; (DSCAlarmPanel) {dscalarm="panel:panel_trouble_message"}
+
+DateTime PANEL_TIME "Panel Time [%1$tA, %1$tm/%1$td/%1$tY %1tT]" &lt;calendar&gt; (DSCAlarmPanel) {dscalarm="panel:panel_time"}
+Switch PANEL_TIME_STAMP (DSCAlarmPanel) {dscalarm="panel:panel_time_stamp"}
+Switch PANEL_TIME_BROADCAST (DSCAlarmPanel) {dscalarm="panel:panel_time_broadcast"}
+
+Switch PANEL_FIRE_KEY_ALARM (DSCAlarmPanel) {dscalarm="panel:panel_fire_key_alarm"}
+Switch PANEL_PANIC_KEY_ALARM (DSCAlarmPanel) {dscalarm="panel:panel_panic_key_alarm"}
+Switch PANEL_AUX_KEY_ALARM (DSCAlarmPanel) {dscalarm="panel:panel_aux_key_alarm"}
+Switch PANEL_AUX_INPUT_ALARM (DSCAlarmPanel) {dscalarm="panel:panel_aux_input_alarm"}
+
+/* DSC Alarm Partition Items */
+String PARTITION1_STATUS "Partition 1 Status: [%s]" (DSCAlarmPartitions) {dscalarm="partition:1:partition_status"}
+Number PARTITION1_ARM_MODE "Partition Arm Mode: [%d]" (DSCAlarmPartitions) {dscalarm="partition:1:partition_arm_mode"}
+
+Switch PARTITION1_ARMED (DSCAlarmPartitions) {dscalarm="partition:1:partition_armed"}
+Switch PARTITION1_ENTRY_DELAY (DSCAlarmPartitions) {dscalarm="partition:1:partition_entry_delay"}
+Switch PARTITION1_EXIT_DELAY (DSCAlarmPartitions) {dscalarm="partition:1:partition_exit_delay"}
+Switch PARTITION1_IN_ALARM (DSCAlarmPartitions) {dscalarm="partition:1:partition_in_alarm"}
+String PARTITION1_OPENING_CLOSING_MODE "Partition 1 Opening/Closing Mode: [%s]" (DSCAlarmPartitions) {dscalarm="partition:1:partition_opening_closing_mode"}
+
+/* DSC Alarm Zones Items */
+Contact ZONE1_GENERAL_STATUS "Tamper Switch" (DSCAlarmZones) {dscalarm="zone:1:1:zone_general_status"}
+Number ZONE1_BYPASS_MODE "Tamper Switch Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:1:zone_bypass_mode"}
+String ZONE1_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:1:zone_alarm_status"}
+String ZONE1_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:1:zone_fault_status"}
+String ZONE1_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:1:zone_tamper_status"}
+Switch ZONE1_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:1:zone_in_alarm"}
+Switch ZONE1_TAMPER (DSCAlarmZones) {dscalarm="zone:1:1:zone_tamper"}
+Switch ZONE1_FAULT (DSCAlarmZones) {dscalarm="zone:1:1:zone_fault"}
+Switch ZONE1_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:1:zone_tripped"}
+
+Contact ZONE9_GENERAL_STATUS "Front Door Sensor" (DSCAlarmZones, FrontFoyer) {dscalarm="zone:1:9:zone_general_status"}
+Number ZONE9_BYPASS_MODE "Front Door Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:9:zone_bypass_mode"}
+String ZONE9_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:9:zone_alarm_status"}
+String ZONE9_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:9:zone_fault_status"}
+String ZONE9_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:9:zone_tamper_status"}
+Switch ZONE9_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:9:zone_in_alarm"}
+Switch ZONE9_TAMPER (DSCAlarmZones) {dscalarm="zone:1:9:zone_tamper"}
+Switch ZONE9_FAULT (DSCAlarmZones) {dscalarm="zone:1:9:zone_fault"}
+Switch ZONE9_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:9:zone_tripped"}
+
+Contact ZONE10_GENERAL_STATUS "Deck Door Sensor" (DSCAlarmZones, FamilyRoom) {dscalarm="zone:1:10:zone_general_status"}
+Number ZONE10_BYPASS_MODE "Deck Door Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:10:zone_bypass_mode"}
+String ZONE10_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:10:zone_alarm_status"}
+String ZONE10_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:10:zone_fault_status"}
+String ZONE10_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:10:zone_tamper_status"}
+Switch ZONE10_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:10:zone_in_alarm"}
+Switch ZONE10_TAMPER (DSCAlarmZones) {dscalarm="zone:1:10:zone_tamper"}
+Switch ZONE10_FAULT (DSCAlarmZones) {dscalarm="zone:1:10:zone_fault"}
+Switch ZONE10_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:10:zone_tripped"}
+
+Contact ZONE11_GENERAL_STATUS "Back Door Sensor" (DSCAlarmZones, UtilityRoom) {dscalarm="zone:1:11:zone_general_status"}
+Number ZONE11_BYPASS_MODE "Back Door Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:11:zone_bypass_mode"}
+String ZONE11_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:11:zone_alarm_status"}
+String ZONE11_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:11:zone_fault_status"}
+String ZONE11_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:11:zone_tamper_status"}
+Switch ZONE11_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:11:zone_in_alarm"}
+Switch ZONE11_TAMPER (DSCAlarmZones) {dscalarm="zone:1:11:zone_tamper"}
+Switch ZONE11_FAULT (DSCAlarmZones) {dscalarm="zone:1:11:zone_fault"}
+Switch ZONE11_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:11:zone_tripped"}
+
+Contact ZONE12_GENERAL_STATUS "Side Door Sensor" (DSCAlarmZones, SideFoyer) {dscalarm="zone:1:12:zone_general_status"}
+Number ZONE12_BYPASS_MODE "Side Door Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:12:zone_bypass_mode"}
+String ZONE12_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:12:zone_alarm_status"}
+String ZONE12_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:12:zone_fault_status"}
+String ZONE12_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:12:zone_tamper_status"}
+Switch ZONE12_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:12:zone_in_alarm"}
+Switch ZONE12_TAMPER (DSCAlarmZones) {dscalarm="zone:1:12:zone_tamper"}
+Switch ZONE12_FAULT (DSCAlarmZones) {dscalarm="zone:1:12:zone_fault"}
+Switch ZONE12_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:12:zone_tripped"}
+
+Contact ZONE13_GENERAL_STATUS "Garage Door 1 Sensor" (DSCAlarmZones, Garage) {dscalarm="zone:1:13:zone_general_status"}
+Number ZONE13_BYPASS_MODE "Garage Door 1 Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:13:zone_bypass_mode"}
+String ZONE13_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:13:zone_alarm_status"}
+String ZONE13_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:13:zone_fault_status"}
+String ZONE13_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:13:zone_tamper_status"}
+Switch ZONE13_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:13:zone_in_alarm"}
+Switch ZONE13_TAMPER (DSCAlarmZones) {dscalarm="zone:1:13:zone_tamper"}
+Switch ZONE13_FAULT (DSCAlarmZones) {dscalarm="zone:1:13:zone_fault"}
+Switch ZONE13_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:13:zone_tripped"}
+
+Contact ZONE14_GENERAL_STATUS "Garage Door 2 Sensor" (DSCAlarmZones, Garage) {dscalarm="zone:1:14:zone_general_status"}
+Number ZONE14_BYPASS_MODE "Garage Door 2 Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:14:zone_bypass_mode"}
+String ZONE14_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:14:zone_alarm_status"}
+String ZONE14_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:14:zone_fault_status"}
+String ZONE14_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:14:zone_tamper_status"}
+Switch ZONE14_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:14:zone_in_alarm"}
+Switch ZONE14_TAMPER (DSCAlarmZones) {dscalarm="zone:1:14:zone_tamper"}
+Switch ZONE14_FAULT (DSCAlarmZones) {dscalarm="zone:1:14:zone_fault"}
+Switch ZONE14_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:14:zone_tripped"}
+
+Contact ZONE15_GENERAL_STATUS "Garage Window Sensor" (DSCAlarmZones, Garage) {dscalarm="zone:1:15:zone_general_status"}
+Number ZONE15_BYPASS_MODE "Garage Window Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:15:zone_bypass_mode"}
+String ZONE15_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:15:zone_alarm_status"}
+String ZONE15_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:15:zone_fault_status"}
+String ZONE15_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:15:zone_tamper_status"}
+Switch ZONE15_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:15:zone_in_alarm"}
+Switch ZONE15_TAMPER (DSCAlarmZones) {dscalarm="zone:1:15:zone_tamper"}
+Switch ZONE15_FAULT (DSCAlarmZones) {dscalarm="zone:1:15:zone_fault"}
+Switch ZONE15_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:15:zone_tripped"}
+
+Contact ZONE25_GENERAL_STATUS "Utility Room Motion Sensor" (DSCAlarmZones,  UtilityRoom) {dscalarm="zone:1:25:zone_general_status"}
+Number ZONE25_BYPASS_MODE "Utility Room Motion Sensor Bypass Mode" (DSCAlarmZones) {dscalarm="zone:1:25:zone_bypass_mode"}
+String ZONE25_ALARM_STATUS "Alarm Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:25:zone_alarm_status"}
+String ZONE25_FAULT_STATUS "Fault Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:25:zone_fault_status"}
+String ZONE25_TAMPER_STATUS "Tamper Status : [%s]" (DSCAlarmZones) {dscalarm="zone:1:25:zone_tamper_status"}
+Switch ZONE25_IN_ALARM (DSCAlarmZones) {dscalarm="zone:1:25:zone_in_alarm"}
+Switch ZONE25_TAMPER (DSCAlarmZones) {dscalarm="zone:1:25:zone_tamper"}
+Switch ZONE25_FAULT (DSCAlarmZones) {dscalarm="zone:1:25:zone_fault"}
+Switch ZONE25_TRIPPED (DSCAlarmZones) {dscalarm="zone:1:25:zone_tripped"}
+
+/* DSC Alarm Keypad Items */
+Number KEYPAD_READY_LED "Ready LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_ready_led"}
+Number KEYPAD_ARMED_LED "Armed LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_armed_led"}
+Number KEYPAD_MEMORY_LED "Memory LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_memory_led"}
+Number KEYPAD_BYPASS_LED "Bypass LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_bypass_led"}
+Number KEYPAD_TROUBLE_LED "Trouble LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_trouble_led"}
+Number KEYPAD_PROGRAM_LED "Program LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_program_led"}
+Number KEYPAD_FIRE_LED "Fire LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_fire_led"}
+Number KEYPAD_BACKLIGHT_LED "Backlight LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_backlight_led"}
+Number KEYPAD_AC_LED "AC LED Status: [%d]" (DSCAlarmKeypads) {dscalarm="keypad:keypad_ac_led"}
+</code></pre></div></div>
+
+<p>Here is an example sitemap:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Frame label="Alarm System" {
+	Text label="DSC Alarm System" icon="shield-1" {
+		Frame label="Panel" {
+			Switch item=PANEL_CONNECTION label="Panel Connection" icon="shield-1" mappings=[1="Connected", 0="Disconnected"]
+			Text item=PANEL_MESSAGE icon="shield-1"
+			Selection item=PANEL_COMMAND icon="shield-1" mappings=[0="Poll", 1="Status Report", 2="Labels Request (Serial Only)", 8="Dump Zone Timers (TCP Only)", 10="Set Time/Date", 200="Send User Code"]
+			Text item=PANEL_TIME {
+				Switch item=PANEL_TIME_STAMP label="Panel Time Stamp"
+				Switch item=PANEL_TIME_BROADCAST label="Panel Time Broadcast"
+            }
+
+			Text item=PANEL_SYSTEM_ERROR icon="MyImages/system-error"
+
+			Text item=PANEL_TROUBLE_LED label="Panel Trouble Condition" {
+				Text item=PANEL_TROUBLE_MESSAGE icon="shield-0"
+				Text item=PANEL_SERVICE_REQUIRED label="Service Required"
+				Text item=PANEL_AC_TROUBLE label="AC Trouble"
+				Text item=PANEL_TELEPHONE_TROUBLE label="Telephone Line Trouble"
+				Text item=PANEL_FTC_TROUBLE label="Failed to Communicate Trouble"
+				Text item=PANEL_ZONE_FAULT label="Zone Fault"
+				Text item=PANEL_ZONE_TAMPER label="Zone Tamper"
+				Text item=PANEL_ZONE_LOW_BATTERY label="Zone Low Battery"
+				Text item=PANEL_TIME_LOSS label="Panel Time Loss"					
+		    }
+        }
+		Frame label="Partitions" {
+				Text item=PARTITION1_STATUS icon="shield-1" {
+					Switch item=PARTITION1_ARM_MODE label="Partition 1 Arm Options" mappings=[0="Disarm", 1="Away", 2="Stay", 3="Zero", 4="W/Code"]
+				}
+		}
+
+		Frame label="Keypad" {
+			Text label="Keypad LED Status" icon="shield-1" {
+				Switch item=KEYPAD_READY_LED label="Ready LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_ARMED_LED label="Armed LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_MEMORY_LED label="Memory LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_BYPASS_LED label="Bypass LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_TROUBLE_LED label="Trouble LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_PROGRAM_LED label="Program LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_FIRE_LED label="Fire LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_BACKLIGHT_LED label="Backlight LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+				Switch item=KEYPAD_AC_LED label="AC LED Status:" mappings=[0="Off", 1="On", 2="Flashing"]
+			}
+		}
+
+		Frame label="Zones" {
+			Text item=ZONE1_GENERAL_STATUS {
+				Switch item=ZONE1_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE1_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE1_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE1_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+
+			Text item=ZONE9_GENERAL_STATUS {
+				Switch item=ZONE9_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE9_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE9_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE9_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE10_GENERAL_STATUS {
+				Switch item=ZONE10_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE10_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE10_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE10_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE11_GENERAL_STATUS {
+				Switch item=ZONE11_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE11_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE11_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE11_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE12_GENERAL_STATUS {
+				Switch item=ZONE12_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE12_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE12_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE12_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE13_GENERAL_STATUS {
+				Switch item=ZONE13_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE13_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE13_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE13_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE14_GENERAL_STATUS {
+				Switch item=ZONE14_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE14_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE14_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE14_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+			Text item=ZONE15_GENERAL_STATUS {
+				Switch item=ZONE15_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE15_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE15_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE15_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+		    }
+			Text item=ZONE25_GENERAL_STATUS {
+				Switch item=ZONE25_BYPASS_MODE icon="MyImages/Zone-Alarm" mappings=[0="Armed", 1="Bypassed"]
+				Frame label="Other Status:" {
+					Text item=ZONE25_ALARM_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE25_FAULT_STATUS icon="MyImages/Status-warning"
+					Text item=ZONE25_TAMPER_STATUS icon="MyImages/Status-warning"
+				}
+			}
+		}
+	}
+}
+</code></pre></div></div>
+
+<h2 id="change-log">Change Log</h2>
+
+<h3 id="openhab-160">OpenHAB 1.6.0</h3>
+
+<ul>
+  <li>Initial commit of the DSC Alarm Binding. (<a href="https://github.com/openhab/openhab/pull/1334">#1334</a>)</li>
+</ul>
+
+<h3 id="openhab-170">OpenHAB 1.7.0</h3>
+
+<ul>
+  <li>Added several on/off switch items to help with rule creation.  Added a binding configuration option to adjust the polling period performed by the binding. (<a href="https://github.com/openhab/openhab/pull/1763">#1763</a>)</li>
+  <li>Features added include: renamed item ‘panel_time_date’ to ‘panel_time’; added item ‘panel_time_stamp’ to allow the receiving of time stamped messages from the DSC Alarm system; added item ‘panel_time_broadcast’ to allow the reception of DSC Alarm system time broadcasts for display.  Fixes include: item ‘panel_time_date’ (renamed to ‘panel_time’) was not working at all; added several methods to binding class to eliminate extra ‘for’ loop in message receive thread; included user code fix for the IT-100 serial interface from <a href="https://github.com/openhab/openhab/pull/2203">#2203</a>. (<a href="https://github.com/openhab/openhab/pull/2320">#2320</a>)</li>
+</ul>
+
+<h3 id="openhab-180">OpenHAB 1.8.0</h3>
+
+<ul>
+  <li>Added several new item types to allow the display of trouble conditions on the DSC Alarm.  A new item added to show which opening/closing method was used.  Added a configuration option to allow the suppression of acknowledgement messages from the DSC Alarm system. (<a href="https://github.com/openhab/openhab/pull/2893">#2893</a>)</li>
+  <li>Added user code to user opening/closing messages. (<a href="https://github.com/openhab/openhab/pull/2964">#2964</a>)</li>
+  <li>Added a DSC Alarm Action bundle that allows users to send DSC Alarm Commands directly to the alarm system from a rule. (<a href="https://github.com/openhab/openhab/pull/3266">#3266</a>)</li>
+</ul>
+
+<h3 id="openhab-181">OpenHAB 1.8.1</h3>
+
+<ul>
+  <li>Added support for the DSC Alarm binding to communicate with an IT-100 through a TCP/IP serial server. Also, fixed a bug where the IT-100 serial interface requires a 6 digit usercode but was only receiving 4 digits.
+(<a href="https://github.com/openhab/openhab/pull/3774">#3774</a>)</li>
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

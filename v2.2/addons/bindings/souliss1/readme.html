@@ -1,0 +1,1690 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Souliss - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/souliss1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/souliss1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/souliss1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/souliss1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="souliss-binding">Souliss Binding</h1>
+
+<p><a href="http://www.souliss.net/">Souliss</a> is a networking framework for Arduino and compatibles boards, and is designed to let you easily build a smart home that is distributed over multiple boards via Ethernet, wireless point-to-point and RS485 bus.</p>
+
+<p>Souliss is an open-source and community driven project, you can use the <a href="https://github.com/souliss/souliss/wiki">wiki</a> and <a href="https://github.com/souliss/souliss/wiki/Community">Community</a> to get help and share you results.  Additional details and examples are available on the <a href="https://github.com/souliss/souliss/wiki/openHAB%20Example">openHAB example wiki page</a>.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#prerequisites">Prerequisites</a>
+    <ul>
+      <li><a href="#sketches">Sketches</a></li>
+    </ul>
+  </li>
+  <li><a href="#binding-configuration">Binding Configuration</a></li>
+  <li><a href="#item-configuration">Item Configuration</a>
+    <ul>
+      <li><a href="#service-typicals">Service Typicals</a></li>
+    </ul>
+  </li>
+  <li><a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#items">Items</a></li>
+      <li><a href="#sitemap">Sitemap</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>The binding requires a deployed network.  As a minimum, you need one Souliss node with Ethernet access configured as a <a href="https://github.com/souliss/souliss/wiki/Gateway">Gateway</a>. A Gateway is a special node that is able to communicate with the user interfaces. The binding interacts as a user interface for Souliss.</p>
+
+<p>A starting point is the <a href="https://github.com/souliss/souliss/wiki">Souliss wiki</a>. The best is to start with a single node and connect with SoulissApp. The code for networking activities of this binding is based on <a href="https://github.com/souliss/souliss/wiki/SoulissApp">SoulissApp</a> code, so once connected with SoulissApp, you can move to openHAB directly.</p>
+
+<p>You can use SoulissApp and the Souliss binding at the same time, and generally up to five (by default, but can be increased) user interfaces simultaneously.</p>
+
+<h3 id="sketches">Sketches</h3>
+
+<p>The easiest way is start with a simple example to control an ON/OFF light (though a relay).  In this section, we show you the code to upload on your Arduino with Ethernet shield (based on W5100 / W5200) or an ESP8266 as SoC and the configuration of your openHAB.  The next section will explain the details.</p>
+
+<h4 id="arduino-with-ethernet-shield">Arduino with Ethernet Shield</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>Use the following sketch on your Arduino, before compile ensure that you have installed the Souliss framework from the [[Library Manager</td>
+      <td>http://www.arduino.cc/en/guide/libraries]], just search for souliss inside the Library Manager and select Install.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You need to change the IP address inside the sketch according to one free IP address in your network.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**************************************************************************
+    Souliss - Hello World
+    
+    This is the basic example, control one LED via a push-button or Android
+    using SoulissApp (get it from Play Store).  
+    
+    Run this code on one of the following boards:
+      - Arduino with W5100 Ethernet Shield
+        
+***************************************************************************/</span>
+
+<span class="c1">// Configure the framework
+</span><span class="cp">#include "bconf/StandardArduino.h"          
+#include "conf/ethW5100.h"                  
+#include "conf/Gateway.h"                  
+</span>
+<span class="cm">/*
+  If you are using W5200 or ENC28J60, you just need to  change 
+  the #include "conf/ethW5100.h" with   #include "conf/ethW5200.h" 
+  or #include "conf/ethENC28J60.h"
+
+  This assume that your SPI Chip Select (CS) is on pin 10 as in 
+  most of the Ethernet shield.
+*/</span>
+
+<span class="c1">// Include framework code and libraries
+</span><span class="cp">#include &lt;SPI.h&gt;
+#include "Souliss.h"
+</span>
+<span class="c1">// This identify the number of the LED logic
+</span><span class="cp">#define MYLEDLOGIC          0               
+</span>
+<span class="c1">// Define the network configuration according 
+// to your router settings
+</span><span class="kt">uint8_t</span> <span class="n">ip_address</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">77</span><span class="p">};</span>
+<span class="kt">uint8_t</span> <span class="n">subnet_mask</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="kt">uint8_t</span> <span class="n">ip_gateway</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+<span class="cp">#define Gateway_address 77
+#define myvNet_address  ip_address[3]  
+#define myvNet_subnet   0xFF00
+#define myvNet_supern   Gateway_address
+</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>   
+    <span class="n">Initialize</span><span class="p">();</span>
+
+     <span class="c1">// Set network parameters
+</span>    <span class="n">Souliss_SetIPAddress</span><span class="p">(</span><span class="n">ip_address</span><span class="p">,</span> <span class="n">subnet_mask</span><span class="p">,</span> <span class="n">ip_gateway</span><span class="p">);</span>
+    <span class="n">SetAsGateway</span><span class="p">(</span><span class="n">myvNet_address</span><span class="p">);</span>  
+    
+    <span class="c1">// Define a simple LED light logic
+</span>    <span class="n">Set_SimpleLight</span><span class="p">(</span><span class="n">MYLEDLOGIC</span><span class="p">);</span>        
+    
+    <span class="c1">// We connect a pushbutton between 5V and pin2 with a 
+</span>    <span class="c1">// pulldown resistor between pin2 and GND, the LED is 
+</span>    <span class="c1">// connected to pin9 with a resistor to limit the 
+</span>    <span class="c1">// current amount
+</span>    <span class="n">pinMode</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">INPUT</span><span class="p">);</span>   <span class="c1">// Hardware pulldown required
+</span>    <span class="n">pinMode</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>  <span class="c1">// Power the LED
+</span><span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span> 
+    <span class="c1">// Here we start to play
+</span>    <span class="n">EXECUTEFAST</span><span class="p">()</span> <span class="p">{</span>                     
+        <span class="n">UPDATEFAST</span><span class="p">();</span>   
+        
+        <span class="c1">// We process the logic and relevant input 
+</span>        <span class="c1">// and output every 50 milliseconds
+</span>        <span class="n">FAST_50ms</span><span class="p">()</span> <span class="p">{</span>   
+            <span class="c1">// Use the pin2 as ON/OFF toggle command
+</span>            <span class="n">DigIn</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="n">Souliss_T1n_ToggleCmd</span><span class="p">,</span> <span class="n">MYLEDLOGIC</span><span class="p">);</span>  
+
+            <span class="c1">// Drive the LED as per command
+</span>            <span class="n">Logic_SimpleLight</span><span class="p">(</span><span class="n">MYLEDLOGIC</span><span class="p">);</span>    
+
+            <span class="c1">// Use the pin9 to give power to the LED according to the logic
+</span>            <span class="n">DigOut</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span> <span class="n">Souliss_T1n_Coil</span><span class="p">,</span> <span class="n">MYLEDLOGIC</span><span class="p">);</span>                
+        <span class="p">}</span> 
+              
+        <span class="c1">// Here we handle here the communication
+</span>        <span class="n">FAST_GatewayComms</span><span class="p">();</span>                                        
+        
+    <span class="p">}</span>
+<span class="p">}</span> 
+
+</code></pre></div></div>
+
+<h4 id="esp8266-wifi-soc">ESP8266 WiFi SoC</h4>
+
+<p>In this case we use the ESP8266 as a SoC and not simply as a transceiver, so Souliss is loaded directly on the module and doesn’t require any other microcontroller. You need to install the <a href="https://github.com/souliss/souliss/wiki/Supported%20Hardware">ESP8266 cores</a> in your Arduino IDE.</p>
+
+<p>Compared to the previous example, you only need to change the configuration files to specify that you are now using an ESP8266 and the relevant WiFi library.</p>
+
+<div class="language-c highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cm">/**************************************************************************
+    Souliss - Hello World
+    
+    This is the basic example, control one LED via a push-button or Android
+    using SoulissApp (get it from Play Store).  
+    
+    Run this code on ESP8266 as WiFi SoC.
+        
+***************************************************************************/</span>
+
+<span class="c1">// Configure the framework
+</span><span class="cp">#include "bconf/MCU_ESP8266.h"          
+#include "conf/Gateway.h"                  
+#include "conf/IPBroadcast.h"
+</span>
+<span class="c1">// **** Define the WiFi name and password ****
+</span><span class="cp">#define WIFICONF_INSKETCH
+#define WiFi_SSID               "mywifi"
+#define WiFi_Password           "mypassword"   
+</span>
+<span class="c1">// Include framework code and libraries
+</span><span class="cp">#include &lt;ESP8266WiFi.h&gt;
+#include "Souliss.h"
+</span>
+<span class="c1">// This identify the number of the LED logic
+</span><span class="cp">#define MYLEDLOGIC          0               
+</span>
+<span class="c1">// Define the network configuration according 
+// to your router settings
+</span><span class="kt">uint8_t</span> <span class="n">ip_address</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">77</span><span class="p">};</span>
+<span class="kt">uint8_t</span> <span class="n">subnet_mask</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">255</span><span class="p">,</span> <span class="mi">0</span><span class="p">};</span>
+<span class="kt">uint8_t</span> <span class="n">ip_gateway</span><span class="p">[</span><span class="mi">4</span><span class="p">]</span>  <span class="o">=</span> <span class="p">{</span><span class="mi">192</span><span class="p">,</span> <span class="mi">168</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">};</span>
+<span class="cp">#define Gateway_address 77
+#define myvNet_address  ip_address[3]  
+#define myvNet_subnet   0xFF00
+#define myvNet_supern   Gateway_address
+</span>
+<span class="c1">// **** Define here the right pin for your ESP module **** 
+</span><span class="cp">#define	OUTPUTPIN			5
+</span>
+<span class="kt">void</span> <span class="nf">setup</span><span class="p">()</span>
+<span class="p">{</span>   
+    <span class="n">Initialize</span><span class="p">();</span>
+
+     <span class="c1">// Set network parameters
+</span>    <span class="n">Souliss_SetIPAddress</span><span class="p">(</span><span class="n">ip_address</span><span class="p">,</span> <span class="n">subnet_mask</span><span class="p">,</span> <span class="n">ip_gateway</span><span class="p">);</span>
+    <span class="n">SetAsGateway</span><span class="p">(</span><span class="n">myvNet_address</span><span class="p">);</span>  
+    
+    <span class="c1">// Define a simple LED light logic
+</span>    <span class="n">Set_SimpleLight</span><span class="p">(</span><span class="n">MYLEDLOGIC</span><span class="p">);</span>        
+    
+    <span class="n">pinMode</span><span class="p">(</span><span class="n">OUTPUTPIN</span><span class="p">,</span> <span class="n">OUTPUT</span><span class="p">);</span>  <span class="c1">// Power the LED
+</span><span class="p">}</span>
+
+<span class="kt">void</span> <span class="nf">loop</span><span class="p">()</span>
+<span class="p">{</span> 
+    <span class="c1">// Here we start to play
+</span>    <span class="n">EXECUTEFAST</span><span class="p">()</span> <span class="p">{</span>                     
+        <span class="n">UPDATEFAST</span><span class="p">();</span>   
+        
+        <span class="c1">// We process the logic and relevant input 
+</span>        <span class="c1">// and output every 50 milliseconds
+</span>        <span class="n">FAST_50ms</span><span class="p">()</span> <span class="p">{</span>   
+            <span class="c1">// Drive the LED as per command
+</span>            <span class="n">Logic_SimpleLight</span><span class="p">(</span><span class="n">MYLEDLOGIC</span><span class="p">);</span>    
+            <span class="n">DigOut</span><span class="p">(</span><span class="n">OUTPUTPIN</span><span class="p">,</span> <span class="n">Souliss_T1n_Coil</span><span class="p">,</span> <span class="n">MYLEDLOGIC</span><span class="p">);</span>                
+        <span class="p">}</span> 
+              
+        <span class="c1">// Here we handle here the communication
+</span>        <span class="n">FAST_GatewayComms</span><span class="p">();</span>                                        
+        
+    <span class="p">}</span>
+<span class="p">}</span>
+</code></pre></div></div>
+
+<p>Of course you have to care about the PIN addressing that is different on ESP8266 compared to an Arduino board.</p>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>This binding can be configured in the file <code class="highlighter-rouge">services/souliss.cfg</code>.</p>
+
+<p>The binding isn’t able to locate your Souliss gateway as the <a href="https://github.com/souliss/souliss/wiki/SoulissApp">SoulissApp</a> does, so you should specify the networking information in configuration as follows.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>IP_LAN</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>IP address of Souliss Gateway node.  Use the IP address loaded in your Arduino sketch. Example: 192.168.1.77</td>
+    </tr>
+    <tr>
+      <td>USER_INDEX</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>index of the binding between 1 - 100. Please ensure that each user interface (SoulissApp, openHAB, …) has a different <code class="highlighter-rouge">USER_INDEX</code> and <code class="highlighter-rouge">NODE_NUMBER</code>.  Those values are used to identify the interface.  You can get the values used by SoulissApp from the Networking menu.</td>
+    </tr>
+    <tr>
+      <td>NODE_INDEX</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>node of the binding between 1 - 254. Please ensure that each user interface (SoulissApp, openHAB, …) has a different <code class="highlighter-rouge">USER_INDEX</code> and <code class="highlighter-rouge">NODE_NUMBER</code>.  Those values are used to identify the interface.  You can get the values used by SoulissApp from the Networking menu.</td>
+    </tr>
+    <tr>
+      <td>SERVERPORT</td>
+      <td> </td>
+      <td style="text-align: center">No</td>
+      <td>leave empty for casual port</td>
+    </tr>
+    <tr>
+      <td>REFRESH_DBSTRUCT_TIME</td>
+      <td>600000</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>REFRESH_SUBSCRIPTION_TIME</td>
+      <td>120000</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>REFRESH_HEALTY_TIME</td>
+      <td>60000</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>REFRESH_MONITOR_TIME</td>
+      <td>500</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>SEND_DELAY</td>
+      <td>1500</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>SEND_MIN_DELAY</td>
+      <td>100</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>SECURE_SEND_TIMEOUT_TO_REQUEUE</td>
+      <td>5000</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+    <tr>
+      <td>SECURE_SEND_TIMEOUT_TO_REMOVE_PACKET</td>
+      <td>30000</td>
+      <td style="text-align: center">No</td>
+      <td>time in milliseconds</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>souliss=&lt;Typical&gt;:&lt;nodeID&gt;:&lt;slot&gt;[:&lt;bit&gt;]
+</code></pre></div></div>
+
+<p>where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;Typical&gt;</code> is one of predefined logic dedicated to smart home devices like lights, heating or antitheft.  <code class="highlighter-rouge">&lt;Typical&gt;</code> can be one of T11, T12, T13, T14, T16, T18, T1A, T22, T51, T52, T53, T57. <code class="highlighter-rouge">&lt;Typical&gt;</code>s are defined <a href="https://github.com/souliss/souliss/wiki/Typicals">here</a>. Typicals match directly with openHAB items.  This defines the interaction between the user interface in openHAB (same is for SoulissApp) and the action executed by the node.</li>
+  <li><code class="highlighter-rouge">&lt;nodeID&gt;</code> is the ID of the node.  The first node listed in your SoulissApp has <code class="highlighter-rouge">&lt;nodeID&gt;</code> 1.  Increase for your further nodes.  Can be in the range 1 - 254.</li>
+  <li><code class="highlighter-rouge">&lt;slot&gt;</code> is the slot where your <code class="highlighter-rouge">&lt;Typical&gt;</code> is located.  This is defined in the sketch loaded in your node.  Can be in the range 1 - 254.</li>
+  <li>sections in <code class="highlighter-rouge">[square brackets]</code> are optional</li>
+  <li><code class="highlighter-rouge">&lt;bit&gt;</code> is used only for <code class="highlighter-rouge">&lt;Typical&gt;</code>s that work bitwise, as T1A.  Can be in the range 1 - 8.</li>
+</ul>
+
+<h3 id="service-typicals">Service Typicals</h3>
+
+<p>In order to track the health and timestamps, two service <code class="highlighter-rouge">&lt;Typical&gt;</code>s has been introduced: D98 (Health) and D99 (Timestamp).  Those are not defined in Souliss sketches and are only available in the binding.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>souliss="D98:&lt;nodeNumber&gt;:998"
+souliss="D99:&lt;nodeNumber&gt;:999"
+</code></pre></div></div>
+
+<p>Example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number HEALTH_Nodo1_GF_Servizio "Health Nodo 1 [%1d]" &lt;keyring&gt; (Diagnostic, TechnicView_Node0) {souliss="D98:0:998"}
+String TIMESTAMP_Nodo1_GF_Servizio "Timestamp Nodo 1 [%1$td.%1$tm.%1$tY %1$tk:%1$tM:%1$tS]" &lt;keyring&gt; (Diagnostic, TechnicView_Node0) {souliss="D99:0:999"}
+</code></pre></div></div>
+<h2 id="examples">Examples</h2>
+
+<h3 id="items">Items</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Group All
+Group grp1              (All)
+Group Diagnostic        (All)
+Group TechnicView_Node0 (All)
+Group Health            (All)
+
+Switch SimpleLight  "SimpleLight" (grp1, TechnicView_Node0) {souliss="T11:0:0", autoupdate="false"}
+
+Number HEALTHNodo0 "Health Node 0 [%1d]" &lt;keyring&gt; (Diagnostic, TechnicView_Node0, Health) {souliss="D98:0:998"}
+String TIMESTAMP_Nodo0 "Update Node 0 [%1$td.%1$tm.%1$tY %1$tk:%1$tM:%1$tS]" &lt;keyring&gt; (Diagnostic, TechnicView_Node0) {souliss="D99:0:999"}
+</code></pre></div></div>
+
+<p>If you have correctly configured Souliss and openHAB, you can see and control the switch from the openHAB interface:</p>
+
+<p><img src="https://github.com/souliss/wiki-images/blob/master/examples/openHAB_example.png?raw=true" alt="openHAB and Souliss" /></p>
+
+<p>items/soulissdemo.items</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch LuceSogg "LuceSogg" (GF_Soggiorno, TechnicView_Node0) {souliss="T11:0:6", autoupdate=false}
+Number Temperature_GF_Soggiorno "Temperatura Soggiorno [%.1f °C]"   &lt;temperature&gt; (temperature, GF_Temperature, TechnicView_Node0) {souliss="T52:0:0"}
+Number Umidita_GF_Soggiorno "Umidità Soggiorno [%.1f %%]"   &lt;temperature&gt; (temperature, GF_Temperature, TechnicView_Node0) {souliss="T53:0:2"}
+Number Consumo_GF_Soggiorno "Consumo [%.1f W]" &lt;energy&gt; (GF_Temperature, TechnicView_Node0) {souliss="T57:0:4"}
+Rollershutter Shutter1_GF_Soggiorno "Tenda1" (GF_Soggiorno, TechnicView_Node3 {souliss="T22:3:0", autoupdate=false} 
+Contact ContattoTest "Contatto" (GF_Soggiorno, Lights) {souliss="T13:0:1", autoupdate=true}
+Contact C2 "BIT 3" (GF_Soggiorno, TechnicView_Node3) {souliss="T1A:3:5:2"}
+Contact C3 "BIT 4" (GF_Soggiorno, TechnicView_Node3) {souliss="T1A:3:5:3"}
+Color  RGB_Led_Strip_1 "RGB Led Strip 1" &lt;slider&gt; (GF_Soggiorno)  {souliss="T16:0:2", autoupdate=false}
+Switch SwitchAutoMode 	"T12" 		(GF_Soggiorno, TechnicView_Node3) {souliss="T12:3:0:switch", autoupdate="false"}
+Switch SwitchAutoMode_setup 	"Auto" 		(GF_Soggiorno, TechnicView_Node3) {souliss="T12:3:0:automode", autoupdate="false"}
+Number Temperature_GF_Soggiorno     "Temperature [%.1f °C]"    &lt;temperature&gt; (T31, TechnicView_Node0) {souliss="T31:1:0:measured"}
+Number Temperature_2F_Living_SP "Temp Set Point [%.1f °C]"     &lt;temperature&gt; (T31, TechnicView_Node0) {souliss="T31:1:0:setpoint"}
+Switch setasmeasured "Set as measured" &lt;temperature&gt; (T31, TechnicView_Node0) {souliss="T31:1:0:setasmeasured", autoupdate="false"}
+Switch heating_cooling "Heating Mode" (T31, TechnicView_Node0) {souliss="T31:1:0:heatingcooling", autoupdate="false"}
+Switch heating "Heating" &lt;siren&gt;  (T31, TechnicView_Node0) {souliss="T31:1:0:heating"}
+Switch cooling "Cooling" &lt;siren&gt; (T31, TechnicView_Node0) {souliss="T31:1:0:cooling"}
+Switch fan_off "Fan Off" (T31, TechnicView_Node0) {souliss="T31:1:0:fanoff", autoupdate="false"}
+Switch fan_low "Fan Low" (T31, TechnicView_Node0) {souliss="T31:1:0:fanlow", autoupdate="false"}
+Switch fan_med "Fan Med" (T31, TechnicView_Node0) {souliss="T31:1:0:fanmed", autoupdate="false"}
+Switch fan_high "Fan High" (T31, TechnicView_Node0) {souliss="T31:1:0:fanhigh", autoupdate="false"}
+Switch power "Power Off" (T31, TechnicView_Node0) {souliss="T31:1:0:power"}
+</code></pre></div></div>
+
+<h3 id="sitemap">Sitemap</h3>
+
+<p>This will build a ligh switch and two items with health and last data access.</p>
+
+<p>sitemaps/soulissdemo.sitemap</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap soulissdemo label="Main Menu"
+{
+Frame label="Souliss - Hello World" {
+        Switch item=SimpleLight mappings=[ON="ON", OFF="OFF"]
+        Text item=HEALTHNodo0 icon="icon16x16"
+        Text item=TIMESTAMP_Nodo0 icon="icon16x16"
+    }       
+}
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

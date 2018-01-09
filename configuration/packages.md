@@ -11,7 +11,7 @@ When starting openHAB for the very first time, you are asked to select an initia
 
 There are four packages to choose from, which will be explained here in detail.
 
-_Note_: If you are doing a headless installation, you can also choose the package by setting the `package` parameter in `conf/services/addons.cfg` (resp. `/etc/openhab2/services/addons.cfg` for apt installations).
+*Note*: If you are doing a headless installation, you can also choose the package by setting the `package` parameter in `conf/services/addons.cfg` (resp. `/etc/openhab2/services/addons.cfg` for apt installations).
 
 If you skipped the package installation, the system stays in a minimal setup without any add-ons which also means without any UIs. In such a case, you must configure the add-ons to install in `addons.cfg`.
 
@@ -23,6 +23,7 @@ This is the recommended package for the normal user. It contains the most common
 
 This package thus installs:
 
+- [Home Builder](homebuilder.html){:target="_blank"} as a getting-started generator for your home
 - [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, including item access
 - [Basic UI](../addons/uis/basic/readme.html){:target="_blank"} as the new modern web UI for mobile devices
 - [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for (e.g. wall-mounted) tablets
@@ -57,7 +58,8 @@ These are:
 - [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for daily use
 - only "native" openHAB 2 bindings are available, 1.x add-ons are excluded
 
-**WARNING**: Note that the UI-driven configuration features are new and still under development, so many features will be enhanced in upcoming versions. Specifically the rule engine is in an early stage and has several functional limitations.
+**WARNING**: Note that the UI-driven configuration features are new and still under development, so many features will be enhanced in upcoming versions.
+Specifically the rule engine is in an early stage and has several functional limitations.
 Most features of openHAB still require textual configuration (e.g. the sitemaps and complex rules).
 This package therefore should only be used for very simple setups or as an demonstrator what there is to come.
 
@@ -76,4 +78,3 @@ This includes:
 - RRD4j persistence service for storing time-series locally
 - MAP transformation service as this is heavily used by the sample files
 - Sample configurations files `demo.items`, `demo.things`,  `demo.sitemap`, `demo.rules`, `demo.script`, `rrd4j.persist`, `de.map` and `en.map` for use with the MAP transformation
-

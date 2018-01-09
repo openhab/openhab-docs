@@ -1,0 +1,1779 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Squeezebox - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/squeezebox1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox1/readme.html">Squeezebox <small>(legacy/manual)</small></a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/squeezebox1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/squeezebox1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/squeezebox1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="squeezebox-binding">Squeezebox Binding</h1>
+
+<p>This binding integrates the <a href="http://www.mysqueezebox.com">Logitech Media Server</a> and compatible Squeeze players.</p>
+
+<p>From the <a href="http://en.wikipedia.org/wiki/Squeezebox_%28network_music_player%29">Wikipedia entry</a>:</p>
+
+<blockquote>
+  <p>Slim Devices was established in 2000, and was first known for its SlimServer used for streaming music, but launched a hardware player named SliMP3 able to play these streams in 2001. Although the first player was fairly simple only supporting wired Ethernet and MP3 natively, it was followed two years later by a slightly more advanced player which was renamed to Squeezebox. Other versions followed, gradually adding native support for additional file formats, Wi-Fi-support, gradually adding larger and more advanced displays as well as a version targeting audiophile users. Support for playing music from external streaming platforms such as Pandora, Napster, Last.fm and Sirius were also added. The devices in general have two operating modes; either standalone where the device connects to an internet streaming service directly, or to a local computer running the Logitech Media Server or a network-attached storage device. Both the server software and large parts of the firmware on the most recent players are released under open source licenses.</p>
+</blockquote>
+
+<blockquote>
+  <p>In 2006, Slim Devices was acquired by Logitech for $20 million USD. Logitech continued the development of the player until they announced in August 2012 that it would be discontinued. Given the cross-platform nature of the server and software client, some users have ensured the continued use of the platform by utilizing the Raspberry Pi as dedicated Squeezebox device (both client and server).</p>
+</blockquote>
+
+<p>There is also a binding specifically for openHAB 2 <a href="http://docs.openhab.org/addons/bindings/squeezebox/readme.html">here</a>.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#binding-configuration">Binding Configuration</a>
+    <ul>
+      <li><a href="#example">Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#item-configuration">Item Configuration</a>
+    <ul>
+      <li><a href="#squeezebox-commands">Squeezebox commands</a></li>
+      <li><a href="#squeezebox-variables">Squeezebox variables</a></li>
+    </ul>
+  </li>
+  <li><a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#full-example">Full Example</a></li>
+      <li><a href="#additional-control-of-logitech-media-server">Additional Control of Logitech Media Server</a></li>
+      <li><a href="#example-for-adding-playlists">Example for adding playlists</a></li>
+      <li><a href="#example-for-displaying-text">Example for displaying text</a></li>
+      <li><a href="#more-examples">More Examples</a></li>
+    </ul>
+  </li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>This binding can be configured in the file <code class="highlighter-rouge">services/squeeze.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>server.host</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>host (IP address) of your Logitech Media Server</td>
+    </tr>
+    <tr>
+      <td>server.retries</td>
+      <td>3</td>
+      <td style="text-align: center">No</td>
+      <td>number of retries to allow for a failed connection.</td>
+    </tr>
+    <tr>
+      <td>server.retryTimeout</td>
+      <td>60</td>
+      <td style="text-align: center">No</td>
+      <td>timeout (in seconds) between retries of a failed connection to the Logitech Media Server</td>
+    </tr>
+    <tr>
+      <td>server.cliport</td>
+      <td>9090</td>
+      <td style="text-align: center">No</td>
+      <td>port of the CLI interface of your Logitech Media Server</td>
+    </tr>
+    <tr>
+      <td>server.webport</td>
+      <td>9000</td>
+      <td style="text-align: center">No</td>
+      <td>web port interface of the your Logitech Media Server</td>
+    </tr>
+    <tr>
+      <td>squeeze:ttsurl</td>
+      <td><code class="highlighter-rouge">http://translate.google.com/translate_tts?tl=en&amp;ie=UTF-8&amp;client=openhab&amp;q=%s</code></td>
+      <td style="text-align: center">No</td>
+      <td>TTS URL to use for generating text-to-speech voice announcements. The URL should contain one ‘%s’ parameter which will be substituted with the text to be translated<br />Another TTS service is http://www.voicerss.org/api/ which requires an API key): <code class="highlighter-rouge">https://api.voicerss.org/?key=YOURAPIKEYHERE&amp;hl=en-gb&amp;src=%s</code></td>
+    </tr>
+    <tr>
+      <td>ttsmaxsentencelength</td>
+      <td>100</td>
+      <td style="text-align: center">No</td>
+      <td>maximum TTS sentence length. For example, the Google TTS service only permits up to 100 characters (the default value). The Squeezebox speak action will break long strings into sentence chunks call the TTS service repeatedly</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;boxId1&gt;</code>.id</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>MAC address of your first Squeezebox.  MAC addresses of players are case-sensitive. Use small letters (a-f) if the address contains them. Example: <code class="highlighter-rouge">de:ad:be:ef:12:34</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">&lt;boxId1&gt;</code>.id</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>MAC address of your nth Squeezebox.  MAC addresses of players are case-sensitive. Use small letters (a-f) if the address contains them. Example: <code class="highlighter-rouge">de:ad:be:ef:12:34</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>where <code class="highlighter-rouge">&lt;boxIdN&gt;</code> is a name you choose (like <code class="highlighter-rouge">bedroom</code> and <code class="highlighter-rouge">kitchen</code>) that will be used in both items and the action calls to select with which of your Squeezebox devices to communicate.  Do not use special characters for <code class="highlighter-rouge">&lt;boxIdN&gt;</code>.</p>
+
+<h3 id="example">Example</h3>
+
+<p>First you need to let openHAB know where to find your Squeeze Server and each of your Squeezebox devices. This configuration is entered in your binding configuration file, and is used by both the Squeezebox binding and the Squeezebox Action:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server.host=192.168.1.129
+bedroom.id=de:ad:be:ef:12:34
+kitchen.id=ab:cd:ef:12:34:56
+</code></pre></div></div>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>The syntax of an item configuration is shown in the following line in general:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>squeeze="&lt;boxId&gt;:&lt;command&gt;[:&lt;extra&gt;]"
+</code></pre></div></div>
+
+<p>Where <code class="highlighter-rouge">&lt;boxId&gt;</code> matches one of the ids defined in your binding configuration, described above.</p>
+
+<p>Examples:</p>
+
+<p>Here are some examples of valid binding configuration strings:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>squeeze="player1:volume"
+squeeze="player1:title"
+squeeze="player1:play"
+</code></pre></div></div>
+
+<h3 id="squeezebox-commands">Squeezebox commands</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">power</code></td>
+      <td>Power on/off your device</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">mute</code></td>
+      <td>Mute/unmute your device</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">volume</code></td>
+      <td>Change volume by 5%</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">play</code></td>
+      <td>Play the current title</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">pause</code></td>
+      <td>Pause the current title</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">stop</code></td>
+      <td>Stop the current title</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">next</code></td>
+      <td>Skip to next title</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">prev</code></td>
+      <td>Skip to previous title</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">http:stream</code></td>
+      <td>Play the given http stream (obsolete as there is now a new squeezeboxPlayUrl() action for handling this inside rules directly)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">file:file</code></td>
+      <td>Play the given file on your server (obsolete as there is now a new squeezeboxPlayUrl() action for handling this inside rules directly)</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sync:player-id2</code></td>
+      <td>Add <code class="highlighter-rouge">player-id2</code> to your device for synced playback</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>NOTE: when binding the ‘play’ command to a switch item you will trigger ‘play’ when the item receives the ON command. It will also trigger ‘stop’ when the item receives the OFF command. The same applies for ‘stop’ and ‘pause’ except ON=&gt;stop/pause and OFF=&gt;play. This is so you can setup a single item for controlling play/stop by defining mappings in your sitemap:</p>
+
+<h3 id="squeezebox-variables">Squeezebox variables</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Variable</th>
+      <th>Purpose</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">title</code></td>
+      <td>Title of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">album</code></td>
+      <td>Album name of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">artist</code></td>
+      <td>Artist name of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">year</code></td>
+      <td>Release year of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">genre</code></td>
+      <td>Genre name of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">coverart</code></td>
+      <td>Address to cover art of the current song</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">remotetitle</code></td>
+      <td>Title of radio station currently playing</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">ircode</code></td>
+      <td>String of the cached IR code</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="full-example">Full Example</h3>
+
+<p>items/squeezedemo.items</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer sq_test_volume 	   "Volume [%.1f %%]"	{ squeeze="player1:volume" }
+String sq_test_title	   "Title [%s]"			{ squeeze="player1:title" }
+Switch sq_test_play	   	   "Play"				{ squeeze="player1:play" }
+String sq_test_ircode	   "IR-Code [%s]" 		{ squeeze="player1:ircode" }
+</code></pre></div></div>
+
+<p>sitemaps/squeezedemo.sitemap.fragment</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    Switch item=sq_test_play mappings=[ON="Play", OFF="Stop"]
+</code></pre></div></div>
+
+<p>And whenever the player state is changed from outside of openHAB, these items will be updated accordingly, since there is now no longer a separate item for ‘play’ and ‘isPlaying’.</p>
+
+<p>Squeezebox binding can store the latest IR code (form the infrared remote) in a variable, which can be used to do some actions. Look at this rule:</p>
+
+<p>rules/squeezeirdemo.rules</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "IR Code catched"
+when
+    Item sq_test_ircode received update
+then
+    if (sq_test_ircode.state=="00ff32cd") {
+        sendCommand(Licht_Schlafzimmer, ON)
+        logInfo("IR Code rules", "schalte Schlafzimmerlicht ein")
+    } else if (sq_test_ircode.state=="00ff708f") {
+        sendCommand(Licht_Schlafzimmer, OFF)
+        logInfo("IR Code rules", "schalte Schlafzimmerlicht aus")
+    }
+end
+</code></pre></div></div>
+
+<h3 id="additional-control-of-logitech-media-server">Additional Control of Logitech Media Server</h3>
+
+<p>Another method to gain some extra control of the LMS not provided by the binding is via HTTP GET requests. Using rules, a switch/number etc can be linked to the required HTTP GET request.</p>
+
+<p>All available GET requests can be found on the LMS. 
+In any browser enter <code class="highlighter-rouge">&lt;IP Address of LMS&gt;:9000</code></p>
+
+<p>Help button on the bottom left → Technical information → Logitech Media Server Web Interface
+For the multiple player variable either the IP address or the MAC address can be used.</p>
+
+<h3 id="example-for-adding-playlists">Example for adding playlists</h3>
+
+<p>Item file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Squeezebox_PlayList	"Playlists”
+</code></pre></div></div>
+
+<p>Rule file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "Squeezebox_PlayList"
+when
+	Item Squeezebox_PlayList received command
+then
+	switch(receivedCommand) {
+		case 0 : sendHttpGetRequest("http://&lt;IP Address of LMS&gt;:9000/?p0=playlist&amp;p1=play&amp;p2=&lt;Name of Playlist&gt;&amp;player=&lt;MAC Address of Player&gt;")
+		case 1 : sendHttpGetRequest("http://&lt;IP Address of LMS&gt;:9000/?p0=playlist&amp;p1=play&amp;p2=&lt;Name of Next Playlist &gt;&amp;player=&lt;MAC Address of Player&gt;")
+	}
+end
+</code></pre></div></div>
+
+<p>Sitemap file fragment:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Selection item=Squeezebox_PlayList label="Start Playlist" mappings=[0="&lt;Name of Playlist&gt;", 1="&lt;Name of Next Playlist &gt;"] 
+</code></pre></div></div>
+
+<h3 id="example-for-displaying-text">Example for displaying text</h3>
+
+<p>Rule file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "SqueezeboxDisplay"
+when
+	&lt;any event&gt;
+then
+	var String text= "Das ist ein Text mit variablem Inhalt: " + Item1.state.toString + 
+	" und " + Item2.state.toString 
+	var String url = "http://192.168.2.5:9000/status?p0=display&amp;p1=&amp;p2=" + text.encode("UTF-8") + "&amp;p3=300&amp;player=00:04:20:06:21:6d" 
+            sendHttpGetRequest(url)
+end
+</code></pre></div></div>
+
+<p>The is UTF-8 encoded. The URL calls the squeezebox server at port 9000 with this parameters: p1=upper display line, p2=lower display line, p3=duration of display, player= MAC address of player</p>
+
+<h3 id="more-examples">More Examples</h3>
+
+<p><img src="https://dl.dropboxusercontent.com/u/1781347/wiki/2014-12-18%2017_13_05-openHAB.png" alt="" /></p>
+
+<p>Here you’ll need to configure your players; please make sure that the id’s match the name of your logitech configuration. Do not use special characters for the player id.</p>
+
+<p>services/squeeze.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>server.host     = 192.168.10.59
+
+Bad.id          = 00:04:20:28:65:c7
+Bastelzimmer.id = 00:04:20:29:62:0e
+Buero.id        = 00:04:20:29:a7:27
+Kueche.id       = 00:04:20:28:65:91
+Schlafzimmer.id = 00:04:20:2a:37:4b
+TV.id           = 00:04:20:23:52:3c
+Wohnbereich.id  = 00:04:20:2a:3b:21
+</code></pre></div></div>
+
+<p>items/squeeze.items</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* SqueezeBox */
+Number squeezeSelectedPlayer
+Number squeezeSelectedStation
+Switch squeezePlay
+
+Switch squeezeBadPower           "Bad" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerOG) { squeeze="Bad:power" }
+Switch squeezeBadPlay            "Bad"                                          { squeeze="Bad:play" }
+Dimmer squeezeBadVolume          "Bad [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Bad:volume" }
+
+Switch squeezeBastelzimmerPower  "Gästezimmer" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerOG) { squeeze="Bastelzimmer:power" }
+Switch squeezeBastelzimmerPlay   "Gästezimmer"                                          { squeeze="Bastelzimmer:play" }
+Dimmer squeezeBastelzimmerVolume "Gästezimmer [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Bastelzimmer:volume" }
+
+Switch squeezeBueroPower         "Büro" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerOG) { squeeze="Buero:power" }
+Switch squeezeBueroPlay          "Büro"                                          { squeeze="Buero:play" }
+Dimmer squeezeBueroVolume        "Büro [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Buero:volume" }
+
+Switch squeezeSchlafzimmerPower  "Schlafzimmer" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerOG) { squeeze="Schlafzimmer:power" }
+Switch squeezeSchlafzimmerPlay   "Schlafzimmer"                                          { squeeze="Schlafzimmer:play" }
+Dimmer squeezeSchlafzimmerVolume "Schlafzimmer [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Schlafzimmer:volume" }
+
+Switch squeezeTVPower            "TV" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerEG, gTV) { squeeze="TV:power" }
+Switch squeezeTVPlay             "TV"                                               { squeeze="TV:play" }
+Dimmer squeezeTVVolume           "TV [%.1f %%]" &lt;volume&gt; (gPlayerVolume)            { squeeze="TV:volume" }
+
+Switch squeezeKuechePower        "Küche" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerEG) { squeeze="Kueche:power" }
+Switch squeezeKuechePlay         "Küche"                                          { squeeze="Kueche:play" }
+Dimmer squeezeKuecheVolume       "Küche [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Kueche:volume" }
+
+Switch squeezeWohnbereichPower   "Wohnbereich" &lt;squeeze&gt; (gPlayerPower, gPlayerPowerEG) { squeeze="Wohnbereich:power" }
+Switch squeezeWohnbereichPlay    "Wohnbereich"                                          { squeeze="Wohnbereich:play" }
+Dimmer squeezeWohnbereichVolume  "Wohnbereich [%.1f %%]" &lt;volume&gt; (gPlayerVolume)       { squeeze="Wohnbereich:volume" }
+</code></pre></div></div>
+
+<p>rules/squeeze.rules</p>
+
+<pre><code class="language-Xtend">// Handle squeezebox radio station UI
+rule "SqueezePlayerRadioStation"
+when 
+	Item squeezePlay changed or
+	Item squeezeSelectedStation changed or
+	Item squeezeSelectedPlayer changed
+then
+	logInfo("squeeze.rules", "SqueezePlayerPlay")
+  
+	var String [] players = newArrayList("Bad", "Bastelzimmer", "Buero", "Schlafzimmer", "TV", "Kueche", "Wohnbereich");
+	var String[] urls = newArrayList(
+	  "http://stream.srg-ssr.ch/drs1/mp3_128.m3u", // Radio SRF1
+	  "http://stream.srg-ssr.ch/drs2/mp3_128.m3u", // Radio SRF2
+	  "http://stream.srg-ssr.ch/drs3/mp3_128.m3u", // Radio SRF3
+	  "http://www.swissgroove.ch/listen.m3u",      // Swiss Groove
+	  "http://icecast.argovia.ch/argovia128.m3u",  // Radio Argovia
+	  "http://stream.srg-ssr.ch/rsj/mp3_128.m3u",  // Swiss Jazz
+	  "http://mp3-live.swr3.de/swr3_m.m3u"         // SWR 3
+	  )
+
+	logInfo("squeeze.rules", squeezeSelectedStation.toString)
+	
+	var stationIndex = ((squeezeSelectedStation.state as DecimalType).intValue - 1)
+	var station = urls.get(stationIndex) as String;
+	
+	var playerIndex = ((squeezeSelectedPlayer.state as DecimalType).intValue - 1) 
+	var player = players.get(playerIndex) as String
+	
+	logInfo("squeeze.rules", player)
+	logInfo("squeeze.rules", station)
+	 
+	if (squeezePlay.state == ON) {
+	  squeezeboxPlayUrl(player, station)
+	} else {
+	  squeezeboxStop(player)
+	}
+
+end
+</code></pre>
+
+<p>sitemaps/squeeze.sitemap</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap
+{
+	Frame label="System"  {
+		Text label="Audio" icon="squeeze"  {
+			Frame label="Alle"  {
+				Switch item=gPlayerPowerAll label="EG &amp; OG" 				
+				Switch item=gPlayerPowerEG label="EG" 				
+				Switch item=gPlayerPowerOG label="OG" 		
+				Group item=gPlayerPower label="Ein / Aus"  {
+					Switch item=squeezeBadPower           				
+					Switch item=squeezeBastelzimmerPower  
+					Switch item=squeezeBueroPower 	      
+					Switch item=squeezeSchlafzimmerPower  
+					Switch item=squeezeTVPower 			  
+					Switch item=squeezeKuechePower 		  
+					Switch item=squeezeWohnbereichPower   
+				}
+				Group item=gPlayerVolume label="Lautstärke"  {
+					Slider item=squeezeBadVolume switchSupport 		    
+					Slider item=squeezeBastelzimmerVolume switchSupport 
+					Slider item=squeezeBueroVolume switchSupport 		
+					Slider item=squeezeSchlafzimmerVolume switchSupport 
+					Slider item=squeezeTVVolume switchSupport 		    
+					Slider item=squeezeKuecheVolume switchSupport 		
+					Slider item=squeezeWohnbereichVolume switchSupport 	
+				}
+				Slider item=gPlayerVolume label="Lautstärke" 				
+			}			
+			Frame label="Einzeln"  {				
+				Selection item=squeezeSelectedPlayer label="Gerät" mappings=[1="Bad", 2="Gästezimmer", 3="Büro", 4="Schlafzimmer", 5="TV", 6="Küche", 7="Wohnbereich"]
+				Selection item=squeezeSelectedStation label="Sender" mappings=[1="SRF 1", 2="SRF 2", 3="SRF 3", 4="Swiss Groove", 5="Argovia", 6="Swiss Jazz", 7="SWR 3"]
+				Switch item=squeezePlay label="Stop / Play" mappings=[OFF="Stop", ON="Play"]
+				
+				Switch item=squeezeBadPower           visibility=[squeezeSelectedPlayer==1]				
+				Switch item=squeezeBastelzimmerPower  visibility=[squeezeSelectedPlayer==2]
+				Switch item=squeezeBueroPower 	      visibility=[squeezeSelectedPlayer==3]
+				Switch item=squeezeSchlafzimmerPower  visibility=[squeezeSelectedPlayer==4]
+				Switch item=squeezeTVPower 			  visibility=[squeezeSelectedPlayer==5]
+				Switch item=squeezeKuechePower 		  visibility=[squeezeSelectedPlayer==6]
+				Switch item=squeezeWohnbereichPower   visibility=[squeezeSelectedPlayer==7]
+				
+				Slider item=squeezeBadVolume switchSupport 		    visibility=[squeezeSelectedPlayer==1]
+				Slider item=squeezeBastelzimmerVolume switchSupport visibility=[squeezeSelectedPlayer==2]
+				Slider item=squeezeBueroVolume switchSupport 		visibility=[squeezeSelectedPlayer==3]
+				Slider item=squeezeSchlafzimmerVolume switchSupport visibility=[squeezeSelectedPlayer==4]
+				Slider item=squeezeTVVolume switchSupport 		    visibility=[squeezeSelectedPlayer==5]
+				Slider item=squeezeKuecheVolume switchSupport 		visibility=[squeezeSelectedPlayer==6]
+				Slider item=squeezeWohnbereichVolume switchSupport 	visibility=[squeezeSelectedPlayer==7] 			
+			}		
+		}		
+	}	
+}
+</code></pre></div></div>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>If you have also some issues with the example feel free to check <a href="https://community.openhab.org/t/wiki-squeezeboxexample-errors-cannot-cast-cannot-retrieve-item/5488">this discussion</a>.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

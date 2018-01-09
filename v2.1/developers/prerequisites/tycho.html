@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Tycho - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/developers/prerequisites/tycho.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/developers">Overview</a></li>
+  <li><a href="/v2.1/developers/contributing/contributing">Contributing</a></li>
+  <li><a href="/v2.1/developers/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="/v2.1/developers/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="/v2.1/developers/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="/v2.1/developers/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="/v2.1/developers/prerequisites/osgitasks.html">Coding tasks</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/developers/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="/v2.1/developers/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="/v2.1/developers/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/developers/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="/v2.1/developers/development/ide.html">IDE Setup</a></li>
+      <li><a href="/v2.1/developers/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="/v2.1/developers/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="/v2.1/developers/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/developers/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="/v2.1/developers/development/evolution.html">Technical Differences</a></li>
+      <li><a href="/v2.1/developers/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="tycho">Tycho</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p><a href="https://eclipse.org/tycho/sitedocs/index.html">Tycho</a> <em>is a set of <a href="https://maven.apache.org/">Maven</a> plugins and extensions for building Eclipse plugins and OSGi bundles with Maven</em> as it is described in the <a href="https://eclipse.org/tycho/">Tycho project homepage</a>. Tycho uses the Eclipse components metadata as much as possible (e.g. for plug-ins and bundles it determines the dependencies via the <code class="highlighter-rouge">MANIFEST.MF</code>file).</p>
+
+<h2 id="integrate-your-bundle-with-the-tycho-build">Integrate your bundle with the Tycho build</h2>
+<p>openHAB project is building the bundles with Tycho, so knowledge about how is Tycho functioning can help you to integrate your work with the build.</p>
+
+<p>Let’s take a look at the pom.xml that is automatically generated, when you create a binding using the <a href="../development/bindings.html#creating-a-skeleton">binding skeleton</a>:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="cp">&lt;?xml version="1.0" encoding="UTF-8"?&gt;</span>
+<span class="nt">&lt;project</span> <span class="na">xmlns:xsi=</span><span class="s">"http://www.w3.org/2001/XMLSchema-instance"</span> <span class="na">xmlns=</span><span class="s">"http://maven.apache.org/POM/4.0.0"</span> <span class="na">xsi:schemaLocation=</span><span class="s">"http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"</span><span class="nt">&gt;</span>
+
+  <span class="nt">&lt;modelVersion&gt;</span>4.0.0<span class="nt">&lt;/modelVersion&gt;</span>
+
+  <span class="nt">&lt;parent&gt;</span>
+    <span class="nt">&lt;groupId&gt;</span>org.openhab.binding<span class="nt">&lt;/groupId&gt;</span>
+    <span class="nt">&lt;artifactId&gt;</span>pom<span class="nt">&lt;/artifactId&gt;</span>
+    <span class="nt">&lt;version&gt;</span>2.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+  <span class="nt">&lt;/parent&gt;</span>
+
+  <span class="nt">&lt;groupId&gt;</span>org.openhab.binding<span class="nt">&lt;/groupId&gt;</span>
+  <span class="nt">&lt;artifactId&gt;</span>org.openhab.binding.mybinding<span class="nt">&lt;/artifactId&gt;</span>
+  <span class="nt">&lt;version&gt;</span>2.0.0-SNAPSHOT<span class="nt">&lt;/version&gt;</span>
+
+  <span class="nt">&lt;name&gt;</span>MyBidning Binding<span class="nt">&lt;/name&gt;</span>
+  <span class="nt">&lt;packaging&gt;</span>eclipse-plugin<span class="nt">&lt;/packaging&gt;</span>
+
+<span class="nt">&lt;/project&gt;</span>
+</code></pre></div></div>
+<p>The generated pom file has done almost everything that is needed to integrate your new binding. We will use it as example to show several Tycho requirements in order to build your bundle:</p>
+
+<ul>
+  <li>the <code class="highlighter-rouge">artifactId</code> in the pom file must match the <code class="highlighter-rouge">Bundle-Sumbolic-Name</code> from the <code class="highlighter-rouge">MANIFEST.MF</code> file;</li>
+  <li>the <code class="highlighter-rouge">version</code> in the pom file must match the <code class="highlighter-rouge">Bundle-Version</code> from the <code class="highlighter-rouge">MANIFEST.MF</code> (Eclipse components use <code class="highlighter-rouge">qualifier</code> as a suffix, Maven uses <code class="highlighter-rouge">SNAPSHOT</code>, but Tycho maps these values correctly);</li>
+  <li>include a <code class="highlighter-rouge">packaging</code> attribute in the pom file. In this example the packaging type is set to <code class="highlighter-rouge">eclipse-plugin</code> in the pom.xml file. For more information about the packing types that Tycho understands follow the <a href="https://wiki.eclipse.org/Tycho/Packaging_Types">link</a>.</li>
+</ul>
+
+<p>Notice that is also important to have a “link” between the pom file in your bundle and the parent pom (the <code class="highlighter-rouge">parent</code> element).</p>
+
+<p>Only one thing must be done more in order to have your bundle included in the openHAB build. You will have to add your binding as a module to the parent pom as well.</p>
+
+<h2 id="configure-tycho">Configure Tycho</h2>
+
+<p>A Tycho build is configured via the standard Maven configuration files - the pom.xml files.</p>
+
+<p>The openHAB project is divided into modules. In the pom, located in the root of the repository, there is a configuration of the Tycho plugins, that will be used from all modules. We will just mention a few settings that are applied there:</p>
+
+<ul>
+  <li>Repositories are defined. This will be the place, where Tycho will search for dependencies;</li>
+  <li>Compiler is selected.</li>
+</ul>
+
+<p>If you are developing a new binding, you might want to override these settings or add a new confugiration for some of the Tycho plug-ins. A case when you have to configure Tycho individually for a project is when you want to implement a test plugin. Test plugins are executed with the <a href="https://eclipse.org/tycho/sitedocs/tycho-surefire/tycho-surefire-plugin/test-mojo.html">tycho-surefire-plugin</a>. You can find more information, how to implement a test plugin and configure the <code class="highlighter-rouge">tycho-surefire-plugin</code> in the <a href="http://www.eclipse.org/smarthome/documentation/development/testing.html">Eclipse SmartHome documentation</a>.</p>
+
+<h2 id="executing-a-tycho-build">Executing a Tycho build</h2>
+
+<p>You can check if all dependencies are resolved with:</p>
+
+<p><code class="highlighter-rouge">mvn clean verify</code></p>
+
+<p>Tycho build is executed just like a standard Maven build. You can use:</p>
+
+<p><code class="highlighter-rouge">mvn clean install</code></p>
+
+<p>You can execute tests with:</p>
+
+<p><code class="highlighter-rouge">mvn clean integration-test</code></p>
+
+<p>Tests are executed in a test runtime (based on <a href="osgi.html">OSGi</a>).</p>
+
+<h2 id="target-platform">Target platform</h2>
+
+<p><a href="targetplatform.html">Target platform</a> is the set of plug-ins which you can use for your development or your build process to resolve the project dependencies.</p>
+
+<p>If you are using a <a href="targetplatform.html#target-definition">target definition file</a>, the file should contain only “Software site” locations (i.e. <em>location</em> elements with <em>type=”InstallableUnit”</em>).</p>
+
+<p>When you execute the build, the bundles that are available (can be used as dependencies) form the <strong>effective content of the target platform</strong>. It consists of the following plug-ins:</p>
+
+<ul>
+  <li>all plug-ins included in the target platform with the Tycho configuration (the configuration is done in the pom files). Multiple approaches exist here, for more details, you can take a look in the <a href="https://wiki.eclipse.org/Tycho/Target_Platform#Which_approach_shall_I_use_for_the_target_platform_of_my_project.3F">Tycho Target platform documentation</a>;</li>
+  <li>other artifacts from the same reactor (the Maven <a href="https://maven.apache.org/guides/mini/guide-multiple-modules.html">reactor</a>, i.e. everything that is built together in the same <code class="highlighter-rouge">mvn</code> call);</li>
+  <li>locally built artifacts in the local Maven repository. Just like in a normal Maven build, a Tycho build uses artifacts that have been built locally and installed into the local Maven repository. They are implicitly added to the target platform.</li>
+</ul>
+
+<h2 id="dependency-resolution-troubleshooting">Dependency resolution troubleshooting</h2>
+
+<p>If you develop a new bundle, you might have dependencies that can not be resolved from Tycho. In case of dependency resolution failure, Tycho will display an error message on the console. The message might be confusing, so we will take a look at one example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[INFO] Resolving dependencies of MavenProject: com.mycorp:com.mycorp.myplugin:0.1.0-SNAPSHOT @ C:\Source\MyProject\com.mycorp.myplugin\pom.xml
+[INFO] {osgi.ws=win32, osgi.os=win32, osgi.arch=x86_64, org.eclipse.update.install.features=true}
+[ERROR] Cannot resolve project dependencies:
+[ERROR]   Software being installed: com.mycorp.myplugin 0.1.0.qualifier
+[ERROR]   Missing requirement: com.mycorp.mylib 0.1.0.qualifier requires 'package org.eclipse.someproject [1.8.2,2.0.0)' but it could not be found
+[ERROR]   Cannot satisfy dependency: com.mycorp.myplugin 0.1.0.qualifier depends on: bundle com.mycorp.mylib 0.0.0
+</code></pre></div></div>
+<p>Source: <a href="https://wiki.eclipse.org/Tycho/Dependency_Resolution_Troubleshooting">https://wiki.eclipse.org/Tycho/Dependency_Resolution_Troubleshooting</a></p>
+
+<p>This error message means that a mandatory dependency of the project can not be resolved. This can be either direct or transitive dependency. In case it is transitive you will see one or more rows like (<code class="highlighter-rouge">Cannot satisfy dependency: [artifact] depends on: [dependency]</code>), which will track the dependencies chain. Important is to note which package (in case of package dependency) or bundle(for plugin dependency) is missing. In this case this is the package <code class="highlighter-rouge">org.eclipse.someproject</code> with version range [1.8.2,2.0.0).</p>
+
+<p>For more detailed explanation of the error message take a look at - <a href="https://wiki.eclipse.org/Tycho/Dependency_Resolution_Troubleshooting">https://wiki.eclipse.org/Tycho/Dependency_Resolution_Troubleshooting</a>.</p>
+
+<p>In order to debug Tycho resolution problems run <strong>mvn</strong> with the flags
+<strong>-Dtycho.debug.resolver=true</strong> and <strong>-X</strong>.</p>
+
+<p>This will display all the bundles that are available in the target platform for this module. In the displayed list you can search, if the required bundle has a mismatching version or it is missing at all.</p>
+
+<p>In order to resolve the problem, you will have to include the bundle that is exporting the missing package (or the required bundle) to the effective content of the target platform.</p>
+
+<h2 id="further-reading">Further Reading</h2>
+<ul>
+  <li><a href="https://wiki.eclipse.org/Tycho/Target_Platform">https://wiki.eclipse.org/Tycho/Target_Platform</a></li>
+  <li><a href="https://wiki.eclipse.org/Tycho/Packaging_Types">https://wiki.eclipse.org/Tycho/Packaging_Types</a></li>
+  <li><a href="https://github.com/FTSRG/cheat-sheets/wiki/Maven-and-Eclipse#tycho">https://github.com/FTSRG/cheat-sheets/wiki/Maven-and-Eclipse#tycho</a></li>
+  <li><a href="http://www.vogella.com/tutorials/EclipseTycho/article.html">http://www.vogella.com/tutorials/EclipseTycho/article.html</a></li>
+  <li><a href="http://www.vogella.com/tutorials/EclipseTargetPlatform/article.html">http://www.vogella.com/tutorials/EclipseTargetPlatform/article.html</a></li>
+  <li><a href="https://wiki.eclipse.org/PDE/Target_Definitions">https://wiki.eclipse.org/PDE/Target_Definitions</a></li>
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

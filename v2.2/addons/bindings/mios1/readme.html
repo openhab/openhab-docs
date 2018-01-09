@@ -1,0 +1,2518 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>MiOS Bridge - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/mios1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/mios1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/mios1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/mios1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h2 id="mios-bridge-binding">MiOS Bridge Binding</h2>
+
+<p>This binding exposes read, and read-command, access to Devices controlled by a MiOS Home Automation controller, such as those seen at http://getvera.com.</p>
+
+<p>It exposes the ability to do the following things in the MiOS HA Controller</p>
+
+<ul>
+  <li><code class="highlighter-rouge">Devices</code> - Read State Variables &amp; Device Attributes, and invoke (single parameter) UPnP Commands to control the Device.</li>
+  <li><code class="highlighter-rouge">Scenes</code> - Read the current execution state of a Scene, and invoke those Scenes within the remote HA Controller</li>
+  <li><code class="highlighter-rouge">System</code> - Read System-level Attributes.</li>
+</ul>
+
+<p>It uses the remote control interfaces (aka “UI Simple” JSON Calls, and HTTP Long-polling) of the MiOS HA Controller to keep the <em>bound</em> openHAB Items in sync with their counterparts in the MiOS HA Controller.</p>
+
+<p>The binding uses the openHAB <em>Transformation Service</em> extensively to “map” the Data &amp; Commands between the two systems. A set of example MAP transform files is provided and these can readily be augmented without needing to tweak the code.</p>
+
+<p>Original code was used from the XBMC Binding, and then heavily modified. Snippets included from the HTTP Binding for the various datatype mapping functions.</p>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#configuration">Configuration</a>
+    <ul>
+      <li><a href="#mios-unit-configuration">MiOS Unit Configuration</a></li>
+      <li><a href="#transformations">Transformations</a></li>
+      <li><a href="#item-configuration">Item Configuration</a></li>
+      <li><a href="#item--mios-system-binding">Item : MiOS System Binding</a></li>
+    </ul>
+  </li>
+  <li><a href="#item-commands-reacting">Item Commands (Reacting)</a>
+    <ul>
+      <li><a href="#item--mios-device-binding---commands-reacting">Item : MiOS Device Binding - Commands (Reacting)</a></li>
+      <li><a href="#item--mios-scene-binding---commands-reacting">Item : MiOS Scene Binding - Commands (Reacting)</a></li>
+    </ul>
+  </li>
+  <li><a href="#mios-binding-and-mios-action-examples">MiOS Binding and MiOS Action Examples</a>
+    <ul>
+      <li><a href="#examples-for-augmenting">Examples for Augmenting</a></li>
+      <li><a href="#examples-for-co-existing">Examples for Co-existing</a></li>
+      <li><a href="#examples-for-replacing">Examples for Replacing</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="configuration">Configuration</h2>
+
+<h3 id="mios-unit-configuration">MiOS Unit Configuration</h3>
+
+<p>In order for the MiOS openHAB Binding to talk to your MiOS Unit, it needs configuration indicating <em>where</em> it lives.  This information is specified within the <code class="highlighter-rouge">services/mios.cfg</code> file.</p>
+
+<p>Each MiOS Unit is identified by a <em>Unit name</em>, which is user-supplied.  This name will be used throughout the subsequent setup steps, and permits you to connect to more than one MiOS Unit that you might have within your environment.</p>
+
+<p>The binding will only talk you MiOS Units living on the same LAN as your MiOS Unit and/or are directly reachable from your LAN where openHAB is running.</p>
+
+<p>The MiOS gateway services, such as <code class="highlighter-rouge">http://cp.mios.com</code> and <code class="highlighter-rouge">http://home.getvera.com</code>, are not supported.</p>
+
+<p>🚨🔧 The simplest configuration entry for <code class="highlighter-rouge">openhab.cfg</code> contains a Unit name, <code class="highlighter-rouge">house</code>, and a hostname, <code class="highlighter-rouge">192.168.1.22</code>, to use for the MiOS Unit connection:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>house.host=192.168.1.22
+</code></pre></div></div>
+
+<p>If you have local DNS setup correctly, then use this form instead:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>house.host=ha.myhouse.example.com
+</code></pre></div></div>
+
+<p>Optionally, you can specify the <code class="highlighter-rouge">port</code> and <code class="highlighter-rouge">timeout</code> to use.  These default to <code class="highlighter-rouge">3480</code> and <code class="highlighter-rouge">60000</code> (ms) respectively.  These have reasonable defaults, so you shouldn’t need to make adjustments.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>house.host=ha.myhouse.example.com
+house.port=3480
+house.timeout=30000
+</code></pre></div></div>
+
+<p>You can also declare multiple MiOS Units, as illustrated in this example.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>houseUpstairs.host=ha-upstairs.myhouse.example.com
+houseDownstairs.host=ha-downstairs.myhouse.example.com
+</code></pre></div></div>
+
+<p>🔦 The MiOS Unit name is case-sensitive, and may only contain AlphaNumeric characters.  The leading character must be an [ASCII] alpha.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h3 id="transformations">Transformations</h3>
+
+<p>Internally, the MiOS Binding uses the openHAB <em>Transformation Service</em>.  The MiOS Binding supplies a number of pre-configured MAP Transformation for the common use-cases.</p>
+
+<p>🚨🔧 These transformations must be copied from the source-code repository:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>features/openhab-addons-external/src/main/resources/transform/mios*.map
+</code></pre></div></div>
+
+<p>and placed into your openHAB installation under the <code class="highlighter-rouge">transform</code> directory.</p>
+
+<p>If you have a Unix machine, the MAP files can also be downloaded using:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install subversion
+svn checkout https://github.com/openhab/openhab/trunk/features/openhab-addons-external/src/main/resources/transform/
+</code></pre></div></div>
+
+<p>🔦  These transformations can be readily extended by the user, for any use-cases that aren’t covered by those pre-configured &amp; shipped with the Binding.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h3 id="item-configuration">Item Configuration</h3>
+
+<p>The MiOS Binding provides a few sources of data from the target MiOS Unit.  These can be categorized into the following data values:</p>
+
+<ul>
+  <li>MiOS Device UPnP State Variables</li>
+  <li>MiOS Device Attributes</li>
+  <li>MiOS Scene Attributes</li>
+  <li>MiOS System Attributes</li>
+</ul>
+
+<p>The examples below illustrates the form of each.</p>
+
+<p>The general form of these bindings is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,&lt;miosThing&gt;{,command:&lt;commandTransform&gt;}{,in:&lt;inTransform&gt;}{,out:&lt;outTransform&gt;}"
+</code></pre></div></div>
+
+<p>In many cases, only a subset of these parameters need to be specified/used, with <em>internal defaults</em> applied for the common use-cases.</p>
+
+<p>The sections below describe the types of things that can be bound, in addition to the transformations that are permitted, and any default transformations that may be applied for you.</p>
+
+<h4 id="item-generation--mios-item-generator">Item Generation : MiOS Item Generator</h4>
+
+<p>🚨🔧The <a href="https://github.com/openhab/openhab1-addons/tree/master/bundles/binding/org.openhab.binding.mios/examples/scripts">MiOS Item Generator</a> is a free-standing tool that generates an initial openHAB Items file for a MiOS Unit.</p>
+
+<p>After the initial generation the openHAB Items file can be customized, or can be regenerated, as Devices are added/removed from the MiOS Unit.</p>
+
+<p>🔦 The Item Generator examples use a MiOS Unit name of “<code class="highlighter-rouge">house</code>”.  This name must match the MiOS Unit name declared in the <a href="#mios-unit-configuration">MiOS Unit configuration</a>.
+  Any name can be used, as long as they’re in sync across the configuration files.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="item--mios-device-binding---values-reading">Item : MiOS Device Binding - Values (Reading)</h4>
+
+<p>Device Bindings can be read-only, with data flowing from the MiOS Unit <em>into</em> openHAB.  Device Bindings have the form:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,device:&lt;deviceId&gt;/service/&lt;serviceURN&gt;/&lt;serviceVariable&gt;
+</code></pre></div></div>
+
+<p>or</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,device:&lt;deviceId&gt;/service/&lt;serviceAlias&gt;/&lt;serviceVariable&gt;
+</code></pre></div></div>
+
+<p>With examples like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number MiOSMemoryUsed         "Used [%.0f KB]"       (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/memoryUsed"}
+Number MiOSMemoryAvailable    "Available [%.0f KB]"  (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/memoryAvailable"}
+Number MiOSMemoryCached       "Cached [%.0f KB]"     (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/memoryCached"}
+Number MiOSMemoryBuffers      "Buffers [%.0f KB]"    (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/memoryBuffers"}
+String MiOSCMHLastRebootLinux "Reboot [%s]"          (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/cmhLastRebootTime"}
+String MiOSMemoryUsedString   "Memory Used [%s KB]"  (BindingDemo) {mios="unit:house,device:382/service/urn:cd-jackson-com:serviceId:SystemMonitor/memoryUsed"}
+</code></pre></div></div>
+
+<p>or, since we’ve internally Alias’d the UPnP <em>Service Id</em> that Chris used, you can also use:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number MiOSMemoryUsed         "Used [%.0f KB]"       (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/memoryUsed"}
+Number MiOSMemoryAvailable    "Available [%.0f KB]"  (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/memoryAvailable"}
+Number MiOSMemoryCached       "Cached [%.0f KB]"     (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/memoryCached"}
+Number MiOSMemoryBuffers      "Buffers [%.0f KB]"    (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/memoryBuffers"}
+String MiOSCMHLastRebootLinux "Reboot [%s]"          (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/cmhLastRebootTime"}
+String MiOSMemoryUsedString   "Memory Used [%s KB]"  (BindingDemo) {mios="unit:house,device:382/service/SystemMonitor/memoryUsed"}
+</code></pre></div></div>
+
+<p>Or you can replace the Weather information, from the openHAB <code class="highlighter-rouge">demo.items</code> file, with contents from the <a href="http://wunderground.com">Weather Underground</a> (WUI) <a href="http://forum.micasaverde.com/index.php/board,42.0.html">Plugin</a> from MiOS:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Weather_Temperature        "Outside Temperature [%.1f °F]" &lt;temperature&gt; (Weather_Chart) {mios="unit:house,device:318/service/TemperatureSensor1/CurrentTemperature"}
+</code></pre></div></div>
+
+<p>or, you can track the status of a Light Switch or perhaps a Dimmer:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number HallLightAsSwitch      "On/Off [%1d]"         (BindingDemo) {mios="unit:house,device:11/service/SwitchPower1/Status"}
+Number HallLightAsDimmer      "Level [%3d]"          (BindingDemo) {mios="unit:house,device:11/service/Dimming1/LoadLevelStatus"}  
+</code></pre></div></div>
+
+<p>The <em>serviceAliases</em> are built into the MiOS Binding and may be expanded over time, as feedback is received.  Each Alias is case-sensitive, and there can be multiple Aliases for a single UPnP ServiceId:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><em>Core</em> UPnP Service Id</th>
+      <th>Aliases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:SwitchPower1</code></td>
+      <td><code class="highlighter-rouge">SwitchPower1</code>, <code class="highlighter-rouge">Switch</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:Dimming1</code></td>
+      <td><code class="highlighter-rouge">Dimming1</code>,<code class="highlighter-rouge">Dimming</code>,<code class="highlighter-rouge">Dimmer</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:TemperatureSensor1</code></td>
+      <td><code class="highlighter-rouge">TemperatureSensor1</code>,<code class="highlighter-rouge">Temperature</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:HVAC_FanOperatingMode1</code></td>
+      <td><code class="highlighter-rouge">HVAC_FanOperatingMode1</code>,<code class="highlighter-rouge">HVACFan</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:HVAC_UserOperatingMode1</code></td>
+      <td><code class="highlighter-rouge">HVAC_UserOperatingMode1</code>,<code class="highlighter-rouge">HVACUser</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:TemperatureSetpoint1_Heat</code></td>
+      <td><code class="highlighter-rouge">TemperatureSetpoint1_Heat</code>,<code class="highlighter-rouge">Heat</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:TemperatureSetpoint1_Cool</code></td>
+      <td><code class="highlighter-rouge">TemperatureSetpoint1_Cool</code>,<code class="highlighter-rouge">Cool</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:AVTransport</code></td>
+      <td><code class="highlighter-rouge">AVTransport</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:RenderingControl</code></td>
+      <td><code class="highlighter-rouge">RenderingControl</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:DeviceProperties</code></td>
+      <td><code class="highlighter-rouge">DeviceProperties</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:HouseStatus1</code></td>
+      <td><code class="highlighter-rouge">HouseStatus1</code>,<code class="highlighter-rouge">HouseStatus</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:ContentDirectory</code></td>
+      <td><code class="highlighter-rouge">ContentDirectory</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:AudioIn</code></td>
+      <td><code class="highlighter-rouge">AudioIn</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:ZoneGroupTopology</code></td>
+      <td><code class="highlighter-rouge">ZoneGroupTopology</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><em>MiCasaVerde</em> UPnP Service Id</th>
+      <th>Aliases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:ZWaveDevice1</code></td>
+      <td><code class="highlighter-rouge">ZWaveDevice1</code>,<code class="highlighter-rouge">ZWaveDevice</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:ZWaveNetwork1</code></td>
+      <td><code class="highlighter-rouge">ZWaveNetwork1</code>,<code class="highlighter-rouge">ZWaveNetwork</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:HaDevice1</code></td>
+      <td><code class="highlighter-rouge">HaDevice1</code>,<code class="highlighter-rouge">HaDevice</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:SceneControllerLED1</code></td>
+      <td><code class="highlighter-rouge">SceneControllerLED1</code>,<code class="highlighter-rouge">SceneControllerLED</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:SecuritySensor1</code></td>
+      <td><code class="highlighter-rouge">SecuritySensor1</code>,<code class="highlighter-rouge">Security</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:HumiditySensor1</code></td>
+      <td><code class="highlighter-rouge">HumiditySensor1</code>,<code class="highlighter-rouge">Humidity</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:EnergyMetering1</code></td>
+      <td><code class="highlighter-rouge">EnergyMetering1</code>,<code class="highlighter-rouge">EnergyMeter</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:SceneController1</code></td>
+      <td><code class="highlighter-rouge">SceneController1</code>,<code class="highlighter-rouge">SceneController</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:HVAC_OperatingState1</code></td>
+      <td><code class="highlighter-rouge">HVAC_OperatingState1</code>,<code class="highlighter-rouge">HVACState</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-org:serviceId:SerialPort1</code></td>
+      <td><code class="highlighter-rouge">SerialPort1</code>,<code class="highlighter-rouge">Serial</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:DoorLock1</code></td>
+      <td><code class="highlighter-rouge">DoorLock1</code>,<code class="highlighter-rouge">DoorLock</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:AlarmPartition2</code></td>
+      <td><code class="highlighter-rouge">AlarmPartition2</code>,<code class="highlighter-rouge">Alarm</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:Camera1</code></td>
+      <td><code class="highlighter-rouge">Camera1</code>,<code class="highlighter-rouge">Camera</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:MiosUpdater1</code></td>
+      <td><code class="highlighter-rouge">MiosUpdater1</code>,<code class="highlighter-rouge">MiosUpdater</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:HouseModes1</code></td>
+      <td><code class="highlighter-rouge">HouseModes1</code>,<code class="highlighter-rouge">HouseModes</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<table>
+  <thead>
+    <tr>
+      <th><em>Plugin-specific</em> UPnP Service Id</th>
+      <th>Aliases</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">urn:cd-jackson-com:serviceId:SystemMonitor</code></td>
+      <td><code class="highlighter-rouge">SystemMonitor</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:cd-jackson-com:serviceId:Config</code></td>
+      <td><code class="highlighter-rouge">CDJConfig</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:garrettwp-com:serviceId:WPSwitch1</code></td>
+      <td><code class="highlighter-rouge">WPSwitch1</code>,<code class="highlighter-rouge">WPSwitch</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:watou-com:serviceId:Nest1</code></td>
+      <td><code class="highlighter-rouge">Nest1</code>,<code class="highlighter-rouge">Nest</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:watou-com:serviceId:NestStructure1</code></td>
+      <td><code class="highlighter-rouge">NestStructure1</code>,<code class="highlighter-rouge">NestStructure</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-micasaverde-com:serviceId:Weather1</code></td>
+      <td><code class="highlighter-rouge">Weather1</code>,<code class="highlighter-rouge">Weather</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:demo-ted-striker:serviceId:PingSensor1</code></td>
+      <td><code class="highlighter-rouge">PingSensor1</code>,<code class="highlighter-rouge">PingSensor</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:micasaverde-com:serviceId:Sonos1</code></td>
+      <td><code class="highlighter-rouge">Sonos1</code>,<code class="highlighter-rouge">Sonos</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:demo-paradox-com:serviceId:ParadoxSecurityEVO1</code></td>
+      <td><code class="highlighter-rouge">ParadoxSecurityEVO1</code>,<code class="highlighter-rouge">Paradox</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:macrho-com:serviceId:LiftMasterOpener1</code></td>
+      <td><code class="highlighter-rouge">LiftMasterOpener1</code>,<code class="highlighter-rouge">LiftMaster</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:directv-com:serviceId:DVR1</code></td>
+      <td><code class="highlighter-rouge">DirecTVDVR1</code>,<code class="highlighter-rouge">DirecTV</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:futzle-com:serviceId:UPnPProxy1</code></td>
+      <td><code class="highlighter-rouge">UPnPProxy1</code>,<code class="highlighter-rouge">UPnPProxy</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:rfxcom-com:serviceId:rfxtrx1</code></td>
+      <td><code class="highlighter-rouge">RfxtrxNew</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">upnp-rfxcom-com:serviceId:rfxtrx1</code></td>
+      <td><code class="highlighter-rouge">Rfxtrx</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-arduino-cc:serviceId:arduinonode1</code></td>
+      <td><code class="highlighter-rouge">ArduinoNode1</code>,<code class="highlighter-rouge">ArduinoNode</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-arduino-cc:serviceId:arduino1</code></td>
+      <td><code class="highlighter-rouge">Arduino1</code>,<code class="highlighter-rouge">Arduino</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:akbooer-com:serviceId:DataYours1</code></td>
+      <td><code class="highlighter-rouge">DataYours1</code>,<code class="highlighter-rouge">DataYours</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:richardgreen:serviceId:VeraAlert1</code></td>
+      <td><code class="highlighter-rouge">VeraAlert1</code>,<code class="highlighter-rouge">VeraAlert</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">urn:upnp-org:serviceId:VSwitch1</code></td>
+      <td><code class="highlighter-rouge">VSwitch1</code>,<code class="highlighter-rouge">VSwitch</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="item--mios-scene-binding---values-reading">Item : MiOS Scene Binding - Values (Reading)</h4>
+
+<p>Scene Bindings are read-only, with data flowing from the MiOS Unit <em>into</em> openHAB.  Scene Bindings have the form:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,scene:&lt;sceneId&gt;/&lt;attributeName&gt;
+</code></pre></div></div>
+
+<p>With examples like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   SceneGarageOpenId         (GScene) {mios="unit:house,scene:109/id"}
+Number   SceneGarageOpenStatus     (GScene) {mios="unit:house,scene:109/status"}
+String   SceneGarageOpenActive     (GScene) {mios="unit:house,scene:109/active"}
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h3 id="item--mios-system-binding">Item : MiOS System Binding</h3>
+
+<p>System Bindings are read-only, with data flowing from the MiOS Unit <em>into</em> openHAB.  System Bindings have the form:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,system:/&lt;attributeName&gt;
+</code></pre></div></div>
+
+<p>With examples like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   SystemZWaveStatus         "[%d]"  (GSystem) {mios="unit:house,system:/ZWaveStatus"}
+String   SystemLocalTime           "[%s]"  (GSystem) {mios="unit:house,system:/LocalTime"}
+String   SystemTimeStamp           "[%s]"  (GSystem) {mios="unit:house,system:/TimeStamp"}
+String   SystemUserDataDataVersion "[%s]"  (GSystem) {mios="unit:house,system:/UserData_DataVersion"}
+Number   SystemDataVersion         "[%d]"  (GSystem) {mios="unit:house,system:/DataVersion"} 
+String   SystemLoadTime            "[%s]"  (GSystem) {mios="unit:house,system:/LoadTime"} 
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="transformations-1">Transformations</h4>
+
+<p>Sometimes the value presented by the binding isn’t in the format that you require for your Item.  For these cases, the binding provides access to the standard openHAB <em>Transformation Service</em>.</p>
+
+<p>To utilize the <em>Transformation Service</em>, you need to declare additional settings on your bindings.</p>
+
+<p>These take the form of the <code class="highlighter-rouge">in:</code> and <code class="highlighter-rouge">out:</code> declarations at the end of the binding.  The <code class="highlighter-rouge">in:</code> declaration is used when values are received from the MiOS Unit, but before it places the value into openHAB.  The <code class="highlighter-rouge">out:</code> declaration is used when values are taken from the openHAB system for delivered to the MiOS Unit (in <em>Command</em> execution, for example).</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,&lt;miosThing&gt;{,in:&lt;inTransform&gt;}{,out:&lt;outTransform&gt;}"
+</code></pre></div></div>
+
+<p>As you can see by the above declaration, the input and output transformations are optional.  If they aren’t declared, then an internal, automated, transformation will be attempted based upon the Type of the Item being bound and, in some cases, the type of MiOS Attribute and/or State Variable involved in the binding.</p>
+
+<p>With examples like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String   SystemZWaveStatusString "ZWave Status String [%d]" (GSystem) {mios="unit:house,system:/ZWaveStatus,in:MAP(miosZWaveStatusIn.map)"}
+Contact  LivingRoomZoneTripped "Living Room (Zone 2) [%s]" &lt;contact&gt; (GContact,GWindow,GPersist) {mios="unit:house,device:117/service/SecuritySensor1/Tripped,in:MAP(miosContactIn.map)"}
+</code></pre></div></div>
+
+<p>and a map transform file like <code class="highlighter-rouge">transform/miosZWaveStatusIn.map</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1=Cool Bananas
+0=In the Dog house
+-=Your guess is as good as mine!
+</code></pre></div></div>
+
+<p>and a map transform file like <code class="highlighter-rouge">transform/miosSwitchIn.map</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1=OPEN
+0=CLOSED
+</code></pre></div></div>
+
+<p>Then as data flows from the MiOS system, data for these items will be <em>transformed</em> into the new String format for display and/or rule purposes.</p>
+
+<p>To ease the setup process, the common MiOS entities have internal defaults for these parameters.  This aids in keeping the binding string simple for typical use-case scenarios.  The defaults are as follows:</p>
+
+<p>For Devices, the defaults are as follows:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State Variable / Attribute</th>
+      <th>Default Parameters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:micasaverde-com:serviceId:DoorLock1/Status</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosLockCommand.map)</code><br /><code class="highlighter-rouge">in:MAP(miosSwitchIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosSwitchOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:watou-com:serviceId:Nest1/status</code></td>
+      <td><code class="highlighter-rouge">in:MAP(miosContactIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosContactOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:RenderingControl/Mute</code></td>
+      <td><code class="highlighter-rouge"> command:MAP(miosUPnPRenderingControlMuteCommand.map)</code><br /><code class="highlighter-rouge">in:MAP(miosSwitchIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosSwitchOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:micasaverde-com:serviceId:SecuritySensor1/Armed</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosArmedCommand.map)</code><br /><code class="highlighter-rouge">in:MAP(miosSwitchIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosSwitchOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:micasaverde-com:serviceId:SecuritySensor1/Tripped</code></td>
+      <td><code class="highlighter-rouge">in:MAP(miosContactIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosContactOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:SwitchPower1/Status</code></td>
+      <td><code class="highlighter-rouge">command:ON/OFF</code><br /><code class="highlighter-rouge">in:MAP(miosSwitchIn.map)</code><br /><code class="highlighter-rouge">out:MAP(miosSwitchOut.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:Dimming1/LoadLevelStatus</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosDimmerCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:TemperatureSetpoint1_Heat/CurrentSetpoint</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosTStatSetpointHeatCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:TemperatureSetpoint1_Cool/CurrentSetpoint</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosTStatSetpointCoolCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:HVAC_UserOperatingMode1/ModeStatus</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosTStatModeStatusCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:HVAC_FanOperatingMode1/Mode</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosTStatFanOperatingModeCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:RenderingControl/Volume</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosUPnPRenderingControlVolumeCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">service/urn:upnp-org:serviceId:AVTransport/TransportState</code></td>
+      <td><code class="highlighter-rouge">command:MAP(miosUPnPTransportStatePlayModeCommand.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">status</code></td>
+      <td><code class="highlighter-rouge">in:MAP(miosStatusIn.map)</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For Scenes, they look like:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State Variable / Attribute</th>
+      <th>Default Parameters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">active</code></td>
+      <td><code class="highlighter-rouge">in:MAP(miosSceneActiveIn.map)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">status</code></td>
+      <td><code class="highlighter-rouge">command:</code><br /><code class="highlighter-rouge">in:MAP(miosStatusIn.map)</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>For users wanting more advanced configurations, the openHAB <em>Transformation Service</em> provides a number of other transforms that may be of interest:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">JS(example.js)</code> - run the Javascript to perform the conversion.</li>
+  <li><code class="highlighter-rouge">MAP (example.map)</code> - Transform using the static, file-based, conversion.</li>
+  <li><code class="highlighter-rouge">XSLT(example.xslt)</code> - Transform using an XSLT transformation.</li>
+  <li><code class="highlighter-rouge">EXEC(...)</code> - Transform using the OS-level script.</li>
+  <li><code class="highlighter-rouge">REGEX(...)</code> - Transform using the supplied Regular Expression and use Capture markers <code class="highlighter-rouge">(</code> and <code class="highlighter-rouge">)</code> around the value to be extracted.</li>
+  <li><code class="highlighter-rouge">XPATH(...)</code> - Transform using the supplied XPath Expression.</li>
+</ul>
+
+<p>More reading on these is available in the openHAB Wiki.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h2 id="item-commands-reacting">Item Commands (Reacting)</h2>
+
+<p>By default, openHAB will send Commands to the Controls that have been outlined in the associated <code class="highlighter-rouge">sitemaps/*.sitemap</code> file.  The Commands sent depend upon the type of Control that’s been bound to the Item.</p>
+
+<p>Through observation, the following commands are commonly sent:</p>
+
+<ul>
+  <li>Switch - <code class="highlighter-rouge">ON</code>, <code class="highlighter-rouge">OFF</code> (When Bound to a <em>Switch</em> Item)</li>
+  <li>Switch - <code class="highlighter-rouge">TOGGLE</code> (When Bound to a <em>Contact</em> Item)</li>
+  <li>Switch - <code class="highlighter-rouge">ON</code> (When <code class="highlighter-rouge">autoupdate="false"</code> is also present in the binding list)</li>
+  <li>Slider - <code class="highlighter-rouge">INCREASE</code>, <code class="highlighter-rouge">DECREASE</code>, <em>&lt;PCTNumber&gt;</em></li>
+</ul>
+
+<p>MiOS Units don’t natively handle these Commands so a mapping step must occur before openHAB Commands can be executed by a MiOS Unit.  Additionally, since MiOS Bindings are read-only by default, we must add a parameter to indicate we want data to flow back to the MiOS Unit.</p>
+
+<p>The <code class="highlighter-rouge">command:</code> Binding parameter is used to specify that we want data to flow back to the MiOS unit as well as how to perform the required mapping.  For most Items bound using the MiOS Binding, internal defaults will take care of the correct <code class="highlighter-rouge">command:</code>, <code class="highlighter-rouge">in:</code> and <code class="highlighter-rouge">out:</code> parameters.  These need only be specified if you have something not handled by the internal defaults, or wish to override them with custom behavior.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h3 id="item--mios-device-binding---commands-reacting">Item : MiOS Device Binding - Commands (Reacting)</h3>
+
+<p>For MiOS Devices, this parameter can take one of several forms:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,device:&lt;deviceId&gt;/service/&lt;UPnPVariable&gt;,command:{&lt;CommandMap&gt;}"
+</code></pre></div></div>
+
+<p>With definitions as:</p>
+
+<p><em>&lt;CommandMap&gt;</em> is <em>&lt;blank&gt;</em> OR;<br />
+<em>&lt;CommandMap&gt;</em> is <em>&lt;InlineCommandMap&gt;</em> OR;<br />
+<em>&lt;CommandMap&gt;</em> is <em>&lt;openHABTransform&gt;</em> <code class="highlighter-rouge">(</code> <em>&lt;TransformParams&gt;</em> <code class="highlighter-rouge">)</code><br /></p>
+
+<p><em>&lt;InlineCommandMap&gt;</em> is <em>&lt;openHABCommandMap&gt;</em> { <code class="highlighter-rouge">|</code> <em>&lt;openHABCommandMap&gt;</em> }*<br />
+<em>&lt;openHABCommandMap&gt;</em> is <em>&lt;openHABCommand&gt;</em> { <code class="highlighter-rouge">=</code> <em>&lt;UPnPAction&gt;</em> }<br />
+<em>&lt;openHABCommand&gt;</em> is <code class="highlighter-rouge">ON</code>, <code class="highlighter-rouge">OFF</code>, <code class="highlighter-rouge">INCREASE</code>, <code class="highlighter-rouge">DECREASE</code>, etc or the special value <code class="highlighter-rouge">_defaultCommand</code><br /></p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>&lt;UPnPAction&gt;</em> is <em>&lt;ServiceName&gt;</em> <code class="highlighter-rouge">/</code> <em>&lt;ServiceAction&gt;</em> <code class="highlighter-rouge">(</code> { <em>&lt;ServiceParam&gt;</em> { <code class="highlighter-rouge">=</code> <em>&lt;ServiceValue&gt;</em></td>
+      <td><code class="highlighter-rouge">=</code> <em>&lt;BoundValue&gt;</em>} } <code class="highlighter-rouge">)</code> OR;<br /></td>
+    </tr>
+    <tr>
+      <td><em>&lt;UPnPAction&gt;</em> is <em>&lt;ServiceAlias&gt;</em> <code class="highlighter-rouge">/</code> <em>&lt;ServiceAction&gt;</em> <code class="highlighter-rouge">(</code> { <em>&lt;ServiceParam&gt;</em> { <code class="highlighter-rouge">=</code> <em>&lt;ServiceValue&gt;</em></td>
+      <td><code class="highlighter-rouge">=</code> <em>&lt;BoundValue&gt;</em>} } <code class="highlighter-rouge">)</code><br /></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><em>&lt;UPnPVariable&gt;</em> is <em>&lt;ServiceName&gt;</em> <code class="highlighter-rouge">/</code> <em>&lt;ServiceVariable&gt;</em> OR;<br />
+<em>&lt;UPnPVariable&gt;</em> is <em>&lt;ServiceAlias&gt;</em> <code class="highlighter-rouge">/</code> <em>&lt;ServiceVariable&gt;</em><br /></p>
+
+<p><em>&lt;openHABTransform&gt;</em> is <code class="highlighter-rouge">MAP</code>, <code class="highlighter-rouge">XSLT</code>, <code class="highlighter-rouge">EXEC</code>, <code class="highlighter-rouge">XPATH</code>, etc<br /></p>
+
+<p><em>&lt;BoundValue&gt;</em> is <code class="highlighter-rouge">?</code>, <code class="highlighter-rouge">??</code>, <code class="highlighter-rouge">?++</code>, <code class="highlighter-rouge">?--</code></p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="device-command-binding-examples-parameterless">Device Command Binding Examples (Parameterless)</h4>
+
+<p>In practice, when discrete commands are being sent by openHAB, the map is fairly simple.  In the examples listed below, the <code class="highlighter-rouge">*.map</code> files are provided and can be downloaded per the <a href="#transformations">Transformations</a> setup descriptions.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h5 id="a-switch">A Switch…</h5>
+
+<p>You might start off with an inline definition of the mapping:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   FamilyTheatreLightsStatus "Family Theatre Lights" (GSwitch) {mios="unit:house,device:13/service/SwitchPower1/Status,command:ON=SwitchPower1/SetTarget(newTargetValue=1)|OFF=SwitchPower1/SetTarget(newTargetValue=0),in:MAP(miosSwitchIn.map)"}
+</code></pre></div></div>
+
+<p>And then reduce it to the internal default map, but specify that you only want to handle <code class="highlighter-rouge">ON</code> and <code class="highlighter-rouge">OFF</code> Commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   FamilyTheatreLightsStatus "Family Theatre Lights" (GSwitch) {mios="unit:house,device:13/service/SwitchPower1/Status,command:ON|OFF,in:MAP(miosSwitchIn.map)"}
+</code></pre></div></div>
+
+<p>or, <em>more simply</em>, use the internal defaults altogether:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   FamilyTheatreLightsStatus "Family Theatre Lights" (GSwitch) {mios="unit:house,device:13/service/SwitchPower1/Status"}
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h5 id="an-armed-sensor">An Armed Sensor…</h5>
+
+<p>The simple version, using internal defaults for the <code class="highlighter-rouge">SecuritySensor1/Armed</code> service state of the Device:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   LivingRoomZoneArmed "Zone Armed [%s]" {mios="unit:house,device:117/service/SecuritySensor1/Armed"}
+</code></pre></div></div>
+
+<p>or the fully spelled out version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   LivingRoomZoneArmed "Zone Armed [%s]" {mios="unit:house,device:117/service/SecuritySensor1/Armed,command:MAP(miosArmedCommand.map),in:MAP(miosSwitchIn.map)"}
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h5 id="a-lock">A Lock…</h5>
+
+<p>The simple version, using internal defaults for the <code class="highlighter-rouge">DoorLock1/Status</code> service state of the Device:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   GarageDeadboltDStatus "Garage Deadbolt" (GLock,GSwitch) {mios="unit:house,device:189/service/DoorLock1/Status"}
+</code></pre></div></div>
+
+<p>or the full version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch   GarageDeadboltDStatus "Garage Deadbolt" (GLock,GSwitch) {mios="unit:house,device:189/service/DoorLock1/Status,command:MAP(miosLockCommand.map),in:MAP(miosSwitchIn.map)"}
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="device-command-binding-examples-parameterized">Device Command Binding Examples (Parameterized)</h4>
+
+<p>For some Commands, in order to pass this information to the remote MiOS Unit, we need to know either the current value of the <em>Item</em>, or we need to know the current value of the <em>Command</em>.</p>
+
+<p>To do this, we introduce the <em>&lt;BoundValue&gt;</em> parameter that, when present in the mapped-command, will be expanded prior to being sent to the MiOS Unit:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">?++</code> - Item Value + 10</li>
+  <li><code class="highlighter-rouge">?--</code> - Item Value - 10</li>
+  <li><code class="highlighter-rouge">?</code> - Item Value</li>
+  <li><code class="highlighter-rouge">??</code> - Command Value</li>
+</ul>
+
+<p>Additionally, since <em>&lt;PCTNumber&gt;</em> is just a value, it won’t match any of the entries in our Mapping file, so we introduce a magic key <code class="highlighter-rouge">_defaultCommand</code>.  We first attempt to do a literal mapping and, if that doesn’t find a match, we go look for this magic key and use it’s entry.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h5 id="a-dimmer-volume-control-speed-controlled-fan">A Dimmer, Volume Control, Speed controlled Fan…</h5>
+
+<p>The simple version, using internal defaults for the <code class="highlighter-rouge">Dimming1/LoadLevelStatus</code> service state of the Device:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer   MasterCeilingFanLoadLevelStatus "Master Ceiling Fan [%d]%" &lt;slider&gt; (GDimmer) {mios="unit:house,device:101/service/Dimming1/LoadLevelStatus"}
+</code></pre></div></div>
+
+<p>or the full version:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer   MasterCeilingFanLoadLevelStatus "Master Ceiling Fan [%d]%" &lt;slider&gt; (GDimmer) {mios="unit:house,device:101/service/Dimming1/LoadLevelStatus,command:MAP(miosDimmerCommand.map)"}
+</code></pre></div></div>
+
+<p>Since Dimmer Items in openHAB can be sent <code class="highlighter-rouge">INCREASE</code>, <code class="highlighter-rouge">DECREASE</code> or <em>&lt;PCTNumber&gt;</em> as the command, the mapping file must account for both the static commands (<code class="highlighter-rouge">INCREASE</code>, <code class="highlighter-rouge">DECREASE</code>) as well as the possibility of a <em>Command Value</em> being sent.</p>
+
+<p>The <code class="highlighter-rouge">miosDimmerCommand.map</code> file has a definition that handles this situation:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>INCREASE=urn:upnp-org:serviceId:Dimming1/SetLoadLevelTarget(newLoadlevelTarget=?++)
+DECREASE=urn:upnp-org:serviceId:Dimming1/SetLoadLevelTarget(newLoadlevelTarget=?--)
+    _defaultCommand=urn:upnp-org:serviceId:Dimming1/SetLoadLevelTarget(newLoadlevelTarget=??)
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h5 id="a-thermostat">A Thermostat…</h5>
+
+<p>A Thermostat is composed of a number of pieces.  Each piece must be first bound to openHAB Items, and then a number of mappings must be put in place.</p>
+
+<p>Since all the components of a Thermostat have reasonable internal defaults, we’ll use the simpler form for our Item definitions in openHAB:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Thermostat Upstairs */
+Number   ThermostatUpstairsId "ID [%d]" {mios="unit:house,device:335/id"}
+String   ThermostatUpstairsDeviceStatus "Device Status [%s]" (GThermostatUpstairs) {mios="unit:house,device:335/status"}
+Number   ThermostatUpstairsCurrentTemperature "Upstairs Temperature [%.1f °F]" &lt;temperature&gt; (GThermostatUpstairs, GTemperature) {mios="unit:house,device:335/service/TemperatureSensor1/CurrentTemperature"}
+Number   ThermostatUpstairsHeatCurrentSetpoint "Heat Setpoint [%.1f °F]" &lt;temperature&gt; (GThermostatUpstairs) {mios="unit:house,device:335/service/TemperatureSetpoint1_Heat/CurrentSetpoint"}
+Number   ThermostatUpstairsCoolCurrentSetpoint "Cool Setpoint [%.1f °F]" &lt;temperature&gt; (GThermostatUpstairs) {mios="unit:house,device:335/service/TemperatureSetpoint1_Cool/CurrentSetpoint"}
+String   ThermostatUpstairsFanMode "Fan Mode" (GThermostatUpstairs) {mios="unit:house,device:335/service/HVAC_FanOperatingMode1/Mode"}
+String   ThermostatUpstairsFanStatus "Fan Status [%s]" (GThermostatUpstairs) {mios="unit:house,device:335/service/HVAC_FanOperatingMode1/FanStatus"}
+String   ThermostatUpstairsModeStatus "Mode Status" (GThermostatUpstairs) {mios="unit:house,device:335/service/HVAC_UserOperatingMode1/ModeStatus"}
+String   ThermostatUpstairsModeState "Mode State [%s]" (GThermostatUpstairs) {mios="unit:house,device:335/service/HVAC_OperatingState1/ModeState"}
+Number   ThermostatUpstairsBatteryLevel "Battery Level [%d] %" (GThermostatUpstairs) {mios="unit:house,device:335/service/HaDevice1/BatteryLevel"}
+DateTime ThermostatUpstairsBatteryDate "Battery Date [%1$ta, %1$tm/%1$te %1$tR]" &lt;calendar&gt; (GThermostatUpstairs) {mios="unit:house,device:335/service/HaDevice1/BatteryDate"}
+DateTime ThermostatUpstairsLastUpdate "Last Update [%1$ta, %1$tm/%1$te %1$tR]" &lt;calendar&gt; (GThermostatUpstairs) {mios="unit:house,device:335/service/HaDevice1/LastUpdate"}
+</code></pre></div></div>
+
+<p>and these need to be paired with similar items in the <code class="highlighter-rouge">*.sitemap</code> file:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Text     item=ThermostatUpstairsCurrentTemperature {
+    Text     item=ThermostatHumidityUpstairsCurrentLevel
+    Setpoint item=ThermostatUpstairsHeatCurrentSetpoint minValue=40 maxValue=80
+    Setpoint item=ThermostatUpstairsCoolCurrentSetpoint minValue=40 maxValue=80
+    Switch   item=ThermostatUpstairsFanMode mappings=[ContinuousOn="On", Auto="Auto"]
+    Text     item=ThermostatUpstairsFanStatus
+    Switch   item=ThermostatUpstairsModeStatus mappings=[HeatOn="Heat", CoolOn="Cool", AutoChangeOver="Auto", Off="Off"]
+    Text     item=ThermostatUpstairsModeState
+    Text     item=ThermostatUpstairsBatteryLevel
+    Text     item=ThermostatUpstairsBatteryDate
+}
+</code></pre></div></div>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h3 id="item--mios-scene-binding---commands-reacting">Item : MiOS Scene Binding - Commands (Reacting)</h3>
+
+<p>MiOS Scenes are parameterless.  They can only be requested to execute, and they provide status updates as attribute values during their execution (<code class="highlighter-rouge">status</code>) or if they’re currently active (<code class="highlighter-rouge">active</code>).</p>
+
+<p>For MiOS Scenes, the <code class="highlighter-rouge">command:</code> parameter has a simpler form:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mios="unit:&lt;unitName&gt;,scene:&lt;sceneId&gt;{/&lt;SceneAttribute&gt;},command:{&lt;CommandMap&gt;}{,in:&lt;inTransform&gt;}"
+</code></pre></div></div>
+
+<p>With definitions as:</p>
+
+<p><em>&lt;CommandList&gt;</em> is <em>&lt;blank&gt;</em> OR;<br />
+<em>&lt;CommandList&gt;</em> is <em>&lt;openHABCommand&gt;</em> { <code class="highlighter-rouge">|</code> <em>&lt;openHABCommand&gt;</em> }*</p>
+
+<p><em>&lt;openHABCommand&gt;</em> is <code class="highlighter-rouge">ON</code>, <code class="highlighter-rouge">OFF</code>, <code class="highlighter-rouge">INCREASE</code>, <code class="highlighter-rouge">DECREASE</code>, <code class="highlighter-rouge">TOGGLE</code> etc</p>
+
+<table>
+  <tbody>
+    <tr>
+      <td><em>&lt;SceneAttribute&gt;</em> is <code class="highlighter-rouge">status</code></td>
+      <td><code class="highlighter-rouge">active</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h4 id="scene-command-binding-examples">Scene Command Binding Examples</h4>
+
+<p>In general Scenes tend to look like:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String   SceneMasterClosetLights "Master Closet Lights Scene" &lt;sofa&gt; (GScene) {mios="unit:house,scene:109/status, autoupdate="false"}
+</code></pre></div></div>
+
+<p>Or if you want the Scene executed upon receipt of <code class="highlighter-rouge">ON</code> or <code class="highlighter-rouge">TOGGLE</code> Commands:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String   SceneMasterClosetLights "Master Closet Lights Scene" &lt;sofa&gt; (GScene) {mios="unit:house,scene:109/status,command:ON|TOGGLE", autoupdate="false"}
+</code></pre></div></div>
+
+<p>🔦 Here we’ve added an additional configuration to the binding declaration, <code class="highlighter-rouge">autoupdate="false"</code>, to ensure the Switch no longer has the <code class="highlighter-rouge">ON</code> and <code class="highlighter-rouge">OFF</code> States automatically managed.  In openHAB, this declaration ensures that the UI rendition appears like a Button.</p>
+
+<p><a href="#configuration">Back to Table of Contents</a></p>
+
+<h2 id="mios-binding-and-mios-action-examples">MiOS Binding and MiOS Action Examples</h2>
+
+<p>Users typically have configurations falling into one or more of the following categories, which will be used to outline any subsequent examples:</p>
+
+<ul>
+  <li>Augmenting - openHAB Rules that “add” to existing MiOS Scenes.</li>
+  <li>Co-existing - Replacing MiOS Scenes with openHAB Rules, but keeping the Devices.</li>
+  <li>
+    <table>
+      <tbody>
+        <tr>
+          <td>Replacing - wholesale replacement of MiOS functionality (Devices</td>
+          <td>Scenes) with openHAB equivalent functionality.</td>
+        </tr>
+      </tbody>
+    </table>
+  </li>
+</ul>
+
+<h3 id="examples-for-augmenting">Examples for Augmenting</h3>
+
+<h4 id="adding-notifications-and-text-to-speech-tts-when-a-house-alarm-is-triggered">Adding Notifications and Text-to-Speech (TTS) when a House Alarm is triggered</h4>
+
+<p>MiOS has a standardized definition that most Alarm Panel plugins adhere to (DSC, Ademco, GE Caddx, Paradox, etc).  This exposes a standardized UPnP-style attribute, <code class="highlighter-rouge">AlarmPartition2/Alarm</code>, for the Alarm System being in active <em>Alarm</em> mode.  It has the value <code class="highlighter-rouge">None</code> or <code class="highlighter-rouge">Alarm</code>.</p>
+
+<p>Here we check the specific transition between those two states as we want to avoid being re-notified, when the <code class="highlighter-rouge">Uninitialized</code> » <code class="highlighter-rouge">Alarm</code> state transition occurs, should openHAB restart.</p>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">String   AlarmArea1Alarm "Alarm Area 1 Alarm [%s]" (GAlarmArea1) {mios="unit:house,device:228/service/AlarmPartition2/Alarm"}
+String   AlarmArea1ArmMode "Alarm Area 1 Arm Mode [%s]" (GAlarmArea1) {mios="unit:house,device:228/service/AlarmPartition2/ArmMode"}
+String   AlarmArea1LastUser "Alarm Area 1 Last User [%s]" (GAlarmArea1) {mios="unit:house,device:228/service/AlarmPartition2/LastUser"}
+</code></pre>
+
+<p>Rule declaration (<code class="highlighter-rouge">house-alarm.rules</code>):</p>
+
+<pre><code class="language-xtend">rule "Alarm Panel Breach"
+when
+	Item AlarmArea1Alarm changed to Active
+then
+	pushNotification("House-Alarm", "House in ALARM!! Notification")
+	say("Alert: House in Alarm Notification")
+end
+
+rule "Alarm Panel Armed (Any)"
+when
+	Item AlarmArea1ArmMode changed from Disarmed to Armed
+then
+	say("Warning! House Armed Notification")
+
+	// Perform deferred notifications, as the User.state may not have been processed yet.
+	createTimer(now.plusSeconds(1)) [
+		logDebug("house-alarm", "Alarm-Panel-Armed-Any Deferred notification")
+		var user = AlarmArea1LastUser.state as StringType
+
+		if (user == null) user = "user unknown"
+		pushNotification("House-Armed", "House Armed Notification (" + user + ")")
+	]
+end
+
+rule "Alarm Panel Disarmed (Fully)"
+when
+	Item AlarmArea1ArmMode changed from Armed to Disarmed
+then
+	say("Warning! House Disarmed Notification")
+
+	// Perform deferred notifications, as the User.state may not have been processed yet. 
+	createTimer(now.plusSeconds(1)) [
+		logDebug("house-alarm", "Alarm-Panel-Disarmed-Fully Deferred notification")
+		var user = AlarmArea1LastUser.state as StringType
+
+		if (user == null) user = "user unknown"
+		pushNotification("House-Disarmed", "House Disarmed Notification (" + user + ")")
+	]
+end
+</code></pre>
+
+<h4 id="adding-notifications-when-battery-powered-devices-are-running-low">Adding Notifications when Battery Powered devices are running low</h4>
+
+<p>MiOS Systems standardize Battery Level indications (0-100%) for all battery-power devices (Alarm sensors, Z-Wave Door Locks, etc) and Nest uses a simple “ok” String to represent the Battery Status.</p>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">Number   GarageDeadboltBatteryLevel "Garage Deadbolt Battery Level [%d %%]" &lt;energy&gt; (GBattery,GPersist) {mios="unit:house,device:189/service/HaDevice1/BatteryLevel"}
+Number   HallCupboardZoneBatteryLevel "Hall Cupboard Battery Level [%d %%]" &lt;energy&gt; (GBattery,GPersist) {mios="unit:house,device:301/service/HaDevice1/BatteryLevel"}
+Number   EXTFrontMotionZoneBatteryLevel "EXT Front Motion Zone Battery Level [%d %%]" &lt;energy&gt; (GBattery,GPersist) {mios="unit:house,device:302/service/HaDevice1/BatteryLevel"}
+Number   EXTRearMotionZoneBatteryLevel "EXT Rear Motion Battery Level [%d %%]" &lt;energy&gt; (GBattery,GPersist) {mios="unit:house,device:396/service/HaDevice1/BatteryLevel"}
+String   NestSmokeGuestBedroom_battery_health "Guest Bedroom Smoke Battery Health [%s]" &lt;energy&gt;       (GSmoke,GBattery,GPersist) {nest="&lt;[smoke_co_alarms(Guest Bedroom).battery_health]"}
+</code></pre>
+
+<p>Rule declaration (<code class="highlighter-rouge">house-battery.rules</code>):</p>
+
+<pre><code class="language-xtend">val Number LOW_BATTERY_THRESHOLD = 60 // for Z-Wave Battery devices
+val String OK_BATTERY_STATE = 'ok'    // for Nest Thermostat and Protect devices
+
+rule "Low Battery Alert"
+when
+        Time cron "0 0 8,12,20 * * ?"
+then
+        GBattery?.members.filter(s|s.state instanceof DecimalType).forEach[item |
+                var Number level = item.state as Number
+                var String name = item.name
+
+                if (level &lt; LOW_BATTERY_THRESHOLD) {
+                        logInfo('Low-Battery-Alert', 'Bad: ' + name)
+                        pushNotification("Low-Battery-Alert", "House Low Battery Notification (" + name + ")")
+                } else {
+                        logDebug('Low-Battery-Alert', 'Good: ' + name)
+                }
+        ]
+
+        GBattery?.members.filter(s|s.state instanceof StringType).forEach[item |
+                var String level = (item.state as StringType).toString
+                var String name = item.name
+
+                if (level != OK_BATTERY_STATE) {
+                        logInfo('Low-Battery-Alert', 'Bad: ' + name)
+                        pushNotification("Low-Battery-Alert", "House Low Battery Notification (" + name + ")")
+                } else {
+                        logDebug('Low-Battery-Alert', 'Good: ' + name)
+                }
+        ] 
+end
+</code></pre>
+
+<h3 id="examples-for-co-existing">Examples for Co-existing</h3>
+
+<h4 id="when-motion-detected-turn-lights-on-off-after-5-minutes">When Motion detected turn Lights ON (OFF after 5 minutes)</h4>
+
+<p>This is typical of a declarative Scene in MiOS.  In this case, the lights are left on for 5 minutes, and if new motion is detected in that time, another 5 minute clock is started.</p>
+
+<p>The logging can be removed as needed.</p>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">Group GSwitch All
+
+Switch   MasterClosetLightsStatus "Master Closet Lights" (GSwitch) {mios="unit:house,device:391/service/SwitchPower1/Status"}
+Switch   MasterClosetFibaroLightStatus "Master Closet Fibaro Light" (GSwitch) {mios="unit:house,device:431/service/SwitchPower1/Status"}
+</code></pre>
+
+<p>Rule declaration (<code class="highlighter-rouge">house-master.rules</code>):</p>
+
+<pre><code class="language-xtend">import org.openhab.model.script.actions.Timer
+import java.util.concurrent.locks.ReentrantLock
+
+val int MCL_DELAY_SECONDS = 300
+var Timer mclTimer = null
+var ReentrantLock mclLock = new ReentrantLock(false)
+
+rule "Master Closet Motion"
+when
+	Item MasterClosetZoneTripped changed from CLOSED to OPEN
+then
+	logInfo("house-master", "Master-Closet-Motion Timer lights ON")
+	sendCommand(MasterClosetLightsStatus, ON)
+	sendCommand(MasterClosetFibaroLightStatus, ON)
+
+	mclLock.lock
+	if (mclTimer != null) {
+		mclTimer.cancel
+		logInfo("house-master", "Master-Closet-Motion Timer Cancel")
+	}
+
+	mclTimer = createTimer(now.plusSeconds(MCL_DELAY_SECONDS)) [
+		logInfo("house-master", "Master-Closet-Motion Timer lights OFF")
+		sendCommand(MasterClosetLightsStatus, OFF)
+		sendCommand(MasterClosetFibaroLightStatus, OFF)
+	]
+	mclLock.unlock
+end
+</code></pre>
+
+<h4 id="when-motion-detected-turn-lights-on-if-nighttime-and-off-after-5-minutes">When Motion detected turn Lights ON (if nighttime) and OFF after 5 minutes</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>A variant of the above, this Rule has parts that only run at Nighttime.  Here we use the [[Astro Binding</td>
+      <td>Astro-Binding]] to compute daylight hours.  See the Astro Binding configuration for details on how to setup that Binding’s <code class="highlighter-rouge">configuration/openhab.cfg</code> entry.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Item declaration (<code class="highlighter-rouge">sunrise.items</code>):</p>
+
+<pre><code class="language-xtend">DateTime ClockDaylightStart "Daylight Start [%1$tH:%1$tM]" &lt;calendar&gt; {astro="planet=sun, type=daylight, property=start, offset=-30"}
+DateTime ClockDaylightEnd   "Daylight End [%1$tH:%1$tM]" &lt;calendar&gt;   {astro="planet=sun, type=daylight, property=end, offset=+30"}
+</code></pre>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">Switch   KitchenSinkLightStatus "Kitchen Sink Light" (GSwitch) {mios="unit:house,device:99/service/SwitchPower1/Status"}
+Switch   KitchenPantryLightStatus "Kitchen Pantry Light" (GSwitch) {mios="unit:house,device:425/service/SwitchPower1/Status"}
+Switch   PowerHotWaterPumpStatus "Power Hot Water Pump" (GSwitch) {mios="unit:house,device:303/service/SwitchPower1/Status"}
+Switch   KitchenPantryZoneArmed "Zone Armed [%s]" {mios="unit:house,device:426/service/SecuritySensor1/Armed"}
+</code></pre>
+
+<p>Rule declaration (<code class="highlighter-rouge">house-kitchen.rules</code>):</p>
+
+<pre><code class="language-xtend">import org.openhab.model.script.actions.Timer
+import java.util.concurrent.locks.ReentrantLock
+
+val int K_DELAY_SECONDS = 240
+var Timer kTimer = null
+var ReentrantLock kLock = new ReentrantLock(false)
+
+rule "Kitchen Motion"
+when
+	Item KitchenMotionZoneTripped changed from CLOSED to OPEN
+then
+	logInfo("house-kitchen", "Kitchen-Motion Timer ON")
+
+	// Ignore this Rule if the Motion sensor is bypassed.
+	if (KitchenMotionZoneArmed.state != ON) {
+		logInfo("house-kitchen", "Kitchen-Motion Not Armed, skipping")
+		return void
+	}
+
+	val DateTime daylightStart = new DateTime((ClockDaylightStart.state as DateTimeType).getCalendar)
+	val DateTime daylightEnd = new DateTime((ClockDaylightEnd.state as DateTimeType).getCalendar)
+
+	var boolean night = daylightStart.isAfterNow || daylightEnd.isBeforeNow
+
+	if (night) {
+		logInfo("house-kitchen", "Kitchen-Motion Night Time")
+		sendCommand(KitchenSinkLightStatus, ON)
+		sendCommand(KitchenPantryLightStatus, ON)
+	}
+
+	logInfo("house-kitchen", "Kitchen-Motion Any Time")
+	sendCommand(PowerHotWaterPumpStatus, ON)
+
+	kLock.lock
+	if (kTimer != null) {
+		kTimer.cancel
+		logInfo("house-kitchen", "Kitchen-Motion Timer Cancel")
+	}
+
+	kTimer = createTimer(now.plusSeconds(K_DELAY_SECONDS)) [
+		logInfo("house-kitchen", "Kitchen-Motion Timer OFF")
+		sendCommand(KitchenSinkLightStatus, OFF)
+		sendCommand(KitchenPantryLightStatus, OFF)
+		sendCommand(PowerHotWaterPumpStatus, OFF)
+	]
+	kLock.unlock
+end
+</code></pre>
+
+<h4 id="when-openingclosing-windows-keep-nest-away-state-in-sync-to-save-energy">When opening/closing Windows keep Nest <em>Away</em> state in sync to save energy.</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>This originally ran as a Scene on the MiOS Unit, but was replaced with an openHAB Rule.  The Items are a mix of Items, from an Alarm system running on MiOS, and the [[Nest Binding</td>
+      <td>Nest-Binding]], running locally.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Explicitly check for the <code class="highlighter-rouge">OPEN</code> » <code class="highlighter-rouge">CLOSED</code> state transition, to avoid issues when openHAB restarts (<code class="highlighter-rouge">Uninitialized</code> » <code class="highlighter-rouge">OPEN</code>) or when <em>duplicate</em> values come in from the MiOS System (<code class="highlighter-rouge">OPEN</code> » <code class="highlighter-rouge">OPEN</code>).</p>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">Group GPersist (All)
+Group GWindow "All Windows [%d]" &lt;contact&gt; (GContact)
+
+Contact  LivingRoomZoneTripped "Living Room (Zone 2) [MAP(en.map):%s]" &lt;contact&gt;        (GWindow,GPersist) {mios="unit:house,device:117/service/SecuritySensor1/Tripped"}
+Contact  KitchenZoneTripped "Kitchen (Zone 3) [MAP(en.map):%s]" &lt;contact&gt;               (GWindow,GPersist) {mios="unit:house,device:118/service/SecuritySensor1/Tripped"}
+Contact  FamilyRoomZoneTripped "Family Room (Zone 5) [MAP(en.map):%s]" &lt;contact&gt;        (GWindow,GPersist) {mios="unit:house,device:120/service/SecuritySensor1/Tripped"}
+Contact  MasterBedroomZoneTripped "Master Bedroom (Zone 8) [MAP(en.map):%s]" &lt;contact&gt;  (GWindow,GPersist) {mios="unit:house,device:122/service/SecuritySensor1/Tripped"}
+Contact  Bedroom3ZoneTripped "Bedroom #3 (Zone 9) [MAP(en.map):%s]" &lt;contact&gt;           (GWindow,GPersist) {mios="unit:house,device:123/service/SecuritySensor1/Tripped"}
+Contact  Bedroom2ZoneTripped "Bedroom #2 (Zone 10) [MAP(en.map):%s]" &lt;contact&gt;          (GWindow,GPersist) {mios="unit:house,device:124/service/SecuritySensor1/Tripped"}
+Contact  GuestBathZoneTripped "Guest Bathroom (Zone 11) [MAP(en.map):%s]" &lt;contact&gt;     (GWindow,GPersist) {mios="unit:house,device:125/service/SecuritySensor1/Tripped"}
+Contact  StairsWindowsZoneTripped "Stairs Windows (Zone 12) [MAP(en.map):%s]" &lt;contact&gt; (GWindow,GPersist) {mios="unit:house,device:126/service/SecuritySensor1/Tripped"}
+Contact  MasterBath1ZoneTripped "Master Bath (Zone 19) [MAP(en.map):%s]" &lt;contact&gt;      (GWindow,GPersist) {mios="unit:house,device:133/service/SecuritySensor1/Tripped"}
+Contact  MasterBath2ZoneTripped "Master Bath (Zone 20) [MAP(en.map):%s]" &lt;contact&gt;      (GWindow,GPersist) {mios="unit:house,device:134/service/SecuritySensor1/Tripped"}
+Contact  MasterBath3ZoneTripped "Master Bath (Zone 21) [MAP(en.map):%s]" &lt;contact&gt;      (GWindow,GPersist) {mios="unit:house,device:135/service/SecuritySensor1/Tripped"}
+</code></pre>
+
+<p>Rule declaration (house.rules):</p>
+
+<pre><code class="language-xtend">rule "Windows Closed (all)
+when
+	Item Bedroom2ZoneTripped changed from OPEN to CLOSED or
+	Item Bedroom3ZoneTripped changed from OPEN to CLOSED or
+	Item FamilyRoomZoneTripped changed from OPEN to CLOSED or
+	Item GuestBathZoneTripped changed from OPEN to CLOSED or
+	Item KitchenZoneTripped changed from OPEN to CLOSED or
+	Item LivingRoomZoneTripped changed from OPEN to CLOSED or
+	Item MasterBath1ZoneTripped changed from OPEN to CLOSED or
+	Item MasterBath2ZoneTripped changed from OPEN to CLOSED or
+	Item MasterBath3ZoneTripped changed from OPEN to CLOSED or
+	Item MasterBedroomZoneTripped changed from OPEN to CLOSED or
+	Item StairsWindowsZoneTripped changed from OPEN to CLOSED
+then
+	if (GWindow.members.filter(s|s.state==OPEN).size == 0) {
+		say("Attention: All Windows closed.")
+		sendCommand(Nest_away, "home")
+	}
+end
+
+rule "Windows Opened (any)"
+when
+	Item Bedroom2ZoneTripped changed from CLOSED to OPEN or
+	Item Bedroom3ZoneTripped changed from CLOSED to OPEN or
+	Item FamilyRoomZoneTripped changed from CLOSED to OPEN or
+	Item GuestBathZoneTripped changed from CLOSED to OPEN or
+	Item KitchenZoneTripped changed from CLOSED to OPEN or
+	Item LivingRoomZoneTripped changed from CLOSED to OPEN or
+	Item MasterBath1ZoneTripped changed from CLOSED to OPEN or
+	Item MasterBath2ZoneTripped changed from CLOSED to OPEN or
+	Item MasterBath3ZoneTripped changed from CLOSED to OPEN or
+	Item MasterBedroomZoneTripped changed from CLOSED to OPEN or
+	Item StairsWindowsZoneTripped changed from CLOSED to OPEN
+then
+	if (GWindow.members.filter(s|s.state==OPEN).size == 1) {
+		say("Attention: First Window opened.")
+		sendCommand(Nest_away, "away")
+	}
+end
+</code></pre>
+
+<h3 id="examples-for-replacing">Examples for Replacing</h3>
+
+<h4 id="publishing-data-to-smartenergygroupscom-seg">Publishing data to SmartEnergyGroups.com (SEG)</h4>
+
+<table>
+  <tbody>
+    <tr>
+      <td>I wrote [[this script</td>
+      <td>http://forum.micasaverde.com/index.php/topic,31212.0.html]] to publish data from MiOS to [[SmartEnergyGroups (SEG)</td>
+      <td>http://smartenergygroups.com]] for analysis.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Here’s what you do to replace it with openHAB functionality:</p>
+
+<p>Item declaration (<code class="highlighter-rouge">house.items</code>):</p>
+
+<pre><code class="language-xtend">Group GPersist (All)
+
+Group GMonitor (All)
+Group GMonitorTemperature (GMonitor)
+Group GMonitorHumidity (GMonitor)
+Group GMonitorPower (GMonitor)
+Group GMonitorEnergy (GMonitor)
+
+Number   WeatherTemperatureCurrentTemperature "Outside [%.1f °F]" &lt;temperature&gt;          (GPersist,GMonitorTemperature) {mios="unit:house,device:318/service/TemperatureSensor1/CurrentTemperature"}
+Number   WeatherLowTemperatureCurrentTemperature "Outside Low [%.1f °F]" &lt;temperature&gt;   (GPersist,GMonitorTemperature) {mios="unit:house,device:319/service/TemperatureSensor1/CurrentTemperature"}
+Number   WeatherHighTemperatureCurrentTemperature "Outside High [%.1f °F]" &lt;temperature&gt; (GPersist,GMonitorTemperature) {mios="unit:house,device:320/service/TemperatureSensor1/CurrentTemperature"}
+Number   WeatherHumidityCurrentLevel "Outside Humidity [%d %%]"                          (GPersist,GMonitorHumidity)    {mios="unit:house,device:321/service/HumiditySensor1/CurrentLevel"}
+Number   NestTStatUpstairs_humidity "Humidity [%d %%]"                                   (GPersist,GMonitorHumidity)    {nest="&lt;[thermostats(Upstairs).humidity]"}
+Number   NestTStatUpstairs_ambient_temperature_f "Upstairs [%.1f °F]" &lt;temperature&gt;      (GPersist,GMonitorTemperature) {nest="&lt;[thermostats(Upstairs).ambient_temperature_f]"}
+Number   NestTStatDownstairs_humidity "Humidity [%d %%]"                                 (GPersist,GMonitorHumidity)    {nest="&lt;[thermostats(Downstairs).humidity]"}
+Number   NestTStatDownstairs_ambient_temperature_f "Downstairs [%.1f °F]" &lt;temperature&gt;  (GPersist,GMonitorTemperature) {nest="&lt;[thermostats(Downstairs).ambient_temperature_f]"}
+</code></pre>
+
+<p>Persistence declaration (<code class="highlighter-rouge">rrd4j.persist</code>):</p>
+
+<pre><code class="language-xtend">Strategies {
+	// for rrd charts, we need a cron strategy
+	everyMinute : "0 * * * * ?"
+	everyDay : "0 0 23 * * ?"
+}
+
+Items {
+	SystemDataVersion, SystemUserDataDataVersion, SystemTimeStamp, SystemLocalTime, SystemLoadTime : strategy = everyDay
+	GPersist* : strategy = everyChange, everyMinute, restoreOnStartup
+	GTemperature* : strategy = everyMinute, restoreOnStartup
+}
+</code></pre>
+
+<p>Rule declaration (<code class="highlighter-rouge">seg.rules</code>):</p>
+
+<pre><code class="language-xtend">import java.util.Locale
+
+rule "Log Data to SmartEnergyGroups (SEG)"
+when
+	Time cron "0 0/2 * * * ?" or
+	Item NestTStatUpstairs_ambient_temperature_f changed or
+	Item NestTStatDownstairs_ambient_temperature_f changed or
+	Item WeatherTemperatureCurrentTemperature changed or
+	Item WeatherLowTemperatureCurrentTemperature changed or
+	Item WeatherHighTemperatureCurrentTemperature changed or
+	Item NestTStatUpstairs_humidity changed or
+	Item NestTStatDownstairs_humidity changed or
+	Item WeatherHumidityCurrentLevel changed
+then
+	val String SEG_SITE = "&lt;yourSiteKeyHere&gt;"
+	val String SEG_URL = "http://api.smartenergygroups.com/api_sites/stream"
+	val String NODE_NAME = "openHAB"
+	val Locale LOCALE = Locale::getDefault
+
+	var String segData = ""
+
+	GMonitorTemperature?.members.forEach(item|
+		segData = segData + String::format(LOCALE, "(t_%s %s)", item.name, (item.state as Number).toString)
+	)
+
+	GMonitorHumidity?.members.forEach(item |
+		segData = segData + String::format(LOCALE, "(h_%s %s)", item.name, (item.state as Number).toString)
+	)
+
+	GMonitorPower?.members.forEach(item |
+		segData = segData + String::format(LOCALE, "(p_%s %s)", item.name, (item.state as Number).toString)
+	)
+
+	GMonitorEnergy?.members.forEach(item |
+		segData = segData + String::format(LOCALE, "(e_%s %s)", item.name, (item.state as Number).toString)
+	)
+
+	segData = String::format("(site %s (node %s ? %s))", SEG_SITE, NODE_NAME, segData)
+	sendHttpPostRequest(SEG_URL, "application/x-www-form-urlencoded", segData)
+end
+</code></pre>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

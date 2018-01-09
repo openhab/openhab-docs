@@ -1,0 +1,1417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Weather - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/addons/bindings/weather1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../addons/bindings/weather1/readme.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/addons/bindings/weather1/readme.html">v2.2</a></li>
+      <li><a href="/v2.1/addons/bindings/weather1/readme.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="weather-binding">Weather Binding</h1>
+
+<p>The Weather binding collects current and forecast weather data from different providers with a free weather API. You can also display weather data with highly customizable html layouts and icons.</p>
+
+<p><img src="https://farm4.staticflickr.com/3946/15407522168_7ea34d51e1_o.png" alt="" /></p>
+
+<p>There is also a binding specifically openHAB 2 <a href="http://docs.openhab.org/addons/bindings/yahooweather/readme.html">here</a> for Yahoo! Weather.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#binding-configuration">Binding Configuration</a>
+    <ul>
+      <li><a href="#api-keys-for-weather-providers">API Keys for Weather Providers</a></li>
+      <li><a href="#location-configuration">Location Configuration</a></li>
+      <li><a href="#configuration-example">Configuration Example</a></li>
+    </ul>
+  </li>
+  <li><a href="#item-configuration">Item Configuration</a>
+    <ul>
+      <li><a href="#number-formatting">Number formatting</a></li>
+      <li><a href="#units">Units</a></li>
+      <li><a href="#unit-conversion">Unit conversion</a></li>
+      <li><a href="#examples">Examples</a></li>
+      <li><a href="#forecast">Forecast</a></li>
+      <li><a href="#data-accuracy">Data accuracy</a></li>
+      <li><a href="#common-id">Common Id</a></li>
+    </ul>
+  </li>
+  <li><a href="#html-layouts">Html Layouts</a>
+    <ul>
+      <li><a href="#html-layout-gallery">HTML Layout Gallery</a></li>
+    </ul>
+  </li>
+  <li><a href="#debugging-and-tracing">Debugging and Tracing</a></li>
+  <li><a href="#troubleshooting">Troubleshooting</a></li>
+  <li><a href="#downloads">Downloads</a></li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>The binding can be configured in the file <code class="highlighter-rouge">services/weather.cfg</code>.</p>
+
+<h3 id="api-keys-for-weather-providers">API Keys for Weather Providers</h3>
+
+<p>Before you can use a weather provider, you need to register a free apikey on the website of the provider.</p>
+
+<p>The apikey for the different weather providers, at least one must be specified.</p>
+
+<blockquote>
+  <p><a href="http://hamweather.com">Hamweather</a> has two apikeys (client_id, secret_id).
+<a href="https://weather.yahoo.com">Yahoo</a> does not need an apikey.</p>
+</blockquote>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>apikey.ForecastIo</td>
+      <td>API key for <a href="http://forecast.io">ForecastIo</a></td>
+    </tr>
+    <tr>
+      <td>apikey.OpenWeatherMap</td>
+      <td>API key for <a href="http://openweathermap.org">OpenWeatherMap</a></td>
+    </tr>
+    <tr>
+      <td>apikey.WorldWeatherOnline</td>
+      <td>API key for <a href="http://worldweatheronline.com">WorldWeatherOnline</a></td>
+    </tr>
+    <tr>
+      <td>apikey.Wunderground</td>
+      <td>API key for <a href="http://wunderground.com">Wunderground</a></td>
+    </tr>
+    <tr>
+      <td>apikey.Hamweather</td>
+      <td><code class="highlighter-rouge">client_id</code> for <a href="http://hamweather.com">Hamweather</a></td>
+    </tr>
+    <tr>
+      <td>apikey2.Hamweather</td>
+      <td><code class="highlighter-rouge">client_secret</code> for <a href="http://hamweather.com">Hamweather</a></td>
+    </tr>
+    <tr>
+      <td>apikey.Meteoblue</td>
+      <td>API key for <a href="https://www.meteoblue.com/">MeteoBlue</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="location-configuration">Location Configuration</h3>
+
+<p>Now you can specify your location(s). Each location has a <code class="highlighter-rouge">&lt;locationId&gt;</code> that can be referenced from an item.</p>
+
+<p>You can specify multiple locations by repeating these properties with different values for <code class="highlighter-rouge">&lt;locationId&gt;</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.name</td>
+      <td>the name of the location, useful for displaying in html layouts (optional)</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.latitude</td>
+      <td>the latitude the weather is retrieved from (not required for Yahoo)</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.longitude</td>
+      <td>the longitude the weather is retrieved from (not required for Yahoo)</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.woeid</td>
+      <td>required for Yahoo, the numeric Where On Earth ID, found at end of your weather.yahoo.com URL</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.provider</td>
+      <td>reference to a provider name</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.language</td>
+      <td>the language of the weather condition text (see provider homepage for supported languages)</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.updateInterval</td>
+      <td>the interval in minutes the weather is retrieved</td>
+    </tr>
+    <tr>
+      <td>location.<code class="highlighter-rouge">&lt;locationId&gt;</code>.units</td>
+      <td>whether to use metric (SI) or imperial (US) values; may not be supported by all providers</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Important:</strong> Each weather provider has a daily request limit for the free weather API. Also the weather does not change quickly, so please choose a moderate updateInterval. The request limit can be found on the weather provider website.</p>
+
+<h3 id="configuration-example">Configuration Example</h3>
+
+<p>Let’s display the current temperature and humidity in Salzburg (AT) from Yahoo.</p>
+
+<p>services/weather.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>location.home.woeid=547826
+location.home.provider=Yahoo
+location.home.language=de
+location.home.updateInterval=10
+</code></pre></div></div>
+
+<p>yourweather.items</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home, type=temperature, property=current"}
+Number   Humidity      "Humidity [%d %%]"        {weather="locationId=home, type=atmosphere, property=humidity"}
+</code></pre></div></div>
+
+<p>For Yahoo, you don’t need an apikey, but you do need a woeid (which you can find as the numeric digits at the end of your weather.yahoo.com URL). The location has the locationId <em>home</em> and updates the weather data every 10 minutes.</p>
+
+<p>In the items file, you reference the <code class="highlighter-rouge">&lt;locationId&gt;</code> and the type and property to display (see below for more).</p>
+
+<p>Let’s say you want to switch to another provider, ForecastIo. All you have to do is register your apikey, configure it, supply your latitude and longitude, and change the provider in your location:</p>
+
+<p>The apikeys below are not registered and are for example purposes only.</p>
+
+<p>services/weather.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apikey.ForecastIo=sdf7g69fdgdfg679dfg69sdgkj
+location.home.latitude=47.8011
+location.home.longitude=13.0448
+location.home.provider=ForecastIo
+</code></pre></div></div>
+
+<p>Now the weather data is retrieved from ForecastIo, your item file does not need to be changed! Let’s say you want to have the current temperature from ForecastIo and the humidity from OpenWeatherMap.</p>
+
+<p>services/weather.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>apikey.ForecastIo=sdf7g69fdgdfg679dfg69sdgkj
+apikey.OpenWeatherMap=766967gdfgdfgs9g76dsfg5ds76g521
+
+location.home-FIO.latitude=47.8011
+location.home-FIO.longitude=13.0448
+location.home-FIO.provider=ForecastIo
+location.home-FIO.language=de
+location.home-FIO.updateInterval=10
+
+location.home-OWM.latitude=47.8011
+location.home-OWM.longitude=13.0448
+location.home-OWM.provider=OpenWeatherMap
+location.home-OWM.language=de
+location.home-OWM.updateInterval=10
+</code></pre></div></div>
+
+<p>yourweather.items</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Temperature   "Temperature [%.2f °C]"   {weather="locationId=home-FIO, type=temperature, property=current"}
+Number   Humidity      "Humidity [%d %%]"        {weather="locationId=home-OWM, type=atmosphere, property=humidity"}
+</code></pre></div></div>
+
+<p>Or you want to see the current temperature if there is a difference between providers and which one gives the best result for your location. This can be done with all available type/properties of course.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Temperature_FIO   "Temperature-FIO [%.2f °C]"   {weather="locationId=home-FIO, type=temperature, property=current"}
+Number   Temperature_OWM   "Temperature-OWM [%.2f °C]"   {weather="locationId=home-OWM, type=temperature, property=current"}
+</code></pre></div></div>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<ul>
+  <li><strong>type</strong> <code class="highlighter-rouge">atmosphere</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">humidity, visibility, visibility, pressure, pressure, pressureTrend, ozone, uvIndex</code></li>
+    </ul>
+  </li>
+  <li><strong>type</strong> <code class="highlighter-rouge">clouds</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">percent</code></li>
+    </ul>
+  </li>
+  <li><strong>type</strong> <code class="highlighter-rouge">condition</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">text, observationTime, id, lastUpdate, commonId</code></li>
+    </ul>
+  </li>
+  <li><strong>type</strong> <code class="highlighter-rouge">precipitation</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">rain, rain, snow, snow, probability</code></li>
+    </ul>
+  </li>
+  <li><strong>type</strong> <code class="highlighter-rouge">temperature</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">current, min, max, feel, dewpoint, minMax</code></li>
+    </ul>
+  </li>
+  <li><strong>type</strong> <code class="highlighter-rouge">wind</code>
+    <ul>
+      <li><strong>property</strong> <code class="highlighter-rouge">speed, direction, degree, gust, chill</code></li>
+    </ul>
+  </li>
+</ul>
+
+<p>Important: type and property are case sensitive! So enter the values exactly as shown.</p>
+
+<p>Every weather provider sends different data, so not all properties are set. If you want to know which provider sends which properties, switch the binding to <a href="#debugging-and-tracing">DEBUG Mode</a> (see below).</p>
+
+<h3 id="number-formatting">Number formatting</h3>
+
+<p>Each item can be formatted with the parameters roundingMode and scale. Supported roundingModes and what they do can be found in the <a href="http://docs.oracle.com/javase/7/docs/api/java/math/RoundingMode.html">JavaDocs</a>. Default values are roundingMode=half_up and scale=2.</p>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// default
+String   Temperatur_MinMax   "Min/Max [%s °C]"   {weather="locationId=home, forecast=0, type=temperature, property=minMax"}
+&gt; Temperatur_MinMax state updated to 8.91/17.25
+
+// scale set to 0
+String   Temperatur_MinMax   "Min/Max [%s °C]"   {weather="locationId=home, forecast=0, type=temperature, property=minMax, scale=0"}
+&gt; Temperatur_MinMax state updated to 9/17
+
+// roundingMode and scale set
+String   Temperatur_MinMax   "Min/Max [%s °C]"   {weather="locationId=home, forecast=0, type=temperature, property=minMax, roundingMode=down, scale=0"}
+&gt; Temperatur_MinMax state updated to 8/17
+</code></pre></div></div>
+
+<h3 id="units">Units</h3>
+
+<p>Some providers (eg. ForecastIO) allow passing a units parameter in method calls in order to specify which units (metric (SI) or imperial (US)) should be used by returned data.  Not all providers support this, however.</p>
+
+<p>Starting with the 1.10.0 release of the binding, the configuration contains a new setting to allow this to be user configurable:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>#location.&lt;locationId1&gt;.units=
+</code></pre></div></div>
+
+<p>The values used for this setting will depend on the provider being used. As an example, for ForecastIO, this allows retrieving the current conditions in either <code class="highlighter-rouge">si</code> (metric) or <code class="highlighter-rouge">us</code> (imperial) units:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Light rain on Sunday through Wednesday, with temperatures bottoming out at 29°C on Monday.
+Light rain on Sunday through Wednesday, with temperatures bottoming out at 84°F on Monday.
+</code></pre></div></div>
+
+<h3 id="unit-conversion">Unit conversion</h3>
+
+<p>The default units are:</p>
+
+<ul>
+  <li>speed: kilometer per hour</li>
+  <li>temperature: celsius</li>
+  <li>precipitation: rain in millimeters and snow in centimeter</li>
+  <li>pressure: millibar</li>
+</ul>
+
+<p>You can convert numeric values to other units with the <code class="highlighter-rouge">unit</code> parameter. Example to convert the temperature from Celsius to Fahrenheit:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Temperature_F    "Temperature [%.2f °F]"   {weather="locationId=home, type=temperature, property=current, unit=fahrenheit"}
+</code></pre></div></div>
+
+<p>All possible conversions can be found in the following Items section.</p>
+
+<h3 id="examples">Examples</h3>
+
+<p>If you copy and paste, don’t forget to change the locationId to the one you specified.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// atmosphere
+Number   Humidity    	  "Humidity [%d %%]"  	  {weather="locationId=home, type=atmosphere, property=humidity"}
+Number   Visibility    	  "Visibility [%.2f km]"  {weather="locationId=home, type=atmosphere, property=visibility"}
+Number   Visibility_Mph   "Visibility [%.2f mi]"  {weather="locationId=home, type=atmosphere, property=visibility, unit=mph"}
+Number   Pressure    	  "Pressure [%.2f mb]"    {weather="locationId=home, type=atmosphere, property=pressure"}
+Number   Pressure_Inches  "Pressure [%.2f in]"    {weather="locationId=home, type=atmosphere, property=pressure, unit=inches"}
+String   Pressure_Trend   "Pressuretrend [%s]"    {weather="locationId=home, type=atmosphere, property=pressureTrend"}
+Number   Ozone            "Ozone [%d ppm]"    	  {weather="locationId=home, type=atmosphere, property=ozone"}
+Number   UV_Index         "UV Index"              {weather="locationId=home, type=atmosphere, property=uvIndex, scale=0"}
+
+// clouds
+Number   Clouds   "Clouds [%.0f %%]"   {weather="locationId=home, type=clouds, property=percent"}
+
+// condition
+String   Condition        "Condition [%s]"      {weather="locationId=home, type=condition, property=text"}
+String   Condition_ID     "Condition id [%s]"   {weather="locationId=home, type=condition, property=id"}
+DateTime ObservationTime  "Observation time [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"   {weather="locationId=home, type=condition, property=observationTime"}
+DateTime LastUpdate       "Last update [%1$td.%1$tm.%1$tY %1$tH:%1$tM]"        {weather="locationId=home, type=condition, property=lastUpdate"}
+String   CommonId         "Common id [%s]"      {weather="locationId=home, type=condition, property=commonId"}
+
+// precipitation
+Number   Rain          "Rain [%.2f mm/h]"   {weather="locationId=home, type=precipitation, property=rain"}
+Number   Rain_Inches   "Rain [%.2f in/h]"   {weather="locationId=home, type=precipitation, property=rain, unit=inches"}
+Number   Snow          "Snow [%.2f mm/h]"   {weather="locationId=home, type=precipitation, property=snow"}
+Number   Snow_Inches   "Snow [%.2f in/h]"   {weather="locationId=home, type=precipitation, property=snow, unit=inches"}
+Number   Precip_Probability   "Precip probability [%d %%]"   {weather="locationId=home, type=precipitation, property=probability"}
+// new total property in 1.8, only Wunderground
+Number   Precip_Total         "Precip total [%d mm]"   {weather="locationId=home, type=precipitation, property=total"}
+Number   Precip_Total_Inches  "Precip total [%d in]"   {weather="locationId=home, type=precipitation, property=total, unit=inches"}
+
+// temperature
+Number   Temperature      "Temperature [%.2f °C]"       {weather="locationId=home, type=temperature, property=current"}
+Number   Temperature_F    "Temperature [%.2f °F]"       {weather="locationId=home, type=temperature, property=current, unit=fahrenheit"}
+Number   Temp_Feel        "Temperature feel [%.2f °C]"  {weather="locationId=home, type=temperature, property=feel"}
+Number   Temp_Feel_F      "Temperature feel [%.2f °F]"  {weather="locationId=home, type=temperature, property=feel, unit=fahrenheit"}
+Number   Temp_Dewpoint    "Dewpoint [%.2f °C]"          {weather="locationId=home, type=temperature, property=dewpoint"}
+Number   Temp_Dewpoint_F  "Dewpoint [%.2f °F]"          {weather="locationId=home, type=temperature, 
+property=dewpoint, unit=fahrenheit"}
+// min and max values only available in forecasts
+Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, type=temperature, property=min"}
+Number   Temp_Min_F       "Temperature min [%.2f °F]"   {weather="locationId=home, type=temperature, property=min, unit=fahrenheit"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, type=temperature, property=max"}
+Number   Temp_Max_F       "Temperature max [%.2f °F]"   {weather="locationId=home, type=temperature, property=max, unit=fahrenheit"}
+String   Temp_MinMax      "Min/Max [%s °C]"             {weather="locationId=home, type=temperature, property=minMax"}
+String   Temp_MinMax_F    "Min/Max [%s °F]"             {weather="locationId=home, type=temperature, property=minMax, unit=fahrenheit"}
+
+// wind
+Number   Wind_Speed           "Windspeed [%.2f km/h]"    {weather="locationId=home, type=wind, property=speed"}
+Number   Wind_Speed_Beaufort  "Windspeed Beaufort [%d]"  {weather="locationId=home, type=wind, property=speed, unit=beaufort"}
+Number   Wind_Speed_Knots     "Windspeed [%.2f kn]"      {weather="locationId=home, type=wind, property=speed, unit=knots"}
+Number   Wind_Speed_Mps       "Windspeed [%.2f mps]"     {weather="locationId=home, type=wind, property=speed, unit=mps"}
+Number   Wind_Speed_Mph       "Windspeed [%.2f mph]"     {weather="locationId=home, type=wind, property=speed, unit=mph"}
+String	 Wind_Direction       "Wind direction [%s]"      {weather="locationId=home, type=wind, property=direction"}
+Number   Wind_Degree          "Wind degree [%.0f °]"     {weather="locationId=home, type=wind, property=degree"}
+Number   Wind_Gust            "Wind gust [%.2f km/h]"    {weather="locationId=home, type=wind, property=gust"}
+Number   Wind_Gust_Beaufort   "Wind gust Beaufort [%d]"  {weather="locationId=home, type=wind, property=gust, unit=beaufort"}
+Number   Wind_Gust_Knots      "Wind gust [%.2f kn]"      {weather="locationId=home, type=wind, property=gust, unit=knots"}
+Number   Wind_Gust_Mps        "Wind gust [%.2f mps]"     {weather="locationId=home, type=wind, property=gust, unit=mps"}
+Number   Wind_Gust_Mph        "Wind gust [%.2f mph]"     {weather="locationId=home, type=wind, property=gust, unit=mph"}
+Number   Wind_Chill           "Wind chill [%.2f °C]"     {weather="locationId=home, type=wind, property=chill"}
+Number   Wind_Chill_F         "Wind chill [%.2f °F]"     {weather="locationId=home, type=wind, property=chill, unit=fahrenheit"}
+
+// weather station (only Wunderground and Hamweather), needs version 1.7 or greater of the binding
+String   Station_Name         "Station Name [%s]"        {weather="locationId=home, type=station, property=name"}
+String   Station_Id           "Station Id [%s]"          {weather="locationId=home, type=station, property=id"}
+Number   Station_Latitude     "Station Latitude [%.6f]"  {weather="locationId=home, type=station, property=latitude, scale=6"}
+Number   Station_Longitude    "Station Longitude [%.6f]" {weather="locationId=home, type=station, property=longitude, scale=6"}
+
+</code></pre></div></div>
+
+<h3 id="forecast">Forecast</h3>
+
+<p>All bindings can also be used for forecasts. You only have to add the forecast day in the item.<br />
+Display tomorrows min and max temperature forecast:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Temp_Min         "Temperature min [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=min"}
+Number   Temp_Max         "Temperature max [%.2f °C]"   {weather="locationId=home, forecast=1, type=temperature, property=max"}
+</code></pre></div></div>
+
+<p>0 = todays forecast, 1 = tomorrows forecast, and so on.</p>
+
+<p>Each provider sends different forecast days.</p>
+
+<ul>
+  <li>ForecastIo: 8 days (0-7)</li>
+  <li>OpenWeatherMap: 5 days (0-4)</li>
+  <li>WorldWeatherOnline: 5 days (0-4)</li>
+  <li>Wunderground: 10 days (0-9)</li>
+  <li>Hamweather: 5 days (0-4)</li>
+  <li>Yahoo: 10 days (0-9)</li>
+</ul>
+
+<p><strong>Note:</strong> If you omit the forecast property, the <em>current</em> conditions are shown, if you specify forecast=0, the forecast for <em>today</em> is shown.</p>
+
+<h3 id="data-accuracy">Data accuracy</h3>
+
+<p>It highly depends on your location and which weather provider you choose. Some providers updates the data in realtime, others only once in a hour. You have to test yourself and find the best provider for your location.</p>
+
+<h3 id="common-id">Common Id</h3>
+
+<p>The common id property <code class="highlighter-rouge">(locationId=..., type=condition, property=commonId)</code> is an attempt to have a unique weather id for all providers. This is useful for displaying weather icons and a short condition text message. The documentation from the different weather providers are partially poor, hence the mapping is partially a guess and needs to be optimized with your help. If you think the commonId/weather icon is wrong, just <a href="mailto:gerrieg.openhab@icloud.com">contact me</a>.<br />
+If you want to see the current mapping, you can open the file <code class="highlighter-rouge">common-id-mappings.xml</code> in the binding jar.</p>
+
+<p>Example to use a common condition text message:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String   CommonCondition   "[MAP(weather_en.map):%s]"   {weather="locationId=..., type=condition, property=commonId"}
+</code></pre></div></div>
+
+<p>Example map files for english and german are in the <a href="#download">download section</a>.</p>
+
+<h2 id="html-layouts">Html Layouts</h2>
+
+<p>The binding provides a url to serve highly customizable html layouts for displaying weather data and icons. You have to add some folders/files to the openhab webapps folder:<br />
+<img src="https://farm6.staticflickr.com/5602/14973200854_0b374490a5_o.png" alt="" /></p>
+
+<p>The weather-data folder is the root, the images folder contains the different iconsets with 32 weather icons. In the layouts folder are the layout html files. You can add as many html layout files you want. You can use tokens to map weather data into the html layout.</p>
+
+<p><strong>Tokens:</strong></p>
+
+<ul>
+  <li>Weather: <code class="highlighter-rouge">${weather:TYPE.PROPERTY(FORMATTER)}</code></li>
+  <li>Forecast: <code class="highlighter-rouge">${forecast(DAY):TYPE.PROPERTY(FORMATTER)}</code></li>
+  <li>LocationConfig: <code class="highlighter-rouge">${config:CONFIG_PROPERTY}</code></li>
+  <li>RequestParameter: <code class="highlighter-rouge">${param:PARAMETER_NAME}</code></li>
+</ul>
+
+<p><strong>Example:</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// locationConfig data from openhab.cfg
+${config:name}
+${config:latitude}
+${config:longitude}
+
+// weather and forecast data directly from the weather objects
+${weather:atmosphere.humidity}
+${weather:temperature.current}
+${weather:temperature.current(%.1f)}
+${weather:condition.observationTime(%1$td.%1$tm.%1$tY %1$tH:%1$™)}
+${forecast(0):temperature.minMax(%.0f)}
+
+// request parameter
+${param:iconset}
+</code></pre></div></div>
+
+<p><strong>Unit conversion</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>${weather:temperature.current[fahrenheit]} 
+${weather:temperature.current(%.1f)[fahrenheit]} 
+${weather:wind.speed[mph]} 
+</code></pre></div></div>
+
+<p>See <code class="highlighter-rouge">example.html</code> in the layouts folder. You can download the weather-data folder in the <a href="#download">download section</a>.</p>
+
+<p><strong>Using the layout file:</strong></p>
+
+<p>You must specify a locationId and a layout parameter, iconset is optional (default=colorful)<br />
+Either directly:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://HOST:PORT/weather?locationId=home&amp;layout=example&amp;iconset=colorful
+</code></pre></div></div>
+
+<p>or in a sitemap:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Webview url="/weather?locationId=home&amp;layout=example&amp;iconset=colorful" height=7
+</code></pre></div></div>
+
+<p>(This does not work for OpenHAB2 and this page needs an update for how to use this on OH2)</p>
+
+<h3 id="html-layout-gallery">HTML Layout Gallery</h3>
+
+<p>I would like to create a weather layout gallery. If you have a great looking html weather layout you want it to share, just <a href="mailto:gerrieg.openhab@icloud.com">send it to me</a> an i will put it on this wiki page.</p>
+
+<h2 id="debugging-and-tracing">Debugging and Tracing</h2>
+
+<p>The root logger for this binding is <code class="highlighter-rouge">org.openhab.binding.weather</code>. If you want to see which data a provider sends, set the level to DEBUG.</p>
+
+<p>If you want to see even more, set the level to <code class="highlighter-rouge">TRACE</code> to also see the communication with the provider.</p>
+
+<h2 id="troubleshooting">Troubleshooting</h2>
+
+<p>I assume, the binding is installed.</p>
+
+<ul>
+  <li>In the openHAB logfile you must see for each configured apikey one line with</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ProviderConfig[providerName=xx, apiKey=xxx]
+</code></pre></div></div>
+
+<p>and for each configured location</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LocationConfig[providerName=xxx, language=xx, updateInterval=xx, latitude=xx.xxxx, longitude=xx.xxxx, woeid=xxx, locationId=xxx, name=xxx]
+</code></pre></div></div>
+
+<p>If these entries do not exist, there is a problem in your weather.cfg. A common problem is a space in front of the config properties.</p>
+
+<ul>
+  <li>If the items are still not populated, switch the binding to <a href="#debugging-and-tracing">DEBUG mode</a> and start openHab. Now you should see for every weather item a entry in your logfile:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Adding item ... with WeatherBindingConfig[locationId=..., type=..., property=..., roundingMode=..., scale=...]
+</code></pre></div></div>
+
+<p>If you don’t see these entries, check your items file.</p>
+
+<ul>
+  <li>
+    <p>As mentioned earlier, every weather provider sends different data and not all available binding properties are set. If you want to know which provider sends which properties to optimize your items, switch the binding to <a href="#debugging-and-tracing">DEBUG mode</a>. At every refresh the weather data is logged to the logfile.</p>
+  </li>
+  <li>
+    <p>important note if you’re installing from a debian based distribution: openhab-addon-action-weather and openhab-addon-binding-weather are not compatible with each other and will silently fail (at least since 1.7.1). If you made sure your openhab.cfg and your items are fine but you still don’t see any <code class="highlighter-rouge">ProviderConfig</code> lines you might wan’t to check the installed openhab addons.</p>
+  </li>
+</ul>
+
+<h2 id="downloads">Downloads</h2>
+
+<ul>
+  <li><a href="https://drive.google.com/file/d/0Bw7zjCgsXYnHQTlGcndMR19DSUk/view?usp=sharing">weather-data</a> with icons and example layout file</li>
+  <li><a href="https://drive.google.com/file/d/0Bw7zjCgsXYnHbnVIdkFGaVZIbHM/view?usp=sharing">map-files</a> with short condition text <strong>for the commonId property</strong></li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

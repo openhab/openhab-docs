@@ -1,0 +1,1768 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Homematic - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/homematic/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/homematic/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/homematic/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/homematic/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="homematic-binding">Homematic Binding</h1>
+
+<p>This is the binding for the <a href="http://www.eq-3.de/">eQ-3 Homematic Solution</a>.
+This binding allows you to integrate, view, control and configure all Homematic devices in the openHAB environment.</p>
+
+<h2 id="supported-bridges">Supported Bridges</h2>
+
+<p>All gateways which provides the Homematic BIN- or XML-RPC API:</p>
+<ul>
+  <li>CCU 1+2</li>
+  <li><a href="https://www.homegear.eu">Homegear</a></li>
+  <li><a href="https://github.com/alexreinert/piVCCU">piVCCU</a></li>
+  <li><a href="https://github.com/leonsio/YAHM">YAHM</a></li>
+  <li><a href="http://www.eq-3.de/downloads.html?kat=download&amp;id=125">Windows BidCos service</a></li>
+  <li><a href="https://github.com/eq-3/occu">OCCU</a></li>
+</ul>
+
+<p>The Homematic IP Access Point does not support this API and can’t be used with this binding.
+But you can control Homematic IP devices with a CCU2 with at least firmware 2.17.15.</p>
+
+<p>These ports are used by the binding by default to communicate <strong>TO</strong> the gateway:</p>
+<ul>
+  <li>RF components: 2001</li>
+  <li>WIRED components: 2000</li>
+  <li>HMIP components: 2010</li>
+  <li>CUxD: 8701</li>
+  <li>TclRegaScript: 8181</li>
+  <li>Groups: 9292</li>
+</ul>
+
+<p>And <strong>FROM</strong> the gateway to openHab:</p>
+<ul>
+  <li>XML-RPC: 9125</li>
+  <li>BIN-RPC: 9126</li>
+</ul>
+
+<p><strong>Note:</strong> The binding tries to identify the gateway with XML-RPC and uses henceforth:</p>
+
+<ul>
+  <li><strong>CCU</strong>
+    <ul>
+      <li><strong>RF</strong>: BIN-RPC</li>
+      <li><strong>WIRED</strong>: BIN-RPC</li>
+      <li><strong>HMIP</strong>: XML-RPC</li>
+      <li><strong>CUxD</strong>: BIN-RPC (CUxD version &gt;= 1.6 required)</li>
+      <li><strong>Groups</strong>: XML-RPC</li>
+    </ul>
+  </li>
+  <li><strong>Homegear</strong>
+    <ul>
+      <li>BIN-RPC</li>
+    </ul>
+  </li>
+  <li><strong>Other</strong>
+    <ul>
+      <li>XML-RPC</li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="supported-things">Supported Things</h2>
+
+<p>All devices connected to a Homematic gateway.
+All required openHAB metadata are generated during device discovery.
+With Homegear or a CCU, variables and scripts are supported too.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>Gateway discovery is only available for Homegear, you need at least 0.6.x for gateway discovery. For all other gateways you have to manually add a bridge in a things file.<br />
+Device discovery is supported for all gateways.</p>
+
+<p>The binding has a gateway type autodetection, but sometimes a gateway does not clearly notify the type.
+If you are using a YAHM for example, you have to manually set the gateway type in the bride configuration to CCU.</p>
+
+<p>If autodetection can not identify the gateway, the binding uses the default gateway implementation.
+The difference is, that variables, scripts and device names are not supported, everything else is the same.</p>
+
+<h2 id="bridge-configuration">Bridge Configuration</h2>
+
+<p>There are several settings for a bridge:</p>
+<ul>
+  <li>
+    <p><strong>gatewayAddress</strong> (required)<br />
+Network address of the Homematic gateway</p>
+  </li>
+  <li>
+    <p><strong>gatewayType</strong><br />
+Hint for the binding to identify the gateway type (auto|ccu|noccu) (default = auto).</p>
+  </li>
+  <li>
+    <p><strong>callbackHost</strong><br />
+Callback network address of the openHAB server, default is auto-discovery</p>
+  </li>
+  <li>
+    <p><strong>callbackPort DEPRECATED, use binCallbackPort and xmlCallbackPort</strong><br />
+Callback port of the openHAB server, default is 9125 and counts up for each additional bridge</p>
+  </li>
+  <li>
+    <p><strong>xmlCallbackPort</strong><br />
+Callback port of the XML-RPC openHAB server, default is 9125 and counts up for each additional bridge</p>
+  </li>
+  <li>
+    <p><strong>binCallbackPort</strong><br />
+Callback port of the BIN-RPC openHAB server, default is 9126 and counts up for each additional bridge</p>
+  </li>
+  <li>
+    <p><strong>aliveInterval DEPRECATED, not necessary anymore</strong><br />
+The interval in seconds to check if the communication with the Homematic gateway is still alive. If no message receives from the Homematic gateway, the RPC server restarts (default = 300)</p>
+  </li>
+  <li>
+    <p><strong>reconnectInterval DEPRECATED, not necessary anymore</strong><br />
+The interval in seconds to force a reconnect to the Homematic gateway, disables aliveInterval! (0 = disabled, default = disabled).<br />
+If you have no sensors which sends messages in regular intervals and/or you have low communication, the aliveInterval may restart the connection to the Homematic gateway to often. The reconnectInterval disables the aliveInterval and reconnects after a fixed period of time.
+Think in hours when configuring (one hour = 3600)</p>
+  </li>
+  <li>
+    <p><strong>timeout</strong><br />
+The timeout in seconds for connections to a Homematic gateway (default = 15)</p>
+  </li>
+  <li>
+    <p><strong>socketMaxAlive</strong><br />
+The maximum lifetime of a pooled socket connection to the Homematic gateway in seconds (default = 900)</p>
+  </li>
+  <li>
+    <p><strong>rfPort</strong><br />
+The port number of the RF daemon (default = 2001)</p>
+  </li>
+  <li>
+    <p><strong>wiredPort</strong><br />
+The port number of the HS485 daemon (default = 2000)</p>
+  </li>
+  <li>
+    <p><strong>hmIpPort</strong><br />
+The port number of the HMIP server (default = 2010)</p>
+  </li>
+  <li>
+    <p><strong>cuxdPort</strong><br />
+The port number of the CUxD daemon (default = 8701)</p>
+  </li>
+</ul>
+
+<p>The syntax for a bridge is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>homematic:bridge:NAME
+</code></pre></div></div>
+
+<ul>
+  <li><strong>homematic</strong> the binding id, fixed</li>
+  <li><strong>bridge</strong> the type, fixed</li>
+  <li><strong>name</strong> the name of the bridge</li>
+</ul>
+
+<h4 id="example">Example</h4>
+
+<ul>
+  <li>minimum configuration</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge homematic:bridge:ccu [ gatewayAddress="..."]
+</code></pre></div></div>
+
+<ul>
+  <li>with callback settings</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge homematic:bridge:ccu [ gatewayAddress="...", callbackHost="...", callbackPort=... ]
+</code></pre></div></div>
+
+<ul>
+  <li>multiple bridges</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge homematic:bridge:lxccu [ gatewayAddress="..."]
+Bridge homematic:bridge:occu  [ gatewayAddress="..."]
+</code></pre></div></div>
+
+<h2 id="thing-configuration">Thing Configuration</h2>
+
+<p>Things are all discovered automatically, you can handle them in PaperUI.</p>
+
+<p>If you really like to manually configure a thing:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge homematic:bridge:ccu [ gatewayAddress="..." ]
+{
+  Thing HM-LC-Dim1T-Pl-2    JEQ0999999
+}
+</code></pre></div></div>
+
+<p>The first parameter after Thing is the device type, the second the serial number.
+If you are using Homegear, you have to add the prefix <code class="highlighter-rouge">HG-</code> for each type.
+This is necessary, because the Homegear devices supports more datapoints than Homematic devices.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Thing HG-HM-LC-Dim1T-Pl-2     JEQ0999999
+</code></pre></div></div>
+
+<p>As additional parameters you can define a name and a location for each thing.
+The Name will be used to identify the Thing in the Paper UI lists, the Location will be used in the Control section of PaperUI to sort the things.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Thing HG-HM-LC-Dim1T-Pl-2     JEQ0999999  "Name"  @  "Location"
+</code></pre></div></div>
+
+<p>All channels have two configs:</p>
+<ul>
+  <li><strong>delay</strong>: delays transmission of a command <strong>to</strong> the Homematic gateway, duplicate commands are filtered out</li>
+  <li><strong>receiveDelay</strong>: delays a received event <strong>from</strong> the Homematic gateway, duplicate events are filtered out (OH 2.2)</li>
+</ul>
+
+<p>The receiveDelay is handy for dimmers and rollershutters for example.
+If you have a slider in a UI and you move this slider to a new position, it jumps around because the gateway sends multiple events with different positions until the final has been reached.
+If you set the <code class="highlighter-rouge">receiveDelay</code> to some seconds, these events are filtered out and only the last position is distributed to openHab.
+The disadvantage is of course, that all events for this channel are delayed.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>  Thing HM-LC-Dim1T-Pl-2    JEQ0999999 "Name"  @  "Location" {
+      Channels:
+          Type HM-LC-Dim1T-Pl-2_1_level : 1#LEVEL [
+              delay = 0,
+              receiveDelay = 4
+          ]
+  }
+</code></pre></div></div>
+
+<p>The Type is the device type, channel number and lowercase channel name separated with a underscore.</p>
+
+<h3 id="items">Items</h3>
+
+<p>In the items file, you can map the datapoints, the syntax is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>homematic:TYPE:BRIDGE:SERIAL:CHANNELNUMBER#DATAPOINTNAME
+</code></pre></div></div>
+
+<ul>
+  <li><strong>homematic:</strong> the binding id, fixed</li>
+  <li><strong>type:</strong> the type of the Homematic device</li>
+  <li><strong>bridge:</strong> the name of the bridge</li>
+  <li><strong>serial:</strong> the serial number of the Homematic device</li>
+  <li><strong>channelnumber:</strong> the channel number of the Homematic datapoint</li>
+  <li><strong>datapointname:</strong> the name of the Homematic datapoint</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch  RC_1  "Remote Control Button 1" { channel="homematic:HM-RC-19-B:ccu:KEQ0099999:1#PRESS_SHORT" }
+Dimmer  Light "Light [%d %%]"           { channel="homematic:HM-LC-Dim1T-Pl-2:ccu:JEQ0555555:1#LEVEL" }
+</code></pre></div></div>
+
+<p><strong>Note:</strong> don’t forget to add the <code class="highlighter-rouge">HG-</code> type prefix for Homegear devices</p>
+
+<h2 id="virtual-device-and-datapoints">Virtual device and datapoints</h2>
+
+<p>The binding supports one virtual device and some virtual datapoints.
+Virtual datapoints are generated by the binding and provides special functionality.</p>
+
+<h4 id="gateway-extras">GATEWAY-EXTRAS</h4>
+
+<p>The GATEWAY-EXTRAS is a virtual device which contains a switch to reload all values from all devices and also a switch to put the gateway in the install mode to add new devices.
+If the gateway supports variables and scripts, you can handle them with this device too.
+The type is generated: GATEWAY-EXTRAS-&amp;lsqb;BRIDGE_ID&amp;rsqb;.
+Example: bridgeId=ccu, type=GATEWAY-EXTRAS-CCU<br />
+Address: fixed GWE00000000</p>
+
+<h4 id="reload_all_from_gateway">RELOAD_ALL_FROM_GATEWAY</h4>
+
+<p>A virtual datapoint (Switch) to reload all values for all devices, available in channel 0 in GATEWAY-EXTRAS</p>
+
+<h4 id="reload_rssi">RELOAD_RSSI</h4>
+
+<p>A virtual datapoint (Switch) to reload all rssi values for all devices, available in channel 0 in GATEWAY-EXTRAS</p>
+
+<h4 id="rssi">RSSI</h4>
+
+<p>A virtual datapoint (Number) with the unified RSSI value from RSSI_DEVICE and RSSI_PEER, available in channel 0 for all wireless devices</p>
+
+<h4 id="install_mode">INSTALL_MODE</h4>
+
+<p>A virtual datapoint (Switch) to start the install mode on the gateway, available in channel 0 in GATEWAY-EXTRAS</p>
+
+<h4 id="install_mode_duration">INSTALL_MODE_DURATION</h4>
+
+<p>A virtual datapoint (Integer) to hold the duration for the install mode, available in channel 0 in GATEWAY-EXTRAS (max 300 seconds, default = 60)</p>
+
+<h4 id="delete_mode">DELETE_MODE</h4>
+
+<p>A virtual datapoint (Switch) to remove the device from the gateway, available in channel 0 for each device. Deleting a device is only possible if DELETE_DEVICE_MODE is not LOCKED</p>
+
+<h4 id="delete_device_mode">DELETE_DEVICE_MODE</h4>
+
+<p>A virtual datapoint (Enum) to configure the device deletion with DELETE_MODE, available in channel 0 for each device</p>
+<ul>
+  <li><strong>LOCKED:</strong> (default) device can not be deleted</li>
+  <li><strong>RESET:</strong> device is reset to factory settings before deleting</li>
+  <li><strong>FORCE:</strong> device is also deleted if it is not reachable</li>
+  <li><strong>DEFER:</strong> if the device can not be reached, it is deleted at the next opportunity</li>
+</ul>
+
+<p><strong>Note:</strong> if you change the value and don’t delete the device, the virtual datapoints resets to LOCKED after 30 seconds</p>
+
+<h4 id="on_time_automatic">ON_TIME_AUTOMATIC</h4>
+
+<p>A virtual datapoint (Number) to automatically set the ON_TIME datapoint before the STATE or LEVEL datapoint is sent to the gateway, available for all devices which supports the ON_TIME datapoint.<br />
+This is usefull to automatically turn off the datapoint after the specified time.</p>
+
+<h4 id="display_options">DISPLAY_OPTIONS</h4>
+
+<p>A virtual datapoint (String) to control the display of a 19 button Homematic remote control (HM-RC-19), available on channel 18</p>
+
+<p>The remote control display is limited to five characters, a longer text is truncated.</p>
+
+<p>You have several additional options to control the display.</p>
+<ul>
+  <li>BEEP <em>(TONE1, TONE2, TONE3)</em> - let the remote control beep</li>
+  <li>BACKLIGHT <em>(BACKLIGHT_ON, BLINK_SLOW, BLINK_FAST)</em> - control the display backlight</li>
+  <li>UNIT <em>(PERCENT, WATT, CELSIUS, FAHRENHEIT)</em> - display one of these units</li>
+  <li>SYMBOL <em>(BULB, SWITCH, WINDOW, DOOR, BLIND, SCENE, PHONE, BELL, CLOCK, ARROW_UP, ARROW_DOWN)</em> - display symbols, multiple symbols possible</li>
+</ul>
+
+<p>You can combine any option, they must be separated by a comma.
+If you specify more than one option for BEEP, BACKLIGHT and UNIT, only the first one is taken into account and all others are ignored. For SYMBOL you can specify multiple options.</p>
+
+<p><strong>Examples:</strong></p>
+
+<p>Assumed you mapped the virtual datapoint to a String item called Display_Options</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String Display_Options "Display_Options" { channel="homematic:HM-RC-19-B:ccu:KEQ0099999:18#DISPLAY_OPTIONS" }
+</code></pre></div></div>
+
+<p>show message TEST:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome send Display_Options "TEST"
+</code></pre></div></div>
+
+<p>show message TEXT, beep once and turn backlight on:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome send Display_Options "TEXT, TONE1, BACKLIGHT_ON"
+</code></pre></div></div>
+
+<p>show message 15, beep once, turn backlight on and shows the celsius unit:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome send Display_Options "15, TONE1, BACKLIGHT_ON, CELSIUS"
+</code></pre></div></div>
+
+<p>show message ALARM, beep three times, let the backlight blink fast and shows a bell symbol:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome send Display_Options "ALARM, TONE3, BLINK_FAST, BELL"
+</code></pre></div></div>
+
+<p>Duplicate options: TONE3 is ignored, because TONE1 is specified previously.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome send Display_Options "TEXT, TONE1, BLINK_FAST, TONE3"
+</code></pre></div></div>
+
+<h4 id="display_submit">DISPLAY_SUBMIT</h4>
+
+<p>Adds multiple virtual datapoints to the HM-Dis-WM55 device to easily send colored text and icons to the display</p>
+
+<p>Example: Display text at line 1,3 and 5 when the bottom button on the display is pressed</p>
+
+<ul>
+  <li>Items</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String Display_line_1   "Line 1"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_LINE_1" }
+String Display_line_3   "Line 3"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_LINE_3" }
+String Display_line_5   "Line 5"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_LINE_5" }
+
+String Display_color_1  "Color 1"   { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_COLOR_1" }
+String Display_color_3  "Color 3"   { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_COLOR_3" }
+String Display_color_5  "Color 5"   { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_COLOR_5" }
+
+String Display_icon_1   "Icon 1"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_ICON_1" }
+String Display_icon_3   "Icon 3"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_ICON_3" }
+String Display_icon_5   "Icon 5"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_ICON_5" }
+
+Switch Button_bottom    "Button"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#PRESS_SHORT" }
+Switch Display_submit   "Submit"    { channel="homematic:HM-Dis-WM55:ccu:NEQ0123456:1#DISPLAY_SUBMIT" }
+</code></pre></div></div>
+
+<ul>
+  <li>Rule</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "Display Test"
+when
+    Item Button_bottom received update ON
+then
+    sendCommand(Display_line_1, "Line 1")
+    sendCommand(Display_line_3, "Line 3")
+    sendCommand(Display_line_5, "Line 5")
+
+    sendCommand(Display_icon_1, "NONE")
+    sendCommand(Display_icon_3, "OPEN")
+    sendCommand(Display_icon_5, "INFO")
+
+    sendCommand(Display_color_1, "NONE")
+    sendCommand(Display_color_3, "RED")
+    sendCommand(Display_color_5, "BLUE")
+
+    sendCommand(Display_submit, ON)
+end
+</code></pre></div></div>
+
+<h4 id="press">PRESS</h4>
+
+<p>A virtual datapoint (String) to simulate a key press, available on all channels that contains PRESS_ datapoints.<br />
+Available values: SHORT, LONG, LONG_RELEASE</p>
+
+<p>Example: to capture a key press on the 19 button remote control in a rule</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "example trigger rule"
+when
+    Channel 'homematic:HM-RC-19-B:ccu:KEQ0012345:1#PRESS' triggered SHORT
+then
+    ...
+end
+</code></pre></div></div>
+
+<h3 id="troubleshooting">Troubleshooting</h3>
+
+<p><strong>SHORT &amp; LONG_PRESS events of push buttons do not occur on the event bus</strong></p>
+
+<p>It seems buttons like the HM-PB-2-WM55 do just send these kind of events to the CCU if they are mentioned in a CCU program.
+A simple workaround to make them send these events is, to create a program (rule inside the CCU) that does just have a “When” part and no “Then” part, in this “When” part each channel needs to be mentioned at least once.
+As the HM-PB-2-WM55 for instance has two channels, it is enough to mention the SHORT_PRESS event of channel 1 &amp; 2.
+The LONG_PRESS events will work automatically as they are part of the same channels.
+After the creation of this program, the button device will receive configuration data from the CCU which have to be accepted by pressing the config-button at the back of the device.</p>
+
+<p><strong>INSTALL_TEST</strong></p>
+
+<p>If a button is still not working and you do not see any PRESS_LONG / SHORT in your log file (loglevel DEBUG), it could be because of enabled security.
+Try to disable security of your buttons in the HomeMatic Web GUI and try again.
+If you can’t disable security try to use key INSTALL_TEST which gets updated to ON for each key press</p>
+
+<p><strong>-1 Failure</strong></p>
+
+<p>A device may return this failure while fetching the datapoint values.
+I’ve tested pretty much but i did not found the reason. The HM-ES-TX-WM device for example always returns this failure, it’s impossible with the current CCU2 firmware (2.17.15) to fetch the values.
+I’ve implemented two workarounds, if a device returns the failure, workaround one is executed, if the device still returns the failure, workaround two is executed.
+This always works in my tests, but you may see a OFFLINE, ONLINE cycle for the device.<br />
+Fetching values is only done at startup or if you trigger a REFRESH. I hope this will be fixed in one of the next CCU firmwares.<br />
+With <a href="https://www.homegear.eu">Homegear</a> everything works as expected.</p>
+
+<p><strong>No variables and scripts in GATEWAY-EXTRAS</strong></p>
+
+<p>The gateway autodetection of the binding can not clearly identify the gateway and falls back to the default implementation.
+Use the <code class="highlighter-rouge">gatewayType=ccu</code> config to force the binding to use the CCU implementation.</p>
+
+<p><strong>Variables out of sync</strong></p>
+
+<p>The CCU only sends a event if a datapoint of a device has changed.
+There is (currently) no way to receive a event automatically when a variable has changed.
+To reload all variable values, send a REFRESH command to any variable.<br />
+e.g you have a item linked to a variable with the name Var_1<br />
+In the console:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>smarthome:send Var_1 REFRESH
+</code></pre></div></div>
+
+<p>In scripts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>import org.eclipse.smarthome.core.types.RefreshType
+...
+sendCommand(Var_1, RefreshType.REFRESH)
+</code></pre></div></div>
+
+<p><strong>Note:</strong> adding new and removing deleted variables from the GATEWAY-EXTRAS Thing is currently not supported. You have to delete the Thing, start a scan and add it again.</p>
+
+<h3 id="debugging-and-tracing">Debugging and Tracing</h3>
+
+<p>If you want to see what’s going on in the binding, switch the loglevel to DEBUG in the Karaf console</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log:set DEBUG org.openhab.binding.homematic
+</code></pre></div></div>
+
+<p>If you want to see even more, switch to TRACE to also see the gateway request/response data</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log:set TRACE org.openhab.binding.homematic
+</code></pre></div></div>
+
+<p>Set the logging back to normal</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log:set INFO org.openhab.binding.homematic
+</code></pre></div></div>
+
+<p>To identify problems, i need a full startup TRACE log</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>stop org.openhab.binding.homematic
+log:set TRACE org.openhab.binding.homematic
+start org.openhab.binding.homematic
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

@@ -1,0 +1,2121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Rules - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/configuration/rules-dsl.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../configuration/rules-dsl.html">latest version</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/configuration/rules-dsl.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      
+<h1 id="textual-rules">Textual Rules</h1>
+
+<p>“Rules” are used for automating processes: Each rule can be triggered, which invokes a script that performs any kinds of tasks, e.g. turn on lights by modifying your items, do mathematical calculations, start timers etcetera.</p>
+
+<p>openHAB has a highly integrated, lightweight but yet powerful rule engine included.
+On this page you will learn how to leverage its functionality to do <em>real</em> home automation.</p>
+
+<ul id="markdown-toc">
+  <li><a href="#defining-rules" id="markdown-toc-defining-rules">Defining Rules</a>    <ul>
+      <li><a href="#file-location" id="markdown-toc-file-location">File Location</a></li>
+      <li><a href="#ide-support" id="markdown-toc-ide-support">IDE Support</a></li>
+      <li><a href="#the-syntax" id="markdown-toc-the-syntax">The Syntax</a></li>
+      <li><a href="#rule-triggers" id="markdown-toc-rule-triggers">Rule Triggers</a></li>
+      <li><a href="#event-based-triggers" id="markdown-toc-event-based-triggers">Event-based Triggers</a></li>
+      <li><a href="#time-based-triggers" id="markdown-toc-time-based-triggers">Time-based Triggers</a></li>
+      <li><a href="#system-based-triggers" id="markdown-toc-system-based-triggers">System-based Triggers</a></li>
+      <li><a href="#thing-based-triggers" id="markdown-toc-thing-based-triggers">Thing-based Triggers</a></li>
+      <li><a href="#channel-based-triggers" id="markdown-toc-channel-based-triggers">Channel-based Triggers</a></li>
+    </ul>
+  </li>
+  <li><a href="#scripts" id="markdown-toc-scripts">Scripts</a>    <ul>
+      <li><a href="#manipulating-item-states" id="markdown-toc-manipulating-item-states">Manipulating Item States</a>        <ul>
+          <li><a href="#sendcommand-method-vs-action" id="markdown-toc-sendcommand-method-vs-action">MyItem.sendCommand(“new state”) versus sendCommand(MyItem, “new state”)</a></li>
+        </ul>
+      </li>
+      <li><a href="#using-state-of-items-in-rules" id="markdown-toc-using-state-of-items-in-rules">Using the States of Items in Rules</a>        <ul>
+          <li><a href="#conversions" id="markdown-toc-conversions">Working with Item States: Conversions</a></li>
+          <li><a href="#deeper-dive" id="markdown-toc-deeper-dive">Deeper Dive</a></li>
+        </ul>
+      </li>
+      <li><a href="#implicit-variables" id="markdown-toc-implicit-variables">Implicit Variables inside the Execution Block</a></li>
+      <li><a href="#return" id="markdown-toc-return">Early returns</a></li>
+      <li><a href="#concurrency-guard" id="markdown-toc-concurrency-guard">Concurrency Guard</a></li>
+      <li><a href="#transformations" id="markdown-toc-transformations">Transformations</a></li>
+      <li><a href="#logging" id="markdown-toc-logging">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="#rule-examples" id="markdown-toc-rule-examples">Rule Examples</a></li>
+  <li><a href="#further-examples" id="markdown-toc-further-examples">Further Examples</a></li>
+</ul>
+
+<h2 id="defining-rules">Defining Rules</h2>
+
+<h3 id="file-location">File Location</h3>
+
+<p>Rules are placed in the folder <code class="highlighter-rouge">${openhab.home}/conf/rules</code>.
+The <a href="/v2.2/tutorials/demo.html">demo setup</a> already comes with a demo file called <code class="highlighter-rouge">demo.rules</code>, which has a couple of examples that can be a good starting point.</p>
+
+<p>A rule file can contain multiple rules.
+All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
+It therefore makes sense to have different rule files for different use-cases or categories.</p>
+
+<h3 id="ide-support">IDE Support</h3>
+
+<p>The <a href="/v2.2/configuration/editors.html#esh-designer">Eclipse SmartHome Designer</a> offers support for rules building.
+It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
+This makes the creation of rules very easy!</p>
+
+<blockquote>
+  <p>Bugs:
+Please note that there are a couple of <a href="https://github.com/eclipse/smarthome/issues?q=is%3Aopen+is%3Aissue+label%3ADesigner+label%3Abug">open bugs</a> related to the SmartHome Designer.
+These result in error markers in the Designer, while the rules are executed nicely by the runtime.</p>
+</blockquote>
+
+<h3 id="the-syntax">The Syntax</h3>
+
+<p>Note: The rule syntax is based on <a href="http://www.eclipse.org/Xtext/#xbase">Xbase</a> and as a result it is sharing many details with <a href="http://www.eclipse.org/xtend/">Xtend</a>, which is built on top of Xbase as well.
+As a result, we will often point to the Xtend documentation for details.</p>
+
+<p>A rule file is a text file with the following structure:</p>
+
+<ul>
+  <li>Imports</li>
+  <li>Variable Declarations</li>
+  <li>Rules</li>
+</ul>
+
+<p>The <strong>Imports</strong> section contains import statement just like in Java.
+As in Java, they make the imported types available without having to use the fully qualified name for them.
+For further details, please see the <a href="http://www.eclipse.org/xtend/documentation/202_xtend_classes_members.html#imports">Xtend documentation for imports</a>.</p>
+
+<p>Example:</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">net</span><span class="p">.</span><span class="nx">URI</span>
+</code></pre></div></div>
+
+<p>A few default imports are already done, so classes from these packages do not need to be explicitly imported:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">smarthome</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">items</span>
+<span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">smarthome</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">persistence</span>
+<span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">smarthome</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">library</span><span class="o">.</span><span class="na">types</span>
+<span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">smarthome</span><span class="o">.</span><span class="na">core</span><span class="o">.</span><span class="na">library</span><span class="o">.</span><span class="na">items</span>
+<span class="n">org</span><span class="o">.</span><span class="na">eclipse</span><span class="o">.</span><span class="na">smarthome</span><span class="o">.</span><span class="na">model</span><span class="o">.</span><span class="na">script</span><span class="o">.</span><span class="na">actions</span>
+</code></pre></div></div>
+
+<p>The <strong>Variable Declarations</strong> section can be used to declare variables that should be accessible to all rules in this file.
+You can declare variables with or without initial values and modifiable or read-only.
+For further details, please see the <a href="http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html#variable-declaration">Xtend documentation for variable declarations</a>.</p>
+
+<p>Example:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// a variable with an initial value. Note that the variable type is automatically inferred</span>
+<span class="n">var</span> <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+
+<span class="c1">// a read-only value, again the type is automatically inferred</span>
+<span class="n">val</span> <span class="n">msg</span> <span class="o">=</span> <span class="s">"This is a message"</span>
+
+<span class="c1">// an uninitialized variable where we have to provide the type (as it cannot be inferred from an initial value)</span>
+<span class="n">var</span> <span class="n">Number</span> <span class="n">x</span>
+</code></pre></div></div>
+
+<p>The <strong>Rules</strong> section contains a list of rules.
+Each rule has the following syntax:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rule</span> <span class="s">"rule name"</span>
+<span class="n">when</span>
+    <span class="o">&lt;</span><span class="n">TRIGGER</span> <span class="n">CONDITION1</span><span class="o">&gt;</span> <span class="n">or</span>
+    <span class="o">&lt;</span><span class="n">TRIGGER_CONDITION2</span><span class="o">&gt;</span> <span class="n">or</span>
+    <span class="o">&lt;</span><span class="n">TRIGGER_CONDITION3</span><span class="o">&gt;</span>
+    <span class="o">...</span>
+<span class="n">then</span>
+    <span class="o">&lt;</span><span class="n">SCRIPT_BLOCK</span><span class="o">&gt;</span>
+<span class="n">end</span>
+</code></pre></div></div>
+
+<p>A rule can have any number of trigger conditions, but must at least have one.
+The <code class="highlighter-rouge">SCRIPT_BLOCK</code> contains the code that should be executed, when a trigger condition is met, see the <a href="#scripts">script</a> section for details on its syntax.</p>
+
+<h3 id="rule-triggers">Rule Triggers</h3>
+
+<p>Before a rule starts working, it has to be triggered.</p>
+
+<p>There are different categories of rule triggers:</p>
+
+<ul>
+  <li><strong>Item</strong>(-Event)-based triggers: They react on events on the openHAB event bus, i.e. commands and status updates for items</li>
+  <li><strong>Time</strong>-based triggers: They react at special times, e.g. at midnight, every hour, etc.</li>
+  <li><strong>System</strong>-based triggers: They react on certain system statuses.</li>
+  <li><strong>Thing</strong>-based triggers: They react on thing status, i.e. change from ONLINE to OFFLINE.</li>
+</ul>
+
+<p>Here are the details for each category:</p>
+
+<h3 id="event-based-triggers">Event-based Triggers</h3>
+
+<p>You can listen to commands for a specific item, on status updates or on status changes (an update might leave the status unchanged).
+You can decide whether you want to catch only a specific command/status or any.
+Here is the syntax for all these cases (parts in square brackets are optional):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Item</span> <span class="o">&lt;</span><span class="n">item</span><span class="o">&gt;</span> <span class="n">received</span> <span class="n">command</span> <span class="o">[&lt;</span><span class="n">command</span><span class="o">&gt;]</span>
+<span class="n">Item</span> <span class="o">&lt;</span><span class="n">item</span><span class="o">&gt;</span> <span class="n">received</span> <span class="n">update</span> <span class="o">[&lt;</span><span class="n">state</span><span class="o">&gt;]</span>
+<span class="n">Item</span> <span class="o">&lt;</span><span class="n">item</span><span class="o">&gt;</span> <span class="n">changed</span> <span class="o">[</span><span class="n">from</span> <span class="o">&lt;</span><span class="n">state</span><span class="o">&gt;]</span> <span class="o">[</span><span class="n">to</span> <span class="o">&lt;</span><span class="n">state</span><span class="o">&gt;]</span>
+</code></pre></div></div>
+
+<p>A simplistic explanation of the differences between <code class="highlighter-rouge">command</code> and <code class="highlighter-rouge">update</code> can be found in the article about <a href="../addons/actions.html">openHAB core actions</a>.</p>
+
+<h3 id="time-based-triggers">Time-based Triggers</h3>
+
+<p>You can either use some pre-defined expressions for timers or use a <a href="http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06">cron expression</a> instead:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Time</span> <span class="n">is</span> <span class="n">midnight</span>
+<span class="n">Time</span> <span class="n">is</span> <span class="n">noon</span>
+<span class="n">Time</span> <span class="n">cron</span> <span class="s">"&lt;cron expression&gt;"</span>
+</code></pre></div></div>
+
+<p>A cron expression takes the form of six or optionally seven fields:</p>
+
+<ol>
+  <li>Seconds</li>
+  <li>Minutes</li>
+  <li>Hours</li>
+  <li>Day-of-Month</li>
+  <li>Month</li>
+  <li>Day-of-Week</li>
+  <li>Year (optional field)</li>
+</ol>
+
+<p>for more information see the <a href="http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06">Quartz documentation</a>.</p>
+
+<p>You may also use <a href="http://www.cronmaker.com/">CronMaker</a> or the generator at <a href="http://www.freeformatter.com/cron-expression-generator-quartz.html">FreeFormatter.com</a> to generate cron expressions.</p>
+
+<h3 id="system-based-triggers">System-based Triggers</h3>
+
+<p>Two system-based triggers are provided as described in the table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Trigger</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>System started</td>
+      <td>System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file.</td>
+    </tr>
+    <tr>
+      <td>System shuts down</td>
+      <td>Rules using the ‘System shuts down’ trigger execute when openHAB shuts down.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>You may wish to use the ‘System started’ trigger to initialize values at startup if they are not already set.</p>
+
+<p>Example:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rule</span> <span class="s">"Speedtest init"</span>
+<span class="n">when</span>
+    <span class="n">System</span> <span class="n">started</span>
+<span class="n">then</span>
+    <span class="nf">createTimer</span><span class="o">(</span><span class="n">now</span><span class="o">.</span><span class="na">plusSeconds</span><span class="o">(</span><span class="mi">30</span><span class="o">),</span> <span class="o">[|</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">Speedtest_Summary</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">NULL</span> <span class="o">||</span> <span class="n">Speedtest_Summary</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="s">""</span><span class="o">)</span> <span class="n">Speedtest_Summary</span><span class="o">.</span><span class="na">postUpdate</span><span class="o">(</span><span class="s">"unknown"</span><span class="o">)</span>
+    <span class="o">])</span>
+<span class="n">end</span>
+</code></pre></div></div>
+
+<h3 id="thing-based-triggers">Thing-based Triggers</h3>
+
+<p>Your rules can take actions based upon status updates or status changes generated by Things.
+You can decide whether you want to catch only a specific or any status the Thing can get updated too.
+Here is the syntax for all these cases (parts in square brackets are optional):</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Thing</span> <span class="o">&lt;</span><span class="n">thingUID</span><span class="o">&gt;</span> <span class="n">received</span> <span class="n">update</span> <span class="o">[&lt;</span><span class="n">status</span><span class="o">&gt;]</span>
+<span class="n">Thing</span> <span class="o">&lt;</span><span class="n">thingUID</span><span class="o">&gt;</span> <span class="n">changed</span> <span class="o">[</span><span class="n">from</span> <span class="o">&lt;</span><span class="n">status</span><span class="o">&gt;]</span> <span class="o">[</span><span class="n">to</span> <span class="o">&lt;</span><span class="n">status</span><span class="o">&gt;]</span>
+</code></pre></div></div>
+
+<p>The status used in the trigger and the script is a string (no quotes).
+You can find all the possible values for status from <a href="/v2.2/concepts/things.html">Thing Status</a>.
+And refer to <a href="/v2.2/addons/actions.html">Thing Status Action</a> to find how to get thing status in the script.</p>
+
+<p>The <code class="highlighter-rouge">thingUID</code> is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
+You can find it from PaperUI or from Karaf remote console.
+For example, one z-wave device can be “zwave:device:c5155aa4:node14”.</p>
+
+<blockquote>
+  <p>Note: You need to use quotes around <code class="highlighter-rouge">thingUID</code> if it contains special characters such as ‘:’.</p>
+</blockquote>
+
+<h3 id="channel-based-triggers">Channel-based Triggers</h3>
+
+<p>Some add-ons provide trigger channels.
+Compared with other types of channels, a trigger channel provides information about discrete events, but does not provide continuous state information.</p>
+
+<p>Your rules can take actions based upon trigger events generated by these trigger channels.
+You can decide whether you want to catch only a specific or any trigger the channel provides.
+Here is the syntax for these cases (parts in square brackets are optional):</p>
+
+<blockquote>
+  <p>Note: You need to use quotes around <code class="highlighter-rouge">triggerChannel</code> if it contains special characters such as <code class="highlighter-rouge">:</code>.</p>
+</blockquote>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">Channel</span> <span class="s">"&lt;triggerChannel&gt;"</span> <span class="n">triggered</span> <span class="o">[&lt;</span><span class="n">triggerEvent</span><span class="o">&gt;]</span>
+</code></pre></div></div>
+
+<p><code class="highlighter-rouge">triggerChannel</code> is the identifier for a specific channel.</p>
+
+<p>When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
+There is no generic list of possible values for <code class="highlighter-rouge">triggerEvent</code>,
+The <code class="highlighter-rouge">triggerEvent</code>(s) available depend upon the specific implementation details of the binding.</p>
+
+<p>Example:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">rule</span> <span class="s">"Start wake up light on sunrise"</span>
+<span class="n">when</span>
+    <span class="n">Channel</span> <span class="s">"astro:sun:home:rise#event"</span> <span class="n">triggered</span> <span class="n">START</span>
+<span class="n">then</span>
+    <span class="o">...</span>
+<span class="n">end</span>
+</code></pre></div></div>
+
+<h2 id="scripts">Scripts</h2>
+
+<p>The expression language used within scripts is the same that is used in the Xtend language - see the <a href="http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html">documentation of expressions</a> on the Xtend homepage.</p>
+
+<p>The syntax is very similar to Java, but has many nice features that allows writing concise code.
+It is especially powerful in handling collections.
+What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.</p>
+
+<p>To be able to do something useful with the scripts, openHAB provides access to</p>
+
+<ul>
+  <li>all defined items, so that you can easily access them by their name</li>
+  <li>all enumerated states/commands, e.g. <code class="highlighter-rouge">ON, OFF, DOWN, INCREASE</code> etc.</li>
+  <li>all <a href="https://github.com/openhab/openhab/wiki/Actions">standard actions</a> to make something happen</li>
+</ul>
+
+<p>Combining these features, you can easily write code like:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">Temperature</span><span class="o">.</span><span class="na">state</span> <span class="o">&lt;</span> <span class="mi">20</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Heating</span><span class="o">.</span><span class="na">sendCommand</span><span class="o">(</span><span class="n">ON</span><span class="o">)</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h3 id="manipulating-item-states">Manipulating Item States</h3>
+
+<p>Rules are often used to manipulate the state of an Item, for example switching lights on and off under certain conditions.
+Two commands can change the value or state of an Item within rules:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">MyItem.postUpdate(&lt;new_state&gt;)</code> - Change the status of an Item without causing any implicit actions. Can be used to reflect changes that may be caused by other means.</li>
+  <li><code class="highlighter-rouge">MyItem.sendCommand(&lt;new_state&gt;)</code> - Change the status of an Item and trigger potential further actions, e.g. send a command to the linked device/binding.</li>
+</ul>
+
+<p>In relation to <a href="/v2.2/configuration/rules-dsl.html#event-based-triggers">event-based rule triggers</a> the manipulator commands <code class="highlighter-rouge">sendCommand</code> and <code class="highlighter-rouge">postUpdate</code> act differently.
+The following table summarizes the impact of the two manipulator commands on the rule execution due to the used trigger:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command \ Rule Trigger</th>
+      <th><code class="highlighter-rouge">received update</code></th>
+      <th><code class="highlighter-rouge">received command</code></th>
+      <th><code class="highlighter-rouge">changed</code></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>postUpdate</td>
+      <td>⚡ rule fires</td>
+      <td>❌</td>
+      <td>(depends)</td>
+    </tr>
+    <tr>
+      <td>sendCommand</td>
+      <td>❌</td>
+      <td>⚡ rule fires</td>
+      <td>(depends)</td>
+    </tr>
+    <tr>
+      <td><em>Change through Binding</em></td>
+      <td>⚡ rule fires</td>
+      <td>⚡ rule fires</td>
+      <td>(depends)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>Beware:</strong>
+Besides the specific manipulator command methods <code class="highlighter-rouge">MyItem.sendCommand(&lt;new_state&gt;)</code> and <code class="highlighter-rouge">MyItem.postUpdate(&lt;new_state&gt;)</code>, generic manipulators in the form of <code class="highlighter-rouge">sendCommand(MyItem, &lt;new_state&gt;)</code> and <code class="highlighter-rouge">postUpdate(MyItem, &lt;new_state&gt;)</code> are available. The specific versions is normally recommended.</p>
+
+<h4 id="sendcommand-method-vs-action">MyItem.sendCommand(“new state”) versus sendCommand(MyItem, “new state”)</h4>
+
+<p>Using the methods <code class="highlighter-rouge">MyItem.sendCommand(&lt;new_state&gt;)</code> and <code class="highlighter-rouge">MyItem.postUpdate(&lt;new_state&gt;)</code> is often preferable.
+These are methods of Objects that can accept a variety of types.</p>
+
+<p>Contrary, the Actions <code class="highlighter-rouge">sendCommand(MyItem, "&lt;new_state&gt;")</code> and <code class="highlighter-rouge">postUpdate(MyItem, "&lt;new_state&gt;")</code> can only accept strings as arguments.</p>
+
+<p>The reasons lie within Java, the object-oriented programming language on which openHAB is built.
+Java and the Rules DSL have two basic types, primitives and Objects.
+A lower case letter data type after a <code class="highlighter-rouge">var</code> or a <code class="highlighter-rouge">val</code> statement, for example <code class="highlighter-rouge">var int</code>, indicates a primitive type.
+An upper case letter data type after a <code class="highlighter-rouge">val</code> and <code class="highlighter-rouge">var</code> statement, for example <code class="highlighter-rouge">var Number</code> indicates an Object.
+Objects are more complex than primitives.</p>
+
+<p>Objects have special methods that can perform many necessary type conversions automatically.
+Using <code class="highlighter-rouge">Myitem.sendCommand(new_state)</code> or <code class="highlighter-rouge">Myitem.postUpdate(new_state)</code> will, in most cases, convert <code class="highlighter-rouge">new_state</code> into a type that Object <code class="highlighter-rouge">myItem</code> can apply.</p>
+
+<p>The Action <code class="highlighter-rouge">sendCommand(MyItem, new_state)</code> does not provide the same flexibilty.
+For example, if <code class="highlighter-rouge">new_state</code> is typed as a primitive (e.g., <code class="highlighter-rouge">var int new_state = 3</code>) and myItem is of the Object type Dimmer:</p>
+<ul>
+  <li>the following command <strong><em>will fail</em></strong>: <del>sendCommand(MyItem, new_state)</del>.</li>
+  <li>However, the following command <strong>will work</strong>: <code class="highlighter-rouge">MyItem.sendCommand(new_state)</code>.</li>
+</ul>
+
+<p>Using <code class="highlighter-rouge">MyItem.postUpdate(new_state)</code> or <code class="highlighter-rouge">MyItem.sendCommand(new_state)</code> will create the most stable code.
+It provides by far the best option for avoiding most problems.
+This syntax ensures that any conversion (typing) of the <code class="highlighter-rouge">new_state</code> is done in a way that is most suitable for <code class="highlighter-rouge">myItem</code>.</p>
+
+<p><strong>Exception:</strong>
+Actions are useful when the name of the Item is only available as a String.
+For example, if the name of the Item to receive an update or command was calculated in the Rule by building up a String:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">val</span> <span class="n">index</span> <span class="o">=</span> <span class="mi">5</span>
+<span class="n">sendCommand</span><span class="o">(</span><span class="s">"My_Lamp_"</span> <span class="o">+</span> <span class="n">index</span><span class="o">,</span> <span class="n">ON</span><span class="o">)</span>
+</code></pre></div></div>
+
+<h3 id="using-state-of-items-in-rules">Using the States of Items in Rules</h3>
+
+<p>Often it is desired to calculate other values from Item states or to compare Item states against other values</p>
+
+<p>In openHAB, every item carries a state.
+The state of an Item is an Object itself and can be accessed with <code class="highlighter-rouge">MyItem.state</code>.
+A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the <a href="/v2.2/concepts/items.html">openHab documentation for items</a>. 
+To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
+Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.</p>
+
+<p>This section differentiates between command type and state type. 
+For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
+For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType. 
+Therefore the following are all valid commands one can send to a Color Item:</p>
+<ul>
+  <li><code class="highlighter-rouge">MyColorItem.sendCommand(ON)</code></li>
+  <li><code class="highlighter-rouge">MyColorItem.sendCommand(INCREASE)</code></li>
+  <li><code class="highlighter-rouge">MyColorItem.sendCommand(new PercentType(50))</code></li>
+  <li><code class="highlighter-rouge">MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))</code></li>
+</ul>
+
+<p>An alternative way to command or update the state of an item is through the use of specially formatted strings. 
+The section in the <a href="/v2.2/concepts/items.html#state-and-command-type-formatting">item documentation on formatting</a> details the requirements for the formatting.</p>
+
+<p>Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
+The Color Item from the example above will accept various command types, but will only return an HSBType.</p>
+
+<p>Groups can be declared with any Item type and the internal state of the Group will match that type. 
+For example, <code class="highlighter-rouge">Group:Switch</code> will return an OnOffType for its state.</p>
+
+<p>Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
+There are two ways to discover these methods:</p>
+
+<ul>
+  <li>Use the <a href="/v2.2/installation/designer.html">Eclipse SmartHome Designer</a> and the <code class="highlighter-rouge">&lt;ctrl&gt;&lt;space&gt;</code> key combo to list all the available methods</li>
+  <li>Look at the JavaDocs for the given type.
+For example, the <a href="http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html">JavaDoc for HSBType</a> shows getRed, getBlue, and getGreen methods.
+Thse methods can be called in Rules-DSL without the “get” part in name as in <code class="highlighter-rouge">(MyColorItem.state as HSBType).red)</code>. 
+They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.</li>
+</ul>
+
+<h4 id="conversions">Working with Item States: Conversions</h4>
+
+<p><em>Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on <a href="/v2.2/concepts/items.html">items in the openHAB documentation</a>.</em></p>
+
+<p>Below a <strong>non-exhaustive</strong> list of some more common conversions. 
+The interested reader is encouraged to also visit the <a href="https://community.openhab.org">forum</a> where many more examples can be found.</p>
+
+<h5 id="conversion-of-itemstate-to-string">Conversion of Item.state to String</h5>
+
+<p>All Item states can be converted into a string by invoking <code class="highlighter-rouge">MyItem.state.toString</code>.</p>
+
+<h5 id="color-item">Color Item</h5>
+
+<p>A Color Item stores an <strong>HSBType</strong>.
+The HSB stands for Hue, Saturation, and Brightness. 
+Often one has the desired color as an RGB values (Red, Green, Blue). 
+The following code can be used to send an RGB value to a Color Item.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.awt.Color</span>
+
+<span class="c1">// Create item</span>
+<span class="n">val</span> <span class="n">newColor</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Color</span><span class="o">(</span><span class="n">red</span><span class="o">,</span> <span class="n">blue</span><span class="o">,</span> <span class="n">green</span><span class="o">)</span> <span class="c1">// where red, blue, and green are ints between 0 and 255</span>
+
+<span class="c1">//Saving to an Item</span>
+<span class="n">MyColorItem</span><span class="o">.</span><span class="na">sendCommand</span><span class="o">(</span><span class="k">new</span> <span class="n">HSBType</span><span class="o">(</span><span class="n">newColor</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
+Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code>
+<span class="c1">//Example for conversion to 8-bit representation</span>
+<span class="c1">// In rule body</span>
+<span class="n">val</span> <span class="n">red</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyColorItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">HSBType</span><span class="o">).</span><span class="na">red</span> <span class="o">*</span> <span class="mi">255</span>
+<span class="n">val</span> <span class="n">green</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyColorItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">HSBType</span><span class="o">).</span><span class="na">green</span> <span class="o">*</span> <span class="mi">255</span>
+<span class="n">val</span> <span class="n">blue</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyColorItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">HSBType</span><span class="o">).</span><span class="na">blue</span> <span class="o">*</span> <span class="mi">255</span>
+</code></pre></div></div>
+
+<h5 id="contact-item">Contact Item</h5>
+
+<p>A Contact Item carries a  OpenClosedType.
+OpenClosedType is an Enumeration. 
+One can convert from Open and Closed to 1 and 0 with code similar to:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">val</span> <span class="n">contactNum</span> <span class="o">=</span> <span class="k">if</span> <span class="o">(</span><span class="n">MyContactItem</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">OPEN</span><span class="o">)</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h5 id="datetime-item">DateTime Item</h5>
+
+<p>A DateTime Item carries a <strong>DateTimeType</strong>.
+DateTimeType presents the biggest challenge when converting and performing calculations. 
+The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably <code class="highlighter-rouge">now</code>. 
+However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.</p>
+
+<p>The lowest common denominator when working with time is to get at the epoch value. 
+Epoch is the number of milliseconds that has passed since 1 January 1970 GMT and stored in a <code class="highlighter-rouge">long</code>. 
+With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and visa versa.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Get epoch from DateTimeType</span>
+<span class="n">val</span> <span class="n">Number</span> <span class="n">epoch</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyDateTimeItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">DateTimeType</span><span class="o">).</span><span class="na">calendar</span><span class="o">.</span><span class="na">timeInMillis</span>
+
+<span class="c1">// Get epoch from Joda DateTime</span>
+<span class="n">val</span> <span class="n">Number</span> <span class="n">nowEpoch</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="na">millis</span>
+
+<span class="c1">// Convert DateTimeType to Joda DateTime</span>
+<span class="n">val</span> <span class="n">joda</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DateTime</span><span class="o">((</span><span class="n">MyDateTimeItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">DateTimeType</span><span class="o">).</span><span class="na">calendar</span><span class="o">.</span><span class="na">timeInMillis</span><span class="o">)</span>
+
+<span class="c1">// Convert Joda DateTime to DateTimeType</span>
+<span class="n">val</span> <span class="n">calendar</span> <span class="o">=</span> <span class="n">java</span><span class="o">.</span><span class="na">util</span><span class="o">.</span><span class="na">Calendar</span><span class="o">::</span><span class="n">getInstance</span>
+<span class="n">calendar</span><span class="o">.</span><span class="na">timeInMillis</span> <span class="o">=</span> <span class="n">now</span><span class="o">.</span><span class="na">millis</span>
+<span class="n">val</span> <span class="n">dtt</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DateTimeType</span><span class="o">(</span><span class="n">calendar</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item. 
+Here an option to do so utilizing SimpleDateFormat:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span>
+
+<span class="c1">// Convert epoch to a human readable</span>
+<span class="n">val</span> <span class="n">SimpleDateFormat</span> <span class="n">sdf</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="s">"yyyy-MM-dd'T'HH:mm:ss.SSSZ"</span><span class="o">)</span>
+<span class="n">val</span> <span class="n">String</span> <span class="n">timestampString</span> <span class="o">=</span> <span class="n">sdf</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">timestampEpoch</span><span class="o">))</span>
+
+<span class="c1">// Convert human readable time stamp to DateTimeType</span>
+<span class="n">val</span> <span class="n">DateTimeType</span> <span class="n">timestamp</span> <span class="o">=</span> <span class="n">DateTimeType</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">timestampString</span><span class="o">)</span>
+
+<span class="c1">//convert state from Item of DateTimeType into a string</span>
+<span class="n">val</span> <span class="n">String</span> <span class="n">datetime_string</span>  <span class="o">=</span> <span class="n">DateTime_Item</span><span class="o">.</span><span class="na">state</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="s">"%1$td.%1$tm.%1$ty %1$tH:%1$tM"</span><span class="o">))</span>
+</code></pre></div></div>
+
+<p>Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
+For some examples:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// See if DateTimeType is before Joda DateTime</span>
+<span class="k">if</span><span class="o">(</span><span class="n">now</span><span class="o">.</span><span class="na">isBefore</span><span class="o">((</span><span class="n">MyDateTimeItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">DateTimeType</span><span class="o">).</span><span class="na">calendar</span><span class="o">.</span><span class="na">timeInMillis</span><span class="o">))</span> <span class="o">...</span>
+
+<span class="c1">// See if DateTimeType is after Joda DateTime</span>
+<span class="k">if</span><span class="o">(</span><span class="n">now</span><span class="o">.</span><span class="na">isAfter</span><span class="o">((</span><span class="n">MyDateTimeItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">DateTimeType</span><span class="o">).</span><span class="na">calendar</span><span class="o">.</span><span class="na">timeInMillis</span><span class="o">))...</span>
+
+<span class="c1">// Get the hour in the day from a DateTimeType</span>
+<span class="n">val</span> <span class="n">hours</span> <span class="o">=</span> <span class="o">(</span><span class="n">MyDateTimeItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">DateTimeType</span><span class="o">).</span><span class="na">calendar</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="nl">Calendar:</span><span class="o">:</span><span class="n">HOUR_OF_DAY</span><span class="o">)</span>
+<span class="c1">// See the Calendar javadocs for the full set of parameters available</span>
+</code></pre></div></div>
+
+<h5 id="dimmer-item">Dimmer Item</h5>
+
+<p>A Dimmer Item carries a <strong>PercentType</strong>.
+PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value. 
+The Rules language supports doing mathematical and logical operations with Numbers
+The Number Object supports methods for getting primitive versions of that Number if needed.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Loading from an Item</span>
+<span class="n">val</span> <span class="n">dimVal</span> <span class="o">=</span> <span class="n">MyDimmerItem</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">Number</span>
+<span class="c1">//as integer</span>
+<span class="n">val</span> <span class="kt">int</span> <span class="n">dimAsInt</span> <span class="o">=</span> <span class="n">dimVal</span><span class="o">.</span><span class="na">intValue</span>
+<span class="c1">// as float</span>
+<span class="n">val</span> <span class="kt">float</span> <span class="n">dimAsFloat</span> <span class="o">=</span> <span class="n">dimVal</span><span class="o">.</span><span class="na">floatValue</span>
+</code></pre></div></div>
+
+<p>If the conversion from or into hexadecimal values is necessary, the following examples may be useful:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// to convert a hex_code (a number expressed in hexadecimals) to a Number type </span>
+<span class="n">val</span> <span class="n">dimVal</span> <span class="o">=</span>  <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">hex_code</span><span class="o">,</span> <span class="mi">16</span><span class="o">)</span> <span class="n">as</span> <span class="n">Number</span>
+<span class="c1">//for very large_hex_codes use</span>
+<span class="n">val</span> <span class="n">dimVal</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">large_hex_code</span><span class="o">,</span> <span class="mi">16</span><span class="o">).</span><span class="na">longValue</span><span class="o">()</span> <span class="n">as</span> <span class="n">Number</span>
+
+<span class="c1">// and here an additional example to convert an integer_value to hex_code string</span>
+<span class="n">var</span> <span class="n">String</span> <span class="n">hex</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="n">integer_value</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Additional conversions that might be useful are listed below under NumberItem</p>
+
+<h5 id="location-item">Location Item</h5>
+
+<p>A Location Items carries a <strong>PointType</strong>.
+A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. 
+Here are a few examples:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Creation</span>
+<span class="n">val</span> <span class="n">location</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PointType</span><span class="o">(</span><span class="k">new</span> <span class="n">DecimalType</span><span class="o">(</span><span class="mf">50.12345</span><span class="o">),</span> <span class="k">new</span> <span class="n">DecimalType</span><span class="o">(</span><span class="mf">10.12345</span><span class="o">))</span>
+<span class="c1">// Creation from String; ATTENTION: do not add space after comma</span>
+<span class="n">val</span> <span class="n">PointType</span> <span class="n">home</span> <span class="o">=</span> <span class="k">new</span> <span class="n">PointType</span><span class="o">(</span><span class="s">"12.121212,123.123123"</span><span class="o">)</span>
+
+<span class="c1">// Loading from an Item</span>
+<span class="n">val</span> <span class="n">PointType</span> <span class="n">location</span> <span class="o">=</span> <span class="n">Device_Coordinates</span><span class="o">.</span><span class="na">state</span> <span class="n">as</span> <span class="n">PointType</span>
+</code></pre></div></div>
+
+<h5 id="number-item">Number Item</h5>
+
+<p>A Number Items carries a <strong>DecimalType</strong>. 
+A DecimalType is also a java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.</p>
+
+<p>Here some other commonly needed conversions:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//convert integer_number to string containing hex_code</span>
+<span class="n">var</span> <span class="n">String</span> <span class="n">hex_code</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">toHexString</span><span class="o">(</span><span class="n">integer_number</span><span class="o">);</span>
+
+<span class="c1">//convert hex_code to Number type</span>
+<span class="n">var</span> <span class="n">MyNumber</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">hex_code</span><span class="o">,</span> <span class="mi">16</span><span class="o">)</span> <span class="n">as</span> <span class="n">Number</span>
+<span class="c1">//use the following for large_hex_code</span>
+<span class="n">var</span> <span class="n">MyNumber</span> <span class="o">=</span> <span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">hex</span><span class="o">,</span> <span class="mi">16</span><span class="o">)</span> <span class="n">as</span> <span class="n">Number</span>
+
+<span class="c1">// coverting hex_code into DecimalType</span>
+<span class="n">var</span> <span class="n">DecimalType</span> <span class="n">parsedResult</span> <span class="o">=</span> <span class="n">DecimalType</span><span class="o">.</span><span class="na">valueOf</span><span class="o">(</span><span class="n">Long</span><span class="o">.</span><span class="na">parseLong</span><span class="o">(</span><span class="n">hex_code</span><span class="o">,</span> <span class="mi">16</span><span class="o">).</span><span class="na">toString</span><span class="o">);</span>
+</code></pre></div></div>
+
+<p>Other useful conversions can be found under Dimmer Item.</p>
+
+<p>One warning comes with DecimalType. 
+The full explanation is <a href="https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4">beyond the scope of this introduction</a>. 
+To avoid an error mentioning an “Ambiguous Method Call” always cast the state of a DecimalType to a Number, not DecimalType.</p>
+
+<h5 id="player-item">Player Item</h5>
+
+<p>The Player item allows to control players (e.g. audio players) with commands such as Play, Pause, Next, Previous, Rewind and Fastforward.
+The Player Item carries three types with predefined commands</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>State Type</th>
+      <th>Commands</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><strong>PlayPauseType</strong></td>
+      <td>PLAY, PAUSE</td>
+    </tr>
+    <tr>
+      <td><strong>RewindFastforwardType</strong></td>
+      <td>REWIND, FASTFORWARD</td>
+    </tr>
+    <tr>
+      <td><strong>NextPreviousType</strong></td>
+      <td>NEXT, PREVIOUS</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>These types can be convert from Open and Closed to 1 and 0 with code similar to the Contact Item (OpenClosedType)</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Loading from an Item</span>
+<span class="n">val</span> <span class="kt">int</span> <span class="n">Playing</span> <span class="o">=</span> <span class="k">if</span> <span class="o">(</span><span class="n">MyPlayerItem</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">PLAY</span><span class="o">)</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h5 id="pointtype">PointType</h5>
+
+<p>See Location item</p>
+
+<h5 id="rollershutter-item">Rollershutter Item</h5>
+
+<p>See Dimmer
+In addition to the command types of the item type Dimmer, the Rollershutter item accepts the StopMoveType with the commands STOP and MOVE</p>
+
+<h5 id="string-item">String Item</h5>
+
+<p>To convert the state of an Item that carries a StringType, the method toString can be invoked.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">//Loading from an Item</span>
+<span class="n">val</span> <span class="n">stateAsString</span> <span class="o">=</span> <span class="n">MyStringItem</span><span class="o">.</span><span class="na">state</span><span class="o">.</span><span class="na">toString</span>
+</code></pre></div></div>
+
+<p>In case an item returns a string containing a value as a hexadecimal number, it can be converted to an integer by using</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//Loading hexvalue from string
+val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
+</code></pre></div></div>
+
+<h5 id="switch-item">Switch Item</h5>
+
+<p>A Switch Item carries a OnOffType.
+OnOffType is an Enumeration. 
+One can convert from ON and OFF to 1 and 0 with code similar to:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">val</span> <span class="n">SwitchNum</span> <span class="o">=</span> <span class="k">if</span> <span class="o">(</span><span class="n">MySwitchItem</span><span class="o">.</span><span class="na">state</span> <span class="o">==</span> <span class="n">ON</span><span class="o">)</span> <span class="mi">1</span> <span class="k">else</span> <span class="mi">0</span>
+</code></pre></div></div>
+
+<h4 id="deeper-dive">Deeper Dive</h4>
+
+<p>While interacting with Item states, care must be taken to understand the difference between Objects and primitives. 
+As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
+However, inheritance only applies to Objects and does <strong>not</strong> apply to primitives; examples for primitives are <code class="highlighter-rouge">integer</code> and <code class="highlighter-rouge">boolean</code>.
+Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. 
+This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do. 
+The top level base Class for all Objects in Java and the Rules DSL is called simply <code class="highlighter-rouge">Object</code>.</p>
+
+<p>In addition to other useful things, the class <code class="highlighter-rouge">Object</code> implements a method called <code class="highlighter-rouge">toString</code>. 
+And since <code class="highlighter-rouge">Object</code> is the parent of all Objects, ALL Classes also implement a <code class="highlighter-rouge">toString</code> method. 
+<em>However primitives do not inherit from Object. 
+They don’t inherit from anything and they don’t have any methods at all which includes the lack of a toString Method.</em></p>
+
+<p>Objects are typically equipped with many more type conversion methods, while primitives do not support any type conversion. 
+This distinction is very relevant when trying to use the result of a calculation and apply it to an Item state.
+The <code class="highlighter-rouge">sendCommand</code> is a generic action and needs to be able to work with all Item types. 
+Actions only support two String arguments as all Objects will support the conversion <code class="highlighter-rouge">toString</code>. 
+<code class="highlighter-rouge">sendCommand (MyItem, new_state)</code> will automatically use the <code class="highlighter-rouge">MyItem.toString</code> method to convert MyItem into a String. 
+It will also attempt to do so with the second argument if <code class="highlighter-rouge">new_state</code> is not already a String. 
+However, if the second argument is a primitive, and not an Object, it does not carry a method <code class="highlighter-rouge">toString</code>. 
+Thus, Rules DSL will not be able to cast <code class="highlighter-rouge">new_state</code> as a String. 
+As a consequence, the use of <code class="highlighter-rouge">sendCommand(MyItem, primitive)</code>, using a primitive as the second argument, will almost always fail.</p>
+
+<p>The different syntax for the generic and the objective-specific differs and is given in the table below:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Generic (Action)</th>
+      <th>Specific (Method)</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">postUpdate(MyItem, new_state)</code></td>
+      <td><code class="highlighter-rouge">MyItem.postUpdate(new_state)</code></td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">sendCommand(MyItem, new_state)</code></td>
+      <td><code class="highlighter-rouge">MyItem.sendCommand(new_state)</code></td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
+Using the method <code class="highlighter-rouge">MyTimes.sendCommand()</code> that is owned by MyItem will use the <code class="highlighter-rouge">sendCommand</code> method that is suitable to make the necessary type conversions.
+For example, the <code class="highlighter-rouge">NumberItem</code> class would have a <code class="highlighter-rouge">sendCommand(int)</code>, <code class="highlighter-rouge">sendCommand(long)</code>, <code class="highlighter-rouge">sendCommand(float)</code>, <code class="highlighter-rouge">sendCommand(double)</code>, <code class="highlighter-rouge">sendCommand(Number)</code>, <code class="highlighter-rouge">sendCommand(DecimalType)</code>, and <code class="highlighter-rouge">sendCommand(String)</code> method. 
+Each of these separate methods is individually written to handle all of these different types of Objects. 
+MyItem will automatically apply the method that corresponds to the argument type.</p>
+
+<h3 id="implicit-variables">Implicit Variables inside the Execution Block</h3>
+
+<p>Besides the implicitly available variables for items and commands/states, rules can have additional pre-defined variables, depending on their triggers:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">receivedCommand</code> - will be implicitly available in every rule that has at least one command event trigger.</li>
+  <li><code class="highlighter-rouge">previousState</code> - will be implicitly available in every rule that has at least one status change event trigger.</li>
+  <li><code class="highlighter-rouge">triggeringItem</code> - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.</li>
+</ul>
+
+<h3 id="return">Early returns</h3>
+
+<p>It is possible to return early from a rule, not executing the rest of the statements like this:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">if</span> <span class="o">(</span><span class="n">Temperature</span><span class="o">.</span><span class="na">state</span> <span class="o">&gt;</span> <span class="mi">20</span><span class="o">)</span> <span class="o">{</span>
+	<span class="k">return</span><span class="o">;</span>
+<span class="o">}</span>
+<span class="n">Heating</span><span class="o">.</span><span class="na">sendCommand</span><span class="o">(</span><span class="n">ON</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>Caveat: Please note the semicolon after the return statement which terminates the command without an additional argument.</p>
+
+<h3 id="concurrency-guard">Concurrency Guard</h3>
+
+<p>If a rule triggers on UI events it may be necessary to guard against concurrency.</p>
+
+<div class="language-javascript highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">import</span> <span class="nx">java</span><span class="p">.</span><span class="nx">util</span><span class="p">.</span><span class="nx">concurrent</span><span class="p">.</span><span class="nx">locks</span><span class="p">.</span><span class="nx">ReentrantLock</span>
+
+<span class="nx">val</span> <span class="nx">ReentrantLock</span> <span class="nx">lock</span>  <span class="o">=</span> <span class="k">new</span> <span class="nx">ReentrantLock</span><span class="p">()</span>
+
+<span class="nx">rule</span> <span class="nx">ConcurrentCode</span>
+<span class="nx">when</span>
+    <span class="nx">Item</span> <span class="nx">Dummy</span> <span class="nx">received</span> <span class="nx">update</span>
+<span class="nx">then</span>
+    <span class="nx">lock</span><span class="p">.</span><span class="nx">lock</span><span class="p">()</span>
+    <span class="k">try</span> <span class="p">{</span>
+        <span class="c1">// do stuff</span>
+    <span class="p">}</span> <span class="k">finally</span><span class="p">{</span>
+        <span class="nx">lock</span><span class="p">.</span><span class="nx">unlock</span><span class="p">()</span>
+    <span class="p">}</span>
+<span class="nx">end</span>
+</code></pre></div></div>
+
+<h3 id="transformations">Transformations</h3>
+
+<p>openHAB <a href="/v2.2/addons/transformations.html">Transformation services</a> may also be used in rules to transform/translate/convert data.
+The general syntax is as follows:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">transform</span><span class="o">(</span><span class="s">"&lt;transformation-identifier&gt;"</span><span class="o">,</span> <span class="s">"&lt;transf. expression or transf. file name&gt;"</span><span class="o">,</span> <span class="o">&lt;</span><span class="n">input</span><span class="o">-</span><span class="n">data</span> <span class="n">or</span> <span class="n">variable</span><span class="o">&gt;)</span>
+</code></pre></div></div>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;transformation-identifier&gt;</code> - Shorthand identifier of the transformation service</li>
+  <li><code class="highlighter-rouge">&lt;transf. expression or transf. file name&gt;</code> - Transformation service specific</li>
+  <li><code class="highlighter-rouge">&lt;input-data or variable&gt;</code> - The data to transform, MUST be of data type <em>String</em></li>
+</ul>
+
+<p>Examples:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">condition</span> <span class="o">=</span> <span class="n">transform</span><span class="o">(</span><span class="s">"MAP"</span><span class="o">,</span> <span class="s">"window_esp.map"</span><span class="o">,</span> <span class="s">"CLOSED"</span><span class="o">)</span>
+<span class="n">var</span> <span class="n">temperature</span> <span class="o">=</span> <span class="n">transform</span><span class="o">(</span><span class="s">"JSONPATH"</span><span class="o">,</span> <span class="s">"$.temperature"</span><span class="o">,</span> <span class="n">jsonstring</span><span class="o">)</span>
+<span class="n">var</span> <span class="n">fahrenheit</span> <span class="o">=</span> <span class="n">transform</span><span class="o">(</span><span class="s">"JS"</span><span class="o">,</span> <span class="s">"convert-C-to-F.js"</span><span class="o">,</span> <span class="n">temperature</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>For all available Transformation services please refer to the list of <a href="/v2.2/addons/transformations.html">Transformation Add-ons</a>.</p>
+
+<h3 id="logging">Logging</h3>
+
+<p>You can emit log messages from your rules to aid debugging.
+There are a number of logging methods available from your rules, the java signatures are:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logDebug</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerName</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">,</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span>
+<span class="n">logInfo</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerName</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">,</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span>
+<span class="n">logWarn</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerName</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">,</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span>
+<span class="n">logError</span><span class="o">(</span><span class="n">String</span> <span class="n">loggerName</span><span class="o">,</span> <span class="n">String</span> <span class="n">format</span><span class="o">,</span> <span class="n">Object</span><span class="o">...</span> <span class="n">args</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>In each case, the <code class="highlighter-rouge">loggerName</code> parameter is combined with the string <code class="highlighter-rouge">org.eclipse.smarthome.model.script.</code> to create the log4j logger name.
+For example, if your rules file contained the following log message:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">logDebug</span><span class="o">(</span><span class="s">"kitchen"</span><span class="o">,</span> <span class="s">"Kitchen light turned on"</span><span class="o">)</span>
+</code></pre></div></div>
+
+<p>then the logger you would have to configure to have your messages appearing in the console would be:</p>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>log:set DEBUG org.eclipse.smarthome.model.script.kitchen
+</code></pre></div></div>
+
+<h2 id="rule-examples">Rule Examples</h2>
+
+<p>Below some examples for common rules:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">var</span> <span class="n">Number</span> <span class="n">counter</span>
+
+<span class="c1">// setting the counter to some initial value</span>
+<span class="c1">// we could have done this in the variable declaration already</span>
+<span class="n">rule</span> <span class="n">Startup</span>
+<span class="n">when</span>
+    <span class="n">System</span> <span class="n">started</span>
+<span class="n">then</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">end</span>
+
+<span class="c1">// increase the counter at midnight</span>
+<span class="n">rule</span> <span class="s">"Increase counter"</span>
+<span class="n">when</span>
+    <span class="n">Time</span> <span class="n">cron</span> <span class="s">"0 0 0 * * ?"</span>
+<span class="n">then</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">counter</span> <span class="o">+</span> <span class="mi">1</span>
+<span class="n">end</span>
+
+<span class="c1">// tell the number of days either at noon or if a button is pressed</span>
+<span class="n">rule</span> <span class="s">"Announce number of days up"</span>
+<span class="n">when</span>
+    <span class="n">Time</span> <span class="n">is</span> <span class="n">noon</span> <span class="n">or</span>
+    <span class="n">Item</span> <span class="n">AnnounceButton</span> <span class="n">received</span> <span class="n">command</span> <span class="n">ON</span>
+<span class="n">then</span>
+    <span class="nf">say</span><span class="o">(</span><span class="s">"The system is up since "</span> <span class="o">+</span> <span class="n">counter</span> <span class="o">+</span> <span class="s">" days"</span><span class="o">)</span>
+<span class="n">end</span>
+
+<span class="c1">// sets the counter to the value of a received command</span>
+<span class="n">rule</span> <span class="s">"Set the counter"</span>
+<span class="n">when</span>
+    <span class="n">Item</span> <span class="n">SetCounterItem</span> <span class="n">received</span> <span class="n">command</span>
+<span class="n">then</span>
+    <span class="n">counter</span> <span class="o">=</span> <span class="n">receivedCommand</span> <span class="n">as</span> <span class="n">DecimalType</span>
+<span class="n">end</span>
+</code></pre></div></div>
+
+<h2 id="further-examples">Further Examples</h2>
+
+<p>Many more examples can be found in the <a href="https://community.openhab.org/c/tutorials-examples">Tutorials &amp; Examples</a> category of the community forum.
+They are community provided and new ones are added constantly.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

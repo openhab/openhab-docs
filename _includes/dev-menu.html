@@ -1,4 +1,5 @@
-{% include base.html %} {% assign docu = base | append: "/developers" %}
+{% include base.html %}
+{% assign docu = base | append: "/developers" %}
 
 <ul class="nav">
   <li><a href="{{docu}}">Overview</a></li>
@@ -9,7 +10,9 @@
         <ul>
           <li><a href="{{docu}}/prerequisites/osgi.html">Overview</a></li>
           <li><a href="{{docu}}/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="{{docu}}/prerequisites/configadmin.html">Configuration Admin</a></li>
           <li><a href="{{docu}}/prerequisites/osgitasks.html">Coding tasks</a></li>
+          <li><a href="{{docu}}/prerequisites/eventadmin.html">Event Admin</a></li>
         </ul>
       </li>
       <li><a href="{{docu}}/prerequisites/tycho.html">Tycho</a></li>

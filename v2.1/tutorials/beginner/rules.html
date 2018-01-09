@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/tutorials/beginner/rules.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li>Tutorial (Beginner)</li>
+  <ul>
+    <li><a href="/v2.1/tutorials/beginner/index.html">Overview</a></li>
+    <li><a href="/v2.1/tutorials/beginner/1sttimesetup.html">First-time setup</a></li>
+    <li><a href="/v2.1/tutorials/beginner/uis.html">User Interfaces</a></li>
+    <li><a href="/v2.1/tutorials/beginner/configuration.html">Configuring openHAB and installing add-ons</a></li>
+    <li><a href="/v2.1/tutorials/beginner/sitemap.html">Creating a sitemap</a></li>
+    <li><a href="/v2.1/tutorials/beginner/rules.html">Working with rules</a></li>
+    <li><a href="/v2.1/tutorials/beginner/logs.html">Looking to the logs</a></li>
+    <li><a href="/v2.1/tutorials/beginner/persistence.html">Working with persistence</a></li>
+  </ul>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="working-with-rules-and-scripts">Working with rules and scripts</h1>
+
+<p>Now that we have the two items - “Presence_Mobile_John” aka “Johns mobile” and “Wallplug_FF_LR_TV” aka “TV wallplug LR” - we can create a simple rule.
+Let’s assume we want to turn on the wallplug (and give some juice to the connected TV) as soon as John’s mobile comes online, turn it off again when the mobile goes offline (this would be a very basic “presence” rule).</p>
+
+<p>Rules are defined in the conf/rules directory. So we create the file default.rules there.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>conf/rules/default.rules
+</code></pre></div></div>
+
+<p>You can create as many .rules files as you want - this eases the overview of different rules/situations. For example:</p>
+
+<ul>
+  <li>presence.rules for the presence detection</li>
+  <li>alarm.rules for your alarm actions</li>
+  <li>tv.rules for rules specific for your SmartTV</li>
+  <li>and so on</li>
+</ul>
+
+<p>For now, we edit the default.rules</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule <span class="s2">"Wallplug_FF_LR_TV ON"</span>
+when
+  Item Presence_Mobile_John changed from OFF to ON
+<span class="k">then
+  </span>Wallplug_FF_LR_TV.sendCommand<span class="o">(</span>ON<span class="o">)</span>
+end
+
+rule <span class="s2">"Wallplug_FF_LR_TV OFF"</span>
+when
+  Item Presence_Mobile_John changed from ON to OFF
+<span class="k">then
+  </span>Wallplug_FF_LR_TV.sendCommand<span class="o">(</span>OFF<span class="o">)</span>
+end
+</code></pre></div></div>
+
+<p>The rule syntax in this example is very easy:</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule <span class="s2">"rule name (should be unique for logging purposes)"</span>
+when
+  &lt;TRIGGER CONDITION1&gt; or 
+  &lt;TRIGGER_CONDITION2&gt; or 
+  &lt;TRIGGER_CONDITION3&gt;
+  ...
+<span class="k">then</span>
+  &lt;EXECUTION_BLOCK&gt;
+end
+</code></pre></div></div>
+
+<p>The trigger conditions can be one of the following:</p>
+
+<ul>
+  <li>Item triggers - just like in the example above. If the state of an item changes, do something</li>
+  <li>Time triggers - do something at a specified time</li>
+  <li>System triggers - do something after a system event happened, i.e. openHAB was started or is shut down</li>
+</ul>
+
+<p><strong>More information on rules can be found <a href="/v2.1/configuration/rules-dsl.html">in the rules section of the user manual!</a></strong></p>
+
+<p>The execution block in the example only consists of the “sendCommand” command, which sets the state of the named item.</p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>ItemName.sendCommand<span class="o">(</span>STATE<span class="o">)</span>
+</code></pre></div></div>
+
+<p>Once the mobile comes online, the wallplug will turn on, As soon as it goes offline, it will turn off. Just as simple as that :)</p>
+
+<hr />
+
+<p><strong>This part has to be completed!</strong></p>
+
+<hr />
+
+<p><em>Guidelines</em></p>
+
+<p><em>I think this will become the longest section</em></p>
+
+<p><em>Don’t forget to address JSR233 or other alternatives to the DSL that will be built into openHAB</em></p>
+
+<ul>
+  <li>
+    <p><em>Event driven development</em></p>
+  </li>
+  <li>
+    <p><em>Format and structure of rules</em></p>
+  </li>
+  <li>
+    <p><em>Difference between actions and posting sending things to items</em></p>
+  </li>
+  <li>
+    <p><em>Functions</em></p>
+  </li>
+  <li>
+    <p><em>Group.members manipulation and how it can help simplify your rules</em></p>
+  </li>
+  <li>
+    <p><em>How to figure out what to import</em></p>
+  </li>
+  <li>
+    <p><em>Working with Time</em></p>
+  </li>
+  <li>
+    <p><em>Working with Timers</em></p>
+  </li>
+  <li>
+    <p><em>Casting to appropriate types and when that is necessary</em></p>
+  </li>
+  <li>
+    <p><em>Working with Numbers</em></p>
+  </li>
+  <li>
+    <p><em>Working with States</em></p>
+  </li>
+  <li>
+    <p><em>Lambdas -&gt; in advanced openHAB</em></p>
+  </li>
+  <li>
+    <p><em>…</em></p>
+  </li>
+</ul>
+
+<hr />
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+
