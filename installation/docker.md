@@ -80,6 +80,7 @@ chown -R openhab:openhab /opt/openhab
 
 ### Running the Container as a Service Managed by Docker
 
+Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 Services can be run an maintained on a Linux machine one of two ways, using Docker or using the system's built in service management (e.g. systemd).
 If using docker to manage the service, run the following command:
 
@@ -123,6 +124,7 @@ To change the runtime parameters stop the container then execute the long comman
 
 ### Running the Container as a Service Controlled by Systemd
 
+Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 If running on a Systemd based Linux distro (Ubuntu 16.1 to be specific).
 The following openhab2.service file will start a new openHAB 2 container every time it starts the service and destroy that container when the service stops.
 What that means is any data that you want to preserve between restarts of openHAB 2 (e.g. configuration, databases, etc.) must be mounted from your host file system into the container.
@@ -167,6 +169,7 @@ Finally run `sudo systemctl start openhab2.service` to start openHAB running.
 
 ## Explanation of Arguments Passed to Docker
 
+Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/openhab/) for the most up to date set of recommended arguments and environment variables.
 - `/usr/bin/docker run` : create a new container from the passed in Image (last argument)
 - `--name=openhab` : give the container a human remember able name
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
@@ -199,8 +202,6 @@ By default the openHAB user in the container is running with:
 
 ## Updating the Image
 
-Use the following steps to update the docker image and all installed add-ons.
-
 Stop the container:
 
 `docker stop openhab` or `sudo systemct stop openhab`
@@ -208,13 +209,6 @@ Stop the container:
 Delete the container:
 
 `docker rm openhab`
-
-Delete the contents of `/opt/openhab/userdata/cache` and `/opt/openhab/userdata/tmp`
-
-```bash
-rm -rf /opt/openhab/userdata/cache
-rm -rf /opt/openhab/userdata/tmp
-```
 
 Pull down the latest image:
 
@@ -226,26 +220,9 @@ where `<version>` is the version of openHAB, `<architecture>` is your architectu
 
 Restart the container using the full command above.
 
-With this upgrade approach it is best if one has configured OH using the cfg files (including addons.cfg) rather than using PaperUI or Habmin.
+The Docker image will automatically perform an upgrade on your mapped in userdata folder whenever it detects that your userdata version and the image's version differ.
+It determines the versions are different by comparing userdata/etc/version.properties.
+Any changes between the two files will trigger and upgrade.
 
-There is an alternative to deleting the cache and tmp directories by using the Karaf console.
-
-Log into the Karaf console
-
-```bash
-ssh openhab@localhost -p 8101
-```
-
-or
-
-```bash
-docker exec -it openhab /openhab/runtime/bin/client
-```
-
-The default password for the login is ``habopen``.
-
-Run `bundle:update <id>` where `<id>` is the ID of the addon as listed when you run `bundle:list`
-
-Repeat step 2 for all bindings
-
-With this approach you can maintain the installation and configuration of OH in PaperUI or Habmin but must update everything individually.
+The upgrade process first creates a backup of the entire mapped in userdata folder (skipping the backup folder) and places it as a dated tar file into userdata/backup.
+It then performs all the same steps that the upgrade script and which are performed by an apt-get/yum upgrade.
