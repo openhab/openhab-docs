@@ -92,7 +92,7 @@ Each rule has the following syntax:
 ```java
 rule "rule name"
 when
-    <TRIGGER CONDITION1> or
+    <TRIGGER_CONDITION1> or
     <TRIGGER_CONDITION2> or
     <TRIGGER_CONDITION3>
     ...
@@ -101,11 +101,9 @@ then
 end
 ```
 
-Rule names must be unique within your openHAB installation. If rule name contains multiple words, it must be wrapped in quotes.
-
-A rule can have any number of trigger conditions, but must at least have one. 
-
-The `SCRIPT_BLOCK` contains the code that should be executed, when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
+- Each rule must have a unique name within your openHAB installation, and the name should be wrapped in quotes.
+- A rule can have any number of trigger conditions, but must at least have one.
+- The `SCRIPT_BLOCK` contains the code that should be executed, when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
 ### Rule Triggers
@@ -737,7 +735,7 @@ var Number counter
 
 // setting the counter to some initial value
 // we could have done this in the variable declaration already
-rule Startup
+rule "Startup"
 when
     System started
 then
