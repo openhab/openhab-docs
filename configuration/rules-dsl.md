@@ -90,20 +90,17 @@ The **Rules** section contains a list of rules.
 Each rule has the following syntax:
 
 ```java
-rule "rule name"
+rule "<RULE_NAME>"
 when
-    <TRIGGER_CONDITION1> or
-    <TRIGGER_CONDITION2> or
-    <TRIGGER_CONDITION3>
-    ...
+    <TRIGGER_CONDITION>
 then
     <SCRIPT_BLOCK>
 end
 ```
 
-- Each rule must have a unique name within your openHAB installation, and the name should be wrapped in quotes.
-- A rule can have any number of trigger conditions, but must at least have one.
-- The `SCRIPT_BLOCK` contains the code that should be executed, when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
+- `<RULE_NAME>` - Each rule must have a unique name (given within quotes). It is recommended to choose a meaningful description as rule name.
+- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. At least one condition has to be given, multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
+- `SCRIPT_BLOCK` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
 ### Rule Triggers
