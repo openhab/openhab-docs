@@ -92,14 +92,14 @@ Each rule has the following syntax:
 ```java
 rule "<RULE_NAME>"
 when
-    <TRIGGER_CONDITION>
+    <TRIGGER_CONDITION> [or <TRIGGER_CONDITION2> [or ...]]
 then
     <SCRIPT_BLOCK>
 end
 ```
 
-- `<RULE_NAME>` - Each rule must have a unique name (given within quotes). It is recommended to choose a meaningful description as rule name.
-- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. At least one condition has to be given, multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
+- `<RULE_NAME>` - Each rule must have a unique name (given within quotes). It is recommended that you choose a name that has meaning when spoken.
+- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. A rule is executed in reaction to one or more trigger conditions. Multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
 - `SCRIPT_BLOCK` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
