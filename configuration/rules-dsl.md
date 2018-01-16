@@ -90,19 +90,17 @@ The **Rules** section contains a list of rules.
 Each rule has the following syntax:
 
 ```java
-rule "rule name"
+rule "<RULE_NAME>"
 when
-    <TRIGGER CONDITION1> or
-    <TRIGGER_CONDITION2> or
-    <TRIGGER_CONDITION3>
-    ...
+    <TRIGGER_CONDITION> [or <TRIGGER_CONDITION2> [or ...]]
 then
     <SCRIPT_BLOCK>
 end
 ```
 
-A rule can have any number of trigger conditions, but must at least have one.
-The `SCRIPT_BLOCK` contains the code that should be executed, when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
+- `<RULE_NAME>` - Each rule must have a unique name (given within quotes). It is recommended that you choose a name that has meaning when spoken.
+- `<TRIGGER_CONDITION>` - The triggering event upon which the rule logic is executed. A rule is executed in reaction to one or more trigger conditions. Multiple conditions are separated by the keyword `or`. Please see below for different possible triggers.
+- `<SCRIPT_BLOCK>` - Contains the logic that should be executed when a trigger condition is met, see the [script](#scripts) section for details on its syntax.
 
 {: #rule-triggers}
 ### Rule Triggers
@@ -734,7 +732,7 @@ var Number counter
 
 // setting the counter to some initial value
 // we could have done this in the variable declaration already
-rule Startup
+rule "Startup"
 when
     System started
 then
