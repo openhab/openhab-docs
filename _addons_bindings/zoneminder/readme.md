@@ -3,7 +3,7 @@ id: zoneminder
 label: Zoneminder
 title: Zoneminder - Bindings
 type: binding
-description: "This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder). It also only offers access to a limited set of values, as well as a even more limited option to update values in ZoneMinder. It requires at least ZoneMinder 1.29 with API enabled (option 'OPT_USE_API' in ZoneMinder must be enabled). The option 'OPT_TRIGGERS' must be anabled to allow openHAB to trip the ForceAlarm in ZoneMinder."
+description: "This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder)."
 since: 2x
 logo: images/addons/zoneminder.png
 install: auto
@@ -15,7 +15,10 @@ install: auto
 
 # Zoneminder Binding
 
-This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder). It also only offers access to a limited set of values, as well as a even more limited option to update values in ZoneMinder. It requires at least ZoneMinder 1.29 with API enabled (option 'OPT_USE_API' in ZoneMinder must be enabled). The option 'OPT_TRIGGERS' must be anabled to allow openHAB to trip the ForceAlarm in ZoneMinder.
+This binding offers integration to a ZoneMinder Server. It currently only offers to integrate to monitors (eg. cameras in ZoneMinder).
+It also only offers access to a limited set of values, as well as a even more limited option to update values in ZoneMinder.
+It requires at least ZoneMinder 1.29 with API enabled (option 'OPT_USE_API' in ZoneMinder must be enabled).
+The option 'OPT_TRIGGERS' must be anabled to allow openHAB to trip the ForceAlarm in ZoneMinder.
 
 ## Supported Things
 
@@ -29,32 +32,38 @@ This binding supports the following thing types
 
 ## Getting started /  Discovery
 
-The binding consists of a Bridge (the ZoneMinder Server it self), and a number of Things, which relates to the induvidual monitors in ZoneMinder. ZoneMinder things can be configured either through the online configuration utility via discovery, or manually through the 'zoneminder.things' configuration file. The Bridge will not be autodiscovered, this behaviour is by design. That is because the ZoneMinder API can be configured to communicate on custom ports, you can even change the url from the default /zm/ to something userdefined. That makes it meaningless to scan for a ZoneMinder Server. The Bridge must therefore be added manually, this can be done from PaperUI. After adding the Bridge it will go ONLINE, and after a short while and the discovery process for monitors will start. When a new monitor is discovered it will appear in the Inbox.
-
+The binding consists of a Bridge (the ZoneMinder Server it self), and a number of Things, which relates to the induvidual monitors in ZoneMinder.
+ZoneMinder things can be configured either through the online configuration utility via discovery, or manually through the 'zoneminder.things' configuration file.
+The Bridge will not be autodiscovered, this behavior is by design.
+That is because the ZoneMinder API can be configured to communicate on custom ports, you can even change the url from the default /zm/ to something userdefined.
+That makes it meaningless to scan for a ZoneMinder Server.
+The Bridge must therefore be added manually, this can be done from PaperUI.
+After adding the Bridge it will go ONLINE, and after a short while and the discovery process for monitors will start.
+When a new monitor is discovered it will appear in the Inbox.
 
 ### Bridge
 
-Channel       | Type      | Description
--------------- | --------- | ----------------------------------
-online         | Switch    | Parameter indicating if the server is online
-CPU load       | Text      | Current CPU Load of server
-Disk Usage     | text      | Current Disk Usage on server
+| Channel    | Type   | Description                                  |
+|------------|--------|----------------------------------------------|
+| online     | Switch | Parameter indicating if the server is online |
+| CPU load   | Text   | Current CPU Load of server                   |
+| Disk Usage | text   | Current Disk Usage on server                 |
 
 ### Thing
 
- Channel       | Type      | Description
--------------- | --------- | ----------------------------------
-online         | Switch    | Parameter indicating if the monitor is online
-enabled        | Switch    | Parameter indicating if the monitor is enabled
-force-alarm    | Switch    | Parameter indicating if Force Alarm for the the monitor is active
-alarm	       | Switch    | true if monitor has an active alarm
-recording      | Text	   | true if monitor is recording
-detailed-status| Text	   |  Detailed status of monitor (Idle, Pre-alarm, Alarm, Alert, Recording)
-event-cause    | Text	   | Empty when there is no active event, else it contains the text with the cause of the event	
-function       | Text      | Text corresponding the value in ZoneMinder: None, Monitor, Modect, Record, Mocord, Nodect
-capture-daemon | Switch      | Run state of ZMC Daemon 
-analysis-daemon| Switch      | Run state of ZMA Daemon 
-frame-daemon   | Switch      | Run state of ZMF Daemon 
+| Channel         | Type   | Description                                                                                |
+|-----------------|--------|--------------------------------------------------------------------------------------------|
+| online          | Switch | Parameter indicating if the monitor is online                                              |
+| enabled         | Switch | Parameter indicating if the monitor is enabled                                             |
+| force-alarm     | Switch | Parameter indicating if Force Alarm for the the monitor is active                          |
+| alarm           | Switch | true if monitor has an active alarm                                                        |
+| recording       | Text   | true if monitor is recording                                                               |
+| detailed-status | Text   | Detailed status of monitor (Idle, Pre-alarm, Alarm, Alert, Recording)                      |
+| event-cause     | Text   | Empty when there is no active event, else it contains the text with the cause of the event |
+| function        | Text   | Text corresponding the value in ZoneMinder: None, Monitor, Modect, Record, Mocord, Nodect  |
+| capture-daemon  | Switch | Run state of ZMC Daemon                                                                    |
+| analysis-daemon | Switch | Run state of ZMA Daemon                                                                    |
+| frame-daemon    | Switch | Run state of ZMF Daemon                                                                    |
 
 ## Manual configuration
 
@@ -111,7 +120,7 @@ then
 	}
 	else if (zmMonitor1_EventState.state == OFF) {
 		logInfo("zoneminder.rules", "ZoneMinder Alarm stopped")
-	}	
+	}
 end
 
 rule "Monitor1 Recording State"
@@ -123,7 +132,7 @@ then
 	}
 	else if (zmMonitor1_Recording.state == OFF) {
 		logInfo("zoneminder.rules", "ZoneMinder recording stopped")
-	}	
+	}
 end
 
 
@@ -141,7 +150,6 @@ then
 	}
 end
 ```
-
 
 ### Sitemap configuration
 

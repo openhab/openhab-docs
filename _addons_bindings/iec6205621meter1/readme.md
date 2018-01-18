@@ -6,7 +6,7 @@ type: binding
 description: "This binding is used to communicate to metering devices supporting serial communication according IEC 62056-21 mode C master. It can be used to read metering data from slaves such as gas, water, heat, or electricity meters."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.iec6205621meter/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

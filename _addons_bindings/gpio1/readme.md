@@ -6,7 +6,7 @@ type: binding
 description: "This binding is for the local GPIO subsystem. It is currently only exposed to user space by [Linux GPIO framework](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt). Being based on a kernel implementation, it's hardware agnostic and works on different boards without modification (this is on theory only, not all existing boards can be tested)."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.gpio/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

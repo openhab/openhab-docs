@@ -1,13 +1,12 @@
 ---
 layout: documentation
 title: HABPanel
+source: https://github.com/openhab/org.openhab.ui.habpanel/blob/master/doc/habpanel.md
 ---
 
 {% include base.html %}
 
-<!-- Attention authors: If you want to improve or enhance this article, please go to: -->
-<!--   * https://github.com/openhab/org.openhab.ui.habpanel/issues -->
-<!--   * https://github.com/openhab/org.openhab.ui.habpanel/blob/master/docs/habpanel.md -->
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
 
 # Designing dashboard interfaces with HABPanel
 

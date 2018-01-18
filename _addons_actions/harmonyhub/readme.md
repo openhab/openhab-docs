@@ -3,7 +3,7 @@ id: harmonyhub
 label: Logitech Harmony Hub
 title: Logitech Harmony Hub - Actions
 type: action
-description: "* `harmonyPressButton(<device>, <command>)`"
+description: "*   `harmonyPressButton(<device>, <command>)`"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.harmonyhub/README.md
 since: 1x
 install: manual
@@ -17,11 +17,10 @@ install: manual
 
 ## Actions
 
-* `harmonyPressButton(<device>, <command>)`
-* `harmonyPressButton(<qualifier>, <device>, <command>)`
-* `harmonyStartActivity(<activity>)`
-* `harmonyStartActivity(<qualifier>,<activity>)`
-
+*   `harmonyPressButton(<device>, <command>)`
+*   `harmonyPressButton(<qualifier>, <device>, <command>)`
+*   `harmonyStartActivity(<activity>)`
+*   `harmonyStartActivity(<qualifier>,<activity>)`
 
 ## Examples
 

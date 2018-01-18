@@ -6,7 +6,7 @@ type: binding
 description: "This binding supports the horizon mediabox used by cable companies in the Netherlands and some other countries. The box is manufactured by Samsung and known as SMT-G7400 and SMT-G7401. This binding is tested with the SMT-G7401 but should also work with the SMT-G7400. The binding only works when your box is connected to your home network. When you are able to use the HorizonGo remote control app, you should also be able to use this binding."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.horizon/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
