@@ -464,6 +464,8 @@ cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
   * Static webview files are now located in `<openhab 2 conf>/html` instead of  `/usr/share/openhab/webapps`
 
   * The name of the sitemap (i.e. the word right after `sitemap` at the top of the file) must match the file name. For example the file named `myhome.sitemap` should start with `sitemap myhome`.
+  * Charts no longer display a legend by default. If this parameter is not set, the legend is hidden if there is only one chart series.
+  Add 'legend=true' to restore the chart's legend. 
 
 ### Rules
   * All references to org.openhab.core.* in imports and class references should be removed. All of these classes are automatically included and have moved.
