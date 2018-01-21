@@ -228,7 +228,7 @@ How long you need to wait before changing your "delayed_start" Item from "OFF" t
 Create `$OPENHAB_CONF/rules/refresh.rules` with the following content (This rule runs only once when openHAB starts):
 
 ```sh
-var boolean reloadOnce = Temperature
+var boolean reloadOnce = true
 rule "Refresh rules after persistence service has started"
   when System started
 then
