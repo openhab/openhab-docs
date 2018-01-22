@@ -28,7 +28,7 @@ The following Actions are a core part of openHAB and do not need to be separatel
 
 When the result of the commandString is to cause some action (e.g. turn on a light, change a thermostat to a new temperature, etc.) then use sendCommand. When interacting with widgets on the user interfaces commands are sent to the Items.
 
-When the result of the commandString is to change the state of an Item without causing some action (i.e. to make the state of an Item match the state of a device without commanding the device to change).
+When the result of the commandString is to change the state of an Item without causing some action (i.e. to make the state of an Item match the state of a device without commanding the device to change) then use postUpdate.
 
 As a general rule, is better to call `MyItem.sendCommand(command)` and `MyItem.postUpdate(command)` where possible because the Item methods are able to handle a wider variety of commands appropriately. The Actions are best reserved for use in cases where the Item's name is determined at runtime.
 
