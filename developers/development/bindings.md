@@ -22,9 +22,16 @@ As a first step, you need to decide in which namespace you want to develop your 
 
 ## Creating a Skeleton
 
-For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding. For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with a single parameter, which is your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem'). When prompted, enter your name as author and hit "Y" to start the skeleton generation.
+For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding.
+For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments
+Foremost your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
+The latter your name as author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
 
-For the Eclipse SmartHome namespace: Choose the option "Eclipse SmartHome Extensions" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding. For this, go to `git/smarthome/tools/archetype`and run `mvn install` in order to install the archetype definition in your local Maven repo. Now go to `git/smarthome/extensions/binding` and call the script `create_esh_binding_skeleton.sh` with a single parameter, which is your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem'). When prompted, enter your name as author and hit "Y" to start the skeleton generation.
+For the Eclipse SmartHome namespace: Choose the option "Eclipse SmartHome Extensions" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding.
+For this, go to `git/smarthome/tools/archetype`and run `mvn install` in order to install the archetype definition in your local Maven repo.
+Now go to `git/smarthome/extensions/binding` and call the script `create_binding_skeleton.sh` with two parameters.
+The first one is your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
+The second one is your name as author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
 
 Now switch in Eclipse and choose `File->Import->General->Existing Projects into Workspace`, enter the folder of the newly created skeleton as the root directory and press "Finish".
 
