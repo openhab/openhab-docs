@@ -52,6 +52,6 @@ url of the corresponding `.jar` file.
 For this installation option you need a bundles `.jar` file.
 One way of retrieving those files is mentiones above in the openHAB consle part.
 
-Place the `.jar` file in the `$OPENHAB_HOME/add-ons` folder on the machine you are running openHAB on.
+Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
