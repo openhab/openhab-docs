@@ -60,19 +60,22 @@ The following devices have been tested with the binding
 | Device                     | Description                    |
 |----------------------------|--------------------------------|
 | Busch-Jaeger 6711          | Relay Insert                   |
+| GE Bulbs                   |                                |
 | Hue Bulbs                  | Color LED Bulb                 |
 | Hue Motion Sensor          | Motion and Luminance sensor    |
+| Innr Bulbs                 |                                |
 | Osram Bulbs                |                                |
 | SmartThings Plug           | Metered Plug                   |
 | SmartThings Motion Sensor  | Motion and Temperature sensor  |
 | SmartThings Contact Sensor | Contact and Temperature sensor |
 | Tradfri Bulbs              |                                |
+| Tradfri Motion Sensor      |                                |
 
 
 
 ## Discovery
 
-Once the binding is authorized, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds.
+Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds.
 
 
 ## Thing Configuration
@@ -95,6 +98,7 @@ The following channels are supported -:
 | switch_onoff | ```ON_OFF``` (0x0006) | Switch  |
 | color_color | ```COLOR_CONTROL``` (0x0300) | Color |   |
 | color_temperature | ```COLOR_CONTROL``` (0x0300) | Dimmer |   |
+| electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number |   |
 | ias_contactportal1 | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_motionintrusion | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_motionpresence | ```IAS_ZONE``` (0x0500) | Switch |  |
@@ -105,7 +109,7 @@ The following channels are supported -:
 
 ### Updates
 
-The binding will attempt to configure a connection with the device to receive automatic and instantaneous reports when the device status changes. Should this configuration fail, the binding will resort to using a fast polling (note that "fast" is approximately 10 seconds at this time). 
+The binding will attempt to configure a connection with the device to receive automatic and instantaneous reports when the device status changes. Should this configuration fail, the binding will resort to using a fast polling (note that "fast" is approximately 30 seconds at this time). 
 
 
 ## When things don't appear to be working
@@ -118,3 +122,5 @@ log:set debug com.zsmartsystems.zigbee
 ```
 
 This will log data into the standard openhab.log file.
+
+Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network.

@@ -1,7 +1,7 @@
 ---
 id: pioneeravr
-label: PioneerAVR Configuration
-title: PioneerAVR Configuration - Bindings
+label: Pioneer AVR
+title: Pioneer AVR - Bindings
 type: binding
 description: "The binding can auto-discover the Pioneer AVRs present on your local network."
 since: 2x
@@ -13,7 +13,7 @@ install: auto
 
 {% include base.html %}
 
-# PioneerAVR Binding Configuration
+# Pioneer AVR Binding
 
 ## Binding configuration
 
@@ -29,7 +29,7 @@ org.openhab.pioneeravr:enableAutoDiscovery=false
 This configuration parameter only control the PioneerAVR auto-discovery process, not the openHAB auto-discovery.
 Moreover, if the openHAB auto-discovery is disabled, the PioneerAVR auto-discovery is disabled too.
 
-##Thing configuration
+## Thing configuration
 
 In the things folder, create a file called pioneeravr.things (or any other name) and configure your AVRs inside.
 
@@ -53,7 +53,6 @@ pioneeravr:ipAvr:vsx921IP [ address="192.168.1.25", tcpPort="23" ]
 pioneeravr:serialAvr:vsx921Serial [ serialPort="COM9" ]
 ```
 
-
 ## Channels
 
 *   power: power On/Off the AVR. Receive power events.
@@ -63,8 +62,7 @@ pioneeravr:serialAvr:vsx921Serial [ serialPort="COM9" ]
 *   setInputSource: Set the input source of the AVR. See input source mapping for more details. Receive source input change events with the input source ID.
 *   displayInformation: Receive display events. Reflect the display on the AVR front panel.
 
-
-##Input Source Mapping
+## Input Source Mapping
 
 Here after are the ID values of the input sources:
 
