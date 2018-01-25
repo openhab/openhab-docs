@@ -8,7 +8,7 @@ layout: documentation
 
 All add-ons for openHAB 2 are part of the distribution.
 This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible.
-Add-ons can be easily installed in different ways, which are described below in detail.
+Add-ons can be installed easily in different ways, which are described below in detail.
 
 | Add-on Type                             | Description                                                                                                               |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
@@ -22,7 +22,7 @@ Add-ons can be easily installed in different ways, which are described below in 
 
 ## Installation of Add-ons
 
-Depending on the package you have choosen during your first time setup, there are already some pre-installed add-ons.
+Depending on the [package]({{base}}/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
 Additional add-ons can be installed in the different ways, described below.
 
 ### Through Paper UI
@@ -35,7 +35,7 @@ Search for the desired add-on in the categories and press install.
 ### From the openHAB Console
 
 Connect to the [openHAB console]({{base}}/administration/console.html) in your prefered [way]({{base}}/administration/console.html#accessing-the-console).
-Use the [bundle]({{base}}/administration/bundles.html) command family to install a specific add-on:
+Use either the [bundle]({{base}}/administration/bundles.html) command family to install a specific add-on:
 
 ```sh
 bundle:install <URL-TO-ADD-ON-JAR-FILE>
@@ -46,6 +46,22 @@ Just navigate to your desired add-on through the cloudbees page and copy the
 url of the corresponding `.jar` file.
 
 ![installing Add-ons from Karaf console](images/index_installation_karaf.gif)
+
+Or you could also use the feature command family to install a specific add-on:
+
+```sh
+feature:install <feature>[/version]
+```
+
+You can find out correct feature names with `feature:list`.
+Optionally you can add the add-on version you want to install.
+Running the command without the parameter, will install the latest stable version.
+
+Example:
+
+```sh
+feature:install openhab-binding-network
+```
 
 ### With a `.jar` file
 
