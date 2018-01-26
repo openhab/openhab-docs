@@ -11,7 +11,8 @@ The following guidelines apply to all (Java) code of the openHAB project.
 They must be followed to ensure a consistent code base for easy readability and maintainability.
 Exceptions can certainly be made, but they should be discussed and approved by a project maintainer upfront.
 
-Note that this list also serves as a checklist for code reviews on pull requests. To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
+Note that this list also serves as a checklist for code reviews on pull requests.
+To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
 ## A. Code Style
 
@@ -24,7 +25,9 @@ Note that this list also serves as a checklist for code reviews on pull requests
 1. Generics must be used where applicable.
 1. Code should not show any warnings. Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
 1. For dependency injection, OSGi Declarative Services should be used.
+1. OSGi Declarative Services should be declared using annotations. The IDE will take care of the service *.xml file creation. See the official OSGi documentation for an [example here](http://enroute.osgi.org/services/org.osgi.service.component.html).
 1. Packages that contain classes that are not meant to be used by other bundles should have "internal" in their package name.
+1. [Null annotations](https://wiki.eclipse.org/JDT_Core/Null_Analysis) are used from the Eclipse JDT project. Therefore every bundle should have an **optional** `Import-Package` dependency to `org.eclipse.jdt.annotation`.
 
 ## B. OSGi Bundles
 
@@ -34,12 +37,15 @@ Note that this list also serves as a checklist for code reviews on pull requests
 1. The manifest must not contain any "Require-Bundle" entries. Instead, "Import-Package" must be used.
 1. The manifest must not export any internal package.
 1. The manifest must not have any version constraint on package imports, unless this is thoughtfully added. Note that Eclipse automatically adds these constraints based on the version in the target platform, which might be too high in many cases.
-1. The manifest must include all services in the Service-Component entry. A good approach is to put `OSGI-INF/*.xml` in there.
+1. The manifest must include all services in the Service-Component entry. A good approach is to put OSGI-INF/*.xml in there.
 1. Every exported package of a bundle must be imported by the bundle itself again.
+1. Test fragments may have the bundles `org.junit`, `org.hamcrest` and `org.mockito` in the "Require-Bundle" section. This is the only exception to not having "Require-Bundle" at all.
+1. Any 3rd party content has to be added thoughtfully and version/license information has to be given in the NOTICE file.
 
 ## C. Language Levels and Libraries
 
-1. Eclipse SmartHome requires at least JavaSE 7. Hence no features of Java 8 must be used within the code. To allow optimized JavaSE 8 runtimes, the set of Java packages to be used is furthermore restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
+1. Eclipse SmartHome generally targets JavaSE 8 with the following restrictions:
+ * To allow optimized JavaSE 8 runtimes, the set of Java packages to be used is furthermore restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
 1. The minimum OSGi framework version supported is [OSGi R4.2](http://www.osgi.org/Download/Release4V42), no newer features must be used.
 1. For logging, slf4j (v1.7.2) is used.
 1. A few common utility libraries are available that every Eclipse SmartHome based solution has to provide and which can be used throughout the code (and which are made available in the target platform):
@@ -66,3 +72,11 @@ Note that this list also serves as a checklist for code reviews on pull requests
  - ```error``` logging should only be used to inform the user that something is tremendously wrong in his setup, the system cannot function normally anymore, and there is a need for immediate action. It should also be used if some code fails irrecoverably and the user should report it as a severe bug.
 1. For bindings, you should NOT log errors, if e.g. connections are dropped - this is considered to be an external problem and from a system perspective to be a normal and expected situation. The correct way to inform users about such events is to update the Thing status accordingly. Note that all events (including Thing status events) are anyhow already logged.
 1. Likewise, bundles that accept external requests (such as servlets) must not log errors or warnings if incoming requests are incorrect. Instead, appropriate error responses should be returned to the caller.
+
+## Static Code Analysis
+
+The openHAB Maven build includes [tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the Coding Guidelines and some additional best practices. Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/master/docs/included-checks.md).
+
+The tool will generate an individual report for each bundle that you can find in `path/to/bundle/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `target/summary_report.html`. The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info). If any error is found within your code the Maven build will end with failure. You will receive detailed information (path to the file, line and message) listing all problems with Priority 1 on the console.
+
+Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask). Re-run the build to confirm that the checks are passing.
