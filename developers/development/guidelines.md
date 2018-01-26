@@ -75,8 +75,13 @@ To speed up the contribution process, we therefore advice to go through this che
 
 ## Static Code Analysis
 
-The openHAB Maven build includes [tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the Coding Guidelines and some additional best practices. Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/master/docs/included-checks.md).
+The openHAB Maven build includes [tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the Coding Guidelines and some additional best practices.
+Information about the checks can be found [here](https://github.com/openhab/static-code-analysis/blob/master/docs/included-checks.md).
 
-The tool will generate an individual report for each bundle that you can find in `path/to/bundle/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `target/summary_report.html`. The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info). If any error is found within your code the Maven build will end with failure. You will receive detailed information (path to the file, line and message) listing all problems with Priority 1 on the console.
+The tool will generate an individual report for each bundle that you can find in `path/to/bundle/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `target/summary_report.html`.
+The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info).
+If any error is found within your code the Maven build will end with failure.
+You will receive detailed information (path to the file, line and message) listing all problems with Priority 1 on the console.
 
-Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask). Re-run the build to confirm that the checks are passing.
+Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask).
+Re-run the build to confirm that the checks are passing.
