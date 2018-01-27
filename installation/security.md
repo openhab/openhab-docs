@@ -40,11 +40,11 @@ openHAB does not (yet) support restricting access through HTTP(S) for certain us
 **Security Warning:**
 It is vitally important that you MUST NOT directly expose your openHAB instance to the Internet (e.g. by opening a port in your firewall)!
 
-If you want to limit access to only certain network interfaces, you can do so in the file `$OPENHAB_USERDATA/etc/org.ops4j.pax.web.cfg` by editing the `org.ops4j.pax.web.listening.addresses` parameter.
+If you want to limit access to only certain network interfaces, you can do so by setting the environment variable `OPENHAB_HTTP_ADDRESS`.
 Setting it to
 
 ```conf
-org.ops4j.pax.web.listening.addresses = 127.0.0.1
+OPENHAB_HTTP_ADDRESS=127.0.0.1
 ```
 
 will e.g. only allow requests through the local loopback interface.
