@@ -37,7 +37,7 @@ To speed up the contribution process, we therefore advice to go through this che
 1. The manifest must not contain any "Require-Bundle" entries. Instead, "Import-Package" must be used.
 1. The manifest must not export any internal package.
 1. The manifest must not have any version constraint on package imports, unless this is thoughtfully added. Note that Eclipse automatically adds these constraints based on the version in the target platform, which might be too high in many cases.
-1. The manifest must include all services in the Service-Component entry. A good approach is to put `OSGI-INF/*.xml in there.
+1. The manifest must include all services in the Service-Component entry. A good approach is to put `OSGI-INF/*.xml` in there.
 1. Every exported package of a bundle must be imported by the bundle itself again.
 1. Test fragments may have the bundles `org.junit`, `org.hamcrest` and `org.mockito` in the "Require-Bundle" section. This is the only exception to not having "Require-Bundle" at all.
 1. Any 3rd party content has to be added thoughtfully and version/license information has to be given in the NOTICE file.
