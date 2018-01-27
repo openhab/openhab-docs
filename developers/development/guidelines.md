@@ -25,7 +25,7 @@ To speed up the contribution process, we therefore advice to go through this che
 1. Generics must be used where applicable.
 1. Code should not show any warnings. Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
 1. For dependency injection, OSGi Declarative Services should be used.
-1. OSGi Declarative Services should be declared using annotations. The IDE will take care of the service *.xml file creation. See the official OSGi documentation for an [example here](http://enroute.osgi.org/services/org.osgi.service.component.html).
+1. OSGi Declarative Services should be declared using annotations. The IDE will take care of the service `*.xml` file creation. See the official OSGi documentation for an [example here](http://enroute.osgi.org/services/org.osgi.service.component.html).
 1. Packages that contain classes that are not meant to be used by other bundles should have "internal" in their package name.
 1. [Null annotations](https://wiki.eclipse.org/JDT_Core/Null_Analysis) are used from the Eclipse JDT project. Therefore every bundle should have an **optional** `Import-Package` dependency to `org.eclipse.jdt.annotation`.
 
@@ -37,7 +37,7 @@ To speed up the contribution process, we therefore advice to go through this che
 1. The manifest must not contain any "Require-Bundle" entries. Instead, "Import-Package" must be used.
 1. The manifest must not export any internal package.
 1. The manifest must not have any version constraint on package imports, unless this is thoughtfully added. Note that Eclipse automatically adds these constraints based on the version in the target platform, which might be too high in many cases.
-1. The manifest must include all services in the Service-Component entry. A good approach is to put OSGI-INF/*.xml in there.
+1. The manifest must include all services in the Service-Component entry. A good approach is to put `OSGI-INF/*.xml in there.
 1. Every exported package of a bundle must be imported by the bundle itself again.
 1. Test fragments may have the bundles `org.junit`, `org.hamcrest` and `org.mockito` in the "Require-Bundle" section. This is the only exception to not having "Require-Bundle" at all.
 1. Any 3rd party content has to be added thoughtfully and version/license information has to be given in the NOTICE file.
@@ -66,10 +66,10 @@ To speed up the contribution process, we therefore advice to go through this che
 1. Parametrized logging must be used (instead of string concatenation).
 1. Where ever unchecked exceptions are caught and logged, the exception should be added as a last parameter to the logging. For checked exceptions, this is normally not recommended, unless it can be considered an error situation and the stacktrace would hold additional important information for the analysis.
 1. Logging levels should focus on the system itself and describe its state. As every bundle is only one out of many, logging should be done very scarce. It should be up to the user to increase the logging level for specific bundles, packages or classes if necessary. This means in detail:
- - Most logging should be done in ```debug``` level. ```trace``` can be used for even more details, where necessary.
- - Only few important things should be logged in ```info``` level, e.g. a newly started component or a user file that has been loaded.
- - ```warn``` logging should only be used to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal, while possibly ignoring some faulty configuration/situation. It can also be used in situations, where a code section is reached, which is not expected by the implementation under normal circumstances (while being able to automatically recover from it).
- - ```error``` logging should only be used to inform the user that something is tremendously wrong in his setup, the system cannot function normally anymore, and there is a need for immediate action. It should also be used if some code fails irrecoverably and the user should report it as a severe bug.
+ - Most logging should be done in `debug` level. `trace` can be used for even more details, where necessary.
+ - Only few important things should be logged in `info` level, e.g. a newly started component or a user file that has been loaded.
+ - `warn` logging should only be used to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal, while possibly ignoring some faulty configuration/situation. It can also be used in situations, where a code section is reached, which is not expected by the implementation under normal circumstances (while being able to automatically recover from it).
+ - `error` logging should only be used to inform the user that something is tremendously wrong in his setup, the system cannot function normally anymore, and there is a need for immediate action. It should also be used if some code fails irrecoverably and the user should report it as a severe bug.
 1. For bindings, you should NOT log errors, if e.g. connections are dropped - this is considered to be an external problem and from a system perspective to be a normal and expected situation. The correct way to inform users about such events is to update the Thing status accordingly. Note that all events (including Thing status events) are anyhow already logged.
 1. Likewise, bundles that accept external requests (such as servlets) must not log errors or warnings if incoming requests are incorrect. Instead, appropriate error responses should be returned to the caller.
 
