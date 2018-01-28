@@ -7,7 +7,7 @@ layout: documentation
 # Add-ons
 
 All add-ons for openHAB 2 are part of the distribution.
-This includes all new 2.0 bindings as well as all 1.x add-ons that were reported to be compatible.
+This includes all 2.x bindings as well as all 1.x add-ons that were reported to be compatible.
 There are several ways you can install an add-on. 
 These are described under *Installation of Add-ons* below
 
@@ -61,7 +61,7 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 
 According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for our example is *network*.
 
-With this information we can now edit the *addons.cfg* file in the `userdata` folder on the machine you are running openHAB on.
+With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
 
