@@ -61,6 +61,19 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 
 According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for our example is *network*.
 
+Another way of getting the correct id, is the url from the add-ons documentation page.
+For example the url for the [mqtt binding]({{base}}/addons/bindings/mqtt1/readme.html) is
+
+````text
+https://docs.openhab.org/addons/bindings/mqtt1/readme.html
+```
+
+So the id would be *mqtt1* in this case.
+Did you notice the trailing *1* in this id?
+This is because the mqqt binding is a 1.x add-on.
+
+> All 1.x add-ons **must** have a trailing 1 in their id.
+
 With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
@@ -77,13 +90,14 @@ persistence = influxdb
 misc = restdocs
 ```
 
-To install the network binding like we ant in this example, we just need to add the id *network* to the binding section.
+To install the network binding like we want in this example, we just need to add the id *network* to the binding section.
 
 ```text
 binding = astro,mqtt1,network
 ```
 
 After saving the file, the add-on will be installed.
+
 
 ### With a `.jar` file
 
