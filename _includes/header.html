@@ -53,17 +53,18 @@
             </li>
           </ul>
           <ul id="nav-mobile" class="side-nav">
-            <li><a href="{{base}}/index.html">Home</a></li>
-            <li><a href="{{root}}/tutorials/index.html">Tutorials</a></li>
-            <li><a href="{{base}}/introduction.html">User Manual</a></li>
-            <li><a href="{{root}}/developers/index.html">Developer Guide</a></li>
-            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
-            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
             <li class="search">
+              <i class="material-icons">search</i>
               <form method="GET" id="searchformmob" class="search-form" action="/search">
                 <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
               </form>
             </li>
+            <li><a href="{{base}}/index.html">Home</a></li>
+            <li><a href="{{root}}/tutorials/index.html">Tutorials</a><div id="side-nav-mobile-tutorials" class="side-nav-mobile"></div></li>
+            <li><a href="{{base}}/introduction.html">User Manual</a><div id="side-nav-mobile-user" class="side-nav-mobile"></div></li>
+            <li><a href="{{root}}/developers/index.html">Developer Guide</a><div id="side-nav-mobile-developer" class="side-nav-mobile"></div></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
           </ul>
         </div>
       </div>
