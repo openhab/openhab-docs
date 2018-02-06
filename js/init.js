@@ -77,6 +77,9 @@ function initSideNav() {
         }
     });
 
+    var sideNavMobileSection = (linkUrl.indexOf('/developer') == 0) ? 'developer' : (linkUrl.indexOf('/tutorials') == 0) ? 'tutorials' : 'user';
+    $('section ul.nav').clone().appendTo('#side-nav-mobile-' + sideNavMobileSection);
+
     // Sticky SideNav
     if (!window.onLandingPage) {
         var isSmall = $(window).width() <= 600;
