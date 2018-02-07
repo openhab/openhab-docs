@@ -20,9 +20,9 @@ The `to` paremeter can contain a semicolon-separated list of email addresses.
 
 ## Actions
 
--   `sendMail(String to, String subject, String message)`: Sends an email via SMTP.
--   `sendMail(String to, String subject, String message, String attachmentUrl)`: Sends an email with attachment via SMTP.
--   `sendMail(String to, String subject, String message, List<String> attachmentUrlList)`: Sends an email with one or more attachments via SMTP.  
+- `sendMail(String to, String subject, String message)`: Sends an email via SMTP.
+- `sendMail(String to, String subject, String message, String attachmentUrl)`: Sends an email with attachment via SMTP.
+- `sendMail(String to, String subject, String message, List<String> attachmentUrlList)`: Sends an email with one or more attachments via SMTP.  
 
 ## Configuration
 
@@ -42,7 +42,7 @@ This action service can be configured via the `services/mail.cfg` file.
 
 ## Examples
 
-```
+```javascript
 import java.util.List
 ...
 val List<String> attachmentUrlList = newArrayList(

@@ -17,7 +17,7 @@ install: auto
 
 The ZWave binding supports an interface to a wireless Z-Wave home automation network. 
 
-ZWave is a wireless home automation protocol with reliable two way communications between nodes. It supports a mesh network where mains powered nodes can route messages between nodes that could otherwise not communicate with each other. The network supports hop distances of up to four hops.
+ZWave is a wireless home automation protocol with reliable two way communications between nodes. It supports a *mesh network* where mains powered nodes can route messages between nodes that could otherwise not communicate with each other. The network supports hop distances of up to four hops.
 
 A wide range of devices are supported from lights, switches and sensors to smoke alarms, window coverings and keyfobs. Z-Wave certification guarantees that certified devices will be compatible with each other and the network.
 
@@ -26,6 +26,9 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 
 ## Supported Things
 
+The ZWave binding provides support for a large number of devices (currently 688). See the [full list of supported things](doc/things.md).
+
+
 ### ZWave Serial Adapter
 
 Before the binding can be used, a serial adapter must be added. This needs to be done manually. Select `Serial ZStick`, and enter the serial port.
@@ -33,7 +36,7 @@ Before the binding can be used, a serial adapter must be added. This needs to be
 
 ## Discovery
 
-Once the binding is authorized, and an adapter is added, it automatically reads all devices that are included into the network. This is read directly from the Z-Wave controller and new things are added to the Inbox. When the discovery process is started, the binding will put the controller into inclusion mode for a defined period of time to allow new devices to be discovered and added to the network.
+Once the binding is authorized, and an adapter is added, it automatically reads all devices that are included into the network. This is read directly from the Z-Wave controller and new things are added to the Inbox. When the discovery process is started, the binding will put the controller into inclusion mode for a defined period of time to allow new devices to be discovered and added to the network. Device discovery occurs in two phases - first the device is added to the inbox as an *Unknown Device* to provide the user immediate feedback that the device has been discovered. Once the device type is known, the inbox entry is updated with the actual device name and manufacturer. 
 
 
 ## Binding Configuration
@@ -102,14 +105,21 @@ It is defined in seconds.
 
 #### Network Security Key [security_networkkey]
 
-This sets the network security key used in your network for securing communications using the secure command classes. It is a 16 byte value, specified in hexadecimal.
+This sets the network security key used in your network for securing communications using the secure command classes. It is a 16 byte value, specified in hexadecimal. The following formats -:
+
+* ```0011223344556677889900AABBCCDDEEFF```
+* ```00 11 22 33 44 55 66 77 88 99 00 AA BB CC DD EE FF```
+* ```00,11,22,33,44,55,66,77,88,99,00,AA,BB,CC,DD,EE,FF```
+* ```0x00 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 0x99 0x00 0xAA 0xBB 0xCC 0xDD 0xEE 0xFF```
 
 
 ### Thing Configuration
 
-There are a huge number of things supported by the Z-Wave binding, so configuration can not be covered here and you should refer to the device manual.
+There are a large number of things supported by the Z-Wave binding, so configuration can not be covered here and you should refer to the device manual. A [summary of supported devices can be found here](doc/thing-list.md) and this links to the list of configuration parameters the binding provides.
 
-Things configured manually require the following minimum configuration to be set. -:
+#### Textual Thing Configuration
+
+Things configured manually through text files require the following minimum configuration to be set. -:
 
 | Configuration      | Description                                                                                                   |
 |--------------------|---------------------------------------------------------------------------------------------------------------|
@@ -118,7 +128,6 @@ Things configured manually require the following minimum configuration to be set
 | zwave_deviceid     | Specifies the device ID for this device (as decimal). This is used to get the thing type from the database.   |
 | zwave_devicetype   | Specifies the device type for this device (as decimal). This is used to get the thing type from the database. |
 | zwave_version      | Specifies the application version for this device. This is used to get the thing type from the database.      |
-
 
 
 ## Channels
@@ -139,23 +148,30 @@ The table below summarises the channels available in the controller. These provi
 
 ### Device Channels
 
-### Device attributes
+Channels supported by each device can be found in the device documentation. Refer to the [device summary](doc/thing-list.md) and select your device.
 
-This section provides a summary of the device attributes that are displayed in the user interface.
+### Device properties
+
+This section provides a summary of the device properties that are displayed in the user interface.
 
 #### Using Security
+
 This indicates that the device is currently securely included in the network and that some classes are handled securely. This will only be true if secure inclusion has been successfully completed.
  
 #### Routing
+
 This flag indicates that the device participates in routing. This means that the device is capable of routing messages, and has the resources to maintain a routing table. It doesn’t necessarily mean that the device will act as a router in the mesh network which is not possible for battery devices.
  
 #### Listening
+
 This flag indicates that the device is permanently listening to messages from other devices. This is normally true for mains powered devices, however battery devices do not permanently listen to reduce power consumption. A device that is not permanently listening will experience some latency when the controller wants to send messages to it as it will be mostly sleeping – when it wakes up it will send a WAKEUP message to the controller to alert it that it is able to receive for a few seconds. Note that this doesn’t impact messages from the device which can be sent at any time.
  
 #### Frequently Listening
+
 This flag indicates that the device supports FLiRS and listens for received messages periodically. A FLiRS device will periodically wake into a low power receive mode to listen for a beam signal – this can occur every 200ms, or every 1 second. If the device receives the beam signal during this low power wakeup, it will fully wake up its receiver so that it can receive the incoming message. This is normally used for devices that are battery operated, but need to have near constant communications with the controller and is commonly used on locks.
  
 #### Beaming
+
 Beaming is a related to FLiRS devices and indicates that the device is able to send a beaming signal to wake up a FLiRS device. The last node in a route to a FLiRS device needs to support Beaming to wake up the FLiRS device.
  
 
@@ -163,10 +179,10 @@ Beaming is a related to FLiRS devices and indicates that the device is able to s
 
 To initialise the binding and get your Z-Wave network running, you need to follow the following steps -:
 
-* Manually install the serial controller. It doesn't matter what type of Z-Wave dongle you have, there is only a single *thing type* since all sticks use the same communication protocol, and the binding can detect what functions the device supports by communicating with the stick.
+* Manually install the serial controller. It doesn't matter what type of Z-Wave dongle you have, there is only a single *thing type*. since all sticks use the same communication protocol, and the binding can detect what functions the device supports by communicating with the stick.
 * Set the serial port in the controller configuration.
 * In the UI enable *discovery* mode - this will add all existing things into the *discovery inbox*. From the *inbox* you can add the device directly into the system.
-* the binding should automatically detect the device type and should provide a list of *channels* to which you can attach *items*. Note that it may take some time to discover the device type - especially in battery devices.
+* The binding should automatically detect the device type and should provide a list of *channels* to which you can attach *items*. Note that it may take some time to discover the device type - especially in battery devices where you may need to manually wake up the device a few times to allow the interrogation to complete. Refer to the device manual for information on waking up the device.
 
 
 ## Z-Wave Network
@@ -176,15 +192,17 @@ This section provides information on the Z-Wave network, and how functions are i
 
 ### Network Overview
 
-The Z-Wave network includes devices known as *Controllers* and *Slaves*. As the name suggests, *Controllers* control how the network runs and provide network administration functions, while *Slaves* are users of the network.
+The Z-Wave network includes devices known as *Controllers* and *Slaves*. As the name suggests, *Controllers* control how the network runs and provide network administration functions, while *Slaves* are users of the network. The primary controller is normally linked to your home automation software (eg openHAB) and provides the link from your automation system, to the Z-Wave network.
 
 
 #### Home ID
+
 The network is identified with a *Home ID*. This is programmed into the controller, and can't be changed. It is used to identify the network in all frames that are transmitted over the air. When a device is included into a network, the controller sets the *Home ID* of the network in the slave so that the slave will only communicate over this network until it is removed from the network.
 
 
 #### Node ID
-Each node in the network is identified with a *Node ID*. The controller allocated the *Node ID* when the device is included into the network. A single Z-Wave network supports 232 devices (*Node ID* 1 to 232). The controller will allocate node IDs sequentially. Normally therefore the controller has Node ID 1 since it is normally the first device in the network. IDs will then be allocated sequentially up to number 232 after which the controller will allocate unused addresses.
+
+Each node in the network is identified with a *Node ID*. The controller allocates the *Node ID* when the device is included into the network. A single Z-Wave network supports 232 devices (*Node ID* 1 to 232) and the controller will allocate node IDs sequentially. Normally therefore the controller has Node ID 1 since it is normally the first device in the network. IDs will then be allocated sequentially up to number 232 after which the controller will allocate unused addresses.
 
 
 #### Message Routing
@@ -198,7 +216,7 @@ Frames can also be transmitted as *Broadcast Frames* within the Z-Wave network, 
 
 #### Command Classes
 
-Z-Wave uses what are known as *Command Classes* to communicate. These *Command Classes* are a set of standardised commands to allow devices to perform specific functions. Each *Command Class* has a specific function, and each device will likely support multiple classes to allow the users to interact with the device.
+Z-Wave uses what are known as *Command Classes* to communicate. These *Command Classes* are a set of standardised commands to allow devices to perform specific functions in an interoperable way. Each *Command Class* has a specific function, and each device will likely support multiple classes to allow the users to interact with the device.
 
 Every device supports the *BASIC* command class. This is normally mapped to a specific *Command Class* - the *BASIC* class is used to provide a high degree of interoperability between devices, and is especially useful when devices are communicating peer-to-peer as slaves do not need to know the detail of many different classes.
 
@@ -209,6 +227,7 @@ There are different types of controllers in a Z-Wave network. This section provi
 
 
 #### Primary Controller
+
 There is a single *Primary* controller in the network. This controller provides the network routing table
 
 
@@ -220,7 +239,7 @@ There is a single *Primary* controller in the network. This controller provides 
 
 ### Slaves
 
-Most devices in your network are *slaves* - they come in in two types, *routing* and *non-routing*.
+Most devices in your network are *slaves* - they come in in two types, *routing* and *non-routing*. A routing slave simply means that it is capable of participating in the mesh network so does not require direct communications with the controller. It does not necessarily mean that it can act as a router, and battery devices can not route frames due to the fact they sleep most of the time.
 
 
 ## Z-Wave in practice
@@ -232,18 +251,18 @@ This section endeavors to provide some practical information about Z-Wave networ
 
 Inclusion and exclusion are always started by the primary controller, unless an *SIS* is available in the network, in which case any controller can start these functions.  To include or exclude a device in the network, set the controller into include mode, and press the appropriate button on the device to place the device into include mode.  All Z-Wave devices will have such a button, and you should refer to the device manual.
 
-Secure inclusion must be started from the binding. This is because once the device is included into the network, a key exchange takes place between the binding and the device. This key exchange must take place within a very short time of the inclusion, and if it doesn't succeed, the device must be excluded and included again.  Secure inclusion will generate a lot of activity on the network, so you should avoid other activities at the same time, and the device being included should be close to the controller to reduce any retries that could cause the security handshake to fail.
+Secure inclusion **must** be started from the binding directly (ie with the controller plugged in to the USB and *Online**). This is because once the device is included into the network, a key exchange takes place between the binding and the device. This key exchange must take place within a very short time of the inclusion, and if it doesn't succeed, the device must be excluded and included again.  Secure inclusion will generate a lot of activity on the network, so you should avoid other activities at the same time, and the device being included should be close to the controller to reduce any retries that could cause the security handshake to fail.
 
 
 ### Device Initialisation
 
-As soon as the device is discovered (eg included) it is added to the inbox. At this point we still don't know the manufacturer etc.
+As soon as the device is discovered (eg included into the network) it is added to the inbox. At this point we still don't know the manufacturer etc.
 
-During the initialisation of a device, the binding performs a discovery and configuration phase. It requests information from the device first to find out information like the manufacturer and what device classes are supported. Once it knows this, the device is shown in the inbox with a 'proper label' based on information from the database.
+During the initialisation of a device, the binding performs a discovery and configuration phase. It requests information from the device first to find out information like the manufacturer and what device classes are supported. Once it knows this, the device is shown in the inbox with a 'proper label' based on information from the database. It should be noted that as battery devices will be sleeping most of the time, they may need to be woken up manually to allow this interrogation to complete.
 
-We then initialise some information in the device such as associations. Association configuration is read from the database. Configuration parameters are not configured automatically and must be manually configured through a user interface.
+We then initialise some information in the device such as associations. Association configuration is read from the database although the Z-Wave Plus Lifeline association group will be configured automatically to report to openHAB. Configuration parameters are not configured automatically and must be manually configured through a user interface.
 
-This discovery is only performed once, and the information is then persisted when the binding is restarted. On each restart the binding will perform an update of the information to read any dynamic data from the device.
+This discovery is normally only performed once, and the information is then persisted when the binding is restarted. On each restart the binding will perform an update of the information to read any dynamic data from the device.
 
 
 ### Thing States
@@ -272,6 +291,7 @@ In order to configure the device properly following its initial inclusion in the
 
 A battery device will be considered *DEAD* if the controller does not receive a wakeup notification, or some other message, within approximately twice the wakeup period. In this event, the thing will be set offline and the device considered *DEAD*.
 
+A special type of battery device is a *FLiRS* device. These devices do not sleep all the time, but wake regularly to check for messages (normally less than 1 second). These devices a much more responsive than normal non-listening battery devices and are considered the same as mains powered devices with a slightly longer latency. Battery devices requiring regular communications with the controller such as locks and thermostats may implement *FLiRS* technology.
 
 ### Polling
 
@@ -289,7 +309,7 @@ The binding provides a number of facilities for maintaining the network.
 
 #### Mesh Heal
 
-Sometimes the Z-Wave mesh can get messed up and nodes can become 'lost'. In theory, the Z-Wave controller should automatically resolve these issues, and any device that finds itself orphaned from the network should send a *Explorer Frames* to request a routing update.
+Sometimes the Z-Wave mesh can get messed up and nodes can become 'lost'. In theory, the Z-Wave controller should automatically resolve most of these issues, and any device that finds itself orphaned from the network should send a *Explorer Frames* to request a routing update (note: this is a Z-Wave Plus feature only).
 
 In order to manually repair the mesh, the binding implements a *mesh heal* function. This will systematically work through the network nodes, starting with the controller and working outwards. For each node, the controller will request an update to the nodes neighbors - this can take up to a minute to complete foe each node, although it is normally much less. The neighbor update will only be performed on nodes that are *listening* - this means battery devices will not be updated through this process but they should be updated by the controller.
 
@@ -324,9 +344,9 @@ Devices are identified in the database by 4 pieces of information that are provi
 The primary identification is performed using the Manufacturer ID, Device Type and Device ID. Many devices use multiple deviceType and deviceId sets to identify different regions, or other minor differences, and some manufacturers will produce multiple firmware versions for the same device, so this information is also used in some instances.
 
 
-#### Unknown Devices 
+#### Unknown Devices
 
 If the device is listed as *Unknown*, then the device has not been fully discovered by the binding and will not work correctly. There are a few possible reasons for this -:
 
 * **The device is not in the database.** If the device attributes show that this device has a valid manufacturer ID, device ID and type, then this is likely the case (eg. you see a label like "*Z-Wave node 1 (0082:6015:020D::2.0)*"). Even if the device appears to be in the database, some manufacturers use multiple sets of references for different regions or versions, and your device references may not be in the database. In either case, the database must be updated and you should raise an issue to get this addressed.
-* **The device initialisation is not complete.** Once the device is included into the network, the binding must interrogate it to find out what type of device it is. One part of this process is to get the manufacturer information required to identify the device, and until this is done, the device will remain unknown. For mains powered devices, this will occur quickly, however for battery devices the device must be woken up a number of  times to allow the discovery phase to complete. This must be performed with the device close to the controller.  
+* **The device initialisation is not complete.** Once the device is included into the network, the binding must interrogate it to find out what type of device it is. One part of this process is to get the manufacturer information required to identify the device, and until this is done, the device will remain unknown. For mains powered devices, this will normally occur quickly, however for battery devices the device must be woken up a number of  times to allow the discovery phase to complete. This must be performed with the device close to the controller and you should refer to the device manual for information on waking up the device.  
