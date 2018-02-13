@@ -66,6 +66,22 @@ The following table summarises the channels available for the ZMNHBD Flush 2 rel
 | Switch 2 | switch_binary2 | switch_binary | Switch | Switch |
 | Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number |
 | Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number |
+| Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number |
+
+
+### Sensor (temperature)
+
+#### Scale
+
+Select the scale for temperature readings
+
+
+| Property         | Value    |
+|------------------|----------|
+| Configuration ID | config_scale |
+| Data Type        | TEXT || Default Value | 0 |
+| Options | Celsius (0) |
+|  | Fahrenheit (1) |
 
 
 ### Sensor (temperature)

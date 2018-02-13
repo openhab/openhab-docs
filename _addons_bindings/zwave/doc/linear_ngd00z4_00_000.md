@@ -18,6 +18,7 @@ The following table summarises the channels available for the NGD00Z-4 Garage Do
 | Channel | Channel Id | Channel Type UID | Category | Item Type |
 |---------|------------|------------------|----------|-----------|
 | Barrier State | barrier_state | barrier_state | Door | Number |
+| Alarm (raw) | alarm_raw | alarm_raw |  | String |
 
 
 ### Device Configuration

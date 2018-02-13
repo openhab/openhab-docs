@@ -9,7 +9,33 @@ title: HS1SA - ZWave
 
 This describes the Z-Wave device *HS1SA*, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs1sa_00_000```. 
 
-Smoke Detector
+Smoke Detector  
+
+
+## Overview 
+
+The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.
+
+  
+
+
+### Inclusion Information 
+
+Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second. If Inclusion Process is successful, Green led will turn off.
+
+  
+
+
+### Exclusion Information 
+
+Press the pin 3 times within 1.5s. If Exclusion Process is successful, Green led is Blinking 6 times, then turn off. 
+
+  
+
+
+### Wakeup Information 
+
+Wake up Notification is transmitted every 24 hours by default. Wake up Notification is transmitted after Notification Report is Transmitted.
 
 
 ## Channels

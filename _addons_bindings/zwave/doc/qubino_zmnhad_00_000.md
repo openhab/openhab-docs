@@ -9,7 +9,46 @@ title: ZMNHAD - ZWave
 
 This describes the Z-Wave device *ZMNHAD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhad_00_000```. 
 
-Flush 1 relay
+Flush 1 relay  
+
+
+## Overview 
+
+This Z-Wave module is used for switching on or off the electrical device (e.g. light or fan). The module can be controlled either through Z-wave network or through the wall switch. The module is designed to be mounted inside a “flush mounting box”, hidden behind a traditional wall switch. Module measures power consumption of electrical device and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network. Supported switches Module supports mono-stable switches (push button) and bi-stable switches. The module is factory set to operate with bi-stable switches.
+
+  
+
+
+### Inclusion Information 
+
+**Module Inclusion (Adding to Z-Wave network)**
+
+ *  Connect module to power supply (with temperature sensor connected -if purchased)
+ *  Enable add/remove mode on main controller
+ *  Auto-inclusion (works forabout 5 seconds after connected to power supply) or
+ *  Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or
+ *  Press service button **S** (only applicable for 24 V SELV supply voltage) for more than 2 seconds.
+
+**NOTE1:** For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
+
+**NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.
+
+  
+
+
+### Exclusion Information 
+
+**Module Exclusion/Reset (Removing from Z-Wavenetwork)**
+
+ *  Connect module to power supply
+ *  Bring module within maximum 1 meter (3 feet) of the main controller,
+ *  Enable add/remove mode on main controller,
+ *  Press push button **I1 **five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or
+ *  Press service button **S **(only applicable for 24 V SELV supply voltage) for more than 6 seconds.
+
+By this function all parameters of the module are set to default values and own ID is deleted.
+
+If push button I1 is pressed three times within 3s (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.
 
 
 ## Channels
@@ -25,9 +64,26 @@ The following table summarises the channels available for the ZMNHAD Flush 1 rel
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch |
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number |
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number |
-| Binary Sensor 2 | sensor_binary2 | sensor_binary | Door | Switch |
+| Binary Sensor I2 | sensor_binary2 | sensor_binary | Door | Switch |
 | Alarm (power) 2 | alarm_power2 | alarm_power | Door | Switch |
+| Binary Sensor I3 | sensor_binary3 | sensor_binary | Door | Switch |
 | Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number |
+| Sensor (temperature) | sensor_temperature4 | sensor_temperature | Temperature | Number |
+
+
+### Sensor (temperature)
+
+#### Scale
+
+Select the scale for temperature readings
+
+
+| Property         | Value    |
+|------------------|----------|
+| Configuration ID | config_scale |
+| Data Type        | TEXT || Default Value | 0 |
+| Options | Celsius (0) |
+|  | Fahrenheit (1) |
 
 
 ### Sensor (temperature)
@@ -66,7 +122,7 @@ Detailed information on each parameter can be found below.
 | 101: Enable / Disable Endpoints I3 or select Notification Type and Event | Enabling I3 means that Endpoint (I3) will be present on UI. Disabling it will result in hi... |
 | 110: Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. 32536 – offset is 0.0... |
 | 120: Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on tempera... |
-| 1: Lifeline to Controller (reserved for communication with the main contr |  |
+| 1: Lifeline | Lifeline group (reserved for communication with the main controller |
 | 2: Basic on/off (triggered at change of the input Q state and reflectin |  |
 | 3: Basic on/off (triggered at change of the input I2 state and reflecti |  |
 | 4: Notification report (triggered at change of the input I2 state and r |  |
@@ -286,7 +342,9 @@ If digital temperature sensor is connected, module reports measured temperature 
 | Default Value | 5 |
 
 
-#### 1: Lifeline to Controller (reserved for communication with the main contr
+#### 1: Lifeline
+
+Lifeline group (reserved for communication with the main controller
 
 
 | Property         | Value    |

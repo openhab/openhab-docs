@@ -52,6 +52,7 @@ The following table summarises the channels available for the FGS223 Double Swit
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number |
 | Scene Number | scene_number | scene_number |  | Number |
 | Alarm | alarm_general | alarm_general | Door | Switch |
+| Send notification | notification_send | notification_send |  | Number |
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch |
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number |
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number |

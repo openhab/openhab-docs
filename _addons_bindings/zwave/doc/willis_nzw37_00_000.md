@@ -14,7 +14,40 @@ Inovelli Smart Plug (2 Channel with Scene Control)
 
 ## Overview 
 
-The 2 ports smart plug provides one Z-Wave outlet for remote controlled by controller through Z-Wave gateway for internet of thing service and can be configured in Z-Wave sensor network, if Z-Wave certified controller features remote access, you can now control your device  from your mobile phone devices. the other outlet will be manual On/Off by push button on front. The outlets have maximum load for 600W Incandescent, ½ HP motor or 1200W resistive.
+2 Controllable Outlets
+
+Indoor
+
+Wall Plug
+
+120 VAC, 60 Hz
+
+908.42 MHz
+
+Max Load Outlet \#1 1200W (10A) Resistive
+
+Max Load Outlet \#2 1200W (10A) Resistive
+
+Max Simultaneous Load 16A
+
+Max Range LoS 30 m
+
+Operating Temperature Range 0°C to 40°C
+
+UL E464831
+
+FCC ID OXGZW36
+
+  
+
+
+### Inclusion Information 
+
+Auto-Inclusion 30 sec from power on
+
+Backup-Inclusion Press button 5 times within 1 sec
+
+(Tested to work with Network Wide Inclusion)
 
 
 ## Channels

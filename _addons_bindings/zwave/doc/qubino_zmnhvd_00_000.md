@@ -67,7 +67,7 @@ Detailed information on each parameter can be found below.
 | 141: Input I1 0-10V reporting threshold |  |
 | 143: Minimum sensor range value |  |
 | 144: Maximum sensor range value |  |
-| 1: Lifeline Group | reserved for communication with the main controller |
+| 1: Lifeline | Reserved for communication with the main controller |
 | 2: basic on/off | triggered at change of the input I1 state and reflecting its state |
 | 3: start level change/stop level change | triggered at change of the input I1 state and reflecting its state) up to 16 nodes. Workin... |
 | 4: multilevel set | triggered at changes of state/value of the Flush Dimmer 0-10V |
@@ -347,9 +347,9 @@ Available config. parameters (data type is2 Byte DEC):
 | Default Value | 1000 |
 
 
-#### 1: Lifeline Group
+#### 1: Lifeline
 
-reserved for communication with the main controller
+Reserved for communication with the main controller
 
 
 | Property         | Value    |

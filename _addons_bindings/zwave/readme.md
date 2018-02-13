@@ -26,7 +26,7 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 
 ## Supported Things
 
-The ZWave binding provides support for a large number of devices (currently 688). See the [full list of supported things](doc/things.md).
+The ZWave binding provides support for a large number of devices (currently 696). See the [full list of supported things](doc/things.md).
 
 
 ### ZWave Serial Adapter
@@ -115,7 +115,7 @@ This sets the network security key used in your network for securing communicati
 
 ### Thing Configuration
 
-There are a large number of things supported by the Z-Wave binding, so configuration can not be covered here and you should refer to the device manual. A [summary of supported devices can be found here](doc/thing-list.md) and this links to the list of configuration parameters the binding provides.
+There are a large number of things supported by the Z-Wave binding, so configuration can not be covered here and you should refer to the device manual. A [summary of supported devices can be found here](doc/things.md) and this links to the list of configuration parameters the binding provides.
 
 #### Textual Thing Configuration
 

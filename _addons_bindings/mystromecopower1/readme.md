@@ -6,7 +6,7 @@ type: binding
 description: "The openHAB Mystrom binding allows you to send commands to Mystrom Eco Power Switches, receive consumption numbers and states of devices."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.mystromecopower/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -74,6 +74,7 @@ The following devices have been tested with the binding
 | Tradfri Bulbs              |                                                   |
 | Tradfri Motion Sensor      |                                                   |
 | Trust Bulbs                | *note1*                                           |
+| Ubisys modules             | D1 Dimmer, S1/S2 Switch modules                   |
 
 Note 1: Some bulbs may not work with the Telegesis dongle.
 

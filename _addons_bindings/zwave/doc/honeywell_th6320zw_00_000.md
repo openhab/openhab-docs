@@ -129,6 +129,38 @@ Detailed information on each parameter can be found below.
 
 | Parameter   | Description |
 |-------------|-------------|
+| 2: Temperature Scale | Temperature Scale |
+| 1: Lifeline | Z-Wave Plus Lifeline |
+
+
+#### 2: Temperature Scale
+
+Temperature Scale  
+
+
+##### Overview 
+
+0 = Fahrenheit / 1 = Celsius
+
+
+| Property         | Value    |
+|------------------|----------|
+| Configuration ID | config_2_1 |
+| Data Type        | INTEGER |
+| Range | 0 to 1 |
+| Default Value | 0 |
+
+
+#### 1: Lifeline
+
+Z-Wave Plus Lifeline
+
+
+| Property         | Value    |
+|------------------|----------|
+| Configuration ID | group_1 |
+| Data Type        | TEXT |
+| Range |  to  |
 
 
 ---
