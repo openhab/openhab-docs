@@ -77,8 +77,8 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 ### Audio
 
-| `smarthome:audio play [<sink>] <filename>` | plays a sound file from the `conf/sounds` folder through the optionally specified audio sink(s)
-| `smarthome:audio stream [<sink>] <url>` | streams the sound from the url through the optionally specified audio sink(s)
+| `smarthome:audio play [<sink>] <filename> [<volume>]` | plays a sound file from the `conf/sounds` folder through the optionally specified audio sink(s) with the optionally specified volume
+| `smarthome:audio stream [<sink>] <url> [<volume>]` | streams the sound from the url through the optionally specified audio sink(s) with the optionally specified volume
 | `smarthome:audio sources` | lists the audio sources
 | `smarthome:audio sinks` | lists the audio sinks
 
