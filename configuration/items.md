@@ -152,6 +152,7 @@ In the example above, if you move the Slider widget to 60%, move the Switch to O
 The Item name is used to uniquely identify an Item.
 The name must be unique across all `.items` files in your openHAB configuration.
 The only characters permitted in an Item name are letters, numbers and the underscore character.
+Names must not begin with numbers.
 Spaces and special characters are not permitted.
 
 A good Item name is self-explanatory and hints at its Item type and interaction options.
