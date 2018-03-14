@@ -44,6 +44,9 @@ Alternatively the [`playSound()` function](https://www.eclipse.org/smarthome/doc
 
 ```java
 playSound("doorbell.mp3")
+playSound("doorbell.mp3", 25)
+playSound("sonos:PLAY5:kitchen", "doorbell.mp3")
+playSound("sonos:PLAY5:kitchen", "doorbell.mp3", 25)
 ```
 
 ## Voice
@@ -74,8 +77,11 @@ Alternatively you can execute such commands within DSL rules by using the [`say(
 
 ```java
 say("Hello world!")
+say("Hello world!", 25)
 say("Hello world!", "voicerss:enGB")
+say("Hello world!", "voicerss:enGB", 25)
 say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen")
+say("Hello world!", "voicerss:enUS", "sonos:PLAY5:kitchen", 25)
 ```
 
 You can select a particular voice (second parameter) and a particular audio sink (third parameter).
