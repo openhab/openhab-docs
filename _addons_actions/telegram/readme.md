@@ -30,7 +30,7 @@ As described in the Telegram Bot API, this is the manual procedure needed in ord
 
 - Open a new chat with your new Bot and post a message on the chat
 - Open a browser and invoke `https://api.telegram.org/bot<token>/getUpdates` (where `<token>` is the authentication token previously obtained)
-- Look at the JSON result and write down the value of `result[0].message.chat.id`. That is the chatId.
+- Look at the JSON result and write down the value of `result[0].message.chat.id`. That is the chatId. Note that Telegram group chat chatIds are prefixed with a dash "-" that must be included in the config file. (e.g. bot1.chatId: -22334455)
 
 ## Configuration
 
@@ -127,3 +127,17 @@ end
 Do not use username/password in url like in this example `http://<username>:<password>@server/image.png`; pass the credentials to the `sendTelegramPhoto` method instead.
 
 `http` and `https` are the only protocols allowed.
+
+If you would like to send a base64 jpeg or png image.
+
+telegram.rules
+
+```java
+rule "Send telegram with base64 image and caption"
+when
+    Item Light_GF_Living_Table changed
+then
+    var String base64Image = "data:image/jpeg;base64, LzlqLzRBQ..."
+    sendTelegramPhoto("bot1", base64Image, "sent from Openhab")
+end
+```
