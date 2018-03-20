@@ -7,7 +7,7 @@ layout: documentation
 # Add-ons
 
 All add-ons for openHAB 2 are part of the distribution.
-This includes all 2.x bindings as well as all 1.x add-ons that were reported to be compatible.
+This includes all 2.x Bindings as well as all 1.x add-ons that were reported to be compatible.
 There are several ways you can install an add-on. 
 These are described under *Installation of Add-ons* below
 
@@ -17,7 +17,7 @@ These are described under *Installation of Add-ons* below
 | [User Interfaces](uis.html)             | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
 | [Persistence](persistence.html)         | Persistence services allow openHAB to store time series data for history-based actions or statistics                      |
 | [Actions](actions.html)                 | Actions are predefined methods for openHAB rules and scripts                                                              |
-| [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for items                               |
+| [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for Items                               |
 | [Voice Services](voices.html)           | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc.                                |
 | [3rd Party System Integration](io.html) | Expose openHAB to external systems                                                                                        |
 
@@ -33,9 +33,9 @@ Search for the desired add-on in the categories and press install.
 
 ![installing Add-ons through Paper UI](images/index_installation_paperui.gif)
 
-### By editing addons.cfg
+### Through Configuration Files
 
-For this installation option you need to know the *id* of the desired add-on
+For this installation option you need to know the `id` of the desired add-on
 
 You can find it out in the [openHAB console]({{base}}/administration/console.html) with:
 
@@ -43,8 +43,8 @@ You can find it out in the [openHAB console]({{base}}/administration/console.htm
 feature:list | grep ^openhab
 ```
 
-This will give you a list of all available add-ons.
-It could probably look similar to this example:
+A list of all available add-ons starting with "openhab" will be returned.
+It could look similar to this example:
 
 ```text
 ...
@@ -61,18 +61,16 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 
 According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for our example is *network*.
 
-Another way of getting the correct id, is the url from the add-ons documentation page.
-For example the url for the [mqtt binding]({{base}}/addons/bindings/mqtt1/readme.html) is
+Another way to find the correct `id` is to look at the URL of the add-on documentation page.
+For example the url for the [mqtt Binding documentation]({{base}}/addons/bindings/mqtt1/readme.html) is
 
 ````text
 https://docs.openhab.org/addons/bindings/mqtt1/readme.html
 ```
 
-So the id would be *mqtt1* in this case.
+In this case, the `id` would be "mqtt1".
 Did you notice the trailing *1* in this id?
-This is because the mqqt binding is a 1.x add-on.
-
-> All 1.x add-ons **must** have a trailing 1 in their id.
+This is because the mqqt Binding is a 1.x add-on.
 
 With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
@@ -90,7 +88,7 @@ persistence = influxdb
 misc = restdocs
 ```
 
-To install the network binding like we want in this example, we just need to add the id *network* to the binding section.
+To install the network Binding like we want in this example, we just need to add the id *network* to the Binding section.
 
 ```text
 binding = astro,mqtt1,network
@@ -99,7 +97,7 @@ binding = astro,mqtt1,network
 After saving the file, the add-on will be installed.
 
 
-### With a `.jar` file
+### Through manually provided add-ons
 
 > Attention:
 > This option is adressed to advanced users.
@@ -111,4 +109,4 @@ One way of retrieving those files is mentiones above in the openHAB console part
 
 Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
-You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
+Place the .jar file in the folder Additional add-on files as described in File Locations ([linux]({{base}}/installation/linux.html#file-locations), [windows]({{base}}/installation/windows.html#file-locations) or [macosx]({{base}}/installation/macosx.html#file-locations)).
