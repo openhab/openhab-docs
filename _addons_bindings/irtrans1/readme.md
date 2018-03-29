@@ -6,7 +6,7 @@ type: binding
 description: "This binding communicates with the [IRTrans](http://www.irtrans.de) infrared emitter/transceiver."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.irtrans/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

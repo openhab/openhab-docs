@@ -6,7 +6,7 @@ type: action
 description: "The Satel Action bundle provides actions to read the event log of the connected alarm system, check current connection status and override configured user code."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.satel/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

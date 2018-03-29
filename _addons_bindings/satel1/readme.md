@@ -6,7 +6,7 @@ type: binding
 description: "The Satel Integra Alarm System allows openHAB to connect to your alarm system via TCP/IP network with ETHM-1 module installed, or via RS-232 serial port with INT-RS module installed."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.satel/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
