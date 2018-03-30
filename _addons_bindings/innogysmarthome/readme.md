@@ -1,9 +1,9 @@
 ---
 id: innogysmarthome
-label: innogy SmartHome binding
-title: innogy SmartHome binding - Bindings
+label: innogy SmartHome
+title: innogy SmartHome - Bindings
 type: binding
-description: "The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) System into openHAB."
+description: "The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) system into openHAB."
 since: 2x
 install: auto
 ---
@@ -12,9 +12,9 @@ install: auto
 
 {% include base.html %}
 
-# innogy SmartHome binding
+# innogy SmartHome Binding
 
-The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) System into openHAB.
+The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) system into openHAB.
 It uses the official API as provided by innogy as cloud service.
 As all status updates and commands have to go through the API, a permanent internet connection is required.
 Currently there is no API for a direct communication with the innogy SmartHome Controller (SHC).
