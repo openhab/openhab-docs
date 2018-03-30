@@ -6,7 +6,7 @@ type: binding
 description: "The Nibe heat pump binding is used to get live data from from Nibe heat pumps without using a Modbus adapter (but instead using an Arduino UNO and RS485 and Ethernet shields). This binding should be compatible with at least the F1145 and F1245 heat pump models."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.nibeheatpump/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

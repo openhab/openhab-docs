@@ -6,7 +6,7 @@ type: binding
 description: "This binding allows openHAB to be integrated [RWE SmartHome](https://www.rwe-smarthome.de/) software previous to version 2.0. It uses an unofficial interface, which is limited in some cases, as explained below. As the interface has some delay and polling is needed to receive all changes from the RWE SmartHome Central (SHC), it may take one or two seconds until a device finally responds. However, this is tolerable in most cases as time critical rules can be done in the RWE Smarthome Central itself."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.rwesmarthome/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
