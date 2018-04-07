@@ -243,13 +243,14 @@ end
 Create a refresh script `$OPENHAB_CONF/rules_refresh.sh` and make it executable (`chmod +x rules_refresh.sh`):
 
 ```sh
+#!/bin/bash
 #This script is called by openHAB after the persistence service has started
 sleep 5
 cd [full_path_to_openhab_config_directory]/rules
-RULES=`find *.rules |grep -v refresh.rules
-for f in $RULES
+FileList="$(find *.rules | grep -v refresh.rules)"
+for File in $FileList
 do
-  touch $f
+  touch $File
 done
 ```
 
