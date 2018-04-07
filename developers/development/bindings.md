@@ -23,7 +23,7 @@ As a first step, you need to decide in which namespace you want to develop your 
 ## Creating a Skeleton
 
 For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding.
-For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments
+For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
 Foremost your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
 The latter your name as author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
 
