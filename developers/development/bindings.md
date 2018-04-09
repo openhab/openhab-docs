@@ -23,7 +23,7 @@ As a first step, you need to decide in which namespace you want to develop your 
 ## Creating a Skeleton
 
 For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and go ahead and create a skeleton for your binding.
-For this, go into your git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
+For this, go into your Git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
 Foremost your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
 The latter your name as author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
 
@@ -45,6 +45,13 @@ To learn about the internal structure and the concepts of a binding, please see 
 Please especially note our [coding guidelines](guidelines), which must be respected for having pull requests approved.
 If you have any special dependencies of your code, please check the [library recommendations](https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html) at Eclipse SmartHome.
 This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
+
+_Note:_ Currently Eclipse SmartHome and openHAB are using different license versions (EPL-2.0 for ESH and EPL-1.0 for OH2).
+The skeleton templates uses the newer EPL-2.0 version.
+To compile a new openHAB binding without any errors you additionally have to perform the following steps:
+
+- replace `NOTICE` with `about.html` in the `build-properties` file
+- run `mvn license:format` in the root folder of your local Git repository (see [coding guidelines A.2](guidelines.html#a-code-style))
 
 ## Setup and Run the Binding
 
@@ -73,7 +80,7 @@ Once you are happy with your implementation, you need to integrate it in the Mav
 For the Maven build, please add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/addons/binding/pom.xml) at the alphabetically correct position.
 To have the binding being picked up by the distro, you furthermore need to add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position. If you have a dependency on some transport bundle (e.g. upnp, mdns or serial), make sure to add a line for this dependency as well (see the other bindings as an example).
 
-Before you create a pull request on Github, you should  now run
+Before you create a pull request on GitHub, you should now run
 
 ```
 mvn clean install
@@ -85,7 +92,10 @@ from the repository root to ensure that the build works smoothly. If it does, it
 
 The Build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices. Information about the checks can be found [here](https://github.com/openhab/static-code-analysis#esh-guidelines-covered).
 
-The tool will generate an idividual report for each binding that you can find in `.../your_binding_directory/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `../openhab2-addons/target/summary_report.html`. The tool categorizes the found issues by priority: 1(error),2(warning) or 3(info). If any error is found within your code the Maven build will end with failure. You will receive detailed information (path to the file, line and message) listing all problems with Prioriry 1 on the console:
+The tool will generate an individual report for each binding that you can find in `.../your_binding_directory/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `../openhab2-addons/target/summary_report.html`.
+The tool categorizes the found issues by priority: 1(error), 2(warning) or 3(info).
+If any error is found within your code the Maven build will end with failure.
+You will receive detailed information (path to the file, line and message) listing all problems with priority 1 on the console:
 
 ```
 ...
@@ -97,4 +107,5 @@ The tool will generate an idividual report for each binding that you can find in
 ...
 ```
 
-Please fix all the Priority 1 issues and all issues with Priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask). Re-run the build to confirm that the checks are passing.
+Please fix all the priority 1 issues and all issues with priority 2 and 3 that are relevant (if you have any doubt don't hesitate to ask).
+Re-run the build to confirm that the checks are passing.
