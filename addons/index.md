@@ -72,6 +72,9 @@ In this case, the `id` would be "mqtt1".
 Did you notice the trailing *1* in this id?
 This is because the mqqt Binding is a 1.x add-on.
 
+The trailing `1` has to be appended for `binding`- and `misc`-addons.
+It is *not needed* for other addon types like `persistence`.
+
 With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
