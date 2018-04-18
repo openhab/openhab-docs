@@ -100,7 +100,7 @@ This optimization is reflected in the data and command types.
 
 Available Item types are:
 
-| Item Name      | Description | Command Types |
+| Type Name      | Description | Command Types |
 |----------------|-------------|---------------|
 | Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
 | Contact        | Status of contacts, e.g. door/window contacts | OpenClose |
