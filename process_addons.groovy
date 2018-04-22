@@ -43,8 +43,9 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                 if (! readme.exists()) {
                     log.warn("No README.md found.")
                 } else {
-                    readme.renameTo(new File(simpleNameDir.path, 'readme.md'))
-                    //println readme
+                    def readmeLowerCase = new File(simpleNameDir.path, 'readme.md')
+                    readme.renameTo(readmeLowerCase)
+                    readme = readmeLowerCase
                     def label = readme.readLines().find{it.startsWith('#')}
                     if (label == null) {
                         log.warn("No level 1 header found.")
