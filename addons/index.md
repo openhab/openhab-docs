@@ -35,9 +35,9 @@ Search for the desired add-on in the categories and press install.
 
 ### Through Configuration Files
 
-For this installation option you need to know the `id` of the desired add-on
+For this installation option you need to know the `id` of the desired add-on, e.g., network or mqtt1.
 
-You can find it out in the [openHAB console]({{base}}/administration/console.html) with:
+You can find it out with the following command within [openHAB console]({{base}}/administration/console.html):
 
 ```sh
 feature:list | grep ^openhab
@@ -59,18 +59,18 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 ...
 ```
 
-According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for our example is *network*.
+According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for the shown example is *network*.
 
 Another way to find the correct `id` is to look at the URL of the add-on documentation page.
 For example the url for the [mqtt Binding documentation]({{base}}/addons/bindings/mqtt1/readme.html) is
 
-````text
+```text
 https://docs.openhab.org/addons/bindings/mqtt1/readme.html
 ```
 
 In this case, the `id` would be "mqtt1".
 Did you notice the trailing *1* in this id?
-This is because the mqqt Binding is a 1.x add-on.
+This is because the mqtt Binding is a 1.x add-on.
 
 The trailing `1` has to be appended for `binding`- and `misc`-addons.
 It is *not needed* for other addon types like `persistence`.
