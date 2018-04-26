@@ -37,26 +37,26 @@ openHAB stores configuration information in JSON (JavaScript Object Notation) fo
 
 ## Storage Scope
 
-All configuration information regarding _**Items, Links, and Things**_ which are defined via the User Interfaces (Paper UI, HABmin, REST) or via internal openHAB services.
+All configuration information regarding _**Items, Links, and Things**_ are defined via the User Interfaces (Paper UI, HABmin, REST) or via internal openHAB services.
 
-Note: The JSON DB does NOT store information for manually configured Items, Links, or Things, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab2/items/`).
+Note: The JSON DB does NOT store information for manually configured _**Items, Links, or Things**_, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab2/items/`).
 
 ## Storage Purpose
 
-The JSON DB Storage can be used for:
+JSON DB Storage can be used for:
 - Backup: Maintains a copy of your configurations in the `OPENHAB_USERDATA/jsondb/backup` directory
 - Troubleshooting: Allows the user to interact with the configurations that were automatically generated via the UIs
 - Advanced administration: Gives the possibility to manually define configuration parameters within the `*.json` files
 
 ## Storage Use
 
-openHAB writes the `*.json` files everytime a change is made via the User Interfaces.
-openHAB _**reads only once the `*.json` files at startup**_.  So, if you edit them manually, you should restart openHAB.
+openHAB writes the `*.json` files every time a change is made via the User Interfaces.
+openHAB _**reads the `*.json` files only once at startup**_.  So, if you edit them manually, you should restart openHAB.
 
-The system employs 2 write mechanisms  to improve performance where there are multiple writes in a short time. When the service is closed, all open services are written to disk.  The parameters for the 2 mechanisms can be modified in Paper UI :arrow_right: Configuration :arrow_right: System :arrow_right: Json Storage
+The system employs two write mechanisms to improve performance where there are multiple writes in a short time. When the service is closed, all open services are written to disk.  The parameters for the two mechanisms may be modified in Paper UI :arrow_right: Configuration :arrow_right: System :arrow_right: Json Storage
 
 1. _Write delay_ (defaults to 500 ms): Sets the time to wait before writing changes to disk. This can reduce the number of writes when many changes are being introduced within a short period, and
-2. _Maximum write delay_ (defaults to 30000 ms): Sets the maximum period the service will wait to write data to disk in the event that many changes are happening continually.
+2. _Maximum write delay_ (defaults to 30000 ms): Sets the maximum period the service will wait to write data in cases where changes are happening continually.
 
 The service keeps backups of each table - currently up to 5 backups are maintained. Each time the json file is written, the old file is moved into a backup folder, and old files are removed from the backup folder.
 
