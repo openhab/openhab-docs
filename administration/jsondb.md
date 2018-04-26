@@ -75,8 +75,8 @@ The parameters for the two mechanisms may be modified in Paper UI :arrow_right: 
 This can reduce the number of writes when many changes are being introduced within a short period, and
 2. _Maximum write delay_ (defaults to 30000 ms): Sets the maximum period the service will wait to write data in cases where changes are happening continually.
 
-The service keeps backups of each table - currently up to 5 backups are maintained.
-Each time the json file is written, the old file is moved into a backup folder, and old files are removed from the backup folder.
+The service keeps up to five backups of each table. 
+The outdated file is copied to the backup folder and then that file is overwritten with the new content.
 
 ## Storage Location
 
