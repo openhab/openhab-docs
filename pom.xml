@@ -191,9 +191,14 @@
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-bundles/bindings</directory>
                   <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
+                    <include>org.openhab.binding.zwave/README.md</include>
+                    <include>org.openhab.binding.zwave/doc/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-bundles/bindings/org.openhab.binding.zigbee</directory>
+                  <includes>
+                    <include>org.openhab.binding.zigbee/README.md</include>
                   </includes>
                 </resource>
               </resources>
