@@ -13,7 +13,8 @@ Ths includes how to access logging information and configure logging for user-de
 There are two ways to check log entries:
 
 1. Through files stored on the **file system**
-2. During runtime in the **Karaf Console**
+2. With the **openHABian log viewer**
+3. During runtime in the **Karaf Console**
 
 ## File System
 
@@ -21,6 +22,15 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 - `events.log`
 - `openhab.log`
+
+## openHABian Log Viewer (frontail)
+
+If you are running your openHAB instance with *openHABian* you are able to view your log entries through a nice and simple web interface.
+You can install it easily as an [optional component]({{base}}/installation/openhabian.html#optional-components) with the [openHABian configuration tool]({{base}}/installation/openhabian.html#openhabian-config).
+It can then be reached from [http://openhabianpi:9001/](http://openhabianpi:9001/) and gets new logs automatically.
+There is also a filter option available, as you can see in the picture below.
+
+![Animated showcase of frontail log viewer](images/frontail.gif)
 
 ## Karaf Console
 
