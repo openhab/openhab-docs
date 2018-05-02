@@ -40,12 +40,6 @@ Most data stored in the database is written in a way that should be understandab
 
 As stated above, the files are only read during system startup - therefore if you change a file you will need to stop openHAB, make your changes and restart the system for the changes to take effect.
 
-Example file -:
-
-```
-
-```
-
 ----
 
 openHAB stores configuration information in JSON (JavaScript Object Notation) formatted (structured) text files located in the `OPENHAB_USERDATA/jsondb/` directory.
