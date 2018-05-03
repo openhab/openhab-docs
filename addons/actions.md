@@ -138,7 +138,7 @@ then
 end
 ```
 
-For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopehnab.org website](http://www.myopenhab.org).
+For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](http://www.myopenhab.org).
 
 ## Installable Actions
 
