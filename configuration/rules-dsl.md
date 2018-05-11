@@ -512,10 +512,12 @@ val PointType location = Device_Coordinates.state as PointType
 
 ##### Number Item
 
-A Number Items carries a **DecimalType**. 
-A DecimalType is also a java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
+A Number Items carries either a **DecimalType** or a **QuantityType** in case the Number Item has a dimension attached (e.g. `Number:Temperature`). 
+DecimalType and QuantityType are also java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
 
 Here some other commonly needed conversions:
+
+* For DecimalType states:
 
 ```java
 //convert integer_number to string containing hex_code
@@ -530,9 +532,30 @@ var MyNumber = Long.parseLong(hex, 16) as Number
 var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
 ```
 
+* For QuantityType states:
+
+```java
+// define a QuantityType variable
+var myTemperature = 20 [°C]
+
+// convert a quantity state into a different unit:
+var fahrenheit = myTemperature.toUnit("°F")
+
+// convert scalar value to DecimalType
+var myDecimal = new DecimalType(fahrenheit.doubleValue) // myDecimal == 68
+
+// access scalar values as int, double, float
+var myInt = fahrenheit.intValue
+var mydouble = fahrenheit.doubleValue
+var myfloat = fahrenheit.floatValue
+
+// check if a number item state is a QuantityType
+var isQuantity = myItem.state instanceof QuantityType
+```
+
 Other useful conversions can be found under Dimmer Item.
 
-One warning comes with DecimalType. 
+One warning comes with DecimalType (also holds true for QuantityType). 
 The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4). 
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
 
