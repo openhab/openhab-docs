@@ -4,9 +4,9 @@ layout: tutorial-beginner
 
 {% include base.html %}
 
-# OpenHAB 2 UIs
+# openHAB UIs
 
-OpenHAB 2 offers different UIs in its standard configuration: the *Paper UI*, the *Basic UI* and the *Classic UI* (this has to be installed manually from within Paper UI or via config file).
+openHAB offers different UIs in its standard configuration: the *Paper UI*, the *Basic UI* and the *Classic UI* (this has to be installed manually from within Paper UI or via config file).
 
 ## The Paper UI
 
@@ -55,4 +55,4 @@ The Classic UI offers the same services that the Basic UI but with a different l
 
 ![](images/classicui2.png)
 
-Now let's start with the [configuration of openHAB 2]({{base}}/tutorials/beginner/configuration.html)
+Now let's start with the [configuration of openHAB]({{base}}/tutorials/beginner/configuration.html)
