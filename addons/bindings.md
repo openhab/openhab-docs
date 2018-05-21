@@ -84,6 +84,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
   </thead>
   <tbody>
     {% for binding in site.addons_bindings %}
+        {% if binding.install %}
         <tr class="install-{{binding.install}} since-{{binding.since}}">
           <td>
             <h4><a href="{{base}}{{binding.url}}">{% if binding.logo %}<img class="logo" src="{{base}}/{{binding.logo}}" title="{{ binding.label }}" alt="{{ binding.label }}" />{% else %}{{ binding.label }}{% endif %}</a></h4>
@@ -91,6 +92,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
           </td>
           <td>{{ binding.description | markdownify }}</td>
         </tr>
+        {% endif %}
     {% endfor %}
- </tbody>
+  </tbody>
 </table>
