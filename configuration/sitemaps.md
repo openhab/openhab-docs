@@ -129,7 +129,7 @@ The following element types may be used in a Sitemap definition file.
 <!-- TODO: check for new element types -->
 
 **Choosing the right element type:**
-Data presented by Sitemap elements will almost always originate from a referenced [Item}({{base}}/configuration/items.md).
+Data presented by Sitemap elements will almost always originate from a referenced [Item]({{base}}/configuration/items.html).
 Each Item is of a certain Item type, for example `Switch`, `Number` or `String`.
 
 While not all combinations are meaningful, Items of one datatype may be linked to different Sitemap element types.
