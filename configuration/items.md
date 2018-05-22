@@ -493,8 +493,8 @@ Incompatible Item types within a Group may result in the invalid aggregation res
 
 ```java
 Group:Number             Lights       "Active Lights [%d]"              // e.g. "2"
-Group:Switch:OR(ON, OFF) Lights       "Active Lights [%d]"              // e.g. ON and "2"
-Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" //e.g. "21.3 °C"
+Group:Switch:OR(ON,OFF)  Lights       "Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
 ```
 
 The first two examples above compute the number of active lights and store them as group state.
