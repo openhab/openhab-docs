@@ -61,5 +61,3 @@ echo_process "Running Maven Clean Plugin... "
 mvn clean
 echo_process "Running Maven Package Plugin... "
 mvn package
-
-find ./_addons_bindings/zwave/ -name '*.md' -type f -exec sed -i 's/\.md)/\.html)/gI' {} \;
