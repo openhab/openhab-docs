@@ -12,7 +12,7 @@ install: manual
 
 {% include base.html %}
 
-## Bluetooth BlueZ Adapter
+# Bluetooth BlueZ Adapter
 
 This extension supports Bluetooth access via BlueZ on Linux (ARMv6hf).
 

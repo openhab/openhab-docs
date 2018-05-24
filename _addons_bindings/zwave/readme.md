@@ -148,7 +148,7 @@ The table below summarises the channels available in the controller. These provi
 
 ### Device Channels
 
-Channels supported by each device can be found in the device documentation. Refer to the [device summary](doc/thing-list.md) and select your device.
+Channels supported by each device can be found in the device documentation. Refer to the [device summary](doc/things.md) and select your device.
 
 ### Device properties
 
