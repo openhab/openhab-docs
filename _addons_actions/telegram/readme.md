@@ -6,6 +6,7 @@ type: action
 description: "The Telegram Action service allows sending formatted messages to Telegram clients ([https://telegram.org](https://telegram.org)), by using the Telegram Bot API."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.telegram/README.md
 since: 1x
+logo: images/addons/telegram.png
 install: auto
 ---
 

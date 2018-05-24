@@ -5,6 +5,7 @@ title: JavaScript - Transformation Services
 type: transform
 description: "Transform an input to an output using JavaScript."
 since: 2x
+logo: images/addons/javascript.png
 install: auto
 ---
 

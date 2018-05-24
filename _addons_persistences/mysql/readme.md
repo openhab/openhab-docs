@@ -6,6 +6,7 @@ type: persistence
 description: "This service allows you to persist state updates using the [MySQL](https://www.mysql.com/) database. Note that other SQL databases need a separate service due to incompatibilities between different SQL databases."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.mysql/README.md
 since: 1x
+logo: images/addons/mysql.png
 install: auto
 ---
 
