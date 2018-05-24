@@ -1,0 +1,79 @@
+---
+layout: documentation
+title: ASR-ZW - ZWave
+---
+
+{% include base.html %}
+
+# ASR-ZW Thermostat Receiver
+This describes the Z-Wave device *ASR-ZW*, manufactured by *Horstmann Controls Limited* with the thing type UID of ```horstmann_asrzw_00_000```.
+
+# Overview
+
+## Channels
+The following table summarises the channels available for the ASR-ZW
+
+| Channel | Channel Id | Category | Item Type |
+|---------|------------|----------|-----------|
+| Switch | switch_binary | Switch | Switch | 
+| Thermostat mode | thermostat_mode | Temperature | Number | 
+
+### Switch
+The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Thermostat mode
+The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The following state translation is provided for this channel to the ```Number``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| 0 | Off |
+| 1 | Heat |
+| 2 | Cool |
+| 3 | Auto |
+| 4 | Aux Heat |
+| 5 | Resume |
+| 6 | Fan Only |
+| 7 | Furnace |
+| 8 | Dry Air |
+| 9 | Moist Air |
+| 10 | Auto Changeover |
+| 11 | Heat Economy |
+| 12 | Cool Economy |
+| 13 | Away |
+| 15 | Full Power |
+| 31 | Manufacturer Specific |
+
+
+
+## Device Configuration
+The following table provides a summary of the 0 configuration parameter available in the ASR-ZW.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+
+## Association Groups
+Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
+
+The ASR-ZW supports 0 association group.
+
+## Technical Information
+
+### Endpoints
+
+#### Endpoint 0
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_THERMOSTAT_MODE_V1| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
+| COMMAND_CLASS_VERSION_V1| |
+
+---
+
+Did you spot an error in the above definition or want to improve the content?
+You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/310).
