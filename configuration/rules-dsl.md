@@ -386,7 +386,6 @@ When individual color values from a HSBType as a PercentType are retrieved, it w
 Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
 
 ```java
-
 //Example for conversion to 8-bit representation
 // In rule body
 val red = (MyColorItem.state as HSBType).red * 255
@@ -512,7 +511,7 @@ val PointType location = Device_Coordinates.state as PointType
 
 ##### Number Item
 
-A Number Items carries either a **DecimalType** or a **QuantityType** in case the Number Item has a dimension attached (e.g. `Number:Temperature`). 
+A Number Items carries either a **DecimalType** or a **QuantityType** in case the Number Item has a dimension attached (e.g. `Number:Temperature` in the items file). In rules, units are added to a number by a `|`, where the unit has to be put in quotes, if it contains non-alphabetic characters, e.g. `10|m`, but `20|"km/h"'. A couple of commonly used units do not necessarily require quotes, these are '°C', '°F', 'Ω', '°', '%', 'm²' and 'm³', so it is ok to write `20|"°C"`, but `20|°C` will also work.
 DecimalType and QuantityType are also java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
 
 Here some other commonly needed conversions:
@@ -536,7 +535,7 @@ var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).
 
 ```java
 // define a QuantityType variable
-var myTemperature = 20 [°C]
+var myTemperature = 20|°C
 
 // convert a quantity state into a different unit:
 var fahrenheit = myTemperature.toUnit("°F")
@@ -699,7 +698,8 @@ end
 {: #transformations}
 ### Transformations
 
-openHAB [Transformation services]({{base}}/addons/transformations.html) may also be used in rules to transform/translate/convert data.
+openHAB [Transformation services]({{base}}/addons/transformations.html) can be used in rules to transform/translate/convert data.
+
 The general syntax is as follows:
 
 ```java
@@ -718,13 +718,8 @@ var temperature = transform("JSONPATH", "$.temperature", jsonstring)
 var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
 ```
 
-For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
-
-#### Advanced Transformations
-
-The aforementioned `transform` command trys to transform the given value and if it does not succeed due to an error it returns the given value again.
-In case of an error during the trasnformation a `TransformationException` is thrown, providing a message about what went wrong.
-We offer a `transformRaw` method which does not catch this Exception and return the given value, but forward this Exception to the caller.
+The `transform` method tries to transform the given value and if it does not succeed it returns the original unchanged value.
+In contrast to the `transform` method, the `transformRaw` method does not catch any `TransformationException`s internally, but throws them, so that the caller can handle it.
 
 ```java
 transformRaw("<transformation-identifier>", "<transf. expression or transf. file name>", <input-data or variable>)
@@ -743,6 +738,9 @@ finally {
     // always runs even if there was an error, good place for cleanup
 }
 ```
+
+For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
+
 
 {: #logging}
 ### Logging
