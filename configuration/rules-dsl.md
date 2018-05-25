@@ -720,6 +720,30 @@ var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
 
 For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
 
+#### Advanced Transformations
+
+The aforementioned `transform` command trys to transform the given value and if it does not succeed due to an error it returns the given value again.
+In case of an error during the trasnformation a `TransformationException` is thrown, providing a message about what went wrong.
+We offer a `transformRaw` method which does not catch this Exception and return the given value, but forward this Exception to the caller.
+
+```java
+transformRaw("<transformation-identifier>", "<transf. expression or transf. file name>", <input-data or variable>)
+```
+
+Example:
+
+```java
+try {
+    var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+}
+catch(TransformationException e) {
+    logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
+}
+finally {
+    // always runs even if there was an error, good place for cleanup
+}
+```
+
 {: #logging}
 ### Logging
 
