@@ -12,7 +12,9 @@ The device is in the category of Light Bulb, defining Devices that illuminate so
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the L 810 LED iHF
 
 | Channel | Channel Id | Category | Item Type |
@@ -28,12 +30,15 @@ The following table summarises the channels available for the L 810 LED iHF
 | Alarm (burglar) 2 | alarm_burglar2 | Door | Switch | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -44,9 +49,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -57,6 +64,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (system)
+
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -67,12 +75,15 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Dimmer 1
+
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number 1
+
 The ```scene_number1``` channel supports the ```Number``` item.
 
 ### Alarm (burglar) 2
+
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -85,6 +96,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 15 configuration parameters available in the L 810 LED iHF.
 Detailed information on each parameter can be found in the sections below.
 
@@ -107,6 +119,7 @@ Detailed information on each parameter can be found in the sections below.
 | 16 | Motion_Disable | Motion Off behaviour (timeout): |
 
 ### Parameter 1: Time
+
 Duration of light after motion detection.
 
 Values in the range 5 to 900 may be set.
@@ -117,6 +130,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Light
+
 Light threshold \[lx\]:
 0 – run Learn ambient light sequence. 2000 – is used as daylight (always night mode). Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 2000 may be set.
@@ -127,6 +141,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Dim
+
 Night dim mode and time \[min\]: (only for SLAMP with DIM ability)
 0 – off (dim = basic light completely disabled). 1-60 – time \[minutes\] (enabled in night mode, starts after lamp is switched off after motion detection). -1 – whole night (dim through the whole night when lamp is off). Dim mode is also disabled when local control is disabled as well as in Slave mode.
 Values in the range 0 to 60 may be set.
@@ -137,6 +152,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Range
+
 Motion Radar Range \[cm\]: (only for iHF sensor)
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as default value and any potentiometer movement rewrites the current setting.
 Values in the range 100 to 500 may be set.
@@ -147,6 +163,7 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 
 ### Parameter 5: Sensity
+
 Motion Radar Sensitivity \[%\]: (SLAMP+SPIR)
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 100 may be set.
@@ -157,6 +174,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Brighntes Meas Interval
+
 Brightness measuring interval \[min\]: (only SLAMP)
 Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.
 Values in the range 0 to 120 may be set.
@@ -167,6 +185,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Global_Light
+
 Use external Ambient Light value:
 When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically. If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.
 Values in the range 0 to 1 may be set.
@@ -177,6 +196,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Slave_Mode
+
 Disable local control:
 Bit Field:
 
@@ -220,6 +240,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Off_Behaviour
+
 Off behaviour (timeout):
 Behaviour after BASIC OFF (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.
 
@@ -238,6 +259,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: On_Behaviour
+
 On behaviour (timeout):
 Behaviour after BASIC ON (and similar commands). If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.
 
@@ -256,6 +278,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: On_Time_Over
+
 On behaviour time over (timeout):
 Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or OFF\_ON\_BEHAVIOUR (0-209) to prevent staying ON forever when there is no motion.
 
@@ -274,6 +297,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: On_Off_Behaviour
+
 Sequence On-Off behaviour (timeout):
 Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands. The intention is to use a much longer timeout value than the time after a single ON command which should then be followed by a short timeout value. The behaviour is the same as for parameter 10 (OFF\_LOCAL\_DISABLE) except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.
 Values in the range 0 to 255 may be set.
@@ -284,6 +308,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: Off_On_Behaviour
+
 Sequence Off-On behaviour (timeout):
 Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands. The intention is to use a much longer timeout value than the time after a single OFF command which should then be followed by a short timeout value. The behaviour is the same as for parameter 11 (ON\_LOCAL\_DISABLE) except: 255 – device ignores OFF - ON sequence and uses ON behaviour.
 Values in the range 0 to 255 may be set.
@@ -294,6 +319,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 15: Sequence_Time
+
 Sequence timing:
 Time in \[100 milliseconds\] of maximum delay between BASIC ON and BASIC OFF (and vice versa) to consider this as a sequence. It is typically 1 second, but can be exceptionally longer due to retransmissions and overload – in this case, a longer interval can be allowed (up to 5 seconds).
 Values in the range 10 to 50 may be set.
@@ -304,6 +330,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 16: Motion_Disable
+
 Motion Off behaviour (timeout):
 Motion disable timeout after BASIC SET to motion endpoint when the internal motion sensor is not used for evaluating the behaviour of the lamp(SLAMP) relay(SPIR) and groups 2 and 3. Events are, however, still transmitted to the Lifeline, and the device can be controlled via remote motion sensors.
 
@@ -322,27 +349,33 @@ This parameter has the configuration ID ```config_16_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The L 810 LED iHF supports 5 association groups.
 
 ### Group 1: Lifeline
+
 Lifeline
 This group supports 1 nodes.
 
 ### Group 2: Control: Key01
+
 On/Off control
 This group supports 16 nodes.
 
 ### Group 3: Notification: Motion
+
 Motion Begin/End (PIR/radar/iHF)
 This group supports 16 nodes.
 
 ### Group 4: Sensor: Luminescence
+
 Ambient light
 This group supports 15 nodes.
 
 ### Group 5: Control: Key02
+
 On/Off button
 This group supports 16 nodes.
 

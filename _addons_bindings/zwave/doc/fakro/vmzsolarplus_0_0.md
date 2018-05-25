@@ -10,7 +10,9 @@ This describes the Z-Wave device *VMZ Solar z-wave plus*, manufactured by *Fakro
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the VMZ Solar z-wave plus
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,12 +22,15 @@ The following table summarises the channels available for the VMZ Solar z-wave p
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -38,6 +43,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 15 configuration parameters available in the VMZ Solar z-wave plus.
 Detailed information on each parameter can be found in the sections below.
 
@@ -60,6 +66,7 @@ Detailed information on each parameter can be found in the sections below.
 | 100 | Autoexclude | Autoexclude |
 
 ### Parameter 1: operating mode
+
 operating mode
 Operating mode. Available values:
 
@@ -82,6 +89,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: winter mode
+
 Summer/Winter mode
 summer mode: go down if sun shines and go up if it is cloudy
 
@@ -99,6 +107,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Delay time
+
 delay to auto shade
 Delay time in minutes after which the shade is open or closed in auto mode
 Values in the range 0 to 30 may be set.
@@ -109,6 +118,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Level of sensitivity for day
+
 Level of insolation to open/close the shades
 Level of insolation in mA to open/close the shades in the auto mode
 Values in the range 3 to 100 may be set.
@@ -119,6 +129,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Temperature
+
 Temperature
 T\[<sup>o</sup>C\] = x minus 50
 Values in the range 0 to 0 may be set.
@@ -130,6 +141,7 @@ This is a read only parameter.
 
 
 ### Parameter 6: STM active
+
 STM AutoShade active
 
 The following option values may be configured -:
@@ -145,6 +157,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 13: Restore last position
+
 Restore last position
 Restore last position or always go down till the end.
 The following option values may be configured -:
@@ -160,6 +173,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 17: Insolation level
+
 Current on autoshade solar panel
 Current from autoshade solar panel for loading battery: 0 - 255 mA
 Values in the range 0 to 255 may be set.
@@ -171,6 +185,7 @@ This is a read only parameter.
 
 
 ### Parameter 21: Motor current
+
 Motor current
 Current used by motor: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
@@ -182,6 +197,7 @@ This is a read only parameter.
 
 
 ### Parameter 77: CLOSE current
+
 CLOSE current
 CLOSE current: 1\[mA\] - 255\[mA\]
 Values in the range 1 to 255 may be set.
@@ -192,6 +208,7 @@ This parameter has the configuration ID ```config_77_1``` and is of type ```INTE
 
 
 ### Parameter 78: OPEN current
+
 OPEN current
 OPEN current: 1\[mA\] - 255\[mA\]
 Values in the range 1 to 255 may be set.
@@ -202,6 +219,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 
 ### Parameter 79: CLOSE overload current
+
 CLOSE overload current
 CLOSE overload current: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
@@ -212,6 +230,7 @@ This parameter has the configuration ID ```config_79_1``` and is of type ```INTE
 
 
 ### Parameter 80: OPEN overload current
+
 OPEN overload current
 OPEN overload current: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
@@ -222,6 +241,7 @@ This parameter has the configuration ID ```config_80_1``` and is of type ```INTE
 
 
 ### Parameter 99: Restore default config values
+
 Restore default config values
 Restore default config values.
 The following option values may be configured -:
@@ -237,6 +257,7 @@ This parameter has the configuration ID ```config_99_1``` and is of type ```INTE
 
 
 ### Parameter 100: Autoexclude
+
 Autoexclude
 
 The following option values may be configured -:
@@ -252,23 +273,28 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The VMZ Solar z-wave plus supports 4 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 1 nodes.
 
 ### Group 2: BasicRepeat
+
 
 This group supports 5 nodes.
 
 ### Group 3: MultilevelRepeat
 
+
 This group supports 5 nodes.
 
 ### Group 4: BasicControl
+
 
 This group supports 5 nodes.
 

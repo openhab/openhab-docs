@@ -10,7 +10,9 @@ This describes the Z-Wave device *ZMNHIA*, manufactured by *Goap* with the thing
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZMNHIA
 
 | Channel | Channel Id | Category | Item Type |
@@ -24,15 +26,19 @@ The following table summarises the channels available for the ZMNHIA
 | Binary Sensor 2 | sensor_binary2 | Door | Switch | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -56,9 +62,11 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Binary Sensor 1
+
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -69,6 +77,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
+
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -81,6 +90,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 17 configuration parameters available in the ZMNHIA.
 Detailed information on each parameter can be found in the sections below.
 
@@ -105,6 +115,7 @@ Detailed information on each parameter can be found in the sections below.
 | 63 | Switch selection | Connected device type can be (NO) or (NC) |
 
 ### Parameter 1: Input 1 switch type
+
 Input 1 switch type
 
 The following option values may be configured -:
@@ -120,6 +131,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input 2 switch type
+
 Input 2 switch type
 
 The following option values may be configured -:
@@ -135,6 +147,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Input 3 switch type
+
 Input 3 switch type
 
 The following option values may be configured -:
@@ -152,6 +165,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Input 2 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -167,6 +181,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Input 3 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -180,6 +195,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Activate / deactivate functions ALL ON/ALL OFF
+
 Module responds to commands ALL ON / ALL OFF
 Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
 The following option values may be configured -:
@@ -197,6 +213,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: Set point set by I2
+
 Set point set by I2
 When I2 is pressed set point will be set according to the value of this parameter. Available config. parameters:
 
@@ -215,6 +232,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Set point set by I3
+
 Set point set by I3
 When I3 is pressed set point will be set according to the value of this parameter. Available config. parameters
 
@@ -233,6 +251,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 30: Saving the state of the relay after a power failure
+
 Saving the state of the relay after a power failure
 
 The following option values may be configured -:
@@ -248,6 +267,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ### Parameter 40: Power reporting in Watts on power change for Q1
+
 Power reporting in Watts on power change
 Set value means percentage, set value from 0 - 100=0% - 100%. Available configuration parameters
 
@@ -266,6 +286,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting in Watts by time interval for Q1
+
 Power reporting in Watts by time interval
 Set value means time interval (0 – 65535) in seconds, when power report is send. Available config. parameters
 
@@ -282,6 +303,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 43: Hysteresis On
+
 Hysteresis On
 This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device on. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.
 
@@ -296,6 +318,7 @@ This parameter has the configuration ID ```config_43_1``` and is of type ```INTE
 
 
 ### Parameter 44: Hysteresis Off
+
 Hysteresis Off
 This parameter defines temperature min difference between real measured temperature and set-point temperature to turn device off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 255 means from - 0.1 °C to -12.7 °C.
 
@@ -310,6 +333,7 @@ This parameter has the configuration ID ```config_44_1``` and is of type ```INTE
 
 
 ### Parameter 45: Antifreeze
+
 Antifreeze function Temperature
 Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Parameter can be set from 0 to 255 where 0 to 127 means from 0.0 °C to 12.7 °C and from 128 to 254 means from - 0.1 °C to -12.6 °C.
 
@@ -326,6 +350,7 @@ This parameter has the configuration ID ```config_45_1``` and is of type ```INTE
 
 
 ### Parameter 60: Too low temperature limit
+
 Too low temperature limit
 Available configuration parameters
 
@@ -340,6 +365,7 @@ This parameter has the configuration ID ```config_60_2``` and is of type ```INTE
 
 
 ### Parameter 61: Too high temperature limit
+
 Too high temperature limit
 Available configuration parameters:
 
@@ -354,6 +380,7 @@ This parameter has the configuration ID ```config_61_2``` and is of type ```INTE
 
 
 ### Parameter 63: Switch selection
+
 Connected device type can be (NO) or (NC)
 Set value means the type of the device that is connected to the relay output. The device type can be normally open (NO) or normally close (NC). Available configuration parameters
 
@@ -370,31 +397,38 @@ This parameter has the configuration ID ```config_63_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHIA supports 6 association groups.
 
 ### Group 1: Basic on/off Q1
 
+
 This group supports 16 nodes.
 
 ### Group 2: Basic on/off I2
+
 
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off I3
 
+
 This group supports 16 nodes.
 
 ### Group 4: High Temperature
+
 
 This group supports 16 nodes.
 
 ### Group 5: Low Temperature
 
+
 This group supports 16 nodes.
 
 ### Group 6: Default Reporting Group
+
 
 This group supports 1 nodes.
 

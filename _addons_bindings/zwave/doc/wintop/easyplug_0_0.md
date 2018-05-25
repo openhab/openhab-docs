@@ -10,7 +10,9 @@ This describes the Z-Wave device *EasyPlug*, manufactured by *Wintop* with the t
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the EasyPlug
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,32 +23,35 @@ The following table summarises the channels available for the EasyPlug
 | Electric meter (watts) | meter_watts | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the EasyPlug.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The EasyPlug supports 1 association group.
 
 ### Group 1: Group 1
+
 
 This group supports 5 nodes.
 

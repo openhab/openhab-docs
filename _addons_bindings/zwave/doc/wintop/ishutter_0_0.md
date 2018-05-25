@@ -12,7 +12,9 @@ The device is in the category of Blinds, defining Roller shutters, window blinds
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the iShutter
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,17 +24,21 @@ The following table summarises the channels available for the iShutter
 |  | switch_binary2 | Switch | Switch | 
 
 ### Switch 1
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### 
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 12 configuration parameters available in the iShutter.
 Detailed information on each parameter can be found in the sections below.
 
@@ -52,6 +58,7 @@ Detailed information on each parameter can be found in the sections below.
 | 14 | Invert open and close relays | Allow exchanging open and close relays |
 
 ### Parameter 1: Buttons Mode
+
 See overview
 0 -> One push button
 
@@ -77,6 +84,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Automatically close after
+
 If not zero, automatically close blind after a user defined time
 
 Values in the range 0 to 65535 may be set.
@@ -87,6 +95,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: What to do on RF close command
+
 Defines how to interpret RF Off command.
 0 -> Close
 
@@ -112,6 +121,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Typical click timeout
+
 time used to differentiate click, hold, double and triple clicks
 1 - 100 -> in 10ms units
 Values in the range 0 to 100 may be set.
@@ -122,6 +132,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Invert buttons
+
 Invert buttons
 0 -> No
 
@@ -139,6 +150,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Action on button press or hold
+
 Defines which command should be sent to Association group
 Defines which command should be sent to Association group on button press or hold. Scene mode will send 1 for Up event, 2 for Stop, 3 for Down.
 
@@ -158,6 +170,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: LED mode
+
 Set LED indication mode
 0 -> Disabled
 
@@ -184,6 +197,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Full close time
+
 Time to go from opened to closed state.
 Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and multilevel Set values (1-99, 255) would Open except 0 value that would Close.
 Values in the range 0 to 255 may be set.
@@ -194,6 +208,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: Full open time
+
 Time to go from closed to open state
 Time to go from closed to open state. This value may differ from Full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close
 Values in the range 0 to 255 may be set.
@@ -204,6 +219,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Node Id of the blocking device
+
 Id of the device which commands would not be Open/Close, but as block/unblock.
 Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Usefull with door opening detector: if the door is open, block the blind not to break shades while they move.
 Values in the range 0 to 255 may be set.
@@ -214,6 +230,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: which command from blocking node to enable the protection
+
 Which command from blocking device is closed door and hence, unprotected.
 0 -> on On
 
@@ -231,6 +248,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: Invert open and close relays
+
 Allow exchanging open and close relays
 Allow exchanging open and close relays if blind control is wired to the motor incorrectly
 
@@ -250,15 +268,18 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The iShutter supports 2 association groups.
 
 ### Group 1: Click, press and hold of up/down buttons
+
 Click, press and hold of up/down buttons
 This group supports 10 nodes.
 
 ### Group 2:  Send Reports on blind state change
+
 Send Reports on blind state change
 This group supports 10 nodes.
 

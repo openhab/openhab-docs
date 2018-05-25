@@ -10,7 +10,9 @@ This describes the Z-Wave device *Soft Remote*, manufactured by *ID-RF* with the
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Soft Remote
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,11 +20,13 @@ The following table summarises the channels available for the Soft Remote
 | Scene Number | scene_number |  | Number | 
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 8 configuration parameters available in the Soft Remote.
 Detailed information on each parameter can be found in the sections below.
 
@@ -38,6 +42,7 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | LED Management | How to set up LED behaviour |
 
 ### Parameter 1: Buttons 1 and 3 profile
+
 To set-up the profile of buttons 1 and 3
 
 The following option values may be configured -:
@@ -54,6 +59,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Buttons 2 and 4 profile
+
 To set-up the profile of buttons 2 and 4
 
 The following option values may be configured -:
@@ -70,6 +76,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Scene Type
+
 To choose the way of sending Scene to the gateway
 
 The following option values may be configured -:
@@ -85,6 +92,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Button 1 configuration
+
 To set-up the how button 1 behaves, when set in MONO Profile
 
 The following option values may be configured -:
@@ -101,6 +109,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Button 2 configuration
+
 To set-up the how button 2 behaves, when set in MONO Profile
 
 The following option values may be configured -:
@@ -117,6 +126,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Button 3 configuration
+
 To set-up the how button 3 behaves, when set in MONO Profile
 
 The following option values may be configured -:
@@ -133,6 +143,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Button 4 configuration
+
 To set-up the how button 4 behaves, when set in MONO Profile
 
 The following option values may be configured -:
@@ -149,6 +160,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: LED Management
+
 How to set up LED behaviour
 
 The following option values may be configured -:
@@ -166,35 +178,43 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Soft Remote supports 7 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 1 nodes.
 
 ### Group 2: Button 1 - Mono - Controlled nodes
+
 
 This group supports 8 nodes.
 
 ### Group 3: Button 2 - Mono - Controlled nodes
 
+
 This group supports 8 nodes.
 
 ### Group 4: Button 3 - Mono - Controlled nodes
+
 
 This group supports 8 nodes.
 
 ### Group 5: Button 4 - Mono - Controlled nodes
 
+
 This group supports 8 nodes.
 
 ### Group 6: Button 1 and 3 - Duo - Controlled nodes
 
+
 This group supports 8 nodes.
 
 ### Group 7: Button 2 and 4 - Duo - Controlled nodes
+
 
 This group supports 8 nodes.
 

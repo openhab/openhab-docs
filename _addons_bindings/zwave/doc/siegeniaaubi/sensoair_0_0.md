@@ -10,7 +10,9 @@ This describes the Z-Wave device *Sensoair*, manufactured by *SIEGENIA-AUBI KG* 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Sensoair
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,11 +20,13 @@ The following table summarises the channels available for the Sensoair
 | Sensor (CO2) | sensor_co2 |  | Number | 
 
 ### Sensor (CO2)
+
 The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 2 configuration parameters available in the Sensoair.
 Detailed information on each parameter can be found in the sections below.
 
@@ -32,6 +36,7 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | Interval for unsolicited Sensor Report Mode B | defines how often a Sensor report is sent |
 
 ### Parameter 1: Device Configuration Value 1
+
 Configuration of the device operating mode
 - bit 0 Unsolicited Multilevel Report Mode A 0 = disabled, 1 = **enabled**
 - bit 1 Unsolicited Multilevel Report Mode B 0 = **disabled**, 1 = enabled
@@ -57,6 +62,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Interval for unsolicited Sensor Report Mode B
+
 defines how often a Sensor report is sent
 When enabled by parameter 1, SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an interval of 5 - 65000 seconds. The interval (default setting = 30s) is configured as follows:
 
@@ -71,11 +77,13 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Sensoair supports 1 association group.
 
 ### Group 1: Group 1
+
 
 This group supports 5 nodes.
 

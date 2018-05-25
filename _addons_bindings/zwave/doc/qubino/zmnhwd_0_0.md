@@ -11,6 +11,7 @@ This describes the Z-Wave device *ZMNHWD*, manufactured by *Goap* with the thing
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.
 
 Supported control types:
@@ -21,14 +22,17 @@ Supported control types:
 This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).
 
 ## Inclusion Information
+
 To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.
 
 The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.
 
 ## Exclusion Information
+
 To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHWD
 
 | Channel | Channel Id | Category | Item Type |
@@ -39,20 +43,25 @@ The following table summarises the channels available for the ZMNHWD
 | Color Temperature | color_temperature | ColorLight | Dimmer | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 14 configuration parameters available in the ZMNHWD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -74,6 +83,7 @@ Detailed information on each parameter can be found in the sections below.
 | 14 | 4 Dimmers mode | 4 Dimmers mode |
 
 ### Parameter 1: Input IN1 configuration
+
 Input IN1 configuration
 
 The following option values may be configured -:
@@ -97,6 +107,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input IN2 configuration
+
 Input IN2 configuration
 
 The following option values may be configured -:
@@ -120,6 +131,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Input IN3 configuration
+
 Input IN3 configuration
 
 The following option values may be configured -:
@@ -143,6 +155,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Input IN4 configuration
+
 Input IN4 configuration
 
 The following option values may be configured -:
@@ -166,6 +179,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Auto scene mode set
+
 Activation of the programmed scene changing color shades.
 
 The following option values may be configured -:
@@ -185,6 +199,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Auto Scene Mode
+
 Duration between Colour change
 - 1-127 – delay duration is 1 sec to 127 sec
 - 1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene.
@@ -196,6 +211,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 
 ### Parameter 7: Memorize device status at power cut
+
 Device will be set to status memorized before power cut.
 
 The following option values may be configured -:
@@ -211,6 +227,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Automatic turning off output after set time
+
 Automatic turning off output after set time
 - 0 – Auto OFF disabled
 - 1 – 32536 = 1 second – 32536 seconds Auto OFF
@@ -222,6 +239,7 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 
 
 ### Parameter 9: Automatic turning on output after set time
+
 Automatic turning on output after set time
 - 0 – Auto ON disabled
 - 1 – 32536 = 1 second – 32536 seconds Auto ON
@@ -233,6 +251,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ### Parameter 10: MAX dimming value
+
 MAX dimming value
 2-99 = 2 % – 99 %
 Values in the range 2 to 99 may be set.
@@ -243,6 +262,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: MIN dimming value
+
 MIN dimming value
 1-98 = 1 % – 98 %
 Values in the range 1 to 98 may be set.
@@ -253,6 +273,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Dimming time (soft on/off)
+
 Dimming time (soft on/off)
 - Default value 10 = 1 s
 - 5 – 25 = from 0.5 to 2.5 seconds
@@ -264,6 +285,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: Dimming time when key pressed
+
 Dimming time when key pressed
 1 – 127 = from 1 to 127 seconds
 
@@ -276,6 +298,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: 4 Dimmers mode
+
 4 Dimmers mode
 NOTE: If the parameter no. 14 is enabled, parameter no. 1,2,3,4 has no effect.
 
@@ -295,11 +318,13 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHWD supports 1 association group.
 
 ### Group 1: Send basic report to this group
+
 
 This group supports 1 nodes.
 

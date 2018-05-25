@@ -12,7 +12,9 @@ The device is in the category of Blinds, defining Roller shutters, window blinds
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZRTSI
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,17 +23,14 @@ The following table summarises the channels available for the ZRTSI
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the ZRTSI.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The ZRTSI supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

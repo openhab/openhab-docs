@@ -10,7 +10,9 @@ This describes the Z-Wave device *ZMNHZD*, manufactured by *Goap* with the thing
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZMNHZD
 
 | Channel | Channel Id | Category | Item Type |
@@ -32,53 +34,69 @@ The following table summarises the channels available for the ZMNHZD
 |  Thermo/ Hygro Sensor Ch2 – Humidity  | sensor_relhumidity10 | Humidity | Number | 
 
 ### Sensor (velocity)
+
 The ```sensor_velocity``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (direction)
+
 The ```sensor_direction``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (rain rate)
+
 The ```sensor_rainrate``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermo/ Hygro Sensor Ch1 – Temperature
+
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Wind Gauge – Direction
+
 The ```sensor_direction2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Wind Gauge – Velocity
+
 The ```sensor_velocity3``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Wind Gauge – Wind gust
+
 The ```sensor_velocity4``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ###  Wind Gauge – Temperature
+
 The ```sensor_temperature5``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Wind Gauge – Wind Chill
+
 The ```sensor_temperature6``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ###  Rain Sensor
+
 The ```sensor_rainrate7``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ###  Thermo/ Hygro Sensor Ch1 – Humidity
+
 The ```sensor_relhumidity8``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermo/ Hygro Sensor Ch2 – Temperature
+
 The ```sensor_temperature9``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ###  Thermo/ Hygro Sensor Ch2 – Humidity 
+
 The ```sensor_relhumidity10``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 16 configuration parameters available in the ZMNHZD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -102,6 +120,7 @@ Detailed information on each parameter can be found in the sections below.
 | 250 | Unsecure / Secure Inclusion  | Unsecure / Secure Inclusion |
 
 ### Parameter 1: Wind Gauge
+
 Wind Gauge, Wind Gust Top Value
 Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association
 Values in the range 0 to 8800 may be set.
@@ -112,6 +131,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Rain Gauge
+
 Rain Rate top value
 If the sensor Rain Rate is higher than the parameter value, a device triggers a association.
 Values in the range 0 to 30000 may be set.
@@ -122,6 +142,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Wind Gauge
+
 Wind Gust
 0 - if the wind gauge is higher than the parameter No. 1 value, then a device sends basic set = 0x00
 
@@ -134,6 +155,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Rain Gauge
+
 Rain Rate
 0 - if the rain amount is higher than the parameter No. 2 value, then a device sends basic set = 0x00
 
@@ -146,6 +168,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: End Point 1
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -158,6 +181,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: End Point 2
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -170,6 +194,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: End Point 3
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -182,6 +207,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: End Point 4
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -194,6 +220,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: End Point 5
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -206,6 +233,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: End Point 6
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -218,6 +246,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: End Point 7
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -230,6 +259,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: End Point 8
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -242,6 +272,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: End Point 9
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -254,6 +285,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: End Point 10
+
 Unsolicited report
 0 - Unsolicited report disabled
 
@@ -266,6 +298,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ### Parameter 15: Random ID enable
+
 enables/disables random ID
 If Random ID is disabled, the Weather Station USB Key can receive data from multiple 433 MHz Sensors on the same Channel. If the Random ID is enabled, the USB Key can receive data from only one sensor on the same channel. If the USB Key does not receive a data from a sensor on a specific channel for more than 2.5 hours, it clears the Random ID of the device and waits for a new ID. If you replace the batteries in the modules, the Random ID will change. If you want that the USB Key accept a module immediately, set the Parameter No. 15 to “0” and in the next step again to “1”.
 Values in the range 0 to 1 may be set.
@@ -276,6 +309,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 250: Unsecure / Secure Inclusion 
+
 Unsecure / Secure Inclusion
 - default Value 0
 - 0 – Unsecure Inclusion
@@ -302,19 +336,23 @@ This parameter has the configuration ID ```config_250_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHZD supports 3 association groups.
 
 ### Group 1: Lifeline group
+
 reserved for the communication with the main controller
 This group supports 1 nodes.
 
 ### Group 2: Basic on/off
+
 triggered when the wind gust of the wind gauge exceed the configuration parameter 1 value
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off
+
 triggered when the rain rate exceed the configuration parameter 2 value
 This group supports 16 nodes.
 

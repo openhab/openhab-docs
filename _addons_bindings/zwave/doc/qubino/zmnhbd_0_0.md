@@ -11,9 +11,11 @@ This describes the Z-Wave device *ZMNHBD*, manufactured by *Goap* with the thing
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 This Z-Wave module is used for switching on or off two electrical devices (e.g. lights or fans,..). The module can be controlled either through Z-Wave network or through the wallswitches. The module is designed to be mounted inside a "flush mountingbox", hidden behind a traditional wall switch. Module measures power consumption of two electrical devices and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
 ## Inclusion Information
+
 **Module Inclusion (Adding to Z-Wave network)**
 
 - Connect module to power supply (with temperature sensor connected -if purchased)
@@ -27,6 +29,7 @@ This Z-Wave module is used for switching on or off two electrical devices (e.g. 
 **NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.
 
 ## Exclusion Information
+
 **Module Exclusion/Reset (Removing from Z-Wavenetwork)**
 
 - Connect module to power supply
@@ -40,6 +43,7 @@ By this function all parameters of the module are set to default values and own 
 If push button I1 is pressed three times within 3s (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHBD
 
 | Channel | Channel Id | Category | Item Type |
@@ -57,41 +61,53 @@ The following table summarises the channels available for the ZMNHBD
 | Sensor (temperature) | sensor_temperature3 | Temperature | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
+
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 2
+
 The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 17 configuration parameters available in the ZMNHBD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -116,6 +132,7 @@ Detailed information on each parameter can be found in the sections below.
 | 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
 
 ### Parameter 1: Input 1 switch type
+
 Input 1 switch type
 
 The following option values may be configured -:
@@ -131,6 +148,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input 2 switch type
+
 Input 2 switch type
 
 The following option values may be configured -:
@@ -146,6 +164,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Functions ALL ON/ALL OFF
+
 Activate / deactivate functions ALL ON/ALL OFF
 Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
 The following option values may be configured -:
@@ -163,6 +182,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Automatic turning off output Q1 after set time
+
 When relay Q1 is ON it goes automatically OFF after defined time
 Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).
 
@@ -176,6 +196,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Automatic turning on output Q1 after set time
+
 When relay Q1 is OFF it goes automatically ON after defined time
 Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).
 
@@ -189,6 +210,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: Automatic turning off relay Q2 after set time
+
 When relay Q2 is ON it goes automatically OFF after defined time
 Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..).
 
@@ -202,6 +224,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: Automatic turning on output Q2 after set time
+
 When relay Q2 is OFF it goes automatically ON after defined time
 Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..).
 
@@ -215,6 +238,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 15: Automatic turning off / on seconds or milliseconds selection
+
 Automatic turning off / on seconds or milliseconds selection
 Available configuration parameters:
 
@@ -230,6 +254,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 30: Saving the state after a power failure
+
 Saving the state of the relays Q1 and Q2 after a power failure
 
 The following option values may be configured -:
@@ -245,6 +270,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ### Parameter 40: Power reporting in Watts for Q1
+
 Power reporting in Watts on power change for Q1
 Set value means percentage, set value from 0 –100 = 0% -100%.
 
@@ -262,6 +288,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 41: Power reporting in Watts for Q2
+
 Power reporting in Watts on power change for Q2
 Set value means percentage, set value from 0 –100 = 0% -100%. Available configuration parameters:
 
@@ -277,6 +304,7 @@ This parameter has the configuration ID ```config_41_1``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting time interval for Q1
+
 Power reporting in Watts by time interval for Q1
 Set value means time interval (0 – 32535) in seconds, when power report is send. Available configuration parameters:
 
@@ -291,6 +319,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 43: Power reporting time interval for Q2
+
 Power reporting in Watts by time interval for Q2
 Set value means time interval (0 –32535) in seconds, when power report is send. Available configuration parameters:
 
@@ -305,6 +334,7 @@ This parameter has the configuration ID ```config_43_2``` and is of type ```INTE
 
 
 ### Parameter 63: Output Q1 Switch selection
+
 
 
 The following option values may be configured -:
@@ -322,6 +352,7 @@ This parameter has the configuration ID ```config_63_1``` and is of type ```INTE
 ### Parameter 64: Output Q2 Switch selection
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -335,6 +366,7 @@ This parameter has the configuration ID ```config_64_1``` and is of type ```INTE
 
 
 ### Parameter 110: Temperature sensor offset
+
 Temperature sensor offset settings
 Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:
 
@@ -350,6 +382,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 120: Digital temperature sensor reporting
+
 Digital temperature sensor reporting
 If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:
 
@@ -364,39 +397,48 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHBD supports 8 association groups.
 
 ### Group 1: Default Reporting Group
 
+
 This group supports 1 nodes.
 
 ### Group 2: Q1 basic on/off
+
 
 This group supports 16 nodes.
 
 ### Group 3: Q1 switch binary
 
+
 This group supports 16 nodes.
 
 ### Group 4: Q1 power meter
+
 
 This group supports 16 nodes.
 
 ### Group 5: Q2 basic on/off
 
+
 This group supports 16 nodes.
 
 ### Group 6: Q2 switch binary
+
 
 This group supports 16 nodes.
 
 ### Group 7: Q2 power meter
 
+
 This group supports 16 nodes.
 
 ### Group 8: Multilevel sensor
+
 
 This group supports 16 nodes.
 

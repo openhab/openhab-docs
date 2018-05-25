@@ -12,7 +12,9 @@ The device is in the category of Sensor, defining Device used to measure somethi
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the HKZW_MS02
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,6 +22,7 @@ The following table summarises the channels available for the HKZW_MS02
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,6 +35,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 5 configuration parameters available in the HKZW_MS02.
 Detailed information on each parameter can be found in the sections below.
 
@@ -44,6 +48,7 @@ Detailed information on each parameter can be found in the sections below.
 | 32 | Level of low battery | Define a battery level ad the "low battery" |
 
 ### Parameter 12: Motion Sensor`s Sensitivity
+
 The higher the value,the more sensitive the PIR sensor
 
 The following option values may be configured -:
@@ -60,6 +65,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 14: Enable/Disable Basic Set Command
+
 The motion Sensor can reverse its value of BASIC SET when motion is triggered
 
 The following option values may be configured -:
@@ -75,6 +81,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ### Parameter 15: value of basic set command
+
 assigned to send Basic Set Command
 
 The following option values may be configured -:
@@ -92,6 +99,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 ### Parameter 17: enable/disable shock alarm
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -105,6 +113,7 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 
 
 ### Parameter 32: Level of low battery
+
 Define a battery level ad the "low battery"
 
 Values in the range 10 to 50 may be set.
@@ -115,15 +124,18 @@ This parameter has the configuration ID ```config_32_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HKZW_MS02 supports 2 association groups.
 
 ### Group 1: report the motion detection and battery level
 
+
 This group supports 5 nodes.
 
 ### Group 2: assigned to send BASIC SET command
+
 
 This group supports 5 nodes.
 

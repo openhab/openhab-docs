@@ -10,7 +10,9 @@ This describes the Z-Wave device *AZEMT500BB32MA*, manufactured by *Trane Corpor
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the AZEMT500BB32MA
 
 | Channel | Channel Id | Category | Item Type |
@@ -27,15 +29,19 @@ The following table summarises the channels available for the AZEMT500BB32MA
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Sensor (relative humidity)
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -59,6 +65,7 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Operating State
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -73,24 +80,30 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
+
 The ```thermostat_fanmode``` channel supports the `````` item.
 
 ### Thermostat fan state
+
 The ```thermostat_fanstate``` channel supports the `````` item.
 
 ### Clock Time Offset
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the AZEMT500BB32MA.
+
+The following table provides a summary of the 1 configuration parameters available in the AZEMT500BB32MA.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -98,6 +111,7 @@ Detailed information on each parameter can be found in the sections below.
 | 132 | Schedule Mode |  |
 
 ### Parameter 132: Schedule Mode
+
 
 
 The following option values may be configured -:
@@ -113,11 +127,13 @@ This parameter has the configuration ID ```config_132_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The AZEMT500BB32MA supports 1 association group.
 
 ### Group 1: Reports
+
 
 This group supports 1 nodes.
 

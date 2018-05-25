@@ -10,7 +10,9 @@ This describes the Z-Wave device *Vitrum I EU Boiler*, manufactured by *VDA* wit
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Vitrum I EU Boiler
 
 | Channel | Channel Id | Category | Item Type |
@@ -23,37 +25,40 @@ The following table summarises the channels available for the Vitrum I EU Boiler
 | Dimmer 1 | switch_dimmer1 | DimmableLight | Dimmer | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 1
+
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the Vitrum I EU Boiler.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Vitrum I EU Boiler supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

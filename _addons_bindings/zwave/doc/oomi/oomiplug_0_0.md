@@ -10,7 +10,9 @@ This describes the Z-Wave device *Oomi Plug*, manufactured by *Fantem* with the 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Oomi Plug
 
 | Channel | Channel Id | Category | Item Type |
@@ -27,38 +29,49 @@ The following table summarises the channels available for the Oomi Plug
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Meter Reset
+
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Clock Time Offset
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 26 configuration parameters available in the Oomi Plug.
 Detailed information on each parameter can be found in the sections below.
 
@@ -92,6 +105,7 @@ Detailed information on each parameter can be found in the sections below.
 | 255 | RESET | Reset the device to defaults |
 
 ### Parameter 3: Current overload protection enable
+
 Current overload protection enable
 Current Overload Protection. Load will be closed when the Current overrun (US: 15.5A, other country: 16.2A) and the time more than 2 minutes (0=disabled, 1=enabled).
 The following option values may be configured -:
@@ -107,6 +121,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 20: Output load after re-power
+
 Configure the output load status after re‐power
 Configure the output load status after re-power on  
 (0=last status, 1=always on, 2=always off)
@@ -124,6 +139,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 
 
 ### Parameter 33: RGB LED color testing
+
 Set the RGB LED color value for testing.
 Value1: Reserved
 
@@ -141,6 +157,7 @@ This is a write only parameter.
 
 
 ### Parameter 80: Enable send to associated devices
+
 Enable to send notifications to Group 1
 Enable to send notifications to associated devices (Group 1) when the state of Micro Switch’s load changed (0=nothing, 1=hail CC, 2=basic CC report).
 The following option values may be configured -:
@@ -157,6 +174,7 @@ This parameter has the configuration ID ```config_80_1``` and is of type ```INTE
 
 
 ### Parameter 81: Configure LED state
+
 Configure the state of the LED
 Configure the state of LED when it is in 3 modes below:
 
@@ -178,6 +196,7 @@ This parameter has the configuration ID ```config_81_1``` and is of type ```INTE
 
 ### Parameter 83: Color in night light mode
 
+
 This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 16777215 may be set.
 
@@ -187,6 +206,7 @@ This parameter has the configuration ID ```config_83_3``` and is of type ```INTE
 
 
 ### Parameter 83: Blue night light color value
+
 Blue night light color value
 Value for parameter 83, night light blue color
 Values in the range 0 to 255 may be set.
@@ -197,6 +217,7 @@ This parameter has the configuration ID ```config_83_3_000000FF``` and is of typ
 
 
 ### Parameter 83: Green night light color value
+
 Green night light color value
 Green color value for parameter 83, night light mode.
 Values in the range 0 to 255 may be set.
@@ -207,6 +228,7 @@ This parameter has the configuration ID ```config_83_3_0000FF00``` and is of typ
 
 
 ### Parameter 83: Red night light color value
+
 Configure the RGB value when it is in Night light mode
 Configure the RGB value when it is in Night light mode.  
 Value1: Red color value  
@@ -227,6 +249,7 @@ This parameter has the configuration ID ```config_83_3_00FF0000``` and is of typ
 
 ### Parameter 84: Color in energy mode 
 
+
 This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 16777215 may be set.
 
@@ -236,6 +259,7 @@ This parameter has the configuration ID ```config_84_3``` and is of type ```INTE
 
 
 ### Parameter 84: Green brightness in energy mode (%)
+
 Green brightness in energy mode (%)
 Configure the brightness level of RGB LED (0%-100%) when  
 it is in Energy Mode/momentary indicate mode.  
@@ -250,6 +274,7 @@ This parameter has the configuration ID ```config_84_3_000000FF``` and is of typ
 
 
 ### Parameter 84: Yellow brightness in energy mode (%)
+
 Yellow brightness in energy mode (%)
 
 Values in the range 0 to 100 may be set.
@@ -260,6 +285,7 @@ This parameter has the configuration ID ```config_84_3_0000FF00``` and is of typ
 
 
 ### Parameter 84: Red brightness in energy mode (%)
+
 Red brightness in energy mode (%)
 
 Values in the range 0 to 100 may be set.
@@ -270,6 +296,7 @@ This parameter has the configuration ID ```config_84_3_00FF0000``` and is of typ
 
 
 ### Parameter 90: Enable items 91 and 92
+
 Enables/disables parameter 91 and 92
 Enables/disables parameter 91 and 92 below (1=enabled, 0=disabled).
 The following option values may be configured -:
@@ -285,6 +312,7 @@ This parameter has the configuration ID ```config_90_1``` and is of type ```INTE
 
 
 ### Parameter 91: Wattage Threshold
+
 minimum change in wattage to trigger
 The value here represents minimum change in wattage (in  
 terms of wattage) for a REPORT to be sent (Valid values 0-  
@@ -297,6 +325,7 @@ This parameter has the configuration ID ```config_91_2``` and is of type ```INTE
 
 
 ### Parameter 92: Wattage Percent Change
+
 minimum change in wattage percent
 The value here represents minimum change in wattage  
 percent (in terms of percentage) for a REPORT to be sent  
@@ -309,6 +338,7 @@ This parameter has the configuration ID ```config_92_1``` and is of type ```INTE
 
 
 ### Parameter 100: Set 101‐103 to default. 
+
 Set 101‐103 to default.
 
 The following option values may be configured -:
@@ -325,6 +355,7 @@ This is a write only parameter.
 
 
 ### Parameter 101: Values to send to group 1
+
 Which reports need to send in Report group 1
 
 The following option values may be configured -:
@@ -344,6 +375,7 @@ This parameter has the configuration ID ```config_101_4``` and is of type ```INT
 
 
 ### Parameter 102: Values to send to group 2
+
 Which reports need to send in Report group 2
 
 The following option values may be configured -:
@@ -363,6 +395,7 @@ This parameter has the configuration ID ```config_102_4``` and is of type ```INT
 
 
 ### Parameter 103: Values to send to group 3
+
 Which reports need to send in Report group 3
 
 The following option values may be configured -:
@@ -382,6 +415,7 @@ This parameter has the configuration ID ```config_103_4``` and is of type ```INT
 
 
 ### Parameter 110: Set 111‐113 to default.
+
 Set 111‐113 to default.
 
 The following option values may be configured -:
@@ -398,6 +432,7 @@ This is a write only parameter.
 
 
 ### Parameter 111: Time interval for sending to group 1
+
 Group 1 automatic update interval
 The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).
 
@@ -412,6 +447,7 @@ This parameter has the configuration ID ```config_111_4``` and is of type ```INT
 
 
 ### Parameter 112: Time interval for sending to group 2
+
 Group 2 automatic update interval
 The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).
 
@@ -426,6 +462,7 @@ This parameter has the configuration ID ```config_112_4``` and is of type ```INT
 
 
 ### Parameter 113: Time interval for sending to group 3
+
 Group 3 automatic update interval
 The time interval of sending Report group 1 (Valid values 0x01-0xFFFFFFFF).
 
@@ -440,6 +477,7 @@ This parameter has the configuration ID ```config_113_4``` and is of type ```INT
 
 
 ### Parameter 252: Configuration Locked
+
 Enable/disable Configuration Locked (0 =disable, 1 = enable).
 Enable/disable Configuration Locked (0 =disable, 1 =enable).
 The following option values may be configured -:
@@ -455,6 +493,7 @@ This parameter has the configuration ID ```config_252_1``` and is of type ```INT
 
 
 ### Parameter 255: RESET
+
 Reset the device to defaults
 Reset configuration set up to default setting.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 1 may be set.
@@ -466,15 +505,18 @@ This is a write only parameter.
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Oomi Plug supports 2 association groups.
 
 ### Group 1: Group 1
+
 load notification type (lifeline)
 This group supports 5 nodes.
 
 ### Group 2: Group 2
+
 forwarding basic set (retransmit)
 This group supports 5 nodes.
 

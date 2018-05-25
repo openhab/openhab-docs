@@ -12,7 +12,9 @@ The device is in the category of Light Bulb, defining Devices that illuminate so
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the RGB bulb
 
 | Channel | Channel Id | Category | Item Type |
@@ -23,20 +25,25 @@ The following table summarises the channels available for the RGB bulb
 | Color Temperature | color_temperature | ColorLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 5 configuration parameters available in the RGB bulb.
 Detailed information on each parameter can be found in the sections below.
 
@@ -49,6 +56,7 @@ Detailed information on each parameter can be found in the sections below.
 | 255 | Resetting to factory default | RGB BULB will exclude from the Z-Wave network with this particular command |
 
 ### Parameter 21: Status after power failure
+
 Define how the RGB BULB will react after the power supply is back on.
 
 The following option values may be configured -:
@@ -65,6 +73,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 
 ### Parameter 24: Notification when Load status change
+
 RGB BULB can send notifications to associated device
 RGB BULB can send notifications to associated device (Group Lifeline) when the status of the RGB BULB is changed.
 The following option values may be configured -:
@@ -81,6 +90,7 @@ This parameter has the configuration ID ```config_24_1``` and is of type ```INTE
 
 
 ### Parameter 51: Enable/disable the function of using wall switch
+
 Enable/disable the function of using wall switch to turn on/off RGB BULB
 
 The following option values may be configured -:
@@ -96,6 +106,7 @@ This parameter has the configuration ID ```config_51_1``` and is of type ```INTE
 
 
 ### Parameter 61: Advance mode
+
 RGB BULB can blink or cyclic/random change color automatically at set intervals.
 RGB BULB can blink or cyclic/random change color automatically at set intervals. It will stop blink or change color when receiving any control command like Basic SetThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
@@ -117,6 +128,7 @@ This parameter has the configuration ID ```config_61_4``` and is of type ```INTE
 
 
 ### Parameter 255: Resetting to factory default
+
 RGB BULB will exclude from the Z-Wave network with this particular command
 
 The following option values may be configured -:
@@ -131,11 +143,13 @@ This parameter has the configuration ID ```config_255_4``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The RGB bulb supports 1 association group.
 
 ### Group 1: Lifeline
+
 
 This group supports 5 nodes.
 

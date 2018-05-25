@@ -12,7 +12,9 @@ The device is in the category of Sensor, defining Device used to measure somethi
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ITEMP
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,6 +24,7 @@ The following table summarises the channels available for the ITEMP
 | Alarm (CO2) | alarm_co2 | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,9 +35,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (CO2)
+
 The ```alarm_co2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -47,6 +52,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the ITEMP.
 Detailed information on each parameter can be found in the sections below.
 
@@ -58,6 +64,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Temperature Offset | Can be used to calibrate the temperature sensors function. Calibrated as factory default. |
 
 ### Parameter 1: Reset to factory default
+
 Delete configuration but keeps inclusion
 
 The following option values may be configured -:
@@ -73,6 +80,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Command sent on external dry contact
+
 Configure what te external contact sends when trigger
 
 The following option values may be configured -:
@@ -88,6 +96,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Operating Mode
+
 Defines if the sensor is in normal wakeup mode or always on (drains battery fast)
 
 The following option values may be configured -:
@@ -103,6 +112,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Temperature Offset
+
 Can be used to calibrate the temperature sensors function. Calibrated as factory default.
 
 Values in the range 0 to 15300 may be set.
@@ -113,15 +123,18 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ITEMP supports 2 association groups.
 
 ### Group 1: Binary input Group
 
+
 This group supports 5 nodes.
 
 ### Group 2: Alarm Group
+
 
 This group supports 5 nodes.
 

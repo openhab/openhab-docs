@@ -12,7 +12,9 @@ The device is in the category of Door, defining Door sensors.
 
 # Overview
 
+
 ## Inclusion Information
+
 1\. Remove the sensor cover.
 
 2\. Make sure the sensor is powered.
@@ -26,6 +28,7 @@ gateway operating manual)
 LED will flash on and off alternately five times.sor.
 
 ## Exclusion Information
+
 1\. Remove the device cover.
 
 2\. Make sure the sensor is powered.
@@ -37,6 +40,7 @@ gateway operating manual)
 4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ## Wakeup Information
+
 You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
 
 The minimum wakeup interval is 300s (5 minutes)
@@ -48,6 +52,7 @@ Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s,
 Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
+
 The following table summarises the channels available for the Door/Window Sensor
 
 | Channel | Channel Id | Category | Item Type |
@@ -56,6 +61,7 @@ The following table summarises the channels available for the Door/Window Sensor
 | Alarm (access) | alarm_access | Door | Switch | 
 
 ### Door/Window Sensor
+
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
@@ -66,6 +72,7 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Alarm (access)
+
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -78,6 +85,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 2 configuration parameters available in the Door/Window Sensor.
 Detailed information on each parameter can be found in the sections below.
 
@@ -87,6 +95,7 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | Basic Set Level | Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be. |
 
 ### Parameter 1: ON/OFF Delay
+
 Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.
 
 Values in the range 0 to 65535 may be set.
@@ -97,6 +106,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Basic Set Level
+
 Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
 Available Settings:
 
@@ -113,23 +123,28 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Door/Window Sensor supports 4 association groups.
 
 ### Group 1: Group 1
+
 Is assigned to the device status - OPEN/CLOSED.
 This group supports 1 nodes.
 
 ### Group 2: Group 2
+
 Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.
 This group supports 5 nodes.
 
 ### Group 3: Group 3
+
 Send Notification to associated devices.
 This group supports 5 nodes.
 
 ### Group 4: Group 4
+
 Send Notification to associated devices.
 This group supports 5 nodes.
 

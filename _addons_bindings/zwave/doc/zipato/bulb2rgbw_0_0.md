@@ -12,7 +12,9 @@ The device is in the category of Light Bulb, defining Devices that illuminate so
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the RGBWE2
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,18 +24,22 @@ The following table summarises the channels available for the RGBWE2
 | Color Temperature | color_temperature | ColorLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the RGBWE2.
+
+The following table provides a summary of the 1 configuration parameters available in the RGBWE2.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -41,6 +47,7 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | internal bulb temperature |  |
 
 ### Parameter 1: internal bulb temperature
+
 
 
 Values in the range 0 to 0 may be set.
@@ -52,10 +59,10 @@ This is a read only parameter.
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The RGBWE2 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

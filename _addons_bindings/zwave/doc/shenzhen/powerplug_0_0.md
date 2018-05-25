@@ -11,6 +11,7 @@ This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *Shenzhen Neo Ele
 The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
 
 # Overview
+
 This Plug provides line voltage, current load, power consumption and energy
 
 consumption measuring.
@@ -28,6 +29,7 @@ commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One
 Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.
 
 ## Inclusion Information
+
 1\. Make sure the sensor is powered.
 
 2\. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or
@@ -39,6 +41,7 @@ gateway operating manual)
 LED will flash on and off with green alternately five times within 2 seconds.
 
 ## Exclusion Information
+
 1\. Make sure the sensor is powered.
 
 2\. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or
@@ -50,6 +53,7 @@ gateway operating manual)
 the LED will flash on and off with yellow alternately five times within 2 seconds.
 
 ## Channels
+
 The following table summarises the channels available for the NAS-WR01ZE
 
 | Channel | Channel Id | Category | Item Type |
@@ -62,21 +66,27 @@ The following table summarises the channels available for the NAS-WR01ZE
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (amps)
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -89,6 +99,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 10 configuration parameters available in the NAS-WR01ZE.
 Detailed information on each parameter can be found in the sections below.
 
@@ -106,6 +117,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Button On/Off Enable | Enable/Disable top button function |
 
 ### Parameter 1: Meter Report Enable
+
 This parameter defines Disable/Enable meter report measure data to controller.
 
 The following option values may be configured -:
@@ -121,6 +133,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Meter Report Interval
+
 Interval time reporting data to controller
 This parameter defines interval time (in seconds) that Meter report data to main controller.
 Values in the range 1 to 65535 may be set.
@@ -131,6 +144,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Maxium over-load current
+
 maximum current the plug can provide to load
 This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power and send alarm.
 
@@ -153,6 +167,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Maximum alarm current
+
 Max current for over-current notification
 Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#.
 Values in the range 1 to 15 may be set.
@@ -163,6 +178,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: LED enable
+
 This parameter defines the LED indication Function ON/OFF.
 
 The following option values may be configured -:
@@ -178,6 +194,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Power Report Threshold
+
 Power consumed change to be reported
 How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.
 Values in the range 1 to 100 may be set.
@@ -188,6 +205,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Remember Relay ON/OFF status after power failure.
+
 Plug state after power-on
  Define how will the Plug react after the power supply is back on. 0 = will be off after the power supply is reconnected. Others = remember relay status
 The following option values may be configured -:
@@ -203,6 +221,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Plug Time switch Function
+
 Timer plug OFF after time period
 Defines if the timer function is enabled/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.
 The following option values may be configured -:
@@ -218,6 +237,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Time switch Period
+
 Delay time after the plug is switched off
 This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.
 Values in the range 1 to 65535 may be set.
@@ -228,6 +248,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ### Parameter 10: Button On/Off Enable
+
 Enable/Disable top button function
 If this parameter is set to ‘1’, users can turn on and off the wall plug by pressing the button on the top of the wall plug.If this parameter is set to ‘0’, the wall plug cannot be turned on and off by pressing the button.
 The following option values may be configured -:
@@ -243,19 +264,23 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The NAS-WR01ZE supports 3 association groups.
 
 ### Group 1: Group 1
+
 is assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.
 This group supports 1 nodes.
 
 ### Group 2: Group 2
+
 Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC\_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC\_SET (0x00).
 This group supports 5 nodes.
 
 ### Group 3: Group 3
+
 Send Notification to associated devices.
 This group supports 5 nodes.
 

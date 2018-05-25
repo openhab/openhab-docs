@@ -11,6 +11,7 @@ This describes the Z-Wave device *HKZW_FLD01*, manufactured by *Hank* with the t
 The device is in the category of Sensor, defining Device used to measure something.
 
 # Overview
+
 HANK Flood Sensor is a device that is capable od both detecting leaks and floods when the level of water gest too low in a pool or a tank. Flood Sensor can work with your Z-Wave network to prevent emergencies such as burst water boiler to leakingar conditioners.
 
 It includes:
@@ -32,6 +33,7 @@ It includes:
 -Firmware OTA upgrade supported.
 
 ## Inclusion Information
+
 Add Flood Sensor into Z-Wave Network:
 
 1- Open the cover.
@@ -47,6 +49,7 @@ Add Flood Sensor into Z-Wave Network:
 6- Successful adding will be confirmed by the Z-Wave controller's message.
 
 ## Exclusion Information
+
 Remove Flood Sensor into Z-Wave Network:
 
 1- Open the cover.
@@ -62,6 +65,7 @@ Remove Flood Sensor into Z-Wave Network:
 6- Successful removing will be confirmed by the Z-Wave controller's message.
 
 ## Wakeup Information
+
 Defining a time period by which the flood Sensor sends a wake up notification command frame to communicate with the assigned device, update parameters, update software detecs battery level.
 
 Wake up interval set to 0 disables the sending wake up notification command, in such configuration it is needed manually wake the device up by press the Z-button.
@@ -71,6 +75,7 @@ Avaliable settings: 0-2678400
 Default setting: 0
 
 ## Channels
+
 The following table summarises the channels available for the HKZW_FLD01
 
 | Channel | Channel Id | Category | Item Type |
@@ -81,9 +86,11 @@ The following table summarises the channels available for the HKZW_FLD01
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (heat)
+
 The ```alarm_heat``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -94,6 +101,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (flood)
+
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -104,6 +112,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -116,6 +125,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 10 configuration parameters available in the HKZW_FLD01.
 Detailed information on each parameter can be found in the sections below.
 
@@ -133,6 +143,7 @@ Detailed information on each parameter can be found in the sections below.
 | 32 | Level of low battery | This parameter defines a battery level as the "low bettery" |
 
 ### Parameter 14: Enable/Disable Basic Set Command
+
 The flood sensor can send BASIC SET command to nodes associated
 
 The following option values may be configured -:
@@ -148,6 +159,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ### Parameter 15: value of the Basic Set
+
 The flood sensor can send BASIC SET command to nodes associated
 
 The following option values may be configured -:
@@ -163,6 +175,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 17: Flooding Alarm
+
 Enable/Disable flooding alarm
 
 The following option values may be configured -:
@@ -178,6 +191,7 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 
 
 ### Parameter 18: Shock Alarm
+
 Enable/Disable shock alarm
 
 The following option values may be configured -:
@@ -193,6 +207,7 @@ This parameter has the configuration ID ```config_18_1``` and is of type ```INTE
 
 
 ### Parameter 19: High Temperature Alarm
+
 Enable/Disable high temperature alarm
 
 The following option values may be configured -:
@@ -208,6 +223,7 @@ This parameter has the configuration ID ```config_19_1``` and is of type ```INTE
 
 
 ### Parameter 20: Set the high temperature alarm trigger value
+
 Available setting(US):-67°c to -257°c
 
 Values in the range -670 to 2570 may be set.
@@ -218,6 +234,7 @@ This parameter has the configuration ID ```config_20_2``` and is of type ```INTE
 
 
 ### Parameter 21: Low Temperature Alarm
+
 Enable/Disable low temperature alarm
 
 The following option values may be configured -:
@@ -233,6 +250,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 
 ### Parameter 22: Set the low temperature alarm trigger value
+
 Available setting(US):-67°c to -257°c
 
 Values in the range -670 to 2570 may be set.
@@ -243,6 +261,7 @@ This parameter has the configuration ID ```config_22_2``` and is of type ```INTE
 
 
 ### Parameter 24: Blinking LED
+
 Enable/Disable blinking LED when alarm being triggerd
 
 The following option values may be configured -:
@@ -258,6 +277,7 @@ This parameter has the configuration ID ```config_24_1``` and is of type ```INTE
 
 
 ### Parameter 32: Level of low battery
+
 This parameter defines a battery level as the "low bettery"
 
 Values in the range 10 to 50 may be set.
@@ -268,15 +288,18 @@ This parameter has the configuration ID ```config_32_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HKZW_FLD01 supports 2 association groups.
 
 ### Group 1: Report
+
 report the flooding detection,shock detection and the battert level
 This group supports 5 nodes.
 
 ### Group 2: Send Command
+
 Group 2 is assigned to send BASIC SET command
 This group supports 5 nodes.
 

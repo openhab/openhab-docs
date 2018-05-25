@@ -10,7 +10,9 @@ This describes the Z-Wave device *NAS-DS01Z*, manufactured by *Shenzhen Neo Elec
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the NAS-DS01Z
 
 | Channel | Channel Id | Category | Item Type |
@@ -19,6 +21,7 @@ The following table summarises the channels available for the NAS-DS01Z
 | Alarm (access) | alarm_access | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -29,6 +32,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (access)
+
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -41,6 +45,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 2 configuration parameters available in the NAS-DS01Z.
 Detailed information on each parameter can be found in the sections below.
 
@@ -50,6 +55,7 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | Basic Set Level |  |
 
 ### Parameter 1: OFF Delay
+
 Adjust the amount of delay before the OFF command is transmitted.
 Description This configuration parameter that can be used to adjust the amount of delay before the OFF command is transmitted. This parameter can be configured with the value of 0 through 65535, where 0 means send OFF command immediately and 65535 means 65535 seconds of delay.
 Values in the range 0 to 65535 may be set.
@@ -60,6 +66,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Basic Set Level
+
 
 
 The following option values may be configured, in addition to values in the range -1 to 99 -:
@@ -75,23 +82,28 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The NAS-DS01Z supports 4 association groups.
 
 ### Group 1: Lifeline
+
 GROUP 1 is lifeline service that assigned to Sensor (Door/Window detector) status – Open/Close
 This group supports 5 nodes.
 
 ### Group 2: Group 2
+
 GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 1 and 2. This Group Support: BASIC\_SET.
 This group supports 5 nodes.
 
 ### Group 3: Group 3
+
 GROUP 3 allows for Send Notification to associated devices in this group. This Group Support: NOTIFICATION\_REPORT.
 This group supports 5 nodes.
 
 ### Group 4: Group 4
+
 GROUP 4 allows for Send Notification to associated devices in this group. This Group Support: SENSOR\_BINARY\_REPORT
 This group supports 5 nodes.
 

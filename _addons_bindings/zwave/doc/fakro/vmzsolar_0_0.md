@@ -12,7 +12,9 @@ The device is in the category of Blinds, defining Roller shutters, window blinds
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the VMZ Solar
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,14 +23,17 @@ The following table summarises the channels available for the VMZ Solar
 | Blinds control | blinds_control | Blinds | Rollershutter | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 6 configuration parameters available in the VMZ Solar.
 Detailed information on each parameter can be found in the sections below.
 
@@ -42,6 +47,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Level of sensitivity for night | Level of sensitivity for night |
 
 ### Parameter 1: mode
+
 operating mode
 Operating mode. Available values:
 
@@ -64,6 +70,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: winter mode
+
 Summer/Winter mode
 Summer / Winter mode
 
@@ -83,6 +90,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Measurement frequency
+
 Measurement frequency
 
 Values in the range 1 to 30 may be set.
@@ -93,6 +101,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Level of sensitivity for day
+
 Level of sensitivity for day
 
 Values in the range 1 to 99 may be set.
@@ -103,6 +112,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Temperature
+
 Temperature
 
 Values in the range 0 to 0 may be set.
@@ -114,6 +124,7 @@ This is a read only parameter.
 
 
 ### Parameter 6: Level of sensitivity for night
+
 Level of sensitivity for night
 
 Values in the range 1 to 9 may be set.
@@ -124,10 +135,10 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The VMZ Solar supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

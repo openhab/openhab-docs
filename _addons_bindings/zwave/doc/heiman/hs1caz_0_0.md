@@ -11,6 +11,7 @@ This describes the Z-Wave device *HS1CA-Z*, manufactured by *Heiman Technology C
 The device is in the category of Sensor, defining Device used to measure something.
 
 # Overview
+
 Carbon monoxide Sensor
 
 Battery Type: CR123A
@@ -36,6 +37,7 @@ Manual:
 https://products.z-wavealliance.org/ProductManual/File?folder=&filename=Manuals/1940/HS1CA-Z%20documentation.doc
 
 ## Inclusion Information
+
 Set the z-Wave controller to inclusion mode.
 
 Then quickly triple press button behind small hole on the side of the CO-Sensor device (within 1.5 s) to include. This button is called „NET Button“ in manual. You can use a needle or an SIM card extractor to push the button behind the small hole on the side of the device.
@@ -45,11 +47,13 @@ Green LED will blink 3 times within 1 second.
 If inclusion process is successful, green LED will turn off.
 
 ## Exclusion Information
+
 Set the z-Wave controller to exclusion mode and then quickly triple press button behind small hole on the side of the CO-Sensor device (within 1.5 s) to exclude. This button is called „NET Button“ in manual. You can use a needle or an SIM card extractor to push the button behind the small hole on the side of the device.
 
 If exclusion process is successful, green LED will blink 6 times and then turn off.
 
 ## Channels
+
 The following table summarises the channels available for the HS1CA-Z
 
 | Channel | Channel Id | Category | Item Type |
@@ -58,6 +62,7 @@ The following table summarises the channels available for the HS1CA-Z
 | Alarm (CO) | alarm_co | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -68,6 +73,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (CO)
+
 The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -80,6 +86,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 0 configuration parameter available in the HS1CA-Z.
 Detailed information on each parameter can be found in the sections below.
 
@@ -87,19 +94,23 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HS1CA-Z supports 3 association groups.
 
 ### Group 1: Lifeline
+
 Battery, Notification, Reset locally Notification, Binary report
 This group supports 1 nodes.
 
 ### Group 2: Root device Group (binary sensor)
+
 Binary Sensor CO via lifeline and on status Chance of CO detection
 This group supports 5 nodes.
 
 ### Group 3: Root device Group (notification)
+
 CO status as notification report and on status change of CO detection
 This group supports 5 nodes.
 

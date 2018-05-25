@@ -12,7 +12,9 @@ The device is in the category of Power Outlet, defining Small devices to be plug
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the DZPA1
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,11 +22,13 @@ The following table summarises the channels available for the DZPA1
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 9 configuration parameters available in the DZPA1.
 Detailed information on each parameter can be found in the sections below.
 
@@ -46,6 +50,7 @@ Detailed information on each parameter can be found in the sections below.
  This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the |
 
 ### Parameter 4: Invert Switch
+
 Invert the ON/OFF Switch State.   
  Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON.   
  Note: If you invert the switches and also install the product upside down, the load will now be control
@@ -63,6 +68,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Ignore Start-Level (Receiving)
+
 This dimmer will start dimming from its current level.
 
 The following option values may be configured -:
@@ -78,6 +84,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Night Light
+
 Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.
 
 The following option values may be configured -:
@@ -94,6 +101,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 7: On/Off Command Dim Step
+
 Indicates how many levels the dimmer will change for each dimming step.
 
 Values in the range 1 to 99 may be set.
@@ -104,6 +112,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: On/Off Command Dim Rate
+
 This value indicates in 10 millisecond resolution.   
  This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
 
@@ -115,6 +124,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Local Control Dim Step
+
 Indicates how many levels the dimmer will change for each dimming step.
 
 Values in the range 1 to 99 may be set.
@@ -125,6 +135,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Local Control Dim Rate
+
 This value indicates in 10 millisecond resolution.   
  This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
 
@@ -136,6 +147,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: ALL ON/ALL OFF Dim Step
+
 Indicates how many levels the dimmer will change for each dimming step.
 
 Values in the range 1 to 99 may be set.
@@ -146,6 +158,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: ALL ON/ALL OFF Dim Rate
+
 This value indicates in 10 millisecond resolution.   
  This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
 
@@ -157,10 +170,10 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The DZPA1 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

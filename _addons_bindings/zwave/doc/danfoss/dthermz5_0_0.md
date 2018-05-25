@@ -10,7 +10,9 @@ This describes the Z-Wave device *DTHERMZ5*, manufactured by *Danfoss* with the 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the DTHERMZ5
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,20 +23,25 @@ The following table summarises the channels available for the DTHERMZ5
 | Scene Number | scene_number |  | Number | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Setpoint (cooling)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 11 configuration parameters available in the DTHERMZ5.
 Detailed information on each parameter can be found in the sections below.
 
@@ -53,6 +60,7 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | LED color | 1=Green 2=Red |
 
 ### Parameter 1: Temperature Report threshold
+
 Range is from 0.1 to 10°C 1=0.1°C 100=10°C
 Default value 5 = 0.5 °C
 Values in the range 1 to 100 may be set.
@@ -63,6 +71,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Set-point display resolution
+
 range from 0.1 to 10°C 1=0.1°C 100=10°C
 
 Values in the range 1 to 100 may be set.
@@ -73,6 +82,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Min Set-point and override limit
+
 from min 0°C to max setpoint override limit 0=0°C 40=40°C
 
 Values in the range 0 to 40 may be set.
@@ -83,6 +93,7 @@ This parameter has the configuration ID ```config_3_2``` and is of type ```INTEG
 
 
 ### Parameter 4: Max Set-point and override limit
+
 from min setpoint override limit to max 40°C 0=0°C 40=40°C
 
 Values in the range 0 to 40 may be set.
@@ -93,6 +104,7 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 
 ### Parameter 5: LED Flash period
+
 0 to 65535 seconds
 
 Values in the range 0 to 65535 may be set.
@@ -103,6 +115,7 @@ This parameter has the configuration ID ```config_5_4``` and is of type ```INTEG
 
 
 ### Parameter 6: Set-point control function
+
 0=Disabled 1=Enabled
 
 The following option values may be configured -:
@@ -118,6 +131,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Temporarily override scheduler
+
 0=Disabled 1=Enabled
 
 The following option values may be configured -:
@@ -133,6 +147,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Set-point type in Thermostat_Setpoint_Reports
+
 1=Heating 2=Cooling 10=Auto Changeover
 
 The following option values may be configured -:
@@ -149,6 +164,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: LED on time
+
 1=100ms 5=500ms
 
 Values in the range 1 to 5 may be set.
@@ -159,6 +175,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ### Parameter 10: Number of LED flashes (duration)
+
 0 to 255
 
 Values in the range 0 to 255 may be set.
@@ -169,6 +186,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ### Parameter 11: LED color
+
 1=Green 2=Red
 
 The following option values may be configured -:
@@ -184,10 +202,10 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The DTHERMZ5 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

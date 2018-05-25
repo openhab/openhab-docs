@@ -10,7 +10,9 @@ This describes the Z-Wave device *ZMNHJA*, manufactured by *Goap* with the thing
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZMNHJA
 
 | Channel | Channel Id | Category | Item Type |
@@ -23,15 +25,19 @@ The following table summarises the channels available for the ZMNHJA
 | Binary Sensor 3 | sensor_binary3 | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
+
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -42,6 +48,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
+
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -52,6 +59,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 3
+
 The ```sensor_binary3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -64,6 +72,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 10 configuration parameters available in the ZMNHJA.
 Detailed information on each parameter can be found in the sections below.
 
@@ -83,6 +92,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Input 1 switch type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -96,6 +106,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input 2 switch type
+
 
 
 The following option values may be configured -:
@@ -113,6 +124,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Input 3 switch type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -126,6 +138,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Input 1 contact type
+
 
 
 The following option values may be configured -:
@@ -143,6 +156,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Input 2 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -158,6 +172,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Input 3 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -171,6 +186,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 11: Input 1 operation mode selection
+
 
 
 The following option values may be configured -:
@@ -193,6 +209,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 ### Parameter 12: Input 2 operation mode selection
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -211,6 +228,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: Input 3 operation mode selection
+
 
 
 The following option values may be configured -:
@@ -233,6 +251,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 ### Parameter 30: Saving the state of the device after a power failure
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -246,27 +265,33 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHJA supports 5 association groups.
 
 ### Group 1: Lifeline group
+
 Reserved for communication with the main controller
 This group supports 1 nodes.
 
 ### Group 2: Multilevel
+
 Triggered at changes of state/value of the Flush pilot wire
 This group supports 99 nodes.
 
 ### Group 3: Basic on/off 
+
 Triggered at change of the input I1 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 4: Basic on/off
+
 Triggered at change of the input I2 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 5: Basic on/off
+
 Triggered at change of the input I3 state and reflecting its state
 This group supports 99 nodes.
 

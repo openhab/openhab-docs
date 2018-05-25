@@ -11,6 +11,7 @@ This describes the Z-Wave device *NZW31*, manufactured by *Inovelli* with the th
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 Inovelli's In-Wall Smart Dimmer not only has the ability to control lights from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.   
   
 In addition, it has scene control enabled, which allows you to double tap the switch to activate a Z-Wave scene. An example would be a bedtime scene, which turns off all lights, locks the door(s) and sets the temperature to 68 degrees.   
@@ -18,6 +19,7 @@ In addition, it has scene control enabled, which allows you to double tap the sw
 Simplifying lives, one smart home product at a time... that's Inovelli.
 
 ## Inclusion Information
+
 **Including Steps:**
 
 - This will vary based on the HUB/Gateway you’re using, but you need to go one (1) step before putting your HUB/Gateway in inclusion process — once you are one (1) step away from physically starting the inclusion/pairing process — **THEN STOP!**
@@ -33,9 +35,11 @@ Congratulations, you now have a remote controlled switch!
 **\*\*If you are having issues pairing your device, please ensure your switch is within range of your HUB. 95% of the pairing/including failures stem from this issue. Best practice is to start with Z-Wave products near your HUB and build your network out. The more Z-Wave devices, the more efficient your network.\*\***
 
 ## Exclusion Information
+
 - Press the Top (UP) Button on your NZW31 six (6) times within 2 seconds
 
 ## Channels
+
 The following table summarises the channels available for the NZW31
 
 | Channel | Channel Id | Category | Item Type |
@@ -43,11 +47,13 @@ The following table summarises the channels available for the NZW31
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the NZW31.
 Detailed information on each parameter can be found in the sections below.
 
@@ -59,6 +65,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Countdown Timer | Shutoff Timer |
 
 ### Parameter 1: Dimmer Step configuration
+
 Dimmer Speed Setting (On/Off)
 Control the speed with which the dimmer turns on and off.
 Values in the range 1 to 99 may be set.
@@ -69,6 +76,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Dimmer Minimum Configuration
+
 Lowest dim setting before turning off
 Lowest dim setting before turning off
 Values in the range 1 to 99 may be set.
@@ -79,6 +87,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Switch Orientation
+
 Invert On/Off from Top/Bottom
 Invert the switch on/off position.
 
@@ -98,6 +107,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Countdown Timer
+
 Shutoff Timer
 Countdown timer.
 
@@ -110,11 +120,13 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The NZW31 supports 1 association group.
 
 ### Group 1: Lifeline
+
 
 This group supports 5 nodes.
 

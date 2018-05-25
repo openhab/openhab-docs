@@ -10,7 +10,9 @@ This describes the Z-Wave device *GE Plug in Smart Switch*, manufactured by *Jas
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the GE Plug in Smart Switch
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,12 +20,14 @@ The following table summarises the channels available for the GE Plug in Smart S
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the GE Plug in Smart Switch.
+
+The following table provides a summary of the 1 configuration parameters available in the GE Plug in Smart Switch.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -31,6 +35,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | LED light | control LED light behavior. Default is on when connected device is off |
 
 ### Parameter 3: LED light
+
 control LED light behavior. Default is on when connected device is off
 
 The following option values may be configured -:
@@ -49,10 +54,10 @@ This is a write only parameter.
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The GE Plug in Smart Switch supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

@@ -12,7 +12,9 @@ The device is in the category of Wall Switch, defining Any device attached to th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZWN-RSM2
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,18 +24,22 @@ The following table summarises the channels available for the ZWN-RSM2
 | Switch 2 | switch_binary2 | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the ZWN-RSM2.
+
+The following table provides a summary of the 1 configuration parameters available in the ZWN-RSM2.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -41,6 +47,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | Unsolicited Report Configuration | ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net |
 
 ### Parameter 3: Unsolicited Report Configuration
+
 ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net
 
 Values in the range 0 to 255 may be set.
@@ -51,10 +58,10 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The ZWN-RSM2 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

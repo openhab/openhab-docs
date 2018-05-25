@@ -10,7 +10,9 @@ This describes the Z-Wave device *KFOB*, manufactured by *Z-Wave.Me* with the th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the KFOB
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,11 +20,13 @@ The following table summarises the channels available for the KFOB
 | Scene Number | scene_number |  | Number | 
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 11 configuration parameters available in the KFOB.
 Detailed information on each parameter can be found in the sections below.
 
@@ -41,6 +45,7 @@ Detailed information on each parameter can be found in the sections below.
 | 30 | Send unsolicited Battery Report on Wake Up |  |
 
 ### Parameter 1: Button 1 and 3 pair mode
+
 In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks
 
 The following option values may be configured -:
@@ -57,6 +62,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Button 2 and 4 pair mode
+
 In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks
 
 The following option values may be configured -:
@@ -73,6 +79,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 11: Action on group 1
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -93,6 +100,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Action on group 2
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -113,6 +121,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: Action on group 3
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -133,6 +142,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: Action on group 4
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -153,6 +163,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 
 ### Parameter 20: Typical click timeout
+
 Typical time used to differenciate click, hold and double clicks in 10ms units
 
 Values in the range 0 to 255 may be set.
@@ -163,6 +174,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 
 
 ### Parameter 21: Send the following Switch All commands
+
 
 
 The following option values may be configured -:
@@ -181,6 +193,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Invert buttons
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -194,6 +207,7 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 
 
 ### Parameter 24: LED confirmation mode
+
 
 
 The following option values may be configured -:
@@ -212,6 +226,7 @@ This parameter has the configuration ID ```config_24_1``` and is of type ```INTE
 ### Parameter 30: Send unsolicited Battery Report on Wake Up
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -226,23 +241,28 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The KFOB supports 4 association groups.
 
 ### Group 1: Controlled by button 1 or single clicks of buttons 1 and 3
 
+
 This group supports 8 nodes.
 
 ### Group 2: Controlled by button 3 or double clicks of buttons 1 and 3
+
 
 This group supports 8 nodes.
 
 ### Group 3: Controlled by button 2 or single clicks of buttons 2 and 4
 
+
 This group supports 8 nodes.
 
 ### Group 4: Controlled by button 4 or double clicks of buttons 2 and 4
+
 
 This group supports 8 nodes.
 

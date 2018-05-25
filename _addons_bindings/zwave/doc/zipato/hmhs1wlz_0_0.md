@@ -11,6 +11,7 @@ This describes the Z-Wave device *HM-HS1WL-Z*, manufactured by *Zipato* with the
 The device is in the category of Sensor, defining Device used to measure something.
 
 # Overview
+
 INTRODUCTION
 
 Smart Water Leakage sensor adopts Z-Wave wireless module. Super low power consumption circuit design ensures the long battery lifespan. Separate design of body and sensor efficiently prevents the influence resulted from high humidity. High precision and sensitivity applicable for basement, machine room, hotel, water tower, pool, swimming pool, solar, kitchen, bathroom and other places may have water leakage or water overflow.
@@ -69,6 +70,7 @@ ASSOCIATION & ASSOCIATION GROUP INFORMATION
 \- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
 
 ## Inclusion Information
+
 INSTALLATION STEP 1:   
 Remove battery insulation film to power it on
 
@@ -79,6 +81,7 @@ INSTALLATION STEP 2:
 \- If Inclusion Process is successful, Green led will turn off.
 
 ## Exclusion Information
+
 DEVICE EXCLUSION   
 \- Click \[Remove\] icon in Z-Wave PC Controller Program   
 \- Press the networking button 3 times within 1.5s   
@@ -88,9 +91,11 @@ FACTORY RESET
 Long press the networking button, then power on (put into the battery), ID code is clear and reset to factory settings.
 
 ## Wakeup Information
+
 The manual doesn't say, but I've found that tapping the tamper sensor once makes the device blink and that seems to wake it up.
 
 ## Channels
+
 The following table summarises the channels available for the HM-HS1WL-Z
 
 | Channel | Channel Id | Category | Item Type |
@@ -100,6 +105,7 @@ The following table summarises the channels available for the HM-HS1WL-Z
 | Alarm (flood) | alarm_flood | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -110,6 +116,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -120,6 +127,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (flood)
+
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -132,6 +140,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 0 configuration parameter available in the HM-HS1WL-Z.
 Detailed information on each parameter can be found in the sections below.
 
@@ -139,27 +148,33 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HM-HS1WL-Z supports 5 association groups.
 
 ### Group 1: Lifeline
+
 Lifeline association group
 This group supports 5 nodes.
 
 ### Group 2: Root Device group (Binary Sensor)
+
 Root Device group (Binary Sensor)
 This group supports 5 nodes.
 
 ### Group 3: Root Device group (Binary Sensor) 
+
 Root Device group (Binary Sensor)
 This group supports 5 nodes.
 
 ### Group 4: Root Device group (Notification) 
+
 Root Device group (Notification)
 This group supports 5 nodes.
 
 ### Group 5: Root Device group (Notification) 
+
 Root Device group (Notification)
 This group supports 5 nodes.
 

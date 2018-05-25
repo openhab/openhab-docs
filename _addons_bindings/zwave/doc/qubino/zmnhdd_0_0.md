@@ -11,9 +11,11 @@ This describes the Z-Wave device *ZMNHDD*, manufactured by *Goap* with the thing
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 This Z-Wave module is used for dimming the bulb or to manage the speed of a fan. The module can be controlled either through a Z-Wave network or through the wall switch. The module is designed to be mounted inside a "flush mounting box", hidden behind a traditional wall switch. Module measures power consumption of bulb or fan and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
 ## Inclusion Information
+
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
 - Connect module to power supply (with temperature sensor connected - if purchased),
@@ -27,6 +29,7 @@ WARNING: Service button S **must NOT be used** when module is connected to 110-2
 **NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.
 
 ## Exclusion Information
+
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
 - Connect module to power supply
@@ -40,6 +43,7 @@ By this function all parameters of the module are set to default values and own 
 NOTE: If the module is included with parameters 100 or 101 with values different to default and module reset is done, wait at least 30s before next inclusion.
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHDD
 
 | Channel | Channel Id | Category | Item Type |
@@ -62,12 +66,15 @@ The following table summarises the channels available for the ZMNHDD
 | Alarm 3 | alarm_general3 | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -78,18 +85,23 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset the total power consumption
+
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -100,18 +112,23 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 1
+
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Electric meter (kWh) 1
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 2
+
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -122,6 +139,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm 2
+
 The ```alarm_general2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -132,6 +150,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Binary Sensor 3
+
 The ```sensor_binary3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -142,6 +161,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm 3
+
 The ```alarm_general3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -154,6 +174,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 23 configuration parameters available in the ZMNHDD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -186,6 +207,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Input 1 switch type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -199,6 +221,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input 2 switch type
+
 
 
 The following option values may be configured -:
@@ -216,6 +239,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Input 2 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -231,6 +255,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Input 3 contact type
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -244,6 +269,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
+
 Flush dimmer module responds to commands ALL ON / ALL OFF
 Flush dimmer module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
 The following option values may be configured -:
@@ -261,6 +287,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Automatic turning off output after set time
+
 Auto OFF enabled with defined time, step is 1 second.
 - 0 - Auto OFF disabled
 - 1 – 32536 = 1 second – 32536 seconds
@@ -272,6 +299,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Automatic turning on output after set time
+
 Auto ON enabled with defined time, step is 1 second.
 - 0 - Auto ON disabled
 - 1 – 32536 = 1 second – 32536 seconds
@@ -283,6 +311,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 20: Enable / Disable 3-way switch
+
 Dimming is done by push button or switch connected to I1.
 Dimming is done by push button or switch connected to I1 (by default).
 
@@ -301,6 +330,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 
 
 ### Parameter 21: Enable / Disable Double click function
+
 A fast double click on the push button will set dimming power at maximum.
 If Double click function is enabled, a fast double click on the push button will set dimming power at maximum dimming value.
 The following option values may be configured -:
@@ -316,6 +346,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 
 ### Parameter 30: Saving the state of the device after a power failure
+
 If enabled, flush dimmer module saves its state before power failure.
 If state saving is enabled, flush dimmer module saves its state before power failure (it returns to the last position saved before a power failure).
 
@@ -333,6 +364,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ### Parameter 40: Power reporting in watts on power change
+
 Set value is percentage, set value from 0 - 100 = 0% - 100%.
 Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5.
 
@@ -350,6 +382,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting in Watts by time interval
+
 Set value means time interval (0 – 32767) in seconds.
 Set value means time interval (0 – 32767) in seconds, when power report is sent.
 
@@ -365,6 +398,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 60: Minimum dimming value
+
 Minimum dimming value is set by entered value.
 - 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
 
@@ -377,6 +411,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 
 
 ### Parameter 61: Maximum dimming value
+
 Maximum dimming value is set by entered value.
 - 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
 
@@ -389,6 +424,7 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 
 
 ### Parameter 65: Dimming time (soft on/off)
+
 Set value means time of moving the Dimmer between min. and max. dimming values
 Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).
 
@@ -402,6 +438,7 @@ This parameter has the configuration ID ```config_65_2``` and is of type ```INTE
 
 
 ### Parameter 66: Dimming time when key pressed
+
 Time of moving the Dimmer between min. and max dimming values
 Time of moving the Dimmer between min. and max dimming values by continuous hold of push button I1 or associated device.
 
@@ -415,6 +452,7 @@ This parameter has the configuration ID ```config_66_2``` and is of type ```INTE
 
 
 ### Parameter 67: Ignore start level
+
 This parameter is used with association group 3
 This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1.
 The following option values may be configured -:
@@ -430,6 +468,7 @@ This parameter has the configuration ID ```config_67_1``` and is of type ```INTE
 
 
 ### Parameter 68: Dimming duration
+
 This parameter is used with association group 3
 This parameter is used with association group 3. The Duration field MUST specify the time that the transition should take from the current value to the new target value. A supporting device SHOULD respect the specified Duration value.
 Values in the range 0 to 127 may be set.
@@ -440,6 +479,7 @@ This parameter has the configuration ID ```config_68_1``` and is of type ```INTE
 
 
 ### Parameter 100: Enable / Disable Endpoints I2
+
 Enabling I2 means that Endpoint (I2) will be present on UI.
 Enabling I2 means that Endpoint (I2) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint.
 
@@ -465,6 +505,7 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 
 ### Parameter 101: Enable / Disable Endpoints I3
+
 Enabling I3 means that Endpoint (I3) will be present on UI.
 Enabling I3 means that Endpoint (I3) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint.
 
@@ -490,6 +531,7 @@ This parameter has the configuration ID ```config_101_1``` and is of type ```INT
 
 
 ### Parameter 110: Temperature sensor offset settings
+
 Offset to actual measured value
 Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:
 
@@ -505,6 +547,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 120: Digital temperature sensor reporting
+
 Module reports measured temperature on defined temperature change
 If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:
 
@@ -518,6 +561,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 
 
 ### Parameter 250: Unsecure / Secure Inclusion
+
 
 The Flush dimmer supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, a dimmer could be included as unsecure and keep all the functionalityThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
@@ -533,51 +577,63 @@ This parameter has the configuration ID ```config_250_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHDD supports 11 association groups.
 
 ### Group 1: Controller Updates
+
 Lifeline group
 This group supports 1 nodes.
 
 ### Group 2: I1 basic on/off
+
 Triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 3: I1 start/stop level change
+
 Triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 4: Multilevel
+
 Triggered at changes of state/value of the Flush Dimmer
 This group supports 16 nodes.
 
 ### Group 5: I2 basic on/off
+
 Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 6: I2 notification report
+
 Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 7: I2 binary sensor
+
 Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 8: I3 basic on/off
+
 Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 9: I3 notification report
+
 Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 10: I3 binary sensor
+
 Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 11: Multilevel sensor
+
 Triggered at change of temperature sensor
 This group supports 16 nodes.
 

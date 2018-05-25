@@ -12,7 +12,9 @@ The device is in the category of Wall Switch, defining Any device attached to th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the WALLC-S
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,17 +24,21 @@ The following table summarises the channels available for the WALLC-S
 | Scene Number | scene_number |  | Number | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Activation
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 10 configuration parameters available in the WALLC-S.
 Detailed information on each parameter can be found in the sections below.
 
@@ -50,6 +56,7 @@ Detailed information on each parameter can be found in the sections below.
 | 30 | Send unsolicited Battery Report on Wake Up |  |
 
 ### Parameter 1: Button 1 and 3 pair mode
+
 In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks
 
 The following option values may be configured -:
@@ -66,6 +73,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Button 2 and 4 pair mode
+
 In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks
 
 The following option values may be configured -:
@@ -82,6 +90,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 11: Action on group 1
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -103,6 +112,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Action on group 2
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -124,6 +134,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: Action on group 3
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -145,6 +156,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: Action on group 4
+
 In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
@@ -168,6 +180,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 ### Parameter 21: Send the following Switch All commands
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -184,6 +197,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Invert buttons
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -197,6 +211,7 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 
 
 ### Parameter 25: Blocks wakeup even when wakeup interval is set
+
 If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery.
 
 The following option values may be configured -:
@@ -214,6 +229,7 @@ This parameter has the configuration ID ```config_25_1``` and is of type ```INTE
 ### Parameter 30: Send unsolicited Battery Report on Wake Up
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -228,27 +244,33 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The WALLC-S supports 5 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 10 nodes.
 
 ### Group 2: Group 1
+
 
 This group supports 10 nodes.
 
 ### Group 3: Group 2
 
+
 This group supports 10 nodes.
 
 ### Group 4: Group 3
 
+
 This group supports 10 nodes.
 
 ### Group 5: Group 4
+
 
 This group supports 10 nodes.
 

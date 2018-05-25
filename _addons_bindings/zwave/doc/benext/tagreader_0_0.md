@@ -10,7 +10,9 @@ This describes the Z-Wave device *Tag Reader*, manufactured by *BeNext* with the
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Tag Reader
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,9 +22,11 @@ The following table summarises the channels available for the Tag Reader
 | Alarm (access) | notification_access_control |  | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -33,6 +37,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (access)
+
 The ```notification_access_control``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -80,6 +85,7 @@ The following state translation is provided for this channel to the ```Number```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 6 configuration parameters available in the Tag Reader.
 Detailed information on each parameter can be found in the sections below.
 
@@ -93,6 +99,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | RFID circuit start-up time | The time the RFID will be started after pressing "home" or "away" |
 
 ### Parameter 1: Set to Default
+
 Set all configuration values to default values (factory settings)
 If the Value is set to 0xFF (255) this device will return to factory settings.
 Values in the range 0 to 255 may be set.
@@ -103,6 +110,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Feedback time
+
 the time the beep goes to off
 0x00 = Off, 0xFF = endless
 Values in the range 0 to 255 may be set.
@@ -113,6 +121,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Feedback time-out
+
 waiting for the wake-up-no-more command
 Too configure the time-out, waiting on the wakeup\_no\_more\_information command before the error sound starts automatically. The error sound is set to 8 short beeps.
 
@@ -125,6 +134,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: feedback beeps per second
+
 Amount of beeps a second
 To set the amount of beeps per second, every beep is around 10ms.
 Values in the range 0 to 5 may be set.
@@ -135,6 +145,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Mode 
+
 To configure mode
 Mode 1 = normal working mode
 
@@ -149,6 +160,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: RFID circuit start-up time
+
 The time the RFID will be started after pressing "home" or "away"
 0x64 (100 \* 10 ms = 1 s)
 
@@ -163,11 +175,13 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Tag Reader supports 1 association group.
 
 ### Group 1: Association group 1
+
 Link devices to the tag reader
 This group supports 5 nodes.
 

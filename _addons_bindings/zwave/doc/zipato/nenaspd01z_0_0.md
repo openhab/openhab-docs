@@ -10,7 +10,9 @@ This describes the Z-Wave device *NE-NAS-PD01Z*, manufactured by *Zipato* with t
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the NE-NAS-PD01Z
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,6 +22,7 @@ The following table summarises the channels available for the NE-NAS-PD01Z
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -30,9 +33,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -45,6 +50,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 9 configuration parameters available in the NE-NAS-PD01Z.
 Detailed information on each parameter can be found in the sections below.
 
@@ -61,6 +67,7 @@ Detailed information on each parameter can be found in the sections below.
 | 9 | Ambient illumination report | when lux changes by the number in this setting it is reported |
 
 ### Parameter 1: Sensitivity level
+
 8 = Highest sensitivity, 255 = lowest sesitivity
 1\. SENSITIVITY LEVEL SETTING
 
@@ -81,6 +88,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: ON / OFF Duration
+
 How long should the associated devices have ON status.
 2\. ON / OFF DURATION
 
@@ -103,6 +111,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: BASIC SET Level
+
 BASIC SET LEVEL
 3\. BASIC SET LEVEL BASIC\_SET command will be sent when PIR sensor is triggered. The receiver will take it into consideration; for instance, if a lamp module is receiving the BASIC\_SET command of which value is decisive as to how bright of dim level of lamp module shall be.
 
@@ -127,6 +136,7 @@ This parameter has the configuration ID ```config_3_2``` and is of type ```INTEG
 
 
 ### Parameter 4:  PIR detection ENABLED / DISABLED
+
 Enable og disable the PIR sensor
 4\. PIR DETECTION FUNCTION ENABLED / DISABLED This parameter can enable or disable the PIR sensor detecting function. Function: Enabled / Disabled PIR function
 
@@ -145,6 +155,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Ambent illumination LUX level
+
 Lux value which determines when the light sensor is activated
 5\. AMBIENT ILLUMINATION LUX LEVEL This parameter can set Lux value which determines when the light sensor is activated. If the ambient illumination level falls bellow this value and a person moves across or within the detection area, PIR sensor will send Z-Wave ON command (i.e. BASIC\_set (value = parameter 3) to an associated device and activate it.
 
@@ -165,6 +176,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 
 
 ### Parameter 6: Re-Trigger Interval
+
 Adjust the interval of being re-triggered
 6\. RE-TRIGGER INTERVAL SETTING This parameter can be used to adjust the interval of being re-triggered after the PIR sensor has been triggered. This parameter value must be less than Paramater #2. If user sets this parameter to default by Configure CC, the parameter #2 will be set to default value.
 
@@ -185,6 +197,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Light sensor polling interval
+
 How often should ambient illumination be evaluated
 7\. LIGHT SENSOR POLLING INTERVAL This parameter can set the light sensor to measure ambient illumination level interval time. NOTE: This value must be less than Wakeup Interval Time!
 
@@ -205,6 +218,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 
 ### Parameter 8: LUX level function enable
+
 See overview
 8\. LUX LEVEL FUNCTION ENABLE If this parameter is set to “1” and when Lux level is less than the value defined by parameter #5, PIR sensor will send a BASIC\_SET command frame (i.e. BASIC\_SET (value = parameter 3) to an associated device and activate it. If Lux level is greater than the value defined by parameter #5, PIR sensor will not send BASIC\_SET command frame.
 
@@ -225,6 +239,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Ambient illumination report
+
 when lux changes by the number in this setting it is reported
 9\. AMBIENT ILLUMINATION LUX LEVEL REPORT This parameter defines by how much Lux level must change in Lux to be reported to the main controller.
 
@@ -245,23 +260,28 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The NE-NAS-PD01Z supports 4 association groups.
 
 ### Group 1: Group 1
+
 lifeline service
 This group supports 4 nodes.
 
 ### Group 2: Group 2
+
 BASIC\_SET control command group
 This group supports 4 nodes.
 
 ### Group 3: Group 3
+
 NOTIFICATION\_REPORT\_V4
 This group supports 4 nodes.
 
 ### Group 4: Group 4
+
 Sensor Binary Report
 This group supports 4 nodes.
 

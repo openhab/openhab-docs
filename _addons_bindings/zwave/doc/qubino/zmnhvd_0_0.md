@@ -12,7 +12,9 @@ The device is in the category of Wall Switch, defining Any device attached to th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZMNHVD
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,17 +24,21 @@ The following table summarises the channels available for the ZMNHVD
 | Sensor (general) | sensor_general |  | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (general)
+
 The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 24 configuration parameters available in the ZMNHVD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -64,6 +70,7 @@ Detailed information on each parameter can be found in the sections below.
 | 144 | Maximum sensor range value  |  |
 
 ### Parameter 1: Input 1 Switch Type
+
 By this parameter the user can set input based on device type (switch, potentiometer, 0-10V sensor,...)
 
 The following option values may be configured -:
@@ -85,6 +92,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 11: Automatic turning off output after set time
 
 
+
 Values in the range 0 to 32536 may be set.
 
 The manufacturer defined default value is 0.
@@ -93,6 +101,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Automatic turning on output after set time
+
 
 
 Values in the range 0 to 32535 may be set.
@@ -105,6 +114,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 ### Parameter 21: Enable/Disable Double click function
 
 
+
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is 0.
@@ -113,6 +123,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 
 ### Parameter 30: Saving the state of the device after a power failure
+
 
 
 Values in the range 0 to 1 may be set.
@@ -125,6 +136,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 ### Parameter 52: Auto or manual selection
 
 
+
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is 0.
@@ -133,6 +145,7 @@ This parameter has the configuration ID ```config_52_1``` and is of type ```INTE
 
 
 ### Parameter 53: PID value inside deadband
+
 
 
 Values in the range 0 to 1 may be set.
@@ -145,6 +158,7 @@ This parameter has the configuration ID ```config_53_1``` and is of type ```INTE
 ### Parameter 54: PID deadband 
 
 
+
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is 1.
@@ -153,6 +167,7 @@ This parameter has the configuration ID ```config_54_1``` and is of type ```INTE
 
 
 ### Parameter 55: Integral sampling time 
+
 
 
 Values in the range 0 to 127 may be set.
@@ -165,6 +180,7 @@ This parameter has the configuration ID ```config_55_1``` and is of type ```INTE
 ### Parameter 56: P parameter
 
 
+
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is 100.
@@ -175,6 +191,7 @@ This parameter has the configuration ID ```config_56_2``` and is of type ```INTE
 ### Parameter 57: I parameter 
 
 
+
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is 1.
@@ -183,6 +200,7 @@ This parameter has the configuration ID ```config_57_2``` and is of type ```INTE
 
 
 ### Parameter 58: D parameter 
+
 Available config. parameters (data type is2 Byte DEC):
 
 Values in the range 0 to 1000 may be set.
@@ -195,6 +213,7 @@ This parameter has the configuration ID ```config_58_2``` and is of type ```INTE
 ### Parameter 60: Minimum dimming value 
 
 
+
 Values in the range 1 to 98 may be set.
 
 The manufacturer defined default value is 1.
@@ -203,6 +222,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 
 
 ### Parameter 61: Maximum dimming value 
+
 
 
 Values in the range 2 to 99 may be set.
@@ -215,6 +235,7 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 ### Parameter 65:  Dimming time (soft on/off)
 
 
+
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is 100.
@@ -223,6 +244,7 @@ This parameter has the configuration ID ```config_65_2``` and is of type ```INTE
 
 
 ### Parameter 66: Dimming time when key pressed
+
 
 
 Values in the range 1 to 255 may be set.
@@ -235,6 +257,7 @@ This parameter has the configuration ID ```config_66_1``` and is of type ```INTE
 ### Parameter 67:  Ignore start level 
 
 
+
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is 0.
@@ -243,6 +266,7 @@ This parameter has the configuration ID ```config_67_1``` and is of type ```INTE
 
 
 ### Parameter 68: Dimming duration 
+
 
 
 Values in the range 0 to 127 may be set.
@@ -255,6 +279,7 @@ This parameter has the configuration ID ```config_68_1``` and is of type ```INTE
 ### Parameter 110: Temperature sensor offset settings
 
 
+
 Values in the range 1 to 32536 may be set.
 
 The manufacturer defined default value is 32536.
@@ -263,6 +288,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 120: Digital temperature sensor reporting
+
 
 
 Values in the range 0 to 127 may be set.
@@ -275,6 +301,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 ### Parameter 140: Input I1 Sensor reporting 
 
 
+
 Values in the range 0 to 140 may be set.
 
 The manufacturer defined default value is 5.
@@ -283,6 +310,7 @@ This parameter has the configuration ID ```config_140_2``` and is of type ```INT
 
 
 ### Parameter 141:  Input I1 0-10V reporting threshold
+
 
 
 Values in the range 0 to 100 may be set.
@@ -295,6 +323,7 @@ This parameter has the configuration ID ```config_141_1``` and is of type ```INT
 ### Parameter 143: Minimum sensor range value 
 
 
+
 Values in the range 0 to 20000 may be set.
 
 The manufacturer defined default value is 0.
@@ -305,6 +334,7 @@ This parameter has the configuration ID ```config_143_2``` and is of type ```INT
 ### Parameter 144: Maximum sensor range value 
 
 
+
 Values in the range 0 to 20000 may be set.
 
 The manufacturer defined default value is 1000.
@@ -313,31 +343,38 @@ This parameter has the configuration ID ```config_144_2``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHVD supports 6 association groups.
 
 ### Group 1: Lifeline
+
 Reserved for communication with the main controller
 This group supports 1 nodes.
 
 ### Group 2:  basic on/off 
+
 triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 3: start level change/stop level change
+
 triggered at change of the input I1 state and reflecting its state) up to 16 nodes. Working only when the Parameter no. 1 is set to mono stable switch type.
 This group supports 16 nodes.
 
 ### Group 4: multilevel set
+
 triggered at changes of state/value of the Flush Dimmer 0-10V
 This group supports 16 nodes.
 
 ### Group 5:  multilevel sensor report
+
 triggered at change of analogue sensor
 This group supports 16 nodes.
 
 ### Group 6:  multilevel sensor report
+
 triggered at change of temperature sensor
 This group supports 16 nodes.
 

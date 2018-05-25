@@ -12,7 +12,9 @@ The device is in the category of Lock, defining Devices whose primary pupose is 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Yale Smart Door Lock Z-Wave Module
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,9 +24,11 @@ The following table summarises the channels available for the Yale Smart Door Lo
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Door Lock
+
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 
 ### Alarm
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -35,11 +39,13 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Clock Time Offset
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 0 configuration parameter available in the Yale Smart Door Lock Z-Wave Module.
 Detailed information on each parameter can be found in the sections below.
 
@@ -47,11 +53,13 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Yale Smart Door Lock Z-Wave Module supports 1 association group.
 
 ### Group 1: Alarm Reports
+
 
 This group supports 4 nodes.
 

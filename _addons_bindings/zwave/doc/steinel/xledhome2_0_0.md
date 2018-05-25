@@ -11,6 +11,7 @@ This describes the Z-Wave device *XLED Home 2*, manufactured by *Steinel* with t
 The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
 
 # Overview
+
 – Sensor-switched floodlight suitable for wall   
 mounting outdoors.  
 – Fully swivelling LED panel and moveable sensor.   
@@ -23,6 +24,7 @@ the opal cover, this extremely efficient technology
 provides wide-area lighting
 
 ## Inclusion Information
+
 1\. Set the Z-Wave controller to inclusion mode.  
 2\. Press the link key once brieﬂy to set the device to inclusion mode.  
 3\. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
@@ -30,6 +32,7 @@ provides wide-area lighting
 (STOGGLE)
 
 ## Exclusion Information
+
 1\. Set the Z-Wave controller to exclusion mode.  
 2\. Press the link key once brieﬂy to set the device to exclusion  
 mode.  
@@ -38,6 +41,7 @@ mode.
 (STOGGLE)
 
 ## Channels
+
 The following table summarises the channels available for the XLED Home 2
 
 | Channel | Channel Id | Category | Item Type |
@@ -54,12 +58,15 @@ The following table summarises the channels available for the XLED Home 2
 | Sensor (luminance)2 | sensor_luminance3 | Temperature | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -70,9 +77,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -83,6 +92,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (system)
+
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -93,12 +103,15 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Control: Key01 lamp (on/off)
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
+
 The ```scene_number1``` channel supports the ```Number``` item.
 
 ### Alarm (burglar) motion
+
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -109,11 +122,13 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Sensor (luminance)2
+
 The ```sensor_luminance3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 13 configuration parameters available in the XLED Home 2.
 Detailed information on each parameter can be found in the sections below.
 
@@ -134,6 +149,7 @@ Detailed information on each parameter can be found in the sections below.
 | 16 | MOTION_ DISABLE | Motion Off behaviour (timeout) |
 
 ### Parameter 1: Time
+
 Duration of light after motion detection.
 
 Values in the range 5 to 900 may be set.
@@ -144,6 +160,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: LIGHT
+
 Light threshold \[lx\]:
 0 – run Learn ambient light sequence.  
 2000 – is used as daylight (always night mode).  
@@ -158,6 +175,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 5: SENSITIVITY
+
 Motion Radar Sensitivity \[%\]
 Value can be controlled via potentiometer (if present on device) – potentiom-  
 eter value is then used as the default value and any potentiometer movement  
@@ -170,6 +188,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: BRIGHTNES MEAS 1 INTERVAL
+
 Brightness measuring interval \[min\]
 nterval for measuring ambient light when lamp is on (lamp switches off  
 briefly and measures). 0 = function is off.
@@ -181,6 +200,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 8: GLOBAL_LIGHT
+
 Use external Ambient Light value
 When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor  
 values and uses Light Report values from any Z-Wave light sensor instead –  
@@ -195,6 +215,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: SLAVE_MODE
+
 Disable local control
 "Stupid" mode (bit 2 = 1):  
 \- has higher priority then slave mode  
@@ -247,6 +268,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: (OFF_BEHAVIOUR)
+
 Off behaviour (timeout)
 Behaviour after BASIC OFF (and similar commands).  
 If a transition (even with zero change) with a non-default duration is to be pro-  
@@ -278,6 +300,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: ON_BEHAVIOUR
+
 On behaviour (timeout)
 Behaviour after BASIC ON (and similar commands).  
 If a transition (even with zero change) with a non-default duration is to be  
@@ -314,6 +337,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: ON_TIME_OVER
+
 On behaviour time over (timeout)
 Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or  
 OFF\_ON\_BEHAVIOUR (0-209) to prevent staying ON forever when there is  
@@ -336,6 +360,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: ON_OFF_ BEHAVIOUR
+
 Sequence On-Off behaviour (timeout)
 Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands.  
 The intention is to use a much longer timeout value than the time after a  
@@ -350,6 +375,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: OFF_ON_ BEHAVIOUR
+
 Sequence Off-On behaviour (timeout)
 Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands.  
 The intention is to use a much longer timeout value than the time after a sin-  
@@ -364,6 +390,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 15: SEQUENCE_ TIME
+
 Sequence timing
 Time in \[100 milliseconds\] of maximum delay between BASIC ON and BASIC  
 OFF (and vice versa) to consider this as a sequence. It is typically 1 second,  
@@ -377,6 +404,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 16: MOTION_ DISABLE
+
 Motion Off behaviour (timeout)
 Motion disable timeout after BASIC SET to motion endpoint when the inter-  
 nal motion sensor is not used for evaluating the behaviour of the lamp (SLAMP)  
@@ -405,23 +433,28 @@ This parameter has the configuration ID ```config_16_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The XLED Home 2 supports 4 association groups.
 
 ### Group 1: Lifeline
+
 Lifeline
 This group supports 1 nodes.
 
 ### Group 2: Control: Key01
+
 On/Off control (Never ever add controller, only third-party devices!)
 This group supports 16 nodes.
 
 ### Group 3: Motion Begin/End (PIR/radar/iHF)
+
 Notification: Motion
 This group supports 16 nodes.
 
 ### Group 4: Ambient light
+
 Sensor: Luminescence
 This group supports 15 nodes.
 

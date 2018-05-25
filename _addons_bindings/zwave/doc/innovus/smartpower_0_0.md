@@ -10,7 +10,9 @@ This describes the Z-Wave device *SmartPower*, manufactured by *INNOVUS* with th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the SmartPower
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,17 +22,21 @@ The following table summarises the channels available for the SmartPower
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (power)
+
 The ```sensor_power``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 2 configuration parameters available in the SmartPower.
 Detailed information on each parameter can be found in the sections below.
 
@@ -40,6 +46,7 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | BO IR support | Enable/Disable BO IR Support |
 
 ### Parameter 1: Report node
+
 Report changes in level to this node id
 Report Node, reports changes in level to this node id.
 
@@ -52,6 +59,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: BO IR support
+
 Enable/Disable BO IR Support
 BO IR support is disabled if 0 otherwise enabled. -> Copied from SmartDimmer, as there's no config information available.
 The following option values may be configured -:
@@ -67,11 +75,13 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The SmartPower supports 1 association group.
 
 ### Group 1: Switch
+
 
 This group supports 5 nodes.
 

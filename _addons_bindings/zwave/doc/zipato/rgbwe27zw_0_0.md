@@ -10,7 +10,9 @@ This describes the Z-Wave device *RGBWE27ZW*, manufactured by *Zipato* with the 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the RGBWE27ZW
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,17 +22,21 @@ The following table summarises the channels available for the RGBWE27ZW
 | Color Temperature | color_temperature | ColorLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 5 configuration parameters available in the RGBWE27ZW.
 Detailed information on each parameter can be found in the sections below.
 
@@ -43,6 +49,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Enable or Disable Random Strobe Pulse Colors | Values range are 0 (turn on) or 1 (turn off). |
 
 ### Parameter 1: Color temperature
+
 Values range from 0 to 100 where 0 is cold white and 100 is warm white.
 
 Values in the range 1 to 100 may be set.
@@ -53,6 +60,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Shock sensor sensitivity
+
 Range from 0 to 31 where 0 is minimum sensitivity and 31 is maximum sensitivity.
 
 Values in the range 0 to 31 may be set.
@@ -63,6 +71,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Strobe Light Interval
+
 Values range from 0 to 25 in intervals of 100 milliseconds.
 
 Values in the range 0 to 25 may be set.
@@ -73,6 +82,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Strobe Light Pulse Count
+
 Values range from 0 to 250 and a special value 255 which sets infinite flashing.
 
 Values in the range 0 to 255 may be set.
@@ -83,6 +93,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Enable or Disable Random Strobe Pulse Colors
+
 Values range are 0 (turn on) or 1 (turn off).
 
 The following option values may be configured -:
@@ -98,11 +109,13 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The RGBWE27ZW supports 1 association group.
 
 ### Group 1: Lifeline
+
 
 This group supports 7 nodes.
 

@@ -10,7 +10,9 @@ This describes the Z-Wave device *Molite*, manufactured by *BeNext* with the thi
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Molite
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,6 +23,7 @@ The following table summarises the channels available for the Molite
 | Alarm | alarm_general | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -31,12 +34,15 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -49,6 +55,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 16 configuration parameters available in the Molite.
 Detailed information on each parameter can be found in the sections below.
 
@@ -72,6 +79,7 @@ Detailed information on each parameter can be found in the sections below.
 | 16 | Light table 10 % | If a LDR resistance measured lower then this value the returned light percentage is 10%. See chapter light table for more information. |
 
 ### Parameter 1: Reset to factory settings
+
 Set all configuration values to default values (factory settings).
 
 Values in the range 0 to 255 may be set.
@@ -82,6 +90,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Mode timeout
+
 The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.
 
 Values in the range 0 to 900 may be set.
@@ -92,6 +101,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Switch off time
+
 The switch off time will start running as soon as mode timeout is done. The Motion sensor is turned on and when movement is detected again. The mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message
 
 Values in the range 0 to 2700 may be set.
@@ -102,6 +112,7 @@ This parameter has the configuration ID ```config_3_2``` and is of type ```INTEG
 
 
 ### Parameter 4: sensitivity
+
 the sensitivity of the motion circuit
 
 Values in the range 0 to 127 may be set.
@@ -112,6 +123,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: The mode
+
 The mode that is entered after detection
 
 The following option values may be configured -:
@@ -128,6 +140,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: The temperature offset
+
 An offset for the temperature.
 
 Values in the range 0 to 0 may be set.
@@ -138,6 +151,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 
 ### Parameter 7: Light table 100 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 100%. See chapter light table for more information.
 
 Values in the range 0 to 17 may be set.
@@ -148,6 +162,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 
 ### Parameter 8: Light table 90 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 90%. See chapter light table for more information.
 
 Values in the range 0 to 38 may be set.
@@ -158,6 +173,7 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 
 
 ### Parameter 9: Light table 80 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 80%. See chapter light table for more information.
 
 Values in the range 0 to 85 may be set.
@@ -168,6 +184,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ### Parameter 10: Light table 70 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 70%. See chapter light table for more information.
 
 Values in the range 0 to 186 may be set.
@@ -178,6 +195,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Light table 60 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 60%. See chapter light table for more information.
 
 Values in the range 0 to 407 may be set.
@@ -188,6 +206,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Light table 50 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 50%. See chapter light table for more information.
 
 Values in the range 0 to 891 may be set.
@@ -198,6 +217,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: Light table 40 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 40%. See chapter light table for more information.
 
 Values in the range 0 to 1949 may be set.
@@ -208,6 +228,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: Light table 30 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 30%. See chapter light table for more information.
 
 Values in the range 0 to 4265 may be set.
@@ -218,6 +239,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 15: Light table 20 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 20%. See chapter light table for more information.
 
 Values in the range 0 to 9332 may be set.
@@ -228,6 +250,7 @@ This parameter has the configuration ID ```config_15_2``` and is of type ```INTE
 
 
 ### Parameter 16: Light table 10 %
+
 If a LDR resistance measured lower then this value the returned light percentage is 10%. See chapter light table for more information.
 
 Values in the range 0 to 20417 may be set.
@@ -238,11 +261,13 @@ This parameter has the configuration ID ```config_16_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Molite supports 1 association group.
 
 ### Group 1: Devices to be switched on when motion detected and off after on time
+
 
 This group supports 5 nodes.
 

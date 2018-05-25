@@ -11,19 +11,23 @@ This describes the Z-Wave device *ZV9102FA-CCT*, manufactured by *Sunricher* wit
 The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
 
 # Overview
+
 The SR-ZV9102FA-CCT is a dual color zwave lighting device and z wave slave that adopts z-wave RF Plus and z-wave mesh network technology with 4 channel, 5A per channel output for dual color LED lights. As a z-wave slave, the device can be added to z-wave network or removed from z-wave network by z-wave primary (master) controllers or gateway. The z wave devices are transceivers that enable to receive and transmit RF signal from the z wave remote while both of them are added to the network. The transceiver is a universal z wave slave which is compatible with universal z wave primary (master) controllers/gateway.
 
 ## Inclusion Information
+
 Power on the receiver. By factory default setting, the connected LED lights will be under a slow rhythm breath status which means the receiver is waiting to be searched by the master (primary) controller or z-wave gateway -> set the z-wave master (primary) controller or gateway into network inclusion mode (please refer to the user manual to learn how)
 
 There shall be an indication on the master (primary) controller or gateway -> LED light connected with the receiver flashes 5 times quickly to indicate successful and automatic adding to z-wave network
 
 ## Exclusion Information
+
 When the receiver has already been added to z-wave network and connected LED light is switched on, set the z-wave master (primary) controller or gateway into network exclusion mode (please refer to the user manual to learn how).
 
 Click the “prog” key on the receiver -> there shall be an indication on the master (primary) controller -> the connected LED light with the receiver flashes twice to indicate successful removal from z-wave network
 
 ## Channels
+
 The following table summarises the channels available for the ZV9102FA-CCT
 
 | Channel | Channel Id | Category | Item Type |
@@ -35,18 +39,23 @@ The following table summarises the channels available for the ZV9102FA-CCT
 | Alarm (system) | alarm_system |  | Switch | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Color Control
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Alarm (system)
+
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -59,6 +68,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 8 configuration parameters available in the ZV9102FA-CCT.
 Detailed information on each parameter can be found in the sections below.
 
@@ -74,6 +84,7 @@ Detailed information on each parameter can be found in the sections below.
 | 9 | Set external switch function | Enable / disable external switch for inclusion / exclusion |
 
 ### Parameter 2: Save state on power failure
+
 Shut off load (default), turn on load or restore saved state after power failure
 Load state after power failure
 
@@ -90,6 +101,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Enable/disable BASIC report
+
 Enable/disable sending of BASIC reports
 Enable or disable sending of BASIC reports
 
@@ -104,6 +116,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Colour channels
+
 Set number of channels of LED load - single colour, CCT or RGBW
 Set number of channels of LED load
 
@@ -120,6 +133,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Stage mode
+
 Set stage mode for lighting changes
 Set lighting stage mode
 
@@ -144,6 +158,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Stage mode speed
+
 Set speed of changes in stage mode
 Set speed of stage mode 0-255
 
@@ -156,6 +171,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Stage mode execution time
+
 Set execution time for stage mode
 Set execution time for stage mode
 
@@ -170,6 +186,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Stage mode hue
+
 Set stage mode hue 0-255
 Set hue for stage mode
 
@@ -184,6 +201,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Set external switch function
+
 Enable / disable external switch for inclusion / exclusion
 Enable / disable external switch for inclusion / excluison of the device to / from the network
 
@@ -198,11 +216,13 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZV9102FA-CCT supports 1 association group.
 
 ### Group 1: Lifeline
+
 
 This group supports 1 nodes.
 

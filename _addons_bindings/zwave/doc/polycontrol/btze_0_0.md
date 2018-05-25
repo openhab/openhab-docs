@@ -11,6 +11,7 @@ This describes the Z-Wave device *Danalock V3-BTZE*, manufactured by *Poly-contr
 The device is in the category of Lock, defining Devices whose primary pupose is locking something.
 
 # Overview
+
 Danalock supports:   
 \- S0/S2 Z-Wave Security   
 \- Bluetooth Smart   
@@ -20,6 +21,7 @@ Danalock supports:
 \- Back To Back
 
 ## Inclusion Information
+
 To add or include the Danalock into a Z-Wave network
 
 1. Set the controller in inclusion mode
@@ -27,6 +29,7 @@ To add or include the Danalock into a Z-Wave network
 3. Wait 5 seconds.
 
 ## Exclusion Information
+
 To remove or exclude the Danalock into a Z-Wave network
 
 1. Set the controller in exclusion mode
@@ -34,6 +37,7 @@ To remove or exclude the Danalock into a Z-Wave network
 3. Wait 5 seconds.
 
 ## Channels
+
 The following table summarises the channels available for the Danalock V3-BTZE
 
 | Channel | Channel Id | Category | Item Type |
@@ -41,11 +45,13 @@ The following table summarises the channels available for the Danalock V3-BTZE
 | Door Lock | lock_door | Door | Switch | 
 
 ### Door Lock
+
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 6 configuration parameters available in the Danalock V3-BTZE.
 Detailed information on each parameter can be found in the sections below.
 
@@ -59,6 +65,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Autolock | Lock after an unlock.Value is delay in sec before lock is locked again. |
 
 ### Parameter 1: Twin Assist
+
 Helps you to lock and unlock your door lock.
 0 -> disabled
 
@@ -76,6 +83,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Hold and Release
+
 After a unlock operation the lock holds the lock, so the door can be opened
 0 -> disabled
 
@@ -92,6 +100,7 @@ This parameter has the configuration ID ```config_2_4``` and is of type ```INTEG
 
 
 ### Parameter 3: Block to block
+
 The lock will run the motor until it hits resistance.
 
 The following option values may be configured -:
@@ -107,6 +116,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: BLE Temporary Allowed
+
 The BLE is enabled for a number of seconds.
 0 -> Disabled
 
@@ -119,6 +129,7 @@ This parameter has the configuration ID ```config_4_4``` and is of type ```INTEG
 
 
 ### Parameter 5: BLE Always Allowed
+
 BLE Always Allowed
 0 -> BLE Always disabled
 
@@ -136,6 +147,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Autolock
+
 Lock after an unlock.Value is delay in sec before lock is locked again.
 0 -> disabled
 
@@ -148,11 +160,13 @@ This parameter has the configuration ID ```config_6_4``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Danalock V3-BTZE supports 1 association group.
 
 ### Group 1: Lifeline
+
 Z-Wave Plus Lifeline
 This group supports 1 nodes.
 

@@ -11,11 +11,13 @@ This describes the Z-Wave device *WADWAZ-1*, manufactured by *Linear Corp* with 
 The device is in the category of Door, defining Door sensors.
 
 # Overview
+
 Linear Z-Wave products are easy to install, and allow dealers to create an integrated wireless network with nearly limitless expansion and interoperability with security and health monitoring systems, energy management, home entertainment, appliances, and more.
 
 The WADWAZ-1 sensor monitors a door or window and sends Z-Wave signals when the door is opened or closed.
 
 ## Inclusion Information
+
 Refer to your Controller operating instructions to add this module under the command of the Wireless Controller.
 
 1. Unscrew the screw fastening the rear cover and slide the rear cover down.
@@ -31,15 +33,18 @@ Refer to your Controller operating instructions to add this module under the com
 **NOTE**: If you have trouble adding the WADWAZ-1 to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must first “RESET UNIT” with your Controller to remove it from the network. Although adding it to a group includes it in the network, removing it from a group does not remove it from the network. If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network
 
 ## Exclusion Information
+
 For “Exclusion” from (removing from) a network:
 
 1. Set up the Z-WaveTM Interface Controller into “exclusion” mode, and following its instruction to delete the WADWAZ-1 from the Controller.
 2. Press the Program switch of WADWAZ-1 for 1 second and release to be excluded. The LED light will fl ash continuously when the sensor is in the Exclusion condition.
 
 ## Wakeup Information
+
 Open and then closed the cover to wakeup the device. This will also trigger the tamper alarm, which needs to be turned off manually.
 
 ## Channels
+
 The following table summarises the channels available for the WADWAZ-1
 
 | Channel | Channel Id | Category | Item Type |
@@ -50,6 +55,7 @@ The following table summarises the channels available for the WADWAZ-1
 | Sensor (External Switch) | sensor_binary | Door | Switch | 
 
 ### Sensor (Binary)
+
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
@@ -60,6 +66,7 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Sensor (Alarm)
+
 The ```alarm_entry``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -70,6 +77,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Closed |
 
 ### Tamper Alarm
+
 The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -80,6 +88,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Sensor (External Switch)
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -92,18 +101,17 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the WADWAZ-1.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The WADWAZ-1 supports 1 association group.
 
 ### Group 1: Controller Updates
+
 
 This group supports 5 nodes.
 

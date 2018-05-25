@@ -11,6 +11,7 @@ This describes the Z-Wave device *WDS*, manufactured by *wiDom* with the thing t
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 Universal Double Switch is an ON/OFF control device designed to independently control two separate loads, suited for use as both a local and remote switch. Similarly to the other WiDom “in wall” devices, it can be fully integrated into pre-existing systems and configured to associate configurable behaviours to a specific number of clicks, in full integration with the Z-Wave home automation ecosystem.
 
 Each of its two channels features an integrated consumption measurement device. The Universal Double Switch also boasts the lowest energy consumption on the market.
@@ -41,6 +42,7 @@ Actuator element: Relay
 Conformity: CE, RoHS
 
 ## Inclusion Information
+
 The device supports both the Network Wide Inclusion (which offers the opportunity of inclusion into a network even if the device is not directly connected to the controller) and the Normal Inclusion mechanisms.
 
 If the device is not included into a Z-Wave network, a single click on the (B) button or on one of the external switches will launch the process of traditional inclusion. If the device inclusion procedure does not start within 2 seconds, the Network Wide Inclusion network will be launched lasting a variable amount of time between 15-30 seconds.
@@ -48,9 +50,11 @@ If the device is not included into a Z-Wave network, a single click on the (B) b
 INFO: Through the inclusion procedure, activated with a single click on one of the external switches, the system determines the type of external switch (see parameter No. 62).
 
 ## Exclusion Information
+
 Only a controller can remove a device from the network. WiDom Universal Double Switch is compatible with all Z-Wave certified controllers. After the exclusion procedure has been activated by the controller, the device can be removed, putting it in Exclusion Mode by three consecutive clicks on the (B) button or on the external switch, when available.
 
 ## Channels
+
 The following table summarises the channels available for the WDS
 
 | Channel | Channel Id | Category | Item Type |
@@ -63,26 +67,33 @@ The following table summarises the channels available for the WDS
 | Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
+
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 15 configuration parameters available in the WDS.
 Detailed information on each parameter can be found in the sections below.
 
@@ -105,6 +116,7 @@ Detailed information on each parameter can be found in the sections below.
 | 62 | Type of external switch | Defines the type of external switch connected to the device |
 
 ### Parameter 1: Outputs status upon receipt of 1 click on its command
+
 Defines the status of the output O1/O2 after 1 Click
 Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 1 Click
 
@@ -128,6 +140,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Outputs status upon receipt of 2 clicks on its command
+
 Defines the status of the output O1/O2 after 2 Clicks
 Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 2 Clicks
 The following option values may be configured -:
@@ -145,6 +158,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Type of outputs
+
 Defines how the outputs are controlled
 Defines if the outputs are controlled individually, as a traditional device with two channels, or if its behaviour simulates a single pole double throw relay
 
@@ -175,6 +189,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Clicks that activate the control of the associated devices
+
 Defines the Clicks on the Switches that control associated devices
 Defines the number of clicks on the Switch 1 or Switch 2 that enable the control of the correspondent associated devices
 
@@ -194,6 +209,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Level used to control association group 2 and 3
+
 Defines how to control the devices associated to group 2 and 3.
 #### Configuration value and Action performed on the associated device
 
@@ -252,6 +268,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Level used to control association group 4 and 5.
+
 Defines how to control the devices associated to group 4 and 5.
 #### Configuration value and Action performed on the associated device
 
@@ -310,6 +327,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Timer to switch OFF the Channel 1
+
 Defines the time after which the Channel 1 is switched OFF
 0 (Default Value): Timer disabled
 
@@ -323,6 +341,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Timer to switch OFF the Channel 2
+
 Defines the time after which the Channel 2 is switched OFF
 0 (Default Value): Timer disabled
 
@@ -336,6 +355,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: Timer to switch ON the Channel 1
+
 Defines the time after which the Channel 1 is switched ON
 0 (Default Value): Timer disabled
 
@@ -348,6 +368,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: Timer to switch ON the Channel 2
+
 Defines the time after which the Channel 2 is switched ON
 0 (Default Value): Timer disabled
 
@@ -361,6 +382,7 @@ This is a read only parameter.
 
 
 ### Parameter 20: Outputs status after Multi-Channel Basic Set command
+
 Defines how Basic Set commands controlling outputs
 The two channels can be controlled individually by Z-Wave network. The status of the channels upon receipt of a Multi-Channel Basic Set command is defined by the value set on the parameter.
 The following option values may be configured -:
@@ -378,6 +400,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 
 
 ### Parameter 21: Outputs status upon receipt of a Basic Set command
+
 Define which channels are controlled by Basic Set command
 The channels of the device can be controlled individually from all other Z-Wave devices that support the multichannel feature. In order to support also the integration with no-multichannel systems, this parameter allows to define if the receipt of a no-multichannel systems, this parameter allows to define if the receipt of a no-multichannel command controls only the Channel 1 or both.
 The following option values may be configured -:
@@ -393,6 +416,7 @@ This parameter has the configuration ID ```config_21_2``` and is of type ```INTE
 
 
 ### Parameter 60: Start-up status
+
 Defines the status of the device following a restart.
 
 The following option values may be configured -:
@@ -411,6 +435,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 
 
 ### Parameter 61: Configuration reset
+
 Defines which parameters should be reset to default values
 
 The following option values may be configured -:
@@ -429,6 +454,7 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 
 
 ### Parameter 62: Type of external switch
+
 Defines the type of external switch connected to the device
 
 The following option values may be configured -:
@@ -445,27 +471,33 @@ This parameter has the configuration ID ```config_62_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The WDS supports 5 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 8 nodes.
 
 ### Group 2: On/Off control (Switch 1)
+
 
 This group supports 8 nodes.
 
 ### Group 3: Dimming control (Switch 1)
 
+
 This group supports 8 nodes.
 
 ### Group 4: On/Off control (Switch 2)
 
+
 This group supports 8 nodes.
 
 ### Group 5: Dimming control (Switch 2)
+
 
 This group supports 8 nodes.
 

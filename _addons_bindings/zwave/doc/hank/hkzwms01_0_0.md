@@ -10,7 +10,9 @@ This describes the Z-Wave device *HKZW_MS01*, manufactured by *Hank* with the th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the HKZW_MS01
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,15 +23,19 @@ The following table summarises the channels available for the HKZW_MS01
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -42,6 +48,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 3 configuration parameters available in the HKZW_MS01.
 Detailed information on each parameter can be found in the sections below.
 
@@ -52,6 +59,7 @@ Detailed information on each parameter can be found in the sections below.
 | 15 | value of basic set command |  |
 
 ### Parameter 12: Motion Sensor`s Sensitivity
+
 The higher the value,the more sensitive the PIR sensor
 
 The following option values may be configured -:
@@ -73,6 +81,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 14: Enable/Disable Basic Set Command
+
 The motion Sensor can reverse its value of BASIC SET when motion is triggered
 
 The following option values may be configured -:
@@ -90,6 +99,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 ### Parameter 15: value of basic set command
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -103,15 +113,18 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HKZW_MS01 supports 2 association groups.
 
 ### Group 1: Lifeline
+
 Reports the motion detection and battery
 This group supports 5 nodes.
 
 ### Group 2: Basic Set
+
 assigned to send Basic Set Command
 This group supports 5 nodes.
 

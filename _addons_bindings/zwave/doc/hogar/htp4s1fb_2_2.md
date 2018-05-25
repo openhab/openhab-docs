@@ -10,6 +10,7 @@ This describes the Z-Wave device *HTP-4S1-FB*, manufactured by *Hogar Controls* 
 This version of the device is limited to firmware versions above 2.2
 
 # Overview
+
 The HOGAR Touch Panels features a stunning glass face with advanced capacitive touch sensor engineered with smart home wireless standards Zigbee, Z-Wave Plus and Wifi variants.
 
 The Smart Home deserves better than an ordinary light switch. Hogar touch panels are one-of-a-kind collection of switches, dimmers, and scene controller that will transform walls from boring to absolutely breath-taking.
@@ -19,6 +20,7 @@ Fits in existing electrical box and does not require new wires. Innovative assem
 Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket for more information.
 
 ## Inclusion Information
+
 1\. Tap and hold any of the touch button for few seconds (about 7 seconds).
 
 2\. The LEDs of all the buttons will turn solid red all at the same time.
@@ -28,6 +30,7 @@ Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket 
 4\. The LED of the button will flash pink (once) indicating that the device is ready to be included.
 
 ## Exclusion Information
+
 1\. Tap and hold any of the touch button for few seconds (about 7 seconds).
 
 2\. The LEDs of all the buttons will turn solid red all at the same time.
@@ -37,6 +40,7 @@ Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket 
 4\. The LED of the button will flash pink (once) indicating that the device is ready to be included.
 
 ## Channels
+
 The following table summarises the channels available for the HTP-4S1-FB
 
 | Channel | Channel Id | Category | Item Type |
@@ -48,34 +52,36 @@ The following table summarises the channels available for the HTP-4S1-FB
 | Switch 4 | switch_binary4 | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 3
+
 The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 4
+
 The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the HTP-4S1-FB.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The HTP-4S1-FB supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

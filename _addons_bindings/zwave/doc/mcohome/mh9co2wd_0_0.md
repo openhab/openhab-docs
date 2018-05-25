@@ -9,6 +9,7 @@ title: MH9-CO2-WD - ZWave
 This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *McoHome Technology Co., Ltd* with the thing type UID of ```mcohome_mh9co2wd_00_000```.
 
 # Overview
+
 MCOHome CO2 Monitor is an air quality detector which compatible with Z-Wave technology.
 
 It is mainly used to monitor CO2 concentration in industrial, agricultural, and residence environment, while monitoring the indoor temperature, humidity and VOC (optional) air quality.
@@ -39,6 +40,7 @@ Device can be included into any Z-Wave network, and is compatible with any other
 - COMMAND\_CLASS\_VERSION
 
 ## Inclusion Information
+
 Activate Inclusion/Exclusion mode in the gateway.
 
 When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.
@@ -48,6 +50,7 @@ If device has not been included into any Z-Wave network before, “- - -”will 
 Then press K2 once, “- - -” flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, “- - -” will stop flashing in 20 sec.
 
 ## Exclusion Information
+
 Activate Inclusion/Exclusion mode in the gateway.
 
 When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.
@@ -57,6 +60,7 @@ If a node ID displays, it means the device is already in a Z-Wave network.
 To press K2 once can remove it from the network. “- - -” displays and press K1 once can return to normal work.
 
 ## Channels
+
 The following table summarises the channels available for the MH9-CO2-WD
 
 | Channel | Channel Id | Category | Item Type |
@@ -68,15 +72,19 @@ The following table summarises the channels available for the MH9-CO2-WD
 | Alarm (general) | alarm_general | Door | Switch | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (CO2)
+
 The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (CO2)
+
 The ```alarm_co2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -87,6 +95,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -99,7 +108,8 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the MH9-CO2-WD.
+
+The following table provides a summary of the 1 configuration parameters available in the MH9-CO2-WD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -107,6 +117,7 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Notification Threshold | CO2 Notification Threshold |
 
 ### Parameter 1: Notification Threshold
+
 CO2 Notification Threshold
 Sets the CO2 notification threshold for association group 1.
 
@@ -119,15 +130,18 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The MH9-CO2-WD supports 2 association groups.
 
 ### Group 1: Notification
+
 sends report ever 30s when CO2 value above threshold
 This group supports 5 nodes.
 
 ### Group 2: Gateway report
+
 CO2, Temperature and Humidity is reported when changed
 This group supports 1 nodes.
 

@@ -12,7 +12,9 @@ The device is in the category of Power Outlet, defining Small devices to be plug
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the DZPD3
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,14 +23,17 @@ The following table summarises the channels available for the DZPD3
 | Scene Number | scene_number |  | Number | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 6 configuration parameters available in the DZPD3.
 Detailed information on each parameter can be found in the sections below.
 
@@ -42,6 +47,7 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Load Type | Type of lamp |
 
 ### Parameter 1: Fade On Time
+
 Time it takes to fade on
 0 is instant on 1-127 is in seconds 128-253 is in minutes
 Values in the range 0 to 253 may be set.
@@ -52,6 +58,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Fade off time
+
 time it takes to fade off
 0 is instant on 1-127 is in seconds 128-253 is in minutes
 Values in the range 0 to 253 may be set.
@@ -64,6 +71,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Minimum Light Level
 
 
+
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is 10.
@@ -74,6 +82,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Maximum Light Level
 
 
+
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is 100.
@@ -82,6 +91,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Locator LED Status
+
 LED Off or Status Mode 255 or Locator Mode
 
 The following option values may be configured -:
@@ -98,6 +108,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Load Type
+
 Type of lamp
 
 The following option values may be configured -:
@@ -114,10 +125,10 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The DZPD3 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

@@ -10,7 +10,9 @@ This describes the Z-Wave device *DHSZWDMIW01*, manufactured by *Wintop* with th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the DHSZWDMIW01
 
 | Channel | Channel Id | Category | Item Type |
@@ -19,25 +21,24 @@ The following table summarises the channels available for the DHSZWDMIW01
 | Scene Number | scene_number |  | Number | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the DHSZWDMIW01.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The DHSZWDMIW01 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

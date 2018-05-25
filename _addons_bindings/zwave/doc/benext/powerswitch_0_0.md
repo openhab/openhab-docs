@@ -10,7 +10,9 @@ This describes the Z-Wave device *powerSwitch*, manufactured by *BeNext* with th
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the powerSwitch
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,11 +20,13 @@ The following table summarises the channels available for the powerSwitch
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the powerSwitch.
 Detailed information on each parameter can be found in the sections below.
 
@@ -34,6 +38,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Led indicator | Show the led compared to the relay state |
 
 ### Parameter 1: Set to Default
+
 Set all configuration values to default values (factory settings)
 All values (0x00 – 0xFF) except for 0x55 can be used to default all the configuration params .
 Values in the range 0 to 255 may be set.
@@ -44,6 +49,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Start up with last known socket status
+
 state in what the switch is when power is supplied
 If 0x01–0xFF: When power applied socket is the state before power was disconnected
 Values in the range 0 to 255 may be set.
@@ -54,6 +60,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Relay delay time
+
 When the relay is switched it can't be switched again until the configured time has passed
 Value \* 10 milliseconds
 Values in the range 0 to 0 may be set.
@@ -64,6 +71,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Led indicator
+
 Show the led compared to the relay state
 If value is 0: the indicator led is never switched on If value is 1: the indicator led is switched on when relay is switched on If value is 2: the indicator led is switched on when relay is switched off
 Values in the range 0 to 2 may be set.
@@ -74,11 +82,13 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The powerSwitch supports 1 association group.
 
 ### Group 1: Group 1
+
 
 This group supports 1 nodes.
 

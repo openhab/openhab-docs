@@ -13,7 +13,9 @@ The device is in the category of Motion Detector, defining Motion sensors/detect
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZWN-BPC-PLUS
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,6 +24,7 @@ The following table summarises the channels available for the ZWN-BPC-PLUS
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,6 +35,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -44,6 +48,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 1 configuration parameter available in the ZWN-BPC-PLUS.
 Detailed information on each parameter can be found in the sections below.
 
@@ -52,6 +57,7 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Motion timeout | Multiplier to wakeup timer interval |
 
 ### Parameter 1: Motion timeout
+
 Multiplier to wakeup timer interval
 It is minimum time when the associated nodes keep turn on
 
@@ -64,23 +70,28 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZWN-BPC-PLUS supports 4 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 1 nodes.
 
 ### Group 2: Basic Report
+
 
 This group supports 5 nodes.
 
 ### Group 3: Notification Report
 
+
 This group supports 5 nodes.
 
 ### Group 4: Basic Set
+
 
 This group supports 5 nodes.
 

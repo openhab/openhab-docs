@@ -11,9 +11,11 @@ This describes the Z-Wave device *ZMNHKD*, manufactured by *Goap* with the thing
 The device is in the category of HVAC, defining Air condition devices, Fans.
 
 # Overview
+
 This Z-Wave module is used to regulate temperature in heating and cooling mode. Module can be controlled either through Z-Wave network or through the wall switch. The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch. Module measures power consumption of connected device. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
 ## Inclusion Information
+
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
 - Connect module to power supply (with temperature sensor connected - if purchased),
@@ -27,6 +29,7 @@ WARNING: Service button S **must NOT be used** when module is connected to 110-2
 **NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.
 
 ## Exclusion Information
+
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
 - Connect module to power supply
@@ -40,6 +43,7 @@ By this function all parameters of the module are set to default values and own 
 NOTE: If the module is included with parameters 100 or 101 with values different to default and module reset is done, wait at least 30s before next inclusion.
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHKD
 
 | Channel | Channel Id | Category | Item Type |
@@ -52,15 +56,19 @@ The following table summarises the channels available for the ZMNHKD
 | Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -84,14 +92,17 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 31 configuration parameters available in the ZMNHKD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -130,6 +141,7 @@ Detailed information on each parameter can be found in the sections below.
 | 122 | Node Id of external battery powered sensor | Node Id of external battery powered sensor |
 
 ### Parameter 1: Input I1 switch type
+
 Input I1 switch type
 
 The following option values may be configured -:
@@ -145,6 +157,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Input I2 switch type
+
 Input I2 switch type
 
 The following option values may be configured -:
@@ -160,6 +173,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Input 1 contact type
+
 Input 1 contact type
 This parameter determines how the sensor is connected (for example: door/window sensor) Set this parameter according to the type of sensor you use. This parameter has influence only when parameter no. 11 is set to the value “2”. After setting this parameter, switch the window sensor once, so that the device can determine the input state.
 The following option values may be configured -:
@@ -175,6 +189,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Input 2 contact type
+
 Input 2 contact type
 This parameter determines how the sensor is connected (for example: door/window sensor). Set this parameter according to the type of sensor you use.
 
@@ -193,6 +208,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Activate / deactivate ALL ON/ALL OFF
+
 Activate / deactivate ALL ON/ALL OFF
 Flush Heat & Cool Thermostat device responds to commands ALL ON / ALL OFF that may be sent by the primary or secondary gateway (hub) within the Z-Wave network.
 The following option values may be configured -:
@@ -210,6 +226,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: I1 Functionality selection
+
 I1 Functionality selection
 If "Window Sensor" selected (value set to "2"), parameter 100 (enable/disable endpoint) must be set to non-zero value and module re-included!
 The following option values may be configured -:
@@ -226,6 +243,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: I2 Functionality selection
+
 I2 Functionality selection
 0-990 - Temperature setpoint from 0,0 to 99,0 °C  
 1001-1150 - Temperature setpoint -0.1 to -15°C  
@@ -246,6 +264,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 40: Watt Power Consumption Reporting Threshold for Q⬆ Load
+
 Watt Power Consumption Reporting Threshold for Q⬆ Load
 Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading. Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.   
  0 - Power consumption reporting disabled  
@@ -262,6 +281,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 42: Watt Power Consumption Reporting Time Threshold for Q⬆
+
 Watt Power Consumption Reporting Time Threshold for Q⬆
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
@@ -275,6 +295,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 43: Hysteresis heating On
+
 Hysteresis heating On
 This parameter defines temperature difference between measured temperature and set-point temperature to turn heating on.   
  default value 1010 (-1.0 °C)   
@@ -293,6 +314,7 @@ This parameter has the configuration ID ```config_43_2``` and is of type ```INTE
 
 
 ### Parameter 44: Hysteresis Heating Off
+
 Hysteresis Heating Off
 This parameter defines temperature difference between measured temperature and set-point temperature to turn heating off.  
  • default value 2 (+0.2 °C)  
@@ -311,6 +333,7 @@ This parameter has the configuration ID ```config_44_2``` and is of type ```INTE
 
 
 ### Parameter 45: Hysteresis Cooling On
+
 Hysteresis Cooling On
 This parameter defines temperature difference between measured temperature and set-point temperature to turn cooling on.  
  • default value 5 (+0.5 °C)  
@@ -324,6 +347,7 @@ This parameter has the configuration ID ```config_45_2``` and is of type ```INTE
 
 
 ### Parameter 46: Hysteresis Cooling Off
+
 Hysteresis Cooling Off
 This parameter defines temperature difference between measured temperature and set-point temperature to turn cooling off.  
  • default value 1002 (-0.2 °C)  
@@ -343,6 +367,7 @@ This parameter has the configuration ID ```config_46_2``` and is of type ```INTE
 
 
 ### Parameter 47: Antifreeze
+
 Antifreeze
 Set value means at which temperature the device will be turned on even if the thermostat was manually set to off. Antifreeze is activated only in heating mode. It uses a hysteresis determined in parameters no. 43 and 44.  
  • default value 50 (5,0 °C)  
@@ -357,6 +382,7 @@ This parameter has the configuration ID ```config_47_2``` and is of type ```INTE
 
 
 ### Parameter 60: Too low temperature limit
+
 Too low temperature limit
 This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.  
 Too low temperature limit is used with Association Group 4.   
@@ -371,6 +397,7 @@ This parameter has the configuration ID ```config_60_2``` and is of type ```INTE
 
 
 ### Parameter 61: Too high temperature limit
+
 Too high temperature limit
 This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device.  
  • default value 700 (too high temperature limit is 70.0 °C)  
@@ -383,6 +410,7 @@ This parameter has the configuration ID ```config_61_2``` and is of type ```INTE
 
 
 ### Parameter 64: Output Switch selection Q1
+
 Output Switch selection Q1
 Set value means the type of the device that is connected to the Q1 output. The device type can be normally open (NO) or normally close (NC).
 The following option values may be configured -:
@@ -398,6 +426,7 @@ This parameter has the configuration ID ```config_64_1``` and is of type ```INTE
 
 
 ### Parameter 65: Output Switch selection Q2
+
 Output Switch selection Q2
 Set value means the type of the device that is connected to the Q2 output. The device type can be normally open (NO) or normally close (NC).
 The following option values may be configured -:
@@ -413,6 +442,7 @@ This parameter has the configuration ID ```config_65_1``` and is of type ```INTE
 
 
 ### Parameter 70: Input I1 status on delay
+
 Input I1 status on delay
 This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.  
  If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.  
@@ -425,6 +455,7 @@ This parameter has the configuration ID ```config_70_2``` and is of type ```INTE
 
 
 ### Parameter 71: Input I1 status off delay
+
 Input I1 status off delay
 This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.  
 If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.
@@ -436,6 +467,7 @@ This parameter has the configuration ID ```config_71_2``` and is of type ```INTE
 
 
 ### Parameter 72: Input I2 status on delay
+
 Input I2 status on delay
 This parameter specifies the delay before the device execute command after input I2 is activated.  
  This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
@@ -447,6 +479,7 @@ This parameter has the configuration ID ```config_72_2``` and is of type ```INTE
 
 
 ### Parameter 73: Input I2 status off delay
+
 Input I2 status off delay
 This parameter specifies the delay before the device execute command after input I2 is deactivated.  
  This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
@@ -458,6 +491,7 @@ This parameter has the configuration ID ```config_73_2``` and is of type ```INTE
 
 
 ### Parameter 76: Association group 2, 10 - reporting on time interval
+
 Association group 2, 10 - reporting on time interval
 Determinates the time interval of sending device status ON/OFF to the associated device.  
  If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).  
@@ -472,6 +506,7 @@ This parameter has the configuration ID ```config_76_1``` and is of type ```INTE
 
 
 ### Parameter 77: Association group 10 - delay before sending Basic Set ON
+
 Association group 10 - delay before sending Basic Set ON
 Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.  
  If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.  
@@ -486,6 +521,7 @@ This parameter has the configuration ID ```config_77_2``` and is of type ```INTE
 
 
 ### Parameter 78: Scale Selection
+
 Scale Selection
 This parameter determines in which measurement unit the device will report temperature - Fahrenheit or Celsius.  
  This scale has influence on Temperature reporting and scale reporting. The device is capable of receiving a Set point in all supported scales
@@ -502,6 +538,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 
 ### Parameter 100: Enable/Disable Endpoint I1 or select the Type and Event
+
 Enable/Disable Endpoint I1 or select the Notification Type and Event
 Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).  
  After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!  
@@ -526,6 +563,7 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 
 ### Parameter 101: Enable/Disable Endpoint I2 or select type
+
 Enable/Disable Endpoint I2 or select type
 
 The following option values may be configured -:
@@ -547,6 +585,7 @@ This parameter has the configuration ID ```config_101_1``` and is of type ```INT
 
 
 ### Parameter 110: Temperature sensor offset settings
+
 Temperature sensor offset settings
 32536 = offset is 0.0°C  
 1..100 = offset is 0.1..10.0°C added to actual measuring value  
@@ -559,6 +598,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 120: Digital temperature sensor reporting
+
 Digital temperature sensor reporting
 If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter
 Values in the range 0 to 127 may be set.
@@ -569,6 +609,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 
 
 ### Parameter 121: Digital temperature sensor / setpoint selector
+
 Digital temperature sensor / setpoint selector
 
 The following option values may be configured -:
@@ -588,6 +629,7 @@ This parameter has the configuration ID ```config_121_1``` and is of type ```INT
 
 
 ### Parameter 122: Node Id of external battery powered sensor
+
 Node Id of external battery powered sensor
 0 - disabled
 
@@ -600,43 +642,53 @@ This parameter has the configuration ID ```config_122_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHKD supports 9 association groups.
 
 ### Group 1: Lifeline
+
 reserved for communication with the main controller
 This group supports 1 nodes.
 
 ### Group 2: basic on/off (output)
+
 Triggered at change of the output
 This group supports 16 nodes.
 
 ### Group 3: Sensor_multilevel_get
 
+
 This group supports 16 nodes.
 
 ### Group 4: basic on/off (temp limit)
+
 triggered by Too high temperature limit
 This group supports 16 nodes.
 
 ### Group 5: Thermostat setpoint get
 
+
 This group supports 16 nodes.
 
 ### Group 6: basic on/off (window)
+
 triggered by change of I1
 This group supports 16 nodes.
 
 ### Group 7: basic on/off (condense sensor)
+
 triggered by change of I2
 This group supports 16 nodes.
 
 ### Group 8: basic on/off (flood sensor)
+
 triggered by change of I3
 This group supports 16 nodes.
 
 ### Group 9: sensor multilevel report
+
 Triggered at change of temperature
 This group supports 16 nodes.
 

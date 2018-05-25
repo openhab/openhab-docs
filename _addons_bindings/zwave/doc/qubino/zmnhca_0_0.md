@@ -12,7 +12,9 @@ The device is in the category of Blinds, defining Roller shutters, window blinds
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZMNHCA
 
 | Channel | Channel Id | Category | Item Type |
@@ -29,38 +31,49 @@ The following table summarises the channels available for the ZMNHCA
 | Electric meter (kWh) | meter_kwh1 | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### switch
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
+
 The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Temperatur Sensor
+
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 12 configuration parameters available in the ZMNHCA.
 Detailed information on each parameter can be found in the sections below.
 
@@ -80,6 +93,7 @@ Detailed information on each parameter can be found in the sections below.
 | 90 | Relay delay time | This parameter defines the time delay between output relay switching |
 
 ### Parameter 10: ALL ON / ALL OFF
+
 Responds to commands ALL ON / ALL OFF from Main Controller
 Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
 
@@ -105,6 +119,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 40: - Power reporting in Watts on power change for Q1 or Q2
+
 Power consumption change threshold for sending updates
 Power report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
@@ -123,6 +138,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting in Watts by time interval for Q1 or Q2
+
 Power reporting in Watts by time interval for Q1 or Q2
 Set value means time interval (0 – 32767) in seconds, when power report is send. Available configuration parameters (data type is 2 Byte DEC):
 
@@ -137,6 +153,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 71: Operating modes
+
 Operation Mode (Shutter or Venetian)
 This parameter defines selection between two available operating modes. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -156,6 +173,7 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 
 
 ### Parameter 72: Slats tilting full turn time
+
 Slat full turn time in tenths of a second.
 This parameter defines the time necessary for slats to make full turn (180 degrees). Available configuration parameters (data type is 2 Byte DEC):
 
@@ -172,6 +190,7 @@ This parameter has the configuration ID ```config_72_2``` and is of type ```INTE
 
 
 ### Parameter 73: Slats position
+
 Slats position
 This parameter defines slats position after up/down movement through Z-wave or push-buttons. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -193,6 +212,7 @@ This parameter has the configuration ID ```config_73_1``` and is of type ```INTE
 
 
 ### Parameter 74: Motor moving up/down time
+
 Shutter motor moving time of complete opening or complete closing
 This parameter defines Shutter motor moving time of complete opening or complete closing. Available configuration parameters (data type is 2 Byte DEC):
 
@@ -215,6 +235,7 @@ This parameter has the configuration ID ```config_74_2``` and is of type ```INTE
 
 
 ### Parameter 76: Motor operation detection
+
 Power threshold
 Power threshold to be interpreted when motor reach the limit switch. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -230,6 +251,7 @@ This parameter has the configuration ID ```config_76_1``` and is of type ```INTE
 
 
 ### Parameter 78: Forced Shutter calibration
+
 0 to 1 a Shutter enters the calibration mode
 By modifying the parameters setting from 0 to 1 a Shutter DC module enters the calibration mode. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -243,6 +265,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 
 ### Parameter 80: Reporting to controller
+
 reports regarding to main controller
 This parameter defines if reporting regarding power level, multilevel, etc,…is reported to controller or not. Available configuration parameters: default value 1
 
@@ -261,6 +284,7 @@ This parameter has the configuration ID ```config_80_1``` and is of type ```INTE
 
 
 ### Parameter 85: Power consumption max delay time
+
 max time before motor power consumption is read
 This parameter defines the max time before motor power consumption is read after one of the relays is switched ON. If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, motor in end position,...) the relay will switch OFF. Time is defined by entering it manually. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -275,6 +299,7 @@ This parameter has the configuration ID ```config_85_1``` and is of type ```INTE
 
 
 ### Parameter 90: Relay delay time
+
 This parameter defines the time delay between output relay switching
 This parameter defines the minimum time delay between next motor movement (minimum time between switching motor off and on again). Available configuration parameters (data type is 1 Byte DEC):
 
@@ -288,27 +313,33 @@ This parameter has the configuration ID ```config_90_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHCA supports 5 association groups.
 
 ### Group 1: basic on/off
+
 triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 2: basic on/of
+
 triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 3: multileve
+
 triggered at changes of value of the Flush shutter position
 This group supports 16 nodes.
 
 ### Group 4: multilevel
+
 triggered at changes of value of slats tilting position
 This group supports 16 nodes.
 
 ### Group 5: default reporting group
+
 
 This group supports 16 nodes.
 

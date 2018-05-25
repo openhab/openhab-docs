@@ -11,6 +11,7 @@ This describes the Z-Wave device *ZMNHTD*, manufactured by *Goap* with the thing
 The device is in the category of Sensor, defining Device used to measure something.
 
 # Overview
+
 This Z-Wave module is used for energy measurements in single-phase electrical power network and can be used in residential, industrial and utility applications. Meters measure energy directly in 2-wire networks according to the principle of fast sampling of voltage and current signals. A built-in microprocessor calculates energy, power and power factor from the measured signals. The module can be controlled through Z-wave network and it acts as repeater in order to improve range and stability of Z-wave network. It is designed to be mounted on DIN rail.
 
 Measurements: Voltage V Current I Power – Active W Power – Active total Import kWh Power – Active total Export kWh Power – Reactive var Power – Reactive total kvarh Power – Apparent total kVAh Power Factor PF
@@ -18,6 +19,7 @@ Measurements: Voltage V Current I Power – Active W Power – Active total Impo
 It is possible to connect two external relay to Smart Meter module. One controlled by built-in optical (IR) communication port on the side, second controlled by output on terminal 5.
 
 ## Inclusion Information
+
 Module Inclusion (Adding to Z-wave network)
 
 - Connect module to power supply
@@ -28,6 +30,7 @@ Module Inclusion (Adding to Z-wave network)
 NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
 
 ## Exclusion Information
+
 Module Exclusion/Reset (Removing from Z-Wave network):
 
 - Connect module to power supply
@@ -38,6 +41,7 @@ Module Exclusion/Reset (Removing from Z-Wave network):
 By this function all parameters of the module are set to default values and own ID is deleted. If service button S is pressed more than 2 and less than 6 seconds module is excluded, but configuration parameters are not set to default values.
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHTD
 
 | Channel | Channel Id | Category | Item Type |
@@ -53,35 +57,45 @@ The following table summarises the channels available for the ZMNHTD
 | Switch Relay | switch_binary2 | Switch | Switch | 
 
 ### Power factor
+
 The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Voltage
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Power
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Energy Comsumption
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Apparent Energy Consumption
+
 The ```meter_kvah``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Current
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset Meter Stats
+
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### switch_binary
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch Relay
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 25 configuration parameters available in the ZMNHTD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -114,6 +128,7 @@ Detailed information on each parameter can be found in the sections below.
 | 148 | Active power accumulated (export) |  |
 
 ### Parameter 7: Input 1 switch function selection
+
 IR external relay or External Relay control mode
 Available config. parameters (data type is 1 Byte DEC
 The following option values may be configured -:
@@ -132,6 +147,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF 
+
 Activate / deactivate functions
 Smart Meter module responds to commands ALL ON/ ALL OFF that may be sent by the main controller or by other controller belonging to the system
 The following option values may be configured -:
@@ -149,6 +165,7 @@ This parameter has the configuration ID ```config_10_3``` and is of type ```INTE
 
 
 ### Parameter 11: Timer turning off IR external relay
+
 Automatic turning off IR external relay output after set time
 When IR external relay is ON it goes automatically OFF after time defined by this Parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC):
 The following option values may be configured -:
@@ -164,6 +181,7 @@ This parameter has the configuration ID ```config_11_2_00007F17``` and is of typ
 
 
 ### Parameter 12:  Timer turning on IR external relay output 
+
 Automatic turning on IR external relay output after set time
 When IR external relay is OFF it goes automatically ON after time defined by this Parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)
 Values in the range 0 to 32535 may be set.
@@ -174,6 +192,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: Timer turning off External relay output
+
 Automatic turning off External relay output after set time
 When External relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)
 Values in the range 0 to 32535 may be set.
@@ -184,6 +203,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: Timer turning on External relay after output
+
 Automatic turning on External relay after output set time
 When External relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC)
 Values in the range 0 to 32535 may be set.
@@ -194,6 +214,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 40: Power reporting (Watts) on power change 
+
 Power reporting in Watts on power change
 Set value means percentage, set value from 0 – 100 = 0% - 100%. Available configuration parameters (data type is 1 Byte DEC)
 
@@ -208,6 +229,7 @@ This parameter has the configuration ID ```config_40_2``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting (Watts) by time interval
+
 Power reporting in Watts by time interval
 Set value means time interval (0 – 32535) in seconds, when power report is send. Available config. parameters (data type is 2 Byte DEC).
 
@@ -220,6 +242,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 45: Reset Power counters
+
 Reset Power counters
 Available config. parameters (data type is 1 Byte DEC
 The following option values may be configured -:
@@ -238,6 +261,7 @@ This parameter has the configuration ID ```config_45_1``` and is of type ```INTE
 
 
 ### Parameter 100: Enable / Disable endpoints relays
+
 Enable / Disable endpoints IR external relay and External relay
 Enabling IR external relay and External relay or both of them, means that endpoint (IR external relay) and endpoint (External relay) or both will be present on UI. Disabling them will result in hiding endpoints according to Parameter set value. Note that hiding endpoint has no impact on its functionality. Available configuration parameters (data type is 1 Byte DEC)
 
@@ -257,6 +281,7 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 
 ### Parameter 110: Maximum Power auto off
+
 Maximum Power auto off
 Set value means Maximum Power Consumption (0 - 15000) in watts (W), when relays are turned off according to parameters no. 111 and 112. Available configuration parameters (data type is 2 Bytes DEC
 The following option values may be configured -:
@@ -272,6 +297,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 111: Delay overpower off
+
 Delay overpower off
 Set value means number of second to power off relay (defined by parameters no. 110 and 112) before restart (30 - 32535) in seconds (s). Available configuration parameters (data type is 2 Bytes DEC):
 Values in the range 0 to 32525 may be set.
@@ -282,6 +308,7 @@ This parameter has the configuration ID ```config_111_2``` and is of type ```INT
 
 
 ### Parameter 112: Relay to power off
+
 Relay to power off
 Set value selects relay to be powered off when threshold is reached (defined by parameters no. 110 and 111). Available config. parameters (data type is 1 Byte DEC)
 The following option values may be configured -:
@@ -301,6 +328,7 @@ This parameter has the configuration ID ```config_112_1``` and is of type ```INT
 ### Parameter 130: Serial Number
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -310,6 +338,7 @@ This is a read only parameter.
 
 
 ### Parameter 131: Meter Software reference
+
 
 
 Values in the range 0 to 0 may be set.
@@ -323,6 +352,7 @@ This is a read only parameter.
 ### Parameter 132: Meter Hardware reference
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -332,6 +362,7 @@ This is a read only parameter.
 
 
 ### Parameter 140: Voltage U1
+
 
 
 Values in the range 0 to 0 may be set.
@@ -345,6 +376,7 @@ This is a read only parameter.
 ### Parameter 141: Current I1
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -354,6 +386,7 @@ This is a read only parameter.
 
 
 ### Parameter 142: Active Power Total (Pt)
+
 
 
 Values in the range 0 to 0 may be set.
@@ -367,6 +400,7 @@ This is a read only parameter.
 ### Parameter 143: Reactive Power Total (Qt)
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -376,6 +410,7 @@ This is a read only parameter.
 
 
 ### Parameter 144: Power Factor Total (PFt)
+
 
 
 Values in the range 0 to 0 may be set.
@@ -389,6 +424,7 @@ This is a read only parameter.
 ### Parameter 145: Active power accumulated (import)
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -398,6 +434,7 @@ This is a read only parameter.
 
 
 ### Parameter 146: Reactive power accumulated
+
 
 
 Values in the range 0 to 0 may be set.
@@ -411,6 +448,7 @@ This is a read only parameter.
 ### Parameter 147: Apparent power accumulated
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -422,6 +460,7 @@ This is a read only parameter.
 ### Parameter 148: Active power accumulated (export)
 
 
+
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is 0.
@@ -431,11 +470,13 @@ This is a read only parameter.
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHTD supports 1 association group.
 
 ### Group 1: Lifeline
+
 Reserved for communication with the main controller
 This group supports 1 nodes.
 

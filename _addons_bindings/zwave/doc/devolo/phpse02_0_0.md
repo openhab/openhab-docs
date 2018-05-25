@@ -11,6 +11,7 @@ This describes the Z-Wave device *ph-pse02*, manufactured by *Devolo* with the t
 The device is in the category of Siren, defining Siren used by Alarm systems.
 
 # Overview
+
 **\### NOTE ###**
 
 The XML used for adding this device to the database comes from the Devolo Home Control Alarmsiren (http://www.devolo.de/article/devolo-home-control-alarmsirene/). But it seems to be made by Zipato (https://www.zipato.com/product/multisound-indoor-siren).  
@@ -65,6 +66,7 @@ FREQUENCY
 Source: https://www.zipato.com/product/multisound-indoor-siren
 
 ## Channels
+
 The following table summarises the channels available for the ph-pse02
 
 | Channel | Channel Id | Category | Item Type |
@@ -76,9 +78,11 @@ The following table summarises the channels available for the ph-pse02
 | Start Sound | notification_send |  | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -89,6 +93,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -99,6 +104,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -109,11 +115,13 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Start Sound
+
 The ```notification_send``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 3 configuration parameters available in the ph-pse02.
 Detailed information on each parameter can be found in the sections below.
 
@@ -124,6 +132,7 @@ Detailed information on each parameter can be found in the sections below.
 | 31 | Alarm Duration | Play alarm sound duration. |
 
 ### Parameter 7: Costumer  Function
+
 NotificationReport/BinaryReport
 Notification Type,
 
@@ -138,6 +147,7 @@ This parameter has the configuration ID ```config_7_4``` and is of type ```INTEG
 
 
 ### Parameter 29: Disable Alarm
+
 Disable the alarm function.
 Disable the alarm function.
 
@@ -154,6 +164,7 @@ This parameter has the configuration ID ```config_29_4``` and is of type ```INTE
 
 
 ### Parameter 31: Alarm Duration
+
 Play alarm sound duration.
 Play alarm sound duration, 1 tick is 30 seconds.
 
@@ -168,11 +179,13 @@ This parameter has the configuration ID ```config_31_4_0000000C``` and is of typ
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ph-pse02 supports 1 association group.
 
 ### Group 1: Report Message
+
 Report Message, e.g. tamper alarm
 This group supports 8 nodes.
 

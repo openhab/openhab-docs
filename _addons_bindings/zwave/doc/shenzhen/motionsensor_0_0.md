@@ -11,6 +11,7 @@ This describes the Z-Wave device *Motion Sensor*, manufactured by *Shenzhen Neo 
 The device is in the category of Motion Detector, defining Motion sensors/detectors.
 
 # Overview
+
 This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
 
 In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.
@@ -18,6 +19,7 @@ In the Back casing, there is a button that is used to carry out include, exclude
 When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.
 
 ## Inclusion Information
+
 1\. Remove the sensor cover.
 
 2\. Make sure the sensor is powered.
@@ -31,6 +33,7 @@ gateway operating manual)
 LED will flash on and off alternately five times..
 
 ## Exclusion Information
+
 1\. Remove the device cover.
 
 2\. Make sure the sensor is powered.
@@ -42,6 +45,7 @@ gateway operating manual)
 4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ## Wakeup Information
+
 You can press the button once to wake up the device and send wakeup notification to controller.
 
 If press successfully, the LED will blink one time.
@@ -55,6 +59,7 @@ Allowable interval among each wakeup interval is 60 second, such as 360, 420, 48
 Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
+
 The following table summarises the channels available for the Motion Sensor
 
 | Channel | Channel Id | Category | Item Type |
@@ -65,6 +70,7 @@ The following table summarises the channels available for the Motion Sensor
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -75,12 +81,15 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -93,6 +102,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 10 configuration parameters available in the Motion Sensor.
 Detailed information on each parameter can be found in the sections below.
 
@@ -110,6 +120,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | LED Blink Enable | Defines whether the LED blinking is on / off. 1 = enable -> blink once when motion sensor detect movement, 0= disbale |
 
 ### Parameter 1: Sensitivity Level Setting
+
 Defines the sensitivity of PIR sensor. Where 8 = highest & 255 = lowest sensitivity
 
 Values in the range 8 to 255 may be set.
@@ -120,6 +131,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: ON/OFF Duration Setting
+
 Determined how long the associated devices should stay ON status. This Parameter value must be large than Parameter 6#.
 For instance, this parameter is set to 30(second), the PIR detector will send a
 
@@ -136,6 +148,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 3: Basic Set Level
+
 Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
 Available Settings:
 
@@ -154,6 +167,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Enable/Disable PIR Function
 
 
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -167,6 +181,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Lux Level Set
+
 Set a lux level value which determines when the light sensor is activated.
 If the ambient illumination level falls below this value and a person moves
 
@@ -183,6 +198,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 
 
 ### Parameter 6: Re-trigger Interval
+
 Adjust the interval of being re-triggered after the PIR detector has been triggered. No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.
 
 Values in the range 1 to 8 may be set.
@@ -193,6 +209,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Light Sensor Polling Interval
+
 The Intervall after which the Light Sensor Measure is polled.
 
 Values in the range 60 to 36000 may be set.
@@ -203,6 +220,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 
 ### Parameter 8: Lux Level Function Enable
+
 0 = Off, 1 =On and Lux Level must be less than #5 -> then send Basic Set(Parameter #3)
 If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR
 
@@ -224,6 +242,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Lux Level Changed Report
+
 How much the Lux Level must change, in lux, to be reported to the main controller.
 
 Values in the range 0 to 255 may be set.
@@ -234,6 +253,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 
 ### Parameter 10: LED Blink Enable
+
 Defines whether the LED blinking is on / off. 1 = enable -> blink once when motion sensor detect movement, 0= disbale
 
 The following option values may be configured -:
@@ -249,23 +269,28 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Motion Sensor supports 4 association groups.
 
 ### Group 1: Group 1
+
 Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
 This group supports 1 nodes.
 
 ### Group 2: Group 2
+
 Sending Control Command to associated devices. This association group is configured through the advanced parameters no. 2, 3, 5 and 8
 This group supports 4 nodes.
 
 ### Group 3: Group 3
+
 Send Notification to associated devices.
 This group supports 4 nodes.
 
 ### Group 4: Group 4
+
 Send Notification to associated devices.
 This group supports 4 nodes.
 

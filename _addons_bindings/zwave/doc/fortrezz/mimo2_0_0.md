@@ -9,6 +9,7 @@ title: MIMO2+ - ZWave
 This describes the Z-Wave device *MIMO2+*, manufactured by *FortrezZ LLC* with the thing type UID of ```fortrezz_mimo2_00_000```.
 
 # Overview
+
 The MIMO2+ module provides two analog or digital input and two relay output (isolated dry contacts, NO-COM-NC) and can be controlled by ZWaveTM. The system includes a program switch for Z-WaveTM inclusion/exclusion and a status light (LED) for various indications.
 
 Input SIG1 and SIG2 is an analog input, internally pulled-up to the MIMO2+ supply voltage. The system allows trigger conditions to be set based on the input voltage being inside or outside a user-defined range (configured via Z-Wave). This provides great flexibility for capturing events in a wide variety of applications. The trigger status of the input can be read via Z-WaveTM and/or can be automatically sent to a configured node, typically the Controller. In addition, a count of the trigger events that have occurred for the input channel is internally recorded (and stored in the ‘pulse count’) and is available to be requested or automatically sent via Z-Wave. The current triggered/un-triggered status can also be read via ZWave. The SIG1 and SIG2 input can be associated with up to two other Z-WaveTM devices, such that an associated device will automatically turn on (or off) based on the occurrence of a trigger event. Finally, the analog input channel can be configured so that the analog input level (not just binary trigger status) is periodically sent to up to two other associated nodes.
@@ -16,14 +17,17 @@ Input SIG1 and SIG2 is an analog input, internally pulled-up to the MIMO2+ suppl
 The output relay is typically commanded via Z-WaveTM commands. In addition, the user can configure the input SIG1 or SIG2 trigger condition to be mapped to the output relay. For example, Relay 1 or 2 can be automatically turned on based on Input SIG1 being triggered. The relay activation can be set via a jumper or via Z-WaveTM for either momentary or latched operation.
 
 ## Inclusion Information
+
 1. Set up the inclusion mode at the controller (for detailed directions, please refer to your controller user manual)
 2. If the LED has a periodic single blink, the unit will be automatically included. Otherwise, the button has been previously pressed and automatic inclusion mode is no longer active. In this case, briefly press the button once and the controller will indicate that the unit has been included in the network. Also, the Status LED will blink when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode.
 
 ## Exclusion Information
+
 1. Set up the exclusion mode at the controller (for detailed directions, please refer to your controller user manual)
 2. Press the button and the controller will indicate the unit has been removed from the network. The Status LED will blink when the exclusion completes.
 
 ## Channels
+
 The following table summarises the channels available for the MIMO2+
 
 | Channel | Channel Id | Category | Item Type |
@@ -37,12 +41,15 @@ The following table summarises the channels available for the MIMO2+
 | Relay 2 | switch_binary4 | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor
+
 The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -53,20 +60,25 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Sensor 1
+
 The ```sensor_general1``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor 2
+
 The ```sensor_general2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Relay 1
+
 The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Relay 2
+
 The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 18 configuration parameters available in the MIMO2+.
 Detailed information on each parameter can be found in the sections below.
 
@@ -92,6 +104,7 @@ Detailed information on each parameter can be found in the sections below.
 | 13 | Sensor 2 Upper Threshold Low |  |
 
 ### Parameter 1: Relay 1 Trigger Interval
+
 Momentary trigger time in 100ms intervals, 10=1s, 0=disable
 
 Values in the range 0 to 31 may be set.
@@ -102,6 +115,7 @@ This parameter has the configuration ID ```config_1_1_0000001F``` and is of type
 
 
 ### Parameter 1: Relay 1 Trigger Configuration
+
 Relay 1 Trigger on Sensor Input
 
 The following option values may be configured -:
@@ -121,6 +135,7 @@ This parameter has the configuration ID ```config_1_1_000000E0``` and is of type
 
 
 ### Parameter 2: Relay 2 Trigger Interval
+
 Momentary trigger time in 100ms intervals, 10=1s, 0=disable
 
 Values in the range 0 to 31 may be set.
@@ -131,6 +146,7 @@ This parameter has the configuration ID ```config_2_1_0000001F``` and is of type
 
 
 ### Parameter 2: Relay 2 Trigger Configuration
+
 Relay 2 Trigger on Sensor Input
 
 The following option values may be configured -:
@@ -150,6 +166,7 @@ This parameter has the configuration ID ```config_2_1_000000E0``` and is of type
 
 
 ### Parameter 3: Sensor 1 Report Interval
+
 Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)
 
 Values in the range 0 to 63 may be set.
@@ -160,6 +177,7 @@ This parameter has the configuration ID ```config_3_1_0000003F``` and is of type
 
 
 ### Parameter 3: Sensor 1 Report Mode
+
 Report state periodically or on change
 
 The following option values may be configured -:
@@ -175,6 +193,7 @@ This parameter has the configuration ID ```config_3_1_00000040``` and is of type
 
 
 ### Parameter 3: Sensor 1 Trigger Mode
+
 Trigger Inside or Outside Low/High Thresholds
 
 The following option values may be configured -:
@@ -192,6 +211,7 @@ This parameter has the configuration ID ```config_3_1_00000080``` and is of type
 ### Parameter 4: Sensor 1 Lower Threshold High
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -200,6 +220,7 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 
 ### Parameter 5: Sensor 1 Lower Threshold Low
+
 
 
 Values in the range 0 to 4095 may be set.
@@ -212,6 +233,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 ### Parameter 6: Sensor 1 Upper Threshold High
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -222,6 +244,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 ### Parameter 7: Sensor 1 Upper Threshold Low
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -230,6 +253,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 
 ### Parameter 9: Sensor 1 Report Interval
+
 Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)
 
 Values in the range 0 to 63 may be set.
@@ -240,6 +264,7 @@ This parameter has the configuration ID ```config_9_1_0000003F``` and is of type
 
 
 ### Parameter 9: Sensor 2 Report Mode
+
 Report state periodically or on change
 
 The following option values may be configured -:
@@ -255,6 +280,7 @@ This parameter has the configuration ID ```config_9_1_00000040``` and is of type
 
 
 ### Parameter 9: Sensor 2 Trigger Mode
+
 Trigger Inside or Outside Low/High Thresholds
 
 The following option values may be configured -:
@@ -272,6 +298,7 @@ This parameter has the configuration ID ```config_9_1_00000080``` and is of type
 ### Parameter 10: Sensor 2 Lower Threshold High
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -280,6 +307,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Sensor 2 Lower Threshold Low
+
 
 
 Values in the range 0 to 4095 may be set.
@@ -292,6 +320,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: Sensor 2 Upper Threshold High
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -302,6 +331,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 ### Parameter 13: Sensor 2 Upper Threshold Low
 
 
+
 Values in the range 0 to 4095 may be set.
 
 The manufacturer defined default value is 0.
@@ -310,19 +340,23 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The MIMO2+ supports 3 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 1 nodes.
 
 ### Group 2: Sensor 1 On Change
 
+
 This group supports 2 nodes.
 
 ### Group 3: Sensor 2 On Change
+
 
 This group supports 2 nodes.
 

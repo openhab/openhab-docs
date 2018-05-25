@@ -11,11 +11,13 @@ This describes the Z-Wave device *GWPN6*, manufactured by *GreenWave Reality Inc
 The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
 
 # Overview
+
 This Configuration is for the 6 plug version of the PowerNode.
 
 It should work for both NP210 and NP310 devices (except _NP210_-G-EN which is 5-port UK version).
 
 ## Inclusion Information
+
 On the PowerNode, press and hold the **Sync** button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.
 
 After a few seconds, the rotating pattern on both the PowerNode and the Gateway stops. All bars turn green forming a circle for several seconds. This indicates a successful inclusion.
@@ -23,9 +25,11 @@ After a few seconds, the rotating pattern on both the PowerNode and the Gateway 
 If all bars on the activity indicator start flashing instead of forming a solid circle, then the PowerNode inclusion process has failed, and you must start the sync process again. If syncing continually fails even though the PowerNode is close to the Gateway, then it may be an indication of a hardware fault, and the PowerNode might need replacing.
 
 ## Exclusion Information
+
 On the PowerNode, press and hold the **Sync** button for approximately one second until the PowerNode activity indicator begins to display a counter-clockwise rotating pattern. The PowerNode is attempting exclusion.
 
 ## Channels
+
 The following table summarises the channels available for the GWPN6
 
 | Channel | Channel Id | Category | Item Type |
@@ -54,15 +58,19 @@ The following table summarises the channels available for the GWPN6
 | Electric meter (kWh) 6 | meter_kwh6 | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -73,62 +81,81 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
+
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 2
+
 The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 3
+
 The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 3
+
 The ```meter_watts3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 3
+
 The ```meter_kwh3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 4
+
 The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 4
+
 The ```meter_watts4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 4
+
 The ```meter_kwh4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 5
+
 The ```switch_binary5``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 5
+
 The ```meter_watts5``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 5
+
 The ```meter_kwh5``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 6
+
 The ```switch_binary6``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 6
+
 The ```meter_watts6``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 6
+
 The ```meter_kwh6``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 5 configuration parameters available in the GWPN6.
 Detailed information on each parameter can be found in the sections below.
 
@@ -141,6 +168,7 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | LED for network  error | If the LED should indicate a network error by flashing or not |
 
 ### Parameter 0: Min. variation of load current
+
 Minimum variation in load current before a message is sent.
 Minimum variation in load current before a message is sent. Value in percent (30 => 30%)
 Values in the range 0 to 100 may be set.
@@ -151,6 +179,7 @@ This parameter has the configuration ID ```config_0_1``` and is of type ```INTEG
 
 
 ### Parameter 1: No communication light
+
 Duration (min) the device flashes after a communication error.
 After how many minutes the GreenWave device should start flashing if the controller didn't communicate with this device.
 Values in the range 0 to 255 may be set.
@@ -161,6 +190,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Wheel position
+
 Wheel position on the GreenWave device (read-only)
 
 The following option values may be configured -:
@@ -185,6 +215,7 @@ This is a read only parameter.
 
 
 ### Parameter 3: Power-on state
+
 Default state after power loss
 
 The following option values may be configured -:
@@ -201,6 +232,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: LED for network  error
+
 If the LED should indicate a network error by flashing or not
 
 The following option values may be configured -:
@@ -216,23 +248,28 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The GWPN6 supports 4 association groups.
 
 ### Group 1: Wheel position change
 
+
 This group supports 1 nodes.
 
 ### Group 2: Current leakage on relay
+
 
 This group supports 1 nodes.
 
 ### Group 3: Power level change
 
+
 This group supports 1 nodes.
 
 ### Group 4: Over-current detection
+
 
 This group supports 1 nodes.
 

@@ -10,7 +10,9 @@ This describes the Z-Wave device *doorSensor*, manufactured by *BeNext* with the
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the doorSensor
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,6 +22,7 @@ The following table summarises the channels available for the doorSensor
 | Alarm (CO) | alarm_co | Door | Switch | 
 
 ### Door Sensor
+
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
@@ -30,9 +33,11 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (CO)
+
 The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -45,6 +50,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the doorSensor.
 Detailed information on each parameter can be found in the sections below.
 
@@ -56,6 +62,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Temperature offset | An offset for the temperature. |
 
 ### Parameter 1: Reset to factory settings
+
 Set all configuration values to default values (factory settings).
 
 Values in the range 0 to 255 may be set.
@@ -66,6 +73,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: External contact behavior
+
 Configure what the external contact sends when triggered.
 
 The following option values may be configured -:
@@ -81,6 +89,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Operating mode.
+
 The main operating mode for the device.
 
 The following option values may be configured -:
@@ -97,6 +106,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Temperature offset
+
 An offset for the temperature.
 
 Values in the range -32768 to 32767 may be set.
@@ -107,15 +117,18 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The doorSensor supports 2 association groups.
 
 ### Group 1: Send frame to every node in this group (internal contact)
 
+
 This group supports 5 nodes.
 
 ### Group 2: Send frame to every node in this group (external contact)
+
 
 This group supports 5 nodes.
 

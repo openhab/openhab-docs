@@ -11,17 +11,21 @@ This describes the Z-Wave device *HS2WD-Z*, manufactured by *Heiman Technology C
 The device is in the category of Siren, defining Siren used by Alarm systems.
 
 # Overview
+
 Product support sound and light alarm.
 
 ## Inclusion Information
+
 - Press the pin-hole 3 times within 1.5s, Green LED is Blinking 3 times within 1.5 second.
 - If add Process is successful, Green LED will turn off.
 
 ## Exclusion Information
+
 - Press the pin-hole 3 times within 1.5 second.
 - If remove Process is successful, Green LED is Blinking 6 times, then turn off.
 
 ## Channels
+
 The following table summarises the channels available for the HS2WD-Z
 
 | Channel | Channel Id | Category | Item Type |
@@ -29,23 +33,23 @@ The following table summarises the channels available for the HS2WD-Z
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the HS2WD-Z.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HS2WD-Z supports 1 association group.
 
 ### Group 1: Lifeline
+
 
 This group supports 5 nodes.
 

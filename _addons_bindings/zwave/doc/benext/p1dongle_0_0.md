@@ -9,6 +9,7 @@ title: P1-dongle - ZWave
 This describes the Z-Wave device *P1-dongle*, manufactured by *BeNext* with the thing type UID of ```benext_p1dongle_00_000```.
 
 # Overview
+
 The P1-dongle sends smart meter data wirelessly to your controller, helping you get insight of your consumption and things like the overall yield of your solar panels. The P1-dongle can connect to smart meters that support DSMR (Dutch Smart Meter Reader Protocol) eg. all smart meters with a P1-connector.
 
 LED Status Information
@@ -21,6 +22,7 @@ LED Status Information
 - No ready and not included in a Z-Wave network: LED pulse once per second
 
 ## Inclusion Information
+
 - Put you controller in inclusion mode
 - Connect the P1 Dongle to your Smart Meter (use a power source when needed)
 - The P1 Dongle will switch to Network Wide Inclusion automatically
@@ -28,6 +30,7 @@ LED Status Information
 Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
 
 ## Exclusion Information
+
 - Put your controller and the P1 Dongle in exclusion mode (LED pulse three times per 1.5 second)
 - The dongle will exclude from it's former network and reset to node ID zero
 - If the P1 Dongle wasn't included in a network before, this procedure will act as a node reset
@@ -35,6 +38,7 @@ Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second)
 Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
 
 ## Channels
+
 The following table summarises the channels available for the P1-dongle
 
 | Channel | Channel Id | Category | Item Type |
@@ -48,30 +52,38 @@ The following table summarises the channels available for the P1-dongle
 | Gas meter (G_Cubic_Meters) 3 | meter_gas_cubic_meters3 | Energy | Number | 
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
+
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 2
+
 The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 2
+
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Gas meter (G_Cubic_Meters) 3
+
 The ```meter_gas_cubic_meters3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the P1-dongle.
+
+The following table provides a summary of the 1 configuration parameters available in the P1-dongle.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -79,6 +91,7 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | Baud Rate | Baud rate: the rate the device sends data between the smart meter and z-wave |
 
 ### Parameter 4: Baud Rate
+
 Baud rate: the rate the device sends data between the smart meter and z-wave
 Set BAUD rate value \* 100.
 Values in the range 0 to 40000 may be set.
@@ -89,10 +102,10 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The P1-dongle supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

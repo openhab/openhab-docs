@@ -11,6 +11,7 @@ This describes the Z-Wave device *Smart Plug 16A*, manufactured by *Goap* with t
 The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
 
 # Overview
+
 This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.
 
 Power supply: 230V +/- 10%, 50 Hz
@@ -22,6 +23,7 @@ Overload protection >16 A
 Power consumption <1W
 
 ## Inclusion Information
+
 Auto inclusion (first time usage)
 
 - start inclusion mode of z-wave controller
@@ -34,15 +36,18 @@ Manual inclusion
 - press the service button (S) 3 times within 3 seconds
 
 ## Exclusion Information
+
 - plug device into power outlet
 - ensure device is within maximum 1 meter (3 feet) of the main controller
 - enable exclusion mode on main controller
 - press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
 
 ## Wakeup Information
+
 Press the Service button (S) 3 times within 3 seconds.
 
 ## Channels
+
 The following table summarises the channels available for the Smart Plug 16A
 
 | Channel | Channel Id | Category | Item Type |
@@ -55,21 +60,27 @@ The following table summarises the channels available for the Smart Plug 16A
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts)
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -82,6 +93,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 7 configuration parameters available in the Smart Plug 16A.
 Detailed information on each parameter can be found in the sections below.
 
@@ -96,6 +108,7 @@ Detailed information on each parameter can be found in the sections below.
 | 41 | Treshold time for power reporting | Treshold time for power reporting \[Watt\] |
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
+
 
 
 The following option values may be configured -:
@@ -113,6 +126,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Automatic turning OFF relay after set time
+
 When the relay is turned ON, it automatically turns OFF after the defined time
 The timer is reset each time, the module receives an ON command (from push button/main controller/association).
 
@@ -130,6 +144,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: On automatically with timer
+
 Turn Smart plug On Automatically with Timer
 If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
@@ -148,6 +163,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 15: Timer Settings Unit
+
 Set Timer Units to Seconds or Milliseconds
 Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).
 The following option values may be configured -:
@@ -163,6 +179,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 30: Restore state ofter power failure
+
 Restore on/off status for Smart plug 16A after power failure
 
 The following option values may be configured -:
@@ -178,6 +195,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ### Parameter 40: Treshold Change in Power  for reporting
+
 Change of power consumption \[Watt\] reporting threshold
 Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.
 
@@ -195,6 +213,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 41: Treshold time for power reporting
+
 Treshold time for power reporting \[Watt\]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
@@ -210,27 +229,33 @@ This parameter has the configuration ID ```config_41_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Smart Plug 16A supports 5 association groups.
 
 ### Group 1: Lifeline
+
 Reserved for communication with main controller
 This group supports 1 nodes.
 
 ### Group 2: Status on/off
+
 Send control command BASIC\_SET 0x00/0xFF
 This group supports 5 nodes.
 
 ### Group 3: Load dependent 
+
 sending control commands BASIC\_SET 0x00/0xFF depending on current load
 This group supports 5 nodes.
 
 ### Group 4: Secure Status On/Off
+
 Send control command BASIC\_SET 0x00/0xFF
 This group supports 5 nodes.
 
 ### Group 5: Secure Load dependent 
+
 sending control commands BASIC\_SET 0x00/0xFF depending on current load
 This group supports 5 nodes.
 

@@ -9,15 +9,19 @@ title: Vitrum III EU Dimmer - ZWave
 This describes the Z-Wave device *Vitrum III EU Dimmer*, manufactured by *VDA* with the thing type UID of ```vda_dimmer3_00_000```.
 
 # Overview
+
 When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.
 
 ## Inclusion Information
+
 With the controller in the inclusion mode, press any of the touch keys on the device.
 
 ## Exclusion Information
+
 Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.
 
 ## Channels
+
 The following table summarises the channels available for the Vitrum III EU Dimmer
 
 | Channel | Channel Id | Category | Item Type |
@@ -28,40 +32,45 @@ The following table summarises the channels available for the Vitrum III EU Dimm
 | Dimmer 3 | switch_dimmer3 | DimmableLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 1
+
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 2
+
 The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 3
+
 The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the Vitrum III EU Dimmer.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Vitrum III EU Dimmer supports 3 association groups.
 
 ### Group 1: Switch channel 1
 
+
 This group supports 5 nodes.
 
 ### Group 2: Dimmer Channel 2
 
+
 This group supports 5 nodes.
 
 ### Group 3: Dimmer Channel 3
+
 
 This group supports 5 nodes.
 

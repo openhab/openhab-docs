@@ -10,7 +10,9 @@ This describes the Z-Wave device *ZME_FT*, manufactured by *Z-Wave.Me* with the 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZME_FT
 
 | Channel | Channel Id | Category | Item Type |
@@ -21,9 +23,11 @@ The following table summarises the channels available for the ZME_FT
 | Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -47,14 +51,17 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 7 configuration parameters available in the ZME_FT.
 Detailed information on each parameter can be found in the sections below.
 
@@ -71,6 +78,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Boost Dry mode duration
 
 
+
 Values in the range 0 to 1800 may be set.
 
 The manufacturer defined default value is 1800.
@@ -79,6 +87,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Button mode
+
 
 
 The following option values may be configured -:
@@ -95,6 +104,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Basic mode
+
 
 
 The following option values may be configured -:
@@ -115,6 +125,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Temperature control interval
 
 
+
 Values in the range 1 to 60 may be set.
 
 The manufacturer defined default value is 18.
@@ -125,6 +136,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Maximum allowed temperature deviation
 
 
+
 Values in the range 1 to 60 may be set.
 
 The manufacturer defined default value is 30.
@@ -133,6 +145,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Maximal allowed temperature
+
 In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree.
 
 Values in the range 20 to 55 may be set.
@@ -143,6 +156,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Typical click timeout
+
 Typical time used to differenciate click from hold
 
 Values in the range 1 to 100 may be set.
@@ -153,11 +167,13 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZME_FT supports 1 association group.
 
 ### Group 1: Group 1
+
 Unsolicited notifications about thermostat mode and setpoint temperature changes
 This group supports 10 nodes.
 

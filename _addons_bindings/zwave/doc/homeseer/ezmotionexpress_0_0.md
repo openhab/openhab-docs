@@ -10,7 +10,9 @@ This describes the Z-Wave device *EZMotion Express*, manufactured by *Express Co
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the EZMotion Express
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,6 +22,7 @@ The following table summarises the channels available for the EZMotion Express
 | Temperature Sensor | sensor_temperature3 | Temperature | Number | 
 
 ### Motion Sensor
+
 The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -30,14 +33,17 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Illumination Sensor
+
 The ```sensor_luminance2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Temperature Sensor
+
 The ```sensor_temperature3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 6 configuration parameters available in the EZMotion Express.
 Detailed information on each parameter can be found in the sections below.
 
@@ -51,6 +57,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | On Value | The value sent by the Z-Wave BASIC\_SET command when motion is detected. |
 
 ### Parameter 1: Sensitivity
+
 Sensitivity sets the amount of motion required for EZMotion to detect motion.
 Sensitivity sets the amount of motion required for EZMotion to detect motion. A higher value makes it more sensitive and a lower value makes it less sensitive. Note that values above 200 are not recommended when EZMotion is battery operated.
 
@@ -67,6 +74,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: On Time
+
 Sets the number of minutes the lights stay on when motion has not been detected.
 On Time sets the number of minutes that the lights stay on when motion has not been detected.  
  A value of 0 On Time is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMotion will NOT turn the lights off in this mode. Note that this mode will significantly shorten battery life.
@@ -84,6 +92,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: LED On/Off
+
 LED ON/OFF turns the LED on or off.
 LED ON/OFF turns the LED on or off. A slight improvement in battery life is obtained by turning the LED off. Setting LED ON/OFF to zero will turn the LED off and 255 turns it on.
 The following option values may be configured -:
@@ -99,6 +108,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Light Threshold
+
 Light Threshold is the % of light above which the lights will not be turned on.
 Light Threshold is the percentage of light in the room above which the lights will not be turned on. Light Threshold is often used in room with a lot of natural daylight. Setting Light Threshold to a value of 50% will cause EZMotion to not turn the lights on when the natural light in the room is already at the 50% value. This feature only prevents the lights from coming on when motion is first detected and the light level in the room is already above Light Threshold. It will not turn the lights off when the amount of natural light in the room increases. It will automatically turn on the lights in a room that has motion in it and that the amount of natural light has dropped below Light Threshold.
 
@@ -115,6 +125,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Stay Awake
+
 Setting Stay Awake value
 Setting Stay Awake to a non-zero value will cause EZMotion to always be awake. NOTE: this mode should NOT be used when EZMotion is battery powered! Batteries will only last a few days in this mode.
 
@@ -130,6 +141,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: On Value
+
 The value sent by the Z-Wave BASIC\_SET command when motion is detected.
 On Value is the value sent by the Z-Wave BASIC\_SET command when motion is detected.  
  A value of 0 will turn the lights off (not recommended).  
@@ -144,11 +156,13 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The EZMotion Express supports 1 association group.
 
 ### Group 1: Association Group
+
 
 This group supports 4 nodes.
 

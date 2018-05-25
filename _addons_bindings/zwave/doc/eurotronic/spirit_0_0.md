@@ -12,13 +12,17 @@ The device is in the category of Radiator Control, defining Controls on radiator
 
 # Overview
 
+
 ## Inclusion Information
+
 Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. Spirit Z-Wave Plus will show the assigned NodeID.
 
 ## Exclusion Information
+
 Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the boost button of the Spirit Z-Wave Plus for at least 5 seconds.
 
 ## Channels
+
 The following table summarises the channels available for the Spirit
 
 | Channel | Channel Id | Category | Item Type |
@@ -33,15 +37,19 @@ The following table summarises the channels available for the Spirit
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### External temperature
+
 The ```sensor_report``` channel supports the `````` item.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -65,12 +73,15 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Setpoint (heat)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (energy heat)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Alarm (system)
+
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -81,6 +92,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -93,6 +105,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 8 configuration parameters available in the Spirit.
 Detailed information on each parameter can be found in the sections below.
 
@@ -108,6 +121,7 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Measured  Temperature offset | Measured Temperature offset |
 
 ### Parameter 1: LCD Invert
+
 LCD Invert
 
 The following option values may be configured -:
@@ -123,6 +137,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: LCD Timeout
+
 LCD Timeout
 0: No Timeout LCD always on
 
@@ -139,6 +154,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Backlight
+
 Backlight
 
 The following option values may be configured -:
@@ -154,6 +170,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Battery report
+
 Battery report
 
 The following option values may be configured -:
@@ -169,6 +186,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Measured  Temperature report
+
 Measured Temperature report
 0: Unsolicited Temperature reporting disabled
 
@@ -183,6 +201,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Valve opening  percentage report
+
 Valve opening percentage report
 0: Unsolicited valve opening percentage reporting disabled.
 
@@ -195,6 +214,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Window open detection
+
 Window open detection
 
 The following option values may be configured -:
@@ -212,6 +232,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Measured  Temperature offset
+
 Measured Temperature offset
 -50 - +50: Offsets the measured temperature by-5,0°C – (+)5,0°C
 
@@ -228,11 +249,13 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The Spirit supports 1 association group.
 
 ### Group 1: Lifeline
+
 Spirit Z-Wave Plus can only be associated with the Z-Wave controller.
 This group supports 1 nodes.
 

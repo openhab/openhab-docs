@@ -10,7 +10,9 @@ This describes the Z-Wave device *RFWC5*, manufactured by *Cooper Wiring Devices
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the RFWC5
 
 | Channel | Channel Id | Category | Item Type |
@@ -18,43 +20,48 @@ The following table summarises the channels available for the RFWC5
 | Scene Number | scene_number |  | Number | 
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the RFWC5.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The RFWC5 supports 6 association groups.
 
 ### Group 1: Group 1
 
+
 This group supports 232 nodes.
 
 ### Group 2: Group 2
+
 
 This group supports 232 nodes.
 
 ### Group 3: Group 3
 
+
 This group supports 232 nodes.
 
 ### Group 4: Group 4
+
 
 This group supports 232 nodes.
 
 ### Group 5: Group 5
 
+
 This group supports 232 nodes.
 
 ### Group 127: Group 255
+
 
 This group supports 1 nodes.
 

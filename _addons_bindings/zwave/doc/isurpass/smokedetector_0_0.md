@@ -10,7 +10,9 @@ This describes the Z-Wave device *Smoke Detector*, manufactured by *Shenzhen iSu
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Smoke Detector
 
 | Channel | Channel Id | Category | Item Type |
@@ -19,6 +21,7 @@ The following table summarises the channels available for the Smoke Detector
 | Alarm (smoke) | alarm_smoke | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -29,6 +32,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (smoke)
+
 The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -41,17 +45,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the Smoke Detector.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Smoke Detector supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

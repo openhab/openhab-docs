@@ -10,7 +10,9 @@ This describes the Z-Wave device *SmoothRemote*, manufactured by *INNOVUS* with 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the SmoothRemote
 
 | Channel | Channel Id | Category | Item Type |
@@ -19,6 +21,7 @@ The following table summarises the channels available for the SmoothRemote
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the SmoothRemote.
 Detailed information on each parameter can be found in the sections below.
 
@@ -30,6 +33,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | Network Update Interval | Network Update Interval, time between network updates in 256 seconds. Disabled if 0. |
 
 ### Parameter 0: Button Press Time
+
 Button Press Time, time for presses on a single button to register as seperate and not part of a sequence, measured in 0.01s. 0 is interpreted as a 1.
 Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
 Values in the range 0 to 255 may be set.
@@ -40,6 +44,7 @@ This parameter has the configuration ID ```config_0_1``` and is of type ```INTEG
 
 
 ### Parameter 1: Button Multiple Press Time
+
 Button Multiple Press Time, time for presses on multiple buttons to register as seperate and not part of a sequence, measured in 0.01 s. 0 is interpreted as a 1.
 Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
 Values in the range 0 to 255 may be set.
@@ -50,6 +55,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Button Hold Time
+
 Button Hold Time, time for presses to register as being held down in 0.01s. 0 is interpreted as a 1.
 Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
 Values in the range 0 to 255 may be set.
@@ -60,6 +66,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Network Update Interval
+
 Network Update Interval, time between network updates in 256 seconds. Disabled if 0.
 Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
 Values in the range 0 to 65535 may be set.
@@ -70,10 +77,10 @@ This parameter has the configuration ID ```config_3_2``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The SmoothRemote supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

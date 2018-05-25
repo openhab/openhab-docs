@@ -10,7 +10,9 @@ This describes the Z-Wave device *DZ6HD*, manufactured by *Leviton* with the thi
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the DZ6HD
 
 | Channel | Channel Id | Category | Item Type |
@@ -19,14 +21,17 @@ The following table summarises the channels available for the DZ6HD
 | Scene Number | scene_number |  | Number | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 8 configuration parameters available in the DZ6HD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -42,6 +47,7 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Load Type | Load type |
 
 ### Parameter 1: Fade On Time
+
 Fade on time
 - 0: Instant on
 - 1 to 127: 1-127 seconds
@@ -54,6 +60,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Fade Off Time
+
 Fade off time
 - 0: Instant off
 - 1 to 127: 1-127 seconds
@@ -66,6 +73,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Minimum Light Level
+
 Minimum light level
 
 Values in the range 0 to 100 may be set.
@@ -76,6 +84,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Maximum Light Level
+
 Maximum light level
 
 Values in the range 0 to 100 may be set.
@@ -86,6 +95,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Preset Light Level
+
 Preset light level
 - 0: Last dim level
 - 1 to 100: Level
@@ -97,6 +107,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: LED Dim Level Indicator Timeout
+
 LED dim level indicator timeout
 - 0: LED indicators off
 - 1 to 254: Timeout in seconds
@@ -109,6 +120,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Locator LED Status
+
 Locator LED status
 - 0: LED off
 - 254: Status mode
@@ -121,6 +133,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Load Type
+
 Load type
 - 0: Incandescent
 - 1: LED
@@ -133,11 +146,13 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The DZ6HD supports 1 association group.
 
 ### Group 1: Group 1
+
 Z-Wave Plus Lifeline
 This group supports 5 nodes.
 

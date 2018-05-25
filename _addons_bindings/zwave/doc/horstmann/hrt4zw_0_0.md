@@ -11,9 +11,11 @@ This describes the Z-Wave device *HRT4-ZW*, manufactured by *Horstmann Controls 
 The device is in the category of HVAC, defining Air condition devices, Fans.
 
 # Overview
+
 **Note**: This device is also sold as Secure SRT321
 
 ## Channels
+
 The following table summarises the channels available for the HRT4-ZW
 
 | Channel | Channel Id | Category | Item Type |
@@ -24,12 +26,15 @@ The following table summarises the channels available for the HRT4-ZW
 | Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -53,11 +58,13 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 3 configuration parameters available in the HRT4-ZW.
 Detailed information on each parameter can be found in the sections below.
 
@@ -68,6 +75,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | Delta T | Defines the temperature steps of the heating control. Steps are 0.1 K |
 
 ### Parameter 1: Enable Temperature Sensor
+
 Controls the use of the temperature sensor on the device
 
 The following option values may be configured -:
@@ -83,6 +91,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Temperature Scale
+
 Controls the temperature sensor scale
 
 The following option values may be configured -:
@@ -98,6 +107,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Delta T
+
 Defines the temperature steps of the heating control. Steps are 0.1 K
 
 Values in the range 0 to 255 may be set.
@@ -108,27 +118,33 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The HRT4-ZW supports 5 association groups.
 
 ### Group 1: Thermostat Mode Set
 
+
 This group supports 4 nodes.
 
 ### Group 2: Binary Switch Set
+
 
 This group supports 4 nodes.
 
 ### Group 3: Unsolicited Battery Level Reports
 
+
 This group supports 4 nodes.
 
 ### Group 4: Thermostat Set Point Reports
 
+
 This group supports 4 nodes.
 
 ### Group 5: Unsolicited Sensor Multilevel Reports
+
 
 This group supports 4 nodes.
 

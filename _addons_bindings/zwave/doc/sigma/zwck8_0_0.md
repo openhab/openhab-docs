@@ -11,20 +11,25 @@ This describes the Z-Wave device *K8*, manufactured by *Sigma Designs (Former Ze
 The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 # Overview
+
 Note that this device incorrectly reports the manufacturer ID. This may be due to the device being uncertified and therefore this device may be removed from the database at some stage.
 
 ## Inclusion Information
+
 1. Set the Master (Primary) controller into network Inclusion Mode.
 2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
 
 ## Exclusion Information
+
 1. Set the Master (Primary) controller into network Exclusion Mode.
 2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
 
 ## Wakeup Information
+
 Press and hold ca. 2 sec. both I and O keys on the top row (Group 2 keys). The LED indicator should turn ON if the battery has enough power and the Wall Controller works well.
 
 ## Channels
+
 The following table summarises the channels available for the K8
 
 | Channel | Channel Id | Category | Item Type |
@@ -32,6 +37,7 @@ The following table summarises the channels available for the K8
 | Binary Sensor | sensor_binary | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -44,34 +50,37 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the K8.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The K8 supports 5 association groups.
 
 ### Group 1: Lifeline
 
+
 This group supports 1 nodes.
 
 ### Group 2: Button pair 1
+
 
 This group supports 20 nodes.
 
 ### Group 3: Button pair 2
 
+
 This group supports 20 nodes.
 
 ### Group 4: Button pair 3
 
+
 This group supports 20 nodes.
 
 ### Group 5: Button pair 4
+
 
 This group supports 20 nodes.
 

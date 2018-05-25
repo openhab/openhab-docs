@@ -11,6 +11,7 @@ This describes the Z-Wave device *RS LED D2 Z-Wave*, manufactured by *Steinel* w
 The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
 
 # Overview
+
 The sensor-switched indoor light contains an active motion detector.   
 The integrated HF sensor emits high-frequency electromagnetic waves (5.8 GHz) and receives their echo.   
 The change in echo caused by the slightest movement within the detection zone of the light is detected by the sensor.  
@@ -34,6 +35,7 @@ This product can be operated in any Z-Wave network with other Z-Wave certified d
 All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
 
 ## Inclusion Information
+
 These instructions for including and excluding Steinel Z-Wave products have been written for the Smart Friends system.  
 They may not always apply to other Z-Wave products.   
 You will find further details in the description of your Z-Wave controller.
@@ -45,9 +47,11 @@ Following exclusion, all configuration parameters (time, sensitivity etc.) remai
 SET = Z-Wave button: Button for inclusion and exclusion as well as for returning the device to the factory setting.
 
 ## Exclusion Information
+
 **To start the light's inclusion or exclusion mode, briefly press button SET.**
 
 ## Channels
+
 The following table summarises the channels available for the RS LED D2 Z-Wave
 
 | Channel | Channel Id | Category | Item Type |
@@ -63,12 +67,15 @@ The following table summarises the channels available for the RS LED D2 Z-Wave
 | Alarm (burglar) 2 | alarm_burglar2 | Door | Switch | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -79,9 +86,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (system)
+
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -92,6 +101,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -102,12 +112,15 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
+
 The ```scene_number1``` channel supports the ```Number``` item.
 
 ### Alarm (burglar) 2
+
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -120,6 +133,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 14 configuration parameters available in the RS LED D2 Z-Wave.
 Detailed information on each parameter can be found in the sections below.
 
@@ -141,6 +155,7 @@ Detailed information on each parameter can be found in the sections below.
 | 16 | Motion Off behaviour (timeout) | MOTION\_ DISABLE |
 
 ### Parameter 1: Time [s]
+
 Duration of light after motion detection.
 
 Values in the range 5 to 900 may be set.
@@ -151,6 +166,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 
 ### Parameter 2: Light threshold [lx]
+
 LIGHT
 0 – run Learn ambient light sequence.  
 2000 – is used as daylight (always night mode).
@@ -164,6 +180,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 
 ### Parameter 4: Motion Radar Range [cm]
+
 RANGE
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as default value and any potentiometer movement rewrites the current setting.
 Values in the range 100 to 500 may be set.
@@ -174,6 +191,7 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 
 ### Parameter 5: Motion Radar Sensitivity [%]
+
 SENSITIVITY
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 100 may be set.
@@ -184,6 +202,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Brightness measuring interval [min]
+
 (only SLAMP)
 Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.
 Values in the range 5 to 120 may be set.
@@ -194,6 +213,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Use external Ambient Light value
+
 GLOBAL\_LIGHT
 When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically.
 
@@ -206,6 +226,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Disable local control
+
 SLAVE\_MODE
 **"Stupid" mode (bit 2 = 1):**  
 \- has higher priority then slave mode  
@@ -258,6 +279,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Off behaviour (timeout)
+
 OFF\_BEHAVIOUR
 Behaviour after BASIC OFF (and similar commands).  
 If a transition (even with zero change) with a non-default duration is to be pro-  
@@ -286,6 +308,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: On behaviour (timeout)
+
 ON\_BEHAVIOUR
 Behaviour after BASIC ON (and similar commands).  
 If a transition (even with zero change) with a non-default duration is to be processed, the transition cannot be interrupted by any motion event in any case.
@@ -311,6 +334,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 
 ### Parameter 12: On behaviour time over (timeout)
+
 ON\_TIME\_OVER
 Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or  
 OFF\_ON\_BEHAVIOUR (0-209) to prevent staying ON forever when there is  
@@ -333,6 +357,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 
 ### Parameter 13: Sequence On-Off behaviour (timeout)
+
 ON\_OFF\_ BEHAVIOUR
 Behaviour after a rapid sequence of BASIC ON and BASIC OFF commands.  
 The intention is to use a much longer timeout value than the time after a  
@@ -347,6 +372,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 
 ### Parameter 14: Sequence Off-On behaviour (timeout)
+
 OFF\_ON\_ BEHAVIOUR
 Behaviour after a rapid sequence of BASIC OFF and BASIC ON commands.  
 The intention is to use a much longer timeout value than the time after a sin-  
@@ -361,6 +387,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 15: Sequence timing
+
 SEQUENCE\_TIME
 Time in \[100 milliseconds\] of maximum delay between BASIC ON and BASIC  
 OFF (and vice versa) to consider this as a sequence. It is typically 1 second,  
@@ -374,6 +401,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 
 ### Parameter 16: Motion Off behaviour (timeout)
+
 MOTION\_ DISABLE
 Motion disable timeout after BASIC SET to motion endpoint when the inter-  
 nal motion sensor is not used for evaluating the behaviour of the lamp (SLAMP)  
@@ -402,27 +430,33 @@ This parameter has the configuration ID ```config_16_2``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The RS LED D2 Z-Wave supports 5 association groups.
 
 ### Group 0: Root
+
 Root
 This group supports 1 nodes.
 
 ### Group 1: Lifeline
+
 Lifeline
 This group supports 1 nodes.
 
 ### Group 2: Control: Key01
+
 On/Off control (Never ever add controller, only third-party devices!)
 This group supports 16 nodes.
 
 ### Group 3: Motion Begin/End (PIR/radar/iHF)
+
 Notification: Motion
 This group supports 16 nodes.
 
 ### Group 4: Ambient light
+
 Sensor: Luminescence
 This group supports 15 nodes.
 

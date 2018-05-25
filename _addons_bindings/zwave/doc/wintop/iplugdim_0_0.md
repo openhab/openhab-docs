@@ -9,6 +9,7 @@ title: iPlugDim - ZWave
 This describes the Z-Wave device *iPlugDim*, manufactured by *Wintop* with the thing type UID of ```wintop_iplugdim_00_000```.
 
 # Overview
+
 - The iPlugDim can be remotely controlled.
 - The iPlugDim can be controlled by the push button on the front of the device.
 - The iPlugDim ’s indicator light will indicate the status of the switch (ON or OFF).
@@ -27,6 +28,7 @@ The indicator gives various statuses of the device as follows:
 5. Learn mode failed: Indicator light blinks 8 times fast.
 
 ## Inclusion Information
+
 1. Make sure your Z‐Wave controller is in the right operation mode (include or exclude).
 2. Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process
   
@@ -34,6 +36,7 @@ The indicator gives various statuses of the device as follows:
 3. (The product will start NWI automatically after unsuccessful normal inclusion)
 
 ## Channels
+
 The following table summarises the channels available for the iPlugDim
 
 | Channel | Channel Id | Category | Item Type |
@@ -41,22 +44,20 @@ The following table summarises the channels available for the iPlugDim
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the iPlugDim.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The iPlugDim supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

@@ -12,7 +12,9 @@ The device is in the category of HVAC, defining Air condition devices, Fans.
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the CT100 Plus
 
 | Channel | Channel Id | Category | Item Type |
@@ -44,6 +46,7 @@ The following table summarises the channels available for the CT100 Plus
 | Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -54,12 +57,15 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (relative humidity)
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -83,6 +89,7 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Operating State
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -97,33 +104,43 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
+
 The ```thermostat_fanmode``` channel supports the `````` item.
 
 ### Thermostat fan state
+
 The ```thermostat_fanstate``` channel supports the `````` item.
 
 ### Clock Time Offset
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 1
+
 The ```sensor_relhumidity1``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 1
+
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode 1
+
 The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -147,6 +164,7 @@ The following state translation is provided for this channel to the ```Number```
 | 31 | Manufacturer Specific |
 
 ### Operating State 1
+
 The ```thermostat_state1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -161,35 +179,45 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating) 1
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling) 1
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air) 1
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace) 1
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode 1
+
 The ```thermostat_fanmode1``` channel supports the `````` item.
 
 ### Thermostat fan state 1
+
 The ```thermostat_fanstate1``` channel supports the `````` item.
 
 ### Clock Time Offset 1
+
 The ```time_offset1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 2
+
 The ```sensor_relhumidity2``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 2
+
 The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 15 configuration parameters available in the CT100 Plus.
 Detailed information on each parameter can be found in the sections below.
 
@@ -212,6 +240,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | Multicast | Enable or disables Multicast |
 
 ### Parameter 1: Temperature Reporting Threshold
+
 Reporting threshold for changes in the ambient temperature
 This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.
 The following option values may be configured -:
@@ -230,6 +259,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: HVAC Settings
+
 Configured HVAC settings
 Byte 1 = HVAC Setup: Normal (0x01) or Heat Pump (0x02)  
 Byte 2 = Aux Setup (Gas (0x01) or Electric (0x02)) & Number of Auxiliary Stages (Heat Pump)/Number of Heat Stages (Normal)  
@@ -244,6 +274,7 @@ This is a read only parameter.
 
 
 ### Parameter 3: Utility Lock Enable/Disable
+
 Prevents setpoint changes at thermostat
 If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock. This will prevent changes to the setpoint at the thermostat screen.
 The following option values may be configured -:
@@ -260,6 +291,7 @@ This is a write only parameter.
 
 
 ### Parameter 4: Power Status
+
 C-Wire / Battery Status
 If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries.
 Values in the range 0 to 0 may be set.
@@ -271,6 +303,7 @@ This is a read only parameter.
 
 
 ### Parameter 5: Humidity Reporting Threshold
+
 Reporting threshold for changes in the relative humidity
 This value determines the reporting threshold when association reporting is enabled. Unsupported values will be ignored.
 The following option values may be configured -:
@@ -288,6 +321,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Auxiliary/Emergency
+
 Enables or disables auxiliary / emergency heating
 If set to 0, auxiliary / emergency heat is disabled, all other values, 1-255, will enable the auxiliary / emergency heat. This can only be enabled when the thermostat is set to Heat Pump mode.
 The following option values may be configured -:
@@ -303,6 +337,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 7: Thermostat Swing Temperature
+
 Variance allowed from setpoint to engage HVAC
 The thermostat swing temperature is in units of 0.5 degrees Fahrenheit.
 The following option values may be configured -:
@@ -324,6 +359,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Thermostat Diff Temperature
+
 Configures additional stages
 Sets the differential temperature for multi-stage HVAC systems. The differential temperature delta defines when the thermostat will turn on additional stages. This command configures both the heat and cool differential temperatures.
 The following option values may be configured -:
@@ -340,6 +376,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Thermostat Recovery Mode
+
 Fast or Economy recovery mode
 The Thermostat Recovery Mode can be either fast (1) or economy (2).
 The following option values may be configured -:
@@ -355,6 +392,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Temperature Filter Upper Bound
+
 Upper/Lower bounds for thermostat temperature reporting
 The thermostat will report ambient temperature changes for temperature values greater than the upper bound. This field must be between 0F and 124F. By default, this value is 0F (report all temperature changes).
 Values in the range 0 to 124 may be set.
@@ -365,6 +403,7 @@ This parameter has the configuration ID ```config_10_4_000000FF``` and is of typ
 
 
 ### Parameter 10: Temperature Filter Lower Bound Unit
+
 Upper/Lower bounds for thermostat temperature reporting
 Specifies unit for lower bound parameter. If set to 1, lower bound is Celsius. If set to 9, lower bound is Fahrenheit.
 The following option values may be configured -:
@@ -380,6 +419,7 @@ This parameter has the configuration ID ```config_10_4_0000F000``` and is of typ
 
 
 ### Parameter 10: Temperature Filter Upper Bound Unit
+
 Upper/Lower bounds for thermostat temperature reporting
 Specifies unit for upper bound parameter. If set to 1, upper bound is Celsius. If set to 9, upper bound is Fahrenheit.
 The following option values may be configured -:
@@ -395,6 +435,7 @@ This parameter has the configuration ID ```config_10_4_0000FF00``` and is of typ
 
 
 ### Parameter 10: Temperature Filter Lower Bound
+
 Upper/Lower bounds for thermostat temperature reporting
 The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).
 Values in the range 0 to 124 may be set.
@@ -405,6 +446,7 @@ This parameter has the configuration ID ```config_10_4_00FF0000``` and is of typ
 
 
 ### Parameter 11: Simple UI Mode
+
 Simple mode enable/disable
 If the value is set to 0 then Normal Mode is enabled. If the value is set to 1 then Simple Mode is enabled.
 The following option values may be configured -:
@@ -420,6 +462,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Multicast
+
 Enable or disables Multicast
 If set to 0, Multicast is disabled. If set to 1, Multicast is enabled.
 The following option values may be configured -:
@@ -435,11 +478,13 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The CT100 Plus supports 1 association group.
 
 ### Group 1: Group 1
+
 Send report about Thermostat Mode, Thermostat Operating State, Fan Mode, Fan State, Setpoint, Sensor Multilevel
 This group supports 2 nodes.
 

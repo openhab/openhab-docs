@@ -11,6 +11,7 @@ This describes the Z-Wave device *HKZW_SO03*, manufactured by *Hank* with the th
 The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
 
 # Overview
+
 WELL DONE!  
  You have picked the finest solution for your smart home, congratulations!  
  Now it's time to enjoy these great features of your new Smart Plug:  
@@ -52,6 +53,7 @@ Z-WAVE COMMAND CLASSES
  COMMAND\_CLASS\_ZWAVEPLUS\_INFO
 
 ## Inclusion Information
+
 Z-WAVE INCLUSION
 
 Auto Z-Wave Inclusion  
@@ -77,6 +79,7 @@ Secure Z-Wave Inclusion
  6. A new secure on / off device should be recognized by your Z-Wave controller
 
 ## Exclusion Information
+
 Z-WAVE EXCLUSION
 
 1\. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
@@ -89,6 +92,7 @@ Z-WAVE EXCLUSION
 Please repeat the process following all steps carefully if the first attempt is unsuccessful
 
 ## Channels
+
 The following table summarises the channels available for the HKZW_SO03
 
 | Channel | Channel Id | Category | Item Type |
@@ -101,26 +105,33 @@ The following table summarises the channels available for the HKZW_SO03
 | Electric meter (amps) | meter_current | Energy | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 4 configuration parameters available in the HKZW_SO03.
 Detailed information on each parameter can be found in the sections below.
 
@@ -132,6 +143,7 @@ Detailed information on each parameter can be found in the sections below.
 | 27 | Led Indicator Control | Led Indicator Control |
 
 ### Parameter 20: Overload Protection
+
 Overload Protection
 16.5A for over 5 seconds when this setting is enabled. We DO NOT recommend changing this parameter’s value as it may result in device damage and malfunction.
 
@@ -146,6 +158,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 
 
 ### Parameter 21: On/Off Status Recovery After Power Failure
+
 On/Off Status Recovery After Power Failure
 Parameter 21: Choose the recovery state for your Smart Plug if power outage occurs.
 
@@ -166,6 +179,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 
 
 ### Parameter 24: On/Off Status Change Notifications
+
 On/Off Status Change Notifications
 Parameter 24: Your Smart Plug will automatically send a notification to the controller and
 
@@ -188,6 +202,7 @@ This parameter has the configuration ID ```config_24_1``` and is of type ```INTE
 
 
 ### Parameter 27: Led Indicator Control
+
 Led Indicator Control
 Parameter 27: You can choose how the LED indicator displays power consumption on thesmart plug
 
@@ -208,10 +223,10 @@ This parameter has the configuration ID ```config_27_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The HKZW_SO03 supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

@@ -10,7 +10,9 @@ This describes the Z-Wave device *Door Sensor IN*, manufactured by *Shenzhen Neo
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Door Sensor IN
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,6 +22,7 @@ The following table summarises the channels available for the Door Sensor IN
 | Alarm (general) | alarm_general | Door | Switch | 
 
 ### Door Sensor
+
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
@@ -30,6 +33,7 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Alarm (access)
+
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -40,6 +44,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -52,17 +57,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the Door Sensor IN.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Door Sensor IN supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

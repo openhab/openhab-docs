@@ -10,6 +10,7 @@ This describes the Z-Wave device *ZMNHCD*, manufactured by *Goap* with the thing
 This version of the device is limited to firmware versions below 4.0
 
 # Overview
+
 ZMNHCD version S1 for version up to 4.0
 
 To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:
@@ -24,6 +25,7 @@ To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:
 8. Be patient until the binding until processed all your nodes again
 
 ## Channels
+
 The following table summarises the channels available for the ZMNHCD
 
 | Channel | Channel Id | Category | Item Type |
@@ -39,35 +41,45 @@ The following table summarises the channels available for the ZMNHCD
 | Blinds Control 2 | blinds_control2 | Blinds | Rollershutter | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control 1
+
 The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Switch 2
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control 2
+
 The ```blinds_control2``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 14 configuration parameters available in the ZMNHCD.
 Detailed information on each parameter can be found in the sections below.
 
@@ -89,6 +101,7 @@ Detailed information on each parameter can be found in the sections below.
 | 120 | Digital temperature sensor reporting | Threshold for sending temperature change reports |
 
 ### Parameter 10: ALL ON/ALL OFF
+
 Responds to commands ALL ON / ALL OFF from Main Controller
 Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
 
@@ -114,6 +127,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 40: Power reporting in watts on power change
+
 Power consumption change threshold for sending updates
 Power report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
@@ -132,6 +146,7 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 
 ### Parameter 42: Power reporting in Watts by time interval
+
 Power reporting in Watts by time interval for Q1 or Q2
 Set value means time interval (0 – 32767) in seconds, when power report is send. Available configuration parameters (data type is 2 Byte DEC):
 
@@ -146,6 +161,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 
 ### Parameter 71: Operating modes
+
 Operation Mode (Shutter or Venetian)
 This parameter defines selection between two available operating modes. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -165,6 +181,7 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 
 
 ### Parameter 72: Slats tilting full turn time
+
 Slat full turn time in tenths of a second.
 This parameter defines the time necessary for slats to make full turn (180 degrees). Available configuration parameters (data type is 2 Byte DEC):
 
@@ -181,6 +198,7 @@ This parameter has the configuration ID ```config_72_2``` and is of type ```INTE
 
 
 ### Parameter 73: Slats position
+
 Slats position after up/down movement.
 This parameter defines slats position after up/down movement through Z-wave or push-buttons. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -201,6 +219,7 @@ This parameter has the configuration ID ```config_73_1``` and is of type ```INTE
 
 
 ### Parameter 74: Motor moving up/down time
+
 Shutter motor moving time of complete opening or complete closing
 This parameter defines Shutter motor moving time of complete opening or complete closing. Available configuration parameters (data type is 2 Byte DEC):
 
@@ -223,6 +242,7 @@ This parameter has the configuration ID ```config_74_2``` and is of type ```INTE
 
 
 ### Parameter 76: Motor operation detection
+
 Power threshold to be interpreted when motor reach the limit switch
 Power threshold to be interpreted when motor reach the limit switch. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -238,6 +258,7 @@ This parameter has the configuration ID ```config_76_1``` and is of type ```INTE
 
 
 ### Parameter 78: Forced Shutter calibration
+
 Enters calibration mode if set to 1
 By modifying the parameters setting from 0 to 1 a Shutter DC module enters the calibration mode. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -256,6 +277,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 
 ### Parameter 80: Reporting to Controller
+
 Defines if reporting regarding power level, etc is reported to controller.
 This parameter defines if reporting regarding power level, multilevel, etc,…is reported to controller or not. Available configuration parameters: default value 1
 
@@ -274,6 +296,7 @@ This parameter has the configuration ID ```config_80_1``` and is of type ```INTE
 
 
 ### Parameter 85: Power consumption max delay time
+
 Time delay for detecting motor errors
 This parameter defines the max time before motor power consumption is read after one of the relays is switched ON. If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, motor in end position,...) the relay will switch OFF. Time is defined by entering it manually. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -288,6 +311,7 @@ This parameter has the configuration ID ```config_85_1``` and is of type ```INTE
 
 
 ### Parameter 90: Relay delay time
+
 Defines the minimum time delay between next motor movement
 This parameter defines the minimum time delay between next motor movement (minimum time between switching motor off and on again). Available configuration parameters (data type is 1 Byte DEC):
 
@@ -301,6 +325,7 @@ This parameter has the configuration ID ```config_90_1``` and is of type ```INTE
 
 
 ### Parameter 110: Temperature sensor offset settings
+
 Adds or removes an offset from the measured temperature.
 Set value is added or subtracted to actual measured value by sensor. Available configuration parameters (data type is 2 Byte DEC):
 
@@ -316,6 +341,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 
 ### Parameter 120: Digital temperature sensor reporting
+
 Threshold for sending temperature change reports
 If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters (data type is 1 Byte DEC):
 
@@ -330,27 +356,33 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The ZMNHCD supports 5 association groups.
 
 ### Group 1: Controller Updates
 
+
 This group supports 1 nodes.
 
 ### Group 2: On/Off Triggered by I1
+
 
 This group supports 16 nodes.
 
 ### Group 3: On/Off Triggered by I2
 
+
 This group supports 16 nodes.
 
 ### Group 4: Multi-level Triggerd by Shutter Position
 
+
 This group supports 16 nodes.
 
 ### Group 5: Multilevel Trigger by Slat Position
+
 
 This group supports 16 nodes.
 

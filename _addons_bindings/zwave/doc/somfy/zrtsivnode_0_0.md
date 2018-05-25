@@ -10,7 +10,9 @@ This describes the Z-Wave device *ZRTSI-VNODE*, manufactured by *Somfy* with the
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the ZRTSI-VNODE
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,28 +22,28 @@ The following table summarises the channels available for the ZRTSI-VNODE
 | Scene Number | scene_number |  | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Scene Number
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the ZRTSI-VNODE.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The ZRTSI-VNODE supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

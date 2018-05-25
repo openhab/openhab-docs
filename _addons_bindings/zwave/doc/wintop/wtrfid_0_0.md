@@ -10,7 +10,9 @@ This describes the Z-Wave device *WTRFID*, manufactured by *Wintop* with the thi
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the WTRFID
 
 | Channel | Channel Id | Category | Item Type |
@@ -20,9 +22,11 @@ The following table summarises the channels available for the WTRFID
 | Alarm (access) | notification_access_control |  | Number | 
 
 ### Switch
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -33,6 +37,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (access)
+
 The ```notification_access_control``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -80,6 +85,7 @@ The following state translation is provided for this channel to the ```Number```
 
 
 ## Device Configuration
+
 The following table provides a summary of the 5 configuration parameters available in the WTRFID.
 Detailed information on each parameter can be found in the sections below.
 
@@ -92,6 +98,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Mode | Configure the operating mode |
 
 ### Parameter 1: Set to Default
+
 Set all configuration values to default values (factory settings).
 
 Values in the range 1 to 255 may be set.
@@ -102,6 +109,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 2: Audible feedback config
+
 To configure the time the beep is automatically turned off in seconds.
 The Mini Keypad RFiD/Z-Wave supports 3 types of notification sound configurations:
 
@@ -116,6 +124,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 
 ### Parameter 3: Feedback timeout
+
 Feedback timeout
 To configure the timeout to wait for a WAKEUP\_NO\_MORE\_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other.
 
@@ -128,6 +137,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 
 ### Parameter 4: Feedback beeps per Second
+
 To configure the number of beeps per second. Every beep is fixed about 10ms.
 
 Values in the range 1 to 255 may be set.
@@ -138,6 +148,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 
 ### Parameter 5: Mode
+
 Configure the operating mode
 To configure the operating mode. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.
 
@@ -150,11 +161,13 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The WTRFID supports 1 association group.
 
 ### Group 1: Group1
+
 
 This group supports 5 nodes.
 

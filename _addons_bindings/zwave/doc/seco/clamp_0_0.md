@@ -10,7 +10,9 @@ This describes the Z-Wave device *Zwave Clamp*, manufactured by *Seco* with the 
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the Zwave Clamp
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,34 +24,36 @@ The following table summarises the channels available for the Zwave Clamp
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Electric meter (amps)
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Clock Time Offset
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
-The following table provides a summary of the 0 configuration parameter available in the Zwave Clamp.
-Detailed information on each parameter can be found in the sections below.
 
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configugured.
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Zwave Clamp supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

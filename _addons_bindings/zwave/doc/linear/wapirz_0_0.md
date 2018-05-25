@@ -12,7 +12,9 @@ The device is in the category of Motion Detector, defining Motion sensors/detect
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the WAPIRZ-1
 
 | Channel | Channel Id | Category | Item Type |
@@ -22,6 +24,7 @@ The following table summarises the channels available for the WAPIRZ-1
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 
 ### Binary Sensor
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,9 +35,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (temperature)
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -47,7 +52,8 @@ The following state translation is provided for this channel to the ```Switch```
 
 
 ## Device Configuration
-The following table provides a summary of the 1 configuration parameter available in the WAPIRZ-1.
+
+The following table provides a summary of the 1 configuration parameters available in the WAPIRZ-1.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -55,6 +61,7 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Re-trigger Wait Time | Re-trigger Wait Time |
 
 ### Parameter 1: Re-trigger Wait Time
+
 Re-trigger Wait Time
 By default, to conserve battery life, after the WAPIRZ-1 detects motion it cannot be re-triggered by motion again for 3 minutes. Each time motion is detected (even during this wait time) the 3 minute timer starts over.
 Values in the range 1 to 255 may be set.
@@ -65,11 +72,13 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The WAPIRZ-1 supports 1 association group.
 
 ### Group 1: Group 1
+
 
 This group supports 5 nodes.
 

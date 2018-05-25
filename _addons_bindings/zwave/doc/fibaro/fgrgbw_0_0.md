@@ -10,7 +10,9 @@ This describes the Z-Wave device *FGRGBW*, manufactured by *Fibargroup* with the
 
 # Overview
 
+
 ## Channels
+
 The following table summarises the channels available for the FGRGBW
 
 | Channel | Channel Id | Category | Item Type |
@@ -27,38 +29,49 @@ The following table summarises the channels available for the FGRGBW
 | White | switch_dimmer5 | DimmableLight | Dimmer | 
 
 ### Dimmer
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (power)
+
 The ```sensor_power``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Color
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Start animation
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Red
+
 The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Green
+
 The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Blue
+
 The ```switch_dimmer4``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### White
+
 The ```switch_dimmer5``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
+
 The following table provides a summary of the 20 configuration parameters available in the FGRGBW.
 Detailed information on each parameter can be found in the sections below.
 
@@ -109,6 +122,7 @@ Detailed information on each parameter can be found in the sections below.
 | 73 | Triple click action | Triple click action. Default setting: 0 |
 
 ### Parameter 1: ALL ON / ALL OFF function activation
+
 Activation/deactivation of ALL ON/ALL OFF functions.
 By default, ALL ON active ALL OFF active.
 The following option values may be configured -:
@@ -126,6 +140,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 
 ### Parameter 6: Associations command class choice
+
 Associations command class choice. By default, Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP. Default setting: Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP
 
 The following option values may be configured -:
@@ -144,6 +159,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 
 ### Parameter 8: Outputs state change mode
+
 MODE1, Example: change saturation level from 0% to 99% Parameter 9: Step = 5 Parameter 10: Time between steps: 10ms. Default setting: MODE1
 
 The following option values may be configured -:
@@ -159,6 +175,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 
 ### Parameter 9: Step value (relevant for MODE1)
+
 Step value (relevant for MODE1).  
  Default setting: 1  
  Available settings: 1 - 255.
@@ -171,6 +188,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 
 ### Parameter 10: Time between steps (relevant for MODE1)
+
 Time between steps (relevant for MODE1).  
  Default setting: 10 ms  
  0 - immediate change of state  
@@ -184,6 +202,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 
 ### Parameter 11: Time for changing from start to end value
+
 Step value (relevant for MODE1).  
  Default setting: 67 (3s)  
  0: immediate change  
@@ -199,6 +218,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 
 ### Parameter 12: Maximum Brightening level
+
 Maximum Brightening level.  
  Default setting: 255  
  Available settings: 3 - 255.
@@ -211,6 +231,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 
 ### Parameter 13: Minimum dim level
+
 Minimum dim level. Default setting: 2 Available settings: 3 - 255.
 
 Values in the range 2 to 255 may be set.
@@ -221,6 +242,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 
 ### Parameter 14: Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only
+
 Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
  Default setting: 4369  
  Controlled device: RGBW, toggle switch inputs (NORMAL MODE).
@@ -233,6 +255,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 
 ### Parameter 16: Remember device status after power failure
+
 Define how will the Plug react after the power supply is back on. Default setting: 1 Available settings: 0 - Device does not memorize its state aft
 
 The following option values may be configured -:
@@ -248,6 +271,7 @@ This parameter has the configuration ID ```config_16_1``` and is of type ```INTE
 
 
 ### Parameter 30: Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.)
+
 Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.) Default setting: INACTIVE
 
 The following option values may be configured -:
@@ -265,6 +289,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 
 ### Parameter 38: Alarm sequence program
+
 Alarm sequence program.  
  Default setting: 10  
  1-10 specifies alarm program number.
@@ -277,6 +302,7 @@ This parameter has the configuration ID ```config_38_1``` and is of type ```INTE
 
 
 ### Parameter 39: Active PROGRAM alarm time
+
 IActive PROGRAM alarm time.  
  Default setting: 600s  
  1-65534 specifies alarm time in seconds.
@@ -289,6 +315,7 @@ This parameter has the configuration ID ```config_39_2``` and is of type ```INTE
 
 
 ### Parameter 42: Command class reporting Outputs status change
+
 Command class reporting Outputs status change. Default setting: 0
 
 The following option values may be configured -:
@@ -305,6 +332,7 @@ This parameter has the configuration ID ```config_42_1``` and is of type ```INTE
 
 
 ### Parameter 43: Reporting 0-10v analog inputs change threshold
+
 Parameter defines a value by which input voltage must change in order to be reported to the main controller.  
  New value is calculated based on last reported value.  
  Default setting: 5
@@ -317,6 +345,7 @@ This parameter has the configuration ID ```config_43_1``` and is of type ```INTE
 
 
 ### Parameter 44: Power load reporting frequency
+
 Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.  
  Default setting: 3 600 (s)
 
@@ -328,6 +357,7 @@ This parameter has the configuration ID ```config_44_2``` and is of type ```INTE
 
 
 ### Parameter 45: Reporting Changes in energy consumed by controlled devices
+
 Defines the required change in power to generate an unsolicited power report.  
  New, reported energy value is calculated based on last reported value.  
  Default setting: 10 (0,1 kWh).
@@ -340,6 +370,7 @@ This parameter has the configuration ID ```config_45_1``` and is of type ```INTE
 
 
 ### Parameter 71: Response to BRIGHTNESS set to 0%
+
 Response to BRIGHTNESS set to 0%. Default setting: 1
 
 The following option values may be configured -:
@@ -355,6 +386,7 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 
 
 ### Parameter 72: Starting animation program
+
 Starting animation programm. Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1
 
 Values in the range 1 to 10 may be set.
@@ -365,6 +397,7 @@ This parameter has the configuration ID ```config_72_1``` and is of type ```INTE
 
 
 ### Parameter 73: Triple click action
+
 Triple click action. Default setting: 0
 
 The following option values may be configured -:
@@ -380,27 +413,33 @@ This parameter has the configuration ID ```config_73_1``` and is of type ```INTE
 
 
 ## Association Groups
+
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
 The FGRGBW supports 5 association groups.
 
 ### Group 1: Assigned to IN1 input
 
+
 This group supports 5 nodes.
 
 ### Group 2: Assigned to IN2 input
+
 
 This group supports 5 nodes.
 
 ### Group 3: Assigned to IN3 input
 
+
 This group supports 5 nodes.
 
 ### Group 4: Assigned to IN4 input
 
+
 This group supports 5 nodes.
 
 ### Group 5: Reports device status
+
 
 This group supports 1 nodes.
 
