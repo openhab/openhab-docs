@@ -46,19 +46,19 @@ and the files' configuration data will be used again.
 ## Versatility and a recommendation
 
 openHAB provides different user interfaces to modify settings, manage your things and items, build rules and access the sitemap results.
-Things evolved over time, habmin provides a set of features to now overlap with PaperUI (which came later). They are all supposed to 
-work, but every interface still has it's own strong points and some of the more advanced settings might just work in one or the other.
-At large, you have the full freedom of choice. We know this can be confusing at times, particularly for new users.
-So here's a recommendation to avoid some future frustration
+habmin provides a set of features to now overlap with PaperUI (which came later). Every interface still has it's own strong points.
+They all are supposed to work, it's just that some of the more advanced settings might work better in one or the other.
+You have the full freedom of choice. On the other hand, we know this can be very confusing at times, particularly for new openHAB users. 
+To help starters in narrowing down choices, here's some guidance that might also help to avoid some future pitfalls:
 
 * use PaperUI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to
   assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
 * use PaperUI to manage configuration of each and every openHAB 2 addon and binding
 * use file configuration to manage configuration of openHAB 1 addons and bindings 
-* use PaperUI to manage ZWave things, but use files to manage ZWave items.
+* use PaperUI to manage ZWave things, but use configuration files to manage ZWave items.
   There's a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done
   using a text editor (e.g. search-and-replace names and parameters).
-  _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration isn't
+    _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration isn't
   changing much over time. On the other hand, you will keep changing _items_ rather often. If you're new to openHAB, you will e.g. keep
   changing all of your item names as you keep learning what's a naming scheme you like best to work with in your rules.
   And once you're a pro, you will want to keep using files anyway.  
