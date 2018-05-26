@@ -83,18 +83,20 @@ Please follow the instructions in the installation article matching your platfor
 
 ## Additional Steps
 
-After you got openHAB 2 set up and running, there are a few additional setup steps you should consider:
+After you got openHAB 2 set up and running, there are a few additional setup steps you should consider.
+If you chose to install openHABian, best idea is to simply browse the [menu options to install additional tools]({{base}}/installation/openhabian.md#optional-components).
 
--   Configure a network share on your openHAB host device and mount it locally: [Linux Samba Share](linux.html#network-sharing), Windows file sharing, ...
+Either way, consider to
+-   Configure a network share on your openHAB host device and mount it to your local box: use [Linux Samba Share](linux.html#network-sharing) to share 
+-   Install an [editor](editor.html) such as VS code extensions on your local machine to manage your configuration files on the openHAB host.
+-   Setup a [backup concept] such as [this one](https://github.com/openhab/openhabian/blob/master/docs/openhabian-amanda.md) from openHABian
 
--   Install the [Eclipse SmartHome Designer](designer.html) on your local machine, to manage your (remote) configuration files.
-    The designer comes with built-in support for the openHAB syntax and elements.
 
 ## Getting started
 
 With the openHAB 2 distribution up and running, you should now continue with
 the [Beginner Tutorial]({{base}}/tutorials/beginner)
-or by working on your own configuration.
+or by creating your own configuration. Check out the openHAB demo setup files as starter templates.
 
 ## Help
 
