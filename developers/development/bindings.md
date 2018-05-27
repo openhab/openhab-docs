@@ -60,7 +60,7 @@ To compile a new openHAB binding without errors, you have to perform the followi
 ## Setup and Run the Binding
 
 To setup the binding you need to configure at least one *Thing* and link an *Item* to it.
-In your workspace in `demo-resources/src/main/resources/things`, you can define and configure *Things* in file with a `*.things` extensions.
+In your workspace in `distro-resources/src/main/resources/things`, you can define and configure *Things* in files with a `*.things` extension.
 The following file defines a thing for the Yahoo Weather binding:
 
 ```
