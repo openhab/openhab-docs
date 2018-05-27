@@ -5,6 +5,7 @@ title: innogy SmartHome - Bindings
 type: binding
 description: "The binding integrates the [innogy SmartHome](http://innogy.com/smarthome) system into openHAB."
 since: 2x
+logo: images/addons/innogysmarthome.png
 install: auto
 ---
 

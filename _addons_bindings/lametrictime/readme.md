@@ -5,6 +5,7 @@ title: LaMetric - Bindings
 type: binding
 description: "The LaMetric binding allows to connect openHab to LaMetric Time connected clock devices, providing following features:"
 since: 2x
+logo: images/addons/lametrictime.png
 install: auto
 ---
 
