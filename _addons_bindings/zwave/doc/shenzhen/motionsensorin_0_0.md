@@ -6,10 +6,11 @@ title: Motion Sensor IN - ZWave
 {% include base.html %}
 
 # Motion Sensor IN Motion Sensor IN
-This describes the Z-Wave device *Motion Sensor IN*, manufactured by *Shenzhen Neo Electronics Co., Ltd* with the thing type UID of ```shenzhen_motionsensorin_00_000```.
+This describes the Z-Wave device *Motion Sensor IN*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_motionsensorin_00_000```.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/478) to improve the documentation.
 
 ## Channels
 
@@ -21,8 +22,12 @@ The following table summarises the channels available for the Motion Sensor IN
 | Sensor (luminance) | sensor_luminance | Temperature | Number | 
 | Alarm (general) | alarm_general | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -35,9 +40,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (luminance)
 
+Indicates the current light reading
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (general)
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -50,6 +60,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -59,11 +72,17 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Ok |
 | ON | Alarm |
 
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -97,4 +116,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/478).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/478).

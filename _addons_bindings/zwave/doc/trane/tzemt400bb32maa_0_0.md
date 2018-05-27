@@ -8,8 +8,14 @@ title: TZEMT400BB32MAA - ZWave
 # TZEMT400BB32MAA Trane Z-Wave Programmable Thermostat
 This describes the Z-Wave device *TZEMT400BB32MAA*, manufactured by *Trane Corporation* with the thing type UID of ```trane_tzemt400bb32maa_00_000```.
 
-# Overview
+![TZEMT400BB32MAA product image](https://www.cd-jackson.com/zwave_device_uploads/245/245_default.jpg)
 
+
+The TZEMT400BB32MAA does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/245) to improve the documentation.
 
 ## Channels
 
@@ -28,9 +34,14 @@ The following table summarises the channels available for the TZEMT400BB32MAA
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -56,6 +67,9 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State
 
+Sets the thermostat operating state
+        
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -71,21 +85,28 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
-The ```thermostat_fanmode``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Thermostat fan state
 
-The ```thermostat_fanstate``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -111,7 +132,7 @@ The following option values may be configured -:
 | 0 | Hold |
 | 1 | Schedule |
 
-The manufacturer defined default value is 0 (Hold).
+The manufacturer defined default value is ```0``` (Hold).
 
 This parameter has the configuration ID ```config_132_1``` and is of type ```INTEGER```.
 
@@ -150,7 +171,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/245/d3f32301-3cd0-496f-925a-a0d76971e67c.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/245).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/245).

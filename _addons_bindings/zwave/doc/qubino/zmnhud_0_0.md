@@ -6,10 +6,9 @@ title: ZMNHUD - ZWave
 {% include base.html %}
 
 # ZMNHUD Flush pilot (DIN version)
-This describes the Z-Wave device *ZMNHUD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhud_00_000```.
+This describes the Z-Wave device *ZMNHUD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhud_00_000```.
 
 # Overview
-
 
 ## Channels
 
@@ -23,13 +22,22 @@ The following table summarises the channels available for the ZMNHUD
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

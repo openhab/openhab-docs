@@ -6,25 +6,28 @@ title: HS1SA-Z - ZWave
 {% include base.html %}
 
 # HS1SA-Z Smart Smoke Detector
-This describes the Z-Wave device *HS1SA-Z*, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs1sa_00_000```.
+This describes the Z-Wave device *HS1SA-Z*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1sa_00_000```.
 
-The device is in the category of Smoke Detector, defining Smoke detectors.
+The device is in the category of *Smoke Detector*, defining Smoke detectors.
 
-# Overview
+![HS1SA-Z product image](https://www.cd-jackson.com/zwave_device_uploads/530/530_default.jpg)
+
+
+## Overview
 
 The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.
 
-## Inclusion Information
+### Inclusion Information
 
 - Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.
 - If Inclusion Process is successful, Green led will turn off.
 
-## Exclusion Information
+### Exclusion Information
 
 - Press the pin 3 times within 1.5s.
 - If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.
 
-## Wakeup Information
+### Wakeup Information
 
 - Wake up Notification is transmitted every 24 hours by default.
 - Wake up Notification is transmitted after Notification Report is Transmitted.
@@ -37,8 +40,12 @@ The following table summarises the channels available for the HS1SA-Z
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm (smoke) | alarm_smoke | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -51,6 +58,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (smoke)
 
+Indicates if a smoke is triggered
+        
+
 The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -60,11 +70,17 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Ok |
 | ON | Alarm |
 
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -109,7 +125,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [HS1SA-Z](https://www.cd-jackson.com/zwave_device_uploads/530/HS1SAZ-3381756.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/530).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/530).

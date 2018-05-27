@@ -6,11 +6,16 @@ title: ZMNHWD - ZWave
 {% include base.html %}
 
 # ZMNHWD Qubino Flush RGBW Dimmer
-This describes the Z-Wave device *ZMNHWD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhwd_00_000```.
+This describes the Z-Wave device *ZMNHWD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhwd_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+![ZMNHWD product image](https://www.cd-jackson.com/zwave_device_uploads/567/567_default.jpg)
+
+
+The ZMNHWD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.
 
@@ -21,13 +26,13 @@ Supported control types:
 
 This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).
 
-## Inclusion Information
+### Inclusion Information
 
 To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.
 
 The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.
 
-## Exclusion Information
+### Exclusion Information
 
 To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.
 
@@ -44,17 +49,30 @@ The following table summarises the channels available for the ZMNHWD
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
+The color temperature channel allows to set the color
+            temperature of a light from 0 (cold) to 100 (warm).
 
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
@@ -101,7 +119,7 @@ The following option values may be configured -:
 | 9 | SCENE mode – toggle switch type |
 | 10 | SCENE mode – toggle with memory switch type |
 
-The manufacturer defined default value is 4 (BRIGHTNESS mode – momentary switch type).
+The manufacturer defined default value is ```4``` (BRIGHTNESS mode – momentary switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -125,7 +143,7 @@ The following option values may be configured -:
 | 9 | SCENE mode – toggle switch type |
 | 10 | SCENE mode – toggle with memory switch type |
 
-The manufacturer defined default value is 7 (RAINBOW mode – momentary switch type).
+The manufacturer defined default value is ```7``` (RAINBOW mode – momentary switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -149,7 +167,7 @@ The following option values may be configured -:
 | 9 | SCENE mode – toggle switch type |
 | 10 | SCENE mode – toggle with memory switch type |
 
-The manufacturer defined default value is 8 (SCENE mode – momentary switch type).
+The manufacturer defined default value is ```8``` (SCENE mode – momentary switch type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -173,7 +191,7 @@ The following option values may be configured -:
 | 9 | SCENE mode – toggle switch type |
 | 10 | SCENE mode – toggle with memory switch type |
 
-The manufacturer defined default value is 1 (NORMAL mode – momentary switch type).
+The manufacturer defined default value is ```1``` (NORMAL mode – momentary switch type).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -193,7 +211,7 @@ The following option values may be configured -:
 | 5 | Romantic |
 | 6 | Party scene |
 
-The manufacturer defined default value is 1 (Ocean).
+The manufacturer defined default value is ```1``` (Ocean).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -205,7 +223,7 @@ Duration between Colour change
 - 1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene.
 Values in the range 1 to 1127 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_6_2``` and is of type ```INTEGER```.
 
@@ -221,7 +239,7 @@ The following option values may be configured -:
 | 0 | Do not memorize |
 | 1 | Memorize |
 
-The manufacturer defined default value is 0 (Do not memorize).
+The manufacturer defined default value is ```0``` (Do not memorize).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -233,7 +251,7 @@ Automatic turning off output after set time
 - 1 – 32536 = 1 second – 32536 seconds Auto OFF
 Values in the range 0 to 32536 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_8_2``` and is of type ```INTEGER```.
 
@@ -245,7 +263,7 @@ Automatic turning on output after set time
 - 1 – 32536 = 1 second – 32536 seconds Auto ON
 Values in the range 0 to 32536 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_9_2``` and is of type ```INTEGER```.
 
@@ -256,7 +274,7 @@ MAX dimming value
 2-99 = 2 % – 99 %
 Values in the range 2 to 99 may be set.
 
-The manufacturer defined default value is 99.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -267,7 +285,7 @@ MIN dimming value
 1-98 = 1 % – 98 %
 Values in the range 1 to 98 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -279,7 +297,7 @@ Dimming time (soft on/off)
 - 5 – 25 = from 0.5 to 2.5 seconds
 Values in the range 5 to 25 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -292,7 +310,7 @@ Dimming time when key pressed
 NOTE: Dimming time depends also on Min and Max dimming value.
 Values in the range 1 to 127 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -312,7 +330,7 @@ The following option values may be configured -:
 | 2 | Four dimmers mode enabled – toggle switch type |
 | 3 | Four dimmers mode enabled – toggle with memory switch type |
 
-The manufacturer defined default value is 0 (Four dimmers mode disabled).
+The manufacturer defined default value is ```0``` (Four dimmers mode disabled).
 
 This parameter has the configuration ID ```config_14_1``` and is of type ```INTEGER```.
 
@@ -351,7 +369,12 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Qubino Flush RGBW Dimmer – ZWAVE PLUS – User Manual](https://www.cd-jackson.com/zwave_device_uploads/567/Qubino-Flush-RGBW-Dimmer-PLUS-user-manual-V1-2-eng.pdf)
+* [Extended manual](https://www.cd-jackson.com/zwave_device_uploads/567/Qubino-Flush-RGBW-Dimmer-PLUS-extended-manual-eng-2-2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/567).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/567).

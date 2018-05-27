@@ -13,7 +13,6 @@ The device is in the category of Motion Detector, defining Motion sensors/detect
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the ZWN-BPC-PLUS
@@ -25,6 +24,9 @@ The following table summarises the channels available for the ZWN-BPC-PLUS
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -35,6 +37,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -49,7 +54,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 1 configuration parameter available in the ZWN-BPC-PLUS.
+The following table provides a summary of the 1 configuration parameters available in the ZWN-BPC-PLUS.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |

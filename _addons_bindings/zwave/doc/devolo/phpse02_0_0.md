@@ -8,9 +8,14 @@ title: ph-pse02 - ZWave
 # ph-pse02 Multisound indoor siren (Zipato/Devolo)
 This describes the Z-Wave device *ph-pse02*, manufactured by *Devolo* with the thing type UID of ```devolo_phpse02_00_000```.
 
-The device is in the category of Siren, defining Siren used by Alarm systems.
+The device is in the category of *Siren*, defining Siren used by Alarm systems.
 
-# Overview
+![ph-pse02 product image](https://www.cd-jackson.com/zwave_device_uploads/453/453_default.jpg)
+
+
+The ph-pse02 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 **\### NOTE ###**
 
@@ -79,9 +84,14 @@ The following table summarises the channels available for the ph-pse02
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -94,6 +104,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -105,6 +118,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (general)
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -115,6 +131,71 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Start Sound
+
+Notification
+
+Event
+
+Sound
+
+ event1 Smokealarm (0x01)
+
+0x01 ~ 0xFF
+
+fire alert
+
+ event2 Accesscontrol (0x06)
+
+Window/Door open (0x16)
+
+door chime
+
+ event7 Accesscontrol (0x06)
+
+Activate alarm system (0x03)
+
+2x beep
+
+ event8 Accesscontrol (0x06)
+
+Deactivate alarm system (0x04)
+
+1x beep
+
+ event3 Homesecurity (0x07)
+
+0x01 ~ 0xFF
+
+emergency
+
+ sound event4 Emergency (0x0A)
+
+Contact police (0x01)
+
+policecar
+
+sound
+
+ event5 Emergency (0x0A)
+
+Contact fire department (0x02)
+
+fire engine sound
+
+ event6 Emergency (0x0A)
+
+Contact ambulance (0x03)
+
+ambulance
+
+sound
+
+ event9 Emergency (0x0A) Notification (0xFE)
+
+silent alarm (no sound, flashing LED)
+
+Sends a notification
+        
 
 The ```notification_send``` channel supports the ```Number``` item.
 
@@ -141,7 +222,7 @@ Notification Type,
 1: Using Sensor Binary Report.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 4.
+The manufacturer defined default value is ```4```.
 
 This parameter has the configuration ID ```config_7_4``` and is of type ```INTEGER```.
 
@@ -158,7 +239,7 @@ Disable the alarm function.
 Caution: After the power up, this configuration is always 0.
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_29_4``` and is of type ```INTEGER```.
 
@@ -173,7 +254,7 @@ Default is 3 minutes, maximum is 63.5 minutes.
 0 means never auto stop.
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 6.
+The manufacturer defined default value is ```6```.
 
 This parameter has the configuration ID ```config_31_4_0000000C``` and is of type ```INTEGER```.
 
@@ -213,7 +294,11 @@ This group supports 8 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [QUICK INSTALLATION GUIDE V1.2](https://www.cd-jackson.com/zwave_device_uploads/453/ph-pse02-Zipato-Siren-User-Manual-v1-2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/453).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/453).

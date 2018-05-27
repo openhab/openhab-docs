@@ -8,22 +8,24 @@ title: 32563 - ZWave
 # 32563 Smart Door Sensor
 This describes the Z-Wave device *32563*, manufactured by *Jasco Products* with the thing type UID of ```ge_smartdoorsensor_00_000```.
 
-# Overview
+![32563 product image](https://www.cd-jackson.com/zwave_device_uploads/504/504_default.png)
 
 
-## Inclusion Information
+## Overview
+
+### Inclusion Information
 
 1. Follow the instructions for your Z-Wave certified controller to include the device to the Z-Wave network.
 2. Once the controller is ready to include your Hinge Pin Smart Door Sensor press and release the manual/program button on the smart switch to include it in the network.
 
-## Exclusion Information
+### Exclusion Information
 
 1. Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.
 2. Once the controller is ready to exclude your device, press and release the manual/program button on the Hinge Pin Smart Door Sensor to exclude it from the network.
 
 You may wish to reset all of your Hinge Pin Smart Door Sensor's settings to their factory defaults. To do this, press the program button 10 times within 6 seconds. If your Door Sensor has been successfully reset, its LED light will blink for 3 seconds. This should only be used in the event your network’s primary controller is missing or otherwise inoperable.
 
-## Wakeup Information
+### Wakeup Information
 
 1. Press and hold the Z-wave Button for 6 seconds. It will be wake up and send “Wake Up Notification CC “ to HUB.
 2. It will sleep after timeout for 10 seconds, or sleep right away when received the “Wake Up No More Information CC”.
@@ -36,8 +38,12 @@ The following table summarises the channels available for the 32563
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm (access) | alarm_access | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -50,6 +56,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (access)
 
+Indicates if the access control alarm is triggered
+        
+
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -58,6 +67,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -69,6 +84,8 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 20 | Report Method | Change Open/Close Report Method |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 20: Report Method
 
@@ -78,9 +95,26 @@ Change Open/Close Report Method
 3. Basic Report
 Values in the range 1 to 3 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -128,7 +162,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/504/03d7fa20-e284-4093-b78a-d2ec8d255816-1-.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/504).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/504).

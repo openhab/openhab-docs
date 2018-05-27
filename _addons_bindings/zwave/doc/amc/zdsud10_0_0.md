@@ -8,8 +8,14 @@ title: ZDS-UD10 - ZWave
 # ZDS-UD10 Dimming Switch Module
 This describes the Z-Wave device *ZDS-UD10*, manufactured by *Airline Mechanical Co., Ltd.* with the thing type UID of ```amc_zdsud10_00_000```.
 
-# Overview
+![ZDS-UD10 product image](https://www.cd-jackson.com/zwave_device_uploads/184/184_default.png)
 
+
+The ZDS-UD10 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/184) to improve the documentation.
 
 ## Channels
 
@@ -21,13 +27,17 @@ The following table summarises the channels available for the ZDS-UD10
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -50,7 +60,11 @@ The device does not support associations.
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/184/ZDS-manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/184).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/184).

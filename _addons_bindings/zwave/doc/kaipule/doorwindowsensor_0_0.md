@@ -8,7 +8,7 @@ title: TP-802ZD - ZWave
 # TP-802ZD Door/Window Sensor
 This describes the Z-Wave device *TP-802ZD*, manufactured by *Kaipule Technology Co., Ltd.* with the thing type UID of ```kaipule_doorwindowsensor_00_000```.
 
-# Overview
+## Overview
 
 The sensor must be added to the Zwave network prior to use.
 
@@ -18,15 +18,15 @@ Factory Setting
 Press the tamper switch 6 times in 2s, it will recover to factory setting after a period of time  
 (Please use the reset procedure only when the primary controller is missing or inoperable)
 
-## Inclusion Information
+### Inclusion Information
 
 To include the sensor in a networks start by placing the controller in inclusion mode. Then activate the inclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.
 
-## Exclusion Information
+### Exclusion Information
 
 To exclude the sensor in a networks start by placing the controller in exclusion mode. Then activate the exclusion mode at the sensor by pressing the tamper switch 3 times within 1.5s.
 
-## Wakeup Information
+### Wakeup Information
 
 a) Manual Wake-up  
 Quickly press tamper switch once, the door sensor will automatically send wake-up  
@@ -44,8 +44,12 @@ The following table summarises the channels available for the TP-802ZD
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Alarm (access) | alarm_access | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -58,6 +62,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -69,6 +76,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (access)
 
+Indicates if the access control alarm is triggered
+        
+
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -77,6 +87,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -90,6 +106,8 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Basic Set Level | Basic Set Command will be sent when the door/window is opened or closed |
 | 2 | Turn Off Light Time Configuration | Turn Off Light Time |
 | 3 | Door Sensor Status Report | Auto report Door/Window status time |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Basic Set Level
 
@@ -106,7 +124,7 @@ Available settings:
 255 (Default) For ON/OFF Light Only
 Values in the range 1 to 100 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -119,7 +137,7 @@ command to Group2, and send “Basic Set = 0x00” command to turn-off light aft
 Set value = “t”, means to send Basic Set command after “t” seconds.
 Values in the range 1 to 120 may be set.
 
-The manufacturer defined default value is 20.
+The manufacturer defined default value is ```20```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -132,9 +150,26 @@ to the Gateway about its current tamper & open/close status. Set value = t, mean
 (“t”=0, means no status report)
 Values in the range 0 to 24 may be set.
 
-The manufacturer defined default value is 12.
+The manufacturer defined default value is ```12```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -179,4 +214,4 @@ This group supports 2 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/633).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/633).

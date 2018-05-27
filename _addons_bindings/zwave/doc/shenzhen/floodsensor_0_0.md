@@ -6,15 +6,18 @@ title: Flood sensor - ZWave
 {% include base.html %}
 
 # Flood sensor Flood/water sensor
-This describes the Z-Wave device *Flood sensor*, manufactured by *Shenzhen Neo Electronics Co., Ltd* with the thing type UID of ```shenzhen_floodsensor_00_000```.
+This describes the Z-Wave device *Flood sensor*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_floodsensor_00_000```.
 
-The device is in the category of Sensor, defining Device used to measure something.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
-# Overview
+![Flood sensor product image](https://www.cd-jackson.com/zwave_device_uploads/493/493_default.jpg)
+
+
+## Overview
 
 Flood/Water detection
 
-## Inclusion Information
+### Inclusion Information
 
 1\. Remove the sensor cover.
 
@@ -24,7 +27,7 @@ Flood/Water detection
 
 4\. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..
 
-## Exclusion Information
+### Exclusion Information
 
 1\. Remove the device cover.
 
@@ -34,7 +37,7 @@ Flood/Water detection
 
 4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
-## Wakeup Information
+### Wakeup Information
 
 You can press the button once to wake up the device and send wakeup notification to controller.
 
@@ -56,8 +59,12 @@ The following table summarises the channels available for the Flood sensor
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -70,6 +77,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -78,6 +88,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -90,6 +106,8 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Basic setting command | Basic setting command to be transmitted |
 | 2 | OFF delay | The amount of delay before the OFF command is transmitted |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Basic setting command
 
@@ -104,7 +122,7 @@ The following option values may be configured -:
 | 99 | Dim level (upper bound) (multilevel switch) |
 | 255 | ON (Binary switch) |
 
-The manufacturer defined default value is 99 (Dim level (upper bound) (multilevel switch)).
+The manufacturer defined default value is ```99``` (Dim level (upper bound) (multilevel switch)).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -115,9 +133,26 @@ The amount of delay before the OFF command is transmitted
 Adjust the amount of delay before the OFF command is transmitted
 Values in the range 1 to 65535 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -169,7 +204,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Shenzhen Watersensor Manual](https://www.cd-jackson.com/zwave_device_uploads/493/Shenzhen-NEO-watersensor-Z-wave.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/493).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/493).

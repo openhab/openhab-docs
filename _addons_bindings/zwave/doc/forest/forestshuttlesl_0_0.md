@@ -8,23 +8,28 @@ title: Forest Shuttle S/L, Forest Group NL - ZWave
 # Forest Shuttle S/L, Forest Group NL Drapery hardware
 This describes the Z-Wave device *Forest Shuttle S/L, Forest Group NL*, manufactured by *Forest Group Nederland B.V* with the thing type UID of ```forest_forestshuttlesl_00_000```.
 
-# Overview
+![Forest Shuttle S/L, Forest Group NL product image](https://www.cd-jackson.com/zwave_device_uploads/510/510_default.png)
+
+
+The Forest Shuttle S/L, Forest Group NL does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 Role type: always on slave
 
 Node type: z-wave plus node
 
-## Inclusion Information
+### Inclusion Information
 
 Set your main controller into learn mode. Press configuration button 3 times. Led 3 is ON. Press and hold once more for 4 seconds, led will start blinking for 10 seconds. The Shuttle Z-wave motor will be detected and included into the Z-wave network of your controller.
 
-## Exclusion Information
+### Exclusion Information
 
 To exclude, set your main controller into exclude mode. Press configuration button 3 times. Led 3 is ON. Press and hold once more for 4 seconds, led will start blinking for 10 seconds. The Shuttle Z-wave motor will be detected and excluded into the Z-wave network of your controller.
 
 You can also reset the device, but only use this if your main controller is not operable. For reset, press the config button 25 times and confirm by pressing the button once more for 4 seconds until the led blinks 3 times and goes off.
 
-## Wakeup Information
+### Wakeup Information
 
 Not specified
 
@@ -39,9 +44,43 @@ The following table summarises the channels available for the Forest Shuttle S/L
 
 ### Switch
 
+Switch binary command can be used to turn the Shuttle LZ fully open or fully closed.
+
+Value:
+
+-0x00: Close
+
+-0xFF: Open
+
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+Values 0-99 (%) are used to set the rail to the preferred position.
+
+Value 255 is used to set the curtain fully open.
+
+The level change is stopped when:
+
+\- stop multilevel start level command is received
+
+\- the curtain reached an end position (fully open or full closed)
+
+Because of version 3 of this command class, the shuttle LZ responds with the following types:
+
+Primary switch type: 0x03
+
+\- 0xFF is Open
+
+\- 0x00 is Closed
+
+Secondary switch type: 0x00 (NOT SUPPORTED)
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -49,7 +88,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -84,7 +123,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/510/Shuttle-S-L-Z-Wave-EN.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/510).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/510).

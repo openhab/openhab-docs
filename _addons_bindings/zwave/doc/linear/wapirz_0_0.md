@@ -8,10 +8,14 @@ title: WAPIRZ-1 - ZWave
 # WAPIRZ-1 PIR Motion Detector
 This describes the Z-Wave device *WAPIRZ-1*, manufactured by *Linear Corp* with the thing type UID of ```linear_wapirz_00_000```.
 
-The device is in the category of Motion Detector, defining Motion sensors/detectors.
+The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-# Overview
+![WAPIRZ-1 product image](https://www.cd-jackson.com/zwave_device_uploads/5/5_default.jpg)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/5) to improve the documentation.
 
 ## Channels
 
@@ -22,8 +26,12 @@ The following table summarises the channels available for the WAPIRZ-1
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Sensor (temperature) | sensor_temperature | Temperature | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -36,9 +44,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -48,6 +61,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -59,6 +78,8 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Re-trigger Wait Time | Re-trigger Wait Time |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Re-trigger Wait Time
 
@@ -66,9 +87,26 @@ Re-trigger Wait Time
 By default, to conserve battery life, after the WAPIRZ-1 detects motion it cannot be re-triggered by motion again for 3 minutes. Each time motion is detected (even during this wait time) the 3 minute timer starts over.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -102,7 +140,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Installation Guide](https://www.cd-jackson.com/zwave_device_uploads/5/WAPIRZ-install.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/5).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/5).

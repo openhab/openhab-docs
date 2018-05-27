@@ -8,8 +8,14 @@ title: DZ6HD - ZWave
 # DZ6HD 600W Dimmer
 This describes the Z-Wave device *DZ6HD*, manufactured by *Leviton* with the thing type UID of ```leviton_dz6hd_00_000```.
 
-# Overview
+![DZ6HD product image](https://www.cd-jackson.com/zwave_device_uploads/556/556_default.png)
 
+
+The DZ6HD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/556) to improve the documentation.
 
 ## Channels
 
@@ -22,9 +28,15 @@ The following table summarises the channels available for the DZ6HD
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -45,6 +57,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | LED Dim Level Indicator Timeout | LED dim level indicator timeout |
 | 7 | Locator LED Status | Locator LED status |
 | 8 | Load Type | Load type |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Fade On Time
 
@@ -54,7 +67,7 @@ Fade on time
 - 128 to 253: 1-126 minutes
 Values in the range 0 to 253 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -67,7 +80,7 @@ Fade off time
 - 128 to 253: 1-126 minutes
 Values in the range 0 to 253 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -78,7 +91,7 @@ Minimum light level
 
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -89,7 +102,7 @@ Maximum light level
 
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -101,7 +114,7 @@ Preset light level
 - 1 to 100: Level
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -114,7 +127,7 @@ LED dim level indicator timeout
 - 255: Always on
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -127,7 +140,7 @@ Locator LED status
 - 255: Locator mode
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -140,9 +153,23 @@ Load type
 - 2: CFL
 Values in the range 0 to 2 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -181,7 +208,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/556/DI-000-DZ6HD-02A-X4--1-.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/556).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/556).

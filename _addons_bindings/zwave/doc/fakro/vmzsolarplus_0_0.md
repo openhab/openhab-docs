@@ -10,7 +10,6 @@ This describes the Z-Wave device *VMZ Solar z-wave plus*, manufactured by *Fakro
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the VMZ Solar z-wave plus
@@ -23,13 +22,21 @@ The following table summarises the channels available for the VMZ Solar z-wave p
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
 
+Provides start / stop control of blinds
+        
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
+
+Indicates if a power alarm is triggered
+        
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

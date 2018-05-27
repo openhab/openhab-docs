@@ -6,10 +6,11 @@ title: Soft Remote - ZWave
 {% include base.html %}
 
 # Soft Remote Remote Control
-This describes the Z-Wave device *Soft Remote*, manufactured by *ID-RF* with the thing type UID of ```nodon_softremote_00_000```.
+This describes the Z-Wave device *Soft Remote*, manufactured by *[ID-RF](http://www.nodon.fr/)* with the thing type UID of ```nodon_softremote_00_000```.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/250) to improve the documentation.
 
 ## Channels
 
@@ -18,10 +19,19 @@ The following table summarises the channels available for the Soft Remote
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Scene Number | scene_number |  | Number | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Scene Number
 
+Triggers when a scene button is pressed
+
 The ```scene_number``` channel supports the ```Number``` item.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -40,6 +50,8 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Button 3 configuration | To set-up the how button 3 behaves, when set in MONO Profile |
 | 7 | Button 4 configuration | To set-up the how button 4 behaves, when set in MONO Profile |
 | 8 | LED Management | How to set up LED behaviour |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Buttons 1 and 3 profile
 
@@ -53,7 +65,7 @@ The following option values may be configured -:
 | 1 | Mono |
 | 2 | Duo |
 
-The manufacturer defined default value is 0 (Scene).
+The manufacturer defined default value is ```0``` (Scene).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -70,7 +82,7 @@ The following option values may be configured -:
 | 1 | Mono |
 | 2 | Duo |
 
-The manufacturer defined default value is 0 (Scene).
+The manufacturer defined default value is ```0``` (Scene).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -86,7 +98,7 @@ The following option values may be configured -:
 | 0 | Central Scene |
 | 1 | Scene Activation |
 
-The manufacturer defined default value is 0 (Central Scene).
+The manufacturer defined default value is ```0``` (Central Scene).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -103,7 +115,7 @@ The following option values may be configured -:
 | 1 | All switches ON |
 | 2 | All switches OFF |
 
-The manufacturer defined default value is 0 (Control group 2).
+The manufacturer defined default value is ```0``` (Control group 2).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -120,7 +132,7 @@ The following option values may be configured -:
 | 1 | All switches ON |
 | 2 | All switches OFF |
 
-The manufacturer defined default value is 0 (Control group 3).
+The manufacturer defined default value is ```0``` (Control group 3).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -137,7 +149,7 @@ The following option values may be configured -:
 | 1 | All switches ON |
 | 2 | All switches OFF |
 
-The manufacturer defined default value is 0 (Control group 4).
+The manufacturer defined default value is ```0``` (Control group 4).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -154,7 +166,7 @@ The following option values may be configured -:
 | 1 | All switches ON |
 | 2 | All switches OFF |
 
-The manufacturer defined default value is 0 (Control group 5).
+The manufacturer defined default value is ```0``` (Control group 5).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -172,9 +184,26 @@ The following option values may be configured -:
 | 2 | Blink to confirm command |
 | 3 | Flash Blue after button press and blink to confirm command |
 
-The manufacturer defined default value is 0 (No LED).
+The manufacturer defined default value is ```0``` (No LED).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -243,4 +272,4 @@ This group supports 8 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/250).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/250).

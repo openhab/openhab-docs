@@ -8,7 +8,9 @@ title: Vitrum Satellite VI - ZWave
 # Vitrum Satellite VI Vitrum touch switch satellite 6 buttons
 This describes the Z-Wave device *Vitrum Satellite VI*, manufactured by *VDA* with the thing type UID of ```vda_satellitevi_00_000```.
 
-# Overview
+The Vitrum Satellite VI does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.
 
@@ -24,11 +26,11 @@ Each button can be configured in 4 different modes. Press the 2 service buttons 
 
 After mode selection, please proceed with inclusion process.
 
-## Inclusion Information
+### Inclusion Information
 
 With the controller in the inclusion mode, press any of the touch keys on the device. Vitrum indicates that it has been included to the network by flashing the yellow LEDs three times and switching on all the lights connected to the unit.
 
-## Exclusion Information
+### Exclusion Information
 
 Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.
 
@@ -49,33 +51,63 @@ The following table summarises the channels available for the Vitrum Satellite V
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 1
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 2
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 3
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 4
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer4``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 5
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer5``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 6
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer6``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -83,7 +115,7 @@ The ```switch_dimmer6``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -199,4 +231,4 @@ This group supports 5 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/626).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/626).

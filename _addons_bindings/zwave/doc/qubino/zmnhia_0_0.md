@@ -6,10 +6,13 @@ title: ZMNHIA - ZWave
 {% include base.html %}
 
 # ZMNHIA Flush on/off thermostat
-This describes the Z-Wave device *ZMNHIA*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhia_00_000```.
+This describes the Z-Wave device *ZMNHIA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhia_00_000```.
 
-# Overview
+The ZMNHIA does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/211) to improve the documentation.
 
 ## Channels
 
@@ -27,17 +30,26 @@ The following table summarises the channels available for the ZMNHIA
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -63,9 +75,14 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Binary Sensor 1
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -77,6 +94,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -125,7 +145,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -141,7 +161,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -157,7 +177,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -173,7 +193,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -189,7 +209,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -207,7 +227,7 @@ The following option values may be configured -:
 | 2 | ALL ON active ALL OFF is not active |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -226,7 +246,7 @@ From 0 to 990 – set point from 0.0 °C to 99.0 °C
 From 1001 to 1150 – set point from -0.1 °C to -15.0 °C
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -245,7 +265,7 @@ From 0 to 990 – set point from 0.0 °C to 99.0 °C
 From 1001 to 1150 – set point from -0.1 °C to -15.0 °C
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -261,7 +281,7 @@ The following option values may be configured -:
 | 0 | Module saves its state |
 | 1 | Module does not save state |
 
-The manufacturer defined default value is 0 (Module saves its state).
+The manufacturer defined default value is ```0``` (Module saves its state).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -280,7 +300,7 @@ default value 3
 NOTE: If power changed is less than 1W, the report is not sent (pushed), independent of percentage set.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -297,7 +317,7 @@ default value 300 (power report in Watts is send each 300s)
 1 – 65535 = 1second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value.
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
@@ -312,7 +332,7 @@ Available configuration parameters
 default value 132 (-0.5 °C)
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 132.
+The manufacturer defined default value is ```132```.
 
 This parameter has the configuration ID ```config_43_1``` and is of type ```INTEGER```.
 
@@ -327,7 +347,7 @@ Available configuration parameters
 default value 5 (+0.5 °C)
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_44_1``` and is of type ```INTEGER```.
 
@@ -344,7 +364,7 @@ default value 50 (5,0 °C)
 255 – Antifreeze functionality disabled
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_45_1``` and is of type ```INTEGER```.
 
@@ -359,7 +379,7 @@ Default value 50 (Too low temperature limit is 5.0°C)
 1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 50.
+The manufacturer defined default value is ```50```.
 
 This parameter has the configuration ID ```config_60_2``` and is of type ```INTEGER```.
 
@@ -374,7 +394,7 @@ Default value 50 (Too low temperature limit is 5.0°C)
 1 - 1000 = 0.1°C – 100.0°C, step is 0.1°C. Too low temperature limit is set by entered value. In case is set value out of this range, module is changing set value automatically to default value.
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 700.
+The manufacturer defined default value is ```700```.
 
 This parameter has the configuration ID ```config_61_2``` and is of type ```INTEGER```.
 
@@ -391,7 +411,7 @@ default value 0
 1 - When system is turned off the output is 230 V.
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_63_2``` and is of type ```INTEGER```.
 
@@ -468,4 +488,4 @@ This group supports 1 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/211).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/211).

@@ -8,10 +8,13 @@ title: LRM-AS - ZWave
 # LRM-AS Wall Mounted Dimmer
 This describes the Z-Wave device *LRM-AS*, manufactured by *Evolve* with the thing type UID of ```evolve_lrmas_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+The LRM-AS does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/39) to improve the documentation.
 
 ## Channels
 
@@ -23,16 +26,26 @@ The following table summarises the channels available for the LRM-AS
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Switch
+
+Switch the power on and off
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -45,6 +58,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -53,6 +69,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -66,6 +88,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | Night Light | In night-light mode the LED will turn ON when the switch is turned OFF. |
 | 4 | Invert Switch | Change the top of the switch to OFF and the bottom of the switch to ON. |
 | 29 | Load Sense |  |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 3: Night Light
 
@@ -78,7 +101,7 @@ The following option values may be configured -:
 | 0 | No |
 | 1 | Yes |
 
-The manufacturer defined default value is 1 (Yes).
+The manufacturer defined default value is ```1``` (Yes).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -94,7 +117,7 @@ The following option values may be configured -:
 | 0 | No |
 | 1 | Yes |
 
-The manufacturer defined default value is 0 (No).
+The manufacturer defined default value is ```0``` (No).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -110,9 +133,23 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 0 (Disable).
+The manufacturer defined default value is ```0``` (Disable).
 
 This parameter has the configuration ID ```config_29_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -149,7 +186,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_BATTERY_V0| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/39/EVLRMAS-Manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/39).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/39).

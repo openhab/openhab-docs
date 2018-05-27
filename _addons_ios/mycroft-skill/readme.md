@@ -61,11 +61,11 @@ Restart mycroft for the changes to take effect.
 ### openHAB Item Configuration
 
 Items are exposed to openHAB skill for Mycroft through the use of tags.
-See the [Hue Emulation](http://docs.openhab.org/addons/ios/hueemulation/readme.html) and [HomeKit Add-on](http://docs.openhab.org/addons/ios/homekit/readme.html) documentation for details about tagging and available tags.
+See the [Hue Emulation](https://www.openhab.org/addons/integrations/hueemulation/) and [HomeKit Add-on](https://www.openhab.org/addons/integrations/homekit/) documentation for details about tagging and available tags.
 
 * **Items via .items - File**
 
-  See [Item Definition and Syntax](http://docs.openhab.org/configuration/items.html#item-definition-and-syntax)
+  See [Item Definition and Syntax](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax)
      
   Some examples of tagged items are:
   

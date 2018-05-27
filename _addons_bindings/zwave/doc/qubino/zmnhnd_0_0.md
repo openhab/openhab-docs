@@ -6,12 +6,15 @@ title: ZMNHND - ZWave
 {% include base.html %}
 
 # ZMNHND Flush 1D relay
-This describes the Z-Wave device *ZMNHND*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhnd_00_000```.
+This describes the Z-Wave device *ZMNHND*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhnd_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+The ZMNHND does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/207) to improve the documentation.
 
 ## Channels
 
@@ -29,9 +32,14 @@ The following table summarises the channels available for the ZMNHND
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -44,13 +52,20 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
 
+Switch the power on and off
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor Binary
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -63,9 +78,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature) 2
 
+Indicates the current temperature
+
 The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Burglar
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -96,6 +116,7 @@ Detailed information on each parameter can be found in the sections below.
 | 100 | Enable / Disable Endpoints I2 or select Notification Type and Event | Enabling I2 means that Endpoint (I2) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Endpoint device type selec |
 | 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. 32536 – offset is 0.0C From 1 to 100–value from 0.1°C to 10.0°C is added to actual measured temperature. From 1001 to 1100 – value from -0.1 °C to -10.0 °C is subtracted to actual mea |
 | 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. 0 – Reporting disabled 1- 127 = 0,1°C – 12,7°C, step is 0,1°C |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
 
@@ -108,7 +129,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -124,7 +145,7 @@ The following option values may be configured -:
 | 0 | NO (normaly open) input type |
 | 1 | NC (normaly close) input type |
 
-The manufacturer defined default value is 0 (NO (normaly open) input type).
+The manufacturer defined default value is ```0``` (NO (normaly open) input type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -142,7 +163,7 @@ The following option values may be configured -:
 | 2 | ALL ON active ALL OFF is not active |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -153,7 +174,7 @@ When relay is ON it goes automatically OFF after time defined by this parameter.
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -164,7 +185,7 @@ When relay is OFF it goes automatically ON after time defined by this parameter.
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -180,7 +201,7 @@ The following option values may be configured -:
 | 0 | Seconds selected |
 | 1 | Milliseconds selected |
 
-The manufacturer defined default value is 0 (Seconds selected).
+The manufacturer defined default value is ```0``` (Seconds selected).
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -196,7 +217,7 @@ The following option values may be configured -:
 | 0 | Flush 1D relay module saves its state before power failure (it returns |
 | 1 | Flush 1D relay module does not save the state after a power failure, i |
 
-The manufacturer defined default value is 0 (Flush 1D relay module saves its state before power failure (it returns).
+The manufacturer defined default value is ```0``` (Flush 1D relay module saves its state before power failure (it returns).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -212,7 +233,7 @@ The following option values may be configured -:
 | 0 | When system is turned off the output is 0V (NC). |
 | 1 | When system is turned off the output is 230V or 24V (NO). |
 
-The manufacturer defined default value is 0 (When system is turned off the output is 0V (NC).).
+The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC).).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 
@@ -234,7 +255,7 @@ The following option values may be configured -:
 | 6 | Smoke Alarm; Smoke detected, unknown loc. |
 | 9 | Sensor binary. |
 
-The manufacturer defined default value is 1 (Home Security; Motion Detection, unknown loc.).
+The manufacturer defined default value is ```1``` (Home Security; Motion Detection, unknown loc.).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
 
@@ -245,7 +266,7 @@ Set value is added or subtracted to actual measured value by sensor. 32536 – o
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 32536.
+The manufacturer defined default value is ```32536```.
 
 This parameter has the configuration ID ```config_110_2``` and is of type ```INTEGER```.
 
@@ -256,9 +277,23 @@ If digital temperature sensor is connected, module reports measured temperature 
 
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_120_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -351,7 +386,11 @@ This group supports 16 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 
+### Documentation Links
+
+* [Qubino ZMNHND 1D relay user manual](https://www.cd-jackson.com/zwave_device_uploads/207/Qubino-Flush-1D-relay-PLUS-user-manual-V1-4.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/207).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/207).

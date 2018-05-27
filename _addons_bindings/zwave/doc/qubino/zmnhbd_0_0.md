@@ -6,15 +6,20 @@ title: ZMNHBD - ZWave
 {% include base.html %}
 
 # ZMNHBD Flush 2 relays
-This describes the Z-Wave device *ZMNHBD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhbd_00_000```.
+This describes the Z-Wave device *ZMNHBD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhbd_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+![ZMNHBD product image](https://www.cd-jackson.com/zwave_device_uploads/215/215_default.jpg)
+
+
+The ZMNHBD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 This Z-Wave module is used for switching on or off two electrical devices (e.g. lights or fans,..). The module can be controlled either through Z-Wave network or through the wallswitches. The module is designed to be mounted inside a "flush mountingbox", hidden behind a traditional wall switch. Module measures power consumption of two electrical devices and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
-## Inclusion Information
+### Inclusion Information
 
 **Module Inclusion (Adding to Z-Wave network)**
 
@@ -28,7 +33,7 @@ This Z-Wave module is used for switching on or off two electrical devices (e.g. 
 
 **NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.
 
-## Exclusion Information
+### Exclusion Information
 
 **Module Exclusion/Reset (Removing from Z-Wavenetwork)**
 
@@ -62,45 +67,67 @@ The following table summarises the channels available for the ZMNHBD
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
+
+Indicates the current temperature
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
 
+Switch the power on and off
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
+
+Switch the power on and off
 
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 2
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
+
+Indicates the current temperature
 
 The ```sensor_temperature3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -130,6 +157,7 @@ Detailed information on each parameter can be found in the sections below.
 | 64 | Output Q2 Switch selection |  |
 | 110 | Temperature sensor offset | Temperature sensor offset settings |
 | 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
 
@@ -142,7 +170,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -158,7 +186,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -176,7 +204,7 @@ The following option values may be configured -:
 | 2 | ALL ON active ALL OFF is not active |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -190,7 +218,7 @@ Timer is reset to zero each time the module receive ON command regardless from w
 - 1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -204,7 +232,7 @@ Timer is reset to zero each time the module receive OFF command regardless from 
 - 1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -218,7 +246,7 @@ Timer is reset to zero each time the module receive ON command regardless from w
 - 1 - 32535 = 1second (0,01s) - 32535 seconds (325,35s) Auto OFF enabled with define time, step is 1s or 10ms according to parameter nr.15.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_13_2``` and is of type ```INTEGER```.
 
@@ -232,7 +260,7 @@ Timer is reset to zero each time the module receive OFF command regardless from 
 - 1 - 32535 = 1second (0,01s) - 32536 seconds (325,35s) Auto ON enabled with define time, step is 1s or 10ms according to parameter nr.15.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
@@ -248,7 +276,7 @@ Available configuration parameters:
 **NOTE:** Parameter is valid for both outputs Q1, Q2 and is the same for turning off or on.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -264,7 +292,7 @@ The following option values may be configured -:
 | 0 | Saves its state before power failure |
 | 1 | Does not save the state after a power failure |
 
-The manufacturer defined default value is 0 (Saves its state before power failure).
+The manufacturer defined default value is ```0``` (Saves its state before power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -282,7 +310,7 @@ Available configuration parameters:
 **NOTE:** If power changed is less than 1W, the report is not send (pushed), independent of percentage set.
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -298,7 +326,7 @@ Set value means percentage, set value from 0 –100 = 0% -100%. Available config
 **NOTE:** If power changed is less than 1W, the report is not send (pushed), independent of percentage set.
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_41_1``` and is of type ```INTEGER```.
 
@@ -313,7 +341,7 @@ Set value means time interval (0 – 32535) in seconds, when power report is sen
 - 1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
@@ -328,7 +356,7 @@ Set value means time interval (0 –32535) in seconds, when power report is send
 - 1 - 32535 = 1 second - 32535 seconds. Reporting enabled, Power report is send with time interval set by entered value.
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_43_2``` and is of type ```INTEGER```.
 
@@ -344,7 +372,7 @@ The following option values may be configured -:
 | 0 | When system is turned off the output is 0V (NC) |
 | 1 | When system is turned off the output is 230V or 24V (NO) |
 
-The manufacturer defined default value is 0 (When system is turned off the output is 0V (NC)).
+The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC)).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 
@@ -360,7 +388,7 @@ The following option values may be configured -:
 | 0 | When system is turned off the output is 0V (NC) |
 | 1 | When system is turned off the output is 230V or 24V (NO) |
 
-The manufacturer defined default value is 0 (When system is turned off the output is 0V (NC)).
+The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC)).
 
 This parameter has the configuration ID ```config_64_1``` and is of type ```INTEGER```.
 
@@ -376,7 +404,7 @@ Set value is added or subtracted to actual measured value by sensor. Available c
 - From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.
 Values in the range 0 to 32536 may be set.
 
-The manufacturer defined default value is 32536.
+The manufacturer defined default value is ```32536```.
 
 This parameter has the configuration ID ```config_110_2``` and is of type ```INTEGER```.
 
@@ -391,9 +419,23 @@ If digital temperature sensor is connected, module reports measured temperature 
 - 1 - 127 = 0,1°C – 12,7°C, step is 0,1°C
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_120_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -490,7 +532,11 @@ This group supports 16 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/215/Qubino-Flush-2-Relays-PLUS-user-manual-eng-V1-4.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/215).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/215).

@@ -6,9 +6,14 @@ title: Heating Control - ZWave
 {% include base.html %}
 
 # Heating Control Thermostat for controlling the opentherm protocol
-This describes the Z-Wave device *Heating Control*, manufactured by *BeNext* with the thing type UID of ```benext_heatingcontrol_00_000```.
+This describes the Z-Wave device *Heating Control*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_heatingcontrol_00_000```.
 
-# Overview
+![Heating Control product image](https://www.cd-jackson.com/zwave_device_uploads/473/473_default.png)
+
+
+The Heating Control does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 The Heating Control is the central point of your climate environment. You can overwrite the temperature setpoint of your thermostat, and this product also reports information about your thermostat or boiler. For example the room temperature, boiler pressure, modulation level or water temperature.
 
@@ -30,13 +35,26 @@ The following table summarises the channels available for the Heating Control
 
 ### Room temperature
 
+Room temperature of the room thermostat
+
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Outside temperature
 
+The temperature outside, if reported by the boiler
+
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Determines the mode of the thermostat, either ON ("Heat", 1), or OFF ("Off", 0). The heating setpoint will be applied if the mode Heat is applied and the Energy saving setpoint if the mode Off is applied
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -62,9 +80,17 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Heating setpoint
 
+The setpoint used for the heating schedule
+
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Energy save setpoint
+
+The setpoint used for the energy save heating program
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -97,7 +123,7 @@ The following option values may be configured -:
 |--------|-------------|
 | 255 | Reset |
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -108,7 +134,7 @@ Interval of updating data from thermostat and boiler
 The interval in seconds that data is requested (and therefore updated) from the thermostat and boiler.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 14.
+The manufacturer defined default value is ```14```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -119,7 +145,7 @@ Difference of temperature before new update
 The value that the room temperature must differ (compared to his previous send value) before an unsolicited room temperature report is send to the associated node.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -130,7 +156,7 @@ Difference in setpoint before new update
 The value that the temperature setpoint must differ (compared to his previous send value) before an unsolicited temperature setpoint report is send to the associated node.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -146,7 +172,7 @@ The following option values may be configured -:
 | 0 | Off |
 | 255 | On |
 
-The manufacturer defined default value is 0 (Off).
+The manufacturer defined default value is ```0``` (Off).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -163,7 +189,7 @@ The following option values may be configured -:
 | 1 | Remeha Celcia 20 |
 | 2 | Honeywell (rounded temperatures) |
 
-The manufacturer defined default value is 0 (No special).
+The manufacturer defined default value is ```0``` (No special).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -179,7 +205,7 @@ The following option values may be configured -:
 | 0 | Disable boiler/thermostat status messages auto report |
 | 255 | Enable boiler/thermostat status messages auto report |
 
-The manufacturer defined default value is 0 (Disable boiler/thermostat status messages auto report).
+The manufacturer defined default value is ```0``` (Disable boiler/thermostat status messages auto report).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -195,7 +221,7 @@ The following option values may be configured -:
 | 0 | Disable thermostat schedule |
 | 255 | Enable thermostat schedule |
 
-The manufacturer defined default value is 0 (Disable thermostat schedule).
+The manufacturer defined default value is ```0``` (Disable thermostat schedule).
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -213,7 +239,7 @@ The following option values may be configured -:
 | 0 | Readout OFF |
 | 255 | Readout ON |
 
-The manufacturer defined default value is 0 (Readout OFF).
+The manufacturer defined default value is ```0``` (Readout OFF).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -247,7 +273,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Heating Control Manual EN](https://www.cd-jackson.com/zwave_device_uploads/473/heatingcontrol.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/473).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/473).

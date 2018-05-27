@@ -40,37 +40,55 @@ The following table summarises the channels available for the heatapp! floor
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 1
+
+Switch the power on and off
 
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
 
+Switch the power on and off
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 3
+
+Switch the power on and off
 
 The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 4
 
+Switch the power on and off
+
 The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 5
+
+Switch the power on and off
 
 The ```switch_binary5``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 6
 
+Switch the power on and off
+
 The ```switch_binary6``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 7
 
+Switch the power on and off
+
 The ```switch_binary7``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 8
+
+Switch the power on and off
 
 The ```switch_binary8``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -118,8 +136,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The heatapp! floor supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

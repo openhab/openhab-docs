@@ -8,15 +8,20 @@ title: Vitrum III EU Dimmer - ZWave
 # Vitrum III EU Dimmer
 This describes the Z-Wave device *Vitrum III EU Dimmer*, manufactured by *VDA* with the thing type UID of ```vda_dimmer3_00_000```.
 
-# Overview
+![Vitrum III EU Dimmer product image](https://www.cd-jackson.com/zwave_device_uploads/475/475_default.jpg)
+
+
+The Vitrum III EU Dimmer does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 When the device is in the stand-alone mode and is not included in a Z-Wave network the illuminated ring around the touch keys will light red for a moment when passing from one mode to another.
 
-## Inclusion Information
+### Inclusion Information
 
 With the controller in the inclusion mode, press any of the touch keys on the device.
 
-## Exclusion Information
+### Exclusion Information
 
 Press and hold the leftmost touch key for at least 8 seconds. The device will flash red three times and sound an acoustic signal to indicate that the original factory setting has been restored.
 
@@ -33,17 +38,33 @@ The following table summarises the channels available for the Vitrum III EU Dimm
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 1
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 2
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 3
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -51,7 +72,7 @@ The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -119,7 +140,12 @@ This group supports 5 nodes.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Datasheet](https://www.cd-jackson.com/zwave_device_uploads/475/Vitrum-III-EU-Dimmer-Wireless1-datasheet.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/475/a28c244860f3d1fa1f8637c47351c45d85d3c9e4.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/475).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/475).

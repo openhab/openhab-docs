@@ -8,12 +8,14 @@ title: TILT-ZWAVE2.5-ECO - ZWave
 # TILT-ZWAVE2.5-ECO Z-wave Plus Gold Plated Reliability Garage Door Tilt Sensor
 This describes the Z-Wave device *TILT-ZWAVE2.5-ECO*, manufactured by *Ecolink* with the thing type UID of ```eco_tiltzwave25eco_00_000```.
 
-The device is in the category of Garage Door, defining Garage Door.
+The device is in the category of *Garage Door*, defining Garage Door.
 
-# Overview
+![TILT-ZWAVE2.5-ECO product image](https://www.cd-jackson.com/zwave_device_uploads/581/581_default.jpg)
 
 
-## Inclusion Information
+## Overview
+
+### Inclusion Information
 
 1\. Start by placing the controller into inclusion mode.
 
@@ -23,11 +25,11 @@ The device is in the category of Garage Door, defining Garage Door.
 
 If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 5 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.
 
-## Exclusion Information
+### Exclusion Information
 
 Exclusion mode on the sensor is activated on the sensor by the exact same procedure as inclusion.
 
-## Wakeup Information
+### Wakeup Information
 
 To save power, this sensor sleeps most of the time and is therefore not awake to receive messages from a gateway for testing. Removing the top case from the sensor will put in device into a tampered mode in which the sensor will stay awake and able to receive messages. Most of the time an end user would not do this, but if the sensor needs to be configured after inclusion, an end user can follow the instructions below for sending Wake-Up notifications.
 
@@ -43,8 +45,12 @@ The following table summarises the channels available for the TILT-ZWAVE2.5-ECO
 | Alarm (power) | alarm_power | Door | Switch | 
 | Alarm (access) | alarm_access | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -57,6 +63,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (power)
 
+Indicates if a power alarm is triggered
+        
+
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -67,6 +76,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (access)
+
+Indicates if the access control alarm is triggered
+        
 
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -79,6 +91,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -87,6 +102,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -99,6 +120,8 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Basic Sets for Association Group 2 | Send or not send Basic Set commands |
 | 2 | Send Reports | Send or not send Sensor Binary Report commands |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Basic Sets for Association Group 2
 
@@ -111,7 +134,7 @@ The following option values may be configured -:
 | 0 | Do Not Send Basic Sets |
 | 255 | Send Basic Sets |
 
-The manufacturer defined default value is 0 (Do Not Send Basic Sets).
+The manufacturer defined default value is ```0``` (Do Not Send Basic Sets).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -127,9 +150,26 @@ The following option values may be configured -:
 | 0 | Send Sensor Binary Reports and Notification Reports |
 | 255 | Send Only Notification Reports |
 
-The manufacturer defined default value is 0 (Send Sensor Binary Reports and Notification Reports).
+The manufacturer defined default value is ```0``` (Send Sensor Binary Reports and Notification Reports).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -171,7 +211,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [ECOLINK ZWAVE PLUS 2.5 Manual](https://www.cd-jackson.com/zwave_device_uploads/581/ecolink-z-wave-plus-garage-door-tilt-sensor-tiltzwave2-5-eco-manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/581).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/581).

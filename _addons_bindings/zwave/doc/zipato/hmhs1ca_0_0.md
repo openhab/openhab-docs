@@ -6,10 +6,9 @@ title: HM-HS1CA - ZWave
 {% include base.html %}
 
 # HM-HS1CA CO Sensor with acoustic alarm
-This describes the Z-Wave device *HM-HS1CA*, manufactured by *Zipato* with the thing type UID of ```zipato_hmhs1ca_00_000```.
+This describes the Z-Wave device *HM-HS1CA*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_hmhs1ca_00_000```.
 
 # Overview
-
 
 ## Channels
 
@@ -22,6 +21,9 @@ The following table summarises the channels available for the HM-HS1CA
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,6 +34,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (CO)
+
+Indicates if the carbon monoxide alarm is triggered
+        
 
 The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -46,7 +51,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

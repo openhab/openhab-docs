@@ -335,7 +335,7 @@ A database of device information is required for Z-Wave since there is no way to
 
 The binding makes use of the database to derive device names, and provide a list of channels that are available on the device. If there is no database entry, then (currently) the device will show up as *Unknown* in the things list.
 
-Devices are identified in the database by 4 pieces of information that are provided by the device during the initial discovery process. These are -:
+Devices are identified in the database by 4 pieces of information that are provided by the device during the initial discovery process which is performed after a device is included into the network. These are -:
 
 * Manufacturer ID
 * Device Type
@@ -343,6 +343,8 @@ Devices are identified in the database by 4 pieces of information that are provi
 * Firmware version
 
 The primary identification is performed using the Manufacturer ID, Device Type and Device ID. Many devices use multiple deviceType and deviceId sets to identify different regions, or other minor differences, and some manufacturers will produce multiple firmware versions for the same device, so this information is also used in some instances.
+
+Further information on the database can be found [here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-database-guide).
 
 
 #### Unknown Devices

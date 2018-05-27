@@ -6,10 +6,16 @@ title: FGRGBW - ZWave
 {% include base.html %}
 
 # FGRGBW RGBW Controller
-This describes the Z-Wave device *FGRGBW*, manufactured by *Fibargroup* with the thing type UID of ```fibaro_fgrgbw_00_000```.
+This describes the Z-Wave device *FGRGBW*, manufactured by *[Fibargroup](http://www.fibaro.com/)* with the thing type UID of ```fibaro_fgrgbw_00_000```.
 
-# Overview
+![FGRGBW product image](https://www.cd-jackson.com/zwave_device_uploads/131/131_default.jpg)
 
+
+The FGRGBW does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/131) to improve the documentation.
 
 ## Channels
 
@@ -30,41 +36,73 @@ The following table summarises the channels available for the FGRGBW
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (power)
+
+Indicates the energy consumption (kWh)
 
 The ```sensor_power``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Color
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Start animation
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Red
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Green
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer3``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Blue
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer4``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### White
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer5``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -120,6 +158,7 @@ Detailed information on each parameter can be found in the sections below.
 | 71 | Response to BRIGHTNESS set to 0% | Response to BRIGHTNESS set to 0%. Default setting: 1 |
 | 72 | Starting animation program | Starting animation programm. Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1 |
 | 73 | Triple click action | Triple click action. Default setting: 0 |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: ALL ON / ALL OFF function activation
 
@@ -134,7 +173,7 @@ The following option values may be configured -:
 | 1 | ALL ON inactive ALL OFF active |
 | 2 | ALL ON active ALL OFF inactive |
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -153,7 +192,7 @@ The following option values may be configured -:
 | 3 | Brightness - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP |
 | 4 | Rainbow (RGBW) - COLOR\_CONTROL\_SET |
 
-The manufacturer defined default value is 0 (Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP).
+The manufacturer defined default value is ```0``` (Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -169,7 +208,7 @@ The following option values may be configured -:
 | 0 | MODE1 (related parameters: 9-step value, 10-time between steps) |
 | 1 | MODE2 (related parameters: 11-time to change value, relevant for RGB/R |
 
-The manufacturer defined default value is 0 (MODE1 (related parameters: 9-step value, 10-time between steps)).
+The manufacturer defined default value is ```0``` (MODE1 (related parameters: 9-step value, 10-time between steps)).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -182,7 +221,7 @@ Step value (relevant for MODE1).
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -196,7 +235,7 @@ Time between steps (relevant for MODE1).
 
 Values in the range 0 to 60000 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -212,7 +251,7 @@ Step value (relevant for MODE1).
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 67.
+The manufacturer defined default value is ```67```.
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -225,7 +264,7 @@ Maximum Brightening level.
 
 Values in the range 3 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -236,7 +275,7 @@ Minimum dim level. Default setting: 2 Available settings: 3 - 255.
 
 Values in the range 2 to 255 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -249,7 +288,7 @@ Inputs/Outputs configuration - relevant for main controllers other than Home Cen
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 4369.
+The manufacturer defined default value is ```4369```.
 
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
@@ -265,7 +304,7 @@ The following option values may be configured -:
 | 0 | Do not remember state |
 | 1 | Remember state before power failure |
 
-The manufacturer defined default value is 1 (Remember state before power failure).
+The manufacturer defined default value is ```1``` (Remember state before power failure).
 
 This parameter has the configuration ID ```config_16_1``` and is of type ```INTEGER```.
 
@@ -283,7 +322,7 @@ The following option values may be configured -:
 | 2 | ALARM OFF - the device turns off once alarm is detected (all channels |
 | 3 | ALARM PROGRAM - alarm sequence turns on (program selected in parameter |
 
-The manufacturer defined default value is 0 (INACTIVE - the device doesn't respond to alarm frames).
+The manufacturer defined default value is ```0``` (INACTIVE - the device doesn't respond to alarm frames).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -296,7 +335,7 @@ Alarm sequence program.
 
 Values in the range 1 to 10 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_38_1``` and is of type ```INTEGER```.
 
@@ -309,7 +348,7 @@ IActive PROGRAM alarm time.
 
 Values in the range 1 to 65534 may be set.
 
-The manufacturer defined default value is 600.
+The manufacturer defined default value is ```600```.
 
 This parameter has the configuration ID ```config_39_2``` and is of type ```INTEGER```.
 
@@ -326,7 +365,7 @@ The following option values may be configured -:
 | 1 | Reporting as a result of inputs actions (SWITCH MULTILEVEL) |
 | 2 | Reporting as a result of inputs actions (COLOR CONTROL) |
 
-The manufacturer defined default value is 0 (Reporting as a result of inputs and controllers actions (SWITCH MULTIL).
+The manufacturer defined default value is ```0``` (Reporting as a result of inputs and controllers actions (SWITCH MULTIL).
 
 This parameter has the configuration ID ```config_42_1``` and is of type ```INTEGER```.
 
@@ -339,7 +378,7 @@ Parameter defines a value by which input voltage must change in order to be repo
 
 Values in the range 1 to 100 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_43_1``` and is of type ```INTEGER```.
 
@@ -351,7 +390,7 @@ Parameter defines Time between reports. The report will be sent if last reported
 
 Values in the range 1 to 65534 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_44_2``` and is of type ```INTEGER```.
 
@@ -364,7 +403,7 @@ Defines the required change in power to generate an unsolicited power report.
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_45_1``` and is of type ```INTEGER```.
 
@@ -380,7 +419,7 @@ The following option values may be configured -:
 | 0 | illumination colour set to white (all channels controlled together) |
 | 1 | last set colour is memorized |
 
-The manufacturer defined default value is 1 (last set colour is memorized).
+The manufacturer defined default value is ```1``` (last set colour is memorized).
 
 This parameter has the configuration ID ```config_71_1``` and is of type ```INTEGER```.
 
@@ -391,7 +430,7 @@ Starting animation programm. Starting predefined program when device set to work
 
 Values in the range 1 to 10 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_72_1``` and is of type ```INTEGER```.
 
@@ -407,9 +446,23 @@ The following option values may be configured -:
 | 0 | NODE INFO control frame is sent |
 | 1 | starting favourite program |
 
-The manufacturer defined default value is 0 (NODE INFO control frame is sent).
+The manufacturer defined default value is ```0``` (NODE INFO control frame is sent).
 
 This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -494,7 +547,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_BASIC_V0| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 
+### Documentation Links
+
+* [User Manual (v2.1-v2.3)](https://www.cd-jackson.com/zwave_device_uploads/131/fibaro-rgbw-controller-2-1-2-3-manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/131).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/131).

@@ -6,11 +6,16 @@ title: NAS-WR01ZE - ZWave
 {% include base.html %}
 
 # NAS-WR01ZE Metered Wall Plug Switch
-This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *Shenzhen Neo Electronics Co., Ltd* with the thing type UID of ```shenzhen_powerplug_00_000```.
+This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_powerplug_00_000```.
 
-The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-# Overview
+![NAS-WR01ZE product image](https://www.cd-jackson.com/zwave_device_uploads/397/397_default.jpg)
+
+
+The NAS-WR01ZE does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 This Plug provides line voltage, current load, power consumption and energy
 
@@ -28,7 +33,7 @@ commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One
 
 Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.
 
-## Inclusion Information
+### Inclusion Information
 
 1\. Make sure the sensor is powered.
 
@@ -40,7 +45,7 @@ gateway operating manual)
 
 LED will flash on and off with green alternately five times within 2 seconds.
 
-## Exclusion Information
+### Exclusion Information
 
 1\. Make sure the sensor is powered.
 
@@ -67,25 +72,38 @@ The following table summarises the channels available for the NAS-WR01ZE
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (amps)
+
+Indicates the instantaneous current consumption
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
 
+Indicates the instantaneous voltage
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
+
+Indicates if a power alarm is triggered
+        
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -115,6 +133,7 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Plug Time switch Function | Timer plug OFF after time period |
 | 9 | Time switch Period | Delay time after the plug is switched off |
 | 10 | Button On/Off Enable | Enable/Disable top button function |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Meter Report Enable
 
@@ -127,7 +146,7 @@ The following option values may be configured -:
 | 0 | Disable Report |
 | 1 | Enable Report |
 
-The manufacturer defined default value is 1 (Enable Report).
+The manufacturer defined default value is ```1``` (Enable Report).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -138,7 +157,7 @@ Interval time reporting data to controller
 This parameter defines interval time (in seconds) that Meter report data to main controller.
 Values in the range 1 to 65535 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -161,7 +180,7 @@ This parameter value must be great than #4. If user set this parameter to defaul
 the parameter #4 will be set to default value.
 Values in the range 1 to 16 may be set.
 
-The manufacturer defined default value is 13.
+The manufacturer defined default value is ```13```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -172,7 +191,7 @@ Max current for over-current notification
 Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#.
 Values in the range 1 to 15 may be set.
 
-The manufacturer defined default value is 12.
+The manufacturer defined default value is ```12```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -188,7 +207,7 @@ The following option values may be configured -:
 | 0 | Disable LED indication Function |
 | 1 | Enable LED indication Function |
 
-The manufacturer defined default value is 1 (Enable LED indication Function).
+The manufacturer defined default value is ```1``` (Enable LED indication Function).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -199,7 +218,7 @@ Power consumed change to be reported
 How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.
 Values in the range 1 to 100 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -215,7 +234,7 @@ The following option values may be configured -:
 | 0 | Don’t remember relay state |
 | 1 | Remember the Relay Status. |
 
-The manufacturer defined default value is 1 (Remember the Relay Status.).
+The manufacturer defined default value is ```1``` (Remember the Relay Status.).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -231,7 +250,7 @@ The following option values may be configured -:
 | 0 | Time switch Disable |
 | 1 | Time switch Enable |
 
-The manufacturer defined default value is 0 (Time switch Disable).
+The manufacturer defined default value is ```0``` (Time switch Disable).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -242,7 +261,7 @@ Delay time after the plug is switched off
 This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.
 Values in the range 1 to 65535 may be set.
 
-The manufacturer defined default value is 150.
+The manufacturer defined default value is ```150```.
 
 This parameter has the configuration ID ```config_9_2``` and is of type ```INTEGER```.
 
@@ -258,9 +277,23 @@ The following option values may be configured -:
 | 0 | Disable Button |
 | 1 | Enable Button |
 
-The manufacturer defined default value is 1 (Enable Button).
+The manufacturer defined default value is ```1``` (Enable Button).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -307,7 +340,13 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Instruction Manual Power Plug](https://www.cd-jackson.com/zwave_device_uploads/397/Manual-for-Power-plug-Z-wave-Neo.pdf)
+* [SMART PLUG USER MANUAL](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
+* [SMART PLUG USER MANUAL - Version from 23.09.2016](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/397).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/397).

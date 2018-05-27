@@ -6,10 +6,13 @@ title: powerSwitch - ZWave
 {% include base.html %}
 
 # powerSwitch Power Switch EU
-This describes the Z-Wave device *powerSwitch*, manufactured by *BeNext* with the thing type UID of ```benext_powerswitch_00_000```.
+This describes the Z-Wave device *powerSwitch*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_powerswitch_00_000```.
 
-# Overview
+The powerSwitch does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/224) to improve the documentation.
 
 ## Channels
 
@@ -20,6 +23,8 @@ The following table summarises the channels available for the powerSwitch
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
+Switch the power on and off
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -36,6 +41,7 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | Start up with last known socket status | state in what the switch is when power is supplied |
 | 9 | Relay delay time | When the relay is switched it can't be switched again until the configured time has passed |
 | 10 | Led indicator | Show the led compared to the relay state |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Set to Default
 
@@ -43,7 +49,7 @@ Set all configuration values to default values (factory settings)
 All values (0x00 – 0xFF) except for 0x55 can be used to default all the configuration params .
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -54,7 +60,7 @@ state in what the switch is when power is supplied
 If 0x01–0xFF: When power applied socket is the state before power was disconnected
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -65,7 +71,7 @@ When the relay is switched it can't be switched again until the configured time 
 Value \* 10 milliseconds
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -76,9 +82,23 @@ Show the led compared to the relay state
 If value is 0: the indicator led is never switched on If value is 1: the indicator led is switched on when relay is switched on If value is 2: the indicator led is switched on when relay is switched off
 Values in the range 0 to 2 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -111,7 +131,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/224/powerswitch.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/224).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/224).

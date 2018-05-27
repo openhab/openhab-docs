@@ -8,8 +8,11 @@ title: SmartPower - ZWave
 # SmartPower RAone SmartPower
 This describes the Z-Wave device *SmartPower*, manufactured by *INNOVUS* with the thing type UID of ```innovus_smartpower_00_000```.
 
-# Overview
+The SmartPower does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/61) to improve the documentation.
 
 ## Channels
 
@@ -23,13 +26,19 @@ The following table summarises the channels available for the SmartPower
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (power)
 
+Indicates the energy consumption (kWh)
+
 The ```sensor_power``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -44,6 +53,7 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Report node | Report changes in level to this node id |
 | 2 | BO IR support | Enable/Disable BO IR Support |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Report node
 
@@ -53,7 +63,7 @@ Report Node, reports changes in level to this node id.
 Disabled if 0. -> Copied from SmartDimmer, as there's no config information available.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -69,9 +79,23 @@ The following option values may be configured -:
 | 0 | disabled |
 | 1 | enabled |
 
-The manufacturer defined default value is 1 (enabled).
+The manufacturer defined default value is ```1``` (enabled).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -107,7 +131,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Technical documentation](https://www.cd-jackson.com/zwave_device_uploads/61/smartpower-zw-tech-doc.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/61).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/61).

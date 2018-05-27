@@ -12,7 +12,6 @@ The device is in the category of Window, defining Window.
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the HS1DS
@@ -24,6 +23,9 @@ The following table summarises the channels available for the HS1DS
 
 ### Binary Sensor
 
+Indicates if the door/window is open or closed
+        
+
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
@@ -34,6 +36,9 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -48,7 +53,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

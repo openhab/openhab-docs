@@ -12,7 +12,6 @@ The device is in the category of Lock, defining Devices whose primary pupose is 
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the Yale Smart Door Lock Z-Wave Module
@@ -25,9 +24,14 @@ The following table summarises the channels available for the Yale Smart Door Lo
 
 ### Door Lock
 
+Lock and unlock the door
+
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 
 ### Alarm
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -40,17 +44,16 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Clock Time Offset
 
+Provides the current time difference for the devices time
+        
+
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
 ## Device Configuration
 
-The following table provides a summary of the 0 configuration parameter available in the Yale Smart Door Lock Z-Wave Module.
-Detailed information on each parameter can be found in the sections below.
-
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configured.
 
 ## Association Groups
 

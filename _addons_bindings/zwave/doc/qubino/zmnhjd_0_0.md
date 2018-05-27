@@ -6,10 +6,16 @@ title: ZMNHJD - ZWave
 {% include base.html %}
 
 # ZMNHJD Flush Pilot
-This describes the Z-Wave device *ZMNHJD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhjd_00_000```.
+This describes the Z-Wave device *ZMNHJD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhjd_00_000```.
 
-# Overview
+![ZMNHJD product image](https://www.cd-jackson.com/zwave_device_uploads/273/273_default.png)
 
+
+The ZMNHJD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/273) to improve the documentation.
 
 ## Channels
 
@@ -26,17 +32,28 @@ The following table summarises the channels available for the ZMNHJD
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -49,6 +66,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Binary Sensor 2
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -59,6 +79,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 3
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -88,6 +111,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | Input 2 operation mode selection |  |
 | 13 | Input 3 operation mode selection |  |
 | 30 | Saving the state of the device after a power failure |  |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
 
@@ -100,7 +124,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -116,7 +140,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -132,7 +156,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -148,7 +172,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -164,7 +188,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -180,7 +204,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -201,7 +225,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 1 (Comfort).
+The manufacturer defined default value is ```1``` (Comfort).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -222,7 +246,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 4 (Eco Mode).
+The manufacturer defined default value is ```4``` (Eco Mode).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -243,7 +267,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 5 (Frost Protection).
+The manufacturer defined default value is ```5``` (Frost Protection).
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -259,9 +283,23 @@ The following option values may be configured -:
 | 0 | The module saves its state before power failure |
 | 1 | The module does not save the state |
 
-The manufacturer defined default value is 0 (The module saves its state before power failure).
+The manufacturer defined default value is ```0``` (The module saves its state before power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -339,7 +377,11 @@ This group supports 99 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User's manual](https://www.cd-jackson.com/zwave_device_uploads/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/273).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/273).

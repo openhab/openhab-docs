@@ -6,10 +6,9 @@ title: Oomi Plug - ZWave
 {% include base.html %}
 
 # Oomi Plug Oomi Plug is a low-cost Z-Wave Switch plug-in module specifically used to enable Z-Wave command and control (on/off) of any plug-in tool.
-This describes the Z-Wave device *Oomi Plug*, manufactured by *Fantem* with the thing type UID of ```oomi_oomiplug_00_000```.
+This describes the Z-Wave device *Oomi Plug*, manufactured by *[Fantem](http://www.oomi.com/)* with the thing type UID of ```oomi_oomiplug_00_000```.
 
 # Overview
-
 
 ## Channels
 
@@ -30,41 +29,67 @@ The following table summarises the channels available for the Oomi Plug
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
 
+Indicates the instantaneous voltage
+
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
+
+Indicates the instantaneous current consumption
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Meter Reset
 
+Reset the meter
+
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Color Control
+
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
 
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
 
+The color temperature channel allows to set the color
+            temperature of a light from 0 (cold) to 100 (warm).
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 

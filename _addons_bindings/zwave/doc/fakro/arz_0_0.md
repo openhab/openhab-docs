@@ -8,10 +8,16 @@ title: ARZ - ZWave
 # ARZ Roller Shutter Module
 This describes the Z-Wave device *ARZ*, manufactured by *Fakro* with the thing type UID of ```fakro_arz_00_000```.
 
-The device is in the category of Blinds, defining Roller shutters, window blinds, etc..
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-# Overview
+![ARZ product image](https://www.cd-jackson.com/zwave_device_uploads/248/248_default.jpg)
 
+
+The ARZ does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/248) to improve the documentation.
 
 ## Channels
 
@@ -24,9 +30,14 @@ The following table summarises the channels available for the ARZ
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
+
+Provides start / stop control of blinds
+        
 
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
@@ -34,7 +45,7 @@ The ```blinds_control``` channel supports the ```Rollershutter``` item and is in
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -58,7 +69,11 @@ The device does not support associations.
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/248/AJP-Z-WAVE-FAKRO-EN.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/248).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/248).

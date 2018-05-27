@@ -8,8 +8,11 @@ title: Qees Wall - ZWave
 # Qees Wall Wall mountable mini 4 button remote
 This describes the Z-Wave device *Qees Wall*, manufactured by *Qees* with the thing type UID of ```qees_qeeswall_00_000```.
 
-# Overview
+The Qees Wall does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/531) to improve the documentation.
 
 ## Channels
 
@@ -17,12 +20,19 @@ The following table summarises the channels available for the Qees Wall
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
+| battery-level | system.battery-level | Battery | Number |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -46,7 +56,11 @@ The device does not support associations.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User Manual (Danish)](https://www.cd-jackson.com/zwave_device_uploads/531/QEES-Wall--brugermanual-dk-0-3.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/531).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/531).

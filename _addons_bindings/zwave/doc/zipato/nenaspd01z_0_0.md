@@ -6,10 +6,9 @@ title: NE-NAS-PD01Z - ZWave
 {% include base.html %}
 
 # NE-NAS-PD01Z PIR motion sensor and light measurement
-This describes the Z-Wave device *NE-NAS-PD01Z*, manufactured by *Zipato* with the thing type UID of ```zipato_nenaspd01z_00_000```.
+This describes the Z-Wave device *NE-NAS-PD01Z*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_nenaspd01z_00_000```.
 
 # Overview
-
 
 ## Channels
 
@@ -23,6 +22,9 @@ The following table summarises the channels available for the NE-NAS-PD01Z
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -34,9 +36,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (luminance)
 
+Indicates the current light reading
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

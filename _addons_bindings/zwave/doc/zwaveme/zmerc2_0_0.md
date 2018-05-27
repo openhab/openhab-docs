@@ -8,8 +8,9 @@ title: ZME_RC2 - ZWave
 # ZME\_RC2 Z-Wave Remote Control+
 This describes the Z-Wave device *ZME_RC2*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zmerc2_00_000```.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/149) to improve the documentation.
 
 ## Channels
 
@@ -18,10 +19,19 @@ The following table summarises the channels available for the ZME_RC2
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Scene Number | scene_number |  | Number | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Scene Number
 
+Triggers when a scene button is pressed
+
 The ```scene_number``` channel supports the ```Number``` item.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -44,6 +54,8 @@ Detailed information on each parameter can be found in the sections below.
 | 19 | Command to Control Scene No3 (association group 11) | This parameter defines the command to be sent to devices of control scene group No3 when the related button is pressed (association group 11) |
 | 20 | Command to Control group All On/Off (association group 12) | This parameter defines the command to be sent to devices of control group All On/Off when the related button is pressed (association group 12) |
 | 21 | Send the following Switch All commands | Send the following Switch All commands |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 10: Command to Control Group No1 (association group 2)
 
@@ -60,7 +72,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -80,7 +92,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -100,7 +112,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -120,7 +132,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -140,7 +152,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_14_1``` and is of type ```INTEGER```.
 
@@ -160,7 +172,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -180,7 +192,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 1 (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
 
 This parameter has the configuration ID ```config_16_1``` and is of type ```INTEGER```.
 
@@ -200,7 +212,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 4 (Send Scenes).
+The manufacturer defined default value is ```4``` (Send Scenes).
 
 This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
 
@@ -220,7 +232,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 4 (Send Scenes).
+The manufacturer defined default value is ```4``` (Send Scenes).
 
 This parameter has the configuration ID ```config_18_1``` and is of type ```INTEGER```.
 
@@ -240,7 +252,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 4 (Send Scenes).
+The manufacturer defined default value is ```4``` (Send Scenes).
 
 This parameter has the configuration ID ```config_19_1``` and is of type ```INTEGER```.
 
@@ -260,7 +272,7 @@ The following option values may be configured -:
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is 3 (Switch All).
+The manufacturer defined default value is ```3``` (Switch All).
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
@@ -277,9 +289,26 @@ The following option values may be configured -:
 | 2 | Switch on only |
 | 255 | Switch all on and off |
 
-The manufacturer defined default value is 255 (Switch all on and off).
+The manufacturer defined default value is ```255``` (Switch all on and off).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -368,7 +397,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V2| |
 
+### Documentation Links
+
+* [Z-wave.me RC2 remote+ user manual](https://www.cd-jackson.com/zwave_device_uploads/149/zwave-me-RC2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/149).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/149).

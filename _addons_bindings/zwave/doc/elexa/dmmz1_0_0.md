@@ -8,8 +8,9 @@ title: DMMZ1 - ZWave
 # DMMZ1 Dome Battery powered Z-Wave Plus enabled mousetrap
 This describes the Z-Wave device *DMMZ1*, manufactured by *Elexa Consumer Products Inc.* with the thing type UID of ```elexa_dmmz1_00_000```.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/684) to improve the documentation.
 
 ## Channels
 
@@ -19,8 +20,12 @@ The following table summarises the channels available for the DMMZ1
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -33,6 +38,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -41,6 +49,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -56,6 +70,8 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | High Voltage Duration Time  | How long the Mouser will fire continuously before it starts to burst-fire |
 | 4 | Enable/Disable LED Alarm | Enables or disables the indicator LED alarm when the trap is tripped |
 | 5 | LED Alarm Duration | Sets the amount of time the LED Indicator blinks after the trap is tripped |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: BASIC_SET Level
 
@@ -69,7 +85,7 @@ This parameter sets the value sent by the BASIC\_SET command to Association Grou
 FF (255/Turn On Device)
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -89,7 +105,7 @@ The following option values may be configured -:
 | 1 | Continuous Fire |
 | 2 | Burst Fire |
 
-The manufacturer defined default value is 2 (Burst Fire).
+The manufacturer defined default value is ```2``` (Burst Fire).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -102,7 +118,7 @@ This parameter defines how long the Mouser will fire continuously before it star
 00 64 ~ 01 68 (100~360 in Seconds)
 Values in the range 64 to 168 may be set.
 
-The manufacturer defined default value is 64.
+The manufacturer defined default value is ```64```.
 
 This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
 
@@ -122,7 +138,7 @@ The following option values may be configured -:
 | 0 | LED Alarm Disabled |
 | 1 | LED Alarm Enabled |
 
-The manufacturer defined default value is 1 (LED Alarm Enabled).
+The manufacturer defined default value is ```1``` (LED Alarm Enabled).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -137,9 +153,26 @@ This parameter sets the amount of time the LED Indicator blinks after the trap i
 01~FF (1~255 in Hours)
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -191,7 +224,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Dome Mouser Advanced Manual](https://www.cd-jackson.com/zwave_device_uploads/684/Dome-Mouser-Advanced-Manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/684).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/684).

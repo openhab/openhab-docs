@@ -8,9 +8,12 @@ title: GoControl GC-TBZ48 - ZWave
 # GoControl GC-TBZ48 Z-Wave Plus Thermostat
 This describes the Z-Wave device *GoControl GC-TBZ48*, manufactured by *Linear Corp* with the thing type UID of ```linear_gctbz48_00_000```.
 
-The device is in the category of HVAC, defining Air condition devices, Fans.
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-# Overview
+![GoControl GC-TBZ48 product image](https://www.cd-jackson.com/zwave_device_uploads/622/622_default.jpg)
+
+
+## Overview
 
 The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming setings, as well as to display current conditions in the home or office.
 
@@ -28,17 +31,25 @@ The following table summarises the channels available for the GoControl GC-TBZ48
 | Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
+| battery-level | system.battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -64,6 +75,9 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State
 
+Sets the thermostat operating state
+        
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -79,21 +93,34 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (cooling)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
-The ```thermostat_fanmode``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Thermostat fan state
 
-The ```thermostat_fanstate``` channel supports the `````` item.
+Channel type information on this channel is not found.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -101,7 +128,7 @@ The ```time_offset``` channel supports the ```Number``` item and is in the ```Te
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -155,7 +182,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CMD_V1| |
 
+### Documentation Links
+
+* [Product Manual](https://www.cd-jackson.com/zwave_device_uploads/622/GC-TBZ48-Install.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/622).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/622).

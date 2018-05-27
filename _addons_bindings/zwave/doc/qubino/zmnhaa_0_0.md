@@ -6,12 +6,15 @@ title: ZMNHAA - ZWave
 {% include base.html %}
 
 # ZMNHAA Flush 1 relay
-This describes the Z-Wave device *ZMNHAA*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhaa_00_000```.
+This describes the Z-Wave device *ZMNHAA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhaa_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+The ZMNHAA does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/205) to improve the documentation.
 
 ## Channels
 
@@ -28,21 +31,32 @@ The following table summarises the channels available for the ZMNHAA
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
+
+Indicates the current temperature
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -54,6 +68,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -93,7 +110,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -109,7 +126,7 @@ The following option values may be configured -:
 | 0 | NO (normaly open) input type |
 | 1 | NC (normaly close) input type |
 
-The manufacturer defined default value is 0 (NO (normaly open) input type).
+The manufacturer defined default value is ```0``` (NO (normaly open) input type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -125,7 +142,7 @@ The following option values may be configured -:
 | 0 | NO (normaly open) input type |
 | 1 | NC (normaly close) input type |
 
-The manufacturer defined default value is 0 (NO (normaly open) input type).
+The manufacturer defined default value is ```0``` (NO (normaly open) input type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -143,7 +160,7 @@ The following option values may be configured -:
 | 2 | ALL ON active ALL OFF is not active |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -154,7 +171,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -170,7 +187,7 @@ The following option values may be configured -:
 | 0 | Flush 1relay module saves its state before power failure (it returns t |
 | 1 | Flush 1relay module does not save the state after a power failure, it |
 
-The manufacturer defined default value is 0 (Flush 1relay module saves its state before power failure (it returns t).
+The manufacturer defined default value is ```0``` (Flush 1relay module saves its state before power failure (it returns t).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -181,7 +198,7 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -192,7 +209,7 @@ default value 300 (power report in Watts is send each 300s) 0 – Reporting Disa
 
 Values in the range 0 to 65535 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
@@ -257,7 +274,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_BASIC_V0| |
 | COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/205/flush-1-relay-ZMNHAA2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/205).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/205).

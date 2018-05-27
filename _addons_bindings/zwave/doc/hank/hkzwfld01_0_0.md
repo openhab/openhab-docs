@@ -6,11 +6,14 @@ title: HKZW_FLD01 - ZWave
 {% include base.html %}
 
 # HKZW\_FLD01 Flood Sensor FLD01
-This describes the Z-Wave device *HKZW_FLD01*, manufactured by *Hank* with the thing type UID of ```hank_hkzwfld01_00_000```.
+This describes the Z-Wave device *HKZW_FLD01*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwfld01_00_000```.
 
-The device is in the category of Sensor, defining Device used to measure something.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
-# Overview
+![HKZW_FLD01 product image](https://www.cd-jackson.com/zwave_device_uploads/674/674_default.jpg)
+
+
+## Overview
 
 HANK Flood Sensor is a device that is capable od both detecting leaks and floods when the level of water gest too low in a pool or a tank. Flood Sensor can work with your Z-Wave network to prevent emergencies such as burst water boiler to leakingar conditioners.
 
@@ -32,7 +35,7 @@ It includes:
 
 -Firmware OTA upgrade supported.
 
-## Inclusion Information
+### Inclusion Information
 
 Add Flood Sensor into Z-Wave Network:
 
@@ -48,7 +51,7 @@ Add Flood Sensor into Z-Wave Network:
 
 6- Successful adding will be confirmed by the Z-Wave controller's message.
 
-## Exclusion Information
+### Exclusion Information
 
 Remove Flood Sensor into Z-Wave Network:
 
@@ -64,7 +67,7 @@ Remove Flood Sensor into Z-Wave Network:
 
 6- Successful removing will be confirmed by the Z-Wave controller's message.
 
-## Wakeup Information
+### Wakeup Information
 
 Defining a time period by which the flood Sensor sends a wake up notification command frame to communicate with the assigned device, update parameters, update software detecs battery level.
 
@@ -84,12 +87,18 @@ The following table summarises the channels available for the HKZW_FLD01
 | Alarm (heat) | alarm_heat |  | Switch | 
 | Alarm (flood) | alarm_flood | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Sensor (temperature)
+
+Indicates the current temperature
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (heat)
+
+Indicates if a heat alarm is triggered
+        
 
 The ```alarm_heat``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -102,6 +111,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (flood)
 
+Indicates if the flood alarm is triggered
+        
+
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -113,6 +125,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -121,6 +136,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -141,6 +162,8 @@ Detailed information on each parameter can be found in the sections below.
 | 22 | Set the low temperature alarm trigger value | Available setting(US):-67°c to -257°c |
 | 24 | Blinking LED | Enable/Disable blinking LED when alarm being triggerd |
 | 32 | Level of low battery | This parameter defines a battery level as the "low bettery" |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 14: Enable/Disable Basic Set Command
 
@@ -153,7 +176,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 1 (Enable).
+The manufacturer defined default value is ```1``` (Enable).
 
 This parameter has the configuration ID ```config_14_1``` and is of type ```INTEGER```.
 
@@ -169,7 +192,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 0 (Disable).
+The manufacturer defined default value is ```0``` (Disable).
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -185,7 +208,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 1 (Enable).
+The manufacturer defined default value is ```1``` (Enable).
 
 This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
 
@@ -201,7 +224,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 1 (Enable).
+The manufacturer defined default value is ```1``` (Enable).
 
 This parameter has the configuration ID ```config_18_1``` and is of type ```INTEGER```.
 
@@ -217,7 +240,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 1 (Enable).
+The manufacturer defined default value is ```1``` (Enable).
 
 This parameter has the configuration ID ```config_19_1``` and is of type ```INTEGER```.
 
@@ -228,7 +251,7 @@ Available setting(US):-67°c to -257°c
 
 Values in the range -670 to 2570 may be set.
 
-The manufacturer defined default value is 1040.
+The manufacturer defined default value is ```1040```.
 
 This parameter has the configuration ID ```config_20_2``` and is of type ```INTEGER```.
 
@@ -244,7 +267,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 0 (Disable).
+The manufacturer defined default value is ```0``` (Disable).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
@@ -255,7 +278,7 @@ Available setting(US):-67°c to -257°c
 
 Values in the range -670 to 2570 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_22_2``` and is of type ```INTEGER```.
 
@@ -271,7 +294,7 @@ The following option values may be configured -:
 | 0 | Disable |
 | 1 | Enable |
 
-The manufacturer defined default value is 1 (Enable).
+The manufacturer defined default value is ```1``` (Enable).
 
 This parameter has the configuration ID ```config_24_1``` and is of type ```INTEGER```.
 
@@ -282,9 +305,26 @@ This parameter defines a battery level as the "low bettery"
 
 Values in the range 10 to 50 may be set.
 
-The manufacturer defined default value is 20.
+The manufacturer defined default value is ```20```.
 
 This parameter has the configuration ID ```config_32_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -327,7 +367,12 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [User manual](https://www.cd-jackson.com/zwave_device_uploads/674/Hank-Flood-Sensor-User-Manual.pdf)
+* [Test report](https://www.cd-jackson.com/zwave_device_uploads/674/Hank-Flood-Sensor-Test-Report.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/674).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/674).

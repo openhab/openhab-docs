@@ -8,10 +8,14 @@ title: CT100 Plus - ZWave
 # CT100 Plus Z-Wave Thermostat
 This describes the Z-Wave device *CT100 Plus*, manufactured by *Radio Thermostat Company of America (RTC)* with the thing type UID of ```rtc_ct100plus_00_000```.
 
-The device is in the category of HVAC, defining Air condition devices, Fans.
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-# Overview
+![CT100 Plus product image](https://www.cd-jackson.com/zwave_device_uploads/641/641_default.png)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/641) to improve the documentation.
 
 ## Channels
 
@@ -30,6 +34,7 @@ The following table summarises the channels available for the CT100 Plus
 | Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
+| battery-level | system.battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 | Sensor (relative humidity) 1 | sensor_relhumidity1 | Humidity | Number | 
 | Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number | 
@@ -47,6 +52,9 @@ The following table summarises the channels available for the CT100 Plus
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -58,13 +66,20 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (relative humidity)
 
+Indicates the current relative humidity
+
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -90,6 +105,9 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State
 
+Sets the thermostat operating state
+        
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -105,41 +123,65 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
-The ```thermostat_fanmode``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Thermostat fan state
 
-The ```thermostat_fanstate``` channel supports the `````` item.
+Channel type information on this channel is not found.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 1
 
+Indicates the current relative humidity
+
 The ```sensor_relhumidity1``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 1
 
+Indicates the current temperature
+
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode 1
+
+Sets the thermostat
+        
 
 The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -165,6 +207,9 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State 1
 
+Sets the thermostat operating state
+        
+
 The ```thermostat_state1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -180,37 +225,52 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating) 1
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling) 1
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air) 1
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace) 1
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode 1
 
-The ```thermostat_fanmode1``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Thermostat fan state 1
 
-The ```thermostat_fanstate1``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Clock Time Offset 1
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 2
 
+Indicates the current relative humidity
+
 The ```sensor_relhumidity2``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 2
+
+Indicates the current temperature
 
 The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -253,7 +313,7 @@ The following option values may be configured -:
 | 3 | 1.5° F |
 | 4 | 2.0° F |
 
-The manufacturer defined default value is 2 (1.0° F).
+The manufacturer defined default value is ```2``` (1.0° F).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -267,7 +327,7 @@ Byte 3 = Number of Heat Pump Stages
 Byte 4 = Number of Cool Stages
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_2_4``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -284,7 +344,7 @@ The following option values may be configured -:
 | 0 | Utility lock disabled |
 | 1 | Utility lock enabled |
 
-The manufacturer defined default value is 0 (Utility lock disabled).
+The manufacturer defined default value is ```0``` (Utility lock disabled).
 
 This parameter has the configuration ID ```config_3_1_wo``` and is of type ```INTEGER```.
 This is a write only parameter.
@@ -296,7 +356,7 @@ C-Wire / Battery Status
 If 0x01, the thermostat is powered by a C-wire. If 0x02, the thermostat is powered by batteries.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -315,7 +375,7 @@ The following option values may be configured -:
 | 2 | 5% RH |
 | 3 | 10% RH |
 
-The manufacturer defined default value is 0 (Disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -331,7 +391,7 @@ The following option values may be configured -:
 | 0 | Auxiliary/Emergency heat disabled |
 | 1 | Auxiliary/Emergency heat enabled |
 
-The manufacturer defined default value is 0 (Auxiliary/Emergency heat disabled).
+The manufacturer defined default value is ```0``` (Auxiliary/Emergency heat disabled).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -353,7 +413,7 @@ The following option values may be configured -:
 | 7 | 3.5° F |
 | 8 | 4.0° F |
 
-The manufacturer defined default value is 2 (1.0° F).
+The manufacturer defined default value is ```2``` (1.0° F).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -370,7 +430,7 @@ The following option values may be configured -:
 | 8 | 4.0° F |
 | 12 | 6.0° F |
 
-The manufacturer defined default value is 4 (2.0° F).
+The manufacturer defined default value is ```4``` (2.0° F).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -386,7 +446,7 @@ The following option values may be configured -:
 | 1 | Fast recovery mode |
 | 2 | Economy recovery mode |
 
-The manufacturer defined default value is 2 (Economy recovery mode).
+The manufacturer defined default value is ```2``` (Economy recovery mode).
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -397,7 +457,7 @@ Upper/Lower bounds for thermostat temperature reporting
 The thermostat will report ambient temperature changes for temperature values greater than the upper bound. This field must be between 0F and 124F. By default, this value is 0F (report all temperature changes).
 Values in the range 0 to 124 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_10_4_000000FF``` and is of type ```INTEGER```.
 
@@ -413,7 +473,7 @@ The following option values may be configured -:
 | 1 | Celsius |
 | 9 | Fahreheit |
 
-The manufacturer defined default value is 9 (Fahreheit).
+The manufacturer defined default value is ```9``` (Fahreheit).
 
 This parameter has the configuration ID ```config_10_4_0000F000``` and is of type ```INTEGER```.
 
@@ -429,7 +489,7 @@ The following option values may be configured -:
 | 1 | Celsius |
 | 9 | Fahrenheit |
 
-The manufacturer defined default value is 9 (Fahrenheit).
+The manufacturer defined default value is ```9``` (Fahrenheit).
 
 This parameter has the configuration ID ```config_10_4_0000FF00``` and is of type ```INTEGER```.
 
@@ -440,7 +500,7 @@ Upper/Lower bounds for thermostat temperature reporting
 The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).
 Values in the range 0 to 124 may be set.
 
-The manufacturer defined default value is 124.
+The manufacturer defined default value is ```124```.
 
 This parameter has the configuration ID ```config_10_4_00FF0000``` and is of type ```INTEGER```.
 
@@ -456,7 +516,7 @@ The following option values may be configured -:
 | 0 | Normal mode enabled |
 | 1 | Simple mode enabled |
 
-The manufacturer defined default value is 1 (Simple mode enabled).
+The manufacturer defined default value is ```1``` (Simple mode enabled).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -472,7 +532,7 @@ The following option values may be configured -:
 | 0 | Multicast disabled |
 | 1 | Multicast enabled |
 
-The manufacturer defined default value is 0 (Multicast disabled).
+The manufacturer defined default value is ```0``` (Multicast disabled).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -547,7 +607,11 @@ This group supports 2 nodes.
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 
+### Documentation Links
+
+* [CT100 Plus User Guide](https://www.cd-jackson.com/zwave_device_uploads/641/CT100-Plus-UserGuide.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/641).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/641).

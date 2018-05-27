@@ -6,7 +6,7 @@ title: Danalock V3-BTZE - ZWave
 {% include base.html %}
 
 # Danalock V3-BTZE Z-Wave controlled door lock with Bluetooth Smart
-This describes the Z-Wave device *Danalock V3-BTZE*, manufactured by *Poly-control* with the thing type UID of ```polycontrol_btze_00_000```.
+This describes the Z-Wave device *Danalock V3-BTZE*, manufactured by *[Poly-control](https://www.danalock.com/)* with the thing type UID of ```polycontrol_btze_00_000```.
 
 The device is in the category of Lock, defining Devices whose primary pupose is locking something.
 
@@ -45,6 +45,8 @@ The following table summarises the channels available for the Danalock V3-BTZE
 | Door Lock | lock_door | Door | Switch | 
 
 ### Door Lock
+
+Lock and unlock the door
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 

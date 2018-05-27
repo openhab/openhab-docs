@@ -6,9 +6,12 @@ title: MH9-CO2-WD - ZWave
 {% include base.html %}
 
 # MH9-CO2-WD CO2 Monitor Air quality detector
-This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *McoHome Technology Co., Ltd* with the thing type UID of ```mcohome_mh9co2wd_00_000```.
+This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh9co2wd_00_000```.
 
-# Overview
+![MH9-CO2-WD product image](https://www.cd-jackson.com/zwave_device_uploads/455/455_default.png)
+
+
+## Overview
 
 MCOHome CO2 Monitor is an air quality detector which compatible with Z-Wave technology.
 
@@ -39,7 +42,7 @@ Device can be included into any Z-Wave network, and is compatible with any other
 - COMMAND\_CLASS\_MANUFACTURER\_SPECIFIC
 - COMMAND\_CLASS\_VERSION
 
-## Inclusion Information
+### Inclusion Information
 
 Activate Inclusion/Exclusion mode in the gateway.
 
@@ -49,7 +52,7 @@ If device has not been included into any Z-Wave network before, “- - -”will 
 
 Then press K2 once, “- - -” flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, “- - -” will stop flashing in 20 sec.
 
-## Exclusion Information
+### Exclusion Information
 
 Activate Inclusion/Exclusion mode in the gateway.
 
@@ -73,17 +76,26 @@ The following table summarises the channels available for the MH9-CO2-WD
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
+
+Indicates the current relative humidity
 
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (CO2)
 
+Indicates the CO2 level
+
 The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (CO2)
+
+Indicates if the carbon dioxide alarm is triggered
+        
 
 The ```alarm_co2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -95,6 +107,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -124,7 +139,7 @@ Sets the CO2 notification threshold for association group 1.
 When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.
 Values in the range 1 to 2000 may be set.
 
-The manufacturer defined default value is 1000.
+The manufacturer defined default value is ```1000```.
 
 This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
 
@@ -161,7 +176,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_SENSOR_CONFIGURATION_V1| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/455/McoHomeCO2Monitor.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/455).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/455).

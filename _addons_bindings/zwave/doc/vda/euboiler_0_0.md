@@ -8,8 +8,9 @@ title: Vitrum I EU Boiler - ZWave
 # Vitrum I EU Boiler Vitrum touch timer switch Dual Relay
 This describes the Z-Wave device *Vitrum I EU Boiler*, manufactured by *VDA* with the thing type UID of ```vda_euboiler_00_000```.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/683) to improve the documentation.
 
 ## Channels
 
@@ -26,25 +27,41 @@ The following table summarises the channels available for the Vitrum I EU Boiler
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
 
+Triggers when a scene button is pressed
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Switch 1
 
+Switch the power on and off
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 1
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -52,7 +69,7 @@ The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -97,4 +114,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/683).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/683).

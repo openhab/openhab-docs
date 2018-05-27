@@ -6,7 +6,7 @@ title: HS1HT-Z  - ZWave
 {% include base.html %}
 
 # HS1HT-Z Temperature/Humidity Sensor
-This describes the Z-Wave device *HS1HT-Z *, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs1htz_00_000```.
+This describes the Z-Wave device *HS1HT-Z *, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1htz_00_000```.
 
 The device is in the category of Sensor, defining Device used to measure something.
 
@@ -42,9 +42,13 @@ The following table summarises the channels available for the HS1HT-Z
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
+
+Indicates the current relative humidity
 
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -52,7 +56,7 @@ The ```sensor_relhumidity``` channel supports the ```Number``` item and is in th
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

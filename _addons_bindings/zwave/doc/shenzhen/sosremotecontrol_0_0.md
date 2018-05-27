@@ -6,7 +6,7 @@ title: SOS/Remote Control - ZWave
 {% include base.html %}
 
 # SOS/Remote Control Z-Wave Remote for Scene selection and SOS button
-This describes the Z-Wave device *SOS/Remote Control*, manufactured by *Shenzhen Neo Electronics Co., Ltd* with the thing type UID of ```shenzhen_sosremotecontrol_00_000```.
+This describes the Z-Wave device *SOS/Remote Control*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_sosremotecontrol_00_000```.
 
 The device is in the category of Remote Control, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
@@ -54,6 +54,9 @@ The following table summarises the channels available for the SOS/Remote Control
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -65,9 +68,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Scene Number
 
+Triggers when a scene button is pressed
+
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Alarm (emergency)
+
+Indicates if the emergency alarm is triggered
+        
 
 The ```alarm_emergency``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

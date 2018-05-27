@@ -8,10 +8,14 @@ title: YKFCON - ZWave
 # YKFCON Smart Living Keyfree Smart Lock
 This describes the Z-Wave device *YKFCON*, manufactured by *ASSA ABLOY* with the thing type UID of ```yale_ykfcon_00_000```.
 
-The device is in the category of Lock, defining Devices whose primary pupose is locking something.
+The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-# Overview
+![YKFCON product image](https://www.cd-jackson.com/zwave_device_uploads/292/292_default.jpg)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292) to improve the documentation.
 
 ## Channels
 
@@ -21,12 +25,18 @@ The following table summarises the channels available for the YKFCON
 |---------|------------|----------|-----------|
 | Door Lock | lock_door | Door | Switch | 
 | Alarm | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Door Lock
+
+Lock and unlock the door
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 
 ### Alarm
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -36,6 +46,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -53,6 +69,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Language | Language used by the voice prompts |
 | 7 | Shutdown Time | Number of times the device is locked out after the invalid retries are exceeded |
 | 8 | Operating Mode | Sets if the unit operates normal, or disables keypad and Z-Wave lock/unlock |
+|  | Lock Timeout | Sets the time after which the door will auto lock |
 
 ### Parameter 1: Audio Volume
 
@@ -70,7 +87,7 @@ The following option values may be configured -:
 | 2 | Low |
 | 3 | High |
 
-The manufacturer defined default value is 3 (High).
+The manufacturer defined default value is ```3``` (High).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -88,7 +105,7 @@ The following option values may be configured -:
 | 0 | Off |
 | 255 | On |
 
-The manufacturer defined default value is 0 (Off).
+The manufacturer defined default value is ```0``` (Off).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -99,7 +116,7 @@ Time after unlocking that the device will lock
 
 Values in the range 5 to 255 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -110,7 +127,7 @@ The number of invalid tries before the lock shutdowns and sends an alarm
 
 Values in the range 1 to 7 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -131,7 +148,7 @@ The following option values may be configured -:
 | 2 | Spanish |
 | 3 | French |
 
-The manufacturer defined default value is 1 (English).
+The manufacturer defined default value is ```1``` (English).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -142,7 +159,7 @@ Number of times the device is locked out after the invalid retries are exceeded
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -163,9 +180,15 @@ The following option values may be configured -:
 | 1 | Vacation Mode |
 | 2 | Privacy Mode |
 
-The manufacturer defined default value is 0 (Normal).
+The manufacturer defined default value is ```0``` (Normal).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+### Lock Timeout
+
+Sets the time after which the door will auto lock.
+
+This parameter has the configuration ID ```doorlock_timeout``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -205,7 +228,13 @@ This group supports 5 nodes.
 | COMMAND_CLASS_TIME_PARAMETERS_V1| |
 | COMMAND_CLASS_SECURITY_V1| |
 
+### Documentation Links
+
+* [Data Sheet](https://www.cd-jackson.com/zwave_device_uploads/292/yale-smart-living-keyfree-connected-data-sheet.pdf)
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/292/yale-smart-living-keyfree-connected-user-manual.pdf)
+* [Technical Information](https://www.cd-jackson.com/zwave_device_uploads/292/yale-locks-info.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292).

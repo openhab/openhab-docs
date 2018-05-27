@@ -8,10 +8,11 @@ title: ZSMOKE - ZWave
 # ZSMOKE Smoke Alarm
 This describes the Z-Wave device *ZSMOKE*, manufactured by *BRK Brands, Inc.* with the thing type UID of ```brk_zsmoke_00_000```.
 
-The device is in the category of Smoke Detector, defining Smoke detectors.
+The device is in the category of *Smoke Detector*, defining Smoke detectors.
 
-# Overview
+## Overview
 
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/239) to improve the documentation.
 
 ## Channels
 
@@ -20,8 +21,12 @@ The following table summarises the channels available for the ZSMOKE
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Alarm | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Alarm
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -31,6 +36,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -54,7 +65,7 @@ The following option values may be configured -:
 | 0 | Single Alarm |
 | 1 | Double Alarm |
 
-The manufacturer defined default value is 0 (Single Alarm).
+The manufacturer defined default value is ```0``` (Single Alarm).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -90,4 +101,4 @@ This group supports 5 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/239).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/239).

@@ -6,7 +6,7 @@ title: OOMI ColorStrip - ZWave
 {% include base.html %}
 
 # OOMI ColorStrip LED RGBWW Strip
-This describes the Z-Wave device *OOMI ColorStrip*, manufactured by *Fantem* with the thing type UID of ```oomi_colorstrip_00_000```.
+This describes the Z-Wave device *OOMI ColorStrip*, manufactured by *[Fantem](http://www.oomi.com/)* with the thing type UID of ```oomi_colorstrip_00_000```.
 
 The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
 
@@ -34,13 +34,24 @@ The following table summarises the channels available for the OOMI ColorStrip
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
+The color temperature channel allows to set the color
+            temperature of a light from 0 (cold) to 100 (warm).
 
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
@@ -48,18 +59,13 @@ The ```color_temperature``` channel supports the ```Dimmer``` item and is in the
 
 ## Device Configuration
 
-The following table provides a summary of the 0 configuration parameter available in the OOMI ColorStrip.
-Detailed information on each parameter can be found in the sections below.
-
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configured.
 
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The OOMI ColorStrip supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

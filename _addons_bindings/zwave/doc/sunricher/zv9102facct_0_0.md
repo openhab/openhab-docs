@@ -6,7 +6,7 @@ title: ZV9102FA-CCT - ZWave
 {% include base.html %}
 
 # ZV9102FA-CCT Z-wave CCT LED controller
-This describes the Z-Wave device *ZV9102FA-CCT*, manufactured by *Sunricher* with the thing type UID of ```sunricher_zv9102facct_00_000```.
+This describes the Z-Wave device *ZV9102FA-CCT*, manufactured by *[Sunricher](www.sunricher.com)* with the thing type UID of ```sunricher_zv9102facct_00_000```.
 
 The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
 
@@ -40,21 +40,37 @@ The following table summarises the channels available for the ZV9102FA-CCT
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Color Control
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
 
+The color temperature channel allows to set the color
+            temperature of a light from 0 (cold) to 100 (warm).
+
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Alarm (system)
+
+Indicates if a system alarm is triggered
+        
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 

@@ -8,7 +8,12 @@ title: swiidplug - ZWave
 # swiidplug SwiidPlug
 This describes the Z-Wave device *swiidplug*, manufactured by *Reitz-Group.de* with the thing type UID of ```reitz_swiidplug_00_000```.
 
-# Overview
+![swiidplug product image](https://www.cd-jackson.com/zwave_device_uploads/49/49_default.jpg)
+
+
+The swiidplug does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 The SwiidPlug™ is designed to switch on and off remotely appliances (mainly lights) which are plugged into its female socket, The SwiidPlug™ is suitable for the wireless switching of incandescent light bulbs as well as halogen and LED lights (all transformer types). The SwiidPlug™ can be operated manually by pressing on its FUNCTION button which then acts as an on/off toggle switch and can be operated remotely and wirelessly by Z -Wave®. The SwiidPlug™ can also handle associations with other devices, both ways to and from it. Thus, your SwiidPlug™ can respond directly to a signal from another Z-Wave® device in your network, such as the triggering of a presence detector. As soon as it has been plugged into a mains socket, the SwiidPlug™ can be included into a Z-Wave® network so as to interoperate with controllers and other Z-Wave® devices.
 
@@ -26,13 +31,15 @@ The following table summarises the channels available for the swiidplug
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -57,7 +64,13 @@ The device does not support associations.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_INDICATOR_V1| |
 
+### Documentation Links
+
+* [POPP Manual](https://www.cd-jackson.com/zwave_device_uploads/49/Manual-IP20-POPP-En.pdf)
+* [User manual](https://www.cd-jackson.com/zwave_device_uploads/49/ZAP-User-s-manual-vBAT-30-11-2014.pdf)
+* [advanced-swiidplug](https://www.cd-jackson.com/zwave_device_uploads/49/advanced-swiidplug.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/49).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/49).

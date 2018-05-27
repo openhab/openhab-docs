@@ -10,7 +10,6 @@ This describes the Z-Wave device *Smoke Detector*, manufactured by *Shenzhen iSu
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the Smoke Detector
@@ -22,6 +21,9 @@ The following table summarises the channels available for the Smoke Detector
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -32,6 +34,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (smoke)
+
+Indicates if a smoke is triggered
+        
 
 The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -46,7 +51,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

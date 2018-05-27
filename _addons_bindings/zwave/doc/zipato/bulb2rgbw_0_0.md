@@ -6,12 +6,18 @@ title: RGBWE2 - ZWave
 {% include base.html %}
 
 # RGBWE2 RGBW Bulb V2
-This describes the Z-Wave device *RGBWE2*, manufactured by *Zipato* with the thing type UID of ```zipato_bulb2rgbw_00_000```.
+This describes the Z-Wave device *RGBWE2*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_bulb2rgbw_00_000```.
 
-The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
+The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-# Overview
+![RGBWE2 product image](https://www.cd-jackson.com/zwave_device_uploads/619/619_default.jpg)
 
+
+The RGBWE2 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/619) to improve the documentation.
 
 ## Channels
 
@@ -25,13 +31,24 @@ The following table summarises the channels available for the RGBWE2
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Color Temperature
+
+The color temperature channel allows to set the color
+            temperature of a light from 0 (cold) to 100 (warm).
 
 The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
@@ -44,18 +61,33 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | internal bulb temperature |  |
+| 1 | Internal bulb temperature |  |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
-### Parameter 1: internal bulb temperature
+### Parameter 1: Internal bulb temperature
 
 
 
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 This is a read only parameter.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -86,7 +118,11 @@ The device does not support associations.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/619/rgbw2-Zipato-RGBW-gen2-Bulb-User-Manual-Z-Wave-v1-2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/619).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/619).

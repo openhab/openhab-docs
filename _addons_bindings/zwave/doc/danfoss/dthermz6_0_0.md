@@ -8,8 +8,12 @@ title: DTHERMZ6 - ZWave
 # DTHERMZ6 Living Connect Z Thermostat
 This describes the Z-Wave device *DTHERMZ6*, manufactured by *Danfoss* with the thing type UID of ```danfoss_dthermz6_00_000```.
 
-# Overview
+![DTHERMZ6 product image](https://www.cd-jackson.com/zwave_device_uploads/502/502_default.jpg)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/502) to improve the documentation.
 
 ## Channels
 
@@ -19,17 +23,31 @@ The following table summarises the channels available for the DTHERMZ6
 |---------|------------|----------|-----------|
 | Sensor (temperature) | sensor_temperature | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| battery-level | system.battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Sensor (temperature)
+
+Indicates the current temperature
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -37,7 +55,7 @@ The ```time_offset``` channel supports the ```Number``` item and is in the ```Te
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -71,7 +89,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_MULTI_CMD_V1| |
 
+### Documentation Links
+
+* [Product Manual](https://www.cd-jackson.com/zwave_device_uploads/502/THERMZ6.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/502).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/502).

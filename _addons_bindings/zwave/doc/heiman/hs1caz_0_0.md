@@ -6,7 +6,7 @@ title: HS1CA-Z - ZWave
 {% include base.html %}
 
 # HS1CA-Z CO Detector
-This describes the Z-Wave device *HS1CA-Z*, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs1caz_00_000```.
+This describes the Z-Wave device *HS1CA-Z*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1caz_00_000```.
 
 The device is in the category of Sensor, defining Device used to measure something.
 
@@ -63,6 +63,9 @@ The following table summarises the channels available for the HS1CA-Z
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -73,6 +76,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (CO)
+
+Indicates if the carbon monoxide alarm is triggered
+        
 
 The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -87,11 +93,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 0 configuration parameter available in the HS1CA-Z.
-Detailed information on each parameter can be found in the sections below.
-
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configured.
 
 ## Association Groups
 

@@ -51,6 +51,9 @@ The following table summarises the channels available for the ZWN-BDS
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -62,6 +65,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (general)
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -72,6 +78,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -86,18 +95,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 0 configuration parameter available in the ZWN-BDS.
-Detailed information on each parameter can be found in the sections below.
-
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configured.
 
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The ZWN-BDS supports 0 association group.
-
+The device does not support associations.
 ## Technical Information
 
 ### Endpoints

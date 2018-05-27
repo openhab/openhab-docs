@@ -6,12 +6,18 @@ title: Alarm Sound - ZWave
 {% include base.html %}
 
 # Alarm Sound Alarm sound
-This describes the Z-Wave device *Alarm Sound*, manufactured by *BeNext* with the thing type UID of ```benext_alarmsound_00_000```.
+This describes the Z-Wave device *Alarm Sound*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_alarmsound_00_000```.
 
-The device is in the category of Siren, defining Siren used by Alarm systems.
+The device is in the category of *Siren*, defining Siren used by Alarm systems.
 
-# Overview
+![Alarm Sound product image](https://www.cd-jackson.com/zwave_device_uploads/443/443_default.png)
 
+
+The Alarm Sound does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/443) to improve the documentation.
 
 ## Channels
 
@@ -24,9 +30,14 @@ The following table summarises the channels available for the Alarm Sound
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -65,7 +76,7 @@ Set all configuration values to default values (factory settings)
 If value is set to 255 reset to default settings.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -76,7 +87,7 @@ Test connection by sending a periodic test. if the device doesn't react the user
 0 this is turned off. 1-255 turn it on.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -87,7 +98,7 @@ Time it takes to send a new frame after the last frame has succesfully send
 t(s) = param1 \* 6 \*60
 Values in the range 0 to 60 may be set.
 
-The manufacturer defined default value is 60.
+The manufacturer defined default value is ```60```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -98,7 +109,7 @@ Time elapsed between failing to end a frame and sending a new frame.
 t(s) = param1 \*60
 Values in the range 0 to 240 may be set.
 
-The manufacturer defined default value is 240.
+The manufacturer defined default value is ```240```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -111,7 +122,7 @@ The index of the sound mode when a switch binary/basic set frame been received
 If value is put higher then 5 the application will read this as 1.
 Values in the range 0 to 6 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -124,7 +135,7 @@ The sound and light mode that will be used when the device gets unplugged.
 If value is put higher then 5 the application will read this as 1.
 Values in the range 0 to 6 may be set.
 
-The manufacturer defined default value is 6.
+The manufacturer defined default value is ```6```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -139,7 +150,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_10_18``` and is of type ```INTEGER```.
 
@@ -154,7 +165,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_28_18``` and is of type ```INTEGER```.
 
@@ -169,7 +180,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_46_18``` and is of type ```INTEGER```.
 
@@ -184,7 +195,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_64_18``` and is of type ```INTEGER```.
 
@@ -199,7 +210,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_82_18``` and is of type ```INTEGER```.
 
@@ -214,7 +225,7 @@ When the configuration is not this size the frame will be ignored.
 For the configuration of the light/sound mode i would like to refer to the manual.
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_100_18``` and is of type ```INTEGER```.
 
@@ -254,7 +265,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_MULTI_CMD_V1| |
 
+### Documentation Links
+
+* [Alarm Sound NL](https://www.cd-jackson.com/zwave_device_uploads/443/alarmsound-nl.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/443).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/443).

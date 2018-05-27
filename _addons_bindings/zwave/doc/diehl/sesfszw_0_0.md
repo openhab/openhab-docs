@@ -8,10 +8,11 @@ title: SES FS-ZW - ZWave
 # SES FS-ZW Plug Actuator
 This describes the Z-Wave device *SES FS-ZW*, manufactured by *Diehl AKO* with the thing type UID of ```diehl_sesfszw_00_000```.
 
-# Overview
+The SES FS-ZW does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
 
-## Inclusion Information
+### Inclusion Information
 
 The inclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
@@ -25,7 +26,7 @@ The Status LED lights up white.
 
 During the next 5 seconds, the wireless connection is established and the inclusion process for linking the plug actuator to the central unit is performed.
 
-## Exclusion Information
+### Exclusion Information
 
 The exclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
@@ -54,17 +55,26 @@ The following table summarises the channels available for the SES FS-ZW
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (system)
+
+Indicates if a system alarm is triggered
+        
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -77,6 +87,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (heat)
 
+Indicates if a heat alarm is triggered
+        
+
 The ```alarm_heat``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -87,6 +100,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
+
+Indicates if a power alarm is triggered
+        
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -117,6 +133,7 @@ Detailed information on each parameter can be found in the sections below.
 | 9 | Reset of overcurrent shutdown | Activation despite 3x safety shutdown |
 | 10 | Night mode | Set Night mode of the Status LED |
 | 11 | Info LED colour | Set color of the Info LED |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Default switch state
 
@@ -130,7 +147,7 @@ The following option values may be configured -:
 | 1 | Plug actuator ON |
 | 2 | Last status is restored |
 
-The manufacturer defined default value is 2 (Last status is restored).
+The manufacturer defined default value is ```2``` (Last status is restored).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -141,7 +158,7 @@ Minimum time between two (non-requested) energy values
 
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -152,7 +169,7 @@ Maximum time between two energy values, independently of changes in the value
 
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 120.
+The manufacturer defined default value is ```120```.
 
 This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
 
@@ -163,7 +180,7 @@ Minimum time between two (non-requested) power values
 
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_4_2``` and is of type ```INTEGER```.
 
@@ -174,7 +191,7 @@ Maximum time between two power values, independently of changes in the value
 
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 120.
+The manufacturer defined default value is ```120```.
 
 This parameter has the configuration ID ```config_5_2``` and is of type ```INTEGER```.
 
@@ -185,7 +202,7 @@ Minimum change required for a new energy value to be transmitted.
 The transmission must take place in the time window between parameter 2 and 3.
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_6_2``` and is of type ```INTEGER```.
 
@@ -196,7 +213,7 @@ Minimum change required for a new power value to be transmitted.
 The transmission must take place in the time window between parameter 4 and 5
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 150.
+The manufacturer defined default value is ```150```.
 
 This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
 
@@ -212,7 +229,7 @@ The following option values may be configured -:
 | 0 | Plug actuator remains OFF |
 | 1 | Automatic restart |
 
-The manufacturer defined default value is 0 (Plug actuator remains OFF).
+The manufacturer defined default value is ```0``` (Plug actuator remains OFF).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -230,7 +247,7 @@ The following option values may be configured -:
 | 0 | No reset |
 | 1 | Reset |
 
-The manufacturer defined default value is 0 (No reset).
+The manufacturer defined default value is ```0``` (No reset).
 
 This parameter has the configuration ID ```config_9_1_wo``` and is of type ```INTEGER```.
 This is a write only parameter.
@@ -247,7 +264,7 @@ The following option values may be configured -:
 | 0 | Night mode OFF |
 | 1 | Night mode ON |
 
-The manufacturer defined default value is 0 (Night mode OFF).
+The manufacturer defined default value is ```0``` (Night mode OFF).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -265,9 +282,23 @@ The following option values may be configured -:
 | 2 | Info LED yellow |
 | 3 | Info LED red |
 
-The manufacturer defined default value is 0 (Info LED OFF).
+The manufacturer defined default value is ```0``` (Info LED OFF).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -302,7 +333,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_INDICATOR_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/671/SES-FS-ZW-BA-06-15-B.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/671).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/671).

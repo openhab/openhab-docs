@@ -6,10 +6,9 @@ title: MH6-HP - ZWave
 {% include base.html %}
 
 # MH6-HP Programmable Thermostat
-This describes the Z-Wave device *MH6-HP*, manufactured by *McoHome Technology Co., Ltd* with the thing type UID of ```mcohome_mh6hp_00_000```.
+This describes the Z-Wave device *MH6-HP*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh6hp_00_000```.
 
 # Overview
-
 
 ## Channels
 
@@ -28,9 +27,14 @@ The following table summarises the channels available for the MH6-HP
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -56,6 +60,9 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State
 
+Sets the thermostat operating state
+        
+
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -71,21 +78,32 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
+
+
 The ```thermostat_fanmode``` channel supports the `````` item.
 
 ### Thermostat fan state
 
+
+
 The ```thermostat_fanstate``` channel supports the `````` item.
 
 ### Clock Time Offset
+
+Provides the current time difference for the devices time
+        
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -93,7 +111,7 @@ The ```time_offset``` channel supports the ```Number``` item and is in the ```Te
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

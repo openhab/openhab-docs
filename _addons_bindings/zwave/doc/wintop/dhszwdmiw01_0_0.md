@@ -8,8 +8,11 @@ title: DHSZWDMIW01 - ZWave
 # DHSZWDMIW01 DHS Z-Wave Micro Dimmer
 This describes the Z-Wave device *DHSZWDMIW01*, manufactured by *Wintop* with the thing type UID of ```wintop_dhszwdmiw01_00_000```.
 
-# Overview
+The DHSZWDMIW01 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/398) to improve the documentation.
 
 ## Channels
 
@@ -22,9 +25,15 @@ The following table summarises the channels available for the DHSZWDMIW01
 
 ### Dimmer
 
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
+
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -32,7 +41,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -57,7 +66,11 @@ The device does not support associations.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Z-Wave InWall Dimmer User Guide](https://www.cd-jackson.com/zwave_device_uploads/398/Z-Wave-InWall-Dimmer-User-Manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/398).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/398).

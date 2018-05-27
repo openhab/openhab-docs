@@ -8,8 +8,14 @@ title: GE Plug in Smart Switch - ZWave
 # GE Plug in Smart Switch GE Plug in Smart Switch Zwave Plus
 This describes the Z-Wave device *GE Plug in Smart Switch*, manufactured by *Jasco Products* with the thing type UID of ```ge_gepluginsmartswitch_00_000```.
 
-# Overview
+![GE Plug in Smart Switch product image](https://www.cd-jackson.com/zwave_device_uploads/517/517_default.jpg)
 
+
+The GE Plug in Smart Switch does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/517) to improve the documentation.
 
 ## Channels
 
@@ -20,6 +26,8 @@ The following table summarises the channels available for the GE Plug in Smart S
 | Switch | switch_binary | Switch | Switch | 
 
 ### Switch
+
+Switch the power on and off
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -33,6 +41,7 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 3 | LED light | control LED light behavior. Default is on when connected device is off |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 3: LED light
 
@@ -46,11 +55,25 @@ The following option values may be configured -:
 | 1 | LED is on when connected device is on |
 | 2 | LED is off at all times |
 
-The manufacturer defined default value is 0 (reset to factory default).
+The manufacturer defined default value is ```0``` (reset to factory default).
 
 This parameter has the configuration ID ```config_3_1_wo``` and is of type ```INTEGER```.
 This is a read only parameter.
 This is a write only parameter.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -81,7 +104,11 @@ The device does not support associations.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [ge zwaveplus plug-in smart switch product manual](https://www.cd-jackson.com/zwave_device_uploads/517/ge-zwaveplus-plug-in-smart-switch-manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/517).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/517).

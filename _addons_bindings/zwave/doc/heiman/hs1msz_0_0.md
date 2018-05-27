@@ -6,7 +6,7 @@ title: HS1MS-Z - ZWave
 {% include base.html %}
 
 # HS1MS-Z Smart Motion Sensor
-This describes the Z-Wave device *HS1MS-Z*, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs1msz_00_000```.
+This describes the Z-Wave device *HS1MS-Z*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs1msz_00_000```.
 
 The device is in the category of Motion Detector, defining Motion sensors/detectors.
 
@@ -40,6 +40,9 @@ The following table summarises the channels available for the HS1MS-Z
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -50,6 +53,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -64,7 +70,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

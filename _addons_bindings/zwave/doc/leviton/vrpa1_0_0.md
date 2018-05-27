@@ -8,11 +8,13 @@ title: VRPA1 - ZWave
 # VRPA1 Vizia RF + Scene Capable Plug-in Module
 This describes the Z-Wave device *VRPA1*, manufactured by *Leviton* with the thing type UID of ```leviton_vrpa1_00_000```.
 
-# Overview
+The VRPA1 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 The Vizia RF + Scene Capable Plug-in Appliance Module (VRPA1-1LW) is ideal for any residential setting where remote ON/OFF switching of appliances, motor loads up to 1/2 HP, or freestanding lights, including Incandescent, Magnetic Low Voltage, Fluorescent and Compact Fluorescent loads is needed. Typical applications include switching of fluorescent lamps, portable fans, kitchen appliances, indoor fountains and more. The Vizia RF + Scene Capable Plug-in Appliance Module also allows users to incorporate small appliances into scene and zone home control applications.
 
-## Inclusion Information
+### Inclusion Information
 
 1. Plug in the device
 2. Press and hold the front button until the light changes to a flashing amber
@@ -28,9 +30,13 @@ The following table summarises the channels available for the VRPA1
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -38,7 +44,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -71,7 +77,11 @@ This group supports 254 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Product Specification and Data Sheet](https://www.cd-jackson.com/zwave_device_uploads/350/VRF-plugin-modules-techsht-BW-v1p4HR.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/350).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/350).

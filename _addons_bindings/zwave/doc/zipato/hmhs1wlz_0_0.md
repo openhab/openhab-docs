@@ -6,7 +6,7 @@ title: HM-HS1WL-Z - ZWave
 {% include base.html %}
 
 # HM-HS1WL-Z Smart Water Leakage Sensor
-This describes the Z-Wave device *HM-HS1WL-Z*, manufactured by *Zipato* with the thing type UID of ```zipato_hmhs1wlz_00_000```.
+This describes the Z-Wave device *HM-HS1WL-Z*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_hmhs1wlz_00_000```.
 
 The device is in the category of Sensor, defining Device used to measure something.
 
@@ -106,6 +106,9 @@ The following table summarises the channels available for the HM-HS1WL-Z
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -117,6 +120,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -127,6 +133,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (flood)
+
+Indicates if the flood alarm is triggered
+        
 
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -141,11 +150,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 0 configuration parameter available in the HM-HS1WL-Z.
-Detailed information on each parameter can be found in the sections below.
-
-| Param | Name  | Description |
-|-------|-------|-------------|
+The device has no configuration parameters configured.
 
 ## Association Groups
 

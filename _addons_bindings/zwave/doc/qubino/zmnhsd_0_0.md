@@ -6,11 +6,16 @@ title: ZMNHSD - ZWave
 {% include base.html %}
 
 # ZMNHSD DIN Rail Dimmer
-This describes the Z-Wave device *ZMNHSD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhsd_00_000```.
+This describes the Z-Wave device *ZMNHSD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhsd_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+![ZMNHSD product image](https://www.cd-jackson.com/zwave_device_uploads/324/324_default.jpg)
+
+
+The ZMNHSD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 This Z-wave module is used for dimming the bulb or to manage the speed of a fan. The module can be controlled either thorough Z-wave network or through the wall switch.
 
@@ -18,11 +23,11 @@ The module is designed to be mounted inside an electrical cabinet onto DIN rail.
 
 Module measures power consumption of bulb or fan and supports connection of digital temperature sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
-## Inclusion Information
+### Inclusion Information
 
 Press service button S for more than 6 seconds or press push button I five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply
 
-## Exclusion Information
+### Exclusion Information
 
 If service button S is pressed more than 2 and less than 6 seconds (or if push button I is pressed three times within 3s) module is excluded, but configuration parametres are not set to default values.
 
@@ -41,17 +46,27 @@ The following table summarises the channels available for the ZMNHSD
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -91,6 +106,7 @@ Detailed information on each parameter can be found in the sections below.
 
 - default value 5 = 0.5°C
 - 0 – Reporting disabled |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input switch type
 
@@ -103,7 +119,7 @@ The following option values may be configured -:
 | 0 | 0 - Mono-stable switch type (push button) |
 | 1 | 1 - Bi-stable switch type |
 
-The manufacturer defined default value is 0 (0 - Mono-stable switch type (push button)).
+The manufacturer defined default value is ```0``` (0 - Mono-stable switch type (push button)).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -119,7 +135,7 @@ The following option values may be configured -:
 | 0 | Dimmer |
 | 1 | Switch |
 
-The manufacturer defined default value is 0 (Dimmer).
+The manufacturer defined default value is ```0``` (Dimmer).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -137,7 +153,7 @@ The following option values may be configured -:
 | 2 | ALL ON active, ALL OFF is not active |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -153,7 +169,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | Auto off DISABLED |
 
-The manufacturer defined default value is 0 (Auto off DISABLED).
+The manufacturer defined default value is ```0``` (Auto off DISABLED).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -169,7 +185,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | Auto on DISABLED |
 
-The manufacturer defined default value is 0 (Auto on DISABLED).
+The manufacturer defined default value is ```0``` (Auto on DISABLED).
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -185,7 +201,7 @@ The following option values may be configured -:
 | 0 | 0 - double click disabled |
 | 1 | 1 - double click enabled |
 
-The manufacturer defined default value is 0 (0 - double click disabled).
+The manufacturer defined default value is ```0``` (0 - double click disabled).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
@@ -201,7 +217,7 @@ The following option values may be configured -:
 | 0 | 0 - Save state enabled |
 | 1 | 1 - Save state disabled |
 
-The manufacturer defined default value is 0 (0 - Save state enabled).
+The manufacturer defined default value is ```0``` (0 - Save state enabled).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -212,7 +228,7 @@ Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is
 
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -224,7 +240,7 @@ Set value means time interval (0 – 32767) in seconds, when power report is sen
 - 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is sent with time interval set by entered
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 300.
+The manufacturer defined default value is ```300```.
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
@@ -237,7 +253,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 1 to 98 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_60_1``` and is of type ```INTEGER```.
 
@@ -250,7 +266,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 2 to 99 may be set.
 
-The manufacturer defined default value is 99.
+The manufacturer defined default value is ```99```.
 
 This parameter has the configuration ID ```config_61_1``` and is of type ```INTEGER```.
 
@@ -264,7 +280,7 @@ Set value means time of moving the Dimmer between min. and max. dimming values b
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_65_2``` and is of type ```INTEGER```.
 
@@ -276,7 +292,7 @@ Time to moving the Dimmer between min. and max values (in seconds).
 - 1- 255 = 1 second – 255 seconds.
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_66_2``` and is of type ```INTEGER```.
 
@@ -292,7 +308,7 @@ The following option values may be configured -:
 | 0 | 0 - respect start level |
 | 1 | 1 - ignore start level |
 
-The manufacturer defined default value is 0 (0 - respect start level).
+The manufacturer defined default value is ```0``` (0 - respect start level).
 
 This parameter has the configuration ID ```config_67_1``` and is of type ```INTEGER```.
 
@@ -303,7 +319,7 @@ This parameter is used with association group 3.
 The Duration field MUST specify the time that the transition should take from the current value to the new target value. A supporting device SHOULD respect the specified Duration value.
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_68_1``` and is of type ```INTEGER```.
 
@@ -318,7 +334,7 @@ Set value is added or subtracted to actual measured value by sensor. Available c
 
 Values in the range 1 to 32536 may be set.
 
-The manufacturer defined default value is 32536.
+The manufacturer defined default value is ```32536```.
 
 This parameter has the configuration ID ```config_110_2``` and is of type ```INTEGER```.
 
@@ -332,9 +348,23 @@ If digital temperature sensor is connected, module reports measured temperature 
 
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_120_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -387,7 +417,11 @@ This group supports 16 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Qubino DIN Dimmer User Manual](https://www.cd-jackson.com/zwave_device_uploads/324/Qubino-DIN-Dimmer-user-PLUS-manual-V1-0-eng-1.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/324).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/324).

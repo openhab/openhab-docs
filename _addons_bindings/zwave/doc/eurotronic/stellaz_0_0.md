@@ -8,10 +8,14 @@ title: StellaZ - ZWave
 # StellaZ Thermostatic Valve
 This describes the Z-Wave device *StellaZ*, manufactured by *Eurotronics* with the thing type UID of ```eurotronic_stellaz_00_000```.
 
-The device is in the category of Radiator Control, defining Controls on radiators used to heat up rooms.
+The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 
-# Overview
+![StellaZ product image](https://www.cd-jackson.com/zwave_device_uploads/183/183_default.jpg)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/183) to improve the documentation.
 
 ## Channels
 
@@ -25,12 +29,20 @@ The following table summarises the channels available for the StellaZ
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -43,9 +55,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -71,17 +88,27 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (furnace)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -108,7 +135,11 @@ The device does not support associations.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/183/productattachments-files-e-u-eur-stellaz.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/183).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/183).

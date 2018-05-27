@@ -8,9 +8,14 @@ title: WDS - ZWave
 # WDS Universal Double Switch
 This describes the Z-Wave device *WDS*, manufactured by *wiDom* with the thing type UID of ```widom_wds_00_000```.
 
-The device is in the category of Wall Switch, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-# Overview
+![WDS product image](https://www.cd-jackson.com/zwave_device_uploads/432/432_default.jpg)
+
+
+The WDS does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 Universal Double Switch is an ON/OFF control device designed to independently control two separate loads, suited for use as both a local and remote switch. Similarly to the other WiDom “in wall” devices, it can be fully integrated into pre-existing systems and configured to associate configurable behaviours to a specific number of clicks, in full integration with the Z-Wave home automation ecosystem.
 
@@ -41,7 +46,7 @@ Electrical IP Rating: IP 20
 Actuator element: Relay  
 Conformity: CE, RoHS
 
-## Inclusion Information
+### Inclusion Information
 
 The device supports both the Network Wide Inclusion (which offers the opportunity of inclusion into a network even if the device is not directly connected to the controller) and the Normal Inclusion mechanisms.
 
@@ -49,7 +54,7 @@ If the device is not included into a Z-Wave network, a single click on the (B) b
 
 INFO: Through the inclusion procedure, activated with a single click on one of the external switches, the system determines the type of external switch (see parameter No. 62).
 
-## Exclusion Information
+### Exclusion Information
 
 Only a controller can remove a device from the network. WiDom Universal Double Switch is compatible with all Z-Wave certified controllers. After the exclusion procedure has been activated by the controller, the device can be removed, putting it in Exclusion Mode by three consecutive clicks on the (B) button or on the external switch, when available.
 
@@ -68,25 +73,37 @@ The following table summarises the channels available for the WDS
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
 
+Switch the power on and off
+
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
 
+Switch the power on and off
+
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -114,6 +131,7 @@ Detailed information on each parameter can be found in the sections below.
 | 60 | Start-up status | Defines the status of the device following a restart. |
 | 61 | Configuration reset | Defines which parameters should be reset to default values |
 | 62 | Type of external switch | Defines the type of external switch connected to the device |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Outputs status upon receipt of 1 click on its command
 
@@ -134,7 +152,7 @@ The following option values may be configured -:
 | 3 | OFF |
 | 4 | IGNORE |
 
-The manufacturer defined default value is 1 (TOGGLE).
+The manufacturer defined default value is ```1``` (TOGGLE).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -152,7 +170,7 @@ The following option values may be configured -:
 | 3 | OFF |
 | 4 | IGNORE |
 
-The manufacturer defined default value is 1 (TOGGLE).
+The manufacturer defined default value is ```1``` (TOGGLE).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -183,7 +201,7 @@ Both channels can be OFF but they can never be ON simultaneously. It can be used
 **INFO:** 0 – configuration is available on WiDom Universal Double Switch starting from the firmware version 1.40.
 Values in the range 0 to 39 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -203,7 +221,7 @@ The following option values may be configured -:
 | 1 | 1 CLICK |
 | 2 | 2 CLICKS |
 
-The manufacturer defined default value is 2 (2 CLICKS).
+The manufacturer defined default value is ```2``` (2 CLICKS).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -262,7 +280,7 @@ If the Relay 1 is ON/OFF, the associated devices are OFF/ON
 No action is taken on the associated devices
 Values in the range -1 to 106 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -321,7 +339,7 @@ If the Relay 1 is ON/OFF, the associated devices are OFF/ON
 No action is taken on the associated devices
 Values in the range -1 to 106 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -335,7 +353,7 @@ Defines the time after which the Channel 1 is switched OFF
 From 1 to 32000 (seconds): After this time the relay of the Channel 1 is OFF
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -349,7 +367,7 @@ Defines the time after which the Channel 2 is switched OFF
 From 1 to 32000 (seconds): After this time the relay of the Channel 2 is OFF
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -362,7 +380,7 @@ Defines the time after which the Channel 1 is switched ON
 From 1 to 32000 (seconds): After this time the relay of the Channel 1 is ON
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -375,7 +393,7 @@ Defines the time after which the Channel 2 is switched ON
 From 1 to 32000 (seconds): After this time the relay of the Channel 2 is ON
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_13_2``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -394,7 +412,7 @@ The following option values may be configured -:
 | 3 | IGNORE IF OFF |
 | 4 | IGNORE |
 
-The manufacturer defined default value is 1 (AS RECEIVED).
+The manufacturer defined default value is ```1``` (AS RECEIVED).
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
@@ -410,7 +428,7 @@ The following option values may be configured -:
 | 1 | CHANNEL 1 |
 | 3 | BOTH CHANNELS |
 
-The manufacturer defined default value is 3 (BOTH CHANNELS).
+The manufacturer defined default value is ```3``` (BOTH CHANNELS).
 
 This parameter has the configuration ID ```config_21_2``` and is of type ```INTEGER```.
 
@@ -429,7 +447,7 @@ The following option values may be configured -:
 | 3 | ON\_ON |
 | 4 | PREVIOUS STATUS |
 
-The manufacturer defined default value is 4 (PREVIOUS STATUS).
+The manufacturer defined default value is ```4``` (PREVIOUS STATUS).
 
 This parameter has the configuration ID ```config_60_1``` and is of type ```INTEGER```.
 
@@ -448,7 +466,7 @@ The following option values may be configured -:
 | 3 | RESTART DEVICE |
 | 4 | IGNORE |
 
-The manufacturer defined default value is 4 (IGNORE).
+The manufacturer defined default value is ```4``` (IGNORE).
 
 This parameter has the configuration ID ```config_61_1``` and is of type ```INTEGER```.
 
@@ -465,9 +483,23 @@ The following option values may be configured -:
 | 1 | BUTTON |
 | 2 | SWITCH |
 
-The manufacturer defined default value is 1 (BUTTON).
+The manufacturer defined default value is ```1``` (BUTTON).
 
 This parameter has the configuration ID ```config_62_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -534,7 +566,12 @@ This group supports 8 nodes.
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 
+### Documentation Links
+
+* [User Manual (IT)](https://www.cd-jackson.com/zwave_device_uploads/432/Widom-Double-Relay-IT-0.pdf)
+* [User Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/432/Widom-Double-Relay-EN.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/432).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/432).

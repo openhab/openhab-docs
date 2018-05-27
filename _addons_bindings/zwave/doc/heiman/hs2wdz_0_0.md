@@ -6,7 +6,7 @@ title: HS2WD-Z - ZWave
 {% include base.html %}
 
 # HS2WD-Z Smart Siren
-This describes the Z-Wave device *HS2WD-Z*, manufactured by *Heiman Technology Co. Ltd* with the thing type UID of ```heiman_hs2wdz_00_000```.
+This describes the Z-Wave device *HS2WD-Z*, manufactured by *[Heiman Technology Co. Ltd](http://www.heimantech.com/)* with the thing type UID of ```heiman_hs2wdz_00_000```.
 
 The device is in the category of Siren, defining Siren used by Alarm systems.
 
@@ -34,13 +34,15 @@ The following table summarises the channels available for the HS2WD-Z
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

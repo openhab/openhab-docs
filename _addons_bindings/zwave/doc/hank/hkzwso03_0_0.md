@@ -6,11 +6,16 @@ title: HKZW_SO03 - ZWave
 {% include base.html %}
 
 # HKZW\_SO03 Smart Plug
-This describes the Z-Wave device *HKZW_SO03*, manufactured by *Hank* with the thing type UID of ```hank_hkzwso03_00_000```.
+This describes the Z-Wave device *HKZW_SO03*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwso03_00_000```.
 
-The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-# Overview
+![HKZW_SO03 product image](https://www.cd-jackson.com/zwave_device_uploads/677/677_default.jpg)
+
+
+The HKZW_SO03 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 WELL DONE!  
  You have picked the finest solution for your smart home, congratulations!  
@@ -52,7 +57,7 @@ Z-WAVE COMMAND CLASSES
  COMMAND\_CLASS\_VERSION  
  COMMAND\_CLASS\_ZWAVEPLUS\_INFO
 
-## Inclusion Information
+### Inclusion Information
 
 Z-WAVE INCLUSION
 
@@ -78,7 +83,7 @@ Secure Z-Wave Inclusion
  5. LED indicator will turn solid green once the inclusion is completed. Please allow 5 minutes for configuration. DO NOT press any buttons or move the device during that time  
  6. A new secure on / off device should be recognized by your Z-Wave controller
 
-## Exclusion Information
+### Exclusion Information
 
 Z-WAVE EXCLUSION
 
@@ -106,25 +111,37 @@ The following table summarises the channels available for the HKZW_SO03
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
+
+Indicates the instantaneous voltage
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
+
+Indicates the instantaneous current consumption
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -141,6 +158,7 @@ Detailed information on each parameter can be found in the sections below.
 | 21 | On/Off Status Recovery After Power Failure | On/Off Status Recovery After Power Failure |
 | 24 | On/Off Status Change Notifications | On/Off Status Change Notifications |
 | 27 | Led Indicator Control | Led Indicator Control |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 20: Overload Protection
 
@@ -152,7 +170,7 @@ Values: 0 – Disabled; 1 – Enabled (default).
 Size: 1 byte dec.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
@@ -173,7 +191,7 @@ power is restored (it does not remember the status prior to power outage);
 Size: 1 byte dec.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
@@ -196,7 +214,7 @@ status is changed manually by pressing and releasing the Z-Wave button on the Sm
 Size: 1 byte dec.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 2 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_24_1``` and is of type ```INTEGER```.
 
@@ -217,9 +235,23 @@ stay off for most of the time)
 Size: 1 byte dec.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_27_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -252,7 +284,11 @@ The device does not support associations.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Zooz ZEN06 Manual](https://www.cd-jackson.com/zwave_device_uploads/677/Zooz-Z-Wave-Smart-Plug-ZEN06-Manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/677).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/677).

@@ -8,8 +8,12 @@ title: DMWS1 - ZWave
 # DMWS1 Dome Leak Sensor
 This describes the Z-Wave device *DMWS1*, manufactured by *Elexa Consumer Products Inc.* with the thing type UID of ```elexa_dmws1_00_000```.
 
-# Overview
+![DMWS1 product image](https://www.cd-jackson.com/zwave_device_uploads/651/651_default.jpg)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/651) to improve the documentation.
 
 ## Channels
 
@@ -20,8 +24,17 @@ The following table summarises the channels available for the DMWS1
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm (flood) | alarm_flood | Door | Switch | 
 | Alarm (general) | alarm_general | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+The Leak Sensor also sends a Binary Sensor Report when a leak is detected or removed. See below for the SENSOR\_BINARY\_REPORT parameters sent:  
+Sensor Type: 06 (Water)  
+Leak Detected Value: 0xFF  
+Leak Removed Value: 0x00
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -34,6 +47,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (flood)
 
+Indicates if the flood alarm is triggered
+        
+
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -45,6 +61,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (general)
 
+Indicates if an alarm is triggered
+        
+
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -53,6 +72,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -70,6 +95,8 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Enable/Disable Audible Alarm | Enables or disables the audible alarm (“beeping”) |
 | 6 | Enable/Disable Water Detection | If disabled, the device will not respond in any way to detected leaks. |
 | 7 | Basic Set Level | The value sent by the BASIC\_SET command to Association Group 2 |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Total Alarm Duration
 
@@ -79,7 +106,7 @@ Total time the Leak Sensor will beep and light its LED in the event of a leak
 1-255: 1-255 minutes
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 120.
+The manufacturer defined default value is ```120```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -90,7 +117,7 @@ Quiet time between each Reminder Alarm
 
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -101,7 +128,7 @@ Time the Leak Sensor beeps before it is muted
 
 Values in the range 10 to 255 may be set.
 
-The manufacturer defined default value is 60.
+The manufacturer defined default value is ```60```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -112,7 +139,7 @@ Length of each beep after the Initial Alarm
 
 Values in the range 5 to 255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -128,7 +155,7 @@ The following option values may be configured -:
 | 0 | Audible Alarm Disabled |
 | 1 | Audible Alarm Enabled |
 
-The manufacturer defined default value is 1 (Audible Alarm Enabled).
+The manufacturer defined default value is ```1``` (Audible Alarm Enabled).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -144,7 +171,7 @@ The following option values may be configured -:
 | 0 | Water Detection Disabled |
 | 1 | Water Detection Enabled |
 
-The manufacturer defined default value is 1 (Water Detection Enabled).
+The manufacturer defined default value is ```1``` (Water Detection Enabled).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -155,9 +182,26 @@ The value sent by the BASIC\_SET command to Association Group 2
 Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -209,7 +253,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [Operating Guide and ZWave command reference](https://www.cd-jackson.com/zwave_device_uploads/651/DMWS1-dome-z-leak-detector-operating-guide.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/651).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/651).

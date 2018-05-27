@@ -8,10 +8,16 @@ title: EZMultiPli - ZWave
 # EZMultiPli Multi Sensor
 This describes the Z-Wave device *EZMultiPli*, manufactured by *Express Controls* with the thing type UID of ```homeseer_ezmultipli_00_000```.
 
-The device is in the category of Sensor, defining Device used to measure something.
+The device is in the category of *Sensor*, defining Device used to measure something.
 
-# Overview
+![EZMultiPli product image](https://www.cd-jackson.com/zwave_device_uploads/268/268_default.jpg)
 
+
+The EZMultiPli does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/268) to improve the documentation.
 
 ## Channels
 
@@ -26,17 +32,28 @@ The following table summarises the channels available for the EZMultiPli
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (luminance)
+
+Indicates the current light reading
 
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Color
 
+The color channel allows to control the color of a light.
+            It is also possible to dim values and switch the light on and off.
+        
+
 The ```color_color``` channel supports the ```Color``` item.
 
 ### Alarm
+
+Indicates if an alarm is triggered
+        
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -76,7 +93,7 @@ Recommended values:
 - 60 min for a library, office or other room where someone may be sitting still for a long time
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -91,7 +108,7 @@ A value of 0 will turn the lights off (not recommended). A value between 1 and 9
 A value of -1 will turn the light “on” which depends on the device but most will set the dim level to the last dim setting.
 Values in the range -1 to 99 may be set.
 
-The manufacturer defined default value is -1.
+The manufacturer defined default value is ```-1```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -104,7 +121,7 @@ A Luminance report is sent to the system controller every LiteMin minutes.
 A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 60.
+The manufacturer defined default value is ```60```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -117,7 +134,7 @@ A Temperature report is sent to the controller every TempMin minutes.
 A value of zero turns this mode off. Temperature values can still be obtained at any time by polling the status of the temperature sensor.
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 60.
+The manufacturer defined default value is ```60```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -128,7 +145,7 @@ TempAdj is a twos-complement number that is used to adjust the temperature readi
 TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F.
 Values in the range -127 to 128 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -168,7 +185,11 @@ This group supports 4 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [EZMultiPli Manual](https://www.cd-jackson.com/zwave_device_uploads/268/EZMultiPliOwnerManual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/268).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/268).

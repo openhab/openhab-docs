@@ -6,7 +6,7 @@ title: Smart Plug 16A - ZWave
 {% include base.html %}
 
 # Smart Plug 16A Smart Plug
-This describes the Z-Wave device *Smart Plug 16A*, manufactured by *Goap* with the thing type UID of ```qubino_smartplug_00_000```.
+This describes the Z-Wave device *Smart Plug 16A*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_smartplug_00_000```.
 
 The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
 
@@ -61,25 +61,38 @@ The following table summarises the channels available for the Smart Plug 16A
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts)
+
+Indicates the instantaneous voltage
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
 
+Indicates the instantaneous current consumption
+
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
+
+Indicates the energy consumption (kWh)
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
+Indicates the instantaneous power consumption
+
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
+
+Indicates if a power alarm is triggered
+        
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

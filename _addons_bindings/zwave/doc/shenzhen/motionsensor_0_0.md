@@ -6,11 +6,14 @@ title: Motion Sensor - ZWave
 {% include base.html %}
 
 # Motion Sensor PIR Motion Sensor
-This describes the Z-Wave device *Motion Sensor*, manufactured by *Shenzhen Neo Electronics Co., Ltd* with the thing type UID of ```shenzhen_motionsensor_00_000```.
+This describes the Z-Wave device *Motion Sensor*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_motionsensor_00_000```.
 
-The device is in the category of Motion Detector, defining Motion sensors/detectors.
+The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-# Overview
+![Motion Sensor product image](https://www.cd-jackson.com/zwave_device_uploads/401/401_default.jpg)
+
+
+## Overview
 
 This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
 
@@ -18,7 +21,7 @@ In the Back casing, there is a button that is used to carry out include, exclude
 
 When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.
 
-## Inclusion Information
+### Inclusion Information
 
 1\. Remove the sensor cover.
 
@@ -32,7 +35,7 @@ gateway operating manual)
 
 LED will flash on and off alternately five times..
 
-## Exclusion Information
+### Exclusion Information
 
 1\. Remove the device cover.
 
@@ -44,7 +47,7 @@ gateway operating manual)
 
 4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
-## Wakeup Information
+### Wakeup Information
 
 You can press the button once to wake up the device and send wakeup notification to controller.
 
@@ -68,8 +71,12 @@ The following table summarises the channels available for the Motion Sensor
 | Sensor (luminance) | sensor_luminance | Temperature | Number | 
 | Sensor (temperature) | sensor_temperature | Temperature | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Binary Sensor
+
+Indicates if a sensor has triggered
+        
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -82,13 +89,20 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (luminance)
 
+Indicates the current light reading
+
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -98,6 +112,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -118,6 +138,8 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Lux Level Function Enable | 0 = Off, 1 =On and Lux Level must be less than #5 -> then send Basic Set(Parameter #3) |
 | 9 | Lux Level Changed Report | How much the Lux Level must change, in lux, to be reported to the main controller. |
 | 10 | LED Blink Enable | Defines whether the LED blinking is on / off. 1 = enable -> blink once when motion sensor detect movement, 0= disbale |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Sensitivity Level Setting
 
@@ -125,7 +147,7 @@ Defines the sensitivity of PIR sensor. Where 8 = highest & 255 = lowest sensitiv
 
 Values in the range 8 to 255 may be set.
 
-The manufacturer defined default value is 12.
+The manufacturer defined default value is ```12```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -142,7 +164,7 @@ detector is triggered and the associated device will be turned on 30(second) bef
 is turned off.
 Values in the range 5 to 600 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -159,7 +181,7 @@ Available Settings:
  Dim Level (Multilevel Switch Device)
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -175,7 +197,7 @@ The following option values may be configured -:
 | 0 | Disable PIR Detector Function |
 | 255 | Enable PIR Detector Function |
 
-The manufacturer defined default value is 255 (Enable PIR Detector Function).
+The manufacturer defined default value is ```255``` (Enable PIR Detector Function).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -192,7 +214,7 @@ command(i.e. BASIC\_SET value = parameter 3#) to an associated device and activa
 it.
 Values in the range 0 to 1000 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_5_2``` and is of type ```INTEGER```.
 
@@ -203,7 +225,7 @@ Adjust the interval of being re-triggered after the PIR detector has been trigge
 
 Values in the range 1 to 8 may be set.
 
-The manufacturer defined default value is 8.
+The manufacturer defined default value is ```8```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -214,7 +236,7 @@ The Intervall after which the Light Sensor Measure is polled.
 
 Values in the range 60 to 36000 may be set.
 
-The manufacturer defined default value is 180.
+The manufacturer defined default value is ```180```.
 
 This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
 
@@ -236,7 +258,7 @@ The following option values may be configured -:
 | 0 | Disable Lux Level Function |
 | 1 | Enable Lux Level Function |
 
-The manufacturer defined default value is 0 (Disable Lux Level Function).
+The manufacturer defined default value is ```0``` (Disable Lux Level Function).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -247,7 +269,7 @@ How much the Lux Level must change, in lux, to be reported to the main controlle
 
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_9_2``` and is of type ```INTEGER```.
 
@@ -263,9 +285,26 @@ The following option values may be configured -:
 | 0 | Disable LED blinking |
 | 1 | Enable LED blinking |
 
-The manufacturer defined default value is 1 (Enable LED blinking).
+The manufacturer defined default value is ```1``` (Enable LED blinking).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -318,7 +357,13 @@ This group supports 4 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Instruction Manual Motion Sensor](https://www.cd-jackson.com/zwave_device_uploads/401/Manual-for-Motion-sensor-PIR-Zwave-Neo.pdf)
+* [Motion Detector User Guide](https://www.cd-jackson.com/zwave_device_uploads/401/Motion-Detector-User-Guide.pdf)
+* [Motion Detector User Guide V_3.2](https://www.cd-jackson.com/zwave_device_uploads/401/Motion-Detector-User-Guide-EU-V3-2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/401).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/401).

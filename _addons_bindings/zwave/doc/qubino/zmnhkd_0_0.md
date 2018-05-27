@@ -6,7 +6,7 @@ title: ZMNHKD - ZWave
 {% include base.html %}
 
 # ZMNHKD Flush Heat & Cool Thermostat
-This describes the Z-Wave device *ZMNHKD*, manufactured by *Goap* with the thing type UID of ```qubino_zmnhkd_00_000```.
+This describes the Z-Wave device *ZMNHKD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhkd_00_000```.
 
 The device is in the category of HVAC, defining Air condition devices, Fans.
 
@@ -57,17 +57,26 @@ The following table summarises the channels available for the ZMNHKD
 
 ### Sensor (temperature)
 
+Indicates the current temperature
+
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
+
+Indicates the instantaneous power consumption
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
+Indicates the energy consumption (kWh)
+
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
+
+Sets the thermostat
+        
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -93,9 +102,13 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
+Sets the thermostate setpoint
+
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
+
+Sets the thermostate setpoint
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 

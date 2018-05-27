@@ -25,7 +25,7 @@ and links to more detailed information about each thing.
 | ACT - Advanced Control Technologies | [ZTM230](act/ztm230_0_0.md) |  | ```act_ztm230_00_000``` |  |
 | AEON Labs | [DSA03202](aeon/dsa03202_0_0.md) |  | ```aeon_dsa03202_00_000``` |  |
 | AEON Labs | [DSA38](aeon/dsa38_0_0.md) |  | ```aeon_dsa38_00_000``` |  |
-| AEON Labs | [DSB05](aeon/dsb05_0_0.md) |  | ```aeon_dsb05_00_000``` |  |
+| AEON Labs | [DSB05](aeon/dsb05_0_0.md) |  | ```aeon_dsb05_00_000``` | Motion Detector |
 | AEON Labs | [DSB09](aeon/dsb09_0_0.md) |  | ```aeon_dsb09_00_000``` |  |
 | AEON Labs | [DSB28](aeon/dsb28_0_0.md) |  | ```aeon_dsb28_00_000``` |  |
 | AEON Labs | [DSB29](aeon/dsb29_0_0.md) |  | ```aeon_dsb29_00_000``` |  |
@@ -154,7 +154,7 @@ and links to more detailed information about each thing.
 | EcoNet Controls | [GR-105N](econet/gr105n_0_0.md) |  | ```econet_gr105n_00_000``` |  |
 | Elexa Consumer Products Inc. | [DMMS1](elexa/dmms1_0_0.md) |  | ```elexa_dmms1_00_000``` | Motion Detector |
 | Elexa Consumer Products Inc. | [DMMZ1](elexa/dmmz1_0_0.md) |  | ```elexa_dmmz1_00_000``` |  |
-| Elexa Consumer Products Inc. | [DMOF1](elexa/dmof1_0_0.md) |  | ```elexa_dmof1_00_000``` |  |
+| Elexa Consumer Products Inc. | [DMOF1](elexa/dmof1_0_0.md) |  | ```elexa_dmof1_00_000``` | Power Outlet |
 | Elexa Consumer Products Inc. | [DMS01](elexa/dms01_0_0.md) |  | ```elexa_dms01_00_000``` |  |
 | Elexa Consumer Products Inc. | [DMWD1](elexa/dmwd1_0_0.md) |  | ```elexa_dmwd1_00_000``` | Sensor |
 | Elexa Consumer Products Inc. | [DMWS1](elexa/dmws1_0_0.md) |  | ```elexa_dmws1_00_000``` |  |
@@ -239,10 +239,10 @@ and links to more detailed information about each thing.
 | Fibargroup | [FGR222](fibaro/fgr222_24_24.md) | 24.24 | ```fibaro_fgr222_24_024``` | Blinds |
 | Fibargroup | [FGRGBW](fibaro/fgrgbw_0_0.md) |  | ```fibaro_fgrgbw_00_000``` |  |
 | Fibargroup | [FGRM222](fibaro/fgrm222_0_0.md) | 22.22 | ```fibaro_fgrm222_00_000``` | Blinds |
-| Fibargroup | [FGS211](fibaro/fgs211_0_0.md) |  | ```fibaro_fgs211_00_000``` |  |
+| Fibargroup | [FGS211](fibaro/fgs211_0_0.md) |  | ```fibaro_fgs211_00_000``` | Wall Switch |
 | Fibargroup | [FGS212](fibaro/fgs212_0_0.md) |  | ```fibaro_fgs212_00_000``` |  |
 | Fibargroup | [FGS213](fibaro/fgs213_0_0.md) |  | ```fibaro_fgs213_00_000``` | Wall Switch |
-| Fibargroup | [FGS221](fibaro/fgs221_1_4.md) | 1.4 to 1.8 | ```fibaro_fgs221_01_004``` |  |
+| Fibargroup | [FGS221](fibaro/fgs221_1_4.md) | 1.4 to 1.8 | ```fibaro_fgs221_01_004``` | Wall Switch |
 | Fibargroup | [FGS221](fibaro/fgs221_1_9.md) | 1.9 to 1.11 | ```fibaro_fgs221_01_009``` |  |
 | Fibargroup | [FGS221](fibaro/fgs221_2_1.md) | 2.1 to 2.3 | ```fibaro_fgs221_02_001``` |  |
 | Fibargroup | [FGS222](fibaro/fgs222_0_0.md) |  | ```fibaro_fgs222_00_000``` | Wall Switch |
@@ -424,7 +424,7 @@ and links to more detailed information about each thing.
 | Linear Corp | [WA105DBZ](linear/wa105dbz_0_0.md) |  | ```linear_wa105dbz_00_000``` | Siren |
 | Linear Corp | [WADWAZ-1](linear/wadwaz1_0_0.md) |  | ```linear_wadwaz1_00_000``` | Door |
 | Linear Corp | [WAPIRZ-1](linear/wapirz_0_0.md) |  | ```linear_wapirz_00_000``` | Motion Detector |
-| Linear Corp | [WD500Z-1](linear/wd500z_0_0.md) |  | ```linear_wd500z_00_000``` |  |
+| Linear Corp | [WD500Z-1](linear/wd500z_0_0.md) |  | ```linear_wd500z_00_000``` | Wall Switch |
 | Linear Corp | [WO15Z](linear/wo15z_0_0.md) |  | ```linear_wo15z_00_000``` |  |
 | Linear Corp | [WS15Z-1](linear/ws15z_0_0.md) |  | ```linear_ws15z_00_000``` | Wall Switch |
 | Linear Corp | [WT00Z-1](linear/wt00z1_0_0.md) |  | ```linear_wt00z1_00_000``` |  |
@@ -464,7 +464,7 @@ and links to more detailed information about each thing.
 | Merten | [509519](merten/509519_0_0.md) |  | ```merten_509519_00_000``` |  |
 | Merten | [50x5xx](merten/50x5xx_0_0.md) |  | ```merten_50x5xx_00_000``` | Blinds |
 | Monoprice | [10795](monoprice/10795_0_0.md) |  | ```monoprice_10795_00_000``` | Door |
-| Nexia Home Intelligence | [DB100Z](nexia/db100z_0_0.md) |  | ```nexia_db100z_00_000``` |  |
+| Nexia Home Intelligence | [DB100Z](nexia/db100z_0_0.md) |  | ```nexia_db100z_00_000``` | Door |
 | ID-RF | [ASP-3-1](nodon/asp31_0_0.md) |  | ```nodon_asp31_00_000``` |  |
 | ID-RF | [CRC-3100](nodon/crc3100_0_0.md) |  | ```nodon_crc3100_00_000``` | Remote Control |
 | ID-RF | [CWS-3101](nodon/cws3101_0_0.md) |  | ```nodon_cws3101_00_000``` | Wall Switch |
@@ -621,7 +621,7 @@ and links to more detailed information about each thing.
 | TKB Home | [TZ04](tkb/tz04_0_0.md) |  | ```tkb_tz04_00_000``` |  |
 | TKB Home | [TZ06](tkb/tz06_0_0.md) |  | ```tkb_tz06_00_000``` |  |
 | TKB Home | [TZ08](tkb/tz08_0_0.md) |  | ```tkb_tz08_00_000``` |  |
-| TKB Home | [TZ 10](tkb/tz10_0_0.md) |  | ```tkb_tz10_00_000``` | HVAC |
+| TKB Home | [TZ10](tkb/tz10_0_0.md) |  | ```tkb_tz10_00_000``` | HVAC |
 | TKB Home | [TZ35S](tkb/tz35s_0_0.md) |  | ```tkb_tz35s_00_000``` | Wall Switch |
 | TKB Home | [TZ36D](tkb/tz36d_2_1.md) | 2.1 | ```tkb_tz36d_02_001``` |  |
 | TKB Home | [TZ37](tkb/tz37_0_0.md) |  | ```tkb_tz37_00_000``` |  |
@@ -676,7 +676,7 @@ and links to more detailed information about each thing.
 | Vision Security | [ZP3102](vision/zp3102_8_0.md) | 8.0 | ```vision_zp3102_08_000``` | Motion Detector |
 | Vision Security | [ZP3103](vision/zp3103_0_0.md) |  | ```vision_zp3103_00_000``` |  |
 | Vision Security | [ZS5101](vision/zs5101_0_0.md) |  | ```vision_zs5101_00_000``` |  |
-| Vision Security | [ZS6101](vision/zs6101_0_0.md) |  | ```vision_zs6101_00_000``` |  |
+| Vision Security | [ZS6101](vision/zs6101_0_0.md) |  | ```vision_zs6101_00_000``` | Smoke Detector |
 | Vision Security | [ZS6301](vision/zs6301_0_0.md) |  | ```vision_zs6301_00_000``` |  |
 | Vision Security | [ZSE40](vision/zse40_0_0.md) |  | ```vision_zse40_00_000``` | Motion Detector |
 | Vision Security | [ZW4101](vision/zw4101_0_0.md) |  | ```vision_zw4101_00_000``` |  |

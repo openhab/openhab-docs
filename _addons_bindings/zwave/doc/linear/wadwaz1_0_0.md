@@ -8,15 +8,18 @@ title: WADWAZ-1 - ZWave
 # WADWAZ-1 Door/Windows Sensor
 This describes the Z-Wave device *WADWAZ-1*, manufactured by *Linear Corp* with the thing type UID of ```linear_wadwaz1_00_000```.
 
-The device is in the category of Door, defining Door sensors.
+The device is in the category of *Door*, defining Door sensors.
 
-# Overview
+![WADWAZ-1 product image](https://www.cd-jackson.com/zwave_device_uploads/9/9_default.jpg)
+
+
+## Overview
 
 Linear Z-Wave products are easy to install, and allow dealers to create an integrated wireless network with nearly limitless expansion and interoperability with security and health monitoring systems, energy management, home entertainment, appliances, and more.
 
 The WADWAZ-1 sensor monitors a door or window and sends Z-Wave signals when the door is opened or closed.
 
-## Inclusion Information
+### Inclusion Information
 
 Refer to your Controller operating instructions to add this module under the command of the Wireless Controller.
 
@@ -32,14 +35,14 @@ Refer to your Controller operating instructions to add this module under the com
 
 **NOTE**: If you have trouble adding the WADWAZ-1 to a group it may be that the Home ID and Node ID were not cleared from it after testing. You must first “RESET UNIT” with your Controller to remove it from the network. Although adding it to a group includes it in the network, removing it from a group does not remove it from the network. If removed from a group, it functions as a repeater (only). “RESET UNIT” removes it completely from the network
 
-## Exclusion Information
+### Exclusion Information
 
 For “Exclusion” from (removing from) a network:
 
 1. Set up the Z-WaveTM Interface Controller into “exclusion” mode, and following its instruction to delete the WADWAZ-1 from the Controller.
 2. Press the Program switch of WADWAZ-1 for 1 second and release to be excluded. The LED light will fl ash continuously when the sensor is in the Exclusion condition.
 
-## Wakeup Information
+### Wakeup Information
 
 Open and then closed the cover to wakeup the device. This will also trigger the tamper alarm, which needs to be turned off manually.
 
@@ -53,8 +56,12 @@ The following table summarises the channels available for the WADWAZ-1
 | Sensor (Alarm) | alarm_entry | Door | Switch | 
 | Tamper Alarm | alarm_tamper |  | Switch | 
 | Sensor (External Switch) | sensor_binary | Door | Switch | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Sensor (Binary)
+
+Indicates if the door/window is open or closed
+        
 
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -67,6 +74,9 @@ The following state translation is provided for this channel to the ```Contact``
 
 ### Sensor (Alarm)
 
+Indicates if the entry alarm is triggered
+        
+
 The ```alarm_entry``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -77,6 +87,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Closed |
 
 ### Tamper Alarm
+
+Indicates if the tamper alarm is triggered
+        
 
 The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -89,6 +102,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (External Switch)
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -98,11 +114,17 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Triggered |
 | OFF | Untriggered |
 
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+
 
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -133,7 +155,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [WADWAZ install manual](https://www.cd-jackson.com/zwave_device_uploads/9/WADWAZ-install.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/9).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/9).

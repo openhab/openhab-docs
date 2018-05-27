@@ -6,10 +6,14 @@ title: Tag Reader - ZWave
 {% include base.html %}
 
 # Tag Reader Tag Reader
-This describes the Z-Wave device *Tag Reader*, manufactured by *BeNext* with the thing type UID of ```benext_tagreader_00_000```.
+This describes the Z-Wave device *Tag Reader*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_tagreader_00_000```.
 
-# Overview
+![Tag Reader product image](https://www.cd-jackson.com/zwave_device_uploads/444/444_default.png)
 
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/444) to improve the documentation.
 
 ## Channels
 
@@ -20,12 +24,18 @@ The following table summarises the channels available for the Tag Reader
 | Switch | switch_binary | Switch | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Alarm (access) | notification_access_control |  | Number | 
+| battery-level | system.battery-level | Battery | Number |
 
 ### Switch
+
+Switch the power on and off
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered
+        
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -37,6 +47,12 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (access)
+
+Event ID 5 = Away
+
+Event ID 6 = Home
+
+Access Control
 
 The ```notification_access_control``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -82,6 +98,12 @@ The following state translation is provided for this channel to the ```Number```
 | 75 | Barrier detected short in WallStation wires |
 | 76 | Barrier associated with non-Z-wave remote control |
 
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+
 
 
 ## Device Configuration
@@ -97,6 +119,8 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | feedback beeps per second | Amount of beeps a second |
 | 5 | Mode  | To configure mode |
 | 6 | RFID circuit start-up time | The time the RFID will be started after pressing "home" or "away" |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Set to Default
 
@@ -104,7 +128,7 @@ Set all configuration values to default values (factory settings)
 If the Value is set to 0xFF (255) this device will return to factory settings.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -115,7 +139,7 @@ the time the beep goes to off
 0x00 = Off, 0xFF = endless
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 15.
+The manufacturer defined default value is ```15```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -128,7 +152,7 @@ Too configure the time-out, waiting on the wakeup\_no\_more\_information command
 0x00 = off
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -139,7 +163,7 @@ Amount of beeps a second
 To set the amount of beeps per second, every beep is around 10ms.
 Values in the range 0 to 5 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -154,7 +178,7 @@ Mode 3 = z-wave chip is always on to be asked for information, for example versi
 Any other value will be reported after a GET, but will be seen as a mode 1.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -169,9 +193,26 @@ The time (\*10 ms) the RFID circuit waits to start after "home" or "away" has be
 the time \*10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -206,7 +247,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Tag reader manual NL](https://www.cd-jackson.com/zwave_device_uploads/444/tagreader-nl.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/444).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/444).

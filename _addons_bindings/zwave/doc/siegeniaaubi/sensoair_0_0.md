@@ -6,10 +6,16 @@ title: Sensoair - ZWave
 {% include base.html %}
 
 # Sensoair Air quality sensor for indoor use
-This describes the Z-Wave device *Sensoair*, manufactured by *SIEGENIA-AUBI KG* with the thing type UID of ```siegeniaaubi_sensoair_00_000```.
+This describes the Z-Wave device *Sensoair*, manufactured by *[SIEGENIA-AUBI KG](https://www.siegenia.com)* with the thing type UID of ```siegeniaaubi_sensoair_00_000```.
 
-# Overview
+![Sensoair product image](https://www.cd-jackson.com/zwave_device_uploads/451/451_default.jpg)
 
+
+The Sensoair does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/451) to improve the documentation.
 
 ## Channels
 
@@ -20,6 +26,8 @@ The following table summarises the channels available for the Sensoair
 | Sensor (CO2) | sensor_co2 |  | Number | 
 
 ### Sensor (CO2)
+
+Indicates the CO2 level
 
 The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -56,7 +64,7 @@ SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an 
 5 - 65000 seconds. The interval can be configured with parameter 2.
 Values in the range 0 to 143 may be set.
 
-The manufacturer defined default value is 141.
+The manufacturer defined default value is ```141```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -71,7 +79,7 @@ Device Configuration Value 1 = MSB (default 0x00)
 Device Configuration Value 2 = LSB (default 0x1e)
 Values in the range 5 to 65000 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -105,7 +113,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_SENSOR_CONFIGURATION_V1| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/451/co2-eng.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/451).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/451).

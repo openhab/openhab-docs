@@ -10,7 +10,6 @@ This describes the Z-Wave device *FLF-ZWAVE5 R1*, manufactured by *Ecolink* with
 
 # Overview
 
-
 ## Channels
 
 The following table summarises the channels available for the FLF-ZWAVE5 R1
@@ -23,6 +22,9 @@ The following table summarises the channels available for the FLF-ZWAVE5 R1
 
 ### Binary Sensor
 
+Indicates if a sensor has triggered
+        
+
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -34,6 +36,9 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
+Indicates if the burglar alarm is triggered
+        
+
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
@@ -44,6 +49,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (flood)
+
+Indicates if the flood alarm is triggered
+        
 
 The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -58,7 +66,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 

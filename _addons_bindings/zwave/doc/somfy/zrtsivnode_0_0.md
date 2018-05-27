@@ -6,10 +6,16 @@ title: ZRTSI-VNODE - ZWave
 {% include base.html %}
 
 # ZRTSI-VNODE Z-Wave to RTS Interface Virtual Node
-This describes the Z-Wave device *ZRTSI-VNODE*, manufactured by *Somfy* with the thing type UID of ```somfy_zrtsivnode_00_000```.
+This describes the Z-Wave device *ZRTSI-VNODE*, manufactured by *[Somfy](http://www.somfy.com/)* with the thing type UID of ```somfy_zrtsivnode_00_000```.
 
-# Overview
+![ZRTSI-VNODE product image](https://www.cd-jackson.com/zwave_device_uploads/370/370_default.jpg)
 
+
+The ZRTSI-VNODE does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/370) to improve the documentation.
 
 ## Channels
 
@@ -23,13 +29,20 @@ The following table summarises the channels available for the ZRTSI-VNODE
 
 ### Switch
 
+Switch the power on and off
+
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
 
+Provides start / stop control of blinds
+        
+
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Scene Number
+
+Triggers when a scene button is pressed
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -37,7 +50,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configugured.
+The device has no configuration parameters configured.
 
 ## Association Groups
 
@@ -60,7 +73,11 @@ The device does not support associations.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/370/ZRTSI-Instructions-1811265.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/370).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/370).
