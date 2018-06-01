@@ -511,7 +511,9 @@ val PointType location = Device_Coordinates.state as PointType
 
 ##### Number Item
 
-A Number Items carries either a **DecimalType** or a **QuantityType** in case the Number Item has a dimension attached (e.g. `Number:Temperature` in the items file). In rules, units are added to a number by a `|`, where the unit has to be put in quotes, if it contains non-alphabetic characters, e.g. `10|m`, but `20|"km/h"`. A couple of commonly used units do not necessarily require quotes, these are '°C', '°F', 'Ω', '°', '%', 'm²' and 'm³', so it is ok to write `20|"°C"`, but `20|°C` will also work.
+A Number Items carries either a **DecimalType** or a **QuantityType** in case the Number Item has a dimension attached (e.g. `Number:Temperature` in the items file).
+In rules, units are added to a number by a `|`, where the unit has to be put in quotes, if it contains non-alphabetic characters, e.g. `10|m`, but `20|"km/h"`.
+A couple of commonly used units do not necessarily require quotes, these are `°C`, `°F`, `Ω`, `°`, `%`, `m²` and `m³`, so it is ok to write `20|"°C"`, but `20|°C` will also work.
 DecimalType and QuantityType are also java.lang.Number so all the conversions listed above under Dimmer Item apply to Number Item as well.
 
 Here some other commonly needed conversions:
