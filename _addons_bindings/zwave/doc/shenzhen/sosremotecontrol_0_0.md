@@ -8,9 +8,16 @@ title: SOS/Remote Control - ZWave
 # SOS/Remote Control Z-Wave Remote for Scene selection and SOS button
 This describes the Z-Wave device *SOS/Remote Control*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_sosremotecontrol_00_000```.
 
-The device is in the category of Remote Control, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
+The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-# Overview
+![SOS/Remote Control product image](https://www.cd-jackson.com/zwave_device_uploads/799/799_default.jpg)
+
+
+The SOS/Remote Control supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+The SOS/Remote Control does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+## Overview
 
 Remote control/SOS is a smart security device that can communication with other devices via z-wave .
 
@@ -20,7 +27,7 @@ SOS is used for emergency；
 
 With 4 buttons, you can use Remote control for emergency call and set 6 different scenes .
 
-## Inclusion Information
+### Inclusion Information
 
 1\) Ensure remote control is in z-wave range.
 
@@ -32,7 +39,7 @@ With 4 buttons, you can use Remote control for emergency call and set 6 differen
 
 5\) Wait for the controller to configure.
 
-## Exclusion Information
+### Exclusion Information
 
 1\) Ensure the device is connected to power supply.
 
@@ -44,18 +51,18 @@ With 4 buttons, you can use Remote control for emergency call and set 6 differen
 
 ## Channels
 
-The following table summarises the channels available for the SOS/Remote Control
+The following table summarises the channels available for the SOS/Remote Control -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Scene Number | scene_number |  | Number | 
 | Alarm (emergency) | alarm_emergency | Door | Switch | 
+| Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -68,14 +75,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Scene Number
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Alarm (emergency)
 
-Indicates if the emergency alarm is triggered
-        
+Indicates if the emergency alarm is triggered.
 
 The ```alarm_emergency``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -85,6 +91,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -98,6 +110,8 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Basic Set Level | Basic Set Command will be sent where contains a value when SOS is triggered if group 2 have associated a device such as siren |
 | 2 | SOS Event Clear Time | This parameter defines the time to clear emergency event after emergency event is triggered when parameter #3 is set to ‘2’. This parameter is set to ‘0’, the clearing emergency event will not occurred always. |
 | 3 | SOS Configuration | This parameter defines the SOS key function, the SOS key can be configured as emergency event key or central scene notification key. |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Basic Set Level
 
@@ -107,7 +121,7 @@ Basic Set Command will be sent where contains a value when SOS is triggered if g
 0~99 are mapping to Basic Set value (0 ~ 99). 100 is mapping to Basic Set Value 0xFF.
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -122,7 +136,7 @@ This parameter is set to ‘0’, the clearing emergency event will not occurred
 The default value of this parameter is set to ‘60’, means that the emergency event will be cleared after 60 seconds when emergency event is triggered.
 Values in the range 30 to 32767 may be set.
 
-The manufacturer defined default value is 60.
+The manufacturer defined default value is ```60```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -144,9 +158,26 @@ The following option values may be configured -:
 | 1 | Enable Scene Mode |
 | 2 | SOS Mode |
 
-The manufacturer defined default value is 2 (SOS Mode).
+The manufacturer defined default value is ```2``` (SOS Mode).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -189,7 +220,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [SOS PDF from NEO](https://www.cd-jackson.com/zwave_device_uploads/799/SOS.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/799).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/799).

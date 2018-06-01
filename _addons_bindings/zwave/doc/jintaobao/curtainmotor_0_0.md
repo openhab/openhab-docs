@@ -13,7 +13,7 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 ![Curtain Motor product image](https://www.cd-jackson.com/zwave_device_uploads/654/654_default.jpg)
 
 
-The Curtain Motor does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The Curtain Motor supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -21,7 +21,7 @@ No device information is provided in the database. Consider [updating the databa
 
 ## Channels
 
-The following table summarises the channels available for the Curtain Motor
+The following table summarises the channels available for the Curtain Motor -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -31,7 +31,7 @@ The following table summarises the channels available for the Curtain Motor
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -39,13 +39,12 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -87,7 +86,7 @@ This group supports 5 nodes.
 
 ### Documentation Links
 
-* [maunal](https://www.cd-jackson.com/zwave_device_uploads/654/Jin-tao-bao-Curtain-motor.pdf)
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/654/Jin-tao-bao-Curtain-motor.pdf)
 
 ---
 

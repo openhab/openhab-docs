@@ -8,15 +8,13 @@ title: ZWN-SC7 - ZWave
 # ZWN-SC7 Scene Controller
 This describes the Z-Wave device *ZWN-SC7*, manufactured by *Wenzhou MTLC Electric Appliances Co.,Ltd.* with the thing type UID of ```enerwave_zwnsc7_00_000```.
 
-The ZWN-SC7 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
-
 ## Overview
 
 No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/187) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the ZWN-SC7
+The following table summarises the channels available for the ZWN-SC7 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -24,7 +22,7 @@ The following table summarises the channels available for the ZWN-SC7
 
 ### Scene Number
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 

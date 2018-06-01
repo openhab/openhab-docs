@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHND*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-The ZMNHND does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The ZMNHND supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -18,7 +18,7 @@ No device information is provided in the database. Consider [updating the databa
 
 ## Channels
 
-The following table summarises the channels available for the ZMNHND
+The following table summarises the channels available for the ZMNHND -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -32,14 +32,13 @@ The following table summarises the channels available for the ZMNHND
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -52,20 +51,19 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor Binary
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -78,14 +76,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (temperature) 2
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Burglar
 
-Indicates if the burglar alarm is triggered
-        
+Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -388,7 +385,7 @@ This group supports 16 nodes.
 
 ### Documentation Links
 
-* [Qubino ZMNHND 1D relay user manual](https://www.cd-jackson.com/zwave_device_uploads/207/Qubino-Flush-1D-relay-PLUS-user-manual-V1-4.pdf)
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/207/Qubino-Flush-1D-relay-PLUS-user-manual-V1-4.pdf)
 
 ---
 

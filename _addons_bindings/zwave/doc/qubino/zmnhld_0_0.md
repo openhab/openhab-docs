@@ -13,7 +13,7 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![ZMNHLD product image](https://www.cd-jackson.com/zwave_device_uploads/498/498_default.png)
 
 
-The ZMNHLD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The ZMNHLD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -49,7 +49,7 @@ NOTE: If the module is included with parameters 100 or 101 with values different
 
 ## Channels
 
-The following table summarises the channels available for the ZMNHLD
+The following table summarises the channels available for the ZMNHLD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -61,14 +61,13 @@ The following table summarises the channels available for the ZMNHLD
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -94,20 +93,19 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Thermostat setpoint
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Temperature Sensor
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:

@@ -8,16 +8,62 @@ title: ARF - ZWave
 # ARF Roller blind module
 This describes the Z-Wave device *ARF*, manufactured by *Fakro* with the thing type UID of ```fakro_arf_00_000```.
 
-The device is in the category of Blinds, defining Roller shutters, window blinds, etc..
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-# Overview
+![ARF product image](https://www.cd-jackson.com/zwave_device_uploads/848/848_default.png)
+
+
+The ARF supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
+
+The ARF blackout blind is a stylish, decorative blind with runners at the sides to allow the blind to be posi tioned anywhere on the window. It also prevents daylight entering at the sides, thus providing a complete blackout.
+
+The ARF Z-Wave blackout blind has a built in 12V electric drive which enables operation at 12V blinds by remote control or wall switch. The standard version of the action blinds ARF Z-Wave is only possible with the window closed.
+
+### Inclusion Information
+
+Start INCLUDE procedure with the controller of existing network and then press programming button P on the roller shutter being added to the network.
+
+### Exclusion Information
+
+Start EXCLUDE procedure with the controller of existing network and then press programming button P on the roller shutter being added to the network.
 
 ## Channels
 
-The following table summarises the channels available for the ARF
+The following table summarises the channels available for the ARF -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
+| Switch | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Alarm (power) | alarm_power | Door | Switch | 
+
+### Switch
+
+Switch the power on and off.
+
+The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Dimmer
+
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Alarm (power)
+
+Indicates if a power alarm is triggered.
+
+The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | Ok |
+| ON | Alarm |
 
 
 
@@ -34,8 +80,31 @@ The device does not support associations.
 
 ### Endpoints
 
+#### Endpoint 0
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
+| COMMAND_CLASS_ALARM_V3| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_NODE_NAMING_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [fakro arf manual EN](https://www.cd-jackson.com/zwave_device_uploads/848/ARF-ARP-Z-WAVE-EN.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/848).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/848).

@@ -11,7 +11,7 @@ This describes the Z-Wave device *ZMNHJD*, manufactured by *[Goap](http://www.qu
 ![ZMNHJD product image](https://www.cd-jackson.com/zwave_device_uploads/273/273_default.png)
 
 
-The ZMNHJD does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The ZMNHJD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -19,7 +19,7 @@ No device information is provided in the database. Consider [updating the databa
 
 ## Channels
 
-The following table summarises the channels available for the ZMNHJD
+The following table summarises the channels available for the ZMNHJD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -32,7 +32,7 @@ The following table summarises the channels available for the ZMNHJD
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -40,20 +40,18 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -66,8 +64,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Binary Sensor 2
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -80,8 +77,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Binary Sensor 3
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -379,7 +375,7 @@ This group supports 99 nodes.
 
 ### Documentation Links
 
-* [User's manual](https://www.cd-jackson.com/zwave_device_uploads/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+* [User manual](https://www.cd-jackson.com/zwave_device_uploads/273/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
 
 ---
 

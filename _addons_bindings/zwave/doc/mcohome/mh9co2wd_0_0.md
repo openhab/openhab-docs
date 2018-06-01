@@ -11,6 +11,8 @@ This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *[McoHome Technol
 ![MH9-CO2-WD product image](https://www.cd-jackson.com/zwave_device_uploads/455/455_default.png)
 
 
+The MH9-CO2-WD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Overview
 
 MCOHome CO2 Monitor is an air quality detector which compatible with Z-Wave technology.
@@ -64,7 +66,7 @@ To press K2 once can remove it from the network. “- - -” displays and press 
 
 ## Channels
 
-The following table summarises the channels available for the MH9-CO2-WD
+The following table summarises the channels available for the MH9-CO2-WD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -76,26 +78,25 @@ The following table summarises the channels available for the MH9-CO2-WD
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
 
-Indicates the current relative humidity
+Indicates the current relative humidity.
 
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (CO2)
 
-Indicates the CO2 level
+Indicates the CO2 level.
 
 The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (CO2)
 
-Indicates if the carbon dioxide alarm is triggered
-        
+Indicates if the carbon dioxide alarm is triggered.
 
 The ```alarm_co2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -108,8 +109,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (general)
 
-Indicates if an alarm is triggered
-        
+Indicates if an alarm is triggered.
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 

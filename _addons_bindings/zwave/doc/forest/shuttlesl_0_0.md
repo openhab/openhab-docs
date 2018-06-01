@@ -1,17 +1,19 @@
 ---
 layout: documentation
-title: Forest Shuttle S/L, Forest Group NL - ZWave
+title: Shuttle S/L - ZWave
 ---
 
 {% include base.html %}
 
-# Forest Shuttle S/L, Forest Group NL Drapery hardware
-This describes the Z-Wave device *Forest Shuttle S/L, Forest Group NL*, manufactured by *Forest Group Nederland B.V* with the thing type UID of ```forest_forestshuttlesl_00_000```.
+# Shuttle S/L Drapery hardware
+This describes the Z-Wave device *Shuttle S/L*, manufactured by *Forest Group Nederland B.V* with the thing type UID of ```forest_shuttlesl_00_000```.
 
-![Forest Shuttle S/L, Forest Group NL product image](https://www.cd-jackson.com/zwave_device_uploads/510/510_default.png)
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
+
+![Shuttle S/L product image](https://www.cd-jackson.com/zwave_device_uploads/510/510_default.png)
 
 
-The Forest Shuttle S/L, Forest Group NL does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The Shuttle S/L supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -35,7 +37,7 @@ Not specified
 
 ## Channels
 
-The following table summarises the channels available for the Forest Shuttle S/L, Forest Group NL
+The following table summarises the channels available for the Shuttle S/L -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -52,7 +54,7 @@ Value:
 
 -0xFF: Open
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -80,7 +82,6 @@ Secondary switch type: 0x00 (NOT SUPPORTED)
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
@@ -94,9 +95,9 @@ The device has no configuration parameters configured.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Forest Shuttle S/L, Forest Group NL supports 1 association group.
+The Shuttle S/L supports 1 association group.
 
-### Group 1: lifeline
+### Group 1: Lifeline
 
 
 This group supports 1 nodes.
@@ -125,7 +126,7 @@ This group supports 1 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/510/Shuttle-S-L-Z-Wave-EN.pdf)
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/510/Shuttle-S-L-Z-Wave-EN.pdf)
 
 ---
 

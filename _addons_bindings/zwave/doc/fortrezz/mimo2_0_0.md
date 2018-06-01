@@ -8,7 +8,7 @@ title: MIMO2+ - ZWave
 # MIMO2+ Dual Digital or Analog Voltage input and Dual Contact Relay
 This describes the Z-Wave device *MIMO2+*, manufactured by *FortrezZ LLC* with the thing type UID of ```fortrezz_mimo2_00_000```.
 
-The MIMO2+ does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The MIMO2+ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -30,7 +30,7 @@ The output relay is typically commanded via Z-WaveTM commands. In addition, the 
 
 ## Channels
 
-The following table summarises the channels available for the MIMO2+
+The following table summarises the channels available for the MIMO2+ -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -44,7 +44,7 @@ The following table summarises the channels available for the MIMO2+
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -56,8 +56,7 @@ The ```sensor_general``` channel supports the ```Number``` item. This is a read 
 
 ### Alarm (power)
 
-Indicates if a power alarm is triggered
-        
+Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -82,13 +81,13 @@ The ```sensor_general2``` channel supports the ```Number``` item. This is a read
 
 ### Relay 1
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Relay 2
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 

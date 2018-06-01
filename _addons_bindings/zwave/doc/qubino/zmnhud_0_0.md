@@ -8,11 +8,15 @@ title: ZMNHUD - ZWave
 # ZMNHUD Flush pilot (DIN version)
 This describes the Z-Wave device *ZMNHUD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhud_00_000```.
 
-# Overview
+The ZMNHUD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/715) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the ZMNHUD
+The following table summarises the channels available for the ZMNHUD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -22,7 +26,7 @@ The following table summarises the channels available for the ZMNHUD
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
@@ -30,14 +34,12 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -67,6 +69,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | Input 2 operation mode selection |  |
 | 13 | Input 3 operation mode selection |  |
 | 30 | Saving the state of the device after a power failure |  |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
 
@@ -79,7 +82,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -95,7 +98,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -111,7 +114,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type (push button) |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -127,7 +130,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -143,7 +146,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -159,7 +162,7 @@ The following option values may be configured -:
 | 0 | NO (normally open) input type |
 | 1 | NC (normally close) input type |
 
-The manufacturer defined default value is 0 (NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -180,7 +183,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 1 (Comfort).
+The manufacturer defined default value is ```1``` (Comfort).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -201,7 +204,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 4 (Eco Mode).
+The manufacturer defined default value is ```4``` (Eco Mode).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -222,7 +225,7 @@ The following option values may be configured -:
 | 5 | Frost Protection |
 | 6 | Stop |
 
-The manufacturer defined default value is 5 (Frost Protection).
+The manufacturer defined default value is ```5``` (Frost Protection).
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -238,9 +241,23 @@ The following option values may be configured -:
 | 0 | The module saves its state before power failure |
 | 1 | The module does not save the state |
 
-The manufacturer defined default value is 0 (The module saves its state before power failure).
+The manufacturer defined default value is ```0``` (The module saves its state before power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -297,4 +314,4 @@ This group supports 99 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/715).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/715).

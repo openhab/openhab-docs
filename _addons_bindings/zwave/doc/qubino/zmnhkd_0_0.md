@@ -8,13 +8,18 @@ title: ZMNHKD - ZWave
 # ZMNHKD Flush Heat & Cool Thermostat
 This describes the Z-Wave device *ZMNHKD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhkd_00_000```.
 
-The device is in the category of HVAC, defining Air condition devices, Fans.
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-# Overview
+![ZMNHKD product image](https://www.cd-jackson.com/zwave_device_uploads/829/829_default.jpg)
+
+
+The ZMNHKD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
 
 This Z-Wave module is used to regulate temperature in heating and cooling mode. Module can be controlled either through Z-Wave network or through the wall switch. The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch. Module measures power consumption of connected device. It is designed to act as repeater in order to improve range and stability of Z-wave network.
 
-## Inclusion Information
+### Inclusion Information
 
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
@@ -28,7 +33,7 @@ WARNING: Service button S **must NOT be used** when module is connected to 110-2
 
 **NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.
 
-## Exclusion Information
+### Exclusion Information
 
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
@@ -44,7 +49,7 @@ NOTE: If the module is included with parameters 100 or 101 with values different
 
 ## Channels
 
-The following table summarises the channels available for the ZMNHKD
+The following table summarises the channels available for the ZMNHKD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -57,26 +62,25 @@ The following table summarises the channels available for the ZMNHKD
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
-Indicates the instantaneous power consumption
+Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
-Indicates the energy consumption (kWh)
+Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -102,13 +106,13 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -152,6 +156,7 @@ Detailed information on each parameter can be found in the sections below.
 | 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
 | 121 | Digital temperature sensor / setpoint selector | Digital temperature sensor / setpoint selector |
 | 122 | Node Id of external battery powered sensor | Node Id of external battery powered sensor |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input I1 switch type
 
@@ -164,7 +169,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -180,7 +185,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1 (bi-stable switch type).
+The manufacturer defined default value is ```1``` (bi-stable switch type).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -196,7 +201,7 @@ The following option values may be configured -:
 | 0 | normally open |
 | 1 | normally closed |
 
-The manufacturer defined default value is 0 (normally open).
+The manufacturer defined default value is ```0``` (normally open).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -215,7 +220,7 @@ The following option values may be configured -:
 | 0 | normally open |
 | 1 | normally closed |
 
-The manufacturer defined default value is 0 (normally open).
+The manufacturer defined default value is ```0``` (normally open).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -233,7 +238,7 @@ The following option values may be configured -:
 | 2 | ALL ON is active / ALL OFF is not active |
 | 255 | ALL ON is active / ALL OFF is active |
 
-The manufacturer defined default value is 255 (ALL ON is active / ALL OFF is active).
+The manufacturer defined default value is ```255``` (ALL ON is active / ALL OFF is active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -250,7 +255,7 @@ The following option values may be configured -:
 | 2 | Input I1 influences the heating/cooling valves |
 | 32767 | Input I1 doesnt influence on the Heat/Cool process |
 
-The manufacturer defined default value is 1 (Input I1 changes the mode between Off and Heat/Cool ).
+The manufacturer defined default value is ```1``` (Input I1 changes the mode between Off and Heat/Cool ).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -271,7 +276,7 @@ The following option values may be configured -:
 | 2000 | Input I2 influences the cooling value with condense sensor |
 | 32767 | Input I2 doesnt influence on the Heat/Cool process |
 
-The manufacturer defined default value is 32767 (Input I2 doesnt influence on the Heat/Cool process).
+The manufacturer defined default value is ```32767``` (Input I2 doesnt influence on the Heat/Cool process).
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -288,7 +293,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | Power consumption reporting disabled |
 
-The manufacturer defined default value is 0 (Power consumption reporting disabled).
+The manufacturer defined default value is ```0``` (Power consumption reporting disabled).
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -302,7 +307,7 @@ Set value refers to the time interval with which power consumption in Watts is r
 1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
@@ -321,7 +326,7 @@ The following option values may be configured -:
 | 0 | mono-stable switch type |
 | 1 | bi-stable switch type |
 
-The manufacturer defined default value is 1010.
+The manufacturer defined default value is ```1010```.
 
 This parameter has the configuration ID ```config_43_2``` and is of type ```INTEGER```.
 
@@ -340,7 +345,7 @@ The following option values may be configured -:
 | 0 | normally open |
 | 1 | normally closed |
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_44_2``` and is of type ```INTEGER```.
 
@@ -354,7 +359,7 @@ This parameter defines temperature difference between measured temperature and s
  • 1001 - 1255 = - 0,1°C to - 25,5 °C
 Values in the range 0 to 1255 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_45_2``` and is of type ```INTEGER```.
 
@@ -374,7 +379,7 @@ The following option values may be configured -:
 | 2 | Input I3 influences the heating/cooling valves |
 | 32767 | Input I3 doesnt influence on the Heat/Cool process |
 
-The manufacturer defined default value is 1002.
+The manufacturer defined default value is ```1002```.
 
 This parameter has the configuration ID ```config_46_2``` and is of type ```INTEGER```.
 
@@ -389,7 +394,7 @@ Set value means at which temperature the device will be turned on even if the th
  • 255 - Antifreeze functionality disabled
 Values in the range 0 to 1127 may be set.
 
-The manufacturer defined default value is 50.
+The manufacturer defined default value is ```50```.
 
 This parameter has the configuration ID ```config_47_2``` and is of type ```INTEGER```.
 
@@ -404,7 +409,7 @@ Too low temperature limit is used with Association Group 4.
  • 1001 - 1150: - 0.1 °C to – 15.0 °C
 Values in the range 1 to 1150 may be set.
 
-The manufacturer defined default value is 50.
+The manufacturer defined default value is ```50```.
 
 This parameter has the configuration ID ```config_60_2``` and is of type ```INTEGER```.
 
@@ -417,7 +422,7 @@ This parameter determines the temperature at which the device sends a command to
  • 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.
 Values in the range 1 to 1000 may be set.
 
-The manufacturer defined default value is 700.
+The manufacturer defined default value is ```700```.
 
 This parameter has the configuration ID ```config_61_2``` and is of type ```INTEGER```.
 
@@ -433,7 +438,7 @@ The following option values may be configured -:
 | 0 | When the device is turned off the output is 0V |
 | 1 | When the system is turned off the output is 230V |
 
-The manufacturer defined default value is 0 (When the device is turned off the output is 0V).
+The manufacturer defined default value is ```0``` (When the device is turned off the output is 0V).
 
 This parameter has the configuration ID ```config_64_1``` and is of type ```INTEGER```.
 
@@ -449,7 +454,7 @@ The following option values may be configured -:
 | 0 | When system is turned off the output is 0V(NC). |
 | 1 | When system is turned off the output is 230V or 24V(NO). |
 
-The manufacturer defined default value is 0 (When system is turned off the output is 0V(NC).).
+The manufacturer defined default value is ```0``` (When system is turned off the output is 0V(NC).).
 
 This parameter has the configuration ID ```config_65_1``` and is of type ```INTEGER```.
 
@@ -462,7 +467,7 @@ This parameter specifies the delay before the device executes command, after inp
  Device status on UI change immediately, but the command will be sent after time set.
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_70_2``` and is of type ```INTEGER```.
 
@@ -474,7 +479,7 @@ This parameter specifies the delay before the device executes command after inpu
 If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_71_2``` and is of type ```INTEGER```.
 
@@ -486,7 +491,7 @@ This parameter specifies the delay before the device execute command after input
  This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_72_2``` and is of type ```INTEGER```.
 
@@ -498,7 +503,7 @@ This parameter specifies the delay before the device execute command after input
  This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
 Values in the range 0 to 32000 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_73_2``` and is of type ```INTEGER```.
 
@@ -513,7 +518,7 @@ Determinates the time interval of sending device status ON/OFF to the associated
  • 1-127 = 1 minute – 127 minutes, reporting enabled
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 30.
+The manufacturer defined default value is ```30```.
 
 This parameter has the configuration ID ```config_76_1``` and is of type ```INTEGER```.
 
@@ -528,7 +533,7 @@ Set a time delay before sent Basic set ON to the associated device. The same tim
  • 1-32767 = 1 second– 32767 seconds, reporting enabled
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_77_2``` and is of type ```INTEGER```.
 
@@ -545,7 +550,7 @@ The following option values may be configured -:
 | 0 | degrees Celsius |
 | 1 | degrees Fahrenheit |
 
-The manufacturer defined default value is 0 (degrees Celsius).
+The manufacturer defined default value is ```0``` (degrees Celsius).
 
 This parameter has the configuration ID ```config_78_1``` and is of type ```INTEGER```.
 
@@ -570,7 +575,7 @@ The following option values may be configured -:
 | 6 | Smoke alarm |
 | 9 | Sensor binary |
 
-The manufacturer defined default value is 0 (disabled).
+The manufacturer defined default value is ```0``` (disabled).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
 
@@ -592,7 +597,7 @@ The following option values may be configured -:
 | 6 | Smoke alarm |
 | 9 | Sensor binary |
 
-The manufacturer defined default value is 0 (disabled).
+The manufacturer defined default value is ```0``` (disabled).
 
 This parameter has the configuration ID ```config_101_1``` and is of type ```INTEGER```.
 
@@ -605,7 +610,7 @@ Temperature sensor offset settings
 1001..1100 = offset is -0.1..-10.0°C subtracted to actual measuring value
 Values in the range 0 to 32536 may be set.
 
-The manufacturer defined default value is 32536.
+The manufacturer defined default value is ```32536```.
 
 This parameter has the configuration ID ```config_110_2``` and is of type ```INTEGER```.
 
@@ -616,7 +621,7 @@ Digital temperature sensor reporting
 If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter
 Values in the range 0 to 127 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_120_1``` and is of type ```INTEGER```.
 
@@ -636,7 +641,7 @@ The following option values may be configured -:
 | 8 | setpoint is grabbed from ext battery sensor |
 | 10 | temperature an setpoint are grabbed from ext batt sensor |
 
-The manufacturer defined default value is 0 (internal sensor is mounted).
+The manufacturer defined default value is ```0``` (internal sensor is mounted).
 
 This parameter has the configuration ID ```config_121_1``` and is of type ```INTEGER```.
 
@@ -649,9 +654,23 @@ Node Id of external battery powered sensor
 1..254 = NodeId of external battery powered room sensor
 Values in the range 0 to 254 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_122_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -784,7 +803,11 @@ This group supports 16 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 
+### Documentation Links
+
+* [Quick User Manual](https://www.cd-jackson.com/zwave_device_uploads/829/Qubino-Flush-Heat-Cool-Thermostat-PLUS-user-manual-V1-5-eng.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/829).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/829).

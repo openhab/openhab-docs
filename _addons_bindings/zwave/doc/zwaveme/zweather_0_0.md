@@ -8,13 +8,17 @@ title: Z-Weather - ZWave
 # Z-Weather Z-Wave weather interface
 This describes the Z-Wave device *Z-Weather*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zweather_00_000```.
 
+The Z-Weather supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+The Z-Weather does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Overview
 
 No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/258) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the Z-Weather
+The following table summarises the channels available for the Z-Weather -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -27,12 +31,11 @@ The following table summarises the channels available for the Z-Weather
 | Sensor (dew point) | sensor_dewpoint | Temperature | Number | 
 | Electric meter (pulses) | meter_pulse | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
-| battery-level | system.battery-level | Battery | Number |
+| Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -45,49 +48,49 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (luminance)
 
-Indicates the current light reading
+Indicates the current light reading.
 
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (velocity)
 
-Indicates the current velocity
+Indicates the current velocity.
 
 The ```sensor_velocity``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (barometric pressure)
 
-Indicates the barometric pressure
+Indicates the barometric pressure.
 
 The ```sensor_barpressure``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
 
-Indicates the current relative humidity
+Indicates the current relative humidity.
 
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (dew point)
 
-Indicates the dewpoint
+Indicates the dewpoint.
 
 The ```sensor_dewpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (pulses)
 
-Indicates the pulse count
+Indicates the pulse count.
 
 The ```meter_pulse``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
-Indicates the energy consumption (kWh)
+Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -95,7 +98,7 @@ The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Ener
 
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -140,14 +143,14 @@ This setting is defined in *seconds*. It is advisable not to set this interval t
 
 Note that this setting does not affect the devices ability to send sensor data, or notification events.
 
-This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 ### Wakeup Node
 
 When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
 In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
 
-This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
 
 
 ## Association Groups

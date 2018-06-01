@@ -8,9 +8,14 @@ title: RS LED D2 Z-Wave - ZWave
 # RS LED D2 Z-Wave Indoor LED-light with motion sensor
 This describes the Z-Wave device *RS LED D2 Z-Wave*, manufactured by *Steinel* with the thing type UID of ```steinel_rsledd2_00_000```.
 
-The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
+The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-# Overview
+![RS LED D2 Z-Wave product image](https://www.cd-jackson.com/zwave_device_uploads/759/759_default.png)
+
+
+The RS LED D2 Z-Wave supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
 
 The sensor-switched indoor light contains an active motion detector.   
 The integrated HF sensor emits high-frequency electromagnetic waves (5.8 GHz) and receives their echo.   
@@ -34,7 +39,7 @@ The settings last selected will always be in effect regardless of whether they w
 This product can be operated in any Z-Wave network with other Z-Wave certified devices from other manufacturers.   
 All non-battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
 
-## Inclusion Information
+### Inclusion Information
 
 These instructions for including and excluding Steinel Z-Wave products have been written for the Smart Friends system.  
 They may not always apply to other Z-Wave products.   
@@ -46,13 +51,13 @@ Following exclusion, all configuration parameters (time, sensitivity etc.) remai
   
 SET = Z-Wave button: Button for inclusion and exclusion as well as for returning the device to the factory setting.
 
-## Exclusion Information
+### Exclusion Information
 
 **To start the light's inclusion or exclusion mode, briefly press button SET.**
 
 ## Channels
 
-The following table summarises the channels available for the RS LED D2 Z-Wave
+The following table summarises the channels available for the RS LED D2 Z-Wave -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -68,20 +73,19 @@ The following table summarises the channels available for the RS LED D2 Z-Wave
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -94,14 +98,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (luminance)
 
-Indicates the current light reading
+Indicates the current light reading.
 
 The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (system)
 
-Indicates if a system alarm is triggered
-        
+Indicates if a system alarm is triggered.
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -114,8 +117,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
-Indicates if the burglar alarm is triggered
-        
+Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -128,20 +130,19 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Switch 1
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number1``` channel supports the ```Number``` item.
 
 ### Alarm (burglar) 2
 
-Indicates if the burglar alarm is triggered
-        
+Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -175,6 +176,7 @@ Detailed information on each parameter can be found in the sections below.
 | 14 | Sequence Off-On behaviour (timeout) | OFF\_ON\_ BEHAVIOUR |
 | 15 | Sequence timing | SEQUENCE\_TIME |
 | 16 | Motion Off behaviour (timeout) | MOTION\_ DISABLE |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Time [s]
 
@@ -182,7 +184,7 @@ Duration of light after motion detection.
 
 Values in the range 5 to 900 may be set.
 
-The manufacturer defined default value is 180.
+The manufacturer defined default value is ```180```.
 
 This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
 
@@ -196,7 +198,7 @@ LIGHT
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting
 Values in the range 2 to 2000 may be set.
 
-The manufacturer defined default value is 2000.
+The manufacturer defined default value is ```2000```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
 
@@ -207,7 +209,7 @@ RANGE
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as default value and any potentiometer movement rewrites the current setting.
 Values in the range 100 to 500 may be set.
 
-The manufacturer defined default value is 500.
+The manufacturer defined default value is ```500```.
 
 This parameter has the configuration ID ```config_4_2``` and is of type ```INTEGER```.
 
@@ -218,7 +220,7 @@ SENSITIVITY
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 100 may be set.
 
-The manufacturer defined default value is 100.
+The manufacturer defined default value is ```100```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -229,7 +231,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.
 Values in the range 5 to 120 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -242,7 +244,7 @@ When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor values a
 If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -295,7 +297,7 @@ bit field:
 0 - Slave mode
 Values in the range 0 to 4 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -324,7 +326,7 @@ The following option values may be configured -:
 |--------|-------------|
 | 255 | Lamp/relay is switched off for TIME (cfg 1) |
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -350,7 +352,7 @@ Notice – during the day, this mode cannot be ended remotely due to motion even
 255 = Lamp/relay is switched on for TIME (cfg 1). It does not wait for a motion event and works normally via current motion evaluation.
 Values in the range 2 to 209 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -373,7 +375,7 @@ no motion.
 255 = Never stop waiting for motion.
 Values in the range 0 to 209 may be set.
 
-The manufacturer defined default value is 204.
+The manufacturer defined default value is ```204```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -388,7 +390,7 @@ The behaviour is the same as for parameter 10 (OFF\_LOCAL\_DISABLE)
 except: 255 – device ignores ON - OFF sequence and uses OFF behaviour.
 Values in the range 0 to 209 may be set.
 
-The manufacturer defined default value is 204.
+The manufacturer defined default value is ```204```.
 
 This parameter has the configuration ID ```config_13_2``` and is of type ```INTEGER```.
 
@@ -403,7 +405,7 @@ The behaviour is the same as for parameter 11 (ON\_LOCAL\_DISABLE)
 except: 255 – device ignores OFF - ON sequence and uses ON behaviour.
 Values in the range 0 to 209 may be set.
 
-The manufacturer defined default value is 204.
+The manufacturer defined default value is ```204```.
 
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
@@ -417,7 +419,7 @@ but can be exceptionally longer due to retransmissions and overload – in this
 case, a longer interval can be allowed (up to 5 seconds).
 Values in the range 10 to 50 may be set.
 
-The manufacturer defined default value is 10.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -446,9 +448,23 @@ Timeout:
 255 = BASIC SET to motion endpoint ignored, motion sensor still disabled.
 Values in the range 2 to 209 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_16_2``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -547,7 +563,13 @@ This group supports 15 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 
+### Documentation Links
+
+* [STEINEL RS LED D2 Z-Wave - operation manual](https://www.cd-jackson.com/zwave_device_uploads/759/bedien-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave, Z-Wave Interface v 1.0.0](https://www.cd-jackson.com/zwave_device_uploads/759/bdal2-110043511.pdf)
+* [STEINEL RS LED D2 Z-Wave - Data Sheet](https://www.cd-jackson.com/zwave_device_uploads/759/Steinel-RS-LED-D2-Z-Wave---DataSheet.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/759).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/759).

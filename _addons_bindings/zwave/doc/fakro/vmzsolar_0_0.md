@@ -10,30 +10,31 @@ This describes the Z-Wave device *VMZ Solar*, manufactured by *Fakro* with the t
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
+The VMZ Solar supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
 ## Overview
 
 No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/670) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the VMZ Solar
+The following table summarises the channels available for the VMZ Solar -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Blinds control | blinds_control | Blinds | Rollershutter | 
-| battery-level | system.battery-level | Battery | Number |
+| Battery Level | battery-level | Battery | Number |
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
 
-Provides start / stop control of blinds
-        
+Provides start / stop control of blinds.
 
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
@@ -41,7 +42,7 @@ The ```blinds_control``` channel supports the ```Rollershutter``` item and is in
 
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 

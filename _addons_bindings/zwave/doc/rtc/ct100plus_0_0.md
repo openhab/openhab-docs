@@ -13,13 +13,15 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![CT100 Plus product image](https://www.cd-jackson.com/zwave_device_uploads/641/641_default.png)
 
 
+The CT100 Plus supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
 ## Overview
 
 No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/641) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the CT100 Plus
+The following table summarises the channels available for the CT100 Plus -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -34,7 +36,7 @@ The following table summarises the channels available for the CT100 Plus
 | Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
-| battery-level | system.battery-level | Battery | Number |
+| Battery Level | battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 | Sensor (relative humidity) 1 | sensor_relhumidity1 | Humidity | Number | 
 | Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number | 
@@ -52,8 +54,7 @@ The following table summarises the channels available for the CT100 Plus
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -66,20 +67,19 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Sensor (relative humidity)
 
-Indicates the current relative humidity
+Indicates the current relative humidity.
 
 The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -105,8 +105,7 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State
 
-Sets the thermostat operating state
-        
+Sets the thermostat operating state.
 
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -123,25 +122,25 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -157,31 +156,29 @@ Channel type information on this channel is not found.
 
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 ### Clock Time Offset
 
-Provides the current time difference for the devices time
-        
+Provides the current time difference for the devices time.
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 1
 
-Indicates the current relative humidity
+Indicates the current relative humidity.
 
 The ```sensor_relhumidity1``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 1
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode 1
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -207,8 +204,7 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Operating State 1
 
-Sets the thermostat operating state
-        
+Sets the thermostat operating state.
 
 The ```thermostat_state1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -225,25 +221,25 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating) 1
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling) 1
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air) 1
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace) 1
 
-Sets the thermostate setpoint
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
@@ -257,20 +253,19 @@ Channel type information on this channel is not found.
 
 ### Clock Time Offset 1
 
-Provides the current time difference for the devices time
-        
+Provides the current time difference for the devices time.
 
 The ```time_offset1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 2
 
-Indicates the current relative humidity
+Indicates the current relative humidity.
 
 The ```sensor_relhumidity2``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 2
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 

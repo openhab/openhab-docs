@@ -8,9 +8,14 @@ title: Danalock V3-BTZE - ZWave
 # Danalock V3-BTZE Z-Wave controlled door lock with Bluetooth Smart
 This describes the Z-Wave device *Danalock V3-BTZE*, manufactured by *[Poly-control](https://www.danalock.com/)* with the thing type UID of ```polycontrol_btze_00_000```.
 
-The device is in the category of Lock, defining Devices whose primary pupose is locking something.
+The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-# Overview
+![Danalock V3-BTZE product image](https://www.cd-jackson.com/zwave_device_uploads/708/708_default.png)
+
+
+The Danalock V3-BTZE supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+## Overview
 
 Danalock supports:   
 \- S0/S2 Z-Wave Security   
@@ -20,7 +25,7 @@ Danalock supports:
 \- Hold And Release   
 \- Back To Back
 
-## Inclusion Information
+### Inclusion Information
 
 To add or include the Danalock into a Z-Wave network
 
@@ -28,7 +33,7 @@ To add or include the Danalock into a Z-Wave network
 2. Push the switch once.
 3. Wait 5 seconds.
 
-## Exclusion Information
+### Exclusion Information
 
 To remove or exclude the Danalock into a Z-Wave network
 
@@ -38,17 +43,24 @@ To remove or exclude the Danalock into a Z-Wave network
 
 ## Channels
 
-The following table summarises the channels available for the Danalock V3-BTZE
+The following table summarises the channels available for the Danalock V3-BTZE -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Door Lock | lock_door | Door | Switch | 
+| Battery Level | battery-level | Battery | Number |
 
 ### Door Lock
 
-Lock and unlock the door
+Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -65,6 +77,7 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | BLE Temporary Allowed | The BLE is enabled for a number of seconds. |
 | 5 | BLE Always Allowed | BLE Always Allowed |
 | 6 | Autolock | Lock after an unlock.Value is delay in sec before lock is locked again. |
+|  | Lock Timeout | Sets the time after which the door will auto lock |
 
 ### Parameter 1: Twin Assist
 
@@ -79,7 +92,7 @@ The following option values may be configured -:
 | 0 | disabled |
 | 1 | enabled |
 
-The manufacturer defined default value is 0 (disabled).
+The manufacturer defined default value is ```0``` (disabled).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -96,7 +109,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | Disabled |
 
-The manufacturer defined default value is 0 (Disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_2_4``` and is of type ```INTEGER```.
 
@@ -112,7 +125,7 @@ The following option values may be configured -:
 | 0 | Disabled |
 | 1 | Enabled |
 
-The manufacturer defined default value is 0 (Disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -125,7 +138,7 @@ The BLE is enabled for a number of seconds.
 1 to 2147483647 -> enabled no. of seconds
 Values in the range 0 to 2147483647 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_4_4``` and is of type ```INTEGER```.
 
@@ -143,7 +156,7 @@ The following option values may be configured -:
 | 0 | BLE Always disabled |
 | 1 | BLE Always enabled |
 
-The manufacturer defined default value is 0 (BLE Always disabled).
+The manufacturer defined default value is ```0``` (BLE Always disabled).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -156,9 +169,15 @@ Lock after an unlock.Value is delay in sec before lock is locked again.
 1 to 2147483647 -> enabled no. of seconds
 Values in the range 0 to 2147483647 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_6_4``` and is of type ```INTEGER```.
+
+### Lock Timeout
+
+Sets the time after which the door will auto lock.
+
+This parameter has the configuration ID ```doorlock_timeout``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -193,7 +212,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_SECURITY_V1| |
 
+### Documentation Links
+
+* [Product manual](https://www.cd-jackson.com/zwave_device_uploads/708/Danalock-V3-Product-manual-Z-Wave-V-0-9-1.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/708).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/708).
