@@ -430,6 +430,13 @@ calendar.timeInMillis = now.millis
 val dtt = new DateTimeType(calendar)
 ```
 
+Note: as DateTypeType(calendar) above is now deprecated, the simplest non-deprecated way to update a DateTimeType item with a Joda DateTime value in a rule is by converting it to a string.
+
+```java
+// update myDateTime item with current time
+myDateTime.postUpdate(now.toString)
+```
+
 In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item. 
 Here an option to do so utilizing SimpleDateFormat:
 
