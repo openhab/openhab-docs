@@ -8,21 +8,26 @@ title: Spirit - ZWave
 # Spirit Thermostatic Valve
 This describes the Z-Wave device *Spirit*, manufactured by *Eurotronics* with the thing type UID of ```eurotronic_spirit_00_000```.
 
-The device is in the category of Radiator Control, defining Controls on radiators used to heat up rooms.
+The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 
-# Overview
+![Spirit product image](https://www.cd-jackson.com/zwave_device_uploads/710/710_default.jpg)
 
-## Inclusion Information
+
+The Spirit supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+## Overview
+
+### Inclusion Information
 
 Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. Spirit Z-Wave Plus will show the assigned NodeID.
 
-## Exclusion Information
+### Exclusion Information
 
 Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the boost button of the Spirit Z-Wave Plus for at least 5 seconds.
 
 ## Channels
 
-The following table summarises the channels available for the Spirit
+The following table summarises the channels available for the Spirit -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -34,31 +39,28 @@ The following table summarises the channels available for the Spirit
 | Setpoint (energy heat) | thermostat_setpoint | Temperature | Number | 
 | Alarm (system) | alarm_system |  | Switch | 
 | Alarm (power) | alarm_power | Door | Switch | 
+| Battery Level | battery-level | Battery | Number |
 
 ### Dimmer
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Current temperature
 
-Indicates the current temperature
+Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### External temperature
 
-
-
-The ```sensor_report``` channel supports the `````` item.
+Channel type information on this channel is not found.
 
 ### Thermostat mode
 
-Sets the thermostat
-        
+Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
@@ -84,20 +86,23 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heat)
 
-Sets the thermostate setpoint
+Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
+
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Setpoint (energy heat)
 
-Sets the thermostate setpoint
+Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
+
+Sets the thermostate setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Alarm (system)
 
-Indicates if a system alarm is triggered
-        
+Indicates if a system alarm is triggered.
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -110,8 +115,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (power)
 
-Indicates if a power alarm is triggered
-        
+Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -121,6 +125,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -151,7 +161,7 @@ The following option values may be configured -:
 | 0 | LCD-content normal |
 | 1 | LCD-content inverted (UK Edition) |
 
-The manufacturer defined default value is 0 (LCD-content normal ).
+The manufacturer defined default value is ```0``` (LCD-content normal ).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -168,7 +178,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | No Timeout LCD always on |
 
-The manufacturer defined default value is 0 (No Timeout LCD always on).
+The manufacturer defined default value is ```0``` (No Timeout LCD always on).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -184,7 +194,7 @@ The following option values may be configured -:
 | 0 | Backlight disabled |
 | 1 | Backlight enabled |
 
-The manufacturer defined default value is 1 (Backlight enabled).
+The manufacturer defined default value is ```1``` (Backlight enabled).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -200,7 +210,7 @@ The following option values may be configured -:
 | 0 | system notification |
 | 1 | Send battery status unsolicited once a day. |
 
-The manufacturer defined default value is 1 (Send battery status unsolicited once a day. ).
+The manufacturer defined default value is ```1``` (Send battery status unsolicited once a day. ).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -215,7 +225,7 @@ Measured Temperature report
 default 5: report on delta T = 0,5°C
 Values in the range 0 to 50 may be set.
 
-The manufacturer defined default value is 5.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -228,7 +238,7 @@ Valve opening percentage report
 1-100: report if valve opening changed by delta = 1% ... 100%
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -246,7 +256,7 @@ The following option values may be configured -:
 | 2 | Sensitivity medium |
 | 3 | Sensitivity high |
 
-The manufacturer defined default value is 2 (Sensitivity medium).
+The manufacturer defined default value is ```2``` (Sensitivity medium).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -263,7 +273,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 128 | External temperature sensor will be used for regulation. |
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -307,7 +317,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_SECURITY_V0| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/710/Spirit-Z-Wave-BAL-web-EN-view-04.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/710).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/710).

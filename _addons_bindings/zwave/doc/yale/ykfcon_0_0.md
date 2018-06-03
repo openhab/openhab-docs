@@ -13,30 +13,31 @@ The device is in the category of *Lock*, defining Devices whose primary pupose i
 ![YKFCON product image](https://www.cd-jackson.com/zwave_device_uploads/292/292_default.jpg)
 
 
+The YKFCON supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
 ## Overview
 
 No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the YKFCON
+The following table summarises the channels available for the YKFCON -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Door Lock | lock_door | Door | Switch | 
 | Alarm | alarm_general | Door | Switch | 
-| battery-level | system.battery-level | Battery | Number |
+| Battery Level | battery-level | Battery | Number |
 
 ### Door Lock
 
-Lock and unlock the door
+Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
 
 ### Alarm
 
-Indicates if an alarm is triggered
-        
+Indicates if an alarm is triggered.
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -51,7 +52,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 

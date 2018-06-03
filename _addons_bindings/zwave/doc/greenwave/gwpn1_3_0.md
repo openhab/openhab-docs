@@ -14,7 +14,7 @@ The device is in the category of *Power Outlet*, defining Small devices to be pl
 ![GWPN1 product image](https://www.cd-jackson.com/zwave_device_uploads/102/102_default.jpg)
 
 
-The GWPN1 does not permanently listening for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The GWPN1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -36,7 +36,7 @@ On the PowerNode, press and hold the **Sync** button for approximately one secon
 
 ## Channels
 
-The following table summarises the channels available for the GWPN1
+The following table summarises the channels available for the GWPN1 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -48,32 +48,31 @@ The following table summarises the channels available for the GWPN1
 
 ###  Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
 
-Indicates the instantaneous power consumption
+Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
-Indicates the energy consumption (kWh)
+Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset total power consumption
 
-Reset the meter
+Reset the meter.
 
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm
 
-Indicates if an alarm is triggered
-        
+Indicates if an alarm is triggered.
 
 The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -245,7 +244,7 @@ This group supports 1 nodes.
 ### Documentation Links
 
 * [Documentation of Z-Wave settings](https://www.cd-jackson.com/zwave_device_uploads/102/z-wave-greenwave-powernode-manual.pdf)
-* [ English Manual](https://www.cd-jackson.com/zwave_device_uploads/102/z-wave-greenwave-powernode-manual.pdf)
+* [ English User Manual](https://www.cd-jackson.com/zwave_device_uploads/102/z-wave-greenwave-powernode-manual.pdf)
 * [Documentation of Z-Wave settings](https://www.cd-jackson.com/zwave_device_uploads/102/Technical-Doc-for-the-powernodes.pdf)
 
 ---

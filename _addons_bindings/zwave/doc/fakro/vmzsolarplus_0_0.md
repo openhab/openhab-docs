@@ -8,35 +8,38 @@ title: VMZ Solar z-wave plus - ZWave
 # VMZ Solar z-wave plus Awning Blind z-wave plus version
 This describes the Z-Wave device *VMZ Solar z-wave plus*, manufactured by *Fakro* with the thing type UID of ```fakro_vmzsolarplus_00_000```.
 
-# Overview
+The VMZ Solar z-wave plus supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+## Overview
+
+No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/750) to improve the documentation.
 
 ## Channels
 
-The following table summarises the channels available for the VMZ Solar z-wave plus
+The following table summarises the channels available for the VMZ Solar z-wave plus -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Blinds control | blinds_control | Blinds | Rollershutter | 
 | Alarm (power) | alarm_power | Door | Switch | 
+| Battery Level | battery-level | Battery | Number |
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
 
-Provides start / stop control of blinds
-        
+Provides start / stop control of blinds.
 
 The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
 
-Indicates if a power alarm is triggered
-        
+Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -46,6 +49,12 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | Ok |
 | ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -71,6 +80,7 @@ Detailed information on each parameter can be found in the sections below.
 | 80 | OPEN overload current | OPEN overload current |
 | 99 | Restore default config values | Restore default config values |
 | 100 | Autoexclude | Autoexclude |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: operating mode
 
@@ -90,7 +100,7 @@ The following option values may be configured -:
 | 1 | semiauto |
 | 2 | auto |
 
-The manufacturer defined default value is 0 (manual).
+The manufacturer defined default value is ```0``` (manual).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -108,7 +118,7 @@ The following option values may be configured -:
 | 1 | summer mode only |
 | 2 | winter mode |
 
-The manufacturer defined default value is 1 (summer mode only).
+The manufacturer defined default value is ```1``` (summer mode only).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -119,7 +129,7 @@ delay to auto shade
 Delay time in minutes after which the shade is open or closed in auto mode
 Values in the range 0 to 30 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -130,7 +140,7 @@ Level of insolation to open/close the shades
 Level of insolation in mA to open/close the shades in the auto mode
 Values in the range 3 to 100 may be set.
 
-The manufacturer defined default value is 3.
+The manufacturer defined default value is ```3```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -141,7 +151,7 @@ Temperature
 T\[<sup>o</sup>C\] = x minus 50
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -158,7 +168,7 @@ The following option values may be configured -:
 | 0 | no |
 | 1 | yes |
 
-The manufacturer defined default value is 0 (no).
+The manufacturer defined default value is ```0``` (no).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -174,7 +184,7 @@ The following option values may be configured -:
 | 1 | go down |
 | 2 | restore last position |
 
-The manufacturer defined default value is 1 (go down).
+The manufacturer defined default value is ```1``` (go down).
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -185,7 +195,7 @@ Current on autoshade solar panel
 Current from autoshade solar panel for loading battery: 0 - 255 mA
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -197,7 +207,7 @@ Motor current
 Current used by motor: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 This is a read only parameter.
@@ -209,7 +219,7 @@ CLOSE current
 CLOSE current: 1\[mA\] - 255\[mA\]
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_77_1``` and is of type ```INTEGER```.
 
@@ -220,7 +230,7 @@ OPEN current
 OPEN current: 1\[mA\] - 255\[mA\]
 Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_78_1``` and is of type ```INTEGER```.
 
@@ -231,7 +241,7 @@ CLOSE overload current
 CLOSE overload current: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_79_1``` and is of type ```INTEGER```.
 
@@ -242,7 +252,7 @@ OPEN overload current
 OPEN overload current: 10\[mA\] - 2,55\[A\]
 Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_80_1``` and is of type ```INTEGER```.
 
@@ -258,7 +268,7 @@ The following option values may be configured -:
 | 1 | restore default config values |
 | 2 | user values |
 
-The manufacturer defined default value is 2 (user values).
+The manufacturer defined default value is ```2``` (user values).
 
 This parameter has the configuration ID ```config_99_1``` and is of type ```INTEGER```.
 
@@ -274,9 +284,23 @@ The following option values may be configured -:
 | 1 | off |
 | 2 | on |
 
-The manufacturer defined default value is 1 (off).
+The manufacturer defined default value is ```1``` (off).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -333,4 +357,4 @@ This group supports 5 nodes.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/750).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/750).

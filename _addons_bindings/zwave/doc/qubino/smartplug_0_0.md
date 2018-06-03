@@ -8,9 +8,14 @@ title: Smart Plug 16A - ZWave
 # Smart Plug 16A Smart Plug
 This describes the Z-Wave device *Smart Plug 16A*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_smartplug_00_000```.
 
-The device is in the category of Power Outlet, defining Small devices to be plugged into a power socket in a wall which stick there.
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-# Overview
+![Smart Plug 16A product image](https://www.cd-jackson.com/zwave_device_uploads/822/822_default.png)
+
+
+The Smart Plug 16A supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
 
 This Z-Wave module is used for switching and energy measurements in single-phase electrical power networks and can be used in residential, industrial and utility applications.
 
@@ -22,7 +27,7 @@ Overload protection >16 A
 
 Power consumption <1W
 
-## Inclusion Information
+### Inclusion Information
 
 Auto inclusion (first time usage)
 
@@ -35,20 +40,20 @@ Manual inclusion
 - start inclusion mode of z-wave controller
 - press the service button (S) 3 times within 3 seconds
 
-## Exclusion Information
+### Exclusion Information
 
 - plug device into power outlet
 - ensure device is within maximum 1 meter (3 feet) of the main controller
 - enable exclusion mode on main controller
 - press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
 
-## Wakeup Information
+### Wakeup Information
 
 Press the Service button (S) 3 times within 3 seconds.
 
 ## Channels
 
-The following table summarises the channels available for the Smart Plug 16A
+The following table summarises the channels available for the Smart Plug 16A -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -61,38 +66,37 @@ The following table summarises the channels available for the Smart Plug 16A
 
 ### Switch
 
-Switch the power on and off
+Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts)
 
-Indicates the instantaneous voltage
+Indicates the instantaneous voltage.
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
 
-Indicates the instantaneous current consumption
+Indicates the instantaneous current consumption.
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
-Indicates the energy consumption (kWh)
+Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 
-Indicates the instantaneous power consumption
+Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
 
-Indicates if a power alarm is triggered
-        
+Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -119,6 +123,7 @@ Detailed information on each parameter can be found in the sections below.
 | 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Treshold Change in Power  for reporting | Change of power consumption \[Watt\] reporting threshold |
 | 41 | Treshold time for power reporting | Treshold time for power reporting \[Watt\] |
+|  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
 
@@ -133,7 +138,7 @@ The following option values may be configured -:
 | 2 | ALL ON active, ALL OFF disabled |
 | 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is 255 (ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -151,7 +156,7 @@ The following option values may be configured, in addition to values in the rang
 |--------|-------------|
 | 0 | Auto OFF disabled |
 
-The manufacturer defined default value is 0 (Auto OFF disabled).
+The manufacturer defined default value is ```0``` (Auto OFF disabled).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -170,7 +175,7 @@ The following option values may be configured -:
 | 0 | Auto ON Disabled |
 | 0 | please delete this option |
 
-The manufacturer defined default value is 0 (please delete this option).
+The manufacturer defined default value is ```0``` (please delete this option).
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
@@ -186,7 +191,7 @@ The following option values may be configured -:
 | 0 | timer set in seconds |
 | 1 | timer set in milliseconds |
 
-The manufacturer defined default value is 0 (timer set in seconds).
+The manufacturer defined default value is ```0``` (timer set in seconds).
 
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
@@ -202,7 +207,7 @@ The following option values may be configured -:
 | 0 | Restore state after power failure |
 | 1 | Do not restore state after power failure |
 
-The manufacturer defined default value is 0 (Restore state after power failure).
+The manufacturer defined default value is ```0``` (Restore state after power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -220,7 +225,7 @@ NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be r
 NOTE: When reporting Watts, module will automatically report also \[V\] (Voltage) and \[A\] (Amperes)
 Values in the range 0 to 100 may be set.
 
-The manufacturer defined default value is 20.
+The manufacturer defined default value is ```20```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -236,9 +241,23 @@ Set value refers to the time interval with which power consumption in Watts is r
 The device is reporting the following values (if there was a change): Power \[W\], Voltage \[V\] and Current \[A\]
 Values in the range 0 to 32535 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_41_2``` and is of type ```INTEGER```.
+
+### Switch All Mode
+
+Set the mode for the switch when receiving SWITCH ALL commands.
+
+The following option values may be configured -:
+| Value  | Description |
+|--------|-------------|
+| 0 | Exclude from All On and All Off groups |
+| 1 | Include in All On group |
+| 2 | Include in All Off group |
+| 255 | Include in All On and All Off groups |
+
+This parameter has the configuration ID ```switchall_mode``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -297,7 +316,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_SECURITY_V1| |
 
+### Documentation Links
+
+* [Qubino Smart Plug 16A extended manual](https://www.cd-jackson.com/zwave_device_uploads/822/Qubino-Smart-Plug-16A-PLUS-extended-manual-eng-2-2-2.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/822).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/822).

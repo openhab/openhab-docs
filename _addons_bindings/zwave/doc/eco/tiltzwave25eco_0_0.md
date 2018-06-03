@@ -13,6 +13,10 @@ The device is in the category of *Garage Door*, defining Garage Door.
 ![TILT-ZWAVE2.5-ECO product image](https://www.cd-jackson.com/zwave_device_uploads/581/581_default.jpg)
 
 
+The TILT-ZWAVE2.5-ECO supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+The TILT-ZWAVE2.5-ECO does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Overview
 
 ### Inclusion Information
@@ -37,7 +41,7 @@ The sensor will wake up every so often and when the case is closed, it will send
 
 ## Channels
 
-The following table summarises the channels available for the TILT-ZWAVE2.5-ECO
+The following table summarises the channels available for the TILT-ZWAVE2.5-ECO -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -45,12 +49,11 @@ The following table summarises the channels available for the TILT-ZWAVE2.5-ECO
 | Alarm (power) | alarm_power | Door | Switch | 
 | Alarm (access) | alarm_access | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
-| battery-level | system.battery-level | Battery | Number |
+| Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
 
-Indicates if a sensor has triggered
-        
+Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -63,8 +66,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (power)
 
-Indicates if a power alarm is triggered
-        
+Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -77,8 +79,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (access)
 
-Indicates if the access control alarm is triggered
-        
+Indicates if the access control alarm is triggered.
 
 The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -91,8 +92,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ### Alarm (burglar)
 
-Indicates if the burglar alarm is triggered
-        
+Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
@@ -107,7 +107,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```system.battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -162,14 +162,14 @@ This setting is defined in *seconds*. It is advisable not to set this interval t
 
 Note that this setting does not affect the devices ability to send sensor data, or notification events.
 
-This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
 
 ### Wakeup Node
 
 When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
 In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
 
-This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
 
 
 ## Association Groups

@@ -8,19 +8,24 @@ title: ZV9102FA-CCT - ZWave
 # ZV9102FA-CCT Z-wave CCT LED controller
 This describes the Z-Wave device *ZV9102FA-CCT*, manufactured by *[Sunricher](www.sunricher.com)* with the thing type UID of ```sunricher_zv9102facct_00_000```.
 
-The device is in the category of Light Bulb, defining Devices that illuminate something, such as bulbs, etc..
+The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-# Overview
+![ZV9102FA-CCT product image](https://www.cd-jackson.com/zwave_device_uploads/793/793_default.png)
+
+
+The ZV9102FA-CCT supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+
+## Overview
 
 The SR-ZV9102FA-CCT is a dual color zwave lighting device and z wave slave that adopts z-wave RF Plus and z-wave mesh network technology with 4 channel, 5A per channel output for dual color LED lights. As a z-wave slave, the device can be added to z-wave network or removed from z-wave network by z-wave primary (master) controllers or gateway. The z wave devices are transceivers that enable to receive and transmit RF signal from the z wave remote while both of them are added to the network. The transceiver is a universal z wave slave which is compatible with universal z wave primary (master) controllers/gateway.
 
-## Inclusion Information
+### Inclusion Information
 
 Power on the receiver. By factory default setting, the connected LED lights will be under a slow rhythm breath status which means the receiver is waiting to be searched by the master (primary) controller or z-wave gateway -> set the z-wave master (primary) controller or gateway into network inclusion mode (please refer to the user manual to learn how)
 
 There shall be an indication on the master (primary) controller or gateway -> LED light connected with the receiver flashes 5 times quickly to indicate successful and automatic adding to z-wave network
 
-## Exclusion Information
+### Exclusion Information
 
 When the receiver has already been added to z-wave network and connected LED light is switched on, set the z-wave master (primary) controller or gateway into network exclusion mode (please refer to the user manual to learn how).
 
@@ -28,7 +33,7 @@ Click the “prog” key on the receiver -> there shall be an indication on the 
 
 ## Channels
 
-The following table summarises the channels available for the ZV9102FA-CCT
+The following table summarises the channels available for the ZV9102FA-CCT -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -42,13 +47,12 @@ The following table summarises the channels available for the ZV9102FA-CCT
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
-        
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
 
-Triggers when a scene button is pressed
+Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 
@@ -56,7 +60,6 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
-        
 
 The ```color_color``` channel supports the ```Color``` item.
 
@@ -69,8 +72,7 @@ The ```color_temperature``` channel supports the ```Dimmer``` item and is in the
 
 ### Alarm (system)
 
-Indicates if a system alarm is triggered
-        
+Indicates if a system alarm is triggered.
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
@@ -111,7 +113,7 @@ Load state after power failure
 2 - restore saved state after power failure
 Values in the range 0 to 2 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -126,7 +128,7 @@ Enable or disable sending of BASIC reports
 1 - (default) Enable sending of BASIC reports
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 1.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -143,7 +145,7 @@ Set number of channels of LED load
 2 - (default) RGBW - single channel PWM output to control RGBW LEDs
 Values in the range 0 to 2 may be set.
 
-The manufacturer defined default value is 2.
+The manufacturer defined default value is ```2```.
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -168,7 +170,7 @@ Set lighting stage mode
 7 - random mode, the colors switch randomly
 Values in the range 0 to 7 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -181,7 +183,7 @@ Set speed of stage mode 0-255
 0 is slowest 255 is fastest
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -196,7 +198,7 @@ Set execution time for stage mode
 1 - 255 set execution time
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -211,7 +213,7 @@ Set hue for stage mode
 Only valid for fade in, fade out and flash mode.
 Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is 255.
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -226,7 +228,7 @@ Enable / disable external switch for inclusion / excluison of the device to / fr
 1 - enable switch
 Values in the range 0 to 1 may be set.
 
-The manufacturer defined default value is 0.
+The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -265,7 +267,11 @@ This group supports 1 nodes.
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 
+### Documentation Links
+
+* [User manual](https://www.cd-jackson.com/zwave_device_uploads/793/sr-zv9102fa-cct-user-manual.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [edit the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/793).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/793).
