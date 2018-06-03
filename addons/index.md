@@ -49,7 +49,7 @@ It could look similar to this example:
 ```text
 ...
 openhab-transformation-xslt               | 0.9.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | XSLT Transformation
-openhab-voice-mactts                      | 0.9.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | MacOS Text-to-Speech
+openhab-voice-mactts                      | 0.9.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | macOS Text-to-Speech
 openhab-binding-amazondashbutton          | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Amazon Dash Button Binding
 openhab-binding-astro                     | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Astro Binding
 openhab-binding-autelis                   | 2.0.0.SNAPSHOT   |          | Uninstalled | openhab-aggregate-xml   | Autelis Binding
@@ -77,7 +77,7 @@ It is *not needed* for other addon types like `persistence`.
 
 With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
-You can find out the correct locations on the corresponding documentation pages, e.g. [linux]({{base}}/installation/linux.html#file-locations) or [windows]({{base}}/installation/windows.html#file-locations).
+You can find out the correct locations on the corresponding documentation pages, e.g. [Linux]({{base}}/installation/linux.html#file-locations) or [Windows]({{base}}/installation/windows.html#file-locations).
 
 The file could look like this (depending on your choosen package and already installed add-ons):
 
@@ -112,4 +112,4 @@ One way of retrieving those files is mentiones above in the openHAB console part
 
 Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
-Place the .jar file in the folder Additional add-on files as described in File Locations ([linux]({{base}}/installation/linux.html#file-locations), [windows]({{base}}/installation/windows.html#file-locations) or [macosx]({{base}}/installation/macosx.html#file-locations)).
+Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux]({{base}}/installation/linux.html#file-locations), [Windows]({{base}}/installation/windows.html#file-locations) or [macOS]({{base}}/installation/macosx.html#file-locations)).
