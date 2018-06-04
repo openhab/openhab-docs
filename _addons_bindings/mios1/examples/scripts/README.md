@@ -8,7 +8,7 @@ NOTE: The rules for generating the Items file may change over time.  The output 
 
 ### OS Requirements
 
-These scripts are intended to be run on a Linux, Unix or MacOS X system.
+These scripts are intended to be run on a Linux, Unix or macOS system.
 
 The MiOS openHAB Item file Generator scripts consist of:
 
