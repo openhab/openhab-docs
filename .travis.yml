@@ -22,4 +22,5 @@ script:
 - git remote add origin-pages https://${GH_TOKEN}@${GH_REPO} > /dev/null 2>&1
 - git commit -am "Updated external content (Travis build ${TRAVIS_BUILD_NUMBER})"
 - git push -u origin-pages ${BRANCH}
+after_success:
 - curl -X POST -d '' https://api.netlify.com/build_hooks/${NETLIFY_BUILD_HOOK}
