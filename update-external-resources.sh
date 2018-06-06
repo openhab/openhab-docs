@@ -23,10 +23,10 @@ mkdir -p "$resourcefolder"
 echo -e "# About\\n\\nUsed to temporarily store repository clones from related openHAB projects for 'update-external-resources.sh'." > "$resourcefolder/README.md"
 
 # Prerequisites
-if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
-  echo "The git or mvn command were not found on the system. Please install. Exiting."
-  exit 1
-fi
+#if ! command -v git &>/dev/null || ! command -v mvn &>/dev/null; then
+#  echo "The git or mvn command were not found on the system. Please install. Exiting."
+#  exit 1
+#fi
 
 echo_process "Updating the base openhab-docs repo... (skipping)"
 #git pull
