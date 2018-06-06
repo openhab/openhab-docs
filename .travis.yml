@@ -12,14 +12,14 @@ env:
   - secure: ImpL0ic+fHnxDGKSnLURrV3p1zJ+6U2VUVIcElT2blIlirXyauebOWMZmqgR1hzW/u2aQuEYKUmKW04BYJ8PodcLH8Ct6QspSP+gOS/fgNJa0VHGV9zysnrVRXat5S6eX3uWcQkfrykwWK2WmNoAsNAgCEnUO+/iwWEjuCZJea0mNKm52bALFCp0LyIdEcbj8lc0DDAvmnDT/yawcooO2bHZuCjd/sX5R0RCPS8rVV8o9VJ4H/45ekYZ/E4ggmJQ8+CckKNn6Rmxl1g5LSNMPzEJoYjQt7bIg2ISrQ/UcWrhoZtPEk1u5duEMlAuHTFImEmCLE4BdpMhA7PFhXQnzJVj+0qZ53+BMLv+MGC1LIDBt/KDQgfbUMUc0chfsbkSM58MJBXotklVhp4D2xawmMJY85CbegiO8m48wpqomjMynmXb0xfcLZf/ra4Eu5ql0I0sICrI36c+E4wGNKLxApLnve1ykY80WkmSZvnwPPq7JPNZSEmI7b0rsSi+bfcABm3VX04cbm4nQ59bj031rjyo8/OzQI7YeLaEEMVDqMWiE+n2nfj+R1BdDpdfQMDyrjdqKcMjIQE9i2zR3GGbOlGsQatBI1qvtEZO9vRYKq0fe1WXc7ChSjFlnbl0/mg/Et5iUyQGNc9GiT4sBT6390p6+DcPug4AqGYdQN+8g6s=
 before_install:
 - "./update-external-resources.sh"
-script:
+install:
 - mvn clean package
-after_success:
+script:
 - git status
 - git config user.email ${EMAIL}
 - git config user.name ${USER}
 - git checkout -b ${BRANCH}
-- git remote add origin-pages https://${GH_TOKEN}@{GH_REPO} > /dev/null 2>&1
+- git remote add origin-pages https://${GH_TOKEN}@${GH_REPO} > /dev/null 2>&1
 - git commit -am "Updated external content (Travis build ${TRAVIS_BUILD_NUMBER})"
 - git push -u origin-pages ${BRANCH}
 - curl -X POST -d '' https://api.netlify.com/build_hooks/${NETLIFY_BUILD_HOOK}
