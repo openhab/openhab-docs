@@ -18,8 +18,8 @@ after_success:
 - git status
 - git config user.email ${EMAIL}
 - git config user.name ${USER}
-- git checkout ${BRANCH}
+- git checkout -b ${BRANCH}
 - git remote add origin-pages https://${GH_TOKEN}@{GH_REPO} > /dev/null 2>&1
 - git commit -am "Updated external content (Travis build ${TRAVIS_BUILD_NUMBER})"
-- git push origin-pages
+- git push -u origin-pages ${BRANCH}
 - curl -X POST -d '' https://api.netlify.com/build_hooks/${NETLIFY_BUILD_HOOK}
