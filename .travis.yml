@@ -6,9 +6,9 @@ branches:
   - gh-pages
 env:
   global:
-  - USER="ghys"
-  - EMAIL="github@schaus.net"
-  - REPO="ghys/openhab-docs"
+  - USER="openhab-bot"
+  - EMAIL="bot@openhab.org"
+  - REPO="openhab/openhab-docs"
   - BRANCH="gh-pages"
   - GH_REPO="github.com/${REPO}.git"
   - secure: omm7zbQZz/XmRzz/5N97d3IqRKqViqMuYx6mrGI4iY3TmkZrSNut1PUaLgv+svrXMJTt2SvD+UWmyR2EFaVNrjqQzi9BcY6df8Zn1E6lgiNKF0mSatYNKLt+JJvr1kCvkHmJAijZBOSM3oHOnm3fgRKF/bTkl9dMFVmSl9dG9b2BhZyjvByJV7GDPNXKsrQWFqKoY0nO/+25u4gUsmQDJkVCPHexSgD2aWKSStgU556FxegihifGIEyYBDLVwlboFFrZ+/nKSxgvoR0ESbdLTqExgZGyPg5cZOnRTztA+YlV2YKxIYiU6RHWFIak2uD5aV9EXr2GG1AkQEX3kn0PGBn/c+y37O3/lTXIUFXNV2etc0L1aMNlE7rMDiezinByQuWrZqwMxPKtPj6DI3CSVr0uOYglL1E0u9euYE2coTilc78x033gV19wvkCRLiNeFWlht7MF+//apO0mr3iS+FLD8zh+33VQ1xnj57oD+WsSwJB1oUJX4ZEGQkE3WbISpdy4VeBTzBNdi10pl6cJr7GWrlpHluC9tP8609N/puSPCotbQh8RhwgMQLdxYS/YFTT6tMjp6czc64MIgEPABTWNGd79J7pp7m/7tYRmiSC/nat3d5MGlG0u557FasKUAYZphl+wAcEQCSIMZ3wQ27u+BZNjp5i30as0Q6yZpow=
