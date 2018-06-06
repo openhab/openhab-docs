@@ -134,7 +134,7 @@ rule "Front Door Notification"
 when
   Item Apartment_FrontDoor changed to OPEN
 then
-  send Notification("me@email.com", "Front door was opened!")
+  sendNotification("me@email.com", "Front door was opened!")
 end
 ```
 
