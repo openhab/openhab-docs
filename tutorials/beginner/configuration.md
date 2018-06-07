@@ -153,4 +153,4 @@ If you activate the slider of the wallplug, it will start routing power :)
 
 **Your first action with openHAB!**
 
-[On the next page]({{base}}/tutorials/beginner/sitemap.html), we will define a sitemap to create your own view of things an items.
+[On the next page]({{base}}/tutorials/beginner/sitemap.html), we will define a sitemap to create your own view of things and items.
