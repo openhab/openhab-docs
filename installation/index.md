@@ -87,8 +87,8 @@ After you got openHAB 2 set up and running, there are a few additional setup ste
 
 -   Configure a network share on your openHAB host device and mount it locally: [Linux Samba Share](linux.html#network-sharing), Windows file sharing, ...
 
--   Install the [Eclipse SmartHome Designer](designer.html) on your local machine, to manage your (remote) configuration files.
-    The designer comes with built-in support for the openHAB syntax and elements.
+-   Install [Visual Studio Code](https://code.visualstudio.com/Download) and the [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) on your local machine, to manage your (remote) configuration files.
+    The openHAB VS Code Extension comes with built-in support for the openHAB syntax and elements.
 
 ## Getting started
 
