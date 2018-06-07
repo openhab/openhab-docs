@@ -93,7 +93,7 @@ After you got openHAB 2 set up and running, there are a few additional setup ste
 ## Getting started
 
 With the openHAB 2 distribution up and running, you should now continue with
-the [Beginner Tutorial]({{base}}/tutorials/beginner)
+the [Beginner Tutorial]({{base}}/tutorial)
 or by working on your own configuration.
 
 ## Help
