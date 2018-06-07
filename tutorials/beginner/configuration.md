@@ -133,7 +133,7 @@ Here we configure the port and basic settings and click the check icon afterward
 
 openHAB immediately starts discovering Zwave things via the Zwave controller and shows them in the inbox - if they already have been included! If this is a completely new Zwave controller, you'll have to include your Zwave things first.
 To set the controller into incusion mode, press the "+" icon again.
-Please refer to the manual of you Zwave device in order to find out how the inclusion works there (most of the time it's pressing thetamper button thrice).
+Please refer to the manual of your Zwave device in order to find out how the inclusion works there (most of the time it's pressing the tamper button thrice).
 
 Let's assume we bought a new wallplug and included it, it's "Node 30".
 For a simple sitemap and rule example on the next page, we'll configure this thing now:
@@ -144,8 +144,8 @@ For a simple sitemap and rule example on the next page, we'll configure this thi
 
 ![](images/picture_21.jpg)
 
-Basically we gave the thing a name ("Wallplug TV", please note the naming convention mentioned above!) and linked the "Switch" channel.
-Now we can see the wallplug (and the Zwave controller) on the "Control" page, too. It's switch is currently turned off:
+Basically we gave the thing a name ("Wallplug TV") and linked the "Switch" channel.
+Now we can see the wallplug (and the Zwave controller) on the "Control" page, too. Its switch is currently turned off:
 
 ![](images/picture_22.jpg)
 
