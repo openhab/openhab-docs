@@ -91,7 +91,7 @@ So we'll link both channels of the "John's Mobile" thing now by clicking the rad
 ![](images/picture_14.jpg)
 
 For most of the bindings each thing can be configured further by clicking the pen-icon.
-There you can edit the name again, chose a location (this is important for the "Control" menu item later) and, of course, change binding realated options.
+There you can edit the name again, chose a location (this is important for the "Control" menu item later) and, of course, change binding related options.
 With the network binding for example, you can also change the IP address, the timeout, the refresh interval etc.
 
 ![](images/picture_15.jpg)
