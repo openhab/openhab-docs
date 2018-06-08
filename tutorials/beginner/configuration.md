@@ -49,8 +49,10 @@ The discovered "things" are now displayed in the inbox, and you can decide what 
 
 The difference between ignoring and deleting discovered things is as follows:
 
-- If you ignore a thing, it disappears from the visible inbox. If you decide to add it at a later time, you can do so by scrolling to the bottom of the inbox and click the "SHOW IGNORED" button.
-- If you delete the thing, it won't be visible in the inbox any more. But if you start a new discovery process later, the thing will reappear.
+- If you ignore a thing, it disappears from the visible inbox.
+If you decide to add it at a later time, you can do so by scrolling to the bottom of the inbox and click the "SHOW IGNORED" button.
+- If you delete the thing, it won't be visible in the inbox any more.
+But if you start a new discovery process later, the thing will reappear.
 
 In this example, we click on the check icon of the thing with the IP address 192.168.1.103.
 Let's assume this is John's mobile phone which we want to use for presence detection.
