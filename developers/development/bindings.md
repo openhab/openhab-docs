@@ -29,7 +29,8 @@ This is the better option, if your binding is not interesting for other solution
 For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and create a skeleton for your binding.
 To do this, go into your Git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
 It is important that your binding name is in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
-After the binding name, provide your name as the author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
+After the binding name, provide your name as the author (surrounded by quotes if you want to use whitespaces to separate your first and last name).
+Example: `~/git/openhab2-addons/addons/binding/create_openhab_binding_skeleton.sh BindingName "Firstname Lastname"`
 
 For the Eclipse SmartHome namespace: Choose the option "Eclipse SmartHome Extensions" in [your IDE setup](ide.html), and create a skeleton for your binding.
 To do this, go to `git/smarthome/tools/archetype`and run `mvn install` in order to install the archetype definition in your local Maven repo.
