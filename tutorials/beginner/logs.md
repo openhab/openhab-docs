@@ -17,7 +17,9 @@ To watch the logs in realtime with a openhabian based setup use the below linux 
 CTRL+C will close the stream. 
 You can also use SAMBA/network shares to open or copy the file directly.
 ```text
+
 tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
+
 ```
 Bindings can have the level of detail increased or decreased on a per binding basis and this is done with the Karaf console. 
 
