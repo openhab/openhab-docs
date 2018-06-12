@@ -16,11 +16,11 @@ Before asking for help on the forum, it is worth checking openhab.log for clues 
 To watch the logs in realtime with a openhabian based setup use the below linux command which can be done via SSH with a program called putty from a windows or mac machine. 
 CTRL+C will close the stream. 
 You can also use SAMBA/network shares to open or copy the file directly.
+
 ```text
-
 tail -f /var/log/openhab2/openhab.log -f /var/log/openhab2/events.log
-
 ```
+
 Bindings can have the level of detail increased or decreased on a per binding basis and this is done with the Karaf console. 
 
 To find them if you are not using Openhabian:
