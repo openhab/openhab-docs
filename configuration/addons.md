@@ -14,7 +14,7 @@ Additional add-ons can be installed in the different ways, described below.
 Navigate to the add-ons section.
 Search for the desired add-on in the categories and press install.
 
-![installing Add-ons through Paper UI](images/addons_index_installation_paperui.gif)
+![installing Add-ons through Paper UI](./images/addons_index_installation_paperui.gif)
 
 ## Through Configuration Files
 
