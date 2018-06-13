@@ -6,7 +6,7 @@ layout: documentation
 
 # Installation of Add-ons
 
-Depending on the [package]({{base}}/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
+Depending on the [package](/docs/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
 Additional add-ons can be installed in the different ways, described below.
 
 ## Through Paper UI
@@ -20,7 +20,7 @@ Search for the desired add-on in the categories and press install.
 
 For this installation option you need to know the `id` of the desired add-on, e.g., network or mqtt1.
 
-You can find it out with the following command within [openHAB console]({{base}}/administration/console.html):
+You can find it out with the following command within [openHAB console](/docs/administration/console.html):
 
 ```sh
 feature:list | grep ^openhab
@@ -42,10 +42,10 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 ...
 ```
 
-According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for the shown example is *network*.
+According to the [naming convention for bundles](/docs/administration/bundles.html#naming-convention-for-bundles) the *id* for the shown example is *network*.
 
 Another way to find the correct `id` is to look at the URL of the add-on documentation page.
-For example the url for the [mqtt Binding documentation]({{base}}/addons/bindings/mqtt1/readme.html) is
+For example the url for the [mqtt Binding documentation](/docs/addons/bindings/mqtt1/readme.html) is
 
 ```text
 https://docs.openhab.org/addons/bindings/mqtt1/readme.html
@@ -60,7 +60,7 @@ It is *not needed* for other addon types like `persistence`.
 
 With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
-You can find out the correct locations on the corresponding documentation pages, e.g. [Linux]({{base}}/installation/linux.html#file-locations) or [Windows]({{base}}/installation/windows.html#file-locations).
+You can find out the correct locations on the corresponding documentation pages, e.g. [Linux](/docs/installation/linux.html#file-locations) or [Windows](/docs/installation/windows.html#file-locations).
 
 The file could look like this (depending on your choosen package and already installed add-ons):
 
@@ -95,4 +95,4 @@ One way of retrieving those files is mentiones above in the openHAB console part
 
 Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
-Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux]({{base}}/installation/linux.html#file-locations), [Windows]({{base}}/installation/windows.html#file-locations) or [macOS]({{base}}/installation/macosx.html#file-locations)).
+Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macosx.html#file-locations)).
