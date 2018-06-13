@@ -96,7 +96,7 @@ Within the `OPENHAB_USERDATA/jsondb/` directory, you will find the following fil
 In this example, we will use the Network Binding (2.0) to Search for Things, add a new Thing to openHAB and then modify its parameters to check the information that is stored in the JsonDB.
 
 Step 1. Add new Thing (name: `ISP_Gateway`) from Paper UIs Inbox:
-![Add_Thing_Paper_UI](images/add_thing_paper_ui.png)
+![Add_Thing_Paper_UI](./images/add_thing_paper_ui.png)
 
 Step 2. Check the contents of the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file:
 
@@ -190,7 +190,7 @@ Step 3. Using Paper UI :arrow_right: Configuration :arrow_right: Things, edit th
 - Retry (from 1 to 3)
 - Timeout (from 5000 to 10000)
 and save:
-![Edit_Thing_Paper_UI](images/edit_thing_paper_ui.png)
+![Edit_Thing_Paper_UI](./images/edit_thing_paper_ui.png)
 
 Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file: 
-![New_Json](images/new_json_file.png)
+![New_Json](./images/new_json_file.png)
