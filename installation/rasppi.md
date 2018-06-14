@@ -7,7 +7,7 @@ title: Raspberry Pi
 
 # Raspberry Pi
 
-Because of it's **low price**, it's **small form factor** and the **low energy consumption**, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB.
+Because of its **low price**, its **small form factor** and the **low energy consumption**, the [Raspberry Pi](https://www.raspberrypi.org) is a quite popular platform for openHAB.
 It is favored amongst existing users and a recommended choice for newcomers.
 
 ![Raspberry Pi 2 Model B](images/rpi2b.png)
