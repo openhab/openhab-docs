@@ -25,6 +25,18 @@ A ZigBee Coordinator is the network controller, and is therefore the heart of th
 
 Coordinators need to be installed manually and the serial port must be set.
 
+#### Examples for coordinators
+
+| Name and Link              | Coordinator | Comment                       |
+|----------------------------|-------------|-------------------------------|
+|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[TI2531](#ti2531-coordinator)|Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html)<br>Also CC2530, CC2538 or CC2650 might work with the correct firmware but are not suggested|
+|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)|-|
+|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)|-|
+|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and Zigbee|
+|[Telegesis ETRX357USB zigbee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)|-|
+|[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)|Only working on Linux devices|
+|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#xbee-xu-z11-coordinator)|-|
+
 #### TI2531 Coordinator
 
 This is the Texas Instruments ZNP stack. The thing type is ```coordinator_ti2351```.
@@ -52,6 +64,10 @@ The Ember EZSP NCP (Network Co-Processor) supports the Silabs EM358 or MightyGec
 #### Telegesis ETRX3
 
 The thing type is ```coordinator_telegesis```.
+
+#### XBee XU-Z11 Coordinator
+
+The thing type is ```coordinator_xbee```.
 
 ### Devices
 

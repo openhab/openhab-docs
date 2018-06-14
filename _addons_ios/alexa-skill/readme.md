@@ -1,17 +1,3 @@
----
-id: alexa-skill
-label: Amazon Alexa Skill
-title: Amazon Alexa Skill - System Integrations
-type: io
-description: "An intelligent voice guided personal assistant. Amazon Alexa became famous by the Amazon Echo speaker but is also available through independent solutions. The certified openHAB Alexa skill allows to naturally control the openHAB smart home by voiced commands."
-since: 2x
-install: manual
----
-
-<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
-
-{% include base.html %}
-
 # Amazon Alexa Skill
 
 An intelligent voice guided personal assistant. Amazon Alexa became famous by the Amazon Echo speaker but is also available through independent solutions. The certified openHAB Alexa skill allows to naturally control the openHAB smart home by voiced commands.  

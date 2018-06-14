@@ -266,6 +266,8 @@ Number Netatmo_Wind_Strength "Wind Strength [%.0f KPH]" { channel = "netatmo:NAM
 | LowBattery          | Switch       | Low battery                                              |
 | BatteryVP           | Number       | Battery level                                            |
 | RfStatus            | Number       | Signal strength (0 for no signal, 1 for weak, 2 for average, 3 for good or 4 for excellent) |
+| MaxWindStrength     | Number:Speed | Maximum wind strength recorded                           |
+| DateMaxWindStrength | DateTime     | Timestamp when MaxWindStrength was recorded              |
 
 All these channels are read only.
 
@@ -328,6 +330,7 @@ All these channels are read only.
 | Temperature         | Number:Temperature | Current temperature                                        |
 | Sp_Temperature      | Number:Temperature | Thermostat temperature setpoint                            |
 | SetpointMode        | String             | Chosen setpoint_mode (program, away, hg, manual, off, max) |
+| Planning            | String             | Id of the currently active planning when mode = program    |
 | ThermRelayCmd       | Switch             | Indicates whether the furnace is heating or not            |
 | ThermOrientation    | Number             | Physical orientation of the thermostat module              |
 | TimeStamp           | DateTime           | Timestamp when data was measured                           |
@@ -337,7 +340,7 @@ All these channels are read only.
 | BatteryVP           | Number             | Battery level                                              |
 | RfStatus            | Number             | Signal strength (0 for no signal, 1 for weak, 2 for average, 3 for good or 4 for excellent) |
 
-All these channels except Sp_Temperature and SetpointMode are read only.
+All these channels except Sp_Temperature, SetpointMode and Planning are read only.
 
 
 ### Welcome Home
@@ -409,9 +412,6 @@ Person things are automatically created in discovery process for all known perso
 | welcomePersonLastEvent        | Image     | Picture of the last event for this person              |
 
 All these channels except welcomePersonAtHome are read only.
-
-Warning : while setting person away using the channel welcomePersonAtHome is fine, the contrary does not seem supported officially by Netatmo API.
-
 
 # Configuration Examples
 

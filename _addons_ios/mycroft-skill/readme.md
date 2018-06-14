@@ -1,17 +1,3 @@
----
-id: mycroft-skill
-label: Mycroft AI Skill
-title: Mycroft AI Skill - System Integrations
-type: io
-description: "[Mycroft AI](https://mycroft.ai/) is the world’s first open source voice enabled assistant."
-since: 2x
-install: manual
----
-
-<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
-
-{% include base.html %}
-
 # Mycroft AI Skill
 
 [Mycroft AI](https://mycroft.ai/) is the world’s first open source voice enabled assistant.
@@ -30,7 +16,17 @@ The skill currently supportes the English (U.S.) and English (U.K.) languages bu
 
 ### Skill Installation
 
-The openHAB skill has to be installed on your Mycroft instance, please refer to the [official documentation](https://docs.mycroft.ai/skills.and.features/adding.skills) to learn how to install a skill. 
+The openHAB skill has to be installed on your Mycroft instance, please refer to the [official documentation](https://mycroft.ai/documentation/msm/) to learn how to install a skill. 
+
+From 18.2.5b mycroft-core release it is possible to install the skill using the voice command:
+- *"Hey Mycroft, install openhab"*
+
+or via the [msm](https://mycroft.ai/documentation/msm/) command:
+```shell
+msm install openhab
+```
+
+To manually install the skill:
 
 Clone the [skill repository](https://github.com/openhab/openhab-mycroft.git) into the Mycroft skills directory,
 then trigger installation of needed dependencies:
@@ -43,7 +39,7 @@ cd skill-openhab
 pip install -r requirements.txt
 ```
 
-If on [picroft](https://docs.mycroft.ai/development/installation/raspberry.pi), use the skills directory `/opt/mycroft/skills` and skip the `workon mycroft` command.
+If on [picroft](https://mycroft.ai/documentation/picroft/), use the skills directory `/opt/mycroft/skills` and skip the `workon mycroft` command.
 
 ### Skill Configuration
 
