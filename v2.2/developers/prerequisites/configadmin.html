@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Configuration Admin - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/developers/prerequisites/configadmin.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/developers">Overview</a></li>
+  <li><a href="/v2.2/developers/contributing/contributing">Contributing</a></li>
+  <li><a href="/v2.2/developers/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="/v2.2/developers/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="/v2.2/developers/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="/v2.2/developers/prerequisites/configadmin.html">Configuration Admin</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgitasks.html">Coding tasks</a></li>
+          <li><a href="/v2.2/developers/prerequisites/eventadmin.html">Event Admin</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/developers/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="/v2.2/developers/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="/v2.2/developers/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/ide.html">IDE Setup</a></li>
+      <li><a href="/v2.2/developers/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="/v2.2/developers/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="/v2.2/developers/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/evolution.html">Technical Differences</a></li>
+      <li><a href="/v2.2/developers/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="configuration-admin-service">Configuration Admin Service</h1>
+
+<h2 id="introduction">Introduction</h2>
+
+<p>In the previous article about <a href="osgids.html">OSGi Declarative Services</a> we have learned how to register and track services. Here we will configure them in runtime.</p>
+
+<h2 id="basics">Basics</h2>
+
+<p>As defined in the <a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi Compendium specification</a> <em>configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform.</em></p>
+
+<h3 id="configuration-admin-service-1">Configuration Admin Service</h3>
+
+<p>In OSGi, configurations are stored in a central database that is being managed by a special service - the <em>Configuration Admin Service</em>(<code class="highlighter-rouge">org.osgi.service.cm.ConfigurationAdmin</code>). This service monitors the service registry and <strong>provides a configuration to the services</strong> that are registered with a <em>service.pid</em> property. Configuration changes are first made persistent, and then are passed to the target service. It is important to understand that <strong>the target bundle receives updates from the Configuration Admin service</strong>. Implementations should be aware that the update reception could be delayed if the Configuration Admin service is missing.</p>
+
+<h3 id="configuration-properties">Configuration properties</h3>
+
+<p>Each configuration is uniquely identified by a PID (Persistent IDentifier) and stores properties. The properties can be edited, or new properties could be added during runtime by other bundle that uses the Configuration Admin service.</p>
+
+<p>In OSGi, configurations properties are key-value pairs that are accessible via <code class="highlighter-rouge">Map&lt;String, Object&gt;</code>. Please note that the following types of objects are supported:</p>
+
+<ul>
+  <li>String;</li>
+  <li>Boolean;</li>
+  <li>Byte;</li>
+  <li>Short;</li>
+  <li>Integer;</li>
+  <li>Long;</li>
+  <li>Float;</li>
+  <li>Double;</li>
+  <li>Character.</li>
+</ul>
+
+<p>If the Configuration Admin service detects an unsupported property type, it will throw <code class="highlighter-rouge">IllegalArgumentException</code>.</p>
+
+<h2 id="configuring-declarative-services">Configuring Declarative Services</h2>
+
+<p><a href="osgids.html">Declarative Services</a> (DS) is highly integrated with the Configuration Admin service. Each DS component has a configuration object that is related with it, when the <em>service.pid</em> property is missing, the name of the component is used as a PID. The configuration is injected in the bundle <code class="highlighter-rouge">activate</code>, <code class="highlighter-rouge">deactivate</code> and <code class="highlighter-rouge">modified</code> methods. The code below is an example, how to register a service with a <em>service.pid</em> property and how to use the injected configuration.</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="nt">&lt;scr:component</span> <span class="na">name=</span><span class="s">"com.example.handler"</span> <span class="na">xmlns:scr=</span><span class="s">"http://www.osgi.org/xmlns/scr/v1.1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">"com.example.TimeEventHandler"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"event.topics"</span><span class="nt">&gt;</span>some/topic<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;service&gt;</span>
+        <span class="nt">&lt;provide</span> <span class="na">interface=</span><span class="s">"org.osgi.service.event.EventHandler"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"service.pid"</span> <span class="na">type=</span><span class="s">"String"</span> <span class="na">value=</span><span class="s">"com.example.handler"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span>
+</code></pre></div></div>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">java.text.SimpleDateFormat</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Date</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.util.Map</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.osgi.service.component.ComponentContext</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.Event</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.EventHandler</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimeEventHandler</span> <span class="kd">implements</span> <span class="n">EventHandler</span> <span class="o">{</span>
+
+    <span class="c1">// Use the default formatter</span>
+    <span class="n">privateSimpleDateFormat</span> <span class="n">dateFormatter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">();</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">activate</span><span class="o">(</span><span class="n">ComponentContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">properties</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">modified</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="cm">/**
+     * This method could be called by multiple threads
+     */</span>
+    <span class="kd">public</span> <span class="kd">synchronized</span> <span class="kt">void</span> <span class="nf">modified</span><span class="o">(</span><span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">properties</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// note, that Config Admin may send an empty configuration</span>
+        <span class="k">if</span> <span class="o">(</span><span class="n">properties</span> <span class="o">!=</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+            <span class="n">String</span> <span class="n">pattern</span> <span class="o">=</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">properties</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">"formatting"</span><span class="o">);</span>
+            <span class="n">dateFormatter</span> <span class="o">=</span> <span class="k">new</span> <span class="n">SimpleDateFormat</span><span class="o">(</span><span class="n">pattern</span><span class="o">);</span>
+        <span class="o">}</span>
+    <span class="o">}</span>
+
+    <span class="kd">protected</span> <span class="kt">void</span> <span class="nf">deactivate</span><span class="o">(</span><span class="n">ComponentContext</span> <span class="n">context</span><span class="o">,</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">properties</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">modified</span><span class="o">(</span><span class="n">properties</span><span class="o">);</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">Long</span> <span class="n">timeInMillis</span> <span class="o">=</span> <span class="o">(</span><span class="n">Long</span><span class="o">)</span> <span class="n">event</span><span class="o">.</span><span class="na">getProperty</span><span class="o">(</span><span class="s">"time"</span><span class="o">);</span>
+        <span class="n">Date</span> <span class="n">date</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Date</span><span class="o">(</span><span class="n">timeInMillis</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">"The current time is: "</span> <span class="o">+</span> <span class="n">dateFormatter</span><span class="o">.</span><span class="na">format</span><span class="o">(</span><span class="n">date</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="managed-services">Managed Services</h2>
+
+<p><code class="highlighter-rouge">org.osgi.service.cm.ManagedService</code> interface is another way to register a service that needs configuration. You have to register your service as a MangedService with a <em>service.pid</em> property. Configuration Admin tracks the Service Registry and will update the MangedService, when the configuration is changed. The examples below illustrate how to register a service as ManagedService:</p>
+
+<div class="language-xml highlighter-rouge"><div class="highlight"><pre class="highlight"><code>?xml version="1.0" encoding="UTF-8"?&gt;
+<span class="nt">&lt;scr:component</span> <span class="na">name=</span><span class="s">"com.example.handler"</span> <span class="na">xmlns:scr=</span><span class="s">"http://www.osgi.org/xmlns/scr/v1.1.0"</span><span class="nt">&gt;</span>
+    <span class="nt">&lt;implementation</span> <span class="na">class=</span><span class="s">"com.example.TimeEventHandler"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"event.topics"</span><span class="nt">&gt;</span>some/topic<span class="nt">&lt;/property&gt;</span>
+    <span class="nt">&lt;service&gt;</span>
+        <span class="nt">&lt;provide</span> <span class="na">interface=</span><span class="s">"org.osgi.service.cm.MangedService"</span><span class="nt">/&gt;</span>
+        <span class="nt">&lt;provide</span> <span class="na">interface=</span><span class="s">"org.osgi.service.event.EventHandler"</span><span class="nt">/&gt;</span>
+    <span class="nt">&lt;/service&gt;</span>
+    <span class="nt">&lt;property</span> <span class="na">name=</span><span class="s">"service.pid"</span> <span class="na">type=</span><span class="s">"String"</span> <span class="na">value=</span><span class="s">"com.example.handler"</span><span class="nt">/&gt;</span>
+<span class="nt">&lt;/scr:component&gt;</span>
+</code></pre></div></div>
+
+<p>The MangedService interface contains a single method <code class="highlighter-rouge">updated()</code> that will be called from the Configuration Admin service when the configuration is changed.</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kn">package</span> <span class="n">com</span><span class="o">.</span><span class="na">example</span><span class="o">.</span><span class="na">provider</span><span class="o">;</span>
+
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.Event</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">org.osgi.service.event.EventHandler</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TimeEventHandler</span> <span class="kd">implements</span> <span class="n">EventHandler</span><span class="o">,</span> <span class="n">ManagedService</span> <span class="o">{</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">updated</span><span class="o">(</span><span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="o">?&gt;</span> <span class="n">properties</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// process configuration properties here</span>
+    <span class="o">}</span>
+
+    <span class="nd">@Override</span>
+    <span class="kd">public</span> <span class="kt">void</span> <span class="nf">handleEvent</span><span class="o">(</span><span class="n">Event</span> <span class="n">event</span><span class="o">)</span> <span class="o">{</span>
+        <span class="c1">// handle the event</span>
+    <span class="o">}</span>
+<span class="o">}</span>
+</code></pre></div></div>
+
+<h2 id="using-the-configuration-admin-to-update-the-configuration">Using the Configuration Admin to update the configuration</h2>
+
+<p>As we have seen in the previous examples Configuration Admin service tracks the Service Registry and the internal configuration database for changes. It can be used to update the configuration(or create if it is missing) as well. The flow is the following:</p>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// gets the configuration or creates new if it is missing</span>
+<span class="n">Configuration</span> <span class="n">config</span> <span class="o">=</span> <span class="n">configurationAdmin</span><span class="o">.</span><span class="na">getConfiguration</span><span class="o">(</span>
+    <span class="s">"com.example.handler"</span><span class="o">,</span> <span class="kc">null</span><span class="o">);</span>
+<span class="n">Dictionary</span><span class="o">&lt;</span><span class="n">String</span><span class="o">,</span> <span class="n">Object</span><span class="o">&gt;</span> <span class="n">props</span> <span class="o">=</span> <span class="n">config</span><span class="o">.</span><span class="na">getProperties</span><span class="o">();</span>
+
+<span class="c1">// if null, the configuration is new</span>
+<span class="k">if</span> <span class="o">(</span><span class="n">props</span> <span class="o">==</span> <span class="kc">null</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">props</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Hashtable</span><span class="o">();</span>
+<span class="o">}</span>
+
+<span class="c1">// set some properties</span>
+<span class="n">props</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="s">"formatting"</span><span class="o">,</span> <span class="s">"EEE, d MMM yyyy HH:mm:ss Z"</span><span class="o">);</span>
+
+<span class="c1">// update the configuration, the target bundle will be notified for the change</span>
+<span class="n">config</span><span class="o">.</span><span class="na">update</span><span class="o">(</span><span class="n">props</span><span class="o">);</span>
+</code></pre></div></div>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hint! 
+The implementaiton of the Configuration Admin Service in Equinox is provided by the
+`org.eclipse.equinox.cm` bundle.
+</code></pre></div></div>
+
+<p>After the call to <code class="highlighter-rouge">update</code> the Configuration Admin service persists the new configuration data and sends an update to the ManagedService registered with the service PID asynchronously.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Hint!
+Configuration objects have a security feature called `Location` that prevents other
+bundles from modifying their configuration. In the example above we have created a
+configuration using the `Configuration config = configurationAdmin.getConfiguration
+("com.example.handler", null);`. The second paramter ('null') guarantees that the
+location for the configuration will be set when the service with this PID is
+registered for the first time. If the location is not set correctly the Config
+Admin may not send the update to the bundle.
+</code></pre></div></div>
+
+<h2 id="further-reading">Further Reading</h2>
+
+<ul>
+  <li><a href="http://enroute.osgi.org/services/org.osgi.service.cm.html">http://enroute.osgi.org/services/org.osgi.service.cm.html</a></li>
+  <li><a href="http://blog.vogella.com/2016/09/26/configuring-osgi-declarative-services/">http://blog.vogella.com/2016/09/26/configuring-osgi-declarative-services/</a></li>
+  <li><a href="https://osgilook.wordpress.com/2009/03/22/configuration-admin-service-explained-the-managedservice-interface/">https://osgilook.wordpress.com/2009/03/22/configuration-admin-service-explained-the-managedservice-interface/</a></li>
+  <li><a href="https://osgi.org/download/r4v42/r4.cmpn.pdf">OSGi Service Platform Service Compendium, Release 4, Version 4.2,August 2009</a></li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+
+<script>
+  var host = "docs.openhab.org";
+  if (!(window.location.host.startsWith("127.0.0.1")) && (host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+

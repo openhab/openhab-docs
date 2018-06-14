@@ -1,0 +1,25 @@
+Manifest-Version: 1.0
+Bundle-Name: Utils Console
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhab.training.utils.console
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: org.eclipse.osgi.framework.console,
+ org.openhab.training.electricity.battery.rechargable,
+ org.openhab.training.electricity.battery.ds,
+ org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.consumer.dynamic,
+ org.openhab.training.electricity.provider,
+ org.openhab.training.electricity.tv.ds,
+ org.openhab.training.electricity.tv.managedservice,
+ org.openhab.training.utils.console,
+ org.osgi.framework,
+ org.osgi.service.cm,
+ org.osgi.service.component,
+ org.osgi.service.event,
+ org.slf4j
+Export-Package: org.openhab.training.utils.console
+Service-Component: OSGI-INF/*.xml 
+Bundle-ActivationPolicy: lazy

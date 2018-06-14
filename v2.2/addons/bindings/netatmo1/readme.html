@@ -1,0 +1,2033 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Netatmo - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/netatmo1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo1/readme.html">Netatmo <small>(legacy/manual)</small></a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/netatmo1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/netatmo1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/netatmo1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="netatmo-binding">Netatmo Binding</h1>
+
+<p>The Netatmo binding integrates the Netatmo Personal Weather Station into openHAB. Its different modules allow you to measure temperature, humidity, air pressure, carbon dioxide concentration in the air, as well as the ambient noise level.</p>
+
+<p>The Netatmo Welcome Camera is also supported; it is a home camera with face recognition. It notifies you when it sees someone it knows, but also when it sees a stranger. See information below to obtain the necessary informations to setup your Netatmo Gear, also see <a href="http://www.netatmo.com/">the Netatmo website</a> for details on their products.</p>
+
+<p>There is also a binding specifically for openHAB 2 <a href="http://docs.openhab.org/addons/bindings/netatmo/readme.html">here</a>.</p>
+
+<blockquote>
+  <p>The Netatmo Binding (1.x) is considered a legacy binding and does not show up by default as an add-on in the OpenHAB 2 Paper UI. In order for the binding to show up as a add-on, you need to go to Configuration-&gt;System and enable both <strong>Access Remote Repositories</strong> and <strong>Include Legacy 1.x Bindings</strong> and save the setting. Once you have done this, you will see both <strong>Netatmo Binding</strong> and <strong>Netatmo Binding (1.x)</strong> in Add-ons, you will want to install <strong>Netatmo Binding</strong>.</p>
+</blockquote>
+
+<h2 id="prerequisites">Prerequisites</h2>
+
+<p>To make the binding work an <a href="http://oauth.net/2/">OAuth2</a> authorization has to be performed by hand to let openHAB connect to your Netatmo devices. The following is a step by step guide to do so.</p>
+
+<p>A note on the notation: Variable are written like this <code class="highlighter-rouge">&lt;VARIABLE_NAME&gt;</code> when replacing the variable, replace the <code class="highlighter-rouge">&lt;</code> and <code class="highlighter-rouge">&gt;</code> as well. E.g. Assuming <code class="highlighter-rouge">&lt;CLIENT_ID&gt;</code> is 1234 then,</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.netatmo.com/oauth2/authorize?client_id=&lt;CLIENT_ID&gt;
+</code></pre></div></div>
+
+<p>should be replaced with</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.netatmo.com/oauth2/authorize?client_id=1234
+</code></pre></div></div>
+
+<h3 id="1-application-creation">1. Application creation</h3>
+
+<p>Create an application at https://dev.netatmo.com/dev/createapp .</p>
+
+<h3 id="2-authorize-your-application">2. Authorize your Application</h3>
+
+<p><a href="https://dev.netatmo.com/doc/authentication/authcode">Authorize the application</a> by visiting the following URL in your Browser.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://api.netatmo.com/oauth2/authorize?client_id=&lt;CLIENT_ID&gt;&amp;redirect_uri=http%3Alocalhost%3A8080%2Ftest%2F&amp;scope=&lt;SCOPE&gt;&amp;state=42"
+</code></pre></div></div>
+
+<p>The variables to fill in are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;CLIENT_ID&gt;</code> Your client ID taken from your App at https://dev.netatmo.com/dev/listapps</li>
+  <li><code class="highlighter-rouge">&lt;SCOPE&gt;</code> A list of devices and capabilities. The full scope would be <code class="highlighter-rouge">read_station read_thermostat write_thermostat read_camera access_camera</code>, see the <a href="https://dev.netatmo.com/doc/authentication/scopes">Netatmo Scope Documentation</a> for more info. Please ensure that the variable is <a href="http://www.w3schools.com/tags/ref_urlencode.asp">URL encoded</a> if your browser doesn’t do it automatically, e.g. the URL encoded complete list of scopes would be <code class="highlighter-rouge">read_station%20read_thermostat%20write_thermostat%20read_camera%20access_camera</code></li>
+</ul>
+
+<p>When entering the URL to your browser it will take you to the Netatmo Webpage asking you to authorize your application to access your Netatmo data. The page should look something like <a href="https://dev.netatmo.com/images/dev/auth_app.jpg">this</a>. After this step your Application should appear as an authorized application in your Netatmo profile. Please make sure it is there, the setup can not continue if your app is not authorized.</p>
+
+<h3 id="3-retrieve-a-refresh-token">3. Retrieve a refresh token</h3>
+<p><a href="https://dev.netatmo.com/doc/authentication/refreshtoken">Retrieve a refresh token</a> from Netatmo API, using e.g. curl.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>curl -d 'grant_type=password&amp;client_id=&lt;CLIENT_ID&gt;&amp;client_secret=&lt;CLIENT_SECRET&gt;&amp;username=&lt;USERNAME&gt;&amp;password=&lt;PASSWORD&gt;&amp;scope=&lt;SCOPE&gt;' 'https://api.netatmo.net/oauth2/token'
+</code></pre></div></div>
+
+<p>The variables to fill in are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;CLIENT_ID&gt;</code> Same as before</li>
+  <li><code class="highlighter-rouge">&lt;CLIENT_SECRET&gt;</code> Your client secret taken from your App at https://dev.netatmo.com/dev/listapps</li>
+  <li><code class="highlighter-rouge">&lt;USERNAME&gt;</code> Your Netatmo username</li>
+  <li><code class="highlighter-rouge">&lt;PASSWORD&gt;</code> Your Netatmo password</li>
+  <li><code class="highlighter-rouge">&lt;SCOPE&gt;</code> Same as before.</li>
+</ul>
+
+<p>A successful response looks like this:</p>
+
+<pre><code class="language-JSON">{
+    "access_token":"2YotnFZFEjr1zCsicMWpAA",
+    "expires_in":10800,
+    "refresh_token":"tGzv3JOkF0XG5Qx2TlKWIA",
+}
+</code></pre>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>Add client id, client secret and refresh token to the file <code class="highlighter-rouge">services/netatmo.cfg</code>.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>clientid=&lt;CLIENT_ID&gt;
+clientsecret=&lt;CLIENT_SECRET&gt;
+refreshtoken=&lt;REFRESH_TOKEN&gt;
+</code></pre></div></div>
+
+<p>The variables to fill in are:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;CLIENT_ID&gt;</code> Same as before</li>
+  <li><code class="highlighter-rouge">&lt;CLIENT_SECRET&gt;</code> Same as before</li>
+  <li><code class="highlighter-rouge">&lt;REFRESH_TOKEN&gt;</code> The refresh token from the previous response</li>
+</ul>
+
+<h2 id="measurement-units">Measurement Units</h2>
+
+<p>You can optionally set the unit system and/or pressure units. The unit systems options are either Metric (Celsius/meters/millimeters) or US (Fahrenheit/feet/inches) and is case insensitive. The  temperature (Celsius or Fahrenheit), rain (millimeter or inches) and altitude (meters or feet) are affected by this parameter. If not specified, openHAB defaults to Metric.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>unitsystem=m
+unitsystem=us
+</code></pre></div></div>
+
+<p>The pressure unit is either mbar, inHg, or mmHg and is used for pressure, and is case insenstive. If not specified, openHAB defaults to mbar.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pressureunit=mbar
+pressureunit=inHg
+pressureunit=mmHg
+</code></pre></div></div>
+
+<h2 id="items-and-rules-configuration">Items and Rules Configuration</h2>
+
+<p>The IDs for the modules can be extracted from the developer documentation on the netatmo site.  First login with your user. Then some examples of the documentation contain the <strong>real results</strong> of your weather station. Get the IDs of your devices (indoor, outdoor, rain gauge) here:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>https://dev.netatmo.com/doc/methods/devicelist
+</code></pre></div></div>
+
+<p>main_device is the ID of the “main device”, the indoor sensor. This is equal to the MAC address of the Netatmo.</p>
+
+<p>The other modules you can recognize by “module_name” and then note the “_id” which you need later.</p>
+
+<h3 id="another-way-to-get-the-ids-is-to-calculate-them">Another way to get the IDs is to calculate them</h3>
+
+<p>You have to calculate the ID for the outside module as follows: (it cannot be read from the app)
+if the first serial character is “h”:  start with “02”,
+if the first serial character is “i”: start with “03”,</p>
+
+<p>append “:00:00:”,</p>
+
+<p>split the rest into three parts of two characters and append with a colon as delimeter.</p>
+
+<p>For example your serial number “h00bcdc” should end up as “02:00:00:00:bc:dc”.</p>
+
+<h3 id="indoor">Indoor</h3>
+
+<h4 id="example-items-for-the-indoor-module">Example items for the <strong>indoor module</strong>:</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Netatmo_Indoor_CO2 "Carbon dioxide [%d ppm]" {netatmo="00:00:00:00:00:00#Co2"}
+// Since 1.9 also with the keyword weather=
+Number Netatmo_Indoor_CO2 "Carbon dioxide [%d ppm]" {netatmo="weather=00:00:00:00:00:00#Co2"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-the-indoor-module">Supported types for the indoor module</h4>
+
+<ul>
+  <li>Temperature</li>
+  <li>Humidity</li>
+  <li>Co2</li>
+  <li>Pressure</li>
+  <li>Noise</li>
+  <li>WifiStatus</li>
+  <li>Altitude</li>
+  <li>Latitude</li>
+  <li>Longitude</li>
+  <li>TimeStamp</li>
+  <li>min_temp</li>
+  <li>date_min_temp</li>
+  <li>max_temp</li>
+  <li>date_max_temp</li>
+  <li>min_hum</li>
+  <li>date_min_hum</li>
+  <li>max_hum</li>
+  <li>date_max_hum</li>
+  <li>min_pressure</li>
+  <li>date_min_pressure</li>
+  <li>max_pressure</li>
+  <li>date_max_pressure</li>
+  <li>min_noise</li>
+  <li>date_min_noise</li>
+  <li>max_noise</li>
+  <li>date_max_noise</li>
+  <li>min_co2</li>
+  <li>date_min_co2</li>
+  <li>max_co2</li>
+  <li>date_max_co2</li>
+</ul>
+
+<h3 id="outdoor">Outdoor</h3>
+
+<h4 id="example-item-for-the-outdoor-module-first-id-is-the-main-module-second-id-is-the-outdoor-module">Example item for the <strong>outdoor module</strong> (first id is the main module, second id is the outdoor module):</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Netatmo_Outdoor_Temperature "Outdoor temperature [%.1f °C]" {netatmo="00:00:00:00:00:00#00:00:00:00:00:00#Temperature"}
+// Since 1.9 also with the keyword weather=
+Number Netatmo_Outdoor_Temperature "Outdoor temperature [%.1f °C]" {netatmo="weather=00:00:00:00:00:00#00:00:00:00:00:00#Temperature"}
+</code></pre></div></div>
+
+<h3 id="supported-types-for-the-outdoor-module">Supported types for the outdoor module</h3>
+
+<ul>
+  <li>Temperature</li>
+  <li>Humidity</li>
+  <li>RfStatus</li>
+  <li>BatteryVP</li>
+  <li>TimeStamp</li>
+  <li>min_temp</li>
+  <li>date_min_temp</li>
+  <li>max_temp</li>
+  <li>date_max_temp</li>
+  <li>min_hum</li>
+  <li>date_min_hum</li>
+  <li>max_hum</li>
+  <li>date_max_hum</li>
+</ul>
+
+<h3 id="rain">Rain</h3>
+
+<h4 id="example-item-for-the-rain-gauge-first-id-is-the-main-module-second-id-is-the-rain-module">Example item for the <strong>rain gauge</strong> (first id is the main module, second id is the rain module):</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Netatmo_Rain_Current "Rain [%.1f mm]" {netatmo="00:00:00:00:00:00#00:00:00:00:00:00#Rain"}
+// Since 1.9 also with the keyword weather=
+Number Netatmo_Rain_Current "Rain [%.1f mm]" {netatmo="weather=00:00:00:00:00:00#00:00:00:00:00:00#Rain"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-the-rain-guage">Supported types for the rain guage</h4>
+
+<ul>
+  <li>Rain</li>
+  <li>Humidity</li>
+  <li>sum_rain</li>
+  <li>RfStatus</li>
+  <li>BatteryVP</li>
+</ul>
+
+<h3 id="wind">Wind</h3>
+
+<h4 id="example-item-for-the-wind-module-first-id-is-the-main-module-second-id-is-the-wind-module">Example item for the <strong>wind module</strong> (first id is the main module, second id is the wind module):</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Netatmo_Wind_Strength "Wind Strength [%.0f KPH]" {netatmo="00:00:00:00:00:00#00:00:00:00:00:00#WindStrength"}
+// Since 1.9 also with the keyword weather=
+Number Netatmo_Wind_Strength "Wind Strength [%.0f KPH]" {netatmo="weather=00:00:00:00:00:00#00:00:00:00:00:00#WindStrength"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-the-wind-module">Supported types for the wind module</h4>
+
+<ul>
+  <li>WindStrength</li>
+  <li>WindAngle</li>
+  <li>GustStrength</li>
+  <li>GustAngle</li>
+  <li>date_max_gust</li>
+  <li>RfStatus</li>
+  <li>BatteryVP</li>
+</ul>
+
+<p>Types <strong>WindStrength</strong>, <strong>WindAngle</strong>, <strong>GustStrength</strong>, <strong>GustAngle</strong> are for a specific time frame, and default to the latest measurement.</p>
+
+<p>Other possible time frames are:</p>
+
+<ul>
+  <li>30min</li>
+  <li>1hour</li>
+  <li>3hours</li>
+  <li>1day</li>
+  <li>1week</li>
+  <li>1month</li>
+</ul>
+
+<p>The type <strong>date_max_gust</strong> is also for a specific time frame, and defaults to 1 day. It will only work with the ranges <strong>1day</strong>, <strong>1week</strong>, and <strong>1month</strong>.</p>
+
+<p>Example items with different time frames:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Netatmo_Wind_Strength_Current        "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindStrength"}
+Number   Netatmo_Wind_Wind_Angle_Current      "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindAngle"}
+Number   Netatmo_Wind_Gust_Strength_Current   "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustStrength"}
+Number   Netatmo_Wind_Gust_Angle_Current      "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustAngle"}
+
+Number   Netatmo_Wind_Strength_Today          "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindStrength,1day"}
+Number   Netatmo_Wind_Wind_Angle_Today        "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindAngle,1day"}
+Number   Netatmo_Wind_Gust_Strength_Today     "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustStrength,1day"}
+Number   Netatmo_Wind_Gust_Angle_Today        "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustAngle,1day"}
+DateTime Netatmo_Wind_Max_Gust_Date_Today     "Date Max Gust [%1$tD %1$tr]"  (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust"}
+
+Number   Netatmo_Wind_Strength_Month          "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindStrength,1month"}
+Number   Netatmo_Wind_Wind_Angle_Month        "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindAngle,1month"}
+Number   Netatmo_Wind_Gust_Strength_Month     "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustStrength,1month"}
+Number   Netatmo_Wind_Gust_Angle_Month        "Wind Angle [%d°]"             (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustAngle,1month"}
+DateTime Netatmo_Wind_Max_Gust_Date_Month     "Date Max Gust [%1$tD %1$tr]"  (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust,1month"}
+
+// Since 1.9 also with the keyword weather=
+
+Number   Netatmo_Wind_Strength_Current        "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindStrength"}
+Number   Netatmo_Wind_Wind_Angle_Current      "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindAngle"}
+Number   Netatmo_Wind_Gust_Strength_Current   "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustStrength"}
+Number   Netatmo_Wind_Gust_Angle_Current      "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustAngle"}
+
+Number   Netatmo_Wind_Strength_Today          "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindStrength,1day"}
+Number   Netatmo_Wind_Wind_Angle_Today        "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindAngle,1day"}
+Number   Netatmo_Wind_Gust_Strength_Today     "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustStrength,1day"}
+Number   Netatmo_Wind_Gust_Angle_Today        "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustAngle,1day"}
+DateTime Netatmo_Wind_Max_Gust_Date_Today     "Date Max Gust [%1$tD %1$tr]"  (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust"}
+
+Number   Netatmo_Wind_Strength_Month          "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindStrength,1month"}
+Number   Netatmo_Wind_Wind_Angle_Month        "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindAngle,1month"}
+Number   Netatmo_Wind_Gust_Strength_Month     "Wind Strength [%.0f KPH]"     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustStrength,1month"}
+Number   Netatmo_Wind_Gust_Angle_Month        "Wind Angle [%d°]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustAngle,1month"}
+DateTime Netatmo_Wind_Max_Gust_Date_Month     "Date Max Gust [%1$tD %1$tr]"  (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust,1month"}
+</code></pre></div></div>
+
+<h3 id="min-max-and-sum-types">Min, Max and Sum Types</h3>
+
+<p>Types that contain <strong>_min</strong>, <strong>_max</strong>, or <strong>_sum</strong> are for a specific time frame, with a default of 1 day. Possible time frames are:</p>
+
+<ul>
+  <li>30min</li>
+  <li>1hour</li>
+  <li>3hours</li>
+  <li>1day</li>
+  <li>1week</li>
+  <li>1month</li>
+</ul>
+
+<p>The types that contain <strong>_date</strong> will only work with the ranges <strong>1day</strong>, <strong>1week</strong>, and <strong>1month</strong>.</p>
+
+<p>Example items with different time frames:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Netatmo_Indoor_Max_Temp_Today       "Indoor Maximum Temperature Today [%.2f C]"      (Netatmo)  {netatmo="00:00:00:00:00:00#max_temp"}
+Number   Netatmo_Indoor_Max_Temp_This_Week   "Indoor Maximum Temperature This Week [%.2f C]"  (Netatmo)  {netatmo="00:00:00:00:00:00#max_temp,1week"}
+Number   Netatmo_Indoor_Max_Temp_This_Month  "Indoor Maximum Temperature This Month [%.2f C]" (Netatmo)  {netatmo="00:00:00:00:00:00#max_temp,1month"}
+Number   Netatmo_Rain_Today                  "Rain Today [%.02f mm]"                          (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#sum_rain"}
+Number   Netatmo_Rain_Week                   "Rain This Week [%.02f mm]"                      (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#sum_rain,1week""}
+Number   Netatmo_Rain_Month                  "Rain This Month [%.02f mm]"                     (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#sum_rain,1month""}
+
+// Since 1.9 also with the keyword weather=
+
+Number   Netatmo_Indoor_Max_Temp_Today       "Indoor Maximum Temperature Today [%.2f C]"      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_temp"}
+Number   Netatmo_Indoor_Max_Temp_This_Week   "Indoor Maximum Temperature This Week [%.2f C]"  (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_temp,1week"}
+Number   Netatmo_Indoor_Max_Temp_This_Month  "Indoor Maximum Temperature This Month [%.2f C]" (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_temp,1month"}
+Number   Netatmo_Rain_Today                  "Rain Today [%.02f mm]"                          (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#sum_rain"}
+Number   Netatmo_Rain_Week                   "Rain This Week [%.02f mm]"                      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#sum_rain,1week""}
+Number   Netatmo_Rain_Month                  "Rain This Month [%.02f mm]"                     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#sum_rain,1month""}
+</code></pre></div></div>
+
+<h3 id="example-items">Example Items</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number   Netatmo_Indoor_Temperature    "Indoor Temperature [%.2f C]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#Temperature"}
+Number   Netatmo_Indoor_Humidity       "Indoor Humidity [%d %%]"                           (Netatmo)  {netatmo="00:00:00:00:00:00#Humidity"}
+Number   Netatmo_Indoor_CO2            "Indoor Carbon dioxide [%d ppm]"                    (Netatmo)  {netatmo="00:00:00:00:00:00#Co2"}
+Number   Netatmo_Indoor_Pressure       "Indoor Pressure [%.2f mbar]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#Pressure"}
+Number   Netatmo_Indoor_Noise          "Indoor Noise [%d db]"                              (Netatmo)  {netatmo="00:00:00:00:00:00#Noise"}
+Number   Netatmo_Indoor_wifi           "Indoor Wifi status [%d / 4]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#Wifistatus"}
+Number   Netatmo_Indoor_altitude       "Indoor Altitude [%f]"                              (Netatmo)  {netatmo="00:00:00:00:00:00#Altitude"}
+Number   Netatmo_Indoor_latitude       "Indoor Latitude [%.6f]"                            (Netatmo)  {netatmo="00:00:00:00:00:00#Latitude"}
+Number   Netatmo_Indoor_longitude      "Indoor Longitude [%.6f]"                           (Netatmo)  {netatmo="00:00:00:00:00:00#Longitude"}
+Number   Netatmo_Indoor_Min_Temp       "Indoor Minimum Temperature Today [%.2f C]"         (Netatmo)  {netatmo="00:00:00:00:00:00#min_temp"}
+DateTime Netatmo_Indoor_Min_Temp_Date  "Indoor Minimum Temperature Today [%1$tD %1$tr]"    (Netatmo)  {netatmo="00:00:00:00:00:00#date_min_temp"}
+Number   Netatmo_Indoor_Max_Temp       "Indoor Maximum Temperature Today [%.2f C]"         (Netatmo)  {netatmo="00:00:00:00:00:00#max_temp"}
+DateTime Netatmo_Indoor_Max_Temp_Date  "Indoor Maximum Temperature Today [%1$tD %1$tr]"    (Netatmo)  {netatmo="00:00:00:00:00:00#date_max_temp"}
+Number   Netatmo_Indoor_Min_Hum        "Indoor Minimum Humidity Today [%d %%]"             (Netatmo)  {netatmo="00:00:00:00:00:00#min_hum"}
+DateTime Netatmo_Indoor_Min_Hum_Date   "Indoor Minimum Humidity Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="00:00:00:00:00:00#date_min_hum"}
+Number   Netatmo_Indoor_Max_Hum        "Indoor Maximum Humidity Today [%d %%]"             (Netatmo)  {netatmo="00:00:00:00:00:00#max_hum"}
+DateTime Netatmo_Indoor_Max_Hum_Date   "Indoor Maximum Humidity Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="00:00:00:00:00:00#date_max_hum"}
+Number   Netatmo_Indoor_Min_Press      "Indoor Minimum Pressure Today [%.2f mbar]"         (Netatmo)  {netatmo="00:00:00:00:00:00#min_pressure"}
+DateTime Netatmo_Indoor_Min_Temp_Press "Indoor Minimum Pressure Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="00:00:00:00:00:00#date_min_pressure"}
+Number   Netatmo_Indoor_Max_Press      "Indoor Maximum Pressure Today [%.2f mbar]"         (Netatmo)  {netatmo="00:00:00:00:00:00#max_pressure"}
+DateTime Netatmo_Indoor_Max_Temp_Press "Indoor Maximum Pressure Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="00:00:00:00:00:00#date_max_pressure"}
+Number   Netatmo_Indoor_Min_Noise      "Indoor Minimum Noise Today [%d db]"                (Netatmo)  {netatmo="00:00:00:00:00:00#min_noise"}
+DateTime Netatmo_Indoor_Min_Noise_Date "Indoor Minimum Noise Today [%1$tD %1$tr]"          (Netatmo)  {netatmo="00:00:00:00:00:00#date_min_noise"}
+Number   Netatmo_Indoor_Max_Noise      "Indoor Maximum Noise Today [%d db]"                (Netatmo)  {netatmo="00:00:00:00:00:00#max_noise"}
+DateTime Netatmo_Indoor_Max_Noise_Date "Indoor Maximum Noise Today [%1$tD %1$tr]"          (Netatmo)  {netatmo="00:00:00:00:00:00#date_max_noise"}
+Number   Netatmo_Indoor_Min_CO2        "Indoor Minimum Carbon Dioxide Today [%d ppm]"      (Netatmo)  {netatmo="00:00:00:00:00:00#min_co2"}
+DateTime Netatmo_Indoor_Min_CO2_Date   "Indoor Minimum Carbon Dioxide Today [%1$tD %1$tr]" (Netatmo)  {netatmo="00:00:00:00:00:00#date_min_co2"}
+Number   Netatmo_Indoor_Max_CO2        "Indoor Maxinum Carbon Dioxide Today [%d ppm]"      (Netatmo)  {netatmo="00:00:00:00:00:00#max_co2"}
+DateTime Netatmo_Indoor_Max_CO2_Date   "Indoor Maximum Carbon Dioxide Today [%1$tD %1$tr]" (Netatmo)  {netatmo="00:00:00:00:00:00#date_max_co2"}
+
+Number   Netatmo_Outdoor_Temperature   "Outdoor Temperature [%.2f °C]"                     (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#Temperature"}
+Number   Netatmo_Outdoor_Humidity      "Outdoor Humidity [%.2f %%]"                        (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#Humidity"}
+Number   Netatmo_Outdoor_Rfstatus      "Outdoor RF status [%d / 5]"                        (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#Rfstatus"}
+Number   Netatmo_Outdoor_Batteryvp     "Outdoor battery status [%d %%]"                    (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#Batteryvp"}
+Number   Netatmo_Outdoor_Min_Temp      "Outdoor Mininum Temperature Today [%.2f C]"        (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#min_temp"}
+DateTime Netatmo_Outdoor_Min_Temp_Date "Outdoor Minimum Temperature Today [%1$tD %1$tr]"   (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#date_min_temp"}
+Number   Netatmo_Outdoor_Max_Temp      "Outdoor Maximum Temperature Today [%.2f C]"        (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#max_temp"}
+DateTime Netatmo_Outdoor_Max_Temp_Date "Outdoor Maximum Temperature Today [%1$tD %1$tr]"   (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#date_max_temp"}
+Number   Netatmo_Outdoor_Min_Hum       "Outdoor Mininum Humidity Today [%d %%]"            (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#min_hum"}
+DateTime Netatmo_Outdoor_Min_Hum_Date  "Outdoor Minimum Humidity Today [%1$tD %1$tr]"      (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#date_min_hum"}
+Number   Netatmo_Outdoor_Max_Hum       "Outdoor Maximum Humidity Today [%d %%]"            (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#max_hum"}
+DateTime Netatmo_Outdoor_Max_Hum_Date  "Outdoor Maximum Humidity Today [%1$tD %1$tr]"      (Netatmo)  {netatmo="00:00:00:00:00:00#02:00:00:00:00:00#date_max_hum"}
+
+Number   Netatmo_Rain_Current          "Rain Current [%.02f mm]"                           (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#Rain"}
+Number   Netatmo_Rain_Today            "Rain Today [%.02f mm]"                             (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#sum_rain"}
+Number   Netatmo_Rain_Rfstatus         "Rain RF Status [%d / 5]"                           (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#Rfstatus"}
+Number   Netatmo_Rain_Batteryvp        "Rain battery status [%d %%]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#05:00:00:00:00:be#Batteryvp"}
+
+Number   Netatmo_Wind_Strength         "Wind Strength [%.0f KPH]"                          (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindStrength"}
+Number   Netatmo_Wind_Wind_Angle       "Wind Angle [%d°]"                                  (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#WindAngle"}
+Number   Netatmo_Wind_Gust_Strength    "Wind Strength [%.0f KPH]"                          (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustStrength"}
+Number   Netatmo_Wind_Gust_Angle       "Wind Angle [%d°]"                                  (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#GustAngle"}
+DateTime Netatmo_Wind_Max_Gust_Date    "Date Max Gust [%1$tD %1$tr]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust"}
+Number   Netatmo_Wind_Rfstatus         "Wind RF Status [%d / 5]"                           (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#Rfstatus"}
+Number   Netatmo_Wind_Batteryvp        "Wind battery status [%d %%]"                       (Netatmo)  {netatmo="00:00:00:00:00:00#06:00:00:00:00:de#Batteryvp"}
+
+// Since 1.9 also with the keyword weather=
+
+Number   Netatmo_Indoor_Temperature    "Indoor Temperature [%.2f C]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Temperature"}
+Number   Netatmo_Indoor_Humidity       "Indoor Humidity [%d %%]"                           (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Humidity"}
+Number   Netatmo_Indoor_CO2            "Indoor Carbon dioxide [%d ppm]"                    (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Co2"}
+Number   Netatmo_Indoor_Pressure       "Indoor Pressure [%.2f mbar]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Pressure"}
+Number   Netatmo_Indoor_Noise          "Indoor Noise [%d db]"                              (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Noise"}
+Number   Netatmo_Indoor_wifi           "Indoor Wifi status [%d / 4]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Wifistatus"}
+Number   Netatmo_Indoor_altitude       "Indoor Altitude [%f]"                              (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Altitude"}
+Number   Netatmo_Indoor_latitude       "Indoor Latitude [%.6f]"                            (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Latitude"}
+Number   Netatmo_Indoor_longitude      "Indoor Longitude [%.6f]"                           (Netatmo)  {netatmo="weather=00:00:00:00:00:00#Longitude"}
+Number   Netatmo_Indoor_Min_Temp       "Indoor Minimum Temperature Today [%.2f C]"         (Netatmo)  {netatmo="weather=00:00:00:00:00:00#min_temp"}
+DateTime Netatmo_Indoor_Min_Temp_Date  "Indoor Minimum Temperature Today [%1$tD %1$tr]"    (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_min_temp"}
+Number   Netatmo_Indoor_Max_Temp       "Indoor Maximum Temperature Today [%.2f C]"         (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_temp"}
+DateTime Netatmo_Indoor_Max_Temp_Date  "Indoor Maximum Temperature Today [%1$tD %1$tr]"    (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_max_temp"}
+Number   Netatmo_Indoor_Min_Hum        "Indoor Minimum Humidity Today [%d %%]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#min_hum"}
+DateTime Netatmo_Indoor_Min_Hum_Date   "Indoor Minimum Humidity Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_min_hum"}
+Number   Netatmo_Indoor_Max_Hum        "Indoor Maximum Humidity Today [%d %%]"             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_hum"}
+DateTime Netatmo_Indoor_Max_Hum_Date   "Indoor Maximum Humidity Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_max_hum"}
+Number   Netatmo_Indoor_Min_Press      "Indoor Minimum Pressure Today [%.2f mbar]"         (Netatmo)  {netatmo="weather=00:00:00:00:00:00#min_pressure"}
+DateTime Netatmo_Indoor_Min_Temp_Press "Indoor Minimum Pressure Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_min_pressure"}
+Number   Netatmo_Indoor_Max_Press      "Indoor Maximum Pressure Today [%.2f mbar]"         (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_pressure"}
+DateTime Netatmo_Indoor_Max_Temp_Press "Indoor Maximum Pressure Today [%1$tD %1$tr]"       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_max_pressure"}
+Number   Netatmo_Indoor_Min_Noise      "Indoor Minimum Noise Today [%d db]"                (Netatmo)  {netatmo="weather=00:00:00:00:00:00#min_noise"}
+DateTime Netatmo_Indoor_Min_Noise_Date "Indoor Minimum Noise Today [%1$tD %1$tr]"          (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_min_noise"}
+Number   Netatmo_Indoor_Max_Noise      "Indoor Maximum Noise Today [%d db]"                (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_noise"}
+DateTime Netatmo_Indoor_Max_Noise_Date "Indoor Maximum Noise Today [%1$tD %1$tr]"          (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_max_noise"}
+Number   Netatmo_Indoor_Min_CO2        "Indoor Minimum Carbon Dioxide Today [%d ppm]"      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#min_co2"}
+DateTime Netatmo_Indoor_Min_CO2_Date   "Indoor Minimum Carbon Dioxide Today [%1$tD %1$tr]" (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_min_co2"}
+Number   Netatmo_Indoor_Max_CO2        "Indoor Maxinum Carbon Dioxide Today [%d ppm]"      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#max_co2"}
+DateTime Netatmo_Indoor_Max_CO2_Date   "Indoor Maximum Carbon Dioxide Today [%1$tD %1$tr]" (Netatmo)  {netatmo="weather=00:00:00:00:00:00#date_max_co2"}
+
+Number   Netatmo_Outdoor_Temperature   "Outdoor Temperature [%.2f °C]"                     (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#Temperature"}
+Number   Netatmo_Outdoor_Humidity      "Outdoor Humidity [%.2f %%]"                        (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#Humidity"}
+Number   Netatmo_Outdoor_Rfstatus      "Outdoor RF status [%d / 5]"                        (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#Rfstatus"}
+Number   Netatmo_Outdoor_Batteryvp     "Outdoor battery status [%d %%]"                    (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#Batteryvp"}
+Number   Netatmo_Outdoor_Min_Temp      "Outdoor Mininum Temperature Today [%.2f C]"        (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#min_temp"}
+DateTime Netatmo_Outdoor_Min_Temp_Date "Outdoor Minimum Temperature Today [%1$tD %1$tr]"   (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#date_min_temp"}
+Number   Netatmo_Outdoor_Max_Temp      "Outdoor Maximum Temperature Today [%.2f C]"        (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#max_temp"}
+DateTime Netatmo_Outdoor_Max_Temp_Date "Outdoor Maximum Temperature Today [%1$tD %1$tr]"   (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#date_max_temp"}
+Number   Netatmo_Outdoor_Min_Hum       "Outdoor Mininum Humidity Today [%d %%]"            (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#min_hum"}
+DateTime Netatmo_Outdoor_Min_Hum_Date  "Outdoor Minimum Humidity Today [%1$tD %1$tr]"      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#date_min_hum"}
+Number   Netatmo_Outdoor_Max_Hum       "Outdoor Maximum Humidity Today [%d %%]"            (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#max_hum"}
+DateTime Netatmo_Outdoor_Max_Hum_Date  "Outdoor Maximum Humidity Today [%1$tD %1$tr]"      (Netatmo)  {netatmo="weather=00:00:00:00:00:00#02:00:00:00:00:00#date_max_hum"}
+
+Number   Netatmo_Rain_Current          "Rain Current [%.02f mm]"                           (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#Rain"}
+Number   Netatmo_Rain_Today            "Rain Today [%.02f mm]"                             (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#sum_rain"}
+Number   Netatmo_Rain_Rfstatus         "Rain RF Status [%d / 5]"                           (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#Rfstatus"}
+Number   Netatmo_Rain_Batteryvp        "Rain battery status [%d %%]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#05:00:00:00:00:be#Batteryvp"}
+
+Number   Netatmo_Wind_Strength         "Wind Strength [%.0f KPH]"                          (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindStrength"}
+Number   Netatmo_Wind_Wind_Angle       "Wind Angle [%d°]"                                  (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#WindAngle"}
+Number   Netatmo_Wind_Gust_Strength    "Wind Strength [%.0f KPH]"                          (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustStrength"}
+Number   Netatmo_Wind_Gust_Angle       "Wind Angle [%d°]"                                  (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#GustAngle"}
+DateTime Netatmo_Wind_Max_Gust_Date    "Date Max Gust [%1$tD %1$tr]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#date_max_gust"}
+Number   Netatmo_Wind_Rfstatus         "Wind RF Status [%d / 5]"                           (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#Rfstatus"}
+Number   Netatmo_Wind_Batteryvp        "Wind battery status [%d %%]"                       (Netatmo)  {netatmo="weather=00:00:00:00:00:00#06:00:00:00:00:de#Batteryvp"}
+</code></pre></div></div>
+
+<h3 id="example-rules">Example Rules</h3>
+
+<h4 id="example-rule-to-send-a-mail-if-carbon-dioxide-reaches-a-certain-threshold">Example rule to send a mail if carbon dioxide reaches a certain threshold</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var boolean co2HighWarning = false
+var boolean co2VeryHighWarning = false
+
+rule "Monitor carbon dioxide level"
+when
+	Item Netatmo_Indoor_CO2 changed
+then
+	if(Netatmo_Indoor_CO2.state &gt; 1000) {
+		if(co2HighWarning == false) {
+			sendMail("example@example.com",
+			         "High carbon dioxide level!",
+			         "Carbon dioxide level is " + Netatmo_Indoor_CO2.state + " ppm.")
+			co2HighWarning = true
+		}
+	} else if(Netatmo_Indoor_CO2.state &gt; 2000) {
+		if(co2VeryHighWarning == false) {
+			sendMail("example@example.com",
+			         "Very high carbon dioxide level!",
+			         "Carbon dioxide level is " + Netatmo_Indoor_CO2.state + " ppm.")
+			co2VeryHighWarning = true
+		}
+	} else {
+		co2HighWarning = false
+		co2VeryHighWarning = false
+	}
+end
+</code></pre></div></div>
+
+<h4 id="example-rule-to-send-notifications-if-the-module-battery-level-is-low">Example rule to send notifications if the module battery level is low</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "Monitor Netatmo battery levels"
+when
+    Time cron "00 10 * * * ?" or
+    System started
+then
+    if( Netatmo_Outdoor_Batteryvp.state &lt; 20) {
+        logInfo("NetatmoBatteryAlerts","Netatmo Outdoor Sensor Battery is low: " + Netatmo_Outdoor_Batteryvp.state + " Sending alert!")
+        var String mailSubject = "Netatmo Outdoor Sensor Battery is low: " + Netatmo_Outdoor_Batteryvp.state + "!"
+        sendMail("&lt;MAIL&gt;", mailSubject, mailSubject);
+    }
+
+    if( Netatmo_Rain_Batteryvp.state &lt; 20) {
+        logInfo("NetatmoBatteryAlerts","Netatmo Rain Battery is low: " + Netatmo_Rain_Batteryvp.state + " Sending alert!")
+        var String mailSubject = "Netatmo Rain Gauge Battery is low: " + Netatmo_Rain_Batteryvp.state + "!"
+        sendMail("&lt;MAIL&gt;", mailSubject, mailSubject);
+    }
+end
+</code></pre></div></div>
+
+<h2 id="welcome-camera">Welcome Camera</h2>
+
+<h2 id="setup">Setup</h2>
+
+<p>First, create your developer Account and App, as described above. The Steps are all the same, but for Welcome, you will need some more information (Home ID, Face ID etc) to get all the Input you need. There are two different ways to retrieve those infos:</p>
+
+<h3 id="option-1">Option 1</h3>
+
+<p>Obtain the Home ID from the Netatmo Web Interface (will only work with a PC or Mac and a browser that is displaying links on mouse over)</p>
+
+<ul>
+  <li>Go to https://my.netatmo.com/app/camera</li>
+  <li>Log in with your Netatmo Credentials</li>
+  <li>Click on the Gear-Icon in the upper right corner</li>
+  <li>In the next window hover your mouse pointer over one of the Options as Localisation or Timezone and check the preview address for the page (in Chrome in the lower left corner)</li>
+  <li>Correct Addresses look like this: https://my.netatmo.com/settingscamera/localisation/000000000000000000000000</li>
+  <li>The 000000000000000000000000-Part is your Home ID. Write it down, you will need this in the next steps</li>
+</ul>
+
+<h3 id="option-2">Option 2</h3>
+
+<h4 id="obtain-the-home-id-from-shell">Obtain the Home ID from Shell</h4>
+
+<ul>
+  <li>Download and install this small Node.JS-Tool from shell: https://www.npmjs.com/package/netatmo</li>
+  <li>After everything is set up, edit the test.js file and fill in the needed informations for the Module to run:
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var auth = {
+"client_id": "",
+"client_secret": "",
+"username": "",
+"password": "",
+};
+</code></pre></div>    </div>
+  </li>
+  <li>Then give it a go (nodejs test.js) and check for the outputs, your Home ID should be right there</li>
+</ul>
+
+<h4 id="obtain-face-id-camera-id-event-id-etc">Obtain Face ID, Camera ID, Event ID etc.</h4>
+
+<p>Now that you got your Home ID you can go to https://dev.netatmo.com/dev/resources/technical/reference/welcome/gethomedata and collect the other informations to setup your Netatmo items:</p>
+
+<ul>
+  <li>In the developer area, click on the arrow the says “Try this method by yourself with our TRY IT module.” in the right pane</li>
+  <li>Fill in Home ID and size (300 for example) and click “Try IT”</li>
+  <li>Below you will get the result in XML-like structure</li>
+  <li>Click through the several subfolders to obtain everything you need</li>
+</ul>
+
+<h3 id="home">Home</h3>
+
+<p>Example item for the <strong>home</strong> (first id is the home id):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String Welcome_Home                "Home [%s]"          {netatmo="camera=000000000000000000000000#Name"}
+String Welcome_Home_Place_Country  "Home Country [%s]"  {netatmo="camera=000000000000000000000000#PlaceCountry"}
+String Welcome_Home_Place_Timezone "Home Timezone [%s]" {netatmo="camera=000000000000000000000000#PlaceTimezone"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-welcome-camera-home">Supported types for welcome camera home</h4>
+
+<ul>
+  <li>Name</li>
+  <li>PlaceCountry</li>
+  <li>PlaceTimezone</li>
+</ul>
+
+<h3 id="person">Person</h3>
+
+<h4 id="example-item-for-the-person">Example item for the person</h4>
+
+<p>First id is the home id, second is the person id:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String   Welcome_Person_Name       "Person Name [%s]"                                 {netatmo="camera=000000000000000000000000#00000000-0000-0000-0000-000000000000#Pseudo"}
+DateTime Welcome_Person_LastSeen   "Person LastSeen [%1$ta, %1$td.%1$tm.%1$tY %1$tR]" {netatmo="camera=000000000000000000000000#00000000-0000-0000-0000-000000000000#LastSeen"}
+Switch   Welcome_Person_AtHome     "Person [%s]"                                      {netatmo="camera=000000000000000000000000#00000000-0000-0000-0000-000000000000#OutOfSight"}
+String   Welcome_Person_FaceId     "Person FaceId [%s]"                               {netatmo="camera=000000000000000000000000#00000000-0000-0000-0000-000000000000#FaceId"}
+String   Welcome_Person_FaceKey    "Person FaceKey [%s]"                              {netatmo="camera=000000000000000000000000#00000000-0000-0000-0000-000000000000#FaceKey"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-welcome-camera-person">Supported types for welcome camera person</h4>
+
+<ul>
+  <li>Pseudo</li>
+  <li>LastSeen</li>
+  <li>OutOfSight</li>
+  <li>FaceId</li>
+  <li>FaceKey</li>
+</ul>
+
+<h3 id="unknown-person">Unknown Person</h3>
+
+<h4 id="example-item-for-the-unknown-person">Example item for the unknown person</h4>
+
+<p>First id is the home id:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Welcome_Unknown_Home       "Unknown @Home Count [%d]"    {netatmo="camera=000000000000000000000000#UNKNOWN#HomeCount"}
+Number Welcome_Unknown_Away       "Unknown @Away Count [%d]"    {netatmo="camera=000000000000000000000000#UNKNOWN#AwayCount"}
+String Welcome_Unknown_LastSeen   "Unknown lastSeenList [%s]"   {netatmo="camera=000000000000000000000000#UNKNOWN#LastSeenList"}
+String Welcome_Unknown_OutOfSight "Unknown OutOfSightList [%s]" {netatmo="camera=000000000000000000000000#UNKNOWN#OutOfSightList"}
+String Welcome_Unknown_FaceId     "Unknown FaceIdList [%s]"     {netatmo="camera=000000000000000000000000#UNKNOWN#FaceIdList"}
+String Welcome_Unknown_FaceKey    "Unknown FaceKeyList [%s]"    {netatmo="camera=000000000000000000000000#UNKNOWN#FaceKeyList"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-welcome-camera-unknown-person">Supported types for welcome camera unknown person</h4>
+
+<ul>
+  <li>HomeCount</li>
+  <li>AwayCount</li>
+  <li>LastSeenList</li>
+  <li>OutOfSightList</li>
+  <li>FaceIdList</li>
+  <li>FaceKeyList</li>
+</ul>
+
+<h3 id="camera">Camera</h3>
+
+<p>Example item for the <strong>camera</strong> (first id is the home id, second is the camera_id):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String Welcome_Camera            "Camera [%s]"              {netatmo="camera=000000000000000000000000#00:00:00:00:00:00#Name"}
+String Welcome_Camera_Status     "Camera Status [%s]"       {netatmo="camera=000000000000000000000000#00:00:00:00:00:00#Status"}
+String Welcome_Camera_SDStatus   "Camera SD Status [%s]"    {netatmo="camera=000000000000000000000000#00:00:00:00:00:00#SdStatus"}
+String Welcome_Camera_AlimStatus "Camera Power Status [%s]" {netatmo="camera=000000000000000000000000#00:00:00:00:00:00#AlimStatus"}
+</code></pre></div></div>
+
+<h4 id="supported-types-for-welcome-camera-unknown-person-1">Supported types for welcome camera unknown person</h4>
+
+<ul>
+  <li>Name</li>
+  <li>Status</li>
+  <li>SdStatus</li>
+  <li>AlimStatus</li>
+</ul>
+
+<h2 id="common-problems">Common problems</h2>
+
+<h3 id="missing-certificate-authority">Missing Certificate Authority</h3>
+
+<blockquote>
+  <p>NOTE: Netatmo switched from SmartCom to Go Daddy for its certificate authority. With this change, you should not encounter the below error anymore.</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>javax.net.ssl.SSLHandshakeException:
+sun.security.validator.ValidatorException:
+PKIX path building failed:
+sun.security.provider.certpath.SunCertPathBuilderException:
+unable to find valid certification path to requested target
+</code></pre></div></div>
+
+<p>This can be solved by installing the StartCom CA Certificate into the local JDK like this:</p>
+
+<ul>
+  <li>
+    <p>Download the certificate from https://www.startssl.com/certs/ca.pem or use wget https://www.startssl.com/certs/ca.pem</p>
+  </li>
+  <li>
+    <p>Then import it into the keystore (the password is “changeit”)</p>
+  </li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$JAVA_HOME/bin/keytool -import -keystore $JAVA_HOME/jre/lib/security/cacerts -alias StartCom-Root-CA -file ca.pem
+</code></pre></div></div>
+
+<p>If $JAVA_HOME is not set then run the command:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>update-alternatives <span class="nt">--list</span> java
+</code></pre></div></div>
+
+<p>This should output something similar to:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/usr/lib/jvm/java-8-oracle/jre/bin/java
+</code></pre></div></div>
+
+<p>Use everything before /jre/… to set the JAVA_HOME environment variable:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">export </span><span class="nv">JAVA_HOME</span><span class="o">=</span>/usr/lib/jvm/java-8-oracle
+</code></pre></div></div>
+
+<p>After you set the environment variable, try:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">ls</span> <span class="nt">-l</span> <span class="nv">$JAVA_HOME</span>/jre/lib/security/cacerts
+</code></pre></div></div>
+
+<p>If it’s set correctly then you should see something similar to:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">-rw-r--r--</span> 1 root root 101992 Nov 4 10:54 /usr/lib/jvm/java-8-oracle/jre/lib/security/cacerts
+</code></pre></div></div>
+
+<p>Now try and rerun the keytool command. If you didn’t get errors, you should be good to go.</p>
+
+<p><a href="http://jinahya.wordpress.com/2013/04/28/installing-the-startcom-ca-certifcate-into-the-local-jdk/">(source)</a></p>
+
+<p>Alternative approach if above solution does not work:</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo </span>keytool <span class="nt">-delete</span> <span class="nt">-alias</span> StartCom-Root-CA <span class="nt">-keystore</span> <span class="nv">$JAVA_HOME</span>/jre/lib/security/cacerts <span class="nt">-storepass</span> changeit  
+</code></pre></div></div>
+
+<p>Download the certificate from https://api.netatmo.net to $JAVA_HOME/jre/lib/security/ and save it as api.netatmo.net.crt (X.509 / PEM)</p>
+
+<div class="language-shell highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nb">sudo</span> <span class="nv">$JAVA_HOME</span>/bin/keytool <span class="nt">-import</span> <span class="nt">-keystore</span> <span class="nv">$JAVA_HOME</span>/jre/lib/security/cacerts <span class="nt">-alias</span> StartCom-Root-CA <span class="nt">-file</span> api.netatmo.net.crt 
+</code></pre></div></div>
+
+<p>The password is “changeit”.</p>
+
+<h2 id="sample-data">Sample data</h2>
+
+<p>If you want to evaluate this binding but have not got a Netatmo station yourself yet, you can add the Netatmo office in Paris to your account:</p>
+
+<p>http://www.netatmo.com/en-US/addguest/index/TIQ3797dtfOmgpqUcct3/70:ee:50:00:02:20</p>
+
+<h2 id="icons">Icons</h2>
+
+<p>The following icons are used by original Netatmo web app:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th style="text-align: center">Modules</th>
+      <th style="text-align: center">Battery</th>
+      <th style="text-align: center">Signal</th>
+      <th style="text-align: center">Wifi</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/module_int.png" alt="http://my.netatmo.com/img/my/app/module_int.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/battery_verylow.png" alt="http://my.netatmo.com/img/my/app/battery_verylow.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/signal_verylow.png" alt="http://my.netatmo.com/img/my/app/signal_verylow.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/wifi_low.png" alt="http://my.netatmo.com/img/my/app/wifi_low.png" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/module_ext.png" alt="http://my.netatmo.com/img/my/app/module_ext.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/battery_low.png" alt="http://my.netatmo.com/img/my/app/battery_low.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/signal_low.png" alt="http://my.netatmo.com/img/my/app/signal_low.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/wifi_low.png" alt="http://my.netatmo.com/img/my/app/wifi_low.png" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/module_rain.png" alt="http://my.netatmo.com/img/my/app/module_rain.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/battery_medium.png" alt="http://my.netatmo.com/img/my/app/battery_medium.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/signal_medium.png" alt="http://my.netatmo.com/img/my/app/signal_medium.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/wifi_high.png" alt="http://my.netatmo.com/img/my/app/wifi_high.png" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/battery_high.png" alt="http://my.netatmo.com/img/my/app/battery_high.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/signal_high.png" alt="http://my.netatmo.com/img/my/app/signal_high.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/wifi_full.png" alt="http://my.netatmo.com/img/my/app/wifi_full.png" /></td>
+    </tr>
+    <tr>
+      <td style="text-align: center"> </td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/battery_full.png" alt="http://my.netatmo.com/img/my/app/battery_full.png" /></td>
+      <td style="text-align: center"><img src="http://my.netatmo.com/img/my/app/signal_full.png" alt="http://my.netatmo.com/img/my/app/signal_full.png" /></td>
+      <td style="text-align: center"> </td>
+    </tr>
+  </tbody>
+</table>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

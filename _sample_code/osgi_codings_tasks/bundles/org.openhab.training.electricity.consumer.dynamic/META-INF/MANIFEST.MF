@@ -1,0 +1,12 @@
+Manifest-Version: 1.0
+Bundle-Name: Dynamic Consumer
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-ManifestVersion: 2
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-SymbolicName: org.openhab.training.electricity.consumer.dynamic
+Import-Package: org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.consumer.dynamic,
+ org.openhab.training.electricity.provider
+Export-Package: org.openhab.training.electricity.consumer.dynamic

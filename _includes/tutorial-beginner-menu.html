@@ -1,0 +1,16 @@
+{% include base.html %}
+{% assign docu = base | append: "/tutorials/beginner" %}
+
+<ul class="nav">
+  <li>Tutorial (Beginner)</li>
+  <ul>
+    <li><a href="{{docu}}/index.html">Overview</a></li>
+    <li><a href="{{docu}}/1sttimesetup.html">First-time setup</a></li>
+    <li><a href="{{docu}}/uis.html">User Interfaces</a></li>
+    <li><a href="{{docu}}/configuration.html">Configuring openHAB and installing add-ons</a></li>
+    <li><a href="{{docu}}/sitemap.html">Creating a sitemap</a></li>
+    <li><a href="{{docu}}/rules.html">Working with rules</a></li>
+    <li><a href="{{docu}}/logs.html">Looking to the logs</a></li>
+    <li><a href="{{docu}}/persistence.html">Working with persistence</a></li>
+  </ul>
+</ul>

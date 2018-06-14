@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-Name: Utils
+Bundle-ManifestVersion: 2
+Bundle-SymbolicName: org.openhab.training.utils
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-Vendor: openHAB.org
+Bundle-Version: 1.0.0.qualifier
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Import-Package: org.openhab.training.utils,
+ org.eclipse.osgi.framework.console,
+ org.osgi.framework,
+ org.slf4j
+Export-Package: org.openhab.training.utils

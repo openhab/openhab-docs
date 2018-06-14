@@ -1,0 +1,1270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>JDBC - Persistence - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/addons/persistence/jdbc/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../addons/persistence/jdbc/readme.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/addons/persistence/jdbc/readme.html">v2.2</a></li>
+      <li><a href="/v2.1/addons/persistence/jdbc/readme.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="jdbc-persistence">JDBC Persistence</h1>
+
+<p>This service writes and reads item states to and from a number of relational database systems that support <a href="https://en.wikipedia.org/wiki/Java_Database_Connectivity">Java Database Connectivity (JDBC)</a>.  This service allows you to persist state updates using one of several different underlying database services. It is designed for a maximum of scalability, to store very large amounts of data and still over the years not lose its speed.</p>
+
+<p>The generic design makes it relatively easy for developers to integrate other databases that have JDBC drivers.  The following databases are currently supported and tested:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Database</th>
+      <th>Tested Driver / Version</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><a href="https://db.apache.org/derby/">Apache Derby</a></td>
+      <td><a href="http://mvnrepository.com/artifact/org.apache.derby/derby">derby-10.12.1.1.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.h2database.com/">H2</a></td>
+      <td><a href="http://mvnrepository.com/artifact/com.h2database/h2">h2-1.4.191.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://hsqldb.org/">HSQLDB</a></td>
+      <td><a href="http://mvnrepository.com/artifact/org.hsqldb/hsqldb">hsqldb-2.3.3.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://mariadb.org/">MariaDB</a></td>
+      <td><a href="http://mvnrepository.com/artifact/org.mariadb.jdbc/mariadb-java-client">mariadb-java-client-1.4.6.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.mysql.com/">MySQL</a></td>
+      <td><a href="http://mvnrepository.com/artifact/mysql/mysql-connector-java">mysql-connector-java-5.1.39.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="http://www.postgresql.org/">PostgreSQL</a></td>
+      <td><a href="http://mvnrepository.com/artifact/org.postgresql/postgresql">postgresql-9.4.1209.jre7.jar</a></td>
+    </tr>
+    <tr>
+      <td><a href="https://www.sqlite.org/">SQLite</a></td>
+      <td><a href="http://mvnrepository.com/artifact/org.xerial/sqlite-jdbc">sqlite-jdbc-3.16.1.jar</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#configuration">Configuration</a>
+    <ul>
+      <li><a href="#minimal-configuration">Minimal Configuration</a></li>
+      <li><a href="#migration-from-mysql-to-jdbc-persistence-services">Migration from MySQL to JDBC Persistence Services</a></li>
+    </ul>
+  </li>
+  <li><a href="#technical-notes">Technical Notes</a>
+    <ul>
+      <li><a href="#database-table-schema">Database Table Schema</a></li>
+      <li><a href="#number-precision">Number Precision</a></li>
+      <li><a href="#rounding-results">Rounding results</a></li>
+      <li><a href="#for-developers">For Developers</a></li>
+      <li><a href="#performance-tests">Performance Tests</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="configuration">Configuration</h2>
+
+<p>This service can be configured in the file <code class="highlighter-rouge">services/jdbc.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>url</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>JDBC URL to establish a connection to your database.  Examples:<br /><br /><code class="highlighter-rouge">jdbc:derby:./testDerby;create=true</code><br /><code class="highlighter-rouge">jdbc:h2:./testH2</code><br /><code class="highlighter-rouge">jdbc:hsqldb:./testHsqlDb</code><br /><code class="highlighter-rouge">jdbc:mariadb://192.168.0.1:3306/testMariadb</code><br /><code class="highlighter-rouge">jdbc:mysql://192.168.0.1:3306/testMysql?serverTimezone=UTC</code><br /><code class="highlighter-rouge">jdbc:postgresql://192.168.0.1:5432/testPostgresql</code><br /><code class="highlighter-rouge">jdbc:sqlite:./testSqlite.db</code>.<br /><br />If no database is available it will be created; for example the url <code class="highlighter-rouge">jdbc:h2:./testH2</code> creates a new H2 database in openHAB folder. Example to create your own MySQL database directly:<br /><br /><code class="highlighter-rouge">CREATE DATABASE 'yourDB' CHARACTER SET utf8 COLLATE utf8_general_ci;</code></td>
+    </tr>
+    <tr>
+      <td>user</td>
+      <td> </td>
+      <td style="text-align: center">if needed</td>
+      <td>database user name</td>
+    </tr>
+    <tr>
+      <td>password</td>
+      <td> </td>
+      <td style="text-align: center">if needed</td>
+      <td>database user password</td>
+    </tr>
+    <tr>
+      <td>errReconnectThreshold</td>
+      <td>0</td>
+      <td style="text-align: center">No</td>
+      <td>when the service is deactivated (0 means ignore)</td>
+    </tr>
+    <tr>
+      <td>sqltype.CALL</td>
+      <td><code class="highlighter-rouge">VARCHAR(200)</code></td>
+      <td style="text-align: center">No</td>
+      <td>All <code class="highlighter-rouge">sqlType</code> options allow you to change the SQL data type used to store values for different openHAB item states.  See the following links for further information: <a href="https://mybatis.github.io/mybatis-3/apidocs/reference/org/apache/ibatis/type/JdbcType.html">mybatis</a> <a href="http://www.h2database.com/html/datatypes.html">H2</a> <a href="http://www.postgresql.org/docs/9.3/static/datatype.html">PostgresSQL</a></td>
+    </tr>
+    <tr>
+      <td>sqltype.COLOR</td>
+      <td><code class="highlighter-rouge">VARCHAR(70)</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.CONTACT</td>
+      <td><code class="highlighter-rouge">VARCHAR(6)</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.DATETIME</td>
+      <td><code class="highlighter-rouge">DATETIME</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.DIMMER</td>
+      <td><code class="highlighter-rouge">TINYINT</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.LOCATION</td>
+      <td><code class="highlighter-rouge">VARCHAR(30)</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.NUMBER</td>
+      <td><code class="highlighter-rouge">DOUBLE</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.ROLLERSHUTTER</td>
+      <td><code class="highlighter-rouge">TINYINT</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.STRING</td>
+      <td><code class="highlighter-rouge">VARCHAR(65500)</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.SWITCH</td>
+      <td><code class="highlighter-rouge">VARCHAR(6)</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.TABLEPRIMARYKEY</td>
+      <td><code class="highlighter-rouge">TIMESTAMP</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>sqltype.TABLEPRIMARYVALUE</td>
+      <td><code class="highlighter-rouge">NOW()</code></td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>numberDecimalcount</td>
+      <td>3</td>
+      <td style="text-align: center">No</td>
+      <td>for Itemtype “Number” default decimal digit count</td>
+    </tr>
+    <tr>
+      <td>tableNamePrefix</td>
+      <td><code class="highlighter-rouge">item</code></td>
+      <td style="text-align: center">No</td>
+      <td>table name prefix. For Migration from MySQL Persistence, set to <code class="highlighter-rouge">Item</code>.</td>
+    </tr>
+    <tr>
+      <td>tableUseRealItemNames</td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">No</td>
+      <td>table name prefix generation.  When set to <code class="highlighter-rouge">true</code>, real item names are used for table names and <code class="highlighter-rouge">tableNamePrefix</code> is ignored.  When set to <code class="highlighter-rouge">false</code>, the <code class="highlighter-rouge">tableNamePrefix</code> is used to generate table names with sequential numbers.</td>
+    </tr>
+    <tr>
+      <td>tableIdDigitCount</td>
+      <td>4</td>
+      <td style="text-align: center">No</td>
+      <td>when <code class="highlighter-rouge">tableUseRealItemNames</code> is <code class="highlighter-rouge">false</code> and thus table names are generated sequentially, this controls how many zero-padded digits are used in the table name.  With the default of 4, the first table name will end with <code class="highlighter-rouge">0001</code>. For migration from the MySQL persistence service, set this to 0.</td>
+    </tr>
+    <tr>
+      <td>rebuildTableNames</td>
+      <td>false</td>
+      <td style="text-align: center">No</td>
+      <td>rename existing tables using <code class="highlighter-rouge">tableUseRealItemNames</code> and <code class="highlighter-rouge">tableIdDigitCount</code>. USE WITH CARE! Deactivate after Renaming is done!</td>
+    </tr>
+    <tr>
+      <td>jdbc.maximumPoolSize</td>
+      <td>configured per database in package <code class="highlighter-rouge">org.openhab.persistence.jdbc.db.*</code></td>
+      <td style="text-align: center">No</td>
+      <td>Some embeded databases can handle only one connection.  See <a href="https://github.com/brettwooldridge/HikariCP/issues/256">this link</a> for more information</td>
+    </tr>
+    <tr>
+      <td>jdbc.minimumIdle</td>
+      <td>see above</td>
+      <td style="text-align: center">No</td>
+      <td>see above</td>
+    </tr>
+    <tr>
+      <td>enableLogTime</td>
+      <td><code class="highlighter-rouge">false</code></td>
+      <td style="text-align: center">No</td>
+      <td>timekeeping</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>All item- and event-related configuration is done in the file <code class="highlighter-rouge">persistence/jdbc.persist</code>.</p>
+
+<p>To configure this service as the default persistence service for openHAB 2, add or change the line</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>org.eclipse.smarthome.persistence:default=jdbc
+</code></pre></div></div>
+
+<p>in the file <code class="highlighter-rouge">services/runtime.cfg</code>.</p>
+
+<h3 id="minimal-configuration">Minimal Configuration</h3>
+
+<p>services/jdbc.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url=jdbc:postgresql://192.168.0.1:5432/testPostgresql
+</code></pre></div></div>
+
+<h3 id="migration-from-mysql-to-jdbc-persistence-services">Migration from MySQL to JDBC Persistence Services</h3>
+
+<p>The JDBC Persistence service can act as a replacement for the MySQL Persistence service.  Here is an example of a configuration for a MySQL database named <code class="highlighter-rouge">testMysql</code> with user <code class="highlighter-rouge">test</code> and password <code class="highlighter-rouge">test</code>:</p>
+
+<p>services/jdbc.cfg</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>url=jdbc:mysql://192.168.0.1:3306/testMysql
+user=test
+password=test
+tableNamePrefix=Item
+tableUseRealItemNames=false
+tableIdDigitCount=0
+</code></pre></div></div>
+
+<p>Remember to install and uninstall the services you want, and rename <code class="highlighter-rouge">persistence/mysql.persist</code> to <code class="highlighter-rouge">persistence/jdbc.persist</code>.</p>
+
+<h2 id="technical-notes">Technical Notes</h2>
+
+<h3 id="database-table-schema">Database Table Schema</h3>
+
+<p>The table name schema can be reconfigured after creation, if needed.</p>
+
+<p>The service will create a mapping table to link each item to a table, and a separate table is generated for each item.  The item data tables include time and data values.  The SQL data type used depends on the openHAB item type, and allows the item state to be recovered back into openHAB in the same way it was stored.</p>
+
+<p>With this <em>per-item</em> layout, the scalability and easy maintenance of the database is ensured, even if large amounts of data must be managed. To rename existing tables, use the parameters <code class="highlighter-rouge">tableUseRealItemNames</code> and <code class="highlighter-rouge">tableIdDigitCount</code> in the configuration.</p>
+
+<h3 id="number-precision">Number Precision</h3>
+
+<p>Default openHAB number items are persisted with SQL datatype <code class="highlighter-rouge">double</code>. Internally openHAB uses <code class="highlighter-rouge">BigDecimal</code>. If better numerical precision is needed, for example set <code class="highlighter-rouge">sqltype.NUMBER = DECIMAL(max digits, max decimals)</code>, then on the Java side, the service works with <code class="highlighter-rouge">BigDecimal</code> without type conversion. If more come decimals as <code class="highlighter-rouge">max decimals</code> provides, this persisted value is rounded mathematically correctly. The SQL types <code class="highlighter-rouge">DECIMAL</code> or  <code class="highlighter-rouge">NUMERIC</code> are precise, but to work with <code class="highlighter-rouge">DOUBLE</code> is faster.</p>
+
+<h3 id="rounding-results">Rounding results</h3>
+
+<p>The results of database queries of number items are rounded to three decimal places by default. With <code class="highlighter-rouge">numberDecimalcount</code> decimals can be changed. Especially if sql types <code class="highlighter-rouge">DECIMAL</code> or  <code class="highlighter-rouge">NUMERIC</code> are used for <code class="highlighter-rouge">sqltype.NUMBER</code>, rounding can be disabled by setting <code class="highlighter-rouge">numberDecimalcount=-1</code>.</p>
+
+<h3 id="for-developers">For Developers</h3>
+
+<ul>
+  <li>Clearly separated source files for the database-specific part of openHAB logic.</li>
+  <li>Code duplication by similar services is prevented.</li>
+  <li>Integrating a new SQL and JDBC enabled database is fairly simple.</li>
+</ul>
+
+<h3 id="performance-tests">Performance Tests</h3>
+
+<p>Not necessarily representative of the performance you may experience.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>DATABASE</th>
+      <th style="text-align: right">FIRST RUN</th>
+      <th style="text-align: right">AVERAGE</th>
+      <th style="text-align: right">FASTEST</th>
+      <th style="text-align: right">SIZE AFTER</th>
+      <th>COMMENT</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Derby</td>
+      <td style="text-align: right">7.829</td>
+      <td style="text-align: right">6.892</td>
+      <td style="text-align: right">5.381</td>
+      <td style="text-align: right">5.36 MB</td>
+      <td>local embedded</td>
+    </tr>
+    <tr>
+      <td>H2</td>
+      <td style="text-align: right">1.797</td>
+      <td style="text-align: right">2.080</td>
+      <td style="text-align: right">1.580</td>
+      <td style="text-align: right">0.96 MB</td>
+      <td>local embedded</td>
+    </tr>
+    <tr>
+      <td>hsqldb</td>
+      <td style="text-align: right">3.474</td>
+      <td style="text-align: right">2.104</td>
+      <td style="text-align: right">1.310</td>
+      <td style="text-align: right">1.23 MB</td>
+      <td>local embedded</td>
+    </tr>
+    <tr>
+      <td>mysql</td>
+      <td style="text-align: right">11.873</td>
+      <td style="text-align: right">11.524</td>
+      <td style="text-align: right">10.971</td>
+      <td style="text-align: right">-</td>
+      <td>ext. Server VM</td>
+    </tr>
+    <tr>
+      <td>postgresql</td>
+      <td style="text-align: right">8.147</td>
+      <td style="text-align: right">7.072</td>
+      <td style="text-align: right">6.895</td>
+      <td style="text-align: right">-</td>
+      <td>ext. Server VM</td>
+    </tr>
+    <tr>
+      <td>sqlite</td>
+      <td style="text-align: right">2.406</td>
+      <td style="text-align: right">1.249</td>
+      <td style="text-align: right">1.137</td>
+      <td style="text-align: right">0.28 MB</td>
+      <td>local embedded</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Each test ran about 20 Times every 30 seconds.</li>
+  <li>openHAB 1.x has ready started for about a Minute.</li>
+  <li>the data in seconds for the evaluation are from the console output.</li>
+</ul>
+
+<p>Used a script like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var count = 0;
+rule "DB STRESS TEST"
+when 
+	Time cron "30 * * * * ?"
+then
+	if( count = 24) count = 0
+	count = count+1
+	if( count &gt; 3 &amp;&amp; count &lt; 23){
+		for( var i=500; i&gt;1; i=i-1){
+			postUpdate( NUMBERITEM, i)
+			SWITCHITEM.previousState().state
+			postUpdate( DIMMERITEM, OFF)
+			NUMBERITEM.changedSince( now().minusMinutes(1))
+			postUpdate( DIMMERITEM, ON)
+		}
+	}
+end
+</code></pre></div></div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

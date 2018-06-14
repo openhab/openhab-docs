@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/tutorials/advanced/connecting.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li>Tutorial (Advanced)</li>
+  <ul>
+    <li><a href="/v2.1/tutorials/advanced/index.html">Overview</a></li>
+    <li><a href="/v2.1/tutorials/advanced/installing.html">Installing the extension</a></li>
+    <li><a href="/v2.1/tutorials/advanced/connecting.html">Connecting to the Z-Wave controller</a></li>
+    <li><a href="/v2.1/tutorials/advanced/adding.html">Adding a new thing</a></li>
+    <li><a href="/v2.1/tutorials/advanced/configuring.html">Configuring a thing</a></li>
+    <li><a href="/v2.1/tutorials/advanced/tools.html">Other tools of HABmin</a></li>
+  </ul>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="connecting-to-the-z-wave-controller">Connecting to the Z-Wave controller</h1>
+
+<h2 id="what-is-the-controller-">What is the controller ?</h2>
+
+<p>The Z-wave controller is the masterpiece of the Z-Wave network.</p>
+
+<p>The Z-Wave bindings relies on it to dialog with the Z-Wave devices. Adding it is made from the <strong>HABmin</strong>.</p>
+
+<p>Working with the Z-Wave devices will be done in <strong>HABmin</strong>.</p>
+
+<h2 id="adding-the-thing">Adding the Thing</h2>
+
+<ul>
+  <li>From openHAB welcome screen, choose the <strong>HABmin</strong> tile.</li>
+  <li>On the left menu, click on <strong>Configuration</strong> and <strong>Things configuration</strong>.</li>
+  <li>The controller must be added manually. Click on the <strong>+</strong> sign, at the top of the screen.</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-1.png" alt="" /></p>
+
+<ul>
+  <li>In the following screen, choose <strong>Z-Wave Binding</strong> :</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-2.png" alt="" /></p>
+
+<ul>
+  <li>You can then select: <strong>Z-Wave Serial Controller</strong> :</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-3.png" alt="" /></p>
+
+<ul>
+  <li>In the following screen, you can change the <strong>label</strong> value to the name you want to give to the controller.</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-7.png" alt="" /></p>
+
+<ul>
+  <li>Click on save, and you are ready to configure it.</li>
+</ul>
+
+<blockquote>
+  <p>When click on <strong>Save</strong>, nothing changes on the screen, but the log file confirms that a next thing has been defined.
+The log file looks like:</p>
+</blockquote>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-05-09 18:53:33.987 [INFO ] [smarthome.event.ThingAddedEvent     ] - Thing 'zwave:serial_zstick:154966faddf' has been added.
+2016-05-09 18:53:33.990 [ERROR] [ing.zwave.handler.ZWaveSerialHandler] - ZWave port is not set.
+2016-05-09 18:53:33.990 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from UNINITIALIZED to INITIALIZING
+</code></pre></div></div>
+
+<h2 id="configuring-it">Configuring it</h2>
+
+<ul>
+  <li>On the left menu, click again on  <strong>Things configuration</strong>, the controller is now in the list :</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-4.png" alt="" /></p>
+
+<ul>
+  <li>Click on the Controller</li>
+  <li>The following screen allows you to configure the Thing.</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-5.png" alt="" /></p>
+
+<h2 id="configuring-the-port">Configuring the port</h2>
+<hr />
+<p><em>This section is so far centred on Mac OS. It must be modified in order to cover Linux and Windows.</em>
+—</p>
+
+<h3 id="finding-the-port-name">Finding the port name</h3>
+
+<ul>
+  <li>Open the terminal window</li>
+  <li>Type the following command <code class="highlighter-rouge">ls \dev\tty*</code></li>
+  <li>Depending on your USB device, the name can look like <code class="highlighter-rouge">/dev/tty.SLAB_USBtoUART</code> or <code class="highlighter-rouge">/dev/tty.usbmodem14111</code></li>
+</ul>
+
+<p>The port name that is displayed is the parameter needed</p>
+
+<h3 id="setting-the-port-name">Setting the port name</h3>
+
+<ul>
+  <li>Click on Port configuration</li>
+  <li>Fill the serial port with the port name</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-9.png" alt="" /></p>
+
+<ul>
+  <li>Click on save</li>
+  <li>After a few seconds, the thing icon becomes greens</li>
+</ul>
+
+<p><img src="images/zwave-controller-config-A.png" alt="" /></p>
+
+<blockquote>
+  <p>If you made any kind of mistake in the port configuration, the icon will become red.
+The log file will contain this kind of lines:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-05-09 19:14:27.162 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Stopped ZWave serial handler
+2016-05-09 19:14:27.163 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Connecting to serial port 'usbmodem14111'
+2016-05-09 19:14:27.163 [INFO ] [smarthome.event.ThingUpdatedEvent   ] - Thing 'zwave:serial_zstick:154966faddf' has been updated.
+2016-05-09 19:14:27.165 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from OFFLINE (COMMUNICATION_ERROR): Serial Error: Port tty.usbmodem14111 does not exist to OFFLINE
+2016-05-09 19:14:27.166 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from OFFLINE to OFFLINE (COMMUNICATION_ERROR): Serial Error: Port usbmodem14111 does not exist
+</code></pre></div>  </div>
+</blockquote>
+
+<h3 id="looking-to-the-logs">Looking to the logs</h3>
+
+<p>The console will display messages related to the binding initialisation.`</p>
+
+<blockquote>
+  <p>A “clean” startup looks this way in the log file:</p>
+
+  <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>2016-05-09 21:29:33.195 [INFO ] [arthome.ui.paper.internal.PaperUIApp] - Started Paper UI at /ui
+2016-05-09 21:29:33.252 [INFO ] [.dashboard.internal.DashboardService] - Started dashboard at /start
+2016-05-09 21:29:33.567 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Serial port is initialized
+2016-05-09 21:29:33.626 [INFO ] [ui.habmin.internal.servlet.HABminApp] - Started HABmin servlet at /habmin
+2016-05-09 21:29:33.478 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from UNINITIALIZED to INITIALIZING
+2016-05-09 21:29:33.479 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from INITIALIZING to OFFLINE
+2016-05-09 21:29:33.490 [INFO ] [ing.zwave.handler.ZWaveSerialHandler] - Connecting to serial port '/dev/tty.usbmodem14111'
+2016-05-09 21:29:33.682 [INFO ] [ve.internal.protocol.ZWaveController] - Starting ZWave controller
+2016-05-09 21:29:33.683 [INFO ] [ve.internal.protocol.ZWaveController] - ZWave timeout is set to 5000ms. Soft reset is false.
+2016-05-09 21:29:33.802 [INFO ] [basic.internal.servlet.WebAppServlet] - Started Basic UI at /basicui/app
+2016-05-09 21:29:31.896 [INFO ] [smarthome.event.ThingAddedEvent     ] - Thing 'zwave:serial_zstick:154966faddf' has been added.
+2016-05-09 21:29:33.823 [INFO ] [assic.internal.servlet.WebAppServlet] - Started Classic UI at /classicui/app
+2016-05-09 21:29:36.875 [INFO ] [age.SerialApiGetInitDataMessageClass] - NODE 1: Node found
+2016-05-09 21:29:36.876 [INFO ] [age.SerialApiGetInitDataMessageClass] - ZWave Controller using Controller API
+2016-05-09 21:29:36.876 [INFO ] [age.SerialApiGetInitDataMessageClass] - ZWave Controller is Primary Controller
+2016-05-09 21:29:36.876 [INFO ] [age.SerialApiGetInitDataMessageClass] - ------------Number of Nodes Found Registered to ZWave Controller------------
+2016-05-09 21:29:36.876 [INFO ] [age.SerialApiGetInitDataMessageClass] - # Nodes = 1
+2016-05-09 21:29:36.877 [INFO ] [age.SerialApiGetInitDataMessageClass] - ----------------------------------------------------------------------------
+2016-05-09 21:29:36.881 [INFO ] [me.event.ThingStatusInfoChangedEvent] - 'zwave:serial_zstick:154966faddf' changed from OFFLINE to ONLINE
+</code></pre></div>  </div>
+</blockquote>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

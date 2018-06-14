@@ -1,0 +1,59 @@
+{% assign newsite = 'https://www.openhab.org' %}
+{% assign newurl = newsite | append: '/docs' | append: page.url %}
+{% if page.url == '/tutorials/' %}
+    {% assign newurl = newsite | append: '/docs/tutorial/' %}
+{% elsif page.url contains '/tutorials/beginner/' %}
+    {% assign newurl = newurl | replace: '/tutorials/beginner/', '/tutorial/' %}
+{% elsif page.url contains '/tutorials/migration.html' %}
+    {% assign newurl = newsite | append: '/docs/configuration/migration/' %}
+{% elsif page.url == '/introduction.html' %}
+    {% assign newurl = newsite | append: '/docs/' %}
+{% elsif page.url contains '/addons/uis/paper/' %}
+    {% assign newurl = newsite | append: '/docs/configuration/paperui.html' %}
+{% elsif page.url contains '/addons/uis/basic/' %}
+    {% assign newurl = newsite | append: '/docs/configuration/ui/basic/' %}
+{% elsif page.url contains '/addons/uis/classic/' %}
+    {% assign newurl = newsite | append: '/docs/configuration/ui/classic/' %}
+{% elsif page.url contains '/addons/uis/habmin/' %}
+    {% assign newurl = newsite | append: '/docs/configuration/ui/habmin/' %}
+{% elsif page.url contains '/addons/uis/habpanel/' %}
+    {% assign newurl = newsite | append: '/docs/configuration/habpanel.html' %}
+{% elsif page.url contains '/addons/uis/apps' %}
+    {% assign newurl = newurl | replace: '/addons/uis/apps', '/apps' %}
+{% elsif page.url contains '/addons/ios/alexa-skill' %}
+    {% assign newurl = newsite | append: '/docs/ecosystem/alexa/' %}
+{% elsif page.url contains '/addons/ios/mycroft-skill' %}
+    {% assign newurl = newsite | append: '/docs/ecosystem/mycroft/' %}
+{% elsif page.url contains '/addons/' %}
+    {% if page.url contains 'readme.html' %}
+        {% assign newurl = newsite | append: page.url | replace_first: '/ios', '/integrations' | replace_first: '/voices/', '/voice/' | replace: 'readme.html', '' %}
+    {% elsif page.url contains 'transformations.html' %}
+        {% assign newurl = newsite | append: '/docs/configuration/transformations.html' %}
+    {% elsif page.url contains 'actions.html' %}
+        {% assign newurl = newsite | append: '/docs/configuration/actions.html' %}
+    {% else %}
+        {% assign newurl = newsite | append: '/addons/' %}
+    {% endif %}
+{% elsif page.url contains '/appendix/' %}
+    {% assign newurl = newsite | append: '/about/contributing.html' %}
+{% elsif page.url contains '/developers/' %}
+    {% assign newurl = newurl | replace: '/developers/', '/developer/' %}
+{% endif %}
+
+<div class="col s10 offset-s1">
+<div class="card grey darken-1" id="contribution-wanted">
+    <div class="card-content white-text">
+    <span class="card-title white-text">The openHAB Documentation Has Moved</span>
+    <p>
+        The documentation has moved to
+        <a target="_blank" style="color: #FF6600; font-weight: bold;" href="{{newsite}}/docs/">openhab.org/docs</a>
+        and
+        <a target="_blank" style="color: #FF6600; font-weight: bold;" href="{{newsite}}/addons/">openhab.org/addons</a>.
+    </p>
+    <p>Please use the link below to be redirected to the new version of this article, and update your bookmarks.</p>
+    </div>
+    <div class="card-action">
+    <a class="" target="_blank" href="{{newurl}}">Open This Article on the New Documentation Site</a>
+    </div>
+</div>
+</div>
