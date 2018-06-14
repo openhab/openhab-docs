@@ -476,6 +476,17 @@
               <destinationFile>${basedir}/_addons_ios/ext/alexa-skill/readme.md</destinationFile>
             </configuration>
           </execution>
+          <execution>
+            <id>copy-oh-google-assistant-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy</goal>
+            </goals>
+            <configuration>
+              <sourceFile>${basedir}/.external-resources/openhab-google-assistant/USAGE.md</sourceFile>
+              <destinationFile>${basedir}/_addons_ios/ext/google-assistant/readme.md</destinationFile>
+            </configuration>
+          </execution>
         </executions>
       </plugin>
       <plugin>
