@@ -7,7 +7,7 @@ title: Bundle Management
 
 # Bundle Management
 
-The [Karaf console](#console) offers various commands to manage bundles. Most of these commands are not needed in the normal (non-developer) use of openHAB. However some basic commands are needed when dealing with some expert user situations like testing a binding.
+The [Karaf console](console.html) offers various commands to manage bundles. Most of these commands are not needed in the normal (non-developer) use of openHAB. However some basic commands are needed when dealing with some expert user situations like testing a binding.
 
 ## List Bundles
 
