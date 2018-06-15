@@ -10,6 +10,27 @@ This repository contains the documentation for openHAB.
 
 The result is available at [http://docs.openhab.org/](http://docs.openhab.org/) [Deprecated] and [https://www.openhab.org/docs/](https://www.openhab.org/docs/)
 
+## How it works
+
+In this repo you can find and improve all *general* documentation contents.
+In fact that is everything you can see in the `master` branch.
+There are also other *read-only* branches, which hold external content like the *add-ons* and *concepts* documentation.
+We will read about them later.
+
+### So i can't improve a binding article here?
+
+Correct, this is done in the corresponding addon repository.
+You may want to know how to find the right file in all of those repos?
+Thats fairly easy.
+Just visit the page you want to improve in the docs directly.
+You will find the following paragraph at the bottom, which will point you directly to the file you want to improve.
+
+![Contribution link to a specific page](.images/contribution_link.png)
+
+When your improvement has been made and merged, we will get the updated article automatically through our build mechanism.
+This happens mostly once a day.
+Afterwards your change is included in the next homepage build.
+
 ## Contributing to the Documentation
 
 The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
