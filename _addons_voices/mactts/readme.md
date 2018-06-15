@@ -1,9 +1,9 @@
 ---
 id: mactts
-label: MacOS Text-to-Speech
-title: MacOS Text-to-Speech - Voices
+label: macOS Text-to-Speech
+title: macOS Text-to-Speech - Voices
 type: voice
-description: "The MacOS Text-to-Speech (TTS) service uses the MacOS 'say' command for producing spoken text."
+description: "The macOS Text-to-Speech (TTS) service uses the macOS 'say' command for producing spoken text."
 since: 2x
 logo: images/addons/mactts.png
 install: auto
@@ -13,13 +13,13 @@ install: auto
 
 {% include base.html %}
 
-# MacOS Text-to-Speech
+# macOS Text-to-Speech
 
 ## Overview
 
-The MacOS Text-to-Speech (TTS) service uses the MacOS "say" command for producing spoken text.
+The macOS Text-to-Speech (TTS) service uses the macOS "say" command for producing spoken text.
 
-Obviously, this service only works on a host that is running MacOS.
+Obviously, this service only works on a host that is running macOS.
 
 ## Configuration
 
