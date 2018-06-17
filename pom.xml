@@ -483,8 +483,16 @@
               <goal>copy</goal>
             </goals>
             <configuration>
-              <sourceFile>${basedir}/.external-resources/openhab-google-assistant/USAGE.md</sourceFile>
-              <destinationFile>${basedir}/_addons_ios/ext/google-assistant/readme.md</destinationFile>
+              <outputDirectory>${basedir}/_addons_ios/ext/google-assistant/</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab-google-assistant</directory>
+                  <includes>
+                    <include>USAGE.md</include>
+                    <include>docs/*.png</include>
+                  </includes>
+                </resource>
+              </resources>
             </configuration>
           </execution>
         </executions>
