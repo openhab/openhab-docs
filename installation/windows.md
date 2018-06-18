@@ -37,7 +37,7 @@ On this page, we will be using `C:\openHAB2` as an example.
 The openHAB runtime is distributed using a platform-independent zip file.
 To install it, follow these simple steps:
 
-1.  Choose between the Stable Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg)](https://bintray.com/openhab/mvn/download_file?file_path=org%2Fopenhab%2Fdistro%2Fopenhab%2F2.2.0%2Fopenhab-2.2.0.zip) or the latest Snapshot Version [![Download](https://api.bintray.com/packages/openhab/mvn/openhab-distro/images/download.svg?version=2.3.0)](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/lastSuccessfulBuild/artifact/distributions/openhab/target/openhab-2.3.0-SNAPSHOT.zip) of openHAB.
+1.  Download the latest Windows Stable or Snapshot ZIP archive file for manual installation from the [Download](https://www.openhab.org/download/) page.
 
 2.  Unzip the file in your chosen directory (e.g. `C:\openHAB2`)
 
@@ -85,14 +85,16 @@ To update manually, download a later version of the openHAB distribution zip fil
     - `userdata\etc\branding-ssh.properties`
     - `userdata\etc\config.properties`
     - `userdata\etc\custom.properties`
+    - `userdata\etc\custom.system.properties`
     - `userdata\etc\distribution.info`
     - `userdata\etc\jre.properties`
+    - `userdata\etc\org.openhab.addons.cfg`
     - `userdata\etc\org.ops4j.pax.url.mvn.cfg`
+    - `userdata\etc\overrides.properties`
     - `userdata\etc\profile.cfg`
     - `userdata\etc\startup.properties`
-    - `userdata\etc\version.properties`
     - `userdata\etc\system.properties`
-    - `userdata\etc\custom.system.properties`
+    - `userdata\etc\version.properties`
     - Any file in `userdata\etc` that starts with `org.apache.karaf`
     - The `userdata\cache` folder
     - The `userdata\tmp` folder
