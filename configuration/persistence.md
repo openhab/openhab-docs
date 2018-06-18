@@ -112,9 +112,8 @@ Below you will find a complete example persistence configuration file:
 ```java
 // persistence strategies have a name and definition and are referred to in the "Items" section
 Strategies {
-        everyMinute : "0 * * * * ?"
-        everyHour   : "0 0 * * * ?"
-        everyDay    : "0 0 0 * * ?"
+        everyHour : "0 0 * * * ?"
+        everyDay  : "0 0 0 * * ?"
 
         // if no strategy is specified for an Item entry below, the default list will be used
        default = everyChange
