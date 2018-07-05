@@ -1,0 +1,30 @@
+language: groovy
+rvm:
+- 2.0.0
+branches:
+  only:
+  - gh-pages
+env:
+  global:
+  - USER="openhab-bot"
+  - EMAIL="bot@openhab.org"
+  - REPO="openhab/openhab-docs"
+  - BRANCH="gh-pages"
+  - GH_REPO="github.com/${REPO}.git"
+  - secure: omm7zbQZz/XmRzz/5N97d3IqRKqViqMuYx6mrGI4iY3TmkZrSNut1PUaLgv+svrXMJTt2SvD+UWmyR2EFaVNrjqQzi9BcY6df8Zn1E6lgiNKF0mSatYNKLt+JJvr1kCvkHmJAijZBOSM3oHOnm3fgRKF/bTkl9dMFVmSl9dG9b2BhZyjvByJV7GDPNXKsrQWFqKoY0nO/+25u4gUsmQDJkVCPHexSgD2aWKSStgU556FxegihifGIEyYBDLVwlboFFrZ+/nKSxgvoR0ESbdLTqExgZGyPg5cZOnRTztA+YlV2YKxIYiU6RHWFIak2uD5aV9EXr2GG1AkQEX3kn0PGBn/c+y37O3/lTXIUFXNV2etc0L1aMNlE7rMDiezinByQuWrZqwMxPKtPj6DI3CSVr0uOYglL1E0u9euYE2coTilc78x033gV19wvkCRLiNeFWlht7MF+//apO0mr3iS+FLD8zh+33VQ1xnj57oD+WsSwJB1oUJX4ZEGQkE3WbISpdy4VeBTzBNdi10pl6cJr7GWrlpHluC9tP8609N/puSPCotbQh8RhwgMQLdxYS/YFTT6tMjp6czc64MIgEPABTWNGd79J7pp7m/7tYRmiSC/nat3d5MGlG0u557FasKUAYZphl+wAcEQCSIMZ3wQ27u+BZNjp5i30as0Q6yZpow=
+  - secure: ImpL0ic+fHnxDGKSnLURrV3p1zJ+6U2VUVIcElT2blIlirXyauebOWMZmqgR1hzW/u2aQuEYKUmKW04BYJ8PodcLH8Ct6QspSP+gOS/fgNJa0VHGV9zysnrVRXat5S6eX3uWcQkfrykwWK2WmNoAsNAgCEnUO+/iwWEjuCZJea0mNKm52bALFCp0LyIdEcbj8lc0DDAvmnDT/yawcooO2bHZuCjd/sX5R0RCPS8rVV8o9VJ4H/45ekYZ/E4ggmJQ8+CckKNn6Rmxl1g5LSNMPzEJoYjQt7bIg2ISrQ/UcWrhoZtPEk1u5duEMlAuHTFImEmCLE4BdpMhA7PFhXQnzJVj+0qZ53+BMLv+MGC1LIDBt/KDQgfbUMUc0chfsbkSM58MJBXotklVhp4D2xawmMJY85CbegiO8m48wpqomjMynmXb0xfcLZf/ra4Eu5ql0I0sICrI36c+E4wGNKLxApLnve1ykY80WkmSZvnwPPq7JPNZSEmI7b0rsSi+bfcABm3VX04cbm4nQ59bj031rjyo8/OzQI7YeLaEEMVDqMWiE+n2nfj+R1BdDpdfQMDyrjdqKcMjIQE9i2zR3GGbOlGsQatBI1qvtEZO9vRYKq0fe1WXc7ChSjFlnbl0/mg/Et5iUyQGNc9GiT4sBT6390p6+DcPug4AqGYdQN+8g6s=
+before_install:
+- "./update-external-resources.sh"
+install:
+- mvn clean package
+script:
+- git status
+- git config user.email ${EMAIL}
+- git config user.name ${USER}
+- git checkout ${BRANCH}
+- git remote add origin-pages https://${GH_TOKEN}@${GH_REPO} > /dev/null 2>&1
+- git add -A
+- git commit -m "Updated external content (Travis build ${TRAVIS_BUILD_NUMBER}) [skip ci]"
+- git push -u origin-pages ${BRANCH}
+after_success:
+- curl -X POST -d '' https://api.netlify.com/build_hooks/${NETLIFY_BUILD_HOOK}
