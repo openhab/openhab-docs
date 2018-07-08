@@ -21,7 +21,8 @@ We will read about them later.
 
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
-This is fairly easy: on most of the documentation pages on https://www.openhab.org/, 
+This is fairly easy: 
+on most of the documentation pages on https://www.openhab.org/, 
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
 ![Contribution link to a specific page](./images/contribution_link.png)
@@ -34,7 +35,8 @@ This happens mostly once a day. Afterwards your change is included in the next b
 The documentation is a community effort, so everyone is welcome to suggest changes, add new sections and fix bugs.
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
-create a pull request directly from GitHub. Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
+create a pull request directly from GitHub. 
+Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
 them as bext as you can before submitting a change for review - but don't worry if you don't understand all of them, we
 will help you to get it right.
 
