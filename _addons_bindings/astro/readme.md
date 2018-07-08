@@ -48,7 +48,7 @@ Optionally, a refresh `interval` (in seconds) can be defined to also calculate p
             * `duration` (Number)
     * **group** `position`
         * **channel** 
-            * `azimuth, elevation` (Number)
+            * `azimuth, elevation, shadeLength` (Number)
     * **group** `radiation`
         * **channel** 
             * `direct, diffuse, total` (Number)

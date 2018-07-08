@@ -10,11 +10,39 @@ This describes the Z-Wave device *ZMNHDA*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
+![ZMNHDA product image](https://www.cd-jackson.com/zwave_device_uploads/209/209_default.png)
+
+
 The ZMNHDA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/209) to improve the documentation.
+This Z-Wave module is used for dimming the bulb or to manage the speed of a fan. The module can be controlled either through a Z-Wave network or through the wall switch.   
+   
+The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch.   
+   
+Module measures power consumption of bulb or fan and supports connection of digital temperature sensor.
+
+### Inclusion Information
+
+- Connect module to power supply,
+- bring module within maximum 1 meter (3 feet) of the main controller,
+- enable add/remove mode on main controller,
+- auto-inclusion (30 minutes after connected to power supply) or
+- press service button S for more than 2 seconds or
+- press push button I1 three times within 3s (3 times change switch state within 3 seconds).
+
+### Exclusion Information
+
+- Connect module to power supply,
+- bring module within maximum 1 meter (3 feet) of the main controller,
+- enable add/remove mode on main controller,
+- press service button S for more than 6 seconds or
+- press push button I1 five times within 3s (5 times change switch state within 3 seconds)
+
+By this function all parameters of the module are set to default values and own ID is deleted.
+
+If service button S is pressed more than 2 and less than 6 second module is excluded, but configuration parameters are not set to default values.
 
 ## Channels
 
@@ -356,6 +384,10 @@ This group supports 4 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V0| |
 | COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+
+### Documentation Links
+
+* [User manual v6](https://www.cd-jackson.com/zwave_device_uploads/209/Qubino-Flush-dimmer-user-manual-V6-eng.pdf)
 
 ---
 

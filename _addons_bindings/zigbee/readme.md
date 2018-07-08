@@ -23,19 +23,19 @@ The ZigBee binding supports an interface to a wireless ZigBee home automation ne
 
 A ZigBee Coordinator is the network controller, and is therefore the heart of the ZigBee network. It also acts as the trust centre to control security access to the network.
 
-Coordinators need to be installed manually and the serial port must be set.
+Coordinators need to be installed manually and the serial port and baud rate must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device, you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
 
-#### Examples for coordinators
+The following coordinators are known to be supported.
 
 | Name and Link              | Coordinator | Comment                       |
 |----------------------------|-------------|-------------------------------|
-|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[TI2531](#ti2531-coordinator)|Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html)<br>Also CC2530, CC2538 or CC2650 might work with the correct firmware but are not suggested|
-|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)|-|
-|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)|-|
-|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and Zigbee|
-|[Telegesis ETRX357USB zigbee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)|-|
+|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[TI2531](#ti2531-coordinator)|Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html)<br>Also CC2530, CC2538 or CC2650 may work with the correct firmware but are not suggested|
+|[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)| |
+|[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)| Use baud rate 57600 and software flow control. |
+|[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and ZigBee. Use baud rate 57600 and software flow control. |
+|[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)| |
 |[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)|Only working on Linux devices|
-|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#xbee-xu-z11-coordinator)|-|
+|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#xbee-xu-z11-coordinator)| |
 
 #### TI2531 Coordinator
 
@@ -60,6 +60,8 @@ The firmware can be flashed with `./cc-tool -e -w CC2531ZNP-Pro-Secure_Standard.
 #### Ember EZSP NCP Coordinator
 
 The Ember EZSP NCP (Network Co-Processor) supports the Silabs EM358 or MightyGecko dongles with the standard NCP firmware. The thing type is ```coordinator_ember```.
+
+Note that there are generally two versions of the Ember NCP firmware in use. One operates at a baud rate of 115200 with RTS/CTS flow control (i.e. hardware flow control), the other operates at a baud rate of 57600, and XON/XOFF flow control (i.e. software flow control). If you are programming your own stick (e.g. the CEL stick) then it should be advisable to use the hardware flow control version - many commercial sticks seem to use the lower speed and software flow control (e.g. Bitron and Nortek HUSBZB-1).
 
 #### Telegesis ETRX3
 
@@ -101,7 +103,7 @@ Once the binding is installed, and an adapter is added, it automatically reads a
 
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
 
-When a ZigBee device restarts (eg a bulb is powered on), it will send an announcement to advise the coordinator that it is on the network and this will allow the binding to rediscover devices that have become lost. Battery devices often have a button that may also perform this function.
+When a ZigBee device restarts (e.g. a bulb is powered on), it will send an announcement to advise the coordinator that it is on the network and this will allow the binding to rediscover devices that have become lost. Battery devices often have a button that may also perform this function.
 
 ## Leave
 
@@ -123,18 +125,26 @@ The following channels are supported -:
 
 | Channel UID | ZigBee Cluster | Type     |Description                  |
 |-------------|----------------|----------|-----------------------------|
-| switch_dimmer | ```LEVEL_CONTROL``` (0x0008) | Dimmer |   |
-| switch_onoff | ```ON_OFF``` (0x0006) | Switch  |
+| battery-level | ```POWER_CONFIGURATION``` (0x0001) | Number |   |
+| battery_voltage | ```POWER_CONFIGURATION``` (0x0001) | Number |   |
 | color_color | ```COLOR_CONTROL``` (0x0300) | Color |   |
 | color_temperature | ```COLOR_CONTROL``` (0x0300) | Dimmer |   |
 | electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number |   |
+| electrical_rmscurrent | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number |   |
+| electrical_rmsvoltage | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number |   |
+| ias_codetector | ```IAS_ZONE``` (0x0500)  | Switch |   |
 | ias_contactportal1 | ```IAS_ZONE``` (0x0500) | Switch |  |
+| ias_fire | ```IAS_ZONE``` (0x0500)  | Switch |   |
 | ias_motionintrusion | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_motionpresence | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_standard_system | ```IAS_ZONE``` (0x0500) | Switch |  |
 | measurement_illuminance | ```ILLUMINANCE_MEASUREMENT``` (0x0400) | Number |   |
-| measurement_temperature | ```TEMPERATURE_MEASUREMENT``` (0x0402) | Number |   |
-| sensor_occupancy   | ```OCCUPANCY_SENSING``` (0x0406) | Switch  |  |
+| measurement_pressure | ```PRESSURE_MEASUREMENT``` (0x0403) | Number |   |
+| measurement_relativehumidity | ```RELATIVE_HUMIDITY_MEASUREMENT``` (0x0405) | Number |   |
+| measurement_temperature | ```TEMPERATURE_MEASUREMENT``` (0x0402) | Number:Temperature |   |
+| sensor_occupancy | ```OCCUPANCY_SENSING``` (0x0406) | Switch  |  |
+| switch_dimmer | ```LEVEL_CONTROL``` (0x0008) | Dimmer |   |
+| switch_onoff | ```ON_OFF``` (0x0006) | Switch  |
 
 
 ### Updates
@@ -153,4 +163,4 @@ log:set debug com.zsmartsystems.zigbee
 
 This will log data into the standard openhab.log file.
 
-Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network.
+Note that logs can only show what is happening at a high level - it can't show all data exchanges between the device and the coordinator - just what the coordinator sends to the binding. For this reason it can be difficult to debug issues where devices are not joining the network, or other low level issues need resolving. In such cases a network sniffer log is required, which requires additional hardware and software.

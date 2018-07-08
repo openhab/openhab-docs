@@ -47,10 +47,6 @@ Manual inclusion
 - enable exclusion mode on main controller
 - press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
 
-### Wakeup Information
-
-Press the Service button (S) 3 times within 3 seconds.
-
 ## Channels
 
 The following table summarises the channels available for the Smart Plug 16A -:

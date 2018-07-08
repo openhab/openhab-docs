@@ -8,11 +8,40 @@ title: ZMNHBA - ZWave
 # ZMNHBA Flush 2 relays
 This describes the Z-Wave device *ZMNHBA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhba_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![ZMNHBA product image](https://www.cd-jackson.com/zwave_device_uploads/208/208_default.png)
+
+
 The ZMNHBA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/208) to improve the documentation.
+This Z-Wave module is used for switching on or off two electrical devices (e.g. lights, fans, etc ...).  
+The module can be controlled either through Z-Wave network or through the wall switches.  
+The module is designed to be mounted inside a “flush mounting box”, hidden behind a traditional wall switch.  
+Module measures power consumption of two electrical devices and supports connection of digital temperature sensor.
+
+### Inclusion Information
+
+- Connect module to power supply,
+- bring module within maximum 1 meter (3 feet) of the main controller,
+- enable add/remove mode on main controller,
+- auto-inclusion (30 minutes after connected to power supply) or
+- press service button S for more than 2 second or
+- press push button I1 three times within 3s (3 times change switch state within 3  
+  seconds).
+
+### Exclusion Information
+
+- Connect module to power supply
+- bring module within maximum 1 meter (3 feet) of the main controller,
+- enable add/remove mode on main controller,
+- press service button S for more than 6 second or
+- press push button I1 five times within 3s (5 times change switch state within 3 seconds).
+
+By this function all parameters of the module are set to default values and own ID is deleted.  
+If service button S is pressed more than 2 and less than 6second module is excluded, but configuration parameters are not set to default values
 
 ## Channels
 

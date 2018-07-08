@@ -36,7 +36,7 @@ The following table summarises the channels available for the ARF -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds control | blinds_control | Blinds | Rollershutter | 
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
@@ -45,12 +45,11 @@ Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
-### Dimmer
+### Blinds control
 
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+Provides start / stop control of blinds.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
 
@@ -87,7 +86,7 @@ The device does not support associations.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -102,7 +101,7 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [fakro arf manual EN](https://www.cd-jackson.com/zwave_device_uploads/848/ARF-ARP-Z-WAVE-EN.pdf)
+* [User Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/848/ARF-ARP-Z-WAVE-EN.pdf)
 
 ---
 

@@ -8,6 +8,11 @@ title: VRPD3 - ZWave
 # VRPD3 Scene Capable Plug-in Dimmer
 This describes the Z-Wave device *VRPD3*, manufactured by *Leviton* with the thing type UID of ```leviton_vrpd3_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
+![VRPD3 product image](https://www.cd-jackson.com/zwave_device_uploads/199/199_default.jpg)
+
+
 The VRPD3 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview

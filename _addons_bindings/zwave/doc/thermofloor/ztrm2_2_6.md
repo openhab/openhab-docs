@@ -217,7 +217,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Floor minimum temperature limit (FLo) | Floor minimum temperature limit (FLo) |
 | 6 | Floor maximum temperature (FHi) | Floor maximum temperature (FHi) |
 | 7 | Air minimum temperature limit (ALo) | Air minimum temperature limit (ALo) |
-| 8 | Air maximum temperature limet (AHi) | Air maximum temperature limet (AHi) |
+| 8 | Air maximum temperature limit (AHi) | Air maximum temperature limit (AHi) |
 | 9 | FP mode P setting (PLo) | FP mode P setting (PLo) |
 | 10 | Heating mode setpoint (CO) | Heating mode setpoint (CO) |
 | 11 | Energy saving mode setpoint (ECO) | Energy saving mode setpoint (ECO) |
@@ -239,10 +239,10 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Operation mode
 
 Operation mode
-1\. Value = 0, Off (default)  
-2\. Value = 1, Heating mode  
-3\. Value = 2, Cooling mode (not implemented)  
-4\. Value = 11, Energy saving mode
+Value = 0, Off (default)  
+Value = 1, Heating mode  
+Value = 2, Cooling mode (not implemented)  
+Value = 11, Energy saving mode
 The following option values may be configured -:
 
 | Value  | Description |
@@ -260,12 +260,12 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Sensor mode
 
 Sensor mode
-1\. Value = 0, F-mode, floor sensor mode  
-2\. Value = 1, A-mode, internal room sensor mode (default)  
-3\. Value = 2, AF-mode, internal sensor and floor sensor mode  
-4\. Value = 3, A2-mode, external room sensor mode  
-5\. Value = 4, P-mode, power regulator mode  
-6\. Value = 5, FP-mode, floor sensor and power regulator mode
+Value = 0, F-mode, floor sensor mode  
+Value = 1, A-mode, internal room sensor mode (default)  
+Value = 2, AF-mode, internal sensor and floor sensor mode  
+Value = 3, A2-mode, external room sensor mode  
+Value = 4, P-mode, power regulator mode  
+Value = 5, FP-mode, floor sensor and power regulator mode
 The following option values may be configured -:
 
 | Value  | Description |
@@ -311,17 +311,8 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 Temperature control hysteresis (DIFF I)
 1\. Value = 0 - 30, 0.3C - 3.0C (default is 0.5C)  
-2\. Value = 1, Mode 1: level-controlled input  
-3\. Value = 2, Mode 2: falling-edge controlled input  
-4\. Value = 3, Mode 3: raising-edge controlled input (standard)  
 When using a water-based heating, the recommended hysteresis is a minimum of 1.0C
-The following option values may be configured, in addition to values in the range 0 to 30 -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Mode 1: level-controlled input |
-| 2 | Mode 2: falling-edge controlled input |
-| 3 | Mode 3: raising-edge controlled input (standard) |
+Values in the range 0 to 30 may be set.
 
 The manufacturer defined default value is ```5```.
 
@@ -361,9 +352,9 @@ The manufacturer defined default value is ```50```.
 This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
 
 
-### Parameter 8: Air maximum temperature limet (AHi)
+### Parameter 8: Air maximum temperature limit (AHi)
 
-Air maximum temperature limet (AHi)
+Air maximum temperature limit (AHi)
 1\. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)
 Values in the range 50 to 400 may be set.
 
@@ -529,11 +520,7 @@ Temperature report interval
 
 Time interval between consecutive temperature reports.  
 Temperature reports can also be sent as a result of polling.
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Reporting of temperature disabled |
+Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```60```.
 
@@ -563,11 +550,7 @@ Meter report interval
 
 Time interval between consecutive meter reports.  
 Meter reports can also be sent as a result of polling.
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Reporting of metering values is disabled |
+Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```60```.
 

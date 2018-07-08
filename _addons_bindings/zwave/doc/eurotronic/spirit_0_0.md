@@ -17,6 +17,10 @@ The Spirit supports routing. This allows the device to communicate using other r
 
 ## Overview
 
+Spirit Z-Wave Plus is a Z-Wave radio standard compatible energy-saving radiator thermostat.
+
+FLiRS (Frequently Listening Receiver Slave): Spirit Z-Wave uses FLiRS to provide short latency and short responding times.
+
 ### Inclusion Information
 
 Start Inclusion mode of your primary Z-Wave Controller. Press the Boost-Button. Spirit Z-Wave Plus will show the assigned NodeID.

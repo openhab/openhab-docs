@@ -31,10 +31,6 @@ To exclude, set your main controller into exclude mode. Press configuration butt
 
 You can also reset the device, but only use this if your main controller is not operable. For reset, press the config button 25 times and confirm by pressing the button once more for 4 seconds until the led blinks 3 times and goes off.
 
-### Wakeup Information
-
-Not specified
-
 ## Channels
 
 The following table summarises the channels available for the Shuttle S/L -:

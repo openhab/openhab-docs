@@ -36,10 +36,6 @@ The siren alarm can be included to the Z-wave network by pressing on the code bu
 3. Quickly, triple click the code button, LED light will flash red for 5 times.
 4. Wait for the main controller to delete the sensor.
 
-### Wakeup Information
-
-Press code button once, LED will blink one time.
-
 ## Channels
 
 The following table summarises the channels available for the NAS-AB01Z -:

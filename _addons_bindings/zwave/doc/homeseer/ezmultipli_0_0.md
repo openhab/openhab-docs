@@ -17,7 +17,25 @@ The EZMultiPli supports routing. This allows the device to communicate using oth
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/268) to improve the documentation.
+EZMultiPli™ enables fully automated lighting that turns on the lights when you enter a room and turns them off shortly after you leave. Sophisticated lighting, Audio, Video and heating/cooling are enabled with the EZMultiPli™ threesensors-in-one Z-Wave® device.
+
+EZMultiPli is primarily intended as a motion sensor that will detect motion and send a command to up to 4 associated ZWave devices as well as the system controller. The other ZWave devices can directly control lights in a room or the motion indication can be sent to a computer for complex scene control of lighting, audio, video and heating/cooling. When motion is not detected within a pre-set amount of time, EZMultiPli will send an “off” command to the Z-Wave nodes to turn the lights off.
+
+In addition to the motion sensor, EZMultiPli also senses the amount of light in the room as well as the current temperature. The color LED light within EZMultiPli is a convenient night light or can be used as an indicator light to let you know if the weather forecast is predicting rain, your garage doors are open or any other indicator supported by your home control application.
+
+EZMultiPli is wall powered and needs no wires or batteries. Simply plug EZMultiPli into the wall, join the Z-Wave network and you’re ready to go.
+
+### Inclusion Information
+
+Before attempting to include (pair) EZMultiPli to a Z-Wave network, be sure the LED is blinking an aqua color. If it is not blinking aqua, follow the exclusion instructions above.
+
+Follow the procedure of the Z-Wave primary controller to begin the inclusion process. Then press and release the push button on the side of EZMultiPli. Once EZMultiPli has been added to the Z-Wave network, the LED will stop blinking blue and instead will blink white each time it detects motion. EZMultiPli remains in this mode for 5 minutes. Once the 5 minutes has expired, EZMultiPli will enter normal operating mode and the LED will remain off. Pressing the push button will restart the 5 minute motion detector test mode. The primary controller should provide a Z-Wave NodeID which has been assigned to EZMultiPli. The NodeID is a unique identifier and is used by many home control applications to identify this particular EZMultiPli. Write down the NodeID and location for later entry into your home control application.
+
+### Exclusion Information
+
+When EZMultiPli is first plugged into the wall outlet, the LED should blink an aqua color. This indicates that it is not currently joined (or paired) to a Z-Wave network. If the LED is blinking white each time motion is detected, then it is already joined to a Z-Wave network. If the LED is blinking white you will need to exclude it from the other Z-Wave network before attempting to join a new one.
+
+Follow the procedure of the Z-Wave primary controller to begin the exclusion process. Once the primary controller is ready to receive the exclusion command, press and release the push button on the side of EZMultiPli. The primary controller should give an indication that the reset process has completed. EZMultiPlis LED will blink aqua when it is ready to be added to a Z-Wave network.
 
 ## Channels
 
@@ -154,12 +172,12 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The EZMultiPli supports 2 association groups.
 
-### Group 1: LIFELINE
+### Group 1: Lifeline
 
 This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network.
 This group supports 1 nodes.
 
-### Group 2: BASIC
+### Group 2: Basic
 
 This group is used to directly turn lights on or off when motion is detected.
 This group supports 4 nodes.

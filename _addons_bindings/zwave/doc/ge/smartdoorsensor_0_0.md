@@ -8,14 +8,29 @@ title: 32563 - ZWave
 # 32563 Smart Door Sensor
 This describes the Z-Wave device *32563*, manufactured by *Jasco Products* with the thing type UID of ```ge_smartdoorsensor_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
 ![32563 product image](https://www.cd-jackson.com/zwave_device_uploads/504/504_default.png)
 
 
 The 32563 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
-The 32563 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The 32563 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
+
+#### Description
+
+Whether you’re coming or going, your home is ready when you are with the Z-Wave Smart Door Sensor. Not only does the Smart Door Sensor efficiently eliminate household tasks as you go about your day, but remote monitoring allows you to feel secure once you’ve left home. By simply opening or closing your door, the sensor uses Z-Wave technology to wirelessly trigger scenes throughout your home. From your mobile device, you’re able to schedule lights to turn on as soon as you walk in and be notified of activity while you’re away. Simple installation uses your door’s existing hinge and pin, making setup a breeze. The sensor is discreetly designed to blend subtly into the frame of the door, adding the convenience of the Smart Door Sensor to your home without distracting from your household decor. Color-matching kits are also available, with options including white, dark brown and a paintable finish.
+
+#### Features
+
+- Works on all standard doors using your existing hinge
+- Reversible for right and left door openings
+- Adjusts to fit door trim
+- Compatible with hinge pins up to 5/16" in diameter
+- CR2 battery included (battery lasts up to 2 years)
+- Color matching kits available
 
 ### Inclusion Information
 
@@ -30,6 +45,10 @@ The 32563 does not permanently listen for messages sent from the controller - it
 You may wish to reset all of your Hinge Pin Smart Door Sensor's settings to their factory defaults. To do this, press the program button 10 times within 6 seconds. If your Door Sensor has been successfully reset, its LED light will blink for 3 seconds. This should only be used in the event your network’s primary controller is missing or otherwise inoperable.
 
 ### Wakeup Information
+
+The 32563 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+
+The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 1. Press and hold the Z-wave Button for 6 seconds. It will be wake up and send “Wake Up Notification CC “ to HUB.
 2. It will sleep after timeout for 10 seconds, or sleep right away when received the “Wake Up No More Information CC”.
@@ -125,17 +144,17 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The 32563 supports 3 association groups.
 
-### Group 1: 1
+### Group 1: Lifeline
 
-Z-Wave Plus Lifeline
+Lifeline
 This group supports 5 nodes.
 
-### Group 2: 2
+### Group 2: Control
 
 For Control
 This group supports 5 nodes.
 
-### Group 3: 3
+### Group 3: Control
 
 For Control
 This group supports 5 nodes.

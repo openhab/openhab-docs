@@ -15,11 +15,34 @@ The device is in the category of *Motion Detector*, defining Motion sensors/dete
 
 The WAPIRZ-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
-The WAPIRZ-1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour. The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+The WAPIRZ-1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/5) to improve the documentation.
+Wireless Passive Infrared (PIR) Motion Detector
+
+### Inclusion Information
+
+1. Prepare the Controller to include a unit to the network by adding it to a group (method of adding a node to the network). Refer to controller instructions.
+2. If your Controller supports Network Wide Inclusion (NWI) locate the WAPIRZ-1 near the proposed installation location. If not skip to Step 4.
+3. With your Controller in Inclusion mode, you should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking. Skip to Step 10. If the LED does not stop blinking, relocate the WAPIRZ-1 to within 100 feet (line of sight) of a Z-Wave device or your hub and repeat Step 3. If the LED continues to blink, your Controller does not support NWI and continue with Step 4.
+4. Place the WAPIRZ-1 within 3 feet of the Controller.
+5. With your controller in Inclusion mode, depress the Tamper switch for 1 second then release.
+6. You should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking.
+7. The device will appear in the list of Switches.
+
+### Exclusion Information
+
+1. Set up the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the WAPIRZ-1 from the controller.
+2. Press the Tamper switch of WAPIRZ-1 for 1 second and release to be excluded. The LED light will flash continuously when the sensor is in the Exclusion condition.
+
+### Wakeup Information
+
+The WAPIRZ-1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+
+The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+Open the motion detector case to “wake” the unit.
 
 ## Channels
 
