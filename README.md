@@ -8,7 +8,7 @@
 
 This repository contains the documentation for openHAB.
 
-The result is available at [http://docs.openhab.org/](http://docs.openhab.org/) [Deprecated] and [https://www.openhab.org/docs/](https://www.openhab.org/docs/)
+The result is available at [https://www.openhab.org/docs/](https://www.openhab.org/docs/) and [http://docs.openhab.org/](http://docs.openhab.org/) [Deprecated]
 
 ## How it works
 
@@ -37,36 +37,40 @@ The documentation is a community effort, so everyone is welcome to suggest chang
 This is done exactly the same way as for the code repositories, simply through pull requests against this repo.
 Please read the [contribution guidelines](CONTRIBUTING.md) for details.
 
-## Automatically Generated Parts
+## So what are the other branches for?
 
-Please note that a few parts of this repository MUST NOT BE MANUALLY EDITED!
-These are copied from the source code repositories and some files are generated from them. These files/folders are:
+We use them to bring together all relevant articles or to archive versioned content.
+Mostly those branches will get updated automatically through our continuous integration builds.
+You can read a bit more below about our external ressources and how we get them.
+
+### Automatically Generated Parts
+
+Those parts are __all__ binding documentation files, no matter if they are from the `openhab1-addons` repo or the `openhab2-addons` repo or any special binding repo like *habmin*, *zwave* or the *alexa skill*.
+This includes also some concept articles from the eclipse smarthome repo.
+
+We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
+Imagine you want to do an improvement of the zwave binding and have to update the readme file in a completely different place.
+That's twice the effort and also we would have to coordinate two Pull Requests.
+So we are saving time for everyone in keeping those files over there.
+
+### How the documentation build works
+
+We have set up our [build server](https://openhab.ci.cloudbees.com/view/Documentation/) to do the magic automatically.
+There are several triggers (mostly time based), which will then *gather the external contents* and move them to our *final* branch.
+You can find these generated contents in the *final* branch under:
 
 - `addons_*`
 - `concepts`
 
-The generation/update of these files can be triggered through `bash update-external-resources.sh` in the repo root.
-The process will create a temporary folder `.external-resources`, which is only used by the update script and can be ignored.
-
-## About the `_addons_*` Folders
-
-See [Jekyll Collections](https://jekyllrb.com/docs/collections/) for general details.
-The folders represent collections of the different Addons types.
-
-If you are here to help improve one of the contained READMEs, read carefully.
-These files are mere copies of files in other repositories and will be overwritten on a regular basis.
-Please find the original repository and add your contribution there.
-
-At the time of this writing, the folders are automatically created and updated by the toolchain
+You can even have a look at how this works in detail.
+The script which does the work on our build server is `bash update-external-resources.sh` in the repo root.
+The folders are updated by the following toolchain
 
 - `update-external-resources.sh` → `pom.xml` → `process_addons.groovy`
 
-Configuration of the collections happens through `_config.yml`.
-The most important setting you need to be aware of, is, that all files in collections are mapped to certain paths:
-
-- e.g. `_addons_bindings\astro\readme.md` → [docs.openhab.org/addons/bindings/astro/readme.html](http://docs.openhab.org/addons/bindings/astro/readme.html)
-
-Check the mentioned files for more details.
+This works similar for the *general* documentation contents.
+Everything that gets updated in the *master* branch will be copied over to the *final* branch automatically.
+Afterwards we will update everything to the website in fixed intervalls.
 
 ## Documentation Versioning
 
@@ -77,7 +81,3 @@ In short, the following has to be considered:
 
 - Versions like "2.1.0" are marked by git tags.
 - Based on tags branches like "2.1-patch" are created, to include later discovered changes (like fixed links).
-- The intended base folder for the version needs to be set in `_config.yml`, e.g. `baseurl: "/v2.1"`.
-- New versions have to be added to the dropdown menu shown on the resulting website, configured in `_includes/versioning.html`.
-- The version branch has to be generated with jekyll, the resulting content goes into the version folder identical to the above set baseurl. Execute e.g. `jekyll build -d path/to/checked-out/gh-pages-branch/v2.1/`
-- The generated static page files under, e.g., `v2.1/` need to be committed to `gh-pages` for GitHub Pages to pick them up and include in the generated page.
