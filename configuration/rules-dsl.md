@@ -30,13 +30,9 @@ It therefore makes sense to have different rule files for different use-cases or
 
 ### IDE Support
 
-The [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#esh-designer) offers support for rules building.
+The [openHAB VS Code Extension]({{base}}/configuration/editors.html#editors.html#openhab-vs-code-extension) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
-
-> Bugs:
-> Please note that there are a couple of [open bugs](https://github.com/eclipse/smarthome/issues?q=is%3Aopen+is%3Aissue+label%3ADesigner+label%3Abug) related to the SmartHome Designer.
-> These result in error markers in the Designer, while the rules are executed nicely by the runtime.
 
 ### The Syntax
 

@@ -454,7 +454,7 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, you must use the `everyMinute` (60 seconds) logging strategy.  Otherwise rrd4j thinks that there is no data and will not properly draw the charts.
+- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](https://www.openhab.org/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
 
