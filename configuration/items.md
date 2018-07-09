@@ -214,8 +214,8 @@ The label text for the Item in the following example is "Temperature" and the op
 Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-The label defined for an item can be overwritten by the label definition on a sitemap with the label atribute.
-If the label definition on the item contained label text and state representations these have to be considered seperatly.
+The label defined for an Item can be overwritten by the label definition on a sitemap.
+If the label definition on the Item contained label text and the state representation these have to be considered separatly.
 
 ```perl
 sitemap demo label="My home automation" {
