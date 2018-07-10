@@ -202,33 +202,18 @@ Two naming schemes are established in the community for Group names:
 {: #label}
 ### Label
 
-The label is used to describe an Item in a human-readable way.
-Graphical UIs will display the label when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Label text is used to describe an Item in a human-readable way.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
-In textual configurations the label in quotation marks, contains the label text and the optional state presentation field in square brackets (see below).
-They will be showed side by side, the text left aligned and the state representation right-aligned.
-The label text for the Item in the following example is "Temperature" and the optional state representation is set to be displayed e.g as "23.9 °C":
+In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
+The label for the Item in the following example is "Temperature and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-The label defined for an Item can be overwritten by the label definition on a sitemap.
-If the label definition on the Item contained label text and the state representation these have to be considered separatly.
-
-```perl
-sitemap demo label="My home automation" {
-    Frame label="Date" {
-        // Overrides label text only, keeps state representation defined by Item
-        Text item=Livingroom_Temperature label="Livingroom"
-        // Overrides label text and sets state representation to be empty, not displayed
-        Text item=Livingroom_Temperature label="Livingroom []"
-        // Overrides label text and state representation
-        Text item=Livingroom_Temperature label="Livingroom [%.2f °F]"
-    }
-}
-```
+Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/configuration/sitemaps.html#element-types).
 
 {: #state}
 ### State
