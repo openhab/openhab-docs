@@ -158,17 +158,18 @@ In the following example a Item which has a label and state defined is overwritt
 ```perl
 sitemap demo label="My home automation" {
     Frame label="Temperature" {
-        //# Overrides only the text, but will keep the state format from the Item definition
+        # Overrides only the text, but will keep the state format from the Item definition
         Text item=Livingroom_Temperature label="Livingroom"
-        //# Overrides the text and hides any state representation.
+        # Overrides the text and hides any state representation.
         Text item=Livingroom_Temperature label="Livingroom []"
-        //# Overrides the text and state representation
-        //# and also changes the state unit to Fahrenheit
-        //# if the value of the item supports [UoM]({{base}}/concepts/units-of-measurement.html) also the value will be transformed.
+        # Overrides the text and state representation
+        # and also changes the state unit to Fahrenheit
+        # if the value of the item supports UoM (link below) the value will be transformed.
         Text item=Livingroom_Temperature label="Livingroom [%.2f °F]"
     }
 }
 ```
+UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
 
 -   Additional parameters such as `mappings` and `valuecolor` are described below.
 
