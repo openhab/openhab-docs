@@ -30,7 +30,7 @@ It therefore makes sense to have different rule files for different use-cases or
 
 ### IDE Support
 
-The [openHAB VS Code Extension]({{base}}/configuration/editors.html#editors.html#openhab-vs-code-extension) offers support for rules building.
+The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) offers support for rules building.
 It includes syntax checks and coloring, validation with error markers, content assist (Ctrl+Space) incl. templates etc.
 This makes the creation of rules very easy!
 
