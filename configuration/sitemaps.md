@@ -152,6 +152,25 @@ This provides the flexibility to present Items in the way desired in your home a
 If no label or icon are specified in the Sitemap, then the label and/or icon you assigned to the Item will be displayed.
 Setting a value for `label` or `icon` of a Sitemap element will override the values defined for the linked Item.
 
+It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
+In the following example a Item which has a label and state defined is overwritten.
+
+```java
+sitemap demo label="My home automation" {
+    Frame label="Temperature" {
+        // Overrides only the text, but will keep the state format from the Item definition
+        Text item=Livingroom_Temperature label="Livingroom"
+        // Overrides the text and hides any state representation.
+        Text item=Livingroom_Temperature label="Livingroom []"
+        // Overrides the text and state representation
+        // and also changes the state unit to Fahrenheit
+        // if the value of the item supports UoM (link below) the value will be transformed.
+        Text item=Livingroom_Temperature label="Livingroom [%.2f °F]"
+    }
+}
+```
+UoM = [Units of Measurment]({{base}}/concepts/units-of-measurement.html)
+
 -   Additional parameters such as `mappings` and `valuecolor` are described below.
 
 ### Element Type 'Frame'
