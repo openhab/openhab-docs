@@ -236,7 +236,7 @@ This section provides information about what a user can expect regarding the beh
 -   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-*N.B.*  Many openHAB users find that it can be very useful to use [Persistence]({{base}}/addons/persistence.html) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons.html) and [System started](/docs/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
 #### Command vs. Status
@@ -297,7 +297,7 @@ In the example below, the entry `MAP(window_esp.map)` causes the output of the `
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 ```
 
-Please refer to the article on [Transformations](transform.html) for more usage details and a list of available transformation services.
+Please refer to the article on [Transformations](/docs/configuration/transformations.html) for more usage details and a list of available transformation services.
 
 {: #icons}
 ### Icons
@@ -533,7 +533,7 @@ See the [Hue Emulation]({{base}}/addons/ios/hueemulation/readme.html) or [HomeKi
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
-See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available Bindings.
+See "[currently available Bindings](/addons.html)" for a list of available Bindings.
 This capability of interacting with real-world things is enabled through the association of Bindings with Items.
 
 Once an Item is associated with a Binding, the state of one aspect of a device is reflected in openHAB (e.g., you can see if a light is on or off in one of the user interfaces).
@@ -561,7 +561,7 @@ Switch Phone_Mobile {ns="192.168.1.123:80"}
 Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
 Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
-The information required for each binding is specified in the configuration information provided for each of the available [Bindings]({{base}}/addons/bindings.html).
+The information required for each binding is specified in the configuration information provided for each of the available [Bindings](/addons.html).
 
 Examples:
 
@@ -595,7 +595,7 @@ Once accepted, the new Thing will appear under Configuration > Things.
 
 Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section for more information on how to discover or manually define Things for a given Binding.
+See the [Bindings](/addons.html) configuration section for more information on how to discover or manually define Things for a given Binding.
 
 ##### Paper UI Linking
 
