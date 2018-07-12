@@ -155,16 +155,16 @@ Setting a value for `label` or `icon` of a Sitemap element will override the val
 It has to be considered that if the label defined in a Channel or an Item contains text and state, these representations have to be overwritten separately in the Sitemap.
 In the following example a Item which has a label and state defined is overwritten.
 
-```perl
+```java
 sitemap demo label="My home automation" {
     Frame label="Temperature" {
-        # Overrides only the text, but will keep the state format from the Item definition
+        // Overrides only the text, but will keep the state format from the Item definition
         Text item=Livingroom_Temperature label="Livingroom"
-        # Overrides the text and hides any state representation.
+        // Overrides the text and hides any state representation.
         Text item=Livingroom_Temperature label="Livingroom []"
-        # Overrides the text and state representation
-        # and also changes the state unit to Fahrenheit
-        # if the value of the item supports UoM (link below) the value will be transformed.
+        // Overrides the text and state representation
+        // and also changes the state unit to Fahrenheit
+        // if the value of the item supports UoM (link below) the value will be transformed.
         Text item=Livingroom_Temperature label="Livingroom [%.2f °F]"
     }
 }
