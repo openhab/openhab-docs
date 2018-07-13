@@ -103,7 +103,7 @@ Available Item types are:
 | Type Name      | Description | Command Types |
 |----------------|-------------|---------------|
 | Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact        | Status of contacts, e.g. door/window contacts | OpenClose |
+| Contact        | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed |
 | DateTime       | Stores date and time | - |
 | Dimmer         | Percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
 | Group          | Item to nest other items / collect them in groups | - |
@@ -113,7 +113,7 @@ Available Item types are:
 | Player         | Allows control of players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
 | Rollershutter  | Roller shutter Item, typically used for blinds | UpDown, StopMove, Percent |
 | String         | Stores texts | String |
-| Switch         | Switch Item, typically used for lights (on/off) | OnOff |
+| Switch         | Switch Item, used for anything that needs to be switched ON and OFF | OnOff |
 
 More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
@@ -208,11 +208,13 @@ Graphical UIs will display the label text when the Item is included, e.g. in [Ba
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
-The label for the Item in the following example is "Temperature":
+The label for the Item in the following example is "Temperature and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
+
+Channel labels can be overwritten by Item definitions and Item labels can be overwritten in [Sitemaps]({{base}}/configuration/sitemaps.html#element-types).
 
 {: #state}
 ### State

@@ -29,12 +29,12 @@ Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-p
 
 **Meeting the Requirements:**
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-You may want to install Zulu, a fully certified Java build [as a package](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
+You may want to install Zulu, a fully certified Java build [as a package](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
 
 Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](http://www.azul.com/downloads/zulu-embedded/).
 If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
 
-When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
+When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
 **Note:** Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9. 
 
@@ -414,7 +414,7 @@ As openHAB 2 is still in an evolving state, the snapshot may be the **preferred 
 
 -   **Official Release**
 
-    Download and extract the latest offical stable version of openHAB 2 from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) to your host:
+    Download and extract the latest offical stable version of openHAB 2 from [our downloadpage](https://www.openhab.org/download/) to your host:
 
     ```shell
     cd /tmp
@@ -425,11 +425,11 @@ As openHAB 2 is still in an evolving state, the snapshot may be the **preferred 
 
 -   **Beta/RC Release**
 
-    If available, beta or release candidate builds of openHAB 2 can also be downloaded from [bintray.com/openhab](https://bintray.com/openhab/mvn/openhab-distro) and extracted to your host as shown above.
+    If available, beta or release candidate builds of openHAB 2 can also be downloaded from [our downloadpage](https://www.openhab.org/download/) and extracted to your host as shown above.
 
 -   **Snapshot Release**
 
-    Download and extract the latest snapshot version of openHAB 2 from [openhab.ci.cloudbees.com](https://openhab.ci.cloudbees.com/job/openHAB-Distribution) to your host. The process is analogue to above.
+    Download and extract the latest snapshot version of openHAB 2 from [our downloadpage](https://www.openhab.org/download/) to your host. The process is analogue to above.
 
 The extracted openHAB files should belong to the earlier created `openhab` user.
 Execute:
@@ -446,8 +446,8 @@ Everything is ready for a first test run.
 sudo su -s /bin/bash -c '/opt/openhab2/start.sh' openhab
 ```
 
-You will see the openHAB Karaf Console in your terminal and can directly interact with it.
-Please be aware, that openHAB 2 will need a few minutes so finish the first start, even after the Karaf console is visible.
+You will see the openHAB Console in your terminal and can directly interact with it.
+Please be aware, that openHAB 2 will need a few minutes so finish the first start, even after the openHAB console is visible.
 Let openHAB 2 settle for **around 15 minutes**.
 If the portal is not reachable by then, restart once.
 
@@ -569,15 +569,15 @@ sudo rm /lib/systemd/system/openhab2.service
 
 ### File Locations
 
-|                                  | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
-|:--------------------------------:|:---------------------------- |:----------------------------------|
-| openHAB application              | `/usr/share/openhab2`        | `/opt/openhab2`                   |
-| Additional add-on files          | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`            |
-| Site configuration               | `/etc/openhab2`              | `/opt/openhab2/conf`              |
-| Log files                        | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`     |
-| Userdata like rrd4j databases    | `/var/lib/openhab2`          | `/opt/openhab2/userdata`          |
-| Backups folder                   | `/var/lib/openhab2/backups`  | `/opt/openhab2/backups`           |
-| Service configuration            | `/etc/default/openhab2`      | (not preconfigured)               |
+|                               | Repository Installation      | Manual Installation (according to [guide](#manual-installation)) |
+|:-----------------------------:|------------------------------|------------------------------------------------------------------|
+|      openHAB application      | `/usr/share/openhab2`        | `/opt/openhab2`                                                  |
+|    Additional add-on files    | `/usr/share/openhab2/addons` | `/opt/openhab2/addons`                                           |
+|       Site configuration      | `/etc/openhab2`              | `/opt/openhab2/conf`                                             |
+|           Log files           | `/var/log/openhab2`          | `/opt/openhab2/userdata/logs`                                    |
+| Userdata like rrd4j databases | `/var/lib/openhab2`          | `/opt/openhab2/userdata`                                         |
+|         Backups folder        | `/var/lib/openhab2/backups`  | `/opt/openhab2/backups`                                          |
+|     Service configuration     | `/etc/default/openhab2`      | (not preconfigured)                                              |
 
 ## Backup and Restore
 
@@ -624,7 +624,7 @@ Execute the following command in one session or have both files separated in ses
 
 You could even set up an SSH configuration (in Putty or similar) to automatically connect and execute the commands every time you start working on your setup.
 
-With openHAB 2 you can also [use the Karaf console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
+With openHAB 2 you can also [use the openHAB console]({{base}}/administration/logging.html#karaf-console) to have a colored glance at the logging information.
 
 ## Recommended Additional Setup Steps
 
@@ -676,7 +676,7 @@ openHAB depends on configuration files and folders with custom content (details 
 Because your openHAB installation most probably is stored on a remote device, being able to easily access and modify these files from your local PC or Mac is important.
 Therefore setting up a [Samba](https://en.wikipedia.org/wiki/Samba_%28software%29) network share is **highly recommended**.
 
-The [Eclipse SmartHome Designer]({{base}}/configuration/editors.html#eclipse-smarthome-designer) software does also depend on a mounted share to access the openHAB configuration files.
+The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-code-extension) software does also depend on a mounted share to access the openHAB configuration files.
 
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba.
