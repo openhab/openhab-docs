@@ -13,9 +13,9 @@ The data may be retrieved at a later time, for example to restore your system af
 openHAB persists Item states in a database, and most popular databases are supported.
 You may have more than one persistence add-on loaded, and each of these may be configured independently.
 
-A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
+A complete list of supported persistence add-ons may be found in the [persistence]({/addons/#persistence) section of the on-line openHAB documentation.
 
-Please refer to the [available persistence service add-on]({{base}}/addons/persistence.html) documentation for your selected persistence add-on for configuration instructions.
+Please refer to the [available persistence service add-on](/addons/#persistence) documentation for your selected persistence add-on for configuration instructions.
 
 ## Default Persistence Service
 

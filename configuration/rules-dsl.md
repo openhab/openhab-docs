@@ -125,7 +125,7 @@ Item <item> received update [<state>]
 Item <item> changed [from <state>] [to <state>]
 ```
 
-A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](../addons/actions.html).
+A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
 
 {: #time-based-triggers}
 ### Time-based Triggers
@@ -190,8 +190,8 @@ Thing <thingUID> changed [from <status>] [to <status>]
 ```
 
 The status used in the trigger and the script is a string (no quotes).
-You can find all the possible values for status from [Thing Status]({{base}}/concepts/things.html).
-And refer to [Thing Status Action]({{base}}/addons/actions.html) to find how to get thing status in the script.
+You can find all the possible values for status from [Thing Status](/docs/concepts/things.html).
+And refer to [Thing Status Action](/addons/#action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from PaperUI or from Karaf remote console.
@@ -343,7 +343,7 @@ For example, `Group:Switch` will return an OnOffType for its state.
 Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
 There are two ways to discover these methods:
 
-- Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
+- Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
 For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
 Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
@@ -696,7 +696,7 @@ end
 {: #transformations}
 ### Transformations
 
-openHAB [Transformation services]({{base}}/addons/transformations.html) can be used in rules to transform/translate/convert data.
+openHAB [Transformation services](/addons/#transform) can be used in rules to transform/translate/convert data.
 
 The general syntax is as follows:
 
@@ -737,7 +737,7 @@ finally {
 }
 ```
 
-For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
+For all available Transformation services please refer to the list of [Transformation Add-ons](/addons/#transform).
 
 
 {: #logging}
