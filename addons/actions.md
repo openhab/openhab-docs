@@ -35,19 +35,10 @@ As a general rule, is better to call `MyItem.sendCommand(command)` and `MyItem.p
 - `Map<Item, State> storeStates(Item item1, Item item2, ... Item itemn)`: Returns a `Map<Item, State>` with the current state of each Item. All members of Groups are put into the Map but not the Group's state itself.
 - `restoreStates(Map<Item, State> statesMap)`: Restores the items' states from the map. If the saved state can be interpreted as a command (ON/OFF/etc.), a command is sent to the Item. Otherwise an update is sent to the Item.
 
-### Audio Actions
+### Audio & Voice Actions
 
-- `setMasterVolume(float volume)`: Sets the volume of the host machine (volume in range 0-1)
-- `increaseMasterVolume(float percent)`: Increases the volume by the given percent
-- `decreaseMasterVolume(float percent)`: Decreases the volume by the given percent
-- `float getMasterVolume()`: Returns the current volume as a float between 0 and 1
-- `playSound(String filename)`: Plays the given sound file. The file must be an mp3 or wav and located in `${openhab.home}/sounds`
-- `playStream(String url)`: Plays the audio stream at the given url
-- `say(String text)`: Says the given text through Text-to-Speech
-- `say(String text, String voice)`: Says the given text through the given voice (depends on the TTS engine and voices installed)
-- ` say(String text, String voice, String device)`: Says the given text through the given voice to the given output device (Mac OSX only).
-
-To get a list of available voices use `say -v ?` and to get a list of devices uses `say -a ?`.
+The framework supports several multimedia actions.
+They can be found in the article about [openHAB multimedia]({{base}}/configuration/multimedia.html).
 
 ### Logging Actions
 
