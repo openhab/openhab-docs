@@ -191,7 +191,7 @@ Thing <thingUID> changed [from <status>] [to <status>]
 
 The status used in the trigger and the script is a string (no quotes).
 You can find all the possible values for status from [Thing Status](/docs/concepts/things.html).
-And refer to [Thing Status Action](/addons.html) to find how to get thing status in the script.
+And refer to [Thing Status Action](/addons/#action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from PaperUI or from Karaf remote console.
@@ -696,7 +696,7 @@ end
 {: #transformations}
 ### Transformations
 
-openHAB [Transformation services](/addons.html) can be used in rules to transform/translate/convert data.
+openHAB [Transformation services](/addons/#transform) can be used in rules to transform/translate/convert data.
 
 The general syntax is as follows:
 
@@ -737,7 +737,7 @@ finally {
 }
 ```
 
-For all available Transformation services please refer to the list of [Transformation Add-ons](/addons.html).
+For all available Transformation services please refer to the list of [Transformation Add-ons](/addons/#transform).
 
 
 {: #logging}
