@@ -642,7 +642,7 @@ The different syntax for the generic and the objective-specific differs and is g
 | `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
 
 The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
-Using the method `MyTimes.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
+Using the method `MyItems.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
 For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
 Each of these separate methods is individually written to handle all of these different types of Objects. 
 MyItem will automatically apply the method that corresponds to the argument type.
