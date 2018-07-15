@@ -74,7 +74,7 @@ One can configure whether specific log entries are logged out and where they get
 For example:
 
 ```javascript
-var Timer myTimer = createTimer(now.plusMinutes(5), [|
+var Timer myTimer = createTimer(now.plusMinutes(5), [ |
     logInfo("rules", "Timer activated")
 ])
 ```
