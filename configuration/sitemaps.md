@@ -524,13 +524,13 @@ This limits the possible input values, which is yet another often occurring use 
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/items.md#icons-dynamic), depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon](/docs/configuration/items.html#icons-dynamic), depending on certain Item states.
 A few practical use cases are:
 
 - Show a battery warning if the voltage level of a device is below 30%
 - Hide further control elements for the TV if it is turned off
 - Highlight a value with a warning color if it is outside accepted limits
-- Present a special icon, depending on the state of an item (a [dynamic icon]({{base}}/items.md#icons-dynamic))
+- Present a special icon, depending on the state of an item (a [dynamic icon](/docs/configuration/items.html#icons-dynamic))
 
 ### Visibility
 
@@ -544,10 +544,13 @@ visibility=[item_name operator value, item_name operator value, ... ]
 ```
 
 Valid comparison operators are:
+
 - equal to `==`, unequal to `!=`
 - less than or equal to `<=`, greater than or equal to`>=`
 - less than `<`, greater than `>`
+
 Expressions are evaluated from left to right.
+The Item will be visible if any one of the comparisons is evaluated as `true`, otherwise it will be hidden.
 
 **Examples:**
 
@@ -557,14 +560,9 @@ visibility=[TV_Power==ON]
 visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
-If any one of the comparisons is evaluated as `true`, the Item will be visible, otherwise it will be hidden.
-It is important to note that visibility may be determined based on only one condition at a time.
-If any one of the comparisons is evaluated as `true`, then the Item will be visible.
-Otherwise it will be hidden.
-
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
 Combining multiple conditions, for example Morning *AND* above 19 °C is not supported.
-To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional Item that is set by a Rule.
+To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
 Rules have a rich set of features that can support more involved scenarios.
 
 ### Label and Value Colors
