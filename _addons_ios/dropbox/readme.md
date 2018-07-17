@@ -3,7 +3,7 @@ id: dropbox
 label: Dropbox Synchronization
 title: Dropbox Synchronization - System Integrations
 type: io
-description: "This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account."
+description: "This service no longer exists. It was written to work with the original Dropbox API, which is now retired."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/io/org.openhab.io.dropbox/README.md
 since: 1x
 logo: images/addons/dropbox.png
@@ -15,6 +15,11 @@ install: auto
 {% include base.html %}
 
 # Dropbox Synchronization Service
+
+This service no longer exists. It was written to work with the original Dropbox API, which is now retired.
+An update for OH2/ESH is in progress but not completed.
+
+<hr>
 
 This service will synchronize files on the openHAB server, such as configuration and log files, to and/or from a Dropbox account.
 
