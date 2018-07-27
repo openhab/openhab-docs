@@ -6,7 +6,7 @@ type: binding
 description: "The openHAB Cardio2e binding allows connecting to Secant Cardio IIé home automation system installations. Dimming or switching lights on and off, switching devices on and off, activating roller shutters, executing scenarios, managing HVACs or activating system security are only some examples."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.cardio2e/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

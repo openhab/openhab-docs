@@ -18,7 +18,7 @@ install: manual
 
 This binding allows openHAB to monitor and control pulseaudio servers.
 
-There is also a binding specifically for openHAB 2 [here](http://docs.openhab.org/addons/bindings/pulseaudio/readme.html).
+There is also a binding specifically for openHAB 2 [here](https://www.openhab.org/addons/bindings/pulseaudio/).
 
 ## Prerequisites
 
