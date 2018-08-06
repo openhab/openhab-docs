@@ -87,7 +87,7 @@ After saving the file, the add-on will be installed.
 
 > Attention:
 > This option is adressed to advanced users.
-> Installing add-os with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
+> Installing add-on's with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
 > Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
 
 For this installation option you need a bundles `.jar` file.
