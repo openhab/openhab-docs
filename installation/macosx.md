@@ -28,13 +28,13 @@ You have the choice to use the current stable version or the latest snapshot bui
 -   **Stable**
 
     The stable builds have undergone testing, it is the recommended version to download.
-    Download the latest `openhab-2.x.x.zip` [here](https://bintray.com/openhab/mvn/openhab-distro/_latestVersion).
+    Download the latest `openhab-2.x.x.zip` [here](https://www.openhab.org/download/).
 
 -   **Snapshot (Unstable)**
 
     Snapshots are built daily, and contain the latest changes to openHAB's source code.
     These changes haven't undergone the same amount of testing as the stable releases, so only use them if you **need** a new feature.
-    Download the latest `openhab-2.x.x-SNAPSHOT.zip` [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
+    Download the latest `openhab-2.x.x-SNAPSHOT.zip` [here](https://www.openhab.org/download/).
 
 The following instructions are performed in a terminal window. At first launch of the terminal, you will be inside your home directory.
 
