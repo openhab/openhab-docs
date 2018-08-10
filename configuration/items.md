@@ -32,7 +32,7 @@ For example, an Item bound to a sensor receives updated sensor readings and an I
 
 There are two methods for defining Items:
 
-1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+1.  Through [Paper UI]({{base}}/configuration/paperui.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
     (Note that 1.x and legacy Bindings do not offer this option)
 
@@ -204,7 +204,7 @@ Two naming schemes are established in the community for Group names:
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/configuration/ui/basic/) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
@@ -310,7 +310,7 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
-openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
+openHAB provides a set of [classic icons]({{base}}/configuration/iconsets/classic/) by default.
 Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
