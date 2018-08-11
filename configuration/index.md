@@ -57,15 +57,15 @@ The following table shows what an interface can be used for. For a recommendatio
       <td>✔️</td>
     </tr>
     <tr>
-      <td>Define Things</td>
+      <td>Manage Things</td>
       <td>✔️</td>
-      <td>✔️</td>
+      <td>✔️(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
     </tr>
     <tr>
-      <td>Define Items</td>
-      <td>✔️</td>
+      <td>Manage Items</td>
+      <td>✔️(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
@@ -100,16 +100,16 @@ The following table shows what an interface can be used for. For a recommendatio
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️</td>
-      <td>✔️<br />(Experimental)</td>
-      <td>✔️<br />(Graphical)</td>
+      <td>✔️<br />(recommended)</td>
+      <td>✔️<br />(experimental)</td>
+      <td>✔️<br />(graphical)</td>
       <td>❌</td>
     </tr>
     <tr>
-      <td>Manage Z-Wave Devices</td>
-      <td>✔️<br />(Not&nbsp;Recommended)</td>
-      <td>✔️<br />(Limited)</td>
-      <td>✔️</td>
+      <td>Manage Z-Wave Devices<br/>(see&nbsp;recommendation)</td>
+      <td>✔️<br />(not recommended)</td>
+      <td>✔️<br />(limited)</td>
+      <td>✔️<br />(recommended)</td>
       <td>❌</td>
     </tr>
     <tr>
@@ -129,7 +129,6 @@ The following table shows what an interface can be used for. For a recommendatio
   </tbody>
 </table>
 
-{: #text-vs-ui}
 ### Textual vs. Graphical Configuration
 
 In openHAB 1.X, smart home configuration was done via configuration files only.
@@ -143,7 +142,6 @@ Both methods can be used **side-by-side or even mixed**, e.g. a Thing is discove
 configuration done in the database will not be written back to files, so if you restart openHAB, changes made in PaperUI won't survive 
 and the files' configuration data will be used again.
 
-{: #recommendation}
 ## A recommendation
 
 All interface options are supposed to work, it's just that some of the more advanced settings might work better in one or the other
