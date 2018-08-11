@@ -59,13 +59,13 @@ The following table shows what an interface can be used for. For a recommendatio
     <tr>
       <td>Manage Things</td>
       <td>✔️</td>
-      <td>✔️(recommended)</td>
+      <td>✔️<br />(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
     </tr>
     <tr>
       <td>Manage Items</td>
-      <td>✔️(recommended)</td>
+      <td>✔️<br />(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>✔️</td>
