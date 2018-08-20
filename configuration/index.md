@@ -16,7 +16,7 @@ You as the end-user have the **full control** over every aspect of your smart ho
 Every device connected to openHAB is functionally and logically different.
 In order to represent all of these, openHAB defines the following few base components:
 
-- [Bindings]({{base}}/addons/bindings.html) - The numerous Bindings to communicate with your devices
+- [Add-ons](/addons/) - The numerous Add-ons to communicate with your devices
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
@@ -32,9 +32,10 @@ For more details on the base concept behind openHAB, please visit the [Concepts 
 ## Versatility
 
 openHAB provides different user interfaces to modify settings, manage your things and items, build rules and access the sitemap results.
-HABmin provides a set of features to now overlap with Paper UI (which came later). Every interface still has its own strong points.
-The following table shows what the user interfaces can be used for. For a recommendation to new users which one(s) to use, see the section
-below.
+HABmin provides a set of features to now overlap with Paper UI (which came later).
+Every interface still has its own strong points.
+The following table shows what the user interfaces can be used for.
+For a recommendation to new users which one(s) to use, see the section below.
 
 ### Comparison
 
@@ -133,7 +134,8 @@ below.
 ### Textual vs. Graphical Configuration
 
 In openHAB 1.x, smart home configuration was done via configuration files only.
-openHAB 2 added the administrative web interface "Paper UI". It allows for configuration of the base system and setup of openHAB 2 add-ons.
+openHAB 2 added the administrative web interface "Paper UI".
+It allows for configuration of the base system and setup of openHAB 2 add-ons.
 Please be aware that not every addon/binding of openHAB version 1.x has been updated to version 2 and thus to work with Paper UI.
 You can still run these but you need to use file configuration for them.
 
@@ -144,23 +146,21 @@ Configuration done in files will be synced to the database (so they are accessib
 
 ## Recommendation for New Users
 
-All interface options are supposed to work, still some of the more advanced settings might work better in one or the other
-setup. You have the full freedom of choice. On the other hand, this can be very confusing at times, particularly for new
-users. To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
+All interface options are supposed to work, still some of the more advanced settings might work better in one or the other setup.
+You have the full freedom of choice. On the other hand, this can be very confusing at times, particularly for new users.
+To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
-* use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to
-  assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
+* use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
 * use Paper UI to manage configuration of each and every openHAB 2 add-on and binding
 * use file configuration to manage configuration of openHAB 1 add-ons and bindings
 * use Paper UI to manage ZWave things, but use configuration files to manage ZWave items.<br/>
-  There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done
-  using a text editor (e.g. search-and-replace names and parameters).
+  There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done using a text editor (e.g. search-and-replace names and parameters).
   _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration is not changing much over time.
-  On the other hand, you will keep changing _items_ rather often. If you are new to openHAB, you will e.g. keep changing all of your item names as you keep learning what is a naming scheme you like best to work with in your rules.
+  On the other hand, you will keep changing _items_ rather often.
+  If you are new to openHAB, you will e.g. keep changing all of your item names as you keep learning what is a naming scheme you like best to work with in your rules.
   And once you are a pro, you will want to keep using files anyway.  
-  You do can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will 
-  override any UI-made changes on next openHAB startup.
+  You do can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will override any UI-made changes on next openHAB startup.
 * use the editor of your choice to edit [sitemaps]({{base}}/configuration/sitemaps.html). Start with the demo sitemap as a template.
 * use VS code extensions to [edit rules]({{base}}/configuration/editors.html)
-  You can also use ESH designer or any text editor, but be aware that any 'save' results in openHAB reloading the rules file.
+  You can also use any text editor, but be aware that any 'save' results in openHAB reloading the rules file.
   This can take more than a minute on a slow box such as as Raspberry Pi, so better do not edit rules files in place.
