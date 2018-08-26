@@ -1,0 +1,112 @@
+{
+  "name": "openhab-docs",
+  "version": "0.0.0",
+  "description": "(this package file is currently only used for remark-lint)",
+  "// 01": "",
+  "// 02": "A few usage notes:                                               ",
+  "// 03": "remark-lint is a linter for markdown files. With this file in    ",
+  "// 04": "place you can check all *.md files against the Style Guide of    ",
+  "// 05": "this project.                                                    ",
+  "// 06": "                                                                 ",
+  "// 07": "First install Node.js. Afterwards run 'npm install' inside this  ",
+  "// 08": "folder to install all dependencies as defined in this file.      ",
+  "// 09": "                                                                 ",
+  "// 10": "The style check can be executed in the following ways:           ",
+  "// 11": "  1. From the console: 'npm run-script lint-md'                  ",
+  "// 12": "  2. Inside the Atom editor with the linter-markdown package:    ",
+  "// 13": "     https://atom.io/packages/linter-markdown                    ",
+  "// 14": "",
+  "main": "index.html",
+  "license": "EPL-1.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openhab/openhab-docs.git"
+  },
+  "bugs": {
+    "url": "https://github.com/openhab/openhab-docs/issues"
+  },
+  "homepage": "https://github.com/openhab/openhab-docs#readme",
+  "scripts": {
+    "lint-md": "remark .",
+    "lint-test": "remark styleguide.md"
+  },
+  "dependencies": {
+    "remark-cli": "^3.0.1",
+    "remark-lint-blockquote-indentation": "^1.0.0",
+    "remark-lint-code-block-style": "^1.0.0",
+    "remark-lint-fenced-code-flag": "^1.0.0",
+    "remark-lint-list-item-indent": "^1.0.0",
+    "remark-lint-maximum-line-length": "^1.0.0",
+    "remark-lint-no-blockquote-without-caret": "^1.0.0",
+    "remark-lint-no-missing-blank-lines": "^1.0.0",
+    "remark-lint-no-tabs": "^1.0.0",
+    "remark-lint-ordered-list-marker-value": "^1.0.0",
+    "remark-lint-table-pipe-alignment": "^1.0.0",
+    "remark-lint-unordered-list-marker-style": "^1.0.0",
+    "remark-preset-lint-consistent": "^2.0.0",
+    "remark-preset-lint-markdown-style-guide": "^1.0.0",
+    "remark-preset-lint-recommended": "^2.0.0"
+  },
+  "remarkConfig": {
+    "plugins": [
+      [
+        "remark-preset-lint-consistent",
+        true
+      ],
+      [
+        "remark-preset-lint-recommended",
+        true
+      ],
+      [
+        "remark-preset-lint-markdown-style-guide",
+        true
+      ],
+      [
+        "remark-lint-list-item-indent",
+        "mixed"
+      ],
+      [
+        "remark-lint-blockquote-indentation",
+        2
+      ],
+      [
+        "remark-lint-maximum-line-length",
+        240
+      ],
+      [
+        "remark-lint-no-blockquote-without-caret",
+        true
+      ],
+      [
+        "remark-lint-no-missing-blank-lines",
+        {
+          "exceptTightLists": true
+        }
+      ],
+      [
+        "remark-lint-no-tabs",
+        true
+      ],
+      [
+        "remark-lint-code-block-style",
+        "fenced"
+      ],
+      [
+        "remark-lint-fenced-code-flag",
+        true
+      ],
+      [
+        "remark-lint-ordered-list-marker-value",
+        "ordered"
+      ],
+      [
+        "remark-lint-table-pipe-alignment",
+        false
+      ],
+      [
+        "remark-lint-unordered-list-marker-style",
+        "-"
+      ]
+    ]
+  }
+}

@@ -1,0 +1,173 @@
+{% include base.html %}
+{% assign docu = base %}
+
+<ul class="nav">
+  <li><a href="{{docu}}/introduction.html">Introduction</a></li>
+  <li><a href="{{docu}}/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="{{docu}}/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/concepts/things.html">Things</a></li>
+      <li><a href="{{docu}}/concepts/items.html">Items</a></li>
+      <li><a href="{{docu}}/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="{{docu}}/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="{{docu}}/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/installation/linux.html">Linux</a></li>
+      <li><a href="{{docu}}/installation/windows.html">Windows</a></li>
+      <li><a href="{{docu}}/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="{{docu}}/installation/openhabian.html">openHABian</a></li>
+      <li><a href="{{docu}}/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="{{docu}}/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="{{docu}}/installation/pine.html">Pine A64</a></li>
+      <li><a href="{{docu}}/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="{{docu}}/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="{{docu}}/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="{{docu}}/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/configuration/things.html">Things</a></li>
+      <li><a href="{{docu}}/configuration/items.html">Items</a></li>
+      <li><a href="{{docu}}/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="{{docu}}/configuration/transform.html">Transformations</a></li>
+      <li><a href="{{docu}}/configuration/persistence.html">Persistence</a></li>
+      <li><a href="{{docu}}/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="{{docu}}/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="{{docu}}/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="{{docu}}/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="{{docu}}/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="{{docu}}/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="{{docu}}/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="{{docu}}/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="{{docu}}/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="{{docu}}/configuration/habmin.html">HABmin</a></li>
+      <li><a href="{{docu}}/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="{{docu}}/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="{{docu}}/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="{{docu}}/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="{{docu}}/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="{{docu}}/addons/bindings.html">Overview</a></li>
+          <hr />
+          {% for binding in site.addons_bindings %}
+            {% if binding.install == "auto" %}
+              <li><a href="{{docu}}{{ binding.url }}">{{ binding.label }}</a></li>
+            {% elsif binding.id == page.id and page.install == "manual" or page.install == "legacy" %}
+              <li><a href="{{docu}}{{ binding.url }}">{{ binding.label }} <small>(legacy/manual)</small></a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="{{docu}}/addons/uis.html">Overview</a></li>
+          <hr />
+          {% for ui in site.addons_uis %}
+          <li><a href="{{docu}}{{ ui.url }}">{{ ui.label }}</a></li>
+          {% endfor %}
+          <hr />
+          <li><a href="{{docu}}/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="{{docu}}/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="{{docu}}/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="{{docu}}/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="{{docu}}/addons/persistence.html">Overview</a></li>
+          <hr />
+          {% for persistence in site.addons_persistences %}
+            {% if persistence.install == "auto" or persistence.id == page.id and page.install == "manual" %}
+              <li><a href="{{docu}}{{ persistence.url }}">{{ persistence.label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="{{docu}}/addons/actions.html">Overview</a></li>
+          <hr />
+          {% for action in site.addons_actions %}
+            {% if action.install == "auto" or  action.id == page.id and page.install == "manual" %}
+              <li><a href="{{docu}}{{ action.url }}">{{ action.label }}</a></li>
+            {% endif %}
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="{{docu}}/addons/transformations.html">Overview</a></li>
+          <hr />
+          {% for transformation in site.addons_transformations %}
+          <li><a href="{{docu}}{{ transformation.url }}">{{ transformation.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <li><a href="{{docu}}/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="{{docu}}/addons/voices.html">Overview</a></li>
+          <hr />
+          {% for voice in site.addons_voices %}
+          <li><a href="{{docu}}{{ voice.url }}">{{ voice.label }}</a></li>
+          {% endfor %}
+        </ul>
+      </li>
+      <hr />
+      <li><a href="{{docu}}/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="{{docu}}/addons/io.html">Overview</a></li>
+          <hr />
+          {% for io in site.addons_ios %}
+          <li><a href="{{docu}}{{ io.url }}">{{ io.label }}</a></li>
+          {% endfor %}
+          <hr />
+          <li><a href="{{docu}}/configuration/restdocs.html">REST API</a></li>
+          <li><a href="{{docu}}/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="{{docu}}/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="{{docu}}/administration/console.html">Console</a></li>
+      <li><a href="{{docu}}/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="{{docu}}/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="{{docu}}/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="{{docu}}/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="{{docu}}/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="{{docu}}/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>

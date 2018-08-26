@@ -1,0 +1,2582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>digitalSTROM - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/digitalstrom/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/digitalstrom/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/digitalstrom/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="digitalstrom-binding">digitalSTROM Binding</h1>
+
+<p>This binding integrates the <a href="http://www.digitalstrom.de/">digitalSTROM-System</a>.
+The integration happens through the digitalSTROM-Server, which acts as a gateway to connect the digitalSTROM-Devices.
+The digitalSTROM-Server communicates through the digitalSTROM-Meters with the digitalSTROM-Devices, which are directly connected to the power-line.</p>
+
+<p><strong>Note:</strong> All was tested with digitalSTROM-Server firmware version 1.9.3 to 1.10.3.</p>
+
+<p><img src="doc/DS-Clamps.jpg" alt="various_digitalSTROM_clamps" /></p>
+
+<h2 id="supported-things">Supported Things</h2>
+
+<h3 id="digitalstrom-server">digitalSTROM-Server</h3>
+
+<p>The digitalSTROM-Server is required for accessing any other digitalSTROM-Devices. It acts like a <em>“bridge”</em>.</p>
+
+<h3 id="digitalstrom-devices">digitalSTROM-Devices</h3>
+
+<p>At this point almost all available <strong>GE</strong>, <strong>SW</strong>, <strong>GR</strong> and <strong>BL</strong> digitalSTROM-Devices with a set output-mode, unequal <em>disabled</em>, are supported by this binding. Furthermore sensor devices like the <strong>dS-iSens200</strong> and <strong>SW-devices</strong> with binary-inputs are supported.
+Last but not least the <strong>circuit</strong> (dS-Meter) is supported, too. They will provide the power consumption and electric meter as channels.</p>
+
+<p>For that there are identically named thing types. Only the <em>GR</em> type has a channel (shade), which cannot be changed. The other types add their channels dynamically affected by the set color-group and output-mode. They also automatically change or add the channels, if the color-group or output-mode has changed through the dSS-web-configuration or the configured sensor priorities of the thing has changed.</p>
+
+<ul>
+  <li>The following table shows all tested digitalSTROM-Devices with their output-modes.</li>
+</ul>
+
+<table>
+  <thead>
+    <tr>
+      <th>HW-Type</th>
+      <th>Output-Mode</th>
+      <th>Tested color group</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>GE-KL200</td>
+      <td>switched</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>GE-KM200</td>
+      <td>switched, dimmed</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>GE-TKM210</td>
+      <td>switched, dimmed</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>GE-SDM200</td>
+      <td>switched, dimmed</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>GE-UMV200</td>
+      <td>1-10V dimmed</td>
+      <td>yellow</td>
+    </tr>
+    <tr>
+      <td>GR-KL200</td>
+      <td>standard output-mode</td>
+      <td>grey</td>
+    </tr>
+    <tr>
+      <td>GR-KL210</td>
+      <td>standard output-mode</td>
+      <td>grey</td>
+    </tr>
+    <tr>
+      <td>GR-KL220</td>
+      <td>standard output-mode</td>
+      <td>grey</td>
+    </tr>
+    <tr>
+      <td>SW-KL200</td>
+      <td>switch, powersave, wipe</td>
+      <td>black, yellow</td>
+    </tr>
+    <tr>
+      <td>SW-UMR200</td>
+      <td>single switched, combined switch, combined 2 stage switch, combined 3 stage switch</td>
+      <td>yellow , black</td>
+    </tr>
+    <tr>
+      <td>SW-ZWS200</td>
+      <td>switch, powersave, wipe</td>
+      <td>black, yellow</td>
+    </tr>
+    <tr>
+      <td>BL-KM200</td>
+      <td>switch, pwm</td>
+      <td>blue</td>
+    </tr>
+  </tbody>
+</table>
+
+<ul>
+  <li>Binary-inputs were tested with SW-UMR200.</li>
+  <li>Sensor channels were tested with dS-iSens200 and power sensor with all other supported devices, which are listed in the table above.</li>
+</ul>
+
+<h3 id="digitalstrom-scenes">digitalSTROM-Scenes</h3>
+
+<p>Furthermore the digitalSTROM-Scene concept is part of the digitalSTROM-Binding.
+These scenes are implemented as virtual things.
+The different scene thing types are listed in the following table.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thing-Type-ID</th>
+      <th>Label</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>appScene</td>
+      <td>Apartment-Scene</td>
+      <td>Represents a digitalSTROM Apartment-Scene.</td>
+    </tr>
+    <tr>
+      <td>zoneScene</td>
+      <td>Zone-Scene</td>
+      <td>Represents a digitalSTROM Zone-Scene.</td>
+    </tr>
+    <tr>
+      <td>groupScene</td>
+      <td>Group-Scene</td>
+      <td>Represents a digitalSTROM Group-Scene.</td>
+    </tr>
+    <tr>
+      <td>namedScene</td>
+      <td>Named-Scene</td>
+      <td>Represents a digitalSTROM Scene, which has a user-defined name.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="digitalstrom-zone-temperature-control">digitalSTROM-Zone-Temperature-Control</h3>
+
+<p>Last but not least, the digitalSTROM-Zone-Temperature-Control is also supported, if a zone-temerature-control is configured, as thing-type <strong>zone_temperature_control</strong>.
+The difference between the digitalSTROM-heating-control-app is, that there are no operation-modes, like <em>comfort</em> or <em>eco</em>. You can directly set the target temperature, in case <em>pid-control</em> is configured, otherwise you can set the value in percent of heating valves at the zone. 
+The needed channels will be added automatically, as it is also the case for the devices.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>The digitalSTROM-Server is discovered by mDNS or <em>dss.local.</em> at the local network.
+Once the server is added as a thing, you have to set a user name and password or insert a valid application-token to authenticate with the server.
+If the binding is authorized, it automatically reads all supported devices, the dS-Meters and temperature controlled configured zones, that are set up on the digitalSTROM-System, and puts them into the <em>inbox</em>.</p>
+
+<p>digitalSTROM-Scenes can be discovered, too.
+The background scene-discovery is deactivated by default to not flood the inbox.
+Otherwise it will discover so many scenes, that it can be difficult to find the searched devices.</p>
+
+<p>Discoverable scenes are all user named scenes, group scenes that are reachable by local push-buttons, zone scenes and apartment scenes.
+The discovery also will discover all called scenes, if they aren’t automatically discovered yet.
+Temperature control scenes, like <em>eco</em> will be ignored, so they cannot be discovered.</p>
+
+<p>If you only want to discover one of the thing types, you can start a discovery scan on the thing type you want to have discovered.
+You can use the command line command, e.g.: <code class="highlighter-rouge">smarthome:discovery start digitalstrom:namedScene</code> to start the scan.
+Which thing types this binding supports, please have a look at <strong>Supported Things</strong>.</p>
+
+<h2 id="thing-configuration-and-properties">Thing Configuration and Properties</h2>
+
+<h3 id="digitalstrom-server-1">digitalSTROM-Server</h3>
+
+<p>The digitalSTROM-Server thing has the following configuration parameter groups: <em>Connection configuration</em>, <em>Server information</em> and <em>General configurations</em>.</p>
+
+<h4 id="connection-configuration">Connection configuration</h4>
+
+<p>If the digitalSTROM-Server isn’t found automatically, e.g. because the server isn’t placed at the local network or the mDNS-service is deactivated, you have to insert the network address or URL and the authentication data manually through the graphical user interface or type it into the *.thing with textual configuration.
+If you use your user name and password for authentication and there is already a token for this application, it will be automatically retrieved from the digitalSTROM-Server, otherwise a new application-token will be generated.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Network address</td>
+      <td>dSSAddress</td>
+      <td>Network address of the digitalSTROM-Server.</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>User name</td>
+      <td>userName</td>
+      <td>Name of a registered user to authenticate to the digitalSTROM-Server.</td>
+      <td>user name and password or Application-Token</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Password</td>
+      <td>password</td>
+      <td>Password of a registered user to authenticate to the digitalSTROM-Server.</td>
+      <td>user name and password or Application-Token</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Application-Token</td>
+      <td>applicationToken</td>
+      <td>The Application-Token to authenticate to the digitalSTROM-Server.</td>
+      <td>user name and password or Application-Token</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="server-information">Server information</h4>
+
+<p>The parameter group <em>Server information</em> only includes informative parameters, which have no special functionality.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dSID</td>
+      <td>dSID</td>
+      <td>The unique identifier of a digitalSTROM-server.</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="general-configuration">General configuration:</h4>
+
+<p>Here you can set general binding configuration parameters, which are shown in following table:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+      <th>default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Sensor update interval</td>
+      <td>sensorDataUpdateInterval</td>
+      <td>Sets the seconds after the digitalSTROM-Device sensor data will be updated. If the priority is higher than ‘never’.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>60</td>
+    </tr>
+    <tr>
+      <td>Total power update interval</td>
+      <td>totalPowerUpdateInterval</td>
+      <td>Sets the interval in seconds, after the digitalSTROM total power consumption and total electric meter sensor data will be updated.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>30</td>
+    </tr>
+    <tr>
+      <td>Days to be slaked trash bin devices</td>
+      <td>defaultTrashBinDeleateTime</td>
+      <td>Sets the days after the temporary saved digitalSTROM-Device configuration from not reachable digitalSTROM-Devices get permanently deleted.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <td>Wait time sensor reading</td>
+      <td>sensorWaitTime</td>
+      <td>Waiting time between the evaluation of the sensor values and the reading of the scenes in seconds. <strong>ATTENTION:</strong> digitalSTROM rule 8 and 9 require a waiting period of 1 minute. Values less than 60 seconds could affect the digitalSTROM system.</td>
+      <td>false</td>
+      <td>true</td>
+      <td>60</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>At the thing file, a manual configuration looks e.g. like</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge digitalstrom:dssBridge:dssBridge1 [ dSSAddress="dss.local.",  userName="dssadmin", password="dssadmin", sensorDataUpdateInterval=180]
+</code></pre></div></div>
+
+<h4 id="properties">Properties</h4>
+
+<p>In addition to the configuration the digitalSTROM-Server has the following properties.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property-Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>serverCert</td>
+      <td>The SSL-Certificate of the digitalSTROM-Server.</td>
+    </tr>
+    <tr>
+      <td>dS-Installation-Name</td>
+      <td>The digitalSTROM-System installation name.</td>
+    </tr>
+    <tr>
+      <td>version</td>
+      <td>The digitalSTROM-Server-Application version.</td>
+    </tr>
+    <tr>
+      <td>distroVersion</td>
+      <td>The digitalSTROM-Server firmware version.</td>
+    </tr>
+    <tr>
+      <td>Hardware</td>
+      <td>The digitalSTROM-Server hardware identifier.</td>
+    </tr>
+    <tr>
+      <td>Revision</td>
+      <td>The digitalSTROM-Server hardware revision number.</td>
+    </tr>
+    <tr>
+      <td>Serial</td>
+      <td>The digitalSTROM-Server hardware serial number.</td>
+    </tr>
+    <tr>
+      <td>Ethernet</td>
+      <td>The digitalSTROM-Server IEEE mac address.</td>
+    </tr>
+    <tr>
+      <td>MachineID</td>
+      <td>The digitalSTROM-Server unique id.</td>
+    </tr>
+    <tr>
+      <td>Kernel</td>
+      <td>The digitalSTROM-Server linux kernel release string.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="digitalstrom-devices-1">digitalSTROM-Devices</h3>
+
+<p>The digitalSTROM-Device things have the following configuration parameter groups <em>Device information</em> and <em>Sensor setup</em>.</p>
+
+<h4 id="device-information">Device information</h4>
+
+<p>Each digitalSTROM-Device needs the device ID named dSID as configuration parameter.
+The device ID is printed as serial number at the digitalSTROM-Device and can also be found within the web-interface of the digitalSTROM-Server.
+The following table shows the parameter:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>ID</td>
+      <td>dSID</td>
+      <td>The unique identifier of a digitalSTORM-device.</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="sensor-setup">Sensor setup</h4>
+
+<p>The GE, BL and SW digitalSTROM-Devices usually have sensors to capture power consumption data.
+So these devices have the following parameters to read them out.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Active power refresh priority</td>
+      <td>activePowerRefreshPriority</td>
+      <td>Sets the refresh priority for the active power sensor value. Can be never, low priority, medium priority or high priority.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>never</td>
+    </tr>
+    <tr>
+      <td>Electric meter refresh priority</td>
+      <td>electricMeterRefreshPriority</td>
+      <td>Sets the refresh priority for the electric meter sensor value. Can be never, low priority, medium priority or high priority.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>never</td>
+    </tr>
+    <tr>
+      <td>Output current refresh priority</td>
+      <td>outputCurrentRefreshPriority</td>
+      <td>Sets the refresh priority for the output current sensor value. Can be never, low priority, medium priority or high priority.</td>
+      <td>false</td>
+      <td>false</td>
+      <td>never</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="properties-1">Properties</h4>
+
+<p>Furthermore a supported digitalSTROM-Device has some informative properties.
+The following table shows all informative properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property-Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dSUID</td>
+      <td>The unique identifier of a digitalSTORM-device with virtual devices.</td>
+    </tr>
+    <tr>
+      <td>deviceName</td>
+      <td>he name of a digitalSTROM-Device.</td>
+    </tr>
+    <tr>
+      <td>meterDSID</td>
+      <td>Identifier of the meter to which the device is connected.</td>
+    </tr>
+    <tr>
+      <td>hwInfo</td>
+      <td>The hardware type from this digitalSTROM-Device.</td>
+    </tr>
+    <tr>
+      <td>zoneID</td>
+      <td>The digitalSTROM-Device is part of this zone.</td>
+    </tr>
+    <tr>
+      <td>groups</td>
+      <td>The digitalSTROM-Device is part of this user-defined or functional groups.</td>
+    </tr>
+    <tr>
+      <td>output mode</td>
+      <td>The current digitalSTROM-Device output mode e.g. 22 = dimmable.</td>
+    </tr>
+    <tr>
+      <td>funcColorGroup</td>
+      <td>The current digitalSTROM-Device functional color group e.g. yellow = light.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The device scene configurations will also be persisted in the properties. There are in the format:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property-Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>scene[sceneID]</td>
+      <td>{Scene: [sceneID], dontcare: [don’t care flag], localPrio: [local prio flag], specialMode: [special mode flag]}(0..1), {sceneValue: [scene value], sceneAngle: [scene angle]}(0..1)</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="digitalstrom-meter">digitalSTROM-Meter</h3>
+
+<p>A digitalSTROM-Meter needs, like the digitalSTROM-Devices, only the unique digitalSTROM device ID named dSID as configuration parameter, which has the same parameters, so please have a look at the point <em>Device information</em>.</p>
+
+<h4 id="properties-2">Properties</h4>
+
+<p>In contrast to the digitalSTROM-Device there are other informal properties. The following table shows the available properties:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property-Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>hwName</td>
+      <td>The hardware name of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>swVersion</td>
+      <td>The software version of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>apiVersion</td>
+      <td>The api version of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>dspSwVersion</td>
+      <td>The dsp software version of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>dSUID</td>
+      <td>The dSUID of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>deviceName</td>
+      <td>The user defined name of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>armSwVersion</td>
+      <td>The arm software version of the digitalSTROM-Meter</td>
+    </tr>
+    <tr>
+      <td>hwVersion</td>
+      <td>The hardware version of the digitalSTROM-Meter</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="digitalstrom-zone-temperature-control-1">digitalSTROM-Zone-Temperature-Control</h3>
+
+<p>The thing type of a digitalSTROM-Zone-Temperature-Control is <strong>zone_temperature_control</strong>. 
+As configuration only the zone ID or the zone name, to identify the controlled zone, is needed.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zone ID or name</td>
+      <td>zoneID</td>
+      <td>The zone id or zone name of the temperature controlled zone.</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="properties-3">Properties</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property-Name</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>controlMode</td>
+      <td>The currently configured control mode.</td>
+    </tr>
+    <tr>
+      <td>controlDSUID</td>
+      <td>The dSID of the meter or service that runs the control algorithm.</td>
+    </tr>
+    <tr>
+      <td>controlState</td>
+      <td>The currently configured control state.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="digitalstrom-scenes-1">digitalSTROM-Scenes</h3>
+
+<p>The digitalSTROM-Scenes can be defined with following parameters.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Advanced</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Zone ID or name</td>
+      <td>zoneID</td>
+      <td>The zone ID or zone name of the called scene. 0 or empty is broadcast to all.</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Group ID or name</td>
+      <td>groupID</td>
+      <td>The group ID or group name of the called scene. 0 or empty is broadcast to all.</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>Scene ID or name</td>
+      <td>sceneID</td>
+      <td>The call scene ID or scene name, e.g. preset 1 for scene ID 5. Callable scenes are from 0 to 126.</td>
+      <td>false</td>
+      <td>false</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The Scene-Thing-Type <em>Named-Scene</em> and <em>Group-Scene</em> have all parameters.
+The <em>Apartment-Scene</em> only has the parameters <em>Scene name</em> and <em>Scene ID</em> an the <em>Zone-Scene</em> has all parameters without <em>Group ID or name</em>.</p>
+
+<h3 id="textual-configuration-examples">Textual configuration examples</h3>
+
+<p>Usually the discovery works reliable, so that a manual configuration is not needed.</p>
+
+<p>However, at the thing file, a manual configuration looks e.g. like</p>
+
+<h4 id="digitalstrom-devices-2">digitalSTROM-Devices</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thing digitalstrom:GE:GE-KM200 (digitalstrom:dssBridge:myDssBridge) [ dSID="3504175fe0000000000043d4",  activePowerRefreshPriority="low", electricMeterRefreshPriority=“medium", outputCurrentRefreshPriority="high"]
+Thing digitalstrom:GR:GR-KL200 (digitalstrom:dssBridge:myDssBridge) [ dSID="3504175fe0000000000043d5"]
+</code></pre></div></div>
+
+<h4 id="digitalstrom-meters">digitalSTROM-Meters</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thing digitalstrom:circuit:circuit (digitalstrom:dssBridge:myDssBridge) [ dSID="3504175fe0000000000043d5"]
+</code></pre></div></div>
+
+<h4 id="digitalstrom-zone-temperature-control-2">digitalSTROM-Zone-Temperature-Control</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thing digitalstrom:zone_temperature_control:zone_temperature_control3 (digitalstrom:dssBridge:myDssBridge)  [ zoneID="3"]
+</code></pre></div></div>
+
+<h4 id="digitalstrom-group-scene">digitalSTROM-Group-Scene</h4>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Thing digitalstrom:groupScene:preset1 (digitalstrom:dssBridge:myDssBridge) [ zoneID="3", groupID="1", sceneID="5"]
+</code></pre></div></div>
+
+<h2 id="channels">Channels</h2>
+
+<p>All devices support some of the following channels:</p>
+
+<h3 id="output-channels">Output-Channels</h3>
+
+<p>digitalSTROM-Devices with an activated output mode.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>light_dimmer</td>
+      <td>Dimmer</td>
+      <td>The <em>light_dimm</em> channel allows to dimm a light device.</td>
+      <td>GE, SW</td>
+    </tr>
+    <tr>
+      <td>light_switch</td>
+      <td>Switch</td>
+      <td>The <em>light_switch</em> channel allows to turn a light device on or off.</td>
+      <td>GE, SW</td>
+    </tr>
+    <tr>
+      <td>light_2_stage</td>
+      <td>String</td>
+      <td>The <em>light_2_stage</em> channel allows to turn both light devices on or off or switch only 1 of the both light device on or off.</td>
+      <td>SW-UMR200</td>
+    </tr>
+    <tr>
+      <td>light_3_stage</td>
+      <td>String</td>
+      <td>The <em>light_3_stage</em> channel allows to turn both light devices on or off or switch both light devices separated from each other on or off.</td>
+      <td>SW-UMR200</td>
+    </tr>
+    <tr>
+      <td>shade</td>
+      <td>Rollershutter</td>
+      <td>The <em>shade</em> channel allows to control shade device e.g. a roller shutter or awnings.</td>
+      <td>GR</td>
+    </tr>
+    <tr>
+      <td>shade_angle</td>
+      <td>Dimmer</td>
+      <td>The <em>shade_angle</em> channel allows to control the relative slat position in percent of blinds.</td>
+      <td>GR</td>
+    </tr>
+    <tr>
+      <td>general_dimmer</td>
+      <td>Dimmer</td>
+      <td>The <em>general_dimmer</em> channel allows to control the power of a device e.g. a ceiling fan.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>general_switch</td>
+      <td>Switch</td>
+      <td>The <em>general_switch</em> channel allows to turn a device on or off e.g. a HIFI-System.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>general_2_stage</td>
+      <td>String</td>
+      <td>The <em>general_2_stage</em> channel allows to turn both relais of the device on or off or switch only 1 of the both relais on or off.</td>
+      <td>SW-UMR200</td>
+    </tr>
+    <tr>
+      <td>general_3_stage</td>
+      <td>String</td>
+      <td>The <em>general_3_stage</em> channel allows to turn both relais of the device on or off or switch both relais of the device separated from each other on or off.</td>
+      <td>SW-UMR200</td>
+    </tr>
+    <tr>
+      <td>heating_switch</td>
+      <td>Switch</td>
+      <td>The <em>heating_switch</em> channel allows to turn a heating device on or off.</td>
+      <td>BL</td>
+    </tr>
+    <tr>
+      <td>heating_dimmer</td>
+      <td>Dimmer</td>
+      <td>The <em>heating_switch</em> channel allows to control the value in percent of heating valve.</td>
+      <td>BL</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>digitalSTROM-Zone-Temperature-Controlled</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>heating_temperature_controled</td>
+      <td>Number</td>
+      <td>The <em>heating_temperature_controled</em> channel allows to set a target temperature of a zone.</td>
+    </tr>
+    <tr>
+      <td>heating_dimmer</td>
+      <td>Dimmer</td>
+      <td>The <em>heating_switch</em> channel allows to control the value in percent of heating valve.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sensor-channels">Sensor-Channels</h3>
+
+<p>digitalSTROM-Devices which have sensors data.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>active_power</td>
+      <td>Number</td>
+      <td>This channel indicates the current active power in watt (W) of the device.”</td>
+      <td>GE, SW, BL</td>
+    </tr>
+    <tr>
+      <td>output_current</td>
+      <td>Number</td>
+      <td>This channel indicates the current output current in milliamper (mA) of the device.”</td>
+      <td>GE, SW, BL</td>
+    </tr>
+    <tr>
+      <td>electric_meter</td>
+      <td>Number</td>
+      <td>This channel indicates the current electric meter value in killowatts hours (kWh) of the device.</td>
+      <td>GE, SW, BL</td>
+    </tr>
+    <tr>
+      <td>temperature_indoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current temperature indoors in Celsius (°C) of the device.</td>
+      <td>dS-iSens200</td>
+    </tr>
+    <tr>
+      <td>temperature_outdoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current temperature outdoors in Celsius (°C) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>brightness_indoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current brightness indoors in Lux (Lx) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>brightness_outdoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current brightness outdoors in Lux (Lx) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>relative_humidity_indoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current relative humidity indoors in percent of the device.</td>
+      <td>dS-iSens200</td>
+    </tr>
+    <tr>
+      <td>relative_humidity_outdoors</td>
+      <td>Number</td>
+      <td>This channel indicates the current relative humidity outdoors in percent of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>air_pressure</td>
+      <td>Number</td>
+      <td>This channel indicates the current relative humidity outdoors in hectopscal (hPa bzw. mbar) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>wind_speed</td>
+      <td>Number</td>
+      <td>This channel indicates the current wind speed in m/s of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>wind_direction</td>
+      <td>Number</td>
+      <td>This channel indicates the current wind direction in degree of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>precipitation</td>
+      <td>Number</td>
+      <td>This channel indicates the current precipitation in milliliter per square meter of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>carbon_dioxide</td>
+      <td>Number</td>
+      <td>This channel indicates the current carbon dioxide in parts per million of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>sound_pressure_level</td>
+      <td>Number</td>
+      <td>This channel indicates the current carbon dioxide in Dezibel (dB) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>room_temperation_set_point</td>
+      <td>Number</td>
+      <td>This channel indicates the current room temperation set point in Celsius (°C) of the device.</td>
+      <td>—</td>
+    </tr>
+    <tr>
+      <td>room_temperation_control_variable</td>
+      <td>Number</td>
+      <td>This channel indicates the current room temperation control variable in Celsius (°C) of the device.</td>
+      <td>—</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>*If no supported device type is at the table, digitalSTROM currently does not offer a device, which support this type of sensor.</p>
+
+<h3 id="binary-input-channels">Binary-Input-Channels</h3>
+
+<p>digitalSTROM-Devices which are able to set a binary-input sensor like SW-UMR200 or SW-AKM200.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>binary_input_presence</td>
+      <td>Switch</td>
+      <td>Will be activated, if a presence is detected.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_brightness</td>
+      <td>Switch</td>
+      <td>Will be activated, if the brightness is higher than a setted value.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_presence_in_darkness</td>
+      <td>Switch</td>
+      <td>Will be activated, if a presence is detected. Sensor has a integrated twilight sensor.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_twilight</td>
+      <td>Switch</td>
+      <td>Will be activated by twilight.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_motion</td>
+      <td>Switch</td>
+      <td>Will be activated, if a motion is detected.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_motion_in_darkness</td>
+      <td>Switch</td>
+      <td>Will be activated, if a motion is detected. Sensor has a integrated twilight sensor.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_smoke</td>
+      <td>Switch</td>
+      <td>Will be activated, if smoke is detected.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_wind_strenght_above_limit</td>
+      <td>Switch</td>
+      <td>Will be activated, if wind strength is above a user adjusted limit.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_rain</td>
+      <td>Switch</td>
+      <td>Will be activated, if rain is detected.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_sun_radiation</td>
+      <td>Switch</td>
+      <td>Will be activated, if the sun light is above threshold.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_temperation_below_limit</td>
+      <td>Switch</td>
+      <td>Will be activated, if the temperature is below a limit.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_battery_status_is_low</td>
+      <td>Switch</td>
+      <td>Will be activated, if the battery status is low.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_window_is_open</td>
+      <td>Switch</td>
+      <td>Will be activated, if a window is open.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_door_is_open</td>
+      <td>Switch</td>
+      <td>Will be activated, if a door is open.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_window_is_tilted</td>
+      <td>Switch</td>
+      <td>Will be activated, if a window is tilted.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_garage_door_is_open</td>
+      <td>Switch</td>
+      <td>Will be activated, if a garage door is open.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_sun_protection</td>
+      <td>Switch</td>
+      <td>Will be activated, if the sun light is too heavy.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_frost</td>
+      <td>Switch</td>
+      <td>Will be activated by frost.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_heating_operation_on_off</td>
+      <td>Switch</td>
+      <td>Will be activated, if heating operation is on, otherwise it will be deactivated.</td>
+      <td>SW</td>
+    </tr>
+    <tr>
+      <td>binary_input_change_over_heating_cooling</td>
+      <td>Switch</td>
+      <td>Will be activated, if heating is activated, otherwise cooling is activated.</td>
+      <td>SW</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="metering-channels">Metering-Channels</h3>
+
+<p>The digitalSTROM-Meters</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>consumption_Wh</td>
+      <td>Number</td>
+      <td>The <em>consumption_Wh</em> channel indicates the current power consumption in watt (W)  of the  circuit.</td>
+      <td>circuit</td>
+    </tr>
+    <tr>
+      <td>energy_Wh</td>
+      <td>Number</td>
+      <td>The <em>energy_Wh</em> channel indicates the current electric meter value in killowatt hours of the circuit.</td>
+      <td>circuit</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The digitalSTROM-Server</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>total_consumption_Wh</td>
+      <td>Number</td>
+      <td>The <em>total_consumption_Wh</em> channel indicates the current consumption power in watt (W)  of all connected circuits to the digitalSTROM-System.</td>
+      <td>dssBridge</td>
+    </tr>
+    <tr>
+      <td>total_energy_Wh</td>
+      <td>Number</td>
+      <td>The <em>total_energy_Wh</em> channel indicates the current electric meter value in killowatt hours of all connected circuits to the digitalSTROM-System.</td>
+      <td>dssBridge</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="scenes">Scenes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th>supported device type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>scene</td>
+      <td>Switch</td>
+      <td>The scene channel allows to call or undo a scene from digitalSTROM.</td>
+      <td>all scene-types</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>**Notes: **</p>
+
+<p><em>Channels with accepted command type increase and decrease:</em></p>
+
+<ul>
+  <li>digitalSTROM will only evaluate increase and decrease commands, if a scene was called before which turn the device on.</li>
+</ul>
+
+<p><em>Blinds:</em></p>
+
+<ul>
+  <li>Increase, decrease and up, down commands of the shade channel changes the angle in digitalSTROM, too. If you want to set only the position, you have to set the value directly.</li>
+  <li>To protect the slats digitalSTROM changes the position by setting the angle, too, if the position is very high or low. So if you want to see the correct position, you have to send a refresh or stop command, if the blind is ready.</li>
+</ul>
+
+<h2 id="full-example">Full Example</h2>
+
+<h3 id="demothings">demo.things:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge digitalstrom:dssBridge:dSS [ dSSAddress="urlOfMyDss",  userName="dssadmin", password="mySecretPassword", sensorDataUpdateInterval=180] {
+  GE GE-KM-200 [ dSID="3504175fe000000000010db9",  activePowerRefreshPriority="low", electricMeterRefreshPriority="medium", outputCurrentRefreshPriority="high"] 
+  SW SW-ZWS-200 [ dSID="3504175fe0000000000651c0"] 
+  SW SW-UMR-200 [ dSID="302ed89f43f00ec0000a1034"] 
+  dSiSens200 dS-iSens200 [ dSID="302ed89f43f026800003543d"] 
+  zoneTemperatureControl zoneTemperatureControl [ zoneID="livingroom"]     
+  GR GR-KL220 [ dSID="3504175fe0000000000651c1" ] 
+  namedScene Scene1 [ zoneID="5", groupID="1", sceneID="5"] 
+  circuit circuit1 [ dSID="3504175fe0000010000004e4" ]    
+  GR GR-KL200 [ dSID="3504175fe0000000000651c1" ]
+}
+</code></pre></div></div>
+
+<h3 id="demoitems">demo.items:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>//dSS
+Number TotalActivePower { channel="digitalstrom:dssBridge:dSS:total_consumption_wh" }
+Number TotalElectricMeter { channel="digitalstrom:dssBridge:dSS:total_energy_wh" }
+
+//circuit (circuit1)
+Number TotalActivePowerDsm { channel="digitalstrom:circuit:dSS:circuit1:energy_wh" }
+Number TotalElectricMeterDsm { channel="digitalstrom:circuit:dSS:circuit1:consumption_wh" }
+
+//Light (KM-200)
+Dimmer Brightness { channel="digitalstrom:GE:dSS:GE-KM-200:light_dimmer" }
+Number ActivePower { channel="digitalstrom:GE:dSS:GE-KM-200:active_power" }
+Number OutputCurrent { channel="digitalstrom:GE:dSS:GE-KM-200:output_current" }
+Number ElectricMeter { channel="digitalstrom:GE:dSS:GE-KM-200:electric_meter" }
+
+//Device
+Switch DeviceSwitch { channel="digitalstrom:SW:dSS:SW-ZWS-200:general_switch" }
+
+//Rollershutter (GR-KL200)
+Rollershutter Shutter { channel="digitalstrom:GR:GR-KL200:shade" }
+
+//Blind (GR-KL220)
+Rollershutter BlindPosition { channel="digitalstrom:GR:GR-KL210:shade" }
+Dimmer BlindAngle { channel="digitalstrom:GR:GR-KL210:shade_angle" }
+
+//Scene (Scene1)
+Switch Scene { channel="digitalstrom:namedScene:dSS:Scene1:scene" }
+
+//binary input device (SW-UMR-200)
+Switch SensorSwitch { channel="digitalstrom:SW:dSS:SW-UMR-200:binary_input_change_over_heating_cooling" }
+
+//indoor climate (dSiSens200)
+Number TempIndoor { channel="digitalstrom:dSiSens200:dSS:dS-iSens200:temperature_indoors" }
+Number HumidityIndoor { channel="digitalstrom:dSiSens200:dSS:dS-iSens200:relative_humidity_indoors" }
+
+//target temperature (zoneTemperatureControl)
+Number Temperature { channel="digitalstrom:zoneTemperatureControl:dSS:zoneTemperatureControl:heating_temperature_controlled" }
+</code></pre></div></div>
+
+<h3 id="demositemap">demo.sitemap:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap demo label="Main Menu"
+{
+  Frame label="System" {
+   Frame label="digitalSTROM-Server"{
+      Text item=TotalActivePower 
+      Text item=TotalElectricMeter 
+    }
+  
+   Frame label="digitalSTROM-Meter"{
+      Text item=TotalActivePowerDsm
+      Text item=TotalElectricMeterDsm
+    }
+  }
+  
+  Frame label="Climate" {
+   Frame label="heating/cooling"{
+      Switch item=SensorSwitch 
+    }
+    
+   Frame label="iSens200"{
+      Text item=TempIndoor
+      Text item=HumidityIndoor
+    }
+    
+   Frame label="Target temperature"{
+      Slider item=Temperature
+      Text item=Temperature
+    }
+  }
+  
+  Frame label="Shade"{
+   Frame label="Rollerschutter"{
+      Slider item=Shade 
+      Text item=Shade
+    }
+    
+   Frame label="Blind"{
+      Slider item=BlindPosition 
+      Slider item=BlindAngle
+    }
+  }
+  
+  Frame label="Scenes"{
+    Frame label="TV scene"{
+      Switch item=Scene 
+    }
+  }
+  
+  Frame label="HiFi" {
+    Frame label="TV light"{
+      Slider item=Brightness 
+      Switch item=Brightness
+      Text item=ActivePower 
+      Text item=OutputCurrent 
+      Text item=ElectricMeter 
+    }
+    
+   Frame label="TV"{
+      Switch item=DeviceSwitch
+    }  
+  }
+}
+</code></pre></div></div>
+
+<h2 id="general-informations">General-Informations</h2>
+
+<h3 id="digitalstrom-scenes-2">digitalSTROM-Scenes</h3>
+
+<p>The device scene configuration will be saved persistently to the thing properties, if the thing is not textual configured (because textual configured things will not be persisted), to update the device state faster. 
+For that each scene configuration of each device has to be read out first, because of the digitalSTROM-rule 9 that requires a waiting period of one minute, that take some time so that at the first start a scene call can be take some time to read it out and update the device state. 
+To read it out faster only the discovered or called scenes will be read out.</p>
+
+<p><strong>Note:</strong>
+Because the digitalSTROM-Server can’t inform the binding about save scene events at this time, the persistently saved scene configurations can’t be updated.
+The current troubleshooting to read out the new scene configuration after a save scene action at the digitalSTROM-Server is the following:</p>
+
+<ol>
+  <li>delete the thing to delete the persistently saved scene configuration</li>
+  <li>restart the server to delete the temporary saved scene configuration</li>
+  <li>add the thing again to read out the scene configuration again.</li>
+</ol>
+
+<h3 id="initial-state-of-digitalstrom-scenes-and-devices">Initial state of digitalSTROM-Scenes and devices</h3>
+
+<p>To get the device and scene state after a server start or restart, the binding uses the last called group scenes of digitalSTROM.
+Because of that there are two things to be observed:</p>
+
+<ol>
+  <li>If a device status has changed through a device scene or a directly set output value, the status is maybe not correct.</li>
+  <li>If the last called group scene was not read out yet, it can takes some time until the status will be updated.</li>
+</ol>
+
+<h3 id="textual-configuration-notice">Textual configuration notice</h3>
+
+<p>If you configure your system with textual configuration files, like <em>*.thing</em>, there is one things you have to  consider.</p>
+
+<ul>
+  <li>The feature of the persisting of scene-configurations, to get the scene-configurations after a restart faster (see <em>digitalSTROM-Scenes</em> above), will not support  textural configured things, because the properties cannot be persist in this case.</li>
+</ul>
+
+<h3 id="rule-specific-notice">Rule specific notice</h3>
+
+<p>If you want to create a rule, which uses things of the digitalSTROM-Binding, there are also two things you have to consider.</p>
+
+<ol>
+  <li>If the rule contains several digitalSTROM-Devices, which can be summarized in a digitalSTROM-Scene, e.g. some lights in a zone, please use a equivalent supported scene. That will significantly reduce the communication to the digitalSTROM-Server, increases performance and does not bypass the digitalSTROM state-machine.</li>
+  <li>If you implement your own temperature control algorithm for a zone/room, e.g. because you want to use other temperature sensors, and call more than one digitalSTROM-BL-KM200, please use the <em>zone_temperature_control</em> for valve value control. The <em>zone_temperature_control</em> for valve value control will call all digitalSTROM-BL-KM200 with one command and increases the performance. To get the needed channel at the <em>zone_temperature_control</em> you have to choose a control mode unequal to <em>pid-controlled</em> for the affected zone at the digitalSTROM-heating-control-app.</li>
+</ol>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

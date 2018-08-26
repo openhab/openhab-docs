@@ -1,0 +1,1711 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Loxone - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/loxone/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/loxone/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/loxone/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/loxone/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="loxone-binding">Loxone Binding</h1>
+
+<p>This binding integrates <a href="https://www.loxone.com/enen/products/miniserver-extensions/">Loxone Miniserver</a> with <a href="http://www.openhab.org/">openHAB</a>.
+Miniserver is represented as a <a href="http://docs.openhab.org/configuration/things.html">Thing</a>. Miniserver controls, that are visible in the Loxone <a href="https://www.loxone.com/enen/kb/user-interface-configuration/">UI</a>, are exposed as openHAB channels.</p>
+
+<h2 id="features">Features</h2>
+
+<p>The following features are currently supported:</p>
+
+<ul>
+  <li><a href="https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol">Discovery</a> of Miniservers available on the local network</li>
+  <li>Creation of channels for Loxone controls that are exposed in the Loxone <a href="https://www.loxone.com/enen/kb/user-interface-configuration/">UI</a></li>
+  <li>Tagging of channels and <a href="http://docs.openhab.org/configuration/items.html">items</a> with tags that can be recognized by <a href="https://en.wikipedia.org/wiki/Amazon_Alexa">Alexa</a> openHAB <a href="https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L">skill</a>, so voice can be used to command Loxone controls</li>
+  <li>Management of a Websocket connection to the Miniserver and updating Thing status accordingly</li>
+  <li>Updates of openHAB channel’s state in runtime according to control’s state changes on the Miniserver</li>
+  <li>Passing channel commands to the Miniserver’s controls</li>
+</ul>
+
+<h2 id="things">Things</h2>
+
+<p>This binding supports <a href="https://www.loxone.com/enen/products/miniserver-extensions/">Loxone Miniservers</a> for accessing controls that are configured in their UI.</p>
+
+<p>The Thing UID of automatically discovered Miniservers is: <code class="highlighter-rouge">loxone:miniserver:&lt;serial&gt;</code>, where <code class="highlighter-rouge">&lt;serial&gt;</code> is a serial number of the Miniserver (effectively this is the MAC address of its network interface).</p>
+
+<h3 id="discovery">Discovery</h3>
+
+<p><a href="https://www.loxone.com/enen/products/miniserver-extensions/">Loxone Miniservers</a> are automatically discovered by the binding and put in the Inbox. <a href="https://en.wikipedia.org/wiki/Simple_Service_Discovery_Protocol">Discovery</a> is performed using <a href="https://en.wikipedia.org/wiki/Universal_Plug_and_Play">UPnP</a> protocol.</p>
+
+<p>Before a Miniserver Thing can go online, it must be configured with a user name and a password of an account available on the Miniserver.
+Please set them manually in Thing configuration after you add a new Miniserver Thing from your Inbox.</p>
+
+<h3 id="manual-configuration">Manual configuration</h3>
+
+<p>As an alternative to the automatic discovery process, Miniservers can be configured manually, through an entry in <a href="http://docs.openhab.org/configuration/things.html#defining-things-using-files">.things file</a>.
+The entry should have the following syntax:</p>
+
+<p><code class="highlighter-rouge">loxone:miniserver:&lt;thing-id&gt; [ user="&lt;user&gt;", password="&lt;password&gt;", host="&lt;host&gt;", port=&lt;port&gt;, ... ]</code></p>
+
+<p>Where:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">&lt;thing-id&gt;</code> is a unique ID for your Miniserver (you can but do not have to use Miniserver’s MAC address here)</li>
+  <li><code class="highlighter-rouge">&lt;user&gt;</code> and <code class="highlighter-rouge">&lt;password&gt;</code> are the credentials used to log into the Miniserver</li>
+  <li><code class="highlighter-rouge">&lt;host&gt;</code> is a host name or IP of the Miniserver</li>
+  <li><code class="highlighter-rouge">&lt;port&gt;</code> is a port of web services on the Miniserver (please notice that port, as a number, is not surrounded by quotation marks, while the other values described above are)</li>
+  <li><code class="highlighter-rouge">...</code> are optional advanced parameters - please refer to <em>Advanced parameters</em> section at the end of this instruction for a list of available options</li>
+</ul>
+
+<p>Example 1 - minimal required configuration:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    `loxone:miniserver:504F2414780F [ user="kryten", password="jmc2017", host="loxone.local", port=80 ]`
+</code></pre></div></div>
+
+<p>Example 2 - additionally keep alive period is set to 2 minutes and Websocket maximum binary message size to 8MB:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    `loxone:miniserver:504F2414780F [ user="kryten", password="jmc2017", host="192.168.0.210", port=80, keepAlivePeriod=120, maxBinMsgSize=8192 ]`
+</code></pre></div></div>
+
+<h3 id="thing-offline-reasons">Thing Offline Reasons</h3>
+
+<p>There can be following reasons why Miniserver status is <code class="highlighter-rouge">OFFLINE</code>:</p>
+
+<ul>
+  <li><strong>Configuration Error</strong>
+    <ul>
+      <li><em>Unknown host</em></li>
+      <li>Miniserver host/ip address can’t be resolved. No connection attempt will be made.</li>
+      <li><em>User not authorized</em>
+        <ul>
+          <li>Invalid user name or password or user not authorized to connect to the Miniserver. Binding will make another attempt to connect after some time.</li>
+        </ul>
+      </li>
+      <li><em>Too many failed login attempts - stopped trying</em>
+        <ul>
+          <li>Miniserver locked out user for too many failed login attempts. In this case binding will stop trying to connect to the Miniserver. A new connection will be attempted only when user corrects user name or password in the configuration parameters.</li>
+        </ul>
+      </li>
+      <li><em>Internal error</em>
+        <ul>
+          <li>Probably a code defect, collect debug data and submit an issue. Binding will try to reconnect, but with unknown chance for success.</li>
+        </ul>
+      </li>
+      <li><em>Other</em>
+        <ul>
+          <li>An exception occured and its details will be displayed</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><strong>Communication Error</strong>
+    <ul>
+      <li><em>Error communicating with Miniserver</em>
+        <ul>
+          <li>I/O error occurred during established communication with the Miniserver, most likely due to network connectivity issues, Miniserver going offline or Loxone Config is uploading a new configuration. A reconnect attempt will be made soon. Please consult detailed message against one of the following:
+            <ul>
+              <li><em>“Text message size &amp;lsqbXX&amp;rsqb exceeds maximum size &amp;lsqbYY&amp;rsqb”</em> - adjust text message size in advanced parameters to be above XX value</li>
+              <li><em>“Binary message size &amp;lsqbXX&amp;rsqb exceeds maximum size &amp;lsqbYY&amp;rsqb”</em> - adjust binary message size in advanced parameters to be above XX value</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+      <li><em>User authentication timeout</em>
+        <ul>
+          <li>Authentication procedure took too long time and Miniserver closed connection. It should not occur under normal conditions and may indicate performance issue on binding’s OS side.</li>
+        </ul>
+      </li>
+      <li><em>Timeout due to no activity</em>
+        <ul>
+          <li>Miniserver closed connection because there was no activity from binding. It should not occur under normal conditions, as it is prevented by sending keep-alive messages from the binding to the Miniserver. By default Miniserver’s timeout is 5 minutes and period between binding’s keep-alive messages is 4 minutes. If you see this error, try changing the keep-alive period in binding’s configuration to a smaller value.</li>
+        </ul>
+      </li>
+      <li><em>Other</em>
+        <ul>
+          <li>An exception occured and its details will be displayed</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h2 id="channels">Channels</h2>
+
+<p>This binding creates channels for controls that are <a href="https://www.loxone.com/enen/kb/user-interface-configuration/">used in Loxone’s user interface</a>.
+Currently supported controls are presented in the table below.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th><a href="https://www.loxone.com/enen/kb/api/">Loxone API Control</a></th>
+      <th>Loxone Block-Functions</th>
+      <th><a href="http://docs.openhab.org/concepts/items.html">Item Types</a></th>
+      <th>Supported Commands</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Dimmer</td>
+      <td><a href="https://www.loxone.com/enen/kb/dimmer/">Dimmer</a></td>
+      <td><code class="highlighter-rouge">Dimmer</code></td>
+      <td><code class="highlighter-rouge">OnOffType.*</code><br /><code class="highlighter-rouge">Percent</code></td>
+    </tr>
+    <tr>
+      <td>InfoOnlyAnalog</td>
+      <td>Analog <a href="https://www.loxone.com/enen/kb/virtual-inputs-outputs/">virtual inputs</a> (virtual state)</td>
+      <td><code class="highlighter-rouge">Number</code></td>
+      <td>none (read-only value)</td>
+    </tr>
+    <tr>
+      <td>InfoOnlyDigital</td>
+      <td>Digital <a href="https://www.loxone.com/enen/kb/virtual-inputs-outputs/">virtual inputs</a> (virtual state)</td>
+      <td><code class="highlighter-rouge">String</code></td>
+      <td>none (read-only value)</td>
+    </tr>
+    <tr>
+      <td>Jalousie</td>
+      <td>Blinds, <a href="https://www.loxone.com/enen/kb/automatic-blinds/">Automatic Blinds</a>, Automatic Blinds Integrated</td>
+      <td><code class="highlighter-rouge">Rollershutter</code></td>
+      <td><code class="highlighter-rouge">UpDown.*</code><br /><code class="highlighter-rouge">StopMove.*</code><br /><code class="highlighter-rouge">Percent</code></td>
+    </tr>
+    <tr>
+      <td>LightController</td>
+      <td><a href="https://www.loxone.com/enen/kb/lighting-controller/">Lighting controller V1 (obsolete)</a>, <a href="https://www.loxone.com/enen/kb/hotel-lighting-controller/">Hotel lighting controller</a><br />Additionally, for each configured output of a lighting controller, a new independent control (with own channel/item) will be created.</td>
+      <td><code class="highlighter-rouge">Number</code></td>
+      <td><code class="highlighter-rouge">Decimal</code> (select lighting scene)<br /><code class="highlighter-rouge">UpDownType.*</code> (swipe through scenes)<br /><code class="highlighter-rouge">OnOffType.*</code> (select all off or all on scene)</td>
+    </tr>
+    <tr>
+      <td>LightControllerV2</td>
+      <td><a href="https://www.loxone.com/enen/kb/lighting-controller-v2/">Lighting controller</a><br />Additionally, for each configured output and for each mood of a lighting controller, a new independent control (with own channel/item) will be created.</td>
+      <td><code class="highlighter-rouge">Number</code></td>
+      <td><code class="highlighter-rouge">Decimal</code> (select mood)<br /><code class="highlighter-rouge">UpDownType.*</code> (swipe through moods)</td>
+    </tr>
+    <tr>
+      <td>LightControllerV2 Mood</td>
+      <td>A mood defined for a <a href="https://www.loxone.com/enen/kb/lighting-controller-v2/">Lighting controller</a>. Each mood will have own channel and can be operated independently in order to allow mixing of moods.</td>
+      <td><code class="highlighter-rouge">Switch</code></td>
+      <td><code class="highlighter-rouge">OnOffType.*</code> (mixes mood in or out of the controller)</td>
+    </tr>
+    <tr>
+      <td>Pushbutton</td>
+      <td><a href="https://www.loxone.com/enen/kb/virtual-inputs-outputs/">Virtual inputs</a> of pushbutton type</td>
+      <td><code class="highlighter-rouge">Switch</code></td>
+      <td><code class="highlighter-rouge">OnOffType.ON</code> (generates Pulse command)</td>
+    </tr>
+    <tr>
+      <td>Radio</td>
+      <td><a href="https://www.loxone.com/enen/kb/radio-buttons/">Radio button 8x and 16x</a></td>
+      <td><code class="highlighter-rouge">Number</code></td>
+      <td><code class="highlighter-rouge">Decimal</code> (select output number 1-8/16 or 0 for all outputs off)<br /><code class="highlighter-rouge">OnOffType.OFF</code> (all outputs off)</td>
+    </tr>
+    <tr>
+      <td>Switch</td>
+      <td><a href="https://www.loxone.com/enen/kb/virtual-inputs-outputs/">Virtual inputs</a> of switch type<br /><a href="https://www.loxone.com/enen/kb/push-button/">Push-button</a></td>
+      <td><code class="highlighter-rouge">Switch</code></td>
+      <td><code class="highlighter-rouge">OnOffType.*</code></td>
+    </tr>
+    <tr>
+      <td>TextState</td>
+      <td><a href="https://www.loxone.com/enen/kb/state/">State</a></td>
+      <td><code class="highlighter-rouge">String</code></td>
+      <td>none (read-only value)</td>
+    </tr>
+    <tr>
+      <td>TimedSwitch</td>
+      <td><a href="https://www.loxone.com/enen/kb/stairwell-light-switch/">Stairwell light switch</a> or <a href="https://www.loxone.com/enen/kb/multifunction-switch/">Multifunction switch</a></td>
+      <td><code class="highlighter-rouge">Switch</code> <br /> <br /> <code class="highlighter-rouge">Number</code></td>
+      <td><code class="highlighter-rouge">OnOffType.*</code> (ON send pulse to Loxone) <br /> <br /> Read-only countdown value to off</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>If your control is supported, but binding does not recognize it, please check if it is exposed in Loxone UI using <a href="https://www.loxone.com/enen/kb-cat/loxone-config/">Loxone Config</a> application.</p>
+
+<p>Channel ID is defined in the following way:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">loxone:miniserver:&lt;serial&gt;:&lt;control-UUID&gt;</code></li>
+</ul>
+
+<p>Channel label is defined in the following way:</p>
+
+<ul>
+  <li>For controls that belong to a room: <code class="highlighter-rouge">&lt;Room name&gt; / &lt;Control name&gt;</code></li>
+  <li>For controls without a room: <code class="highlighter-rouge">&lt;Control name&gt;</code></li>
+</ul>
+
+<h2 id="advanced-parameters">Advanced Parameters</h2>
+
+<p>This section describes the optional advanced parameters that can be configured for a Miniserver. They can be set using UI (e.g. PaperUI) or in a .things file.
+If a parameter is not explicitly defined, binding will use its default value.</p>
+
+<p>To define a parameter value in a .things file, please refer to it by parameter’s ID, for example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>    `keepAlivePeriod=120`
+</code></pre></div></div>
+
+<h3 id="timeouts">Timeouts</h3>
+
+<p>Timeout values control various parts of Websocket connection management.
+They can be tuned, when abnormal behavior of the binding is observed, which can be attributed to timing.
+<br /></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Range</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">firstConDelay</code></td>
+      <td>First connection delay</td>
+      <td>0-120 s</td>
+      <td>1 s</td>
+      <td>Time in seconds between binding initialization with all necessary parameters and first connection attempt.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">keepAlivePeriod</code></td>
+      <td>Period between connection keep-alive messages</td>
+      <td>1-600 s</td>
+      <td>240 s</td>
+      <td>Time in seconds between sending two consecutive keep-alive messages, in order to inform Miniserver about active connection and prevent it from disconnecting. Miniserver default connection timeout is 5 minutes, so default is set to 4 minutes.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">connectErrDelay</code></td>
+      <td>Connect error delay</td>
+      <td>0-600 s</td>
+      <td>10 s</td>
+      <td>Time in seconds between failed Websocket connect attempt and another attempt to connect. Websocket connection is established before authentication and data transfer. It can usually fail due to unreachable Miniserver.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">responseTimeout</code></td>
+      <td>Response timeout</td>
+      <td>0-60 s</td>
+      <td>4 s</td>
+      <td>Time to wait for a response from Miniserver to a request sent from the binding. A request can be any of: websocket connect request, credentials hashing key request, configuration request, enabling of state updates (until initial states are received). If this time passed without the expected reaction from the Miniserver, the connection will be closed. A new connection attempt may be made, depending on the situation.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">userErrorDelay</code></td>
+      <td>Authentication error delay</td>
+      <td>0-3600 s</td>
+      <td>60 s</td>
+      <td>Time in seconds between user authentication error and another connection attempt. User authentication error can be a result of a wrong name or password, or no authority granted to the user on the Miniserver. If this time is too short, Miniserver will eventually lock out the user for a longer period of time due to too many failed login attempts. This time should allow the administrator to fix the authentication issue without being locked out. Connection retry is required, because very rarely Miniserver seems to reject correct credentials, which are successful on a subsequent identical attempt.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">comErrorDelay</code></td>
+      <td>Communication error delay</td>
+      <td>0-3600 s</td>
+      <td>30 s</td>
+      <td>Time in seconds between an active connection closes, as a result of a communication error, and next connection attempt. This relates to all types of network communication issues, which can occur and cease to exist randomly to the binding. It is desired that the binding monitors the situation and brings things back to online as soon as Miniserver is accessible.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="sizes">Sizes</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Range</th>
+      <th>Default</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td><code class="highlighter-rouge">maxBinMsgSize</code></td>
+      <td>Maximum binary message size (kB)</td>
+      <td>0-100 MB</td>
+      <td>3072 (3 MB)</td>
+      <td>For Websocket client, a maximum size of a binary message that can be received from the Miniserver. If you get communication errors with a message indicating there are too long binary messages received, you may need to adjust this parameter.</td>
+    </tr>
+    <tr>
+      <td><code class="highlighter-rouge">maxTextMsgSize</code></td>
+      <td>Maximum text message size (kB)</td>
+      <td>0-100 MB</td>
+      <td>512 KB</td>
+      <td>For Websocket client, a maximum size of a text message that can be received from the Miniserver. If you get communication errors with a message indicating there are too long text messages received, you may need to adjust this parameter.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="limitations">Limitations</h2>
+
+<ul>
+  <li>As there is no push button item type in openHAB, Loxone’s push button is an openHAB’s switch, which always generates a short pulse on changing its state to on.
+If you use simple UI mode and framework generates items for you, switches for push buttons will still be toggle switches.
+To change it to the push button style, you have to create item manually with <code class="highlighter-rouge">autoupdate=false</code> parameter.
+An example of such item definition is given in the <em>Items</em> section above.</li>
+</ul>
+
+<h2 id="automatic-configuration-example">Automatic Configuration Example</h2>
+
+<p>The simplest and quickest way of configuring a Loxone Miniserver with openHAB is to use automatic configuration features:</p>
+
+<ul>
+  <li>Make sure your Miniserver is up and running and on the same network segment as openHAB server.</li>
+  <li>Add Loxone binding from the available <code class="highlighter-rouge">Add-ons</code>.</li>
+  <li>In <code class="highlighter-rouge">Configuration/System</code> page, set <code class="highlighter-rouge">Item Linking</code> to <code class="highlighter-rouge">Simple Mode</code> (don’t forget to save your choice).</li>
+  <li>Add your Miniserver Thing from the <code class="highlighter-rouge">Inbox</code>, after automatic discovery is performed by the framework during binding initialization.</li>
+  <li>Configure your Miniserver by editing Miniserver Thing in <code class="highlighter-rouge">Configuration/Things</code> page and providing user name and password.</li>
+  <li>Miniserver Thing should go online. Channels and Items will be automatically created and configured.</li>
+  <li>On the <code class="highlighter-rouge">Control</code> page, you can test Miniserver Items and interact with them.</li>
+  <li>As the user interface, you may use <a href="http://docs.openhab.org/addons/uis/habpanel/readme.html">HABPanel</a>, where all Miniserver’s items are ready for picking up, using entirely the graphical user interface.</li>
+</ul>
+
+<h2 id="manual-configuration-example">Manual Configuration Example</h2>
+
+<p>A more advanced setup requires manual creation and editing of openHAB configuration files, according to the instructions provided in <a href="http://docs.openhab.org/configuration/index.html">configuration user guide</a>.
+In this example we will manually configure:</p>
+
+<ul>
+  <li>A Miniserver with serial number 504F2414780F, available at IP 192.168.0.220 and with web services port 80</li>
+  <li>A Miniserver’s user named “kryten” and password “jmc2017”</li>
+  <li>Items for:
+    <ul>
+      <li>Temperature of the Miniserver - a Virtual Analog State functional block</li>
+      <li>State of a garage door - a Virtual Digital State funtional block (ON=door open, OFF=door closed)</li>
+      <li>Kitchen lights switch - a Switch Subcontrol at the AI1 output of a Lighting Controller functional block (with a tag recognizable by Alexa service)</li>
+      <li>Pushbutton to switch all lights off - a Virtual Input of Pushbutton type functional block (pushbutton realized by adding <code class="highlighter-rouge">autoupdate="false"</code> parameter)</li>
+      <li>Kitchen blinds - a Jalousie functional block</li>
+      <li>Lighting scene - a Lighting Controller functional block</li>
+      <li>Output valve selection for garden watering - 8x Radio Button functional block, where only one valve can be open at a time</li>
+      <li>A text displaying current alarm’s state - a State functional block</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="thingsloxonethings">things/loxone.things:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>loxone:miniserver:504F2414780F [ user="kryten", password="jmc2017", host="192.168.0.220", port=80
+</code></pre></div></div>
+
+<h3 id="itemsloxoneitems">items/loxone.items:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Type       ID              Label                                  Icon          Tags         Settings
+
+Number        Miniserver_Temp "Miniserver temperature: [%.1f °C]"    &lt;temperature&gt;              {channel="loxone:miniserver:504F2414780F:0F2F2133-017D-3C82-FFFF203EB0C34B9E"}
+Switch        Garage_Door     "Garage door [MAP(garagedoor.map):%s]" &lt;garagedoor&gt;               {channel="loxone:miniserver:504F2414780F:0F2F2133-017D-3C82-FFFF203EB0C34B9E"}
+Switch        Kitchen_Lights  "Kitchen Lights"                       &lt;switch&gt;      ["lighting"] {channel="loxone:miniserver:504F2414780F:0EC5E0CF-0255-6ABD-FFFF402FB0C24B9E_AI1"}
+Switch        Stair_Lights    "Stair Lights"                         &lt;switch&gt;      ["lighting"] {channel="loxone:miniserver:504F2414780F:0EC5E0CF-0255-31BD-FFFF402FB0C24B9E"}
+Number        Stair_Lights-1  "Stair Lights Deactivation Delay"      &lt;clock&gt;       ["lighting"] {channel="loxone:miniserver:504F2414780F:0EC5E0CF-0255-31BD-FFFF402FB0C24B9E-1"}
+Switch        Reset_Lights    "Switch all lights off"                &lt;switch&gt;      ["lighting"] {channel="loxone:miniserver:504F2414780F:0F2F2133-01AD-3282-FFFF201EB0C24B9E",autoupdate="false"}
+Rollershutter Kitchen_Blinds  "Kitchen blinds"                       &lt;blinds&gt;                   {channel="loxone:miniserver:504F2414780F:0F2E2123-014D-3232-FFEF204EB3C24B9E"}
+Dimmer        Kitchen_Dimmer  "Kitchen dimmer"                       &lt;slider&gt;      ["lighting"] {channel="loxone:miniserver:504F2414780F:0F2E2123-014D-3232-FFEF207EB3C24B9E"}
+Number        Light_Scene     "Lighting scene"                       &lt;light&gt;                    {channel="loxone:miniserver:504F2414780F:0FC4E0DF-0255-6ABD-FFFE403FB0C34B9E"}
+Number        Mood_Selector   "Lighting mood"                        &lt;light&gt;                    {channel="loxone:miniserver:504F2414780F:0FC4E0DF-0255-6ABD-FFFE203EA0C34B9E"}
+Switch        Mood_Enter_Home "Entering home"                        &lt;light&gt;                    {channel="loxone:miniserver:504F2414780F:0FC4E0DF-0255-6ABD-FFFE203EA0C34B9E-M1"}
+Switch        Mood_Read_Book  "Reading book"                         &lt;light&gt;                    {channel="loxone:miniserver:504F2414780F:0FC4E0DF-0255-6ABD-FFFE203EA0C34B9E-M2"}
+Switch        Mood_Evening    "Evening setup"                        &lt;light&gt;                    {channel="loxone:miniserver:504F2414780F:0FC4E0DF-0255-6ABD-FFFE203EA0C34B9E-M3"}
+Number        Garden_Valve    "Garden watering section"              &lt;garden&gt;                   {channel="loxone:miniserver:504F2414780F:0FC5E0DF-0355-6AAD-FFFE403FB0C34B9E"}
+String        Alarm_State     "Alarm state [%s]"                     &lt;alarm&gt;                    {channel="loxone:miniserver:504F2414780F:0F2E2134-017D-3E82-FFFF433FB4A34B9E"}
+</code></pre></div></div>
+
+<h3 id="sitemapsloxonesitemap">sitemaps/loxone.sitemap:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap loxone label="Loxone Example Menu"
+{
+    Frame label="Demo Controls" {
+        Text      item=Miniserver_Temp
+        Text      item=Garage_Door
+        Switch    item=Kitchen_Lights
+        Switch    item=Reset_Lights
+        Switch    item=Kitchen_Blinds
+        Slider    item=Kitchen_Dimmer switchSupport
+        Switch    item=Stairs_Light
+        Text      item=Stairs_Light-1
+        Selection item=Light_Scene mappings=[0="All off", 1="My scene 1", 2="My scene 2", 9="All on"]
+        Selection item=Mood_Selector
+        Switch    item=Mood_Enter_Home
+        Switch    item=Mood_Read_Book
+        Switch    item=Mood_Evening
+        Setpoint  item=Garden_Valve minValue=0 maxValue=8 step=1
+        Text      item=Alarm_State
+    }
+}
+</code></pre></div></div>
+
+<h3 id="transformgaragedoormap">transform/garagedoor.map:</h3>
+
+<div class="language-java highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">OFF</span><span class="o">=</span><span class="n">Closed</span>
+<span class="n">ON</span><span class="o">=</span><span class="n">Open</span>
+<span class="o">-=</span><span class="n">Unknown</span>
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

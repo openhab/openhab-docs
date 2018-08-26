@@ -1,0 +1,287 @@
+/* Style definitions specific to docs.openhab.org */
+
+.card .card-title {
+  color: #FF6600;
+  font-weight: 500;
+}
+
+.card .card-action a {
+  color: #039BE5;
+}
+
+.card .card-action a:hover {
+  color: #039BE5;
+}
+
+/* add-on tables */
+
+.addon-table h4 {
+  margin: 0px 0px 5px !important;
+}
+
+.addon-table h4:before {
+  content: none !important;
+}
+
+.addon-table h4:after {
+  content: none !important;
+}
+
+.addon-table td {
+  vertical-align: top;
+}
+
+.addon-table p {
+  margin: 0px 0px 0px !important;
+}
+
+.addon-table img.logo {
+  max-height: 60px !important;
+  max-width: 150px !important;
+}
+
+/* add-on category initial visibility */
+
+.install-legacy {
+  display: none;
+}
+
+.install-manual {
+  display: none;
+}
+
+/* Search box and results */
+
+li.search:hover {
+   background-color: transparent;
+}
+
+.search-form-input  {
+  padding-left: 5px !important;
+  width: 100px;
+  border: none !important;
+  transition: 0.2s ease-in;
+  display: block;
+  margin: 17px 0 0 0 !important;
+}
+
+.sticky .search-form-input {
+  margin: 9px 0 0 0 !important;
+}
+
+.search-form ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.search-form ::-moz-placeholder {
+  color: #fff;
+}
+
+.search-form ::-ms-input-placeholder{
+  color: #fff;
+}
+
+#searchform .search-form-input:focus {
+   padding-right: 30px !important;
+}
+
+#searchresults td {
+   border: none;
+   padding: 0 8px 0 8px;
+}
+
+#searchresults .gsc-webResult .gsc-result {
+   padding: 0px;
+}
+
+#searchresults table {
+   margin-bottom: 10px;
+}
+
+#searchresults .gs-title {
+   height: 1.4em;
+}
+
+#searchresults input {
+   box-sizing: content-box;
+}
+
+input.gsc-input {
+  box-shadow: none !important;
+}
+
+#querymob {
+  color: #000;
+  padding-left: 40px !important;
+  width: 260px;
+}
+
+/* Address (on imprint page) */
+address {
+  font-style: normal;
+}
+
+/* Footer line */
+footer {
+  position: static;
+  font-size: 0.8em;
+}
+footer .list-inline {
+  margin: 0;
+  list-style: none;
+}
+footer .list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}
+
+/* Overrides for mobile mode */
+
+#sidenav-overlay {
+  z-index: 995;
+}
+
+#nav-mobile {
+  top: 64px;
+  padding-bottom: 150px;
+}
+
+#nav-mobile .search .material-icons {
+  color: #aaa;
+  position: absolute;
+  left: 10px;
+  line-height: 50px;
+}
+
+#nav-mobile .search-form ::-webkit-input-placeholder {
+  color: #aaa;
+}
+
+#nav-mobile .search-form ::-moz-placeholder {
+  color: #aaa;
+}
+
+#nav-mobile .search-form ::-ms-input-placeholder{
+  color: #aaa;
+}
+
+@media only screen and (max-width: 992px) {
+
+  body.documentation section.text .side-nav-wrapper {
+      display: none;
+  }
+
+  /* Mobile mode side Nav */
+
+  /* All Menu Links */
+  .side-nav-mobile ul.nav {
+    margin-bottom: 20px;
+  }
+
+  .side-nav-mobile li.active {
+    background: none;
+  }
+
+  .side-nav-mobile ul.nav > li {
+    color: black;
+    font-size: 80%;
+  }
+
+  .side-nav-mobile ul.nav > ul {
+    padding: 0 !important;
+  }
+
+  .side-nav-mobile ul.nav a {
+    padding: 5px 10px;
+    font-size: 1rem;
+    line-height: 24px;
+    height: 36px;
+    display: block;
+    color: #01324D;
+    text-align: left;
+    font-weight: 300;
+  }
+
+  .side-nav-mobile ul.nav ul {
+    height: auto !important;
+  }
+
+  /* First Level Menu Links Hover */
+  .side-nav-mobile ul.nav > li > a:hover {
+    background: #EEE;
+  }
+
+  /* First Level Menu Links */
+  .side-nav-mobile ul.nav li a:after {
+    font-family: "Material Icons";
+    speak: none;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    content: "";
+    position: absolute;
+    right: 10px;
+  }
+
+  /* First level menu with sub nav */
+  .side-nav-mobile ul.nav li a.has-submenu:after {
+    content: "keyboard_arrow_down";
+  }
+
+  /* Active first level menu link */
+  .side-nav-mobile ul.nav li.active > a {
+    color: #039be5;
+    background: #EEE;
+  }
+
+  .side-nav-mobile ul.nav li.active a:after {
+
+  }
+
+  /* First level menu with sub nav opened */
+  .side-nav-mobile ul.nav li.active.open a:after {
+    content: "keyboard_arrow_up";
+  }
+
+  .side-nav-mobile ul.nav li.active ul li a:hover {
+    background: none;
+  }
+
+
+  .side-nav-mobile ul.nav li.active.open ul li a:after {
+    content: none;
+    display: none;
+  }
+
+  /* Second level menu with sub nav */
+  .side-nav-mobile ul.nav li.active.open ul li a.has-submenu:after {
+    content: "keyboard_arrow_down";
+    display: inline;
+  }
+
+  /* Second level menu with sub nav opened */
+  .side-nav-mobile ul.nav li.active.open ul li.open a.has-submenu:after {
+    content: "keyboard_arrow_up";
+  }
+
+  /* Active second level menu link */
+  .side-nav-mobile ul.nav li.active ul li.active a {
+    background: none;
+  }
+
+  .side-nav-mobile ul.nav ul {
+  display: none;
+    margin: 0px;
+    padding: 0px 0px 0px 20px;
+    background-color: #F6F6F6;
+  }
+
+  .side-nav-mobile ul.nav hr, .side-nav-mobile div.content hr {
+    border: 1px solid #CCC;
+    margin: 6px 2px 4px 2px;
+  }
+}

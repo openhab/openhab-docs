@@ -1,0 +1,38 @@
+{% include base.html %}
+{% assign docu = base | append: "/developers" %}
+
+<ul class="nav">
+  <li><a href="{{docu}}">Overview</a></li>
+  <li><a href="{{docu}}/contributing/contributing">Contributing</a></li>
+  <li><a href="{{docu}}/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="{{docu}}/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="{{docu}}/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="{{docu}}/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="{{docu}}/prerequisites/configadmin.html">Configuration Admin</a></li>
+          <li><a href="{{docu}}/prerequisites/osgitasks.html">Coding tasks</a></li>
+          <li><a href="{{docu}}/prerequisites/eventadmin.html">Event Admin</a></li>
+        </ul>
+      </li>
+      <li><a href="{{docu}}/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="{{docu}}/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="{{docu}}/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="{{docu}}/development/ide.html">IDE Setup</a></li>
+      <li><a href="{{docu}}/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="{{docu}}/development/conventions.html">Conventions</a></li>
+      <li><a href="{{docu}}/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="{{docu}}/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="{{docu}}/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="{{docu}}/development/evolution.html">Technical Differences</a></li>
+      <li><a href="{{docu}}/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>

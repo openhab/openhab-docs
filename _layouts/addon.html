@@ -1,0 +1,17 @@
+{% include header.html bodyClass="documentation"%}
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      {% include user-menu.html %}
+    </div>
+    {% include versioning.html %}
+    <div class="content">
+      {% include newsite-banner.html %}
+      {{ content }}
+    </div>
+  </div>
+</section>
+
+{% include footer.html %}
+{% include ssl-redirect.html %}

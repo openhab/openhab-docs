@@ -1,0 +1,87 @@
+# Yekyll site settings
+title: openHAB 2
+description: Empowering the Smart Home
+baseurl: "" # the subpath of the generated content, e.g. "" or "/v2.2"
+url: "https://docs.openhab.org" # the base hostname & protocol for your site
+twitter_username: openhab
+github_username:  openhab
+# Build settings
+markdown: kramdown
+exclude: ["CNAME", "pom.xml", "README.md", "CONTRIBUTING.md", "process_addons.groovy", "update-external-resources.sh", "Vagrantfile"]
+# Additional gems for sitemap generation
+plugins:
+  - jekyll-sitemap
+collections:
+  addons_actions:
+    output: true
+    permalink: /addons/actions/:path:output_ext
+  addons_bindings:
+    output: true
+    permalink: /addons/bindings/:path:output_ext
+  addons_iconsets:
+    output: true
+    permalink: /addons/iconsets/:path:output_ext
+  addons_ios:
+    output: true
+    permalink: /addons/ios/:path:output_ext
+  addons_persistences:
+    output: true
+    permalink: /addons/persistence/:path:output_ext
+  addons_transformations:
+    output: true
+    permalink: /addons/transformations/:path:output_ext
+  addons_uis:
+    output: true
+    permalink: /addons/uis/:path:output_ext
+  addons_voices:
+    output: true
+    permalink: /addons/voices/:path:output_ext
+defaults:
+  -
+    scope:
+      path: ""
+      type: addons_actions
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_bindings
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_iconsets
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_ios
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_persistences
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_transformations
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_uis
+    values:
+      layout: addon
+  -
+    scope:
+      path: ""
+      type: addons_voices
+    values:
+      layout: addon

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/tutorials/beginner/" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li>Tutorial (Beginner)</li>
+  <ul>
+    <li><a href="/v2.2/tutorials/beginner/index.html">Overview</a></li>
+    <li><a href="/v2.2/tutorials/beginner/1sttimesetup.html">First-time setup</a></li>
+    <li><a href="/v2.2/tutorials/beginner/uis.html">User Interfaces</a></li>
+    <li><a href="/v2.2/tutorials/beginner/configuration.html">Configuring openHAB and installing add-ons</a></li>
+    <li><a href="/v2.2/tutorials/beginner/sitemap.html">Creating a sitemap</a></li>
+    <li><a href="/v2.2/tutorials/beginner/rules.html">Working with rules</a></li>
+    <li><a href="/v2.2/tutorials/beginner/logs.html">Looking to the logs</a></li>
+    <li><a href="/v2.2/tutorials/beginner/persistence.html">Working with persistence</a></li>
+  </ul>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="overview">Overview</h1>
+
+<p>This part covers all the basics to use openHAB after you installed it: how to perform the first-time setup, add some bindings, discover and configure things for the first time and finally how to create a sitemap and some basic rules.</p>
+
+<p>The goal of this tutorial is to cover the first steps for new users.
+After performing the first-time setup, you will learn how to install a very simple “binding”, the “Network Binding”.
+A binding is an additional package for openHAB to be able to interact with all kinds of devices or situations.
+To show you the use and configuriation of a more complex binding, we’ll guide you through the installation of the “Zwave Binding”, a binding to control devices in a Zwave network.
+At the end of this tutorial, you will be able to create a local sitemap and your first simple rules.</p>
+
+<p><strong>This tutorial assumes that you already installed openHAB on your preferred system.
+If you’re looking for installation instructions for your platform, please have a look <a href="/v2.2/installation/index.html">here</a> before continuing with this tutorial!</strong></p>
+
+<p>Let’s proceed to step 1, the <a href="/v2.2/tutorials/beginner/1sttimesetup.html">First-Time setup</a></p>
+
+<p><br /></p>
+<hr />
+
+<p><br /></p>
+<div class="row">
+  <div class="col s10 offset-s1">
+    <div class="card grey lighten-3" id="contribution-wanted">
+      <div class="card-content black-text">
+        <span class="card-title">Contributions Wanted</span>
+        <p>Help improve the openHAB 2 documentation! If you'd like to leave corrections, additions or comments for this article or any other part of this website, please drop a word at:</p>
+      </div>
+      <div class="card-action">
+        <a target="_blank" href="https://github.com/openhab/openhab-docs/issues">docs.openhab.org Issue Tracker</a>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

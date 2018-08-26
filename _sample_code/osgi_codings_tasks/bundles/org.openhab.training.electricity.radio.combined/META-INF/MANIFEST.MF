@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Combined Radio
+Bundle-Vendor: openHAB.org
+Bundle-SymbolicName: org.openhab.training.electricity.radio.combined
+Bundle-Version: 1.0.0.qualifier
+Bundle-License: http://www.eclipse.org/legal/epl-v10.html
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Import-Package: org.openhab.training.electricity.consumer,
+ org.openhab.training.electricity.consumer.dynamic,
+ org.openhab.training.electricity.provider,
+ org.openhab.training.electricity.radio.solar,
+ org.openhab.training.electricity.radio.ds
+Service-Component: OSGI-INF/*.xml

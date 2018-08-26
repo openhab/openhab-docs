@@ -1,0 +1,2034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>RFXCOM - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/rfxcom1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom1/readme.html">RFXCOM <small>(legacy/manual)</small></a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/rfxcom1/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/rfxcom1/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/rfxcom1/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="rfxcom-binding">RFXCOM Binding</h1>
+
+<p>The binding should be compatible at least with RFXtrx433 USB 433.92MHz transceiver, which contains both receiver and transmitter functions. The RFXtrx433E is fully compatible with the RFXtrx433, and has in addition the possibility to transmit RFY (Somfy RTS) RF command at the frequency used by Somfy.</p>
+
+<p>The RFXCOM binding currently supports the following packet types:</p>
+
+<ul>
+  <li>Blinds1</li>
+  <li>Control</li>
+  <li>Current</li>
+  <li>Curtain1</li>
+  <li>Energy</li>
+  <li>Humidity</li>
+  <li>Interface</li>
+  <li>Lighting1</li>
+  <li>Lighting2</li>
+  <li>Lighting4</li>
+  <li>Lighting5</li>
+  <li>Lighting6</li>
+  <li>Factory</li>
+  <li>Interface</li>
+  <li>Rain</li>
+  <li>Rfy</li>
+  <li>Security1</li>
+  <li>Security2</li>
+  <li>TemperatureHumidity</li>
+  <li>Temperature</li>
+  <li>Thermostat1</li>
+  <li>Transmitter</li>
+  <li>Wind</li>
+</ul>
+
+<p>There is also a binding specifically for openHAB 2 <a href="http://docs.openhab.org/addons/bindings/rfxcom/readme.html">here</a>.</p>
+
+<h2 id="table-of-contents">Table of Contents</h2>
+
+<!-- MarkdownTOC -->
+
+<ul>
+  <li><a href="#rfxcom-devices">RFXCOM Devices</a></li>
+  <li><a href="#binding-configuration">Binding Configuration</a></li>
+  <li><a href="#item-configuration">Item Configuration</a>
+    <ul>
+      <li><a href="#deviceid-must-be-provided-in-decimal">DeviceId must be provided in decimal</a></li>
+      <li><a href="#packettypesubtype-examples">PacketType.SubType Examples</a></li>
+      <li><a href="#known-values-for-packettypesubtype">Known Values for PacketType.SubType</a></li>
+      <li><a href="#value-selectors">Value Selectors</a></li>
+    </ul>
+  </li>
+  <li><a href="#examples">Examples</a>
+    <ul>
+      <li><a href="#weather-station">Weather Station</a></li>
+      <li><a href="#switches">Switches</a></li>
+      <li><a href="#security1x10securitymotion">SECURITY1.X10_SECURITY_MOTION</a></li>
+      <li><a href="#lighting4pt2262">LIGHTING4.PT2262</a></li>
+      <li><a href="#lighting5it-flamingo-fa500-flamingo-fa500s2-flamingo-fa500s3">LIGHTING5.IT (Flamingo FA500, Flamingo FA500S/2, Flamingo FA500S/3)</a></li>
+      <li><a href="#thermostat1">THERMOSTAT1</a></li>
+      <li><a href="#lightwaverf">LIGHTWAVERF</a></li>
+      <li><a href="#lightwaverf-mood-switch">LIGHTWAVERF Mood Switch</a></li>
+      <li><a href="#owl-cm160-energy-monitor">OWL CM160 Energy Monitor</a></li>
+      <li><a href="#owl-cm113-energy-monitor">OWL CM113 Energy Monitor</a></li>
+    </ul>
+  </li>
+</ul>
+
+<!-- /MarkdownTOC -->
+
+<h2 id="rfxcom-devices">RFXCOM Devices</h2>
+
+<p>The RFXtrx433 device is a very versatile transceiver that can send and receive information to and from a wide number of compatible devices from different brands and manufacturers.</p>
+
+<p>Supports RF 433 Mhz protocols like: HomeEasy, Cresta, X10, La Crosse, OWL, CoCo (<a href="http://www.klikaanklikuit.nl">KlikAanKlikUit</a>), PT2262, Oregon e.o.</p>
+
+<p><strong>Suitable for receiving e.g. following 433.92MHz sensors:</strong></p>
+
+<ul>
+  <li>Cent-a-meter, Electrisave, OWL ampere and power meters,
+Alecto, Cresta, Fine Offset, Hideki, LaCrosse, Oregon, Rubicson, TFA, Viking weather sensors,</li>
+  <li>Avidsen, Chacon, NEXA, Flamingo, Blyss, Proove smoke detectors,</li>
+  <li>Atlantic Meiantech, Visonic, X10 alarm sensors,</li>
+  <li>Oregon scales,</li>
+  <li>Maverick BBQ Rubicson sensors</li>
+  <li>Keeloq, HCS301 based sensors (Security2 protocol)</li>
+  <li>Chacon, Home Easy, COCO, NEXA, X10, Flamingo FA500R remote controls.</li>
+</ul>
+
+<p><strong>And suitable for controlling e.g. following 433.92MHz devices:</strong></p>
+
+<ul>
+  <li>ANSLUT, BBSB, Blyss, Brennestuhl, Chacon, COCO, DI.O, ELRO, Energenie, Eurodomest, Flamingo, HomeEasy, Pulse, Inter Techno, K ambrook, COCO, LightwaveRF, Livolo, Mercury, NEXA, Phenix, Proove, risingsun, Sartano, Siemens, X10, XDOM dimmers / switches,</li>
+  <li>Byron SX, Select Plus doorbell,</li>
+  <li>A-OK, Bofu, Ematronic, Hasta, RAEX, Rohrmotor24,  Roller Trol, Somfy (RFY), Yooda shutter / awning motors,</li>
+  <li>Harrison, Forest curtain motors,</li>
+  <li>Kingpin, Media Mount, Proluxx projection,</li>
+  <li>Avidsen, Chacon, NEXA, Flamingo, Blyss, Proove smoke alarms with  siren,</li>
+  <li>Mertik Maxitrol fireplace,</li>
+  <li>Aoke relay,</li>
+  <li>TRC02 RGB, MDREMOTE LED strip controller,</li>
+  <li>Smartwares radiator valve.</li>
+</ul>
+
+<p><strong>And with the RFXtrx433E suitable for controlling e.g. following 433.42MHz devices:</strong></p>
+
+<ul>
+  <li>Somfy RTS,</li>
+  <li>ASA</li>
+</ul>
+
+<p>See RFXtrx User Guide for the complete list of supported sensors and devices <a href="http://www.rfxcom.com">http://www.rfxcom.com</a> and firmware update announcements.</p>
+
+<p><strong>Whilst the range of supported devices is impressive, not all of them are compatible with the binding for openHAB yet</strong></p>
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>The binding can be configured in the file <code class="highlighter-rouge">services/rfxcom.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Key</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>serialPort</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>the serial port on the host system where RFXCOM controller is connected, e.g. <code class="highlighter-rouge">COM1</code> on Windows,<code class="highlighter-rouge">/dev/ttyS0</code> on Linux or <code class="highlighter-rouge">/dev/tty.PL2303-0000103D</code> on Mac.<br />NOTE: On Linux, should the RFXCOM device be added to the <code class="highlighter-rouge">dialout</code> group, you may get an error stating the the serial port cannot be opened when the RfxCom plugin tries to load.  You can get around this by adding the <code class="highlighter-rouge">openhab</code> user to the <code class="highlighter-rouge">dialout</code> group like this: <code class="highlighter-rouge">usermod -a -G dialout openhab</code>. Also on Linux you may have issues with the USB if using two serial USB devices e.g. RFXcom and ZWave. See the <a href="https://github.com/openhab/openhab1-addons/wiki/symlinks">wiki page on symlinks</a>.</td>
+    </tr>
+    <tr>
+      <td>setMode</td>
+      <td> </td>
+      <td style="text-align: center">No</td>
+      <td>can be used to configure RFXCOM controller to listen to various receiver protocols. This is very useful because the receiver will become more sensitive when only the required protocols are enabled. Example: <code class="highlighter-rouge">0D000000035300000C2F00000000</code>. You can use the RFXmngr application <a href="http://www.rfxcom.com/">found in the Downloads section of the RFXcom website (Windows only)</a> to get the valid configuration command. Command must be a 28 characters (14 bytes) hexadecimal string.  You can also use RFXmngr to get the Device Ids needed to bind each item to openHAB.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="item-configuration">Item Configuration</h2>
+
+<p>The syntax for “in” bindings (updating item states):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rfxcom="&lt;&lt;DeviceId&gt;:&lt;ValueSelector&gt;"
+</code></pre></div></div>
+
+<p>The syntax for “out” bindings (sending commands to items):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rfxcom="&gt;&lt;DeviceId&gt;:&lt;PacketType&gt;.&lt;SubType&gt;:&lt;ValueSelector&gt;"
+</code></pre></div></div>
+
+<h3 id="deviceid-must-be-provided-in-decimal">DeviceId must be provided in decimal</h3>
+
+<p>RFXmngr and the openHAB logging outputs may display something like this example from a HomeEasy wireless wall switch.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Packet Length   = 0B
+Packettype      = Lighting2
+Subtype         = AC
+Id              = 00130FE2
+Unitcode        = 11
+Command         = Off
+Dim level       = 0%
+</code></pre></div></div>
+
+<p>You wouldn’t be forgiven for thinking the <code class="highlighter-rouge">&lt;DeviceId&gt;</code> is <code class="highlighter-rouge">00130FE2</code> but this is not the Id you need.</p>
+
+<p>This is the correct <code class="highlighter-rouge">&lt;DeviceId&gt;</code> but it is in the wrong (hexadecimal) format. You need to convert it to decimal, using a tool like <a href="http://www.binaryhexconverter.com/hex-to-decimal-converter">binaryhexconverter.com</a>. You simply put the HEX <code class="highlighter-rouge">00130FE2</code> in the correct field and press convert.</p>
+
+<p>Use the converted decimal number (easy to identify as it won’t contain any letters) as the <code class="highlighter-rouge">&lt;DeviceId&gt;</code>.</p>
+
+<p>So continuing with the above example. The displayed Id in HEX was <code class="highlighter-rouge">00130FE2</code> this is converted into DEC <code class="highlighter-rouge">1249250</code>. Also for this packettype (Lighting2) you need to join the Unitcode <code class="highlighter-rouge">11</code> to the <code class="highlighter-rouge">&lt;DeviceId&gt;</code>, so finally the binding for the item is:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch    Wall_Switch_FF_Office    {rfxcom="&lt;1249250.11:Command"}
+</code></pre></div></div>
+
+<h4 id="finding-the-correct-deviceid-for-your-items">Finding the correct DeviceId for your items</h4>
+
+<p>If you want to add cheap 433 MHz devices like PT2622 remotes, contacts, sensors or wireless outlets and don’t know the correct values, you can start openHAB in debug mode, press the buttons on the original remote or act on the sensor.</p>
+
+<p>To pair the entry-level wireless remote outlets (Elro, Intertechno, Intertek, Pollin, …) you can do the following:</p>
+
+<ul>
+  <li>Enable Lighting4 protocol using the RFXMgr or <code class="highlighter-rouge">setMode</code></li>
+  <li>Run openHAB in debug mode</li>
+  <li>Press a button on the original remote controller (here I press <code class="highlighter-rouge">A ON</code>) and read the DeviceId <code class="highlighter-rouge">Id</code> and the pulse width <code class="highlighter-rouge">Pulse</code> from the output:</li>
+</ul>
+
+<div class="language-text highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[DEBUG] [.b.r.internal.RFXComConnection:148  ] - Data received:
+- Packet type = LIGHTING4
+- Id = 1285
+- Command = ON
+- Pulse = 318
+</code></pre></div></div>
+
+<p>You can use these values to configure the binding to receive and send data.</p>
+
+<p>Alternately, you can enable DEBUG logging for the logger named <code class="highlighter-rouge">org.openhab.binding.rfxcom</code>.</p>
+
+<blockquote>
+  <p>Some devices like Oregon Thermo Hygrometer changes the <code class="highlighter-rouge">&lt;DeviceId&gt;</code> every time you remove the batteries.  When you change your batteries you will have to get the new <code class="highlighter-rouge">&lt;DeviceId&gt;</code> and update the item.</p>
+</blockquote>
+
+<hr />
+
+<h3 id="packettypesubtype-examples">PacketType.SubType Examples</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Packet</th>
+      <th><code class="highlighter-rouge">&lt;PacketType&gt;.&lt;SubType&gt;</code></th>
+      <th>Examples</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Lighting1</td>
+      <td><code class="highlighter-rouge">SensorId.UnitCode</code></td>
+      <td><code class="highlighter-rouge">B.1</code> or <code class="highlighter-rouge">B.2</code> or <code class="highlighter-rouge">B.0</code> (note 1)</td>
+    </tr>
+    <tr>
+      <td>Lighting2</td>
+      <td><code class="highlighter-rouge">SensorId.UnitCode</code></td>
+      <td><code class="highlighter-rouge">636602.1</code> or <code class="highlighter-rouge">636602.0</code>  (note 1)</td>
+    </tr>
+    <tr>
+      <td>Lighting4</td>
+      <td><code class="highlighter-rouge">SensorId</code></td>
+      <td><code class="highlighter-rouge">1285</code></td>
+    </tr>
+    <tr>
+      <td>Lighting5</td>
+      <td><code class="highlighter-rouge">SensorId.UnitCode</code></td>
+      <td><code class="highlighter-rouge">636602.1</code></td>
+    </tr>
+    <tr>
+      <td>Lighting6</td>
+      <td><code class="highlighter-rouge">SensorId.GroupCode.UnitCode</code></td>
+      <td><code class="highlighter-rouge">257.B.1</code> or <code class="highlighter-rouge">64343.B.2</code> or <code class="highlighter-rouge">636602.H.5</code></td>
+    </tr>
+    <tr>
+      <td>Curtain1</td>
+      <td><code class="highlighter-rouge">SensorId.UnitCode</code></td>
+      <td><code class="highlighter-rouge">P.1</code> (note 2)</td>
+    </tr>
+    <tr>
+      <td>TemperatureHumidity, Current, Energy etc</td>
+      <td><code class="highlighter-rouge">SensorId.UnitCode</code></td>
+      <td><code class="highlighter-rouge">2561</code></td>
+    </tr>
+    <tr>
+      <td>Security2</td>
+      <td><code class="highlighter-rouge">S2_SensorId</code></td>
+      <td><code class="highlighter-rouge">S2_12567</code></td>
+    </tr>
+    <tr>
+      <td>RfyMessage</td>
+      <td><code class="highlighter-rouge">Id1.Id2.Id3.UnitCode</code></td>
+      <td><code class="highlighter-rouge">0.12.12.1</code> (note 3)</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Notes:</p>
+
+<ol>
+  <li>Where “0” would control all items on device,</li>
+  <li>See the RFXcom documents/manual for more information</li>
+  <li>See the RFXcom documents/manual, for defining the Ids and Unit code, you should pair the RFXcom with your somfy motor using RFXMgr program</li>
+</ol>
+
+<h3 id="known-values-for-packettypesubtype">Known Values for PacketType.SubType</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="highlighter-rouge">&lt;PacketType&gt;.&lt;SubType&gt;</code></th>
+      <th>Description</th>
+      <th>ValueSelector</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>LIGHTING1.X10</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.ARC</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.AB400D</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.WAVEMAN</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.EMW200</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.IMPULS</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.RISINGSUN</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.PHILIPS</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING1.ENERGENIE</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING2.AC</td>
+      <td>working</td>
+      <td>Command, DimmingLevel</td>
+    </tr>
+    <tr>
+      <td>LIGHTING2.HOME_EASY_EU</td>
+      <td>working</td>
+      <td>Command,DimmingLevel</td>
+    </tr>
+    <tr>
+      <td>LIGHTING2.ANSLUT</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>LIGHTING4.PT2262</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING5.LIGHTWAVERF</td>
+      <td>working</td>
+      <td>Command, DimmingLevel</td>
+    </tr>
+    <tr>
+      <td>LIGHTING5.IT</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>LIGHTING6.BLYSS</td>
+      <td>working</td>
+      <td>Command</td>
+    </tr>
+    <tr>
+      <td>CURTAIN1.HARRISON</td>
+      <td>Harrison curtain rail, e.g. Neta 12</td>
+      <td>Shutter</td>
+    </tr>
+    <tr>
+      <td>TEMPERATURE.La Crosse TX17</td>
+      <td>working</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.Oregon 2.1<br />THGN122_123_132_THGR122_228_238_268</td>
+      <td>working</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.THGN800_THGR810</td>
+      <td>working</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.RTGR328</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.THGR328</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.WTGR800</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.<br />THGR918_THGRN228_THGN50</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.TFA_TS34C__CRESTA</td>
+      <td>Working</td>
+      <td>Temperature, Humidity, HumidityStatus, BatteryLevel, SignalLevel</td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.<br />WT260_WT260H_WT440H_WT450_WT450H</td>
+      <td>Untested</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TEMPERATUREHUMIDITY.VIKING_02035_02038</td>
+      <td>Working</td>
+      <td>Temperature, Humidity, Humidity status, Signal level, Battery level</td>
+    </tr>
+    <tr>
+      <td>SECURITY1.X10_SECURITY_MOTION</td>
+      <td>working</td>
+      <td>Motion</td>
+    </tr>
+    <tr>
+      <td>SECURITY2</td>
+      <td>working<br />e.g. JFL SHC3.0</td>
+      <td>Contact,Contact1,Contact2,Contact3,SignalLevel,BatteryLevel</td>
+    </tr>
+    <tr>
+      <td>THERMOSTAT1</td>
+      <td>Digimax 210 working</td>
+      <td>Temperature, SetPoint, Contact</td>
+    </tr>
+    <tr>
+      <td>ENERGY.ELEC1</td>
+      <td>Owl CM113 Working</td>
+      <td>Channel1Amps, Channel2Amps, Channel3Amps</td>
+    </tr>
+    <tr>
+      <td>ENERGY.ELEC2</td>
+      <td>Owl CM160 Working</td>
+      <td>InstantAmps, TotalAmpHours</td>
+    </tr>
+    <tr>
+      <td>RFY.RFY</td>
+      <td>Working</td>
+      <td>Shutter</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="value-selectors">Value Selectors</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th><code class="highlighter-rouge">&lt;ValueSelector&gt;</code></th>
+      <th>Item type</th>
+      <th>Values</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>RawData</td>
+      <td>String</td>
+      <td> </td>
+      <td>Full message in hex.</td>
+    </tr>
+    <tr>
+      <td>Data</td>
+      <td>String</td>
+      <td> </td>
+      <td>Message without header. Since 1.9.0.</td>
+    </tr>
+    <tr>
+      <td>Command</td>
+      <td>Switch</td>
+      <td>ON, OFF, GROUP_ON, GROUP_OFF</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SignalLevel</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>DimmingLevel</td>
+      <td>Dimmer</td>
+      <td>UP, DOWN, PERCENTAGE</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Temperature</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Humidity</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>HumidityStatus</td>
+      <td>String</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>BatteryLevel</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Shutter</td>
+      <td>Rollershutter</td>
+      <td>OPEN, CLOSE, STOP</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Motion</td>
+      <td>Switch</td>
+      <td>MOTION, NO_MOTION</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Voltage</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>SetPoint</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Pressure</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Forecast</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RainRate</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RainTotal</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WindDirection</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>WindSpeed</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Gust</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>ChillFactor</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>InstantPower</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TotalUsage</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Voltage</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>InstantAmps</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>TotalAmpHours</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Channel1Amps</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Channel2Amps</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Channel3Amps</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Status</td>
+      <td>String</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Mood</td>
+      <td>Number</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Contact</td>
+      <td>Contact</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Contact1</td>
+      <td>Contact</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Contact2</td>
+      <td>Contact</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Contact3</td>
+      <td>Contact</td>
+      <td> </td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="examples">Examples</h2>
+
+<h3 id="weather-station">Weather Station</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number OutdoorTemperature { rfxcom="&lt;2561:Temperature" }
+Number OutdoorHumidity { rfxcom="&lt;2561:Humidity" }
+Number RainRate { rfxcom="&lt;30464:RainRate" }
+Number WindSpeed    { rfxcom="&lt;19968:WindSpeed" }
+</code></pre></div></div>
+
+<h3 id="switches">Switches</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Btn1 { rfxcom="&lt;636602.1:Command" }
+Number Btn1SignalLevel { rfxcom="&lt;636602.1:SignalLevel" }
+Dimmer Btn1DimLevel { rfxcom="&lt;636602.1:DimmingLevel" }
+String Btn2RawData { rfxcom="&lt;636602.2:RawData" }
+Switch ChristmasTreeLights { rfxcom="&gt;636602.1:LIGHTING2.AC:Command" }
+Rollershutter CurtainDownstairs { rfxcom="&gt;P.1:CURTAIN1.HARRISON:Shutter" }
+Rollershutter ShutterBedroom { rfxcom="&gt;1.0.0.1:RFY.RFY:Shutter" }
+</code></pre></div></div>
+
+<h3 id="security1x10_security_motion">SECURITY1.X10_SECURITY_MOTION</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch swMotion { rfxcom="&lt;4541155:Motion" }
+Number MSensor_Bat { rfxcom="&lt;4541155:BatteryLevel" }
+</code></pre></div></div>
+<h3 id="lighting4pt2262">LIGHTING4.PT2262</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch swWallController { rfxcom="&lt;1285:Command" } // receive wireless wall switch
+Switch pCoffeeMachine { rfxcom="&gt;1285.315:LIGHTING4.PT2262:Command" } // control wireless outlet
+</code></pre></div></div>
+
+<h3 id="lighting5it-flamingo-fa500-flamingo-fa500s2-flamingo-fa500s3">LIGHTING5.IT (Flamingo FA500, Flamingo FA500S/2, Flamingo FA500S/3)</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch fa500_remote_A { rfxcom="&lt;2622466.1:Command" } 
+Switch fa500_remote_B { rfxcom="&lt;2622466.2:Command" }
+Switch fa500_remote_C { rfxcom="&lt;2622466.3:Command" }
+Switch fa500_remote_D { rfxcom="&lt;2622466.4:Command" }
+
+// Note: does not mimic the remote but uses another subtype and code which 
+// should be learned to the socket separately 
+Switch virtual_fa500s_switch_1 { rfxcom="&gt;2061.1:LIGHTING5.IT:Command" } 
+Switch virtual_fa500s_switch_2 { rfxcom="&gt;2061.2:LIGHTING5.IT:Command" }
+</code></pre></div></div>
+
+<h3 id="thermostat1">THERMOSTAT1</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number RFXTemp_Living { rfxcom="&lt;30515:Temperature" } 
+Number RFXTemp_LivingSP { rfxcom="&lt;30515:SetPoint" }
+Contact RFXTemp_LivingRoom_Stat { rfxcom="&lt;30515:Contact" }
+</code></pre></div></div>
+
+<h3 id="lightwaverf">LIGHTWAVERF</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Light1 { rfxcom="&gt;3155730.3:LIGHTING5.LIGHTWAVERF:Command"}
+Dimmer Light2 "Light2 [%d %%]" { rfxcom="&gt;3155730.4:LIGHTING5.LIGHTWAVERF:DimmingLevel"  }
+</code></pre></div></div>
+
+<h3 id="lightwaverf-mood-switch">LIGHTWAVERF Mood Switch</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Button_MoodSwitch { rfxcom="&lt;15942554.16:Mood" }
+</code></pre></div></div>
+
+<h3 id="owl-cm160-energy-monitor">OWL CM160 Energy Monitor</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Owl_InstantAmps { rfxcom="&lt;63689:InstantAmps"}
+Number Owl_TotalAmpHours { rfxcom="&lt;63689:TotalAmpHours"  }
+</code></pre></div></div>
+
+<h3 id="owl-cm113-energy-monitor">OWL CM113 Energy Monitor</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number Owl_Amps { rfxcom="&lt;35072:Channel2Amps" }
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

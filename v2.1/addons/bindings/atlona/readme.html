@@ -1,0 +1,1852 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Atlona - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/addons/bindings/atlona/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../addons/bindings/atlona/readme.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/addons/bindings/atlona/readme.html">v2.2</a></li>
+      <li><a href="/v2.1/addons/bindings/atlona/readme.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="atlona-binding">Atlona Binding</h1>
+
+<p>This binding integrates Atlona AT-UHD-PRO3 HdBaseT matrix switches <a href="http://www.atlona.com">Atlona AT-UHD-PRO3 HdBaseT matrix switches</a> into your openHAB installation.</p>
+
+<h2 id="supported-things">Supported Things</h2>
+
+<p>This binding supports the following thing types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thing</th>
+      <th>Thing Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pro3-44m</td>
+      <td>Thing</td>
+      <td>The AT-UHD-PRO3-44M 4x4 HDBaseT matrix.</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>Thing</td>
+      <td>The AT-UHD-PRO3-66M 6x6 HDBaseT matrix.</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>Thing</td>
+      <td>The AT-UHD-PRO3-88M 8x8 HDBaseT matrix.</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>Thing</td>
+      <td>The AT-UHD-PRO3-1616M 16x16 HDBaseT matrix.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>The Atlona AT-UHD-PRO3 switch can be discovered by starting a scan in the Paper UI and then logging into your switch and pressing the “SDDP” button on the “Network” tab.  The “SDDP” 
+(simple device discovery protocol) button will initiate the discovery process.  If “Telnet Login” is enabled (“Network” tab from the switch configuration UI), you will need to set the
+username and password in the configuration of the newly discovered thing before a connection can be made.</p>
+
+<h2 id="binding-configuration">Binding configuration</h2>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atlona:pro3-88m:home [ ipAddress="192.168.1.30", userName="me", password="12345", polling=600, ping=30, retryPolling=10 ]
+</code></pre></div></div>
+
+<ul>
+  <li>ipAddress: Hostname or IP address of the matrix switch</li>
+  <li>userName: (optional) the username to login with (only if Telnet Login is enabled)</li>
+  <li>password: (optional) the password to login with (only if Telnet Login is enabled)</li>
+  <li>polling: (optional) the time (in seconds) to poll the state from the actual switch (default: 600)</li>
+  <li>ping: (optional) the time (in seconds) to ping the switch to keep our connection alive (default: 30)</li>
+  <li>retryPolling: (optional) the time (in seconds) to retry a connection if the connection has failed (default: 10)</li>
+</ul>
+
+<h3 id="usernamepassword">username/password</h3>
+
+<p>The userName/password configuration options are optional and are only required if you have your switch set with “Telnet Login” enabled (on the “Network” tab from the switch configuration UI).  The user must be a valid user listed on the “Users” tab of the switch configuration UI in this case.</p>
+
+<h3 id="polling">polling</h3>
+
+<p>Polling will automatically occur when (re)connecting to the switch to get the initial state of the switch.  If you have anything outside of openHAB that can modify the switch state (front panel, IR, telnet session or another automation system), you will likely want to set this setting to a much lower value.</p>
+
+<h3 id="ping">ping</h3>
+
+<p>The Atlona switch will time out any IP connection after a specific time (specified by “IP Timeout” on the “Network” tab from the switch configuration UI - 120 by default).  The ping setting MUST be lower than that value.  If it is higher than the “IP Timeout” value, the switch will timeout our connection and the thing will go OFFLINE (until a reconnect attempt is made).</p>
+
+<h2 id="channels">Channels</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Thing</th>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Access</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>pro3-44m</td>
+      <td>primary#power</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Matrix Power Switch</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>primary#panellock</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Sets the front panel locked or unlocked</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>primary#irenable</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disabled the front panel IR</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>primary#presetcmd</td>
+      <td>Switch</td>
+      <td>W</td>
+      <td>Sends a preset command (‘saveX’, ‘recallX’, ‘clearX’) - see notes below</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>primary#matrixcmd</td>
+      <td>Switch</td>
+      <td>W</td>
+      <td>Sends a matrix command (‘resetmatrix’, ‘resetports’, ‘allportsX’) - see notes below</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port1#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #1</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port1#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #1 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port2#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #2</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port2#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #2 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port3#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #3</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port3#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #3 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port4#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #4</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port4#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #4 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port5#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #5</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>port5#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #5 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>mirror5#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #5 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>mirror5#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #5 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume1#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #1 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume1#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #1</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume2#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #2 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume2#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #2</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume3#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #3 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-44m</td>
+      <td>volume3#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #3</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>ALL OF THE pro3-44M channels (except different mirror settings)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port6#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #6</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port6#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #6 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port7#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #7</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port7#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #7 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port8#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #8</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>port8#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #8 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>mirror6#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #6 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>mirror6#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #6 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>mirror8#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #8 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>mirror8#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #8 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>volume4#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #4 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-66m</td>
+      <td>volume4#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #4</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>ALL OF THE pro3-66M channels (except different mirror settings)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>port9#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #9</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>port9#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #9 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>port10#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #10</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>port10#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #10 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>mirror8#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #8 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>mirror8#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #8 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>mirror10#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #10 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>mirror10#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #10 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>volume5#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #5 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>volume5#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #5</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>volume6#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #6 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-88m</td>
+      <td>volume6#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #6</td>
+    </tr>
+    <tr>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>ALL OF THE pro3-88M channels (except different mirror settings)</td>
+      <td> </td>
+      <td> </td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port11#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #11</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port11#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #11 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port12#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #12</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port12#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #12 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port13#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #13</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port13#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #13 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port14#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #14</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port14#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #14 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port15#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #15</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port15#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #15 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port16#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #16</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port16#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #16 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port17#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #17</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port17#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #17 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port18#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #18</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port18#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #18 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port19#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #19</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port19#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #19 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port20#portpower</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Enables/Disables output port #20</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>port20#portoutput</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets output port #20 to the specified input port</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror17#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #17 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror17#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #17 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror18#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #18 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror18#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #18 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror19#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #19 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror19#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #19 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror20#portmirrorenabled</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #20 to enable/disable port mirroring</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>mirror20#portmirror</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets hdmi port #20 to mirror the specified output port (if enabled)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume7#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #7 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume7#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #7</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume8#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #8 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume8#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #8</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume9#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #9 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume9#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #9</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume10#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #10 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume10#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #10</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume11#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #11 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume11#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #11</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume12#volume</td>
+      <td>Number</td>
+      <td>RW</td>
+      <td>Sets the volume of audio port #12 to the specified decibel level (between -79db to +15db)</td>
+    </tr>
+    <tr>
+      <td>pro3-1616m</td>
+      <td>volume12#volumemute</td>
+      <td>Switch</td>
+      <td>RW</td>
+      <td>Mutes/Unmutes audio port #12</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="presetcmd">presetcmd</h3>
+
+<p>The presetcmd channel will take the following commands:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>saveX</td>
+      <td>Saves the current input/output to preset X</td>
+    </tr>
+    <tr>
+      <td>recallX</td>
+      <td>Sets the input/output to preset X</td>
+    </tr>
+    <tr>
+      <td>clearX</td>
+      <td>Clears the preset X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: if X doesn’t exist - nothing will occur.  The # of presets allowed depends on the firmware you are using (5 presets up to rev 13, 10 for rev 14 and above).</p>
+
+<h3 id="matrixcmd">matrixcmd</h3>
+
+<p>The matrixcmd channel will take the following commands:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Command</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>resetmatrix</td>
+      <td>Resets the matrix back to it’s default values (USE WITH CARE!).  Note: some firmware upgrades require a resetmatrix after installing.</td>
+    </tr>
+    <tr>
+      <td>resetports</td>
+      <td>Resets the ports back to their default values (outputX=inputX)</td>
+    </tr>
+    <tr>
+      <td>allportsX</td>
+      <td>Sets all the output ports to the input port X</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note: if X doesn’t exist - nothing will occur.  The # of presets allowed depends on the firmware you are using (5 presets up to rev 13, 10 for rev 14 and above).</p>
+
+<h2 id="changeswarnings">Changes/Warnings</h2>
+
+<p>As of firmware 1.6.03 (rev 13), there are three issues on Atlona firmware (I’ve notified them on these issues):</p>
+
+<ul>
+  <li>clearX command does not work.  The TCP/IP command “ClearX” as specified in Atlona’s protocol will ALWAYS return a “Command Failed”.  Please avoid this channel until atlona releases a new firmware.</li>
+  <li>There is no way to query what the current status is of: panellock, and irenable.  This addon simply assumes that panellock is off and irenable is on at startup.</li>
+  <li>If you make a change in the switches UI that requires a reboot (mainly changing any of the settings on the “Network” tab in the switch configuration UI), this addon’s connection will be inconsistently closed at different times.  The thing will go OFFLINE and then back ONLINE when the reconnect attempt is made - and then it starts all over again.  Please make sure you reboot as soon as possible when the switch UI notifies you.</li>
+  <li>a bug in the firmware will sometimes cause memory presets to disappear after a reboot</li>
+</ul>
+
+<p>As of firmware 1.6.8 (rev 14),</p>
+<ul>
+  <li>The “clearX” command has been fixed and works now.</li>
+  <li>The number of presets have increased to 10</li>
+  <li>If telnet mode is enabled, you must use the admin username/password to issue a matrixreset</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<h3 id="things">Things</h3>
+
+<p>Here is an example with minimal configuration parameters (using default values with no telnet login):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atlona:pro3-88m:home [ ipAddress="192.168.1.30" ]
+</code></pre></div></div>
+
+<p>Here is another example with minimal configuration parameters (using default values with telnet login):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atlona:pro3-88m:home [ ipAddress="192.168.1.30", userName="me", password="12345" ]
+</code></pre></div></div>
+
+<p>Here is a full configuration example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>atlona:pro3-88m:home [ ipAddress="192.168.1.30", userName="me", password="12345", polling=600, ping=30, retryPolling=10 ]
+</code></pre></div></div>
+
+<h3 id="items">Items</h3>
+
+<p>Here is an example of items for the AT-UHD-PRO33-88M:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Atlona_Power "Power" { channel = "atlona:pro3-88m:home:primary#power" }
+Switch Atlona_PanelLock "Panel Lock" { channel = "atlona:pro3-88m:home:primary#panellock" }
+Switch Atlona_Presets "Preset Command" { channel = "atlona:pro3-88m:home:primary#presetcmd" }
+Switch Atlona_IRLock "IR Lock" { channel = "atlona:pro3-88m:home:primary#irenable" }
+Switch Atlona_PortPower1 "Port Power 1" { channel = "atlona:pro3-88m:home:port1#power" }
+Switch Atlona_PortPower2 "Port Power 2" { channel = "atlona:pro3-88m:home:port2#power" }
+Switch Atlona_PortPower3 "Port Power 3" { channel = "atlona:pro3-88m:home:port3#power" }
+Switch Atlona_PortPower4 "Port Power 4" { channel = "atlona:pro3-88m:home:port4#power" }
+Switch Atlona_PortPower5 "Port Power 5" { channel = "atlona:pro3-88m:home:port5#power" }
+Switch Atlona_PortPower6 "Port Power 6" { channel = "atlona:pro3-88m:home:port6#power" }
+Switch Atlona_PortPower7 "Port Power 7" { channel = "atlona:pro3-88m:home:port7#power" }
+Switch Atlona_PortPower8 "Port Power 8" { channel = "atlona:pro3-88m:home:port8#power" }
+Switch Atlona_PortPower9 "Port Power 9" { channel = "atlona:pro3-88m:home:port9#power" }
+Switch Atlona_PortPower10 "Port Power 10" { channel = "atlona:pro3-88m:home:port10#power" }
+Number Atlona_PortOutput1 "Living Room [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port1#portoutput" }
+Number Atlona_PortOutput2 "Master Bed [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port2#portoutput" }
+Number Atlona_PortOutput3 "Kitchen [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port3#portoutput" }
+Number Atlona_PortOutput4 "Output 4 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port4#portoutput" }
+Number Atlona_PortOutput5 "Output 5 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port5#portoutput" }
+Number Atlona_PortOutput6 "Output 6 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port6#portoutput" }
+Number Atlona_PortOutput7 "Output 7 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port7#portoutput" }
+Number Atlona_PortOutput8 "Output 8 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port8#portoutput" }
+Number Atlona_PortOutput9 "Output 9 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port9#portoutput" }
+Number Atlona_PortOutput10 "Output 10 [MAP(atlonainputports.map):%s]" { channel = "atlona:pro3-88m:home:port10#portoutput" }
+Number Atlona_PortMirror8 "Hdmi Mirror 8 [MAP(atlonaoutputports.map):%s]" { channel = "atlona:pro3-88m:home:mirror8#portmirror" }
+Number Atlona_PortMirror10 "Hdmi Mirror 10 [MAP(atlonaoutputports.map):%s]" { channel = "atlona:pro3-88m:home:mirror10#portmirror" }
+Number Atlona_Volume1 "Volume 1 [%s db]" { channel = "atlona:pro3-88m:home:volume1#volume" }
+Number Atlona_Volume2 "Volume 2 [%s db]" { channel = "atlona:pro3-88m:home:volume2#volume" }
+Number Atlona_Volume3 "Volume 3 [%s db]" { channel = "atlona:pro3-88m:home:volume3#volume" }
+Number Atlona_Volume4 "Volume 4 [%s db]" { channel = "atlona:pro3-88m:home:volume4#volume" }
+Number Atlona_Volume5 "Volume 5 [%s db]" { channel = "atlona:pro3-88m:home:volume5#volume" }
+Number Atlona_Volume6 "Volume 6 [%s db]" { channel = "atlona:pro3-88m:home:volume6#volume" }
+Switch Atlona_VolumeMute1 "Mute 1" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+Switch Atlona_VolumeMute2 "Mute 2" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+Switch Atlona_VolumeMute3 "Mute 3" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+Switch Atlona_VolumeMute4 "Mute 4" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+Switch Atlona_VolumeMute5 "Mute 5" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+Switch Atlona_VolumeMute6 "Mute 6" { channel = "atlona:pro3-88m:home:volume1#volumemute" }
+</code></pre></div></div>
+
+<h3 id="sitemap">SiteMap</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap demo label="Main Menu"
+{
+    Frame label="Atlona" {
+        Text label="Device" {
+            Switch item=Atlona_Power
+            Switch item=Atlona_PanelLock
+            Switch item=Atlona_IRLock
+            Text item=Atlona_Presets
+        }
+        Text label="Ports" {
+            Switch item=Atlona_PortPower1 
+            Switch item=Atlona_PortPower2
+            Switch item=Atlona_PortPower3
+            Switch item=Atlona_PortPower4
+            Switch item=Atlona_PortPower5
+            Switch item=Atlona_PortPower6
+            Switch item=Atlona_PortPower7
+            Switch item=Atlona_PortPower8
+            Switch item=Atlona_PortPower9
+            Switch item=Atlona_PortPower10
+            Selection item=Atlona_PortOutput1 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput2 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput3 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput4 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput5 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput6 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput7 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput8 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"] visibility=[Atlona_PortMirror8==0]
+            Selection item=Atlona_PortOutput9 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"]
+            Selection item=Atlona_PortOutput10 mappings=[1="CableBox",2="BluRay Player",3="Roku",4="Apple TV",5="Input 5",6="Input 6",7="Input 7",8="Input 8"] visibility=[Atlona_PortMirror10==0]
+            Selection item=Atlona_PortMirror8 mappings=[0="None",1="Living Room",2="Master Bed",3="Kitchen",4="Output 4",5="Output 5",6="Output 6",7="Output 7",9="Output 9"]
+            Selection item=Atlona_PortMirror10 mappings=[0="None",1="Living Room",2="Master Bed",3="Kitchen",4="Output 4",5="Output 5",6="Output 6",7="Output 7",9="Output 9"]
+        }
+        Text label="Audio" {
+            Setpoint item=Atlona_Volume1 minValue=-79 maxValue=15
+            Setpoint item=Atlona_Volume2 minValue=-79 maxValue=15
+            Setpoint item=Atlona_Volume3 minValue=-79 maxValue=15
+            Setpoint item=Atlona_Volume4 minValue=-79 maxValue=15
+            Setpoint item=Atlona_Volume5 minValue=-79 maxValue=15
+            Setpoint item=Atlona_Volume6 minValue=-79 maxValue=15
+            Switch item=Atlona_VolumeMute1
+            Switch item=Atlona_VolumeMute2
+            Switch item=Atlona_VolumeMute3
+            Switch item=Atlona_VolumeMute4
+            Switch item=Atlona_VolumeMute5
+            Switch item=Atlona_VolumeMute6
+        }
+    }
+}
+</code></pre></div></div>
+
+<h1 id="transformation-maps">Transformation Maps</h1>
+
+<p>The following is some example transformation maps you can create.  Be sure they are in sync with the mappings above.</p>
+
+<h3 id="atlonainputportsmap">atlonainputports.map</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1=CableBox
+2=BluRay Player
+3=Roku
+4=Apple TV
+5=Input 5
+6=Input 6
+7=Input 7
+8=Input 8
+-=-
+NULL=-
+</code></pre></div></div>
+
+<h3 id="atlonaoutputportsmap">atlonaoutputports.map</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1=Living Room
+2=Master Bed
+3=Kitchen
+4=Output 4
+5=Output 5
+6=Output 6
+7=Output 7
+8=Output 8
+9=Output 9
+10=Output 10
+-=-
+NULL=-
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

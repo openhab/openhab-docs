@@ -1,0 +1,3885 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>RFXCOM - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/rfxcom/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/rfxcom/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/rfxcom/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="rfxcom-binding">RFXCOM Binding</h1>
+
+<p>This binding integrates large number of sensors and actuators from several different manufactures through <a href="http://www.rfxcom.com">RFXCOM transceivers</a>.</p>
+
+<p>RFXCOM transceivers support RF 433 Mhz protocols like:</p>
+
+<ul>
+  <li>HomeEasy</li>
+  <li>Cresta</li>
+  <li>X10</li>
+  <li>La Crosse</li>
+  <li>OWL</li>
+  <li>CoCo (KlikAanKlikUit),</li>
+  <li>PT2262</li>
+  <li>Oregon</li>
+  <li>etc.</li>
+</ul>
+
+<p>See the RFXtrx User Guide from <a href="http://www.rfxcom.com">RFXCOM</a> for the complete list of supported sensors and devices as well as firmware update announcements.</p>
+
+<h2 id="supported-rfxcom-types">Supported RFXCOM Types</h2>
+
+<p>This binding supports the RFXtrx433E and RFXtrx315 transceivers and the RFXrec433 receiver as bridges for accessing different sensors and actuators.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>The transceivers/receivers may be automatically discovered by the JD2XX library and put in the Inbox or may be configured manually.</p>
+
+<p>After the bridge is configured and the transceiver receives a message from any sensor or actuator, the device is put in the Inbox. Because RFXCOM communication is a one way protocol, receiver actuators can’t be discovered automatically.</p>
+
+<h3 id="note-apple-os-x">Note: Apple OS X</h3>
+
+<p>Apple provides built-in FTDI drivers for OS X, which need to be disabled to get JD2XX work properly.</p>
+
+<p>FTDI driver disabling can be done by the following command</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo kextunload -b com.apple.driver.AppleUSBFTDI
+</code></pre></div></div>
+
+<p>FTDI driver can be enabled by the following command</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo kextload -b com.apple.driver.AppleUSBFTDI
+</code></pre></div></div>
+
+<h3 id="note-linux">Note: Linux</h3>
+
+<p>Linux has built-in FTDI drivers, which need to be disabled for JD2XX to take over</p>
+
+<p>FTDI drivers can be disabled by blacklisting the ftdi_sio module in your modprobe config (/etc/modprobe.d/). However this will require ALL FTDI devices to then be accessed via something like JD2XX. If you have, or may acquire, other USB serial devices you will probably prefer to configure your RFXCOM manually.</p>
+
+<p>If you configure the RFXCOM manually note that the serial port that is assigned to it may change if you have more than one USB serial device. On systems using udev (practically all modern Linux systems) you can add a rule to /etc/udev/rules.d/ such as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>SUBSYSTEM=="tty", ATTRS{product}=="RFXtrx433", ATTRS{serial}=="A12LPLW", SYMLINK+="rfxtrx0"
+</code></pre></div></div>
+
+<p>and then you will be able to use /dev/rfxtrx0 as the serial device regardless of what /dev/ttyUSB<n> device has been assigned. (N.B. you can get the product and serial strings to use from the output of dmesg, lsusb or by looking in /sys/)</n></p>
+
+<h3 id="manual-configuration">Manual Configuration</h3>
+
+<p>If you have any problems with JD2XX or you don’t want to disable FTDI driver on OS X or Linux, you can also configure RFXCOM transceivers/receivers manually.</p>
+
+<p>To do that via the PaperUI, manually add the generic RFXCOM device named <code class="highlighter-rouge">RFXCOM USB Transceiver</code>, with the description “This is universal RFXCOM transceiver bridge for manual configuration purposes.” You will need to specify at least the serial port which has been assigned to the RFXCOM (see notes above). You may also need to change permissions on the serial port to allow openhab to access it and you may need to tell the java libraries about it by adding a line to &lt;openhab root&gt;/conf/environment such as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>EXTRA\_JAVA\_OPTS="-Dgnu.io.rxtx.SerialPorts=/dev/&amp;lt;device&amp;gt;
+</code></pre></div></div>
+
+<p>Alternatively you can add the RFXCOM using a thing file such as:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge rfxcom:bridge:usb0 [ serialPort="/dev/&amp;lt;device&amp;gt;" ] {
+    _thing definitions_...
+}
+</code></pre></div></div>
+
+<h4 id="rfxcom-over-tcpip">RFXCOM over TCP/IP</h4>
+
+<p>You can also use an RFXCOM device over TCP/IP. To start a TCP server for an RFXCOM device, you can use socat:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>socat tcp-listen:10001,fork,reuseaddr file:/dev/ttyUSB0,raw
+</code></pre></div></div>
+
+<p>A TCP bridge, for use with socat on a remote host, can only be configured manually either through the PaperUI by adding an “RFXCOM USB Transceiver over TCP/IP” device or in a thing file like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge rfxcom:tcpbridge:sunflower [ host="sunflower", port=10001 ] {
+    Thing lighting2 100001_1 [deviceId="100001.1", subType="AC"]
+}
+</code></pre></div></div>
+
+<h2 id="bridge-configuration">Bridge Configuration</h2>
+
+<table>
+  <thead>
+    <tr>
+      <th>Applies to</th>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>all</td>
+      <td>Transceiver type</td>
+      <td>transceiverType</td>
+      <td>Type of the transceiver</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Disable discovery</td>
+      <td>disableDiscovery</td>
+      <td>Prevent unknown devices from being added to the inbox</td>
+      <td>true</td>
+      <td>false</td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Skip transceiver configuration</td>
+      <td>ignoreConfig</td>
+      <td>Do not send config. command, other config will be ignored</td>
+      <td>true</td>
+      <td>true</td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>RFXCOM transceiver mode</td>
+      <td>setMode</td>
+      <td>Config. command as hexadec. (28 chars). If set, other config is ignored.</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Transmit Power</td>
+      <td>transmitPower</td>
+      <td>Transmit power in dBm, between -18dBm and +10dBm.</td>
+      <td>false</td>
+      <td>-18</td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable AEBlyss</td>
+      <td>enableAEBlyss</td>
+      <td>Enable receiving of protocol AEBlyss</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable AC</td>
+      <td>enableAC</td>
+      <td>Enable receiving of protocol AC</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable AD / LightwaveRF</td>
+      <td>enableADLightwaveRF</td>
+      <td>Enable receiving of protocol AD / LightwaveRF</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable ARC</td>
+      <td>enableARC</td>
+      <td>Enable receiving of protocol ARC</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable ATI</td>
+      <td>enableATI</td>
+      <td>Enable receiving of protocol ATI / cartelectronic</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Blinds T0</td>
+      <td>enableBlindsT0</td>
+      <td>Enable receiving of protocol Blinds T0</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Blinds T1</td>
+      <td>enableBlindsT1T2T3T4</td>
+      <td>Enable receiving of protocol Blinds T1</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Byron SX</td>
+      <td>enableByronSX</td>
+      <td>Enable receiving of protocol Byron SX</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable FineOffset / Viking</td>
+      <td>enableFineOffsetViking</td>
+      <td>Enable receiving of protocol FineOffset / Viking</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable FS20/Legrand CAD</td>
+      <td>enableFS20</td>
+      <td>Enable receiving of protocol FS20/Legrand CAD</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Hideki / UPM</td>
+      <td>enableHidekiUPM</td>
+      <td>Enable receiving of protocol Hideki / UPM</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable HomeConfort</td>
+      <td>enableHomeConfort</td>
+      <td>Enable receiving of protocol HomeConfort</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable HomeEasy EU</td>
+      <td>enableHomeEasyEU</td>
+      <td>Enable receiving of protocol HomeEasy EU</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Imagintronix / Opus</td>
+      <td>enableImagintronixOpus</td>
+      <td>Enable receiving of protocol Imagintronix / Opus</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable KEELOQ</td>
+      <td>enableKEELOQ</td>
+      <td>Enable receiving of protocol KEELOQ</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable La Crosse</td>
+      <td>enableLaCrosse</td>
+      <td>Enable receiving of protocol La Crosse</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Lighting4</td>
+      <td>enableLighting4</td>
+      <td>Enable receiving of protocol Lighting4</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Meiantech</td>
+      <td>enableMeiantech</td>
+      <td>Enable receiving of protocol Meiantech</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Mertik</td>
+      <td>enableMertik</td>
+      <td>Enable receiving of protocol Mertik</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Oregon Scientific</td>
+      <td>enableOregonScientific</td>
+      <td>Enable receiving of protocol Oregon Scientific</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable ProGuard</td>
+      <td>enableProGuard</td>
+      <td>Enable receiving of protocol ProGuard</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable RSL</td>
+      <td>enableRSL</td>
+      <td>Enable receiving of protocol RSL</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all except RFXtrx315</td>
+      <td>Enable Rubicson</td>
+      <td>enableRubicson</td>
+      <td>Enable receiving of protocol Rubicson / Lacrosse / Banggood</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Enable Visonic</td>
+      <td>enableVisonic</td>
+      <td>Enable receiving of protocol Visonic</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Enable Undecoded</td>
+      <td>enableUndecoded</td>
+      <td>Enable receiving of protocol Undecoded</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>all</td>
+      <td>Enable X10</td>
+      <td>enableX10</td>
+      <td>Enable receiving of protocol X10</td>
+      <td>false</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>bridge</td>
+      <td>Serial port</td>
+      <td>serialPort</td>
+      <td>Serial port for manual configuration</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>RFXtrx315 / RFXrec433 / RFXtrx433</td>
+      <td>Serial number</td>
+      <td>bridgeId</td>
+      <td>Serial number of the RFXCOM (FTDI) device</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tcpbridge</td>
+      <td>Host</td>
+      <td>host</td>
+      <td>Hostname / ip address of device</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>tcpbridge</td>
+      <td>Port</td>
+      <td>port</td>
+      <td>Port of device</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="thing-configuration">Thing Configuration</h2>
+
+<p>Available configuration parameters are:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Applies to</th>
+      <th>Parameter Label</th>
+      <th>Parameter ID</th>
+      <th>Description</th>
+      <th>Required</th>
+      <th>Default</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>All things</td>
+      <td>Device ID</td>
+      <td>deviceId</td>
+      <td>(Unique) id of the device, for example “100001.1”, “B.8” or “286169”</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>All things</td>
+      <td>Sub type</td>
+      <td>subType</td>
+      <td>Sub type, note that every thing-type has its own sub types</td>
+      <td>true</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>Lighting4</td>
+      <td>Pulse</td>
+      <td>pulse</td>
+      <td>Pulse length used by the device, only used when sending</td>
+      <td>false</td>
+      <td>350</td>
+    </tr>
+    <tr>
+      <td>Lighting4</td>
+      <td>On command ID</td>
+      <td>onCommandId</td>
+      <td>Id of the command which should be send to turn the device ON</td>
+      <td>false</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <td>Lighting4</td>
+      <td>Off command ID</td>
+      <td>offCommandId</td>
+      <td>Id of the command which should be send to turn the device OFF</td>
+      <td>false</td>
+      <td>4</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="channels">Channels</h2>
+
+<p>This binding currently supports following channel types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>chimesound</td>
+      <td>Number</td>
+      <td>Id of the chime sound</td>
+    </tr>
+    <tr>
+      <td>command</td>
+      <td>Switch</td>
+      <td>Command channel.</td>
+    </tr>
+    <tr>
+      <td>commandId</td>
+      <td>String</td>
+      <td>Id of the command.</td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td>Contact</td>
+      <td>Contact channel.</td>
+    </tr>
+    <tr>
+      <td>datetime</td>
+      <td>DateTime</td>
+      <td>DateTime channel.</td>
+    </tr>
+    <tr>
+      <td>dimminglevel</td>
+      <td>Dimmer</td>
+      <td>Dimming level channel.</td>
+    </tr>
+    <tr>
+      <td>forecast</td>
+      <td>String</td>
+      <td>Weather forecast from device: NO_INFO_AVAILABLE/SUNNY/PARTLY_CLOUDY/CLOUDY/RAIN</td>
+    </tr>
+    <tr>
+      <td>humidity</td>
+      <td>Number</td>
+      <td>Relative humidity level in percentages.</td>
+    </tr>
+    <tr>
+      <td>humiditystatus</td>
+      <td>String</td>
+      <td>Current humidity status: NORMAL/COMFORT/DRY/WET</td>
+    </tr>
+    <tr>
+      <td>instantamp</td>
+      <td>Number</td>
+      <td>Instant current in Amperes.</td>
+    </tr>
+    <tr>
+      <td>instantpower</td>
+      <td>Number</td>
+      <td>Instant power consumption in Watts.</td>
+    </tr>
+    <tr>
+      <td>mood</td>
+      <td>Number</td>
+      <td>Mood channel.</td>
+    </tr>
+    <tr>
+      <td>motion</td>
+      <td>Switch</td>
+      <td>Motion detection sensor state.</td>
+    </tr>
+    <tr>
+      <td>pressure</td>
+      <td>Number</td>
+      <td>Barometric value in hPa.</td>
+    </tr>
+    <tr>
+      <td>rainrate</td>
+      <td>Number</td>
+      <td>Rain fall rate in millimeters per hour.</td>
+    </tr>
+    <tr>
+      <td>raintotal</td>
+      <td>Number</td>
+      <td>Total rain in millimeters.</td>
+    </tr>
+    <tr>
+      <td>rawmessage</td>
+      <td>String</td>
+      <td>Hexadecimal representation of the raw RFXCOM msg incl. header and payload</td>
+    </tr>
+    <tr>
+      <td>rawpayload</td>
+      <td>String</td>
+      <td>Hexadecimal representation of payload RFXCOM messages</td>
+    </tr>
+    <tr>
+      <td>setpoint</td>
+      <td>Number</td>
+      <td>Requested temperature.</td>
+    </tr>
+    <tr>
+      <td>shutter</td>
+      <td>Rollershutter</td>
+      <td>Shutter/blind channel.</td>
+    </tr>
+    <tr>
+      <td>status</td>
+      <td>String</td>
+      <td>Status channel.</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>Number</td>
+      <td>Current temperature in degree Celsius.</td>
+    </tr>
+    <tr>
+      <td>totalusage</td>
+      <td>Number</td>
+      <td>Used energy in Watt hours.</td>
+    </tr>
+    <tr>
+      <td>totalamphour</td>
+      <td>Number</td>
+      <td>Used “energy” in ampere-hours.</td>
+    </tr>
+    <tr>
+      <td>uv</td>
+      <td>Number</td>
+      <td>Current UV level.</td>
+    </tr>
+    <tr>
+      <td>venetianBlind</td>
+      <td>Dimmer</td>
+      <td>Open/close and adjust angle of venetian blind</td>
+    </tr>
+    <tr>
+      <td>winddirection</td>
+      <td>Number</td>
+      <td>Wind direction in degrees.</td>
+    </tr>
+    <tr>
+      <td>windspeed</td>
+      <td>Number</td>
+      <td>Wind speed in meters per second.</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>The binding uses the following system channels:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>system.signal-strength</td>
+      <td>Number</td>
+      <td>Represents signal strength of a device as a Number with values 0, 1, 2, 3 or 4; 0 being worst strength and 4 being best strength.</td>
+    </tr>
+    <tr>
+      <td>system.battery-level</td>
+      <td>Number</td>
+      <td>Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (eg 4 levels) should convert to a percentage to provide a consistent battery level reading.</td>
+    </tr>
+    <tr>
+      <td>system.low-battery</td>
+      <td>Switch</td>
+      <td>Represents a low battery warning with possible values on/off.</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="full-example">Full example</h2>
+
+<h3 id="thing-files">Thing files</h3>
+
+<p>Sensors/actuators are easy to configure through the PaperUI. However, if you used a thing file for your RFXCOM you can also configure them manually there as well, for example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge rfxcom:bridge:usb0 [ serialPort="/dev/&amp;lt;device&amp;gt;" ] {
+    Thing lighting2 100001_1 [ deviceId="100001.1", subType="AC" ]
+}
+</code></pre></div></div>
+
+<h3 id="item-files">Item files</h3>
+
+<p>Items may be created through PaperUI or add using item files in which you add a channel parameter specifying the bridge’s name, the thing ID and channel that the item should be linked to, for example:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Switch {channel="rfxcom:lighting2:usb0:100001_1:command"}
+</code></pre></div></div>
+
+<h2 id="supported-things">Supported Things</h2>
+
+<p>This binding currently supports the following things / message types:</p>
+
+<ul>
+  <li><a href="#bbqtemperature---rfxcom-bbq-temperature-sensor">bbqtemperature - RFXCOM BBQ Temperature Sensor</a></li>
+  <li><a href="#blinds1---rfxcom-blinds1-actuator">blinds1 - RFXCOM Blinds1 Actuator</a></li>
+  <li><a href="#chime---rfxcom-chime">chime - RFXCOM Chime</a></li>
+  <li><a href="#currentenergy---rfxcom-currentenergy-actuator">currentenergy - RFXCOM CurrentEnergy Actuator</a></li>
+  <li><a href="#curtain1---rfxcom-curtain1-actuator">curtain1 - RFXCOM Curtain1 Actuator</a></li>
+  <li><a href="#datetime---rfxcom-datetime-sensor">datetime - RFXCOM Date/time sensor</a></li>
+  <li><a href="#energy---rfxcom-energy-sensor">energy - RFXCOM Energy Sensor</a></li>
+  <li><a href="#humidity---rfxcom-humidity-sensor">humidity - RFXCOM Humidity Sensor</a></li>
+  <li><a href="#lighting1---rfxcom-lighting1-actuator">lighting1 - RFXCOM Lighting1 Actuator</a></li>
+  <li><a href="#lighting2---rfxcom-lighting2-actuator">lighting2 - RFXCOM Lighting2 Actuator</a></li>
+  <li><a href="#lighting4---rfxcom-lighting4-actuator">lighting4 - RFXCOM Lighting4 Actuator</a></li>
+  <li><a href="#lighting5---rfxcom-lighting5-actuator">lighting5 - RFXCOM Lighting5 Actuator</a></li>
+  <li><a href="#lighting6---rfxcom-lighting6-actuator">lighting6 - RFXCOM Lighting6 Actuator</a></li>
+  <li><a href="#rain---rfxcom-rain-sensor">rain - RFXCOM Rain Sensor</a></li>
+  <li><a href="#rfy---rfxcom-rfy-actuator">rfy - RFXCOM Rfy Actuator</a></li>
+  <li><a href="#security1---rfxcom-security1-sensor">security1 - RFXCOM Security1 Sensor</a></li>
+  <li><a href="#temperaturehumiditybarometric---rfxcom-temperature-humidity-barometric-sensor">temperaturehumiditybarometric - RFXCOM Temperature-Humidity-Barometric Sensor</a></li>
+  <li><a href="#temperaturehumidity---rfxcom-temperature-humidity-sensor">temperaturehumidity - RFXCOM Temperature-Humidity Sensor</a></li>
+  <li><a href="#temperaturerain---rfxcom-temperature-rain-sensor">temperaturerain - RFXCOM Temperature-Rain Sensor</a></li>
+  <li><a href="#temperature---rfxcom-temperature-sensor">temperature - RFXCOM Temperature Sensor</a></li>
+  <li><a href="#thermostat1---rfxcom-thermostat1-sensor">thermostat1 - RFXCOM Thermostat1 Sensor</a></li>
+  <li><a href="#undecoded---rfxcom-undecoded-rf-messages">undecoded - RFXCOM Undecoded RF Messages</a></li>
+  <li><a href="#uv---rfxcom-uvtemperature-sensor">uv - RFXCOM UV/Temperature Sensor</a></li>
+  <li><a href="#wind---rfxcom-wind-sensor">wind - RFXCOM Wind Sensor</a></li>
+</ul>
+
+<h3 id="bbqtemperature---rfxcom-bbq-temperature-sensor">bbqtemperature - RFXCOM BBQ Temperature Sensor</h3>
+
+<p>A BBQ Temperature device.</p>
+
+<h4 id="channels-1">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>foodTemperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>bbqTemperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="blinds1---rfxcom-blinds1-actuator">blinds1 - RFXCOM Blinds1 Actuator</h3>
+
+<p>A Blinds1 device.</p>
+
+<h4 id="channels-2">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>name</th>
+      <th>Channel Type</th>
+      <th>Item type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>shutter</td>
+      <td><a href="#channels">shutter</a></td>
+      <td>Rollershutter</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-1">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id + unit code, separated by dot. Example 23455.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>T0 - RollerTrol, Hasta new</li>
+          <li>T1 - Hasta old</li>
+          <li>T2 - A-OK RF01</li>
+          <li>T3 - A-OK AC114/AC123</li>
+          <li>T4 - Raex YR1326</li>
+          <li>T5 - Media Mount</li>
+          <li>T6 - DC106/Rohrmotor24-RMF/Yooda</li>
+          <li>T7 - Forest</li>
+          <li>T8 - Chamberlain CS4330CN</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="chime---rfxcom-chime">chime - RFXCOM Chime</h3>
+
+<p>A Chime device.</p>
+
+<h4 id="channels-3">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>chimeSound</td>
+      <td><a href="#channels">chimesound</a></td>
+      <td>Number</td>
+      <td>not all devices support multiple sounds</td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-2">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 2983</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>BYRONSX - Byron SX</li>
+          <li>BYRONMP001 - Byron MP001</li>
+          <li>SELECTPLUS - SelectPlus</li>
+          <li>SELECTPLUS3 - SelectPlus3</li>
+          <li>ENVIVO - Envivo</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="current---rfxcom-current-sensor">current - RFXCOM Current Sensor</h3>
+
+<p>A Current sensing device.</p>
+
+<h4 id="channels-4">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>channel1Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>channel2Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>channel3Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-3">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 5693</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>ELEC1 - OWL - CM113</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="currentenergy---rfxcom-currentenergy-actuator">currentenergy - RFXCOM CurrentEnergy Actuator</h3>
+
+<p>A CurrentEnergy device.</p>
+
+<h4 id="channels-5">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>channel1Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>channel2Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>channel3Amps</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>totalUsage</td>
+      <td><a href="#channels">totalusage</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-4">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 47104</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>ELEC4 - OWL - CM180i</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="curtain1---rfxcom-curtain1-actuator">curtain1 - RFXCOM Curtain1 Actuator</h3>
+
+<p>A Curtain1 device.</p>
+
+<h4 id="channels-6">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>shutter</td>
+      <td><a href="#channels">shutter</a></td>
+      <td>Rollershutter</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-5">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>House code + unit code, separated by dot. Example A.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>HARRISON - Harrison Curtain</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="datetime---rfxcom-datetime-sensor">datetime - RFXCOM Date/time sensor</h3>
+
+<p>A DateTime device.</p>
+
+<h4 id="channels-7">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>dateTime</td>
+      <td><a href="#channels">datetime</a></td>
+      <td>DateTime</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-6">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Device id, example 47360</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>RTGR328N - Oregon RTGR328N</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="energy---rfxcom-energy-sensor">energy - RFXCOM Energy Sensor</h3>
+
+<p>An Energy device.</p>
+
+<h4 id="channels-8">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>instantPower</td>
+      <td><a href="#channels">instantpower</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>totalUsage</td>
+      <td><a href="#channels">totalusage</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>instantAmp</td>
+      <td><a href="#channels">instantamp</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>totalAmpHour</td>
+      <td><a href="#channels">totalamphour</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-7">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 5693</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>ELEC2 - CM119/160</li>
+          <li>ELEC3 - CM180</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="humidity---rfxcom-humidity-sensor">humidity - RFXCOM Humidity Sensor</h3>
+
+<p>A Humidity device.</p>
+
+<h4 id="channels-9">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>humidity</td>
+      <td><a href="#channels">humidity</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>humidityStatus</td>
+      <td><a href="#channels">humiditystatus</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-8">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 5693</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>HUM1 - LaCrosse TX3</li>
+          <li>HUM2 - LaCrosse WS2300</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="configuration-options-9">Configuration options:</h4>
+
+<p>A Lighting1 device.</p>
+
+<h4 id="channels-10">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">contact</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-10">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Device Id. House code + unit code, separated by dot. Example A.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>X10 - X10 lighting</li>
+          <li>ARC - ARC</li>
+          <li>AB400D - ELRO AB400D (Flamingo)</li>
+          <li>WAVEMAN - Waveman</li>
+          <li>EMW200 - Chacon EMW200</li>
+          <li>IMPULS - IMPULS</li>
+          <li>RISINGSUN - RisingSun</li>
+          <li>PHILIPS - Philips SBC</li>
+          <li>ENERGENIE - Energenie ENER010</li>
+          <li>ENERGENIE_5 - Energenie 5-gang</li>
+          <li>COCO - COCO GDR2-2000R</li>
+          <li>HQ_COCO20 - HQ COCO-20</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lighting2---rfxcom-lighting2-actuator">lighting2 - RFXCOM Lighting2 Actuator</h3>
+
+<p>A Lighting2 device.</p>
+
+<h4 id="channels-11">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">command</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>dimmingLevel</td>
+      <td><a href="#channels">dimminglevel</a></td>
+      <td>Dimmer</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-11">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Remote/switch/unit Id + unit code, separated by dot. Example 8773718.10</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>AC - AC</li>
+          <li>HOME_EASY_EU - HomeEasy EU</li>
+          <li>ANSLUT - ANSLUT</li>
+          <li>KAMBROOK - Kambrook RF3672</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lighting4---rfxcom-lighting4-actuator">lighting4 - RFXCOM Lighting4 Actuator</h3>
+
+<p>A Lighting4 device.</p>
+
+<h4 id="channels-12">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>commandId</td>
+      <td><a href="#channels">commandId</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-12">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Device Id. Example 3456</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+      </li>
+      <li>
+        <p>PT2262 - PT2262</p>
+      </li>
+    </ul>
+  </li>
+  <li>pulse - Pulse length
+    <ul>
+      <li>Pulse length of the device</li>
+    </ul>
+  </li>
+  <li>onCommandId - On command
+    <ul>
+      <li>
+        <p>Specifies command to be send when ON must be transmitted</p>
+
+        <ul>
+          <li>0 - OFF (value 0)</li>
+          <li>1 - ON (value 1)</li>
+          <li>2 - OFF (value 2)</li>
+          <li>3 - ON (value 3)</li>
+          <li>4 - OFF (value 4)</li>
+          <li>5 - ON (value 5)</li>
+          <li>6 - value 5</li>
+          <li>7 - ON (value 7)</li>
+          <li>8 - value 8</li>
+          <li>9 - ON (value 9)</li>
+          <li>10 - value 10</li>
+          <li>11 - value 11</li>
+          <li>12 - ON (value 12)</li>
+          <li>13 - value 13</li>
+          <li>14 - value 14</li>
+          <li>15 - value 15</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li>offCommandId - Off command
+    <ul>
+      <li>
+        <p>Specifies command to be send when OFF must be transmitted</p>
+
+        <ul>
+          <li>0 - OFF (value 0)</li>
+          <li>1 - ON (value 1)</li>
+          <li>2 - OFF (value 2)</li>
+          <li>3 - ON (value 3)</li>
+          <li>4 - OFF (value 4)</li>
+          <li>5 - ON (value 5)</li>
+          <li>6 - value 5</li>
+          <li>7 - ON (value 7)</li>
+          <li>8 - value 8</li>
+          <li>9 - ON (value 9)</li>
+          <li>10 - value 10</li>
+          <li>11 - value 11</li>
+          <li>12 - ON (value 12)</li>
+          <li>13 - value 13</li>
+          <li>14 - value 14</li>
+          <li>15 - value 15</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h4 id="examples">Examples</h4>
+
+<p>The support for lighting 4 in RFXCOM is less complete because a lot of different devices use the same chips and can not easily be distinguished.</p>
+
+<p>So some extra configuration can be used for fine tuning the behavior of your Lighting4 devices. For configuration via the PaperUI three extra fields are available, being the the pulse length and a commmand id for on and off commands. If your item is auto-discovered normally the on or off command should be recognized properly.</p>
+
+<p>For a usb attached RFXCOM on Windows the configuration could look like this (note that the <code class="highlighter-rouge">onCommandId</code>, <code class="highlighter-rouge">offCommandId</code> and <code class="highlighter-rouge">pulse</code> are all optional):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge rfxcom:bridge:238adf67 [ serialPort="COM4" ] {
+    Thing lighting4 17745  [deviceId="17745",  subType="PT2262", onCommandId=7, offCommandId=4, pulse=800]
+    Thing lighting4 motion [deviceId="286169", subType="PT2262", onCommandId=9, pulse=392]
+}
+</code></pre></div></div>
+
+<p>Your items file could look like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch Switch                               {channel="rfxcom:lighting4:238adf67:17745:command"}
+Number SwitchCommandId "Command ID [%d]"    {channel="rfxcom:lighting4:238adf67:17745:commandId"}
+</code></pre></div></div>
+
+<p>And if you want random actions on your relay you could for example do like this:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rule "Set random relay variations"
+    when
+        System started or
+        Time cron "/20 * * * * ?"
+    then
+        SwitchCommandId.sendCommand((Math::random * 15.9).intValue)
+end
+</code></pre></div></div>
+
+<h3 id="lighting5---rfxcom-lighting5-actuator">lighting5 - RFXCOM Lighting5 Actuator</h3>
+
+<p>A Lighting5 device.</p>
+
+<h4 id="channels-13">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">command</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>dimmingLevel</td>
+      <td><a href="#channels">dimminglevel</a></td>
+      <td>Dimmer</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>mood</td>
+      <td><a href="#channels">mood</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-13">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Remote/switch/unit Id + unit code, separated by dot. Example 10001.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>AOKE - Aoke Relay</li>
+          <li>AVANTEK - Avantek</li>
+          <li>BBSB_NEW - BBSB new types</li>
+          <li>CONRAD_RSL2 - Conrad RSL2</li>
+          <li>EMW100 - EMW100 GAO/Everflourish</li>
+          <li>EURODOMEST - Eurodomest</li>
+          <li>IT - IT</li>
+          <li>KANGTAI - Kangtai, Cotech</li>
+          <li>LIGHTWAVERF - LightwaveRF, Siemens</li>
+          <li>LIVOLO - Livolo Dimmer or On/Off 1-3</li>
+          <li>LIVOLO_APPLIANCE - Livolo Appliance On/Off 1-10</li>
+          <li>MDREMOTE - MDREMOTE LED dimmer v106</li>
+          <li>MDREMOTE_107 - MDREMOTE v107</li>
+          <li>MDREMOTE_108 - MDREMOTE v108, EKAB-10KRF</li>
+          <li>RGB_TRC02 - RGB TRC02 (2 batt)</li>
+          <li>RGB_TRC02_2 - RGB TRC02_2 (3 batt)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="lighting6---rfxcom-lighting6-actuator">lighting6 - RFXCOM Lighting6 Actuator</h3>
+
+<p>A Lighting6 device.</p>
+
+<h4 id="channels-14">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">command</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-14">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Remote/switch/unit Id + group code + unit code, separated by dot. Example 100.A.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>BLYSS - Blyss</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="rain---rfxcom-rain-sensor">rain - RFXCOM Rain Sensor</h3>
+
+<p>A Rain device.</p>
+
+<h4 id="channels-15">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rainRate</td>
+      <td><a href="#channels">rainrate</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>rainTotal</td>
+      <td><a href="#channels">raintotal</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-15">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>RAIN1 - RGR126/682/918/928</li>
+          <li>RAIN2 - PCR800</li>
+          <li>RAIN3 - TFA</li>
+          <li>RAIN4 - UPM RG700</li>
+          <li>RAIN5 - WS2300</li>
+          <li>RAIN6 - La Crosse TX5</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="rfy---rfxcom-rfy-actuator">rfy - RFXCOM Rfy Actuator</h3>
+
+<p>A Rfy device.</p>
+
+<h4 id="channels-16">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>command</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td>Sends a program command to pair with a device when switched from off to on.</td>
+    </tr>
+    <tr>
+      <td>program</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td>Send Program Command</td>
+    </tr>
+    <tr>
+      <td>shutter</td>
+      <td><a href="#channels">shutter</a></td>
+      <td>Rollershutter</td>
+      <td>Shutter</td>
+    </tr>
+    <tr>
+      <td>venetianBlind</td>
+      <td><a href="#channels">venetianBlind</a></td>
+      <td>Dimmer</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>sunWindDetector</td>
+      <td><a href="#channels">command</a></td>
+      <td>Switch</td>
+      <td>Enable the sun+wind detector.</td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-16">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Unit Id + unit code, separated by dot. Example 100.1</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>RFY - RFY</li>
+          <li>RFY_EXT - RFY Ext</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="security1---rfxcom-security1-sensor">security1 - RFXCOM Security1 Sensor</h3>
+
+<p>A Security1 device.</p>
+
+<h4 id="channels-17">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>status</td>
+      <td><a href="#channels">status</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">command</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>motion</td>
+      <td><a href="#channels">motion</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-17">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Remote/sensor Id. Example 10001</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>X10_SECURITY - X10 security door/window sensor</li>
+          <li>X10_SECURITY_MOTION - X10 security motion sensor</li>
+          <li>X10_SECURITY_REMOTE - X10 security remote (no alive packets)</li>
+          <li>KD101 - KD101 (no alive packets)</li>
+          <li>VISONIC_POWERCODE_SENSOR_PRIMARY_CONTACT - Visonic PowerCode door/window sensor – primary contact (with alive packets)</li>
+          <li>VISONIC_POWERCODE_MOTION - Visonic PowerCode motion sensor (with alive packets)</li>
+          <li>VISONIC_CODESECURE - Visonic CodeSecure (no alive packets)</li>
+          <li>VISONIC_POWERCODE_SENSOR_AUX_CONTACT - Visonic PowerCode door/window sensor – auxiliary contact (no alive packets)</li>
+          <li>MEIANTECH - Meiantech</li>
+          <li>SA30 - SA30 (no alive packets)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="temperaturehumiditybarometric---rfxcom-temperature-humidity-barometric-sensor">temperaturehumiditybarometric - RFXCOM Temperature-Humidity-Barometric Sensor</h3>
+
+<p>A Temperature-Humidity-Barometric device.</p>
+
+<h4 id="channels-18">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>humidity</td>
+      <td><a href="#channels">humidity</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>humidityStatus</td>
+      <td><a href="#channels">humiditystatus</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>pressure</td>
+      <td><a href="#channels">pressure</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>forecast</td>
+      <td><a href="#channels">forecast</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-18">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 59648</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>THB1 - BTHR918, BTHGN129</li>
+          <li>THB2 - BTHR918N, BTHR968</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="temperaturehumidity---rfxcom-temperature-humidity-sensor">temperaturehumidity - RFXCOM Temperature-Humidity Sensor</h3>
+
+<p>A Temperature-Humidity device.</p>
+
+<h4 id="channels-19">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>humidity</td>
+      <td><a href="#channels">humidity</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>humidityStatus</td>
+      <td><a href="#channels">humiditystatus</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-19">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>TH1 - THGN122/123, THGN132, THGR122/228/238/268</li>
+          <li>TH2 - THGR810, THGN800</li>
+          <li>TH3 - RTGR328</li>
+          <li>TH4 - THGR328</li>
+          <li>TH5 - WTGR800</li>
+          <li>TH6 - THGR918/928, THGRN228, THGN500</li>
+          <li>TH7 - TFA TS34C, Cresta</li>
+          <li>TH8 - WT260,WT260H,WT440H,WT450,WT450H</li>
+          <li>TH9 - Viking 02035,02038 (02035 has no humidity), Proove TSS320, 311501</li>
+          <li>TH10 - Rubicson</li>
+          <li>TH11 - EW109</li>
+          <li>TH12 - Imagintronix/Opus XT300 Soil sensor</li>
+          <li>TH13 - Alecto WS1700 and compatibles</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="temperaturerain---rfxcom-temperature-rain-sensor">temperaturerain - RFXCOM Temperature-Rain Sensor</h3>
+
+<p>A Temperature-Rain device.</p>
+
+<h4 id="channels-20">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>rainTotal</td>
+      <td><a href="#channels">raintotal</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-20">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>WS1200 - WS1200</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="temperature---rfxcom-temperature-sensor">temperature - RFXCOM Temperature Sensor</h3>
+
+<p>A Temperature device.</p>
+
+<h4 id="channels-21">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-21">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>TEMP1 - THR128/138, THC138</li>
+          <li>TEMP2 - THC238/268,THN132,THWR288,THRN122,THN122,AW129/131</li>
+          <li>TEMP3 - THWR800</li>
+          <li>TEMP4 - RTHN318</li>
+          <li>TEMP5 - La Crosse TX2, TX3, TX4, TX17</li>
+          <li>TEMP6 - TS15C. UPM temp only</li>
+          <li>TEMP7 - Viking 02811, Proove TSS330, 311346</li>
+          <li>TEMP8 - La Crosse WS2300</li>
+          <li>TEMP9 - Rubicson</li>
+          <li>TEMP10 - TFA 30.3133</li>
+          <li>TEMP11 - WT0122</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="thermostat1---rfxcom-thermostat1-sensor">thermostat1 - RFXCOM Thermostat1 Sensor</h3>
+
+<p>A Thermostat1 device.</p>
+
+<h4 id="channels-22">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>contact</td>
+      <td><a href="#channels">command</a></td>
+      <td>Contact</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>setpoint</td>
+      <td><a href="#channels">setpoint</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-22">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>DIGIMAX - Digimax, TLX7506</li>
+          <li>DIGIMAX_SHORT - Digimax with short format (no set point)</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="undecoded---rfxcom-undecoded-rf-messages">undecoded - RFXCOM Undecoded RF Messages</h3>
+
+<p>Any messages that RFXCOM can receive but not decode.</p>
+
+<h4 id="channels-23">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>rawMessage</td>
+      <td><a href="#channels">rawmessage</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>rawPayload</td>
+      <td><a href="#channels">rawpayload</a></td>
+      <td>String</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-23">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Undecoded items cannot provide a device ID, so this value is always UNDECODED.</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>AC - AC</li>
+          <li>ARC - ARC</li>
+          <li>ATI - ATI</li>
+          <li>HIDEKI_UPM - Hideki, UPM</li>
+          <li>LACROSSE_VIKING - La Crosse, Viking</li>
+          <li>AD - AD</li>
+          <li>MERTIK - Mertik Maxitrol Fireplace controllers</li>
+          <li>OREGON1 - Oregon Scientific 1</li>
+          <li>OREGON2 - Oregon Scientific 2</li>
+          <li>OREGON3 - Oregon Scientific 3</li>
+          <li>PROGUARD - ProGuard</li>
+          <li>VISONIC - Visonic</li>
+          <li>NEC - NEC</li>
+          <li>FS20 - FS20</li>
+          <li>RESERVED - Reserved</li>
+          <li>BLINDS - Blinds</li>
+          <li>RUBICSON - Rubicson</li>
+          <li>AE - AE</li>
+          <li>FINE_OFFSET - Fine Offset</li>
+          <li>RGB - RGB</li>
+          <li>RTS - RTS</li>
+          <li>SELECT_PLUS - Select Plus</li>
+          <li>HOME_CONFORT - Home Confort</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="uv---rfxcom-uvtemperature-sensor">uv - RFXCOM UV/Temperature Sensor</h3>
+
+<p>A UV/Temperature device.</p>
+
+<h4 id="channels-24">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>uv</td>
+      <td><a href="#channels">uv</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-24">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 56923</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>UV1 - UVN128, UV138</li>
+          <li>UV2 - UVN800</li>
+          <li>UV3 - TFA</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+<h3 id="wind---rfxcom-wind-sensor">wind - RFXCOM Wind Sensor</h3>
+
+<p>A Wind device.</p>
+
+<h4 id="channels-25">Channels</h4>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Channel Type</th>
+      <th>Item Type</th>
+      <th>Remarks</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>avgWindSpeed</td>
+      <td><a href="#channels">windspeed</a></td>
+      <td>Number</td>
+      <td>Average Wind Speed</td>
+    </tr>
+    <tr>
+      <td>windSpeed</td>
+      <td><a href="#channels">windspeed</a></td>
+      <td>Number</td>
+      <td>Wind Gust</td>
+    </tr>
+    <tr>
+      <td>windDirection</td>
+      <td><a href="#channels">winddirection</a></td>
+      <td>Number</td>
+      <td>Wind Direction</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td>Current temperature in degree Celsius</td>
+    </tr>
+    <tr>
+      <td>chillTemperature</td>
+      <td><a href="#channels">temperature</a></td>
+      <td>Number</td>
+      <td>Chill temperature in degree Celsius</td>
+    </tr>
+    <tr>
+      <td>signalLevel</td>
+      <td><a href="#channels">system.signal-strength</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>batteryLevel</td>
+      <td><a href="#channels">system.battery-level</a></td>
+      <td>Number</td>
+      <td> </td>
+    </tr>
+    <tr>
+      <td>lowBattery</td>
+      <td><a href="#channels">system.low-battery</a></td>
+      <td>Switch</td>
+      <td> </td>
+    </tr>
+  </tbody>
+</table>
+
+<h4 id="configuration-options-25">Configuration Options</h4>
+
+<ul>
+  <li>deviceId - Device Id
+    <ul>
+      <li>Sensor Id. Example 2983</li>
+    </ul>
+  </li>
+  <li>subType - Sub Type
+    <ul>
+      <li>
+        <p>Specifies device sub type.</p>
+
+        <ul>
+          <li>WIND1 - WTGR800</li>
+          <li>WIND2 - WGR800</li>
+          <li>WIND3 - STR918, WGR918, WGR928</li>
+          <li>WIND4 - TFA</li>
+          <li>WIND5 - UPM WDS500</li>
+          <li>WIND6 - WS2300</li>
+          <li>WIND7 - Alecto WS4500, Auriol H13726, Hama EWS1500, Meteoscan W155/W160, Ventus WS155</li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+</ul>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

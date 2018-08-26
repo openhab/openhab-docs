@@ -1,0 +1,14 @@
+{% include base.html %}
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="{{base}}{{page.url}}">latest version<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="{{base}}/v2.2{{page.url}}">v2.2</a></li>
+      <li><a href="{{base}}/v2.1{{page.url}}">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>

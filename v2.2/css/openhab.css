@@ -1,0 +1,135 @@
+/* Style definitions specific to docs.openhab.org */
+
+.card .card-title {
+  color: #FF6600;
+  font-weight: 500;
+}
+
+.card .card-action a {
+  color: #039BE5;
+}
+
+.card .card-action a:hover {
+  color: #039BE5;
+}
+
+/* add-on tables */
+
+.addon-table h4 {
+  margin: 0px 0px 5px !important;
+}
+
+.addon-table h4:before {
+  content: none !important;
+}
+
+.addon-table h4:after {
+  content: none !important;
+}
+
+.addon-table td {
+  vertical-align: top;
+}
+
+.addon-table p {
+  margin: 0px 0px 0px !important;
+}
+
+.addon-table img.logo {
+  max-height: 60px !important;
+  max-width: 150px !important;
+}
+
+/* add-on category initial visibility */
+
+.install-legacy {
+  display: none;
+}
+
+.install-manual {
+  display: none;
+}
+
+/* Search box and results */
+
+li.search:hover {
+   background-color: transparent;
+}
+
+.search-form-input  {
+  padding-left: 5px !important;
+  width: 100px;
+  border: none !important;
+  transition: 0.2s ease-in;
+  display: block;
+  margin: 17px 0 0 0 !important;
+}
+
+.sticky .search-form-input {
+  margin: 9px 0 0 0 !important;
+}
+
+.search-form ::-webkit-input-placeholder {
+  color: #fff;
+}
+
+.search-form ::-moz-placeholder {
+  color: #fff;
+}
+
+.search-form ::-ms-input-placeholder{
+  color: #fff;
+}
+
+#searchform .search-form-input:focus {
+   padding-right: 30px !important;
+}
+
+#searchresults td {
+   border: none;
+   padding: 0 8px 0 8px;
+}
+
+#searchresults .gsc-webResult .gsc-result {
+   padding: 0px;
+}
+
+#searchresults table {
+   margin-bottom: 10px;
+}
+
+#searchresults .gs-title {
+   height: 1.4em;
+}
+
+#searchresults input {
+   box-sizing: content-box;
+}
+
+input.gsc-input {
+  box-shadow: none !important;
+}
+
+#querymob {
+  color: #000;
+}
+
+/* Address (on imprint page) */
+address {
+  font-style: normal;
+}
+
+/* Footer line */
+footer {
+  position: static;
+  font-size: 0.8em;
+}
+footer .list-inline {
+  margin: 0;
+  list-style: none;
+}
+footer .list-inline > li {
+  display: inline-block;
+  padding-right: 5px;
+  padding-left: 5px;
+}

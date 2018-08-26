@@ -1,0 +1,1610 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>LCN - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.1/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="http://docs.openhab.org/addons/bindings/lcn1/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.1/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.1/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.1/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.1/introduction.html">Introduction</a></li>
+  <li><a href="/v2.1/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.1/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/concepts/things.html">Things</a></li>
+      <li><a href="/v2.1/concepts/items.html">Items</a></li>
+      <li><a href="/v2.1/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.1/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.1/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.1/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.1/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.1/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.1/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.1/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.1/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.1/installation/designer.html">SmartHome Designer</a></li>
+      <li><a href="/v2.1/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.1/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/things.html">Things</a></li>
+      <li><a href="/v2.1/configuration/items.html">Items</a></li>
+      <li><a href="/v2.1/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.1/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.1/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.1/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.1/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.1/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.1/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.1/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <hr />
+      <li><a href="/v2.1/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.1/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.1/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/bindings/airquality/readme.html">Air Quality</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/akm8681/readme.html">AKM868</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/allplay/readme.html">AllPlay</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/asterisk1/readme.html">Asterisk</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/astro1/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/atlona/readme.html">Atlona</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/autelis1/readme.html">Autelis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/benqprojector1/readme.html">BenQ Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bluetooth1/readme.html">Bluetooth</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/bticino1/readme.html">Bticino</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/configadmin1/readme.html">ConfigAdmin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/cups1/readme.html">CUPS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/daikin1/readme.html">Daikin</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/davis1/readme.html">Davis</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ddwrt1/readme.html">DD-WRT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/denon1/readme.html">Denon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/digitalstrom1/readme.html">digitalSTROM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/diyonxbee1/readme.html">DIYOnXBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dmx1/readme.html">DMX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dscalarm1/readme.html">DSC PowerSeries Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ebus1/readme.html">eBUS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ekey1/readme.html">ekey</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/energenie1/readme.html">Energenie</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/exec1/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/expire1/readme.html">Expire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/feed/readme.html">Feed</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fht1/readme.html">FHT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/folding/readme.html">Folding@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freebox1/readme.html">Freebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzaha1/readme.html">Fritz AHA</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/frontiersiliconradio1/readme.html">Frontier Silicon Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fs201/readme.html">FS20</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/garadget1/readme.html">Garadget</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gardena/readme.html">Gardena</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/gpio1/readme.html">GPIO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/harmonyhub1/readme.html">Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdanywhere1/readme.html">HDanywhere</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hms1/readme.html">HMS</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/homematic1/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/horizon1/readme.html">Horizon mediabox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/http1/readme.html">HTTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue/readme.html">Philips Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/hue1/readme.html">Hue</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/iec6205621meter1/readme.html">IEC 62056-21 Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonhub1/readme.html">Insteon Hub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipp/readme.html">IPP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/isy1/readme.html">Description</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/k80551/readme.html">Velleman k8055 USB IO Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/keba/readme.html">Keba</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/km2001/readme.html">KM200</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/knx1/readme.html">KNX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kodi/readme.html">Kodi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lcn1/readme.html">LCN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lifx/readme.html">LIFX</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lightwaverf1/readme.html">LightwaveRF</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/lutron/readme.html">Lutron</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mailcontrol1/readme.html">MailControl</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/max/readme.html">MAX!</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcube1/readme.html">MAX!Cube</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp230171/readme.html">MCP23017</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mcp34241/readme.html">MCP3424</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/miele/readme.html">Miele@home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/milight1/readme.html">Milight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/modbus1/readme.html">Modbus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mpd1/readme.html">MPD</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/mystromecopower1/readme.html">Mystrom Eco Power</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nest1/readme.html">Nest</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/netatmo1/readme.html">Netatmo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/network/readme.html">Network</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkhealth1/readme.html">Network Health</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp/readme.html">NTP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ntp1/readme.html">Network Time Protocol (NTP)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/omnilink1/readme.html">HAI/Leviton Omni and Lumina</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onewire1/readme.html">OneWire</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/onkyo1/readme.html">Onkyo AV Receiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/openpaths1/readme.html">OpenPaths</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/opensprinkler1/readme.html">OpenSprinkler</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/owserver1/readme.html">OWServer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/panstamp1/readme.html">panStamp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/piface1/readme.html">Piface</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pilight1/readme.html">pilight</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pioneeravr1/readme.html">Pioneer AV Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plcbus1/readme.html">PLCBus</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plclogo1/readme.html">PLCLogo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plex1/readme.html">Plex</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/plugwise1/readme.html">Plugwise</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powerdoglocalapi1/readme.html">PowerDog Local API</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/primare1/readme.html">Primare</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/pulseaudio1/readme.html">Pulseaudio</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rfxcom1/readme.html">RFXCOM</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rme/readme.html">RME</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rpircswitch1/readme.html">Raspberry Pi RC Switch</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/russound/readme.html">Russound</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sagercaster1/readme.html">Sager Weathercaster</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sallegra1/readme.html">Sallegra</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/samsungtv1/readme.html">Samsung TV</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sensebox/readme.html">senseBox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/serial1/readme.html">Serial</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/smarthomatic1/readme.html">Smarthomatic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/snmp1/readme.html">SNMP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonance1/readme.html">Sonance</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/sonos1/readme.html">Sonos</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/souliss1/readme.html">Souliss</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/squeezebox1/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/stiebelheatpump1/readme.html">Stiebel Eltron LWZ</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/systeminfo1/readme.html">System Information</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tacmi1/readme.html">TACmi</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tellstick1/readme.html">Tellstick</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tesla/readme.html">Tesla</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tivo1/readme.html">TiVo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/toon/readme.html">Toon</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/tradfri/readme.html">Trådfri</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/ucprelayboard1/readme.html">UCProjects.eu Relay Board</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/upb1/readme.html">UPB</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/urtsi1/readme.html">Somfy URTSI II</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vdr1/readme.html">Video Disk Recorder (VDR)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wago1/readme.html">WAGO</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/weather1/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wemo1/readme.html">Wemo</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/withings1/readme.html">Withings</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/wr32231/readme.html">WR3223 ventilation controller</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/xpl1/readme.html">xPL</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/yamahareceiver1/readme.html">Yamaha Receiver (1.x)</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zibase1/readme.html">Zibase</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave/readme.html">ZWave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zwave1/readme.html">Z-Wave</a></li>
+          
+          <li><a href="/v2.1/addons/bindings/zway/readme.html">Z-Way</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.1/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.1/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.1/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/addons/uis/apps/android.html">Android openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/ios.html">iOS openHAB App</a></li>
+          <li><a href="/v2.1/addons/uis/apps/windows.html">Windows 10 openHAB App</a></li>
+          <hr />
+          <li><a href="/v2.1/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.1/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/persistence/caldav/readme.html">CalDAV</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/cosm/readme.html">Xively (formerly Cosm)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/db4o/readme.html">db4o</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/dynamodb/readme.html">Amazon DynamoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/influxdb08/readme.html">InfluxDB (up to 0.8.x)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jdbc/readme.html">JDBC</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mapdb/readme.html">mapdb</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mongodb/readme.html">MongoDB</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/mysql/readme.html">MySQL</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sense/readme.html">Sen.Se</a></li>
+          
+          <li><a href="/v2.1/addons/persistence/sitewhere/readme.html">SiteWhere</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.1/addons/actions.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/actions/astro/readme.html">Astro</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ciscospark/readme.html">Cisco Spark</a></li>
+          
+          <li><a href="/v2.1/addons/actions/dscalarm/readme.html">DSC Alarm</a></li>
+          
+          <li><a href="/v2.1/addons/actions/ecobee/readme.html">Ecobee</a></li>
+          
+          <li><a href="/v2.1/addons/actions/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+          
+          <li><a href="/v2.1/addons/actions/homematic/readme.html">Homematic</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mail/readme.html">Mail</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mios/readme.html">MiOS</a></li>
+          
+          <li><a href="/v2.1/addons/actions/mqtt/readme.html">MQTT</a></li>
+          
+          <li><a href="/v2.1/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+          
+          <li><a href="/v2.1/addons/actions/openwebif/readme.html">OpenWebIf</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pebble/readme.html">Pebble</a></li>
+          
+          <li><a href="/v2.1/addons/actions/prowl/readme.html">Prowl</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushover/readme.html">Pushover</a></li>
+          
+          <li><a href="/v2.1/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+          
+          <li><a href="/v2.1/addons/actions/satel/readme.html">Satel</a></li>
+          
+          <li><a href="/v2.1/addons/actions/squeezebox/readme.html">Squeezebox</a></li>
+          
+          <li><a href="/v2.1/addons/actions/telegram/readme.html">Telegram</a></li>
+          
+          <li><a href="/v2.1/addons/actions/tinkerforge/readme.html">TinkerForge</a></li>
+          
+          <li><a href="/v2.1/addons/actions/twitter/readme.html">Twitter</a></li>
+          
+          <li><a href="/v2.1/addons/actions/weather/readme.html">Weather</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xbmc/readme.html">XBMC</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xmpp/readme.html">XMPP</a></li>
+          
+          <li><a href="/v2.1/addons/actions/xpl/readme.html">xPL</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.1/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.1/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.1/addons/voice.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.1/addons/voice.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/voice/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.1/addons/voice/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.1/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.1/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.1/addons/io/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.1/addons/io/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.1/addons/io/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.1/addons/io/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.1/addons/io/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.1/addons/io/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.1/configuration/restdocs.html">REST API</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.1/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/console.html">Console</a></li>
+      <li><a href="/v2.1/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.1/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.1/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.1/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.1/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.1/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.1/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.1/../addons/bindings/lcn1/readme.html">latest version</a></li>
+      <li><a href="/v2.1/../v2.2/addons/bindings/lcn1/readme.html">v2.2</a></li>
+      <li><a href="/v2.1/addons/bindings/lcn1/readme.html">v2.1<i class="tiny material-icons right">lens</i></a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="lcn-binding">LCN Binding</h1>
+
+<p>This binding connects to one or more LCN-PCHK instances via TCP/IP. <strong>This means 1 unused LCN-PCHK license is required!</strong></p>
+
+<p><img src="http://3.bp.blogspot.com/-d5mm3HC7uic/VpO2ctrfWNI/AAAAAAAAJOI/a37JMGhC4IY/s600/openhab_lcn.jpg" alt="" /></p>
+
+<p>The minimum recommended version is LCN-PCHK 2.8 (older versions will also work, but lack some functionality). Visit <a href="http://www.lcn.de">http://www.lcn.de</a> for updates.</p>
+
+<h2 id="lcn-overview">LCN Overview</h2>
+
+<h3 id="lcn-modules">LCN Modules</h3>
+
+<p>Active LCN components connected to the LCN bus are called <em>LCN modules</em>. LCN modules are addressed by their numeric id: Valid range is 5..254</p>
+
+<p>In larger buildings, a second topologic layer is added: <em>segments</em>. Valid range is 5..128 or 0 (= no segments exist) or 3 (= target all segments)</p>
+
+<p>Examples: <strong>S000M005</strong>, <strong>S011M100</strong></p>
+
+<p>LCN modules within the <strong>same</strong> segment can be grouped: Valid range is 5..254 or 3 (= target all groups)</p>
+
+<p>Examples: <strong>S000G022</strong>, <strong>S011G111</strong></p>
+
+<h3 id="lcn-firmware-versions">LCN Firmware Versions</h3>
+
+<p>Each LCN module has a feature-set based on its firmware version. This version is written as follows: [year since 1990][month][day]</p>
+
+<p>Each component is written in hexadecimal with 2 characters. Examples:</p>
+
+<ul>
+  <li>090101 = 1. january 1990</li>
+  <li>0D0C01 = 1. december 2003</li>
+  <li>170206 = 6. feb. 2013</li>
+</ul>
+
+<h3 id="lcn-output-ports">LCN Output-Ports</h3>
+
+<p>LCN modules support 2 to 4 analog output-ports (number depends on firmware version). Status values are always in percent.</p>
+
+<p>Modules since 170206 have a 0.5%-steps resolution. Older modules have a 2%-steps resolution.</p>
+
+<p>The time it takes the output-port to reach its set-point is called <em>ramp</em>.</p>
+
+<h3 id="lcn-variables">LCN Variables</h3>
+
+<p>LCN modules support:</p>
+
+<ul>
+  <li>3 or 12 (since 170206) analog variables for general usage</li>
+  <li>2 regulator set-points</li>
+  <li>5 or 4x4 (since 170206) thresholds (trigger levels)</li>
+  <li>4 S0-input counters (LCN-BU4L must be connected)</li>
+</ul>
+
+<h3 id="lcn-regulators-additions-to-variables">LCN Regulators (additions to variables)</h3>
+
+<p>LCN modules have 2 regulators. Each one has a set-point and uses one variable as its value-source (see <a href="#lcnvariables">LCN Variables</a>).</p>
+
+<h3 id="lcn-relays">LCN Relays</h3>
+
+<p>LCN modules support up to 8 relays. If no hardware-relays are connected, the relays can still be used as virtual.</p>
+
+<h3 id="lcn-binary-sensors">LCN Binary-Sensors</h3>
+
+<p>LCN modules support up to 8 binary-sensors (hardware periphery must be connected).</p>
+
+<h3 id="lcn-leds-legacy-name-lamps">LCN LEDs (legacy name: <em>lamps</em>)</h3>
+
+<p>12x multi-state variables used for logic operations.</p>
+
+<p>Values: 0(OFF), 1(ON), 2(BLINK), 3(FLICKER)</p>
+
+<h3 id="lcn-logic-operations-legacy-name-sums">LCN Logic-Operations (legacy name: <em>sums</em>)</h3>
+
+<p>4x multi-state variables representing the result of associated LEDs.</p>
+
+<p>Values: 0(NOT), 1(OR), 2(AND)</p>
+
+<h3 id="lcn-keys">LCN Keys</h3>
+
+<p>LCN keys are data-points with bound commands. LCN modules support 3 (“A-C”) or 4 (“A-D”) key-tables (number depends on firmware version).</p>
+
+<p>Each key-table holds 8 keys. Examples: A1, A7, D8</p>
+
+<p>Each key has 3 command types: HIT(press), MAKE(long press), BREAK(long press release)</p>
+
+<p><strong>Some of these keys can be locked which means the bound (LCN-)commands cannot be executed (via LCN)!</strong></p>
+
+<hr />
+
+<h2 id="binding-configuration">Binding Configuration</h2>
+
+<p>The binding can be configured in the file <code class="highlighter-rouge">services/lcn.cfg</code>.</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Property</th>
+      <th>Default</th>
+      <th style="text-align: center">Required</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>id1</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>unique connection ID (like <code class="highlighter-rouge">myhome</code>) that will be the connection’s unique identifier used in openHAB items</td>
+    </tr>
+    <tr>
+      <td>address1</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>address:port - <strong>address</strong> can be any IP or host name. The <strong>port</strong> (:4114) is optional.</td>
+    </tr>
+    <tr>
+      <td>username1</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>username used to authenticate the connection</td>
+    </tr>
+    <tr>
+      <td>password1</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>password used to authenticate the connection</td>
+    </tr>
+    <tr>
+      <td>mode1</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>LCN busses with <strong>solely</strong> modules with firmware 170206 (feb. 2013) or newer use <code class="highlighter-rouge">native200</code> (means: output-ports have 200 dimming steps).  All other LCN busses use <code class="highlighter-rouge">native50</code> (means: output-ports have 50 dimming steps). This is an important setting as the operation mode is programmed into the LCN modules by LCN-PRO.  If you experience unexpected behavior while dimming output-ports, the connection is probably in the wrong operation mode! <strong>For older versions than LCN-PCHK 2.8: Use <code class="highlighter-rouge">percent50</code> and <code class="highlighter-rouge">percent200</code> instead (loses some precision).</strong></td>
+    </tr>
+    <tr>
+      <td>timeout1</td>
+      <td>3500</td>
+      <td style="text-align: center">No</td>
+      <td>Timeout for requests in milliseconds</td>
+    </tr>
+    <tr>
+      <td>id2</td>
+      <td> </td>
+      <td style="text-align: center">Yes</td>
+      <td>More connections are defined by incrementing the appended counter (<code class="highlighter-rouge">2</code> in the example) for all properties. <strong>Do not skip any numbers! GOOD: 1,2,3,4 BAD: 1,3,4</strong></td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="example-configuration-for-a-connection">Example configuration for a connection</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id1=myhome
+address1=localhost:4114
+username1=lcn
+password1=test123
+mode1=native200
+</code></pre></div></div>
+
+<p>This example defines a connnection (#1) to LCN-PCHK on <strong>localhost</strong> port <strong>4114</strong>. <strong>myhome</strong> will be the connection’s unique identifier (<em>connid</em>, used in openHAB mapping-definitions).</p>
+
+<hr />
+
+<h2 id="items-configuration">Items Configuration</h2>
+
+<p>LCN items are defined by mapping openHAB commands to LCN commands:</p>
+
+<p>Example item with 2 mappings:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleItem "my text" {lcn="[openHABcmd:connid:lcncmd...], [openHABcmd:connid:lcncmd...], ..."}
+</code></pre></div></div>
+
+<ul>
+  <li><strong>openHABcmd</strong>: ON, OFF, INCREASE, DECREASE… (must be replaced when using the examples)</li>
+  <li><strong>connid</strong>: Unique identifier for the LCN connection. Always <code class="highlighter-rouge">myhome</code> in the examples here</li>
+  <li><strong>lcncmd…</strong>: What to do</li>
+</ul>
+
+<p><strong>Everything is case-insensitive.</strong></p>
+
+<p>Visualization of an item is done as follows:</p>
+
+<ul>
+  <li>With an <em>explicit</em> visualization mapping (“best practice”)</li>
+  <li>or implicitly by analyzing all present mappings (“lazy”)</li>
+</ul>
+
+<p><strong>A visualization-mapping should always be the <em>first one</em> specified (before all others)!</strong></p>
+
+<p>The benefits of an <em>explicit</em> visualization mapping: By explicitly telling the openHAB item where to get the current status from, it is possible to visualize one thing, but control something completely different!</p>
+
+<h3 id="lcn-addresses">LCN Addresses</h3>
+
+<p>Examples for S000M005:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openHABcmd:connid:S0.M5...
+openHABcmd:connid:0.5...  ("M" is implicit if missing)
+openHABcmd:connid:0.M005...
+</code></pre></div></div>
+
+<p>Examples for S000G011:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openHABcmd:connid:0.G11...
+openHABcmd:connid:S0.G11...
+</code></pre></div></div>
+
+<h3 id="lcn-output-ports-1">LCN Output-Ports</h3>
+
+<p>Switch S000M005, output-port 2 (no ramp):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleO2 "M005 output-port 2" {lcn="[myhome:OUTPUT_STATUS.0.5.2], [ON:myhome:ON.0.5.2], [OFF:myhome:OFF.0.5.2]"}
+</code></pre></div></div>
+
+<p>The same using <em>lazy</em> visualization and ramp 10s:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleO2 "M005 output-port 2" {lcn="[ON:myhome:ON.0.5.2.10s], [OFF:myhome:OFF.0.5.2.10s]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005, output-port 3 current value (percent):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number exampleO3 "M005 output-port 3 [%d]" {lcn="[myhome:OUTPUT_STATUS.0.5.3]"}
+</code></pre></div></div>
+
+<p>Relative output-port commands:</p>
+
+<ul>
+  <li>+10.5% output-port 2: <code class="highlighter-rouge">[openHABcmd:myhome:ADD.0.5.2.10,5%]</code></li>
+  <li>-5% output-port 2: <code class="highlighter-rouge">[openHABcmd:myhome:SUB.0.5.2.5%]</code></li>
+  <li>alternative for -5%: <code class="highlighter-rouge">[openHABcmd:myhome:REL.0.5.2.-5%]</code></li>
+</ul>
+
+<p>Dimmer S000M005, output-port 2 (5% steps):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Dimmer exampleO2 "M005 output-port 2 [%s]" {lcn="[myhome:OUTPUT_STATUS.0.5.2], [INCREASE:myhome:ADD.0.5.2.5%], [DECREASE:myhome:SUB.0.5.2.5%], [%i:myhome:DIM.0.5.2.%i]"}
+</code></pre></div></div>
+
+<p><strong>“%i”-mapping is required for HABDroid</strong></p>
+
+<p>Toggle S000M005, output-port 2: <code class="highlighter-rouge">[openHABcmd:myhome:TOGGLE.0.5.2]</code></p>
+
+<p>with ramp 10s: <code class="highlighter-rouge">[openHABcmd:myhome:TOGGLE.0.5.2.10s]  (also valid: 0,5s,1second,10seconds,30sec)</code></p>
+
+<p>Dim S000M005, output-port 2 to 66,5%: <code class="highlighter-rouge">[openHABcmd:myhome:DIM.0.5.66,5%]</code></p>
+
+<p>with ramp 10s: <code class="highlighter-rouge">[openHABcmd:myhome:DIM.0.5.2.66,5%.10s]</code></p>
+
+<p><strong>Note: <code class="highlighter-rouge">ON</code>/<code class="highlighter-rouge">OFF</code>/<code class="highlighter-rouge">DIM</code>/<code class="highlighter-rouge">TOGGLE</code> also support “all outputs an once”: Replace the output-port (1,2,3,4) with <code class="highlighter-rouge">ALL</code>.</strong></p>
+
+<p><strong>The only allowed unit for ramps is seconds!</strong></p>
+
+<h3 id="lcn-variables-1">LCN Variables</h3>
+
+<p>Variables can be shown and changed using several measurement units:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">lcn</code> (internal native/raw format)</li>
+  <li><code class="highlighter-rouge">°C</code> / <code class="highlighter-rouge">°Celsius</code> / <code class="highlighter-rouge">Celsius</code></li>
+  <li><code class="highlighter-rouge">°K</code> / <code class="highlighter-rouge">°Kelvin</code> / <code class="highlighter-rouge">Kelvin</code></li>
+  <li><code class="highlighter-rouge">°F</code> / <code class="highlighter-rouge">°Fahrenheit</code> / <code class="highlighter-rouge">Fahrenheit</code></li>
+  <li><code class="highlighter-rouge">lx</code> / <code class="highlighter-rouge">Lux</code> (for periphery connected to the LCN module’s I-port)</li>
+  <li><code class="highlighter-rouge">lx_T</code> / <code class="highlighter-rouge">Lux_T</code> (for periphery connected to the LCN module’s T-port)</li>
+  <li><code class="highlighter-rouge">m/s</code></li>
+  <li><code class="highlighter-rouge">% </code>/ <code class="highlighter-rouge">Percent</code> (used for humidity)</li>
+  <li><code class="highlighter-rouge">ppm</code> (used for CO2)</li>
+  <li><code class="highlighter-rouge">V</code> / <code class="highlighter-rouge">VOLT</code></li>
+  <li><code class="highlighter-rouge">A</code> / <code class="highlighter-rouge">Amp</code> / <code class="highlighter-rouge">Ampere</code></li>
+  <li><code class="highlighter-rouge">°</code> (angle) / <code class="highlighter-rouge">Degree</code></li>
+</ul>
+
+<p><strong>All these alternative spellings can be used.</strong></p>
+
+<p>Visualize S000M0005, Var 2/12:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleVar2 "M005 Var 2 temperature [%s °C]" {lcn="[myhome:VAR_VALUE.0.5.2.°C]"}
+String exampleVar2 "M005 Var 2 [%s]" {lcn="[myhome:VAR_VALUE.0.5.2]"}
+</code></pre></div></div>
+
+<p>Visualize S000M0005, Regulator 1 Set-Point:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleSetPoint1 "M005 regulator 1 set-point [%s °C]" {lcn="[myhome:SETPOINT_VALUE.0.5.1.°C]"}
+</code></pre></div></div>
+
+<p>Set-point control to change regulator 1:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number exampleSetPoint "M005 regulator 1 set-point [%f °C]" {lcn="[myhome:SETPOINT_VALUE.0.5.1.°C], [%i:myhome:SETPOINT.0.5.1.%i°C]"}
+Number exampleSetPoint "M005 regulator 1 set-point [%f °C]" {lcn="[%i:myhome:SETPOINT.0.5.1.%i°C]"}  &lt;- Short form
+</code></pre></div></div>
+
+<p>Visualize S000M0005, threshold 3-4 (register is 3!):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleT34 "M005 threshold 3-4 [%s °C]" {lcn="[myhome:THRESHOLD_VALUE.0.5.3.4.°C]"}
+</code></pre></div></div>
+
+<p>Visualize S000M0005, S0-input 3/4 (requires LCN-BU4L connected to the LCN module):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleS0 "M005 S0-input 3 [%s]" {lcn="[myhome:S0_VALUE.0.5.3]"}
+</code></pre></div></div>
+
+<h3 id="changing-variables">Changing Variables</h3>
+
+<p>Example S000M005, variable 7:</p>
+
+<ul>
+  <li>Add 10°C: <code class="highlighter-rouge">[openHABcmd:myhome:VAR_ADD.0.5.7.10°C]</code></li>
+  <li>Sub 10°C: <code class="highlighter-rouge">[openHABcmd:myhome:VAR_SUB.0.5.7.10°C]</code> or <code class="highlighter-rouge">[openHABcmd:myhome:VAR_REL.0.5.7.-10°C]</code></li>
+  <li>Add raw value 15: <code class="highlighter-rouge">[openHABcmd:myhome:VAR_ADD.0.5.7.15]</code> or <code class="highlighter-rouge">[openHABcmd:myhome:VAR_ADD.0.5.7.15LCN]</code></li>
+  <li>Reset to 0: <code class="highlighter-rouge">[openHABcmd:myhome:VAR_RESET.0.5.7]</code></li>
+  <li>Set to 10°C: <code class="highlighter-rouge">[openHABcmd:myhome:VAR.0.5.7.10°C]</code></li>
+</ul>
+
+<p>Example S000M005, set-point regulator 2</p>
+
+<ul>
+  <li>Add 1°C: <code class="highlighter-rouge">[openHABcmd:myhome:SETPOINT_ADD.0.5.2.1°C]</code></li>
+  <li>Reset to 0: <code class="highlighter-rouge">[openHABcmd:myhome:SETPOINT_RESET.0.5.2]</code></li>
+  <li>Set to 10°C: <code class="highlighter-rouge">[openHABcmd:myhome:SETPOINT.0.5.2.10°C]</code></li>
+</ul>
+
+<p>Example S000M005, threshold 3-4 (register is 3!):</p>
+
+<ul>
+  <li>Add 10,5°C: <code class="highlighter-rouge">[openHABcmd:myhome:THRESHOLD_ADD.0.5.3.4.10,5°C]</code></li>
+</ul>
+
+<h3 id="special-cases">Special Cases</h3>
+
+<ol>
+  <li><code class="highlighter-rouge">VAR</code> and <code class="highlighter-rouge">VAR_RESET</code> with modules before 170206: If the command’s target is an LCN group, those older modules require special commands to work: <code class="highlighter-rouge">VAR_OLD</code>, <code class="highlighter-rouge">VAR_RESET_OLD</code></li>
+  <li>Thresholds with modules before 170206: Older modules only have threshold register 1 (but 5 instead of 4 values!). If the command’s target is an LCN group, those older modules require special commands to work: <code class="highlighter-rouge">THRESHOLD_ADD_OLD</code>, <code class="highlighter-rouge">THRESHOLD_SUB_OLD</code>, <code class="highlighter-rouge">THRESHOLD_REL_OLD</code></li>
+  <li><code class="highlighter-rouge">VAR</code>: If the command’s target is LCN group number 4, the value of the variable will be sent as status message. This makes it possible to send 12 status messages per segment and fetch these values by the modules.</li>
+</ol>
+
+<h3 id="lcn-regulators-additions-to-variables-1">LCN Regulators (additions to variables)</h3>
+
+<p>Lock/unlock S000M005, Regulator 1/2:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleLockReg2 "M005 reg.2 lock/unlock" {lcn="[ON:myhome:LOCK_REGULATOR.0.5.1], [OFF:myhome:UNLOCK_REGULATOR.0.5.1]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005, Regulator 2/2 lock-state:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Contact exampleLockReg1 "M005 reg.2 lock-state" {lcn="[myhome:REGULATOR_LOCK_STATE.0.5.2]"}
+</code></pre></div></div>
+
+<h3 id="lcn-relays-1">LCN Relays</h3>
+
+<p>Switch S000M005, relay 6/8:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleRelay6 "M005 relay 6" {lcn="[ON:myhome:RELAYS.0.5.-----1--], [OFF:myhome:RELAYS.0.5.-----0--]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005, relay 6:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Contact exampleRelay6 "M005 relay 6/8" {lcn="[myhome:RELAY_STATE.0.5.6]"}
+</code></pre></div></div>
+
+<p>More command examples:</p>
+
+<p>Toggle relay 1, turn OFF relays 5+6, turn ON relays 7: <code class="highlighter-rouge">[ON:myhome:RELAY.0.5.T---001-]</code></p>
+
+<h3 id="lcn-binary-sensors-1">LCN Binary-Sensors</h3>
+
+<p>Visualize S000M005, Binary-Sensor 4/8:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Contact exampleWindow "M005 bin.sensor 4" {lcn="[myhome:BINARY_STATE.0.5.4]"}
+</code></pre></div></div>
+
+<h3 id="lcn-leds-legacy-name-lamps-1">LCN LEDs (legacy name: <em>lamps</em>)</h3>
+
+<p>Visualize S000M005, LED 8/12 numeric state:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number exampleLed8 "M005 LED 8 [%d]" {lcn="[myhome:LED_STATE.0.5.8]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005 LED 8 text state:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleLed8 "M005 LED 8 [%s]" {lcn="[myhome:LED_STATE.0.5.8]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005 LED 8 state with custom texts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleLed8 "M005 LED 8 [%s]" {lcn="[myhome:LED_STATE.0.5.8.myOFFtext.myONtext.myBLINKtext.myFLICKERtext]"}
+</code></pre></div></div>
+
+<p>Switch S000M005 LED 8 on/off (<em>lazy</em> visualization):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleLed8 "M005 LED 8 on/off" {lcn="[ON:myhome:LED.0.5.8.ON], [OFF:myhome:LED.0.5.8.OFF]}
+</code></pre></div></div>
+
+<p>Switch S000M005 LED 8 blink/flicker (<em>lazy</em> visualization):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleLed8 "M005 LED 8 on/off" {lcn="[ON:myhome:LED.0.5.8.FLICKER], [OFF:myhome:LED.0.5.8.BLINK]}
+</code></pre></div></div>
+
+<h3 id="lcn-logic-operations-legacy-name-sums-1">LCN Logic-Operations (legacy name: <em>sums</em>)</h3>
+
+<p>Visualize S000M005 logic-op. 3 numeric state:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Number exampleOp3 "M005 logic-op. 3 [%d]" {lcn="[myhome:LOGICOP_STATE.0.5.3]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005 logic-op. 3 text state:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleOp3 "M005 logic-op. 3 [%s]" {lcn="[myhome:LOGICOP_STATE.0.5.3]"}
+</code></pre></div></div>
+
+<p>Visualize S000M005 logic-op. 3 state with custom texts:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>String exampleOp3 "M005 logic-op. 3 [%s]" {lcn="[myhome:LOGICOP_STATE.0.5.3.myNOTtext.myORtext.myANDtext]"}
+</code></pre></div></div>
+
+<h3 id="lcn-keys-1">LCN Keys</h3>
+
+<p>Sending keys (a.k.a. execute bound commands):</p>
+
+<p>Example: S000M005, keys A1,A5,D8</p>
+
+<ul>
+  <li>“hit”: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8]</code> or <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT]</code></li>
+  <li>“make”: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.MAKE]</code></li>
+  <li>“break”: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.BREAK]</code></li>
+</ul>
+
+<p>Sending keys deferred/delayed:</p>
+
+<p>Example: S000M005, keys A1,A5,D8</p>
+
+<ul>
+  <li>“hit” in 10s: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.10s]</code> (range 1..60, also valid: <code class="highlighter-rouge">1second</code>,<code class="highlighter-rouge">10seconds</code>,<code class="highlighter-rouge">30sec</code>)</li>
+  <li>“hit” in 10m: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.10m]</code> (range 1..90, also valid: <code class="highlighter-rouge">1minute</code>,<code class="highlighter-rouge">10minutes</code>,<code class="highlighter-rouge">45min</code>)</li>
+  <li>“hit” in 1h: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT.1h]</code> (range 1..50, also valid: <code class="highlighter-rouge">1hour</code>,<code class="highlighter-rouge">24hours</code>)</li>
+  <li>“hit” in 7d: <code class="highlighter-rouge">[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT.7d]</code> (range 1..45, also valid: <code class="highlighter-rouge">1day</code>,<code class="highlighter-rouge">7days</code>)</li>
+</ul>
+
+<p><strong>“make”/”break” is NOT supported!</strong></p>
+
+<p>Change lock-state S000M005 lock C1, unlock C2, toggle C7:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[openHABcmd:myhome:LOCK.0.5.C.10----T-]
+</code></pre></div></div>
+
+<p>Switch S000M005, show lock-state of key C4, control lock-state of C4,C5,C5:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleC456 "M005 C4(,C5,C6) lock" {lcn="[myhome:LOCK_STATE.0.5.C4], [ON:myhome:LOCK.0.5.C.---111--], [OFF:myhome:LOCK.0.5.C.---000--]"}
+</code></pre></div></div>
+
+<p>The same using <em>lazy</em> visualization (will visualize C4, as it is the first key in the list):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Switch exampleC456 "M005 C4 lock" {lcn="[ON:myhome:LOCK.0.5.C.---111--], [OFF:myhome:LOCK.0.5.C.---000--]"}
+</code></pre></div></div>
+
+<p>Lock keys A1,A2,A3 for 10m: <code class="highlighter-rouge">[openHABcmd:myhome:LOCK.0.5.A1A2A3.10m]</code></p>
+
+<p><strong>Same time-values as <code class="highlighter-rouge">KEYS</code> command.</strong>
+<strong>Only table A is supported!</strong></p>
+
+<h3 id="misc-commands">Misc Commands</h3>
+
+<p>Dynamic text for LCN-GTxD displays (support 4 independent text rows):</p>
+
+<p>Example: S000M005 row 1/4:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[openHABcmd:myhome:DYNTEXT.0.5.1.text up to 60 characters]
+</code></pre></div></div>
+
+<p><strong>The text will be encoded as UTF-8 which means non-ASCII characters will reduce the total available length.</strong></p>
+
+<p>Other commands can be sent by using the LCN-PCK format.</p>
+
+<p><strong>There will be no implicit <em>lazy</em> visualization for these commands!</strong></p>
+
+<p>Beep S000M005 4 times (must be allowed =&gt; LCN-PRO):</p>
+
+<ul>
+  <li>tone 1: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.PIN4]</code> (range 1..15)</li>
+  <li>tone 2: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.PIS004]</code></li>
+</ul>
+
+<p>Store current output-port value(s) as light-scene 6/10:</p>
+
+<ul>
+  <li>store output 1: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.SZS1005]</code> (range is 0..9)</li>
+  <li>store output 2: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.SZS2005]</code></li>
+  <li>store output 3(+4): <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.SZS4005]</code></li>
+</ul>
+
+<p><strong>Storing multiple outputs at once: 1+2+3(+4): <code class="highlighter-rouge">SZS7</code>, 1+2: <code class="highlighter-rouge">SZS3</code>, 1+3: <code class="highlighter-rouge">SZS5</code>, 2+3: <code class="highlighter-rouge">SZS6</code></strong></p>
+
+<p>Recall light-scene 6/10:</p>
+
+<p>recall output 1: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.SZA1005]</code> (range is 0..9)</p>
+
+<p><strong>Same as store, just <code class="highlighter-rouge">SZAx</code> instead of <code class="highlighter-rouge">SZSx</code>.</strong></p>
+
+<p>Change light-scene register:</p>
+
+<p>to register 5/10: <code class="highlighter-rouge">[openHABcmd:myhome:PCK.0.5.SZW004]</code> (range is 0..9)</p>
+
+<hr />
+
+<h2 id="full-demo-example">Full Demo Example</h2>
+
+<p>ISSENDORFF KG has a LCN-demo set-up that is reachable via internet.</p>
+
+<h3 id="serviceslcncfg">services/lcn.cfg</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>id1=lcndemo
+address1=access.lcn.de:5225
+username1=lcn
+password1=lcn
+mode1=native200
+</code></pre></div></div>
+
+<h3 id="lcndemoitems">lcndemo.items</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Contact lcnMotionDetect "Motion detect" {lcn="[lcndemo:BINARY_STATE.0.5.4]"}
+Contact lcnRelayVis "Relay" {lcn="[lcndemo:RELAY_STATE.0.5.1]"}
+Switch lcnRelay "Relay" {lcn="[ON:lcndemo:RELAYS.0.5.1-------], [OFF:lcndemo:RELAYS.0.5.0-------]"}
+Switch lcnLightSwitch "Light" {lcn="[ON:lcndemo:ON.0.5.1.2s], [OFF:lcndemo:OFF.0.5.1.2s]"}
+Dimmer lcnLightDimmer "Light [%s]" {lcn="[lcndemo:OUTPUT_STATUS.0.5.1], [INCREASE:lcndemo:ADD.0.5.1.5%], [DECREASE:lcndemo:SUB.0.5.1.5%], [%i:lcndemo:DIM.0.5.1.%i]"}
+Number lcnCounter "Counter [%d]" {lcn="[lcndemo:VAR_VALUE.0.5.1]"}
+String lcnTemp "Temperature [%s °C]" {lcn="[lcndemo:VAR_VALUE.0.5.2.°C]"}
+String lcnSetPoint "Set-point [%s °C]" {lcn="[lcndemo:SETPOINT_VALUE.0.5.1.°C]"}
+Number lcnSetPointDim "Set-point (10-23°C) [%f °C]" {lcn="[lcndemo:SETPOINT_VALUE.0.5.1.°C], [%i:lcndemo:SETPOINT.0.5.1.%i°C]"}
+String lcnRegulatorTarget "Regulator [%s]" {lcn="[lcndemo:OUTPUT_STATUS.0.5.3]"}
+Switch lcnRegulatorLock "Regulator lock" {lcn="[ON:lcndemo:LOCK_REGULATOR.0.5.1], [OFF:lcndemo:UNLOCK_REGULATOR.0.5.1]"}
+String lcnBright "Brightness [%s lx]" {lcn="[lcndemo:VAR_VALUE.0.5.3.lx]"}
+String lcnCO2 "CO2 [%s ppm]" {lcn="[lcndemo:VAR_VALUE.0.5.4.ppm]"}
+String lcnThreshold1 "Threshold 1 [%s °C]" {lcn="[lcndemo:THRESHOLD_VALUE.0.5.1.1.°C]"}
+String lcnThreshold2 "Threshold 2 [%s °C]" {lcn="[lcndemo:THRESHOLD_VALUE.0.5.1.2.°C]"}
+String lcnThreshold3 "Threshold 3 [%s °C]" {lcn="[lcndemo:THRESHOLD_VALUE.0.5.1.3.°C]"}
+String lcnThreshold4 "Threshold 4 [%s °C]" {lcn="[lcndemo:THRESHOLD_VALUE.0.5.1.4.°C]"}
+</code></pre></div></div>
+
+<h3 id="lcndemositemap">lcndemo.sitemap</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sitemap default label="LCN Demo"
+{
+	Frame label="Coffee" {
+		Text item=lcnMotionDetect
+		Text item=lcnRelayVis
+		Switch item=lcnRelay icon="none"
+		Switch item=lcnLightSwitch
+		Slider item=lcnLightDimmer
+		Text item=lcnCounter
+		Text item=lcnTemp
+		Text item=lcnSetPoint
+		Setpoint item=lcnSetPointDim step=0.5 minValue=10 maxValue=23
+		Text item=lcnRegulatorTarget
+		Switch item=lcnRegulatorLock
+		Text item=lcnBright
+		Text item=lcnCO2
+		Text item=lcnThreshold1
+		Text item=lcnThreshold2
+		Text item=lcnThreshold3
+		Text item=lcnThreshold4
+	}
+}
+</code></pre></div></div>
+
+<h3 id="visualization-through-lcn-gvs">Visualization (through LCN-GVS)</h3>
+
+<p>Address: <a href="http://access.lcn.de/LCNGVSDemo">http://access.lcn.de/LCNGVSDemo</a> -&gt; OpenHAB</p>
+
+<p>Direct address: <a href="http://access.lcn.de/LCNGVSDemo/control.aspx?ui=coffee&amp;proj=OpenHAB">http://access.lcn.de/LCNGVSDemo/control.aspx?ui=coffee&amp;proj=OpenHAB</a></p>
+
+<p>Login: guest</p>
+
+<p>Password: lcn</p>
+
+<hr />
+
+<h2 id="examples">Examples</h2>
+
+<p><strong>All examples use S000M005 or S000G006</strong></p>
+
+<h3 id="lcn-output-ports-2">LCN Output-Ports</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:OUTPUT_STATUS.0.5.1]
+[openHABcmd:myhome:ON.0.5.1]
+[openHABcmd:myhome:ON.0.5.ALL]
+[openHABcmd:myhome:OFF.0.5.1]
+[openHABcmd:myhome:OFF.0.5.ALL]
+[openHABcmd:myhome:TOGGLE.0.5.1]
+[openHABcmd:myhome:TOGGLE.0.G6.ALL]
+
+[openHABcmd:myhome:DIM.0.5.1.50%]
+[openHABcmd:myhome:DIM.0.5.1.50%.10s]
+[openHABcmd:myhome:DIM.0.G6.ALL.50%.10s]
+[%i:myhome:DIM.0.5.1.%i]
+
+[openHABcmd:myhome:ADD.0.5.1.10%]
+[openHABcmd:myhome:SUB.0.5.1.10,5%]
+[openHABcmd:myhome:REL.0.5.1.-10%]
+</code></pre></div></div>
+
+<h3 id="lcn-variables-2">LCN Variables</h3>
+
+<p>Measurement units:</p>
+
+<ul>
+  <li><code class="highlighter-rouge">lcn</code></li>
+  <li><code class="highlighter-rouge">°C</code>, <code class="highlighter-rouge">°Celsius</code>, <code class="highlighter-rouge">Celsius</code></li>
+  <li><code class="highlighter-rouge">°K</code>, <code class="highlighter-rouge">°Kelvin</code>, <code class="highlighter-rouge">Kelvin</code></li>
+  <li><code class="highlighter-rouge">°F</code>, <code class="highlighter-rouge">°Fahrenheit</code>, <code class="highlighter-rouge">Fahrenheit</code></li>
+  <li><code class="highlighter-rouge">lx</code>, <code class="highlighter-rouge">Lux</code>, <code class="highlighter-rouge">lx_T</code>, <code class="highlighter-rouge">Lux_T</code></li>
+  <li><code class="highlighter-rouge">m/s</code></li>
+  <li><code class="highlighter-rouge">%</code>, <code class="highlighter-rouge">Percent</code></li>
+  <li><code class="highlighter-rouge">ppm</code></li>
+  <li><code class="highlighter-rouge">V</code>, <code class="highlighter-rouge">Volt</code></li>
+  <li><code class="highlighter-rouge">A</code>, <code class="highlighter-rouge">Amp</code>, <code class="highlighter-rouge">Ampere</code></li>
+  <li><code class="highlighter-rouge">°</code>, <code class="highlighter-rouge">Degree</code></li>
+</ul>
+
+<h3 id="variables">Variables</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:VAR_VALUE.0.5.1]
+[myhome:VAR_VALUE.0.5.1.°C]
+[myhome:VAR_VALUE.0.5.1.lx]
+[openHABcmd:myhome:VAR.0.5.1.10°C]
+[openHABcmd:myhome:VAR_OLD.0.5.1.10°C]  &lt;- For group-targets before 170206
+[openHABcmd:myhome:VAR_ADD.0.5.1.10°C]
+[openHABcmd:myhome:VAR_SUB.0.5.1.10,5°C]
+[openHABcmd:myhome:VAR_REL.0.5.1.-10°C]
+[openHABcmd:myhome:VAR_RESET.0.5.1]
+[openHABcmd:myhome:VAR_RESET_OLD.0.5.1]  &lt;- For group-targets before 170206
+</code></pre></div></div>
+
+<h3 id="set-points">Set-Points</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:SETPOINT_VALUE.0.5.1]
+[myhome:SETPOINT_VALUE.0.5.1.°C]
+[openHABcmd:myhome:SETPOINT.0.5.1.10°C]
+[openHABcmd:myhome:SETPOINT_ADD.0.5.1.10°C]
+[openHABcmd:myhome:SETPOINT_SUB.0.5.1.10,5°C]
+[openHABcmd:myhome:SETPOINT_REL.0.5.1.-10°C]
+[openHABcmd:myhome:SETPOINT_RESET.0.5.1]
+[%i:myhome:SETPOINT.0.5.1.%i°C]
+</code></pre></div></div>
+
+<h3 id="thresholds">Thresholds</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:THRESHOLD_VALUE.0.5.1.1]
+[myhome:THRESHOLD_VALUE.0.5.1.1.°C]
+[openHABcmd:myhome:THRESHOLD_ADD.0.5.1.1.10°C]
+[openHABcmd:myhome:THRESHOLD_SUB.0.5.1.1.10,5°C]
+[openHABcmd:myhome:THRESHOLD_REL.0.5.1.1.-10°C]
+</code></pre></div></div>
+
+<p><strong>For group-targets before 170206: <code class="highlighter-rouge">THRESHOLD_ADD_OLD</code>, <code class="highlighter-rouge">THRESHOLD_SUB_OLD</code>, <code class="highlighter-rouge">THRESHOLD_REL_OLD</code></strong></p>
+
+<h3 id="s0-input">S0-Input</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:S0_VALUE.0.5.1]
+</code></pre></div></div>
+
+<h3 id="lcn-regulators-additions-to-variables-2">LCN Regulators (additions to variables)</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:REGULATOR_LOCK_STATE.0.5.1]
+[openHABcmd:myhome:LOCK_REGULATOR.0.5.1]
+[openHABcmd:myhome:UNLOCK_REGULATOR.0.5.1]
+</code></pre></div></div>
+
+<h3 id="lcn-relays-2">LCN Relays</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:RELAY_STATE.0.5.1]
+[openHABcmd:myhome:RELAYS.0.5.-----1--]
+[openHABcmd:myhome:RELAYS.0.5.-----0--]
+[openHABcmd:myhome:RELAYS.0.G6.----TTTT]  &lt;- Toggle
+</code></pre></div></div>
+
+<h3 id="lcn-binary-sensors-2">LCN Binary-Sensors</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:BINARY_STATE.0.5.1]
+</code></pre></div></div>
+
+<h3 id="lcn-leds-legacy-name-lamps-2">LCN LEDs (legacy name: <em>lamps</em>)</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:LED_STATE.0.5.1]
+[myhome:LED_STATE.0.5.1.myOFFtext.myONtext.myBLINKtext.myFLICKERtext]
+[openHABcmd:myhome:LED.0.5.1.ON]
+[openHABcmd:myhome:LED.0.5.8.OFF]
+[openHABcmd:myhome:LED.0.5.8.BLINK]
+[openHABcmd:myhome:LED.0.5.8.FLICKER]
+</code></pre></div></div>
+
+<h3 id="lcn-logic-operations-legacy-name-sums-2">LCN Logic-Operations (legacy name: <em>sums</em>)</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:LOGICOP_STATE.0.5.1]
+[myhome:LOGICOP_STATE.0.5.1.myNOTtext.myORtext.myANDtext]
+</code></pre></div></div>
+
+<h3 id="lcn-keys-2">LCN Keys</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[openHABcmd:myhome:KEYS.0.5.A1A5D8]
+[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT]
+[openHABcmd:myhome:KEYS.0.G6.A1A5D8.MAKE]
+[openHABcmd:myhome:KEYS.0.G6.A1A5D8.BREAK]
+
+[openHABcmd:myhome:KEYS.0.5.A1A5D8.10s]    (range 1..60, also valid: 1second,10seconds,30sec)
+[openHABcmd:myhome:KEYS.0.5.A1A5D8.10m]    (range 1..90, also valid: 1minute,10minutes,45min)
+[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT.1h] (range 1..50, also valid: 1hour,24hours)
+[openHABcmd:myhome:KEYS.0.5.A1A5D8.HIT.7d] (range 1..45, also valid: 1day,7days)
+</code></pre></div></div>
+
+<p><strong>“make”/”break” is NOT supported!</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[myhome:LOCK_STATE.0.5.A1]
+[openHABcmd:myhome:LOCK.0.5.A.-10-----]
+[openHABcmd:myhome:LOCK.0.5.D.------TT]  &lt;- Toggle
+
+[openHABcmd:myhome:LOCK.0.5.A1A2A3.10s]
+[openHABcmd:myhome:LOCK.0.5.A1A2A3.10m]
+[openHABcmd:myhome:LOCK.0.5.A1A2A3.1h]
+[openHABcmd:myhome:LOCK.0.5.A1A2A3.7d]
+</code></pre></div></div>
+
+<p><strong>Only table A is supported!</strong></p>
+
+<h3 id="misc-commands-1">Misc Commands</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>[openHABcmd:myhome:DYNTEXT.0.5.1.text in row 1]
+[openHABcmd:myhome:DYNTEXT.0.5.4.text in row 4]
+</code></pre></div></div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.1/js/jquery.min.js"></script>
+<script src="/v2.1/js/jquery.scrollme.min.js"></script>
+<script src="/v2.1/js/jquery.sticky.js"></script>
+<script src="/v2.1/js/materialize.min.js"></script>
+<script src="/v2.1/js/init.js"></script>
+
+<script>
+$(document).ready(function () {
+
+    $('#oh2-checkbox').change(function () {
+        if (this.checked) $('.since-2x').show('slow');
+        else $('.source-oh2').hide('slow');
+    });
+
+    $('#oh1-checkbox').change(function () {
+        if (this.checked) $('.since-1x').show('slow');
+        else $('.source-oh1').hide('slow');
+    });
+
+    $('#legacy-checkbox').change(function () {
+        if (this.checked) $('.install-legacy').show('slow');
+        else $('.install-legacy').hide('slow');
+    });
+
+    $('#manual-checkbox').change(function () {
+        if (this.checked) $('.install-manual').show('slow');
+        else $('.install-manual').hide('slow');
+    });
+
+});
+</script>
+
+</body>
+</html>
+

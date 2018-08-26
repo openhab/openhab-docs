@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Nest - Bindings - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/addons/bindings/nest/readme.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/introduction.html">Introduction</a></li>
+  <li><a href="/v2.2/concepts/index.html">Concepts</a>
+    <ul>
+      <li><a href="/v2.2/concepts/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/concepts/things.html">Things</a></li>
+      <li><a href="/v2.2/concepts/items.html">Items</a></li>
+      <li><a href="/v2.2/concepts/discovery.html">Inbox &amp; Discovery</a></li>
+      <li><a href="/v2.2/concepts/audio.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/installation/index.html">Installation</a>
+    <ul>
+      <li><a href="/v2.2/installation/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/linux.html">Linux</a></li>
+      <li><a href="/v2.2/installation/windows.html">Windows</a></li>
+      <li><a href="/v2.2/installation/macosx.html">Mac OS X</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/openhabian.html">openHABian</a></li>
+      <li><a href="/v2.2/installation/docker.html">Docker</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/rasppi.html">Raspberry Pi</a></li>
+      <li><a href="/v2.2/installation/pine.html">Pine A64</a></li>
+      <li><a href="/v2.2/installation/synology.html">Synology DiskStation</a></li>
+      <li><a href="/v2.2/installation/qnap.html">QNAP NAS</a></li>
+      <hr />
+      <li><a href="/v2.2/installation/security.html">Security &amp; Remote Access</a></li>
+      <li><a href="http://www.myopenhab.org">myopenHAB</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/configuration/index.html">Configuration</a>
+    <ul>
+      <li><a href="/v2.2/configuration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/things.html">Things</a></li>
+      <li><a href="/v2.2/configuration/items.html">Items</a></li>
+      <li><a href="/v2.2/configuration/sitemaps.html">Sitemaps</a></li>
+      <li><a href="/v2.2/configuration/transform.html">Transformations</a></li>
+      <li><a href="/v2.2/configuration/persistence.html">Persistence</a></li>
+      <li><a href="/v2.2/configuration/rules-dsl.html">Rules</a></li>
+      <li><a href="/v2.2/configuration/jsr223.html">JSR223 Scripting</a>
+        <ul>
+          <li><a href="/v2.2/configuration/jsr223.html">Overview</a>
+          <hr />
+          <li><a href="/v2.2/configuration/jsr223-js.html">Javascript</a></li>
+          <li><a href="/v2.2/configuration/jsr223-jython.html">Jython</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/configuration/services.html">Services</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/packages.html">Initial Setup Packages</a></li>
+      <li><a href="/v2.2/configuration/homebuilder.html">Home Builder</a></li>
+      <li><a href="/v2.2/configuration/paperui.html">Paper UI</a></li>
+      <li><a href="/v2.2/configuration/habmin.html">HABmin</a></li>
+      <li><a href="/v2.2/configuration/habpanel.html">HABPanel</a></li>
+      <li><a href="/v2.2/configuration/rules-ng.html">Rules (Experimental)</a></li>
+      <li><a href="/v2.2/configuration/editors.html">Editors</a></li>
+      <hr />
+      <li><a href="/v2.2/configuration/multimedia.html">Audio &amp; Voice</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/addons/index.html">Add-ons</a>
+    <ul>
+      <li><a href="/v2.2/addons/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/addons/bindings.html">Bindings</a>
+        <ul>
+          <li><a href="/v2.2/addons/bindings.html">Overview</a></li>
+          <hr />
+          
+            
+              <li><a href="/v2.2/addons/bindings/airquality/readme.html">Air Quality</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/alarmdecoder1/readme.html">Alarm Decoder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/allplay/readme.html">AllPlay</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/amazondashbutton/readme.html">Amazon Dash Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/anel1/readme.html">Anel NET-PwrCtrl</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/astro/readme.html">Astro</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/atlona/readme.html">Atlona</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/autelis/readme.html">Autelis Pool Control</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/avmfritz/readme.html">AVM FRITZ!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bigassfan/readme.html">BigAssFan</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/boschindego/readme.html">Bosch Indego</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/bticino1/readme.html">Bticino</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-command1/readme.html">CalDAV Command</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/caldav-personal1/readme.html">CalDAV Personal</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/chromecast/readme.html">Chromecast</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/cm11a/readme.html">Cm11a (X10 controller)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/comfoair1/readme.html">ComfoAir</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/coolmasternet/readme.html">CoolMasterNet</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/denon1/readme.html">Denon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/digitalstrom/readme.html">digitalSTROM</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dlinksmarthome/readme.html">D-Link Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dmx/readme.html">DMX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dscalarm/readme.html">DSC Alarm</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/dsmr1/readme.html">DSMR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ebus1/readme.html">eBUS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecobee1/readme.html">Ecobee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ecotouch1/readme.html">EcoTouch</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ekey1/readme.html">ekey</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/energenie1/readme.html">Energenie</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enocean1/readme.html">EnOcean</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/enphaseenergy1/readme.html">Enphase Energy</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/epsonprojector1/readme.html">Epson Projector</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/exec/readme.html">Exec</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/expire1/readme.html">Expire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fatekplc1/readme.html">Fatek PLC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feed/readme.html">Feed</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/feican/readme.html">Feican</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/folding/readme.html">Folding@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freebox/readme.html">Freebox</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/freeswitch1/readme.html">FreeSWITCH</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzbox1/readme.html">Fritz!Box</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fritzboxtr0641/readme.html">Fritzbox (using TR064 protocol)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fs201/readme.html">FS20</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/fsinternetradio/readme.html">FS Internet Radio</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/garadget1/readme.html">Garadget</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gardena/readme.html">Gardena</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/gc100ir1/readme.html">Global Cache IR</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/globalcache/readme.html">GlobalCache</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/harmonyhub/readme.html">Logitech Harmony Hub</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdanywhere/readme.html">HDanywhere</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hdpowerview/readme.html">Hunter Douglas PowerView</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/heatmiser1/readme.html">Heatmiser</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/homematic/readme.html">Homematic</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/http1/readme.html">HTTP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/hue/readme.html">Philips Hue</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/icloud/readme.html">iCloud</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ihc1/readme.html">IHC / ELKO</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/insteonplm1/readme.html">Insteon PLM</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/intertechno1/readme.html">Intertechno</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipp/readme.html">IPP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ipx8001/readme.html">IPX800</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/irtrans1/readme.html">IRTrans</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jeelink/readme.html">Jeelink</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/jointspace1/readme.html">jointSPACE</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/keba/readme.html">Keba</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/knx1/readme.html">KNX</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kodi/readme.html">Kodi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/kostalinverter/readme.html">Kostal Inverter</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/koubachi1/readme.html">Koubachi</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lcn1/readme.html">LCN</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtv1/readme.html">LG TV</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgtvserial/readme.html">LG TV control using serial protocol</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lgwebos/readme.html">LG webOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lifx/readme.html">LIFX</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lirc/readme.html">LIRC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/loxone/readme.html">Loxone</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/lutron/readme.html">Lutron</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/max/readme.html">MAX!</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/maxcul1/readme.html">MAX!CUL</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/meteostick/readme.html">Meteostick</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/miele/readme.html">Miele@home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mihome/readme.html">Xiaomi Mi Smart Home</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/milight/readme.html">Milight/Easybulb/Limitless</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/minecraft/readme.html">Minecraft</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mios1/readme.html">MiOS Bridge</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mochadx101/readme.html">Mochad X10</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/modbus1/readme.html">Modbus</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqtt1/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/mqttitude1/readme.html">OwnTracks (formerly MQTTitude)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/myq1/readme.html">Chamberlain MyQ</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/neohub1/readme.html">NeoHub</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nest/readme.html">Nest</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/netatmo/readme.html">Netatmo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/network/readme.html">Network</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/networkupstools1/readme.html">Network UPS Tools</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nibeheatpump1/readme.html">Nibe Heatpump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikobus1/readme.html">Nikobus</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/nikohomecontrol/readme.html">Niko Home Control</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/novelanheatpump1/readme.html">Novelan/Luxtronic Heat Pump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/ntp/readme.html">NTP</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/oceanic/readme.html">Oceanic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onebusaway/readme.html">OneBusAway</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onewire1/readme.html">OneWire</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/onkyo/readme.html">Onkyo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/openenergymonitor1/readme.html">Open Energy Monitor</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/opensprinkler/readme.html">OpenSprinkler</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/orvibo/readme.html">Orvibo</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/owserver1/readme.html">OWServer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/panasonictv1/readme.html">Panasonic TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/piface1/readme.html">Piface</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pioneeravr/readme.html">PioneerAVR Configuration</a></li>
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plex1/readme.html">Plex</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/plugwise/readme.html">Plugwise</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/powermax1/readme.html">Visonic Powermax</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/pulseaudio/readme.html">Pulseaudio</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/regoheatpump/readme.html">RegoHeatPump</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rfxcom/readme.html">RFXCOM</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rme/readme.html">RME</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rotelra1x/readme.html">Rotel Amplifier</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/russound/readme.html">Russound</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/rwesmarthome1/readme.html">RWE SmartHome</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungac1/readme.html">Samsung Air Conditioner</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/samsungtv/readme.html">Samsung TV</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sapp1/readme.html">Picnet Sapp</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/satel1/readme.html">Satel Integra Alarm System</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sensebox/readme.html">senseBox</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serial1/readme.html">Serial</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/serialbutton/readme.html">Serial Button</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/silvercrestwifisocket/readme.html">Silvercrest Wifi Plug</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sleepiq/readme.html">SleepIQ</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/smaenergymeter/readme.html">SMA Energy Meter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/snmp1/readme.html">SNMP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonance1/readme.html">Sonance</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/sonos/readme.html">Sonos</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/souliss1/readme.html">Souliss</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/squeezebox/readme.html">Logitech Squeezebox</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/swegonventilation1/readme.html">Swegon Ventilation</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/synopanalyzer/readme.html">Synop Analyzer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/systeminfo/readme.html">Systeminfo</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tankerkoenig/readme.html">Tankerkönig</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tcp1/readme.html">TCP & UDP</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tellstick/readme.html">Tellstick</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tesla/readme.html">Tesla</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tinkerforge1/readme.html">TinkerForge</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/toon/readme.html">Toon</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tplinksmarthome/readme.html">TPLinkSmartHome</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/tradfri/readme.html">TRÅDFRI</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/upb1/readme.html">UPB</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/urtsi/readme.html">Somfy URTSI II</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/vitotronic/readme.html">Vitotronic</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weather1/readme.html">Weather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/weatherunderground/readme.html">WeatherUnderground</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wemo/readme.html">Belkin Wemo</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wifiled/readme.html">WiFi LED</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/windcentrale/readme.html">Windcentrale</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/wol1/readme.html">Wake-on-LAN</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/xbmc1/readme.html">XBMC binding (for KODI) (1.x)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yahooweather/readme.html">YahooWeather</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/yamahareceiver/readme.html">Yamahareceiver</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zigbee/readme.html">ZigBee</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zoneminder/readme.html">Zoneminder</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zwave/readme.html">ZWave</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/bindings/zway/readme.html">Z-Way</a></li>
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/uis.html">User Interfaces</a>
+        <ul>
+          <li><a href="/v2.2/addons/uis.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/uis/basic/readme.html">Basic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/classic/readme.html">Classic UI</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habmin/readme.html">HABmin</a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/doc/habpanel.html"></a></li>
+          
+          <li><a href="/v2.2/addons/uis/habpanel/readme.html">HABPanel</a></li>
+          
+          <li><a href="/v2.2/addons/uis/paper/readme.html">Paper UI</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/addons/uis/apps/android.html">Android App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/ios.html">iOS App</a></li>
+          <li><a href="/v2.2/addons/uis/apps/windows.html">Windows 10 App</a></li>
+          <hr />
+          <li><a href="/v2.2/addons/iconsets/classic/readme.html">Iconset (classic)</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/persistence.html">Persistence</a>
+        <ul>
+          <li><a href="/v2.2/addons/persistence.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/influxdb/readme.html">InfluxDB (0.9 and newer)</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jdbc/readme.html">JDBC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/jpa/readme.html">Java Persistence API (JPA)</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mapdb/readme.html">mapdb</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/mysql/readme.html">MySQL</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/persistence/rrd4j/readme.html">rrd4j</a></li>
+            
+          
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/actions.html">Actions</a>
+        <ul>
+          <li><a href="/v2.2/addons/actions.html">Overview</a></li>
+          <hr />
+          
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/ecobee/readme.html">Ecobee</a></li>
+            
+          
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mail/readme.html">Mail</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mios/readme.html">MiOS</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/mqtt/readme.html">MQTT</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/nma/readme.html">NotifyMyAndroid</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pebble/readme.html">Pebble</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/prowl/readme.html">Prowl</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushbullet/readme.html">Pushbullet</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushover/readme.html">Pushover</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/pushsafer/readme.html">Pushsafer</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/satel/readme.html">Satel</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/telegram/readme.html">Telegram</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/twitter/readme.html">Twitter</a></li>
+            
+          
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xbmc/readme.html">XBMC</a></li>
+            
+          
+            
+              <li><a href="/v2.2/addons/actions/xmpp/readme.html">XMPP</a></li>
+            
+          
+            
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/transformations.html">Transformations</a>
+        <ul>
+          <li><a href="/v2.2/addons/transformations.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/transformations/exec/readme.html">Exec</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/javascript/readme.html">JavaScript</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/jsonpath/readme.html">JsonPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/map/readme.html">Map</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/regex/readme.html">RegEx</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/scale/readme.html">Scale</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xpath/readme.html">XPath</a></li>
+          
+          <li><a href="/v2.2/addons/transformations/xslt/readme.html">XSLT</a></li>
+          
+        </ul>
+      </li>
+      <li><a href="/v2.2/addons/voices.html">Voice Services</a>
+        <ul>
+          <li><a href="/v2.2/addons/voices.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/voices/mactts/readme.html">MacOS Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/marytts/readme.html">Mary Text-to-Speech</a></li>
+          
+          <li><a href="/v2.2/addons/voices/voicerss/readme.html">VoiceRSS Text-to-Speech</a></li>
+          
+        </ul>
+      </li>
+      <hr />
+      <li><a href="/v2.2/addons/io.html">3rd Party Integration</a>
+        <ul>
+          <li><a href="/v2.2/addons/io.html">Overview</a></li>
+          <hr />
+          
+          <li><a href="/v2.2/addons/ios/alexa-skill/readme.html">Amazon Alexa Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/dropbox/readme.html">Dropbox Synchronization</a></li>
+          
+          <li><a href="/v2.2/addons/ios/gcal/readme.html">Google Calendar Scheduler</a></li>
+          
+          <li><a href="/v2.2/addons/ios/homekit/readme.html">HomeKit Add-on</a></li>
+          
+          <li><a href="/v2.2/addons/ios/hueemulation/readme.html">openHAB Hue Emulation</a></li>
+          
+          <li><a href="/v2.2/addons/ios/imperihome/readme.html">ImperiHome integration service</a></li>
+          
+          <li><a href="/v2.2/addons/ios/mycroft-skill/readme.html">Mycroft AI Skill</a></li>
+          
+          <li><a href="/v2.2/addons/ios/openhabcloud/readme.html">openHAB Cloud Connector</a></li>
+          
+          <hr />
+          <li><a href="/v2.2/configuration/restdocs.html">REST API</a></li>
+          <li><a href="/v2.2/configuration/eclipseiotmarket.html">Eclipse IoT Marketplace</a></li>
+          <li><a href="http://www.myopenhab.org/" target="_blank">IFTTT</a></li>
+        </ul>
+      </li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/administration/index.html">Advanced Functionality</a>
+    <ul>
+      <li><a href="/v2.2/administration/index.html">Overview</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/console.html">Console</a></li>
+      <li><a href="/v2.2/administration/runtime.html">Runtime Commands</a></li>
+      <li><a href="/v2.2/administration/bundles.html">Bundle Management</a></li>
+      <li><a href="/v2.2/administration/logging.html">Logging</a></li>
+      <hr />
+      <li><a href="/v2.2/administration/jsondb.html">JsonDB Storage</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/appendix/help.html">Community Guidance</a>
+    <ul>
+      <li><a href="/v2.2/appendix/help.html">Finding Help &amp; FAQs</a></li>
+      <li><a href="/v2.2/appendix/contributing.html">Contributing</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    
+
+
+
+
+<div id="versioning" class="row valign-wrapper">
+  <div class="col s12 right-align">
+    <ul id="dropdown-versioning" class="dropdown-content">
+      <li><a href="/v2.2/../addons/bindings/nest/readme.html">latest version</a></li>
+      <li><a href="/v2.2/addons/bindings/nest/readme.html">v2.2<i class="tiny material-icons right">lens</i></a></li>
+      <li><a href="/v2.2/../v2.1/addons/bindings/nest/readme.html">v2.1</a></li>
+    </ul>
+    <a class="btn dropdown-button grey lighten-1" href="#!" data-activates="dropdown-versioning" title="Select which version of this openHAB documentation article you want to read.">
+      Switch Article Version<i class="material-icons right">arrow_drop_down</i>
+    </a>
+  </div>
+</div>
+
+    <div class="content">
+      <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+<h1 id="nest-binding">Nest Binding</h1>
+
+<p>The Nest binding integrates devices by <a href="https://nest.com">Nest</a> using the <a href="https://developers.nest.com/documentation/cloud/get-started">Nest API</a> (REST).</p>
+
+<p>Because the Nest API runs on Nest’s servers a connection with the Internet is required for sending and receiving information.
+The binding uses HTTPS to connect to the Nest API using ports 443 and 9553. Make sure outbound connections to these ports are not blocked by a firewall.</p>
+
+<h2 id="supported-things">Supported Things</h2>
+
+<p>The table below lists the Nest binding thing types:</p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Things</th>
+      <th>Description</th>
+      <th>Thing Type</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Nest Account</td>
+      <td>An account for using the Nest REST API</td>
+      <td>account</td>
+    </tr>
+    <tr>
+      <td>Nest Cam (Indoor, IQ, Outdoor), Dropcam</td>
+      <td>A Nest Cam registered with your account</td>
+      <td>camera</td>
+    </tr>
+    <tr>
+      <td>Nest Protect</td>
+      <td>The smoke detector/Nest Protect for the account</td>
+      <td>smoke_detector</td>
+    </tr>
+    <tr>
+      <td>Structure</td>
+      <td>The Nest structure defines the house the account has setup on Nest. You will only have more than one structure if you have more than one house</td>
+      <td>structure</td>
+    </tr>
+    <tr>
+      <td>Nest Thermostat (E)</td>
+      <td>A Thermostat to control the various aspects of the house’s HVAC system</td>
+      <td>thermostat</td>
+    </tr>
+  </tbody>
+</table>
+
+<h2 id="authorization">Authorization</h2>
+
+<p>The Nest API uses OAuth for authorization.
+Therefor the binding needs some authorization parameters before it can access your Nest account via the Nest API.</p>
+
+<p>To get these authorization parameters you first need to sign up as a <a href="https://developer.nest.com">Nest Developer</a> and <a href="https://developer.nest.com/products/new">register a new Product</a> (free and instant).</p>
+
+<p>While registering a new Product (on the Product Details page) make sure to:</p>
+
+<ul>
+  <li>Leave both “OAuth Redirect URI” fields empty to enable PIN-based authorization.</li>
+  <li>Grant all the permissions you intend to use. When in doubt, enable the permission because the binding needs to be reauthorized when permissions change at a later time.</li>
+</ul>
+
+<p>After creating the Product, your browser shows the Product Overview page.
+This page contains the <strong>Product ID</strong> and <strong>Product Secret</strong> authorization parameters that are used by the binding.
+Take note of both parameters or keep this page open in a browser tab.
+Now copy and paste the “Authorization URL” in a new browser tab.
+Accept the permissions and you will be presented the <strong>Pincode</strong> authorization parameter that is also used by the binding.</p>
+
+<p>You can return to the Product Overview page at a later time by opening the <a href="https://console.developers.nest.com/products">Products</a> page and selecting your Product.</p>
+
+<h2 id="discovery">Discovery</h2>
+
+<p>The binding will discover all Nest Things from your account when you add and configure a “Nest Account” Thing.
+See the Authorization paragraph above for details on how to obtain the Product ID, Product Secret and Pincode configuration parameters.</p>
+
+<p>Once the binding has successfully authorized with the Nest API, it obtains an Access Token using the Pincode.
+The configured Pincode is cleared because it can only be used once.
+The obtained Access Token is saved as an advanced configuration parameter of the “Nest Account”.</p>
+
+<p>You can reuse an Access Token for authorization but not the Pincode.
+A new Pincode can again be generated via the “Authorization URL” (see Authorization paragraph).</p>
+
+<h2 id="channels">Channels</h2>
+
+<h3 id="account-channels">Account Channels</h3>
+
+<p>The account Thing Type does not have any channels.</p>
+
+<h3 id="camera-channels">Camera Channels</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th style="text-align: center">Read Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>app_url</td>
+      <td>String</td>
+      <td>The app URL to see the camera</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>audio_input_enabled</td>
+      <td>Switch</td>
+      <td>If the audio input is currently enabled</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>public_share_enabled</td>
+      <td>Switch</td>
+      <td>If public sharing is currently enabled</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>public_share_url</td>
+      <td>String</td>
+      <td>The URL to see the public share of the camera</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>snapshot_url</td>
+      <td>String</td>
+      <td>The URL to use for a snapshot of the video stream</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>streaming</td>
+      <td>Switch</td>
+      <td>If the camera is currently streaming</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>video_history_enabled</td>
+      <td>Switch</td>
+      <td>If the video history is currently enabled</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>web_url</td>
+      <td>String</td>
+      <td>The web URL to see the camera</td>
+      <td style="text-align: center">R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="smoke-detector-channels">Smoke Detector Channels</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th style="text-align: center">Read Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>co_alarm_state</td>
+      <td>String</td>
+      <td>The carbon monoxide alarm state of the Nest Protect (OK, EMERGENCY, WARNING)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>low_battery</td>
+      <td>Switch</td>
+      <td>Reports whether the battery of the Nest protect is low (if it is battery powered)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>manual_test_active</td>
+      <td>Switch</td>
+      <td>Manual test active at the moment</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>smoke_alarm_state</td>
+      <td>String</td>
+      <td>The smoke alarm state of the Nest Protect (OK, EMERGENCY, WARNING)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>ui_color_state</td>
+      <td>String</td>
+      <td>The current color of the ring on the smoke detector (GRAY, GREEN, YELLOW, RED)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="structure-channels">Structure Channels</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th style="text-align: center">Read Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>away</td>
+      <td>String</td>
+      <td>Away state of the structure (HOME, AWAY, AUTO_AWAY)</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>country_code</td>
+      <td>String</td>
+      <td>Country code of the structure (<a href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>co_alarm_state</td>
+      <td>String</td>
+      <td>Carbon Monoxide alarm state (OK, EMERGENCY, WARNING)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>eta_begin</td>
+      <td>DateTime</td>
+      <td>Estimated time of arrival at home, will setup the heat to turn on and be warm</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>peak_period_end_time</td>
+      <td>DateTime</td>
+      <td>Peak period end for the Rush Hour Rewards program</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>peak_period_start_time</td>
+      <td>DateTime</td>
+      <td>Peak period start for the Rush Hour Rewards program</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>postal_code</td>
+      <td>String</td>
+      <td>Postal code of the structure</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>rush_hour_rewards_enrollment</td>
+      <td>Switch</td>
+      <td>If rush hour rewards system is enabled or not</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>smoke_alarm_state</td>
+      <td>String</td>
+      <td>Smoke alarm state (OK, EMERGENCY, WARNING)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>time_zone</td>
+      <td>String</td>
+      <td>The time zone for the structure (<a href="http://www.iana.org/time-zones">IANA time zone format</a>)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+  </tbody>
+</table>
+
+<h3 id="thermostat-channels">Thermostat Channels</h3>
+
+<table>
+  <thead>
+    <tr>
+      <th>Channel Type ID</th>
+      <th>Item Type</th>
+      <th>Description</th>
+      <th style="text-align: center">Read Write</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>can_cool</td>
+      <td>Switch</td>
+      <td>If the thermostat can actually turn on cooling</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>can_heat</td>
+      <td>Switch</td>
+      <td>If the thermostat can actually turn on heating</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>fan_timer_active</td>
+      <td>Switch</td>
+      <td>If the fan timer is engaged</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>fan_timer_duration</td>
+      <td>Number</td>
+      <td>Length of time (in minutes) that the fan is set to run (15, 30, 45, 60, 120, 240, 480, 960)</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>fan_timer_timeout</td>
+      <td>DateTime</td>
+      <td>Timestamp when the fan stops running</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>has_fan</td>
+      <td>Switch</td>
+      <td>If the thermostat can control the fan</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>has_leaf</td>
+      <td>Switch</td>
+      <td>If the thermostat is currently in a leaf mode</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>humidity</td>
+      <td>Number</td>
+      <td>Indicates the current relative humidity</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>locked</td>
+      <td>Switch</td>
+      <td>If the thermostat has the temperature locked to only be within a set range</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>locked_max_set_point</td>
+      <td>Number</td>
+      <td>The locked range max set point in degrees Celsius</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>locked_min_set_point</td>
+      <td>Number</td>
+      <td>The locked range min set point in degrees Celsius</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>max_set_point</td>
+      <td>Number</td>
+      <td>The max set point in degrees Celsius</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>min_set_point</td>
+      <td>Number</td>
+      <td>The min set point in degrees Celsius</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>mode</td>
+      <td>String</td>
+      <td>Current mode of the Nest thermostat (HEAT, COOL, HEAT_COOL, ECO, OFF)</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>previous_mode</td>
+      <td>String</td>
+      <td>The previous mode of the Nest thermostat (HEAT, COOL, HEAT_COOL, ECO, OFF)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>state</td>
+      <td>String</td>
+      <td>The active state of the Nest thermostat (HEATING, COOLING, OFF)</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>temperature</td>
+      <td>Number</td>
+      <td>Current temperature in degrees Celsius</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>time_to_target_mins</td>
+      <td>Number</td>
+      <td>Time left to the target temperature (mins) approximately</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>set_point</td>
+      <td>Number</td>
+      <td>The set point in degrees Celsius</td>
+      <td style="text-align: center">R/W</td>
+    </tr>
+    <tr>
+      <td>sunlight_correction_active</td>
+      <td>Switch</td>
+      <td>If sunlight correction is active</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>sunlight_correction_enabled</td>
+      <td>Switch</td>
+      <td>If sunlight correction is enabled</td>
+      <td style="text-align: center">R</td>
+    </tr>
+    <tr>
+      <td>using_emergency_heat</td>
+      <td>Switch</td>
+      <td>If the system is currently using emergency heat</td>
+      <td style="text-align: center">R</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Note that the Nest API rounds Thermostat values so they will differ from what shows up in the Nest App.
+The Nest API applies the following rounding:</p>
+
+<ul>
+  <li>degrees Celsius to 0.5 degrees</li>
+  <li>degrees Fahrenheit to whole degrees</li>
+  <li>humidity to 5%</li>
+</ul>
+
+<h2 id="example">Example</h2>
+
+<p>You can use the discovery functionality of the binding to obtain the deviceId and structureId values for defining Nest things in files.</p>
+
+<p>Another way to get the deviceId and structureId values is by querying the Nest API yourself. First <a href="https://developers.nest.com/documentation/cloud/sample-code-auth">obtain an Access Token</a> (or use the Access Token obtained by the binding).
+Then use it with one of the <a href="https://developers.nest.com/documentation/cloud/how-to-read-data">API Read Examples</a>.</p>
+
+<h3 id="demothings">demo.things:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Bridge nest:account:demo_account [ productId="8fdf9885-ca07-4252-1aa3-f3d5ca9589e0", productSecret="QITLR3iyUlWaj9dbvCxsCKp4f", accessToken="c.6rse1xtRk2UANErcY0XazaqPHgbvSSB6owOrbZrZ6IXrmqhsr9QTmcfaiLX1l0ULvlI5xLp01xmKeiojHqozLQbNM8yfITj1LSdK28zsUft1aKKH2mDlOeoqZKBdVIsxyZk4orH0AvKEZ5aY" ] {
+    camera         fish_cam           [ deviceId="qw0NNE8ruxA9AGJkTaFH3KeUiJaONWKiH9Gh3RwwhHClonIexTtufQ" ]
+    smoke_detector hallway_smoke      [ deviceId="Tzvibaa3lLKnHpvpi9OQeCI_z5rfkBAV" ]
+    structure      home               [ structureId="20wKjydArmMV3kOluTA7JRcZg8HKBzTR-G_2nRXuIN1Bd6laGLOJQw" ]
+    thermostat     living_thermostat  [ deviceId="ZqAKzSv6TO6PjBnOCXf9LSI_z5rfkBAV" ]
+}
+</code></pre></div></div>
+
+<h3 id="demoitems">demo.items:</h3>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>/* Camera */
+String Cam_App_URL               "App URL [%s]"          { channel="nest:camera:demo_account:fish_cam:app_url" }
+Switch Cam_Audio_Input_Enabled   "Audio Input Enabled"   { channel="nest:camera:demo_account:fish_cam:audio_input_enabled" }
+String Cam_Snapshot_URL          "Snapshot URL [%s]"     { channel="nest:camera:demo_account:fish_cam:snapshot_url" }
+Switch Cam_Streaming             "Streaming"             { channel="nest:camera:demo_account:fish_cam:streaming" }
+Switch Cam_Public_Share_Enabled  "Public Share Enabled"  { channel="nest:camera:demo_account:fish_cam:public_share_enabled" }
+String Cam_Public_Share_URL      "Public Share URL [%s]" { channel="nest:camera:demo_account:fish_cam:public_share_url" }
+Switch Cam_Video_History_Enabled "Video History Enabled" { channel="nest:camera:demo_account:fish_cam:video_history_enabled" }
+String Cam_Web_URL               "Web URL [%s]"          { channel="nest:camera:demo_account:fish_cam:web_url" }
+
+/* Smoke Detector */
+String Smoke_CO_Alarm    "CO Alarm [%s]"    { channel="nest:smoke_detector:demo_account:hallway_smoke:co_alarm_state" }
+Switch Smoke_Battery_Low "Battery Low"      { channel="nest:smoke_detector:demo_account:hallway_smoke:low_battery" }
+Switch Smoke_Manual_Test "Manual Test"      { channel="nest:smoke_detector:demo_account:hallway_smoke:manual_test_active" }
+String Smoke_Smoke_Alarm "Smoke Alarm [%s]" { channel="nest:smoke_detector:demo_account:hallway_smoke:smoke_alarm_state" }
+String Smoke_UI_Color    "UI Color [%s]"    { channel="nest:smoke_detector:demo_account:hallway_smoke:ui_color_state" }
+
+/* Thermostat */
+Switch Thermostat_Can_Cool     "Can Cool"                       { channel="nest:thermostat:demo_account:living_thermostat:can_cool" }
+Switch Thermostat_Can_Heat     "Can Heat"                       { channel="nest:thermostat:demo_account:living_thermostat:can_heat" }
+Switch Thermostat_FT_Active    "Fan Timer Active"               { channel="nest:thermostat:demo_account:living_thermostat:fan_timer_active" }
+Number Thermostat_FT_Duration  "Fan Timer Duration"             { channel="nest:thermostat:demo_account:living_thermostat:fan_timer_duration" }
+DateTime Thermostat_FT_Timeout "Fan Timer Timeout [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]" { channel="nest:thermostat:demo_account:living_thermostat:fan_timer_timeout" }
+Switch Thermostat_Has_Fan      "Has Fan"                        { channel="nest:thermostat:demo_account:living_thermostat:has_fan" }
+Switch Thermostat_Has_Leaf     "Has Leaf"                       { channel="nest:thermostat:demo_account:living_thermostat:has_leaf" }
+Number Thermostat_Humidity     "Humidity [%.1f %%]"             { channel="nest:thermostat:demo_account:living_thermostat:humidity" }
+Switch Thermostat_Locked       "Locked"                         { channel="nest:thermostat:demo_account:living_thermostat:locked" }
+Number Thermostat_LMaxSP       "Locked Max Set Point [%.1f °C]" { channel="nest:thermostat:demo_account:living_thermostat:locked_max_set_point" }
+Number Thermostat_LMinSP       "Locked Min Set Point [%.1f °C]" { channel="nest:thermostat:demo_account:living_thermostat:locked_min_set_point" }
+Number Thermostat_Max_SP       "Max Set Point [%.1f °C]"        { channel="nest:thermostat:demo_account:living_thermostat:max_set_point" }
+Number Thermostat_Min_SP       "Min Set Point [%.1f °C]"        { channel="nest:thermostat:demo_account:living_thermostat:min_set_point" }
+String Thermostat_Mode         "Mode [%s]"                      { channel="nest:thermostat:demo_account:living_thermostat:mode" }
+String Thermostat_PreviousMode "Previous Mode [%s]"             { channel="nest:thermostat:demo_account:living_thermostat:previous_mode" }
+String Thermostat_State        "State [%s]"                     { channel="nest:thermostat:demo_account:living_thermostat:state" }
+Number Thermostat_Set_Point    "Set Point [%.1f °C]"            { channel="nest:thermostat:demo_account:living_thermostat:set_point" }
+Switch Thermostat_SunlightCA   "Sunlight Correction Active"     { channel="nest:thermostat:demo_account:living_thermostat:sunlight_correction_active" }
+Switch Thermostat_SunlightCE   "Sunlight Correction Enabled"    { channel="nest:thermostat:demo_account:living_thermostat:sunlight_correction_enabled" }
+Number Thermostat_Temperature  "Temperature [%.1f °C]"          { channel="nest:thermostat:demo_account:living_thermostat:temperature" }
+Number Thermostat_TimeToTarget "Time To Target [%s]"            { channel="nest:thermostat:demo_account:living_thermostat:time_to_target_mins" }
+Switch Thermostat_UsingEmHeat  "Using Emergency Heat"           { channel="nest:thermostat:demo_account:living_thermostat:using_emergency_heat" }
+
+/* Structure */
+String   Home_Away "Away [%s]"                                                      { channel="nest:structure:demo_account:home:away" }
+String   Home_CC   "Country Code [%s]"                                              { channel="nest:structure:demo_account:home:country_code" }
+String   Home_COAS "CO Alarm State [%s]"                                            { channel="nest:structure:demo_account:home:co_alarm_state" }
+DateTime Home_ETA  "ETA [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]"                      { channel="nest:structure:demo_account:home:eta_begin" }
+DateTime Home_PPET "Peak Period End Time [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]"     { channel="nest:structure:demo_account:home:peak_period_end_time" }
+DateTime Home_PPST "Peak Period Start Time [%1$tY-%1$tm-%1$td %1$tH:%1$tM:%1$tS]"   { channel="nest:structure:demo_account:home:peak_period_start_time" }
+String   Home_PC   "Postal Code [%s]"                                               { channel="nest:structure:demo_account:home:postal_code" }
+Switch   Home_RHR  "Rush Hour Rewards"                                              { channel="nest:structure:demo_account:home:rush_hour_rewards_enrollment" }
+String   Home_SAS  "Smoke Alarm State [%s]"                                         { channel="nest:structure:demo_account:home:smoke_alarm_state" }
+String   Home_TZ   "Time Zone [%s]"                                                 { channel="nest:structure:demo_account:home:time_zone" }
+</code></pre></div></div>
+
+<h2 id="known-issues">Known Issues</h2>
+
+<ol>
+  <li>The binding uses Celsius as unit for all Themostat temperature channels.</li>
+  <li>Deletion of devices or structures from the connected Nest account is currently not properly handled. The channel and online states of affected Things keep their last known values.</li>
+</ol>
+
+<h2 id="attribution">Attribution</h2>
+
+<p>This documentation contains parts written by John Cocula which were copied from the 1.0 Nest binding.</p>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

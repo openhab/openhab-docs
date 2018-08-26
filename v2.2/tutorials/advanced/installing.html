@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/tutorials/advanced/installing.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li>Tutorial (Advanced)</li>
+  <ul>
+    <li><a href="/v2.2/tutorials/advanced/index.html">Overview</a></li>
+    <li><a href="/v2.2/tutorials/advanced/installing.html">Installing the extension</a></li>
+    <li><a href="/v2.2/tutorials/advanced/connecting.html">Connecting to the Z-Wave controller</a></li>
+    <li><a href="/v2.2/tutorials/advanced/adding.html">Adding a new thing</a></li>
+    <li><a href="/v2.2/tutorials/advanced/configuring.html">Configuring a thing</a></li>
+    <li><a href="/v2.2/tutorials/advanced/tools.html">Other tools of HABmin</a></li>
+  </ul>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="installing-the-extensions">Installing the extensions</h1>
+
+<h1 id="introduction">Introduction</h1>
+
+<p>Setting up the Z-Wave protocol inside openHAB 2 requires two steps:</p>
+<ul>
+  <li>Z-Wave binding install</li>
+  <li>HABmin install</li>
+</ul>
+
+<p>In this chapter:</p>
+<ul>
+  <li>I have chosen to download the latest night build, as HABmin 2 is in a beta phase,</li>
+</ul>
+
+<h1 id="z-wave-binding-install">Z-Wave binding install</h1>
+
+<p>We install Z-Wave binding <em>before</em> HABmin as HABmin relies on the first one.</p>
+
+<p>Installing this binding is quite straightforward. It is to be done through the Paper UI of openHAB.</p>
+
+<ul>
+  <li>Open your browser web at <code class="highlighter-rouge">http://localhost:8011</code>, you should see the following screen:</li>
+</ul>
+
+<p><img src="images/Accueil_Openhab.png" alt="OpenHab 2 Welcome screen" /></p>
+
+<ul>
+  <li>Click on <strong>Paper UI</strong> tile, you should see the following screen:</li>
+</ul>
+
+<p><img src="images/paper_ui_welcome.png" alt="" /></p>
+
+<ul>
+  <li>In the left column, select <strong>Extensions</strong>. The list of the bindings appears.</li>
+</ul>
+
+<p><img src="images/extensions_bindings.png" alt="" /></p>
+
+<ul>
+  <li>Scroll down to Z-Wave binding, click on <strong>install</strong> (at the right).</li>
+</ul>
+
+<p><img src="images/extensions_z_wave.png" alt="" /></p>
+
+<ul>
+  <li>After some times, the Z-Wave binding is installed and the display has changed. The logo of the binding is now blue, and “uninstall” has replaced “install”.</li>
+</ul>
+
+<p><img src="images/extension_z_wave_installed.png" alt="" /></p>
+
+<blockquote>
+  <p>After a reasonable wait, if the progress bar is still on the screen and nothing else has changed on the display, try to refresh the page.</p>
+</blockquote>
+
+<h1 id="habmin-install">HABmin install</h1>
+
+<hr />
+
+<ul>
+  <li>This section is so far centred on Mac OS. It must be modified in order to cover Linux and Windows.*</li>
+</ul>
+
+<hr />
+
+<p>We install HABmin <em>after</em> the Z-Wave binding as HABmin relies on the last one.</p>
+
+<p>HABmin is not yet integrated to the Karaf architecture. So, we have to install it manually.</p>
+
+<ul>
+  <li>
+    <p>Search for the latest build of HABmin 2 at the address <a href="https://github.com/cdjackson/HABmin2/tree/master/output">https://github.com/cdjackson/HABmin2/tree/master/output</a></p>
+  </li>
+  <li>
+    <p>Click on the org.openhab.ui.habmin_2.0.0.SNAPSHOT-0.1.4.jar link, this screen appears:</p>
+  </li>
+</ul>
+
+<p><img src="images/habmin_download_1.png" alt="" /></p>
+
+<ul>
+  <li>At the left on the screen <strong>click on the RAW</strong> button. Other way of downloading HABmin2 will corrupt the software.</li>
+</ul>
+
+<p><img src="images/habmin_download_2.png" alt="" /></p>
+
+<ul>
+  <li>The download finished, back to the terminal, at the openHAB&gt; prompt:</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cal:openHAB admin$ ./start.sh
+Launching the openHAB runtime...
+
+__  _____    ____
+____  ____  ___  ____  / / / /   |  / __ )
+/ __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
+/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
+\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
+/_/                        2.0.0-SNAPSHOT
+
+Hit '&lt;tab&gt;' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '&lt;ctrl-d&gt;' or type 'system:shutdown' or 'logout' to shutdown openHAB.
+
+openhab&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>stop openHAB by keyboarding logout and enter :
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openhab&gt; logout
+</code></pre></div>    </div>
+  </li>
+  <li>A few seconds after, the terminal prompt is displayed :
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>openhab&gt; logout
+cal:openHAB callas$
+</code></pre></div>    </div>
+  </li>
+  <li>Move the HABmin software from the <em>download</em> folder to the <em>addon</em> folder
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cal:openHAB callas$ mv ../Downloads/org.openhab.ui.habmin_2.0.0.SNAPSHOT-0.1.4.jar addons
+</code></pre></div>    </div>
+  </li>
+</ul>
+
+<blockquote>
+  <p>Time for a trick</p>
+
+  <p><em>org.openhab.ui.habmin 2.0.0.SNAPSHOT-0.1.4.jar</em>  can be a little difficult to type. Terminal allows us to use auto completion to avoid that :
+just type the beginning, i.e.: <code class="highlighter-rouge">mv ../Downloads/org.op</code> and press the tab key. Terminal will complete the name for you.</p>
+</blockquote>
+
+<h1 id="launching-openhab-for-the-second-time">Launching openHAB for the second time</h1>
+
+<p>We are going to launch openHAB for the second time, in order to check that our install is successful.</p>
+
+<ul>
+  <li>In the terminal window, type ./start.sh
+    <div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cal:openHAB callas$ ./start.sh
+</code></pre></div>    </div>
+  </li>
+  <li>Messages are displayed, wait until the “openhab&gt;” prompt appears.</li>
+</ul>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cal:openHAB admin$ ./start.sh
+Launching the openHAB runtime...
+
+__  _____    ____
+____  ____  ___  ____  / / / /   |  / __ )
+/ __ \/ __ \/ _ \/ __ \/ /_/ / /| | / __  |
+/ /_/ / /_/ /  __/ / / / __  / ___ |/ /_/ /
+\____/ .___/\___/_/ /_/_/ /_/_/  |_/_____/
+/_/                        2.0.0-SNAPSHOT
+
+Hit '&lt;tab&gt;' for a list of available commands
+and '[cmd] --help' for help on a specific command.
+Hit '&lt;ctrl-d&gt;' or type 'system:shutdown' or 'logout' to shutdown openHAB.
+
+openhab&gt;
+</code></pre></div></div>
+
+<ul>
+  <li>Without closing the terminal, open your favorite web browser and type the following url: <code class="highlighter-rouge">http://localhost:8011</code>, you should see the openHAB welcome screen, <strong>with a new UI</strong> : <strong>HABMIN</strong>.</li>
+</ul>
+
+<p><img src="images/OpenHab_Admin_welcome.png" alt="" /></p>
+
+<blockquote>
+  <p>Which browser should I use ?</p>
+</blockquote>
+
+<blockquote>
+  <p>Safari is supported by openHAB, but the fact is the browser used by the openHAB developer community - and by the owner of the ZWave plugin - is Google Chrome.
+I recommend then Google Chrome, as openHAB 2 is in a beta phase.</p>
+</blockquote>
+
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+

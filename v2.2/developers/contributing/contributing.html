@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+
+
+
+  <!--<link rel="shortcut icon" href="https://www.openhab.org/favicon.png"></link>-->
+  <title>Contribution - openHAB 2 - Empowering the Smart Home</title>
+
+  <!-- CSS -->
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/materialize.css" media="screen,projection" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/pygments-jekyll-style.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/styles.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/openhab.css" />
+  <link type="text/css" rel="stylesheet" href="/v2.2/css/collapsible.css" />
+
+  <!-- Font -->
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
+  <link type="text/css" rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:300,400,700" />
+  <link rel="canonical" href="https://docs.openhab.org/developers/contributing/contributing.html" />
+  <script type="text/javascript">var gaProperty = 'UA-47717934-3';var disableStr = 'ga-disable-' + gaProperty;if (document.cookie.indexOf(disableStr + '=true') > -1) {window[disableStr] = true;}</script>
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-47717934-3', 'auto');
+  ga('set', 'anonymizeIp', true);
+  ga('send', 'pageview');
+  </script>
+</head>
+
+
+<body class="documentation">
+  <div id="header" class="navbar-fixed">
+    <nav role="navigation">
+      <div class="container">
+        <div class="nav-wrapper">
+          <a href="/v2.2/index.html"><img id="logo" src="/images/logo.png" /></a>
+          <a href="#" data-activates="nav-mobile" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search"><i class="material-icons">search</i></li>
+            <li class="search">
+              <form method="GET" id="searchform" class="search-form" action="/search">
+                <input id="query" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+          <ul id="nav-mobile" class="side-nav">
+            <li><a href="/v2.2/index.html">Home</a></li>
+            <li><a href="/tutorials/index.html">Tutorials</a></li>
+            <li><a href="/v2.2/introduction.html">User Manual</a></li>
+            <li><a href="/developers/index.html">Developer Guide</a></li>
+            <li><a target="_blank" href="https://community.openhab.org">Community Forum</a></li>
+            <li><a target="_blank" href="https://github.com/openhab">GitHub</a></li>
+            <li class="search">
+              <form method="GET" id="searchformmob" class="search-form" action="/search">
+                <input id="querymob" name="q" type="text" class="search-form-input" placeholder="search" />
+              </form>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </div>
+
+
+<section id="documentation" class="text content-wrapper">
+  <div class="container">
+    <div class="side-nav-wrapper">
+      
+
+
+
+
+
+<ul class="nav">
+  <li><a href="/v2.2/developers">Overview</a></li>
+  <li><a href="/v2.2/developers/contributing/contributing">Contributing</a></li>
+  <li><a href="/v2.2/developers/prerequisites/osgi.html">Prerequisites</a>
+    <ul>
+      <li><a href="/v2.2/developers/prerequisites/osgi.html">OSGi</a>
+        <ul>
+          <li><a href="/v2.2/developers/prerequisites/osgi.html">Overview</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgids.html">Declarative Services</a></li>
+          <li><a href="/v2.2/developers/prerequisites/configadmin.html">Configuration Admin</a></li>
+          <li><a href="/v2.2/developers/prerequisites/osgitasks.html">Coding tasks</a></li>
+          <li><a href="/v2.2/developers/prerequisites/eventadmin.html">Event Admin</a></li>
+        </ul>
+      </li>
+      <li><a href="/v2.2/developers/prerequisites/tycho.html">Tycho</a></li>
+      <li><a href="/v2.2/developers/prerequisites/equinox.html">Equinox</a></li>
+      <li><a href="/v2.2/developers/prerequisites/targetplatform.html">Target Platform</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/ide.html">Basics</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/ide.html">IDE Setup</a></li>
+      <li><a href="/v2.2/developers/development/guidelines.html">Code Guidelines</a></li>
+      <li><a href="/v2.2/developers/development/bindings.html">Developing Bindings</a></li>
+      <li><a href="/v2.2/developers/development/logging.html">Logging</a></li>
+    </ul>
+  </li>
+  <li><a href="/v2.2/developers/development/evolution.html">Migration from 1.x</a>
+    <ul>
+      <li><a href="/v2.2/developers/development/evolution.html">Technical Differences</a></li>
+      <li><a href="/v2.2/developers/development/compatibilitylayer.html">Compatibility Layer</a></li>
+    </ul>
+  </li>
+</ul>
+
+    </div>
+    <div class="content">
+      
+<h1 id="contributing-to-the-development-of-openhab">Contributing to the Development of openHAB</h1>
+
+<h2 id="the-repositories">The Repositories</h2>
+
+<p>Note that the openHAB distribution repository does not contain any source code, but it rather aggregates features from different repos:</p>
+
+<ul>
+  <li><a href="https://github.com/eclipse/smarthome">Eclipse SmartHome Framework</a>: This repo holds the major parts of the core functionality.</li>
+  <li><a href="https://github.com/kaikreuzer/openhab-core">openHAB 2 Core</a>: This repo contains a few small bundles that are not part of Eclipse SmartHome, but required for the openHAB runtime. This e.g. contains a compatibility layer for supporting openHAB 1 add-ons.</li>
+  <li><a href="https://github.com/openhab/openhab2">openHAB 2 Add-ons</a>: Add-ons of openHAB that use the Eclipse SmartHome APIs can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.</li>
+  <li><a href="https://github.com/openhab/openhab">openHAB 1 Add-ons</a>: Add-ons developed for openHAB 1.x. Most of them are working smoothly on the openHAB 2 runtime and thus they are packaged within the distribution.</li>
+  <li><a href="https://github.com/eclipse/smarthome/tree/master/extensions">Eclipse SmartHome Extensions</a>: Since openHAB uses the Eclipse SmartHome framework, it is automatically compatible with all extensions that are available for it and maintained within the Eclipse SmartHome repository. These are usually high-quality extensions that might be even used in commercial products.</li>
+</ul>
+
+<h2 id="contribution-guidelines">Contribution Guidelines</h2>
+
+<h3 id="pull-requests-are-always-welcome">Pull Requests are Always Welcome</h3>
+
+<p>We are always thrilled to receive pull requests, and do our best to
+process them as fast as possible. Not sure if that typo is worth a pull
+request? Do it! We will appreciate it.</p>
+
+<p>If your pull request is not accepted on the first try, don’t be
+discouraged! If there’s a problem with the implementation, hopefully you
+received feedback on what to improve.</p>
+
+<p>We’re trying very hard to keep openHAB lean and focused. We don’t want it
+to do everything for everybody. This means that we might decide against
+incorporating a new feature. However, there might be a way to implement
+that feature <em>on top of</em> openHAB.</p>
+
+<h3 id="discuss-your-design-on-the-mailing-list">Discuss your Design on the Mailing List</h3>
+
+<p>We recommend discussing your plans <a href="https://community.openhab.org">in the discussion forum</a>
+before starting to code - especially for more ambitious contributions.
+This gives other contributors a chance to point you in the right
+direction, give feedback on your design, and maybe point out if someone
+else is working on the same thing.</p>
+
+<h3 id="create-issues">Create Issues…</h3>
+
+<p>Any significant improvement should be documented as a GitHub
+issue in the <a href="#the-repositories">appropriate repository</a> before anybody
+starts working on it.</p>
+
+<h3 id="but-check-for-existing-issues-first">…but Check for Existing Issues First!</h3>
+
+<p>Please take a moment to check that an issue doesn’t already exist
+documenting your bug report or improvement proposal. If it does, it
+never hurts to add a quick “+1” or “I have this problem too”. This will
+help prioritize the most common problems and requests.</p>
+
+<h3 id="conventions">Conventions</h3>
+
+<p>Fork the repo and make changes on your fork in a feature branch:</p>
+
+<ul>
+  <li>If it’s a bugfix branch, name it XXX-something where XXX is the number of the
+issue</li>
+  <li>If it’s a feature branch, create an enhancement issue to announce your
+intentions, and name it XXX-something where XXX is the number of the issue.</li>
+</ul>
+
+<p>Submit unit tests for your changes.  openHAB has a great test framework built in; use
+it! Take a look at existing tests for inspiration. Run the full test suite on
+your branch before submitting a pull request.</p>
+
+<p>Update the documentation when creating or modifying features. Test
+your documentation changes for clarity, concision, and correctness, as
+well as a clean documentation build.</p>
+
+<p>Write clean code. Universally formatted code promotes ease of writing, reading,
+and maintenance.</p>
+
+<p>Pull requests descriptions should be as clear as possible and include a
+reference to all the issues that they address.</p>
+
+<p>Pull requests must not contain commits from other users or branches.</p>
+
+<p>Commit messages must start with a capitalized and short summary (max. 50
+chars) written in the imperative, followed by an optional, more detailed
+explanatory text which is separated from the summary by an empty line.</p>
+
+<p>Code review comments may be added to your pull request. Discuss, then make the
+suggested modifications and push additional commits to your feature branch. Be
+sure to post a comment after pushing. The new commits will show up in the pull
+request automatically, but the reviewers will not be notified unless you
+comment.</p>
+
+<p>Before the pull request is merged, make sure that you squash your commits into
+logical units of work using <code class="highlighter-rouge">git rebase -i</code> and <code class="highlighter-rouge">git push -f</code>. After every
+commit the test suite should be passing. Include documentation changes in the
+same commit so that a revert would remove all traces of the feature or fix.</p>
+
+<p>Commits that fix or close an issue should include a reference like <code class="highlighter-rouge">Closes #XXX</code>
+or <code class="highlighter-rouge">Fixes #XXX</code>, which will automatically close the issue when merged.</p>
+
+<h3 id="merge-approval">Merge Approval</h3>
+
+<p>openHAB maintainers use the <a href="https://help.github.com/articles/about-pull-request-reviews/">Github review feature</a> to indicate acceptance.</p>
+
+<p>A change requires approval from an absolute majority of the maintainers of each
+component affected. For example, if a change affects <code class="highlighter-rouge">addons/</code> and <code class="highlighter-rouge">features/</code>, it
+needs an absolute majority from the maintainers of <code class="highlighter-rouge">addons/</code> AND, separately, an
+absolute majority of the maintainers of <code class="highlighter-rouge">features/</code>.</p>
+
+<h3 id="sign-your-work">Sign your Work</h3>
+
+<p>The sign-off is a simple line at the end of the explanation for the
+patch, which certifies that you wrote it or otherwise have the right to
+pass it on as an open-source patch.  The rules are pretty simple: if you
+can certify the below (from
+<a href="http://developercertificate.org/">developercertificate.org</a>):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Developer Certificate of Origin
+Version 1.1
+
+Copyright (C) 2004, 2006 The Linux Foundation and its contributors.
+660 York Street, Suite 102,
+San Francisco, CA 94110 USA
+
+Everyone is permitted to copy and distribute verbatim copies of this
+license document, but changing it is not allowed.
+
+
+Developer's Certificate of Origin 1.1
+
+By making a contribution to this project, I certify that:
+
+(a) The contribution was created in whole or in part by me and I
+    have the right to submit it under the open source license
+    indicated in the file; or
+
+(b) The contribution is based upon previous work that, to the best
+    of my knowledge, is covered under an appropriate open source
+    license and I have the right under that license to submit that
+    work with modifications, whether created in whole or in part
+    by me, under the same open source license (unless I am
+    permitted to submit under a different license), as indicated
+    in the file; or
+
+(c) The contribution was provided directly to me by some other
+    person who certified (a), (b) or (c) and I have not modified
+    it.
+
+(d) I understand and agree that this project and the contribution
+    are public and that a record of the contribution (including all
+    personal information I submit with it, including my sign-off) is
+    maintained indefinitely and may be redistributed consistent with
+    this project or the open source license(s) involved.
+</code></pre></div></div>
+
+<p>then you just add a line to every git commit message:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Signed-off-by: Joe Smith &lt;joe.smith@email.com&gt; (github: github_handle)
+</code></pre></div></div>
+
+<p>using your real name (sorry, no pseudonyms or anonymous contributions.)</p>
+
+<p>If your commit contains code from others as well, please ensure that they certify the DCO as well and add them with an “Also-By” line to your commit message:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>Also-by: Ted Nerd &lt;ted.nerd@email.com&gt; (github: github_handle_ted)
+Also-by: Sue Walker &lt;sue.walker@email.com&gt; (github: github_handle_sue)
+Signed-off-by: Joe Smith &lt;joe.smith@email.com&gt; (github: github_handle_joe)
+</code></pre></div></div>
+
+<h4 id="small-patch-exception">Small Patch Exception</h4>
+
+<p>There are several exceptions to the signing requirement. Currently these are:</p>
+
+<ul>
+  <li>Your patch fixes spelling or grammar errors.</li>
+  <li>Your patch is a single line change to documentation.</li>
+</ul>
+
+<h3 id="how-can-i-become-a-maintainer">How can I Become a Maintainer?</h3>
+
+<ul>
+  <li>Step 1: learn the component inside out</li>
+  <li>Step 2: make yourself useful by contributing code, bugfixes, support etc.</li>
+  <li>Step 3: volunteer on [in the community] (https://community.openhab.org/)</li>
+</ul>
+
+<p>Don’t forget: being a maintainer is a time investment. Make sure you will have time to make yourself available.
+You don’t have to be a maintainer to make a difference on the project!</p>
+
+<h2 id="community-guidelines">Community Guidelines</h2>
+
+<p>We want to keep the openHAB community awesome, growing and collaborative. We
+need your help to keep it that way. To help with this we’ve come up with some
+general guidelines for the community as a whole:</p>
+
+<ul>
+  <li>
+    <p>Be nice: Be courteous, respectful and polite to fellow community members: no
+regional, racial, gender, or other abuse will be tolerated. We like nice people
+way better than mean ones!</p>
+  </li>
+  <li>
+    <p>Encourage diversity and participation: Make everyone in our community
+feel welcome, regardless of their background and the extent of their
+contributions, and do everything possible to encourage participation in
+our community.</p>
+  </li>
+  <li>
+    <p>Keep it legal: Basically, don’t get us in trouble. Share only content that
+you own, do not share private or sensitive information, and don’t break the
+law.</p>
+  </li>
+  <li>
+    <p>Stay on topic: Make sure that you are posting to the correct channel
+and avoid off-topic discussions. Remember when you update an issue or
+respond to an email you are potentially sending to a large number of
+people.  Please consider this before you update.  Also remember that
+nobody likes spam.</p>
+  </li>
+</ul>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+<footer>
+  <div class="container">
+    <div class="row">
+        <div class="col s12 m7">
+            Copyright &copy; 2017 by the <a href="https://github.com/openhab">openHAB Community</a> and the <a href="http://www.openhabfoundation.org/">openHAB&nbsp;Foundation&nbsp;e.V.</a>
+        </div>
+        <div class="col s12 m5">
+            <ul class="list-inline right-align">
+               <li><a href="/imprint.html">Imprint</a></li>
+               <li><a href="/privacy.html">Privacy Policy</a></li>
+               <li><a href="http://www.openhab.org">openHAB Website</a></li>
+               <li><a href=# onclick="printPage()">Print This Page</a></li>
+            </ul>
+        </div>
+    </div>
+  </div>
+</footer>
+<script src="/v2.2/js/jquery.min.js"></script>
+<script src="/v2.2/js/jquery.scrollme.min.js"></script>
+<script src="/v2.2/js/jquery.sticky.js"></script>
+<script src="/v2.2/js/materialize.min.js"></script>
+<script src="/v2.2/js/init.js"></script>
+<script src="/v2.2/js/functions.js"></script>
+</body>
+</html>
+
+<script>
+  var host = "docs.openhab.org";
+  if (!(window.location.host.startsWith("127.0.0.1")) && (host == window.location.host) && (window.location.protocol != "https:"))
+    window.location.protocol = "https";
+</script>
+
