@@ -50,7 +50,7 @@ OpenJDK may also be used, but it has some [known limitations](https://community.
 | [OpenJDK](http://openjdk.java.net) | Supported by many Linux distributions, packages [typically available](http://openjdk.java.net/install/index.html) | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates |
 
 Please download and install the Java 8 version of the JVM. 
-openHAB2 is known not to work on Java 9 and Java 10.
+openHAB is known not to work on Java 9 and Java 10.
 
 Please use the **32-bit version** of the JVM for ARM platforms, even on 64-bit operating systems.
 Serial connections won't work with a 64-bit JVM, preventing bindings like Z-Wave from functioning.
