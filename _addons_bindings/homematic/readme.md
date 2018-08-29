@@ -16,7 +16,7 @@ install: auto
 # Homematic Binding
 
 This is the binding for the [eQ-3 Homematic Solution](http://www.eq-3.de/).
-This binding allows you to integrate, view, control and configure all Homematic devices in Eclipse Smarthome.
+This binding allows you to integrate, view, control and configure all Homematic devices in Eclipse SmartHome.
 
 ## Supported Bridges
 

@@ -138,6 +138,7 @@ The following channels are supported -:
 | ias_motionintrusion | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_motionpresence | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_standard_system | ```IAS_ZONE``` (0x0500) | Switch |  |
+| ias_water | ```IAS_ZONE``` (0x0500) | Switch |  |
 | measurement_illuminance | ```ILLUMINANCE_MEASUREMENT``` (0x0400) | Number |   |
 | measurement_pressure | ```PRESSURE_MEASUREMENT``` (0x0403) | Number |   |
 | measurement_relativehumidity | ```RELATIVE_HUMIDITY_MEASUREMENT``` (0x0405) | Number |   |
