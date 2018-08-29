@@ -6,7 +6,7 @@ type: binding
 description: "The OneWire bus system is a lightweight and inexpensive bus system mostly used for sensors (eg. temperature, humidity, counters and presence). There are also switches available. The binding is designed to work as a client of the [ow-server](http://owfs.org/index.php?page=owserver_protocol) which implements the [owserver-protocol](http://owfs.org/index.php?page=owserver-protocol). The OneWire devices could be connected to the machine running ow-server by a USB adapter such as ds9490r or a serial adapter. For detailed information on OneWire please refer to http://en.wikipedia.org/wiki/One_wire or http://owfs.org."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.onewire/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
