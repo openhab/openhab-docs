@@ -106,6 +106,7 @@ Before a rule starts working, it has to be triggered.
 There are different categories of rule triggers:
 
 - **Item**(-Event)-based triggers: They react on events on the openHAB event bus, i.e. commands and status updates for items
+- **Member of**(-Event)-based triggers: They react on events on the openHAB event bus for Items that are a member of the supplied Group
 - **Time**-based triggers: They react at special times, e.g. at midnight, every hour, etc.
 - **System**-based triggers: They react on certain system statuses.
 - **Thing**-based triggers: They react on thing status, i.e. change from ONLINE to OFFLINE.
@@ -126,6 +127,29 @@ Item <item> changed [from <state>] [to <state>]
 ```
 
 A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
+
+An important warning is worth mentioning here.
+When using the `received command` trigger, the Rule will trigger **before** the Item's state is updated.
+Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of ItemName.state.
+
+{: #member-of-triggers}
+### Member of Triggers
+
+As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
+You can also decide whether you want to catch only a specific command/status or any.
+All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
+Of particular note, the implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
+
+```java
+Member of <group> received command [<command>]
+Member of <group> received update [<state>]
+Member of <group> changed [from <state>] [to <state>]
+```
+
+The `Member of` trigger only works with Items that are a direct member of the Group. 
+It does not work with members of nested subgroups.
+Also, as with Item event-based triggers, when using `received command`, the Rule will trigger before the Item's state is updated.
+So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
 
 {: #time-based-triggers}
 ### Time-based Triggers
@@ -805,6 +829,15 @@ when
     Item SetCounterItem received command
 then
     counter = receivedCommand as DecimalType
+end
+
+// turns on a light when one of several motion sensors received command ON, turns it off when one of several received command OFF
+rule "Motion sensor light"
+when
+    Member of MotionSensors received command
+then
+    if(receivedCommand == ON) Light.sendCommand(ON)
+    else Light.sendCommand(OFF)
 end
 ```
 

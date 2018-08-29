@@ -310,7 +310,7 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
-openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
+openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
 Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
