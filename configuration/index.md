@@ -119,7 +119,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️</td>
       <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
-      <td>✔️</td>
+      <td>(✔️)</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
