@@ -56,28 +56,28 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>❌</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>✔️</td>
+      <td>(✔️)</td>
     </tr>
     <tr>
       <td>Manage Things</td>
-      <td>✔️</td>
-      <td>✔️<br />(recommended)</td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td>(✔️)<br/>(limited)</td>
+      <td>✔️<br/>(recommended)</td>
+      <td>✔️<br/>(recommended)</td>
+      <td>(✔️)</td>
     </tr>
     <tr>
-      <td>Manage Items</td>
-      <td>✔️<br />(recommended)</td>
+      <td>Define Items</td>
+      <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td>❌</td>
+      <td>(✔️)</td>
     </tr>
     <tr>
       <td>Define Groups</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>✔️</td>
-      <td>✔️</td>
+      <td>❌</td>
+      <td>(✔️)</td>
     </tr>
     <tr>
       <td>Define Sitemaps</td>
@@ -102,14 +102,14 @@ For a recommendation to new users which one(s) to use, see the section below.
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️<br />(recommended)</td>
-      <td>✔️<br />(experimental)</td>
-      <td>✔️<br />(graphical)</td>
+      <td>✔️<br/>(recommended)</td>
+      <td>(✔️)<br/>(experimental)</td>
+      <td>(❌)<br/>(not functional)</td>
       <td>❌</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices<br/>(see&nbsp;recommendation)</td>
-      <td>✔️<br />(not recommended)</td>
+      <td>❌</td>
       <td>✔️<br />(limited)</td>
       <td>✔️<br />(recommended)</td>
       <td>❌</td>
@@ -117,15 +117,15 @@ For a recommendation to new users which one(s) to use, see the section below.
     <tr>
       <td>Modify openHAB Settings</td>
       <td>✔️</td>
-      <td>✔️</td>
+      <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
       <td>✔️</td>
+      <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
-      <td>❌</td>
       <td>✔️</td>
     </tr>
   </tbody>
@@ -152,7 +152,7 @@ To help starters in narrowing down choices, here is some guidance that might als
 * use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
 * use Paper UI to manage configuration of each and every openHAB 2 add-on and binding
 * use file configuration to manage configuration of openHAB 1 add-ons and bindings
-* use Paper UI to manage ZWave things, but use configuration files to manage ZWave items.<br/>
+* use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
   There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done using a text editor (e.g. search-and-replace names and parameters).
   _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration is not changing much over time.
   On the other hand, you will keep changing _items_ rather often.
