@@ -160,6 +160,7 @@ To help starters in narrowing down choices, here is some guidance that might als
   And once you are a pro, you will want to keep using files anyway.  
   You do can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will override any UI-made changes on next openHAB startup.
 * use the editor of your choice to edit [sitemaps]({{base}}/configuration/sitemaps.html). Start with the demo sitemap as a template.
-* use VS code extensions to [edit rules]({{base}}/configuration/editors.html).
-  You can also use any text editor, but be aware that any 'save' results in openHAB reloading the rules file.
+* use VS code extensions to [edit rules, items and sitemap files.]({{base}}/configuration/editors.html).
+  You can also use any text editor, but VS code extensions will help you by highlighting and cross-checking the file syntax.
+  Either way, be aware that any 'save' results in openHAB reloading the rules file.
   This can take more than a minute on a slow box such as as Raspberry Pi, so better do not edit rules files in place.
