@@ -55,6 +55,13 @@ They can be found in the article about [openHAB multimedia]({{base}}/configurati
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
 
+### Exec Actions
+
+- `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
+- `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
+
+Note: The commandLine variable often has to use a special format where @@ needs to be used in place of spaces. For example the bash command touch somefile will have to be written as touch@@somefile.
+
 ### HTTP Actions
 
 - `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
@@ -108,6 +115,21 @@ if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONL
     logError("ThingStatus", "The thing is offline or doesn't exist.")
 }
 ```
+
+### openHAB Subsystem Actions
+openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, and scripts.
+
+- `callScript(String scriptName)`: Calls a script which must be located in the config/scripts folder.
+
+Scripts are small pieces of Rules DSL code that can be called from Rules. 
+However, Scripts have limitations.
+Scripts cannot accept arguments.
+Scripts cannot return a value.
+Any reference to a class that would normally need to be imported in a .rules file, the class needs to be referred to by its full package as imports are not supported.
+
+- `transform(String type, String function, String value)`: Applies a transformation of a given type with some function to a value and returns the transformed value as a String or the original value if the transformation failed.
+
+See [Transformations]({{base}}/configuration/transformations.html#usage) for available transformations and their usage.
 
 ## Cloud Notification Actions
 
