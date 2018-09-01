@@ -13,11 +13,11 @@ The framework supports some base [functions](https://www.eclipse.org/smarthome/d
 
 ### Actions
 
--`setMasterVolume(float volume)` : Sets the volume of the host machine (volume in range 0-1)
--`setMasterVolume(PercentType percent)` : Sets the volume of the host machine
--`increaseMasterVolume(float percent)` : Increases the volume by the given percent
--`decreaseMasterVolume(float percent)` : Decreases the volume by the given percent
--`float getMasterVolume()` : Returns the current volume as a float between 0 and 1
+- `setMasterVolume(float volume)` : Sets the volume of the host machine (volume in range 0-1)
+- `setMasterVolume(PercentType percent)` : Sets the volume of the host machine
+- `increaseMasterVolume(float percent)` : Increases the volume by the given percent
+- `decreaseMasterVolume(float percent)` : Decreases the volume by the given percent
+- `float getMasterVolume()` : Returns the current volume as a float between 0 and 1
 
 ## Audio
 
@@ -52,17 +52,32 @@ In order to play a sound, you can use the following command on the console:
 
 ```text
 openhab> smarthome:audio play doorbell.mp3
+
+openhab> smarthome:audio stream example.com
 ```
 
 ### Actions
 
-Alternatively the [`playSound()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) can be used in DSL rules:
+Alternatively the [`playSound()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playSound-java.lang.String-) or [`playStream()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/model/script/actions/Audio.html#playStream-java.lang.String-) functions can be used in DSL rules:
+
+- `playSound(String filename)` :	plays a sound from the sounds folder to the default sink
+- `playSound(String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the default sink
+- `playSound(String sink, String filename)` :	plays a sound from the sounds folder to the given sink(s)
+- `playSound(String sink, String filename, PercentType volume)` :	plays a sound with the given volume from the sounds folder to the given sink(s)
+
+- `playStream(String url)` :	plays an audio stream from an url to the default sink (set url to `null` if streaming should be stopped)
+- `playStream(String sink, String url)` :	plays an audio stream from an url to the given sink(s) (set url to `null` if streaming should be stopped)
+
+#### Examples
 
 ```java
 playSound("doorbell.mp3")
 playSound("doorbell.mp3", new PercentType(25))
 playSound("sonos:PLAY5:kitchen", "doorbell.mp3")
 playSound("sonos:PLAY5:kitchen", "doorbell.mp3", new PercentType(25))
+
+playStream("example.com")
+playStream("sonos:PLAY5:kitchen", "example.com")
 ```
 
 ## Voice
@@ -94,7 +109,7 @@ openhab> smarthome:voice say Hello world!
 
 ### Actions
 
-Alternatively you can execute such commands within DSL rules by using the [`say()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-):
+Alternatively you can execute such commands within DSL rules by using the [`say()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#say-java.lang.String-) function:
 
 ```java
 say("Hello world!")
@@ -136,7 +151,7 @@ openhab> smarthome:voice interpret turn on the light
 The default human language interpreter will be used.
 In case of interpretation error, the error message will be said using the default voice and default audio sink.
 
-Again, such a command can also be entered within DSL rules (using the [`interpret()` function](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-))
+Again, such a command can also be entered within DSL rules (using the [`interpret()`](https://www.eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/voice/VoiceManager.html#interpret-java.lang.String-) function)
 
 ```java
 interpret("turn on the light")
