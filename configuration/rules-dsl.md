@@ -751,7 +751,7 @@ Example:
 
 ```java
 try {
-    var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+    var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
     logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
