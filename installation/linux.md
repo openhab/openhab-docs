@@ -775,8 +775,8 @@ You can also manually connect:
 - **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
 - **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
 
-Be sure to use the actual host name instead of `openhab-device`.
-When asked, authenticate with the username "openhab" and the chosen password.
+Be sure to use the actual host name instead of `openhab-device.local`, the default host name is `openhabianpi`.
+When asked, authenticate with the username "openhabian" and the chosen password.
 If you are not able to connect, try with the IP of your device (e.g. `smb://openhab@192.168.0.2` or `\\192.168.0.2`).
 
 If everything went well, you are set and ready to start [configuring]({{base}}/configuration/index.html) your openHAB system.
