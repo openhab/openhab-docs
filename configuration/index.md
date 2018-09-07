@@ -47,6 +47,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <th data-field="paperui">Paper UI</th>
       <th data-field="habmin">HABmin</th>
       <th data-field="karaf">Console</th>
+      <th data-field="recommendation">Recommendation</th>
     </tr>
   </thead>
 
@@ -57,6 +58,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️</td>
       <td>✔️</td>
       <td>(✔️)</td>
+      <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
     </tr>
     <tr>
       <td>Manage Things</td>
@@ -64,6 +66,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️<br/>(recommended)</td>
       <td>✔️<br/>(recommended)</td>
       <td>(✔️)</td>
+      <td>Paper UI or HABmin</td>
     </tr>
     <tr>
       <td>Define Items</td>
@@ -71,6 +74,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️</td>
       <td>❌</td>
       <td>(✔️)</td>
+      <td>items/*.items files</td>
     </tr>
     <tr>
       <td>Define Groups</td>
@@ -78,6 +82,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️</td>
       <td>❌</td>
       <td>(✔️)</td>
+      <td>items/*.items files</td>
     </tr>
     <tr>
       <td>Define Sitemaps</td>
@@ -85,6 +90,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
+      <td>sitemaps/*.sitemap files</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
@@ -92,6 +98,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
+      <td>transform/*.map files</td>
     </tr>
     <tr>
       <td>Define Persistence</td>
@@ -99,27 +106,31 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
+      <td>persistence/*.persist files</td>
     </tr>
     <tr>
       <td>Define Rules</td>
       <td>✔️<br/>(recommended)</td>
-      <td>(✔️)<br/>(experimental)</td>
+      <td>(✔️)<br/>(experimental rules engine only)</td>
       <td>(❌)<br/>(not functional)</td>
       <td>❌</td>
+      <td>rules/*.rules files</td>
     </tr>
     <tr>
       <td>Manage Z-Wave Devices<br/>(see&nbsp;recommendation)</td>
       <td>❌</td>
-      <td>✔️<br />(limited)</td>
-      <td>✔️<br />(recommended)</td>
+      <td>✔️</td>
+      <td>✔️<br/>(recommended)</td>
       <td>❌</td>
+      <td>HABmin</td>
     </tr>
     <tr>
-      <td>Modify openHAB Settings</td>
+      <td>Modify openHAB Settings/Services</td>
       <td>✔️</td>
       <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
       <td>(✔️)</td>
+      <td>Paper UI</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
@@ -127,6 +138,7 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>✔️<br/>(recommended)</td>
       <td>✔️</td>
       <td>✔️</td>
+      <td>Paper UI</td>
     </tr>
   </tbody>
 </table>
@@ -139,9 +151,11 @@ It allows for configuration of the base system and setup of openHAB 2 add-ons.
 Please be aware that not every addon/binding of openHAB version 1.x has been updated to version 2 and thus to work with Paper UI.
 You can still run these but you need to use file configuration for them.
 
-Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database]({{base}}/administration/jsondb.html).
-Both methods can be used **side-by-side or even mixed**, e.g. a Thing is discovered by Paper UI and linked Items are defined in a `.items` configuration file.
-Configuration done in files will be synced to the database (so they are accessible in Paper UI) but configuration done in the database will not be written back to files, so if you restart openHAB, changes made in Paper UI won't survive and the files' configuration data will be used again.
+Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database](administration/jsondb.html).
+For Things and Items, both methods can be used **side-by-side**, e.g. a Thing can be discovered and created by Paper UI and the Items that link to that very same Thing (that Thing's Channels, actually) can be manually defined in a `.items` configuration file. 
+Configuration done in files will be used (and they become visible and even changeable in Paper UI) if no Thing/Item of the same name already exists in, but you can NOT create a Thing or Item using files and then use Paper UI to redefine or change it. Those changes will not be accepted.
+Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied into any `.things` file.
+openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
 
 ## Recommendation for New Users
 
