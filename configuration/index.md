@@ -16,7 +16,7 @@ You as the end-user have the **full control** over every aspect of your smart ho
 Every device connected to openHAB is functionally and logically different.
 In order to represent all of these, openHAB defines the following few base components:
 
-- [Add-ons]({{base}}/addons/index.html) - The numerous Add-ons to communicate with your devices
+- [Add-ons](addons.html) - The numerous Add-ons to communicate with your devices
 - [Things](things.html) - Your devices represented in openHAB
 - [Items](items.html) - properties and capabilities of your Things
 - [Groups](items.html#groups) - collections or categories containing Items
