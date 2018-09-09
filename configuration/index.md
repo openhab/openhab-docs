@@ -35,7 +35,7 @@ openHAB provides different user interfaces to modify settings, manage your thing
 HABmin provides a set of features to now overlap with Paper UI (which came later).
 Every interface still has its own strong points.
 The following table shows what the user interfaces can be used for.
-For a recommendation to new users which one(s) to use, see the section below.
+For a recommendation to new users which one(s) to use, see the section below. "*" means recommended.
 
 ### Comparison
 
@@ -55,33 +55,33 @@ For a recommendation to new users which one(s) to use, see the section below.
     <tr>
       <td>Auto-Discover Things and Items</td>
       <td>❌</td>
+      <td>✔️*</td>
+      <td>✔️*</td>
       <td>✔️</td>
-      <td>✔️</td>
-      <td>(✔️)</td>
       <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
     </tr>
     <tr>
       <td>Manage Things</td>
-      <td>(✔️)<br/>(limited)</td>
-      <td>✔️<br/>(recommended)</td>
-      <td>✔️<br/>(recommended)</td>
-      <td>(✔️)</td>
+      <td>(✔️)<br/>(not for all bindings)</td>
+      <td>✔️*</td>
+      <td>✔️*</td>
+      <td>✔️</td>
       <td>Paper UI or HABmin</td>
     </tr>
     <tr>
       <td>Define Items</td>
-      <td>✔️<br/>(recommended)</td>
+      <td>✔️*</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>(✔️)</td>
+      <td>✔️</td>
       <td>items/*.items files</td>
     </tr>
     <tr>
       <td>Define Groups</td>
-      <td>✔️</td>
+      <td>✔️*</td>
       <td>✔️</td>
       <td>❌</td>
-      <td>(✔️)</td>
+      <td>✔️</td>
       <td>items/*.items files</td>
     </tr>
     <tr>
@@ -110,8 +110,8 @@ For a recommendation to new users which one(s) to use, see the section below.
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️<br/>(recommended)</td>
-      <td>(✔️)<br/>(experimental rules engine only)</td>
+      <td>✔️*</td>
+      <td>(❌)<br/>(only for the experimental rules engine)</td>
       <td>(❌)<br/>(not functional)</td>
       <td>❌</td>
       <td>rules/*.rules files</td>
@@ -120,22 +120,22 @@ For a recommendation to new users which one(s) to use, see the section below.
       <td>Manage Z-Wave Devices<br/>(see&nbsp;recommendation)</td>
       <td>❌</td>
       <td>✔️</td>
-      <td>✔️<br/>(recommended)</td>
+      <td>✔️*</td>
       <td>❌</td>
       <td>HABmin</td>
     </tr>
     <tr>
       <td>Modify openHAB Settings/Services</td>
       <td>✔️</td>
-      <td>✔️<br/>(recommended)</td>
+      <td>✔️*</td>
       <td>✔️</td>
-      <td>(✔️)</td>
+      <td>✔️</td>
       <td>Paper UI</td>
     </tr>
     <tr>
       <td>Install Add-ons</td>
       <td>✔️</td>
-      <td>✔️<br/>(recommended)</td>
+      <td>✔️*</td>
       <td>✔️</td>
       <td>✔️</td>
       <td>Paper UI</td>
@@ -157,23 +157,23 @@ Configuration done in files will be used (and they become visible and even chang
 Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied into any `.things` file.
 openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
 
-## Recommendation for New Users
+## Recommendations for New Users
 
 All interface options are supposed to work, still some of the more advanced settings might work better in one or the other setup.
 You have the full freedom of choice. On the other hand, this can be very confusing at times, particularly for new users.
 To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
-* use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
-* use Paper UI to manage configuration of each and every openHAB 2 add-on and binding
-* use file configuration to manage configuration of openHAB 1 add-ons and bindings
-* use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
+* Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
+* Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
+* Use file configuration to manage configuration of openHAB 1 add-ons and bindings.
+* Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
   There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done using a text editor (e.g. search-and-replace names and parameters).
   _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration is not changing much over time.
   On the other hand, you will keep changing _items_ rather often.
   If you are new to openHAB, you will e.g. keep changing all of your item names as you keep learning what is a naming scheme you like best to work with in your rules. And once you are a pro, you will want to keep using files anyway.  
   You can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will override any UI-made changes on next openHAB startup.
-* use the editor of your choice to edit [sitemaps]({{base}}/configuration/sitemaps.html). Start with the demo sitemap as a template.
-* use VS code extensions to [edit rules, items and sitemap files.]({{base}}/configuration/editors.html).
+* Use the editor of your choice to edit [sitemaps]({{base}}/configuration/sitemaps.html). Start with the demo sitemap as a template.
+* Use VS code extensions to [edit rules, items and sitemap files.]({{base}}/configuration/editors.html).
   You can also use any text editor, but VS code extensions will help you by highlighting and cross-checking the file syntax.
   Either way, be aware that any 'save' results in openHAB reloading the rules file.
   This can take more than a minute on a slow box such as a Raspberry Pi, so better to not edit rules files in place.
