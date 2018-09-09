@@ -61,7 +61,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
     </tr>
     <tr>
-      <td>Manage Things</td>
+      <td>Define and manage Things</td>
       <td>(✔️)<br/>(not for all bindings)</td>
       <td>✔️*</td>
       <td>✔️*</td>
@@ -69,7 +69,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>Paper UI or HABmin</td>
     </tr>
     <tr>
-      <td>Define Items</td>
+      <td>Define and manage Items</td>
       <td>✔️*</td>
       <td>✔️</td>
       <td>❌</td>
