@@ -134,11 +134,11 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Install Add-ons</td>
-      <td>✔️</td>
+      <td>✔️*</td>
       <td>✔️*</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>Paper UI</td>
+      <td>services/addons.cfg or Paper UI</td>
     </tr>
   </tbody>
 </table>
@@ -165,7 +165,7 @@ To help starters in narrowing down choices, here is some guidance that might als
 
 * Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
 * Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
-* Use file configuration to manage configuration of openHAB 1 add-ons and bindings.
+* Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
 * Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
   There is a rationale to this: to use a GUI is comfortable for one-time actions, but you get any repetitive task easier and faster done using a text editor (e.g. search-and-replace names and parameters).
   _Things_ can be autodiscovered so you don't have to enter all of them manually. Once initially configured, their configuration is not changing much over time.
