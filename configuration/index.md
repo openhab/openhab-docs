@@ -3,8 +3,6 @@ layout: documentation
 title: Configuration
 ---
 
-{% include .html %}
-
 # Configuration of your Smart Home
 
 openHAB is the center of your home automation.
