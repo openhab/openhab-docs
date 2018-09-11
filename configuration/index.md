@@ -170,7 +170,7 @@ To help starters in narrowing down choices, here is some guidance that might als
   On the other hand, you will keep changing _items_ rather often.
   If you are new to openHAB, you will e.g. keep changing all of your item names as you keep learning what is a naming scheme you like best to work with in your rules. And once you are a pro, you will want to keep using files anyway. You can configure items via Paper UI, too, and you can use HABmin as well for both but remember once you use files, this will override any UI-made changes on next openHAB startup.
 * Use the editor of your choice to edit [sitemaps](sitemaps.html). Start with the demo sitemap as a template.
-* Use VS code extensions to [edit rules, items and sitemap files.](editors.html).
+* Use VS code extensions to [edit rules, items and sitemap files](editors.html).
   You can also use any text editor, but VS code extensions will help you by highlighting and cross-checking the file syntax.
   Either way, be aware that any 'save' results in openHAB reloading the rules file.
   This can take more than a minute on a slow box such as a Raspberry Pi, so better to not edit rules files in place.
