@@ -436,13 +436,13 @@ With epoch, one can compare two dates together, convert a Joda DateTime to a Dat
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).calendar.timeInMillis
+val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis
 
 // Get epoch from Joda DateTime
 val Number nowEpoch = now.millis
 
 // Convert DateTimeType to Joda DateTime
-val joda = new DateTime((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)
+val joda = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)
 
 // Convert Joda DateTime to DateTimeType
 val calendar = java.util.Calendar::getInstance
@@ -473,13 +473,13 @@ For some examples:
 
 ```java
 // See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)) ...
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)) ...
 
 // See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis))...
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis))...
 
 // Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_OF_DAY)
+val hours = (MyDateTimeItem.state as DateTimeType).zonedDateTime.get(Calendar::HOUR_OF_DAY)
 // See the Calendar javadocs for the full set of parameters available
 ```
 
@@ -751,7 +751,7 @@ Example:
 
 ```java
 try {
-    var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+    var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
     logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)

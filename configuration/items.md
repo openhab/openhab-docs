@@ -62,7 +62,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```
 
 - Fields must be entered in the order shown
-- `itemtype` and `itemname` are manadatory
+- `itemtype` and `itemname` are mandatory
 - All other fields are optional
 - Fields may be separated by one or more spaces, or tabs
 - An Item definition may span multiple lines
