@@ -60,7 +60,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define and manage Things</td>
-      <td>(✔️)<br/>(not for all bindings)</td>
+      <td>(✔️)<br/>not for all bindings</td>
       <td>✔️*</td>
       <td>✔️*</td>
       <td>✔️</td>
@@ -109,13 +109,13 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Define Rules</td>
       <td>✔️*</td>
-      <td>(❌)<br/>(only for the experimental rules engine)</td>
-      <td>(❌)<br/>(not functional)</td>
+      <td>(❌)<br/>only for the experimental rules engine</td>
+      <td>(❌)<br/>not functional</td>
       <td>❌</td>
       <td>rules/*.rules files</td>
     </tr>
     <tr>
-      <td>Manage Z-Wave Devices<br/>(see&nbsp;recommendation)</td>
+      <td>Manage Z-Wave Devices<br/>see&nbsp;recommendation</td>
       <td>❌</td>
       <td>✔️</td>
       <td>✔️*</td>
@@ -132,11 +132,11 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Install Add-ons</td>
-      <td>✔️*</td>
+      <td>✔️*<br/>mandatory for most OH1 bindings</td>
       <td>✔️*</td>
       <td>✔️</td>
       <td>✔️</td>
-      <td>services/addons.cfg or Paper UI</td>
+      <td>services/addons.cfg or Paper UI<br/>services/*.cfg for OH1 bindings</td>
     </tr>
   </tbody>
 </table>
