@@ -16,7 +16,7 @@ The Ecolink PIR v2.5 does not permanently listen for messages sent from the cont
 
 **Overview:**
 
-This is a hardware revision update to EcoLink's prior PIR sensor. It provides the same general capabilities as the prior detector--motion detection, battery state messages, and "burgler" alarm for the case being opened. On motion detection a green LED will flash and the notification will be sent to Group 1.
+This is a hardware revision update to EcoLink's prior PIR sensor.  It provides the same general capabilities as the prior detector--motion detection, battery state messages, and "burgler" alarm for the case being opened.  On motion detection a green LED will flash and the notification will be sent to Group 1.
 
 **Association Groups:**
 
@@ -24,11 +24,11 @@ The device has two association groups of up to 5 nodes each.
 
 **Configuration Parameters:**
 
-The device has two configuration parameters. Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected). By default the sensor does NOT send Basic Set commands of 0x00. Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller can disable the Sensor Binary Report Commands completely.
+The device has two configuration parameters. Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected).  By default the sensor does NOT send Basic Set commands of 0x00.  Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored.  If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller  can disable the Sensor Binary Report Commands completely.
 
 ### Inclusion Information
 
-Initial device inclusion is started by removing the pull tab from the back of the unit. This connects the battery and the device will immediately be eligible for inclusion. Place your controller in inclusion mode prior to pulling the tab from the back.
+Initial device inclusion is started by removing the pull tab from the back of the unit.  This connects the battery and the device will immediately be eligible for inclusion.  Place your controller in inclusion mode prior to pulling the tab from the back.
 
 The manual indicates network-wide inclusion is supported, but also indicates that the device should be within 15 feet of the controller during the inclusion process.
 
@@ -37,6 +37,7 @@ The manual indicates network-wide inclusion is supported, but also indicates tha
 The Ecolink PIR v2.5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Ecolink PIR v2.5 -:
@@ -71,7 +72,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (burglar)
@@ -84,7 +85,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -110,7 +111,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Send Basic Sets
 
 Send or do not send Basic Set commands to AG2
-Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected). By default the sensor does NOT send Basic Set commands of 0x00.
+Parameter 1 configures the sensor to send or not send Basic Set commands of 0x00 to nodes in Association group 2 turning the devices off when the sensor is in a restored state (i.e. motion not detected).  By default the sensor does NOT send Basic Set commands of 0x00.
 
 Configuration Value: 0x00:
 
@@ -134,7 +135,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Send Binary Reports
 
 Send Sensor Binary Reports for backward compatibility
-Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored. If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller can disable the Sensor Binary Report Commands completely.
+Paremter 2 configures the sensor to either send or not to send Sensor Binary Report commands to Association Group 1 when the sensor is faulted and restored.  If the controller is fully compatible with the Notification Command Class thereby making the Sensor Binary Reports redundant, the controller  can disable the Sensor Binary Report Commands completely.
 
 Configuration Value: 0x00:
 
@@ -181,11 +182,13 @@ The Ecolink PIR v2.5 supports 2 association groups.
 ### Group 1: Group 1
 
 
+Group 1 is a lifeline group who will receive unsolicited messages relating to motion detection notifications, case tampering notifications, low-battery notifications, and snsor binary reports.
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
 
+Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set.  On inclusion the controller should put its node ID in group 1 but not in group 2.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -200,7 +203,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V2| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V0| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V5| |

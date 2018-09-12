@@ -17,7 +17,15 @@ The VRMX1 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/191) to improve the documentation.
+Scene Capable Incadescent/Magnetic Low Voltage Fluorescent Dimmer
+
+### Inclusion Information
+
+Press the push pad once.
+
+### Exclusion Information
+
+Press the push pad once.
 
 ## Channels
 
@@ -55,7 +63,6 @@ The VRMX1 supports 1 association group.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ## Technical Information
@@ -68,6 +75,7 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| Linked to BASIC|
@@ -77,7 +85,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_NODE_NAMING_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V0| |
+| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V1| |
 
 ### Documentation Links
 

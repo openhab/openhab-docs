@@ -111,13 +111,13 @@ The device does not support associations.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 
 ### Documentation Links

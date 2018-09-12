@@ -10,17 +10,34 @@ This describes the Z-Wave device *CometZ*, manufactured by *Eurotronics* with th
 
 The device is in the category of *Radiator Control*, defining Controls on radiators used to heat up rooms.
 
+![CometZ product image](https://www.cd-jackson.com/zwave_device_uploads/372/372_default.jpg)
+
+
 The CometZ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The CometZ does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
+Comet Z-wave is a Z-Wave radio standard compatible energy-saving radiator thermostat.
+
+### Inclusion Information
+
+Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.
+
+### Exclusion Information
+
+Press and hold the button in the battery compartment of the Comet Z-wave for 5 seconds. The device moves into installation position in order to enable (de)installation.
+
 ### Wakeup Information
 
 The CometZ does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Click the button in the battery compartment of the Comet Z-wave once.
+
 ## Channels
 
 The following table summarises the channels available for the CometZ -:
@@ -28,15 +45,15 @@ The following table summarises the channels available for the CometZ -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Openness Of The Valve | switch_dimmer | DimmableLight | Dimmer | 
-| Temperature measured by the device | sensor_temperature | Temperature | Number | 
+| Temperature measured by the device | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Temperature for Heat (Eco) | thermostat_setpoint | Temperature | Number | 
-| Temperature for Heat (Comfort) | thermostat_setpoint | Temperature | Number | 
+| Temperature for Heat (Eco) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Temperature for Heat (Comfort) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Openness Of The Valve
 
- openness of the valve 0% equates to a closed valve, 100% an open valve
+ openness of the valve 0% equates to a closed valve, 100% an open valve
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
@@ -47,7 +64,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -72,20 +89,18 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Temperature for Heat (Eco)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Temperature for Heat (Comfort)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 

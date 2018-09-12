@@ -25,6 +25,7 @@ The ZWN-BPC does not permanently listen for messages sent from the controller - 
 The ZWN-BPC does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the ZWN-BPC -:
@@ -101,7 +102,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The ZWN-BPC supports 1 association group.
 
 ### Group 1: Reports
-
 
 This group supports 5 nodes.
 

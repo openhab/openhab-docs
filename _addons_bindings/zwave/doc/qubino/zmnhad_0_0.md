@@ -23,25 +23,25 @@ This Z-Wave module is used for switching on or off the electrical device (e.g. l
 
 **Module Inclusion (Adding to Z-Wave network)**
 
-- Connect module to power supply (with temperature sensor connected -if purchased)
-- Enable add/remove mode on main controller
-- Auto-inclusion (works forabout 5 seconds after connected to power supply) or
-- Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or
-- Press service button **S** (only applicable for 24 V SELV supply voltage) for more than 2 seconds.
+  * Connect module to power supply (with temperature sensor connected -if purchased)
+  * Enable add/remove mode on main controller
+  * Auto-inclusion (works forabout 5 seconds after connected to power supply) or
+  * Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or
+  * Press service button **S** (only applicable for 24 V SELV supply voltage) for more than 2 seconds.
 
-**NOTE1:** For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
+**NOTE1:** For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
 
-**NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.
+**NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply , connect the sensor and re-include the module.
 
 ### Exclusion Information
 
 **Module Exclusion/Reset (Removing from Z-Wavenetwork)**
 
-- Connect module to power supply
-- Bring module within maximum 1 meter (3 feet) of the main controller,
-- Enable add/remove mode on main controller,
-- Press push button **I1** five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or
-- Press service button **S** (only applicable for 24 V SELV supply voltage) for more than 6 seconds.
+  * Connect module to power supply
+  * Bring module within maximum 1 meter (3 feet) of the main controller,
+  * Enable add/remove mode on main controller,
+  * Press push button **I1 **five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or
+  * Press service button **S **(only applicable for 24 V SELV supply voltage) for more than 6 seconds.
 
 By this function all parameters of the module are set to default values and own ID is deleted.
 
@@ -64,8 +64,8 @@ The following table summarises the channels available for the ZMNHAD -:
 | Binary Sensor I2 | sensor_binary2 | Door | Switch | 
 | Alarm (power) 2 | alarm_power2 | Door | Switch | 
 | Binary Sensor I3 | sensor_binary3 | Door | Switch | 
-| Sensor (temperature) | sensor_temperature3 | Temperature | Number | 
-| Sensor (temperature) | sensor_temperature4 | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature3 | Temperature | Number:Temperature | 
+| Sensor (temperature) | sensor_temperature4 | Temperature | Number:Temperature | 
 
 ### Switch
 
@@ -108,7 +108,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Switch 1
@@ -152,7 +152,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Binary Sensor I3
@@ -172,13 +172,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature4``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature4``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -452,53 +452,44 @@ The ZMNHAD supports 9 association groups.
 
 ### Group 1: Lifeline
 
-Lifeline group (reserved for communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Basic on/off (triggered at change of the input Q 
 state and reflectin
-
 
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off (triggered at change of the input I2 
 state and reflecti
 
-
 This group supports 16 nodes.
 
 ### Group 4: Notification report (triggered at change of the input I2 
 state and r
-
 
 This group supports 16 nodes.
 
 ### Group 5: Binary Sensor (triggered at change of the input I2 
 state and reflect
 
-
 This group supports 16 nodes.
 
 ### Group 6: Basic on/off (triggered at change of the input I3 
 state and reflecti
-
 
 This group supports 16 nodes.
 
 ### Group 7: Notification report (triggered at change of the input I3
 state and re
 
-
 This group supports 16 nodes.
 
 ### Group 8: Binary Sensor report(triggered at change of the input I3 
 state and r
 
-
 This group supports 16 nodes.
 
 ### Group 9: Multilevel Sensor report (triggered at change of temperature sensor)
-
 
 This group supports 16 nodes.
 
@@ -526,12 +517,12 @@ This group supports 16 nodes.
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V0| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V3| |
@@ -543,7 +534,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
@@ -555,7 +546,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |

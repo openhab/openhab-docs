@@ -5,8 +5,13 @@ title: ZME_RC2 - ZWave
 
 {% include base.html %}
 
-# ZME\_RC2 Z-Wave Remote Control+
+# ZME_RC2 Z-Wave Remote Control+
 This describes the Z-Wave device *ZME_RC2*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zmerc2_00_000```.
+
+The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
+
+![ZME_RC2 product image](https://www.cd-jackson.com/zwave_device_uploads/149/149_default.png)
+
 
 The ZME_RC2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
@@ -14,11 +19,43 @@ The ZME_RC2 does not permanently listen for messages sent from the controller - 
 
 ## Overview
 
+The Z-Wave.Me Remote controls Z-Wave actuators such as dimmers, switches, thermostats or motor controls for blinds or jalousies and it can activate scenes in central gateways or any other Z-Wave devices. Devices can be turned on and off but dimmers and motor controls can also be turned into a desired dimming level to motor position by keeping a button pushed and releasing it. Although it is controlling other devices, the device can not act as ZWave network controller (primary or secondary) and will always need a Z-Wave network controller to be included into a Z-Wave network.
+
+The device can be used in different modes that are selected by configuration parameters 11-21:
+
+  1. Direct control of associated devices
+  2. Control of all devices in the Z-Wave network
+  3. Simple and enhanced scene activation
+
+10 pair of buttons - illuminated by blue light when operated - allow to control up to 10 control groups (either association groups or scenes)
+
+### Inclusion Information
+
+Bring your primary controller into inclusion mode
+
+For Inclusion press the "Inclusion" button 3 times. The LED will flash green for a moment for confirmation. 
+
+### Exclusion Information
+
+Bring your primary controller into inclusion mode
+
+For Exclusion press the "Exclusion" button for 5 secs. The LED will flash green for a moment for confirmation.
+
 ### Wakeup Information
 
 The ZME_RC2 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+This device is battery operated and turned into deep sleep state most of the time to save battery life time. Communication with the device is limited. In order to communicate with the device, a static controller C is needed in the network. This controller will maintain a mailbox for the battery operated devices and store commands that can not be received during deep sleep state. Without such a controller, communication may become impossible and/or the battery life time is significantly decreased.
+
+This device will wakeup regularly and announce the wakeup state by sending out a so called Wakeup Notification. The controller can then empty the mailbox. Therefore, the device needs to be configured with the desired wakeup interval and the node ID of the controller. If the device was included by a static controller this controller will usually perform all necessary configurations. The wakeup interval is a tradeoff between maximal battery life time and the desired responses of the device.
+
+Pressing the "INCL." button for three times will wake up the device.
+
+It is possible to set the node ID to 255 to send wakeup notifications as broadcast. In this mode device takes more time to go to sleep and drains battery faster, but can notify all it's direct neighbors about a wakeup.
+
 ## Channels
 
 The following table summarises the channels available for the ZME_RC2 -:
@@ -49,7 +86,7 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 10 | Command to Control Group No1 (association group 2) | This parameter defines the command to be sent to devices of control group No1 when the related button is pressed (association group 2) |
+| 10 | Command to Control Group No1 (Assoc. Group 2) | Defines the command sent to group 1 when the button is pressed (Assoc. Group 2) |
 | 11 | Command to Control Group No2 (association group 3) | This parameter defines the command to be sent to devices of control group No2 when the related button is pressed (association group 3) |
 | 12 | Command to Control Group No3 (association group 4) | This parameter defines the command to be sent to devices of control group No3 when the related button is pressed (association group 4) |
 | 13 | Command to Control Group No4 (association group 5) | This parameter defines the command to be sent to devices of control group No4 when the related button is pressed (association group 5) |
@@ -64,22 +101,22 @@ Detailed information on each parameter can be found in the sections below.
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
-### Parameter 10: Command to Control Group No1 (association group 2)
+### Parameter 10: Command to Control Group No1 (Assoc. Group 2)
 
-This parameter defines the command to be sent to devices of control group No1 when the related button is pressed (association group 2)
-
+Defines the command sent to group 1 when the button is pressed (Assoc. Group 2)
+This parameter defines the command to be sent to devices of control group №1 when the related button is pressed (association group 2).
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | Disabled |
-| 1 | Switch On/Off and Dim (send Basic Set and Switch Multilevel) |
+| 1 | Switch On/Off and Dim |
 | 2 | Switch On/Off only (send Basic Set) |
 | 3 | Switch All |
 | 4 | Send Scenes |
 | 5 | Send Preconfigured Scenes |
 
-The manufacturer defined default value is ```1``` (Switch On/Off and Dim (send Basic Set and Switch Multilevel)).
+The manufacturer defined default value is ```1``` (Switch On/Off and Dim).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -324,63 +361,51 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The ZME_RC2 supports 12 association groups.
 
-### Group 1: Lifeline. Send to controller battery level and WakeUp Notification
-
+### Group 1: Lifeline
 
 This group supports 5 nodes.
 
 ### Group 2: The buttons of group No1
 
-
 This group supports 5 nodes.
 
 ### Group 3: The buttons of group No2
-
 
 This group supports 5 nodes.
 
 ### Group 4: The buttons of group No3
 
-
 This group supports 5 nodes.
 
 ### Group 5: The buttons of group No4
-
 
 This group supports 5 nodes.
 
 ### Group 6: The buttons of group No5
 
-
 This group supports 5 nodes.
 
 ### Group 7: The buttons of group No6
-
 
 This group supports 5 nodes.
 
 ### Group 8: The buttons of group No7
 
-
 This group supports 5 nodes.
 
 ### Group 9: The buttons of scene No1
-
 
 This group supports 5 nodes.
 
 ### Group 10: The buttons of scene No2
 
-
 This group supports 5 nodes.
 
 ### Group 11: The buttons of scene No3
 
-
 This group supports 5 nodes.
 
 ### Group 12: The buttons of All On/Off
-
 
 This group supports 5 nodes.
 

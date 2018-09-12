@@ -268,27 +268,22 @@ The ZMNHUD supports 5 association groups.
 
 ### Group 1: Lifeline group
 
-Reserved for communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Multilevel
 
-Triggered at changes of state/value of the Flush pilot wire
 This group supports 99 nodes.
 
 ### Group 3: Basic on/off 
 
-Triggered at change of the input I1 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 4: Basic on/off
 
-Triggered at change of the input I2 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 5: Basic on/off
 
-Triggered at change of the input I3 state and reflecting its state
 This group supports 99 nodes.
 
 ## Technical Information

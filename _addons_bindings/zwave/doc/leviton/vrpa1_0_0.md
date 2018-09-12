@@ -8,16 +8,27 @@ title: VRPA1 - ZWave
 # VRPA1 Vizia RF + Scene Capable Plug-in Module
 This describes the Z-Wave device *VRPA1*, manufactured by *Leviton* with the thing type UID of ```leviton_vrpa1_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
+![VRPA1 product image](https://www.cd-jackson.com/zwave_device_uploads/350/350_default.png)
+
+
 The VRPA1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-The Vizia RF + Scene Capable Plug-in Appliance Module (VRPA1-1LW) is ideal for any residential setting where remote ON/OFF switching of appliances, motor loads up to 1/2 HP, or freestanding lights, including Incandescent, Magnetic Low Voltage, Fluorescent and Compact Fluorescent loads is needed. Typical applications include switching of fluorescent lamps, portable fans, kitchen appliances, indoor fountains and more. The Vizia RF + Scene Capable Plug-in Appliance Module also allows users to incorporate small appliances into scene and zone home control applications.
+The Vizia RF + Scene Capable Plug-in Appliance Module (VRPA1-1LW) is ideal for any residential setting where remote ON/OFF switching of appliances, motor loads up to 1/2 HP, or freestanding lights, including Incandescent, Magnetic Low Voltage, Fluorescent and Compact Fluorescent loads is needed. Typical applications include switching of fluorescent lamps, portable fans, kitchen appliances, indoor fountains and more. The Vizia RF + Scene Capable Plug-in Appliance Module also allows users to incorporate small appliances into scene and zone home control applications. 
 
 ### Inclusion Information
 
-1. Plug in the device
-2. Press and hold the front button until the light changes to a flashing amber
+  1. Plug in VRPA1
+  2. Place controller in inclusion mode
+  3. Press button on front of VRPA1
+
+### Exclusion Information
+
+  1. Place controller in exclusion mode
+  2. Press button on front of VRPA1
 
 ## Channels
 
@@ -53,7 +64,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The VRPA1 supports 1 association group.
 
 ### Group 1: Unknown
-
 
 This group supports 254 nodes.
 

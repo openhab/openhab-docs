@@ -17,13 +17,37 @@ The HRT4-ZW does not permanently listen for messages sent from the controller - 
 
 ## Overview
 
+Wireless Z–Wave Battery Operated Electronic Room Thermostat with TPI temperature control software and ASR-ZW receiver unit
+
 **Note**: This device is also sold as Secure SRT321
+
+### Inclusion Information
+
+  1. Set the number 1 DIL switch on the back of the HRT4-ZW thermostat to the On (Up) position and the display on the HRT4-ZW will change to show the letter ‘I’. If the letter ‘L’ appears, carry out stage 1A opposite.
+  2. Power up the ASR-ZW receiver unit
+  3. The network LED on the ASR-ZW receiver should be flashing.
+  4. Press the dial on the front of the HRT4-ZW thermostat once so that the ‘I’ in the display flashes.
+  5. Press and hold the network button on the ASR-ZW receiver until the On indicator flashes (green) before the Off indicator  
+    becomes solid red.
+  6. After a few seconds the radio mast symbol will appear in the display along with the letters IP.
+  7. Reset the number 1 DIL switch on the back of the HRT4-ZW to the Off position and the temperature should return in the display
+
+### Exclusion Information
+
+Not provided
 
 ### Wakeup Information
 
 The HRT4-ZW does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+  1. Turn the dial of the HRT4-ZW until the letter P appears in the display.
+  2. Press the dial twice.
+  3. A second P should appear in the display which now shows \`PP’.
+  4. Turn the dial until the letter ‘I’ appears in the display and return to the main instruction.
+
 ## Channels
 
 The following table summarises the channels available for the HRT4-ZW -:
@@ -31,9 +55,9 @@ The following table summarises the channels available for the HRT4-ZW -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Switch
@@ -46,7 +70,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -71,14 +95,12 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -169,26 +191,21 @@ The HRT4-ZW supports 5 association groups.
 
 ### Group 1: Thermostat Mode Set
 
-
 This group supports 4 nodes.
 
 ### Group 2: Binary Switch Set
-
 
 This group supports 4 nodes.
 
 ### Group 3: Unsolicited Battery Level Reports
 
-
 This group supports 4 nodes.
 
 ### Group 4: Thermostat Set Point Reports
 
-
 This group supports 4 nodes.
 
 ### Group 5: Unsolicited Sensor Multilevel Reports
-
 
 This group supports 4 nodes.
 
@@ -202,9 +219,9 @@ This group supports 4 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V0| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
-| COMMAND_CLASS_THERMOSTAT_MODE_V0| |
+| COMMAND_CLASS_THERMOSTAT_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

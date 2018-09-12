@@ -17,29 +17,33 @@ The Danalock V3-BTZE supports routing. This allows the device to communicate usi
 
 ## Overview
 
-Danalock supports:   
-\- S0/S2 Z-Wave Security   
-\- Bluetooth Smart   
-\- Twist Assist   
-\- Auto Lock   
-\- Hold And Release   
-\- Back To Back
+Danalock supports:   
+- S0/S2 Z-Wave Security   
+- Bluetooth Smart   
+- Twist Assist   
+- Auto Lock   
+- Hold And Release   
+- Back To Back 
 
 ### Inclusion Information
 
 To add or include the Danalock into a Z-Wave network
 
-1. Set the controller in inclusion mode
-2. Push the switch once.
-3. Wait 5 seconds.
+  1. Set the controller in inclusion mode
+
+  2. Push the switch once.
+
+  3. Wait 5 seconds. 
 
 ### Exclusion Information
 
 To remove or exclude the Danalock into a Z-Wave network
 
-1. Set the controller in exclusion mode
-2. Push the switch once.
-3. Wait 5 seconds.
+  1. Set the controller in exclusion mode
+
+  2. Push the switch once.
+
+  3. Wait 5 seconds. 
 
 ## Channels
 
@@ -102,7 +106,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 After a unlock operation the lock holds the lock, so the door can be opened
 0 -> disabled
 
-1 to 2147483647 -> enabled no. of seconds
+1 to 2147483647 -> enabled no. of seconds
 The following option values may be configured, in addition to values in the range 0 to 2147483647 -:
 
 | Value  | Description |
@@ -135,7 +139,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 The BLE is enabled for a number of seconds.
 0 -> Disabled
 
-1 to 2147483647 -> enabled no. of seconds
+1 to 2147483647 -> enabled no. of seconds
 Values in the range 0 to 2147483647 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -146,9 +150,9 @@ This parameter has the configuration ID ```config_4_4``` and is of type ```INTEG
 ### Parameter 5: BLE Always Allowed
 
 BLE Always Allowed
-0 -> BLE Always disabled
+0 -> BLE Always disabled
 
-1 -> BLE Always enabled
+1 -> BLE Always enabled
 The following option values may be configured -:
 
 | Value  | Description |
@@ -166,7 +170,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 Lock after an unlock.Value is delay in sec before lock is locked again.
 0 -> disabled
 
-1 to 2147483647 -> enabled no. of seconds
+1 to 2147483647 -> enabled no. of seconds
 Values in the range 0 to 2147483647 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -189,7 +193,8 @@ The Danalock V3-BTZE supports 1 association group.
 ### Group 1: Lifeline
 
 Z-Wave Plus Lifeline
-This group supports 1 nodes.
+Z-Wave Plus Lifeline • Device Reset Locally: triggered upon reset. • Battery/notification: triggered upon low battery. • Door Lock operation report: triggered upon a change in door lock • Notification: triggered upon a change in door lock
+This group supports 1 node.
 
 ## Technical Information
 

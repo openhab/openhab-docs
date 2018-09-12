@@ -31,21 +31,21 @@ Power consumption <1W
 
 Auto inclusion (first time usage)
 
-- start inclusion mode of z-wave controller
-- plug device into power outlet (5 seconds auto inclusion)
+  * start inclusion mode of z-wave controller
+  * plug device into power outlet (5 seconds auto inclusion)
 
 Manual inclusion
 
-- plug device into power outlet
-- start inclusion mode of z-wave controller
-- press the service button (S) 3 times within 3 seconds
+  * plug device into power outlet
+  * start inclusion mode of z-wave controller
+  * press the service button (S) 3 times within 3 seconds
 
 ### Exclusion Information
 
-- plug device into power outlet
-- ensure device is within maximum 1 meter (3 feet) of the main controller
-- enable exclusion mode on main controller
-- press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
+  * plug device into power outlet
+  * ensure device is within maximum 1 meter (3 feet) of the main controller
+  * enable exclusion mode on main controller
+  * press service button (S) on module 3 times within 3 seconds (please note: configuration parameters will not be reset!)
 
 ## Channels
 
@@ -100,7 +100,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -117,8 +117,8 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | On automatically with timer | Turn Smart plug On Automatically with Timer |
 | 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
 | 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
-| 40 | Treshold Change in Power  for reporting | Change of power consumption \[Watt\] reporting threshold |
-| 41 | Treshold time for power reporting | Treshold time for power reporting \[Watt\] |
+| 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
+| 41 | Treshold time for power reporting | Treshold time for power reporting [Watt] |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
@@ -144,8 +144,8 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 When the relay is turned ON, it automatically turns OFF after the defined time
 The timer is reset each time, the module receives an ON command (from push button/main controller/association).
 
-- 0 = Auto OFF disabled
-- 1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.
+  * 0 = Auto OFF disabled
+  * 1 - 32535 = 1 second to 32535 seconds delay. Auto OFF is enabled with defined time. Step is 1s.
 The following option values may be configured, in addition to values in the range 0 to 32535 -:
 
 | Value  | Description |
@@ -162,8 +162,8 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 Turn Smart plug On Automatically with Timer
 If Smart plug 16A is OFF, you can schedule it to turn ON automatically after a period of time defined in this parameter. The timer is reset to zero each time the device receives an OFF command, either remotely (from the gateway (hub) or associated device) or locally from the switch.
 
-- 0 - Auto ON Disabled
-- 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).
+  * 0 - Auto ON Disabled
+  * 1 - 32535 = 1 - 32535 seconds (or milliseconds – see Parameter no. 15) Auto ON timer enabled- for a given amount of seconds (or milliseconds).
 The following option values may be configured -:
 
 | Value  | Description |
@@ -179,7 +179,7 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 ### Parameter 15: Timer Settings Unit
 
 Set Timer Units to Seconds or Milliseconds
-Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).
+Choose if you want to set the timer in seconds or milliseconds in parameters 11 and 12. Please note that the value for this parameter applies to settings for Smart plug 16A in all of the above parameters (timer on / timer off).
 The following option values may be configured -:
 
 | Value  | Description |
@@ -210,11 +210,11 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 ### Parameter 40: Treshold Change in Power  for reporting
 
-Change of power consumption \[Watt\] reporting threshold
+Change of power consumption [Watt] reporting threshold
 Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages, so if 20 is set (by default), the device will report any power consumption changes of 20% or more compared to the last reading.
 
-- 0 - Power consumption reporting disabled
-- 1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).
+  * 0 - Power consumption reporting disabled
+  * 1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).
 
 NOTE: Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.
 
@@ -228,13 +228,13 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 41: Treshold time for power reporting
 
-Treshold time for power reporting \[Watt\]
+Treshold time for power reporting [Watt]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
-- 0 - Power consumption reporting disabled
-- 30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
+  * 0 - Power consumption reporting disabled
+  * 30 - 32535 = 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
 
-The device is reporting the following values (if there was a change): Power \[W\], Voltage \[V\] and Current \[A\]
+The device is reporting the following values (if there was a change): Power [W], Voltage [V] and Current [A]
 Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -264,27 +264,30 @@ The Smart Plug 16A supports 5 association groups.
 
 ### Group 1: Lifeline
 
-Reserved for communication with main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Status on/off
 
-Send control command BASIC\_SET 0x00/0xFF
+Send control command BASIC_SET 0x00/0xFF
+This group is assigned to the Smart Plug status On/Off. It allows sending the control command BASIC_SET 0x00/0xFF to associated devices whenevert the Smart Plug is turned On or Off.
 This group supports 5 nodes.
 
 ### Group 3: Load dependent 
 
-sending control commands BASIC\_SET 0x00/0xFF depending on current load
+sending control commands BASIC_SET 0x00/0xFF depending on current load
+This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.
 This group supports 5 nodes.
 
 ### Group 4: Secure Status On/Off
 
-Send control command BASIC\_SET 0x00/0xFF
+Send control command BASIC_SET 0x00/0xFF
+This group is equivalent to association group 2, except commands are sent securily encapsulated.
 This group supports 5 nodes.
 
 ### Group 5: Secure Load dependent 
 
-sending control commands BASIC\_SET 0x00/0xFF depending on current load
+sending control commands BASIC_SET 0x00/0xFF depending on current load
+This group is equivalent to association group 3, except commands are sent securily encapsulated.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -297,7 +300,7 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -306,7 +309,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V5| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V0| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |

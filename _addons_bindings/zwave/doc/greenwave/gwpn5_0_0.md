@@ -82,7 +82,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Switch 1
@@ -292,23 +292,19 @@ The GWPN5 supports 4 association groups.
 
 ### Group 1: Wheel position change
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Current leakage on relay
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 3: Power level change
 
-The new power reading is sent if the delta of the change is greater than the defined minimum variation
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 4: Over-current detection
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -321,7 +317,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V2| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
@@ -334,35 +330,35 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 3
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 4
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 5
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V2| |
 

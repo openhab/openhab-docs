@@ -17,7 +17,51 @@ The MH8-FC supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/336) to improve the documentation.
+MCOHome Fan Coil Thermostat is a Z-Wave enabled device for indoor temperature control. It is mainly applied to a 4-pipe Fan coil system. It can read room temperature and local time, and automatically control fan speed based on the temperature difference. The device is of high reliability and practicability. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.
+
+**Features：**
+
+  * Capacitive touch buttons
+  * Tempered glass panel, PC alloy enclosure
+  * Precise temperature calibration function
+  * Non-volatile Memory, working state saved even power failure
+  * Intelligent on/off control of 3-speed fan, electric (ball) valve or air-valve
+  * Easily steel frame back plate installatio
+
+**Specification**
+
+  * Power Supply：AC85V~260V, 50/60HZ
+  * Resistive Load: ≤3A
+  * Self Consumption：< 1W
+  * Temperature Sensor: NTC 15K
+  * Display Accuracy: 0.1 ℃
+  * Working Environment：0～55℃; <95% RH（Non-condensation)
+  * Temperature Setting：5～35 ℃（Adjustable）
+  * Dimension：86\* 86\*42mm
+  * Hole Pitch：60-65mm（86 Standard junction box）
+  * Z-Wave Frequency: 868.42MHz (EU)
+
+**Safety Information**
+
+To protect yourself and others from danger and to protect the device from damage, please read the safety information before using it.
+
+### Inclusion Information
+
+**Including of Z-Wave network**
+
+Under the shutdown state, press & hold "Down Arrow" to enter interface for inclusion or exclusion of Z-Wave network.
+
+Before device included into network, “\- - -” will display on the screen. Then press once "Down Arrow", device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds.  
+A node ID can always inform us whether the device is in the network or not.
+
+### Exclusion Information
+
+**Excluding of Z-Wave network**
+
+Under the shutdown state, press & hold "Down Arrow" to enter interface for inclusion or exclusion of Z-Wave network.
+
+Before device included into network, “\- - -” will display on the screen. Then press once "Down Arrow", device will enter learning mode to get a node ID. If inclusion is success, a node ID will display on the screen in a few seconds.  
+A node ID can always inform us whether the device is in the network or not.
 
 ## Channels
 
@@ -25,11 +69,11 @@ The following table summarises the channels available for the MH8-FC -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
 
@@ -37,7 +81,7 @@ The following table summarises the channels available for the MH8-FC -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -62,8 +106,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State
 
@@ -84,15 +126,15 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
@@ -116,8 +158,7 @@ The MH8-FC supports 1 association group.
 
 ### Group 1: Lifeline
 
-For sending temperature, working mode, etc. notifications
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

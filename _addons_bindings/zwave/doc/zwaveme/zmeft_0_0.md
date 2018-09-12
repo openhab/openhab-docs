@@ -5,7 +5,7 @@ title: ZME_FT - ZWave
 
 {% include base.html %}
 
-# ZME\_FT Floor Thermostat
+# ZME_FT Floor Thermostat
 This describes the Z-Wave device *ZME_FT*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zmeft_00_000```.
 
 ![ZME_FT product image](https://www.cd-jackson.com/zwave_device_uploads/151/151_default.png)
@@ -23,16 +23,16 @@ The following table summarises the channels available for the ZME_FT -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -57,20 +57,18 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -188,7 +186,6 @@ The ZME_FT supports 1 association group.
 
 ### Group 1: Group 1
 
-Unsolicited notifications about thermostat mode and setpoint temperature changes
 This group supports 10 nodes.
 
 ## Technical Information

@@ -8,6 +8,8 @@ title: RGBWE27ZW - ZWave
 # RGBWE27ZW RGBW bulb
 This describes the Z-Wave device *RGBWE27ZW*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_rgbwe27zw_00_000```.
 
+The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
+
 ![RGBWE27ZW product image](https://www.cd-jackson.com/zwave_device_uploads/237/237_default.png)
 
 
@@ -131,7 +133,6 @@ The RGBWE27ZW supports 1 association group.
 
 ### Group 1: Lifeline
 
-
 This group supports 7 nodes.
 
 ## Technical Information
@@ -146,13 +147,13 @@ This group supports 7 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V2| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_COLOR_V1| |
-| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V0| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V0| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V0| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V0| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V0| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 

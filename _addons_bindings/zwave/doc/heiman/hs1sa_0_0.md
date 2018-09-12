@@ -19,17 +19,17 @@ The HS1SA-Z does not permanently listen for messages sent from the controller - 
 
 ## Overview
 
-The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.
+The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.
 
 ### Inclusion Information
 
-- Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.
-- If Inclusion Process is successful, Green led will turn off.
+  * Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.
+  * If Inclusion Process is successful, Green led will turn off.
 
 ### Exclusion Information
 
-- Press the pin 3 times within 1.5s.
-- If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.
+  * Press the pin 3 times within 1.5s.
+  * If Exclusion Process is successful, Green led is Blinking 6 times, then turn off. 
 
 ### Wakeup Information
 
@@ -37,8 +37,9 @@ The HS1SA-Z does not permanently listen for messages sent from the controller - 
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-- Wake up Notification is transmitted every 24 hours by default.
-- Wake up Notification is transmitted after Notification Report is Transmitted.
+
+  * Wake up Notification is transmitted every 24 hours by default.
+  * Wake up Notification is transmitted after Notification Report is Transmitted.
 
 ## Channels
 
@@ -47,7 +48,7 @@ The following table summarises the channels available for the HS1SA-Z -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Alarm (smoke) | alarm_smoke | Door | Switch | 
+| Alarm (smoke) | alarm_smoke | Smoke | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -67,13 +68,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates if a smoke is triggered.
 
-The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -97,16 +98,19 @@ The HS1SA-Z supports 3 association groups.
 ### Group 1: Lifeline
 
 Battery, Notification, Reset locally Notification, Binary report
-This group supports 1 nodes.
+Association group 1: Lifeline association groupInclude command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.
+This group supports 1 node.
 
 ### Group 2: Root device Group (binary sensor)
 
 Binary smoke sensor via lifeline and on status Chance of smoke detection
+Association group 2: Root Device group(Binary Sensor)Binary Sensor Command Class: Compatible with 300 series1-Binary Sensor reports status of smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
 This group supports 5 nodes.
 
 ### Group 3: Root device Group (notification)
 
 smoke status as notification report and on status change of smoke detection
+Association group 3: Root Device group(Notification)1-Notification reports reports status of detect smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
 This group supports 5 nodes.
 
 ## Technical Information

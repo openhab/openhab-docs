@@ -21,35 +21,36 @@ The HS1HT-Z  does not permanently listen for messages sent from the controller -
 
 Smart Temperature and Humidity Sensor is designed to detect the temperature and humidity in house, and reports the abnormal conditions to users' mobile phone, Users could also check the real-time temperature and humidity via mobile phone, The sensor adopts Z-Wave wireless communication protocol with high sensitivity.
 
-See:   
-https://products.z-wavealliance.org/products/2321  
-and  
-http://www.heimantech.com/product/80.html
+See:  
+https://products.z-wavealliance.org/products/2321 and http://www.heimantech.com/product/80.html
 
 ### Inclusion Information
 
-Click \[Add\] icon in Z-Wave Controller.  
-\- Press the Net\_Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.  
-\- If Inclusion Process is successful, Green LED will turn off.
+Click [Add] icon in Z-Wave Controller.
+
+  * Press the Net_Button 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.
+  * If Inclusion Process is successful, Green LED will turn off.
 
 ### Exclusion Information
 
-Click \[Remove\] icon in Z-Wave Controller.  
-\- Press the Net\_Button 3 times within 1.5s   
-\- If Exclusion Process is successful, Green LED is Blinking 6 times, then turn off
+Click [Remove] icon in Z-Wave Controller.
+
+  * Press the Net_Button 3 times within 1.5s
+  * If Exclusion Process is successful, Green LED is Blinking 6 times, then turn off
 
 ### Wakeup Information
 
 The HS1HT-Z  does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the HS1HT-Z  -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -57,7 +58,7 @@ The following table summarises the channels available for the HS1HT-Z  -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 
@@ -85,17 +86,14 @@ The HS1HT-Z  supports 3 association groups.
 
 ### Group 1: Lifeline
 
-Association group 1: Lifeline association group Maximum supported node is 1. Include command classes: Battery report, multilevel sensor report, and Device Reset Locally.
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Multilevel sensor temperature
 
-Association group 2: Root Device group(multilevel sensor temperature) Maximum supported nodes are 5. 1- multilevel Sensor reports status of the temperature via Lifeline. 2-When the sensor detects status of the temperature, the device will be triggered.
 This group supports 5 nodes.
 
 ### Group 3: Multilevel sensor humidity
 
-Association group 3: Root Device group(multilevel sensor humidity) Maximum supported nodes are 5. 1-multilevel Sensor reports status of the humidity via Lifeline. 2-When the sensor detects status of the humidity , the device will be triggered.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -118,6 +116,11 @@ This group supports 5 nodes.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/709/HS1HT-Z.pdf)
+* [Instructions](https://www.cd-jackson.com/zwave_device_uploads/709/HS1HT-Z-S2doc.pdf)
 
 ---
 

@@ -27,30 +27,30 @@ The following table summarises the channels available for the CT100 Plus -:
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (dry air) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (dry air) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
 | Battery Level | battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 | Sensor (relative humidity) 1 | sensor_relhumidity1 | Humidity | Number | 
-| Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number | 
+| Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number:Temperature | 
 | Thermostat mode 1 | thermostat_mode1 | Temperature | Number | 
 | Operating State 1 | thermostat_state1 | Temperature | Number | 
-| Setpoint (heating) 1 | thermostat_setpoint1 | Temperature | Number | 
-| Setpoint (cooling) 1 | thermostat_setpoint1 | Temperature | Number | 
-| Setpoint (dry air) 1 | thermostat_setpoint1 | Temperature | Number | 
-| Setpoint (furnace) 1 | thermostat_setpoint1 | Temperature | Number | 
+| Setpoint (heating) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Setpoint (cooling) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Setpoint (dry air) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Setpoint (furnace) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
 | Thermostat fan mode 1 | thermostat_fanmode1 |  |  | 
 | Thermostat fan state 1 | thermostat_fanstate1 |  |  | 
 | Clock Time Offset 1 | time_offset1 | Temperature | Number | 
 | Sensor (relative humidity) 2 | sensor_relhumidity2 | Humidity | Number | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number | 
+| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
 
 ### Binary Sensor
 
@@ -75,7 +75,7 @@ The ```sensor_relhumidity``` channel supports the ```Number``` item and is in th
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -100,8 +100,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State
 
@@ -122,27 +120,27 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
@@ -174,7 +172,7 @@ The ```sensor_relhumidity1``` channel supports the ```Number``` item and is in t
 
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode 1
 
@@ -199,8 +197,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State 1
 
@@ -221,27 +217,27 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating) 1
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling) 1
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (dry air) 1
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (furnace) 1
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode 1
 
@@ -267,7 +263,7 @@ The ```sensor_relhumidity2``` channel supports the ```Number``` item and is in t
 
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -331,7 +327,7 @@ This is a read only parameter.
 ### Parameter 3: Utility Lock Enable/Disable
 
 Prevents setpoint changes at thermostat
-If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock. This will prevent changes to the setpoint at the thermostat screen.
+If set to 0, the utility lock is disabled, all other values, 1-255, will enable the utility lock. This will prevent changes to the setpoint at the thermostat screen.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -540,7 +536,6 @@ The CT100 Plus supports 1 association group.
 
 ### Group 1: Group 1
 
-Send report about Thermostat Mode, Thermostat Operating State, Fan Mode, Fan State, Setpoint, Sensor Multilevel
 This group supports 2 nodes.
 
 ## Technical Information
@@ -553,7 +548,7 @@ This group supports 2 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
 | COMMAND_CLASS_THERMOSTAT_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_OPERATING_STATE_V1| |
@@ -578,7 +573,7 @@ This group supports 2 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
 | COMMAND_CLASS_THERMOSTAT_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_OPERATING_STATE_V1| |
@@ -596,7 +591,7 @@ This group supports 2 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

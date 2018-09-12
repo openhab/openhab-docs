@@ -23,25 +23,25 @@ Z-Wave Plus Motion Detector with Light Sensor
 
 ### Inclusion Information
 
-1. Bring Motion Detector to within 10 feet (3 meters) of the controller
-2. Remove the cover of the Motion Detector by twisting it apart
-3. Put the controller into inclusion mode
-4. Press the Connect Button quickly 3 times in a row
+  1. Bring Motion Detector to within 10 feet (3 meters) of the controller
+  2. Remove the cover of the Motion Detector by twisting it apart
+  3. Put the controller into inclusion mode
+  4. Press the Connect Button quickly 3 times in a row
 
 The LED Indicator will flash five times indicating inclusion.
 
 ### Exclusion Information
 
-1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
-2. Put the controller into exclusion mode
-3. Press the Connect Button quickly three times in a row
+  1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
+  2. Put the controller into exclusion mode
+  3. Press the Connect Button quickly three times in a row
 
 The LED Indicator will flash five times indicating exclusion/disconnection
 
 Factory Reset:
 
-1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
-2. Hold the Connect Button for 10 seconds until the LED Indicator blinks once, then release the button.
+  1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
+  2. Hold the Connect Button for 10 seconds until the LED Indicator blinks once, then release the button.
 
 ### Wakeup Information
 
@@ -49,8 +49,9 @@ The DMMS1 does not permanently listen for messages sent from the controller - it
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
-2. Press the Connect Button quickly three times in a row
+
+  1. Remove the cover of the Motion Detector by twisting apart and make sure the Motion Detector is powered
+  2. Press the Connect Button quickly three times in a row
 
 ## Channels
 
@@ -59,7 +60,7 @@ The following table summarises the channels available for the DMMS1 -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -80,7 +81,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
 
@@ -92,7 +93,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -148,7 +149,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 ### Parameter 3: Trigger Action
 
 Brightness to turn on the associated device 1-99, 255=ON
-You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99.
+You can choose if your Mini Sensor turns an associated device on or off when sending the BASIC SET command. Use value 0 to turn the associated device OFF and value 255 to turn it ON. Adjust brightness level for a Z-Wave dimmer (Multilevel switch) by putting in any value between 1 and 99. 
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -170,7 +171,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Light Trigger Level
 
 Max Light level which enables motion trigger
-Set your light sensor as a secondary trigger for associated devices. If light level in a room falls beyond the set point and motion is detected, the Mini Sensor will send BASIC\_SET command to associated devices to turn ON. The number entered as the value corresponds to the number of LUX. By default, if motion has been detected by your Mini Sensor, the associated device will turn ON if light level last reported by the sensor is under 100 LUX.
+Set your light sensor as a secondary trigger for associated devices. If light level in a room falls beyond the set point and motion is detected, the Mini Sensor will send BASIC_SET command to associated devices to turn ON. The number entered as the value corresponds to the number of LUX. By default, if motion has been detected by your Mini Sensor, the associated device will turn ON if light level last reported by the sensor is under 100 LUX. 
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -259,21 +260,25 @@ The DMMS1 supports 4 association groups.
 ### Group 1: Lifeline
 
 
+Lifeline communication of motion / no motion and light level status to Z-Wave controller. Supported command classes: NOTIFICATION\_REPORT\_V4 SENSOR\_BINARY\_REPORT\_V2 SENSOR\_MULTILEVEL\_REPORT\_V7 BATTERY\_REPORT DEVICE\_RESET\_LOCALLY\_NOTIFICATION
 This group supports 5 nodes.
 
 ### Group 2: BASIC
 
-BASIC\_SET Trigger associated devices
+BASIC_SET Trigger associated devices
+control command communication to associated Z-Wave devices in the network. Use parameters 2, 3, 5, and 8 to configure this group’s settings. Supported command classes: BASIC_SET 
 This group supports 5 nodes.
 
 ### Group 3: Notification Reports
 
 NOTIFICATION\_REPORT\_V4
+notifications to Z-Wave devices associated in this group. Supported command classes: NOTIFICATION\_REPORT\_V4
 This group supports 5 nodes.
 
 ### Group 4: SENSOR BINARY
 
-SENSOR\_BINARY\_REPORT\_V2
+SENSOR\_BINARY\_REPORT_V2
+notifications to Z-Wave devices associated in this group. Supported command classes: SENSOR\_BINARY\_REPORT_V2
 This group supports 5 nodes.
 
 ## Technical Information
@@ -287,7 +292,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V2| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V0| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

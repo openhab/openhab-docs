@@ -47,7 +47,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -148,7 +148,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Temperature
 
 Temperature
-T\[<sup>o</sup>C\] = x minus 50
+T[<sup>o</sup>C] = x minus 50
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -204,7 +204,7 @@ This is a read only parameter.
 ### Parameter 21: Motor current
 
 Motor current
-Current used by motor: 10\[mA\] - 2,55\[A\]
+Current used by motor: 10[mA] - 2,55[A]
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -216,7 +216,7 @@ This is a read only parameter.
 ### Parameter 77: CLOSE current
 
 CLOSE current
-CLOSE current: 1\[mA\] - 255\[mA\]
+CLOSE current: 1[mA] - 255[mA]
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -227,7 +227,7 @@ This parameter has the configuration ID ```config_77_1``` and is of type ```INTE
 ### Parameter 78: OPEN current
 
 OPEN current
-OPEN current: 1\[mA\] - 255\[mA\]
+OPEN current: 1[mA] - 255[mA]
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -238,7 +238,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 ### Parameter 79: CLOSE overload current
 
 CLOSE overload current
-CLOSE overload current: 10\[mA\] - 2,55\[A\]
+CLOSE overload current: 10[mA] - 2,55[A]
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -249,7 +249,7 @@ This parameter has the configuration ID ```config_79_1``` and is of type ```INTE
 ### Parameter 80: OPEN overload current
 
 OPEN overload current
-OPEN overload current: 10\[mA\] - 2,55\[A\]
+OPEN overload current: 10[mA] - 2,55[A]
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -312,21 +312,29 @@ The VMZ Solar z-wave plus supports 4 association groups.
 ### Group 1: Lifeline
 
 
-This group supports 1 nodes.
+<commandClass>BATTERY</commandClass>  
+<commandClass>ALARM</commandClass>  
+<commandClass>DEVICE\_RESET\_LOCALLY</commandClass>  
+<commandClass>BASIC</commandClass>  
+ 
+This group supports 1 node.
 
 ### Group 2: BasicRepeat
 
 
+<commandClass>BASIC</commandClass>
 This group supports 5 nodes.
 
 ### Group 3: MultilevelRepeat
 
 
+<commandClass>SWITCH_MULTILEVEL</commandClass>
 This group supports 5 nodes.
 
 ### Group 4: BasicControl
 
 
+<commandClass>BASIC</commandClass>
 This group supports 5 nodes.
 
 ## Technical Information

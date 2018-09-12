@@ -16,7 +16,7 @@ The TP-802ZD does not permanently listen for messages sent from the controller -
 
 The sensor must be added to the Zwave network prior to use.
 
-\- This sensor can not work alone, need connect to Z-wave gateway - First time connect, the distance between sensor and gateway better less than 1.0 meter, after connected, then install the sensor where you need - When connect to gateway, choose add device in your gateway software, then quickly click the sensor's z-wave trigger 3 times to send signal to gateway, delet device similar operation - When install, the door sensor main part and magnetic stripe gap must less than 5mm - The work distance to gateway is 10 to 20 meters indoor, more wall or barrier will influence the distance
+- This sensor can not work alone, need connect to Z-wave gateway - First time connect, the distance between sensor and gateway better less than 1.0 meter, after connected, then install the sensor where you need - When connect to gateway, choose add device in your gateway software, then quickly click the sensor's z-wave trigger 3 times to send signal to gateway, delet device similar operation - When install, the door sensor main part and magnetic stripe gap must less than 5mm - The work distance to gateway is 10 to 20 meters indoor, more wall or barrier will influence the distance
 
 Factory Setting  
 Press the tamper switch 6 times in 2s, it will recover to factory setting after a period of time  
@@ -35,6 +35,7 @@ To exclude the sensor in a networks start by placing the controller in exclusion
 The TP-802ZD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 a) Manual Wake-up  
 Quickly press tamper switch once, the door sensor will automatically send wake-up  
@@ -77,7 +78,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (access)
@@ -90,7 +91,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -186,11 +187,17 @@ The TP-802ZD supports 2 association groups.
 ### Group 1: Group 1
 
 Is assigned to the device status - OPEN/CLOSED.
-This group supports 1 nodes.
+1.It will send “NOTIFICATION_REPORT”to the device in Group 1 when the door sensor is opened / closed, tamper switch is triggered / recovered.
+
+2.When in low battery status, door sensor will send “BATTERY_REPORT” to Group 1 device periodically.
+
+3.The door sensor will send “DEVICE\_RESET\_LOCALLY_NOTIFICATION” to Group1 device when the device recovers to factory settings.
+This group supports 1 node.
 
 ### Group 2: Group 2
 
 Sending control commands to associated devices
+When the door sensor is opened, it will send “BASIC SET” command to control these devices in Group2.
 This group supports 2 nodes.
 
 ## Technical Information

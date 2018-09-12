@@ -25,24 +25,24 @@ Whether you’re coming or going, your home is ready when you are with the Z-Wav
 
 #### Features
 
-- Works on all standard doors using your existing hinge
-- Reversible for right and left door openings
-- Adjusts to fit door trim
-- Compatible with hinge pins up to 5/16" in diameter
-- CR2 battery included (battery lasts up to 2 years)
-- Color matching kits available
+  * Works on all standard doors using your existing hinge
+  * Reversible for right and left door openings
+  * Adjusts to fit door trim
+  * Compatible with hinge pins up to 5/16" in diameter
+  * CR2 battery included (battery lasts up to 2 years)
+  * Color matching kits available
 
 ### Inclusion Information
 
-1. Follow the instructions for your Z-Wave certified controller to include the device to the Z-Wave network.
-2. Once the controller is ready to include your Hinge Pin Smart Door Sensor press and release the manual/program button on the smart switch to include it in the network.
+  1. Follow the instructions for your Z-Wave certified controller to include the device to the Z-Wave network.
+  2. Once the controller is ready to include your Hinge Pin Smart Door Sensor press and release the manual/program button on the smart switch to include it in the network.
 
 ### Exclusion Information
 
-1. Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network.
-2. Once the controller is ready to exclude your device, press and release the manual/program button on the Hinge Pin Smart Door Sensor to exclude it from the network.
+  1. Follow the instructions for your Z-Wave certified controller to exclude a device from the Z-Wave network. 
+  2. Once the controller is ready to exclude your device, press and release the manual/program button on the Hinge Pin Smart Door Sensor to exclude it from the network.
 
-You may wish to reset all of your Hinge Pin Smart Door Sensor's settings to their factory defaults. To do this, press the program button 10 times within 6 seconds. If your Door Sensor has been successfully reset, its LED light will blink for 3 seconds. This should only be used in the event your network’s primary controller is missing or otherwise inoperable.
+You may wish to reset all of your Hinge Pin Smart Door Sensor's settings to their factory defaults. To do this, press the program button 10 times within 6 seconds. If your Door Sensor has been successfully reset, its LED light will blink for 3 seconds. This should only be used in the event your network’s primary controller is missing or otherwise inoperable.
 
 ### Wakeup Information
 
@@ -50,8 +50,9 @@ The 32563 does not permanently listen for messages sent from the controller - it
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-1. Press and hold the Z-wave Button for 6 seconds. It will be wake up and send “Wake Up Notification CC “ to HUB.
-2. It will sleep after timeout for 10 seconds, or sleep right away when received the “Wake Up No More Information CC”.
+
+  1. Press and hold the Z-wave Button for 6 seconds. It will be wake up and send “Wake Up Notification CC “ to HUB. 
+  2. It will sleep after timeout for 10 seconds, or sleep right away when received the “Wake Up No More Information CC”. 
 
 ## Channels
 
@@ -86,7 +87,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -111,9 +112,9 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 20: Report Method
 
 Change Open/Close Report Method
-1. Notification (Default)
-2. Basic Set
-3. Basic Report
+  1. Notification (Default)
+  2. Basic Set
+  3. Basic Report
 Values in the range 1 to 3 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -146,17 +147,14 @@ The 32563 supports 3 association groups.
 
 ### Group 1: Lifeline
 
-Lifeline
 This group supports 5 nodes.
 
 ### Group 2: Control
 
-For Control
 This group supports 5 nodes.
 
 ### Group 3: Control
 
-For Control
 This group supports 5 nodes.
 
 ## Technical Information

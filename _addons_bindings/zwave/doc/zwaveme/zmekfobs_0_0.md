@@ -5,7 +5,7 @@ title: ZME_KFOB-S - ZWave
 
 {% include base.html %}
 
-# ZME\_KFOB-S Secure 4 Button Key Chain Controller
+# ZME_KFOB-S Secure 4 Button Key Chain Controller
 This describes the Z-Wave device *ZME_KFOB-S*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zmekfobs_00_000```.
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
@@ -24,6 +24,7 @@ The ZME_KFOB-S does not permanently listen for messages sent from the controller
 The ZME_KFOB-S does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the ZME_KFOB-S -:
@@ -229,8 +230,8 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 ### Parameter 25: Blocks wakeup even when wakeup interval is set 
 
 Set Blocks wakeup even when wakeup interval is set
-If the KFOB wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery   
- Size: 1 Byte, Default Value: 00
+If the KFOB wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery  
+Size: 1 Byte, Default Value: 00
 The following option values may be configured -:
 
 | Value  | Description |
@@ -285,27 +286,30 @@ The ZME_KFOB-S supports 5 association groups.
 
 ### Group 1: Lifeline
 
-
 This group supports 10 nodes.
 
 ### Group 2: Control Group A
 
 
+Control Group A, controlled by button 1 or single clicks of buttons
 This group supports 10 nodes.
 
 ### Group 3: Control Group B
 
 
+Control Group B, controlled by button 2 or single clicks of buttons 2
 This group supports 10 nodes.
 
 ### Group 4: Control Group C
 
 
+Control Group C, controlled by button 3 or double clicks of buttons 1
 This group supports 10 nodes.
 
 ### Group 5: Control Group D
 
 
+Control Group D, controlled by button 4 or double clicks of buttons 2
 This group supports 10 nodes.
 
 ## Technical Information
@@ -317,7 +321,7 @@ This group supports 10 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SCENE_CONTROLLER_CONF_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |

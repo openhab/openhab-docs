@@ -8,6 +8,8 @@ title: TZEMT400BB32MAA - ZWave
 # TZEMT400BB32MAA Trane Z-Wave Programmable Thermostat
 This describes the Z-Wave device *TZEMT400BB32MAA*, manufactured by *Trane Corporation* with the thing type UID of ```trane_tzemt400bb32maa_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
 ![TZEMT400BB32MAA product image](https://www.cd-jackson.com/zwave_device_uploads/245/245_default.jpg)
 
 
@@ -15,7 +17,19 @@ The TZEMT400BB32MAA supports routing. This allows the device to communicate usin
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/245) to improve the documentation.
+Thermostat for Heating and Cooling HVAC System control
+
+### Inclusion Information
+
+  * Press the MENU button on the thermostat.
+  * Scroll down to Z Wave Install, and press the Select button.
+  * Press the Yes button to enroll the thermostat.
+
+### Exclusion Information
+
+  * Press the MENU button on the thermostat.
+  * Scroll down to Z Wave Install, and press the Select button.
+  * Press the Yes button to enroll the thermostat.
 
 ## Channels
 
@@ -23,20 +37,21 @@ The following table summarises the channels available for the TZEMT400BB32MAA -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
+| Schedule Mode | config_decimal |  | Number | 
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -61,8 +76,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State
 
@@ -83,15 +96,15 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
@@ -100,6 +113,14 @@ Channel type information on this channel is not found.
 ### Thermostat fan state
 
 Channel type information on this channel is not found.
+
+### Schedule Mode
+
+Send 0 to Hold and 1 to Run Schedule.
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
 
 ### Clock Time Offset
 
@@ -142,8 +163,7 @@ The TZEMT400BB32MAA supports 1 association group.
 
 ### Group 1: Reports
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -163,7 +183,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_THERMOSTAT_FAN_STATE_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_LOCK_V0| |
+| COMMAND_CLASS_LOCK_V1| |
 | COMMAND_CLASS_CLOCK_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |

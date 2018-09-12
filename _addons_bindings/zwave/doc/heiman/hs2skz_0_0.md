@@ -69,8 +69,7 @@ The HS2SK-Z supports 1 association group.
 
 ### Group 1: Lifeline
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

@@ -20,11 +20,11 @@ The following table summarises the channels available for the ZMNHIA -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Binary Sensor 1 | sensor_binary1 | Door | Switch | 
 | Binary Sensor 2 | sensor_binary2 | Door | Switch | 
 
@@ -32,7 +32,7 @@ The following table summarises the channels available for the ZMNHIA -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
 
@@ -69,14 +69,12 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Binary Sensor 1
 
@@ -421,33 +419,27 @@ The ZMNHIA supports 6 association groups.
 
 ### Group 1: Basic on/off Q1
 
-
 This group supports 16 nodes.
 
 ### Group 2: Basic on/off I2
-
 
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off I3
 
-
 This group supports 16 nodes.
 
 ### Group 4: High Temperature
-
 
 This group supports 16 nodes.
 
 ### Group 5: Low Temperature
 
-
 This group supports 16 nodes.
 
 ### Group 6: Default Reporting Group
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -465,7 +457,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
-| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V0| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -473,14 +465,14 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 
 ---
 

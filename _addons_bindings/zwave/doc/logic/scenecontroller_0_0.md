@@ -27,13 +27,14 @@ Pushing the upper left button 3 times (triple click) will activate Inclusion Mod
 
 ### Exclusion Information
 
- The inclusion and exclusion of the device is confirmed by sending out a Node Information Frame. Beside this, it may be necessary for certain network operations to send out a Node Information Frame. Triple clicking the button inside the module through a little hole (normally covered by GIRA module) or the upper left button will issue a Node Information Frame.
+ The inclusion and exclusion of the device is confirmed by sending out a Node Information Frame. Beside this, it may be necessary for certain network operations to send out a Node Information Frame. Triple clicking the button inside the module through a little hole (normally covered by GIRA module) or the upper left button will issue a Node Information Frame.
 
 ### Wakeup Information
 
 The Heatit Z-Scene Controller does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Heatit Z-Scene Controller -:
@@ -157,7 +158,7 @@ The ```switch_dimmer6``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The following table provides a summary of the 26 configuration parameters available in the Heatit Z-Scene Controller.
+The following table provides a summary of the 44 configuration parameters available in the Heatit Z-Scene Controller.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -175,10 +176,28 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | Disable Central Scene notification | Disables or enables the sending of Central Scene notifications |
 | 12 | Disable House Cleaning Mode | Disable House Cleaning Mode, double press = 100% light |
 | 13 | Multilevel Switch  for button #1 | Configuration of the Multilevel Switch |
+| 13 | Multilevel Switch for button #1 | Configuration of the Multilevel Switch |
+| 13 | Lower switch value | Configuration of the Multilevel Switch |
+| 13 | Multilevel Switch for button #1 | Configuration of the Multilevel Switch |
+| 14 | Multilevel Switch for button #2 | Configuration of the Multilevel Switch |
+| 14 | Multilevel Switch for button #2 | Configuration of the Multilevel Switch |
+| 14 | Multilevel Switch for button #2 | Configuration of the Multilevel Switch |
 | 14 | Multilevel Switch for button #2 | Configuration of the Multilevel Switch |
 | 15 | Multilevel Switch for button #3 | Configuration of the Multilevel Switch |
+| 15 | Multilevel Switch for button #3 | Configuration of the Multilevel Switch |
+| 15 | Multilevel Switch for button #3 | Configuration of the Multilevel Switch |
+| 15 | Multilevel Switch for button #3 | Configuration of the Multilevel Switch |
+| 16 | Multilevel Switch for button #4 | Configuration of the Multilevel Switch |
+| 16 | Multilevel Switch for button #4 | Configuration of the Multilevel Switch |
+| 16 | Multilevel Switch for button #4 | Configuration of the Multilevel Switch |
 | 16 | Multilevel Switch for button #4 | Configuration of the Multilevel Switch |
 | 17 | Multilevel Switch for button #5 | Configuration of the Multilevel Switch |
+| 17 | Multilevel Switch for button #5 | Configuration of the Multilevel Switch |
+| 17 | Multilevel Switch for button #5 | Configuration of the Multilevel Switch |
+| 17 | Multilevel Switch for button #5 | Configuration of the Multilevel Switch |
+| 18 | Multilevel Switch for button #6 | Configuration of the Multilevel Switch |
+| 18 | Multilevel Switch for button #6 | Configuration of the Multilevel Switch |
+| 18 | Multilevel Switch for button #6 | Configuration of the Multilevel Switch |
 | 18 | Multilevel Switch for button #6 | Configuration of the Multilevel Switch |
 | 19 | Association groups for button 1 | Association groups for button 1 |
 | 20 | Association groups for button 2 | Association groups for button 2 |
@@ -195,9 +214,14 @@ Configuration of Pair Mode for the upper two buttons (button #1 and #2)
 0 Separate mode (toggle mode). (Default)
 
 1 In pair mode, left side sends on/up commands, right side sends off/down commands.
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Separate mode (toggle mode). (Default) |
+| 1 | Left side ON/UP, right side OFF/DOWN |
+
+The manufacturer defined default value is ```0``` (Separate mode (toggle mode). (Default)).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -208,9 +232,14 @@ Configuration of Pair Mode for the middle two buttons (button #3 and #4)
 0 Separate mode (toggle mode). (Default)
 
 1 In pair mode, left side sends on/up commands, right side sends off/down commands.
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Separate mode (toggle mode). (Default) |
+| 1 | Left side ON/UP, right side OFF/DOWN |
+
+The manufacturer defined default value is ```0``` (Separate mode (toggle mode). (Default)).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -221,9 +250,14 @@ Configuration of Pair Mode for the lower two buttons (button #5 and #6)
 0 Separate mode (toggle mode). (Default)
 
 1 In pair mode, left side sends on/up commands, right side sends off/down commands.
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Separate mode (toggle mode). (Default) |
+| 1 | Left side ON/UP, right side OFF/DOWN |
+
+The manufacturer defined default value is ```0``` (Separate mode (toggle mode). (Default)).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -246,9 +280,20 @@ Configuration of the internal operation of LED #1
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -271,9 +316,20 @@ Configuration of the internal operation of LED #2
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -296,9 +352,20 @@ Configuration of the internal operation of LED #3
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
@@ -321,9 +388,20 @@ Configuration of the internal operation of LED #4
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
@@ -346,9 +424,20 @@ Configuration of the internal operation of LED #5
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
@@ -371,9 +460,20 @@ Configuration of the internal operation of LED #6
 6 LED indicates the status of the built-in relay, with inverted indication.
 
 7 LED show a 5 seconds indication when the corresponding button is pressed.
-Values in the range 0 to 7 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | LED indication is disabled |
+| 1 | Status of the corresponding button |
+| 2 | Status of the corresponding button, inverted |
+| 3 | Status of corresponding paddle (pair mode) |
+| 4 | Status of corresponding paddle (pair mode) inv |
+| 5 | Status of the built-in relay |
+| 6 | Status of the built-in relay, inverted |
+| 7 | LED activated on button press |
+
+The manufacturer defined default value is ```1``` (Status of the corresponding button).
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
@@ -395,10 +495,21 @@ This parameter configures the built-in relay
 
 6 Relay is controlled by button #6 or by lower paddle when pair mode is active.
 
-7 Relay is activated for one second and is controlled by button #1 or by upper paddle when pair mode is active.
-Values in the range 0 to 7 may be set.
+7 Relay is activated for one second and is controlled by button #1 or by upper paddle when pair mode is active.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Relay is disabled |
+| 1 | Controlled by button 1 |
+| 2 | Controlled by button 2 |
+| 3 | Controlled by button 3 |
+| 4 | Controlled by button 4 |
+| 5 | Controlled by button 5 |
+| 6 | Controlled by button 6 |
+| 7 | Controlled by button 1, 1 sec |
+
+The manufacturer defined default value is ```1``` (Controlled by button 1).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -409,9 +520,14 @@ Disables or enables the sending of Central Scene notifications
 0 Central Scene notifications are enabled. (Default)
 
 1 Central Scene notifications are disabled.
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Enabled |
+| 1 | Disabled |
+
+The manufacturer defined default value is ```0``` (Enabled).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
@@ -422,9 +538,14 @@ Disable House Cleaning Mode, double press = 100% light
 0 House Cleaning Mode is enabled (Default)
 
 1 House Cleaning Mode is disabled; double-press button scene notifications will be disabled too.
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | House Cleaning Mode is enabled (Default) |
+| 1 | House Cleaning Mode is disabled |
+
+The manufacturer defined default value is ```0``` (House Cleaning Mode is enabled (Default)).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -432,151 +553,397 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 ### Parameter 13: Multilevel Switch  for button #1
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
 0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_13_4_00000001``` and is of type ```INTEGER```.
+
+
+### Parameter 13: Multilevel Switch for button #1
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
 
 0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 3**: Lower switch value
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_13_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 13: Lower switch value
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
 
 0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 4**: Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```0``` (OFF).
 
-This parameter has the configuration ID ```config_13_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_13_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 13: Multilevel Switch for button #1
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_13_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 14: Multilevel Switch for button #2
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
 0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_14_4_00000001``` and is of type ```INTEGER```.
+
+
+### Parameter 14: Multilevel Switch for button #2
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
 
 0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 3**: Lower switch value
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_14_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 14: Multilevel Switch for button #2
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
 
 0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 4:** Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```0``` (OFF).
 
-This parameter has the configuration ID ```config_14_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_14_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 14: Multilevel Switch for button #2
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_14_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 15: Multilevel Switch for button #3
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
 0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_15_4_00000001``` and is of type ```INTEGER```.
+
+
+### Parameter 15: Multilevel Switch for button #3
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
 
 0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 3**: Lower switch value
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_15_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 15: Multilevel Switch for button #3
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
 
 0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 4**: Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```0``` (OFF).
 
-This parameter has the configuration ID ```config_15_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_15_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 15: Multilevel Switch for button #3
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_15_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 16: Multilevel Switch for button #4
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
 0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
 
-0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
-
-**Byte 3**: Lower switch value
-
-0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
-
-**Byte 4**: Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
-
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```1``` (Enabled).
 
 This parameter has the configuration ID ```config_16_4``` and is of type ```INTEGER```.
+
+
+### Parameter 16: Multilevel Switch for button #4
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
+
+0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
+
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_16_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 16: Multilevel Switch for button #4
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
+
+0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
+
+The manufacturer defined default value is ```0``` (OFF).
+
+This parameter has the configuration ID ```config_16_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 16: Multilevel Switch for button #4
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_16_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 17: Multilevel Switch for button #5
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
 0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_17_4_00000001``` and is of type ```INTEGER```.
+
+
+### Parameter 17: Multilevel Switch for button #5
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
 
 0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 3**: Lower switch value
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_17_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 17: Multilevel Switch for button #5
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
 
 0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 4**: Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```0``` (OFF).
 
-This parameter has the configuration ID ```config_17_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_17_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 17: Multilevel Switch for button #5
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_17_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 18: Multilevel Switch for button #6
 
 Configuration of the Multilevel Switch
-**Byte 1**: Enable / Disable
+Byte 1: Enable / Disable
 
-0 Disabled – When single pressing the button, nodes associated to group 6 won’t be switched.
+0 Disabled – When single pressing the button, nodes  associated to group 6 won’t be switched.
 
 1 Enabled – When single pressing the button, nodes associated to group 6 will be switched between the configured upper and lower switch values. (Default)
+The following option values may be configured -:
 
-**Byte 2**: Upper switch value
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_18_4_00000001``` and is of type ```INTEGER```.
+
+
+### Parameter 18: Multilevel Switch for button #6
+
+Configuration of the Multilevel Switch
+Byte 2: Upper switch value
 
 0 – 99, 255 When single pressing the button for ON, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 255)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 3**: Lower switch value
+| Value  | Description |
+|--------|-------------|
+| 255 | ON |
+
+The manufacturer defined default value is ```255``` (ON).
+
+This parameter has the configuration ID ```config_18_4_0000FF00``` and is of type ```INTEGER```.
+
+
+### Parameter 18: Multilevel Switch for button #6
+
+Configuration of the Multilevel Switch
+Byte 3: Lower switch value
 
 0 - 99 When single pressing the button for OFF, a Multilevel Switch Set with this value will be send to devices in association group 6. (Default = 0)
+The following option values may be configured, in addition to values in the range 0 to 99 -:
 
-**Byte 4**: Not used – must be set to 0.
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | OFF |
 
-The manufacturer defined default value is ```1```.
+The manufacturer defined default value is ```0``` (OFF).
 
-This parameter has the configuration ID ```config_18_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_18_4_00FF0000``` and is of type ```INTEGER```.
+
+
+### Parameter 18: Multilevel Switch for button #6
+
+Configuration of the Multilevel Switch
+Byte 4: Not used – must be set to 0.
+Values in the range 0 to 0 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_18_4_01000000``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 19: Association groups for button 1
@@ -585,9 +952,14 @@ Association groups for button 1
 0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
 1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_19_1``` and is of type ```INTEGER```.
 
@@ -598,9 +970,14 @@ Association groups for button 2
 0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
 1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
@@ -608,12 +985,17 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: Association groups for button 3
 
 Association groups for button 3
-0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
+0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
-1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
@@ -621,12 +1003,17 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Association groups for button 4
 
 Association groups for button 4
-0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
+0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
-1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_22_1``` and is of type ```INTEGER```.
 
@@ -634,12 +1021,17 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 ### Parameter 23: Association groups for button 5
 
 Association groups for button 5
-0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
+0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
-1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_23_1``` and is of type ```INTEGER```.
 
@@ -647,12 +1039,17 @@ This parameter has the configuration ID ```config_23_1``` and is of type ```INTE
 ### Parameter 24: Association groups for button 6
 
 Association groups for button 6
-0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
+0 When commands are received by device 1, nodes in the association groups will not be switched, button activations will still send switch values.
 
-1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
-Values in the range 0 to 1 may be set.
+1 When commands are received by device 1, nodes in the association groups will be switched. (Default)
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Not switched |
+| 1 | Switched |
+
+The manufacturer defined default value is ```1``` (Switched).
 
 This parameter has the configuration ID ```config_24_1``` and is of type ```INTEGER```.
 
@@ -663,9 +1060,14 @@ Configuration of backlight control.
 0 Backlight is only controlled by Indicator Command Class – commands send to endpoint 0.
 
 1 Backlight is turned on for 5 seconds when a button is pressed. (Default)
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | By indicator command class |
+| 1 | 5 sec when button pressed |
+
+The manufacturer defined default value is ```1``` (5 sec when button pressed).
 
 This parameter has the configuration ID ```config_25_1``` and is of type ```INTEGER```.
 
@@ -680,9 +1082,14 @@ Value Description
 0 Basic Set commands to endpoint 0 is forwarded to endpoint 1 (Default).
 
 1 Basic Set commands to endpoint 0 controls backlight (on/off).
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Forwarded to endpoint 1 |
+| 1 | Controls backlight |
+
+The manufacturer defined default value is ```0``` (Forwarded to endpoint 1).
 
 This parameter has the configuration ID ```config_26_1``` and is of type ```INTEGER```.
 
@@ -695,157 +1102,126 @@ The Heatit Z-Scene Controller supports 31 association groups.
 
 ### Group 1: Lifeline
 
-
 This group supports 5 nodes.
 
 ### Group 2: Basic Report On/Off button 1
 
-Send Basic Report (On/Off) when button #1 is used
 This group supports 5 nodes.
 
 ### Group 3: Basic Set On/Off button #1
 
-Sends Basic Set (On/Off) when button #1 is used
 This group supports 5 nodes.
 
 ### Group 4: Binary Switch Set On/Off button #1
 
-Sends Binary Switch Set (On/Off) when button #1 is used
 This group supports 5 nodes.
 
 ### Group 5: Binary Toggle Switch Set button #1
 
-Send Binary Toggle Switch Set when button #1 is used.
 This group supports 5 nodes.
 
 ### Group 6: Multilevel Switch for button #1
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #1 is used.
 This group supports 5 nodes.
 
 ### Group 7: Basic Report On/Off button 2
 
-Send Basic Report (On/Off) when button #2 is used
 This group supports 5 nodes.
 
 ### Group 8: Basic Set On/Off button #2
 
-Sends Basic Set (On/Off) when button #2 is used
 This group supports 5 nodes.
 
 ### Group 9: Binary Switch Set On/Off button #2
 
-Sends Binary Switch Set (On/Off) when button #2 is used
 This group supports 5 nodes.
 
 ### Group 10: Binary Toggle Switch Set button #2
 
-Send Binary Toggle Switch Set when button #2 is used
 This group supports 5 nodes.
 
 ### Group 11: Multilevel Switch for button #2
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #2 is used.
 This group supports 5 nodes.
 
 ### Group 12: Basic Report On/Off button 3
 
-Send Basic Report (On/Off) when button #3 is used
 This group supports 5 nodes.
 
 ### Group 13: Basic Set On/Off button #3
 
-Sends Basic Set (On/Off) when button #3 is used
 This group supports 5 nodes.
 
 ### Group 14: Binary Switch Set On/Off button #3
 
-Sends Binary Switch Set (On/Off) when button #3 is used
 This group supports 5 nodes.
 
 ### Group 15: Binary Toggle Switch Set button #3
 
-Send Binary Toggle Switch Set when button #3 is used.
 This group supports 5 nodes.
 
 ### Group 16: Multilevel Switch for button #3
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #3 is used.
 This group supports 5 nodes.
 
 ### Group 17: Basic Report On/Off button 4
 
-Send Basic Report (On/Off) when button #4 is used
 This group supports 5 nodes.
 
 ### Group 18: Basic Set On/Off button #4
 
-Sends Basic Set (On/Off) when button #4 is used
 This group supports 5 nodes.
 
 ### Group 19: Binary Switch Set On/Off button #4
 
-Sends Binary Switch Set (On/Off) when button #4 is used
 This group supports 5 nodes.
 
 ### Group 20: Binary Toggle Switch Set button #4
 
-Send Binary Toggle Switch Set when button #4 is used
 This group supports 5 nodes.
 
 ### Group 21: Multilevel Switch for button #4
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #4 is used.
 This group supports 5 nodes.
 
 ### Group 22: Basic Report On/Off button #5
 
-Sends Basic Report (On/Off) when button #5 is used
 This group supports 5 nodes.
 
 ### Group 23: Basic Set On/Off button #5
 
-Sends Basic Set (On/Off) when button #5 is used
 This group supports 5 nodes.
 
 ### Group 24: Binary Switch Set On/Off button #5
 
-Sends Binary Switch Set (On/Off) when button #5 is used
 This group supports 5 nodes.
 
 ### Group 25: Binary Toggle Switch Set button #5
 
-Send Binary Toggle Switch Set when button #5 is used
 This group supports 5 nodes.
 
 ### Group 26: Multilevel Switch for button #5
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #5 is used.
 This group supports 5 nodes.
 
 ### Group 27: Basic Report On/Off button 6
 
-Send Basic Report (On/Off) when button #6 is used
 This group supports 5 nodes.
 
 ### Group 28: Basic Set On/Off button #6
 
-Sends Basic Set (On/Off) when button #6 is used
 This group supports 5 nodes.
 
 ### Group 29: Binary Switch Set On/Off button #6
 
-Sends Binary Switch Set (On/Off) when button #6 is used
 This group supports 5 nodes.
 
 ### Group 30: Binary Toggle Switch Set button #6
 
-Send Binary Toggle Switch Set when button #6 is used
 This group supports 5 nodes.
 
 ### Group 31: Multilevel Switch for button #6
 
-Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #6 is used.
 This group supports 5 nodes.
 
 ## Technical Information

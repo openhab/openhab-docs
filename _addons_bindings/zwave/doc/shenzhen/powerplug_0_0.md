@@ -19,7 +19,7 @@ The NAS-WR01ZE supports routing. This allows the device to communicate using oth
 
 This Plug provides line voltage, current load, power consumption and energy
 
-consumption measuring.
+consumption measuring. 
 
 **Voltage** – The Supply Power Voltage For Plug.
 
@@ -35,25 +35,25 @@ Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.
 
 ### Inclusion Information
 
-1\. Make sure the sensor is powered.
+1. Make sure the sensor is powered.
 
-2\. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or
+2. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or
 
 gateway operating manual)
 
-3\. Press the button three times within 1.5 second, the device will enter inclusion mode. And the
+3. Press the button three times within 1.5 second, the device will enter inclusion mode. And the
 
 LED will flash on and off with green alternately five times within 2 seconds.
 
 ### Exclusion Information
 
-1\. Make sure the sensor is powered.
+1. Make sure the sensor is powered.
 
-2\. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or
+2. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or
 
 gateway operating manual)
 
-3\. Press the button three times within 1.5 second, the device will enter exclusion mode. And
+3. Press the button three times within 1.5 second, the device will enter exclusion mode. And
 
 the LED will flash on and off with yellow alternately five times within 2 seconds.
 
@@ -110,7 +110,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -170,7 +170,7 @@ send Alarm NOTIFICATION\_EVENT\_POWER\_MANAGEMENT\_OVER\_LOAD\_DETECTED to assoc
 
 devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter
 
-\#3). You must remove the loader and turn on the Plug (press the button once) to enable current
+#3). You must remove the loader and turn on the Plug (press the button once) to enable current
 
 monitor and clear NOTIFICATION ALARM.
 
@@ -225,7 +225,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Remember Relay ON/OFF status after power failure.
 
 Plug state after power-on
- Define how will the Plug react after the power supply is back on. 0 = will be off after the power supply is reconnected. Others = remember relay status
+ Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status
 The following option values may be configured -:
 
 | Value  | Description |
@@ -301,19 +301,28 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The NAS-WR01ZE supports 3 association groups.
 
-### Group 1: Group 1
+### Group 1: L
 
-is assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.
-This group supports 1 nodes.
+Assigned to Plugs status - On/Off. Allows for receiving control command from trigger devices whenever the Plug is turned On or Off.
+NOTIFICATION\_REPORT\_V4
+
+METER\_REPORT\_V4
+
+SWITCH\_BINARY\_REPORT
+
+DEVICE\_RESET\_LOCALLY_NOTIFICATION
+This group supports 1 node.
 
 ### Group 2: Group 2
 
 Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC\_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC\_SET (0x00).
+BASIC_SET
 This group supports 5 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
+NOTIFICATION\_REPORT\_V4
 This group supports 5 nodes.
 
 ## Technical Information

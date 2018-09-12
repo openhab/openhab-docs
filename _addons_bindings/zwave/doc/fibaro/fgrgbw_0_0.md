@@ -115,42 +115,42 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Associations command class choice | Associations command class choice. By default, Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP. Default setting: Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP |
 | 8 | Outputs state change mode | MODE1, Example: change saturation level from 0% to 99% Parameter 9: Step = 5 Parameter 10: Time between steps: 10ms. Default setting: MODE1 |
 | 9 | Step value (relevant for MODE1) | Step value (relevant for MODE1).  
- Default setting: 1  
- Available settings: 1 - 255. |
+Default setting: 1  
+Available settings: 1 - 255. |
 | 10 | Time between steps (relevant for MODE1) | Time between steps (relevant for MODE1).  
- Default setting: 10 ms  
- 0 - immediate change of state  
- Available settings: 1 - 60000 ms. |
+Default setting: 10 ms  
+0 - immediate change of state  
+Available settings: 1 - 60000 ms. |
 | 11 | Time for changing from start to end value | Step value (relevant for MODE1).  
- Default setting: 67 (3s)  
- 0: immediate change  
- 1-63: 20-126 \[ms\] value\*20ms  
- 65-127: 1-63 \[s\] (value-64)\*1s  
- 129-191: 10-630 \[s\] (value-128)\*10s |
+Default setting: 67 (3s)  
+0: immediate change  
+1-63: 20-126 [ms] value*20ms  
+65-127: 1-63 \[s\] (value-64)*1s  
+129-191: 10-630 \[s\] (value-128)*10s |
 | 12 | Maximum Brightening level | Maximum Brightening level.  
- Default setting: 255  
- Available settings: 3 - 255. |
+Default setting: 255  
+Available settings: 3 - 255. |
 | 13 | Minimum dim level | Minimum dim level. Default setting: 2 Available settings: 3 - 255. |
 | 14 | Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only | Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
- Default setting: 4369  
- Controlled device: RGBW, toggle switch inputs (NORMAL MODE). |
+Default setting: 4369  
+Controlled device: RGBW, toggle switch inputs (NORMAL MODE). |
 | 16 | Remember device status after power failure | Define how will the Plug react after the power supply is back on. Default setting: 1 Available settings: 0 - Device does not memorize its state aft |
 | 30 | Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.) | Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.) Default setting: INACTIVE |
 | 38 | Alarm sequence program | Alarm sequence program.  
- Default setting: 10  
- 1-10 specifies alarm program number. |
+Default setting: 10  
+1-10 specifies alarm program number. |
 | 39 | Active PROGRAM alarm time | IActive PROGRAM alarm time.  
- Default setting: 600s  
- 1-65534 specifies alarm time in seconds. |
+Default setting: 600s  
+1-65534 specifies alarm time in seconds. |
 | 42 | Command class reporting Outputs status change | Command class reporting Outputs status change. Default setting: 0 |
 | 43 | Reporting 0-10v analog inputs change threshold | Parameter defines a value by which input voltage must change in order to be reported to the main controller.  
- New value is calculated based on last reported value.  
- Default setting: 5 |
+New value is calculated based on last reported value.  
+Default setting: 5 |
 | 44 | Power load reporting frequency | Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.  
- Default setting: 3 600 (s) |
+Default setting: 3 600 (s) |
 | 45 | Reporting Changes in energy consumed by controlled devices | Defines the required change in power to generate an unsolicited power report.  
- New, reported energy value is calculated based on last reported value.  
- Default setting: 10 (0,1 kWh). |
+New, reported energy value is calculated based on last reported value.  
+Default setting: 10 (0,1 kWh). |
 | 71 | Response to BRIGHTNESS set to 0% | Response to BRIGHTNESS set to 0%. Default setting: 1 |
 | 72 | Starting animation program | Starting animation programm. Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1 |
 | 73 | Triple click action | Triple click action. Default setting: 0 |
@@ -182,10 +182,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP |
+| 0 | Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL_START/STOP |
 | 1 | Normal (RGBW) - COLOR\_CONTROL\_SET/START/STOP\_STATE\_CHANGE |
 | 2 | Normal (RGBW) - COLOR\_CONTROL\_SET |
-| 3 | Brightness - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP |
+| 3 | Brightness - BASIC\_SET/SWITCH\_MULTILEVEL_START/STOP |
 | 4 | Rainbow (RGBW) - COLOR\_CONTROL\_SET |
 
 The manufacturer defined default value is ```0``` (Normal (Dimmer) - BASIC_SET/SWITCH_MULTILEVEL_START/STOP).
@@ -212,8 +212,8 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 ### Parameter 9: Step value (relevant for MODE1)
 
 Step value (relevant for MODE1).  
- Default setting: 1  
- Available settings: 1 - 255.
+Default setting: 1  
+Available settings: 1 - 255.
 
 Values in the range 1 to 255 may be set.
 
@@ -225,9 +225,9 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 ### Parameter 10: Time between steps (relevant for MODE1)
 
 Time between steps (relevant for MODE1).  
- Default setting: 10 ms  
- 0 - immediate change of state  
- Available settings: 1 - 60000 ms.
+Default setting: 10 ms  
+0 - immediate change of state  
+Available settings: 1 - 60000 ms.
 
 Values in the range 0 to 60000 may be set.
 
@@ -239,11 +239,11 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 ### Parameter 11: Time for changing from start to end value
 
 Step value (relevant for MODE1).  
- Default setting: 67 (3s)  
- 0: immediate change  
- 1-63: 20-126 \[ms\] value\*20ms  
- 65-127: 1-63 \[s\] (value-64)\*1s  
- 129-191: 10-630 \[s\] (value-128)\*10s
+Default setting: 67 (3s)  
+0: immediate change  
+1-63: 20-126 [ms] value*20ms  
+65-127: 1-63 \[s\] (value-64)*1s  
+129-191: 10-630 \[s\] (value-128)*10s
 
 Values in the range 1 to 255 may be set.
 
@@ -255,8 +255,8 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 ### Parameter 12: Maximum Brightening level
 
 Maximum Brightening level.  
- Default setting: 255  
- Available settings: 3 - 255.
+Default setting: 255  
+Available settings: 3 - 255.
 
 Values in the range 3 to 255 may be set.
 
@@ -279,8 +279,8 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 ### Parameter 14: Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only
 
 Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
- Default setting: 4369  
- Controlled device: RGBW, toggle switch inputs (NORMAL MODE).
+Default setting: 4369  
+Controlled device: RGBW, toggle switch inputs (NORMAL MODE).
 
 Values in the range 0 to 65535 may be set.
 
@@ -326,8 +326,8 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 ### Parameter 38: Alarm sequence program
 
 Alarm sequence program.  
- Default setting: 10  
- 1-10 specifies alarm program number.
+Default setting: 10  
+1-10 specifies alarm program number.
 
 Values in the range 1 to 10 may be set.
 
@@ -339,8 +339,8 @@ This parameter has the configuration ID ```config_38_1``` and is of type ```INTE
 ### Parameter 39: Active PROGRAM alarm time
 
 IActive PROGRAM alarm time.  
- Default setting: 600s  
- 1-65534 specifies alarm time in seconds.
+Default setting: 600s  
+1-65534 specifies alarm time in seconds.
 
 Values in the range 1 to 65534 may be set.
 
@@ -369,8 +369,8 @@ This parameter has the configuration ID ```config_42_1``` and is of type ```INTE
 ### Parameter 43: Reporting 0-10v analog inputs change threshold
 
 Parameter defines a value by which input voltage must change in order to be reported to the main controller.  
- New value is calculated based on last reported value.  
- Default setting: 5
+New value is calculated based on last reported value.  
+Default setting: 5
 
 Values in the range 1 to 100 may be set.
 
@@ -382,7 +382,7 @@ This parameter has the configuration ID ```config_43_1``` and is of type ```INTE
 ### Parameter 44: Power load reporting frequency
 
 Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.  
- Default setting: 3 600 (s)
+Default setting: 3 600 (s)
 
 Values in the range 1 to 65534 may be set.
 
@@ -394,8 +394,8 @@ This parameter has the configuration ID ```config_44_2``` and is of type ```INTE
 ### Parameter 45: Reporting Changes in energy consumed by controlled devices
 
 Defines the required change in power to generate an unsolicited power report.  
- New, reported energy value is calculated based on last reported value.  
- Default setting: 10 (0,1 kWh).
+New, reported energy value is calculated based on last reported value.  
+Default setting: 10 (0,1 kWh).
 
 Values in the range 1 to 255 may be set.
 
@@ -469,28 +469,23 @@ The FGRGBW supports 5 association groups.
 
 ### Group 1: Assigned to IN1 input
 
-
 This group supports 5 nodes.
 
 ### Group 2: Assigned to IN2 input
-
 
 This group supports 5 nodes.
 
 ### Group 3: Assigned to IN3 input
 
-
 This group supports 5 nodes.
 
 ### Group 4: Assigned to IN4 input
-
 
 This group supports 5 nodes.
 
 ### Group 5: Reports device status
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -516,31 +511,31 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 #### Endpoint 3
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 #### Endpoint 4
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 #### Endpoint 5
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 
 ### Documentation Links

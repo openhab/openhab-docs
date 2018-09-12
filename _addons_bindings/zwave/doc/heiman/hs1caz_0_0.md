@@ -29,15 +29,15 @@ After inserting battery, the device will make a short sound. The device will the
 
 Device Factory Reset
 
--Long press Net\_Button (small button behind hole on the side of the device) while installing battery in HS1CA-Z.
+-Long press Net_Button (small button behind hole on the side of the device) while installing battery in HS1CA-Z. 
 
 You can use a needle or a SIM card extractor (included in package) to press the button.
 
-\- Device Reset Locally notification is transmitted.
+- Device Reset Locally notification is transmitted.
 
-\- Please use this procedure only when the network primary controller is
+- Please use this procedure only when the network primary controller is 
 
-missing or otherwise inoperable.
+missing or otherwise inoperable.
 
 Manual:
 
@@ -64,6 +64,7 @@ If exclusion process is successful, green LED will blink 6 times and then turn o
 The HS1CA-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the HS1CA-Z -:
@@ -97,7 +98,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -121,16 +122,25 @@ The HS1CA-Z supports 3 association groups.
 ### Group 1: Lifeline
 
 Battery, Notification, Reset locally Notification, Binary report
-This group supports 1 nodes.
+<table>
+  <tr>
+    <td>
+      Association group 1: Lifeline association group Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.
+    </td>
+  </tr>
+</table>
+This group supports 1 node.
 
 ### Group 2: Root device Group (binary sensor)
 
 Binary Sensor CO via lifeline and on status Chance of CO detection
+u25b6 Association group 2: Root Device group(Binary Sensor) Binary Sensor Command Class: Compatible with 300 series 1-Binary Sensor reports status of CO or no CO via Lifeline. 2-When the sensor detects status change of CO and no CO, the device will be triggered.
 This group supports 5 nodes.
 
 ### Group 3: Root device Group (notification)
 
 CO status as notification report and on status change of CO detection
+u25b6Association group 3: Root Device group(Notification) 1-Notification reports status of detect CO or no CO via Lifeline. 2-When the sensor detects status change of CO and no CO, the device will be triggered.
 This group supports 5 nodes.
 
 ## Technical Information

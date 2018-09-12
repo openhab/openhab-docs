@@ -68,7 +68,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 9: Relay delay time
 
 When the relay is switched it can't be switched again until the configured time has passed
-Value \* 10 milliseconds
+Value * 10 milliseconds
 Values in the range 0 to 0 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -109,8 +109,7 @@ The powerSwitch supports 1 association group.
 
 ### Group 1: Group 1
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

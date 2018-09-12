@@ -21,16 +21,16 @@ The HS1DS-Z does not permanently listen for messages sent from the controller - 
 
 Door/Window Contact.
 
-Same hardware as DOMUX DX1DS-Z.
+Same hardware as DOMUX DX1DS-Z.
 
 ### Inclusion Information
 
-- Press a Func\_Button 3 time in HS1DS-Z (Door Sensor), Green LED is Blinking 3 times within 1 second.
-- If Inclusion Process is successful, Green led will turn off.
+  * Press a Func_Button 3 time in HS1DS-Z (Door Sensor), Green LED is Blinking 3 times within 1 second.
+  * If Inclusion Process is successful, Green led will turn off. 
 
 ### Exclusion Information
 
-Long press Func\_Button while installing batteries in HS1DS-Z.
+Long press Func_Button while installing batteries in HS1DS-Z.
 
 ### Wakeup Information
 
@@ -38,8 +38,9 @@ The HS1DS-Z does not permanently listen for messages sent from the controller - 
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-- Wake up Notification is transmitted every 24 hours by default.
-- Wake up Notification is transmitted after Notification Report is Transmitted.
+
+  * Wake up Notification is transmitted every 24 hours by default.
+  * Wake up Notification is transmitted after Notification Report is Transmitted.
 
 ## Channels
 
@@ -75,7 +76,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (access)
@@ -88,7 +89,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -110,7 +111,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The HS1DS-Z supports 1 association group.
 
 ### Group 1: Controller Updates
-
 
 This group supports 5 nodes.
 
@@ -135,6 +135,10 @@ This group supports 5 nodes.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Device manual](https://www.cd-jackson.com/zwave_device_uploads/551/HSIDS-Z.pdf)
 
 ---
 

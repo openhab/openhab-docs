@@ -17,20 +17,20 @@ The ZMNHTD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-This Z-Wave module is used for energy measurements in single-phase electrical power network and can be used in residential, industrial and utility applications. Meters measure energy directly in 2-wire networks according to the principle of fast sampling of voltage and current signals. A built-in microprocessor calculates energy, power and power factor from the measured signals. The module can be controlled through Z-wave network and it acts as repeater in order to improve range and stability of Z-wave network. It is designed to be mounted on DIN rail.
+This Z-Wave module is used for energy measurements in single-phase electrical power network and can be used in residential, industrial and utility applications. Meters measure energy directly in 2-wire networks according to the principle of fast sampling of voltage and current signals. A built-in microprocessor calculates energy, power and power factor from the measured signals. The module can be controlled through Z-wave network and it acts as repeater in order to improve range and stability of Z-wave network. It is designed to be mounted on DIN rail. 
 
-Measurements: Voltage V Current I Power – Active W Power – Active total Import kWh Power – Active total Export kWh Power – Reactive var Power – Reactive total kvarh Power – Apparent total kVAh Power Factor PF
+Measurements: Voltage V Current I Power – Active W Power – Active total Import kWh Power – Active total Export kWh Power – Reactive var Power – Reactive total kvarh Power – Apparent total kVAh Power Factor PF 
 
-It is possible to connect two external relay to Smart Meter module. One controlled by built-in optical (IR) communication port on the side, second controlled by output on terminal 5.
+It is possible to connect two external relay to Smart Meter module. One controlled by built-in optical (IR) communication port on the side, second controlled by output on terminal 5. 
 
 ### Inclusion Information
 
 Module Inclusion (Adding to Z-wave network)
 
-- Connect module to power supply
-- enable add/remove mode on main controller
-- auto-inclusion (works for about 5 seconds after connected to power supply) or
-- press service button S for more than 2 second
+  * Connect module to power supply
+  * enable add/remove mode on main controller
+  * auto-inclusion (works for about 5 seconds after connected to power supply) or
+  * press service button S for more than 2 second
 
 NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
 
@@ -38,10 +38,10 @@ NOTE: For auto-inclusion procedure, first set main controller into inclusion mod
 
 Module Exclusion/Reset (Removing from Z-Wave network):
 
-- Connect module to power supply
-- bring module within maximum 1 Meter (3 feet) of the main controller,
-- enable add/remove mode on main controller
-- press service button S for more than 6 seconds.
+  * Connect module to power supply
+  * bring module within maximum 1 Meter (3 feet) of the main controller,
+  * enable add/remove mode on main controller
+  * press service button S for more than 6 seconds.
 
 By this function all parameters of the module are set to default values and own ID is deleted. If service button S is pressed more than 2 and less than 6 seconds module is excluded, but configuration parameters are not set to default values.
 
@@ -123,13 +123,12 @@ The ```switch_binary2``` channel supports the ```Switch``` item and is in the ``
 
 ## Device Configuration
 
-The following table provides a summary of the 25 configuration parameters available in the ZMNHTD.
+The following table provides a summary of the 24 configuration parameters available in the ZMNHTD.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 7 | Input 1 switch function selection | IR external relay or External Relay control mode |
-| 10 | Activate / deactivate functions ALL ON / ALL OFF  | Activate / deactivate functions |
 | 11 | Timer turning off IR external relay | Automatic turning off IR external relay output after set time |
 | 12 |  Timer turning on IR external relay output  | Automatic turning on IR external relay output after set time |
 | 13 | Timer turning off External relay output | Automatic turning off External relay output after set time |
@@ -174,38 +173,23 @@ The manufacturer defined default value is ```4``` (External relay control – mo
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
-### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF 
-
-Activate / deactivate functions
-Smart Meter module responds to commands ALL ON/ ALL OFF that may be sent by the main controller or by other controller belonging to the system
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | ALL ON is not active, ALL OFF is not active |
-| 1 | ALL ON is not active, ALL OFF active |
-| 2 | ALL ON active, ALL OFF is not active |
-| 255 | ALL ON active, ALL OFF active |
-
-The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
-
-This parameter has the configuration ID ```config_10_3``` and is of type ```INTEGER```.
-
-
 ### Parameter 11: Timer turning off IR external relay
 
 Automatic turning off IR external relay output after set time
-When IR external relay is ON it goes automatically OFF after time defined by this Parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). Available configuration parameters (data type is 2 Byte DEC):
+When External IR relay is ON it goes automatically OFF after time defined in this parameter. Timer is reset to zero each time the device receives ON command.  
+Values (size is 2 byte dec):  
+• Default value 0  
+• 0-59 = Auto OFF disabled  
+• 60-32535 = 60 seconds – 32535 seconds
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Auto OFF disabled |
-| 32535 | Auto OFF enabled with define time, step is 1s |
+| 0 | Disabled |
 
-The manufacturer defined default value is ```0``` (Auto OFF disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
-This parameter has the configuration ID ```config_11_2_00007F17``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 12:  Timer turning on IR external relay output 
@@ -248,7 +232,7 @@ Set value means percentage, set value from 0 – 100 = 0% - 100%. Available conf
 
 Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%
 
-NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power).
+NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. When reporting Watts, module will automatically reports also V (Voltage), A (Amperes), Power factor, kVar (Reactive Power). 
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -327,7 +311,7 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 ### Parameter 111: Delay overpower off
 
 Delay overpower off
-Set value means number of second to power off relay (defined by parameters no. 110 and 112) before restart (30 - 32535) in seconds (s). Available configuration parameters (data type is 2 Bytes DEC):
+Set value means number of second to power off relay (defined by parameters no. 110 and 112) before restart (30 - 32535) in seconds (s). Available configuration parameters (data type is 2 Bytes DEC): 
 Values in the range 0 to 32525 may be set.
 
 The manufacturer defined default value is ```30```.
@@ -519,8 +503,7 @@ The ZMNHTD supports 1 association group.
 
 ### Group 1: Lifeline
 
-Reserved for communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -530,45 +513,45 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V2| |
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V4| |
-| COMMAND_CLASS_CRC_16_ENCAP_V0| |
+| COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V0| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_V4| |
-| COMMAND_CLASS_CONFIGURATION_V0| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V2| |
-| COMMAND_CLASS_POWERLEVEL_V0| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
-| COMMAND_CLASS_MARK_V0| |
+| COMMAND_CLASS_MARK_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V2| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
-| COMMAND_CLASS_MARK_V0| |
+| COMMAND_CLASS_MARK_V1| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V2| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
-| COMMAND_CLASS_MARK_V0| |
+| COMMAND_CLASS_MARK_V1| |
 
 ### Documentation Links
 

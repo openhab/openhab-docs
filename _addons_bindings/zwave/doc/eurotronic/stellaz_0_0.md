@@ -19,11 +19,27 @@ The StellaZ does not permanently listen for messages sent from the controller - 
 
 ## Overview
 
+StellaZ is a wireless Thermostat Valve Control capable controlling heating, air ventilation and climate control units. Sensors, control and actuator are combined in one single device allowing stand alone energy efficient room control.
+
+The device can run in four different operation modes (Off, Energy Saving, Comfort, Direct Control) to control the temperature. The room temperature can also be reported by the device. Open windows will be recognized and lead to a lower control temperature for 20 minutes to prevent waste of energy.
+
+### Inclusion Information
+
+Pushing the button behind the round hole in the enclosure for 5 seconds will confirm inclusion of the device.
+
+### Exclusion Information
+
+Pushing the button behind the round hole in the enclosure for 5 seconds will confirm exclusion of the device.
+
 ### Wakeup Information
 
 The StellaZ does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+A single click on button behind the round hole in the enclosure wakes up the device when sleeping.
+
 ## Channels
 
 The following table summarises the channels available for the StellaZ -:
@@ -32,10 +48,10 @@ The following table summarises the channels available for the StellaZ -:
 |---------|------------|----------|-----------|
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Dimmer
@@ -62,7 +78,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -87,20 +103,18 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (furnace)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -130,7 +144,7 @@ The device does not support associations.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V4| |
 | COMMAND_CLASS_THERMOSTAT_MODE_V2| |
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V2| |

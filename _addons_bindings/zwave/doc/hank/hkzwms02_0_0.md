@@ -5,7 +5,7 @@ title: HKZW_MS02 - ZWave
 
 {% include base.html %}
 
-# HKZW\_MS02 Motion Sensor
+# HKZW_MS02 Motion Sensor
 This describes the Z-Wave device *HKZW_MS02*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwms02_00_000```.
 
 The device is in the category of *Sensor*, defining Device used to measure something.
@@ -35,7 +35,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -69,7 +69,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 |
+| 0 |  |
 | 1 | 1 |
 | 2 | 2 |
 
@@ -162,11 +162,9 @@ The HKZW_MS02 supports 2 association groups.
 
 ### Group 1: report the motion detection and battery level
 
-
 This group supports 5 nodes.
 
 ### Group 2: assigned to send BASIC SET command
-
 
 This group supports 5 nodes.
 

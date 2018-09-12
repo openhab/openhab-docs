@@ -36,11 +36,11 @@ The following table summarises the channels available for the Spirit -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Current temperature | sensor_temperature | Temperature | Number | 
-| External temperature | sensor_report |  |  | 
+| Current temperature | sensor_temperature | Temperature | Number:Temperature | 
+| External temperature | sensor_report |  | Number | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heat) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (energy heat) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heat) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (energy heat) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Alarm (system) | alarm_system |  | Switch | 
 | Alarm (power) | alarm_power | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
@@ -56,11 +56,13 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### External temperature
 
-Channel type information on this channel is not found.
+Send report to device.
+
+The ```sensor_report``` channel supports the ```Number``` item.
 
 ### Thermostat mode
 
@@ -85,24 +87,22 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (heat)
 
 Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (energy heat)
 
 Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (system)
 
@@ -114,7 +114,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (power)
@@ -127,7 +127,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -291,7 +291,10 @@ The Spirit supports 1 association group.
 ### Group 1: Lifeline
 
 Spirit Z-Wave Plus can only be associated with the Z-Wave controller.
-This group supports 1 nodes.
+Commands:
+
+BATTERY\_REPORT, DEVICE\_RESET\_LOCALLY\_NOTIFICATION, THERMOSTAT\_MODE\_REPORT, THERMOSTAT\_SETPOINT\_REPORT, NOTIFICATION\_REPORT, PROTECTION\_REPORT, SENSOR\_MULTILEVEL\_REPORT, SWITCH\_MULTILEVEL\_REPORT
+This group supports 1 node.
 
 ## Technical Information
 
@@ -319,7 +322,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
-| COMMAND_CLASS_SECURITY_V0| |
+| COMMAND_CLASS_SECURITY_V1| |
 
 ### Documentation Links
 

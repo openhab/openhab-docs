@@ -27,7 +27,7 @@ Set your main controller into learn mode. Press configuration button 3 times. Le
 
 ### Exclusion Information
 
-To exclude, set your main controller into exclude mode. Press configuration button 3 times. Led 3 is ON. Press and hold once more for 4 seconds, led will start blinking for 10 seconds. The Shuttle Z-wave motor will be detected and excluded into the Z-wave network of your controller.
+To exclude, set your main controller into exclude mode. Press configuration button 3 times. Led 3 is ON. Press and hold once more for 4 seconds, led will start blinking for 10 seconds. The Shuttle Z-wave motor will be detected and excluded into the Z-wave network of your controller.
 
 You can also reset the device, but only use this if your main controller is not operable. For reset, press the config button 25 times and confirm by pressing the button once more for 4 seconds until the led blinks 3 times and goes off.
 
@@ -62,17 +62,17 @@ Value 255 is used to set the curtain fully open.
 
 The level change is stopped when:
 
-\- stop multilevel start level command is received
+- stop multilevel start level command is received
 
-\- the curtain reached an end position (fully open or full closed)
+- the curtain reached an end position (fully open or full closed)
 
 Because of version 3 of this command class, the shuttle LZ responds with the following types:
 
 Primary switch type: 0x03
 
-\- 0xFF is Open
+- 0xFF is Open
 
-\- 0x00 is Closed
+- 0x00 is Closed
 
 Secondary switch type: 0x00 (NOT SUPPORTED)
 
@@ -96,7 +96,8 @@ The Shuttle S/L supports 1 association group.
 ### Group 1: Lifeline
 
 
-This group supports 1 nodes.
+Node associated in this group will receive an unsolicited SWITCH\_MULTILEVEL\_REPORT frame every time the position of the curtain rail is changed, where the value represents the (changed) position.
+This group supports 1 node.
 
 ## Technical Information
 

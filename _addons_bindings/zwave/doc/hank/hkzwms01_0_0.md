@@ -5,7 +5,7 @@ title: HKZW_MS01 - ZWave
 
 {% include base.html %}
 
-# HKZW\_MS01 Multisensor
+# HKZW_MS01 Multisensor
 This describes the Z-Wave device *HKZW_MS01*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwms01_00_000```.
 
 The HKZW_MS01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -19,15 +19,16 @@ The HKZW_MS01 does not permanently listen for messages sent from the controller 
 The HKZW_MS01 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the HKZW_MS01 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -35,7 +36,7 @@ The following table summarises the channels available for the HKZW_MS01 -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 
@@ -47,7 +48,7 @@ The ```sensor_relhumidity``` channel supports the ```Number``` item and is in th
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
 
@@ -59,7 +60,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -163,11 +164,11 @@ The HKZW_MS01 supports 2 association groups.
 ### Group 1: Lifeline
 
 Reports the motion detection and battery
+Reports the motion detection and battery
 This group supports 5 nodes.
 
 ### Group 2: Basic Set
 
-assigned to send Basic Set Command
 This group supports 5 nodes.
 
 ## Technical Information

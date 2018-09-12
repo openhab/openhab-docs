@@ -140,13 +140,13 @@ Defines the status of the output O1/O2 when the switch connected to I1/I2 receiv
 
 INFO:
 
-0 – IN\_OUT configuration is available on WiDom Universal Double Switch starting from the  
+0 – IN_OUT configuration is available on WiDom Universal Double Switch starting from the  
 firmware version 1.40.
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | IN\_OUT |
+| 0 | IN_OUT |
 | 1 | TOGGLE |
 | 2 | ON |
 | 3 | OFF |
@@ -231,13 +231,13 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 Defines how to control the devices associated to group 2 and 3.
 #### Configuration value and Action performed on the associated device
 
-#####   
-0 – SWITCH\_OFF
+#####  
+0 – SWITCH_OFF
 
 The associated devices are switched OFF
 
-#####   
--1 – SWITCH\_ON
+#####  
+-1 – SWITCH_ON
 
 The associated devices are switched ON
 
@@ -245,33 +245,33 @@ The associated devices are switched ON
 
 The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)
 
-#####   
-100 – RELAY\_STATUS (Default Value)
+#####  
+100 – RELAY_STATUS (Default Value)
 
 If the Relay 1 is ON/OFF, the associated devices are ON/OFF
 
-#####   
-101 – RELAY\_STATUS\_BUT\_IGNORE\_IF\_OFF
+#####  
+101 – RELAY\_STATUS\_BUT\_IGNORE\_IF_OFF
 
 If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices
 
-#####   
-102 – RELAY\_STATUS\_BUT\_IGNORE\_IF\_ON
+#####  
+102 – RELAY\_STATUS\_BUT\_IGNORE\_IF_ON
 
 If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices
 
-#####   
-103 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF\_OFF
+#####  
+103 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF_OFF
 
 If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices
 
-#####   
-104 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF\_ON
+#####  
+104 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF_ON
 
 If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices
 
-#####   
-105 – RELAY\_OPPOSITE
+#####  
+105 – RELAY_OPPOSITE
 
 If the Relay 1 is ON/OFF, the associated devices are OFF/ON
 
@@ -290,13 +290,13 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 Defines how to control the devices associated to group 4 and 5.
 #### Configuration value and Action performed on the associated device
 
-#####   
-0 – SWITCH\_OFF
+#####  
+0 – SWITCH_OFF
 
 The associated devices are switched OFF
 
-#####   
--1 – SWITCH\_ON
+#####  
+-1 – SWITCH_ON
 
 The associated devices are switched ON
 
@@ -304,33 +304,33 @@ The associated devices are switched ON
 
 The associated devices (dimmer, roller shutters) are set to the indicated level (only for devices associated to group 3)
 
-#####   
-100 – RELAY\_STATUS (Default Value)
+#####  
+100 – RELAY_STATUS (Default Value)
 
 If the Relay 1 is ON/OFF, the associated devices are ON/OFF
 
-#####   
-101 – RELAY\_STATUS\_BUT\_IGNORE\_IF\_OFF
+#####  
+101 – RELAY\_STATUS\_BUT\_IGNORE\_IF_OFF
 
 If the Relay 1 is ON the associated devices are ON; if it is OFF no action is taken on the associated devices
 
-#####   
-102 – RELAY\_STATUS\_BUT\_IGNORE\_IF\_ON
+#####  
+102 – RELAY\_STATUS\_BUT\_IGNORE\_IF_ON
 
 If the Relay 1 is OFF the associated devices are OFF; if it is ON no action is taken on the associated devices
 
-#####   
-103 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF\_OFF
+#####  
+103 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF_OFF
 
 If the Relay 1 is ON the associated devices are OFF; if it is OFF no action is taken on the associated devices
 
-#####   
-104 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF\_ON
+#####  
+104 – RELAY\_OPPOSITE\_BUT\_IGNORE\_IF_ON
 
 If the Relay 1 is OFF the associated devices are ON; if it is ON no action is taken on the associated devices
 
-#####   
-105 – RELAY\_OPPOSITE
+#####  
+105 – RELAY_OPPOSITE
 
 If the Relay 1 is ON/OFF, the associated devices are OFF/ON
 
@@ -441,10 +441,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF\_OFF |
-| 1 | ON\_OFF |
-| 2 | OFF\_ON |
-| 3 | ON\_ON |
+| 0 | OFF_OFF |
+| 1 | ON_OFF |
+| 2 | OFF_ON |
+| 3 | ON_ON |
 | 4 | PREVIOUS STATUS |
 
 The manufacturer defined default value is ```4``` (PREVIOUS STATUS).
@@ -511,26 +511,31 @@ The WDS supports 5 association groups.
 ### Group 1: Lifeline
 
 
+Devices to receive notifications on: status changes; instantaneous power level; device local reset 
 This group supports 8 nodes.
 
 ### Group 2: On/Off control (Switch 1)
 
 
+Devices controlled by switch 1
 This group supports 8 nodes.
 
 ### Group 3: Dimming control (Switch 1)
 
 
+Devices controlled by switch 1
 This group supports 8 nodes.
 
 ### Group 4: On/Off control (Switch 2)
 
 
+Devices controlled by switch 2
 This group supports 8 nodes.
 
 ### Group 5: Dimming control (Switch 2)
 
 
+Devices controlled by switch 2
 This group supports 8 nodes.
 
 ## Technical Information
@@ -555,14 +560,14 @@ This group supports 8 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 

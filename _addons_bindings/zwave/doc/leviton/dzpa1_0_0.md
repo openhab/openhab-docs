@@ -17,7 +17,57 @@ The DZPA1 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/305) to improve the documentation.
+On/Off (binary) plug in module for lamps or small appliances.
+
+Rated:
+
+  * 600W LED and CFL
+  * 1800W resistive
+  * 1800W Incandescent/Halogen
+  * 1800VA Flourescent
+  * 1800VA Inductive
+  * 1/2 HP 9.8A Motor
+  * 120VAC, 60 Hz
+
+### Inclusion Information
+
+Leviton Decora SmartTM Z-Wave® devices support two methods of inclusion.
+
+When using a Z-Wave PlusTM certified controller choose Network Wide Inclusion.
+
+_Network Wide Inclusion:_
+
+Network Wide Inclusion allows your device to be added to the network using devices already in the network to assist with communication. Work your way from the closest devices to the controller outward.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will blink amber.
+  * Tap the control button one time. The Locator LED will quickly flash green.
+  * The Decora SmartTM Z-Wave® device is ready to learn into the Z-Wave® network.
+  * Follow directions in the Z-Wave® controller to complete the adding process.
+  * Upon successful addition to network the LED will turn off and then blink green 3 times.
+  * If the adding process is not successful the LED will flash red 3 times.
+
+_Traditional Inclusion:_
+
+For older controllers Traditional Inclusion is supported. Depending on the age of the controller the controller will need to be 3 to 35 feet from the device when including.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED
+  * will blink amber.
+  * The Decora SmartTM Z-Wave® device is ready to add to the Z-Wave® network.
+  * Follow directions in the Z-Wave® controller to enter learn mode.
+  * Tap the control button one time. The Locator LED will quickly flash green.
+  * The Z-Wave® controller will begin to pair with the Decora SmartTM device.
+  * Upon successful addition to the network the LED will turn off and then blink green 3 times.
+  * If the adding process is not successful the LED will flash red 3 times.
+
+### Exclusion Information
+
+When removing a device from a Z-Wave® network best practice is to use the exclusion command found in the Z-Wave® controller.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will turn amber.
+  * Follow directions in the Z-Wave® controller to enter exclusion mode.
+  * Tap the control button one time. The Locator LED will quickly flash green.
+  * The Z-Wave® controller will exclude the Decora SmartTM device.
+  * The Z-Wave® controller will confirm successful exclusion from the network.
 
 ## Channels
 
@@ -37,65 +87,26 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 ## Device Configuration
 
-The following table provides a summary of the 9 configuration parameters available in the DZPA1.
+The following table provides a summary of the 1 configuration parameters available in the DZPA1.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 4 | Invert Switch | Invert the ON/OFF Switch State.   
- Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON.   
- Note: If you invert the switches and also install the product upside down, the load will now be control |
-| 5 | Ignore Start-Level (Receiving) | This dimmer will start dimming from its current level. |
-| 7 | Night Light | Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off. |
-| 7 | On/Off Command Dim Step | Indicates how many levels the dimmer will change for each dimming step. |
-| 8 | On/Off Command Dim Rate | This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the |
-| 9 | Local Control Dim Step | Indicates how many levels the dimmer will change for each dimming step. |
-| 10 | Local Control Dim Rate | This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the |
-| 11 | ALL ON/ALL OFF Dim Step | Indicates how many levels the dimmer will change for each dimming step. |
-| 12 | ALL ON/ALL OFF Dim Rate | This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the |
+| 7 | Locator LED Status | Controls state of on-device LED |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
-### Parameter 4: Invert Switch
+### Parameter 7: Locator LED Status
 
-Invert the ON/OFF Switch State.   
- Setting this parameter to Yes will change the top of the switch to OFF and the bottom to ON.   
- Note: If you invert the switches and also install the product upside down, the load will now be control
+Controls state of on-device LED
+Defines the behavior of the green LED.
 
-The following option values may be configured -:
+Default is Night Light mode where LED is on when switch is off.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | No |
-| 1 | Yes |
+Valid values: 0 to 255
 
-The manufacturer defined default value is ```0``` (No).
-
-This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
-
-
-### Parameter 5: Ignore Start-Level (Receiving)
-
-This dimmer will start dimming from its current level.
-
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | No |
-| 1 | Yes |
-
-The manufacturer defined default value is ```0``` (No).
-
-This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
-
-
-### Parameter 7: Night Light
-
-Defines the behavior of the blue LED. Default is Night Light mode where LED is on when switch is off.
-
+  * 0 = LED off
+  * 254 (0xFE) = Status mode
+  * 255 (0xFF) = Locator mode
 The following option values may be configured -:
 
 | Value  | Description |
@@ -107,75 +118,6 @@ The following option values may be configured -:
 The manufacturer defined default value is ```255``` (LED on when switch is OFF).
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
-
-
-### Parameter 7: On/Off Command Dim Step
-
-Indicates how many levels the dimmer will change for each dimming step.
-
-Values in the range 1 to 99 may be set.
-
-The manufacturer defined default value is ```1```.
-
-This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
-
-
-### Parameter 8: On/Off Command Dim Rate
-
-This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
-
-Values in the range 1 to 255 may be set.
-
-The manufacturer defined default value is ```3```.
-
-This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
-
-
-### Parameter 9: Local Control Dim Step
-
-Indicates how many levels the dimmer will change for each dimming step.
-
-Values in the range 1 to 99 may be set.
-
-The manufacturer defined default value is ```1```.
-
-This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
-
-
-### Parameter 10: Local Control Dim Rate
-
-This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
-
-Values in the range 1 to 255 may be set.
-
-The manufacturer defined default value is ```3```.
-
-This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
-
-
-### Parameter 11: ALL ON/ALL OFF Dim Step
-
-Indicates how many levels the dimmer will change for each dimming step.
-
-Values in the range 1 to 99 may be set.
-
-The manufacturer defined default value is ```1```.
-
-This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
-
-
-### Parameter 12: ALL ON/ALL OFF Dim Rate
-
-This value indicates in 10 millisecond resolution.   
- This sets how often the dim level will change. For example, if you set this parameter to 1, then every 10ms the dim level will change. If you set it to 255, then every 2.55 seconds the
-
-Values in the range 1 to 255 may be set.
-
-The manufacturer defined default value is ```3```.
-
-This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 ### Switch All Mode
 
@@ -196,7 +138,14 @@ This parameter has the configuration ID ```switchall_mode``` and is of type ```I
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The DZPA1 supports 1 association group.
+
+### Group 1: Lifeline
+
+Lifeline
+Notification frame is sent
+This group supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints
@@ -207,7 +156,7 @@ The device does not support associations.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

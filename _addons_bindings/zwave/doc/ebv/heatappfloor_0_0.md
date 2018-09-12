@@ -17,7 +17,7 @@ The heatapp! floor supports routing. This allows the device to communicate using
 
 ## Overview
 
-Information at the z-wave alliance product cataloge: https://products.z-wavealliance.org/products/1249
+Information at the z-wave alliance product cataloge: https://products.z-wavealliance.org/products/1249
 
 ### Inclusion Information
 
@@ -113,7 +113,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1:  Missing Radio Link time
 
 Maximum time device will wait for reconnection before going to emergency mode (All switches ON).
-It is maximum time device will wait for reconnection before it going ot emergency mode (All switches ON). It is possible to set in the range of 10min to 4hours. Default value is 30min, only 1 Byte
+It is maximum time device will wait for reconnection before it going ot emergency mode (All switches ON).  It is possible to set in the range of 10min to 4hours. Default value is 30min, only 1 Byte
 Values in the range 10 to 240 may be set.
 
 The manufacturer defined default value is ```30```.
@@ -177,49 +177,49 @@ The device does not support associations.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 3
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 4
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 5
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 6
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 7
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 #### Endpoint 8
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 
 ### Documentation Links

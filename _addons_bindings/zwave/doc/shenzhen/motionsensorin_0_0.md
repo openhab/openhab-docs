@@ -19,6 +19,7 @@ The Motion Sensor IN does not permanently listen for messages sent from the cont
 The Motion Sensor IN does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Motion Sensor IN -:
@@ -26,7 +27,7 @@ The following table summarises the channels available for the Motion Sensor IN -
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (general) | alarm_general | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
@@ -48,7 +49,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (general)
 
@@ -60,7 +61,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (burglar)
@@ -73,7 +74,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level

@@ -22,6 +22,7 @@ The Molite does not permanently listen for messages sent from the controller - i
 The Molite does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Molite -:
@@ -29,8 +30,8 @@ The following table summarises the channels available for the Molite -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm | alarm_general | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -51,13 +52,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm
 
@@ -69,7 +70,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -312,7 +313,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The Molite supports 1 association group.
 
 ### Group 1: Devices to be switched on when motion detected and off after on time
-
 
 This group supports 5 nodes.
 

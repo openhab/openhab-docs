@@ -12,10 +12,10 @@ The iPlugDim supports routing. This allows the device to communicate using other
 
 ## Overview
 
-- The iPlugDim can be remotely controlled.
-- The iPlugDim can be controlled by the push button on the front of the device.
-- The iPlugDim ’s indicator light will indicate the status of the switch (ON or OFF).
-- The iPlugDim can make a dimming function of the load.
+  * The iPlugDim can be remotely controlled.
+  * The iPlugDim can be controlled by the push button on the front of the device.
+  * The iPlugDim ’s indicator light will indicate the status of the switch (ON or OFF).
+  * The iPlugDim can make a dimming function of the load.
 
 Press and release the push button of the iPlugDim to switch on/off the load of socket, press and hold the push button to dim the load of the socket.
 
@@ -23,19 +23,21 @@ Press and release the push button of the iPlugDim to switch on/off the load of s
 
 The indicator gives various statuses of the device as follows:
 
-1. Ready for learn mode: Indicator light blinks every second.
-2. Learn in progress (add): Indicator light blinks 2 times every second.
-3. Learn in progress (remove): Indicator light blinks 3 times every second.
-4. Learn mode success: Indicator light is on for second.
-5. Learn mode failed: Indicator light blinks 8 times fast.
+  1. Ready for learn mode: Indicator light blinks every second.
+  2. Learn in progress (add): Indicator light blinks 2 times every second.
+  3. Learn in progress (remove): Indicator light blinks 3 times every second.
+  4. Learn mode success: Indicator light is on for second.
+  5. Learn mode failed: Indicator light blinks 8 times fast.
 
 ### Inclusion Information
 
-1. Make sure your Z‐Wave controller is in the right operation mode (include or exclude).
-2. Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process
-  
-  (indication mode: Ready for learn mode).
-3. (The product will start NWI automatically after unsuccessful normal inclusion)
+  1. Make sure your Z‐Wave controller is in the right operation mode (include or exclude). 
+
+  2. Press and hold the push button for 4 seconds and release to start the inclusion or exclusion process 
+    
+    (indication mode: Ready for learn mode). 
+
+  3. (The product will start NWI automatically after unsuccessful normal inclusion) 
 
 ## Channels
 
@@ -75,7 +77,7 @@ The device does not support associations.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
-| COMMAND_CLASS_CONFIGURATION_V0| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_VERSION_V1| |

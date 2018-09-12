@@ -18,39 +18,40 @@ The HTP-4S1-FB does not permanently listen for messages sent from the controller
 
 ## Overview
 
-The HOGAR Touch Panels features a stunning glass face with advanced capacitive touch sensor engineered with smart home wireless standards Zigbee, Z-Wave Plus and Wifi variants.
+The HOGAR Touch Panels features a stunning glass face with advanced capacitive touch sensor engineered with smart home wireless standards Zigbee, Z-Wave Plus and Wifi variants.
 
-The Smart Home deserves better than an ordinary light switch. Hogar touch panels are one-of-a-kind collection of switches, dimmers, and scene controller that will transform walls from boring to absolutely breath-taking.
+The Smart Home deserves better than an ordinary light switch. Hogar touch panels are one-of-a-kind collection of switches, dimmers, and scene controller that will transform walls from boring to absolutely breath-taking.
 
 Fits in existing electrical box and does not require new wires. Innovative assembly and snap-in system make it fast and simple to install.
 
-Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket for more information.
+Please visit http://hogarcontrols.com/shop/touch-panels/four-touch-panel-socket for more information.
 
 ### Inclusion Information
 
-1\. Tap and hold any of the touch button for few seconds (about 7 seconds).
+1. Tap and hold any of the touch button for few seconds (about 7 seconds).
 
-2\. The LEDs of all the buttons will turn solid red all at the same time.
+2. The LEDs of all the buttons will turn solid red all at the same time.
 
-3\. At that time, release the button and tap it again only once.
+3. At that time, release the button and tap it again only once. 
 
-4\. The LED of the button will flash pink (once) indicating that the device is ready to be included.
+4. The LED of the button will flash pink (once) indicating that the device is ready to be included.
 
 ### Exclusion Information
 
-1\. Tap and hold any of the touch button for few seconds (about 7 seconds).
+1. Tap and hold any of the touch button for few seconds (about 7 seconds).
 
-2\. The LEDs of all the buttons will turn solid red all at the same time.
+2. The LEDs of all the buttons will turn solid red all at the same time.
 
-3\. At that time, release the button and tap it again only once.
+3. At that time, release the button and tap it again only once. 
 
-4\. The LED of the button will flash pink (once) indicating that the device is ready to be included.
+4. The LED of the button will flash pink (once) indicating that the device is ready to be included.
 
 ### Wakeup Information
 
 The HTP-4S1-FB does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the HTP-4S1-FB -:
@@ -145,7 +146,7 @@ The device does not support associations.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 
 ---
 

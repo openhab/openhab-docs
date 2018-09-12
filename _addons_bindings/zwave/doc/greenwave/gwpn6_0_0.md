@@ -20,7 +20,7 @@ It should work for both NP210 and NP310 devices (except _NP210_-G-EN which is 5-
 
 ### Inclusion Information
 
-On the PowerNode, press and hold the **Sync** button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.
+On the PowerNode, press and hold the **Sync** button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.
 
 After a few seconds, the rotating pattern on both the PowerNode and the Gateway stops. All bars turn green forming a circle for several seconds. This indicates a successful inclusion.
 
@@ -87,7 +87,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Switch 1
@@ -316,23 +316,21 @@ The GWPN6 supports 4 association groups.
 
 ### Group 1: Wheel position change
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Current leakage on relay
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 3: Power level change
 
 
-This group supports 1 nodes.
+The new power reading is sent if the delta of the change is greater than the defined minimum variation.
+This group supports 1 node.
 
 ### Group 4: Over-current detection
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -345,7 +343,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V2| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
@@ -358,42 +356,42 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 3
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 4
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 5
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 #### Endpoint 6
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V2| |
 

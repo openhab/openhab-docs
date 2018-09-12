@@ -23,18 +23,18 @@ Siren Alarm with ten different sounds.
 
 The siren alarm can be included to the Z-wave network by pressing on the code button.
 
-1. Disassemble the siren alarm and insert the battery into the siren alarm. Make sure the device is located within the direct range of the controller.
-2. Set the controller into the learning mode (see main controller’s operating manual).
-3. Quickly, triple click the code button, LED light will flash red.
-4. Siren alarm will be detected and included in the Z-Wave network.
-5. Wait for the main controller to configure the siren alarm.
+  1. Disassemble the siren alarm and insert the battery into the siren alarm. Make sure the device is located within the direct range of the controller.
+  2. Set the controller into the learning mode (see main controller’s operating manual).
+  3. Quickly, triple click the code button, LED light will flash red.
+  4. Siren alarm will be detected and included in the Z-Wave network.
+  5. Wait for the main controller to configure the siren alarm.
 
 ### Exclusion Information
 
-1. Make sure the sensor is connected to power source.
-2. Set the main controller into the learning mode (see main controller’s operating manual).
-3. Quickly, triple click the code button, LED light will flash red for 5 times.
-4. Wait for the main controller to delete the sensor.
+  1. Make sure the sensor is connected to power source.
+  2. Set the main controller into the learning mode (see main controller’s operating manual).
+  3. Quickly, triple click the code button, LED light will flash red for 5 times.
+  4. Wait for the main controller to delete the sensor.
 
 ## Channels
 
@@ -43,7 +43,7 @@ The following table summarises the channels available for the NAS-AB01Z -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Siren ON Mode | config_decimal |  | Decimal | 
+| Siren ON Mode | config_decimal |  | Number | 
 | Alarm | alarm_general | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -63,7 +63,7 @@ Configure default siren ON mode:
 
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Decimal``` item.
+The ```config_decimal``` channel supports the ```Number``` item.
 
 ### Alarm
 
@@ -75,7 +75,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -192,16 +192,13 @@ The NAS-AB01Z supports 3 association groups.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
-
 This group supports 5 nodes.
 
 ### Group 3: Group2
-
 
 This group supports 5 nodes.
 

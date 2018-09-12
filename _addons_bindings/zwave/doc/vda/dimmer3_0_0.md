@@ -78,16 +78,13 @@ The Vitrum III EU Dimmer supports 3 association groups.
 
 ### Group 1: Switch channel 1
 
-
 This group supports 5 nodes.
 
 ### Group 2: Dimmer Channel 2
 
-
 This group supports 5 nodes.
 
 ### Group 3: Dimmer Channel 3
-
 
 This group supports 5 nodes.
 
@@ -110,12 +107,12 @@ This group supports 5 nodes.
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_INDICATOR_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
-| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V0| |
+| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -123,7 +120,7 @@ This group supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -131,7 +128,7 @@ This group supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |

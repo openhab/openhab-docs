@@ -23,19 +23,20 @@ Note that this device incorrectly reports the manufacturer ID. This may be due t
 
 ### Inclusion Information
 
-1. Set the Master (Primary) controller into network Inclusion Mode.
-2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
+  1. Set the Master (Primary) controller into network Inclusion Mode.
+  2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
 
 ### Exclusion Information
 
-1. Set the Master (Primary) controller into network Exclusion Mode.
-2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
+  1. Set the Master (Primary) controller into network Exclusion Mode.
+  2. Press and hold ca. 2 sec. both I and O keys of Group 2 (the top row of keys) on the Wall Controller unit at the same time. The LED light will stay solid. Release the keys.
 
 ### Wakeup Information
 
 The K8 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 Press and hold ca. 2 sec. both I and O keys on the top row (Group 2 keys). The LED indicator should turn ON if the battery has enough power and the Wall Controller works well.
 
@@ -81,26 +82,21 @@ The K8 supports 5 association groups.
 
 ### Group 1: Lifeline
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Button pair 1
-
 
 This group supports 20 nodes.
 
 ### Group 3: Button pair 2
 
-
 This group supports 20 nodes.
 
 ### Group 4: Button pair 3
 
-
 This group supports 20 nodes.
 
 ### Group 5: Button pair 4
-
 
 This group supports 20 nodes.
 
@@ -115,7 +111,7 @@ This group supports 20 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

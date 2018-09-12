@@ -72,7 +72,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -99,7 +99,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Disable Meter Functionality
 
 Enable/Disable the meter report.
-This parameter enables/disables the METER\_REPORT function, which sends periodic reports to Group1 members with information on line voltage, current load, and power & energy consumption. Also see Param 2 & 6.
+This parameter enables/disables the METER_REPORT function, which sends periodic reports to Group1 members with information on line voltage, current load, and power & energy consumption. Also see Param 2 & 6.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -115,7 +115,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: METER_REPORT
 
 The time between meter reports.
-This parameter sets the amount of time between each successive METER\_REPORT signal sent to Group 1 (also see Param 1 & 6.)
+This parameter sets the amount of time between each successive METER_REPORT signal sent to Group 1 (also see Param 1 & 6.)
 Values in the range 1 to 65535 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -126,7 +126,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 ### Parameter 3: Set "Overload" Current level
 
 Maximum current the plug will pass
-Sets the maximum current the plug will pass before it cuts off power and sends a NOTIFICATION\_EVENT\_POWER\_ MANAGEMENT\_OVER\_LOAD\_DETECTED signal to Group 1 and a BASIC\_SET(FF) to Group 2. The LED will then blink red once per second until the current returns to normal. To clear the NOTIFICATION and start monitoring again, the BUTTON must be pushed once (only after the current is back to normal.) **NOTE: this value must be higher than Param 4**
+Sets the maximum current the plug will pass before it cuts off power and sends a NOTIFICATION\_EVENT\_POWER_ MANAGEMENT\_OVER\_LOAD\_DETECTED signal to Group 1 and a BASIC\_SET(FF) to Group 2. The LED will then blink red once per second until the current returns to normal. To clear the NOTIFICATION and start monitoring again, the BUTTON must be pushed once (only after the current is back to normal.) **NOTE: this value must be higher than Param 4**
 Values in the range 1 to 16 may be set.
 
 The manufacturer defined default value is ```13```.
@@ -164,7 +164,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Current change METER_REPORT level
 
 Report of relative change in current flow
-In addition to sending a METER\_REPORT to Group 1 in the time interval set by Param 2, the On/Off Plug-In Switch also sends a METER\_REPORT when it detects a relative change in current flow. This parameter sets this minimum current change amount, in percent, at which point the On/Off Plug-In Switch will send a METER\_REPORT to Group 1. Also see Param 1 & 2.
+In addition to sending a METER\_REPORT to Group 1 in the time interval set by Param 2, the On/Off Plug-In Switch also sends a METER\_REPORT when it detects a relative change in current flow. This parameter sets this minimum current change amount, in percent, at which point the On/Off Plug-In Switch will send a METER_REPORT to Group 1. Also see Param 1 & 2.
 Values in the range 1 to 64 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -254,16 +254,19 @@ The DMOF1 supports 3 association groups.
 ### Group 1: Lifeline
 
 
+Group 1 is the “Lifeline” group, which can hold five devices. The On/Off Plug-In Switch sends this group a Notification Report and Binary Switch Report whenever it is turned on or off. It also sends a Meter Report incrementally based on time (see Param 2,) or when a relative change in power usage is detected (see Param 6.) Finally, the On/Off Plug-In Switch sends this group a Device Reset Locally notification to remove itself from the Z-Wave network. 
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
 
+The On/Off Plug-In Switch sends a BASIC\_SET(FF) command to Association Group 2 to directly trigger devices (like a siren, chime, etc.) when the current passes above the level set in Parameter 3. When the current drops below the level again, a BASIC\_SET(00) command is sent to reset the device (e.g. turn off the siren.) This Group can hold five devices.
 This group supports 5 nodes.
 
 ### Group 3: Group 3
 
 
+The On/Off Plug-In Switch sends Notification Reports to Group 3, and it can hold five devices.
 This group supports 5 nodes.
 
 ## Technical Information

@@ -62,7 +62,6 @@ The Curtain Motor supports 1 association group.
 
 ### Group 1: Lifeline
 
-lifeline group
 This group supports 5 nodes.
 
 ## Technical Information
@@ -74,7 +73,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |

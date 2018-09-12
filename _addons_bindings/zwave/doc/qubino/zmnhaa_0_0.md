@@ -23,7 +23,7 @@ The following table summarises the channels available for the ZMNHAA -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Binary Sensor 1 | sensor_binary1 | Door | Switch | 
@@ -39,7 +39,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 
@@ -221,25 +221,21 @@ The ZMNHAA supports 4 association groups.
 ### Group 1: basic on/off (triggered at change of the output 
 Q state and reflecti
 
-
 This group supports 4 nodes.
 
 ### Group 2:  basic on/off (triggered at change of the input I2 
 state and reflect
-
 
 This group supports 4 nodes.
 
 ### Group 3:  basic on/off (triggered at change of the input I3 
 state and reflect
 
-
 This group supports 4 nodes.
 
 ### Group 4: Controller Updates
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -263,14 +259,14 @@ This group supports 1 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 
 ### Documentation Links
 

@@ -60,14 +60,14 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | The way the Built-in Dimmer reacts when light is turned on/off with button | The way the Built-in Dimmer reacts when light is turned on/off with button |
 | 4 | Enable dimming | This parameter is used to enable the dimming option of the product. When disabled the dimming and fading routine are disabled. |
 | 6 | Maximum load | The maximum powerload in watts when light is turned on, when measured higher then this value the Inline Dimmer is automatically turned off. |
-| 7 | Dimming speed | The speed of dimming when activated (manual and RF). Dim speed is 1% per value (\* 10 ms) |
-| 8 | Fading up speed | The speed of fading when activated (manual and RF). Fade speed is 1% per value (\* 10 ms) |
-| 9 | Toggle time | The time window to repress button to start dimming. Toggle time is value (\* 10ms) |
+| 7 | Dimming speed | The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms) |
+| 8 | Fading up speed | The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms) |
+| 9 | Toggle time | The time window to repress button to start dimming. Toggle time is value (* 10ms) |
 | 11 | Auto meter report: percentage | A percentage that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent. Minimum value = 10% Maximum value = 100% |
 | 12 | Auto meter report: watt | A watt value that an energy value must be different compared to a previous sent value before an unsolicited meter report is sent. Minimum value = 5 watt Maximum value = 255 watt |
 | 13 | Auto meter report: time | A time value that has to be passed compared to a previous sent value before a unsolicited meter report is sent. Minimum value = 10 seconds Maximum value = 255 seconds |
 | 14 | Last known status | What to do with lamp status when power applied. If 0x00: Always switch light off when power applied. If > 0x00: Switch lamp on/off depending on last known lampstatus before power was disconnected. |
-| 15 | Fading down speed | The speed of fading when activated (manual and RF). Fade speed is 1% per value (\* 10 ms) |
+| 15 | Fading down speed | The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms) |
 
 ### Parameter 1: Reset to factory settings
 
@@ -142,7 +142,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 ### Parameter 7: Dimming speed
 
-The speed of dimming when activated (manual and RF). Dim speed is 1% per value (\* 10 ms)
+The speed of dimming when activated (manual and RF). Dim speed is 1% per value (* 10 ms)
 
 Values in the range 0 to 255 may be set.
 
@@ -153,7 +153,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 
 ### Parameter 8: Fading up speed
 
-The speed of fading when activated (manual and RF). Fade speed is 1% per value (\* 10 ms)
+The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms)
 
 Values in the range 0 to 255 may be set.
 
@@ -164,7 +164,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 ### Parameter 9: Toggle time
 
-The time window to repress button to start dimming. Toggle time is value (\* 10ms)
+The time window to repress button to start dimming. Toggle time is value (* 10ms)
 
 Values in the range 0 to 255 may be set.
 
@@ -219,7 +219,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 
 ### Parameter 15: Fading down speed
 
-The speed of fading when activated (manual and RF). Fade speed is 1% per value (\* 10 ms)
+The speed of fading when activated (manual and RF). Fade speed is 1% per value (* 10 ms)
 
 Values in the range 0 to 255 may be set.
 
@@ -236,18 +236,15 @@ The builtInDimmer supports 3 association groups.
 
 ### Group 1: Group 1
 
-
 This group supports 8 nodes.
 
 ### Group 2: Group 2
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 3: Group 3
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

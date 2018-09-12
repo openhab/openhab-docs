@@ -17,6 +17,7 @@ The SmoothRemote does not permanently listen for messages sent from the controll
 The SmoothRemote does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the SmoothRemote -:
@@ -72,7 +73,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Button Hold Time
 
 Button Hold Time, time for presses to register as being held down in 0.01s. 0 is interpreted as a 1.
-Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
+Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. 
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```40```.
@@ -83,7 +84,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Network Update Interval
 
 Network Update Interval, time between network updates in 256 seconds. Disabled if 0.
-Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences.
+Warning: All Configuration values have serious effects on the functioning of the device and as such shouldn't be changed unless one is certain of the consequences. 
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```168```.

@@ -43,8 +43,8 @@ The following table summarises the channels available for the EZMultiPli -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Color | color_color |  | Color | 
 | Alarm | alarm_general | Door | Switch | 
 
@@ -52,13 +52,13 @@ The following table summarises the channels available for the EZMultiPli -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (luminance)
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Color
 
@@ -77,7 +77,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -90,7 +90,7 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | OnTime | OnTime sets the number of minutes that the lights stay on when motion has not been detected. |
-| 2 | OnLevel | OnLevel is the value sent by the Z-Wave BASIC\_SET command to all Association Group 2 nodes when motion is detected. |
+| 2 | OnLevel | OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected. |
 | 3 | LiteMin | A Luminance report is sent to the system controller every LiteMin minutes. |
 | 4 | TempMin | A Temperature report is sent to the controller every TempMin minutes. |
 | 5 | TempAdj | TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. |
@@ -104,9 +104,9 @@ A value of 0 is a special mode where the lights are constantly sent a command to
 
 Recommended values:
 
-- 5 min for hallways
-- 20 min for an office environment
-- 60 min for a library, office or other room where someone may be sitting still for a long time
+  * 5 min for hallways
+  * 20 min for an office environment
+  * 60 min for a library, office or other room where someone may be sitting still for a long time
 Values in the range 0 to 127 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -116,8 +116,8 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: OnLevel
 
-OnLevel is the value sent by the Z-Wave BASIC\_SET command to all Association Group 2 nodes when motion is detected.
-OnLevel is the value sent by the Z-Wave BASIC\_SET command to all Association Group 2 nodes when motion is detected.
+OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.
+OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.
 
 A value of 0 will turn the lights off (not recommended). A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).
 
@@ -158,7 +158,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: TempAdj
 
 TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate.
-TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F.
+TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F. 
 Values in the range -127 to 128 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -175,11 +175,13 @@ The EZMultiPli supports 2 association groups.
 ### Group 1: Lifeline
 
 This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network.
-This group supports 1 nodes.
+This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network. All Notification command class reports (motion detection) are sent to the node assigned to this group. Advanced lighting control should be handled by a home control application based on these reports.
+This group supports 1 node.
 
 ### Group 2: Basic
 
 This group is used to directly turn lights on or off when motion is detected.
+This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. EZMultiPli will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30’) of EZMultiPli. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation. Note that including the NodeID of EZMultiPli in this group will control the LED which will come on when motion is detected and goes off when no motion has been detected for OnTime minutes.
 This group supports 4 nodes.
 
 ## Technical Information

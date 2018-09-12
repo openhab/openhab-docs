@@ -22,11 +22,11 @@ The following table summarises the channels available for the AZEMT500BB32MA -:
 |---------|------------|----------|-----------|
 | Scene Number | scene_number |  | Number | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
 | Clock Time Offset | time_offset | Temperature | Number | 
@@ -47,7 +47,7 @@ The ```sensor_relhumidity``` channel supports the ```Number``` item and is in th
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -72,8 +72,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State
 
@@ -94,15 +92,15 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
@@ -153,8 +151,7 @@ The AZEMT500BB32MA supports 1 association group.
 
 ### Group 1: Reports
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

@@ -19,31 +19,23 @@ The Door/Window Sensor does not permanently listen for messages sent from the co
 
 ## Overview
 
+The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed. 
+
+The battery operated sensor consits of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.
+
 ### Inclusion Information
 
-1\. Remove the sensor cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or
-
-gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter inclusion mode. And the
-
-LED will flash on and off alternately five times.sor.
+  1. Remove the sensor cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.
 
 ### Exclusion Information
 
-1\. Remove the device cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or
-
-gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
+  1. Remove the device cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ### Wakeup Information
 
@@ -51,15 +43,13 @@ The Door/Window Sensor does not permanently listen for messages sent from the co
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
 
-The minimum wakeup interval is 300s (5 minutes)
+You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
 
-The maximum wakeup interval is 16,777,200s (about 194 days)
-
-Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…
-
-Note: The default value is 12 hours. This value is longer, the battery life is greater.
+  * The minimum wakeup interval is 300s (5 minutes)
+  * The maximum wakeup interval is 16,777,200s (about 194 days)
+  * Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…
+  * Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
 
@@ -94,7 +84,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -112,15 +102,15 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | ON/OFF Delay | Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately. |
-| 2 | Basic Set Level | Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be. |
+| 1 | ON/OFF Delay | Delay before the OFF command is transmitted |
+| 2 | Basic Set Level | Basic Set Command sent when door/window is opened or closed |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: ON/OFF Delay
 
+Delay before the OFF command is transmitted
 Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.
-
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -130,14 +120,14 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 ### Parameter 2: Basic Set Level
 
+Basic Set Command sent when door/window is opened or closed
 Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
+
 Available Settings:
 
- 0 - Off, Alarm cancelling or turning a device OFF
-
-1 - 99 or 255 – ON (Binary Switch Device)
-
- Dim Level (Multilevel Switch Device)
+  * 0 - Off, Alarm cancelling or turning a device OFF
+  * 1 - 99 or 255 – ON (Binary Switch Device)
+  * Dim Level (Multilevel Switch Device)
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -171,21 +161,30 @@ The Door/Window Sensor supports 4 association groups.
 ### Group 1: Group 1
 
 Is assigned to the device status - OPEN/CLOSED.
-This group supports 1 nodes.
+It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
+
+  * NOTIFICATION_REPORT
+  * BATTERY_REPORT
+  * SENSOR\_BINARY\_REPORT
+  * DEVICE\_RESET\_LOCALLY_NOTIFICATION
+This group supports 1 node.
 
 ### Group 2: Group 2
 
 Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.
+BASIC_SET
 This group supports 5 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
+NOTIFICATION_REPORT
 This group supports 5 nodes.
 
 ### Group 4: Group 4
 
 Send Notification to associated devices.
+SENSOR\_BINARY\_REPORT
 This group supports 5 nodes.
 
 ## Technical Information

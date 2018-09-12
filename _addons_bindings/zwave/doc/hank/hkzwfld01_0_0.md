@@ -5,7 +5,7 @@ title: HKZW_FLD01 - ZWave
 
 {% include base.html %}
 
-# HKZW\_FLD01 Flood Sensor FLD01
+# HKZW_FLD01 Flood Sensor FLD01
 This describes the Z-Wave device *HKZW_FLD01*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwfld01_00_000```.
 
 The device is in the category of *Sensor*, defining Device used to measure something.
@@ -41,7 +41,7 @@ It includes:
 
 ### Inclusion Information
 
-Add Flood Sensor into Z-Wave Network:
+Add Flood Sensor into Z-Wave Network:
 
 1- Open the cover.
 
@@ -57,19 +57,19 @@ Add Flood Sensor into Z-Wave Network:
 
 ### Exclusion Information
 
-Remove Flood Sensor into Z-Wave Network:
+Remove Flood Sensor into Z-Wave Network:
 
 1- Open the cover.
 
 2- Place the device within the direct range of your Z-Wave controller.
 
-3- Set the main controller's remove mode (see the controller's manual).
+3- Set the main controller's remove mode (see the controller's manual).
 
 4- Click the Z-button once or triple click the Z-button quickly, the LED indicator should blink fast in orange.
 
-5- Wait for the removing process to end.
+5- Wait for the removing process to end.
 
-6- Successful removing will be confirmed by the Z-Wave controller's message.
+6- Successful removing will be confirmed by the Z-Wave controller's message.
 
 ### Wakeup Information
 
@@ -77,7 +77,8 @@ The HKZW_FLD01 does not permanently listen for messages sent from the controller
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-Defining a time period by which the flood Sensor sends a wake up notification command frame to communicate with the assigned device, update parameters, update software detecs battery level.
+
+Defining a time period by which the flood Sensor sends a wake up notification command frame to communicate with the assigned device, update parameters, update software detecs battery level. 
 
 Wake up interval set to 0 disables the sending wake up notification command, in such configuration it is needed manually wake the device up by press the Z-button.
 
@@ -91,7 +92,7 @@ The following table summarises the channels available for the HKZW_FLD01 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (heat) | alarm_heat |  | Switch | 
 | Alarm (flood) | alarm_flood | Door | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
@@ -101,7 +102,7 @@ The following table summarises the channels available for the HKZW_FLD01 -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (heat)
 
@@ -113,7 +114,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (flood)
@@ -126,7 +127,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (burglar)
@@ -139,7 +140,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -340,12 +341,10 @@ The HKZW_FLD01 supports 2 association groups.
 
 ### Group 1: Report
 
-report the flooding detection,shock detection and the battert level
 This group supports 5 nodes.
 
 ### Group 2: Send Command
 
-Group 2 is assigned to send BASIC SET command
 This group supports 5 nodes.
 
 ## Technical Information

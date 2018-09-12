@@ -46,11 +46,11 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Device Configuration Value 1
 
 Configuration of the device operating mode
-- bit 0 Unsolicited Multilevel Report Mode A 0 = disabled, 1 = **enabled**
-- bit 1 Unsolicited Multilevel Report Mode B 0 = **disabled**, 1 = enabled
-- bit 2 Basic Set 0 = disabled, 1 = **enabled**
-- bit 3 Broadcast Multilevel Report 0 = disabled, 1 = **enabled**
-- bit 7 SENSOAIR LEDs 0 = disabled, 1 = **enabled**
+  * bit 0    Unsolicited Multilevel Report Mode A    0 = disabled, 1 = **enabled**
+  * bit 1    Unsolicited Multilevel Report Mode B    0 = **disabled**, 1 = enabled
+  * bit 2    Basic Set                                         0 = disabled, 1 = **enabled**
+  * bit 3    Broadcast Multilevel Report                 0 = disabled, 1 = **enabled**
+  * bit 7    SENSOAIR LEDs                               0 = disabled, 1 = **enabled**
 
 **Unsolicited Multilevel Report Mode A**
 
@@ -58,7 +58,8 @@ SENSOAIR sends an usolicited multilevel report when the CO<sub>2</sub> value
 exceeds one of the following threshold values:  
 600 ppm, 800 ppm, 1000 ppm, 1500 ppm, 2000 ppm, 2500 ppm
 
-**Unsolicited Multilevel Report Mode B**
+**Unsolicited Multilevel Report Mode B  
+** 
 
 SENSOAIR sends the current CO<sub>2</sub> value (without being requested) in an interval of  
 5 - 65000 seconds. The interval can be configured with parameter 2.
@@ -92,7 +93,6 @@ The Sensoair supports 1 association group.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ## Technical Information
@@ -108,7 +108,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V3| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V0| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_SENSOR_CONFIGURATION_V1| |

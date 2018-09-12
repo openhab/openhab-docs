@@ -19,11 +19,38 @@ The DMWD1 does not permanently listen for messages sent from the controller - it
 
 ## Overview
 
+The Dome Door/Window Sensor is a battery powered Z-Wave Plus magnetic reed switch that can monitor the status of doors, windows, and anything else that opens and closes.
+
+The Door/Window Sensor consists of two parts - the “sensor,” and the “magnet.” The sensor has a “reed switch” inside, which is sensitive to the magnet’s presence when aligned properly and within the defined distance. When the sensor and magnet are brought together or pulled apart, the sensor will report its open/close status to its Z-Wave controller.
+
+### Inclusion Information
+
+The Door/Window Sensor should be within 10’ of your Z-Wave controller for the inclusion process. After successful pairing, the device can be brought to the desired location.
+
+  * Remove the SENSOR COVER.
+  * Remove the BATTERY TAB.
+  * Press the BUTTON quickly 3 times in a row.
+
+A red LED will flash five times indicating inclusion
+
+### Exclusion Information
+
+Follow the instructions for your Z-Wave Certified Controller enter exclusion mode. When prompted by the controller:
+
+  * Remove the SENSOR COVER.
+  * Press the BUTTON button quickly 3 times in a row.
+
+A red LED will flash five times indicating exclusion/disconnection.
+
 ### Wakeup Information
 
 The DMWD1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Press and hold the BUTTON for two seconds. The LED INDICATOR will flash once indicating successful wake up.
+
 ## Channels
 
 The following table summarises the channels available for the DMWD1 -:
@@ -57,7 +84,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -75,14 +102,14 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | BASIC_SET Off Delay | The delay time from when the Door/Window Sensor sends the BASIC\_SET command. |
-| 2 | BASIC_SET Level | Sets the value sent by the BASIC\_SET command to Association Group 2 |
+| 1 | BASIC_SET Off Delay | The delay time from when the Door/Window Sensor sends the BASIC_SET command. |
+| 2 | BASIC_SET Level | Sets the value sent by the BASIC_SET command to Association Group 2 |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: BASIC_SET Off Delay
 
-The delay time from when the Door/Window Sensor sends the BASIC\_SET command.
+The delay time from when the Door/Window Sensor sends the BASIC_SET command.
 The delay time from when the Door/Window Sensor sends the BASIC\_SET command to Association Group 2 and when the BASIC\_SET(0) is sent. It accepts a value up to 65,535, in seconds.
 Values in the range 1 to 65535 may be set.
 
@@ -93,7 +120,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 ### Parameter 2: BASIC_SET Level
 
-Sets the value sent by the BASIC\_SET command to Association Group 2
+Sets the value sent by the BASIC_SET command to Association Group 2
 
 The following option values may be configured -:
 
@@ -133,21 +160,25 @@ The DMWD1 supports 4 association groups.
 ### Group 1: Group 1
 
 
+Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report and a Binary Sensor Report when it is opened or closed. It also sends this group a Battery Report in response to Battery Get commands.
 This group supports 5 nodes.
 
 ### Group 2: Group 2 
 
 
+The Door/Window Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to events. Then, after a preset delay, a BASIC_ SET(00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp,) and the delay time before the BASIC_SET(00) is sent is configured using configuration parameters 1 and 2 respectively. 
 This group supports 5 nodes.
 
 ### Group 3: Group 3
 
 
+Group 3 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION_REPORT when the door either opens or closes.
 This group supports 5 nodes.
 
 ### Group 4: Group 4
 
 
+Group 4 supports up to 5 members and the Door/Window Sensor sends it a SENSOR\_BINARY\_REPORT when the door either opens or closes
 This group supports 5 nodes.
 
 ## Technical Information

@@ -17,24 +17,24 @@ The DHS-WIN-BLW-DHS supports routing. This allows the device to communicate usin
 
 ## Overview
 
-The DHS Z-Wave AC Motor Shutter Controller DHS-WIN-BLW-DHS is Z-Wave Shutter device specifically designed for use in smart homes and offices.
+The DHS Z-Wave AC Motor Shutter Controller DHS-WIN-BLW-DHS is Z-Wave Shutter device specifically designed for use in smart homes and offices. 
 
-The product allows to operate roller blinds/shutters wirelessly using a Z-wave enabled (AUS/NZ version 921.42 MHz) controllers (compatible universal remote controllers, control panels, gateways, PC with Z-Wave USB dongle) or manually via connected manual switch.
+The product allows to operate roller blinds/shutters wirelessly using a Z-wave enabled (AUS/NZ version 921.42 MHz) controllers (compatible universal remote controllers, control panels, gateways, PC with Z-Wave USB dongle) or manually via connected manual switch.
 
-The shutter controller can act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful to eliminate “RF deadspots” when the radio range of the Z-Wave network is influenced. This function is part of the Z-Wave network functionality and is set up via Z-Wave controller.
+The shutter controller can act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful to eliminate “RF deadspots” when the radio range of the Z-Wave network is influenced. This function is part of the Z-Wave network functionality and is set up via Z-Wave controller.
 
 ### Inclusion Information
 
-1. Connect the Z-Wave Shutter Controller to the motor, power circuits and to the manual switches as per instructions in the section INSTALLATION above.
-2. When the Shutter Controller is not yet included in a Z-Wave network, NWI works for 30 seconds when the Shutter Controller is power ON. Make sure your Z-Wave Gateway is in the correct operating mode (inclusion). To include/exclude press 5 times any connected buttons. During the whole procedure controller (Gateway) and Z-Wave Shutter Controller must be in close proximity of 3 m. Successful inclusion will be indicated by your Z-Wave remote controller (Gateway). In case inclusion was not successful, try the procedure again or reset network settings by running exclusion procedure (see below).
-3. Once the Z-Wave Shutter Controller has been added into your Z-Wave home network successfully, you may need to assign it to a speciö c button on your controller (Gateway). Refer to your Z-Wave controller (Gateway) / panel for instructions on how to do this.
-4. Now, you can control your lamp via your Z-Wave Gateway or other controller
+  1. Connect the Z-Wave Shutter Controller to the motor, power circuits and to the manual switches as per instructions in the section INSTALLATION above.
+  2. When the Shutter Controller is not yet included in a Z-Wave network, NWI works for 30 seconds when the Shutter Controller is power ON. Make sure your Z-Wave Gateway is in the correct operating mode (inclusion). To include/exclude press 5 times any connected buttons. During the whole procedure controller (Gateway) and Z-Wave Shutter Controller must be in close proximity of 3 m. Successful inclusion will be indicated by your Z-Wave remote controller (Gateway). In case inclusion was not successful, try the procedure again or reset network settings by running exclusion procedure (see below).
+  3. Once the Z-Wave Shutter Controller has been added into your Z-Wave home network successfully, you may need to assign it to a speciö c button on your controller (Gateway). Refer to your Z-Wave controller (Gateway) / panel for instructions on how to do this.
+  4. Now, you can control your lamp via your Z-Wave Gateway or other controller
 
 ### Exclusion Information
 
-1. Install Connect the Z-Wave Shutter Controller to the load, power circuits and to the manual switch as per instructions in the section INSTALLATION above.
-2. Start exclusion procedure on your controller and when requested press and release any connected button 5 times. During the whole procedure the controller and Z-Wave Shutter Controller must be close proximity of not more then 3 m.
-3. Successful exclusion will be indicated by your Z-Wave remote controller. LED on the Z-Wave Shutter Controller will start slow blinking. In case exclusion was not successful, try the procedure again.
+  1. Install Connect the Z-Wave Shutter Controller to the load, power circuits and to the manual switch as per instructions in the section INSTALLATION above.
+  2. Start exclusion procedure on your controller and when requested press and release any connected button 5 times. During the whole procedure the controller and Z-Wave Shutter Controller must be close proximity of not more then 3 m.
+  3. Successful exclusion will be indicated by your Z-Wave remote controller. LED on the Z-Wave Shutter Controller will start slow blinking. In case exclusion was not successful, try the procedure again.
 
 ## Channels
 
@@ -91,10 +91,10 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Buttons mode
 
 Set number and type of directly connected buttons
-- One push button: One button is used (chose any), press while moving up and down stops, while stopped moves to opposite direction to previous.
-- Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down if stopped and stops if moving up, Hold Up/Down moves in up/down, Release stops.
-- Two toggle switch: Switch to Up/Down moves up/down.
-- Two paddles with Power and Direction: Hold Up button to move blinds up. If Down button is pressed, blinds will move down. Release Up button to stop.
+  * One push button: One button is used (chose any), press while moving up and down stops, while stopped moves to opposite direction to previous.
+  * Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down if stopped and stops if moving up, Hold Up/Down moves in up/down, Release stops.
+  * Two toggle switch: Switch to Up/Down moves up/down.
+  * Two paddles with Power and Direction: Hold Up button to move blinds up. If Down button is pressed, blinds will move down. Release Up button to stop.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -214,7 +214,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 ### Parameter 11: Full open time
 
 Time to go from closed to open state
- Time to go from closed to open state. This value may differ from full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close
+ Time to go from closed to open state. This value may differ from full close time for some blinds due to gravity. Used to estimate the current level. Note that in Permanent motion mode the reported value would be Closed or Opened, while all Basic and Multilevel Set values (1-99, 255) would Open except 0 value that would Close
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```60```.
@@ -225,7 +225,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 ### Parameter 12: Node Id of the blocking device
 
 Node Id of the blocking device
-Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Useful with door opening detector: if the door is open, block the blind not to break shades while they move.
+Id of the device which commands would be interpreted not as Open/Close, but as block/unblock. Useful with door opening detector: if the door is open, block the blind not to break shades while they move. 
 Values in the range 0 to 24 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -287,12 +287,10 @@ The DHS-WIN-BLW-DHS supports 2 association groups.
 
 ### Group 1: Click, press and hold of up/down buttons
 
-Click, press and hold of up/down buttons
 This group supports 10 nodes.
 
 ### Group 2: Send Reports on blind state change
 
-Send Reports on blind state change
 This group supports 10 nodes.
 
 ## Technical Information

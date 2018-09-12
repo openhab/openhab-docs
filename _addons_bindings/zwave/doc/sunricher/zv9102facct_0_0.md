@@ -80,7 +80,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -242,7 +242,8 @@ The ZV9102FA-CCT supports 1 association group.
 ### Group 1: Lifeline
 
 
-This group supports 1 nodes.
+Single Cast DEVICE\_RESET\_LOCALLY_NOTIFICATION (sent when factory reset the device)
+This group supports 1 node.
 
 ## Technical Information
 

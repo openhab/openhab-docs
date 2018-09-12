@@ -17,32 +17,32 @@ The XLED Home 2 supports routing. This allows the device to communicate using ot
 
 ## Overview
 
-– Sensor-switched floodlight suitable for wall   
+–  Sensor-switched floodlight suitable for wall  
 mounting outdoors.  
-– Fully swivelling LED panel and moveable sensor.   
-Movement triggers lights, alarms and many other   
+–  Fully swivelling LED panel and moveable sensor.  
+Movement triggers lights, alarms and many other  
 devices. With the fully swivelling panel, the flood-  
 light can be used at home to provide perfect illumi-  
-nation for lighting up property, or commercially for   
-lighting up business premises. In conjunction with   
-the opal cover, this extremely efficient technology   
+nation for lighting up property, or commercially for  
+lighting up business premises. In conjunction with  
+the opal cover, this extremely efficient technology  
 provides wide-area lighting
 
 ### Inclusion Information
 
-1\. Set the Z-Wave controller to inclusion mode.  
-2\. Press the link key once brieﬂy to set the device to inclusion mode.  
-3\. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
-4\. Press the link key 3x brieﬂy to set the device into inclusion mode.  
+1. Set the Z-Wave controller to inclusion mode.  
+2. Press the link key once brieﬂy to set the device to inclusion mode.  
+3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
+4. Press the link key 3x brieﬂy to set the device into inclusion mode.  
 (STOGGLE)
 
 ### Exclusion Information
 
-1\. Set the Z-Wave controller to exclusion mode.  
-2\. Press the link key once brieﬂy to set the device to exclusion  
+1. Set the Z-Wave controller to exclusion mode.  
+2. Press the link key once brieﬂy to set the device to exclusion  
 mode.  
-3\. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
-4\. Press the link key 3x brieﬂy to set the device into exclusion mode.  
+3. Turn the knob from 0 to SET for max. 5 seconds and back. (SKNOB)  
+4. Press the link key 3x brieﬂy to set the device into exclusion mode.  
 (STOGGLE)
 
 ## Channels
@@ -54,13 +54,13 @@ The following table summarises the channels available for the XLED Home 2 -:
 | Switch | switch_binary | Switch | Switch | 
 | Scene Number | scene_number |  | Number | 
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Alarm (system) | alarm_system |  | Switch | 
 | Control: Key01 lamp (on/off) | switch_binary1 | Switch | Switch | 
 | Scene Number 1 | scene_number1 |  | Number | 
 | Alarm (burglar) motion | alarm_burglar2 | Door | Switch | 
-| Sensor (luminance)2 | sensor_luminance3 | Temperature | Number | 
+| Sensor (luminance)2 | sensor_luminance3 |  | Number | 
 
 ### Switch
 
@@ -91,7 +91,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
 
@@ -103,7 +103,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (system)
@@ -116,7 +116,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Control: Key01 lamp (on/off)
@@ -141,14 +141,14 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Sensor (luminance)2
 
 Indicates the current light reading.
 
-The ```sensor_luminance3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance3``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -160,9 +160,9 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Time | Duration of light after motion detection. |
-| 2 | LIGHT | Light threshold \[lx\]: |
-| 5 | SENSITIVITY | Motion Radar Sensitivity \[%\] |
-| 6 | BRIGHTNES MEAS 1 INTERVAL | Brightness measuring interval \[min\] |
+| 2 | LIGHT | Light threshold [lx]: |
+| 5 | SENSITIVITY | Motion Radar Sensitivity [%] |
+| 6 | BRIGHTNES MEAS 1 INTERVAL | Brightness measuring interval [min] |
 | 8 | GLOBAL_LIGHT | Use external Ambient Light value |
 | 9 | SLAVE_MODE | Disable local control |
 | 10 | (OFF_BEHAVIOUR) | Off behaviour (timeout) |
@@ -187,8 +187,8 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 ### Parameter 2: LIGHT
 
-Light threshold \[lx\]:
-0 – run Learn ambient light sequence.  
+Light threshold [lx]:
+0          – run Learn ambient light sequence.  
 2000 – is used as daylight (always night mode).  
 Value can be controlled via potentiometer (if present on device) –  
 potentiometer value is then used as the default value and any  
@@ -202,7 +202,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 ### Parameter 5: SENSITIVITY
 
-Motion Radar Sensitivity \[%\]
+Motion Radar Sensitivity [%]
 Value can be controlled via potentiometer (if present on device) – potentiom-  
 eter value is then used as the default value and any potentiometer movement  
 rewrites the current setting.
@@ -215,7 +215,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 6: BRIGHTNES MEAS 1 INTERVAL
 
-Brightness measuring interval \[min\]
+Brightness measuring interval [min]
 nterval for measuring ambient light when lamp is on (lamp switches off  
 briefly and measures). 0 = function is off.
 Values in the range 5 to 120 may be set.
@@ -228,7 +228,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 8: GLOBAL_LIGHT
 
 Use external Ambient Light value
-When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor  
+When GLOBAL_LIGHT mode is ON – device overrides its own light sensor  
 values and uses Light Report values from any Z-Wave light sensor instead –  
 this has to be configured appropriately to send light automatically.  
 If the last remote light level value is older than 30 minutes, the internal light  
@@ -244,30 +244,30 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 Disable local control
 "Stupid" mode (bit 2 = 1):  
-\- has higher priority then slave mode  
-\- lamp/relay is permanently on (for simple power wall switch controlling)
+- has higher priority then slave mode  
+- lamp/relay is permanently on (for simple power wall switch controlling)
 
 Slave mode (bit 0 =1):  
-\- only if included in Z-Wave network  
-\- useful for controlling via third-party sensor  
-\- lamp/relay is directly controlled via Z-Wave, internal sensors are not used  
+- only if included in Z-Wave network  
+- useful for controlling via third-party sensor  
+- lamp/relay is directly controlled via Z-Wave, internal sensors are not used  
 for controlling it
 
 Central unit checking (bit 1 =1): (useful especially for controlling via gateway)  
 When slave bit is 0:  
-\- device signalises fail of lifeline connection (if this bit is zero, fail of lifeline  
+- device signalises fail of lifeline connection (if this bit is zero, fail of lifeline  
 connection is not signalised)
 
 When slave bit is 1:  
-\- device checks presence of Z-Wave device in lifeline group (gateway).  
+- device checks presence of Z-Wave device in lifeline group (gateway).  
 If it is not present for 2 minutes (testing repeatedly every 30 seconds)  
 device switches to normal mode in the same way as after the end of  
-local disabled mode (ON\_BEHAVIOUR)  
-\- the device checks every 1 minute for recovery of lifeline connection  
-\- if no lifeline specified - it works in normal mode
+local disabled mode (ON_BEHAVIOUR)  
+- the device checks every 1 minute for recovery of lifeline connection  
+- if no lifeline specified - it works in normal mode
 
 Do not use button for lamp switching (bit 6 = 1): only for STOGGLE variant  
-\- disables button controlling device itself along with controlling group 5.  
+- disables button controlling device itself along with controlling group 5.  
 When enabled also works in stand-alone.
 
 Be careful with this option, device stops using its own motion sensor in  
@@ -279,7 +279,7 @@ bit 7 6 5 4 3 2 1 0 Function - Don’t use
 button  
 for lamp -  
 switching  
-(STOGGLE) - - - "Stupid"  
+(STOGGLE) \- - - "Stupid"  
 mode Central  
 unit  
 checking  
@@ -365,15 +365,15 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: ON_TIME_OVER
 
 On behaviour time over (timeout)
-Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or  
+Time limit to stop waiting for motion after timeout of ON_BEHAVIOUR or  
 OFF\_ON\_BEHAVIOUR (0-209) to prevent staying ON forever when there is  
 no motion.
 
 0 = No additional waiting for motion.
 
-1 - 209 = 1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution  
- 101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution  
- 201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution
+1 - 209 =  1..100 – 1 second (1) to 100 seconds (100) in 1-second resolution  
+                  101..200 – 1 minute (101) to 100 minutes (200) in 1-minute resolution  
+                  201..209 – 1 hour (201) to 9 hours (209) in 1-hour resolution
 
 210 - 254 = Reserved
 
@@ -418,7 +418,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 ### Parameter 15: SEQUENCE_ TIME
 
 Sequence timing
-Time in \[100 milliseconds\] of maximum delay between BASIC ON and BASIC  
+Time in [100 milliseconds] of maximum delay between BASIC ON and BASIC  
 OFF (and vice versa) to consider this as a sequence. It is typically 1 second,  
 but can be exceptionally longer due to retransmissions and overload – in this  
 case, a longer interval can be allowed (up to 5 seconds).
@@ -481,21 +481,80 @@ The XLED Home 2 supports 4 association groups.
 ### Group 1: Lifeline
 
 Lifeline
-This group supports 1 nodes.
+- Device Reset Locally (immediately)  
+- Notifications:  
+0x09 (System) – Hardware failure with manufacturer proprietary code (0x03)  
+0x09 (System) – Software failure with manufacturer proprietary code (0x04)  
+0x07 (Home security) – Motion Begin event (0x08)  
+0x07 (Home security) – Motion End event (0x00, 0x08)  
+- Binary Switch Report (SPIR)  
+- Binary Switch Report (SBIN)  
+- Multilevel Switch Report (SMUL)  
+- Multilevel Sensor Report – value of internal ambient light sensor  
+- Central scene notification (STOGGLE)  
+Motion Begin and Motion End events are sent along with frames to group 3.  
+If multichannel association is created the events are sent from motion sensor  
+endpoint.  
+Switch Report is sent immediately upon a change of status along with  
+frames to group 2. If multichannel association is created the events are sent  
+from lamp/relay endpoint.  
+Multilevel Sensor Report is sent a maximum of once per 1 minute  
+(if the value has changed by at least 3%) and a minimum of once per 15 min-  
+utes (if the value has not changed). If the ambient light value is old (cannot  
+be measured because of permanent light), the value is not transmitted via  
+lifeline. Multilevel Sensor Report can also be added to some other events to  
+send in bulk. If multichannel association is created the events are sent from  
+light sensor endpoint.  
+Central scene notification is sent as reaction to user interaction. If multichan-  
+nel association is created the events are sent from toggle button endpoint.
+
+All notifications to lifeline are sent as sensor states regardless of sensor  
+settings and states as SLAVE\_MODE, LOCAL\_DISABLED and MOTION_  
+ENABLE
+This group supports 1 node.
 
 ### Group 2: Control: Key01
 
 On/Off control (Never ever add controller, only third-party devices!)
+Group 2 is used for directly controlling Z-Wave devices via BASIC SET com-  
+mands through the evaluation of movement and light, as with internal use  
+(so that all of these devices work together). This is intended for use especially  
+with third-party devices that do not implement reactions for motion events.  
+BASIC_SET and similar Z-Wave commands are not retransmitted intention-  
+ally to slaves and must be sent to slave devices via the controlling device  
+simultaneously. Only for use in master-slave system, multi-device control is  
+not possible.  
+Group 2 is evaluated and frames are transmitted there also in SLAVE_  
+MODE, regardless of LOCAL\_DISABLED state and when MOTION\_ENABLE  
+is off (not using internal motion sensor, just reacting to remote motion events  
+in this case).  
+If multichannel association is created the events are sent from motion sensor  
+endpoint.
 This group supports 16 nodes.
 
 ### Group 3: Motion Begin/End (PIR/radar/iHF)
 
 Notification: Motion
+Group 3 sends MOTION\_BEGIN and MOTION\_END frames.  
+MOTION_BEGIN frame = Notification 0x07 (Home security) –  
+Motion detection without location (0x08)  
+MOTION_END frame = Notification 0x07 (Home security) –  
+Event inactive (0x00, parameter 0x08)
+
+After the first motion detection, MOTION_BEGIN is sent. If continual move-  
+ment is detected, MOTION_BEGIN is sent every 1 minute repeatedly. When  
+motion ends, MOTION_END is sent 5 seconds after the last motion detec-  
+tion.  
+Notification to group 3 is sent only when NIGHT\_MODE = ON and MOTION\_  
+ENABLE = ON, regardless of LOCAL_DISABLE state.  
+All devices in a group should have the same TIME settings in order that they  
+switch off at the same time.  
+If multichannel association is created the events are sent from motion sensor  
+endpoint.
 This group supports 16 nodes.
 
 ### Group 4: Ambient light
 
-Sensor: Luminescence
 This group supports 15 nodes.
 
 ## Technical Information
@@ -513,7 +572,7 @@ This group supports 15 nodes.
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
 | COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V4| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -532,7 +591,7 @@ This group supports 15 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
@@ -546,7 +605,7 @@ This group supports 15 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ALARM_V4| Linked to BASIC|
@@ -556,7 +615,7 @@ This group supports 15 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

@@ -5,7 +5,7 @@ title: ph-pse02 - ZWave
 
 {% include base.html %}
 
-# ph-pse02 Multisound indoor siren (Zipato/Devolo)
+# ph-pse02 Multisound indoor siren
 This describes the Z-Wave device *ph-pse02*, manufactured by *Devolo* with the thing type UID of ```devolo_phpse02_00_000```.
 
 The device is in the category of *Siren*, defining Siren used by Alarm systems.
@@ -23,17 +23,17 @@ The XML used for adding this device to the database comes from the Devolo Home C
   
 **\### FEATURES ###**  
   
-\- Indoor multichannel siren that works with a a variety of Z-Wave networks/controllers, regardless of the manufacturer  
-\- The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6/40/100kbps)  
-\- 110db sound level  
-\- 6 sounds: Door Chime, Bi Bi Arm/Disarm, Intruder alarm, Ambulance, Police car  
-\- Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)  
-\- DC or Li-ion battery power (over 24 hours of battery life)  
-\- Battery overcharge protection  
-\- Very low power consumption  
-\- Over-the-air firmware update  
-\- Easy to install in EU/China/Taiwan wall sockets  
-\- Tamperproof protection  
+- Indoor multichannel siren that works with a a variety of Z-Wave networks/controllers, regardless of the manufacturer  
+- The new Z-Wave 500 series chip supports multichannel operationand higher data rates (9.6/40/100kbps)  
+- 110db sound level  
+- 6 sounds: Door Chime, Bi Bi Arm/Disarm, Intruder alarm, Ambulance, Police car  
+- Higher output power enhances communication range(+6dBm output power as compared to -2.5dBm 300 series)  
+- DC or Li-ion battery power (over 24 hours of battery life)  
+- Battery overcharge protection  
+- Very low power consumption  
+- Over-the-air firmware update  
+- Easy to install in EU/China/Taiwan wall sockets  
+- Tamperproof protection  
   
   
 **\### TECHNICAL SPECIFICATIONS ###**  
@@ -41,32 +41,32 @@ The XML used for adding this device to the database comes from the Devolo Home C
 PROTOCOL: Z-Wave Plus  
   
 POWER  
-\- DC 5V, Li-Ion battery (optional)  
-\- BATTERY CAPACITY 1150mAh  
+- DC 5V, Li-Ion battery (optional)  
+- BATTERY CAPACITY 1150mAh  
   
 OPERATING CONDITIONS:  
-\- OPERATING VOLTAGE 3.7V  
-\- OPERATING CURRENT 150 mA  
-\- OPERATION TEMPERATURE -10°C ~ 40°C  
+- OPERATING VOLTAGE 3.7V  
+- OPERATING CURRENT 150 mA  
+- OPERATION TEMPERATURE -10°C ~ 40°C  
   
 RANGE  
-\- Minimum 30 meters indoor  
-\- 70 meters outdoor (meant for indoor use only)  
+- Minimum 30 meters indoor  
+- 70 meters outdoor (meant for indoor use only)  
   
 DIMENSIONS  
-\- DEVICE DIMENSIONS 110 x 110 x 22 mm  
-\- DEVICE WEIGHT 113g  
-\- PACKAGE DIMENSIONS 117 x 50 x 117 mm  
-\- PACKAGE WEIGHT 217g  
+- DEVICE  DIMENSIONS 110 x 110 x 22 mm  
+- DEVICE WEIGHT 113g  
+- PACKAGE DIMENSIONS 117 x 50 x 117 mm  
+- PACKAGE WEIGHT 217g  
   
 FREQUENCY  
   
- ph-pse02.au 921.42 MHz (AU)  
- ph-pse02.eu 868.42 MHz (EU)  
- ph-pse02.in 865.20 MHz (IN)  
- ph-pse02.is 916.02 MHz (IS)  
- ph-pse02.ru 869.02 MHz (RU)  
- ph-pse02.us 908.42 MHz (US)  
+    ph-pse02.au 921.42 MHz (AU)  
+    ph-pse02.eu 868.42 MHz (EU)  
+    ph-pse02.in 865.20 MHz (IN)  
+    ph-pse02.is 916.02 MHz (IS)  
+    ph-pse02.ru 869.02 MHz (RU)  
+    ph-pse02.us 908.42 MHz (US)  
   
 Source: https://www.zipato.com/product/multisound-indoor-siren
 
@@ -111,7 +111,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (general)
@@ -124,72 +124,258 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Start Sound
 
-Notification
-
-Event
-
-Sound
-
- event1 Smokealarm (0x01)
-
-0x01 ~ 0xFF
-
-fire alert
-
- event2 Accesscontrol (0x06)
-
-Window/Door open (0x16)
-
-door chime
-
- event7 Accesscontrol (0x06)
-
-Activate alarm system (0x03)
-
-2x beep
-
- event8 Accesscontrol (0x06)
-
-Deactivate alarm system (0x04)
-
-1x beep
-
- event3 Homesecurity (0x07)
-
-0x01 ~ 0xFF
-
-emergency
-
- sound event4 Emergency (0x0A)
-
-Contact police (0x01)
-
-policecar
-
-sound
-
- event5 Emergency (0x0A)
-
-Contact fire department (0x02)
-
-fire engine sound
-
- event6 Emergency (0x0A)
-
-Contact ambulance (0x03)
-
-ambulance
-
-sound
-
- event9 Emergency (0x0A) Notification (0xFE)
-
-silent alarm (no sound, flashing LED)
+<table>
+  <tr>
+    <td>
+       
+    </td>
+    
+    <td>
+      <p>
+        Notification
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Event
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Sound
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event1
+    </td>
+    
+    <td>
+      <p>
+        Smokealarm (0x01)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        0x01 ~ 0xFF
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        fire alert
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event2
+    </td>
+    
+    <td>
+      <p>
+        Accesscontrol (0x06)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Window/Door open (0x16)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        door chime
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event7
+    </td>
+    
+    <td>
+      <p>
+        Accesscontrol (0x06)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Activate alarm system (0x03)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        2x beep
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event8
+    </td>
+    
+    <td>
+      <p>
+        Accesscontrol (0x06)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Deactivate alarm system (0x04)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        1x beep
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event3
+    </td>
+    
+    <td>
+      <p>
+        Homesecurity (0x07)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        0x01 ~ 0xFF
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        emergency
+      </p> sound
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event4
+    </td>
+    
+    <td>
+      <p>
+        Emergency (0x0A)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Contact police (0x01)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        policecar
+      </p>
+      
+      <p>
+        sound
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event5
+    </td>
+    
+    <td>
+      <p>
+        Emergency (0x0A)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Contact fire department (0x02)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        fire engine sound
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event6
+    </td>
+    
+    <td>
+      <p>
+        Emergency (0x0A)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        Contact ambulance (0x03)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        ambulance
+      </p>
+      
+      <p>
+        sound 
+      </p>
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      event9
+    </td>
+    
+    <td>
+      Emergency (0x0A)
+    </td>
+    
+    <td>
+      <p>
+        Notification (0xFE)
+      </p>
+    </td>
+    
+    <td>
+      <p>
+        silent alarm (no sound,  flashing LED)
+      </p>
+    </td>
+  </tr>
+</table>
 
 Sends a notification.
 
@@ -264,6 +450,9 @@ The ph-pse02 supports 1 association group.
 ### Group 1: Report Message
 
 Report Message, e.g. tamper alarm
+Notice: The device supports 1 group.
+
+The group 1 is for receiving the report message, like tamper event. And the group 8 nodes maximum
 This group supports 8 nodes.
 
 ## Technical Information
@@ -277,7 +466,7 @@ This group supports 8 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V0| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V2| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |

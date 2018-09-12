@@ -16,11 +16,11 @@ The SES FS-ZW supports routing. This allows the device to communicate using othe
 
 The inclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
-1\. Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).
+1. Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).
 
-2\. Start “Inclusion” mode on the chosen central unit.
+2. Start “Inclusion” mode on the chosen central unit.
 
-3\. Press the button on the plug actuator 3 times within a period of around 2 seconds.
+3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
 
 The Status LED lights up white.
 
@@ -30,11 +30,11 @@ During the next 5 seconds, the wireless connection is established and the inclus
 
 The exclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
-1\. Make sure that no device is plugged into the plug actuator.
+1. Make sure that no device is plugged into the plug actuator.
 
-2\. Start “Exclusion” mode on the chosen central unit.
+2. Start “Exclusion” mode on the chosen central unit.
 
-3\. Press the button on the plug actuator 3 times within a period of around 2 seconds.
+3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
 
 The Status LED lights up white.
 
@@ -81,7 +81,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (heat)
@@ -94,7 +94,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (power)
@@ -107,7 +107,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -234,9 +234,9 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 ### Parameter 9: Reset of overcurrent shutdown
 
 Activation despite 3x safety shutdown
- Activation despite 3x safety shutdown (parameter 8 = 1)
+ Activation despite 3x safety shutdown (parameter 8 = 1)
 
- A reset request (“Set” command) is normally executed very quickly, as a result of which a query (“Get” command) for this parameter usually returns the response “0” (no reset) for this parameter. In some cases, this can be interpreted incorrectly. Consequently, this parameter should be treated only as “write only”.
+ A reset request (“Set” command) is normally executed very quickly, as a result of which a query (“Get” command) for this parameter usually returns the response “0” (no reset) for this parameter. In some cases, this can be interpreted incorrectly. Consequently, this parameter should be treated only as “write only”. 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -306,8 +306,7 @@ The SES FS-ZW supports 1 association group.
 
 ### Group 1: reportd
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -318,7 +317,7 @@ This group supports 1 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V2| |

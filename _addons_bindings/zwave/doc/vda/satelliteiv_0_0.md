@@ -84,22 +84,18 @@ The Vitrum Satellite IV supports 4 association groups.
 
 ### Group 1: Group 1
 
-Group for Button 1
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
-Group for Button 2
 This group supports 5 nodes.
 
 ### Group 3: Group 3
 
-Group for Button 3
 This group supports 5 nodes.
 
 ### Group 4: Group 4
 
-Group for Button 4
 This group supports 5 nodes.
 
 ## Technical Information
@@ -127,7 +123,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -136,7 +132,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -145,7 +141,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -154,7 +150,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |

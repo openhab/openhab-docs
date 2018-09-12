@@ -20,13 +20,13 @@ The smart motion sensor is designed to detect motion indoors. When the smart mot
 
 ### Inclusion Information
 
-- Press button on the back 3 times, Green LED is Blinking 3 times within 1 second.
-- If Inclusion Process is successful, Green LED will turn off.
+  * Press button on the back 3 times, Green LED is Blinking 3 times within 1 second.
+  * If Inclusion Process is successful, Green LED will turn off.
 
 ### Exclusion Information
 
-- Press back button 3 times quickly.
-- If Exclusion Process is successful, Green LED is Blinking 6 times, then remove battery from HS1MS-Z.
+  * Press back button 3 times quickly.
+  * If Exclusion Process is successful, Green LED is Blinking 6 times, then remove battery from HS1MS-Z.
 
 ### Wakeup Information
 
@@ -34,8 +34,9 @@ The HS1MS-Z does not permanently listen for messages sent from the controller - 
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-- Wake up Notification is transmitted every 24 hours by default.
-- Wake up Notification is transmitted after Notification Report is Transmitted.
+
+  * Wake up Notification is transmitted every 24 hours by default.
+  * Wake up Notification is transmitted after Notification Report is Transmitted.
 
 ## Channels
 
@@ -70,7 +71,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -92,7 +93,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The HS1MS-Z supports 1 association group.
 
 ### Group 1: Lifeline
-
 
 This group supports 5 nodes.
 

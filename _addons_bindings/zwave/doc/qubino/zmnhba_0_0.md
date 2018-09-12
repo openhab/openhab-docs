@@ -24,21 +24,21 @@ Module measures power consumption of two electrical devices and supports connect
 
 ### Inclusion Information
 
-- Connect module to power supply,
-- bring module within maximum 1 meter (3 feet) of the main controller,
-- enable add/remove mode on main controller,
-- auto-inclusion (30 minutes after connected to power supply) or
-- press service button S for more than 2 second or
-- press push button I1 three times within 3s (3 times change switch state within 3  
-  seconds).
+  * Connect module to power supply,
+  * bring module within maximum 1 meter (3 feet) of the main controller,
+  * enable add/remove mode on main controller,
+  * auto-inclusion (30 minutes after connected to power supply) or
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3  
+    seconds).
 
 ### Exclusion Information
 
-- Connect module to power supply
-- bring module within maximum 1 meter (3 feet) of the main controller,
-- enable add/remove mode on main controller,
-- press service button S for more than 6 second or
-- press push button I1 five times within 3s (5 times change switch state within 3 seconds).
+  * Connect module to power supply
+  * bring module within maximum 1 meter (3 feet) of the main controller,
+  * enable add/remove mode on main controller,
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds).
 
 By this function all parameters of the module are set to default values and own ID is deleted.  
 If service button S is pressed more than 2 and less than 6second module is excluded, but configuration parameters are not set to default values
@@ -50,7 +50,7 @@ The following table summarises the channels available for the ZMNHBA -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Switch 1 | switch_binary1 | Switch | Switch | 
@@ -70,7 +70,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 
@@ -135,22 +135,26 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | Automatic turning off relay Q1 after set time | Automatic turning off relay Q1 after set time |
 | 12 | Automatic turning off relay Q2 after set time | Automatic turning off relay Q2 after set time |
 | 30 | Saving Q1 and Q2 after a power failure | Saving the state of the relays Q1 and Q2 after a power failure |
-| 40 | Power reporting in Watts on power change for Q1 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
+| 40 | Power reporting in Watts on power change for Q1 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
 
-- 0 = Reporting Disabled
-- 1–100 = 1% - 100% Reporti |
-| 41 | Power reporting in Watts on power change for Q2 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
-- 0 = Reporting Disabled
-- 1–100 = 1% - 100% Reporti |
-| 42 | Power reporting in Watts by time interval for Q1 | default value is 300 (power report in Watts is sent each 300s)
+  * 0 = Reporting Disabled
+  * 1–100 = 1% - 100% Reporti |
+| 41 | Power reporting in Watts on power change for Q2 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
-| 43 | Power reporting in Watts by time interval for Q2 | default value is 300 (power report in Watts is sent each 300s)
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
+  * 0 = Reporting Disabled
+  * 1–100 = 1% - 100% Reporti |
+| 42 | Power reporting in Watts by time interval for Q1 | default value is 300 (power report in Watts is sent each 300s)  
+
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
+| 43 | Power reporting in Watts by time interval for Q2 | default value is 300 (power report in Watts is sent each 300s)  
+
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -208,8 +212,8 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 Automatic turning off relay Q1 after set time
 Auto OFF enabled with define time, step is 10 mseconds
 
-- 0 = Auto OFF disabled
-- 1–65535 = 0,01 second – 655,35 seconds
+  * 0 = Auto OFF disabled
+  * 1–65535 = 0,01 second – 655,35 seconds
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -222,8 +226,8 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 Automatic turning off relay Q2 after set time
 Auto OFF enabled with define time, step is 10 mseconds
 
-- 0 = Auto OFF disabled
-- 1–65535 = 0,01 second – 655,35 seconds
+  * 0 = Auto OFF disabled
+  * 1–65535 = 0,01 second – 655,35 seconds
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -249,10 +253,11 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 ### Parameter 40: Power reporting in Watts on power change for Q1
 
-Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
+Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
 
-- 0 = Reporting Disabled
-- 1–100 = 1% - 100% Reporti
+
+  * 0 = Reporting Disabled
+  * 1–100 = 1% - 100% Reporti
 
 Values in the range 0 to 255 may be set.
 
@@ -263,10 +268,11 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 41: Power reporting in Watts on power change for Q2
 
-Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
+Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
 
-- 0 = Reporting Disabled
-- 1–100 = 1% - 100% Reporti
+
+  * 0 = Reporting Disabled
+  * 1–100 = 1% - 100% Reporti
 
 Values in the range 0 to 255 may be set.
 
@@ -277,10 +283,11 @@ This parameter has the configuration ID ```config_41_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts by time interval for Q1
 
-default value is 300 (power report in Watts is sent each 300s)
+default value is 300 (power report in Watts is sent each 300s)  
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
 
 Values in the range 0 to 65535 may be set.
 
@@ -291,10 +298,11 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 43: Power reporting in Watts by time interval for Q2
 
-default value is 300 (power report in Watts is sent each 300s)
+default value is 300 (power report in Watts is sent each 300s)  
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
 
 Values in the range 0 to 65535 may be set.
 
@@ -325,16 +333,13 @@ The ZMNHBA supports 3 association groups.
 
 ### Group 1: Basic on/off Q1
 
-
 This group supports 4 nodes.
 
 ### Group 2: Basic on/off Q2
 
-
 This group supports 4 nodes.
 
 ### Group 3: Default Reporting Group
-
 
 This group supports 4 nodes.
 
@@ -361,14 +366,14 @@ This group supports 4 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 

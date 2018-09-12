@@ -46,7 +46,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -74,7 +74,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The Yale Smart Door Lock Z-Wave Module supports 1 association group.
 
 ### Group 1: Alarm Reports
-
 
 This group supports 4 nodes.
 

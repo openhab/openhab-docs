@@ -16,13 +16,13 @@ When the device is in the stand-alone mode and is not included in a Z-Wave netwo
 
 Each button can be configured in 4 different modes. Press the 2 service buttons (left and right each) for at least 8 seconds. Buttons will start to flash and the color of the flashing ring will indicate the channel setting:
 
-\- Yellow: for association with On-Off Modules, toggle-button function (BASIC)
+- Yellow: for association with On-Off Modules, toggle-button function (BASIC)
 
-\- Red: for association with On-Off Modules, push-button function (BASIC)
+- Red: for association with On-Off Modules, push-button function (BASIC)
 
-\- Magenta: for association with Roller Blinds, 2 buttons will start flashing together for up and down movement (SWITCH\_MULTILEVEL)
+- Magenta: for association with Roller Blinds, 2 buttons will start flashing together for up and down movement (SWITCH_MULTILEVEL)
 
-\- Green: for association with Dimmer Modules (SWITCH\_MULTILEVEL)
+- Green: for association with Dimmer Modules (SWITCH_MULTILEVEL)
 
 After mode selection, please proceed with inclusion process.
 
@@ -119,31 +119,37 @@ The Vitrum Satellite VI supports 6 association groups.
 ### Group 1: Button channel 1
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ### Group 2: Button channel 2
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ### Group 3: Button channel 3
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ### Group 4: Button channel 4
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ### Group 5: Button channel 5
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ### Group 6: Button channel 6
 
 
+Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -171,7 +177,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -180,7 +186,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -189,7 +195,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -198,7 +204,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -207,7 +213,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
@@ -216,7 +222,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |

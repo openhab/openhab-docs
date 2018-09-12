@@ -23,24 +23,25 @@ Wireless Passive Infrared (PIR) Motion Detector
 
 ### Inclusion Information
 
-1. Prepare the Controller to include a unit to the network by adding it to a group (method of adding a node to the network). Refer to controller instructions.
-2. If your Controller supports Network Wide Inclusion (NWI) locate the WAPIRZ-1 near the proposed installation location. If not skip to Step 4.
-3. With your Controller in Inclusion mode, you should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking. Skip to Step 10. If the LED does not stop blinking, relocate the WAPIRZ-1 to within 100 feet (line of sight) of a Z-Wave device or your hub and repeat Step 3. If the LED continues to blink, your Controller does not support NWI and continue with Step 4.
-4. Place the WAPIRZ-1 within 3 feet of the Controller.
-5. With your controller in Inclusion mode, depress the Tamper switch for 1 second then release.
-6. You should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking.
-7. The device will appear in the list of Switches.
+  1. Prepare the Controller to include a unit to the network by adding it to a group (method of adding a node to the network). Refer to controller instructions.
+  2. If your Controller supports Network Wide Inclusion (NWI) locate the WAPIRZ-1 near the proposed installation location. If not skip to Step 4.
+  3. With your Controller in Inclusion mode, you should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking. Skip to Step 10. If the LED does not stop blinking, relocate the WAPIRZ-1 to within 100 feet (line of sight) of a Z-Wave device or your hub and repeat Step 3. If the LED continues to blink, your Controller does not support NWI and continue with Step 4.
+  4. Place the WAPIRZ-1 within 3 feet of the Controller.
+  5. With your controller in Inclusion mode, depress the Tamper switch for 1 second then release.
+  6. You should see an indication on your Controller that the “device was included” in the network. It should display binary switch / Linear. The LED will stop blinking.
+  7. The device will appear in the list of Switches.
 
 ### Exclusion Information
 
-1. Set up the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the WAPIRZ-1 from the controller.
-2. Press the Tamper switch of WAPIRZ-1 for 1 second and release to be excluded. The LED light will flash continuously when the sensor is in the Exclusion condition.
+  1. Set up the Z-Wave™ Interface Controller into “exclusion” mode, and following its instruction to delete the WAPIRZ-1 from the controller.
+  2. Press the Tamper switch of WAPIRZ-1 for 1 second and release to be excluded. The LED light will flash continuously when the sensor is in the Exclusion condition.
 
 ### Wakeup Information
 
 The WAPIRZ-1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 Open the motion detector case to “wake” the unit.
 
@@ -51,7 +52,7 @@ The following table summarises the channels available for the WAPIRZ-1 -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -72,7 +73,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (burglar)
 
@@ -84,7 +85,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -141,7 +142,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The WAPIRZ-1 supports 1 association group.
 
 ### Group 1: Group 1
-
 
 This group supports 5 nodes.
 

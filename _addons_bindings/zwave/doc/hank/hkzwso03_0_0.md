@@ -5,7 +5,7 @@ title: HKZW_SO03 - ZWave
 
 {% include base.html %}
 
-# HKZW\_SO03 Smart Plug
+# HKZW_SO03 Smart Plug
 This describes the Z-Wave device *HKZW_SO03*, manufactured by *[Hank](http://www.hank-tech.com/)* with the thing type UID of ```hank_hkzwso03_00_000```.
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
@@ -18,81 +18,81 @@ The HKZW_SO03 supports routing. This allows the device to communicate using othe
 ## Overview
 
 WELL DONE!  
- You have picked the finest solution for your smart home, congratulations!  
- Now it's time to enjoy these great features of your new Smart Plug:  
-\- Wireless control of floor lamps and small appliances  
-\- Energy monitoring in live mode or over time (your Z-Wave gateway needs to support this feature)  
-\- Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller  
-\- LED indicator displaying Z-Wave signal strength and power usage  
-\- Security enabled Z-Wave device with AES signal encryption (requires a security enabled gateway controller for full functionality)  
-\- Z-Wave Plus with improved 500 chip for faster and safer wireless communication  
-\- Built-in range extender for a stronger, more reliable network  
-\- 2 USB charging ports for your smart phone or tablet (no Z-Wave functionality)  
-\- Built-in overload protection in Z-Wave outlet and USB ports
+You have picked the finest solution for your smart home, congratulations!  
+Now it's time to enjoy these great features of your new Smart Plug:  
+- Wireless control of floor lamps and small appliances  
+- Energy monitoring in live mode or over time (your Z-Wave gateway needs to support this feature)  
+- Scene inclusion for custom automation scenarios when included to a Z-Wave gateway controller  
+- LED indicator displaying Z-Wave signal strength and power usage  
+- Security enabled Z-Wave device with AES signal encryption (requires a security enabled gateway controller for full functionality)  
+- Z-Wave Plus with improved 500 chip for faster and safer wireless communication  
+- Built-in range extender for a stronger, more reliable network  
+- 2 USB charging ports for your smart phone or tablet (no Z-Wave functionality)  
+- Built-in overload protection in Z-Wave outlet and USB ports 
 
 SPECIFICATIONS  
- Model Number: ZEN06  
- Z-Wave Signal Frequency: 908.42 MHz
+Model Number: ZEN06  
+Z-Wave Signal Frequency: 908.42 MHz 
 
 Power: 110V, 60Hz  
- Maximum Load: 15A, 1800W  
- USB Charging Port Power: 1A and 2.4A Operating Temperature: 14 – 104 F Range: Up to 130 feet line of sight Installation and Use: Indoor only Dimensions: 4” x 2.5” x 1.2”  
-Weight: 7oz
+Maximum Load: 15A, 1800W  
+USB Charging Port Power: 1A and 2.4A Operating Temperature: 14 – 104 F Range: Up to 130 feet line of sight Installation and Use: Indoor only Dimensions: 4” x 2.5” x 1.2”  
+Weight: 7oz 
 
 Z-WAVE COMMAND CLASSES  
- This device requires the following command classes to be supported and recognized by your Z-Wave controller:  
- COMMAND\_CLASS\_ALLSWITCH  
- COMMAND\_CLASS\_ASSOCIATION  
- COMMAND\_CLASS\_ASSOCIATION\_GROUP\_INFORMATION  
- COMMAND\_CLASS\_BASIC  
- COMMAND\_CLASS\_CONFIGURATION  
- COMMAND\_CLASS\_DEVICE\_RESET\_LOCAL  
- COMMAND\_CLASS\_FIRMWARE\_UPDATE\_MD  
- COMMAND\_CLASS\_MANUFACTURER\_SPECIFIC  
- COMMAND\_CLASS\_METER  
- COMMAND\_CLASS\_POWERLEVEL  
- COMMAND\_CLASS\_SCENE\_ACTIVATION COMMAND\_CLASS\_SCENE\_ACTUATOR\_CONFIGURATION  
- COMMAND\_CLASS\_SECURITY  
- COMMAND\_CLASS\_SWITCH\_BINARY  
- COMMAND\_CLASS\_VERSION  
- COMMAND\_CLASS\_ZWAVEPLUS\_INFO
+This device requires the following command classes to be supported and recognized by your Z-Wave controller:  
+COMMAND\_CLASS\_ALLSWITCH  
+COMMAND\_CLASS\_ASSOCIATION  
+COMMAND\_CLASS\_ASSOCIATION\_GROUP\_INFORMATION  
+COMMAND\_CLASS\_BASIC  
+COMMAND\_CLASS\_CONFIGURATION  
+COMMAND\_CLASS\_DEVICE\_RESET\_LOCAL  
+COMMAND\_CLASS\_FIRMWARE\_UPDATE\_MD  
+COMMAND\_CLASS\_MANUFACTURER_SPECIFIC  
+COMMAND\_CLASS\_METER  
+COMMAND\_CLASS\_POWERLEVEL  
+COMMAND\_CLASS\_SCENE\_ACTIVATION COMMAND\_CLASS\_SCENE\_ACTUATOR_CONFIGURATION  
+COMMAND\_CLASS\_SECURITY  
+COMMAND\_CLASS\_SWITCH_BINARY  
+COMMAND\_CLASS\_VERSION  
+COMMAND\_CLASS\_ZWAVEPLUS_INFO
 
 ### Inclusion Information
 
-Z-WAVE INCLUSION
+Z-WAVE INCLUSION 
 
 Auto Z-Wave Inclusion  
- 1. Put your Z-Wave controller in inclusion mode  
- 2. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
- 3. LED indicator will flash blue  
- 4. A new on / off device should be recognized by your Z-Wave controller
+1. Put your Z-Wave controller in inclusion mode  
+2. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
+3. LED indicator will flash blue  
+4. A new on / off device should be recognized by your Z-Wave controller 
 
 Manual Z-Wave Inclusion  
- 1. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
- 2. Put your Z-Wave controller in inclusion mode  
- 3. Press and release the Z-Wave button 3 TIMES QUICKLY  
- 4. LED indicator will flash blue
+1. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
+2. Put your Z-Wave controller in inclusion mode  
+3. Press and release the Z-Wave button 3 TIMES QUICKLY  
+4. LED indicator will flash blue 
 
-5\. A new on / off device should be recognized by your Z-Wave controller
+5. A new on / off device should be recognized by your Z-Wave controller 
 
 Secure Z-Wave Inclusion  
- 1. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
- 2. Put your Z-Wave controller in secure inclusion mode  
- 3. Press and HOLD the Z-Wave button for at least 3 seconds  
- 4. LED indicator will flash green  
- 5. LED indicator will turn solid green once the inclusion is completed. Please allow 5 minutes for configuration. DO NOT press any buttons or move the device during that time  
- 6. A new secure on / off device should be recognized by your Z-Wave controller
+1. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
+2. Put your Z-Wave controller in secure inclusion mode  
+3. Press and HOLD the Z-Wave button for at least 3 seconds  
+4. LED indicator will flash green  
+5. LED indicator will turn solid green once the inclusion is completed. Please allow 5 minutes for configuration. DO NOT press any buttons or move the device during that time  
+6. A new secure on / off device should be recognized by your Z-Wave controller
 
 ### Exclusion Information
 
-Z-WAVE EXCLUSION
+Z-WAVE EXCLUSION 
 
-1\. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
- 2. Put your Z-Wave controller in exclusion mode  
- 3. Press and release the Z-Wave button 3 TIMES QUICKLY
+1. Plug the smart plug into a grounded receptacle located within 3 feet from your Z-Wave gateway controller  
+2. Put your Z-Wave controller in exclusion mode  
+3. Press and release the Z-Wave button 3 TIMES QUICKLY 
 
-4\. LED indicator will flash orange  
- 5. The smart plug should disappear from your controller's device list and LED indicator will remain solid orange for a few seconds to indicate exclusion
+4. LED indicator will flash orange  
+5. The smart plug should disappear from your controller's device list and LED indicator will remain solid orange for a few seconds to indicate exclusion 
 
 Please repeat the process following all steps carefully if the first attempt is unsuccessful
 

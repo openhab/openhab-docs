@@ -24,7 +24,7 @@ It should work for both NS210 and NS310 devices.
 
 ### Inclusion Information
 
-On the PowerNode, press and hold the **Sync** button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.
+On the PowerNode, press and hold the **Sync** button for approximately one second until the activity indicator displays a clockwise rotating pattern. This indicates the PowerNode is attempting inclusion. During this process, verify that the Gateway activity indicator still displays a clockwise rotating pattern.
 
 After a few seconds, the rotating pattern on both the PowerNode and the Gateway stops. All bars turn green forming a circle for several seconds. This indicates a successful inclusion.
 
@@ -32,7 +32,7 @@ If all bars on the activity indicator start flashing instead of forming a solid 
 
 ### Exclusion Information
 
-On the PowerNode, press and hold the **Sync** button for approximately one second until the PowerNode activity indicator begins to display a counter-clockwise rotating pattern. The PowerNode is attempting exclusion.
+On the PowerNode, press and hold the **Sync** button for approximately one second until the PowerNode activity indicator begins to display a counter-clockwise rotating pattern. The PowerNode is attempting exclusion.
 
 ## Channels
 
@@ -80,7 +80,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -102,7 +102,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 0: Min. variation of load current
 
 Minimum variation in load current before a message is sent.
- Value in percent (30 => 30%)
+ Value in percent (30 => 30%)
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -200,23 +200,21 @@ The GWPN1 supports 4 association groups.
 
 ### Group 1: Wheel position change
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Current leakage on relay
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 3: Power level change
 
 
-This group supports 1 nodes.
+The new power reading is sent if the delta of the change is greater than the defined minimum variation.
+This group supports 1 node.
 
 ### Group 4: Over-current detection
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 
@@ -229,7 +227,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V2| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
@@ -239,7 +237,7 @@ This group supports 1 nodes.
 | COMMAND_CLASS_PROTECTION_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_INDICATOR_V0| |
+| COMMAND_CLASS_INDICATOR_V1| |
 
 ### Documentation Links
 

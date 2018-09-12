@@ -22,6 +22,7 @@ The WTRFID does not permanently listen for messages sent from the controller - i
 The WTRFID does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the WTRFID -:
@@ -49,7 +50,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (access)
@@ -156,9 +157,9 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Feedback timeout
 
 Feedback timeout
-To configure the timeout to wait for a WAKEUP\_NO\_MORE\_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other.
+To configure the timeout to wait for a WAKEUP\_NO\_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other.       
 
-0 -> disabled
+0    ->   disabled
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -182,7 +183,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 Configure the operating mode
 To configure the operating mode. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.
 
-5 | The mode DESCRIPTION: To configure the operating mode. DEFAULT: 0x01 SIZE: 1 byte\* PARAM1: MODE 1: Normal operating mode. MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. PARAM2,3: not used.
+5 | The mode DESCRIPTION: To configure the operating mode. DEFAULT: 0x01 SIZE: 1 byte* PARAM1: MODE 1: Normal operating mode. MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. PARAM2,3: not used.
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -214,7 +215,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The WTRFID supports 1 association group.
 
 ### Group 1: Group1
-
 
 This group supports 5 nodes.
 

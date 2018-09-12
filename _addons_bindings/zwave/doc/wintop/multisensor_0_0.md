@@ -19,6 +19,7 @@ The Multisensor does not permanently listen for messages sent from the controlle
 The Multisensor does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Multisensor -:
@@ -26,11 +27,11 @@ The following table summarises the channels available for the Multisensor -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm | alarm_general | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
-| Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number | 
-| Sensor (luminance) 2 | sensor_luminance2 | Temperature | Number | 
+| Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number:Temperature | 
+| Sensor (luminance) 2 | sensor_luminance2 |  | Number | 
 
 ### Binary Sensor
 
@@ -49,7 +50,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm
 
@@ -61,7 +62,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -74,13 +75,13 @@ The ```battery-level``` channel supports the ```Number``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (luminance) 2
 
 Indicates the current light reading.
 
-The ```sensor_luminance2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -114,7 +115,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Mode Timeout
 
 The time used in mode 2 to turn the sensor off .
-The time used in mode 2 to turn the sensor off .
+The time used in mode 2 to turn the sensor off . 
 
 This Time will start running as soon as detection is seen.
 Values in the range 0 to 3600 may be set.
@@ -193,7 +194,6 @@ The Multisensor supports 1 association group.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ## Technical Information
@@ -220,13 +220,13 @@ This group supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V1| Linked to BASIC|
 
 ### Documentation Links

@@ -27,11 +27,11 @@ The following table summarises the channels available for the Heating Control -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Room temperature | sensor_temperature | Temperature | Number | 
-| Outside temperature | sensor_temperature | Temperature | Number | 
+| Room temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Outside temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Heating setpoint | thermostat_setpoint | Temperature | Number | 
-| Energy save setpoint | thermostat_setpoint | Temperature | Number | 
+| Heating setpoint | thermostat_setpoint | Temperature | Number:Temperature | 
+| Energy save setpoint | thermostat_setpoint | Temperature | Number:Temperature | 
 
 ### Room temperature
 
@@ -39,7 +39,7 @@ Room temperature of the room thermostat
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Outside temperature
 
@@ -47,11 +47,11 @@ The temperature outside, if reported by the boiler
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
-Determines the mode of the thermostat, either ON ("Heat", 1), or OFF ("Off", 0). The heating setpoint will be applied if the mode Heat is applied and the Energy saving setpoint if the mode Off is applied
+Determines the mode of the thermostat, either ON ("Heat", 1), or OFF ("Off", 0). The heating setpoint will be applied if the mode Heat is applied and the Energy saving setpoint if the mode Off is applied
 
 Sets the thermostat.
 
@@ -74,24 +74,22 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Heating setpoint
 
 The setpoint used for the heating schedule
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Energy save setpoint
 
 The setpoint used for the energy save heating program
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -130,7 +128,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Data request interval
 
 Interval of updating data from thermostat and boiler
-The interval in seconds that data is requested (and therefore updated) from the thermostat and boiler.
+The interval in seconds that data is requested (and therefore updated) from the thermostat and boiler. 
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```14```.
@@ -141,7 +139,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: T room update difference
 
 Difference of temperature before new update
-The value that the room temperature must differ (compared to his previous send value) before an unsolicited room temperature report is send to the associated node.
+The value that the room temperature must differ (compared to his previous send value) before an unsolicited room temperature report is send to the associated node. 
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -152,7 +150,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: T setpoint update difference
 
 Difference in setpoint before new update
-The value that the temperature setpoint must differ (compared to his previous send value) before an unsolicited temperature setpoint report is send to the associated node.
+The value that the temperature setpoint must differ (compared to his previous send value) before an unsolicited temperature setpoint report is send to the associated node. 
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -163,7 +161,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Unsolicited CRC
 
 CRC-16 encapulation
-Configure if the unsolicited reports are send with the CRC-16 encapsulation. Not that the receiving node should support this encapsulation to parse the Z-Wave frame!This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Configure if the unsolicited reports are send with the CRC-16 encapsulation. Not that the receiving node should support this encapsulation to parse the Z-Wave frame! This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -179,7 +177,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Type of 'special' thermostat
 
 Type of 'special' thermostat if applicable
-Type of 'special' thermostat. NOTE: when remeha Celcia 20 support is set than any other thermostat cannot be set (!) NOTE2: when Remeha Celcia 20 gives 'Fout 203' send cfg value again
+Type of 'special' thermostat. NOTE: when remeha Celcia 20 support is set than any other thermostat cannot be set (!) NOTE2: when Remeha Celcia 20 gives 'Fout 203' send cfg value again 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -252,7 +250,8 @@ The Heating Control supports 1 association group.
 ### Group 1: Group 1
 
 Unsolicited reports
-This group supports 1 nodes.
+Every unsolicited report will be sent to the nodes in this group. 
+This group supports 1 node.
 
 ## Technical Information
 

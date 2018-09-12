@@ -21,7 +21,7 @@ ZWN-RSM1-Plus
 
 Transform any home into a connected home with the Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Control Module. The lighting control enables wireless control of on/off functions for standard table and floor lamps, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The Z-Wave Plus Module provides ultimate flexibility for your home lighting by creating custom scenes and scheduling timed events when you’re either home or away. Compared to Z-Wave Classic models, the Enerwave Z-Wave Plus Smart Meter Module offers 50% more wireless range and energy efficiency a 250% faster processor and 400% more memory
 
-Take charge of your home’s appliances power outlet by installed directly behind your wall sockets. The Z-Wave Plus Smart Relay Module offers all the power of intelligent automation and remote control. Discrete and smart, the Smart Module Switch work invisibly behind your existing switches without the need to replace them.
+Take charge of your home’s appliances power outlet by installed directly behind your wall sockets.  The Z-Wave Plus Smart Relay Module offers all the power of intelligent automation and remote control.  Discrete and smart, the Smart Module Switch work invisibly behind your existing switches without the need to replace them.
 
 Easily controlled by your mobile device or computer using any Z-Wave certified gateway, Take control of your home lighting with Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Controls! Z-Wave is the world’s largest ecosystem of interoperable smart home products. Z-Wave lighting controls provide an easy-to-install and affordable system to control lighting and small appliances in your home. Add an Enerwave Z-Wave lighting controls to a Z-Wave certified gateway to access and control your home from anywhere in the world using your smartphone, tablet or computer as a home automation command center.
 
@@ -114,12 +114,10 @@ The ZWN-RSM1-PLUS supports 2 association groups.
 
 ### Group 1: Lifeline
 
-Send device reset locally notification
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: StatusReport_ EP
 
-Switch Binary Report
 This group supports 3 nodes.
 
 ## Technical Information

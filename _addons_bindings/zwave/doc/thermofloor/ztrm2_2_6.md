@@ -20,20 +20,20 @@ The Heatit Z-TRM 2 supports routing. This allows the device to communicate using
 
 ### FEATURES
 
-- Floor sensor
-- Built-in room sensor
-- External room sensor
-- Temperature limiter
-- Weekly program/setback via gateway or pilot wire
-- Multilevel sensor command class
-- Firmware updates (OTA)
-- Power metering
-- LED-diode
-- Can be used in connection with different NTC-sensors
-- Lock mode/child lock
-- Calibration
-- 8 associations
-- Supports encryption mode: S0, S2 Authenticated Class, S2 Unauthenticated Class
+  * Floor sensor
+  * Built-in room sensor
+  * External room sensor
+  * Temperature limiter
+  * Weekly program/setback via gateway or pilot wire
+  * Multilevel sensor command class
+  * Firmware updates (OTA)
+  * Power metering
+  * LED-diode
+  * Can be used in connection with different NTC-sensors
+  * Lock mode/child lock
+  * Calibration
+  * 8 associations
+  * Supports encryption mode: S0, S2 Authenticated Class, S2 Unauthenticated Class
 
 ### Inclusion Information
 
@@ -80,16 +80,18 @@ The following table summarises the channels available for the Heatit Z-TRM 2 -:
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
+| P Setting | config_decimal |  | Number | 
+| Display brightness | config_decimal |  | Number | 
 | Switch 1 | switch_binary1 | Switch | Switch | 
 | Electric meter (volts) 1 | meter_voltage1 | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number | 
-| Sensor (temperature) 3 | sensor_temperature3 | Temperature | Number | 
-| Sensor (temperature) 4 | sensor_temperature4 | Temperature | Number | 
+| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
+| Sensor (temperature) 3 | sensor_temperature3 | Temperature | Number:Temperature | 
+| Sensor (temperature) 4 | sensor_temperature4 | Temperature | Number:Temperature | 
 
 ### Switch
 
@@ -138,26 +140,36 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (furnace)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### P Setting
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
+
+### Display brightness
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
 
 ### Switch 1
 
@@ -187,19 +199,19 @@ The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Ene
 
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 3
 
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 4
 
 Indicates the current temperature.
 
-The ```sensor_temperature4``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature4``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -285,12 +297,12 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Floor sensor type
 
 Floor sensor type
-1\. Value = 0, 10K-NTC (default)  
-2\. Value = 1, 12K-NTC  
-3\. Value = 2, 15K-NTC  
-4\. Value = 3, 22K-NTC  
-5\. Value = 4, 33K-NTC  
-6\. Value = 5, 47K-NTC
+1. Value = 0, 10K-NTC (default)  
+2. Value = 1, 12K-NTC  
+3. Value = 2, 15K-NTC  
+4. Value = 3, 22K-NTC  
+5. Value = 4, 33K-NTC  
+6. Value = 5, 47K-NTC
 The following option values may be configured -:
 
 | Value  | Description |
@@ -310,7 +322,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Temperature control hysteresis (DIFF I)
 
 Temperature control hysteresis (DIFF I)
-1\. Value = 0 - 30, 0.3C - 3.0C (default is 0.5C)  
+1. Value = 0 - 30, 0.3C - 3.0C (default is 0.5C)  
 When using a water-based heating, the recommended hysteresis is a minimum of 1.0C
 Values in the range 0 to 30 may be set.
 
@@ -322,7 +334,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Floor minimum temperature limit (FLo)
 
 Floor minimum temperature limit (FLo)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C
+1. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -333,7 +345,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 ### Parameter 6: Floor maximum temperature (FHi)
 
 Floor maximum temperature (FHi)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)
+1. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```400```.
@@ -344,7 +356,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 ### Parameter 7: Air minimum temperature limit (ALo)
 
 Air minimum temperature limit (ALo)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C
+1. Value = 50 - 400, 5.0C - 40.0C, default = 5.0C
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -355,7 +367,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 ### Parameter 8: Air maximum temperature limit (AHi)
 
 Air maximum temperature limit (AHi)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)
+1. Value = 50 - 400, 5.0C - 40.0C, default = 40.0C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```400```.
@@ -366,7 +378,7 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 ### Parameter 9: FP mode P setting (PLo)
 
 FP mode P setting (PLo)
-1\. Value = 0 - 9, default = 0
+1. Value = 0 - 9, default = 0
 Values in the range 0 to 9 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -377,7 +389,7 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 ### Parameter 10: Heating mode setpoint (CO)
 
 Heating mode setpoint (CO)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C
+1. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```210```.
@@ -388,7 +400,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 ### Parameter 11: Energy saving mode setpoint (ECO)
 
 Energy saving mode setpoint (ECO)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 18.0C
+1. Value = 50 - 400, 5.0C - 40.0C, default = 18.0C
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```180```.
@@ -399,7 +411,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: P setting
 
 P setting
-1\. Value = 0 - 10, default = 2
+1. Value = 0 - 10, default = 2
 Values in the range 0 to 10 may be set.
 
 The manufacturer defined default value is ```2```.
@@ -410,7 +422,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 ### Parameter 13: Cooling setpoint (COOL)
 
 Cooling setpoint (COOL)
-1\. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C
+1. Value = 50 - 400, 5.0C - 40.0C, default = 21.0C
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```210```.
@@ -421,7 +433,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 ### Parameter 14: Room sensor calibration
 
 Room sensor calibration
-1\. Value = -40 - 40, -4.0V - 4.0C, default = 0.0C
+1. Value = -40 - 40, -4.0V - 4.0C, default = 0.0C
 Values in the range -40 to 40 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -432,7 +444,7 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 ### Parameter 15: Floor sensor calibration
 
 Floor sensor calibration
-1\. Value = -40 - 40, -4.0C - 4.0C, default = 0.0C
+1. Value = -40 - 40, -4.0C - 4.0C, default = 0.0C
 Values in the range -40 to 40 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -443,7 +455,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 ### Parameter 16: External sensor calibration
 
 External sensor calibration
-1\. Value = -40 - 40, -4.0C - 4.0C, default = 0.0C
+1. Value = -40 - 40, -4.0C - 4.0C, default = 0.0C
 Values in the range -40 to 40 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -454,8 +466,8 @@ This parameter has the configuration ID ```config_16_1``` and is of type ```INTE
 ### Parameter 17: Temperature display
 
 Temperature display
-1\. Value = 0, Display setpoint temperature (default)  
-2\. Value = 1, Display calculated temperature
+1. Value = 0, Display setpoint temperature (default)  
+2. Value = 1, Display calculated temperature
 The following option values may be configured -:
 
 | Value  | Description |
@@ -471,7 +483,7 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 ### Parameter 18: Button brightness - dimmed state
 
 Button brightness - dimmed state
-1\. Value = 0 - 100, 0% - 100%, default = 50%
+1. Value = 0 - 100, 0% - 100%, default = 50%
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -482,7 +494,7 @@ This parameter has the configuration ID ```config_18_1``` and is of type ```INTE
 ### Parameter 19: Button brightness - active state
 
 Button brightness - active state
-1\. Value = 0 - 100, 0% - 100%, default = 100%
+1. Value = 0 - 100, 0% - 100%, default = 100%
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -493,7 +505,7 @@ This parameter has the configuration ID ```config_19_1``` and is of type ```INTE
 ### Parameter 20: Display brightness - dimmed state
 
 Display brightness - dimmed state
-1\. Value = 0 - 100, 0% - 100%, default = 50%
+1. Value = 0 - 100, 0% - 100%, default = 50%
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -504,7 +516,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: Display brightness - active state
 
 Display brightness - active state
-1\. Value = 0 - 100, 0% - 100%, default = 100%
+1. Value = 0 - 100, 0% - 100%, default = 100%
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -515,8 +527,8 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Temperature report interval
 
 Temperature report interval
-1\. Value = 0, Reporting of temperature disabled  
-2\. Value = 1 - 32767, 1s - 32767s, default = 60s
+1. Value = 0, Reporting of temperature disabled  
+2. Value = 1 - 32767, 1s - 32767s, default = 60s
 
 Time interval between consecutive temperature reports.  
 Temperature reports can also be sent as a result of polling.
@@ -530,7 +542,7 @@ This parameter has the configuration ID ```config_22_2``` and is of type ```INTE
 ### Parameter 23: Temperature report hysteresis
 
 Temperature report hysteresis
-1\. Value = 1 - 100, 0.1C - 10.0C, default = 1.0C
+1. Value = 1 - 100, 0.1C - 10.0C, default = 1.0C
 
 The temperature report will be sent if there is a difference in temperature from the previous value reported,  
 defined in this parameter (hysteresis).  
@@ -545,8 +557,8 @@ This parameter has the configuration ID ```config_23_1``` and is of type ```INTE
 ### Parameter 24: Meter report interval
 
 Meter report interval
-1\. Value = 0, Reporting of metering values is disabled  
-2\. Value = 1 - 32767, 1s - 32767s, default = 60s
+1. Value = 0, Reporting of metering values is disabled  
+2. Value = 1 - 32767, 1s - 32767s, default = 60s
 
 Time interval between consecutive meter reports.  
 Meter reports can also be sent as a result of polling.
@@ -560,9 +572,9 @@ This parameter has the configuration ID ```config_24_2``` and is of type ```INTE
 ### Parameter 25: Meter report delta value
 
 Meter report delta value
-1\. Value = 0 - 255, 0kWh - 25.5kWh, default = 1.0kWh
+1. Value = 0 - 255, 0kWh - 25.5kWh, default = 1.0kWh
 
-Delta value in kWh between consecutive meter reports.  
+Delta value in kWh between consecutive meter reports.  
 Meter reports can also be sent as a result of polling.
 Values in the range 0 to 255 may be set.
 
@@ -580,26 +592,35 @@ The Heatit Z-TRM 2 supports 5 association groups.
 ### Group 1: Thermostat device 0
 
 Main thermostat device
+Lifeline. (Normally used by the Z-Wave Controller)  
+Sends:  
+- Device Reset Notifications  
+- Thermostat Setpoint Reports  
+- Thermostat Mode Reports
 This group supports 7 nodes.
 
 ### Group 2: Thermostat device 0
 
 The main thermostat device
+Send Binary Switch Set commands representing the status of the internal relay.
 This group supports 7 nodes.
 
 ### Group 3: Thermostat device 0
 
 The main thermostat device
+Send Multilevel Sensor Reports for internal temperature sensor.
 This group supports 7 nodes.
 
 ### Group 4: Thermostat device 0
 
 The main thermostat device
+Send Multilevel Sensor Reports for external temperature sensor.
 This group supports 7 nodes.
 
 ### Group 5: Thermostat device 0
 
 The main thermostat device
+Send Multilevel Sensor Reports for floor temperature sensor.
 This group supports 7 nodes.
 
 ## Technical Information
@@ -632,7 +653,7 @@ This group supports 7 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -643,8 +664,8 @@ This group supports 7 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V0| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -653,8 +674,8 @@ This group supports 7 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V0| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -663,8 +684,8 @@ This group supports 7 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V0| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -673,6 +694,7 @@ This group supports 7 nodes.
 ### Documentation Links
 
 * [Product Sheet](https://www.cd-jackson.com/zwave_device_uploads/854/Heatit-ztrm2.pdf)
+* [Manual 2018-06-01](https://www.cd-jackson.com/zwave_device_uploads/854/manual-heatit-z-trm2-eng-2018-06-01.pdf)
 
 ---
 

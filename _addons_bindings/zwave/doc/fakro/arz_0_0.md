@@ -17,7 +17,15 @@ The ARZ supports routing. This allows the device to communicate using other rout
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/248) to improve the documentation.
+The ARZ Z-Wave roller shutters are intended for mounting onto FAKRO roof windows.
+
+### Inclusion Information
+
+Press "P" button on the device and hold it for 0.5 sec.
+
+### Exclusion Information
+
+Press "P" button on the device and hold it for 0.5 sec.
 
 ## Channels
 

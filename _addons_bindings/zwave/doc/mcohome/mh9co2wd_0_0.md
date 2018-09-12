@@ -23,26 +23,26 @@ Device can be included into any Z-Wave network, and is compatible with any other
 
 **Specification**
 
-- Power Supply：DC12V
-- CO2 display range: 0-2000ppm
-- Default threshold:1000ppm (adjustable)
-- Temperature range：-9.0～50 ℃
-- Humidity range: 0%～99%RH
-- Installation: Wall-mounted (Vertical)
-- Work environment:-10~+8℃ 0-90%RH (Non-condensation)
-- Dimension：90\* 130\*28mm
-- Hole Pitch：60mm or 82m
-- Housing: Tempered glass+ PC Alloy
+  * Power Supply：DC12V
+  * CO2 display range: 0-2000ppm
+  * Default threshold:1000ppm (adjustable)
+  * Temperature range：-9.0～50 ℃
+  * Humidity range: 0%～99%RH
+  * Installation: Wall-mounted (Vertical)
+  * Work environment:-10~+8℃ 0-90%RH (Non-condensation)
+  * Dimension：90\* 130\*28mm
+  * Hole Pitch：60mm or 82m
+  * Housing: Tempered glass+ PC Alloy
 
 **Command Class supported by the device**
 
-- COMMAND\_CLASS\_BASIC
-- COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V5
-- COMMAND\_CLASS\_CONFIGURATION
-- COMMAND\_CLASS\_NOTIFICATION
-- COMMAND\_CLASS\_ASSOCIATION
-- COMMAND\_CLASS\_MANUFACTURER\_SPECIFIC
-- COMMAND\_CLASS\_VERSION
+  * COMMAND\_CLASS\_BASIC
+  * COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V5
+  * COMMAND\_CLASS\_CONFIGURATION
+  * COMMAND\_CLASS\_NOTIFICATION
+  * COMMAND\_CLASS\_ASSOCIATION
+  * COMMAND\_CLASS\_MANUFACTURER_SPECIFIC
+  * COMMAND\_CLASS\_VERSION
 
 ### Inclusion Information
 
@@ -50,9 +50,9 @@ Activate Inclusion/Exclusion mode in the gateway.
 
 When device is powered on, long press K2 can enter interface for inclusion or exclusion of Z-Wave network.
 
-If device has not been included into any Z-Wave network before, “- - -”will display on the screen.
+If device has not been included into any Z-Wave network before, “\- - -”will display on the screen.
 
-Then press K2 once, “- - -” flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, “- - -” will stop flashing in 20 sec.
+Then press K2 once, “\- - -” flashing and device enters into learning mode to get a node ID. If inclusion is success, a node ID will display on the screen. If not, “\- - -” will stop flashing in 20 sec.
 
 ### Exclusion Information
 
@@ -62,20 +62,21 @@ When device is powered on, long press K2 can enter interface for inclusion or ex
 
 If a node ID displays, it means the device is already in a Z-Wave network.
 
-To press K2 once can remove it from the network. “- - -” displays and press K1 once can return to normal work.
+To press K2 once can remove it from the network. “\- - -” displays and press K1 once can return to normal work.
 
 ### Wakeup Information
 
 The MH9-CO2-WD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the MH9-CO2-WD -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
 | Sensor (CO2) | sensor_co2 |  | Number | 
 | Alarm (CO2) | alarm_co2 | Door | Switch | 
@@ -85,7 +86,7 @@ The following table summarises the channels available for the MH9-CO2-WD -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 
@@ -109,7 +110,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (general)
@@ -122,7 +123,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -158,12 +159,23 @@ The MH9-CO2-WD supports 2 association groups.
 ### Group 1: Notification
 
 sends report ever 30s when CO2 value above threshold
+Group 1 is for “Notification” purpose, which can add up to 5 Node ID. Device works in “Push” mode in “Notification Command Class”.
+
+When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.
+
+Use “Notification Set” can set this unsolicited report; this function is default as “OFF”.
 This group supports 5 nodes.
 
 ### Group 2: Gateway report
 
 CO2, Temperature and Humidity is reported when changed
-This group supports 1 nodes.
+A gateway is suggested to associate with Group 2, which can support only one Node ID. The  
+gateway can ask for detected data any time. And the device will report to this associated device  
+(gateway) when detected data changes:  
+CO2: report when any change ≥50ppm“Multilevel sensor Report (CO2=0x11)”  
+Temperature: report when any change≥ 0.5 “Multilevel ℃ sensor Report (Temp=0x01)”  
+Humidity: report when any change≥ 2%“Multilevel sensor Report (Humidity=0x05)’
+This group supports 1 node.
 
 ## Technical Information
 

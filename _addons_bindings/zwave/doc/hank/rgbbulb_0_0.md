@@ -179,7 +179,6 @@ The RGB bulb supports 1 association group.
 
 ### Group 1: Lifeline
 
-
 This group supports 5 nodes.
 
 ## Technical Information

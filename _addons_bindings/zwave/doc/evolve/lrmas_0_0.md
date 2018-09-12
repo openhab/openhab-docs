@@ -64,7 +64,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -157,7 +157,6 @@ The LRM-AS supports 1 association group.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ## Technical Information
@@ -170,17 +169,17 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_APPLICATION_STATUS_V0| |
-| COMMAND_CLASS_SWITCH_BINARY_V0| |
+| COMMAND_CLASS_APPLICATION_STATUS_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
-| COMMAND_CLASS_METER_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
+| COMMAND_CLASS_METER_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
-| COMMAND_CLASS_ALARM_V0| |
+| COMMAND_CLASS_ALARM_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_BATTERY_V0| |
+| COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
 ### Documentation Links

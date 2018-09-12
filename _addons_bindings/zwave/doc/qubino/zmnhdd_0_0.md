@@ -23,25 +23,25 @@ This Z-Wave module is used for dimming the bulb or to manage the speed of a fan.
 
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
-- Connect module to power supply (with temperature sensor connected - if purchased),
-- Enable add/remove mode on main controller
-- Auto-inclusion (works for about 2 minutesafter connected to power supply) or
-- **110V-230V power supply:** Press push button I1 three times within 3 seconds (3 times change switch state within 3 seconds)
-- **24V SELV:** Press service button **S** for more than 2 seconds.
+  * Connect module to power supply (with temperature sensor connected - if purchased),
+  * Enable add/remove mode on main controller
+  * Auto-inclusion (works for about 2 minutesafter connected to power supply) or
+  * **110V-230V power supply: **Press push button I1 three times within 3 seconds (3 times change switch state within 3 seconds)
+  * **24V SELV: **Press service button **S** for more than 2 seconds.
 
 **NOTE1:** For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to power supply.
 
-**NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.
+**NOTE2:** When connecting temperature sensor to module that has already been included, you have to exclude module first. Switch off power supply,connect the sensor and re-include the module.
 
 ### Exclusion Information
 
 WARNING: Service button S **must NOT be used** when module is connected to 110-230V power supply.
 
-- Connect module to power supply
-- Bring module within maximum 1 meter (3 feet) of the main controller
-- Enable add/remove mode on main controller
-- **110V-230V power supply:** Press push button **I1** five times within 3 seconds (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply
-- **24V SELV:** Press ervice button **S** for more than 6 seconds.
+  * Connect module to power supply
+  * Bring module within maximum 1 meter (3 feet) of the main controller
+  * Enable add/remove mode on main controller
+  * **110V-230V power supply:** Press push button **I1** five times within 3 seconds (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply
+  * **24V SELV:** Press ervice button **S** for more than 6 seconds.
 
 By this function all parameters of the module are set to default values and own ID is deleted. If push button I1 is pressed three times within 3 seconds (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.
 
@@ -56,7 +56,7 @@ The following table summarises the channels available for the ZMNHDD -:
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Reset the total power consumption | meter_reset | Energy | Switch | 
@@ -100,7 +100,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 
@@ -130,7 +130,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Switch 1
@@ -181,7 +181,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Binary Sensor 3
@@ -207,7 +207,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -328,8 +328,8 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 ### Parameter 11: Automatic turning off output after set time
 
 Auto OFF enabled with defined time, step is 1 second.
-- 0 - Auto OFF disabled
-- 1 – 32536 = 1 second – 32536 seconds
+  * 0 - Auto OFF disabled
+  * 1 – 32536 = 1 second – 32536 seconds
 Values in the range 0 to 32536 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -340,8 +340,8 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: Automatic turning on output after set time
 
 Auto ON enabled with defined time, step is 1 second.
-- 0 - Auto ON disabled
-- 1 – 32536 = 1 second – 32536 seconds
+  * 0 - Auto ON disabled
+  * 1 – 32536 = 1 second – 32536 seconds
 Values in the range 0 to 32536 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -407,8 +407,8 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 Set value is percentage, set value from 0 - 100 = 0% - 100%.
 Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5.
 
-- 0 – Reporting Disabled
-- 1 – 100 = 1% - 100% Reporting enabled.
+  * 0 – Reporting Disabled
+  * 1 – 100 = 1% - 100% Reporting enabled.
 
 Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
@@ -425,8 +425,8 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 Set value means time interval (0 – 32767) in seconds.
 Set value means time interval (0 – 32767) in seconds, when power report is sent.
 
-- 0 – reporting disabled
-- 1 – 32767 = 1 second – 32767 seconds. Reporting enabled.
+  * 0 – reporting disabled
+  * 1 – 32767 = 1 second – 32767 seconds. Reporting enabled.
 
 Power report is send with time interval set by entered value.
 Values in the range 0 to 32767 may be set.
@@ -439,7 +439,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 ### Parameter 60: Minimum dimming value
 
 Minimum dimming value is set by entered value.
-- 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
+  * 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
 
 NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 1 to 98 may be set.
@@ -452,7 +452,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 ### Parameter 61: Maximum dimming value
 
 Maximum dimming value is set by entered value.
-- 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
+  * 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
 
 NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 2 to 99 may be set.
@@ -467,8 +467,8 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 Set value means time of moving the Dimmer between min. and max. dimming values
 Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).
 
-- default value 100 = 1s
-- 1 - 255 = 100 mseconds – 25500 mseconds, step is 10 mseconds
+  * default value 100 = 1s
+  * 1 - 255 = 100 mseconds – 25500 mseconds, step is 10 mseconds
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -481,8 +481,8 @@ This parameter has the configuration ID ```config_65_2``` and is of type ```INTE
 Time of moving the Dimmer between min. and max dimming values
 Time of moving the Dimmer between min. and max dimming values by continuous hold of push button I1 or associated device.
 
-- default value 3 = 3s
-- 1- 255 = 1 second – 255 seconds.
+  * default value 3 = 3s
+  * 1- 255 = 1 second – 255 seconds.
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -493,7 +493,7 @@ This parameter has the configuration ID ```config_66_2``` and is of type ```INTE
 ### Parameter 67: Ignore start level
 
 This parameter is used with association group 3
-This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1.
+This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -574,10 +574,10 @@ This parameter has the configuration ID ```config_101_1``` and is of type ```INT
 Offset to actual measured value
 Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:
 
-- default value 32536
-- 32536 – offset is 0.0C
-- From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.
-- From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.
+  * default value 32536
+  * 32536 – offset is 0.0C
+  * From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.
+  * From 1001 to 1100 -value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.
 Values in the range 1 to 32536 may be set.
 
 The manufacturer defined default value is ```32536```.
@@ -590,8 +590,8 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 Module reports measured temperature on defined temperature change
 If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:
 
-- default value 5 = 0.5°C
-- 0 – Reporting disabled
+  * default value 5 = 0.5°C
+  * 0 – Reporting disabled
 Values in the range 0 to 127 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -602,7 +602,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 ### Parameter 250: Unsecure / Secure Inclusion
 
 
-The Flush dimmer supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, a dimmer could be included as unsecure and keep all the functionalityThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The Flush dimmer supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, a dimmer could be included as unsecure and keep all the functionalityThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -623,57 +623,46 @@ The ZMNHDD supports 11 association groups.
 
 ### Group 1: Controller Updates
 
-Lifeline group
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: I1 basic on/off
 
-Triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 3: I1 start/stop level change
 
-Triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 4: Multilevel
 
-Triggered at changes of state/value of the Flush Dimmer
 This group supports 16 nodes.
 
 ### Group 5: I2 basic on/off
 
-Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 6: I2 notification report
 
-Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 7: I2 binary sensor
 
-Triggered at change of the input I2 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 8: I3 basic on/off
 
-Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 9: I3 notification report
 
-Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 10: I3 binary sensor
 
-Triggered at change of the input I3 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 11: Multilevel sensor
 
-Triggered at change of temperature sensor
 This group supports 16 nodes.
 
 ## Technical Information
@@ -687,7 +676,7 @@ This group supports 16 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V0| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
 | COMMAND_CLASS_METER_V3| |
@@ -701,7 +690,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
@@ -711,7 +700,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ALARM_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -720,7 +709,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ALARM_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |

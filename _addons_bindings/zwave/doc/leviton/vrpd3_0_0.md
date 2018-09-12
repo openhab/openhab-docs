@@ -17,7 +17,26 @@ The VRPD3 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/199) to improve the documentation.
+  * Smart plug-in module for use with table and floor lamps
+  * ON/OFF/DIM/BRIGHT switching of CFL/LED loads up to 100W and incandescent loads up to 300W 
+  * ON/OFF scene and zone compatibility
+  * 2-way status updates
+  * Supports Z-Wave Beaming
+
+### Inclusion Information
+
+  1. Plug in Leviton VRPD3
+  2. Place controller in inclusion mode
+  3. Press button on front of VRPD3
+
+If successful, the VRPD3 LED will turn orange during inclusion and then green. The LED will flash red if it fails.
+
+### Exclusion Information
+
+  1. Place controller in exclusion mode
+  2. Press button on front of VRPD3
+
+If successful, the VRPD3 LED will turn orange during exclusion and then green. The LED will flash red if it fails.
 
 ## Channels
 
@@ -48,7 +67,6 @@ The VRPD3 supports 1 association group.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ## Technical Information
@@ -61,11 +79,11 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_APPLICATION_STATUS_V0| |
+| COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
-| COMMAND_CLASS_METER_V0| |
+| COMMAND_CLASS_METER_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |

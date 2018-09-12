@@ -24,6 +24,7 @@ The HS1SA does not permanently listen for messages sent from the controller - it
 The HS1SA does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the HS1SA -:
@@ -31,7 +32,7 @@ The following table summarises the channels available for the HS1SA -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Alarm (smoke) | alarm_smoke | Door | Switch | 
+| Alarm (smoke) | alarm_smoke | Smoke | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -51,13 +52,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates if a smoke is triggered.
 
-The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level

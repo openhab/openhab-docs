@@ -25,6 +25,7 @@ The ZWN-BPC-PLUS does not permanently listen for messages sent from the controll
 The ZWN-BPC-PLUS does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the ZWN-BPC-PLUS -:
@@ -58,7 +59,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -83,9 +84,9 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Motion timeout
 
 Multiplier to wakeup timer interval
-It is minimum time when the associated nodes keep turn on
+It is minimum time when the associated nodes keep turn on
 
-n:1-7 (n\*WAKE\_UP\_INTERVAL)
+n:1-7 (n*WAKE\_UP\_INTERVAL)
 Values in the range 1 to 7 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -119,20 +120,22 @@ The ZWN-BPC-PLUS supports 4 association groups.
 ### Group 1: Lifeline
 
 
-This group supports 1 nodes.
+1. Battery Report
+
+2. Notification Report
+
+3. Device Reset Locally
+This group supports 1 node.
 
 ### Group 2: Basic Report
-
 
 This group supports 5 nodes.
 
 ### Group 3: Notification Report
 
-
 This group supports 5 nodes.
 
 ### Group 4: Basic Set
-
 
 This group supports 5 nodes.
 
@@ -146,7 +149,7 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

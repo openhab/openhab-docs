@@ -21,7 +21,7 @@ The following table summarises the channels available for the PlugInSwitch -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 
@@ -35,7 +35,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
 

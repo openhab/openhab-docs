@@ -27,35 +27,24 @@ When power is first supplied, the LED will flash on and off alternately at one s
 
 ### Inclusion Information
 
-1\. Remove the sensor cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or
-
-gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter inclusion mode. And the
-
-LED will flash on and off alternately five times..
+  1. Remove the sensor cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..
 
 ### Exclusion Information
 
-1\. Remove the device cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or
-
-gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
+  1. Remove the device cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ### Wakeup Information
 
 The Motion Sensor does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 You can press the button once to wake up the device and send wakeup notification to controller.
 
@@ -76,8 +65,8 @@ The following table summarises the channels available for the Motion Sensor -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
+| Temperature Sensor | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -98,13 +87,13 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
-### Sensor (temperature)
+### Temperature Sensor
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (burglar)
 
@@ -116,7 +105,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -180,11 +169,11 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
 Available Settings:
 
- 0 - Off, Alarm cancelling or turning a device OFF
+ 0 - Off, Alarm cancelling or turning a device OFF
 
 1~99 or 255 – ON (Binary Switch Device)
 
- Dim Level (Multilevel Switch Device)
+                      Dim Level (Multilevel Switch Device)
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -215,7 +204,7 @@ If the ambient illumination level falls below this value and a person moves
 
 across or within the detected area , PIR detector will send a Z-Wave ON
 
-command(i.e. BASIC\_SET value = parameter 3#) to an associated device and activate
+command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate
 
 it.
 Values in the range 0 to 1000 may be set.
@@ -254,9 +243,9 @@ If this parameter is set to ‘1’, and when Lux level less than the value defi
 
 detector will send a BASIC\_SET command frame(i.e. BASIC\_SET (value = parameter 3) to an
 
-associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR
+associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR
 
-detector will not send a BASIC\_SET command frame.
+detector will not send a BASIC_SET command frame.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -322,21 +311,33 @@ The Motion Sensor supports 4 association groups.
 ### Group 1: Group 1
 
 Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
-This group supports 1 nodes.
+NOTIFICATION_REPORT
+
+COMMAND\_CLASS\_SENSOR\_BINARY\_V2
+
+COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V7
+
+BATTERY_REPORT
+
+DEVICE\_RESET\_LOCALLY_NOTIFICATION
+This group supports 1 node.
 
 ### Group 2: Group 2
 
 Sending Control Command to associated devices. This association group is configured through the advanced parameters no. 2, 3, 5 and 8
+BASIC_SET
 This group supports 4 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
+NOTIFICATION\_REPORT\_V4
 This group supports 4 nodes.
 
 ### Group 4: Group 4
 
 Send Notification to associated devices.
+SENSOR\_BINARY\_REPORT_V2
 This group supports 4 nodes.
 
 ## Technical Information

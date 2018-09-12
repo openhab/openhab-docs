@@ -15,32 +15,32 @@ The P1-dongle supports routing. This allows the device to communicate using othe
 
 ## Overview
 
-The P1-dongle sends smart meter data wirelessly to your controller, helping you get insight of your consumption and things like the overall yield of your solar panels. The P1-dongle can connect to smart meters that support DSMR (Dutch Smart Meter Reader Protocol) eg. all smart meters with a P1-connector.
+The P1-dongle sends smart meter data wirelessly to your controller, helping you get insight of your consumption and things like the overall yield of your solar panels. The P1-dongle can connect to smart meters that support DSMR (Dutch Smart Meter Reader Protocol) eg. all smart meters with a P1-connector.
 
 LED Status Information
 
-- Ready to install: LED pulse once per second
-- Including: LED pulse twice per second
-- Excluding: LED pulse three times per 1.5 second
-- Include Successful: LED on for one second
-- Ready and operating in a Z-Wave network: LED continuously on
-- No ready and not included in a Z-Wave network: LED pulse once per second
+  * Ready to install: LED pulse once per second
+  * Including: LED pulse twice per second
+  * Excluding: LED pulse three times per 1.5 second
+  * Include Successful: LED on for one second
+  * Ready and operating in a Z-Wave network: LED continuously on
+  * No ready and not included in a Z-Wave network: LED pulse once per second
 
 ### Inclusion Information
 
-- Put you controller in inclusion mode
-- Connect the P1 Dongle to your Smart Meter (use a power source when needed)
-- The P1 Dongle will switch to Network Wide Inclusion automatically
+  * Put you controller in inclusion mode
+  * Connect the P1 Dongle to your Smart Meter (use a power source when needed)
+  * The P1 Dongle will switch to Network Wide Inclusion automatically
 
-Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
+Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
 
 ### Exclusion Information
 
-- Put your controller and the P1 Dongle in exclusion mode (LED pulse three times per 1.5 second)
-- The dongle will exclude from it's former network and reset to node ID zero
-- If the P1 Dongle wasn't included in a network before, this procedure will act as a node reset
+  * Put your controller and the P1 Dongle in exclusion mode (LED pulse three times per 1.5 second)
+  * The dongle will exclude from it's former network and reset to node ID zero 
+  * If the P1 Dongle wasn't included in a network before, this procedure will act as a node reset
 
-Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
+Use the button to switch the P1 Dongle to Inclusion (LED pulse twice per second) or Exclusion / Reset (LED pulse three times per 1.5 second) mode
 
 ## Channels
 
@@ -112,7 +112,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 4: Baud Rate
 
 Baud rate: the rate the device sends data between the smart meter and z-wave
-Set BAUD rate value \* 100.
+Set BAUD rate value * 100.
 Values in the range 0 to 40000 may be set.
 
 The manufacturer defined default value is ```1152```.
@@ -135,16 +135,16 @@ The device does not support associations.
 |---------------|---------|
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
-| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V0| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_MULTI_CHANNEL_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V0| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_SECURITY_V0| |
+| COMMAND_CLASS_SECURITY_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |

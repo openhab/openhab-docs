@@ -12,21 +12,21 @@ The MIMO2+ supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-The MIMO2+ module provides two analog or digital input and two relay output (isolated dry contacts, NO-COM-NC) and can be controlled by ZWaveTM. The system includes a program switch for Z-WaveTM inclusion/exclusion and a status light (LED) for various indications.
+The MIMO2+ module provides two analog or digital input and two relay output (isolated dry contacts, NO-COM-NC) and can be controlled by ZWaveTM.  The system includes a program switch for Z-WaveTM inclusion/exclusion and a status light (LED) for various indications. 
 
-Input SIG1 and SIG2 is an analog input, internally pulled-up to the MIMO2+ supply voltage. The system allows trigger conditions to be set based on the input voltage being inside or outside a user-defined range (configured via Z-Wave). This provides great flexibility for capturing events in a wide variety of applications. The trigger status of the input can be read via Z-WaveTM and/or can be automatically sent to a configured node, typically the Controller. In addition, a count of the trigger events that have occurred for the input channel is internally recorded (and stored in the ‘pulse count’) and is available to be requested or automatically sent via Z-Wave. The current triggered/un-triggered status can also be read via ZWave. The SIG1 and SIG2 input can be associated with up to two other Z-WaveTM devices, such that an associated device will automatically turn on (or off) based on the occurrence of a trigger event. Finally, the analog input channel can be configured so that the analog input level (not just binary trigger status) is periodically sent to up to two other associated nodes.
+Input SIG1 and SIG2 is an analog input, internally pulled-up to the MIMO2+ supply voltage. The system allows trigger conditions to be set based on the input voltage being inside or outside a user-defined range (configured via Z-Wave).  This provides great flexibility for capturing events in a wide variety of applications. The trigger status of the input can be read via Z-WaveTM and/or can be automatically sent to a configured node, typically the Controller.  In addition, a count of the trigger events that have occurred for the input channel is internally recorded (and stored in the ‘pulse count’) and is available to be requested or automatically sent via Z-Wave.  The current triggered/un-triggered status can also be read via ZWave.  The SIG1 and SIG2 input can be associated with up to two other Z-WaveTM devices, such that an associated device will automatically turn on (or off) based on the occurrence of a trigger event.  Finally, the analog input channel can be configured so that the analog input level (not just binary trigger status) is periodically sent to up to two other associated nodes. 
 
-The output relay is typically commanded via Z-WaveTM commands. In addition, the user can configure the input SIG1 or SIG2 trigger condition to be mapped to the output relay. For example, Relay 1 or 2 can be automatically turned on based on Input SIG1 being triggered. The relay activation can be set via a jumper or via Z-WaveTM for either momentary or latched operation.
+The output relay is typically commanded via Z-WaveTM commands. In addition, the user can configure the input SIG1 or SIG2 trigger condition to be mapped to the output relay.  For example, Relay 1 or 2 can be automatically turned on based on Input SIG1 being triggered.  The relay activation can be set via a jumper or via Z-WaveTM for either momentary or latched operation.
 
 ### Inclusion Information
 
-1. Set up the inclusion mode at the controller (for detailed directions, please refer to your controller user manual)
-2. If the LED has a periodic single blink, the unit will be automatically included. Otherwise, the button has been previously pressed and automatic inclusion mode is no longer active. In this case, briefly press the button once and the controller will indicate that the unit has been included in the network. Also, the Status LED will blink when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode.
+  1. Set up the inclusion mode at the controller (for detailed directions, please refer to your controller user manual)
+  2. If the LED has a periodic single blink, the unit will be automatically included.  Otherwise, the button has been previously pressed and automatic inclusion mode is no longer active.  In this case, briefly press the button once and the controller will indicate that the unit has been included in the network.  Also, the Status LED will blink when the inclusion completes. Inclusion and exclusion are always done at normal transmit power mode.  
 
 ### Exclusion Information
 
-1. Set up the exclusion mode at the controller (for detailed directions, please refer to your controller user manual)
-2. Press the button and the controller will indicate the unit has been removed from the network. The Status LED will blink when the exclusion completes.
+  1. Set up the exclusion mode at the controller (for detailed directions, please refer to your controller user manual)
+  2. Press the button and the controller will indicate the unit has been removed from the network. The Status LED will blink when the exclusion completes. 
 
 ## Channels
 
@@ -64,7 +64,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Sensor 1
@@ -363,16 +363,13 @@ The MIMO2+ supports 3 association groups.
 
 ### Group 1: Lifeline
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Sensor 1 On Change
-
 
 This group supports 2 nodes.
 
 ### Group 3: Sensor 2 On Change
-
 
 This group supports 2 nodes.
 
@@ -404,7 +401,7 @@ This group supports 2 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V9| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -413,7 +410,7 @@ This group supports 2 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V9| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -421,14 +418,14 @@ This group supports 2 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 #### Endpoint 4
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 

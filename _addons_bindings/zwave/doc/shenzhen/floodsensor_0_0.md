@@ -23,23 +23,17 @@ Flood/Water detection
 
 ### Inclusion Information
 
-1\. Remove the sensor cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..
+  1. Remove the sensor cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times..
 
 ### Exclusion Information
 
-1\. Remove the device cover.
-
-2\. Make sure the sensor is powered.
-
-3\. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
-
-4\. Press the button three times within 1.5 second, the device will enter exclusion mode.
+  1. Remove the device cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ### Wakeup Information
 
@@ -47,17 +41,13 @@ The Flood sensor does not permanently listen for messages sent from the controll
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
-You can press the button once to wake up the device and send wakeup notification to controller.
 
-If press successfully, the LED will blink one time.
-
-The minimum wakeup interval is 300s
-
-The maximum wakeup interval is 16,777,200s (about 194 days)
-
-Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…
-
-Note: The default value is 12 hours. This value is longer, the battery life is greater.
+  * You can press the button once to wake up the device and send wakeup notification to controller.
+  * If press successfully, the LED will blink one time.
+  * The minimum wakeup interval is 300s
+  * The maximum wakeup interval is 16,777,200s (about 194 days)
+  * Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…
+  * Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
 
@@ -92,7 +82,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -170,21 +160,19 @@ The Flood sensor supports 4 association groups.
 ### Group 1: Device status
 
 Sends the BASIC SET control frame when the probe detects water
+Association group 1 is assigned the status of the device - it sends the BASIC SET control frame to the associated devices when the probe has detected water.
 This group supports 5 nodes.
 
 ### Group 2: Controller updates
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 3: Send Notification Report
 
-Allows sending notification reports
 This group supports 5 nodes.
 
 ### Group 4: Send Basic Report
 
-Allows sending basic reports
 This group supports 5 nodes.
 
 ## Technical Information

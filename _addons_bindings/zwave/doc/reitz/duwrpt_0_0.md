@@ -5,7 +5,7 @@ title: DUW_RPT - ZWave
 
 {% include base.html %}
 
-# DUW\_RPT Düwi Repeater
+# DUW_RPT Düwi Repeater
 This describes the Z-Wave device *DUW_RPT*, manufactured by *Reitz-Group.de* with the thing type UID of ```reitz_duwrpt_00_000```.
 
 ![DUW_RPT product image](https://www.cd-jackson.com/zwave_device_uploads/586/586_default.jpg)
@@ -34,7 +34,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level

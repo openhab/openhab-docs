@@ -21,7 +21,7 @@ The following table summarises the channels available for the EasyPlug -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 
@@ -35,7 +35,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 
@@ -62,7 +62,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The EasyPlug supports 1 association group.
 
 ### Group 1: Group 1
-
 
 This group supports 5 nodes.
 

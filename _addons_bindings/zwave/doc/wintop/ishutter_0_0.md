@@ -79,9 +79,9 @@ See overview
 
 2 -> Two toggle switch
 
-3 -> Two buttons with neutral position
+3 -> Two buttons with neutral position 
 
-One push button: One button is used (chose any), press while moving up and down, stops, while stopped moves to opposite direction to previous. Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down
+One push button: One button is used (chose any), press while moving up and down, stops, while stopped moves to opposite direction to previous. Two buttons with neutral position: Up click moves up if stopped and stops if moving down, Down click moves down 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -118,7 +118,7 @@ Defines how to interpret RF Off command.
 
 3 -> Open if closed, otherwise Close
 
-Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion.
+Can be used in conjunction with Auto Close function: Ignore - to open the door by motion detectors and close it back after some amount of time: in case of multiple motion detectors each would try to open that would that would break logics; Open - to open on both On and Off paddle press on the remote and close after some amount of time. Button close click will still work (if button operations are not disabled). Note that Dim Down command will still begin close motion. 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -149,7 +149,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 Invert buttons
 0 -> No
 
-1 -> Yes
+1 -> Yes 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -169,7 +169,7 @@ Defines which command should be sent to Association group on button press or hol
 
 1 -> Switch On, Off and dim using Basic Set and MultiLevel Start/Stop Changing
 
-2 -> Send Scene
+2 -> Send Scene 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -212,7 +212,7 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 ### Parameter 10: Full close time
 
 Time to go from opened to closed state.
-Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and multilevel Set values (1-99, 255) would Open except 0 value that would Close.
+Used to estimate the current level. Note that in Permanent motion mode the reported value would a be Closed or Opened, while all Basic and  multilevel Set values (1-99, 255) would Open except 0 value that would Close. 
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```60```.
@@ -263,7 +263,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 ### Parameter 14: Invert open and close relays
 
 Allow exchanging open and close relays
-Allow exchanging open and close relays if blind control is wired to the motor incorrectly
+Allow exchanging open and close relays if blind control is wired to the motor incorrectly 
 
 0 -> No
 
@@ -302,12 +302,10 @@ The iShutter supports 2 association groups.
 
 ### Group 1: Click, press and hold of up/down buttons
 
-Click, press and hold of up/down buttons
 This group supports 10 nodes.
 
 ### Group 2:  Send Reports on blind state change
 
-Send Reports on blind state change
 This group supports 10 nodes.
 
 ## Technical Information
@@ -318,18 +316,18 @@ This group supports 10 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_SWITCH_BINARY_V0| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_SWITCH_BINARY_V0| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_SWITCH_BINARY_V0| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 
 ### Documentation Links

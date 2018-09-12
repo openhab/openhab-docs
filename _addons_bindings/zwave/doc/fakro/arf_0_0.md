@@ -17,9 +17,9 @@ The ARF supports routing. This allows the device to communicate using other rout
 
 ## Overview
 
-The ARF blackout blind is a stylish, decorative blind with runners at the sides to allow the blind to be posi tioned anywhere on the window. It also prevents daylight entering at the sides, thus providing a complete blackout.
+The ARF blackout blind is a stylish, decorative blind with runners at the sides to allow the blind to be posi tioned anywhere on the window. It also prevents daylight entering at the sides, thus providing a complete blackout. 
 
-The ARF Z-Wave blackout blind has a built in 12V electric drive which enables operation at 12V blinds by remote control or wall switch. The standard version of the action blinds ARF Z-Wave is only possible with the window closed.
+The ARF Z-Wave blackout blind has a built in 12V electric drive which enables operation at 12V blinds by remote control or wall switch. The standard version of the action blinds ARF Z-Wave is only possible with the window closed. 
 
 ### Inclusion Information
 
@@ -61,7 +61,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 

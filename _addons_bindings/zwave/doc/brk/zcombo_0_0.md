@@ -8,17 +8,51 @@ title: ZCOMBO - ZWave
 # ZCOMBO Smoke and Carbon Monoxide Alarm
 This describes the Z-Wave device *ZCOMBO*, manufactured by *BRK Brands, Inc.* with the thing type UID of ```brk_zcombo_00_000```.
 
+The device is in the category of *Smoke Detector*, defining Smoke detectors.
+
+![ZCOMBO product image](https://www.cd-jackson.com/zwave_device_uploads/238/238_default.jpg)
+
+
 The ZCOMBO supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The ZCOMBO does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
+Z-wave compatible smoke and carbon monoxide alarm. First Alert Z-Wave Detector - NOT WINK compatible  
+Integrated wireless alarm system is Iris compatible to send you mobile alerts and emails. The alarm is also compatible with 3rd party certified z-wave devices with the First Alert protocol. Note- this alarm is not compatible with Onelink. Wireless connection to z-wave hub (not included)  
+Reliable electrochemical co and photoelectric smoke sensors  
+Features single button test/Silence and side-access battery drawer  
+Meets UL standards and backed by 7 year limited warranty  
+Certified for use with Nexia Home Intelligence or other Z-Wave systems  
+Combination Smoke and Carbon Monoxide protection that alerts you whether you are home or away  
+Photoelectric smoke sensor helps reduce false alarms such as from cooking or shower steam
+
+### Inclusion Information
+
+  1. Slide battery door open.
+  2. Insert batteries checking the correct orientation.
+  3. Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.
+
+  * The alarm will remain awake for 30 seconds on inclusion.
+  * The alarm supports one association group with up to 1 node, and sends its alarms to that group.
+  * The alarm supports configuration parameter #1, which has a size of 1, a default value of 0, and when set to 1 causes the device to send double alarm messages.
+
+### Exclusion Information
+
+  1. Slide battery door open.
+  2. Remove and re-insert batteries checking the correct orientation.
+  3. Press and hold the test button. Keep it held down as you slide the battery drawer closed. You may then release the button.
+
 ### Wakeup Information
 
 The ZCOMBO does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Slide the battery out then back in while holding the button to wake it up.
+
 ## Channels
 
 The following table summarises the channels available for the ZCOMBO -:
@@ -26,7 +60,7 @@ The following table summarises the channels available for the ZCOMBO -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Heartbeat | alarm_general | Door | Switch | 
-| Smoke | alarm_smoke | Door | Switch | 
+| Smoke | alarm_smoke | Smoke | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Heartbeat
@@ -39,20 +73,20 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Smoke
 
 Indicates if a smoke is triggered.
 
-The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -96,8 +130,7 @@ The ZCOMBO supports 1 association group.
 
 ### Group 1: Group 1
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

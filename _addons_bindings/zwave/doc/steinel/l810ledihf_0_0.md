@@ -28,7 +28,7 @@ The following table summarises the channels available for the L 810 LED iHF -:
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Scene Number | scene_number |  | Number | 
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Alarm (system) | alarm_system |  | Switch | 
 | Dimmer 1 | switch_dimmer1 | DimmableLight | Dimmer | 
@@ -65,7 +65,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
 
@@ -77,7 +77,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (system)
@@ -90,7 +90,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Dimmer 1
@@ -116,7 +116,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -129,11 +129,11 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Time | Duration of light after motion detection. |
-| 2 | Light | Light threshold \[lx\]: |
-| 3 | Dim | Night dim mode and time \[min\]: (only for SLAMP with DIM ability) |
-| 4 | Range | Motion Radar Range \[cm\]: (only for iHF sensor) |
-| 5 | Sensity | Motion Radar Sensitivity \[%\]: (SLAMP+SPIR) |
-| 6 | Brighntes Meas Interval | Brightness measuring interval \[min\]: (only SLAMP) |
+| 2 | Light | Light threshold [lx]: |
+| 3 | Dim | Night dim mode and time [min]: (only for SLAMP with DIM ability) |
+| 4 | Range | Motion Radar Range [cm]: (only for iHF sensor) |
+| 5 | Sensity | Motion Radar Sensitivity [%]: (SLAMP+SPIR) |
+| 6 | Brighntes Meas Interval | Brightness measuring interval [min]: (only SLAMP) |
 | 8 | Global_Light | Use external Ambient Light value: |
 | 9 | Slave_Mode | Disable local control: |
 | 10 | Off_Behaviour | Off behaviour (timeout): |
@@ -158,7 +158,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 ### Parameter 2: Light
 
-Light threshold \[lx\]:
+Light threshold [lx]:
 0 – run Learn ambient light sequence. 2000 – is used as daylight (always night mode). Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 2000 may be set.
 
@@ -169,7 +169,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 ### Parameter 3: Dim
 
-Night dim mode and time \[min\]: (only for SLAMP with DIM ability)
+Night dim mode and time [min]: (only for SLAMP with DIM ability)
 0 – off (dim = basic light completely disabled). 1-60 – time \[minutes\] (enabled in night mode, starts after lamp is switched off after motion detection). -1 – whole night (dim through the whole night when lamp is off). Dim mode is also disabled when local control is disabled as well as in Slave mode.
 Values in the range 0 to 60 may be set.
 
@@ -180,7 +180,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 ### Parameter 4: Range
 
-Motion Radar Range \[cm\]: (only for iHF sensor)
+Motion Radar Range [cm]: (only for iHF sensor)
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as default value and any potentiometer movement rewrites the current setting.
 Values in the range 100 to 500 may be set.
 
@@ -191,7 +191,7 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 
 ### Parameter 5: Sensity
 
-Motion Radar Sensitivity \[%\]: (SLAMP+SPIR)
+Motion Radar Sensitivity [%]: (SLAMP+SPIR)
 Value can be controlled via potentiometer (if present on device) – potentiometer value is then used as the default value and any potentiometer movement rewrites the current setting.
 Values in the range 2 to 100 may be set.
 
@@ -202,7 +202,7 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 6: Brighntes Meas Interval
 
-Brightness measuring interval \[min\]: (only SLAMP)
+Brightness measuring interval [min]: (only SLAMP)
 Interval for measuring ambient light when lamp is on (lamp switches off briefly and measures). 0 = function is off.
 Values in the range 0 to 120 may be set.
 
@@ -214,7 +214,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 8: Global_Light
 
 Use external Ambient Light value:
-When GLOBAL\_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically. If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.
+When GLOBAL_LIGHT mode is ON – device overrides its own light sensor values and uses Light Report values from any Z-Wave light sensor instead – this has to be configured appropriately to send light automatically. If the last remote light level value is older than 30 minutes, the internal light value is used again until the next external value is received.
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -225,38 +225,34 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 ### Parameter 9: Slave_Mode
 
 Disable local control:
-Bit Field:
+Bit Field: bit 7 6 5 4 3 2 1 0 Function - Don’t use button for lamp switching (STOGGLE) \- - - "Stupid" mode Central unit checking in slave mode  Slave mode 
 
- bit 7 6 5 4 3 2 1 0 Function - Don’t use button for lamp switching (STOGGLE) - - - "Stupid" mode Central unit checking in slave mode Slave mode "Stupid" mode (bit 2 = 1):
---------------------------
+## "Stupid" mode (bit 2 = 1):
 
-\- has higher priority then slave mode - lamp/relay is permanently on (for simple power wall switch controlling)
+- has higher priority then slave mode - lamp/relay is permanently on (for simple power wall switch controlling)
 
-Slave mode (bit 0 =1):
-----------------------
+## Slave mode (bit 0 =1):
 
-\- only if included in Z-Wave network   
-\- useful for controlling via third-party sensor - lamp/relay is directly controlled via Z-Wave, internal sensors are not used for controlling it
+- only if included in Z-Wave network  
+- useful for controlling via third-party sensor - lamp/relay is directly controlled via Z-Wave, internal sensors are not used for controlling it
 
-Central unit checking (bit 1 =1):
----------------------------------
+## Central unit checking (bit 1 =1):
 
 (useful especially for controlling via gateway)
 
 When slave bit is 0:  
-\- device signalises fail of lifeline connection (if this bit is zero, fail of lifeline connection is not signalised)
+- device signalises fail of lifeline connection (if this bit is zero, fail of lifeline connection is not signalised)
 
 When slave bit is 1:  
-\- device checks presence of Z-Wave device in lifeline group (gateway). If it is not present for 2 minutes (testing repeatedly every 30 seconds) device switches to normal mode in the same way as after the end of local disabled mode (ON\_BEHAVIOUR)   
-\- the device checks every 1 minute for recovery of lifeline connection   
-\- if no lifeline specified   
-\- it works in normal mode
+- device checks presence of Z-Wave device in lifeline group (gateway). If it is not present for 2 minutes (testing repeatedly every 30 seconds) device switches to normal mode in the same way as after the end of local disabled mode (ON_BEHAVIOUR)  
+- the device checks every 1 minute for recovery of lifeline connection  
+- if no lifeline specified  
+- it works in normal mode
 
-Do not use button for lamp switching (bit 6 = 1):
--------------------------------------------------
+## Do not use button for lamp switching (bit 6 = 1):
 
-only for STOGGLE variant   
-\- disables button controlling device itself along with controlling group 5. When enabled also works in stand-alone.
+only for STOGGLE variant  
+- disables button controlling device itself along with controlling group 5. When enabled also works in stand-alone.
 
 **Be careful with this option**, device stops using its own motion sensor in Slave and "Stupid" mode.
 Values in the range 0 to 4 may be set.
@@ -307,7 +303,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: On_Time_Over
 
 On behaviour time over (timeout):
-Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or OFF\_ON\_BEHAVIOUR (0-209) to prevent staying ON forever when there is no motion.
+Time limit to stop waiting for motion after timeout of ON\_BEHAVIOUR or OFF\_ON_BEHAVIOUR (0-209) to prevent staying ON forever when there is no motion.
 
 0 No additional waiting for motion.
 
@@ -348,7 +344,7 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 ### Parameter 15: Sequence_Time
 
 Sequence timing:
-Time in \[100 milliseconds\] of maximum delay between BASIC ON and BASIC OFF (and vice versa) to consider this as a sequence. It is typically 1 second, but can be exceptionally longer due to retransmissions and overload – in this case, a longer interval can be allowed (up to 5 seconds).
+Time in [100 milliseconds] of maximum delay between BASIC ON and BASIC OFF (and vice versa) to consider this as a sequence. It is typically 1 second, but can be exceptionally longer due to retransmissions and overload – in this case, a longer interval can be allowed (up to 5 seconds).
 Values in the range 10 to 50 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -398,26 +394,31 @@ The L 810 LED iHF supports 5 association groups.
 ### Group 1: Lifeline
 
 Lifeline
-This group supports 1 nodes.
+Lifeline messages - Device Reset Locally (immediately) - Notifications: 0x09 (System) – Hardware failure with manufacturer proprietary code (0x03) 0x09 (System) – Software failure with manufacturer proprietary code (0x04) 0x07 (Home security) – Motion Begin event (0x08) 0x07 (Home security) – Motion End event (0x00, 0x08) - Binary Switch Report (SPIR) - Binary Switch Report (SBIN) - Multilevel Switch Report (SMUL) - Multilevel Sensor Report – value of internal ambient light sensor - Central scene notification (STOGGLE) Motion Begin and Motion End events are sent along with frames to group 3. If multichannel association is created the events are sent from motion sensor endpoint. Switch Report is sent immediately upon a change of status along with frames to group 2. If multichannel association is created the events are sent from lamp/relay endpoint. Multilevel Sensor Report is sent a maximum of once per 1 minute (if the value has changed by at least 3%) and a minimum of once per 15 minutes (if the value has not changed). If the ambient light value is old (cannot be measured because of permanent light), the value is not transmitted via lifeline. Multilevel Sensor Report can also be added to some other events to send in bulk. If multichannel association is created the events are sent from light sensor endpoint. Central scene notification is sent as reaction to user interaction. If multichannel association is created the events are sent from toggle button endpoint. All notifications to lifeline are sent as sensor states regardless of sensor settings and
+This group supports 1 node.
 
 ### Group 2: Control: Key01
 
 On/Off control
+Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together). This is intended for use especially with third-party devices that do not implement reactions for motion events. BASIC\_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously. Only for use in master-slave system, multi-device control is not possible. Group 2 is evaluated and frames are transmitted there also in SLAVE\_ MODE, regardless of LOCAL\_DISABLED state and when MOTION\_ENABLE is off (not using internal motion sensor, just reacting to remote motion events in this case). If multichannel association is created the events are sent from motion sensor endpoint.
 This group supports 16 nodes.
 
 ### Group 3: Notification: Motion
 
 Motion Begin/End (PIR/radar/iHF)
+Group 3 sends MOTION\_BEGIN and MOTION\_END frames. MOTION\_BEGIN frame = Notification 0x07 (Home security) – Motion detection without location (0x08) MOTION\_END frame = Notification 0x07 (Home security) – Event inactive (0x00, parameter 0x08)After the first motion detection, MOTION\_BEGIN is sent. If continual movement is detected, MOTION\_BEGIN is sent every 1 minute repeatedly. When motion ends, MOTION\_END is sent 5 seconds after the last motion detection. Notification to group 3 is sent only when NIGHT\_MODE = ON and MOTION_ ENABLE = ON, regardless of LOCAL_DISABLE state. All devices in a group should have the same TIME settings in order that they switch off at the same time. If multichannel association is created the events are sent from motion sensor endpoint.
 This group supports 16 nodes.
 
 ### Group 4: Sensor: Luminescence
 
 Ambient light
+Ambient Light via Group 4 is intended to substitute locally measured LUX values in target devices – so that the network can have one source of ambient light value. Frames are sent a maximum of once per 2.5 minutes and a minimum of once per 15 minutes. When device already uses remote Ambient Light value, then this value is also retransmitted to group 4. All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time. If multichannel association is created the events are sent from light sensor endpoint.
 This group supports 15 nodes.
 
 ### Group 5: Control: Key02
 
 On/Off button
+Group 5 is used for directly controlling Z-Wave devices via BASIC SET commands by button. (STOGGLE) If multichannel association is created the events are sent from toggle button endpoint.
 This group supports 16 nodes.
 
 ## Technical Information
@@ -435,7 +436,7 @@ This group supports 16 nodes.
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
 | COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V4| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -454,7 +455,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
@@ -468,7 +469,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ALARM_V4| Linked to BASIC|
@@ -478,7 +479,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V4| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

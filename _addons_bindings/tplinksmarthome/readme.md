@@ -1,7 +1,7 @@
 ---
 id: tplinksmarthome
-label: TPLinkSmartHome
-title: TPLinkSmartHome - Bindings
+label: TP-Link Smart Home
+title: TP-Link Smart Home - Bindings
 type: binding
 description: "This binding adds support to control TP-Link Smart Home Devices from your local openHAB system."
 since: 2x
@@ -12,7 +12,7 @@ install: auto
 
 {% include base.html %}
 
-# TPLinkSmartHome Binding
+# TP-Link Smart Home Binding
 
 This binding adds support to control TP-Link Smart Home Devices from your local openHAB system.
 
@@ -195,7 +195,7 @@ tplinksmarthome:lb130:home "Living Room Bulb 2" [ ipAddress="192.168.0.15", refr
 Switch   TP_L_Switch  "Switch"                            { channel="tplinksmarthome:hs100:home:switch" }
 Number   TP_L_RSSI    "Signal [%d] dB"           <signal> { channel="tplinksmarthome:hs100:home:rssi" }
 Dimmer   TP_LB_Bulb   "Dimmer [%d %%]"           <slider> { channel="tplinksmarthome:lb110:home:brightness" }
-Dimmer   TP_LB_ColorT "Color Temperature [%d] K" <slider> { channel="tplinksmarthome:lb130:home:color" }
+Dimmer   TP_LB_ColorT "Color Temperature [%d] %%" <slider> { channel="tplinksmarthome:lb130:home:colorTemperature" }
 Color    TP_LB_Color  "Color"                    <slider> { channel="tplinksmarthome:lb130:home:color" }
 Switch   TP_LB_ColorS "Switch"                            { channel="tplinksmarthome:lb130:home:color" }
 ```

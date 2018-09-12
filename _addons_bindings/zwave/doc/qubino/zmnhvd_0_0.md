@@ -375,32 +375,26 @@ The ZMNHVD supports 6 association groups.
 
 ### Group 1: Lifeline
 
-Reserved for communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2:  basic on/off 
 
-triggered at change of the input I1 state and reflecting its state
 This group supports 16 nodes.
 
 ### Group 3: start level change/stop level change
 
-triggered at change of the input I1 state and reflecting its state) up to 16 nodes. Working only when the Parameter no. 1 is set to mono stable switch type.
 This group supports 16 nodes.
 
 ### Group 4: multilevel set
 
-triggered at changes of state/value of the Flush Dimmer 0-10V
 This group supports 16 nodes.
 
 ### Group 5:  multilevel sensor report
 
-triggered at change of analogue sensor
 This group supports 16 nodes.
 
 ### Group 6:  multilevel sensor report
 
-triggered at change of temperature sensor
 This group supports 16 nodes.
 
 ## Technical Information
@@ -416,7 +410,7 @@ This group supports 16 nodes.
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V0| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -425,7 +419,7 @@ This group supports 16 nodes.
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V0| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 
 ### Documentation Links
 

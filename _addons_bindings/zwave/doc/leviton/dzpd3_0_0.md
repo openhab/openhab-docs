@@ -17,7 +17,51 @@ The DZPD3 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/322) to improve the documentation.
+300 Watt Scene Capable Plug-In Lamp Dimming Module with Z-Wave Technology for CFL/LED/Incandescent. Turn any standard receptacle into the essence of ‘smart’ lighting with the scene capable plug in lamp dimming module. The low-power radio waves travel easily throughout the walls and floors of your home. Features: On/Off/Dim/Bright incandescent load scene and zone control switching capabilities. 
+
+### Inclusion Information
+
+Leviton Decora SmartTM Z-Wave® devices support two methods of inclusion. When using a Z-Wave PlusTM certified controller choose Network Wide Inclusion.  
+  
+_Network Wide Inclusion_:  
+Network Wide Inclusion allows your device to be added to the network using devices already in the network to assist with communication. Work your way from the closest devices to the controller outward.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will blink amber.
+  * Tap the control button one time. The Locator LED will quickly flash green.
+  * The Decora SmartTM Z-Wave® device is ready to learn into the Z-Wave® network.
+  * Follow directions in the Z-Wave® controller to complete the adding process.
+  * Upon successful addition to network the LED will turn off and then blink green 3 times.
+  * If the adding process is not successful the LED will flash red 3 times.
+
+_Traditional Inclusion:_  
+For older controllers Traditional Inclusion is supported. Depending on the age of the controller the controller will need to be 3 to 35 feet from the device when including.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will blink amber.
+  * The Decora SmartTM Z-Wave® device is ready to add to the Z-Wave® network.
+  * Follow directions in the Z-Wave® controller to enter learn mode.
+  * Tap the control button one time. The Locator LED will quickly flash green. The Z-Wave® controller will begin to pair with the Decora SmartTM device.
+  * Upon successful addition to the network the LED will turn off and then blink green 3 times.
+  * If the adding process is not successful the LED will flash red 3 times.
+
+### Exclusion Information
+
+When removing a device from a Z-Wave® network best practice is to use the exclusion command found in the Z-Wave® controller.
+
+  * Enter Programming Mode by holding the control button for 7 seconds, the Locator LED will turn amber.
+  * Follow directions in the Z-Wave® controller to enter exclusion mode.
+  * Tap the control button one time. The Locator LED will quickly flash green. The Z-Wave® controller will exclude the Decora SmartTM device.
+  * The Z-Wave® controller will confirm successful exclusion from the network.
+
+  
+_Factory Reset_  
+  
+When removing a device from a network it is best practice to use the Exclusion process. In situations where a device needs to be returned to factory default follow the following steps.
+
+  * A reset should only be used when a controller is inoperable or missing:
+  * Holding the control button for a total of 14 seconds.
+  * After the first 7 seconds the LED turns amber.
+  * The Locator LED will quickly flash red/amber after 14 seconds.
+  * Release the control button and the device will reset.
 
 ## Channels
 
@@ -51,7 +95,7 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Fade On Time | Time it takes to fade on |
-| 2 | Fade off time | time it takes to fade off |
+| 2 | Fade off time | Time it takes to fade off |
 | 3 | Minimum Light Level |  |
 | 4 | Maximum Light Level |  |
 | 7 | Locator LED Status | LED Off or Status Mode 255 or Locator Mode |
@@ -71,7 +115,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: Fade off time
 
-time it takes to fade off
+Time it takes to fade off
 0 is instant on 1-127 is in seconds 128-253 is in minutes
 Values in the range 0 to 253 may be set.
 
@@ -154,7 +198,12 @@ This parameter has the configuration ID ```switchall_mode``` and is of type ```I
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The DZPD3 supports 1 association group.
+
+### Group 1: Lifeline
+
+This group supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints
@@ -168,12 +217,12 @@ The device does not support associations.
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
-| COMMAND_CLASS_SCENE_ACTUATOR_CONF_V0| |
+| COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_NODE_NAMING_V1| |
 | COMMAND_CLASS_VERSION_V1| |
-| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V0| |
+| COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V1| |
 
 ### Documentation Links
 

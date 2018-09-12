@@ -19,6 +19,7 @@ The NE-NAS-PD01Z does not permanently listen for messages sent from the controll
 The NE-NAS-PD01Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the NE-NAS-PD01Z -:
@@ -26,7 +27,7 @@ The following table summarises the channels available for the NE-NAS-PD01Z -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -47,7 +48,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
 
@@ -59,7 +60,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -92,7 +93,7 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Sensitivity level
 
 8 = Highest sensitivity, 255 = lowest sesitivity
-1\. SENSITIVITY LEVEL SETTING
+1. SENSITIVITY LEVEL SETTING
 
 This parameter defines the sensitivity of PIR sensor. It’s recommended to test the sensor with moevements from a farthest end of the coverage area at the first time of use. If movements cannot be detected sensitively, simply adjust the sensitivity level with this parameter. This parameter can be configured with the value of 8 through 255, where 8 means high sensitivity and 255 means low sensitivity. Function: Sensivity Level Setting
 
@@ -113,7 +114,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: ON / OFF Duration
 
 How long should the associated devices have ON status.
-2\. ON / OFF DURATION
+2. ON / OFF DURATION
 
 This parameter determines how long the associated devices should have ON status. For instace, if this parameter is set to 30 (sec), the PIR sensor will send a BASIC\_SET command to associated device with valu BASIC\_SET level if PIR sensor is triggered and associated device will be turned on 30 seconds begore it’s turned off. This parameter value must be large as Parameter #. If user set this parameter to default by Configure CC, the parameter # will be set to default value.
 
@@ -136,7 +137,7 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 ### Parameter 3: BASIC SET Level
 
 BASIC SET LEVEL
-3\. BASIC SET LEVEL BASIC\_SET command will be sent when PIR sensor is triggered. The receiver will take it into consideration; for instance, if a lamp module is receiving the BASIC\_SET command of which value is decisive as to how bright of dim level of lamp module shall be.
+3. BASIC SET LEVEL BASIC\_SET command will be sent when PIR sensor is triggered. The receiver will take it into consideration; for instance, if a lamp module is receiving the BASIC\_SET command of which value is decisive as to how bright of dim level of lamp module shall be.
 
 Function: Basic Set Level
 
@@ -161,7 +162,7 @@ This parameter has the configuration ID ```config_3_2``` and is of type ```INTEG
 ### Parameter 4:  PIR detection ENABLED / DISABLED
 
 Enable og disable the PIR sensor
-4\. PIR DETECTION FUNCTION ENABLED / DISABLED This parameter can enable or disable the PIR sensor detecting function. Function: Enabled / Disabled PIR function
+4. PIR DETECTION FUNCTION ENABLED / DISABLED This parameter can enable or disable the PIR sensor detecting function. Function: Enabled / Disabled PIR function
 
 Parameter size: 1 byte
 
@@ -169,7 +170,7 @@ Parameter number: 4
 
 Available settings: 0 (disable) or 255 (enable)
 
-Default setting: 255
+Default setting: 255 
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -180,7 +181,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Ambent illumination LUX level
 
 Lux value which determines when the light sensor is activated
-5\. AMBIENT ILLUMINATION LUX LEVEL This parameter can set Lux value which determines when the light sensor is activated. If the ambient illumination level falls bellow this value and a person moves across or within the detection area, PIR sensor will send Z-Wave ON command (i.e. BASIC\_set (value = parameter 3) to an associated device and activate it.
+5. AMBIENT ILLUMINATION LUX LEVEL This parameter can set Lux value which determines when the light sensor is activated. If the ambient illumination level falls bellow this value and a person moves across or within the detection area, PIR sensor will send Z-Wave ON command (i.e. BASIC_set (value = parameter 3) to an associated device and activate it.
 
 Function: Lux Level Set
 
@@ -201,7 +202,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 ### Parameter 6: Re-Trigger Interval
 
 Adjust the interval of being re-triggered
-6\. RE-TRIGGER INTERVAL SETTING This parameter can be used to adjust the interval of being re-triggered after the PIR sensor has been triggered. This parameter value must be less than Paramater #2. If user sets this parameter to default by Configure CC, the parameter #2 will be set to default value.
+6. RE-TRIGGER INTERVAL SETTING This parameter can be used to adjust the interval of being re-triggered after the PIR sensor has been triggered. This parameter value must be less than Paramater #2. If user sets this parameter to default by Configure CC, the parameter #2 will be set to default value.
 
 Function: Re-trigger interval setting
 
@@ -222,7 +223,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Light sensor polling interval
 
 How often should ambient illumination be evaluated
-7\. LIGHT SENSOR POLLING INTERVAL This parameter can set the light sensor to measure ambient illumination level interval time. NOTE: This value must be less than Wakeup Interval Time!
+7. LIGHT SENSOR POLLING INTERVAL This parameter can set the light sensor to measure ambient illumination level interval time. NOTE: This value must be less than Wakeup Interval Time!
 
 Function: Light Sensor Polling Interval
 
@@ -243,7 +244,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 ### Parameter 8: LUX level function enable
 
 See overview
-8\. LUX LEVEL FUNCTION ENABLE If this parameter is set to “1” and when Lux level is less than the value defined by parameter #5, PIR sensor will send a BASIC\_SET command frame (i.e. BASIC\_SET (value = parameter 3) to an associated device and activate it. If Lux level is greater than the value defined by parameter #5, PIR sensor will not send BASIC\_SET command frame.
+8. LUX LEVEL FUNCTION ENABLE If this parameter is set to “1” and when Lux level is less than the value defined by parameter #5, PIR sensor will send a BASIC\_SET command frame (i.e. BASIC\_SET (value = parameter 3) to an associated device and activate it. If Lux level is greater than the value defined by parameter #5, PIR sensor will not send BASIC_SET command frame.
 
 Function: Lux Level Enable
 
@@ -264,7 +265,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 ### Parameter 9: Ambient illumination report
 
 when lux changes by the number in this setting it is reported
-9\. AMBIENT ILLUMINATION LUX LEVEL REPORT This parameter defines by how much Lux level must change in Lux to be reported to the main controller.
+9. AMBIENT ILLUMINATION LUX LEVEL REPORT This parameter defines by how much Lux level must change in Lux to be reported to the main controller.
 
 Function: Lux Level Report
 
@@ -308,21 +309,25 @@ The NE-NAS-PD01Z supports 4 association groups.
 ### Group 1: Group 1
 
 lifeline service
+**GROUP 1** is lifeline service that is assigned to sensor status - Open/Close. It enables the sensor to send reports and readings to Z-Wave controller or Z-Wave Gateway whenever the sensor is triggered. This group supports: NOTIFICATION\_REPORT\_V4 SENSOR\_BINARY\_REPORT\_V2 SENSOR\_MULTILEVEL\_REPORT\_V7 BATTERY\_REPORT\_DEVICE\_RESET\_LOCALLY_NOTIFICATION
 This group supports 4 nodes.
 
 ### Group 2: Group 2
 
-BASIC\_SET control command group
+BASIC_SET control command group
+**GROUP 2** allows sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 2, 3, 5 and 8. This griup supports: BASIC_SET
 This group supports 4 nodes.
 
 ### Group 3: Group 3
 
 NOTIFICATION\_REPORT\_V4
+**GROUP 3** allows sending notifications to associated devices int his group. This group supports: NOTIFICATION\_REPORT\_V4
 This group supports 4 nodes.
 
 ### Group 4: Group 4
 
 Sensor Binary Report
+**GROUP 4** allows sending sending Sensor Binary Report to associated devices in this group. This group supports: SENSOR\_BINARY\_REPORT_V2
 This group supports 4 nodes.
 
 ## Technical Information

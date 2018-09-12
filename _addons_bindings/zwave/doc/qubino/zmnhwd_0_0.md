@@ -17,24 +17,24 @@ The ZMNHWD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.
+Qubino Flush RGBW module controls RGB/RGBW strips and LED strips or bulbs and has 5 special scene effects. It can also control halogen lights and fans. Its extremely small size allows for easy installation behind wall sockets and switches. Controlled devices may be powered by 12 or 24 VDC.
 
 Supported control types:
 
-- Push button (monostable switch)
-- Bistable switch
+  * Push button (monostable switch)
+  * Bistable switch
 
-This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).
+This should hopefully work with models ZMNHWD1-ZMNHWD8 (which work on different frequencies).
 
 ### Inclusion Information
 
 To include the device, press the service button 3 times within 2 seconds. The LED will turn green if the device was properly included.
 
-The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.
+The device supports auto inclusion: Install the device and connect the power. The auto inclusion function will be active for about 2 minutes.
 
 ### Exclusion Information
 
-To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.
+To exclude the device, press the service button 3 times within 2 seconds. The green LED will blink if the device was properly included and the device will be reset to factory defaults.
 
 ## Channels
 
@@ -217,8 +217,8 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: Auto Scene Mode
 
 Duration between Colour change
-- 1-127 – delay duration is 1 sec to 127 sec
-- 1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene.
+  * 1-127 – delay duration is 1 sec to 127 sec 
+  * 1001-1127 – delay duration is from 1 min to 127 min. This parameter has no effect on Lighting and Party Scene. 
 Values in the range 1 to 1127 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -245,8 +245,8 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 ### Parameter 8: Automatic turning off output after set time
 
 Automatic turning off output after set time
-- 0 – Auto OFF disabled
-- 1 – 32536 = 1 second – 32536 seconds Auto OFF
+  * 0 – Auto OFF disabled 
+  * 1 – 32536 = 1 second – 32536 seconds Auto OFF
 Values in the range 0 to 32536 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -257,8 +257,8 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 ### Parameter 9: Automatic turning on output after set time
 
 Automatic turning on output after set time
-- 0 – Auto ON disabled
-- 1 – 32536 = 1 second – 32536 seconds Auto ON
+  * 0 – Auto ON disabled
+  * 1 – 32536 = 1 second – 32536 seconds Auto ON
 Values in the range 0 to 32536 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -291,8 +291,8 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 ### Parameter 12: Dimming time (soft on/off)
 
 Dimming time (soft on/off)
-- Default value 10 = 1 s
-- 5 – 25 = from 0.5 to 2.5 seconds
+  * Default value 10 = 1 s 
+  * 5 – 25 = from 0.5 to 2.5 seconds 
 Values in the range 5 to 25 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -303,9 +303,9 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 ### Parameter 13: Dimming time when key pressed
 
 Dimming time when key pressed
-1 – 127 = from 1 to 127 seconds
+1 – 127 = from 1 to 127 seconds 
 
-NOTE: Dimming time depends also on Min and Max dimming value.
+NOTE: Dimming time depends also on Min and Max dimming value. 
 Values in the range 1 to 127 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -316,9 +316,9 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 ### Parameter 14: 4 Dimmers mode
 
 4 Dimmers mode
-NOTE: If the parameter no. 14 is enabled, parameter no. 1,2,3,4 has no effect.
+NOTE: If the parameter no. 14 is enabled, parameter no. 1,2,3,4 has no effect. 
 
-NOTE: After parameter change, first exclude device (without setting parameters to default value) and then re include the device.
+NOTE: After parameter change, first exclude device (without setting parameters to default value) and then re include the device. 
 The following option values may be configured -:
 
 | Value  | Description |
@@ -342,7 +342,10 @@ The ZMNHWD supports 1 association group.
 ### Group 1: Send basic report to this group
 
 
-This group supports 1 nodes.
+The Module can be set 1 auto-report ID in Group 1.
+
+The Module will send BASIC_REPORT to device associated in Group 1 when correspond Device is activated.
+This group supports 1 node.
 
 ## Technical Information
 

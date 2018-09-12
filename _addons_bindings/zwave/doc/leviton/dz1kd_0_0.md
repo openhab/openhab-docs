@@ -8,11 +8,34 @@ title: DZ1KD - ZWave
 # DZ1KD 1000W Dimmer
 This describes the Z-Wave device *DZ1KD*, manufactured by *Leviton* with the thing type UID of ```leviton_dz1kd_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![DZ1KD product image](https://www.cd-jackson.com/zwave_device_uploads/664/664_default.jpg)
+
+
 The DZ1KD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/664) to improve the documentation.
+Universal Incandescent, LED, CFL, Magnetic Low Voltage or Fluorescent Dimmer
+
+### Inclusion Information
+
+  * Enter Programming Mode by holding the top of the paddle for 7 seconds, the Locator LED will blink amber.
+  * Tap the top of the paddle one time.
+  * The Locator LED will quickly ﬂash green.
+  * The Decora SmartTM Z-Wave® device is ready to learn into the Z-Wave network.
+  * Follow directions in the Z-Wave® controller to complete the adding process.
+  * Upon successful addition to network the LED will turn off and then blink green 3 times.
+  * If the adding process is not successful the LED will ﬂash red 3 times.
+
+### Exclusion Information
+
+  * Enter Programming Mode by holding the top of the paddle for 7 seconds, the Locator LED will blink amber.
+  * Follow directions in the Z-Wave® controller to enter exclusion mode
+  * Tap the top of the paddle one time. The Locator LED will quickly ﬂash green.
+  * The Z-Wave® controller will exclude the Decora SmartTM device
+  * The Z-Wave® controller will confirm successful exclusion from the network.
 
 ## Channels
 
@@ -58,9 +81,9 @@ Detailed information on each parameter can be found in the sections below.
 ### Parameter 1: Fade On Time
 
 Fade on time
-- 0: Instant on
-- 1 to 127: 1-127 seconds
-- 128 to 253: 1-126 minutes
+  * 0: Instant on
+  * 1 to 127: 1-127 seconds
+  * 128 to 253: 1-126 minutes
 Values in the range 0 to 253 may be set.
 
 The manufacturer defined default value is ```2```.
@@ -71,9 +94,9 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 ### Parameter 2: Fade Off Time
 
 Fade off time
-- 0: Instant off
-- 1 to 127: 1-127 seconds
-- 128 to 253: 1-126 minutes
+  * 0: Instant off
+  * 1 to 127: 1-127 seconds
+  * 128 to 253: 1-126 minutes
 Values in the range 0 to 253 may be set.
 
 The manufacturer defined default value is ```2```.
@@ -106,8 +129,8 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Preset Light Level
 
 Preset light level
-- 0: Last dim level
-- 1 to 100: Level
+  * 0: Last dim level
+  * 1 to 100: Level
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -118,9 +141,9 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: LED Dim Level Indicator Timeout
 
 LED dim level indicator timeout
-- 0: LED indicators off
-- 1 to 254: Timeout in seconds
-- 255: Always on
+  * 0: LED indicators off
+  * 1 to 254: Timeout in seconds
+  * 255: Always on
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -131,9 +154,9 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 7: Locator LED Status
 
 Locator LED status
-- 0: LED off
-- 254: Status mode
-- 255: Locator mode
+  * 0: LED off
+  * 254: Status mode
+  * 255: Locator mode
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -144,9 +167,9 @@ This parameter has the configuration ID ```config_7_1``` and is of type ```INTEG
 ### Parameter 8: Load Type
 
 Load type
-- 0: Incandescent
-- 1: LED
-- 2: CFL
+  * 0: Incandescent
+  * 1: LED
+  * 2: CFL
 Values in the range 0 to 2 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -177,6 +200,7 @@ The DZ1KD supports 1 association group.
 ### Group 1: Group 1
 
 Z-Wave Plus Lifeline
+A NOTIFICATION frame is sent to the nodes in this association group when a Lifeline event occurs.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -200,9 +224,13 @@ This group supports 5 nodes.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
-| COMMAND_CLASS_HAIL_V0| |
+| COMMAND_CLASS_HAIL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/664/Leviton-DZ1KD.pdf)
 
 ---
 

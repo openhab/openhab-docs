@@ -21,13 +21,13 @@ Product support sound and light alarm.
 
 ### Inclusion Information
 
-- Press the pin-hole 3 times within 1.5s, Green LED is Blinking 3 times within 1.5 second.
-- If add Process is successful, Green LED will turn off.
+  * Press the pin-hole 3 times within 1.5s, Green LED is Blinking 3 times within 1.5 second.
+  * If add Process is successful, Green LED will turn off.
 
 ### Exclusion Information
 
-- Press the pin-hole 3 times within 1.5 second.
-- If remove Process is successful, Green LED is Blinking 6 times, then turn off.
+  * Press the pin-hole 3 times within 1.5 second.
+  * If remove Process is successful, Green LED is Blinking 6 times, then turn off.
 
 ## Channels
 
@@ -63,7 +63,6 @@ Association groups allow the device to send unsolicited reports to the controlle
 The HS2WD-Z supports 1 association group.
 
 ### Group 1: Lifeline
-
 
 This group supports 5 nodes.
 

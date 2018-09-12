@@ -26,11 +26,11 @@ The following table summarises the channels available for the GoControl GC-TBZ48
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Scene Number | scene_number |  | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate |  |  | 
 | Battery Level | battery-level | Battery | Number |
@@ -46,7 +46,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 
@@ -71,8 +71,6 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Operating State
 
@@ -93,15 +91,15 @@ The following state translation is provided for this channel to the ```Number```
 
 ### Setpoint (cooling)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
 
@@ -137,16 +135,13 @@ The GoControl GC-TBZ48 supports 3 association groups.
 
 ### Group 1: Group 1
 
-
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
-
 This group supports 5 nodes.
 
 ### Group 3: Group 3
-
 
 This group supports 5 nodes.
 

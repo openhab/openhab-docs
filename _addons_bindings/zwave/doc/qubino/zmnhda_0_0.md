@@ -17,32 +17,32 @@ The ZMNHDA supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-This Z-Wave module is used for dimming the bulb or to manage the speed of a fan. The module can be controlled either through a Z-Wave network or through the wall switch.   
-   
-The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch.   
-   
+This Z-Wave module is used for dimming the bulb or to manage the speed of a fan. The module can be controlled either through a Z-Wave network or through the wall switch.   
+   
+The module is designed to be mounted inside a “flush mounting box” and is hidden behind a traditional wall switch.  
+   
 Module measures power consumption of bulb or fan and supports connection of digital temperature sensor.
 
 ### Inclusion Information
 
-- Connect module to power supply,
-- bring module within maximum 1 meter (3 feet) of the main controller,
-- enable add/remove mode on main controller,
-- auto-inclusion (30 minutes after connected to power supply) or
-- press service button S for more than 2 seconds or
-- press push button I1 three times within 3s (3 times change switch state within 3 seconds).
+  * Connect module to power supply,
+  * bring module within maximum 1 meter (3 feet) of the main controller,
+  * enable add/remove mode on main controller,
+  * auto-inclusion (30 minutes after connected to power supply) or
+  * press service button S for more than 2 seconds or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds).
 
 ### Exclusion Information
 
-- Connect module to power supply,
-- bring module within maximum 1 meter (3 feet) of the main controller,
-- enable add/remove mode on main controller,
-- press service button S for more than 6 seconds or
-- press push button I1 five times within 3s (5 times change switch state within 3 seconds)
+  * Connect module to power supply,
+  * bring module within maximum 1 meter (3 feet) of the main controller,
+  * enable add/remove mode on main controller,
+  * press service button S for more than 6 seconds or 
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds)
 
 By this function all parameters of the module are set to default values and own ID is deleted.
 
-If service button S is pressed more than 2 and less than 6 second module is excluded, but configuration parameters are not set to default values.
+If service button S is pressed more than 2 and less than 6 second module is excluded, but configuration parameters are not set to default values. 
 
 ## Channels
 
@@ -52,7 +52,7 @@ The following table summarises the channels available for the ZMNHDA -:
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Binary Sensor 1 | sensor_binary1 | Door | Switch | 
@@ -75,7 +75,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 
@@ -130,24 +130,25 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Activate / deactivate functions ALL ON/ALL OFF | Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
 | 30 | Saving the state of the device after a power failure | Saving the state of the device after a power failure |
 | 40 | Power reporting in Watts on power change for Q1 | Set value means percentage, set value from 0-100 = 0%-100%. Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%. |
-| 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)
+| 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)  
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enab |
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enab |
 | 60 | Minimum dimming value | Range is 1% – 98%, step is 1%.  
- Default value is 1 (Minimum dimming value is 1%)  
- NOTE: The maximum level may not be lower than the minimum level!  
- 1% min. dimming value is defined by Z-Wave multilevel device class. |
+Default value is 1 (Minimum dimming value is 1%)  
+NOTE: The maximum level may not be lower than the minimum level!  
+1% min. dimming value is defined by Z-Wave multilevel device class. |
 | 61 | Maximum dimming value | Range is 2% – 99%, step is 1%.  
- Default value 99 (Maximum dimming value is 99 %)  
- NOTE: The maximum level may not be lower than the minimum level!  
- 99% max. dimming value is defined by Z-Wave multilevel device class. |
+Default value 99 (Maximum dimming value is 99 %)  
+NOTE: The maximum level may not be lower than the minimum level!  
+99% max. dimming value is defined by Z-Wave multilevel device class. |
 | 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.  
- Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
- Default value 100 (Dimming time between m |
+Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
+Default value 100 (Dimming time between m |
 | 66 | Dimming time when key pressed | Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.  
- Range is 1-255 = 1-255s, step is 1s.  
- Default value 3 (Dimming time between min. and max. dimming values is 3s) |
+Range is 1-255 = 1-255s, step is 1s.  
+Default value 3 (Dimming time between min. and max. dimming values is 3s) |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -245,10 +246,11 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts by time interval
 
-Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)
+Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)  
 
-- 0 = Reporting Disabled
-- 1–65535 = 1 second – 65535 seconds. Reporting enab
+
+  * 0 = Reporting Disabled
+  * 1–65535 = 1 second – 65535 seconds. Reporting enab
 
 Values in the range 0 to 65535 may be set.
 
@@ -260,9 +262,9 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 ### Parameter 60: Minimum dimming value
 
 Range is 1% – 98%, step is 1%.  
- Default value is 1 (Minimum dimming value is 1%)  
- NOTE: The maximum level may not be lower than the minimum level!  
- 1% min. dimming value is defined by Z-Wave multilevel device class.
+Default value is 1 (Minimum dimming value is 1%)  
+NOTE: The maximum level may not be lower than the minimum level!  
+1% min. dimming value is defined by Z-Wave multilevel device class.
 
 Values in the range 0 to 255 may be set.
 
@@ -274,9 +276,9 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 ### Parameter 61: Maximum dimming value
 
 Range is 2% – 99%, step is 1%.  
- Default value 99 (Maximum dimming value is 99 %)  
- NOTE: The maximum level may not be lower than the minimum level!  
- 99% max. dimming value is defined by Z-Wave multilevel device class.
+Default value 99 (Maximum dimming value is 99 %)  
+NOTE: The maximum level may not be lower than the minimum level!  
+99% max. dimming value is defined by Z-Wave multilevel device class.
 
 Values in the range 0 to 255 may be set.
 
@@ -288,8 +290,8 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 ### Parameter 65: Dimming time (soft on/off)
 
 Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.  
- Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
- Default value 100 (Dimming time between m
+Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
+Default value 100 (Dimming time between m
 
 Values in the range 0 to 255 may be set.
 
@@ -301,8 +303,8 @@ This parameter has the configuration ID ```config_65_1``` and is of type ```INTE
 ### Parameter 66: Dimming time when key pressed
 
 Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.  
- Range is 1-255 = 1-255s, step is 1s.  
- Default value 3 (Dimming time between min. and max. dimming values is 3s)
+Range is 1-255 = 1-255s, step is 1s.  
+Default value 3 (Dimming time between min. and max. dimming values is 3s)
 
 Values in the range 0 to 255 may be set.
 
@@ -333,21 +335,17 @@ The ZMNHDA supports 4 association groups.
 
 ### Group 1: multilevel (triggered at changes of state/value of the Flush dimmer)
 
-
 This group supports 4 nodes.
 
 ### Group 2: basic on/off (triggered at change of the input I2 state and reflecting
-
 
 This group supports 4 nodes.
 
 ### Group 3: basic on/off (triggered at change of the input I3 state and reflecting
 
-
 This group supports 4 nodes.
 
 ### Group 4: Controller updates
-
 
 This group supports 4 nodes.
 
@@ -376,14 +374,14 @@ This group supports 4 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 
 ### Documentation Links
 

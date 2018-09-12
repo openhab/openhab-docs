@@ -22,14 +22,15 @@ The DTHERMZ6 does not permanently listen for messages sent from the controller -
 The DTHERMZ6 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the DTHERMZ6 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 | Clock Time Offset | time_offset | Temperature | Number | 
 
@@ -37,13 +38,13 @@ The following table summarises the channels available for the DTHERMZ6 -:
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -71,8 +72,7 @@ The DTHERMZ6 supports 1 association group.
 
 ### Group 1: Target for Wakeup and Override Notifications
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

@@ -6,11 +6,24 @@ title: VRCS2-MRX - ZWave
 {% include base.html %}
 
 # VRCS2-MRX Vizia RF + 2-Button Scene Controller with Switches
-This describes the Z-Wave device *VRCS2-MRX*, manufactured by *Leviton* with the thing type UID of ```leviton_vrcs2mrx1_00_000```.
+This describes the Z-Wave device *VRCS2-MRX*, manufactured by *Leviton* with the thing type UID of ```leviton_vrcs2mrx_00_000```.
+
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![VRCS2-MRX product image](https://www.cd-jackson.com/zwave_device_uploads/418/418_default.png)
+
 
 ## Overview
 
-Switch (Top)
+Leviton VRCS2-MRZ Vizia RF + 2-Button Scene Controller with Switches for Multi-Location Scene Control
+
+### Inclusion Information
+
+There are three different inclusions to be completed with this device.
+
+  1. Include the complete switch on the network (Press both buttons simultaneously until both sets of leds start blinking)
+  2. Include the top button (Press the top button until led starts flashing)
+  3. Include the bottom (Press the bottom button until the led starts flashing)
 
 ## Channels
 
@@ -54,11 +67,11 @@ The device does not support associations.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_SCENE_ACTIVATION_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SCENE_ACTIVATION_V1| Linked to BASIC|
 | COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V0| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_NODE_NAMING_V1| |
 | COMMAND_CLASS_HAIL_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -68,6 +81,7 @@ The device does not support associations.
 ### Documentation Links
 
 * [Product Command Classes](https://www.cd-jackson.com/zwave_device_uploads/418/Product-Command-Classes.pdf)
+* [Z-Wave Protocol Implementation Conformance Statement:](https://www.cd-jackson.com/zwave_device_uploads/418/ZC08-09060016.pdf)
 
 ---
 

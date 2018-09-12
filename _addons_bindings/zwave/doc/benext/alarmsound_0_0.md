@@ -44,7 +44,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -105,7 +105,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Destination routine failed time
 
 Time elapsed between failing to end a frame and sending a new frame.
-t(s) = param1 \*60
+t(s) = param1 *60
 Values in the range 0 to 240 may be set.
 
 The manufacturer defined default value is ```240```.
@@ -238,12 +238,22 @@ The Alarm Sound supports 2 association groups.
 ### Group 1: Association group 1
 
 Changes the LED on the device
-This group supports 1 nodes.
+When the device receives an binary switch/ basic report, this will update the LED
+This group supports 1 node.
 
 ### Group 2: Association group 2
 
 The alarm sound reports it status to the associated devices
-This group supports 1 nodes.
+- In case the device gets unplugged this shall send Alarm report (code 3, Triggered).
+
+- When the device is connected to the power, this shall send an Alarm report (code 3, off).
+
+- When the device is truned of by clicking on the button, this shall send a Switch binary (off).
+
+- When the device gets unplugged the standard "power offline" sound is on, the device will send a Switch binary report (on).
+
+When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.
+This group supports 1 node.
 
 ## Technical Information
 

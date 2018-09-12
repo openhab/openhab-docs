@@ -25,7 +25,7 @@ The following table summarises the channels available for the ZMNHJD -:
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Binary Sensor 1 | sensor_binary1 | Door | Switch | 
 | Binary Sensor 2 | sensor_binary2 | Door | Switch | 
 | Binary Sensor 3 | sensor_binary3 | Door | Switch | 
@@ -47,7 +47,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Binary Sensor 1
 
@@ -306,27 +306,22 @@ The ZMNHJD supports 5 association groups.
 
 ### Group 1: Lifeline group
 
-Reserved for communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Multilevel
 
-Triggered at changes of state/value of the Flush pilot wire
 This group supports 99 nodes.
 
 ### Group 3: Basic on/off 
 
-Triggered at change of the input I1 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 4: Basic on/off
 
-Triggered at change of the input I2 state and reflecting its state
 This group supports 99 nodes.
 
 ### Group 5: Basic on/off
 
-Triggered at change of the input I3 state and reflecting its state
 This group supports 99 nodes.
 
 ## Technical Information
@@ -352,24 +347,24 @@ This group supports 99 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 #### Endpoint 2
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 #### Endpoint 3
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| Linked to BASIC|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 

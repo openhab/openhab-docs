@@ -19,6 +19,7 @@ The Z-Weather does not permanently listen for messages sent from the controller 
 The Z-Weather does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Z-Weather -:
@@ -26,10 +27,10 @@ The following table summarises the channels available for the Z-Weather -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance | Temperature | Number | 
+| Sensor (luminance) | sensor_luminance |  | Number | 
 | Sensor (velocity) | sensor_velocity |  | Number | 
-| Sensor (barometric pressure) | sensor_barpressure | Temperature | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (barometric pressure) | sensor_barpressure |  | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
 | Sensor (dew point) | sensor_dewpoint | Temperature | Number | 
 | Electric meter (pulses) | meter_pulse | Energy | Number | 
@@ -53,7 +54,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (velocity)
 
@@ -65,13 +66,13 @@ The ```sensor_velocity``` channel supports the ```Number``` item. This is a read
 
 Indicates the barometric pressure.
 
-The ```sensor_barpressure``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_barpressure``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 
@@ -164,22 +165,18 @@ The Z-Weather supports 4 association groups.
 
 ### Group 1: Life Line
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Wind Speed
 
-Wind speed is higher than 6 m/s (22 Km/h)
 This group supports 5 nodes.
 
 ### Group 3: End of Dawn
 
-At the end of the dawn if it becomes bright
 This group supports 5 nodes.
 
 ### Group 4: End of Dusk
 
-At the end of the dusk if it becomes bright
 This group supports 5 nodes.
 
 ## Technical Information
@@ -192,7 +189,7 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V6| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -206,9 +203,9 @@ This group supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_LANGUAGE_V1| |
-| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V0| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V1| |
 | COMMAND_CLASS_MULTI_CMD_V1| |
-| COMMAND_CLASS_ASSOCIATION_COMMAND_CONFIGURATION_V0| |
+| COMMAND_CLASS_ASSOCIATION_COMMAND_CONFIGURATION_V1| |
 
 ---
 

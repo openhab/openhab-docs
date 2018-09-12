@@ -24,6 +24,7 @@ The WALLC-S does not permanently listen for messages sent from the controller - 
 The WALLC-S does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the WALLC-S -:
@@ -31,7 +32,6 @@ The following table summarises the channels available for the WALLC-S -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Activation | scene_number |  | Number | 
 | Scene Number | scene_number |  | Number | 
 | Battery Level | battery-level | Battery | Number |
 
@@ -41,12 +41,6 @@ The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
-
-### Scene Activation
-
-Triggers when a scene button is pressed.
-
-The ```scene_number``` channel supports the ```Number``` item.
 
 ### Scene Number
 
@@ -71,10 +65,10 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Button 1 and 3 pair mode | In separate mode button 1 works with group 1, button 3 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 1/3 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks |
 | 2 | Button 2 and 4 pair mode | In separate mode button 1 works with group 2, button 4 with groups 3. Click is On, Hold is dimming Up, Double click is Off, Click-Hold is dimming Down. In pair button 2/4 are Up/Down correspondingly. Click is On/Off, Hold is dimming Up/Down. Single clicks |
-| 11 | Action on group 1 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
-| 12 | Action on group 2 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
-| 13 | Action on group 3 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
-| 14 | Action on group 4 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
+| 11 | Action on group 1 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
+| 12 | Action on group 2 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
+| 13 | Action on group 3 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
+| 14 | Action on group 4 | In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop |
 | 21 | Send the following Switch All commands |  |
 | 22 | Invert buttons |  |
 | 25 | Blocks wakeup even when wakeup interval is set | If the device wakes up and there is no controller nearby, several unsuccessful communication attempts will drain battery. |
@@ -118,7 +112,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 ### Parameter 11: Action on group 1
 
-In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
+In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
 
@@ -140,7 +134,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 ### Parameter 12: Action on group 2
 
-In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
+In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
 
@@ -162,7 +156,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 ### Parameter 13: Action on group 3
 
-In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
+In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
 
@@ -184,7 +178,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 ### Parameter 14: Action on group 4
 
-In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 \* group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
+In Switch On/Off only mode On command is sent on Dim Up, Off on Dim Down. In Scenes mode the scene ID sent is (10 * group + ActionID), where ActionID is: 1 = On, 2 = Off, 3 = Dim Up Start, 4 = Dim Down Start, 5 = Dim Up Stop, 6 = Dim Down Stop
 
 The following option values may be configured -:
 
@@ -295,26 +289,21 @@ The WALLC-S supports 5 association groups.
 
 ### Group 1: Lifeline
 
-
 This group supports 10 nodes.
 
 ### Group 2: Group 1
-
 
 This group supports 10 nodes.
 
 ### Group 3: Group 2
 
-
 This group supports 10 nodes.
 
 ### Group 4: Group 3
 
-
 This group supports 10 nodes.
 
 ### Group 5: Group 4
-
 
 This group supports 10 nodes.
 
@@ -328,10 +317,10 @@ This group supports 10 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V0| Linked to BASIC|
-| COMMAND_CLASS_SCENE_ACTIVATION_V0| |
-| COMMAND_CLASS_SCENE_CONTROLLER_CONF_V0| |
-| COMMAND_CLASS_CENTRAL_SCENE_V0| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
+| COMMAND_CLASS_SCENE_ACTIVATION_V1| |
+| COMMAND_CLASS_SCENE_CONTROLLER_CONF_V1| |
+| COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_BATTERY_V1| |

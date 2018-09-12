@@ -22,6 +22,7 @@ The DWZWAVE2 does not permanently listen for messages sent from the controller -
 The DWZWAVE2 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the DWZWAVE2 -:
@@ -55,7 +56,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -79,11 +80,13 @@ The DWZWAVE2 supports 2 association groups.
 ### Group 1: Group 1
 
 Association Group 1
+Association group one is intended for but not limited to controllers. All nodes whose Node ID that have been set in Association group one will receive all unsolicited Alarm Report frames, and Basic Report frames of 0x00 and 0xFF.  When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one.
 This group supports 5 nodes.
 
 ### Group 2: Group 2
 
 Association Group 2
+Association group two is intended for any device Ecolink Z-Wave Command Class Specification 2 that is controllable with a Basic Set of 0xFF such as lights, sirens, or chimes. When a sensor such as a door or window sensor is opened/faulted, the sensor will send a Basic Report to nodes in Association group one and a Basic Set of 0xFF to Association group two. When the door or window is closed the sensor will send a Basic Report of 0x00 to only group one. The Configuration command class can configure the sensor to send Basic Sets of 0x00 to nodes in group two (turning devices off).
 This group supports 5 nodes.
 
 ## Technical Information

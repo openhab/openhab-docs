@@ -27,10 +27,10 @@ _At the back of the door/window sensor, there is a program button which is used 
 
 **Inclusion**
 
-1. Set a Z-Wave controller into inclusion mode
-2. Press and release the program button located at the back of the door/window sensor to add it into your Z-Wave network and send a Node Information Frame.
-3. The status LED will stay solid for 10 seconds and turn off once inclusion is successful.
-4. If the LED never turns on and the inclusion mode times out, then repeat the inclusion process again, and exclude if necessary.
+  1. Set a Z-Wave controller into inclusion mode
+  2. Press and release the program button located at the back of the door/window sensor to add it into your Z-Wave network and send a Node Information Frame.
+  3. The status LED will stay solid for 10 seconds and turn off once inclusion is successful.
+  4. If the LED never turns on and the inclusion mode times out, then repeat the inclusion process again, and exclude if necessary.
 
 ### Exclusion Information
 
@@ -38,15 +38,16 @@ _At the back of the door/window sensor, there is a program button which is used 
 
 **Exclusion**
 
-1. Set the Z-Wave controller into exclusion mode.
-2. Press and release the program button located at the back of the door/window sensor to exclude it from your Z-Wave network and remove the Node Information Frame.
-3. The status LED will blink 3 times after releasing the program button, which means it's no longer associated with any Z-Wave network.
+  1. Set the Z-Wave controller into exclusion mode.
+  2. Press and release the program button located at the back of the door/window sensor to exclude it from your Z-Wave network and remove the Node Information Frame.
+  3. The status LED will blink 3 times after releasing the program button, which means it's no longer associated with any Z-Wave network.
 
 ### Wakeup Information
 
 The ZWN-BDS does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 To complete Z-Wave association, please refer to your controller's manual. Each controller has its own association method. **If your controller needs the sensor to wake up, press and hold the program button for 2 seconds, release the button when the status LED turns off, and the ZWN-BDS will wake up manually.**
 
@@ -84,7 +85,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -103,7 +104,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 

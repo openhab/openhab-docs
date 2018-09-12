@@ -17,9 +17,9 @@ The NZW31 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-Inovelli's In-Wall Smart Dimmer not only has the ability to control lights from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.   
+Inovelli's In-Wall Smart Dimmer not only has the ability to control lights from anywhere in the world, but it acts as a Z-Wave signal repeater, which amplifies your Z-Wave signal, growing the capabilities of your network.   
   
-In addition, it has scene control enabled, which allows you to double tap the switch to activate a Z-Wave scene. An example would be a bedtime scene, which turns off all lights, locks the door(s) and sets the temperature to 68 degrees.   
+In addition, it has scene control enabled, which allows you to double tap the switch to activate a Z-Wave scene. An example would be a bedtime scene, which turns off all lights, locks the door(s) and sets the temperature to 68 degrees.   
   
 Simplifying lives, one smart home product at a time... that's Inovelli.
 
@@ -27,13 +27,13 @@ Simplifying lives, one smart home product at a time... that's Inovelli.
 
 **Including Steps:**
 
-- This will vary based on the HUB/Gateway you’re using, but you need to go one (1) step before putting your HUB/Gateway in inclusion process — once you are one (1) step away from physically starting the inclusion/pairing process — **THEN STOP!**
-- Walk down to your circuit breaker and flip on the power (you will now have 30 seconds to physically start the inclusion process on your HUB/Gateway)
-- While next to the breaker, start the inclusion process and your HUB/Gateway will automatically start looking for devices
-- Wait for auto-inclusion to do its thing. Your switch will automatically include/pair to your HUB/Gateway 
-  - If successful, your device will flash twice (**NOTE:** Auto-Inclusion will time out after 30 seconds)
-  - If the switch does not flash within 30 seconds, please use the alternate method of pairing which is pressing the top (UP) button 6x within 2 seconds
-- Confirm that your HUB/Gateway shows the switch
+  * This will vary based on the HUB/Gateway you’re using, but you need to go one (1) step before putting your HUB/Gateway in inclusion process — once you are one (1) step away from physically starting the inclusion/pairing process — **THEN STOP!**
+  * Walk down to your circuit breaker and flip on the power (you will now have 30 seconds to physically start the inclusion process on your HUB/Gateway)
+  * While next to the breaker, start the inclusion process and your HUB/Gateway will automatically start looking for devices
+  * Wait for auto-inclusion to do its thing. Your switch will automatically include/pair to your HUB/Gateway 
+      * If successful, your device will flash twice (**NOTE:** Auto-Inclusion will time out after 30 seconds)
+      * If the switch does not flash within 30 seconds, please use the alternate method of pairing which is pressing the top (UP) button 6x within 2 seconds
+  * Confirm that your HUB/Gateway shows the switch
 
 Congratulations, you now have a remote controlled switch!
 
@@ -41,7 +41,7 @@ Congratulations, you now have a remote controlled switch!
 
 ### Exclusion Information
 
-- Press the Top (UP) Button on your NZW31 six (6) times within 2 seconds
+  * Press the Top (UP) Button on your NZW31 six (6) times within 2 seconds
 
 ## Channels
 
@@ -151,6 +151,7 @@ The NZW31 supports 1 association group.
 ### Group 1: Lifeline
 
 
+An association command class that allows the device to communicate with other Z-Wave devices directly -- such as sending BASIC REPORT whenever the switch is turned on or off.
 This group supports 5 nodes.
 
 ## Technical Information
@@ -162,7 +163,7 @@ This group supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |

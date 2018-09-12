@@ -21,11 +21,11 @@ The TILT-ZWAVE2.5-ECO does not permanently listen for messages sent from the con
 
 ### Inclusion Information
 
-1\. Start by placing the controller into inclusion mode.
+1. Start by placing the controller into inclusion mode.
 
-2\. Activate inclusion mode for the sensor by inserting the battery. When the inclusion process is complete the red LED will turn on for approximately 10 seconds and then it will go out. If the LED continues to flash, repeat the inclusion process.
+2. Activate inclusion mode for the sensor by inserting the battery. When the inclusion process is complete the red LED will turn on for approximately 10 seconds and then it will go out. If the LED continues to flash, repeat the inclusion process.
 
-3\. Test the garage door sensor before mounting it. Hold the sensor in your hand. Flip the sensor upside-down and watch the LED while doing so. The LED will flash each time the position of the sensor is changed. If your Z- Wave network has a software interface you may verify that the messages from the sensor are being received each time the sensor is flipped.
+3. Test the garage door sensor before mounting it. Hold the sensor in your hand. Flip the sensor upside-down and watch the LED while doing so. The LED will flash each time the position of the sensor is changed. If your Z- Wave network has a software interface you may verify that the messages from the sensor are being received each time the sensor is flipped.
 
 If you need to repeat the inclusion process, repeat STEP ONE above, then for STEP TWO you will need to simply remove the cover of the sensor, remove the battery for 5 seconds, reinsert the battery, and replace the sensor cover. This will re-enter the sensor in inclusion mode.
 
@@ -38,6 +38,7 @@ Exclusion mode on the sensor is activated on the sensor by the exact same proced
 The TILT-ZWAVE2.5-ECO does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 To save power, this sensor sleeps most of the time and is therefore not awake to receive messages from a gateway for testing. Removing the top case from the sensor will put in device into a tampered mode in which the sensor will stay awake and able to receive messages. Most of the time an end user would not do this, but if the sensor needs to be configured after inclusion, an end user can follow the instructions below for sending Wake-Up notifications.
 
@@ -78,7 +79,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (access)
@@ -91,7 +92,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (burglar)
@@ -104,7 +105,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -185,11 +186,13 @@ The TILT-ZWAVE2.5-ECO supports 2 association groups.
 ### Group 1: Lifeline
 
 Sends low-battery, tamper, open/close, and sensor binary reports
+Group one is a lifeline group who will receive unsolicited messages relating to door/window open/close notifications (because there is no association group for tilt switches), case tampering notifications, low-battery notifications, and sensor binary reports.
 This group supports 5 nodes.
 
 ### Group 2: Basic Set
 
 Sends ON/OFF commands to other devices based on state
+Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set
 This group supports 5 nodes.
 
 ## Technical Information
@@ -204,7 +207,7 @@ This group supports 5 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V2| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V0| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V5| |

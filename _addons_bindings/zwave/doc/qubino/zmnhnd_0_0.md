@@ -24,10 +24,10 @@ The following table summarises the channels available for the ZMNHND -:
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Switch 1 | switch_binary1 | Switch | Switch | 
 | Sensor Binary | sensor_binary2 | Door | Switch | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number | 
+| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
 | Burglar | alarm_burglar2 | Door | Switch | 
 
 ### Switch
@@ -53,7 +53,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Switch 1
 
@@ -78,7 +78,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Burglar
 
@@ -90,7 +90,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 
@@ -301,35 +301,29 @@ The ZMNHND supports 6 association groups.
 
 ### Group 1: Lifeline to Controller (reserved for communication with the main contr
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Basic on/off (triggered at change of the input Q 
 state and reflectin
-
 
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off (triggered at change of the input I2 
 state and reflecti
 
-
 This group supports 16 nodes.
 
 ### Group 4: Notification report (triggered at change of the input I2 
 state and r
-
 
 This group supports 16 nodes.
 
 ### Group 5: Binary Sensor (triggered at change of the input I2 
 state and reflect
 
-
 This group supports 16 nodes.
 
 ### Group 9: Multilevel Sensor report (triggered at change of temperature sensor)
-
 
 This group supports 16 nodes.
 
@@ -345,7 +339,7 @@ This group supports 16 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
-| COMMAND_CLASS_SENSOR_BINARY_V0| |
+| COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -361,7 +355,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -373,7 +367,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V7| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |

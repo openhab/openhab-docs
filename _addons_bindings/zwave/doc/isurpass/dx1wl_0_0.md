@@ -13,11 +13,61 @@ The device is in the category of *Sensor*, defining Device used to measure somet
 ![DX1WL-Z product image](https://www.cd-jackson.com/zwave_device_uploads/659/659_default.jpg)
 
 
-The DX1WL-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The DX1WL-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+The DX1WL-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/659) to improve the documentation.
+Smart Water Leakage sensor adopts Z-Wave wireless module. Super low power consumption circuit design ensures the long battery lifespan. Separate design of body and sensor efficiently prevents the influence resulted from high humidity. High precision and sensitivity applicable for basement, machine room, hotel, water tower, pool, swimming pool, solar, kitchen, bathroom and other places may have water leakage or water overflow.
+
+**SPECIFICATION**
+
+Working voltage: DC3V (2 x AAA battery)  
+Static current: 5uA  
+Alarm current: 35mA  
+Networking: Z-Wave  
+Wireless networking distance: 70 (open area)  
+Working temperature: -10°C~+50°C  
+Working humidity: max 95%RH  
+Body dimensions: 76 x 36.6 x 16.5 mm  
+Sensor dimensions: 28.3 x 26.5 x 12.2 mm
+
+WARNINGS
+
+  1. Install water leakage sensor at areas where it may leak.
+  2. Don't install water leakage sensor at position of rainwater, lampblack, water vapor, etc.
+  3. Don't install water leakage sensor at water immersed position.
+
+### Inclusion Information
+
+INSTALLATION  
+Remove battery insulation film to power it on
+
+DEVICE INCLUSION
+
+  1. Click [Add] icon in Z-Wave PC Controller Program.
+  2. Press the networking button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.
+  3. If Inclusion Process is successful, Green led will turn off.
+
+### Exclusion Information
+
+  1. Click [Remove] icon in Z-Wave PC Controller Program
+  2. Press the networking button 3 times within 1.5s
+  3. If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.
+
+**FACTORY RESET** 
+
+Long press the networking button, then power on (put into the battery), ID code is clear and reset to factory settings.
+
+### Wakeup Information
+
+The DX1WL-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+
+The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+The manual doesn't say, but I've found that tapping the tamper sensor once makes the device blink and that seems to wake it up.
 
 ## Channels
 
@@ -25,6 +75,55 @@ The following table summarises the channels available for the DX1WL-Z -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
+| Binary Sensor | sensor_binary | Door | Switch | 
+| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Alarm (flood) | alarm_flood | Door | Switch | 
+| Battery Level | battery-level | Battery | Number |
+
+### Binary Sensor
+
+Indicates if a sensor has triggered.
+
+The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Triggered |
+| OFF | Untriggered |
+
+### Alarm (burglar)
+
+Indicates if the burglar alarm is triggered.
+
+The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Alarm (flood)
+
+Indicates if the flood alarm is triggered.
+
+The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Battery Level
+
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
+
+The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 
 
@@ -36,7 +135,53 @@ The device has no configuration parameters configured.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The DX1WL-Z supports 5 association groups.
+
+### Group 1: Lifeline
+
+Lifeline association group
+1. Include command classes: 
+
+Battery report,  
+Notification report,  
+Device Reset Locally notification,  
+Binary report. 
+This group supports 5 nodes.
+
+### Group 2: Root Device group (Binary Sensor)
+
+Root Device group (Binary Sensor)
+1-Binary Sensor Command Class: Compatible with 300 series   
+2-Binary Sensor reports status of water or no water via Lifeline.   
+3-When the sensor detects status change between water and no water, the device will be triggered.
+This group supports 5 nodes.
+
+### Group 3: Root Device group (Binary Sensor) 
+
+Root Device group (Binary Sensor)
+- Binary Sensor Command Class:Compatible with 300 series   
+1-Binary Sensor reports the removed status of water sensor.   
+2-When the sensor detects status change of tamper, the device will be triggered. 
+This group supports 5 nodes.
+
+### Group 4: Root Device group (Notification) 
+
+Root Device group (Notification)
+1-Notification reports reports status of detect water or no water via Lifeline.   
+2-When the sensor detects status change between water and no water, the device will be triggered. 
+This group supports 5 nodes.
+
+### Group 5: Root Device group (Notification) 
+
+Root Device group (Notification)
+1-Binary Sensor reports the removed status of water sensor   
+1-When the sensor detects status change of tamper, the device will be triggered.
+
+4-Association & Association Group Information   
+- Lifeline between controller and the product   
+- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
+This group supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints
@@ -45,6 +190,19 @@ The device does not support associations.
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SENSOR_BINARY_V2| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ALARM_V7| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_BATTERY_V1| |
+| COMMAND_CLASS_WAKE_UP_V2| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
 
 ### Documentation Links
 

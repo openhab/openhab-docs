@@ -89,22 +89,22 @@ Detailed information on each parameter can be found in the sections below.
 | 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 32767) in seconds, when power report is sent. |
 | 60 | Minimum dimming value |  |
 | 61 | Maximum dimming value |  |
-| 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).
+| 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet). 
 
-- default value 100 = 1s
-- 1 - 255 = 100 mseconds – 25500 mseconds (25.5 |
+  * default value 100 = 1s
+  * 1 - 255 = 100 mseconds – 25500 mseconds (25.5 |
 | 66 | Dimming time when key pressed | Time to moving the Dimmer between min. and max values (in seconds). |
 | 67 | Ignore start level | This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1. |
 | 68 | Dimming duration | This parameter is used with association group 3. |
-| 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:
+| 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. Available configuration parameters: 
 
-- default value 32536
-- 32536 – offset is 0.0C
-- From 1 to 100 – value from 0.1 °C to 10.0 °C is added to |
-| 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:
+  * default value 32536
+  * 32536 – offset is 0.0C
+  * From 1 to 100 – value from 0.1 °C to 10.0 °C is added to |
+| 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters: 
 
-- default value 5 = 0.5°C
-- 0 – Reporting disabled |
+  * default value 5 = 0.5°C
+  * 0 – Reporting disabled |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input switch type
@@ -160,8 +160,8 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 ### Parameter 11: Automatic turning off output after set time
 
 
-- 0 - Auto OFF disabled
-- 1 – 32536 = 1 second – 32536 seconds Auto OFF enabled with defined time, step is 1 second.
+  * 0 - Auto OFF disabled
+  * 1 – 32536 = 1 second – 32536 seconds Auto OFF enabled with defined time, step is 1 second.
 The following option values may be configured, in addition to values in the range 0 to 32536 -:
 
 | Value  | Description |
@@ -176,8 +176,8 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 ### Parameter 12: Automatic turning on output after set time
 
 
-- 0 - Auto ON disabled
-- 1 – 32536 = 1 second – 32536 seconds Auto ON enabled with defined time, step is 1 second.
+  * 0 - Auto ON disabled
+  * 1 – 32536 = 1 second – 32536 seconds Auto ON enabled with defined time, step is 1 second.
 The following option values may be configured, in addition to values in the range 0 to 32536 -:
 
 | Value  | Description |
@@ -235,8 +235,8 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 ### Parameter 42: Power reporting in Watts by time interval
 
 Set value means time interval (0 – 32767) in seconds, when power report is sent.
-- 0 – reporting disabled
-- 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is sent with time interval set by entered
+  * 0 – reporting disabled
+  * 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is sent with time interval set by entered
 Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -247,7 +247,7 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 ### Parameter 60: Minimum dimming value
 
 
-- 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
+  * 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
 
 NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 1 to 98 may be set.
@@ -260,7 +260,7 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 ### Parameter 61: Maximum dimming value
 
 
-- 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
+  * 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
 
 NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.
 Values in the range 2 to 99 may be set.
@@ -272,10 +272,10 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 
 ### Parameter 65: Dimming time (soft on/off)
 
-Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet).
+Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet). 
 
-- default value 100 = 1s
-- 1 - 255 = 100 mseconds – 25500 mseconds (25.5
+  * default value 100 = 1s
+  * 1 - 255 = 100 mseconds – 25500 mseconds (25.5
 
 Values in the range 1 to 255 may be set.
 
@@ -287,8 +287,8 @@ This parameter has the configuration ID ```config_65_2``` and is of type ```INTE
 ### Parameter 66: Dimming time when key pressed
 
 Time to moving the Dimmer between min. and max values (in seconds).
-- default value 3 = 3s
-- 1- 255 = 1 second – 255 seconds.
+  * default value 3 = 3s
+  * 1- 255 = 1 second – 255 seconds.
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -325,11 +325,11 @@ This parameter has the configuration ID ```config_68_1``` and is of type ```INTE
 
 ### Parameter 110: Temperature sensor offset settings
 
-Set value is added or subtracted to actual measured value by sensor. Available configuration parameters:
+Set value is added or subtracted to actual measured value by sensor. Available configuration parameters: 
 
-- default value 32536
-- 32536 – offset is 0.0C
-- From 1 to 100 – value from 0.1 °C to 10.0 °C is added to
+  * default value 32536
+  * 32536 – offset is 0.0C
+  * From 1 to 100 – value from 0.1 °C to 10.0 °C is added to
 
 Values in the range 1 to 32536 may be set.
 
@@ -340,10 +340,10 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 ### Parameter 120: Digital temperature sensor reporting
 
-If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters:
+If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters: 
 
-- default value 5 = 0.5°C
-- 0 – Reporting disabled
+  * default value 5 = 0.5°C
+  * 0 – Reporting disabled
 
 Values in the range 0 to 127 may be set.
 
@@ -374,26 +374,21 @@ The ZMNHSD supports 5 association groups.
 
 ### Group 1: Controller Updates
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: I1 basic on/off
-
 
 This group supports 16 nodes.
 
 ### Group 3: I1 start/stop level change
 
-
 This group supports 16 nodes.
 
 ### Group 4: Multilevel set
 
-
 This group supports 16 nodes.
 
 ### Group 5: Multilevel sensor report
-
 
 This group supports 16 nodes.
 

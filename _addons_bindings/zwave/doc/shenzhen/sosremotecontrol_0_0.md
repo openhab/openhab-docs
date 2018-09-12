@@ -19,7 +19,7 @@ The SOS/Remote Control does not permanently listen for messages sent from the co
 
 ## Overview
 
-Remote control/SOS is a smart security device that can communication with other devices via z-wave .
+Remote control/SOS is a smart security device that can communication with other devices via z-wave . 
 
 It is compatible with z-wave plus devices, battery powered , compact to carry .
 
@@ -29,31 +29,32 @@ With 4 buttons, you can use Remote control for emergency call and set 6 differen
 
 ### Inclusion Information
 
-1\) Ensure remote control is in z-wave range.
+1) Ensure remote control is in z-wave range.
 
-2\) Set the controller in learning mode.(refer to the controller user manual)
+2) Set the controller in learning mode.(refer to the controller user manual)
 
-3\) Quickly pressing the red button three times,Led will blink.
+3) Quickly pressing the red button three times,Led will blink.
 
-4\) The controller will recognize remote control and add it into z-wave network.
+4) The controller will recognize remote control and add it into z-wave network.
 
-5\) Wait for the controller to configure.
+5) Wait for the controller to configure.
 
 ### Exclusion Information
 
-1\) Ensure the device is connected to power supply.
+1) Ensure the device is connected to power supply. 
 
-2\) Set the controller in remove mode(refer to controller’s user manual)
+2) Set the controller in remove mode(refer to controller’s user manual)
 
-3\) Quick pressing the red button for three times.
+3) Quick pressing the red button for three times.
 
-4\) Wait for removing SOS from the controller .
+4) Wait for removing SOS from the controller .
 
 ### Wakeup Information
 
 The SOS/Remote Control does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the SOS/Remote Control -:
@@ -62,7 +63,7 @@ The following table summarises the channels available for the SOS/Remote Control
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Scene Number | scene_number |  | Number | 
-| Alarm (emergency) | alarm_emergency | Door | Switch | 
+| Alarm (emergency) | alarm_emergency |  |  | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -86,16 +87,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ### Alarm (emergency)
 
-Indicates if the emergency alarm is triggered.
-
-The ```alarm_emergency``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | Ok |
-| ON | Alarm |
+Channel type information on this channel is not found.
 
 ### Battery Level
 
@@ -153,7 +145,7 @@ This parameter defines the SOS key function, the SOS key can be configured as em
 
 If this parameter is set to ‘1’, the SOS key will be configured as central scene notification key.
 
-If this parameter is set to ‘2’, the SOS key will be configured as emergency event notification key. The default settings is ‘2’, the SOS key is
+If this parameter is set to ‘2’, the SOS key will be configured as emergency event notification key. The default settings is ‘2’, the SOS key is 
 
 configured as emergency event notification key.
 The following option values may be configured -:
@@ -194,12 +186,36 @@ The SOS/Remote Control supports 2 association groups.
 ### Group 1: Group 1
 
 Able to control z-wave main controller setting or alarm host status.
-This group supports 1 nodes.
+* COMMAND\_CLASS\_ZWAVEPLUS_INFO (V2)
+
+* COMMAND\_CLASS\_VERSION (V2)
+
+* COMMAND\_CLASS\_MANUFACTURER_SPECIFIC (V2)
+
+* COMMAND\_CLASS\_DEVICE\_RESET\_LOCALLY (V1)
+
+* COMMAND\_CLASS\_POWERLEVEL (V1)
+
+* COMMAND\_CLASS\_BATTERY (V1)
+
+* COMMAND\_CLASS\_ASSOCIATION (V2)
+
+* COMMAND\_CLASS\_ASSOCIATION\_GRP\_INFO (V1)
+
+* COMMAND\_CLASS\_WAKE_UP (V2)
+
+* COMMAND\_CLASS\_NOTIFICATION (V8)
+
+* COMMAND\_CLASS\_SENSOR_BINARY (V2)
+
+* COMMAND\_CLASS\_CONFIGURATION (V1)
+This group supports 1 node.
 
 ### Group 2: Group 2
 
 Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .
-This group supports 1 nodes.
+Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.
+This group supports 1 node.
 
 ## Technical Information
 

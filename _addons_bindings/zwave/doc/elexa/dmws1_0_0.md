@@ -22,6 +22,7 @@ The DMWS1 does not permanently listen for messages sent from the controller - it
 The DMWS1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the DMWS1 -:
@@ -35,7 +36,7 @@ The following table summarises the channels available for the DMWS1 -:
 
 ### Binary Sensor
 
-The Leak Sensor also sends a Binary Sensor Report when a leak is detected or removed. See below for the SENSOR\_BINARY\_REPORT parameters sent:  
+The Leak Sensor also sends a Binary Sensor Report when a leak is detected or removed.  See below for the SENSOR\_BINARY\_REPORT parameters sent:  
 Sensor Type: 06 (Water)  
 Leak Detected Value: 0xFF  
 Leak Removed Value: 0x00
@@ -61,7 +62,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (general)
@@ -74,7 +75,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -98,7 +99,7 @@ Detailed information on each parameter can be found in the sections below.
 | 4 | Reminder Alarm | Length of each beep after the Initial Alarm |
 | 5 | Enable/Disable Audible Alarm | Enables or disables the audible alarm (“beeping”) |
 | 6 | Enable/Disable Water Detection | If disabled, the device will not respond in any way to detected leaks. |
-| 7 | Basic Set Level | The value sent by the BASIC\_SET command to Association Group 2 |
+| 7 | Basic Set Level | The value sent by the BASIC_SET command to Association Group 2 |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
@@ -182,7 +183,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 ### Parameter 7: Basic Set Level
 
-The value sent by the BASIC\_SET command to Association Group 2
+The value sent by the BASIC_SET command to Association Group 2
 Determines the value to be sent in the Basic Set command to Association Group 2 when a leak is detected
 Values in the range 0 to 255 may be set.
 
@@ -217,21 +218,25 @@ The DMWS1 supports 4 association groups.
 ### Group 1: Lifeline
 
 
+Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller.  The Leak Sensor sends this group a Notification Report and a Binary Sensor Report when water is detected or removed.  It also sends this group a Battery Report in reponse to Battery Get commands and a Locally Reset Notification upon local reset.
 This group supports 5 nodes.
 
 ### Group 2: Control
 
-Group to receive BASIC\_SET on leak change
+Group to receive BASIC_SET on leak change
+The Leak Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to a detected leak. Then, after the leak is no longer detected, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 7. 
 This group supports 5 nodes.
 
 ### Group 3: Notification
 
 
+Group 3 supports up to 5 members and the Leak Sensor sends it a NOTIFICATION_REPORT when water is detected or removed
 This group supports 5 nodes.
 
 ### Group 4: Sensor Binary 
 
 
+Group 4 supports up to 5 members and the Leak Sensor sends it a SENSOR\_BINARY\_REPORT when water is detected or removed.
 This group supports 5 nodes.
 
 ## Technical Information

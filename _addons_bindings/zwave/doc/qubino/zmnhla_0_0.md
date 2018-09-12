@@ -25,17 +25,17 @@ The following table summarises the channels available for the ZMNHLA -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
 
 ### Sensor (temperature)
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
 
@@ -72,14 +72,12 @@ The following state translation is provided for this channel to the ```Number```
 | 11 | Heat Economy |
 | 12 | Cool Economy |
 | 13 | Away |
-| 15 | Full Power |
-| 31 | Manufacturer Specific |
 
 ### Setpoint (heating)
 
-Sets the thermostate setpoint.
+Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -222,7 +220,7 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 ### Parameter 10: Activate / deactivate functions ALL ON/ALL OFF			
 
 Respond to ALL ON/ALL OFF
-Flush PWM thermostat module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
+Flush PWM thermostat module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.           
 The following option values may be configured -:
 
 | Value  | Description |
@@ -536,33 +534,27 @@ The ZMNHLA supports 6 association groups.
 
 ### Group 1: On/Off Triggered by Q State
 
-
 This group supports 16 nodes.
 
 ### Group 2: On/Off Triggered by I2
-
 
 This group supports 16 nodes.
 
 ### Group 3: On/Off Triggered by I3
 
-
 This group supports 16 nodes.
 
 ### Group 4: On/Off Triggerd by High Temp
-
 
 This group supports 16 nodes.
 
 ### Group 5: On/Off Trigger by Low Temp
 
-
 This group supports 16 nodes.
 
 ### Group 6: Controller Updates
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ## Technical Information
 

@@ -45,7 +45,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -200,7 +200,6 @@ The YKFCON supports 1 association group.
 
 ### Group 1: Alarm Reports
 
-Alarm reports are sent out to all devices in the association group
 This group supports 5 nodes.
 
 ## Technical Information

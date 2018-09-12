@@ -22,6 +22,7 @@ The Tag Reader does not permanently listen for messages sent from the controller
 The Tag Reader does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Tag Reader -:
@@ -49,7 +50,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (access)
@@ -153,7 +154,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Feedback time-out
 
 waiting for the wake-up-no-more command
-Too configure the time-out, waiting on the wakeup\_no\_more\_information command before the error sound starts automatically. The error sound is set to 8 short beeps.
+Too configure the time-out, waiting on the wakeup\_no\_more_information command before the error sound starts automatically. The error sound is set to 8 short beeps.
 
 0x00 = off
 Values in the range 0 to 255 may be set.
@@ -177,7 +178,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Mode 
 
 To configure mode
-Mode 1 = normal working mode
+Mode 1 =  normal working mode
 
 Mode 3 = z-wave chip is always on to be asked for information, for example version or manufacturer ID.
 
@@ -192,11 +193,11 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 ### Parameter 6: RFID circuit start-up time
 
 The time the RFID will be started after pressing "home" or "away"
-0x64 (100 \* 10 ms = 1 s)
+0x64 (100 * 10 ms = 1 s)
 
-The time (\*10 ms) the RFID circuit waits to start after "home" or "away" has been pressed.
+The time (*10 ms) the RFID circuit waits to start after "home" or "away" has been pressed.
 
-the time \*10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.
+the time *10 miliseconds, minimum = 0 seconds, max = 2,55 seconds. If the value is not in the allowed size the frame will be ignored.
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -230,6 +231,7 @@ The Tag Reader supports 1 association group.
 ### Group 1: Association group 1
 
 Link devices to the tag reader
+This class can be used to link other devices to the tag reader. These devices also get the burglar frame send to them.
 This group supports 5 nodes.
 
 ## Technical Information

@@ -17,6 +17,7 @@ The Soft Remote does not permanently listen for messages sent from the controlle
 The Soft Remote does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 ## Channels
 
 The following table summarises the channels available for the Soft Remote -:
@@ -219,36 +220,29 @@ The Soft Remote supports 7 association groups.
 
 ### Group 1: Lifeline
 
-
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Button 1 - Mono - Controlled nodes
-
 
 This group supports 8 nodes.
 
 ### Group 3: Button 2 - Mono - Controlled nodes
 
-
 This group supports 8 nodes.
 
 ### Group 4: Button 3 - Mono - Controlled nodes
-
 
 This group supports 8 nodes.
 
 ### Group 5: Button 4 - Mono - Controlled nodes
 
-
 This group supports 8 nodes.
 
 ### Group 6: Button 1 and 3 - Duo - Controlled nodes
 
-
 This group supports 8 nodes.
 
 ### Group 7: Button 2 and 4 - Duo - Controlled nodes
-
 
 This group supports 8 nodes.
 
@@ -263,7 +257,7 @@ This group supports 8 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V0| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| Linked to BASIC|
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |

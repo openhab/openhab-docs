@@ -21,12 +21,12 @@ The following table summarises the channels available for the ZMNHZD -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Sensor (velocity) | sensor_velocity |  | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
 | Sensor (direction) | sensor_direction |  | Number | 
 | Sensor (rain rate) | sensor_rainrate | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Thermo/ Hygro Sensor Ch1 – Temperature | sensor_temperature1 | Temperature | Number | 
+| Thermo/ Hygro Sensor Ch1 – Temperature | sensor_temperature1 | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 | Wind Gauge – Direction | sensor_direction2 |  | Number | 
 | Battery Level | battery-level | Battery | Number |
@@ -34,15 +34,15 @@ The following table summarises the channels available for the ZMNHZD -:
 | Battery Level | battery-level | Battery | Number |
 | Wind Gauge – Wind gust | sensor_velocity4 |  | Number | 
 | Battery Level | battery-level | Battery | Number |
-|  Wind Gauge – Temperature | sensor_temperature5 | Temperature | Number | 
+|  Wind Gauge – Temperature | sensor_temperature5 | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
-| Wind Gauge – Wind Chill | sensor_temperature6 | Temperature | Number | 
+| Wind Gauge – Wind Chill | sensor_temperature6 | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 |  Rain Sensor | sensor_rainrate7 | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
 |  Thermo/ Hygro Sensor Ch1 – Humidity | sensor_relhumidity8 | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Thermo/ Hygro Sensor Ch2 – Temperature | sensor_temperature9 | Temperature | Number | 
+| Thermo/ Hygro Sensor Ch2 – Temperature | sensor_temperature9 | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
 |  Thermo/ Hygro Sensor Ch2 – Humidity  | sensor_relhumidity10 | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
@@ -57,7 +57,7 @@ The ```sensor_velocity``` channel supports the ```Number``` item. This is a read
 
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 
@@ -89,7 +89,7 @@ Endpoint 1 receives Temperature data from Thermo/ Hygro Sensor on Channel 1. It 
 
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -113,7 +113,7 @@ The ```battery-level2``` channel supports the ```Number``` item and is in the ``
 
 ### Wind Gauge – Velocity
 
-Endpoint 3 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s.
+Endpoint 3 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s. 
 
 Indicates the current velocity.
 
@@ -127,7 +127,7 @@ The ```battery-level3``` channel supports the ```Number``` item and is in the ``
 
 ### Wind Gauge – Wind gust
 
-Endpoint 4 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s.
+Endpoint 4 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s. 
 
 Indicates the current velocity.
 
@@ -145,7 +145,7 @@ Endpoint 5 receives Temperature data from Wind Gauge. It is capable of receiving
 
 Indicates the current temperature.
 
-The ```sensor_temperature5``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature5``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -159,7 +159,7 @@ Endpoint 6 receives Temperature data from Wind Gauge. It is capable of receiving
 
 Indicates the current temperature.
 
-The ```sensor_temperature6``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature6``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -201,7 +201,7 @@ Endpoint 9 receives Temperature data from Thermo/ Hygro Sensor on Channel 2. It 
 
 Indicates the current temperature.
 
-The ```sensor_temperature9``` channel supports the ```Number``` item and is in the ```Temperature``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature9``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
 
@@ -441,21 +441,21 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 ### Parameter 250: Unsecure / Secure Inclusion 
 
 Unsecure / Secure Inclusion
-- default Value 0
-- 0 – Unsecure Inclusion
-- 1 – Secure Inclusion
+  * default Value 0
+  * 0 – Unsecure Inclusion
+  * 1 – Secure Inclusion
 
 The Weather Station Key supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, the Key could be included as unsecure and keep all the functionality. By default, the Key includes as unsecure. To include the Key as secure follow the procedure:
 
-1. Include the Key into the controller
-2. Set the parameter 250 to the value “1”
-3. Enable add/remove mode on main controller,
-4. Hold service button S between 1.5 and 4 seconds to exclude the module
-5. If the exclusion of the module was successful, the LED on the module starts blinking
-6. Unplug the module out of the power supply
-7. enable add/remove mode on main controller
-8. Plug the module into the power supply to star autoinclusion
-9. Now the module should be included as secure
+  1. Include the Key into the controller
+  2. Set the parameter 250 to the value “1”
+  3. Enable add/remove mode on main controller,
+  4. Hold service button S between 1.5 and 4 seconds to exclude the module
+  5. If the exclusion of the module was successful, the LED on the module starts blinking
+  6. Unplug the module out of the power supply
+  7. enable add/remove mode on main controller
+  8. Plug the module into the power supply to star autoinclusion
+  9. Now the module should be included as secure
 
 The same procedure is to include the module as unsecure
 Values in the range 0 to 1 may be set.
@@ -473,17 +473,14 @@ The ZMNHZD supports 3 association groups.
 
 ### Group 1: Lifeline group
 
-reserved for the communication with the main controller
-This group supports 1 nodes.
+This group supports 1 node.
 
 ### Group 2: Basic on/off
 
-triggered when the wind gust of the wind gauge exceed the configuration parameter 1 value
 This group supports 16 nodes.
 
 ### Group 3: Basic on/off
 
-triggered when the rain rate exceed the configuration parameter 2 value
 This group supports 16 nodes.
 
 ## Technical Information
@@ -507,7 +504,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -516,7 +513,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -525,7 +522,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -534,7 +531,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -543,7 +540,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -552,7 +549,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -561,7 +558,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -570,7 +567,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -579,7 +576,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
@@ -588,7 +585,7 @@ This group supports 16 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_BASIC_V0| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| Linked to BASIC|
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |

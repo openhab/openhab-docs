@@ -25,76 +25,76 @@ Smart Water Leakage sensor adopts Z-Wave wireless module. Super low power consum
 
 SPECIFICATION
 
-Working voltage: DC3V (2 x AAA battery)   
-Static current: 5uA   
-Alarm current: 35mA   
+Working voltage: DC3V (2 x AAA battery)  
+Static current: 5uA  
+Alarm current: 35mA  
 Networking: Z-Wave  
- Wireless networking distance: 70 (open area)   
+Wireless networking distance: 70 (open area)  
 Working temperature: -10°C~+50°C  
- Working humidity: max 95%RH  
- Body dimensions: 76 x 36.6 x 16.5 mm   
+Working humidity: max 95%RH  
+Body dimensions: 76 x 36.6 x 16.5 mm  
 Sensor dimensions: 28.3 x 26.5 x 12.2 mm
 
-WARNINGS   
-1\. Install water leakage sensor at areas where it may leak.   
-2\. Don’t install water leakage sensor at position of rainwater, lampblack, water vapor, etc.   
-3\. Don’t install water leakage sensor at water immersed position.
+WARNINGS  
+1. Install water leakage sensor at areas where it may leak.  
+2. Don’t install water leakage sensor at position of rainwater, lampblack, water vapor, etc.  
+3. Don’t install water leakage sensor at water immersed position.
 
-ASSOCIATION & ASSOCIATION GROUP INFORMATION   
-\- Lifeline between controller and Water Leak Sensor   
-\- Supported command classes Battery report, Notification report, and Device Reset Locally notification, Binary report.
+ASSOCIATION & ASSOCIATION GROUP INFORMATION  
+- Lifeline between controller and Water Leak Sensor  
+- Supported command classes Battery report, Notification report, and Device Reset Locally notification, Binary report.
 
-\- Association Group description   
+- Association Group description  
   
-• Association group 1: Lifeline association group   
-\- Maximum supported nodes are   
-1\. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.   
+• Association group 1: Lifeline association group  
+- Maximum supported nodes are  
+1. Include command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.  
   
-• Association group 2: Root Device group (Binary Sensor)   
-\- Maximum supported nodes are 5.   
-1-Binary Sensor Command Class: Compatible with 300 series   
-2-Binary Sensor reports status of water or no water via Lifeline.   
+• Association group 2: Root Device group (Binary Sensor)  
+- Maximum supported nodes are 5.  
+1-Binary Sensor Command Class: Compatible with 300 series  
+2-Binary Sensor reports status of water or no water via Lifeline.  
 3-When the sensor detects status change between water and no water, the device will be triggered.
 
-• Association group 3: Root Device group (Binary Sensor)   
-\- Maximum supported nodes are 5.   
-\- Binary Sensor Command Class:Compatible with 300 series   
-1-Binary Sensor reports the removed status of water sensor.   
-2-When the sensor detects status change of tamper, the device will be triggered.   
+• Association group 3: Root Device group (Binary Sensor)  
+- Maximum supported nodes are 5.  
+- Binary Sensor Command Class:Compatible with 300 series  
+1-Binary Sensor reports the removed status of water sensor.  
+2-When the sensor detects status change of tamper, the device will be triggered.  
   
-• Association group 4: Root Device group (Notification)   
-\- Maximum supported nodes are 5.   
-1-Notification reports reports status of detect water or no water via Lifeline.   
-2-When the sensor detects status change between water and no water, the device will be triggered.   
+• Association group 4: Root Device group (Notification)  
+- Maximum supported nodes are 5.  
+1-Notification reports reports status of detect water or no water via Lifeline.  
+2-When the sensor detects status change between water and no water, the device will be triggered.  
   
-• Association group 5: Root Device group (Notification)   
-\- Maximum supported nodes are 5.   
-1-Binary Sensor reports the removed status of water sensor   
+• Association group 5: Root Device group (Notification)  
+- Maximum supported nodes are 5.  
+1-Binary Sensor reports the removed status of water sensor  
 1-When the sensor detects status change of tamper, the device will be triggered.
 
-4-Association & Association Group Information   
-\- Lifeline between controller and the product   
-\- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
+4-Association & Association Group Information  
+- Lifeline between controller and the product  
+- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
 
 ### Inclusion Information
 
-INSTALLATION STEP 1:   
+INSTALLATION STEP 1:   
 Remove battery insulation film to power it on
 
-INSTALLATION STEP 2:   
-1\. DEVICE INCLUSION   
-\- Click \[Add\] icon in Z-Wave PC Controller Program.   
-\- Press the networking button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.   
-\- If Inclusion Process is successful, Green led will turn off.
+INSTALLATION STEP 2:  
+1. DEVICE INCLUSION  
+- Click [Add] icon in Z-Wave PC Controller Program.  
+- Press the networking button 3 times within 1.5s, Green LED is blinking 3 times within 1 second.  
+- If Inclusion Process is successful, Green led will turn off.
 
 ### Exclusion Information
 
-DEVICE EXCLUSION   
-\- Click \[Remove\] icon in Z-Wave PC Controller Program   
-\- Press the networking button 3 times within 1.5s   
-\- If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.
+DEVICE EXCLUSION  
+- Click [Remove] icon in Z-Wave PC Controller Program  
+- Press the networking button 3 times within 1.5s  
+- If Exclusion Process is successful, Green led is Blinking 6 times, then turn off.
 
-FACTORY RESET   
+FACTORY RESET  
 Long press the networking button, then power on (put into the battery), ID code is clear and reset to factory settings.
 
 ### Wakeup Information
@@ -102,6 +102,7 @@ Long press the networking button, then power on (put into the battery), ID code 
 The HM-HS1WL-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
 
 The manual doesn't say, but I've found that tapping the tamper sensor once makes the device blink and that seems to wake it up.
 
@@ -139,7 +140,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Alarm (flood)
@@ -152,7 +153,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -176,26 +177,46 @@ The HM-HS1WL-Z supports 5 association groups.
 ### Group 1: Lifeline
 
 Lifeline association group
+1. Include command classes: 
+
+Battery report,  
+Notification report,  
+Device Reset Locally notification,  
+Binary report. 
 This group supports 5 nodes.
 
 ### Group 2: Root Device group (Binary Sensor)
 
 Root Device group (Binary Sensor)
+1-Binary Sensor Command Class: Compatible with 300 series   
+2-Binary Sensor reports status of water or no water via Lifeline.   
+3-When the sensor detects status change between water and no water, the device will be triggered.
 This group supports 5 nodes.
 
 ### Group 3: Root Device group (Binary Sensor) 
 
 Root Device group (Binary Sensor)
+- Binary Sensor Command Class:Compatible with 300 series   
+1-Binary Sensor reports the removed status of water sensor.   
+2-When the sensor detects status change of tamper, the device will be triggered. 
 This group supports 5 nodes.
 
 ### Group 4: Root Device group (Notification) 
 
 Root Device group (Notification)
+1-Notification reports reports status of detect water or no water via Lifeline.   
+2-When the sensor detects status change between water and no water, the device will be triggered. 
 This group supports 5 nodes.
 
 ### Group 5: Root Device group (Notification) 
 
 Root Device group (Notification)
+1-Binary Sensor reports the removed status of water sensor   
+1-When the sensor detects status change of tamper, the device will be triggered.
+
+4-Association & Association Group Information   
+- Lifeline between controller and the product   
+- Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
 This group supports 5 nodes.
 
 ## Technical Information

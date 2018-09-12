@@ -8,17 +8,36 @@ title: TILTZWAVE2 - ZWave
 # TILTZWAVE2 Z-Wave Garage Door Sensor
 This describes the Z-Wave device *TILTZWAVE2*, manufactured by *Ecolink* with the thing type UID of ```eco_tiltzwave2_00_000```.
 
+The device is in the category of *Garage Door*, defining Garage Door.
+
+![TILTZWAVE2 product image](https://www.cd-jackson.com/zwave_device_uploads/139/139_default.jpg)
+
+
 The TILTZWAVE2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The TILTZWAVE2 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
+Sensor which transmits when  a garage door is open or closed. Uses a tilt sensor to detect the angle of a door and transmits open/closed status. Reports tamper condition if cover is removed.
+
+### Inclusion Information
+
+Put controller into inclusion mode, remove the cover, remove the battery for 5 seconds, reinsert the battery, close the cover.
+
+### Exclusion Information
+
+Put controller into exclusion mode, remove the cover, remove the battery for 5 seconds, reinsert the battery, close the cover.
+
 ### Wakeup Information
 
 The TILTZWAVE2 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Remove the cover, close the cover.
+
 ## Channels
 
 The following table summarises the channels available for the TILTZWAVE2 -:
@@ -52,7 +71,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 | Value | Label     |
 |-------|-----------|
-| OFF | Ok |
+| OFF | OK |
 | ON | Alarm |
 
 ### Battery Level
@@ -73,13 +92,11 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The TILTZWAVE2 supports 2 association groups.
 
-### Group 1: Group 1
-
+### Group 1: Lifeline
 
 This group supports 5 nodes.
 
 ### Group 2: Group 2
-
 
 This group supports 5 nodes.
 

@@ -158,29 +158,29 @@ This section provides a summary of the device properties that are displayed in t
 #### Using Security
 
 This indicates that the device is currently securely included in the network and that some classes are handled securely. This will only be true if secure inclusion has been successfully completed.
- 
+
 #### Routing
 
 This flag indicates that the device participates in routing. This means that the device is capable of routing messages, and has the resources to maintain a routing table. It doesn’t necessarily mean that the device will act as a router in the mesh network which is not possible for battery devices.
- 
+
 #### Listening
 
 This flag indicates that the device is permanently listening to messages from other devices. This is normally true for mains powered devices, however battery devices do not permanently listen to reduce power consumption. A device that is not permanently listening will experience some latency when the controller wants to send messages to it as it will be mostly sleeping – when it wakes up it will send a WAKEUP message to the controller to alert it that it is able to receive for a few seconds. Note that this doesn’t impact messages from the device which can be sent at any time.
- 
+
 #### Frequently Listening
 
 This flag indicates that the device supports FLiRS and listens for received messages periodically. A FLiRS device will periodically wake into a low power receive mode to listen for a beam signal – this can occur every 200ms, or every 1 second. If the device receives the beam signal during this low power wakeup, it will fully wake up its receiver so that it can receive the incoming message. This is normally used for devices that are battery operated, but need to have near constant communications with the controller and is commonly used on locks.
- 
+
 #### Beaming
 
 Beaming is a related to FLiRS devices and indicates that the device is able to send a beaming signal to wake up a FLiRS device. The last node in a route to a FLiRS device needs to support Beaming to wake up the FLiRS device.
- 
+
 
 ## Initialisation
 
 To initialise the binding and get your Z-Wave network running, you need to follow the following steps -:
 
-* Manually install the serial controller. It doesn't matter what type of Z-Wave dongle you have, there is only a single *thing type*. since all sticks use the same communication protocol, and the binding can detect what functions the device supports by communicating with the stick.
+* Manually install the serial controller. It doesn't matter what type of Z-Wave dongle you have, there is only a single *thing type* since all sticks use the same communication protocol, and the binding can detect what functions the device supports by communicating with the stick.
 * Set the serial port in the controller configuration.
 * In the UI enable *discovery* mode - this will add all existing things into the *discovery inbox*. From the *inbox* you can add the device directly into the system.
 * The binding should automatically detect the device type and should provide a list of *channels* to which you can attach *items*. Note that it may take some time to discover the device type - especially in battery devices where you may need to manually wake up the device a few times to allow the interrogation to complete. Refer to the device manual for information on waking up the device.

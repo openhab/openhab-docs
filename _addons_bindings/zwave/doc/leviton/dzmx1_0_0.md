@@ -10,11 +10,29 @@ This describes the Z-Wave device *DZMX1*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
+![DZMX1 product image](https://www.cd-jackson.com/zwave_device_uploads/196/196_default.jpg)
+
+
 The DZMX1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/196) to improve the documentation.
+The Leviton DZMX1 is a Z-Wave enabled universal dimmer designed for use for most residential lighting applications. A large range of lighting loads are supported including dimmable LED and CFL, as well incandescent, halogen and magnetic low voltage. The DZMX1 is fully compatible with Z-Wave enabled controllers, gateways, hubs, and security systems.
+
+**FEATURES AND BENEFITS**
+
+  * Scene Capable Universal Dimmer
+  * Z-Wave compatible
+  * 450W Dimmable LED/CFL
+  * 1000W Incandescent, Halogen, MLV and Mark X
+  * 120V 60HZ, neutral required
+  * White, Light Almond and Ivory faces included
+  * Supports Z-Wave Beaming and Network Wide Inclusion
+  * Scene capable
+  * User pre-set minimum brightness before turning off
+  * 49 different fade rates
+  * Transient surge suppression built-in
+  * User pre-set ‘on level’
 
 ## Channels
 
@@ -59,8 +77,9 @@ The device does not support associations.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
-| COMMAND_CLASS_SWITCH_ALL_V0| |
+| COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| Linked to BASIC|
 | COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
