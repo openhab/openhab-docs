@@ -12,7 +12,7 @@ openHAB is a system installed and executed by you, **running independently** fro
 You as the end-user have the **full control** over every aspect of your smart home.
 
 Every device connected to openHAB is functionally and logically different.
-In order to represent all of these, openHAB defines the following few base components:
+In order to represent all of these, openHAB defines the following base components:
 
 - [Add-ons](addons.html) - The numerous Add-ons to communicate with your devices
 - [Things](things.html) - Your devices represented in openHAB
@@ -35,8 +35,6 @@ Every interface still has its own strong points.
 The following table shows what the user interfaces can be used for.
 For a recommendation to new users which one(s) to use, see the section below. "*" means recommended.
 
-### Comparison
-
 <table class="centered highlight">
   <thead>
     <tr>
@@ -44,6 +42,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <th data-field="files">Textual Configuration</th>
       <th data-field="paperui">Paper UI</th>
       <th data-field="habmin">HABmin</th>
+      <th data-field="homebuilder">Homebuilder</th>
       <th data-field="karaf">Console</th>
       <th data-field="recommendation">Recommendation</th>
     </tr>
@@ -55,6 +54,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>❌</td>
       <td>✔️*</td>
       <td>✔️*</td>
+      <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
     </tr>
@@ -63,6 +63,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>(✔️)<br/>not for all bindings</td>
       <td>✔️*</td>
       <td>✔️*</td>
+      <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin</td>
     </tr>
@@ -72,6 +73,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
+      <td>✔️</td>
       <td>items/*.items files</td>
     </tr>
     <tr>
@@ -80,19 +82,22 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
+      <td>✔️</td>
       <td>items/*.items files</td>
     </tr>
     <tr>
       <td>Define Sitemaps</td>
-      <td>✔️</td>
+      <td>✔️*</td>
       <td>❌</td>
       <td>❌</td>
+      <td>✔️*</td>
       <td>❌</td>
-      <td>sitemaps/*.sitemap files</td>
+      <td>Homebuilder or sitemaps/*.sitemap files</td>
     </tr>
     <tr>
       <td>Define Transformations</td>
       <td>✔️</td>
+      <td>❌</td>
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
@@ -104,6 +109,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>❌</td>
       <td>❌</td>
       <td>❌</td>
+      <td>❌</td>
       <td>persistence/*.persist files</td>
     </tr>
     <tr>
@@ -111,6 +117,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️*</td>
       <td>(❌)<br/>only for the experimental rules engine</td>
       <td>(❌)<br/>not functional</td>
+      <td>❌</td>
       <td>❌</td>
       <td>rules/*.rules files</td>
     </tr>
@@ -120,6 +127,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️</td>
       <td>✔️*</td>
       <td>❌</td>
+      <td>❌</td>
       <td>HABmin</td>
     </tr>
     <tr>
@@ -127,6 +135,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️</td>
       <td>✔️*</td>
       <td>✔️</td>
+      <td>❌</td>
       <td>✔️</td>
       <td>Paper UI</td>
     </tr>
@@ -135,6 +144,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>✔️*<br/>mandatory for most OH1 bindings</td>
       <td>✔️*</td>
       <td>✔️</td>
+      <td>❌</td>
       <td>✔️</td>
       <td>services/addons.cfg or Paper UI<br/>services/*.cfg for OH1 bindings</td>
     </tr>
@@ -162,6 +172,7 @@ You have the full freedom of choice. On the other hand, this can be very confusi
 To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
 * Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
+* Create items and groups in `.items` files. You can also use [Homebuilder]{homebuilder.html} to create your initial set of [.items](items.html) and [sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not cover all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
 * Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
 * Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
 * Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
