@@ -122,7 +122,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>rules/*.rules files</td>
     </tr>
     <tr>
-      <td>Manage Z-Wave Devices<br/>see&nbsp;recommendation</td>
+      <td>Manage Z-Wave Devices</td>
       <td>❌</td>
       <td>✔️</td>
       <td>✔️*</td>
