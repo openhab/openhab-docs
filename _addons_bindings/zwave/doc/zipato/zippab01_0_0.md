@@ -5,23 +5,42 @@ title: ZIP-PAB01 - ZWave
 
 {% include base.html %}
 
-# ZIP-PAB01 Zipato Micromodule Energy Meter
-This describes the Z-Wave device *ZIP-PAB01*, manufactured by *[Philio Technology Corp](http://www.philio-tech.com/)* with the thing type UID of ```philio_pab01_00_000```.
+# ZIP-PAB01 Micro Module Energy Meter
+This describes the Z-Wave device *ZIP-PAB01*, manufactured by *[Zipato](http://www.zipato.com/)* with the thing type UID of ```zipato_zippab01_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZIP-PAB01 product image](https://www.cd-jackson.com/zwave_device_uploads/560/560_default.jpg)
+![ZIP-PAB01 product image](https://www.cd-jackson.com/zwave_device_uploads/899/899_default.jpg)
 
 
-The ZIP-PAB01 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+The ZIP-PAB01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview
 
-### Wakeup Information
+  * Slim, compact remote Z-Wave module measures power parameters of connected device
+  * Dual power meter function
+  * Instant power wattage and
+  * Accumulated power consumption KWh report
+  * Amper meter clamp included in the box
+  * Maximum current measure 60A
+  * Higher output power enhances communication range(+2.5dBm output power compared to -2.5dBm 300 series)
+  * New Z-Wave 500 series chip supports multichannel operation and higher data rates (9.6/40/100kbps)
+  * Very low power power consumption
+  * Over-the-air firmware update Easy installation
 
-The ZIP-PAB01 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+### Inclusion Information
 
-The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+In the front casing, there is an On/Off button with LED indicator which is used to carry out inclusion, exclusion, reset or association. After being excluded, its LED flashes on and off alternately and repeatedly at 2-second intervals. It implies that it has not been assigned a node ID and cannot work with Z-Wave enabled devices.
+
+**AUTO INCLUSION**
+
+The function of auto inclusion will be executed as long as the Micromodule does not have Node ID and is plugged into a wall outlet. When first power is applied, its LED flashes on and off alternately and repeatedly at 0.5 second intervals. It implies that it is in learning mode now.
+
+Note: Auto inclusion timeout lasts 2 minutes during which the node information of explorer frame will be emitted once per every 5 seconds. Unlike “inclusion” function as shown in the table below, auto inclusion doesn’t require pressing on/off buttons on the switch.
+
+### Exclusion Information
+
+Pressing On/Off (Include) button three times within 2 seconds will enter exclusion mode.
 
 ## Channels
 
@@ -29,44 +48,32 @@ The following table summarises the channels available for the ZIP-PAB01 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Intensty meter 0 (amps) | meter_current | Energy | Number | 
-| Power factor 0 | meter_powerfactor | Energy | Number | 
-| Power meter 0 (watts) | meter_watts | Energy | Number | 
+| Electric meter (volts) | meter_voltage | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Line voltage (volts) | meter_voltage | Energy | Number | 
-| Intensity meter 1 (amps) | meter_current1 | Energy | Number | 
-| Power factor meter 1 | meter_powerfactor1 | Energy | Number | 
-| Power meter 1 (watts) | meter_watts1 | Energy | Number | 
-| Energy meter 1 (kWh) | meter_kwh1 | Energy | Number | 
-| Line voltage (volts) | meter_voltage1 | Energy | Number | 
-| Intensity meter 2 (amps) | meter_current2 | Energy | Number | 
-| power factor 2 | meter_powerfactor2 | Energy | Number | 
-| Power meter 2 (watts) | meter_watts2 | Energy | Number | 
-| Energy meter 2 (kWh) | meter_kwh2 | Energy | Number | 
-| Line voltage 2 (volts) | meter_voltage2 | Energy | Number | 
-| Intensity meter 3 (amps) | meter_current3 | Energy | Number | 
-| Power factor 3 | meter_powerfactor3 | Energy | Number | 
-| Power meter 3 (watts) | meter_watts3 | Energy | Number | 
-| Energy meter 3 (kWh) | meter_kwh3 | Energy | Number | 
-| Voltage 3 (volts) | meter_voltage3 | Energy | Number | 
+| Electric meter (amps) | meter_current | Energy | Number | 
+| Electric meter (power factor) | meter_powerfactor | Energy | Number | 
+| Electric meter (watts) | meter_watts | Energy | Number | 
+| Electric meter (volts) 1 | meter_voltage1 | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
+| Electric meter (amps) 1 | meter_current1 | Energy | Number | 
+| Electric meter (power factor) 1 | meter_powerfactor1 | Energy | Number | 
+| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
+| Electric meter (volts) 2 | meter_voltage2 | Energy | Number | 
+| Electric meter (kWh) 2 | meter_kwh2 | Energy | Number | 
+| Electric meter (amps) 2 | meter_current2 | Energy | Number | 
+| Electric meter (power factor) 2 | meter_powerfactor2 | Energy | Number | 
+| Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
+| Electric meter (volts) 3 | meter_voltage3 | Energy | Number | 
+| Electric meter (kWh) 3 | meter_kwh3 | Energy | Number | 
+| Electric meter (amps) 3 | meter_current3 | Energy | Number | 
+| Electric meter (power factor) 3 | meter_powerfactor3 | Energy | Number | 
+| Electric meter (watts) 3 | meter_watts3 | Energy | Number | 
 
-### Intensty meter 0 (amps)
+### Electric meter (volts)
 
-Indicates the instantaneous current consumption.
+Indicates the instantaneous voltage.
 
-The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Power factor 0
-
-Indicates the instantaneous power factor.
-
-The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Power meter 0 (watts)
-
-Indicates the instantaneous power consumption.
-
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 
@@ -74,101 +81,113 @@ Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Line voltage (volts)
-
-Indicates the instantaneous voltage.
-
-The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Intensity meter 1 (amps)
+### Electric meter (amps)
 
 Indicates the instantaneous current consumption.
 
-The ```meter_current1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Power factor meter 1
+### Electric meter (power factor)
 
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Power meter 1 (watts)
+### Electric meter (watts)
 
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Energy meter 1 (kWh)
-
-Indicates the energy consumption (kWh).
-
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Line voltage (volts)
+### Electric meter (volts) 1
 
 Indicates the instantaneous voltage.
 
 The ```meter_voltage1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Intensity meter 2 (amps)
-
-Indicates the instantaneous current consumption.
-
-The ```meter_current2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### power factor 2
-
-Indicates the instantaneous power factor.
-
-The ```meter_powerfactor2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Power meter 2 (watts)
-
-Indicates the instantaneous power consumption.
-
-The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
-### Energy meter 2 (kWh)
+### Electric meter (kWh) 1
 
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Line voltage 2 (volts)
+### Electric meter (amps) 1
+
+Indicates the instantaneous current consumption.
+
+The ```meter_current1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (power factor) 1
+
+Indicates the instantaneous power factor.
+
+The ```meter_powerfactor1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (watts) 1
+
+Indicates the instantaneous power consumption.
+
+The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (volts) 2
 
 Indicates the instantaneous voltage.
 
 The ```meter_voltage2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Intensity meter 3 (amps)
+### Electric meter (kWh) 2
+
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (amps) 2
 
 Indicates the instantaneous current consumption.
 
-The ```meter_current3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Power factor 3
+### Electric meter (power factor) 2
 
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Power meter 3 (watts)
+### Electric meter (watts) 2
 
 Indicates the instantaneous power consumption.
 
-The ```meter_watts3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Energy meter 3 (kWh)
+### Electric meter (volts) 3
+
+Indicates the instantaneous voltage.
+
+The ```meter_voltage3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (kWh) 3
 
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Voltage 3 (volts)
+### Electric meter (amps) 3
 
-Indicates the instantaneous voltage.
+Indicates the instantaneous current consumption.
 
-The ```meter_voltage3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (power factor) 3
+
+Indicates the instantaneous power factor.
+
+The ```meter_powerfactor3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (watts) 3
+
+Indicates the instantaneous power consumption.
+
+The ```meter_watts3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -253,6 +272,8 @@ This group supports 1 node.
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -271,7 +292,6 @@ This group supports 1 node.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_METER_V3| |
-| COMMAND_CLASS_MULTI_CHANNEL_V2| |
 #### Endpoint 2
 
 | Command Class | Comment |
@@ -285,9 +305,9 @@ This group supports 1 node.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/560/ph-pab01-Zipato-Micromodule-Energy-Meter-User-Manual-v1-0.pdf)
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/899/ZIP-PAB01.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/560).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/899).

@@ -8,6 +8,8 @@ title: DMWS1 - ZWave
 # DMWS1 Dome Leak Sensor
 This describes the Z-Wave device *DMWS1*, manufactured by *Elexa Consumer Products Inc.* with the thing type UID of ```elexa_dmws1_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
 ![DMWS1 product image](https://www.cd-jackson.com/zwave_device_uploads/651/651_default.jpg)
 
 
@@ -17,11 +19,28 @@ The DMWS1 does not permanently listen for messages sent from the controller - it
 
 ## Overview
 
+The Dome Leak Sensor is a battery powered Z-Wave Plus device that can detect wetness and send a notification when it does so. The Leak Sensor consists of two parts—the “SENSOR ASSEMBLY,” and the optional “REMOTE SENSOR PROBE.” They both detect water similarly, using three visible “LEAD.” The moment water touches any of the LEAD, the device will beep and send a notification with its moisture status to its Z-Wave controller.
+
+### Inclusion Information
+
+Put controller in inclusion mode.
+
+Remove cover from device, remove tab from battery (if present), and press button 3 times rapidly.
+
+### Exclusion Information
+
+Put controller in exclusion mode.
+
+Remove cover from device and press button 3 times rapidly.
+
 ### Wakeup Information
 
 The DMWS1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up.
 
 ## Channels
 

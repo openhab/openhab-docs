@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 780 things from 110 manufacturers.
+The binding supports a total of 781 things from 110 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -15,7 +15,7 @@ and links to more detailed information about each thing.
 | Manufacturer | Model | Version | Thing Type Id | Category |
 |--------------|-------|---------|---------------|----------|
 | ACT - Advanced Control Technologies | [45602](act/45602_0_0.md) |  | ```act_45602_00_000``` |  |
-| ACT - Advanced Control Technologies | [ZDM230](act/zdm230_0_0.md) |  | ```act_zdm230_00_000``` |  |
+| ACT - Advanced Control Technologies | [ZDM230](act/zdm230_0_0.md) |  | ```act_zdm230_00_000``` | Wall Switch |
 | ACT - Advanced Control Technologies | [ZDP200](act/zdp200_0_0.md) |  | ```act_zdp200_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZDW103](act/zdw103_0_0.md) |  | ```act_zdw103_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZDW120](act/zdw120_0_0.md) |  | ```act_zdw120_00_000``` |  |
@@ -30,7 +30,6 @@ and links to more detailed information about each thing.
 | AEON Labs | [DSB09](aeon/dsb09_0_0.md) |  | ```aeon_dsb09_00_000``` | Sensor |
 | AEON Labs | [DSB28](aeon/dsb28_0_0.md) |  | ```aeon_dsb28_00_000``` |  |
 | AEON Labs | [DSB29](aeon/dsb29_0_0.md) |  | ```aeon_dsb29_00_000``` |  |
-| AEON Labs | [DSB45](aeon/dsb45_0_0.md) |  | ```aeon_dsb45_00_000``` |  |
 | AEON Labs | [DSB54](aeon/dsb54_0_0.md) |  | ```aeon_dsb54_00_000``` | Door |
 | AEON Labs | [DSC06](aeon/dsc06_0_0.md) |  | ```aeon_dsc06_00_000``` | Power Outlet |
 | AEON Labs | [DSC08](aeon/dsc08_0_0.md) |  | ```aeon_dsc08_00_000``` |  |
@@ -159,7 +158,7 @@ and links to more detailed information about each thing.
 | Elexa Consumer Products Inc. | [DMOF1](elexa/dmof1_0_0.md) |  | ```elexa_dmof1_00_000``` | Power Outlet |
 | Elexa Consumer Products Inc. | [DMS01](elexa/dms01_0_0.md) |  | ```elexa_dms01_00_000``` | Siren |
 | Elexa Consumer Products Inc. | [DMWD1](elexa/dmwd1_0_0.md) |  | ```elexa_dmwd1_00_000``` | Sensor |
-| Elexa Consumer Products Inc. | [DMWS1](elexa/dmws1_0_0.md) |  | ```elexa_dmws1_00_000``` |  |
+| Elexa Consumer Products Inc. | [DMWS1](elexa/dmws1_0_0.md) |  | ```elexa_dmws1_00_000``` | Sensor |
 | Elexa Consumer Products Inc. | [DMWV1](elexa/dmwv1_0_0.md) |  | ```elexa_dmwv1_00_000``` | Valve |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15R ](enerwave/zw15r_0_0.md) |  | ```enerwave_zw15r_00_000``` |  |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15S](enerwave/zw15s_0_0.md) |  | ```enerwave_zw15s_00_000``` |  |
@@ -363,13 +362,13 @@ and links to more detailed information about each thing.
 | Horstmann Controls Limited | [SSR-302](horstmann/ssr302_0_0.md) |  | ```horstmann_ssr302_00_000``` | HVAC |
 | Horstmann Controls Limited | [SWM301](horstmann/swm301_0_0.md) |  | ```horstmann_swm301_00_000``` |  |
 | Alphonsus Tech | [IDL-101](idlock/idl101_0_0.md) |  | ```idlock_idl101_00_000``` | Door |
+| ID Lock AS | [ID-150](idlock/idl150_0_0.md) |  | ```idlock_idl150_00_000``` | Lock |
 | Ingersoll Rand (was Ecolink) | [DWZWAVE1](ingersollecolink/dwzwave1_0_0.md) |  | ```ingersollecolink_dwzwave1_00_000``` |  |
 | Ingersoll Rand (was Ecolink) | [RS200](ingersollecolink/rs200_0_0.md) |  | ```ingersollecolink_rs200_00_000``` |  |
 | INNOVUS | [SmartDimmer](innovus/00110001_1_0.md) | 1.0 | ```innovus_00110001_01_000``` |  |
 | INNOVUS | [SmartPower](innovus/smartpower_0_0.md) |  | ```innovus_smartpower_00_000``` |  |
 | INNOVUS | [SmoothRemote](innovus/smoothremote_0_0.md) |  | ```innovus_smoothremote_00_000``` |  |
 | Inovelli | [NZW31](inovelli/dimmer_0_0.md) |  | ```inovelli_dimmer_00_000``` | Wall Switch |
-| Inovelli | [NZW36](inovelli/inzw36_0_0.md) |  | ```inovelli_inzw36_00_000``` | Power Outlet |
 | Inovelli | [NZW30](inovelli/nzw30_0_0.md) |  | ```inovelli_nzw30_00_000``` | Wall Switch |
 | Inovelli | [NZW30S](inovelli/nzw30s_0_0.md) |  | ```inovelli_nzw30s_00_000``` | Wall Switch |
 | Inovelli | [NZW36](inovelli/nzw36_0_0.md) |  | ```inovelli_nzw36_00_000``` | Power Outlet |
@@ -392,6 +391,7 @@ and links to more detailed information about each thing.
 | Intermatic | [CA3000](intermatic/intermaticca3000_0_0.md) |  | ```intermatic_intermaticca3000_00_000``` |  |
 | Shenzhen iSurpass Technology Co. ,Ltd | [DL9101V](isurpass/dl9101v_0_0.md) |  | ```isurpass_dl9101v_00_000``` | Lock |
 | Shenzhen iSurpass Technology Co. ,Ltd | [DX1WL-Z](isurpass/dx1wl_0_0.md) |  | ```isurpass_dx1wl_00_000``` | Sensor |
+| Shenzhen iSurpass Technology Co. ,Ltd | [Smoke Detector](isurpass/smokedetector_0_0.md) |  | ```isurpass_smokedetector_00_000``` | Smoke Detector |
 | Jin Tao Bao | [Curtain Motor](jintaobao/curtainmotor_0_0.md) |  | ```jintaobao_curtainmotor_00_000``` | Blinds |
 | Kaipule Technology Co., Ltd. | [TP-802ZD](kaipule/doorwindowsensor_0_0.md) |  | ```kaipule_doorwindowsensor_00_000``` |  |
 | Kaipule Technology Co., Ltd. | [ES-61](kaipule/es61_0_0.md) | 5.255 | ```kaipule_es61_00_000``` | Smoke Detector |
@@ -501,7 +501,7 @@ and links to more detailed information about each thing.
 | permundo GmbH | [PSC132ZW](permundo/psc132zw_0_0.md) |  | ```permundo_psc132zw_00_000``` | Wall Switch |
 | permundo GmbH | [PSC152ZW](permundo/psc152zw_0_0.md) |  | ```permundo_psc152zw_00_000``` | Blinds |
 | permundo GmbH | [PSC234ZW ](permundo/psc234zw_0_0.md) |  | ```permundo_psc234zw_00_000``` | Power Outlet |
-| Philio Technology Corp | [ZIP-PAB01](philio/pab01_0_0.md) |  | ```philio_pab01_00_000``` |  |
+| Philio Technology Corp | [ZIP-PAB01](philio/pab01_0_0.md) |  | ```philio_pab01_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAD02](philio/pad02_0_0.md) |  | ```philio_pad02_00_000``` |  |
 | Philio Technology Corp | [PAN03](philio/pan03_0_0.md) |  | ```philio_pan03_00_000``` |  |
 | Philio Technology Corp | [PAN04](philio/pan04_0_0.md) |  | ```philio_pan04_00_000``` | Wall Switch |
@@ -516,7 +516,7 @@ and links to more detailed information about each thing.
 | Philio Technology Corp | [PAT02-A](philio/pat02a_0_0.md) |  | ```philio_pat02a_00_000``` | Sensor |
 | Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` |  |
 | Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` |  |
-| Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` |  |
+| Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` | Siren |
 | Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` |  |
 | Philio Technology Corp | [PSP05](philio/psp05_0_0.md) |  | ```philio_psp05_00_000``` | Sensor |
 | Philio Technology Corp | [PSR04](philio/psr04_0_0.md) |  | ```philio_psr04_00_000``` |  |
@@ -558,7 +558,7 @@ and links to more detailed information about each thing.
 | Goap | [ZMNHDD](qubino/zmnhdd_0_0.md) |  | ```qubino_zmnhdd_00_000``` | Wall Switch |
 | Goap | [ZMNHIA](qubino/zmnhia_0_0.md) |  | ```qubino_zmnhia_00_000``` |  |
 | Goap | [ZMNHID](qubino/zmnhid_0_0.md) |  | ```qubino_zmnhid_00_000``` | HVAC |
-| Goap | [ZMNHJA](qubino/zmnhja_0_0.md) |  | ```qubino_zmnhja_00_000``` |  |
+| Goap | [ZMNHJA](qubino/zmnhja_0_0.md) |  | ```qubino_zmnhja_00_000``` | Wall Switch |
 | Goap | [ZMNHJD](qubino/zmnhjd_0_0.md) |  | ```qubino_zmnhjd_00_000``` |  |
 | Goap | [ZMNHKD](qubino/zmnhkd_0_0.md) |  | ```qubino_zmnhkd_00_000``` | HVAC |
 | Goap | [ZMNHLA](qubino/zmnhla_0_0.md) |  | ```qubino_zmnhla_00_000``` | HVAC |
@@ -753,7 +753,7 @@ and links to more detailed information about each thing.
 | ASSA ABLOY | [YRL220](yale/yrl220_0_0.md) |  | ```yale_yrl220_00_000``` | Lock |
 | ASSA ABLOY | [Yale Smart Door Lock Z-Wave Module](yale/zwavemodule_0_0.md) |  | ```yale_zwavemodule_00_000``` | Lock |
 | Zipato | [RGBWE2](zipato/bulb2rgbw_0_0.md) |  | ```zipato_bulb2rgbw_00_000``` | Light Bulb |
-| Zipato | [HM-HS1CA](zipato/hmhs1ca_0_0.md) |  | ```zipato_hmhs1ca_00_000``` |  |
+| Zipato | [HM-HS1CA](zipato/hmhs1ca_0_0.md) |  | ```zipato_hmhs1ca_00_000``` | Smoke Detector |
 | Zipato | [HM-HS1WL-Z](zipato/hmhs1wlz_0_0.md) |  | ```zipato_hmhs1wlz_00_000``` | Sensor |
 | Zipato | [HS1SA](zipato/hs1sa_0_0.md) |  | ```zipato_hs1sa_00_000``` | Smoke Detector |
 | Zipato | [MH-P220](zipato/mhp220_0_0.md) |  | ```zipato_mhp220_00_000``` | Wall Switch |
@@ -761,6 +761,7 @@ and links to more detailed information about each thing.
 | Zipato | [PSP02](zipato/phpsp02_0_0.md) |  | ```zipato_phpsp02_00_000``` | Door |
 | Zipato | [RGBWE27ZW](zipato/rgbwe27zw_0_0.md) |  | ```zipato_rgbwe27zw_00_000``` | Light Bulb |
 | Zipato | [ZD2102-5](zipato/zd2102plus_0_0.md) |  | ```zipato_zd2102plus_00_000``` | Door |
+| Zipato | [ZIP-PAB01](zipato/zippab01_0_0.md) |  | ```zipato_zippab01_00_000``` | Wall Switch |
 | Zipato | [ZP3102](zipato/zp3102_0_0.md) |  | ```zipato_zp3102_00_000``` |  |
 | Zooz | [ZEN06](zooz/zen06_0_0.md) |  | ```zooz_zen06_00_000``` |  |
 | Zooz | [ZEN07](zooz/zen07_0_0.md) |  | ```zooz_zen07_00_000``` |  |

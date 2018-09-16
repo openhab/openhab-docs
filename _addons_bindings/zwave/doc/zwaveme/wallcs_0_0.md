@@ -19,11 +19,37 @@ The WALLC-S does not permanently listen for messages sent from the controller - 
 
 ## Overview
 
+The Z-Wave.Me Wall Controller is a Z-Wave device that can both control other Z-Wave devices and activate predefined scenes in an IP gateway. Although it is controlling other devices, the Wall Controller cannot act as Z-Wave network controller (primary or secondary) and will always need a ZWave network controller to be included into a Z-Wave network. The device can be used in different modes that are selected by configuration parameters:
+
+  1. Control of groups of other Z-Wave devices using 'ON', 'OFF' and Dim commands.
+  2. Activation of predefined scenes in Gateways or other Z-Wave devices.
+
+This device support secure communication when included by a controller that also supports secure communication. The device will then send all commands as secure commands unless the receiving device can not accept them. Then the command is send the normal way automatically.
+
+The device can be operated in two different modes:
+
+  * Operation Mode: This is the mode where the device is controlling other Z-Wave devices or is activating scenes.
+  * Management Mode: The device is turned into the management mode by pushing all four buttons for 5 sec. A blinking green LED indicates the management mode. In the management mode the buttons of the device have different functions. If no further action is performed, the device will turn back to the normal mode after 10 sec. Any management action terminates the management mode as well.
+
+In management mode the following actions can be performed:
+
+  * Button 1 - Re-Inclusion/Exclusion: Every re-inclusion or exclusion attempt is confirmed by hitting this button. Any button press stops the mode as well.
+  * Button 2 - Send Node Information Frame and Wake up Notification.
+  * Button 3 - Factory Default Reset. After clicking on button 3 keep button 4 pushed for >4 seconds
+  * Button 4 - Enter into Association mode to assign target devices to one of the four association. Refer to the manuals section about association for more information how to set and unset association groups.
+
+**Factory Reset**
+
+The device can be set back to factory defaults without performing an exclusion process. Please executes the following steps: (1) Turn the device into Management Mode, (2) click on Button 3, (3) keep button 4 pushed for 4 seconds.
+
 ### Wakeup Information
 
 The WALLC-S does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+It is possible to manually wake up the device by pushing button 2 in management mode.
 
 ## Channels
 

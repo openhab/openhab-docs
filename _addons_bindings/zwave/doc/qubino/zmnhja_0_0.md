@@ -8,6 +8,11 @@ title: ZMNHJA - ZWave
 # ZMNHJA Flush Pilot
 This describes the Z-Wave device *ZMNHJA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhja_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![ZMNHJA product image](https://www.cd-jackson.com/zwave_device_uploads/354/354_default.png)
+
+
 The ZMNHJA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
 
 ## Overview

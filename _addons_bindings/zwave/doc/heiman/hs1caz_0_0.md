@@ -170,6 +170,10 @@ This group supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_SENSOR_BINARY_V1| |
 
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/790/User-Manual-HS1CAZ.pdf)
+
 ---
 
 Did you spot an error in the above definition or want to improve the content?
