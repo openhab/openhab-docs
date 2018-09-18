@@ -14,7 +14,7 @@ It provides uniform user interfaces, and a common approach to automation rules a
 We highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html).
 It introduces a number of important ideas that will help you as you install and begin to configure openHAB for the first time.
 
-openHAB runs on many popular platforms including Linux, Windows and Mac OSx.
+openHAB runs on many popular platforms including Linux, Windows and macOS.
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article.
 Many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hastle-free openHAB setup".
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system capable of automating your entire home.

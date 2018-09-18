@@ -6,7 +6,7 @@ layout: intro
 
 # Migration from openHAB 1.x to openHAB 2
 
-This tutorial provides a step-by-step procedure for migrating an existing openHAB 1.x installation to openHAB 2 snapshot. These procedures were generated starting from an apt-get installed openHAB 1.8.3, though they should work for previous versions. Where needed, additional details are provided for other platforms (Windows, OSX, non-Debian based Linux, etc.) and manually installed openHAB 1.x installs.
+This tutorial provides a step-by-step procedure for migrating an existing openHAB 1.x installation to openHAB 2 snapshot. These procedures were generated starting from an apt-get installed openHAB 1.8.3, though they should work for previous versions. Where needed, additional details are provided for other platforms (Windows, macOS, non-Debian based Linux, etc.) and manually installed openHAB 1.x installs.
 
 
 These instructions emphasize the text based procedures over the use of PaperUI and Habmin which is closer to the openHAB 1.x experience.
@@ -689,7 +689,7 @@ Astro). See the add-on's [wiki page]({{base}}/addons/1xaddons.html)  and
 [readme page]({{base}}/addons/bindings.html) to compare and contrast the two versions.
 
 Identify an add-on where there is a 2.0 version that you want to migrate to. Begin
-by identifying those Items that use this binding. On Linux/OSX this can easily be
+by identifying those Items that use this binding. On Linux/macOS this can easily be
 done with the following command
 
 ```bash
