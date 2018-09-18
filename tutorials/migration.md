@@ -505,7 +505,7 @@ there are no values in the database to restore the Items to when openHAB starts.
 common Sitemap issue will be missing icons. Browse through your sitemap
 methodically and identify those entries that have a missing or wrong
 icon. Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html)
-or copy the ones you were using from openHAB 1.x to the conf/icons/classic folder. 
+or copy the ones you were using from openHAB 1.x to the `$OPENHAB_CONF/icons/classic` folder. 
 Both BasicUI and ClassicUI pull their icons from that folder. For details on custom icons make
 sure to check the icons section in the [Items]({{base}}/configuration/items.html#icons) documentation.
 One important change since openHAB 1.x is that icon filenames need to be lowercase only in openHAB 2.
@@ -575,7 +575,7 @@ Let's look at a concrete example. The [Yahoo Weather Binding]({{base}}/addons/bi
 supports exactly one Thing which takes two parameters: a WOEID location and unit.
 
 Thus, as described in the Binding's readme one would manually define a Thing in
-a .things file (located in conf/things) with the line:
+a .things file (located in `$OPENHAB_CONF/things`) with the line:
 
 
 ```java
@@ -693,7 +693,7 @@ by identifying those Items that use this binding. On Linux/OSX this can easily b
 done with the following command
 
 ```bash
-grep <binding> <openHAB 2 conf>/items/*
+grep <binding> $OPENHAB_CONF/items/*
 ```
 where `<binding>` is the string used in the binding config on the Item. For example:
 

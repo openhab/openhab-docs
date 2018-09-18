@@ -21,7 +21,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 
 ### File Location
 
-Rules are placed in the folder `${openhab.home}/conf/rules`.
+Rules are placed in the folder `$OPENHAB_CONF/rules`.
 The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.

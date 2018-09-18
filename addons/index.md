@@ -75,7 +75,7 @@ This is because the mqtt Binding is a 1.x add-on.
 The trailing `1` has to be appended for `binding`- and `misc`-addons.
 It is *not needed* for other addon types like `persistence`.
 
-With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
+With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CONF/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux]({{base}}/installation/linux.html#file-locations) or [Windows]({{base}}/installation/windows.html#file-locations).
 
