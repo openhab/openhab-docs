@@ -13,7 +13,7 @@ But before that, you have to create an items file.
 Both the items and the sitemap files are edited in your editor of choice.
 The files' location is in the `$OPENHAB_CONF` directory, which is different on different operating systems.
 See the linux installation instructions for the [file locations]({{base}}/installation/linux.html#file-locations) specific to linux, or the Windows [file locations]({{base}}/installation/windows.html#file-locations) specific to Windows.
-Mac OSx files are located in the same place as Linux files.
+macOS files are located in the same place as Linux files.
 
 ```bash
 conf/items    <-- *.items files

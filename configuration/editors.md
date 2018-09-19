@@ -78,5 +78,5 @@ You can find the syntax file and installation instructions on [openhabnano](http
 
 ### Textwrangler
 
-Textwrangler is a text and code editor for MAC OS X.
+Textwrangler is a text and code editor for macOS.
 You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
