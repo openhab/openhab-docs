@@ -25,6 +25,23 @@ A ZigBee Coordinator is the network controller, and is therefore the heart of th
 
 Coordinators need to be installed manually and the serial port and baud rate must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device, you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
 
+#### Coordinator Configuration
+
+##### Link Key (zigbee_linkkey)
+
+The key is defined as 16 hexadecimal values. If not defined, this will default to the well known ZigBee HA link key.
+
+If defined with the word ```INSTALLCODE:``` before the key, this will create a link key from an install code which may be shorter than 16 bytes.
+
+eg ```5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39```
+eg ```INSTALLCODE:00 11 22 33 44 55 66 77```
+
+##### Network Key (zigbee_networkkey)
+
+The key is defined as 16 hexadecimal values. If not defined, a random key will be created.
+
+#### Supported Coordinators
+
 The following coordinators are known to be supported.
 
 | Name and Link              | Coordinator | Comment                       |

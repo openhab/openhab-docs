@@ -7,7 +7,7 @@ description: "[OwnTracks](http://owntracks.org), formerly known as _MQTTitude_, 
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.mqttitude/README.md
 since: 1x
 logo: images/addons/mqttitude.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
