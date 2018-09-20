@@ -19,7 +19,7 @@ While the openHAB distribution already contains many add-ons of openHAB 1, there
 Test a not included add-on is very straight forward:
  - Start your runtime
  - Install the 1.x compatibility layer by running `feature:install openhab-runtime-compat1x` in the openHAB console
- - As with openHAB 1.x, simply take the jar file of your add-on and place it in the `${openhab.home}/addons` folder.
+ - As with openHAB 1.x, simply take the jar file of your add-on and place it in the `$OPENHAB_HOME/addons` folder.
  - Copy your personal `openhab.cfg` file to `$OPENHAB_CONF/services/openhab.cfg`.
 
 ## How to solve problems with a certain add-on?
