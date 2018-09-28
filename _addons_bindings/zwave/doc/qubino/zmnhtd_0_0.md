@@ -163,7 +163,7 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | disabled |
-| 2 | IR external relay control – mono stable push button |
+| 2 | IR external control – mono stable push button |
 | 3 | IR external relay control - bi stable switch |
 | 4 | External relay control – mono stable push button |
 | 5 | External relay control – bi stable switch |
@@ -181,7 +181,7 @@ Values (size is 2 byte dec):
 • Default value 0  
 • 0-59 = Auto OFF disabled  
 • 60-32535 = 60 seconds – 32535 seconds
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 32535 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -282,12 +282,12 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Endpoints IR external relay and External relay disabled |
-| 1 | Endpoints IR external relay disabled, External relay enabled |
-| 2 | Endpoints IR external relay enabled, External relay disabled |
-| 3 | Endpoints IR external relay and External relay enabled |
+| 0 | EP IR external relay and External relay disabled |
+| 1 | EP IR external relay dsbld, External relay enbld |
+| 2 | EP IR external relay enbld, External relay dsbld |
+| 3 | EP IR external relay and External relay enabled |
 
-The manufacturer defined default value is ```0``` (Endpoints IR external relay and External relay disabled).
+The manufacturer defined default value is ```0``` (EP IR external relay and External relay disabled).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
 
@@ -296,7 +296,7 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 Maximum Power auto off
 Set value means Maximum Power Consumption (0 - 15000) in watts (W), when relays are turned off according to parameters no. 111 and 112. Available configuration parameters (data type is 2 Bytes DEC
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 15000 -:
 
 | Value  | Description |
 |--------|-------------|

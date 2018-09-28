@@ -8,6 +8,8 @@ title: builtInDimmer - ZWave
 # builtInDimmer Built-in Dimmer
 This describes the Z-Wave device *builtInDimmer*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_builtindimmer_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
 ![builtInDimmer product image](https://www.cd-jackson.com/zwave_device_uploads/225/225_default.png)
 
 

@@ -8,6 +8,8 @@ title: doorSensor - ZWave
 # doorSensor Door Sensor
 This describes the Z-Wave device *doorSensor*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_doorsensor_00_000```.
 
+The device is in the category of *Door*, defining Door sensors.
+
 ![doorSensor product image](https://www.cd-jackson.com/zwave_device_uploads/223/223_default.png)
 
 

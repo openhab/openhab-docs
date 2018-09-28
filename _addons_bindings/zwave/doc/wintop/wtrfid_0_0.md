@@ -5,8 +5,10 @@ title: WTRFID - ZWave
 
 {% include base.html %}
 
-# WTRFID Mini Keypad RFID/Z-Wave
+# WTRFID Mini Keypad RFID
 This describes the Z-Wave device *WTRFID*, manufactured by *Wintop* with the thing type UID of ```wintop_wtrfid_00_000```.
+
+The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
 ![WTRFID product image](https://www.cd-jackson.com/zwave_device_uploads/217/217_default.jpg)
 

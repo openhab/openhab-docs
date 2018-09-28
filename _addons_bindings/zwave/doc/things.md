@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 781 things from 110 manufacturers.
+The binding supports a total of 782 things from 110 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -20,7 +20,7 @@ and links to more detailed information about each thing.
 | ACT - Advanced Control Technologies | [ZDW103](act/zdw103_0_0.md) |  | ```act_zdw103_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZDW120](act/zdw120_0_0.md) |  | ```act_zdw120_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZIR010](act/zir010_0_0.md) |  | ```act_zir010_00_000``` | Motion Detector |
-| ACT - Advanced Control Technologies | [ZRM230](act/zrm230_0_0.md) |  | ```act_zrm230_00_000``` |  |
+| ACT - Advanced Control Technologies | [ZRM230](act/zrm230_0_0.md) |  | ```act_zrm230_00_000``` | Wall Switch |
 | ACT - Advanced Control Technologies | [ZRP200](act/zrp200_0_0.md) |  | ```act_zrp200_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZRW230](act/zrw230_0_0.md) |  | ```act_zrw230_00_000``` |  |
 | ACT - Advanced Control Technologies | [ZTM230](act/ztm230_0_0.md) |  | ```act_ztm230_00_000``` |  |
@@ -30,6 +30,7 @@ and links to more detailed information about each thing.
 | AEON Labs | [DSB09](aeon/dsb09_0_0.md) |  | ```aeon_dsb09_00_000``` | Sensor |
 | AEON Labs | [DSB28](aeon/dsb28_0_0.md) |  | ```aeon_dsb28_00_000``` |  |
 | AEON Labs | [DSB29](aeon/dsb29_0_0.md) |  | ```aeon_dsb29_00_000``` |  |
+| AEON Labs | [DSB45](aeon/dsb45_0_0.md) |  | ```aeon_dsb45_00_000``` | Sensor |
 | AEON Labs | [DSB54](aeon/dsb54_0_0.md) |  | ```aeon_dsb54_00_000``` | Door |
 | AEON Labs | [DSC06](aeon/dsc06_0_0.md) |  | ```aeon_dsc06_00_000``` | Power Outlet |
 | AEON Labs | [DSC08](aeon/dsc08_0_0.md) |  | ```aeon_dsc08_00_000``` |  |
@@ -82,13 +83,13 @@ and links to more detailed information about each thing.
 | August Smart Locks | [ASL-03](august/asl03_0_0.md) |  | ```august_asl03_00_000``` | Lock |
 | Benetek | [BSL01](benetek/bsl01_0_0.md) |  | ```benetek_bsl01_00_000``` | Lock |
 | BeNext | [Alarm Sound](benext/alarmsound_0_0.md) |  | ```benext_alarmsound_00_000``` | Siren |
-| BeNext | [builtInDimmer](benext/builtindimmer_0_0.md) |  | ```benext_builtindimmer_00_000``` |  |
-| BeNext | [doorSensor](benext/doorsensor_0_0.md) |  | ```benext_doorsensor_00_000``` |  |
+| BeNext | [builtInDimmer](benext/builtindimmer_0_0.md) |  | ```benext_builtindimmer_00_000``` | Wall Switch |
+| BeNext | [doorSensor](benext/doorsensor_0_0.md) |  | ```benext_doorsensor_00_000``` | Door |
 | BeNext | [Energy Switch +](benext/energyswitch_0_0.md) |  | ```benext_energyswitch_00_000``` |  |
 | BeNext | [Heating Control](benext/heatingcontrol_0_0.md) |  | ```benext_heatingcontrol_00_000``` |  |
 | BeNext | [Molite](benext/molite_0_0.md) |  | ```benext_molite_00_000``` |  |
 | BeNext | [P1-dongle](benext/p1dongle_0_0.md) |  | ```benext_p1dongle_00_000``` |  |
-| BeNext | [plugInDimmer](benext/plugindimmer_0_0.md) |  | ```benext_plugindimmer_00_000``` |  |
+| BeNext | [plugInDimmer](benext/plugindimmer_0_0.md) |  | ```benext_plugindimmer_00_000``` | Power Outlet |
 | BeNext | [powerSwitch](benext/powerswitch_0_0.md) |  | ```benext_powerswitch_00_000``` |  |
 | BeNext | [Tag Reader](benext/tagreader_0_0.md) |  | ```benext_tagreader_00_000``` |  |
 | Bönig und Kallenbach oHG | [POPE005206](bonig/pope005206_0_0.md) |  | ```bonig_pope005206_00_000``` |  |
@@ -107,7 +108,7 @@ and links to more detailed information about each thing.
 | Cooper Wiring Devices | [RF9536-N](cooper/rf9536n_0_0.md) |  | ```cooper_rf9536n_00_000``` | Wall Switch |
 | Cooper Wiring Devices | [RF9540-N](cooper/rf9540n_0_0.md) |  | ```cooper_rf9540n_00_000``` | Wall Switch |
 | Cooper Wiring Devices | [RF9542](cooper/rf9542_0_0.md) |  | ```cooper_rf9542_00_000``` | Wall Switch |
-| Cooper Wiring Devices | [RFTR9505](cooper/rftr9505_0_0.md) |  | ```cooper_rftr9505_00_000``` |  |
+| Cooper Wiring Devices | [RFTR9505](cooper/rftr9505_0_0.md) |  | ```cooper_rftr9505_00_000``` | Power Outlet |
 | Cooper Wiring Devices | [RFWC5](cooper/rfwc5_0_0.md) |  | ```cooper_rfwc5_00_000``` | Wall Switch |
 | Coqon | [PSMZ0001](coqon/psmz0001_0_0.md) |  | ```coqon_psmz0001_00_000``` | Power Outlet |
 | Danfoss | [010101](danfoss/010101_0_0.md) |  | ```danfoss_010101_00_000``` | Radiator Control |
@@ -134,7 +135,7 @@ and links to more detailed information about each thing.
 | Devolo | [ph-pse02](devolo/phpse02_0_0.md) |  | ```devolo_phpse02_00_000``` | Siren |
 | Devolo | [PST02-1B](devolo/pst021b_0_0.md) |  | ```devolo_pst021b_00_000``` | Motion Detector |
 | Diehl AKO | [SES FS-ZW](diehl/sesfszw_0_0.md) |  | ```diehl_sesfszw_00_000``` |  |
-| D-Link | [DCH-Z110](dlink/dchz110_0_0.md) |  | ```dlink_dchz110_00_000``` |  |
+| D-Link | [DCH-Z110](dlink/dchz110_0_0.md) |  | ```dlink_dchz110_00_000``` | Door |
 | D-Link | [DCH-Z120](dlink/dchz120_0_0.md) |  | ```dlink_dchz120_00_000``` | Sensor |
 | D-Link | [DCH-Z310](dlink/dchz310_0_0.md) |  | ```dlink_dchz310_00_000``` | Smoke Detector |
 | D-Link | [DCH-Z510](dlink/dchz510_0_0.md) |  | ```dlink_dchz510_00_000``` | Siren |
@@ -182,7 +183,7 @@ and links to more detailed information about each thing.
 | Everspring | [AD130](everspring/ad130_0_0.md) |  | ```everspring_ad130_00_000``` | Wall Switch |
 | Everspring | [AD142](everspring/ad142_0_0.md) |  | ```everspring_ad142_00_000``` | Power Outlet |
 | Everspring | [AD146](everspring/ad146_0_0.md) |  | ```everspring_ad146_00_000``` | Wall Switch |
-| Everspring | [AD147](everspring/ad147_0_0.md) |  | ```everspring_ad147_00_000``` |  |
+| Everspring | [AD147](everspring/ad147_0_0.md) |  | ```everspring_ad147_00_000``` | Power Outlet |
 | Everspring | [AN157](everspring/an157_0_0.md) |  | ```everspring_an157_00_000``` | Wall Switch |
 | Everspring | [AN158](everspring/an158_0_0.md) |  | ```everspring_an158_00_000``` | Power Outlet |
 | Everspring | [AN163](everspring/an163_0_0.md) |  | ```everspring_an163_00_000``` |  |
@@ -208,7 +209,7 @@ and links to more detailed information about each thing.
 | Evolve | [LOM15](evolve/lom15_0_0.md) |  | ```evolve_lom15_00_000``` | Wall Switch |
 | Evolve | [LPM-15](evolve/lpm15_0_0.md) |  | ```evolve_lpm15_00_000``` | Power Outlet |
 | Evolve | [LRM-AS](evolve/lrmas_0_0.md) |  | ```evolve_lrmas_00_000``` | Wall Switch |
-| Evolve | [LSM-15](evolve/lsm15_0_0.md) |  | ```evolve_lsm15_00_000``` |  |
+| Evolve | [LSM-15](evolve/lsm15_0_0.md) |  | ```evolve_lsm15_00_000``` | Wall Switch |
 | Evolve | [LTM-5](evolve/ltm5_0_0.md) |  | ```evolve_ltm5_00_000``` |  |
 | Evolve | [T100](evolve/t100_0_0.md) |  | ```evolve_t100_00_000``` |  |
 | Fakro | [AMZ](fakro/amz_0_0.md) |  | ```fakro_amz_00_000``` |  |
@@ -267,7 +268,7 @@ and links to more detailed information about each thing.
 | FortrezZ LLC | [WWA-01 / WWA-02](fortrezz/wwa02_0_0.md) |  | ```fortrezz_wwa02_00_000``` | Sensor |
 | Jasco Products | [12718](ge/12718_0_0.md) |  | ```ge_12718_00_000``` | Wall Switch |
 | Jasco Products | [12727](ge/12727_0_0.md) |  | ```ge_12727_00_000``` |  |
-| Jasco Products | [12729](ge/12729_0_0.md) |  | ```ge_12729_00_000``` |  |
+| Jasco Products | [12729](ge/12729_0_0.md) |  | ```ge_12729_00_000``` | Wall Switch |
 | Jasco Products | [GE/Jasco 14280](ge/14280_0_0.md) |  | ```ge_14280_00_000``` |  |
 | Jasco Products | [GE/Jasco 14285](ge/14285_0_0.md) |  | ```ge_14285_00_000``` | Remote Control |
 | Jasco Products | [14288](ge/14288_0_0.md) |  | ```ge_14288_00_000``` |  |
@@ -511,11 +512,11 @@ and links to more detailed information about each thing.
 | Philio Technology Corp | [Philio PAN07-1A](philio/pan071a_0_0.md) |  | ```philio_pan071a_00_000``` |  |
 | Philio Technology Corp | [PAN08-1a](philio/pan081a_0_0.md) |  | ```philio_pan081a_00_000``` |  |
 | Philio Technology Corp | [PAN08](philio/pan08_0_0.md) |  | ```philio_pan08_00_000``` | Blinds |
-| Philio Technology Corp | [PAN11](philio/pan11_0_0.md) |  | ```philio_pan11_00_000``` |  |
+| Philio Technology Corp | [PAN11](philio/pan11_0_0.md) |  | ```philio_pan11_00_000``` | Power Outlet |
 | Philio Technology Corp | [PAN16](philio/pan16_1_2.md) | 1.2 | ```philio_pan16_01_002``` |  |
 | Philio Technology Corp | [PAT02-A](philio/pat02a_0_0.md) |  | ```philio_pat02a_00_000``` | Sensor |
 | Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` |  |
-| Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` |  |
+| Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` | Sensor |
 | Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` | Siren |
 | Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` |  |
 | Philio Technology Corp | [PSP05](philio/psp05_0_0.md) |  | ```philio_psp05_00_000``` | Sensor |
@@ -596,7 +597,7 @@ and links to more detailed information about each thing.
 | Ring | [DW-SS ](ring/dwss_0_0.md) |  | ```ring_dwss_00_000``` | Door |
 | Radio Thermostat Company of America (RTC) | [CT100](rtc/ct100_0_0.md) |  | ```rtc_ct100_00_000``` |  |
 | Radio Thermostat Company of America (RTC) | [CT100 Plus](rtc/ct100plus_0_0.md) |  | ```rtc_ct100plus_00_000``` | HVAC |
-| Radio Thermostat Company of America (RTC) | [CT101](rtc/ct101_0_0.md) |  | ```rtc_ct101_00_000``` |  |
+| Radio Thermostat Company of America (RTC) | [CT101](rtc/ct101_0_0.md) |  | ```rtc_ct101_00_000``` | HVAC |
 | Radio Thermostat Company of America (RTC) | [CT110](rtc/ct110_0_0.md) |  | ```rtc_ct110_00_000``` |  |
 | Radio Thermostat Company of America (RTC) | [CT200](rtc/ct200_0_0.md) |  | ```rtc_ct200_00_000``` | HVAC |
 | Radio Thermostat Company of America (RTC) | [CT30](rtc/ct30_0_0.md) |  | ```rtc_ct30_00_000``` | HVAC |
@@ -741,7 +742,7 @@ and links to more detailed information about each thing.
 | Wintop | [ITEMP](wintop/itemp_0_0.md) |  | ```wintop_itemp_00_000``` | Sensor |
 | Wintop | [LE120](wintop/le120_0_0.md) |  | ```wintop_le120_00_000``` |  |
 | Wintop | [Multisensor](wintop/multisensor_0_0.md) |  | ```wintop_multisensor_00_000``` |  |
-| Wintop | [WTRFID](wintop/wtrfid_0_0.md) |  | ```wintop_wtrfid_00_000``` |  |
+| Wintop | [WTRFID](wintop/wtrfid_0_0.md) |  | ```wintop_wtrfid_00_000``` | Remote Control |
 | ASSA ABLOY | [SD-L1000-CH](yale/ycl1_0_0.md) |  | ```yale_ycl1_00_000``` | Lock |
 | ASSA ABLOY | [YKFCON](yale/ykfcon_0_0.md) |  | ```yale_ykfcon_00_000``` | Lock |
 | ASSA ABLOY | [YRD110](yale/yrd110_0_0.md) |  | ```yale_yrd110_00_000``` | Lock |

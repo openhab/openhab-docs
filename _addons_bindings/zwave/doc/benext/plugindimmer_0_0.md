@@ -8,6 +8,8 @@ title: plugInDimmer - ZWave
 # plugInDimmer Plug-in Dimmer
 This describes the Z-Wave device *plugInDimmer*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_plugindimmer_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
 ![plugInDimmer product image](https://www.cd-jackson.com/zwave_device_uploads/226/226_default.png)
 
 

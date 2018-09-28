@@ -17,19 +17,14 @@ The VRCS4 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-Vizia RF + 4-Button Remote Scene Controller, rated @ 120/240 VAC, 50/60HZ; z-wave enabled, 
-
-The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. 
-
-The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.
+Vizia RF + 4-Button Remote Scene Controller, rated @ 120/240 VAC, 50/60HZ;  
+The top four buttons provide ON/OFF switching of four scenes.  Each button can have up to 32 devices associated with it. The bottom button transmits DIM/BRIGHT commands to the most recently switched-ON scene.
 
 ### Inclusion Information
 
 To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.
 
-While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode.  When the 4-Scene controller is included in your system the LEDs will turn off.
-
-If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.
+While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into inclusion mode. When the 4-Scene controller is included in your system the LEDs will turn off. If the LEDs on the 4-Scene controller turn red while including, there has been a communications problem.
 
 The instructions state that only one device may be included at a time and it seems that inclusion works best if the system controller is put in including mode after the device is in programming mode.
 
@@ -39,7 +34,7 @@ If the 4-Scene controller has been successfully included in the network and the 
 
 To access programming mode, press and hold the left side of buttons 1 and 3. Wait 5 seconds until the LEDs turn amber then release the buttons.  The LEDs will blink amber.
 
-While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode.  When the 4-Scene controller is excluded from your system the LEDs will turn off.
+While holding your system controller close the the 4-Scene controller (approximately 1 foot) put your system comptroller into exclusion mode. When the 4-Scene controller is excluded from your system the LEDs will turn off.
 
 If the LEDs on the 4-Zone controller turn red while excluding, there has been a communications problem.
 
