@@ -64,6 +64,361 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 Because the Mouser is a battery powered device, it wakes up on regular intervals to give battery and other status updates to the controller, as well as to accept configuration settings from the controller. This helps to extend the battery life. The device can be forced to wake up to submit these reports or accept new settings immediately by simply pressing and holding the BUTTON for half a second. The LED INDICATOR will flash once indicating successful wake up.
 
+### General Usage Information
+
+### Description & Features
+
+The Dome Door/Window Sensor is a battery powered security-enabled\* Z-Wave Plus magnetic reed switch that can monitor the status of doors, windows, and anything else that opens and closes. It can also report ambient temperature levels. The Door/Window Sensor consists of two parts - the “sensor,” and the “magnet.” The sensor has a “reed switch” inside, which is sensitive to the magnet’s presence when aligned properly and within the defined distance. When the sensor and magnet are brought together or pulled apart, the sensor will report its open/close status to its Z-Wave controller, and the encrypted wireless communication\* ensures that user data remains secure. Because many manufacturers use Z-Wave to communicate, the Door/Window Sensor can interact with different products of different categories.
+
+**Key Features**
+
+  * Temperature Sensor
+  * Up to 220’ range
+  * Ten-Year Battery Life
+  * Z-Wave Signal Strength Indication
+  * 1” Max distance between sensor & magnet
+  * Ultra-Narrow (1/4”) Magnet (for Placement Between Door and Casing)
+  * Z-Wave Plus Certified
+  * S0 Security-Enabled*
+  * Monitor doors, windows, medicine cabinets, drawers, garage doors, and many other openings
+
+*A security-enabled Z-Wave Plus controller is required to use all features of the Door/Window Sensor. 
+
+### Specifications
+
+**Technical Specifications**
+
+<table>
+  <tr>
+    <td>
+      Radio protocol
+    </td>
+    
+    <td>
+      Z-Wave(500 series)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Power supply
+    </td>
+    
+    <td>
+      Single CR14505 3.6V battery
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Working current
+    </td>
+    
+    <td>
+      35mA
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Standby current
+    </td>
+    
+    <td>
+      7uA
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Radio frequency
+    </td>
+    
+    <td>
+      908.4 MHz US
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Range
+    </td>
+    
+    <td>
+      Up to 150’ depending on environment
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Dimensions (L x W x H)
+    </td>
+    
+    <td>
+      Sensor: 2.9” x 0.85” x 0.87” (75 x 21 x 22 mm) <br /> Magnet: 1.6” x 0.25” x 0.5” (40 x 6.35 x 12 mm)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Package Contents
+    </td>
+    
+    <td>
+      User Manual, Sensor, Magnet, Battery, Double-Stick Tape, 2x Screws, 2x Wall Anchors
+    </td>
+  </tr>
+</table>
+
+### Factory Reset & Misc. Functions
+
+**Resetting the Door/Window Sensor Pro**
+
+If needed, the Door/Window Sensor Pro can be reset locally by following these steps. Only do this when your Z-Wave controller is disconnected or otherwise unreachable. Beware that resetting your device will disconnect it from the system
+
+  1. Remove the Sensor Cover and confirm that your Door/Window Sensor is powered up.
+  2. Wait for 5 seconds.
+  3. Move the Magnet and Sensor Base in and out of the closed position 6 times.
+  4. The LED Indicator will light up red for two seconds when reset successfully.
+
+The Door/Window Sensor’s memory will be erased to factory settings.
+
+### Physical Installation
+
+The Door/Window Sensor can be install with double stick tape or the provided screws. The device should already be included in your Z-Wave system before continuing further.
+
+**Pre-Installation Checklist**
+
+  * The Magnet Assembly and Sensor Assembly should be less than 1-1/4” apart when closed (Figure 3.)
+  * Hold the Magnet Assembly and Sensor Assembly in place by hand where you wish to install them, move them in and out of the closed position, and make sure the LED Indicator blinks in response. This will confirm that the door and frame are spaced correctly to accommodate the sensor.
+  * When moving the Magnet and Sensor in and out of the closed position, a Green followed by another Green or Red LED Indicator corresponds to Excellent or Poor Z-Wave Signal strength respectively.
+  * Make sure the Sensor Cover Release Button will be accessible in the final position.
+  * The Magnet is small enough (only 1/4” wide) to fit in the groove between the door and the casing.
+  * Finally, confirm that you are still within range of your Z-Wave controller.
+
+Figure 3 - Placing the Door/Window Sensor on the Door
+
+**Installation Using Double-Stick Tape**
+
+  1. Wipe the door and door-frame clean of dust and anything else that will interfere with the tape’s stickiness.
+  2. Peel the double-stick tape and adhere the Sensor Assembly to the door surface.
+  3. Repeat the process for the Magnet Assembly, making sure the Magnet Assembly, and Sensor Assembly are no more than 1-1/4” apart when closed. The lines on the sides of the Magnet Assembly, and Sensor Assembly should be in line.
+  4. Open and close the door to make sure the sensor works as expected (the LED Indicator blinks) and that the signal reaches your Z-Wave controller.
+
+**Installation Using Screws**
+
+Figure 4 - Installing the Door/Window Sensor With Screws
+
+  1. Remove the Sensor Cover and Battery from the Sensor Base and the Magnet Cover from the Magnet Base.
+  2. Hold the Sensor Base in place and drive the included screws through the screw holes into the door.
+  3. Repeat the process for the Magnet Assembly, making sure the Magnet Assembly, and Sensor Assembly are no more than 1-1/4” apart when the door is closed. The lines on the sides of the MAGNET and SENSOR should be in line.
+  4. Replace the Battery, Sensor Cover, and Magnet Cover.
+  5. Open and close the door to make sure the sensor works as expected (the LED Indicator blinks) and that the signal reaches your Z-Wave controller.  
+
+### LED Behavior
+
+<table>
+  <tr>
+    <td>
+      Green
+    </td>
+    
+    <td>
+      Blinks Twice Within 5 Seconds
+    </td>
+    
+    <td>
+      …the sensor Detects the Magnet (door) moving, and the Z-Wave signal reached the controller.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Blinks 3 times quickly
+    </td>
+    
+    <td>
+      …the device is successfully included into the system.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Red
+    </td>
+    
+    <td>
+      Stays on for 2 seconds
+    </td>
+    
+    <td>
+      …the device is reset to factory settings.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Blinks 3 Times quickly
+    </td>
+    
+    <td>
+      … the Button is pressed 3 times quickly and the device is excluded from the network.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Blinks indefinitely
+    </td>
+    
+    <td>
+      …the Sensor Cover is removed and the device is already included in a system.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Yellow (Green + Red)
+    </td>
+    
+    <td>
+      Blinks Indefinitely
+    </td>
+    
+    <td>
+      …the Sensor Cover is removed and the device is not yet included in a system.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Red & Green Alternating
+    </td>
+    
+    <td>
+      Two Flashes (Green-Red) Within 5 Seconds
+    </td>
+    
+    <td>
+      …the sensor Detects the Magnet moving away or getting close (as the Door is opened or closed) and the Z-Wave signal was not received.
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Flashing in alternating colors
+    </td>
+    
+    <td>
+      …the Door/Window Sensor is in inclusion mode. It will continue blinking and remain in inclusion mode for up to two minutes, until it is included in a system.
+    </td>
+  </tr>
+</table>
+
+Table 2 - LED Behavior   
+
+### Button Behavior
+
+<table>
+  <tr>
+    <td>
+      Open the Cover
+    </td>
+    
+    <td>
+      Door/Window Sensor Not Yet Included in System
+    </td>
+    
+    <td>
+      LED Indicator blinks yellow (red + green) until the Sensor Cover is replaced
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Door/Window Sensor Already Included in System
+    </td>
+    
+    <td>
+      Device sends a tamper notification to its controller, and the LED Indicator blinks red until the Sensor Cover is replaced
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Push CONNECT BUTTON 3 Times
+    </td>
+    
+    <td>
+      Door/Window Sensor Already Included in System
+    </td>
+    
+    <td>
+      Device sends node info to Group 1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Door/Window Sensor Already Included, and Controller is in Exclusion Mode
+    </td>
+    
+    <td>
+      Device is excluded from the system and removes the Home ID from its memory
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Door/Window Sensor Not Yet Included in System, and Controller is in Inclusion Mode
+    </td>
+    
+    <td>
+      Device enters inclusion mode and includes into whichever network is also in inclusion mode
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Move the Magnet and Sensor In and Out of the Closed Position 6 Times with Cover Removed
+    </td>
+    
+    <td>
+      Door/Window Sensor Already Included in System
+    </td>
+    
+    <td>
+      Device will be reset to factory settings, and a DEVICE_RESET_LOCALLY command will be sent to Group 1
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Any condition (as long as the device has power)
+    </td>
+    
+    <td>
+      The device’s memory will erase to factory default settings and any associations, configuration parameters, and other locally saved data will be lost
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      Press the Button Once
+    </td>
+    
+    <td>
+      Door/Window Sensor Is Already Included in System
+    </td>
+    
+    <td>
+      Device sends a wake up notification to Node 1.
+    </td>
+  </tr>
+</table>
+
+Table 3 - Button Behavior
+
 ## Channels
 
 The following table summarises the channels available for the DMDP1 -:

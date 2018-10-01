@@ -58,6 +58,17 @@ The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item
 Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
+This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
+
+| Event ID | Event Description  |
+|----------|--------------------|
+| 0        | Single key press   |
+| 1        | Key released       |
+| 2        | Key held down      |
+| 3        | Double keypress    |
+| 4        | Tripple keypress   |
+| 5        | 4 x keypress       |
+| 6        | 5 x keypress       |
 
 ### Battery Level
 

@@ -55,28 +55,14 @@ The following table summarises the channels available for the Flood sensor -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Alarm | alarm_general | Door | Switch | 
+| Flood Alarm | alarm_flood | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
-### Binary Sensor
+### Flood Alarm
 
-Indicates if a sensor has triggered.
+Indicates if the flood alarm is triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| ON | Triggered |
-| OFF | Untriggered |
-
-### Alarm
-
-Indicates if an alarm is triggered.
-
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

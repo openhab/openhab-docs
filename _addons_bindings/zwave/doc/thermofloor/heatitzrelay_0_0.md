@@ -37,6 +37,32 @@ If the device already belongs to a network, follow the remove process before add
 
 The device is removed in the same manner, when the controller is put into Removing Mode. 
 
+### General Usage Information
+
+1. Inputs
+
+1.1.   Temperature inputs
+
+Input 1 and 2 can be used as temperature inputs by connecting NTC sensors the inputs, the type of NTC sensor can be configured by means of configuration parameter 3 and 4. 
+
+A temperature offset can be configured for each of the inputs by means of configuration parameter 5 and 6. 
+
+1.2.   Flood sensor input
+
+Input 3 is a flood sensor input where it is possible to connect a simple flood sensor.
+
+The flood sensor can be left lying on the floor (on an electrically insulating surface), or attached to the floor or to a wall. Designed for flood detection, senses water and other electrically conductive liquids. The sensitivity of the sensor can be configured by means of configuration parameter 14. 
+
+It is possible for the flood input directly to be able to control the SRM relay output, either to turn the relay output ON or OFF when flood is detected, or when no flood is detected, see configuration parameter 12 and 13.
+
+2. Relay Output
+
+The relay output is a high power “normally open” (NO) contact, that can be used for several purposes. 
+
+It is possible to control the relay from the Z-Wave network, or it can be controlled by the flood sensor input. 
+
+The Heatit Z-Relay monitors the current used by the load connected to the relay output. The energy that the load consumes is calculated by means of the measured current and the voltage entered in configuration parameter 15. Energy data is sent to the controller through the Z-Wave network. These data values that the controller is able to receive are; current (A), power (Watt) and the energy consumed over time (kWh).
+
 ## Channels
 
 The following table summarises the channels available for the HEATIT Z-RELAY -:

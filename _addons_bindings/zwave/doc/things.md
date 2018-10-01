@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 782 things from 110 manufacturers.
+The binding supports a total of 786 things from 110 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -96,6 +96,7 @@ and links to more detailed information about each thing.
 | BRK Brands, Inc. | [ZCOMBO](brk/zcombo_0_0.md) |  | ```brk_zcombo_00_000``` | Smoke Detector |
 | BRK Brands, Inc. | [ZSMOKE](brk/zsmoke_0_0.md) |  | ```brk_zsmoke_00_000``` | Smoke Detector |
 | CBCC Domotique SAS | [SW-ZCS-1](cbcc/swzcs1_0_0.md) |  | ```cbcc_swzcs1_00_000``` |  |
+| Chromagic Technologies Corporation | [EM6556](chromagic/em6556_0_0.md) |  | ```chromagic_em6556_00_000``` | Wall Switch |
 | Chromagic Technologies Corporation | [HSM02](chromagic/hsm02_0_0.md) |  | ```chromagic_hsm02_00_000``` |  |
 | Chromagic Technologies Corporation | [SM103](chromagic/sm103_0_0.md) |  | ```chromagic_sm103_00_000``` |  |
 | Cloud Media | [A803N](cloud/a803n_0_0.md) |  | ```cloud_a803n_00_000``` |  |
@@ -193,9 +194,10 @@ and links to more detailed information about each thing.
 | Everspring | [HAC01](everspring/hac01_0_0.md) |  | ```everspring_hac01_00_000``` |  |
 | Everspring | [HSM02](everspring/hsm02_0_0.md) |  | ```everspring_hsm02_00_000``` |  |
 | Everspring | [HSP02](everspring/hsp02_0_0.md) |  | ```everspring_hsp02_00_000``` | Motion Detector |
-| Everspring | [SE812](everspring/se812_0_0.md) |  | ```everspring_se812_00_000``` |  |
+| Everspring | [SE812](everspring/se812_0_0.md) |  | ```everspring_se812_00_000``` | Siren |
 | Everspring | [SF812](everspring/sf812_0_0.md) |  | ```everspring_sf812_00_000``` | Smoke Detector |
 | Everspring | [SM103](everspring/sm103_0_0.md) |  | ```everspring_sm103_00_000``` | Door |
+| Everspring | [SM810](everspring/sm810_0_0.md) |  | ```everspring_sm810_00_000``` | Sensor |
 | Everspring | [SP103](everspring/sp103_0_0.md) |  | ```everspring_sp103_00_000``` | Motion Detector |
 | Everspring | [SP814](everspring/sp814_0_0.md) |  | ```everspring_sp814_00_000``` | Motion Detector |
 | Everspring | [SP816](everspring/sp816_0_0.md) |  | ```everspring_sp816_00_000``` | Motion Detector |
@@ -235,7 +237,7 @@ and links to more detailed information about each thing.
 | Fibargroup | [FGK101](fibaro/fgk101_0_0.md) | 2.3 | ```fibaro_fgk101_00_000``` | Door |
 | Fibargroup | [FGK101](fibaro/fgk101_2_5.md) | 2.5 to 2.5 | ```fibaro_fgk101_02_005``` | Door |
 | Fibargroup | [FGK101](fibaro/fgk101_3_2.md) | 3.2 | ```fibaro_fgk101_03_002``` | Door |
-| Fibargroup | [FGKF601](fibaro/fgkf601_0_0.md) |  | ```fibaro_fgkf601_00_000``` |  |
+| Fibargroup | [FGKF601](fibaro/fgkf601_0_0.md) |  | ```fibaro_fgkf601_00_000``` | Remote Control |
 | Fibargroup | [FGMS001](fibaro/fgms001_0_0.md) | 2.8 | ```fibaro_fgms001_00_000``` | Motion Detector |
 | Fibargroup | [FGMS001](fibaro/fgms001_3_2.md) | 3.2 | ```fibaro_fgms001_03_002``` | Motion Detector |
 | Fibargroup | [FGPB101](fibaro/fgpb101_0_0.md) |  | ```fibaro_fgpb101_00_000``` | Remote Control |
@@ -347,6 +349,7 @@ and links to more detailed information about each thing.
 | HomeSeer Technologies | [HS-WD200+](homeseer/hswd200_0_0.md) |  | ```homeseer_hswd200_00_000``` | Wall Switch |
 | HomeSeer Technologies | [HS-WS100+](homeseer/hsws100_0_0.md) |  | ```homeseer_hsws100_00_000``` |  |
 | HomeSeer Technologies | [HS-WS200+](homeseer/hsws200_0_0.md) |  | ```homeseer_hsws200_00_000``` | Wall Switch |
+| Honeywell | [39349](honeywell/39349_0_0.md) |  | ```honeywell_39349_00_000``` | Wall Switch |
 | Honeywell | [39354](honeywell/39354_0_0.md) |  | ```honeywell_39354_00_000``` | Wall Switch |
 | Honeywell | [39358](honeywell/39358_0_0.md) |  | ```honeywell_39358_00_000``` | Wall Switch |
 | Honeywell | [TH6320ZW](honeywell/th6320zw_0_0.md) |  | ```honeywell_th6320zw_00_000``` | HVAC |
@@ -394,9 +397,8 @@ and links to more detailed information about each thing.
 | Shenzhen iSurpass Technology Co. ,Ltd | [DX1WL-Z](isurpass/dx1wl_0_0.md) |  | ```isurpass_dx1wl_00_000``` | Sensor |
 | Shenzhen iSurpass Technology Co. ,Ltd | [Smoke Detector](isurpass/smokedetector_0_0.md) |  | ```isurpass_smokedetector_00_000``` | Smoke Detector |
 | Jin Tao Bao | [Curtain Motor](jintaobao/curtainmotor_0_0.md) |  | ```jintaobao_curtainmotor_00_000``` | Blinds |
-| Kaipule Technology Co., Ltd. | [TP-802ZD](kaipule/doorwindowsensor_0_0.md) |  | ```kaipule_doorwindowsensor_00_000``` |  |
 | Kaipule Technology Co., Ltd. | [ES-61](kaipule/es61_0_0.md) | 5.255 | ```kaipule_es61_00_000``` | Smoke Detector |
-| Kaipule Technology Co., Ltd. | [IM-20](kaipule/im20_0_0.md) |  | ```kaipule_im20_00_000``` | Door |
+| Kaipule Technology Co., Ltd. | [IM-20](kaipule/im20_0_0.md) |  | ```kaipule_im20_00_000``` | Sensor |
 | Kaipule Technology Co., Ltd. | [ DP-32 / IX-30 / IX-32](kaipule/ix32_6_0.md) | 6.0 | ```kaipule_ix32_06_000``` |  |
 | Kichler | [12387](kichler/12387_0_0.md) |  | ```kichler_12387_00_000``` |  |
 | Kichler | [15DC200](kichler/15dc200_0_0.md) |  | ```kichler_15dc200_00_000``` |  |
@@ -518,7 +520,7 @@ and links to more detailed information about each thing.
 | Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` |  |
 | Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` | Sensor |
 | Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` | Siren |
-| Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` |  |
+| Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` | Door |
 | Philio Technology Corp | [PSP05](philio/psp05_0_0.md) |  | ```philio_psp05_00_000``` | Sensor |
 | Philio Technology Corp | [PSR04](philio/psr04_0_0.md) |  | ```philio_psr04_00_000``` |  |
 | Philio Technology Corp | [PST02A](philio/pst02a_0_0.md) |  | ```philio_pst02a_00_000``` |  |
@@ -571,6 +573,7 @@ and links to more detailed information about each thing.
 | Goap | [ZMNHUD](qubino/zmnhud_0_0.md) |  | ```qubino_zmnhud_00_000``` |  |
 | Goap | [ZMNHVD](qubino/zmnhvd_0_0.md) |  | ```qubino_zmnhvd_00_000``` | Wall Switch |
 | Goap | [ZMNHWD](qubino/zmnhwd_0_0.md) |  | ```qubino_zmnhwd_00_000``` | Wall Switch |
+| Goap | [ZMNHXD](qubino/zmnhxd_0_0.md) |  | ```qubino_zmnhxd_00_000``` | Sensor |
 | Goap | [ZMNHZD](qubino/zmnhzd_0_0.md) |  | ```qubino_zmnhzd_00_000``` |  |
 | Residential Control Systems, Inc. (RCS) | [TBZ48](rcs/tbz48_0_0.md) |  | ```rcs_tbz48_00_000``` |  |
 | Residential Control Systems, Inc. (RCS) | [TZ43](rcs/tz43_0_0.md) |  | ```rcs_tz43_00_000``` |  |
@@ -749,16 +752,17 @@ and links to more detailed information about each thing.
 | ASSA ABLOY | [YRD120](yale/yrd120_0_0.md) |  | ```yale_yrd120_00_000``` | Lock |
 | ASSA ABLOY | [YRD210](yale/yrd210_0_0.md) |  | ```yale_yrd210_00_000``` | Lock |
 | ASSA ABLOY | [YRD220](yale/yrd220_0_0.md) |  | ```yale_yrd220_00_000``` | Lock |
-| ASSA ABLOY | [YRD246](yale/yrd246_0_0.md) |  | ```yale_yrd246_00_000``` | Lock |
+| ASSA ABLOY | [YRD256](yale/yrd256_0_0.md) |  | ```yale_yrd256_00_000``` | Lock |
 | ASSA ABLOY | [YRD446](yale/yrd446_0_0.md) |  | ```yale_yrd446_00_000``` | Lock |
 | ASSA ABLOY | [YRL220](yale/yrl220_0_0.md) |  | ```yale_yrl220_00_000``` | Lock |
 | ASSA ABLOY | [Yale Smart Door Lock Z-Wave Module](yale/zwavemodule_0_0.md) |  | ```yale_zwavemodule_00_000``` | Lock |
+| Zipato | [AB02Z](zipato/ab02z_0_0.md) |  | ```zipato_ab02z_00_000``` | Siren |
 | Zipato | [RGBWE2](zipato/bulb2rgbw_0_0.md) |  | ```zipato_bulb2rgbw_00_000``` | Light Bulb |
 | Zipato | [HM-HS1CA](zipato/hmhs1ca_0_0.md) |  | ```zipato_hmhs1ca_00_000``` | Smoke Detector |
 | Zipato | [HM-HS1WL-Z](zipato/hmhs1wlz_0_0.md) |  | ```zipato_hmhs1wlz_00_000``` | Sensor |
 | Zipato | [HS1SA](zipato/hs1sa_0_0.md) |  | ```zipato_hs1sa_00_000``` | Smoke Detector |
 | Zipato | [MH-P220](zipato/mhp220_0_0.md) |  | ```zipato_mhp220_00_000``` | Wall Switch |
-| Zipato | [NE-NAS-PD01Z](zipato/nenaspd01z_0_0.md) |  | ```zipato_nenaspd01z_00_000``` |  |
+| Zipato | [NE-NAS-PD01Z](zipato/nenaspd01z_0_0.md) |  | ```zipato_nenaspd01z_00_000``` | Motion Detector |
 | Zipato | [PSP02](zipato/phpsp02_0_0.md) |  | ```zipato_phpsp02_00_000``` | Door |
 | Zipato | [RGBWE27ZW](zipato/rgbwe27zw_0_0.md) |  | ```zipato_rgbwe27zw_00_000``` | Light Bulb |
 | Zipato | [ZD2102-5](zipato/zd2102plus_0_0.md) |  | ```zipato_zd2102plus_00_000``` | Door |

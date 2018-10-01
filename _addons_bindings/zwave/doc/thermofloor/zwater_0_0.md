@@ -34,6 +34,14 @@ Place your primary controller in Adding Mode by following the manufacturer’s i
 
 Place your primary controller in Remov Mode by following the manufacturer’s instructions, then activate the remove mode on the device by clicking the small button through the little hole, marked with the text “INCLUSION”, in front of the Heatit Z-Water regulator. The Remove Mode is indicated by Heatit Z-Water status LED is blinking until a timeout occurs after 10 seconds or if the module has been removed from the Z-Wave network.
 
+### General Usage Information
+
+Heatit Z-Water is a DIN-rail regulator for controlling hydronic heating. Heatit Z-Water is a module that clips right onto a DIN rail to add a variety of functions to your wireless Z-Wave network.  
+Heatit Z-Water is equipped with 10 relay outputs and it has 4 analog/digital inputs. The module can be power supplied from a 230V AC mains connection, and is able to deliver an output supply of 24V DC or 230V. Heatit Z-Water relay outputs are able to be freely controlled from the Z-Wave network, and can be used for several purposes, e.g. on/off control of light, control of valve actuators for an underfloor heating system, or control of other home automation systems.
+
+Heatit Z-Water analog/digital inputs (different firmware versions) can be configured to work with different functionality and can be connected to potential free contacts, open-collector outputs, and will be able to control other Z-Wave devices; switches, dimmers, etc. Furthermore, the inputs can be used as a Scene Controller and send Central Scene notifications to the Z-Wave gateway.  
+It is possible to configure the level and the indication of the status indicator LED in the front of the Heatit Z-Water module.
+
 ## Channels
 
 The following table summarises the channels available for the Heatit Z Water -:

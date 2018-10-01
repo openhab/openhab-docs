@@ -76,6 +76,25 @@ NOTE: For S2 inclusion please check chapter – »16. Z-Wave Security«.
   4. Press and hold the S service button between 0.2 and 6 seconds
   5. The device will be removed from your network but custom configuration parameters will not be erased
 
+### General Usage Information
+
+Installation  
+Before installing the device, please read the following carefully and follow the instructions exactly:  
+**Danger of electrocution!**  
+Installation of this device requires a great degree of skill and may be performed only by a licensed and qualified electrician. Please keep in mind that even when the device is turned off, voltage may still be present in the device’s terminals.  
+**Note!**  
+Do not connect the device to loads exceeding the recommended values. Connect the device exactly as shown in the provided diagrams. Improper wiring may be dangerous and result in equipment damage.  
+Electrical installation must be protected by directly associated overcurrent protection fuse with rated current up to 65A, it must be used according to wiring diagram to achieve appropriate overload protection of the device.  
+  
+The installation process, tested and approved by professional electricians, consists of the following simple steps:
+
+  * Step 1 – Turn OFF the fuse:  
+    To prevent electrical shock and/or equipment damage, disconnect electrical power at the main fuse or circuit breaker before installation and maintenance.  
+    Be aware that even if the circuit breaker is off, some voltage may remain in the wires — before proceeding with the installation, be sure no voltage is present in the wiring.  
+    Take extra precautions to avoid accidentally turning the device on during installation.
+  * Step 2 – Installing the device:  
+    Connect the device exactly according to the diagrams shown below
+
 ## Channels
 
 The following table summarises the channels available for the ZMNHXD -:
