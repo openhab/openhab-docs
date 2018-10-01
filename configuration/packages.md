@@ -11,7 +11,7 @@ When starting openHAB for the very first time, you are asked to select an initia
 
 There are four packages to choose from, which will be explained here in detail.
 
-*Note*: If you are doing a headless installation, you can also choose the package by setting the `package` parameter in `conf/services/addons.cfg` (resp. `/etc/openhab2/services/addons.cfg` for apt installations).
+*Note*: If you are doing a headless installation, you can also choose the package by setting the `package` parameter in `$OPENHAB_CONF/services/addons.cfg`.
 
 If you skipped the package installation, the system stays in a minimal setup without any add-ons which also means without any UIs. In such a case, you must configure the add-ons to install in `addons.cfg`.
 

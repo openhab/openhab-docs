@@ -16,8 +16,8 @@ See the linux installation instructions for the [file locations]({{base}}/instal
 macOS files are located in the same place as Linux files.
 
 ```bash
-conf/items    <-- *.items files
-conf/sitemaps <-- *.sitemap files
+$OPENHAB_CONF/items    <-- *.items files
+$OPENHAB_CONF/sitemaps <-- *.sitemap files
 ```
 
 After a fresh installation these directories are empty (except for the readme files), so you have to create a file there. We'll use "default.items" as the items file and "default.sitemap" as the sitemap file in this tutorial.
@@ -28,8 +28,8 @@ After a fresh installation these directories are empty (except for the readme fi
 So we create the files:
 
 ```bash
-conf/items/default.items
-conf/sitemaps/default.sitemap
+$OPENHAB_CONF/items/default.items
+$OPENHAB_CONF/sitemaps/default.sitemap
 ```
 
 Let's start small.
