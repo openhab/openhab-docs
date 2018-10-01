@@ -280,10 +280,11 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    Livingroom_Temperature   "Temperature [%.1f °C]"     // e.g. "23.5 °C"
-String    Livingroom_TV_Channel    "Now Playing [%s]"          // e.g. "Lorem ipsum"
-DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:26"
-Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
+Number    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
+String    Livingroom_TV_Channel    "Now Playing [%s]"                  // e.g. "Lorem ipsum"
+DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]"         // e.g. "Sun 15:26"
+Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "50 %"
+Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g. "49.26°N 123.19°E 0m"
 ```
 
 {: #state-transformation}
