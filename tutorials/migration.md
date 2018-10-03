@@ -54,7 +54,7 @@ If you installed using apt-get these files may include:
 - `/usr/share/openhab/bin` - custom command line arguments to the Java Virtual Machine, changes to the default ports, etc.
 - `/etc/default/openhab` - an alternative place to change default ports
 
-If you are on an operating system that does not support apt-get or performed a manual installation for some other reason simply backup the whole `<openhab home>` directory.
+If you are on an operating system that does not support apt-get or performed a manual installation for some other reason simply backup the whole `$OPENHAB_HOME` directory.
 
 ## Shutdown openhab 1.x
 
@@ -263,10 +263,10 @@ This is a great opportunity to identify those bindings you actually use and only
 When you find a binding to install, press the Install button and wait for installation to complete. 
 Do not install the myopenhab/openhabcloud Binding yet.
 
-One thing to be aware of is any configuration done in PaperUI gets saved to a files and folders under <openHAB 2 conf>.
+One thing to be aware of is any configuration done in PaperUI gets saved to a files and folders under $OPENHAB_CONF.
 Binding configurations, Items, Things, et. al. created in, edited in, and otherwise modified in PaperUI will not appear in the conf directories.
 For example, if you create an Item in PaperUI, you will not find that new Item in any of the .items files.
-Instead they get saved to a JSONDB file located in <openHAB 2 userdata>/jsondb.
+Instead they get saved to a JSONDB file located in $OPENHAB_USERDATA/jsondb.
 Since none of the administration UIs are currently capable of doing everything and we want to minimize the number of changes necessary, you will ultimately end up with a mix of database and text based configuration. 
 This is why we recommend not using PaperUI for those migrating to openHAB 2 from openHAB 1.x.
 
@@ -275,7 +275,7 @@ This is why we recommend not using PaperUI for those migrating to openHAB 2 from
 As bindings and other add-ons are installed, you can watch for errors in the logs. 
 Errors at this time may not be important but make note of those that did generate errors during installation for special attention later.
 
-Once a binding or add-on is installed, it will create a `<openHAB 2 conf>/services/<add-on name>.cfg` file. 
+Once a binding or add-on is installed, it will create a `$OPENHAB_CONF/services/<add-on name>.cfg` file. 
 Unlike in openHAB 1.x where all the binding configurations are placed in the one openhab.cfg file, openHAB 2 has a separate .cfg file for each binding. 
 Transfer the settings for each binding from openhab.cfg to its new .cfg file, removing the binding name from the parameter.
 For example, the parameter `nest:refresh=300000` in openhab.cfg becomes `refresh=300000` in nest.cfg.
@@ -296,15 +296,15 @@ First check the [list of add-ons that are known not to work in openHAB 2]({{base
 
 Next install the openHAB 1.x compatibility layer using the Karaf Console instructions above.
 
-Copy your openhab.cfg file to `<openHAB 2 conf>/services`. 
+Copy your openhab.cfg file to `$OPENHAB_CONF/services`. 
 If you are running an apt-get installed openHAB 1.x openhab.cfg is located in `/etc/openhab/configurations`.
-For an apt-get installed openHAB 2 the `<openHAB 2 conf>` folder is located in `/etc/openhab2`. 
-For manually installed openHAB 1.x this file is located in `<openhab home>/configurations` and in manually installed openHAB 2 it is `<openhab home>/conf`.
+For an apt-get installed openHAB 2 the `$OPENHAB_CONF` folder is located in `/etc/openhab2`. 
+For manually installed openHAB 1.x this file is located in `$OPENHAB_CONF/configurations` and in manually installed openHAB 2 it is `$OPENHAB_CONF/conf`.
 
 This file will have a lot of redundant configuration information in it that you have already moved over to individual binding .cfgs. 
 Make sure to comment those out and just leave the config parameters for the bindings you are manually installing.
 
-Now copy the add-on's jar files that you want to install to the `<openHAB conf>/addons` folder for openHAB 2. 
+Now copy the add-on's jar files that you want to install to the `$OPENHAB_CONF/addons` folder for openHAB 2. 
 For example:
 
 ```bash
@@ -331,7 +331,7 @@ These instructions are only for add-ons that are not listed in PaperUI or the Ka
 ### Final Add-ons Installation Steps
 
 openHAB 2 has a different [folder layout]({{base}}/installation/linux.html#file-locations).
-Of particular node are the <openHAB 2 conf> folders and <openHAB 2 userdata> folders. 
+Of particular node are the `$OPENHAB_CONF` folders and `OPENHAB_CONF` folders. 
 See the previous link for the location of these folders for your installation.
 
 As with openHAB 1.x, one must restart openHAB 2 to pick up changes to .cfg files.
@@ -347,14 +347,14 @@ These errors will have to be fixed.
 Copy over your files in the following order:
 
 ```bash
-cp <openHAB 1.x conf>/configurations/transform/* <openHAB 2 conf>/transform/*
-cp <openHAB 1.x conf>/configurations/scripts/* <openHAB 2 conf>/scripts/*
-cp <openHAB 1.x conf>/configurations/persistence/* <openHAB 2 conf>/persistence
-Copy any custom icons added from webapps/images to <openHAB 2 conf>/icons/classic
-Copy any custom webviews from webapps to <openHAB 2 conf>/html
-cp <openHAB 1.x conf>/configurations/items/* <openHAB 2 conf>/items/*
-cp <openHAB 1.x conf>/configurations/rules/* <openHAB 2 conf>/rules/*
-cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
+cp $OPENHAB1_CONF/configurations/transform/* $OPENHAB_CONF/transform/*
+cp $OPENHAB1_CONF/configurations/scripts/* $OPENHAB_CONF/scripts/*
+cp $OPENHAB1_CONF/configurations/persistence/* $OPENHAB_CONF/persistence
+Copy any custom icons added from webapps/images to $OPENHAB_CONF/icons/classic
+Copy any custom webviews from webapps to $OPENHAB_CONF/html
+cp $OPENHAB1_CONF/configurations/items/* $OPENHAB_CONF/items/*
+cp $OPENHAB1_CONF/configurations/rules/* $OPENHAB_CONF/rules/*
+cp $OPENHAB1_CONF/configurations/sitemaps/* $OPENHAB_CONF/sitemaps/*
 ```
 
 ## Necessary Changes
@@ -389,7 +389,7 @@ cp <openHAB 1.x conf>/configurations/sitemaps/* <openHAB 2 conf>/sitemaps/*
 
   * The default sitemap is configured through a parameter for BasicUI and ClassicUI instead of naming the sitemap `default.sitemap`.
 
-  * Static webview files are now located in `<openhab 2 conf>/html` instead of  `/usr/share/openhab/webapps`
+  * Static webview files are now located in `$OPENHAB_CONF/html` instead of  `/usr/share/openhab/webapps`
 
   * The name of the sitemap (i.e. the word right after `sitemap` at the top of the file) must match the file name. 
   For example the file named `myhome.sitemap` should start with `sitemap myhome`.
@@ -418,7 +418,7 @@ Take note of them with plans to return and correct them if they persist.
 
 ## Testing
 
-- **Items**: Watch `<openHAB 2 userdata>/logs/events.log` and methodically work through all
+- **Items**: Watch `$OPENHAB_CONF/logs/events.log` and methodically work through all
 of your Items activating and deactivating them one-by-one to verify the events
 appear in the logs as expected. 
 The REST API (installable from the Misc tab in PaperUI) can be helpful here as it will let you issue commands or updates to Items directly.
@@ -557,7 +557,7 @@ Each openHAB instance generates its own unique UUID and Secret so one cannot sim
 
 Using your preferred method for add-on installation (see above) install the openHAB Cloud Connector binding (Misc tab in PaperUI). 
 Once installed a new `uuid` and `secret` file will be created.
-These two files are located in a different place in openHAB 2: `<openhab 2 userdata>/uuid` and `<openHAB 2 userdata>/myopenhab/secret`.
+These two files are located in a different place in openHAB 2: `$OPENHAB_CONF/uuid` and `$OPENHAB_CONF/myopenhab/secret`.
 
 Log into your myopenHAB account and select "Account" from the pull down menu under your email:
 
@@ -582,7 +582,7 @@ Begin by identifying those Items that use this binding.
 On Linux/OSX this can easily be done with the following command
 
 ```bash
-grep <binding> <openHAB 2 conf>/items/*
+grep <binding> $OPENHAB_CONF/items/*
 ```
 where `<binding>` is the string used in the binding config on the Item. 
 For example:
@@ -689,7 +689,7 @@ Not all 2.0 bindings support automatic discovery of Things or by their very natu
 As with linking Channels to Items, there is more than one way to do this including through PaperUI, Habmin, the REST API, or through text files. 
 This tutorial will only cover creating Things in text files as that will be closer to the openHAB 1.x way of doing things.
 
-All definitions of new Things are written to .things files in the `<openHAB 2 conf>/things` folder. 
+All definitions of new Things are written to .things files in the `$OPENHAB_CONF/things` folder. 
 The syntax for a Thing definition varies from binding to binding. 
 See the binding's readme for the specific format and parameters required. 
 Also see the binding's readme for the list of channels the Thing supports. 
