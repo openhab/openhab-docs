@@ -30,6 +30,7 @@ The following table summarises the channels available for the DMOF1 -:
 | Electric meter (watts) | meter_watts | Energy | Number | 
 | Electric meter (amps) | meter_current | Energy | Number | 
 | Electric meter (volts) | meter_voltage | Energy | Number | 
+| Reset Meter | meter_reset | Energy | Switch | 
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
@@ -61,6 +62,12 @@ The ```meter_current``` channel supports the ```Number``` item and is in the ```
 Indicates the instantaneous voltage.
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter
+
+Reset the meter.
+
+The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm (power)
 
