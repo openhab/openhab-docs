@@ -119,7 +119,7 @@ if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONL
 ### openHAB Subsystem Actions
 openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, and scripts.
 
-- `callScript(String scriptName)`: Calls a script which must be located in the config/scripts folder.
+- `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
 
 Scripts are small pieces of Rules DSL code that can be called from Rules. 
 However, Scripts have limitations.
