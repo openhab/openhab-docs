@@ -9,7 +9,7 @@ title: Installation Overview
 
 openHAB 2 is based on the Eclipse SmartHome framework and is fully written in Java.
 As such, it only depends on a Java Virtual Machine, which is available for many platforms.
-openHAB can be executed on different versions of **Mac OS X** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
+openHAB can be executed on different versions of **macOS** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
 
 Please be aware of the fact, that openHAB 2 is based on a new core and introduces new concepts.
 Therefore, tutorials and help you may find on the internet for openHAB 1 **might** be outdated!
@@ -70,7 +70,7 @@ Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
 Before you can start, three decisions have to be made:
 
 1.  openHAB 2 is available as a platform independent archive file or through a package repository:
-    - **Manual setup:** Download and extract a platform independent zip archive: [Mac OS X](macosx.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
+    - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
     - **Package setup:** Install though a package repository, including automatic updates.
     This option is only available for Debian or Ubuntu derivatives and the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 

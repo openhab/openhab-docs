@@ -62,7 +62,7 @@ See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html)
 ### Defining Things Using Files
 
 Things can also be defined manually by creating `.things` configuration text files.
-These files are stored in the `things` folder under the openHAB configuration path, e.g. `/etc/openhab2/things/` or `openhab2/conf/things`.
+These files are stored in `$OPENHAB_CONF/things`.
 
 Benefits of defining Things, Items and other aspects of openHAB in configuration text files are, that they are statically defined, unambiguous, flexible and easy to backup and restore.
 The main downsides of configuration files are the effort needed to compose them and the probability for typing errors.

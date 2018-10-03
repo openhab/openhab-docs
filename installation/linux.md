@@ -772,7 +772,7 @@ Check the network devices manager of your local operating system to find and acc
 These might however not be auto-discovered.
 You can also manually connect:
 
-- **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
+- **On macOS:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
 - **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
 
 Be sure to use the actual host name instead of `openhab-device`.
