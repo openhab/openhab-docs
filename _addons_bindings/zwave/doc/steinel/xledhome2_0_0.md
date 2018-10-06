@@ -480,6 +480,7 @@ The XLED Home 2 supports 4 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline
 - Device Reset Locally (immediately)  
 - Notifications:  
@@ -511,7 +512,8 @@ nel association is created the events are sent from toggle button endpoint.
 All notifications to lifeline are sent as sensor states regardless of sensor  
 settings and states as SLAVE\_MODE, LOCAL\_DISABLED and MOTION_  
 ENABLE
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Control: Key01
 
@@ -530,7 +532,8 @@ is off (not using internal motion sensor, just reacting to remote motion events
 in this case).  
 If multichannel association is created the events are sent from motion sensor  
 endpoint.
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Motion Begin/End (PIR/radar/iHF)
 
@@ -551,11 +554,14 @@ All devices in a group should have the same TIME settings in order that they
 switch off at the same time.  
 If multichannel association is created the events are sent from motion sensor  
 endpoint.
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Ambient light
 
-This group supports 15 nodes.
+Sensor: Luminescence
+
+Association group 4 supports 15 nodes.
 
 ## Technical Information
 

@@ -163,13 +163,17 @@ The HKZW_MS01 supports 2 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Reports the motion detection and battery
 Reports the motion detection and battery
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Basic Set
 
-This group supports 5 nodes.
+assigned to send Basic Set Command
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

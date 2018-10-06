@@ -191,23 +191,28 @@ The HRT4-ZW supports 5 association groups.
 
 ### Group 1: Thermostat Mode Set
 
-This group supports 4 nodes.
+
+Association group 1 supports 4 nodes.
 
 ### Group 2: Binary Switch Set
 
-This group supports 4 nodes.
+
+Association group 2 supports 4 nodes.
 
 ### Group 3: Unsolicited Battery Level Reports
 
-This group supports 4 nodes.
+
+Association group 3 supports 4 nodes.
 
 ### Group 4: Thermostat Set Point Reports
 
-This group supports 4 nodes.
+
+Association group 4 supports 4 nodes.
 
 ### Group 5: Unsolicited Sensor Multilevel Reports
 
-This group supports 4 nodes.
+
+Association group 5 supports 4 nodes.
 
 ## Technical Information
 

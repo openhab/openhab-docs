@@ -251,7 +251,8 @@ The Heating Control supports 1 association group.
 
 Unsolicited reports
 Every unsolicited report will be sent to the nodes in this group. 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

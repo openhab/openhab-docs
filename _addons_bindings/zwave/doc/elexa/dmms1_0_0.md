@@ -259,27 +259,31 @@ The DMMS1 supports 4 association groups.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline communication of motion / no motion and light level status to Z-Wave controller. Supported command classes: NOTIFICATION\_REPORT\_V4 SENSOR\_BINARY\_REPORT\_V2 SENSOR\_MULTILEVEL\_REPORT\_V7 BATTERY\_REPORT DEVICE\_RESET\_LOCALLY\_NOTIFICATION
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: BASIC
 
 BASIC_SET Trigger associated devices
 control command communication to associated Z-Wave devices in the network. Use parameters 2, 3, 5, and 8 to configure this group’s settings. Supported command classes: BASIC_SET 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Notification Reports
 
 NOTIFICATION\_REPORT\_V4
 notifications to Z-Wave devices associated in this group. Supported command classes: NOTIFICATION\_REPORT\_V4
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: SENSOR BINARY
 
 SENSOR\_BINARY\_REPORT_V2
 notifications to Z-Wave devices associated in this group. Supported command classes: SENSOR\_BINARY\_REPORT_V2
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

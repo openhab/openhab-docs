@@ -623,47 +623,69 @@ The ZMNHDD supports 11 association groups.
 
 ### Group 1: Controller Updates
 
-This group supports 1 node.
+Lifeline group
+
+Association group 1 supports 1 node.
 
 ### Group 2: I1 basic on/off
 
-This group supports 16 nodes.
+Triggered at change of the input I1 state and reflecting its state
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: I1 start/stop level change
 
-This group supports 16 nodes.
+Triggered at change of the input I1 state and reflecting its state
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Multilevel
 
-This group supports 16 nodes.
+Triggered at changes of state/value of the Flush Dimmer
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: I2 basic on/off
 
-This group supports 16 nodes.
+Triggered at change of the input I2 state and reflecting its state
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: I2 notification report
 
-This group supports 16 nodes.
+Triggered at change of the input I2 state and reflecting its state
+
+Association group 6 supports 16 nodes.
 
 ### Group 7: I2 binary sensor
 
-This group supports 16 nodes.
+Triggered at change of the input I2 state and reflecting its state
+
+Association group 7 supports 16 nodes.
 
 ### Group 8: I3 basic on/off
 
-This group supports 16 nodes.
+Triggered at change of the input I3 state and reflecting its state
+
+Association group 8 supports 16 nodes.
 
 ### Group 9: I3 notification report
 
-This group supports 16 nodes.
+Triggered at change of the input I3 state and reflecting its state
+
+Association group 9 supports 16 nodes.
 
 ### Group 10: I3 binary sensor
 
-This group supports 16 nodes.
+Triggered at change of the input I3 state and reflecting its state
+
+Association group 10 supports 16 nodes.
 
 ### Group 11: Multilevel sensor
 
-This group supports 16 nodes.
+Triggered at change of temperature sensor
+
+Association group 11 supports 16 nodes.
 
 ## Technical Information
 

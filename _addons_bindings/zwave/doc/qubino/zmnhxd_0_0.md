@@ -19,10 +19,11 @@ The ZMNHXD supports routing. This allows the device to communicate using other r
 
 Qubino 3-Phase Smart Meter is used for energy measurements in three-phase electrical power network. It reduces energy consumption, lowers your utility
 
-**FACTORY RESET**  
-1. Connect the device to the power supply  
-2. Press and hold the S service button between 6 seconds and 20 seconds  
-3. Device will be removed from you network
+**FACTORY RESET**
+
+  1. Connect the device to the power supply
+  2. Press and hold the S service button between 6 seconds and 20 seconds
+  3. Device will be removed from you network
 
 **LED1 (Green)**
 
@@ -33,7 +34,7 @@ Qubino 3-Phase Smart Meter is used for energy measurements in three-phase electr
 
   1. External IR relay enabled only 
       * LED is ON = External IR relay is turned ON
-      * LED is OFF = External IR relay is turned OF
+      * LED is OFF = External IR relay is turned OFF
       * LED is 0.5s OFF, 0.5s ON = IR communication error
   2. External TRIAC relay enabled only 
       * LED is ON = External IR relay is turned ON
@@ -50,21 +51,20 @@ Qubino 3-Phase Smart Meter is used for energy measurements in three-phase electr
 
 **AUTOMATICALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (AUTO INCLUSION)**
 
-1. Enable add/remove mode on your Z-Wave gateway (hub)  
-2. Automatic selection of secure/insecure inclusion  
-3. The device can be automatically added to a Z-Wave network during the first 2 minutes  
-4. Connect the device to the power supply  
-5. Auto-inclusion will be initiated within 5 seconds of connection to the power supply and the  
-device will automatically enroll in your network
+  1. Enable add/remove mode on your Z-Wave gateway (hub)
+  2. Automatic selection of secure/insecure inclusion
+  3. The device can be automatically added to a Z-Wave network during the first 2 minutes
+  4. Connect the device to the power supply
+  5. Auto-inclusion will be initiated within 5 seconds of connection to the power supply and the device will automatically enroll in your network
 
 NOTE: For S2 inclusion please check chapter – »16. Z-Wave Security«.
 
 **MANUALLY ADDING THE DEVICE TO A Z-WAVE NETWORK (MANUAL INCLUSION)**
 
-1. Connect the device to the power supply  
-2. Enable add/remove mode on your Z-Wave gateway (hub)  
-2. Toggle the Service button S between 0.2 and 6 seconds  
-3. A new multi-channel device will appear on your dashboard
+  1. Connect the device to the power supply
+  2. Enable add/remove mode on your Z-Wave gateway (hub)
+  3. Toggle the Service button S between 0.2 and 6 seconds
+  4. A new multi-channel device will appear on your dashboard
 
 ### Exclusion Information
 
@@ -78,12 +78,18 @@ NOTE: For S2 inclusion please check chapter – »16. Z-Wave Security«.
 
 ### General Usage Information
 
-Installation  
-Before installing the device, please read the following carefully and follow the instructions exactly:  
-**Danger of electrocution!**  
-Installation of this device requires a great degree of skill and may be performed only by a licensed and qualified electrician. Please keep in mind that even when the device is turned off, voltage may still be present in the device’s terminals.  
-**Note!**  
-Do not connect the device to loads exceeding the recommended values. Connect the device exactly as shown in the provided diagrams. Improper wiring may be dangerous and result in equipment damage.  
+**Installation**
+
+Before installing the device, please read the following carefully and follow the instructions exactly:
+
+**Danger of electrocution!**
+
+Installation of this device requires a great degree of skill and may be performed only by a licensed and qualified electrician. Please keep in mind that even when the device is turned off, voltage may still be present in the device’s terminals.
+
+**Note!**
+
+Do not connect the device to loads exceeding the recommended values. Connect the device exactly as shown in the provided diagrams. Improper wiring may be dangerous and result in equipment damage.
+
 Electrical installation must be protected by directly associated overcurrent protection fuse with rated current up to 65A, it must be used according to wiring diagram to achieve appropriate overload protection of the device.  
   
 The installation process, tested and approved by professional electricians, consists of the following simple steps:
@@ -459,7 +465,10 @@ The ZMNHXD supports 1 association group.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline group (reserved for communication with the gateway (hub))
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

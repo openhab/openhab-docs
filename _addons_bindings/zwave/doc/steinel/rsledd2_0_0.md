@@ -475,10 +475,13 @@ The RS LED D2 Z-Wave supports 5 association groups.
 
 ### Group 0: Root
 
-This group supports 1 node.
+Root
+
+Association group 0 supports 1 node.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline
 Lifeline messages
 
@@ -515,7 +518,8 @@ Central scene notification is sent as reaction to user interaction.
 If multichannel association is created the events are sent from toggle button endpoint.
 
 All notifications to lifeline are sent as sensor states regardless of sensor settings and states as SLAVE\_MODE, LOCAL\_DISABLED and MOTION_ENABLE.
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Control: Key01
 
@@ -527,7 +531,8 @@ This is intended for use especially with third-party devices that do not impleme
 BASIC_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously.
 
 Only for use in master-slave system, multi-device control is not possible.
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Motion Begin/End (PIR/radar/iHF)
 
@@ -552,7 +557,8 @@ If multichannel association is created the events are sent from motion sensor en
 Group 2 is evaluated and frames are transmitted there also in SLAVE\_MODE, regardless of LOCAL\_DISABLED state and when MOTION_ENABLE is off (not using internal motion sensor, just reacting to remote motion events in this case).
 
 If multichannel association is created the events are sent from motion sensor endpoint.
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Ambient light
 
@@ -565,7 +571,8 @@ Frames are sent a maximum of once per 2.5 minutes and a minimum of once per 15 m
 When device already uses remote Ambient Light value, then this value is also retransmitted to group 4.
 
 All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time.
-This group supports 15 nodes.
+
+Association group 4 supports 15 nodes.
 
 ## Technical Information
 

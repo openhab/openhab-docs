@@ -597,31 +597,36 @@ Sends:
 - Device Reset Notifications  
 - Thermostat Setpoint Reports  
 - Thermostat Mode Reports
-This group supports 7 nodes.
+
+Association group 1 supports 7 nodes.
 
 ### Group 2: Thermostat device 0
 
 The main thermostat device
 Send Binary Switch Set commands representing the status of the internal relay.
-This group supports 7 nodes.
+
+Association group 2 supports 7 nodes.
 
 ### Group 3: Thermostat device 0
 
 The main thermostat device
 Send Multilevel Sensor Reports for internal temperature sensor.
-This group supports 7 nodes.
+
+Association group 3 supports 7 nodes.
 
 ### Group 4: Thermostat device 0
 
 The main thermostat device
 Send Multilevel Sensor Reports for external temperature sensor.
-This group supports 7 nodes.
+
+Association group 4 supports 7 nodes.
 
 ### Group 5: Thermostat device 0
 
 The main thermostat device
 Send Multilevel Sensor Reports for floor temperature sensor.
-This group supports 7 nodes.
+
+Association group 5 supports 7 nodes.
 
 ## Technical Information
 

@@ -26,7 +26,7 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 
 ## Supported Things
 
-The ZWave binding provides support for a large number of devices (currently 781 from 110 manufacturers).
+The ZWave binding provides support for a large number of devices (currently 792 from 111 manufacturers).
 See the [full list of supported things](doc/things.md).
 
 

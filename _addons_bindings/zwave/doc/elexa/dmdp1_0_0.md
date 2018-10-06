@@ -989,31 +989,36 @@ The DMDP1 supports 5 association groups.
 
 Group 1 (Lifeline Group)
 Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report or a Binary Sensor Report when it is opened or closed (see Configuration Parameter 3.) It also sends this group a multilevel sensor report to report the temperature and a Battery Report in response to Battery Get commands.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
 Group 2
 Group 2 supports up to 5 members and the Door/Window Sensor sends a Basic Set command to this group (or the Control Group) to directly trigger devices (like a light, chime, etc.) when the tamper switch either opens or closes. The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 07.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
 Group 3
 Group 3 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION\_REPORT or SENSOR\_BINARY_REPORT when the tamper switch either opens or closes.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
 Group 4
 Group 4 supports up to 5 members and the Door/Window Sensor sends a Basic Set command to this group to directly trigger devices (like a light, chime, etc.) when the sensor detects the door/window opening. The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 08 and 09.
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Group 5
 
 Group 5
 Group 5 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION\_REPORT or SENSOR\_BINARY_REPORT when the sensor detects the door/window opening.
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ## Technical Information
 

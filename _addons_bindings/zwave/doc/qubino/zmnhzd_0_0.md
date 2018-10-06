@@ -473,15 +473,21 @@ The ZMNHZD supports 3 association groups.
 
 ### Group 1: Lifeline group
 
-This group supports 1 node.
+reserved for the communication with the main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic on/off
 
-This group supports 16 nodes.
+triggered when the wind gust of the wind gauge exceed the configuration parameter 1 value
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Basic on/off
 
-This group supports 16 nodes.
+triggered when the rain rate exceed the configuration parameter 2 value
+
+Association group 3 supports 16 nodes.
 
 ## Technical Information
 

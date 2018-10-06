@@ -398,23 +398,28 @@ The ZMNHCD supports 5 association groups.
 
 ### Group 1: Controller Updates
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: On/Off Triggered by I1
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: On/Off Triggered by I2
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Multi-level Triggerd by Shutter Position
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Multilevel Trigger by Slat Position
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ## Technical Information
 

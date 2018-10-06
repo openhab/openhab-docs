@@ -157,7 +157,8 @@ The LRM-AS supports 1 association group.
 
 ### Group 1: Group 1
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

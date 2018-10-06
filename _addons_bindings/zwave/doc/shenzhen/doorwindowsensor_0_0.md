@@ -167,25 +167,29 @@ It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wav
   * BATTERY_REPORT
   * SENSOR\_BINARY\_REPORT
   * DEVICE\_RESET\_LOCALLY_NOTIFICATION
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Group 2
 
 Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.
 BASIC_SET
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
 NOTIFICATION_REPORT
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
 Send Notification to associated devices.
 SENSOR\_BINARY\_REPORT
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

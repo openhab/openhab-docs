@@ -106,7 +106,8 @@ The SmartPower supports 1 association group.
 
 ### Group 1: Switch
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

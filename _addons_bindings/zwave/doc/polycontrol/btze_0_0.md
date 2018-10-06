@@ -192,9 +192,11 @@ The Danalock V3-BTZE supports 1 association group.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Z-Wave Plus Lifeline
 Z-Wave Plus Lifeline • Device Reset Locally: triggered upon reset. • Battery/notification: triggered upon low battery. • Door Lock operation report: triggered upon a change in door lock • Notification: triggered upon a change in door lock
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

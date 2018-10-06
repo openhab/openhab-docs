@@ -221,21 +221,25 @@ The ZMNHAA supports 4 association groups.
 ### Group 1: basic on/off (triggered at change of the output 
 Q state and reflecti
 
-This group supports 4 nodes.
+
+Association group 1 supports 4 nodes.
 
 ### Group 2:  basic on/off (triggered at change of the input I2 
 state and reflect
 
-This group supports 4 nodes.
+
+Association group 2 supports 4 nodes.
 
 ### Group 3:  basic on/off (triggered at change of the input I3 
 state and reflect
 
-This group supports 4 nodes.
+
+Association group 3 supports 4 nodes.
 
 ### Group 4: Controller Updates
 
-This group supports 1 node.
+
+Association group 4 supports 1 node.
 
 ## Technical Information
 

@@ -118,39 +118,39 @@ The Vitrum Satellite VI supports 6 association groups.
 
 ### Group 1: Button channel 1
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Button channel 2
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Button channel 3
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Button channel 4
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Button channel 5
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ### Group 6: Button channel 6
 
-
 Control up to 5 devices with this button. The kind of device controlled depends on the Button configuration.
-This group supports 5 nodes.
+
+Association group 6 supports 5 nodes.
 
 ## Technical Information
 

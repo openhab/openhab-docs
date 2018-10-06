@@ -292,19 +292,24 @@ The GWPN5 supports 4 association groups.
 
 ### Group 1: Wheel position change
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Current leakage on relay
 
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ### Group 3: Power level change
 
-This group supports 1 node.
+The new power reading is sent if the delta of the change is greater than the defined minimum variation
+
+Association group 3 supports 1 node.
 
 ### Group 4: Over-current detection
 
-This group supports 1 node.
+
+Association group 4 supports 1 node.
 
 ## Technical Information
 

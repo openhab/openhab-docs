@@ -534,27 +534,33 @@ The ZMNHLA supports 6 association groups.
 
 ### Group 1: On/Off Triggered by Q State
 
-This group supports 16 nodes.
+
+Association group 1 supports 16 nodes.
 
 ### Group 2: On/Off Triggered by I2
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: On/Off Triggered by I3
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: On/Off Triggerd by High Temp
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: On/Off Trigger by Low Temp
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: Controller Updates
 
-This group supports 1 node.
+
+Association group 6 supports 1 node.
 
 ## Technical Information
 

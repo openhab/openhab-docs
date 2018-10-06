@@ -159,27 +159,27 @@ The DMWD1 supports 4 association groups.
 
 ### Group 1: Group 1
 
-
 Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report and a Binary Sensor Report when it is opened or closed. It also sends this group a Battery Report in response to Battery Get commands.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2 
 
-
 The Door/Window Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to events. Then, after a preset delay, a BASIC_ SET(00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp,) and the delay time before the BASIC_SET(00) is sent is configured using configuration parameters 1 and 2 respectively. 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-
 Group 3 supports up to 5 members and the Door/Window Sensor sends it a NOTIFICATION_REPORT when the door either opens or closes.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
-
 Group 4 supports up to 5 members and the Door/Window Sensor sends it a SENSOR\_BINARY\_REPORT when the door either opens or closes
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

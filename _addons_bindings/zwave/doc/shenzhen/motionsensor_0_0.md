@@ -320,25 +320,29 @@ COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V7
 BATTERY_REPORT
 
 DEVICE\_RESET\_LOCALLY_NOTIFICATION
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Group 2
 
 Sending Control Command to associated devices. This association group is configured through the advanced parameters no. 2, 3, 5 and 8
 BASIC_SET
-This group supports 4 nodes.
+
+Association group 2 supports 4 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
 NOTIFICATION\_REPORT\_V4
-This group supports 4 nodes.
+
+Association group 3 supports 4 nodes.
 
 ### Group 4: Group 4
 
 Send Notification to associated devices.
 SENSOR\_BINARY\_REPORT_V2
-This group supports 4 nodes.
+
+Association group 4 supports 4 nodes.
 
 ## Technical Information
 

@@ -174,15 +174,18 @@ The EZMultiPli supports 2 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network.
 This group is normally automatically assigned to the Z-Wave system controller when EZMultiPli is added to the ZWave network. All Notification command class reports (motion detection) are sent to the node assigned to this group. Advanced lighting control should be handled by a home control application based on these reports.
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic
 
 This group is used to directly turn lights on or off when motion is detected.
 This group is used to directly turn lights on or off when motion is detected. Up to four (4) Z-Wave devices can be associated in this group. EZMultiPli will send a BASIC ON command to all devices that are associated in this group. Note that the Z-Wave devices in this group must be within direct range (about 30’) of EZMultiPli. Control of nodes that are further away or blocked by metal or concrete walls should rely on the Z-Wave system controller and the home-control application for reliable operation. Note that including the NodeID of EZMultiPli in this group will control the LED which will come on when motion is detected and goes off when no motion has been detected for OnTime minutes.
-This group supports 4 nodes.
+
+Association group 2 supports 4 nodes.
 
 ## Technical Information
 

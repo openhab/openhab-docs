@@ -163,7 +163,8 @@ The TZEMT400BB32MAA supports 1 association group.
 
 ### Group 1: Reports
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

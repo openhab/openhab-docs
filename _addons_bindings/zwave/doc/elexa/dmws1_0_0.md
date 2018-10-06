@@ -236,27 +236,29 @@ The DMWS1 supports 4 association groups.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller.  The Leak Sensor sends this group a Notification Report and a Binary Sensor Report when water is detected or removed.  It also sends this group a Battery Report in reponse to Battery Get commands and a Locally Reset Notification upon local reset.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Control
 
 Group to receive BASIC_SET on leak change
 The Leak Sensor sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) in response to a detected leak. Then, after the leak is no longer detected, a BASIC_SET(0x00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 7. 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Notification
 
-
 Group 3 supports up to 5 members and the Leak Sensor sends it a NOTIFICATION_REPORT when water is detected or removed
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Sensor Binary 
 
-
 Group 4 supports up to 5 members and the Leak Sensor sends it a SENSOR\_BINARY\_REPORT when water is detected or removed.
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

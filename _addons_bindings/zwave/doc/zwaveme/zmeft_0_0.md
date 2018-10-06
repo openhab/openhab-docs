@@ -186,7 +186,9 @@ The ZME_FT supports 1 association group.
 
 ### Group 1: Group 1
 
-This group supports 10 nodes.
+Unsolicited notifications about thermostat mode and setpoint temperature changes
+
+Association group 1 supports 10 nodes.
 
 ## Technical Information
 

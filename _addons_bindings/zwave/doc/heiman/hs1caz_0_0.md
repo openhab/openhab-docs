@@ -121,6 +121,7 @@ The HS1CA-Z supports 3 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Battery, Notification, Reset locally Notification, Binary report
 <table>
   <tr>
@@ -129,19 +130,22 @@ Battery, Notification, Reset locally Notification, Binary report
     </td>
   </tr>
 </table>
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Root device Group (binary sensor)
 
 Binary Sensor CO via lifeline and on status Chance of CO detection
 u25b6 Association group 2: Root Device group(Binary Sensor) Binary Sensor Command Class: Compatible with 300 series 1-Binary Sensor reports status of CO or no CO via Lifeline. 2-When the sensor detects status change of CO and no CO, the device will be triggered.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Root device Group (notification)
 
 CO status as notification report and on status change of CO detection
 u25b6Association group 3: Root Device group(Notification) 1-Notification reports status of detect CO or no CO via Lifeline. 2-When the sensor detects status change of CO and no CO, the device will be triggered.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

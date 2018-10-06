@@ -147,15 +147,22 @@ The 32563 supports 3 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 5 nodes.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Control
 
-This group supports 5 nodes.
+For Control
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Control
 
-This group supports 5 nodes.
+For Control
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

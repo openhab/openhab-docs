@@ -299,19 +299,23 @@ The KFOB supports 4 association groups.
 
 ### Group 1: Controlled by button 1 or single clicks of buttons 1 and 3
 
-This group supports 8 nodes.
+
+Association group 1 supports 8 nodes.
 
 ### Group 2: Controlled by button 3 or double clicks of buttons 1 and 3
 
-This group supports 8 nodes.
+
+Association group 2 supports 8 nodes.
 
 ### Group 3: Controlled by button 2 or single clicks of buttons 2 and 4
 
-This group supports 8 nodes.
+
+Association group 3 supports 8 nodes.
 
 ### Group 4: Controlled by button 4 or double clicks of buttons 2 and 4
 
-This group supports 8 nodes.
+
+Association group 4 supports 8 nodes.
 
 ## Technical Information
 

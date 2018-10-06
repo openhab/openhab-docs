@@ -311,31 +311,32 @@ The VMZ Solar z-wave plus supports 4 association groups.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 <commandClass>BATTERY</commandClass>  
 <commandClass>ALARM</commandClass>  
 <commandClass>DEVICE\_RESET\_LOCALLY</commandClass>  
 <commandClass>BASIC</commandClass>  
  
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: BasicRepeat
 
-
 <commandClass>BASIC</commandClass>
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: MultilevelRepeat
 
-
 <commandClass>SWITCH_MULTILEVEL</commandClass>
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: BasicControl
 
-
 <commandClass>BASIC</commandClass>
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

@@ -90,9 +90,10 @@ The FLF-ZWAVE5 R1 supports 1 association group.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Group one is a lifeline group who will receive unsolicited messages relating to flood/freeze notifications, case tampering notifications, low-battery notifications.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

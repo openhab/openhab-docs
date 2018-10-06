@@ -453,7 +453,8 @@ Report Message, e.g. tamper alarm
 Notice: The device supports 1 group.
 
 The group 1 is for receiving the report message, like tamper event. And the group 8 nodes maximum
-This group supports 8 nodes.
+
+Association group 1 supports 8 nodes.
 
 ## Technical Information
 

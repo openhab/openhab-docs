@@ -78,15 +78,18 @@ The Vitrum III EU Dimmer supports 3 association groups.
 
 ### Group 1: Switch channel 1
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Dimmer Channel 2
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Dimmer Channel 3
 
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

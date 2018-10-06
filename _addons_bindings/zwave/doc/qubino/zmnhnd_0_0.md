@@ -301,31 +301,37 @@ The ZMNHND supports 6 association groups.
 
 ### Group 1: Lifeline to Controller (reserved for communication with the main contr
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic on/off (triggered at change of the input Q 
 state and reflectin
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Basic on/off (triggered at change of the input I2 
 state and reflecti
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Notification report (triggered at change of the input I2 
 state and r
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Binary Sensor (triggered at change of the input I2 
 state and reflect
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 9: Multilevel Sensor report (triggered at change of temperature sensor)
 
-This group supports 16 nodes.
+
+Association group 9 supports 16 nodes.
 
 ## Technical Information
 

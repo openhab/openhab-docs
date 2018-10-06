@@ -232,7 +232,8 @@ The Tag Reader supports 1 association group.
 
 Link devices to the tag reader
 This class can be used to link other devices to the tag reader. These devices also get the burglar frame send to them.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

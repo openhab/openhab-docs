@@ -114,11 +114,16 @@ The ZWN-RSM1-PLUS supports 2 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Send device reset locally notification
+
+Association group 1 supports 1 node.
 
 ### Group 2: StatusReport_ EP
 
-This group supports 3 nodes.
+Switch Binary Report
+
+Association group 2 supports 3 nodes.
 
 ## Technical Information
 

@@ -446,35 +446,43 @@ The ZMNHBD supports 8 association groups.
 
 ### Group 1: Default Reporting Group
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Q1 basic on/off
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Q1 switch binary
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Q1 power meter
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Q2 basic on/off
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: Q2 switch binary
 
-This group supports 16 nodes.
+
+Association group 6 supports 16 nodes.
 
 ### Group 7: Q2 power meter
 
-This group supports 16 nodes.
+
+Association group 7 supports 16 nodes.
 
 ### Group 8: Multilevel sensor
 
-This group supports 16 nodes.
+
+Association group 8 supports 16 nodes.
 
 ## Technical Information
 

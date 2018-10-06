@@ -842,39 +842,56 @@ The ZMNHLD supports 9 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+reserved for communication with the main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2: basic on/off (output)
 
-This group supports 16 nodes.
+Triggered at change of the output
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Sensor_multilevel_get
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: basic on/off (temp limit)
 
-This group supports 16 nodes.
+triggered by Too high temperature limit
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Thermostat setpoint get
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: basic on/off (window)
 
-This group supports 16 nodes.
+triggered by change of I1
+
+Association group 6 supports 16 nodes.
 
 ### Group 7: basic on/off (condense sensor)
 
-This group supports 16 nodes.
+triggered by change of I2
+
+Association group 7 supports 16 nodes.
 
 ### Group 8: basic on/off (flood sensor)
 
-This group supports 16 nodes.
+triggered by change of I3
+
+Association group 8 supports 16 nodes.
 
 ### Group 9: sensor multilevel report
 
-This group supports 16 nodes.
+Triggered at change of temperature
+
+Association group 9 supports 16 nodes.
 
 ## Technical Information
 

@@ -239,7 +239,8 @@ The Alarm Sound supports 2 association groups.
 
 Changes the LED on the device
 When the device receives an binary switch/ basic report, this will update the LED
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Association group 2
 
@@ -253,7 +254,8 @@ The alarm sound reports it status to the associated devices
 - When the device gets unplugged the standard "power offline" sound is on, the device will send a Switch binary report (on).
 
 When the Device is connected to a powersupply, the device will say it has connection to the associated devices in group 2. when the connection is succesful the led will be on for 1 second. If the device cannot make a connection the led will blink 6 times. If the led doesn't go on there is no device in this association group.
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ## Technical Information
 

@@ -302,11 +302,15 @@ The iShutter supports 2 association groups.
 
 ### Group 1: Click, press and hold of up/down buttons
 
-This group supports 10 nodes.
+Click, press and hold of up/down buttons
+
+Association group 1 supports 10 nodes.
 
 ### Group 2:  Send Reports on blind state change
 
-This group supports 10 nodes.
+Send Reports on blind state change
+
+Association group 2 supports 10 nodes.
 
 ## Technical Information
 

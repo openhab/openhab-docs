@@ -65,7 +65,8 @@ The VRPA1 supports 1 association group.
 
 ### Group 1: Unknown
 
-This group supports 254 nodes.
+
+Association group 1 supports 254 nodes.
 
 ## Technical Information
 

@@ -422,7 +422,8 @@ Lifeline.
 Sends Device Reset notifications and Basic Report On / Off when relay output 1 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Control device 0
 
@@ -432,7 +433,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 2 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Control device 0
 
@@ -442,7 +444,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 3 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Control device 0
 
@@ -452,7 +455,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 4 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Control device 0
 
@@ -462,7 +466,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 5 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ### Group 6: Control device 0
 
@@ -472,7 +477,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 6 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 6 supports 5 nodes.
 
 ### Group 7: Control device 0
 
@@ -482,7 +488,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 7 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 7 supports 5 nodes.
 
 ### Group 8: Control device 0
 
@@ -492,7 +499,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 8 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 8 supports 5 nodes.
 
 ### Group 9: Control device 0
 
@@ -502,7 +510,8 @@ Lifeline.
 Sends Basic Report On / Off when relay output 9 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 9 supports 5 nodes.
 
 ### Group 10: Control device 0
 
@@ -512,31 +521,36 @@ Lifeline.
 Sends Basic Report On / Off when relay output 10 is activated.
 
 Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 10 supports 5 nodes.
 
 ### Group 11: Control device 0
 
 Main control device
 Sends Multilevel Sensor Reports for input 1. Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 11 supports 5 nodes.
 
 ### Group 12: Control device 0
 
 Main control device
 Sends Multilevel Sensor Reports for input 2. Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 12 supports 5 nodes.
 
 ### Group 13: Control device 0
 
 Main control device
 Sends Multilevel Sensor Reports for input 3. Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 13 supports 5 nodes.
 
 ### Group 14: Control device 0
 
 Main control device
 Sends Multilevel Sensor Reports for input 4. Max. nodes in the group: 5
-This group supports 5 nodes.
+
+Association group 14 supports 5 nodes.
 
 ## Technical Information
 

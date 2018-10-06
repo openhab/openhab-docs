@@ -170,11 +170,13 @@ The doorSensor supports 2 association groups.
 
 ### Group 1: Send frame to every node in this group (internal contact)
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Send frame to every node in this group (external contact)
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

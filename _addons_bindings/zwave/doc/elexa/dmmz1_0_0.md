@@ -189,27 +189,27 @@ The DMMZ1 supports 4 association groups.
 
 ### Group 1: Group 1
 
-
 Group 1 is the “Lifeline” group, which can hold five members, typically including the main Z-Wave controller. The Door/Window Sensor sends this group a Notification Report and a Binary Sensor Report when it is tripped, reset, armed, and disarmed. It also sends this group a Battery Report in response to Battery Get commands.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
-
 The Mouser sends a Basic Set command to Association Group 2 (or the Control Group) to directly trigger devices (like a light, chime, etc.) when it is tripped. After the trap is reset, a BASIC_SET(00) command is sent to reset the device (e.g. turn off the light.) The value of the Basic Set command (e.g. brightness of the lamp) is configured using configuration parameter 1.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-
 Group 3 supports up to 5 members and the Mouser sends it a NOTIFICATION_REPORT when tripped, reset, armed, and disarmed.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
-
 Group 4 supports up to 5 members and the Mouser sends it a SENSOR\_BINARY\_REPORT when tripped, reset, armed, and disarmed.
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

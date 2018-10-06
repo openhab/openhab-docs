@@ -63,25 +63,29 @@ The VRCZ4 supports 4 association groups.
 
 Button 1
 First (top) button on controller, can be associated with up to 32 devices.
-This group supports 32 nodes.
+
+Association group 1 supports 32 nodes.
 
 ### Group 2: Group 2
 
 Button 2
 Second button on controller. Can be associated with up to 32 devices.
-This group supports 32 nodes.
+
+Association group 2 supports 32 nodes.
 
 ### Group 3: Group 3
 
 Button 3
 Third button on controller. Can be associated with up to 32 devices.
-This group supports 32 nodes.
+
+Association group 3 supports 32 nodes.
 
 ### Group 4: Group 4
 
 Button 4
 Fourth button on controller. Can be associated with up to 32 devices.
-This group supports 32 nodes.
+
+Association group 4 supports 32 nodes.
 
 ## Technical Information
 

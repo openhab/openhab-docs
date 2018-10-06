@@ -228,7 +228,8 @@ The EZMotion Express supports 1 association group.
 
 ### Group 1: Association Group
 
-This group supports 4 nodes.
+
+Association group 1 supports 4 nodes.
 
 ## Technical Information
 

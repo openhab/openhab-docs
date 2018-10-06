@@ -1113,127 +1113,189 @@ The Heatit Z-Scene Controller supports 31 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 5 nodes.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Basic Report On/Off button 1
 
-This group supports 5 nodes.
+Send Basic Report (On/Off) when button #1 is used
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Basic Set On/Off button #1
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #1 is used
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Binary Switch Set On/Off button #1
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #1 is used
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Binary Toggle Switch Set button #1
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #1 is used.
+
+Association group 5 supports 5 nodes.
 
 ### Group 6: Multilevel Switch for button #1
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #1 is used.
+
+Association group 6 supports 5 nodes.
 
 ### Group 7: Basic Report On/Off button 2
 
-This group supports 5 nodes.
+Send Basic Report (On/Off) when button #2 is used
+
+Association group 7 supports 5 nodes.
 
 ### Group 8: Basic Set On/Off button #2
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #2 is used
+
+Association group 8 supports 5 nodes.
 
 ### Group 9: Binary Switch Set On/Off button #2
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #2 is used
+
+Association group 9 supports 5 nodes.
 
 ### Group 10: Binary Toggle Switch Set button #2
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #2 is used
+
+Association group 10 supports 5 nodes.
 
 ### Group 11: Multilevel Switch for button #2
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #2 is used.
+
+Association group 11 supports 5 nodes.
 
 ### Group 12: Basic Report On/Off button 3
 
-This group supports 5 nodes.
+Send Basic Report (On/Off) when button #3 is used
+
+Association group 12 supports 5 nodes.
 
 ### Group 13: Basic Set On/Off button #3
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #3 is used
+
+Association group 13 supports 5 nodes.
 
 ### Group 14: Binary Switch Set On/Off button #3
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #3 is used
+
+Association group 14 supports 5 nodes.
 
 ### Group 15: Binary Toggle Switch Set button #3
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #3 is used.
+
+Association group 15 supports 5 nodes.
 
 ### Group 16: Multilevel Switch for button #3
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #3 is used.
+
+Association group 16 supports 5 nodes.
 
 ### Group 17: Basic Report On/Off button 4
 
-This group supports 5 nodes.
+Send Basic Report (On/Off) when button #4 is used
+
+Association group 17 supports 5 nodes.
 
 ### Group 18: Basic Set On/Off button #4
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #4 is used
+
+Association group 18 supports 5 nodes.
 
 ### Group 19: Binary Switch Set On/Off button #4
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #4 is used
+
+Association group 19 supports 5 nodes.
 
 ### Group 20: Binary Toggle Switch Set button #4
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #4 is used
+
+Association group 20 supports 5 nodes.
 
 ### Group 21: Multilevel Switch for button #4
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #4 is used.
+
+Association group 21 supports 5 nodes.
 
 ### Group 22: Basic Report On/Off button #5
 
-This group supports 5 nodes.
+Sends Basic Report (On/Off) when button #5 is used
+
+Association group 22 supports 5 nodes.
 
 ### Group 23: Basic Set On/Off button #5
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #5 is used
+
+Association group 23 supports 5 nodes.
 
 ### Group 24: Binary Switch Set On/Off button #5
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #5 is used
+
+Association group 24 supports 5 nodes.
 
 ### Group 25: Binary Toggle Switch Set button #5
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #5 is used
+
+Association group 25 supports 5 nodes.
 
 ### Group 26: Multilevel Switch for button #5
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #5 is used.
+
+Association group 26 supports 5 nodes.
 
 ### Group 27: Basic Report On/Off button 6
 
-This group supports 5 nodes.
+Send Basic Report (On/Off) when button #6 is used
+
+Association group 27 supports 5 nodes.
 
 ### Group 28: Basic Set On/Off button #6
 
-This group supports 5 nodes.
+Sends Basic Set (On/Off) when button #6 is used
+
+Association group 28 supports 5 nodes.
 
 ### Group 29: Binary Switch Set On/Off button #6
 
-This group supports 5 nodes.
+Sends Binary Switch Set (On/Off) when button #6 is used
+
+Association group 29 supports 5 nodes.
 
 ### Group 30: Binary Toggle Switch Set button #6
 
-This group supports 5 nodes.
+Send Binary Toggle Switch Set when button #6 is used
+
+Association group 30 supports 5 nodes.
 
 ### Group 31: Multilevel Switch for button #6
 
-This group supports 5 nodes.
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when button #6 is used.
+
+Association group 31 supports 5 nodes.
 
 ## Technical Information
 

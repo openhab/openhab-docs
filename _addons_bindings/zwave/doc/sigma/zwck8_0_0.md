@@ -82,23 +82,29 @@ The K8 supports 5 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Button pair 1
 
-This group supports 20 nodes.
+
+Association group 2 supports 20 nodes.
 
 ### Group 3: Button pair 2
 
-This group supports 20 nodes.
+
+Association group 3 supports 20 nodes.
 
 ### Group 4: Button pair 3
 
-This group supports 20 nodes.
+
+Association group 4 supports 20 nodes.
 
 ### Group 5: Button pair 4
 
-This group supports 20 nodes.
+
+Association group 5 supports 20 nodes.
 
 ## Technical Information
 

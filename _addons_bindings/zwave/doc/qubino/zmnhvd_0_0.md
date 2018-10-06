@@ -375,27 +375,40 @@ The ZMNHVD supports 6 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Reserved for communication with the main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2:  basic on/off 
 
-This group supports 16 nodes.
+triggered at change of the input I1 state and reflecting its state
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: start level change/stop level change
 
-This group supports 16 nodes.
+triggered at change of the input I1 state and reflecting its state) up to 16 nodes. Working only when the Parameter no. 1 is set to mono stable switch type.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: multilevel set
 
-This group supports 16 nodes.
+triggered at changes of state/value of the Flush Dimmer 0-10V
+
+Association group 4 supports 16 nodes.
 
 ### Group 5:  multilevel sensor report
 
-This group supports 16 nodes.
+triggered at change of analogue sensor
+
+Association group 5 supports 16 nodes.
 
 ### Group 6:  multilevel sensor report
 
-This group supports 16 nodes.
+triggered at change of temperature sensor
+
+Association group 6 supports 16 nodes.
 
 ## Technical Information
 

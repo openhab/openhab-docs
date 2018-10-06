@@ -374,23 +374,28 @@ The ZMNHSD supports 5 association groups.
 
 ### Group 1: Controller Updates
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: I1 basic on/off
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: I1 start/stop level change
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Multilevel set
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Multilevel sensor report
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ## Technical Information
 

@@ -174,11 +174,13 @@ The ITEMP supports 2 association groups.
 
 ### Group 1: Binary input Group
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Alarm Group
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

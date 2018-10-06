@@ -165,19 +165,26 @@ The Z-Weather supports 4 association groups.
 
 ### Group 1: Life Line
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Wind Speed
 
-This group supports 5 nodes.
+Wind speed is higher than 6 m/s (22 Km/h)
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: End of Dawn
 
-This group supports 5 nodes.
+At the end of the dawn if it becomes bright
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: End of Dusk
 
-This group supports 5 nodes.
+At the end of the dusk if it becomes bright
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

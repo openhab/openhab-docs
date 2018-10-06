@@ -147,19 +147,25 @@ The Flood sensor supports 4 association groups.
 
 Sends the BASIC SET control frame when the probe detects water
 Association group 1 is assigned the status of the device - it sends the BASIC SET control frame to the associated devices when the probe has detected water.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Controller updates
 
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ### Group 3: Send Notification Report
 
-This group supports 5 nodes.
+Allows sending notification reports
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Send Basic Report
 
-This group supports 5 nodes.
+Allows sending basic reports
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

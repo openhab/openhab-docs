@@ -306,23 +306,33 @@ The ZMNHJD supports 5 association groups.
 
 ### Group 1: Lifeline group
 
-This group supports 1 node.
+Reserved for communication with the main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2: Multilevel
 
-This group supports 99 nodes.
+Triggered at changes of state/value of the Flush pilot wire
+
+Association group 2 supports 99 nodes.
 
 ### Group 3: Basic on/off 
 
-This group supports 99 nodes.
+Triggered at change of the input I1 state and reflecting its state
+
+Association group 3 supports 99 nodes.
 
 ### Group 4: Basic on/off
 
-This group supports 99 nodes.
+Triggered at change of the input I2 state and reflecting its state
+
+Association group 4 supports 99 nodes.
 
 ### Group 5: Basic on/off
 
-This group supports 99 nodes.
+Triggered at change of the input I3 state and reflecting its state
+
+Association group 5 supports 99 nodes.
 
 ## Technical Information
 

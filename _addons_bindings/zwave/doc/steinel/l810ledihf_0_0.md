@@ -393,33 +393,39 @@ The L 810 LED iHF supports 5 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline
 Lifeline messages - Device Reset Locally (immediately) - Notifications: 0x09 (System) – Hardware failure with manufacturer proprietary code (0x03) 0x09 (System) – Software failure with manufacturer proprietary code (0x04) 0x07 (Home security) – Motion Begin event (0x08) 0x07 (Home security) – Motion End event (0x00, 0x08) - Binary Switch Report (SPIR) - Binary Switch Report (SBIN) - Multilevel Switch Report (SMUL) - Multilevel Sensor Report – value of internal ambient light sensor - Central scene notification (STOGGLE) Motion Begin and Motion End events are sent along with frames to group 3. If multichannel association is created the events are sent from motion sensor endpoint. Switch Report is sent immediately upon a change of status along with frames to group 2. If multichannel association is created the events are sent from lamp/relay endpoint. Multilevel Sensor Report is sent a maximum of once per 1 minute (if the value has changed by at least 3%) and a minimum of once per 15 minutes (if the value has not changed). If the ambient light value is old (cannot be measured because of permanent light), the value is not transmitted via lifeline. Multilevel Sensor Report can also be added to some other events to send in bulk. If multichannel association is created the events are sent from light sensor endpoint. Central scene notification is sent as reaction to user interaction. If multichannel association is created the events are sent from toggle button endpoint. All notifications to lifeline are sent as sensor states regardless of sensor settings and
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Control: Key01
 
 On/Off control
 Group 2 is used for directly controlling Z-Wave devices via BASIC SET commands through the evaluation of movement and light, as with internal use (so that all of these devices work together). This is intended for use especially with third-party devices that do not implement reactions for motion events. BASIC\_SET and similar Z-Wave commands are not retransmitted intentionally to slaves and must be sent to slave devices via the controlling device simultaneously. Only for use in master-slave system, multi-device control is not possible. Group 2 is evaluated and frames are transmitted there also in SLAVE\_ MODE, regardless of LOCAL\_DISABLED state and when MOTION\_ENABLE is off (not using internal motion sensor, just reacting to remote motion events in this case). If multichannel association is created the events are sent from motion sensor endpoint.
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Notification: Motion
 
 Motion Begin/End (PIR/radar/iHF)
 Group 3 sends MOTION\_BEGIN and MOTION\_END frames. MOTION\_BEGIN frame = Notification 0x07 (Home security) – Motion detection without location (0x08) MOTION\_END frame = Notification 0x07 (Home security) – Event inactive (0x00, parameter 0x08)After the first motion detection, MOTION\_BEGIN is sent. If continual movement is detected, MOTION\_BEGIN is sent every 1 minute repeatedly. When motion ends, MOTION\_END is sent 5 seconds after the last motion detection. Notification to group 3 is sent only when NIGHT\_MODE = ON and MOTION_ ENABLE = ON, regardless of LOCAL_DISABLE state. All devices in a group should have the same TIME settings in order that they switch off at the same time. If multichannel association is created the events are sent from motion sensor endpoint.
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Sensor: Luminescence
 
 Ambient light
 Ambient Light via Group 4 is intended to substitute locally measured LUX values in target devices – so that the network can have one source of ambient light value. Frames are sent a maximum of once per 2.5 minutes and a minimum of once per 15 minutes. When device already uses remote Ambient Light value, then this value is also retransmitted to group 4. All devices in such a group should have the same LIGHT (threshold) settings in order that night mode is detected at the same time. If multichannel association is created the events are sent from light sensor endpoint.
-This group supports 15 nodes.
+
+Association group 4 supports 15 nodes.
 
 ### Group 5: Control: Key02
 
 On/Off button
 Group 5 is used for directly controlling Z-Wave devices via BASIC SET commands by button. (STOGGLE) If multichannel association is created the events are sent from toggle button endpoint.
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ## Technical Information
 

@@ -75,7 +75,8 @@ The Yale Smart Door Lock Z-Wave Module supports 1 association group.
 
 ### Group 1: Alarm Reports
 
-This group supports 4 nodes.
+
+Association group 1 supports 4 nodes.
 
 ## Technical Information
 

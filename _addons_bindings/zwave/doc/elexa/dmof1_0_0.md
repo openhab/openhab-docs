@@ -260,21 +260,22 @@ The DMOF1 supports 3 association groups.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Group 1 is the “Lifeline” group, which can hold five devices. The On/Off Plug-In Switch sends this group a Notification Report and Binary Switch Report whenever it is turned on or off. It also sends a Meter Report incrementally based on time (see Param 2,) or when a relative change in power usage is detected (see Param 6.) Finally, the On/Off Plug-In Switch sends this group a Device Reset Locally notification to remove itself from the Z-Wave network. 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
-
 The On/Off Plug-In Switch sends a BASIC\_SET(FF) command to Association Group 2 to directly trigger devices (like a siren, chime, etc.) when the current passes above the level set in Parameter 3. When the current drops below the level again, a BASIC\_SET(00) command is sent to reset the device (e.g. turn off the siren.) This Group can hold five devices.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-
 The On/Off Plug-In Switch sends Notification Reports to Group 3, and it can hold five devices.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

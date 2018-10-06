@@ -97,21 +97,25 @@ The HS1SA-Z supports 3 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Battery, Notification, Reset locally Notification, Binary report
 Association group 1: Lifeline association groupInclude command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Root device Group (binary sensor)
 
 Binary smoke sensor via lifeline and on status Chance of smoke detection
 Association group 2: Root Device group(Binary Sensor)Binary Sensor Command Class: Compatible with 300 series1-Binary Sensor reports status of smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Root device Group (notification)
 
 smoke status as notification report and on status change of smoke detection
 Association group 3: Root Device group(Notification)1-Notification reports reports status of detect smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

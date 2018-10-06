@@ -220,13 +220,15 @@ Able to control z-wave main controller setting or alarm host status.
 * COMMAND\_CLASS\_SENSOR_BINARY (V2)
 
 * COMMAND\_CLASS\_CONFIGURATION (V1)
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Group 2
 
 Switch or active the scene existing in the z-wave controller,thus to control other devices in the scene .
 Note:Remote control is communicating with other devices via z-wave network directly, z-wave controller is not involved in.
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ## Technical Information
 

@@ -314,7 +314,8 @@ The Molite supports 1 association group.
 
 ### Group 1: Devices to be switched on when motion detected and off after on time
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

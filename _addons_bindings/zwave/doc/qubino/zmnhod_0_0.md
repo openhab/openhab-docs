@@ -399,45 +399,59 @@ The ZMNHOD supports 9 association groups.
 
 ### Group 1: Default reporting group
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic on/off 
 
-This group supports 16 nodes.
+Triggered at change of the input I1 state and reflecting its state
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Basic on/off
 
-This group supports 16 nodes.
+Triggered at change of the input I2 state and reflecting its state
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Basic on/off
 
 Triggered at sensing moving direction of roller
 up=FF, down=0
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Basic on/off
 
 Triggered at reaching roller position
 bottom=FF, top=0
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: Basic on/off
 
 Triggered at reaching roller position
 bottom=FF, not bottom=0
-This group supports 16 nodes.
+
+Association group 6 supports 16 nodes.
 
 ### Group 7:  Multilevel set
 
-This group supports 16 nodes.
+triggered at changes of value of the Flush Shutter DC position
+
+Association group 7 supports 16 nodes.
 
 ### Group 8: Multilevel set
 
-This group supports 16 nodes.
+Triggered at changes of value of slats tilting position
+
+Association group 8 supports 16 nodes.
 
 ### Group 9: Multilevel sensor report
 
-This group supports 16 nodes.
+Triggered at change of temperature sensor
+
+Association group 9 supports 16 nodes.
 
 ## Technical Information
 

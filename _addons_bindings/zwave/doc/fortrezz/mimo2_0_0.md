@@ -363,15 +363,19 @@ The MIMO2+ supports 3 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Sensor 1 On Change
 
-This group supports 2 nodes.
+
+Association group 2 supports 2 nodes.
 
 ### Group 3: Sensor 2 On Change
 
-This group supports 2 nodes.
+
+Association group 3 supports 2 nodes.
 
 ## Technical Information
 

@@ -74,9 +74,10 @@ The DMWV1 supports 1 association group.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Group 1 is the “Lifeline” group, which can hold five devices.  The Water Main Shut-Off sends this group a Binary Switch Report whenever it is turned on or off.  The Water Main Shut-Off also sends this group a Device Reset Locally notification to remove itself from the Z-Wave network. 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

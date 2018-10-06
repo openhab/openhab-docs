@@ -536,7 +536,9 @@ The CT100 Plus supports 1 association group.
 
 ### Group 1: Group 1
 
-This group supports 2 nodes.
+Send report about Thermostat Mode, Thermostat Operating State, Fan Mode, Fan State, Setpoint, Sensor Multilevel
+
+Association group 1 supports 2 nodes.
 
 ## Technical Information
 

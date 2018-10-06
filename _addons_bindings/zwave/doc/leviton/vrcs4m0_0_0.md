@@ -71,25 +71,29 @@ The VRCS4-M0 supports 4 association groups.
 
 First (top) button on controller
 On off control of associated scene or zone.
-This group supports 32 nodes.
+
+Association group 1 supports 32 nodes.
 
 ### Group 2: Button 2
 
 Second button on controller
 On off control of associated scene or zone.
-This group supports 32 nodes.
+
+Association group 2 supports 32 nodes.
 
 ### Group 3: Button 3
 
 Third button on controller
 On off control of associated scene or zone.
-This group supports 32 nodes.
+
+Association group 3 supports 32 nodes.
 
 ### Group 4: Button 4
 
 Fourth button on controller
 On off control of associated scene or zone.
-This group supports 32 nodes.
+
+Association group 4 supports 32 nodes.
 
 ## Technical Information
 

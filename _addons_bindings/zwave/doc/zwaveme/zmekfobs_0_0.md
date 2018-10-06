@@ -297,31 +297,33 @@ The ZME_KFOB-S supports 5 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 10 nodes.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 10 nodes.
 
 ### Group 2: Control Group A
 
-
 Control Group A, controlled by button 1 or single clicks of buttons
-This group supports 10 nodes.
+
+Association group 2 supports 10 nodes.
 
 ### Group 3: Control Group B
 
-
 Control Group B, controlled by button 2 or single clicks of buttons 2
-This group supports 10 nodes.
+
+Association group 3 supports 10 nodes.
 
 ### Group 4: Control Group C
 
-
 Control Group C, controlled by button 3 or double clicks of buttons 1
-This group supports 10 nodes.
+
+Association group 4 supports 10 nodes.
 
 ### Group 5: Control Group D
 
-
 Control Group D, controlled by button 4 or double clicks of buttons 2
-This group supports 10 nodes.
+
+Association group 5 supports 10 nodes.
 
 ## Technical Information
 

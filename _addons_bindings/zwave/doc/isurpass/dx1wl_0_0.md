@@ -139,6 +139,7 @@ The DX1WL-Z supports 5 association groups.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline association group
 1. Include command classes: 
 
@@ -146,7 +147,8 @@ Battery report,
 Notification report,  
 Device Reset Locally notification,  
 Binary report. 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Root Device group (Binary Sensor)
 
@@ -154,7 +156,8 @@ Root Device group (Binary Sensor)
 1-Binary Sensor Command Class: Compatible with 300 series   
 2-Binary Sensor reports status of water or no water via Lifeline.   
 3-When the sensor detects status change between water and no water, the device will be triggered.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Root Device group (Binary Sensor) 
 
@@ -162,14 +165,16 @@ Root Device group (Binary Sensor)
 - Binary Sensor Command Class:Compatible with 300 series   
 1-Binary Sensor reports the removed status of water sensor.   
 2-When the sensor detects status change of tamper, the device will be triggered. 
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Root Device group (Notification) 
 
 Root Device group (Notification)
 1-Notification reports reports status of detect water or no water via Lifeline.   
 2-When the sensor detects status change between water and no water, the device will be triggered. 
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Root Device group (Notification) 
 
@@ -180,7 +185,8 @@ Root Device group (Notification)
 4-Association & Association Group Information   
 - Lifeline between controller and the product   
 - Supported command classes: Battery report, multilevel sensor, and Device Reset Locally notification.
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ## Technical Information
 

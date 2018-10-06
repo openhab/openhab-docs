@@ -254,33 +254,33 @@ The MIMOlite supports 5 association groups.
 
 ### Group 1: Binary input Set Group
 
-
 When the input is triggered or untriggered, the MIMOlite will automatically send a Basic Set command to turn on or off the device(s) associated with this group.
-This group supports 2 nodes.
+
+Association group 1 supports 2 nodes.
 
 ### Group 2: MultiLevel Sensor report
 
-
 The MIMOlite will periodically send a MultiLevel Sensor report indicating the input’s analog voltage level.
-This group supports 2 nodes.
+
+Association group 2 supports 2 nodes.
 
 ### Group 3: Power Alarm
 
-
 If a power dropout occurs, the MIMOlite will send an Alarm Command Class report (if there is enough available residual power).
-This group supports 2 nodes.
+
+Association group 3 supports 2 nodes.
 
 ### Group 4: Binary Sensor report
 
-
 When the input is triggered or untriggered, the MIMOlite will automatically send a Binary Sensor report to this group’s associated device(s).
-This group supports 2 nodes.
+
+Association group 4 supports 2 nodes.
 
 ### Group 5: Pulse Meter Sensor report
 
-
 Pulse meter counts will be sent to this group’s associated device(s). This will be sent periodically at the same intervals as Association Group 2, MLS Report except that if the pulse meter count is unchanged the report will not be sent.
-This group supports 2 nodes.
+
+Association group 5 supports 2 nodes.
 
 ## Technical Information
 

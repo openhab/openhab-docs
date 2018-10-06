@@ -358,23 +358,32 @@ The ZMNHCA supports 5 association groups.
 
 ### Group 1: basic on/off
 
-This group supports 16 nodes.
+triggered at change of the input I1 state and reflecting its state
+
+Association group 1 supports 16 nodes.
 
 ### Group 2: basic on/of
 
-This group supports 16 nodes.
+triggered at change of the input I2 state and reflecting its state
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: multileve
 
-This group supports 16 nodes.
+triggered at changes of value of the Flush shutter position
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: multilevel
 
-This group supports 16 nodes.
+triggered at changes of value of slats tilting position
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: default reporting group
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ## Technical Information
 

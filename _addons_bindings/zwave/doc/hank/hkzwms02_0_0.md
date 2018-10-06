@@ -162,11 +162,13 @@ The HKZW_MS02 supports 2 association groups.
 
 ### Group 1: report the motion detection and battery level
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: assigned to send BASIC SET command
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

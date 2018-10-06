@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 786 things from 110 manufacturers.
+The binding supports a total of 792 things from 111 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -79,8 +79,11 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW132](aeon/zw132_0_0.md) |  | ```aeon_zw132_00_000``` | Wall Switch |
 | AEON Labs | [ZW139](aeon/zw139_0_0.md) |  | ```aeon_zw139_00_000``` |  |
 | AEON Labs | [ZW140](aeon/zw140_0_0.md) |  | ```aeon_zw140_00_000``` | Wall Switch |
+| AEON Labs | [Nano Shutter Controller](aeon/zw141_0_0.md) |  | ```aeon_zw141_00_000``` | Blinds |
 | Airline Mechanical Co., Ltd. | [ZDS-UD10](amc/zdsud10_0_0.md) |  | ```amc_zdsud10_00_000``` |  |
 | August Smart Locks | [ASL-03](august/asl03_0_0.md) |  | ```august_asl03_00_000``` | Lock |
+| Avadesign Technology Co. | [Da Vinci Switch Default](avadesign/davinciv3_0_0.md) |  | ```avadesign_davinciv3_00_000``` | Wall Switch |
+| Avadesign Technology Co. | [Da Vinci v9](avadesign/davinciv9_0_0.md) |  | ```avadesign_davinciv9_00_000``` | Wall Switch |
 | Benetek | [BSL01](benetek/bsl01_0_0.md) |  | ```benetek_bsl01_00_000``` | Lock |
 | BeNext | [Alarm Sound](benext/alarmsound_0_0.md) |  | ```benext_alarmsound_00_000``` | Siren |
 | BeNext | [builtInDimmer](benext/builtindimmer_0_0.md) |  | ```benext_builtindimmer_00_000``` | Wall Switch |
@@ -164,7 +167,7 @@ and links to more detailed information about each thing.
 | Elexa Consumer Products Inc. | [DMWV1](elexa/dmwv1_0_0.md) |  | ```elexa_dmwv1_00_000``` | Valve |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15R ](enerwave/zw15r_0_0.md) |  | ```enerwave_zw15r_00_000``` |  |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15S](enerwave/zw15s_0_0.md) |  | ```enerwave_zw15s_00_000``` |  |
-| Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15SM](enerwave/zw15sm_0_0.md) |  | ```enerwave_zw15sm_00_000``` |  |
+| Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW15SM](enerwave/zw15sm_0_0.md) |  | ```enerwave_zw15sm_00_000``` | Wall Switch |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW20R](enerwave/zw20r_0_0.md) |  | ```enerwave_zw20r_00_000``` |  |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW20RM](enerwave/zw20rm_0_0.md) |  | ```enerwave_zw20rm_00_000``` |  |
 | Wenzhou MTLC Electric Appliances Co.,Ltd. | [ZW500D](enerwave/zw500d_0_0.md) |  | ```enerwave_zw500d_00_000``` |  |
@@ -506,7 +509,7 @@ and links to more detailed information about each thing.
 | permundo GmbH | [PSC234ZW ](permundo/psc234zw_0_0.md) |  | ```permundo_psc234zw_00_000``` | Power Outlet |
 | Philio Technology Corp | [ZIP-PAB01](philio/pab01_0_0.md) |  | ```philio_pab01_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAD02](philio/pad02_0_0.md) |  | ```philio_pad02_00_000``` |  |
-| Philio Technology Corp | [PAN03](philio/pan03_0_0.md) |  | ```philio_pan03_00_000``` |  |
+| Philio Technology Corp | [PAN03](philio/pan03_0_0.md) |  | ```philio_pan03_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAN04](philio/pan04_0_0.md) |  | ```philio_pan04_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAN05-1B](philio/pan05_0_0.md) |  | ```philio_pan05_00_000``` | Wall Switch |
 | Philio Technology Corp | [PAN06](philio/pan06_0_0.md) | 1.7 | ```philio_pan06_00_000``` | Wall Switch |
@@ -596,6 +599,7 @@ and links to more detailed information about each thing.
 | Remotec | [ZTS-110](remotec/zts110_0_0.md) |  | ```remotec_zts110_00_000``` | HVAC |
 | Remotec | [ZTS-500](remotec/zts500_0_0.md) |  | ```remotec_zts500_00_000``` | HVAC |
 | Remotec | [ZXT-120](remotec/zxt120_0_0.md) |  | ```remotec_zxt120_00_000``` |  |
+| Remotec | [ZXT-600](remotec/zxt600_1_3.md) | 1.3 | ```remotec_zxt600_01_003``` | Remote Control |
 | R-import Ltd. | [ZMEERAZ2](rimport/zmeeraz2_0_0.md) |  | ```rimport_zmeeraz2_00_000``` |  |
 | Ring | [DW-SS ](ring/dwss_0_0.md) |  | ```ring_dwss_00_000``` | Door |
 | Radio Thermostat Company of America (RTC) | [CT100](rtc/ct100_0_0.md) |  | ```rtc_ct100_00_000``` |  |
@@ -682,6 +686,7 @@ and links to more detailed information about each thing.
 | UFairy G.R. Tech | [GR-B3-3](ufairy/grb33_0_0.md) |  | ```ufairy_grb33_00_000``` |  |
 | UFairy G.R. Tech | [GR-M-202N-2](ufairy/grm202n2_0_0.md) |  | ```ufairy_grm202n2_00_000``` |  |
 | UFairy G.R. Tech | [TP-807ZG](ufairy/tp807zg_0_0.md) |  | ```ufairy_tp807zg_00_000``` | Sensor |
+| UFairy G.R. Tech | [Topvico TP-819ZW](ufairy/tp819_0_0.md) |  | ```ufairy_tp819_00_000``` | Sensor |
 | UFairy G.R. Tech | [Zooz Indoor Siren](ufairy/zse01_0_0.md) |  | ```ufairy_zse01_00_000``` | Siren |
 | UFairy G.R. Tech | [ZSE02](ufairy/zse02_0_0.md) |  | ```ufairy_zse02_00_000``` | Sensor |
 | VDA | [Vitrum III EU Dimmer](vda/dimmer3_0_0.md) |  | ```vda_dimmer3_00_000``` |  |
@@ -771,6 +776,7 @@ and links to more detailed information about each thing.
 | Zooz | [ZEN06](zooz/zen06_0_0.md) |  | ```zooz_zen06_00_000``` |  |
 | Zooz | [ZEN07](zooz/zen07_0_0.md) |  | ```zooz_zen07_00_000``` |  |
 | Zooz | [ZEN15](zooz/zen15_0_0.md) |  | ```zooz_zen15_00_000``` | Power Outlet |
+| Zooz | [ZEN20](zooz/zen20_0_0.md) |  | ```zooz_zen20_00_000``` | Power Outlet |
 | Zooz | [ZEN21](zooz/zen21_0_0.md) |  | ```zooz_zen21_00_000``` | Wall Switch |
 | Zooz | [ZEN22](zooz/zen22_0_0.md) |  | ```zooz_zen22_00_000``` | Wall Switch |
 | Zooz | [ZEN23](zooz/zen23_0_0.md) |  | ```zooz_zen23_00_000``` | Wall Switch |

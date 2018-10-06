@@ -201,7 +201,8 @@ The DZ1KD supports 1 association group.
 
 Z-Wave Plus Lifeline
 A NOTIFICATION frame is sent to the nodes in this association group when a Lifeline event occurs.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

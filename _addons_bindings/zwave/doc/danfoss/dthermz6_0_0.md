@@ -72,7 +72,8 @@ The DTHERMZ6 supports 1 association group.
 
 ### Group 1: Target for Wakeup and Override Notifications
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

@@ -70,7 +70,8 @@ The HS1DS supports 1 association group.
 
 ### Group 1: Controller Updates
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

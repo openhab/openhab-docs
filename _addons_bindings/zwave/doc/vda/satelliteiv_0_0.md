@@ -84,19 +84,27 @@ The Vitrum Satellite IV supports 4 association groups.
 
 ### Group 1: Group 1
 
-This group supports 5 nodes.
+Group for Button 1
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
-This group supports 5 nodes.
+Group for Button 2
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-This group supports 5 nodes.
+Group for Button 3
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
-This group supports 5 nodes.
+Group for Button 4
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

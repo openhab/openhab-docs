@@ -419,27 +419,33 @@ The ZMNHIA supports 6 association groups.
 
 ### Group 1: Basic on/off Q1
 
-This group supports 16 nodes.
+
+Association group 1 supports 16 nodes.
 
 ### Group 2: Basic on/off I2
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Basic on/off I3
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: High Temperature
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Low Temperature
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: Default Reporting Group
 
-This group supports 1 node.
+
+Association group 6 supports 1 node.
 
 ## Technical Information
 

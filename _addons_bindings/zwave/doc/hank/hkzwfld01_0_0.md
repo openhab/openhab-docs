@@ -341,11 +341,15 @@ The HKZW_FLD01 supports 2 association groups.
 
 ### Group 1: Report
 
-This group supports 5 nodes.
+report the flooding detection,shock detection and the battert level
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Send Command
 
-This group supports 5 nodes.
+Group 2 is assigned to send BASIC SET command
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

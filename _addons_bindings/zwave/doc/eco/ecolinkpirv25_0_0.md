@@ -181,15 +181,15 @@ The Ecolink PIR v2.5 supports 2 association groups.
 
 ### Group 1: Group 1
 
-
 Group 1 is a lifeline group who will receive unsolicited messages relating to motion detection notifications, case tampering notifications, low-battery notifications, and snsor binary reports.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
-
 Group 2 is intended for devices that are to be controlled i.e. turned on or off (on only by default) with a Basic Set.  On inclusion the controller should put its node ID in group 1 but not in group 2.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 

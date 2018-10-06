@@ -140,13 +140,17 @@ The DW-SS  supports 2 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Controller Updates
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic Report
 
 Basic report of either 0x00 for CLOSED or 0xFF for OPEN
 When a node is associated with Group 2, the sensor will send a basic report of either 0x00 for “Closed” or 0xFF for “Open.”
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ## Technical Information
 

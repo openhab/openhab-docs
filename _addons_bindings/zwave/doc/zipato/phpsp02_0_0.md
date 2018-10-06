@@ -637,11 +637,15 @@ The PSP02 supports 2 association groups.
 
 ### Group 1: Reports target.
 
-This group supports 8 nodes.
+group to send reports to
+
+Association group 1 supports 8 nodes.
 
 ### Group 2: Basic Set target
 
-This group supports 8 nodes.
+group to send Basic Set light commands to
+
+Association group 2 supports 8 nodes.
 
 ## Technical Information
 

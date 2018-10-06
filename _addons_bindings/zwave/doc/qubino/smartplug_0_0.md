@@ -264,31 +264,38 @@ The Smart Plug 16A supports 5 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Reserved for communication with main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2: Status on/off
 
 Send control command BASIC_SET 0x00/0xFF
 This group is assigned to the Smart Plug status On/Off. It allows sending the control command BASIC_SET 0x00/0xFF to associated devices whenevert the Smart Plug is turned On or Off.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Load dependent 
 
 sending control commands BASIC_SET 0x00/0xFF depending on current load
 This groups allows to send control commands BASIC_SET 0x00/0xFF to associated devices depending on the current load. This association group is configured through the parameters no. 50, 51 and 52.
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Secure Status On/Off
 
 Send control command BASIC_SET 0x00/0xFF
 This group is equivalent to association group 2, except commands are sent securily encapsulated.
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Secure Load dependent 
 
 sending control commands BASIC_SET 0x00/0xFF depending on current load
 This group is equivalent to association group 3, except commands are sent securily encapsulated.
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ## Technical Information
 

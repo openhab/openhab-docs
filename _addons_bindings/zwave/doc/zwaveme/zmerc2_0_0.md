@@ -363,51 +363,65 @@ The ZME_RC2 supports 12 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 5 nodes.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Send to controller battery level and WakeUp Notification
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: The buttons of group No1
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: The buttons of group No2
 
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: The buttons of group No3
 
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: The buttons of group No4
 
-This group supports 5 nodes.
+
+Association group 5 supports 5 nodes.
 
 ### Group 6: The buttons of group No5
 
-This group supports 5 nodes.
+
+Association group 6 supports 5 nodes.
 
 ### Group 7: The buttons of group No6
 
-This group supports 5 nodes.
+
+Association group 7 supports 5 nodes.
 
 ### Group 8: The buttons of group No7
 
-This group supports 5 nodes.
+
+Association group 8 supports 5 nodes.
 
 ### Group 9: The buttons of scene No1
 
-This group supports 5 nodes.
+
+Association group 9 supports 5 nodes.
 
 ### Group 10: The buttons of scene No2
 
-This group supports 5 nodes.
+
+Association group 10 supports 5 nodes.
 
 ### Group 11: The buttons of scene No3
 
-This group supports 5 nodes.
+
+Association group 11 supports 5 nodes.
 
 ### Group 12: The buttons of All On/Off
 
-This group supports 5 nodes.
+
+Association group 12 supports 5 nodes.
 
 ## Technical Information
 

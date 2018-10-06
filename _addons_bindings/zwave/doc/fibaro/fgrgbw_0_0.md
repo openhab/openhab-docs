@@ -469,23 +469,28 @@ The FGRGBW supports 5 association groups.
 
 ### Group 1: Assigned to IN1 input
 
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Assigned to IN2 input
 
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Assigned to IN3 input
 
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Assigned to IN4 input
 
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: Reports device status
 
-This group supports 1 node.
+
+Association group 5 supports 1 node.
 
 ## Technical Information
 

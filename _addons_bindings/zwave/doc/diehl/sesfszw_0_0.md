@@ -306,7 +306,8 @@ The SES FS-ZW supports 1 association group.
 
 ### Group 1: reportd
 
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

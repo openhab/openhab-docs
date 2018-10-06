@@ -164,7 +164,8 @@ Group 1 is for “Notification” purpose, which can add up to 5 Node ID. Device
 When the detected CO2 value is higher than the setting value, the device will send a (CO2 Detected Event) report to the Group 1. And this report will keep sending every 30 sec until the detected value is lower than the setting value.
 
 Use “Notification Set” can set this unsolicited report; this function is default as “OFF”.
-This group supports 5 nodes.
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Gateway report
 
@@ -175,7 +176,8 @@ gateway can ask for detected data any time. And the device will report to this a
 CO2: report when any change ≥50ppm“Multilevel sensor Report (CO2=0x11)”  
 Temperature: report when any change≥ 0.5 “Multilevel ℃ sensor Report (Temp=0x01)”  
 Humidity: report when any change≥ 2%“Multilevel sensor Report (Humidity=0x05)’
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ## Technical Information
 

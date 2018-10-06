@@ -165,23 +165,30 @@ The NAS-DS01Z supports 4 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 5 nodes.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+GROUP 1 is lifeline service that assigned to Sensor (Door/Window detector) status – Open/Close
+
+Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
 GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 1 and 2. This Group Support: BASIC_SET.
 GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 1 and 2. This Group Support: BASIC_SET.
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-This group supports 5 nodes.
+GROUP 3 allows for Send Notification to associated devices in this group. This Group Support: NOTIFICATION_REPORT.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
 GROUP 4 allows for Send Notification to associated devices in this group. This Group Support: SENSOR\_BINARY\_REPORT
 GROUP 4 allows for Send Notification to associated devices in this group. This Group Support: SENSOR\_BINARY\_REPORT
-This group supports 5 nodes.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 

@@ -206,11 +206,15 @@ The plugInDimmer supports 2 association groups.
 
 ### Group 1: Group 1
 
-This group supports 8 nodes.
+Receives BASIC SET commands
+
+Association group 1 supports 8 nodes.
 
 ### Group 2: Group 2
 
-This group supports 1 node.
+Receives METER and MULTILEVEL_SWITCH commands
+
+Association group 2 supports 1 node.
 
 ## Technical Information
 

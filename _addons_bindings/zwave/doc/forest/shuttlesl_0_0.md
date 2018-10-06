@@ -95,9 +95,10 @@ The Shuttle S/L supports 1 association group.
 
 ### Group 1: Lifeline
 
-
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Node associated in this group will receive an unsolicited SWITCH\_MULTILEVEL\_REPORT frame every time the position of the curtain rail is changed, where the value represents the (changed) position.
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

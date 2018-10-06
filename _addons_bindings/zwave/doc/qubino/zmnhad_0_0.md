@@ -452,46 +452,57 @@ The ZMNHAD supports 9 association groups.
 
 ### Group 1: Lifeline
 
-This group supports 1 node.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline group (reserved for communication with the main controller
+
+Association group 1 supports 1 node.
 
 ### Group 2: Basic on/off (triggered at change of the input Q 
 state and reflectin
 
-This group supports 16 nodes.
+
+Association group 2 supports 16 nodes.
 
 ### Group 3: Basic on/off (triggered at change of the input I2 
 state and reflecti
 
-This group supports 16 nodes.
+
+Association group 3 supports 16 nodes.
 
 ### Group 4: Notification report (triggered at change of the input I2 
 state and r
 
-This group supports 16 nodes.
+
+Association group 4 supports 16 nodes.
 
 ### Group 5: Binary Sensor (triggered at change of the input I2 
 state and reflect
 
-This group supports 16 nodes.
+
+Association group 5 supports 16 nodes.
 
 ### Group 6: Basic on/off (triggered at change of the input I3 
 state and reflecti
 
-This group supports 16 nodes.
+
+Association group 6 supports 16 nodes.
 
 ### Group 7: Notification report (triggered at change of the input I3
 state and re
 
-This group supports 16 nodes.
+
+Association group 7 supports 16 nodes.
 
 ### Group 8: Binary Sensor report(triggered at change of the input I3 
 state and r
 
-This group supports 16 nodes.
+
+Association group 8 supports 16 nodes.
 
 ### Group 9: Multilevel Sensor report (triggered at change of temperature sensor)
 
-This group supports 16 nodes.
+
+Association group 9 supports 16 nodes.
 
 ## Technical Information
 

@@ -290,11 +290,13 @@ The Spirit supports 1 association group.
 
 ### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Spirit Z-Wave Plus can only be associated with the Z-Wave controller.
 Commands:
 
 BATTERY\_REPORT, DEVICE\_RESET\_LOCALLY\_NOTIFICATION, THERMOSTAT\_MODE\_REPORT, THERMOSTAT\_SETPOINT\_REPORT, NOTIFICATION\_REPORT, PROTECTION\_REPORT, SENSOR\_MULTILEVEL\_REPORT, SWITCH\_MULTILEVEL\_REPORT
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

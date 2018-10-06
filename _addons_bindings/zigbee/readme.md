@@ -52,7 +52,7 @@ The following coordinators are known to be supported.
 |[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and ZigBee. Use baud rate 57600 and software flow control. |
 |[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)| |
 |[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)|Only working on Linux devices|
-|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#xbee-xu-z11-coordinator)| |
+|[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#digi-xbee-x-stick)| |
 
 #### TI2531 Coordinator
 
@@ -84,9 +84,9 @@ Note that there are generally two versions of the Ember NCP firmware in use. One
 
 The thing type is ```coordinator_telegesis```.
 
-#### XBee XU-Z11 Coordinator
+#### Digi XBee X-Stick
 
-The thing type is ```coordinator_xbee```.
+The thing type is ```coordinator_xbee```. Other XBee S2C devices should also be supported.
 
 ### Devices
 
@@ -121,6 +121,26 @@ Once the binding is installed, and an adapter is added, it automatically reads a
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
 
 When a ZigBee device restarts (e.g. a bulb is powered on), it will send an announcement to advise the coordinator that it is on the network and this will allow the binding to rediscover devices that have become lost. Battery devices often have a button that may also perform this function.
+
+### Install Codes
+
+ZigBee 3 requires that devices use an install code to securely join the network. This must be added
+to the binding before the discovery starts. Install codes should be printed on the box the device came
+in, or possibly on the device itself. Note that there is no standard format for how these codes may be
+displayed on the device or its packaging. You may need to use a QR reader to read the code - again these
+are not standard in their format, although you should be able to find the address and install code in the
+displayed text.
+
+The install code must be entered into the coordinator settings before starting the discovery process.
+The format is ```IEEE Address:Install Code``` in the following format -:
+
+```
+AAAAAAAAAAAAAAAA:CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-DDDD
+```
+
+ZigBee 3 requires the install code to be 16 bytes long (8 blocks of characters) but some older systems using
+this method may use less bytes, but it should still be formatted as 2, 4, or 8 groups of 4 values. 
+Note that the last four characters in the install code are the checksum and may be provided separately.
 
 ## Leave
 

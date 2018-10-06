@@ -200,7 +200,9 @@ The YKFCON supports 1 association group.
 
 ### Group 1: Alarm Reports
 
-This group supports 5 nodes.
+Alarm reports are sent out to all devices in the association group
+
+Association group 1 supports 5 nodes.
 
 ## Technical Information
 

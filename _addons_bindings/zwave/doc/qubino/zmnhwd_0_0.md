@@ -341,11 +341,11 @@ The ZMNHWD supports 1 association group.
 
 ### Group 1: Send basic report to this group
 
-
 The Module can be set 1 auto-report ID in Group 1.
 
 The Module will send BASIC_REPORT to device associated in Group 1 when correspond Device is activated.
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ## Technical Information
 

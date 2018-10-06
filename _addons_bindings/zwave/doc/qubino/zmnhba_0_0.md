@@ -333,15 +333,18 @@ The ZMNHBA supports 3 association groups.
 
 ### Group 1: Basic on/off Q1
 
-This group supports 4 nodes.
+
+Association group 1 supports 4 nodes.
 
 ### Group 2: Basic on/off Q2
 
-This group supports 4 nodes.
+
+Association group 2 supports 4 nodes.
 
 ### Group 3: Default Reporting Group
 
-This group supports 4 nodes.
+
+Association group 3 supports 4 nodes.
 
 ## Technical Information
 

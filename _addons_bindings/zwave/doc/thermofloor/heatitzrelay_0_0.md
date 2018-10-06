@@ -424,27 +424,39 @@ The HEATIT Z-RELAY supports 6 association groups.
 
 ### Group 1: RELAY OUTPUT
 
-This group supports 1 node.
+Lifeline. Lifeline group for the entire module. Sends Basic Report On / Off when the relay is turned on or off. Sends Meter Report with energy data for the load connected to the relay output.
+
+Association group 1 supports 1 node.
 
 ### Group 2: TEMPERATURE INPUT 1 
 
-This group supports 5 nodes.
+Sends Sensor Multilevel Report for input 1. Nodes in this group will receive information of the current temperature measured by the NTC connected to input 1.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: TEMPERATURE INPUT 2 
 
-This group supports 5 nodes.
+Sends Sensor Multilevel Report for input 2. Nodes in this group will receive information of the current temperature measured by the NTC connected to input 2.
+
+Association group 3 supports 5 nodes.
 
 ### Group 4: FLOOD SENSOR INPUT 
 
-This group supports 5 nodes.
+Nodes in this group receives Basic Report On / Off when the flood sensor detects a flood. Normally used for visualization in the Controller.
+
+Association group 4 supports 5 nodes.
 
 ### Group 5: FLOOD SENSOR INPUT 
 
-This group supports 5 nodes.
+Nodes in this group receives Basic Set On / Off when the flood sensor detects a flood.
+
+Association group 5 supports 5 nodes.
 
 ### Group 6: FLOOD SENSOR INPUT
 
-This group supports 5 nodes.
+Nodes in this group receives Notification Report when the flood sensor detects a flood. The notification events reported are: ”Water leak detected ”0x02 and ”ldle” 0x00.
+
+Association group 6 supports 5 nodes.
 
 ## Technical Information
 

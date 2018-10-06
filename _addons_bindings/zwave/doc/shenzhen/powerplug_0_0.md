@@ -311,19 +311,22 @@ METER\_REPORT\_V4
 SWITCH\_BINARY\_REPORT
 
 DEVICE\_RESET\_LOCALLY_NOTIFICATION
-This group supports 1 node.
+
+Association group 1 supports 1 node.
 
 ### Group 2: Group 2
 
 Sending control commands to associated devices. If current load is over the max current defined in parameter #3, the Plug will send a BASIC\_SET (0xFF) to associated devices. When current load is normal, plug will send a BASIC\_SET (0x00).
 BASIC_SET
-This group supports 5 nodes.
+
+Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
 Send Notification to associated devices.
 NOTIFICATION\_REPORT\_V4
-This group supports 5 nodes.
+
+Association group 3 supports 5 nodes.
 
 ## Technical Information
 

@@ -238,15 +238,18 @@ The builtInDimmer supports 3 association groups.
 
 ### Group 1: Group 1
 
-This group supports 8 nodes.
+
+Association group 1 supports 8 nodes.
 
 ### Group 2: Group 2
 
-This group supports 1 node.
+
+Association group 2 supports 1 node.
 
 ### Group 3: Group 3
 
-This group supports 1 node.
+
+Association group 3 supports 1 node.
 
 ## Technical Information
 
