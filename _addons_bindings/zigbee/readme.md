@@ -29,7 +29,7 @@ Coordinators need to be installed manually and the serial port and baud rate mus
 
 ##### Link Key (zigbee_linkkey)
 
-The key is defined as 16 hexadecimal values. If not defined, this will default to the well known ZigBee HA link key.
+The key is defined as 16 hexadecimal values. If not defined, this will default to the well known ZigBee HA link key which is required for ZigBee HA 1.2 devices. Do not alter this key if using with a ZigBee HA 1.2 network unless you fully understand the impact.
 
 If defined with the word ```INSTALLCODE:``` before the key, this will create a link key from an install code which may be shorter than 16 bytes.
 
