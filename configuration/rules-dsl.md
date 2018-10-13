@@ -442,8 +442,8 @@ val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMi
 val Number nowEpoch = now.millis
 
 // Convert DateTimeType to Joda DateTime
-val joda = new DateTime(MyDateTimeItem.state.toString)
-val joda = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
+val jodaVariantOne = new DateTime(MyDateTimeItem.state.toString)
+val jodaVariantTwo = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
 
 // Convert Joda DateTime to DateTimeType
 val calendar = java.util.Calendar::getInstance
