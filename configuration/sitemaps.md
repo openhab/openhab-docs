@@ -519,7 +519,7 @@ By using a Switch or Selection element with a mappings array, you can replace th
 This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
 
-In the third and forth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
+In the third and fourth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
 This limits the possible input values, which is yet another often occurring use case for mappings.
 
 ## Dynamic Sitemaps
@@ -689,7 +689,7 @@ Explanation:
 
 ## Further notes and comparison details
 
--   String comparisons are case sensitive, so `==ON` is not the same a `==on`.
+-   String comparisons are case sensitive, so `==ON` is not the same as `==on`.
 
 -   DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).
