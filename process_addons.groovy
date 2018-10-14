@@ -38,10 +38,16 @@ def process_addon_type = { features, sources, type, collection, suffix, lblremov
                 }
                 def target = new File(project.basedir, "_${collection}")
                 def simpleNameDir = new File(target.path, (source == 'oh1' && type == 'binding') ? id + '1' : id)
-                it.renameTo(simpleNameDir)
+                if (simpleNameDir.exists()) {
+                    log.warn("Destination folder already exists: " + simpleNameDir)
+                }
+                boolean success = it.renameTo(simpleNameDir)
+                if (! success) {
+                    log.warn("Move failed.")
+                }
                 def readme = new File(simpleNameDir.path, 'README.md')
                 if (! readme.exists()) {
-                    log.warn("No README.md found.")
+                    log.warn("No readme.md/README.md found.")
                 } else {
                     def readmeLowerCase = new File(simpleNameDir.path, 'readme.md')
                     readme.renameTo(readmeLowerCase)
