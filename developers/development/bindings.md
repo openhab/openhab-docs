@@ -96,7 +96,7 @@ mvn clean install
 ```
 
 from the repository root to ensure that the build works smoothly.
-If it does, it is time to [contribute your work](../contributing/contributing)!
+If it does, it is time to [contribute your work](../contributing/contributing.html)!
 
 ### Static code analysis
 
