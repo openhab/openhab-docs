@@ -74,10 +74,12 @@ In this example our component needs a [LogService](https://osgi.org/javadoc/r4v4
 
 This is the XML component description. This file is located in the *OSGI-INF* folder and is named *consumer.xml*.
 
-    Note! Please keep in mind that the Service Component Description might be
+    Note! Please keep in mind that the Service Component Description can be
     automatically generated using SCR Annotations like @Component, @Reference,
-    @Activate, @Deacticate and etc that are supported e.g. in Apache Felix. Currently
-    these annotations are not used in the openHAB project, so please ignore examples where they are used.
+    @Activate, @Deacticate and etc that are supported e.g. in Apache Felix. In the openHAB project
+    it is preferred to use these annotations and not create the XML component description by hand.
+    This should be accompanied with a .gitignore file in the OSGI-INF with /*.xml as content.
+    This is needed to avoid adding the generated XML component files to git.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -127,22 +129,26 @@ package com.example.consumer;
 import org.osgi.framework.BundleContext;
 import org.osgi.service.log.LogService;
 
+@Component(service = MyServiceImpl.class, immediate = true)
 public class MyServiceImpl {
     private LogService log;
 
     public MyServiceImpl() {
     }
 
-    public void activate(BundleContext context) {
+    @Activate
+    protected void activate(BundleContext context) {
         System.out.println("Bundle is activated!");
         // No specific action is needed here in this case
     }
 
-    public void deactivate(BundleContext context) {
+    @Deactivate
+    protected void deactivate(BundleContext context) {
         System.out.println("Bundle is deactivated!");
         // No specific action is needed here in this case
     }
 
+    @Reference
     public void setLog(LogService l) {
         log = l;
         System.out.println("Log service is available!");
@@ -208,6 +214,7 @@ package com.example.provider;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
 
+@Component(service = EventHandler.class, property = { "event.topics=some/topic" })
 public class HandlerImpl implements EventHandler {
 
     @Override
@@ -270,7 +277,7 @@ The component **configuration is satisfied** when:
 If the component has lazy initialization (the component is *delayed*), it is moved to the REGISTERED state and it is waiting to be activated, when the service is requested (see Fig.2).  
 Otherwise (the component is *immediate*) as soon as its dependencies are satisfied, the component is activated (see Fig.1).
 
-### 2. Activaiton 
+### 2. Activation
 
 Activation consists of following steps:
 
