@@ -5,7 +5,7 @@ title: HABot - UIs
 type: ui
 description: "[![Build Status](https://travis-ci.org/ghys/habot.svg?branch=master)](https://travis-ci.org/ghys/habot)"
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
