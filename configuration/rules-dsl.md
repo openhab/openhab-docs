@@ -402,15 +402,15 @@ val newColor = new Color(red, blue, green) // where red, blue, and green are int
 MyColorItem.sendCommand(new HSBType(newColor))
 ```
 
-When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
-Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
+When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to divide the PercentType by 100 and multiply by 255 to obtain a standard 8-bit per color channel RGB.
+Correspondingly, for the 16 or 32 bit representation, the PercentType needs to divided by 100 and multiplied by 65535 (2 ^ 16 - 1) or 4294967295 (2 ^ 32 - 1), respectively.
 
 ```java
 //Example for conversion to 8-bit representation
 // In rule body
-val red = (MyColorItem.state as HSBType).red * 255
-val green = (MyColorItem.state as HSBType).green * 255
-val blue = (MyColorItem.state as HSBType).blue * 255
+val red = (MyColorItem.state as HSBType).red / 100 * 255
+val green = (MyColorItem.state as HSBType).green / 100 * 255
+val blue = (MyColorItem.state as HSBType).blue / 100 * 255
 ```
 
 ##### Contact Item
