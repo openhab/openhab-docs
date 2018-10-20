@@ -37,7 +37,7 @@ This is done exactly the same way as for the code repositories, simply through p
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
 create a pull request directly from GitHub. 
 Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
-them as bext as you can before submitting a change for review - but don't worry if you don't understand all of them, we
+them as best as you can before submitting a change for review - but don't worry if you don't understand all of them, we
 will help you to get it right.
 
 ## So what are the other branches for?
