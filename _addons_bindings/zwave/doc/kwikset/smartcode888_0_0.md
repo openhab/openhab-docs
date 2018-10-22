@@ -51,6 +51,12 @@ The following table summarises the channels available for the SmartCode 888 -:
 Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Locked |
+| OFF | Unlocked |
 
 ### Alarm (access)
 
@@ -139,8 +145,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
-| 1 | ON |
+| 0 | Off |
+| 1 | On |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -155,8 +161,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
-| 1 | ON |
+| 0 | Off |
+| 1 | On |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -190,8 +196,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
-| 1 | ON |
+| 0 | Off |
+| 1 | On |
 
 The manufacturer defined default value is ```1``` (ON).
 
@@ -221,8 +227,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
-| 1 | ON |
+| 0 | Off |
+| 1 | On |
 
 The manufacturer defined default value is ```0``` (OFF).
 

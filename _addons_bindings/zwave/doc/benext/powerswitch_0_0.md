@@ -8,7 +8,7 @@ title: powerSwitch - ZWave
 # powerSwitch Power Switch EU
 This describes the Z-Wave device *powerSwitch*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_powerswitch_00_000```.
 
-The powerSwitch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The powerSwitch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

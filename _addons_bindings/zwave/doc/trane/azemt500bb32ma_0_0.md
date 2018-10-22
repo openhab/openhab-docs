@@ -8,7 +8,7 @@ title: AZEMT500BB32MA - ZWave
 # AZEMT500BB32MA American Standard Z-Wave Programmable Thermostat
 This describes the Z-Wave device *AZEMT500BB32MA*, manufactured by *Trane Corporation* with the thing type UID of ```trane_azemt500bb32ma_00_000```.
 
-The AZEMT500BB32MA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The AZEMT500BB32MA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

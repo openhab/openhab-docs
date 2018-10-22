@@ -93,7 +93,7 @@ The ```indicator_level1``` channel supports the ```Dimmer``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

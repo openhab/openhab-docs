@@ -8,7 +8,7 @@ title: DHSZWDMIW01 - ZWave
 # DHSZWDMIW01 DHS Z-Wave Micro Dimmer
 This describes the Z-Wave device *DHSZWDMIW01*, manufactured by *Wintop* with the thing type UID of ```wintop_dhszwdmiw01_00_000```.
 
-The DHSZWDMIW01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The DHSZWDMIW01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -40,7 +40,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

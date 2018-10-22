@@ -8,7 +8,7 @@ title: SmartPower - ZWave
 # SmartPower RAone SmartPower
 This describes the Z-Wave device *SmartPower*, manufactured by *INNOVUS* with the thing type UID of ```innovus_smartpower_00_000```.
 
-The SmartPower supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The SmartPower supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -76,8 +76,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
-| 1 | enabled |
+| 0 | Disabled |
+| 1 | Enabled |
 
 The manufacturer defined default value is ```1``` (enabled).
 

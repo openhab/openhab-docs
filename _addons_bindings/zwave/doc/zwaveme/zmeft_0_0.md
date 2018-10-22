@@ -11,7 +11,7 @@ This describes the Z-Wave device *ZME_FT*, manufactured by *Z-Wave.Me* with the 
 ![ZME_FT product image](https://www.cd-jackson.com/zwave_device_uploads/151/151_default.png)
 
 
-The ZME_FT supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZME_FT supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

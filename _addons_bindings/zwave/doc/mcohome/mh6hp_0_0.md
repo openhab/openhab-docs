@@ -8,7 +8,7 @@ title: MH6-HP - ZWave
 # MH6-HP Programmable Thermostat
 This describes the Z-Wave device *MH6-HP*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh6hp_00_000```.
 
-The MH6-HP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The MH6-HP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -106,7 +106,7 @@ The ```time_offset``` channel supports the ```Number``` item and is in the ```Te
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

@@ -281,8 +281,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 1 | off |
-| 2 | on |
+| 1 | Off |
+| 2 | On |
 
 The manufacturer defined default value is ```1``` (off).
 

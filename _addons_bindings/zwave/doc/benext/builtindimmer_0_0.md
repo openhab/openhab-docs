@@ -13,7 +13,7 @@ The device is in the category of *Wall Switch*, defining Any device attached to 
 ![builtInDimmer product image](https://www.cd-jackson.com/zwave_device_uploads/225/225_default.png)
 
 
-The builtInDimmer supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The builtInDimmer supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

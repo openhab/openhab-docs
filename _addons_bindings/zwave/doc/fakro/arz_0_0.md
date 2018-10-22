@@ -13,7 +13,7 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 ![ARZ product image](https://www.cd-jackson.com/zwave_device_uploads/248/248_default.jpg)
 
 
-The ARZ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ARZ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -52,7 +52,7 @@ The ```blinds_control``` channel supports the ```Rollershutter``` item and is in
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

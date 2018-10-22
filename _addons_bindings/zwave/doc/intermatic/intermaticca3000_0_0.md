@@ -8,7 +8,7 @@ title: CA3000 - ZWave
 # CA3000 Wall Switch
 This describes the Z-Wave device *CA3000*, manufactured by *Intermatic* with the thing type UID of ```intermatic_intermaticca3000_00_000```.
 
-The CA3000 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The CA3000 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -32,7 +32,7 @@ The ```switch_binary``` channel supports the ```Switch``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

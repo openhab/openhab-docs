@@ -10,7 +10,7 @@ This describes the Z-Wave device *HKZW_MS02*, manufactured by *[Hank](http://www
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-The HKZW_MS02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The HKZW_MS02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

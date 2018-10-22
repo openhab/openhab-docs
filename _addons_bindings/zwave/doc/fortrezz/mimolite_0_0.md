@@ -13,7 +13,7 @@ The device is in the category of *Sensor*, defining Device used to measure somet
 ![MIMOlite product image](https://www.cd-jackson.com/zwave_device_uploads/219/219_default.jpg)
 
 
-The MIMOlite supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The MIMOlite supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

@@ -25,7 +25,7 @@ The following table summarises the channels available for the ZRTSI -:
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

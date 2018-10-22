@@ -13,7 +13,7 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 ![ZMNHOD product image](https://www.cd-jackson.com/zwave_device_uploads/214/214_default.jpg)
 
 
-The ZMNHOD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHOD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

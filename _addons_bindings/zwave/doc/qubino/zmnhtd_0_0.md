@@ -13,7 +13,7 @@ The device is in the category of *Sensor*, defining Device used to measure somet
 ![ZMNHTD product image](https://www.cd-jackson.com/zwave_device_uploads/414/414_default.jpg)
 
 
-The ZMNHTD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHTD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -162,7 +162,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
+| 0 | Disabled |
 | 2 | IR external control – mono stable push button |
 | 3 | IR external relay control - bi stable switch |
 | 4 | External relay control – mono stable push button |

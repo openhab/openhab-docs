@@ -11,7 +11,7 @@ This describes the Z-Wave device *P1-dongle*, manufactured by *[BeNext](http://w
 ![P1-dongle product image](https://www.cd-jackson.com/zwave_device_uploads/340/340_default.png)
 
 
-The P1-dongle supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The P1-dongle supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

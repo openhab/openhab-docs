@@ -8,7 +8,7 @@ title: MIMO2+ - ZWave
 # MIMO2+ Dual Digital or Analog Voltage input and Dual Contact Relay
 This describes the Z-Wave device *MIMO2+*, manufactured by *FortrezZ LLC* with the thing type UID of ```fortrezz_mimo2_00_000```.
 
-The MIMO2+ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The MIMO2+ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

@@ -13,7 +13,7 @@ The device is in the category of *Wall Switch*, defining Any device attached to 
 ![DZMX1 product image](https://www.cd-jackson.com/zwave_device_uploads/196/196_default.jpg)
 
 
-The DZMX1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The DZMX1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -60,7 +60,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

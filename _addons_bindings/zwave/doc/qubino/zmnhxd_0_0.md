@@ -13,7 +13,7 @@ The device is in the category of *Sensor*, defining Device used to measure somet
 ![ZMNHXD product image](https://www.cd-jackson.com/zwave_device_uploads/900/900_default.png)
 
 
-The ZMNHXD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHXD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -283,7 +283,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
+| 0 | Disabled |
 | 2 | IR ext relay ctrl – mono stable push btn |
 | 3 | IR external relay control – bi-stable switch |
 | 4 | External relay control – mono stable push button |

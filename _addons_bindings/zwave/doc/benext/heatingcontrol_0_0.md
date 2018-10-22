@@ -11,7 +11,7 @@ This describes the Z-Wave device *Heating Control*, manufactured by *[BeNext](ht
 ![Heating Control product image](https://www.cd-jackson.com/zwave_device_uploads/473/473_default.png)
 
 
-The Heating Control supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Heating Control supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

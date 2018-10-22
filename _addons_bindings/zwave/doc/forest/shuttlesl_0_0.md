@@ -13,7 +13,7 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 ![Shuttle S/L product image](https://www.cd-jackson.com/zwave_device_uploads/510/510_default.png)
 
 
-The Shuttle S/L supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Shuttle S/L supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -85,7 +85,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

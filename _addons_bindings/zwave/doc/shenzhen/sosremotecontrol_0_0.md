@@ -63,7 +63,7 @@ The following table summarises the channels available for the SOS/Remote Control
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Scene Number | scene_number |  | Number | 
-| Alarm (emergency) | alarm_emergency |  |  | 
+| Alarm (emergency) | alarm_emergency |  | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -98,7 +98,16 @@ This channel provides the scene, and the event as a decimal value in the form ``
 
 ### Alarm (emergency)
 
-Channel type information on this channel is not found.
+Indicates Police, Fire, or Medical services should be contacted.
+
+The ```alarm_emergency``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | EMERGENCY |
+| OFF | OK |
 
 ### Battery Level
 

@@ -8,7 +8,7 @@ title: ZMNHIA - ZWave
 # ZMNHIA Flush on/off thermostat
 This describes the Z-Wave device *ZMNHIA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhia_00_000```.
 
-The ZMNHIA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHIA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

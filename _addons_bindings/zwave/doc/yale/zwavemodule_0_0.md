@@ -35,6 +35,12 @@ The following table summarises the channels available for the Yale Smart Door Lo
 Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Locked |
+| OFF | Unlocked |
 
 ### Alarm
 
@@ -65,7 +71,7 @@ The ```time_offset``` channel supports the ```Number``` item and is in the ```Te
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

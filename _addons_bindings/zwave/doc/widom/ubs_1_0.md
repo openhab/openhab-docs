@@ -9,7 +9,7 @@ title: WiDom Universal Relay Switch - ZWave
 This describes the Z-Wave device *WiDom Universal Relay Switch*, manufactured by *wiDom* with the thing type UID of ```widom_ubs_01_000```.
 This version of the device is limited to firmware version 1.0
 
-The WiDom Universal Relay Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The WiDom Universal Relay Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -51,8 +51,8 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 1 | TOGGLE |
-| 2 | ON |
-| 3 | OFF |
+| 2 | On |
+| 3 | Off |
 | 4 | IGNORE |
 
 The manufacturer defined default value is ```1``` (TOGGLE).
@@ -69,8 +69,8 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 1 | TOGGLE |
-| 2 | ON |
-| 3 | OFF |
+| 2 | On |
+| 3 | Off |
 | 4 | IGNORE |
 
 The manufacturer defined default value is ```1``` (TOGGLE).

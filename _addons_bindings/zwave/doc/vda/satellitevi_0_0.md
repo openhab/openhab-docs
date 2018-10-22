@@ -8,7 +8,7 @@ title: Vitrum Satellite VI - ZWave
 # Vitrum Satellite VI Vitrum touch switch satellite 6 buttons
 This describes the Z-Wave device *Vitrum Satellite VI*, manufactured by *VDA* with the thing type UID of ```vda_satellitevi_00_000```.
 
-The Vitrum Satellite VI supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Vitrum Satellite VI supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -108,7 +108,7 @@ The ```switch_dimmer6``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

@@ -8,7 +8,7 @@ title: GE Outdoor Switch - ZWave
 # GE Outdoor Switch Weather Resistant Outdoor Switch
 This describes the Z-Wave device *GE Outdoor Switch*, manufactured by *Jasco Products* with the thing type UID of ```ge_outdoorswitch_00_000```.
 
-The GE Outdoor Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The GE Outdoor Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -39,7 +39,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

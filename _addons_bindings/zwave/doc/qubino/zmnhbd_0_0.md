@@ -13,7 +13,7 @@ The device is in the category of *Wall Switch*, defining Any device attached to 
 ![ZMNHBD product image](https://www.cd-jackson.com/zwave_device_uploads/215/215_default.jpg)
 
 
-The ZMNHBD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHBD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

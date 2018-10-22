@@ -5,15 +5,15 @@ title: Da Vinci Switch Default - ZWave
 
 {% include base.html %}
 
-# Da Vinci Switch Default Da Vinci v3
-This describes the Z-Wave device *Da Vinci Switch Default*, manufactured by *Avadesign Technology Co.* with the thing type UID of ```avadesign_davinciv3_00_000```.
+# Da Vinci Switch Default
+This describes the Z-Wave device *Da Vinci Switch Default*, manufactured by *Avadesign Technology Co.* with the thing type UID of ```avadesign_davincivsw9_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
 ![Da Vinci Switch Default product image](https://www.cd-jackson.com/zwave_device_uploads/911/911_default.png)
 
 
-The Da Vinci Switch Default supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Da Vinci Switch Default supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -35,6 +35,7 @@ The following table summarises the channels available for the Da Vinci Switch De
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds control | blinds_control | Blinds | Rollershutter | 
 | Scene Number | scene_number |  | Number | 
 | Switch 1 | switch_binary1 | Switch | Switch | 
 | Scene Number 1 | scene_number1 |  | Number | 
@@ -67,6 +68,12 @@ The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Blinds control
+
+Provides start / stop control of blinds.
+
+The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Scene Number
 
@@ -296,7 +303,7 @@ This channel provides the scene, and the event as a decimal value in the form ``
 
 ## Device Configuration
 
-The following table provides a summary of the 5 configuration parameters available in the Da Vinci Switch Default.
+The following table provides a summary of the 29 configuration parameters available in the Da Vinci Switch Default.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -306,16 +313,45 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | EP 1 Blind Duration | EP 1 Blind Duration |
 | 4 | EP 1 Output | EP 1 Output |
 | 5 | EP 1 Button attribute | EP 1 Button attribute |
+| 6 | EP 2 Type | EP 2 Type |
+| 7 | EP 2 Partner Id | EP 2 Partner Id |
+| 8 | EP 2 Blind Duration | EP 2 Blind Duration |
+| 11 | EP 3 Type | EP 3 Type |
+| 12 | EP 3 Partner-Id | EP 3 Partner-Id |
+| 13 | EP 3 Blind Duration | EP 3 Blind Duration |
+| 16 | EP 4 Type | EP 4 Type |
+| 17 | EP 4 Partner-Id | EP 4 Partner-Id |
+| 18 | EP 4 Blind Duration | EP 4 Blind Duration |
+| 21 | EP 5 Type | EP 5 Type |
+| 22 | EP 5 Partner-Id | EP 5 Partner-Id |
+| 23 | EP 5 Blind Duration | EP 5 Blind Duration |
+| 26 | EP 6 Type | EP 6 Type |
+| 27 | EP 6 Partner-Id | EP 6 Partner-Id |
+| 28 | EP 6 Blind Duration | EP 6 Blind Duration |
+| 31 | EP 7 Type | EP 7 Type |
+| 32 | EP 7 Partner-Id | EP 7 Partner-Id |
+| 33 | EP 7 Blind Duration | EP 7 Blind Duration |
+| 36 | EP 8 Type | EP 8 Type |
+| 37 | EP 8 Partner-Id | EP 8 Partner-Id |
+| 38 | EP 8 Blind Duration | EP 8 Blind Duration |
+| 41 | EP 9 Type | EP 9 Type |
+| 42 | EP 9 Partner-Id | EP 9 Partner-Id |
+| 43 | EP 9 Blind Duration | EP 9 Blind Duration |
 
 ### Parameter 1: EP 1 Type
 
 EP 1 Type
-1=on/off switch  
-2=blind up  
-3=blind down  
-4=switch multiway  
-5=blind-up multiway  
-6=blind-down multiway
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
 Values in the range 1 to 6 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -369,6 +405,350 @@ Values in the range 0 to 7 may be set.
 The manufacturer defined default value is ```7```.
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+
+### Parameter 6: EP 2 Type
+
+EP 2 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
+
+
+### Parameter 7: EP 2 Partner Id
+
+EP 2 Partner Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
+
+
+### Parameter 8: EP 2 Blind Duration
+
+EP 2 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+
+### Parameter 11: EP 3 Type
+
+EP 3 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
+
+
+### Parameter 12: EP 3 Partner-Id
+
+EP 3 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
+
+
+### Parameter 13: EP 3 Blind Duration
+
+EP 3 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
+
+
+### Parameter 16: EP 4 Type
+
+EP 4 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_16_1``` and is of type ```INTEGER```.
+
+
+### Parameter 17: EP 4 Partner-Id
+
+EP 4 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
+
+
+### Parameter 18: EP 4 Blind Duration
+
+EP 4 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_18_1``` and is of type ```INTEGER```.
+
+
+### Parameter 21: EP 5 Type
+
+EP 5 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
+
+
+### Parameter 22: EP 5 Partner-Id
+
+EP 5 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_22_1``` and is of type ```INTEGER```.
+
+
+### Parameter 23: EP 5 Blind Duration
+
+EP 5 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_23_1``` and is of type ```INTEGER```.
+
+
+### Parameter 26: EP 6 Type
+
+EP 6 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_26_1``` and is of type ```INTEGER```.
+
+
+### Parameter 27: EP 6 Partner-Id
+
+EP 6 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_27_1``` and is of type ```INTEGER```.
+
+
+### Parameter 28: EP 6 Blind Duration
+
+EP 6 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_28_1``` and is of type ```INTEGER```.
+
+
+### Parameter 31: EP 7 Type
+
+EP 7 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_31_1``` and is of type ```INTEGER```.
+
+
+### Parameter 32: EP 7 Partner-Id
+
+EP 7 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_32_1``` and is of type ```INTEGER```.
+
+
+### Parameter 33: EP 7 Blind Duration
+
+EP 7 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_33_1``` and is of type ```INTEGER```.
+
+
+### Parameter 36: EP 8 Type
+
+EP 8 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_36_1``` and is of type ```INTEGER```.
+
+
+### Parameter 37: EP 8 Partner-Id
+
+EP 8 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_37_1``` and is of type ```INTEGER```.
+
+
+### Parameter 38: EP 8 Blind Duration
+
+EP 8 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_38_1``` and is of type ```INTEGER```.
+
+
+### Parameter 41: EP 9 Type
+
+EP 9 Type
+1 = switch on/off
+
+2 = blind up
+
+3 = blind down
+
+4 = switch multiway
+
+5 = blind-up multiway
+
+6 = blind-down multiway
+Values in the range 0 to 6 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_41_1``` and is of type ```INTEGER```.
+
+
+### Parameter 42: EP 9 Partner-Id
+
+EP 9 Partner-Id
+
+Values in the range 0 to 9 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_42_1``` and is of type ```INTEGER```.
+
+
+### Parameter 43: EP 9 Blind Duration
+
+EP 9 Blind Duration
+
+Values in the range 0 to 127 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_43_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups

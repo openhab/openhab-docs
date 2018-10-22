@@ -13,7 +13,7 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![Heatit Z Water product image](https://www.cd-jackson.com/zwave_device_uploads/886/886_default.png)
 
 
-The Heatit Z Water supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Heatit Z Water supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

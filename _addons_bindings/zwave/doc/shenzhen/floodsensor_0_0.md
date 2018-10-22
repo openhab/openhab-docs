@@ -99,7 +99,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 | 1 | Dim level (lower bound) (multilevel switch) |
 | 99 | Dim level (upper bound) (multilevel switch) |
 | 255 | ON (Binary switch) |

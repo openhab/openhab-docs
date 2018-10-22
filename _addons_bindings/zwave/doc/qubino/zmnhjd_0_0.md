@@ -11,7 +11,7 @@ This describes the Z-Wave device *ZMNHJD*, manufactured by *[Goap](http://www.qu
 ![ZMNHJD product image](https://www.cd-jackson.com/zwave_device_uploads/273/273_default.png)
 
 
-The ZMNHJD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHJD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

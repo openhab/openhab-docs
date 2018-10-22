@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHCA*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-The ZMNHCA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHCA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

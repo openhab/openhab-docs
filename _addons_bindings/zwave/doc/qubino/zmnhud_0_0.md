@@ -8,7 +8,7 @@ title: ZMNHUD - ZWave
 # ZMNHUD Flush pilot (DIN version)
 This describes the Z-Wave device *ZMNHUD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhud_00_000```.
 
-The ZMNHUD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHUD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

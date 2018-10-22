@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 792 things from 111 manufacturers.
+The binding supports a total of 794 things from 112 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -82,8 +82,8 @@ and links to more detailed information about each thing.
 | AEON Labs | [Nano Shutter Controller](aeon/zw141_0_0.md) |  | ```aeon_zw141_00_000``` | Blinds |
 | Airline Mechanical Co., Ltd. | [ZDS-UD10](amc/zdsud10_0_0.md) |  | ```amc_zdsud10_00_000``` |  |
 | August Smart Locks | [ASL-03](august/asl03_0_0.md) |  | ```august_asl03_00_000``` | Lock |
-| Avadesign Technology Co. | [Da Vinci Switch Default](avadesign/davinciv3_0_0.md) |  | ```avadesign_davinciv3_00_000``` | Wall Switch |
 | Avadesign Technology Co. | [Da Vinci v9](avadesign/davinciv9_0_0.md) |  | ```avadesign_davinciv9_00_000``` | Wall Switch |
+| Avadesign Technology Co. | [Da Vinci Switch Default](avadesign/davincivsw9_0_0.md) |  | ```avadesign_davincivsw9_00_000``` | Wall Switch |
 | Benetek | [BSL01](benetek/bsl01_0_0.md) |  | ```benetek_bsl01_00_000``` | Lock |
 | BeNext | [Alarm Sound](benext/alarmsound_0_0.md) |  | ```benext_alarmsound_00_000``` | Siren |
 | BeNext | [builtInDimmer](benext/builtindimmer_0_0.md) |  | ```benext_builtindimmer_00_000``` | Wall Switch |
@@ -154,6 +154,7 @@ and links to more detailed information about each thing.
 | Ecolink | [PIR](eco/pir1_0_0.md) |  | ```eco_pir1_00_000``` | Motion Detector |
 | Ecolink | [TILT-ZWAVE2.5-ECO](eco/tiltzwave25eco_0_0.md) |  | ```eco_tiltzwave25eco_00_000``` | Garage Door |
 | Ecolink | [TILTZWAVE2](eco/tiltzwave2_0_0.md) |  | ```eco_tiltzwave2_00_000``` | Garage Door |
+| Ecolink | [TLS-ZWAVE5](eco/tlszwave5_0_0.md) |  | ```eco_tlszwave5_00_000``` | Wall Switch |
 | EcoNet Controls | [EBV-105](econet/ebv105_0_0.md) |  | ```econet_ebv105_00_000``` | Valve |
 | EcoNet Controls | [EV100](econet/ev100_0_0.md) |  | ```econet_ev100_00_000``` |  |
 | EcoNet Controls | [GR-105N](econet/gr105n_0_0.md) |  | ```econet_gr105n_00_000``` | Valve |
@@ -368,7 +369,7 @@ and links to more detailed information about each thing.
 | Horstmann Controls Limited | [SRT323](horstmann/srt323_0_0.md) |  | ```horstmann_srt323_00_000``` | HVAC |
 | Horstmann Controls Limited | [SSR-302](horstmann/ssr302_0_0.md) |  | ```horstmann_ssr302_00_000``` | HVAC |
 | Horstmann Controls Limited | [SWM301](horstmann/swm301_0_0.md) |  | ```horstmann_swm301_00_000``` |  |
-| Alphonsus Tech | [IDL-101](idlock/idl101_0_0.md) |  | ```idlock_idl101_00_000``` | Door |
+| Alphonsus Tech | [IDL-101](idlock/idl101_0_0.md) |  | ```idlock_idl101_00_000``` | Lock |
 | ID Lock AS | [ID-150](idlock/idl150_0_0.md) |  | ```idlock_idl150_00_000``` | Lock |
 | Ingersoll Rand (was Ecolink) | [DWZWAVE1](ingersollecolink/dwzwave1_0_0.md) |  | ```ingersollecolink_dwzwave1_00_000``` |  |
 | Ingersoll Rand (was Ecolink) | [RS200](ingersollecolink/rs200_0_0.md) |  | ```ingersollecolink_rs200_00_000``` |  |
@@ -494,7 +495,7 @@ and links to more detailed information about each thing.
 | ID-RF | [Soft Remote](nodon/softremote_0_0.md) |  | ```nodon_softremote_00_000``` |  |
 | NorthQ | [NQ-9021](northq/nq9021_0_0.md) |  | ```northq_nq9021_00_000``` |  |
 | NorthQ | [NQ-9022](northq/nq9022_0_0.md) |  | ```northq_nq9022_00_000``` |  |
-| NorthQ | [NQ-9121](northq/nq9121_3_0.md) | 3.0 to 3.34 | ```northq_nq9121_03_000``` |  |
+| NorthQ | [NQ-9121](northq/nq9121_3_0.md) | 3.0 to 3.34 | ```northq_nq9121_03_000``` | Sensor |
 | Fantem | [FT096](oomi/ft096_0_0.md) |  | ```oomi_ft096_00_000``` | Power Outlet |
 | Fantem | [FT098](oomi/ft098_0_0.md) |  | ```oomi_ft098_00_000``` | Light Bulb |
 | Fantem | [FT111](oomi/ft111_0_0.md) |  | ```oomi_ft111_00_000``` | Wall Switch |
@@ -520,7 +521,7 @@ and links to more detailed information about each thing.
 | Philio Technology Corp | [PAN11](philio/pan11_0_0.md) |  | ```philio_pan11_00_000``` | Power Outlet |
 | Philio Technology Corp | [PAN16](philio/pan16_1_2.md) | 1.2 | ```philio_pan16_01_002``` |  |
 | Philio Technology Corp | [PAT02-A](philio/pat02a_0_0.md) |  | ```philio_pat02a_00_000``` | Sensor |
-| Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` |  |
+| Philio Technology Corp | [PAT02-B](philio/pat02b_0_0.md) |  | ```philio_pat02b_00_000``` | Sensor |
 | Philio Technology Corp | [PAT02-C](philio/pat02c_0_0.md) |  | ```philio_pat02c_00_000``` | Sensor |
 | Philio Technology Corp | [PSE02](philio/pse02_0_0.md) |  | ```philio_pse02_00_000``` | Siren |
 | Philio Technology Corp | [PSM02](philio/psm02_0_0.md) |  | ```philio_psm02_00_000``` | Door |
@@ -614,7 +615,7 @@ and links to more detailed information about each thing.
 | Allegion | [BE369](schlage/be369_0_0.md) |  | ```schlage_be369_00_000``` |  |
 | Allegion | [BE468](schlage/be468_0_0.md) |  | ```schlage_be468_00_000``` | Lock |
 | Allegion | [BE469](schlage/be469_0_0.md) |  | ```schlage_be469_00_000``` | Lock |
-| Allegion | [FE599NX](schlage/fe599nx_0_0.md) |  | ```schlage_fe599nx_00_000``` |  |
+| Allegion | [FE599NX](schlage/fe599nx_0_0.md) |  | ```schlage_fe599nx_00_000``` | Lock |
 | Seco | [Zwave Clamp](seco/clamp_0_0.md) |  | ```seco_clamp_00_000``` |  |
 | Sensative AB | [11-01-011](sensative/1101011_0_0.md) |  | ```sensative_1101011_00_000``` | Sensor |
 | Sensative AB | [11 02 011](sensative/1102011_0_0.md) |  | ```sensative_1102011_00_000``` | Sensor |
@@ -739,6 +740,7 @@ and links to more detailed information about each thing.
 | Willis Electric Co., Ltd. | [Zen24](willis/zen24_0_0.md) |  | ```willis_zen24_00_000``` |  |
 | Willis Electric Co., Ltd. | [ZW37](willis/zw37_0_0.md) |  | ```willis_zw37_00_000``` | Power Outlet |
 | Willis Electric Co., Ltd. | [ZW691](willis/zw691_0_0.md) |  | ```willis_zw691_00_000``` | Power Outlet |
+| Wink Inc. | [Siren](wink/siren_0_0.md) |  | ```wink_siren_00_000``` | Siren |
 | Wintop | [iModuleDouble](wintop/1122r_1_4.md) | 1.4 | ```wintop_1122r_01_004``` |  |
 | Wintop | [PlugInSwitch](wintop/dhsitswpdhs_0_0.md) |  | ```wintop_dhsitswpdhs_00_000``` |  |
 | Wintop | [DHS-WIN-BLW-DHS](wintop/dhswinblwdhs_0_0.md) |  | ```wintop_dhswinblwdhs_00_000``` | Blinds |
@@ -788,7 +790,7 @@ and links to more detailed information about each thing.
 | Zooz | [ZSE33](zooz/zse33_0_0.md) |  | ```zooz_zse33_00_000``` |  |
 | Zooz | [ZSE40](zooz/zse40_0_0.md) |  | ```zooz_zse40_00_000``` | Sensor |
 | Z-Wave.Me | [06436](zwaveme/06436_0_0.md) |  | ```zwaveme_06436_00_000``` |  |
-| Z-Wave.Me | [Haseman FGR-316-DIN](zwaveme/fgr316_0_0.md) |  | ```zwaveme_fgr316_00_000``` | Power Outlet |
+| Z-Wave.Me | [FGR-316](zwaveme/fgr316_0_0.md) |  | ```zwaveme_fgr316_00_000``` | Power Outlet |
 | Z-Wave.Me | [HS1DS](zwaveme/hs1ds_0_0.md) |  | ```zwaveme_hs1ds_00_000``` | Window |
 | Z-Wave.Me | [KFOB](zwaveme/kfob_0_0.md) |  | ```zwaveme_kfob_00_000``` | Remote Control |
 | Z-Wave.Me | [WALLC-S](zwaveme/wallcs_0_0.md) |  | ```zwaveme_wallcs_00_000``` | Wall Switch |

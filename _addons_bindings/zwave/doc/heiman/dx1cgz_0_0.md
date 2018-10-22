@@ -10,7 +10,7 @@ This describes the Z-Wave device *DX1CG-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-The DX1CG-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The DX1CG-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -41,7 +41,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

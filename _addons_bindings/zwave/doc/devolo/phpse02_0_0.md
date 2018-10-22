@@ -13,7 +13,7 @@ The device is in the category of *Siren*, defining Siren used by Alarm systems.
 ![ph-pse02 product image](https://www.cd-jackson.com/zwave_device_uploads/453/453_default.jpg)
 
 
-The ph-pse02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ph-pse02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

@@ -13,7 +13,7 @@ The device is in the category of *Siren*, defining Siren used by Alarm systems.
 ![Alarm Sound product image](https://www.cd-jackson.com/zwave_device_uploads/443/443_default.png)
 
 
-The Alarm Sound supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Alarm Sound supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

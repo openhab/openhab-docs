@@ -98,7 +98,7 @@ The ```switch_binary4``` channel supports the ```Switch``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

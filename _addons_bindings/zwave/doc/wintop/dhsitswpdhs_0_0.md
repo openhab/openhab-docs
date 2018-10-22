@@ -8,7 +8,7 @@ title: PlugInSwitch - ZWave
 # PlugInSwitch PlugIn Switch with power monitoring
 This describes the Z-Wave device *PlugInSwitch*, manufactured by *Wintop* with the thing type UID of ```wintop_dhsitswpdhs_00_000```.
 
-The PlugInSwitch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The PlugInSwitch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -53,7 +53,7 @@ The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Ener
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

@@ -8,7 +8,7 @@ title: ZMNHZD - ZWave
 # ZMNHZD Multifunctional Weather Station
 This describes the Z-Wave device *ZMNHZD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhzd_00_000```.
 
-The ZMNHZD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHZD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

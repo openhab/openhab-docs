@@ -8,7 +8,7 @@ title: HRVCCM - ZWave
 # HRVCCM Air CCM
 This describes the Z-Wave device *HRVCCM*, manufactured by *Danfoss* with the thing type UID of ```danfoss_hrvccm_00_000```.
 
-The HRVCCM supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The HRVCCM supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -25,7 +25,7 @@ The following table summarises the channels available for the HRVCCM -:
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

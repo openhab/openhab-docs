@@ -13,7 +13,7 @@ The device is in the category of *Valve*, defining Valves used to control water 
 ![DMWV1 product image](https://www.cd-jackson.com/zwave_device_uploads/650/650_default.jpg)
 
 
-The DMWV1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The DMWV1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -64,7 +64,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

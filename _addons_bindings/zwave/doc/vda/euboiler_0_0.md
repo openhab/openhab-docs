@@ -84,7 +84,7 @@ The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ``
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

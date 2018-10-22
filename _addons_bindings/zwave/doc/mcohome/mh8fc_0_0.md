@@ -13,7 +13,7 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![MH8-FC product image](https://www.cd-jackson.com/zwave_device_uploads/336/336_default.jpg)
 
 
-The MH8-FC supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The MH8-FC supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -148,7 +148,7 @@ Channel type information on this channel is not found.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

@@ -13,7 +13,7 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 ![iShutter product image](https://www.cd-jackson.com/zwave_device_uploads/329/329_default.png)
 
 
-The iShutter supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The iShutter supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

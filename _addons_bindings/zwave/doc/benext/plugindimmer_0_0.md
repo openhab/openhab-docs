@@ -13,7 +13,7 @@ The device is in the category of *Power Outlet*, defining Small devices to be pl
 ![plugInDimmer product image](https://www.cd-jackson.com/zwave_device_uploads/226/226_default.png)
 
 
-The plugInDimmer supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The plugInDimmer supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

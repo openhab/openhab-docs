@@ -8,7 +8,7 @@ title: SW-ZCS-1 - ZWave
 # SW-ZCS-1 Cord Switch
 This describes the Z-Wave device *SW-ZCS-1*, manufactured by *CBCC Domotique SAS* with the thing type UID of ```cbcc_swzcs1_00_000```.
 
-The SW-ZCS-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The SW-ZCS-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

@@ -14,7 +14,7 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![Heatit Z-TRM 2 product image](https://www.cd-jackson.com/zwave_device_uploads/854/854_default.jpg)
 
 
-The Heatit Z-TRM 2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Heatit Z-TRM 2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

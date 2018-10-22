@@ -13,7 +13,7 @@ The device is in the category of *Siren*, defining Siren used by Alarm systems.
 ![HS2WD-Z product image](https://www.cd-jackson.com/zwave_device_uploads/771/771_default.png)
 
 
-The HS2WD-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The HS2WD-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -54,7 +54,7 @@ The ```battery-level``` channel supports the ```Number``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

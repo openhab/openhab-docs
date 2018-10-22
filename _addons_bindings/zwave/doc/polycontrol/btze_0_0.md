@@ -17,13 +17,14 @@ The Danalock V3-BTZE supports routing. This allows the device to communicate usi
 
 ## Overview
 
-Danalock supports:   
-- S0/S2 Z-Wave Security   
-- Bluetooth Smart   
-- Twist Assist   
-- Auto Lock   
-- Hold And Release   
-- Back To Back 
+Danalock supports:
+
+  * S0/S2 Z-Wave Security
+  * Bluetooth Smart
+  * Twist Assist
+  * Auto Lock
+  * Hold And Release
+  * Back To Back 
 
 ### Inclusion Information
 
@@ -59,6 +60,12 @@ The following table summarises the channels available for the Danalock V3-BTZE -
 Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Locked |
+| OFF | Unlocked |
 
 ### Battery Level
 
@@ -93,8 +100,8 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
-| 1 | enabled |
+| 0 | Disabled |
+| 1 | Enabled |
 
 The manufacturer defined default value is ```0``` (disabled).
 
@@ -194,7 +201,12 @@ The Danalock V3-BTZE supports 1 association group.
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Z-Wave Plus Lifeline
-Z-Wave Plus Lifeline • Device Reset Locally: triggered upon reset. • Battery/notification: triggered upon low battery. • Door Lock operation report: triggered upon a change in door lock • Notification: triggered upon a change in door lock
+Z-Wave Plus Lifeline
+
+  * Device Reset Locally: triggered upon reset.
+  * Battery/notification: triggered upon low battery.
+  * Door Lock operation report: triggered upon a change in door lock
+  * Notification: triggered upon a change in door lock
 
 Association group 1 supports 1 node.
 

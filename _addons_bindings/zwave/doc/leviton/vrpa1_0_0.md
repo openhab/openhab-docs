@@ -13,7 +13,7 @@ The device is in the category of *Power Outlet*, defining Small devices to be pl
 ![VRPA1 product image](https://www.cd-jackson.com/zwave_device_uploads/350/350_default.png)
 
 
-The VRPA1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The VRPA1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -55,7 +55,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

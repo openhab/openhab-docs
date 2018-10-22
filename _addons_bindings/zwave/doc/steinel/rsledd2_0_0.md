@@ -13,7 +13,7 @@ The device is in the category of *Light Bulb*, defining Devices that illuminate 
 ![RS LED D2 Z-Wave product image](https://www.cd-jackson.com/zwave_device_uploads/759/759_default.png)
 
 
-The RS LED D2 Z-Wave supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The RS LED D2 Z-Wave supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

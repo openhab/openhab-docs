@@ -11,7 +11,7 @@ This describes the Z-Wave device *ZDS-UD10*, manufactured by *Airline Mechanical
 ![ZDS-UD10 product image](https://www.cd-jackson.com/zwave_device_uploads/184/184_default.png)
 
 
-The ZDS-UD10 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZDS-UD10 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -36,7 +36,7 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

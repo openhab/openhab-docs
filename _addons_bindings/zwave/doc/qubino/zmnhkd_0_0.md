@@ -13,7 +13,7 @@ The device is in the category of *HVAC*, defining Air condition devices, Fans.
 ![ZMNHKD product image](https://www.cd-jackson.com/zwave_device_uploads/829/829_default.jpg)
 
 
-The ZMNHKD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZMNHKD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -563,7 +563,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
+| 0 | Disabled |
 | 1 | Home security, motion detection |
 | 2 | CO - Carbon monoxid detected |
 | 3 | CO2 - Carbon dioxid detected |
@@ -585,7 +585,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | disabled |
+| 0 | Disabled |
 | 1 | Home security, motion detection |
 | 2 | CO - Carbon monoxid detected |
 | 3 | CO2 - Carbon dioxid detected |

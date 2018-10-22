@@ -13,7 +13,7 @@ The device is in the category of *Wall Switch*, defining Any device attached to 
 ![WDS product image](https://www.cd-jackson.com/zwave_device_uploads/432/432_default.jpg)
 
 
-The WDS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The WDS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -148,8 +148,8 @@ The following option values may be configured -:
 |--------|-------------|
 | 0 | IN_OUT |
 | 1 | TOGGLE |
-| 2 | ON |
-| 3 | OFF |
+| 2 | On |
+| 3 | Off |
 | 4 | IGNORE |
 
 The manufacturer defined default value is ```1``` (TOGGLE).
@@ -166,8 +166,8 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 1 | TOGGLE |
-| 2 | ON |
-| 3 | OFF |
+| 2 | On |
+| 3 | Off |
 | 4 | IGNORE |
 
 The manufacturer defined default value is ```1``` (TOGGLE).

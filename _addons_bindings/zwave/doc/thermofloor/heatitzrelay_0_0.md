@@ -13,7 +13,7 @@ The device is in the category of *Power Outlet*, defining Small devices to be pl
 ![HEATIT Z-RELAY product image](https://www.cd-jackson.com/zwave_device_uploads/898/898_default.jpg)
 
 
-The HEATIT Z-RELAY supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The HEATIT Z-RELAY supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

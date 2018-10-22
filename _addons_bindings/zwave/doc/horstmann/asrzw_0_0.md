@@ -8,7 +8,7 @@ title: ASR-ZW - ZWave
 # ASR-ZW Thermostat Receiver
 This describes the Z-Wave device *ASR-ZW*, manufactured by *Horstmann Controls Limited* with the thing type UID of ```horstmann_asrzw_00_000```.
 
-The ASR-ZW supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ASR-ZW supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -57,7 +57,7 @@ The following state translation is provided for this channel to the ```Number```
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

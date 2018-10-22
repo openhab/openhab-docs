@@ -8,7 +8,7 @@ title: Digital Home Systems - ZWave
 # Digital Home Systems In Wall Switch
 This describes the Z-Wave device *Digital Home Systems*, manufactured by *Wintop* with the thing type UID of ```wintop_digitalhomesystems_00_000```.
 
-The Digital Home Systems supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The Digital Home Systems supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -39,7 +39,7 @@ The ```scene_number``` channel supports the ```Number``` item.
 
 ## Device Configuration
 
-The device has no configuration parameters configured.
+The device has no configuration parameters defined.
 
 ## Association Groups
 

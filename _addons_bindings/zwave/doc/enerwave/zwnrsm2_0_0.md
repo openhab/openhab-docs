@@ -13,7 +13,7 @@ The device is in the category of *Wall Switch*, defining Any device attached to 
 ![ZWN-RSM2 product image](https://www.cd-jackson.com/zwave_device_uploads/465/465_default.png)
 
 
-The ZWN-RSM2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data from other devices.
+The ZWN-RSM2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 

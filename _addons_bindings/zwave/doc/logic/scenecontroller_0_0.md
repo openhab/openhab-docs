@@ -591,7 +591,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -608,7 +608,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -657,7 +657,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -674,7 +674,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -723,7 +723,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -740,7 +740,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -789,7 +789,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -806,7 +806,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -855,7 +855,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -872,7 +872,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
@@ -921,7 +921,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 255 | ON |
+| 255 | On |
 
 The manufacturer defined default value is ```255``` (ON).
 
@@ -938,7 +938,7 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | OFF |
+| 0 | Off |
 
 The manufacturer defined default value is ```0``` (OFF).
 
