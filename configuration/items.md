@@ -589,7 +589,10 @@ These are all in plain text, so be careful who you share these with if some data
 
 openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
-Each Thing has one or more Channels, and Items are linked to one or more Channels.
+Each Thing has one or more Channels, and Items are linked to one or more Channels. There are two different kinds of channels:
+
+- State Channels will, as soon as linked to the item, update the state of it and/or listen for commands you send to it. For example, if you have a `Player` item, a state channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your item as well as listening for proper commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
+- Trigger channels will only send events that won't have any effect on the item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event. For example, when you use a binding that integrates buttons or wall switches, a trigger channel could be responsible for sending a `CLICK` event when someone is pressing the button of the device. This event on it's own won't change anything on the item, but you could use e.g the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked. Also, you could define a rule that is triggered by this event and e.g. calculates and changes the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
 Once accepted, the new Thing will appear under Configuration > Things.
@@ -651,3 +654,46 @@ Example:
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
+
+#### Profiles
+
+With Profiles you are able to change the behavior how Channels interact with your items. For State Channels, you have to use State Profiles while you have to use Trigger Profiles for Trigger Channels.
+
+Profiles can be specified as a parameter for a given channel:
+
+```java
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="MyScope:MyProfile"]}
+```
+
+There are some built-in profiles available which are described below. Some Bindings will may offer additional profiles for binding-specific use cases. If this is the case, you'll find those within the documentation of the Binding.
+
+##### Default Profile
+
+If you don't specify any profile, the Default Profile will be used. For State Channels, this means that states and commands are just propagated from the channel to the item and vice-versia without any changes. For Trigger Channels, the Default Profile won't change anything at the item.
+
+##### State Profiles
+
+###### FollowProfile
+
+If one device should "follow" the actions of another device, the FollowProfile can be used. The term "follow" in this case means that any state that is sent to an `Item` will be forwarded from this `Item` to any linked channel with the FollowProfile. The FollowProfile takes state updates on an `Item` and sends them as a command onto the channel. In the direction from the ThingHandler towards the `Item`, the FollowProfile ignores state updates.
+
+```java
+<itemType> <itemName> { channel="<channelUID>", channel="<followChannelUID>"[profile="follow"]}
+```
+
+###### OffsetProfile
+
+The `OffsetProfile` provides the possibility to adjust a value from a device before it arrives at the framework.
+An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`.
+A positive offset is the amount of change from the device towards the framework, i.e. all values from the device are increased by this offset and values sent to the device are decreased by this offset.
+A negative offset subtracts the offset from the value sent by the device to the framework and adds the offset to values sent from the framework to the device.
+
+```java
+Number <itemName> { channel="<bindingID>:<thing-typeID>:<thingName>:<channelName>"[profile="offset", offset="<value>"]}
+```
+
+###### (More Profiles TBD)
+
+##### Trigger Profiles
+
+TBD
