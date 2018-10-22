@@ -625,7 +625,7 @@ Number  Azimuth            "Azimuth"                       {channel="astro:sun:h
 Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:command=sensor_binary,respond_to_basic=true"}
 ```
 
-#### Multi Binding/Channel Linkage
+#### Multi Binding / Channel Linkage
 
 An Item may be linked to multiple Bindings and/or Channels.
 Commands and Updates from and to these Items will be combined, and can be used in interesting ways.
@@ -641,7 +641,7 @@ The first example shows a symbiosis of the network health Binding and the Wake-o
 The second example shows a common use case for the [expire Binding]({{base}}/addons/bindings/expire1/readme.html)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
-##### Exception `autoupdate`
+#### Parameter `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
 This way, the Item is unchanged unless you explicitly post an *update* to the item.
