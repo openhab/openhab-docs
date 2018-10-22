@@ -8,7 +8,7 @@
 
 This repository contains the documentation for openHAB.
 
-The result is available at [https://www.openhab.org/docs/](https://www.openhab.org/docs/), [https://www.openhab.org/addons/](https://www.openhab.org/addons/) and [http://docs.openhab.org/](http://docs.openhab.org/) [Deprecated]
+The result is available at [https://www.openhab.org/docs/](https://www.openhab.org/docs/) and [https://www.openhab.org/addons/](https://www.openhab.org/addons/).
 
 ## How it works
 
