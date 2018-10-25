@@ -391,7 +391,7 @@ On the filesystem, the following icon files are provided by the user:
 Take note, that the Transformation used in the `Livingroom_Light_Connection` Item doesn't effect the needed state specific icons - the icon selection considers "myerror", not the contents of the `error.map` file.
 
 **Number State Matching Rule:**
-For Number Items the equal or next lowest state icon that can be found will be used.
+For Number or Dimmer Items the equal or next lowest state icon that can be found will be used. The default icon will be used for negative numers, or above 100 i.e. the available filename range is icon-0 to icon-99 only.
 For a dimmable light (0-100%), you might provide icons as in the example:
 
 | File name          | Description                                          |
