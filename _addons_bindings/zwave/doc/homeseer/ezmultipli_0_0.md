@@ -46,7 +46,7 @@ The following table summarises the channels available for the EZMultiPli -:
 | Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (luminance) | sensor_luminance |  | Number | 
 | Color | color_color |  | Color | 
-| Alarm | alarm_general | Door | Switch | 
+| Motion Alarm | alarm_motion | Door | Switch | 
 
 ### Sensor (temperature)
 
@@ -67,11 +67,11 @@ The color channel allows to control the color of a light.
 
 The ```color_color``` channel supports the ```Color``` item.
 
-### Alarm
+### Motion Alarm
 
-Indicates if an alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

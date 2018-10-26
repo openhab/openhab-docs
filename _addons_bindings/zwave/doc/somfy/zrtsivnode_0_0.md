@@ -8,6 +8,8 @@ title: ZRTSI-VNODE - ZWave
 # ZRTSI-VNODE Z-Wave to RTS Interface Virtual Node
 This describes the Z-Wave device *ZRTSI-VNODE*, manufactured by *[Somfy](http://www.somfy.com/)* with the thing type UID of ```somfy_zrtsivnode_00_000```.
 
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
+
 ![ZRTSI-VNODE product image](https://www.cd-jackson.com/zwave_device_uploads/370/370_default.jpg)
 
 

@@ -8,6 +8,11 @@ title: ZMNHIA - ZWave
 # ZMNHIA Flush on/off thermostat
 This describes the Z-Wave device *ZMNHIA*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhia_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
+![ZMNHIA product image](https://www.cd-jackson.com/zwave_device_uploads/211/211_default.jpg)
+
+
 The ZMNHIA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -479,6 +484,10 @@ Association group 6 supports 1 node.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
+
+### Documentation Links
+
+* [User Manual V1.0](https://www.cd-jackson.com/zwave_device_uploads/211/Qubino-Flush-On-Off-thermostat-user-manual-V1-0-eng.pdf)
 
 ---
 

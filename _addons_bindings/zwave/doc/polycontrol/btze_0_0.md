@@ -30,21 +30,31 @@ Danalock supports:
 
 To add or include the Danalock into a Z-Wave network
 
-  1. Set the controller in inclusion mode
+  1. Pair the lock with bluetooth first
+  2. Set the controller in inclusion mode
 
-  2. Push the switch once.
+  3. Push the switch once.
 
-  3. Wait 5 seconds. 
+  4. Wait 5 seconds. 
 
 ### Exclusion Information
 
 To remove or exclude the Danalock into a Z-Wave network
 
-  1. Set the controller in exclusion mode
+  1. Delete the lock within the app (bluetooth)
+  2. Set the controller in exclusion mode
 
-  2. Push the switch once.
+  3. Push the switch once.
 
-  3. Wait 5 seconds. 
+  4. Wait 5 seconds. 
+
+### General Usage Information
+
+Additional hints:
+
+**Inclusion**: Do **not** include the lock to a Z-Wave network before it has been paired through bluetooth. Otherwise the lock is blocked and you are not able to pair through bluetooth. If you are not able to pair through the app then there is still z-wave information that has not been erased. A factory reset does not delete this Z-Wave information. You must exclude.
+
+**Exclusion**: Delete the lock from the app before you exclude. Otherwise it won’t work. Exclusion is successful when the green light stops lightning immediately. If you use the Aeotec Z-Stick Gen5 it is easier to exclude with the USB stick detached. Inclusion of course with the stick attached to the PC. You can use any kind of controller to exclude - no matter with which controller it has been paired before.
 
 ## Channels
 
