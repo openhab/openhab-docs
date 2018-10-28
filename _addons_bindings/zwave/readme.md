@@ -26,7 +26,7 @@ The binding uses a standard Z-Wave serial stick to communicate with the Z-Wave d
 
 ## Supported Things
 
-The ZWave binding provides support for a large number of devices (currently 792 devices from 111 manufacturers).
+The ZWave binding provides support for a large number of devices (currently 796 devices from 112 manufacturers).
 See the [full list of supported things](doc/things.md).
 
 
@@ -353,3 +353,50 @@ If the device is listed as *Unknown*, then the device has not been fully discove
 
 * **The device is not in the database.** If the device attributes show that this device has a valid manufacturer ID, device ID and type, then this is likely the case (eg. you see a label like "*Z-Wave node 1 (0082:6015:020D::2.0)*"). Even if the device appears to be in the database, some manufacturers use multiple sets of references for different regions or versions, and your device references may not be in the database. In either case, the database must be updated and you should raise an issue to get this addressed.
 * **The device initialisation is not complete.** Once the device is included into the network, the binding must interrogate it to find out what type of device it is. One part of this process is to get the manufacturer information required to identify the device, and until this is done, the device will remain unknown. For mains powered devices, this will normally occur quickly, however for battery devices the device must be woken up a number of  times to allow the discovery phase to complete. This must be performed with the device close to the controller and you should refer to the device manual for information on waking up the device.  
+
+
+## When things don't go as planned
+
+Z-Wave is a complex protocol, and there are many manufacturers producing thousands of devices that are expected to interact seemlessly. In the most part, this does work as hoped, however there are always devices with bugs, or features that don't work as expected. When this happens, the debug logging from the binding is the key to understanding, and ultimately solving, any issues.
+
+When providing a debug log, provide the full log; don't filter anything out. Provide the log with plenty of context before and after the event you're trying to troubleshoot. Sometimes the root cause of the problem happens considerably beforehand. If the log file is too big to include in your forum post, place it on a file-sharing service, and include a link to the file in your post.
+
+To enable debug logging, log on to the [console](https://www.openhab.org/docs/administration/console.html) and enter the following command -:
+
+```
+log:set DEBUG org.openhab.binding.zwave
+```
+
+To disable debug logging, enter the following command -:
+
+```
+log:set INFO org.openhab.binding.zwave
+```
+
+By default, this will put all logging into the standard ```openhab.log``` file.  If you prefer to have all ZWave logging in a separate file, put this in your ```userdata/etc/org.ops4j.pax.logging.cfg``` file.
+
+```
+### Zwave custom logger
+log4j2.logger.Zwave.name = org.openhab.binding.zwave
+log4j2.logger.Zwave.level = DEBUG
+log4j2.logger.Zwave.additivity = false
+log4j2.logger.Zwave.appenderRefs = Zwave
+log4j2.logger.Zwave.appenderRef.Zwave.ref = ZWAVE
+
+### Zwave custom appender
+log4j2.appender.Zwave.name = ZWAVE
+log4j2.appender.Zwave.type = RollingRandomAccessFile
+log4j2.appender.Zwave.fileName = ${openhab.logdir}/zwave.log
+log4j2.appender.Zwave.filePattern = ${openhab.logdir}/zwave.log.%i
+log4j2.appender.Zwave.immediateFlush = true
+log4j2.appender.Zwave.append = true
+log4j2.appender.Zwave.layout.type = PatternLayout
+log4j2.appender.Zwave.layout.pattern = %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-50.50c] - %m%n
+log4j2.appender.Zwave.policies.type = Policies
+log4j2.appender.Zwave.policies.size.type = SizeBasedTriggeringPolicy
+log4j2.appender.Zwave.policies.size.size = 10MB
+log4j2.appender.Zwave.strategy.type = DefaultRolloverStrategy
+log4j2.appender.Zwave.strategy.max = 10
+```
+
+An online viewer that presents the logs in a clearer way in order to help with their understanding, is available [here](https://www.cd-jackson.com/index.php/openhab/zwave-log-viewer).
