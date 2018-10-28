@@ -1,16 +1,21 @@
 ---
 layout: documentation
-title: Ecolink PIR v2.5 - ZWave
+title: PIR Motion Sensor v2.5 - ZWave
 ---
 
 {% include base.html %}
 
-# Ecolink PIR v2.5 Z-Wave PIR Motion Sensor v2.5
-This describes the Z-Wave device *Ecolink PIR v2.5*, manufactured by *Ecolink* with the thing type UID of ```eco_ecolinkpirv25_00_000```.
+# PIR Motion Sensor v2.5 Z-Wave Motion Sensor
+This describes the Z-Wave device *PIR Motion Sensor v2.5*, manufactured by *Ecolink* with the thing type UID of ```eco_ecolinkpirv25_00_000```.
 
-The Ecolink PIR v2.5 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-The Ecolink PIR v2.5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+![PIR Motion Sensor v2.5 product image](https://www.cd-jackson.com/zwave_device_uploads/525/525_default.jpg)
+
+
+The PIR Motion Sensor v2.5 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+
+The PIR Motion Sensor v2.5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
@@ -34,13 +39,13 @@ The manual indicates network-wide inclusion is supported, but also indicates tha
 
 ### Wakeup Information
 
-The Ecolink PIR v2.5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+The PIR Motion Sensor v2.5 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 ## Channels
 
-The following table summarises the channels available for the Ecolink PIR v2.5 -:
+The following table summarises the channels available for the PIR Motion Sensor v2.5 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
@@ -98,7 +103,7 @@ The ```battery-level``` channel supports the ```Number``` item and is in the ```
 
 ## Device Configuration
 
-The following table provides a summary of the 2 configuration parameters available in the Ecolink PIR v2.5.
+The following table provides a summary of the 2 configuration parameters available in the PIR Motion Sensor v2.5.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -177,7 +182,7 @@ This parameter has the configuration ID ```wakeup_node``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Ecolink PIR v2.5 supports 2 association groups.
+The PIR Motion Sensor v2.5 supports 2 association groups.
 
 ### Group 1: Group 1
 
@@ -213,6 +218,10 @@ Association group 2 supports 5 nodes.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Ecolink PIR 2.5 Instruction Manual](https://www.cd-jackson.com/zwave_device_uploads/525/Ecolink-PIR-2-5-Instruction-Manual.pdf)
 
 ---
 
