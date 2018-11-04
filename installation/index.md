@@ -55,7 +55,7 @@ openHAB is known not to work on Java 9 and Java 10.
 Please use the **32-bit version** of the JVM for ARM platforms, even on 64-bit operating systems.
 Serial connections won't work with a 64-bit JVM, preventing bindings like Z-Wave from functioning.
 
-For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org), the minimum recommended Java 8 revision is "101".
+For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org) and the [Eclipse IoT Marketplace]({{base}}/configuration/eclipseiotmarket.html), the minimum recommended Java 8 revision is "161".
 Attention: Most package managers serve an **older revision**.
 Check your current Java version by opening a command line console and typing `java -version`:
 
