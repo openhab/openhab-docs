@@ -240,7 +240,7 @@ then
 end
 ```
 
-Create a refresh script `$OPENHAB_CONF/rules_refresh.sh` and make it executable (`chmod +x rules_refresh.sh`):
+Create a refresh script `$OPENHAB_CONF/rules/rules_refresh.sh` and make it executable (`chmod +x $OPENHAB_CONF/rules/rules_refresh.sh`):
 
 ```sh
 #!/bin/bash
