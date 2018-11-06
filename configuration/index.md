@@ -33,7 +33,7 @@ openHAB provides different user interfaces to modify settings, manage your thing
 HABmin provides a set of features to now overlap with Paper UI (which came later).
 Every interface still has its own strong points.
 The following table shows what the user interfaces can be used for.
-For a recommendation to new users which one(s) to use, see the section below. "*" means recommended.
+For a recommendation to new users which one(s) to use, see the section below. In the table, **"R" means recommended.**
 
 <table class="centered highlight">
   <thead>
@@ -52,8 +52,8 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Auto-Discover Things and Items</td>
       <td>❌</td>
-      <td>✔️*</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
@@ -61,15 +61,15 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Define and manage Things</td>
       <td>(✔️)<br/>not for all bindings</td>
-      <td>✔️*</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin</td>
     </tr>
     <tr>
       <td>Define and manage Items</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -78,7 +78,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Groups</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -87,10 +87,10 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Sitemaps</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>❌</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>Homebuilder or sitemaps/*.sitemap files</td>
     </tr>
@@ -114,7 +114,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>(❌)<br/>only for the experimental rules engine</td>
       <td>(❌)<br/>not functional</td>
       <td>❌</td>
@@ -125,7 +125,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>Manage Z-Wave Devices</td>
       <td>❌</td>
       <td>✔️</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>❌</td>
       <td>HABmin</td>
@@ -133,7 +133,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Modify openHAB Settings/Services</td>
       <td>✔️</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -141,8 +141,8 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Install Add-ons</td>
-      <td>✔️*<br/>mandatory for most OH1 bindings</td>
-      <td>✔️*</td>
+      <td>✔️R<br/>mandatory for OH1 bindings to require config</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
