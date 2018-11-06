@@ -172,7 +172,7 @@ You have the full freedom of choice. On the other hand, this can be very confusi
 To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
 * Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
-* Create items and groups in `.items` files. You can also use [Homebuilder](homebuilder.html) to create your initial set of [.items](items.html) and [sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
+* Create items and groups in `.items` files. You can also use [Homebuilder](homebuilder.html) to create your initial set of [.items](items.html) and [.sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
 * Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
 * Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
 * Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
