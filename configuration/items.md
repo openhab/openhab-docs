@@ -685,3 +685,27 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
 | `rawrocker-to-on-off` | Trigger | Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.
 | `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
+
+Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp ...
+```java
+Item Bedroom_Light { channel="hue:0210:1:bulb1:color" }
+```
+... and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
+```java
+when
+    Channel "serialbutton:button:mybutton:button" triggered PRESSED
+then
+    if (Light_Bedroom.getStateAs(OnOffType) != ON)
+        Light_Bedroom.sendCommand(ON)
+    else
+        Light_Bedroom.sendCommand(OFF)
+end
+```
+
+Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
+
+```java
+Item Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+```
+
+This will make your Rule obsolete. So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.
