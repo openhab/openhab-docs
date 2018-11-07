@@ -393,9 +393,9 @@ Take note, that the Transformation used in the `Livingroom_Light_Connection` Ite
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
 The default icon will be used for negative numbers, or above 100 i.e. the available filename range is icon-0 to icon-99 only.
-Dimmer type Items work in the same way, being limied to 0-100 anyway.
-For a dimmable light (0-100%), you might provide icons as in the example:
+Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
+For a dimmable light (0-100%), you might provide icons as in the example:
 | File name          | Description                                          |
 |--------------------|------------------------------------------------------|
 | `mydimmer.svg`     | Default icon (used in undefined states)              |
