@@ -595,8 +595,8 @@ Each Thing has one or more Channels, and Items are linked to one or more Channel
 For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
 - Trigger Channels will only send events that won't have any effect on the Item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event.
 For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `CLICK` event when someone is pressing the button of the device.
-This event on it's own won't change anything on the Item, but you could use e.g the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
-Also, you could define a Rule that is triggered by this event and e.g. calculates and changes the color of the lamp based on the sun position.
+This event on it's own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
+Also, you could e.g. define a Rule that is triggered by this event that calculates and changes the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
 Once accepted, the new Thing will appear under Configuration > Things.
@@ -661,7 +661,7 @@ Switch Garage_Gate {binding="xxx", autoupdate="false"}
 
 #### Profiles
 
-With Profiles you are able to change the behavior how Channels interact with your Items. For State Channels, you have to use State Profiles while you have to use Trigger Profiles for Trigger Channels.
+With Profiles you are able to change the behavior how Channels interact with your Items. You can use *State Profiles* which can be used on State Channels, and Trigger Profiles for.
 
 Profiles can be specified as a parameter for a given Channel:
 
@@ -669,13 +669,30 @@ Profiles can be specified as a parameter for a given Channel:
 <item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="MyScope:MyProfile"]}
 ```
 
-There are some built-in Profiles available which are described below. Some Bindings will may offer additional Profiles for Binding-specific use cases.
-If this is the case, you'll find those within the documentation of the Binding.
+There are some built-in Profiles available which are described below. Some Bindings will may offer additional Profiles for Binding-specific use cases. If this is the case, you'll find those within the documentation of the Binding.
+Also, all [Transformation Services]({{base}}/addons/bindings/expire1/readme.html) provide a State Profile which allows you to do the transformation already on item-level instead doing it via the [Sitemap]({{base}}/configuration/sitemaps.html).
+You can find the documentation of these Profiles within the [Add-On documentation of the transformation service]({{base}}/addons/#transform) you'd like to use.
+
 
 
 | ID            | Type    | Supported Item Types | Description                        |
 |---------------|---------|----------------------|------------------------------------|
 | `default`     | State   | All                  | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice-versia without any changes. For Trigger Channels, the Default Profile won't change anything at the Item. |
 | `follow`      | State   | All                  | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an `Item` will be forwarded from this `Item` to any linked Channel with the `follow` Profile. It takes state updates on an `Item` and sends them as a command onto the Channel. In the direction from the ThingHandler towards the `Item`, the Profile ignores state updates.
-| `offset`      | State   | Dimmer, Number       | Provides the possibility to adjust a value from a device before it arrives at the item. An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. A positive offset is the amount of change from the device towards the framework, i.e. all values from the device are increased by this offset and values sent to the device are decreased by this offset. A negative offset subtracts the offset from the value sent by the device to the framework and adds the offset to values sent from the framework to the device.|
-| `rawbutton-toggle-switch` | Trigger | Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESS` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
+| `offset`      | State   | Color, Dimmer, Number, Rollershutter | Provides the possibility to adjust a value from a device before it arrives at the item. An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. A positive offset is the amount of change from the device towards the framework, i.e. all values from the device are increased by this offset and values sent to the device are decreased by this offset. A negative offset subtracts the offset from the value sent by the device to the framework and adds the offset to values sent from the Item to the device.|
+| `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESS` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
+| `rawrocker-to-on-off` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.
+| `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
+
+Example:
+
+```java
+when
+    Channel "serialbutton:button:mybutton:button" triggered PRESSED
+then
+    if (Light_Bedroom.getStateAs(OnOffType) != ON)
+        Light_Bedroom.sendCommand(ON)
+    else
+        Light_Bedroom.sendCommand(OFF)
+end
+```
