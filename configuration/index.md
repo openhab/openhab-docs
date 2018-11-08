@@ -29,7 +29,7 @@ For more details on the base concept behind openHAB, please visit the [Concepts 
 
 ## Versatility
 
-openHAB provides different user interfaces to modify settings, manage your things and items, build rules and access the sitemap results.
+openHAB provides different user interfaces to modify settings, manage your things and items and to build rules and sitemaps.
 HABmin provides a set of features to now overlap with Paper UI (which came later).
 Every interface still has its own strong points.
 The following table shows what the user interfaces can be used for.
