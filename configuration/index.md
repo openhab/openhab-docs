@@ -29,11 +29,11 @@ For more details on the base concept behind openHAB, please visit the [Concepts 
 
 ## Versatility
 
-openHAB provides different user interfaces to modify settings, manage your things and items, build rules and access the sitemap results.
+openHAB provides different user interfaces to modify settings, manage your things and items and to build rules and sitemaps.
 HABmin provides a set of features to now overlap with Paper UI (which came later).
 Every interface still has its own strong points.
 The following table shows what the user interfaces can be used for.
-For a recommendation to new users which one(s) to use, see the section below. "*" means recommended.
+For a recommendation to new users which one(s) to use, see the section below. In the table, **"R" means recommended.**
 
 <table class="centered highlight">
   <thead>
@@ -52,8 +52,8 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Auto-Discover Things and Items</td>
       <td>❌</td>
-      <td>✔️*</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin<br/>Do not autocreate Items</td>
@@ -61,15 +61,15 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Define and manage Things</td>
       <td>(✔️)<br/>not for all bindings</td>
-      <td>✔️*</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>✔️</td>
       <td>Paper UI or HABmin</td>
     </tr>
     <tr>
       <td>Define and manage Items</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -78,7 +78,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Groups</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -87,10 +87,10 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Sitemaps</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>❌</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>Homebuilder or sitemaps/*.sitemap files</td>
     </tr>
@@ -114,7 +114,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Define Rules</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>(❌)<br/>only for the experimental rules engine</td>
       <td>(❌)<br/>not functional</td>
       <td>❌</td>
@@ -125,7 +125,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
       <td>Manage Z-Wave Devices</td>
       <td>❌</td>
       <td>✔️</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>❌</td>
       <td>❌</td>
       <td>HABmin</td>
@@ -133,7 +133,7 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     <tr>
       <td>Modify openHAB Settings/Services</td>
       <td>✔️</td>
-      <td>✔️*</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -141,8 +141,8 @@ For a recommendation to new users which one(s) to use, see the section below. "*
     </tr>
     <tr>
       <td>Install Add-ons</td>
-      <td>✔️*<br/>mandatory for most OH1 bindings</td>
-      <td>✔️*</td>
+      <td>✔️R<br/>mandatory for OH1 bindings to require config</td>
+      <td>✔️R</td>
       <td>✔️</td>
       <td>❌</td>
       <td>✔️</td>
@@ -161,8 +161,8 @@ You can still run these but you need to use file configuration for them.
 
 Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database](/docs/administration/jsondb.html).
 For Things and Items, both methods can be used **side-by-side**, e.g. a Thing can be discovered and created by Paper UI and the Items that link to that very same Thing (that Thing's Channels, actually) can be manually defined in a `.items` configuration file. 
-Configuration done in files will be used (and they become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to redefine or change it. Those changes will not be accepted.
-Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied into any `.things` file.
+Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it. 
+Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied back into any `.things` file.
 openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
 
 ## Recommendations for New Users
@@ -172,7 +172,7 @@ You have the full freedom of choice. On the other hand, this can be very confusi
 To help starters in narrowing down choices, here is some guidance that might also help to avoid some future pitfalls:
 
 * Use Paper UI to setup and maintain the openHAB base system. Use it to define _which_ addons and bindings you want to install and to assign _basic, static_ configuration (such as the device name of a ZWave stick or the IP address of a KNX gateway).
-* Create items and groups in `.items` files. You can also use [Homebuilder]{homebuilder.html} to create your initial set of [.items](items.html) and [sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
+* Create items and groups in `.items` files. You can also use [Homebuilder](homebuilder.html) to create your initial set of [.items](items.html) and [.sitemap](sitemaps.html) files. It is a separate GUI tool to assist you with the creation of these components to represent your home, however it does not provide GUI support for all the functionality that is available for use in .items, so it is not recommended to keep using Homebuilder to maintain these files.
 * Use Paper UI to manage configuration of each and every openHAB 2 add-on and binding.
 * Use file configuration or Paper UI to manage configuration of openHAB 1 add-ons and bindings.
 * Use Paper UI or habmin to manage ZWave things, but use configuration files to manage ZWave items.<br/>
