@@ -8,6 +8,11 @@ title: SW-ZCS-1 - ZWave
 # SW-ZCS-1 Cord Switch
 This describes the Z-Wave device *SW-ZCS-1*, manufactured by *CBCC Domotique SAS* with the thing type UID of ```cbcc_swzcs1_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![SW-ZCS-1 product image](https://www.cd-jackson.com/zwave_device_uploads/236/236_default.jpg)
+
+
 The SW-ZCS-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -103,6 +108,10 @@ Association group 2 supports 5 nodes.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
+
+### Documentation Links
+
+* [NodON Wall Switch User Guide](https://www.cd-jackson.com/zwave_device_uploads/236/NodOn-WallSwitch-ZWave-UserGuide-EN-2.pdf)
 
 ---
 
