@@ -135,7 +135,7 @@ Switch PlexTVForward	"Forward"		<video>		{plex="playerid#playback/stepForward"}
 Switch PlexTVReverse	"Reverse"		<video>		{plex="playerid#playback/stepBack"}
 ```
 
-items/plexdemo.sitemap
+sitemaps/plexdemo.sitemap
 
 ```
 sitemap plexdemo label="Main Menu"
