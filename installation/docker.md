@@ -204,7 +204,7 @@ By default the openHAB user in the container is running with:
 
 Stop the container:
 
-`docker stop openhab` or `sudo systemct stop openhab`
+`docker stop openhab` or `sudo systemctl stop openhab`
 
 Delete the container:
 
