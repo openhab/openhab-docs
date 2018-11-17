@@ -19,14 +19,17 @@ The ZCOMBO does not permanently listen for messages sent from the controller - i
 
 ## Overview
 
-Z-wave compatible smoke and carbon monoxide alarm. First Alert Z-Wave Detector - NOT WINK compatible  
-Integrated wireless alarm system is Iris compatible to send you mobile alerts and emails. The alarm is also compatible with 3rd party certified z-wave devices with the First Alert protocol. Note- this alarm is not compatible with Onelink. Wireless connection to z-wave hub (not included)  
-Reliable electrochemical co and photoelectric smoke sensors  
-Features single button test/Silence and side-access battery drawer  
-Meets UL standards and backed by 7 year limited warranty  
-Certified for use with Nexia Home Intelligence or other Z-Wave systems  
-Combination Smoke and Carbon Monoxide protection that alerts you whether you are home or away  
-Photoelectric smoke sensor helps reduce false alarms such as from cooking or shower steam
+Z-wave compatible smoke and carbon monoxide alarm. First Alert Z-Wave Detector - NOT WINK compatible.
+
+Integrated wireless alarm system is Iris compatible to send you mobile alerts and emails. The alarm is also compatible with 3rd party certified Z-Wave devices with the First Alert protocol. Note- this alarm is not compatible with Onelink.
+
+  * Wireless connection to z-wave hub
+  * Reliable electrochemical co and photoelectric smoke sensors
+  * Features single button test/Silence and side-access battery drawer
+  * Meets UL standards and backed by 7 year limited warranty
+  * Certified for use with Nexia Home Intelligence or other Z-Wave systems
+  * Combination Smoke and Carbon Monoxide protection that alerts you whether you are home or away
+  * Photoelectric smoke sensor helps reduce false alarms such as from cooking or shower steam
 
 ### Inclusion Information
 
@@ -60,7 +63,9 @@ The following table summarises the channels available for the ZCOMBO -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Heartbeat | alarm_general | Door | Switch | 
-| Smoke | alarm_smoke | Smoke | Switch | 
+| Smoke Alarm | alarm_smoke | Smoke | Switch | 
+| Carbon Monoxide Alarm | alarm_co | Door | Switch | 
+| Test Button | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Heartbeat
@@ -76,11 +81,37 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Smoke
+### Smoke Alarm
 
 Indicates if a smoke is triggered.
 
 The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Carbon Monoxide Alarm
+
+Indicates if the carbon monoxide alarm is triggered.
+
+The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Test Button
+
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
