@@ -8,7 +8,7 @@ title: Logging
 # Logging in openHAB
 
 This article describes the logging functionality in openHAB 2.
-Ths includes how to access logging information and configure logging for user-defined rules.
+This includes how to access logging information and configure logging for user-defined rules.
 
 There are two ways to check log entries:
 
@@ -24,18 +24,22 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 ## Karaf Console
 
-The [Karaf console](console.html) allows to monitor the log in realtime.
+The [Karaf console](console.html) allows to monitor the log in real-time.
 
 The log shell comes with the following commands:
 
-- `log:clear`: clear the log
-- `log:display`: display the last log entries
-- `log:exception-display`: display the last exception from the log
-- `log:get`: show the log levels
-- `log:set`: set the log levels
-- `log:tail`: continuous display of the log entries
+| Log Command             | Description                                                       |
+|-------------------------|-------------------------------------------------------------------|
+| `log:clear`             | Clear log entries                                                 |
+| `log:display`           | Display the last log entries                                      |
+| `log:exception-display` | Displays the last occurred exception from the log                 |
+| `log:get`               | Show the currently set log level                                  |
+| `log:list`              | List the currently set loggers with their levels                  |
+| `log:log`               | Log a message                                                     |
+| `log:set`               | Set the log level                                                 |
+| `log:tail`              | Continuously display log entries. Use ctrl-c to quit this command |
 
-For example, following command enables the realtime monitoring of the default log:
+For example, the following command enables the real-time monitoring of the default log:
 
 ```
 openhab> log:tail
@@ -61,25 +65,32 @@ The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userd
 
 ## Defining what to log
 
-In order to see the messages, logging needs to activated defining what should be logged and in which detail. This can be done in Karaf using the following console command:
+By default, openHAB comes with logging enabled for several standard packages.
+In order to enable logging for additional packages, you need to define what should be logged and in which detail.
+
+This can be done in Karaf using the following console command:
 
 ```text
 log:set LEVEL package.subpackage
 ```
 
-The **what** is defined by `package.subpackage` and is in most cases a binding (like `org.openhab.binding.zwave`)
-
+The **what** is defined by `package.subpackage` and is in most cases a binding (like `org.openhab.binding.zwave`).
 The **detail** of logging is defined by one of the following levels:
 
-1. DEFAULT
-2. OFF
-3. ERROR
-4. WARN
-5. INFO
-6. DEBUG
-7. TRACE
+| Log Level           | Log Weight    | When it should be used                                                                  |
+|---------------------|---------------|-----------------------------------------------------------------------------------------|
+| OFF                 | 0             | When no events will be logged                                                           |
+| FATAL               | 100           | When a severe error will prevent the application from continuing                        |
+| ERROR               | 200           | When an error in the application, possibly recoverable                                  |
+| WARN                | 300           | When an event that might possible lead to an error                                      |
+| INFO                | 400           | When an event for informational purposes                                                |
+| DEBUG               | 500           | When a general debugging event required                                                 |
+| TRACE               | 600           | When a fine grained debug message, typically capturing the flow through the application |
+| ALL                 | MAX           | When all events should be logged                                                        |
 
-The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combineds all logs from levels 3 to 6, while **TRACE** adds further messages in addition to what **DEBUG** displays.
+The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything.
+**DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.
+**ALL** includes every log level from weight 100 to 600.
 Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
 Following example sets the logging for the Z-Wave binding to **DEBUG**
@@ -88,7 +99,8 @@ Following example sets the logging for the Z-Wave binding to **DEBUG**
 log:set DEBUG org.openhab.binding.zwave
 ```
 
-Note that the log levels set using the `log:set` commands are not persistent and will be lost upon restart. To configure those in a persistent way, the commands have to be added to the [configuration file](#config-file).
+Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.
+To modify the stored log levels, use the console or edit the [configuration file](#config-file).
 
 ## Create Log Entries in Rules
 
@@ -127,26 +139,37 @@ Note that, in the last example above, inclusion and formatting of values is done
 
 ## Logging into Separate File
 
-Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`. Additional files can be defined in order to write specifics logs to a separate place.
+Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`.
+Additional files can be defined in order to write specifics logs to a separate place.
 
 In order to create a new log file following two areas needs to be added to the [configuration file](#config-file):
 
 **New logger:**
 
 ```java
-# Logger - Demo.log
-log4j.logger.org.eclipse.smarthome.model.script.Demo = DEBUG, Demo
+# ZWave Logger
+log4j2.logger.ZWave.name = org.openhab.binding.zwave
+log4j2.logger.ZWave.level = INFO
+log4j2.logger.ZWave.additivity = false
+log4j2.logger.ZWave.appenderRefs = ZWave
+log4j2.logger.ZWave.appenderRef.ZWave.ref = ZWAVE
 ```
 
 **New file appender:**
 
 ```java
-# File appender - Demo.log
-log4j.appender.Demo=org.apache.log4j.RollingFileAppender
-log4j.appender.Demo.layout=org.apache.log4j.PatternLayout
-log4j.appender.Demo.layout.ConversionPattern=%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
-log4j.appender.Demo.file=${openhab.logdir}/Demo.log
-log4j.appender.Demo.append=true
-log4j.appender.Demo.maxFileSize=10MB
-log4j.appender.Demo.maxBackupIndex=10
+# ZWave File Appender - ZWave.log
+log4j2.appender.ZWave.name = ZWAVE
+log4j2.appender.ZWave.type = RollingRandomAccessFile
+log4j2.appender.ZWave.fileName = ${openhab.logdir}/ZWave.log
+log4j2.appender.ZWave.filePattern = ${openhab.logdir}/ZWave.log.%i
+log4j2.appender.ZWave.immediateFlush = true
+log4j2.appender.ZWave.append = true
+log4j2.appender.ZWave.layout.type = PatternLayout
+log4j2.appender.ZWave.layout.pattern = %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5.5p] [%-36.36c] - %m%n
+log4j2.appender.ZWave.policies.type = Policies
+log4j2.appender.ZWave.policies.size.type = SizeBasedTriggeringPolicy
+log4j2.appender.ZWave.policies.size.size = 10MB
+log4j2.appender.ZWave.strategy.type = DefaultRolloverStrategy
+log4j2.appender.ZWave.strategy.max = 10
 ```
