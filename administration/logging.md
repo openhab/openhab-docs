@@ -8,7 +8,7 @@ title: Logging
 # Logging in openHAB
 
 This article describes the logging functionality in openHAB 2.
-Ths includes how to access logging information and configure logging for user-defined rules.
+This includes how to access logging information and configure logging for user-defined rules.
 
 There are two ways to check log entries:
 
@@ -24,7 +24,7 @@ Log files are written to either `userdata/log` (manual setup) or `/var/log/openh
 
 ## Karaf Console
 
-The [Karaf console](console.html) allows to monitor the log in realtime.
+The [Karaf console](console.html) allows to monitor the log in real-time.
 
 The log shell comes with the following commands:
 
@@ -39,7 +39,7 @@ The log shell comes with the following commands:
 | `log:set`               | Set the log level                                                 |
 | `log:tail`              | Continuously display log entries. Use ctrl-c to quit this command |
 
-For example, following command enables the realtime monitoring of the default log:
+For example, the following command enables the real-time monitoring of the default log:
 
 ```
 openhab> log:tail
@@ -65,7 +65,11 @@ The config file for logging is `org.ops4j.pax.logging.cfg` located in the `userd
 
 ## Defining what to log
 
-In order to see the messages, logging needs to activated, defining what should be logged and in which detail. This can be done in Karaf using the following console command:
+By default, openHAB comes with logging enabled for several standard packages.
+
+In order to enable logging for additional packages, you need to define what should be logged and in which detail.
+
+This can be done in Karaf using the following console command:
 
 ```text
 log:set LEVEL package.subpackage
@@ -86,7 +90,12 @@ The **detail** of logging is defined by one of the following levels:
 | TRACE               | 600           | When a fine grained debug message, typically capturing the flow through the application |
 | ALL                 | MAX           | When all events should be logged                                                        |
 
-The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything. **DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.  **ALL** includes every log level from weight 100 to 600.
+The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything.
+
+**DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.
+
+**ALL** includes every log level from weight 100 to 600.
+
 Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
 Following example sets the logging for the Z-Wave binding to **DEBUG**
@@ -95,7 +104,8 @@ Following example sets the logging for the Z-Wave binding to **DEBUG**
 log:set DEBUG org.openhab.binding.zwave
 ```
 
-Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.  To modify the stored log levels, use the console or edit the [configuration file](#config-file).
+Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.
+To modify the stored log levels, use the console or edit the [configuration file](#config-file).
 
 ## Create Log Entries in Rules
 
@@ -134,7 +144,9 @@ Note that, in the last example above, inclusion and formatting of values is done
 
 ## Logging into Separate File
 
-Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`. Additional files can be defined in order to write specifics logs to a separate place.
+Per default all log entries are saved in the file `openhab.log` and event specific entries are saved in `events.log`.
+
+Additional files can be defined in order to write specifics logs to a separate place.
 
 In order to create a new log file following two areas needs to be added to the [configuration file](#config-file):
 
