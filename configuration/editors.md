@@ -85,3 +85,4 @@ You can find the syntax file and installation instructions on [openhab-syntax-te
 
 BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
 You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
+
