@@ -10,6 +10,9 @@ This describes the Z-Wave device *HKZW_MS02*, manufactured by *[Hank](http://www
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
+![HKZW_MS02 product image](https://www.cd-jackson.com/zwave_device_uploads/676/676_default.jpg)
+
+
 The HKZW_MS02 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -160,8 +163,10 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The HKZW_MS02 supports 2 association groups.
 
-### Group 1: report the motion detection and battery level
+### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Report the motion detection and battery level
 
 Association group 1 supports 5 nodes.
 
@@ -192,6 +197,10 @@ Association group 2 supports 5 nodes.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/676/HKZW-MS02.pdf)
 
 ---
 

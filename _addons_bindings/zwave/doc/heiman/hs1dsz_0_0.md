@@ -30,7 +30,8 @@ Same hardware as DOMUX DX1DS-Z.
 
 ### Exclusion Information
 
-Long press Func_Button while installing batteries in HS1DS-Z.
+  * Press a Func_Button 3 times quickly on HS1DS-Z.
+  * If Exclusion Process is successful, Green led is Blinking 6 times, then turn off the HS1DS-Z.
 
 ### Wakeup Information
 
@@ -108,12 +109,43 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The HS1DS-Z supports 1 association group.
+The HS1DS-Z supports 5 association groups.
 
-### Group 1: Controller Updates
+### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 
 Association group 1 supports 5 nodes.
+
+### Group 2: Root Device group (Binary Sensor)
+
+Description: Binary Sensor Command Classes:Compatible with 300 series  
+1-Binary Sensor reports status of open or close door via Lifeline.  
+2-When the sensor detects status change between close door and open door, the device will be triggered.
+
+Association group 2 supports 5 nodes.
+
+### Group 3: Root Device group (Binary Sensor)
+
+Description: Binary Sensor Command Classes:Compatible with 300 series  
+1-Binary Sensor reports the removed status of door sensor.  
+2-When the sensor detects status change of tamper, the device will be triggered.
+
+Association group 3 supports 5 nodes.
+
+### Group 4: Root Device group (Notification)
+
+1-Notification report open door or close status via Lifeline.  
+2- When the sensor detects status change between close door and open door, the device will be triggered
+
+Association group 4 supports 5 nodes.
+
+### Group 5: Root Device group (Notification)
+
+1-Binary Sensor reports the removed status of door sensor.  
+2- When the sensor detects status change of tamper, the device will be triggered
+
+Association group 5 supports 5 nodes.
 
 ## Technical Information
 
