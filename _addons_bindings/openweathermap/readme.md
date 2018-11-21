@@ -5,6 +5,7 @@ title: OpenWeatherMap - Bindings
 type: binding
 description: "This binding integrates the [OpenWeatherMap weather API](https://openweathermap.org/api)."
 since: 2x
+logo: images/addons/openweathermap.png
 install: auto
 ---
 

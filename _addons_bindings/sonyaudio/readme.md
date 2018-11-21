@@ -5,6 +5,7 @@ title: SonyAudio - Bindings
 type: binding
 description: "This binding integrates the [Sony Audio Control API](https://developer.sony.com/develop/audio-control-api/)."
 since: 2x
+logo: images/addons/sonyaudio.png
 install: auto
 ---
 

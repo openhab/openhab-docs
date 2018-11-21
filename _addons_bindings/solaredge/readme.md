@@ -5,6 +5,7 @@ title: SolarEdge - Bindings
 type: binding
 description: "The SolarEdge binding is used to get live data from from SolarEdge inverters via the central web api. This binding should in general be compatible with all inverter models that upload data to the solaredge portal."
 since: 2x
+logo: images/addons/solaredge.png
 install: auto
 ---
 

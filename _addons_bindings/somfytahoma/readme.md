@@ -5,6 +5,7 @@ title: Somfy Tahoma - Bindings
 type: binding
 description: "This binding integrates the [Somfy Tahoma](https://www.somfy.fr/produits/domotique/maison-connectee-tahoma) and [Somfy Connexoon](https://www.somfy.fr/produits/domotique/equipements-connectes-connexoon) home automation systems."
 since: 2x
+logo: images/addons/somfytahoma.png
 install: auto
 ---
 

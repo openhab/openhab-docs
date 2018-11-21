@@ -5,6 +5,7 @@ title: Velbus - Bindings
 type: binding
 description: "The Velbus binding integrates with a [Velbus](https://www.velbus.eu/) system through a Velbus configuration module (VMB1USB or VMB1RS)."
 since: 2x
+logo: images/addons/velbus.png
 install: auto
 ---
 

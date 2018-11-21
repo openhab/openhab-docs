@@ -5,6 +5,7 @@ title: Nuki - Bindings
 type: binding
 description: "This is the binding for the [Nuki Smart Lock](https://nuki.io)."
 since: 2x
+logo: images/addons/nuki.png
 install: auto
 ---
 

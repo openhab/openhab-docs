@@ -5,6 +5,7 @@ title: NEEO - Bindings
 type: binding
 description: "This binding will discovery and control a NEEO Brain/Remote combination."
 since: 2x
+logo: images/addons/neeo.png
 install: auto
 ---
 

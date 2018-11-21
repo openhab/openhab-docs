@@ -5,6 +5,7 @@ title: Fronius - Bindings
 type: binding
 description: "This binding uses the [Fronius Solar API V1](http://www.fronius.com/en/photovoltaics/products/all-products/system-monitoring/open-interfaces/fronius-solar-api-json-) to obtain data from a Fronius devices."
 since: 2x
+logo: images/addons/fronius.png
 install: auto
 ---
 

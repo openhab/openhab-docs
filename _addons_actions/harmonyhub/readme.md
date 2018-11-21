@@ -6,6 +6,7 @@ type: action
 description: "- `harmonyPressButton(<device>, <command>)`"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.harmonyhub/README.md
 since: 1x
+logo: images/addons/harmonyhub.png
 install: manual
 ---
 

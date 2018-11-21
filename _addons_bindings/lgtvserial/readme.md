@@ -5,6 +5,7 @@ title: LG TV control using serial protocol - Bindings
 type: binding
 description: "This binding can send some commands typically used by LG LCD TVs (and some used by projectors)."
 since: 2x
+logo: images/addons/lgtvserial.png
 install: auto
 ---
 

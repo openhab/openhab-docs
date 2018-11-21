@@ -5,6 +5,7 @@ title: MQTT Thing - Bindings
 type: binding
 description: "MQTT is a machine-to-machine (M2M)/'Internet of Things' connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport."
 since: 2x
+logo: images/addons/mqtt.generic.png
 install: manual
 ---
 
@@ -30,6 +31,11 @@ Your Homie base topic needs to be **homie**. The mapping is structured like this
 | Device   | Thing         | homie/super-car                    |
 | Node     | Channel Group | homie/super-car/engine             |
 | Property | Channel       | homie/super-car/engine/temperature |
+
+System trigger channels are supported using non-retained properties, with enum datatype and with the following formats:
+* Format: "PRESSED,RELEASED" -> system.rawbutton
+* Format: "SHORT\_PRESSED,DOUBLE\_PRESSED,LONG\_PRESSED" -> system.button
+* Format: "DIR1\_PRESSED,DIR1\_RELEASED,DIR2\_PRESSED,DIR2\_RELEASED" -> system.rawrocker
 
 ---
 

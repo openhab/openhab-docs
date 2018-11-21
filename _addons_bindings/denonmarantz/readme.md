@@ -5,6 +5,7 @@ title: Denon / Marantz - Bindings
 type: binding
 description: "This binding integrates Denon & Marantz AV receivers by using either Telnet or a (undocumented) HTTP API."
 since: 2x
+logo: images/addons/denonmarantz.png
 install: auto
 ---
 

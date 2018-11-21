@@ -5,6 +5,7 @@ title: Konnected - Bindings
 type: binding
 description: "This binding is for interacting with The Konnected Alarm Panel. A module which interfaces with existing home security sensors."
 since: 2x
+logo: images/addons/konnected.png
 install: auto
 ---
 
