@@ -3,7 +3,7 @@ id: konnected
 label: Konnected
 title: Konnected - Bindings
 type: binding
-description: "This binding is for interacting with The Konnected Alarm Panel. A module which interfaces with existing home security sensors."
+description: "This binding is for interacting with the [Konnected Alarm Panel](https://Konnected.io/). A module which interfaces with existing home security sensors."
 since: 2x
 logo: images/addons/konnected.png
 install: auto
@@ -15,10 +15,9 @@ install: auto
 
 # Konnected Binding
 
-This binding is for interacting with The Konnected Alarm Panel. A module which interfaces with existing home security sensors.  
+This binding is for interacting with the [Konnected Alarm Panel](https://Konnected.io/). A module which interfaces with existing home security sensors.  
 Konnected is an open-source firmware and software that runs on a NodeMCU ESP8266 device. 
 The Konnected hardware is specifically designed for an alarm panel installation, but the general purpose firmware/software can be run on any ESP8266 device.
-https://Konnected.io/_
 
 ## Supported Things
 
