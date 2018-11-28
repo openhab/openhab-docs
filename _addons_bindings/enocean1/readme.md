@@ -7,7 +7,7 @@ description: "[EnOcean](https://www.enocean.com/en/) provides reliable and self-
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.enocean/README.md
 since: 1x
 logo: images/addons/enocean.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

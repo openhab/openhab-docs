@@ -124,6 +124,8 @@ When a ZigBee device restarts (e.g. a bulb is powered on), it will send an annou
 
 ### Install Codes
 
+Note: Currently only Ember coordinators support Zigbee 3, it does not look like the Telegesis coordinators will receive an update to support it.
+
 ZigBee 3 requires that devices use an install code to securely join the network. This must be added
 to the binding before the discovery starts. Install codes should be printed on the box the device came
 in, or possibly on the device itself. Note that there is no standard format for how these codes may be
