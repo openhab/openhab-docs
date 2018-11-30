@@ -632,7 +632,7 @@ The color names above are agreed on between all openHAB UIs and are therefor you
 
 ### Icons
 
-openHAB allows a set of icons to be assigned to the different states of an Item and therefor to be presented in a Sitemap.
+openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
 Please refer to the documentation on [Item configuration](items.html) for details.
 
 ![battery-0]({{base}}/addons/iconsets/classic/icons/battery-0.png "battery-0")
