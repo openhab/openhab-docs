@@ -528,7 +528,7 @@ Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
 Tags will be ignored if no Items in the openHAB installation support it.
 
-See the [Hue Emulation]({{base}}/addons/ios/hueemulation/readme.html) or [HomeKit Add-on]({{base}}/addons/ios/homekit/readme.html) documentation for more details.
+See the [Hue Emulation Service]({{base}}/addons/integrations/hueemulation/) or [HomeKit Add-on]({{base}}addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
@@ -638,7 +638,7 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [expire Binding]({{base}}/addons/bindings/expire1/readme.html)
+The second example shows a common use case for the [Expire Binding]({{base}}/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 #### Parameter `autoupdate`
