@@ -246,12 +246,7 @@ Create a refresh script `$OPENHAB_CONF/rules/rules_refresh.sh` and make it execu
 #!/bin/bash
 #This script is called by openHAB after the persistence service has started
 sleep 5
-cd [full_path_to_openhab_config_directory]/rules
-FileList="$(find *.rules | grep -v refresh.rules)"
-for File in $FileList
-do
-  touch $File
-done
+find "$OPENHAB_CONF/rules" -type f -name '*.rules' -not -name refresh.rules | xargs touch
 ```
 
 The script waits for five seconds and then touches all `*.rules` files (except `refresh.rules`).
