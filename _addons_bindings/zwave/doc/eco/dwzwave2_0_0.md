@@ -8,6 +8,8 @@ title: DWZWAVE2 - ZWave
 # DWZWAVE2 Z-Wave Door/Window Sensor
 This describes the Z-Wave device *DWZWAVE2*, manufactured by *Ecolink* with the thing type UID of ```eco_dwzwave2_00_000```.
 
+The device is in the category of *Door*, defining Door sensors.
+
 ![DWZWAVE2 product image](https://www.cd-jackson.com/zwave_device_uploads/138/138_default.jpg)
 
 

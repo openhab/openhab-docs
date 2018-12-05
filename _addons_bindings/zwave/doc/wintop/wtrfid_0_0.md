@@ -19,11 +19,42 @@ The WTRFID does not permanently listen for messages sent from the controller - i
 
 ## Overview
 
+Zipato Mini RFID Keypad combines RFID and Z-Wave protocol for access control purposes. The user can identify themselves either by using manual code buttons on the numeric keypad, or by using a RFID key fob. The keypad fully supports Zipato automated security systems but also works with other Z-Wave enabled networks. “Home” and “Away” buttons allow the arming and disarming of security system or running any automation scenario.
+
+### Inclusion Information
+
+ INCLUDE IN Z-WAVE NETWORK
+
+  1. Make sure your Z-Wave controller is in the right operation mode (include or exclude)
+  2. Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process (indication mode: Ready for learn mode).
+  3. The product will start NWI automatically after unsuccessful normal inclusion
+
+### Exclusion Information
+
+ EXCLUDE from Z-WAVE NETWORK
+
+  1. Make sure your Z-Wave controller is in the right operation mode (include or exclude)
+  2. Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process (indication mode: Ready for learn mode).
+  3. The product will start NWI automatically after unsuccessful normal inclusion
+
 ### Wakeup Information
 
 The WTRFID does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+The default value is 0x1C20 = 7200 sec = 2 hour
+
+The default node is 0xFF = 255 (broadcast)
+
+It is possible to send a wake up notification on user interaction. Besides sending a Wake Up Notification automatically every 2 hours (or any other time that is configured using the Wake Up Interval Set command), the Mini Keypad RFiD/Z-Wave also sends a Wake Up Notification when:
+
+  * The tamper alarm state changes (Mini Keypad RFiD/Z-Wave is mounted or removed from the wall)
+  * A tag read
+  * A code is entered using the keypad
+
+When the wake up time is set to 0 a wake up notification is never send periodically, only on user interaction
 
 ## Channels
 
@@ -146,9 +177,8 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 To configure the time the beep is automatically turned off in seconds.
 The Mini Keypad RFiD/Z-Wave supports 3 types of notification sound configurations:
 
-1 | Notification sound disabled (configuration parameter 2 set to zero)
-
-2 | Notification sound enabled (default, configuration parameter 2 set to auto-stop time).
+  1. Notification sound disabled (configuration parameter 2 set to zero)
+  2. Notification sound enabled (default, configuration parameter 2 set to auto-stop time).
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -159,9 +189,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 ### Parameter 3: Feedback timeout
 
 Feedback timeout
-To configure the timeout to wait for a WAKEUP\_NO\_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other.       
-
-0    ->   disabled
+To configure the timeout to wait for a WAKEUP\_NO\_MORE_INFORMATION before the error beep is automatically sound. The error beeps are fixed 8 beeps shortly after each other (0 -> disabled)
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -183,9 +211,10 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Mode
 
 Configure the operating mode
-To configure the operating mode. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.
+If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.
 
-5 | The mode DESCRIPTION: To configure the operating mode. DEFAULT: 0x01 SIZE: 1 byte* PARAM1: MODE 1: Normal operating mode. MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1. PARAM2,3: not used.
+  * MODE 1: Normal operating mode.
+  * MODE 3: Z-Wave chip is always on to request e.g. version or manufacturer id. If any mode other then 3, that value will be reported after a get but will be handled in SW as mode 1.
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```1```.

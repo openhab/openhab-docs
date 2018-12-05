@@ -17,7 +17,54 @@ The HKZW_MS02 supports routing. This allows the device to communicate using othe
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/676) to improve the documentation.
+Motion sensor is a universal Z-Wave Sensor. It can detect motion and communicate with other associated Z-Wave devices, such as Gateway, Siren, Smart Switch, etc.
+
+Motion sensor can be included and operated in any Z-Wave network with other Z-Wave certified devices.
+
+The features list:
+
+  1. Z-Wave Plus certified for wide compatibility (500 serials product).
+  2. Supports security 0 and security 2 protected mode with AES-128 encryption.
+  3. Motion sensor.
+  4. Product shock alarm.
+  5. The battery life is up to 1 year.
+  6. Low battery alarm.
+  7. Support firmware OTA
+
+### Inclusion Information
+
+Adding the device:
+
+  1. Open the cover.
+  2. Place the device within the direct range of your Z-Wave controller.
+  3. Set the main controller’s adding mode (see the controller’s manual).
+  4. Click the Z-button once or triple click the Z-button quickly, the LED indicator should blink fast.
+  5. Wait for the adding process to end.
+  6. Successful adding will be confirmed by the Z-Wave controller’s message.
+
+### Exclusion Information
+
+Removing the device:
+
+  1. Open the cover.
+  2. Place the device within the direct range of your Z-Wave controller.
+  3. Set the main controller remove mode (see the controller’s manual).
+  4. Triple click the Z-button quickly, the LED indicator should blink fast.Wait for the removing process to end.
+  5. Successful removing will be confirmed by the Z-Wave controller’s message.
+
+### General Usage Information
+
+Installation:
+
+  1. Turn the cover counter-clockwise and open it. 
+  2. Remove the battery blocker.
+  3. Add the device (see “Adding/removing the device”).
+  4. Close the cover and turn it clockwise.
+  5. Place the sensor to anywhere you want.
+
+Detection Area:
+
+Actual range of the sensor can be influenced by environment conditions. Should false motion alarms be reported, check for any moving objects within the sensor’s detection area, such as trees blowing in the wind, cars passing by, windmills. False motion alarms may be caused by moving masses of air and heat as well. If the device keeps on reporting false alarms, despite eliminating all of the above-mentioned factors, install the device in another place.
 
 ## Channels
 
@@ -25,14 +72,14 @@ The following table summarises the channels available for the HKZW_MS02 -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Motion Alarm | alarm_motion | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
-### Alarm (burglar)
+### Motion Alarm
 
-Indicates if the burglar alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -51,7 +98,7 @@ The ```battery-level``` channel supports the ```Number``` item and is in the ```
 
 ## Device Configuration
 
-The following table provides a summary of the 5 configuration parameters available in the HKZW_MS02.
+The following table provides a summary of the 6 configuration parameters available in the HKZW_MS02.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -60,6 +107,7 @@ Detailed information on each parameter can be found in the sections below.
 | 14 | Enable/Disable Basic Set Command | The motion Sensor can reverse its value of BASIC SET when motion is triggered |
 | 15 | value of basic set command | assigned to send Basic Set Command |
 | 17 | enable/disable shock alarm |  |
+| 18 | Motion Alarm Cancellation Delay | Period of time after which Motion alarm will be cancelled. |
 | 32 | Level of low battery | Define a battery level ad the "low battery" |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
@@ -68,15 +116,20 @@ Detailed information on each parameter can be found in the sections below.
 
 The higher the value,the more sensitive the PIR sensor
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 1 to 8 -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 |  |
-| 1 | 1 |
-| 2 | 2 |
+| 1 | Sensitivity 1 (min) |
+| 2 | Sensitivity 2 |
+| 3 | Sensitivity 3 |
+| 4 | Sensitivity 4 |
+| 5 | Sensitivity 5 |
+| 6 | Sensitivity 6 |
+| 7 | Sensitivity 7 |
+| 8 | Sensitivity 8 (max) |
 
-The manufacturer defined default value is ```8```.
+The manufacturer defined default value is ```8``` (Sensitivity 8 (max)).
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -90,7 +143,7 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | Disable |
-| 1 | enable |
+| 1 | Enable |
 
 The manufacturer defined default value is ```0``` (Disable).
 
@@ -122,11 +175,22 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | Disable |
-| 1 | enable |
+| 1 | Enable |
 
 The manufacturer defined default value is ```0``` (Disable).
 
 This parameter has the configuration ID ```config_17_1``` and is of type ```INTEGER```.
+
+
+### Parameter 18: Motion Alarm Cancellation Delay
+
+Period of time after which Motion alarm will be cancelled.
+The Motion alarm will be cancelled in the main controller and the associated devices after 3 seconds, the alarm cancellation can be delay by this parameter. Any motion detected during the cancellation delay time countdown will result in the countdown being restarted.
+Values in the range 0 to 65535 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_18_2``` and is of type ```INTEGER```.
 
 
 ### Parameter 32: Level of low battery
@@ -201,6 +265,7 @@ Association group 2 supports 5 nodes.
 ### Documentation Links
 
 * [User Manual](https://www.cd-jackson.com/zwave_device_uploads/676/HKZW-MS02.pdf)
+* [HKZW-MS02-V1 Product Manual](https://www.cd-jackson.com/zwave_device_uploads/676/HKZW-MS02-V1-ProductManual.pdf)
 
 ---
 

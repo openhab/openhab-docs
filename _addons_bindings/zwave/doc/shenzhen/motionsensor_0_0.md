@@ -373,6 +373,7 @@ Association group 4 supports 4 nodes.
 * [Instruction Manual Motion Sensor](https://www.cd-jackson.com/zwave_device_uploads/401/Manual-for-Motion-sensor-PIR-Zwave-Neo.pdf)
 * [Motion Detector User Guide](https://www.cd-jackson.com/zwave_device_uploads/401/Motion-Detector-User-Guide.pdf)
 * [Motion Detector User Guide V_3.2](https://www.cd-jackson.com/zwave_device_uploads/401/Motion-Detector-User-Guide-EU-V3-2.pdf)
+* [User_Guide_from_22_11_2018](https://www.cd-jackson.com/zwave_device_uploads/401/Motion-Detector-User-Guide--Light-and-Temperature-.pdf)
 
 ---
 
