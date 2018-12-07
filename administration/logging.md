@@ -80,7 +80,6 @@ The **detail** of logging is defined by one of the following levels:
 | Log Level           | Log Weight    | When it should be used                                                                  |
 |---------------------|---------------|-----------------------------------------------------------------------------------------|
 | OFF                 | 0             | When no events will be logged                                                           |
-| FATAL               | 100           | When a severe error will prevent the application from continuing                        |
 | ERROR               | 200           | When an error in the application, possibly recoverable                                  |
 | WARN                | 300           | When an event that might possible lead to an error                                      |
 | INFO                | 400           | When an event for informational purposes                                                |
