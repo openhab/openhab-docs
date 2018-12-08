@@ -42,7 +42,7 @@ Where `<lgtvIdN>` is a name you can use to reference the device from your item c
 
 ### Example
 
-In `services/mgtv.cfg`:
+In `services/lgtv.cfg`:
 
 ```
 wohnzimmer.host=192.168.77.15
