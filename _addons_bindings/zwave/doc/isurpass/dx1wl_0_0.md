@@ -23,15 +23,15 @@ Smart Water Leakage sensor adopts Z-Wave wireless module. Super low power consum
 
 **SPECIFICATION**
 
-Working voltage: DC3V (2 x AAA battery)  
-Static current: 5uA  
-Alarm current: 35mA  
-Networking: Z-Wave  
-Wireless networking distance: 70 (open area)  
-Working temperature: -10°C~+50°C  
-Working humidity: max 95%RH  
-Body dimensions: 76 x 36.6 x 16.5 mm  
-Sensor dimensions: 28.3 x 26.5 x 12.2 mm
+  * Working voltage: DC3V (2 x AAA battery)
+  * Static current: 5uA
+  * Alarm current: 35mA
+  * Networking: Z-Wave
+  * Wireless networking distance: 70 (open area)
+  * Working temperature: -10°C~+50°C
+  * Working humidity: max 95%RH
+  * Body dimensions: 76 x 36.6 x 16.5 mm
+  * Sensor dimensions: 28.3 x 26.5 x 12.2 mm
 
 WARNINGS
 

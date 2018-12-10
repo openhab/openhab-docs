@@ -64,26 +64,12 @@ The following table summarises the channels available for the Motion Sensor -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
+| Luminance Sensor | sensor_luminance |  | Number | 
 | Temperature Sensor | sensor_temperature | Temperature | Number:Temperature | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Motion Alarm | alarm_motion | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
-### Binary Sensor
-
-Indicates if a sensor has triggered.
-
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| ON | Triggered |
-| OFF | Untriggered |
-
-### Sensor (luminance)
+### Luminance Sensor
 
 Indicates the current light reading.
 
@@ -95,11 +81,11 @@ Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Alarm (burglar)
+### Motion Alarm
 
-Indicates if the burglar alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -308,8 +294,9 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The Motion Sensor supports 4 association groups.
 
-### Group 1: Group 1
+### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
 NOTIFICATION_REPORT
 

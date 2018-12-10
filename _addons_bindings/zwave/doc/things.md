@@ -7,7 +7,7 @@ title: Things Summary - ZWave
 
 # Things Supported by the Z-Wave Binding
 
-The binding supports a total of 821 things from 118 manufacturers.
+The binding supports a total of 829 things from 118 manufacturers.
 
 The list below summarises the things currently supported,
 and links to more detailed information about each thing.
@@ -34,7 +34,7 @@ and links to more detailed information about each thing.
 | AEON Labs | [DSB54](aeon/dsb54_0_0.md) |  | ```aeon_dsb54_00_000``` | Door |
 | AEON Labs | [DSC06](aeon/dsc06_0_0.md) |  | ```aeon_dsc06_00_000``` | Power Outlet |
 | AEON Labs | [DSC08](aeon/dsc08_0_0.md) |  | ```aeon_dsc08_00_000``` |  |
-| AEON Labs | [DSC10](aeon/dsc10_0_0.md) |  | ```aeon_dsc10_00_000``` |  |
+| AEON Labs | [DSC10](aeon/dsc10_0_0.md) |  | ```aeon_dsc10_00_000``` | Power Outlet |
 | AEON Labs | [DSC11](aeon/dsc11_0_0.md) |  | ```aeon_dsc11_00_000``` | Light Bulb |
 | AEON Labs | [DSC12](aeon/dsc12_0_0.md) |  | ```aeon_dsc12_00_000``` |  |
 | AEON Labs | [DSC13](aeon/dsc13_0_0.md) |  | ```aeon_dsc13_00_000``` |  |
@@ -52,7 +52,8 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW056](aeon/zw056_0_0.md) |  | ```aeon_zw056_00_000``` | Door |
 | AEON Labs | [ZW062](aeon/zw062_0_0.md) |  | ```aeon_zw062_00_000``` | Garage Door |
 | AEON Labs | [ZW074](aeon/zw074_0_0.md) |  | ```aeon_zw074_00_000``` | Sensor |
-| AEON Labs | [ZW075](aeon/zw075_0_0.md) |  | ```aeon_zw075_00_000``` | Power Outlet |
+| AEON Labs | [ZW075](aeon/zw075_0_0.md) | 3.999 | ```aeon_zw075_00_000``` | Power Outlet |
+| AEON Labs | [ZW075](aeon/zw075_4_0.md) | 4.0 | ```aeon_zw075_04_000``` | Power Outlet |
 | AEON Labs | [ZW078](aeon/zw078_0_0.md) |  | ```aeon_zw078_00_000``` | Wall Switch |
 | AEON Labs | [ZW080](aeon/zw080_0_0.md) |  | ```aeon_zw080_00_000``` | Siren |
 | AEON Labs | [ZW088](aeon/zw088_1_0.md) | 1.0 | ```aeon_zw088_01_000``` |  |
@@ -80,8 +81,8 @@ and links to more detailed information about each thing.
 | AEON Labs | [ZW139](aeon/zw139_0_0.md) |  | ```aeon_zw139_00_000``` |  |
 | AEON Labs | [ZW140](aeon/zw140_0_0.md) |  | ```aeon_zw140_00_000``` | Wall Switch |
 | AEON Labs | [Nano Shutter Controller](aeon/zw141_0_0.md) |  | ```aeon_zw141_00_000``` | Blinds |
-| Aeotec Limited | [ZWA001 Aeotec Bulb 6 Multi-White](aeotec/zwa001_0_0.md) |  | ```aeotec_zwa001_00_000``` | Light Bulb |
-| Aeotec Limited | [ZWA002-A Aeotec LED Bulb 6 Multi-Color](aeotec/zwa002a_0_0.md) |  | ```aeotec_zwa002a_00_000``` | Light Bulb |
+| Aeotec Limited | [ZWA001](aeotec/zwa001_0_0.md) |  | ```aeotec_zwa001_00_000``` | Light Bulb |
+| Aeotec Limited | [ZWA002](aeotec/zwa002a_0_0.md) |  | ```aeotec_zwa002a_00_000``` | Light Bulb |
 | Aeotec Limited | [ZWA005](aeotec/zwa005_0_0.md) |  | ```aeotec_zwa005_00_000``` | Sensor |
 | Airline Mechanical Co., Ltd. | [ZDS-UD10](amc/zdsud10_0_0.md) |  | ```amc_zdsud10_00_000``` |  |
 | August Smart Locks | [ASL-03](august/asl03_0_0.md) |  | ```august_asl03_00_000``` | Lock |
@@ -375,6 +376,7 @@ and links to more detailed information about each thing.
 | Honeywell | [TH6320ZW](honeywell/th6320zw_0_0.md) |  | ```honeywell_th6320zw_00_000``` | HVAC |
 | Honeywell | [TH8320ZW](honeywell/th8320zw_0_0.md) |  | ```honeywell_th8320zw_00_000``` | HVAC |
 | Honeywell | [ZW4005](honeywell/zw4005_0_0.md) |  | ```honeywell_zw4005_00_000``` | Wall Switch |
+| Honeywell | [Plug-in Outdoor Smart Switch ](honeywell/zw4201_0_0.md) |  | ```honeywell_zw4201_00_000``` | Power Outlet |
 | Horstmann Controls Limited | [ASR-ZW](horstmann/asrzw_0_0.md) |  | ```horstmann_asrzw_00_000``` |  |
 | Horstmann Controls Limited | [C17-ZW](horstmann/c17zw_0_0.md) |  | ```horstmann_c17zw_00_000``` |  |
 | Horstmann Controls Limited | [HRT4-ZW](horstmann/hrt4zw_0_0.md) |  | ```horstmann_hrt4zw_00_000``` | HVAC |
@@ -485,10 +487,12 @@ and links to more detailed information about each thing.
 | McoHome Technology Co., Ltd | [MH-S212](mcohome/mhs212_0_0.md) |  | ```mcohome_mhs212_00_000``` |  |
 | McoHome Technology Co., Ltd | [MH-S311H](mcohome/mhs311_0_0.md) |  | ```mcohome_mhs311_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S312](mcohome/mhs312_0_0.md) |  | ```mcohome_mhs312_00_000``` | Wall Switch |
+| McoHome Technology Co., Ltd | [MH-S314](mcohome/mhs314_0_0.md) |  | ```mcohome_mhs314_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S411](mcohome/mhs411_0_0.md) |  | ```mcohome_mhs411_00_000``` |  |
 | McoHome Technology Co., Ltd | [MH-S412](mcohome/mhs412_0_0.md) |  | ```mcohome_mhs412_00_000``` |  |
 | McoHome Technology Co., Ltd | [MH-S511-IL](mcohome/mhs511il_0_0.md) |  | ```mcohome_mhs511il_00_000``` |  |
 | McoHome Technology Co., Ltd | [MH-S512-IL](mcohome/mhs512il_0_0.md) |  | ```mcohome_mhs512il_00_000``` |  |
+| McoHome Technology Co., Ltd | [MH-S513](mcohome/mhs513_0_0.md) |  | ```mcohome_mhs513_00_000``` | Wall Switch |
 | McoHome Technology Co., Ltd | [MH-S521](mcohome/mhs521_0_0.md) |  | ```mcohome_mhs521_00_000``` |  |
 | McoHome Technology Co., Ltd | [TPS411](mcohome/tps411_0_0.md) |  | ```mcohome_tps411_00_000``` |  |
 | McoHome Technology Co., Ltd | [TPS412](mcohome/tps412_0_0.md) |  | ```mcohome_tps412_00_000``` |  |
@@ -551,19 +555,20 @@ and links to more detailed information about each thing.
 | Poly-control | [BTZEUMV1](polycontrol/danalockuniversalmodulve1_0_0.md) |  | ```polycontrol_danalockuniversalmodulve1_00_000``` | Lock |
 | Popp & Co | [004001](popp/004001_0_0.md) |  | ```popp_004001_00_000``` | Smoke Detector |
 | Popp & Co | [004407](popp/004407_1_0.md) | 1.0 | ```popp_004407_01_000``` |  |
-| Popp & Co | [005107](popp/005107_1_1.md) | 1.1 to 2.5 | ```popp_005107_01_001``` | Siren |
+| Popp & Co | [005107](popp/005107_1_1.md) | 1.1 to 1.2 | ```popp_005107_01_001``` | Siren |
 | Popp & Co | [005206](popp/005206_0_0.md) |  | ```popp_005206_00_000``` |  |
 | Popp & Co | [009204](popp/009204_0_0.md) |  | ```popp_009204_00_000``` |  |
 | Popp & Co | [009303](popp/009303_0_0.md) |  | ```popp_009303_00_000``` | Wall Switch |
 | Popp & Co | [009402](popp/009402_0_0.md) | 1.1 | ```popp_009402_00_000``` | Smoke Detector |
 | Popp & Co | [009402](popp/009402_1_14.md) | 1.14 | ```popp_009402_01_014``` | Smoke Detector |
 | Popp & Co | [009501](popp/009501_1_2.md) | 1.2 to 1.2 | ```popp_009501_01_002``` | Valve |
-| Popp & Co | [012501](popp/012501_0_0.md) |  | ```popp_012501_00_000``` |  |
+| Popp & Co | [012501](popp/012501_0_0.md) |  | ```popp_012501_00_000``` | Lock |
 | Popp & Co | [05438](popp/05438_0_0.md) |  | ```popp_05438_00_000``` | Power Outlet |
 | Popp & Co | [123580](popp/123580_0_0.md) |  | ```popp_123580_00_000``` |  |
 | Popp & Co | [123610](popp/123610_0_0.md) |  | ```popp_123610_00_000``` |  |
 | Popp & Co | [123665](popp/123665_0_0.md) |  | ```popp_123665_00_000``` | Power Outlet |
 | Popp & Co | [700045](popp/700045_0_0.md) |  | ```popp_700045_00_000``` | Remote Control |
+| Popp & Co | [700854](popp/700854_2_4.md) | 2.4 to 2.5 | ```popp_700854_02_004``` | Siren |
 | Popp & Co | [POPE700052](popp/pope700052_0_0.md) |  | ```popp_pope700052_00_000``` |  |
 | Popp & Co | [POPE700168](popp/pope700168_0_0.md) |  | ```popp_pope700168_00_000``` | Sensor |
 | Team Precision PCL | [ZSL301EU](precision/zsl301eu_0_0.md) |  | ```precision_zsl301eu_00_000``` | Wall Switch |
@@ -631,7 +636,7 @@ and links to more detailed information about each thing.
 | Radio Thermostat Company of America (RTC) | [CT32](rtc/ct32_0_0.md) |  | ```rtc_ct32_00_000``` |  |
 | Radio Thermostat Company of America (RTC) | [CT80](rtc/ct80_0_0.md) |  | ```rtc_ct80_00_000``` |  |
 | Samsung SDS | [hmdm100](samsungsds/hmdm100_0_0.md) |  | ```samsungsds_hmdm100_00_000``` | Lock |
-| Allegion | [BE369](schlage/be369_0_0.md) |  | ```schlage_be369_00_000``` |  |
+| Allegion | [BE369](schlage/be369_0_0.md) |  | ```schlage_be369_00_000``` | Lock |
 | Allegion | [BE468](schlage/be468_0_0.md) |  | ```schlage_be468_00_000``` | Lock |
 | Allegion | [BE469](schlage/be469_0_0.md) |  | ```schlage_be469_00_000``` | Lock |
 | Allegion | [FE599NX](schlage/fe599nx_0_0.md) |  | ```schlage_fe599nx_00_000``` | Lock |
@@ -680,7 +685,7 @@ and links to more detailed information about each thing.
 | TKB Home | [GR308](tkb/gr308_0_0.md) |  | ```tkb_gr308_00_000``` |  |
 | TKB Home | [TSM02](tkb/tsm02_0_0.md) |  | ```tkb_tsm02_00_000``` | Sensor |
 | TKB Home | [TZ04](tkb/tz04_0_0.md) |  | ```tkb_tz04_00_000``` |  |
-| TKB Home | [TZ06](tkb/tz06_0_0.md) |  | ```tkb_tz06_00_000``` |  |
+| TKB Home | [TZ06](tkb/tz06_0_0.md) |  | ```tkb_tz06_00_000``` | Wall Switch |
 | TKB Home | [TZ08](tkb/tz08_0_0.md) |  | ```tkb_tz08_00_000``` |  |
 | TKB Home | [TZ10](tkb/tz10_0_0.md) |  | ```tkb_tz10_00_000``` | HVAC |
 | TKB Home | [TZ35S](tkb/tz35s_0_0.md) |  | ```tkb_tz35s_00_000``` | Wall Switch |
@@ -710,7 +715,7 @@ and links to more detailed information about each thing.
 | UFairy G.R. Tech | [TP-807ZG](ufairy/tp807zg_0_0.md) |  | ```ufairy_tp807zg_00_000``` | Sensor |
 | UFairy G.R. Tech | [Topvico TP-819ZW](ufairy/tp819_0_0.md) |  | ```ufairy_tp819_00_000``` | Sensor |
 | UFairy G.R. Tech | [Zooz Indoor Siren](ufairy/zse01_0_0.md) |  | ```ufairy_zse01_00_000``` | Siren |
-| UFairy G.R. Tech | [ZSE02](ufairy/zse02_0_0.md) |  | ```ufairy_zse02_00_000``` | Sensor |
+| UFairy G.R. Tech | [ZSE02](ufairy/zse02_0_0.md) |  | ```ufairy_zse02_00_000``` | Motion Detector |
 | VDA | [Vitrum III EU Dimmer](vda/dimmer3_0_0.md) |  | ```vda_dimmer3_00_000``` |  |
 | VDA | [Vitrum Satellite IV](vda/satelliteiv_0_0.md) |  | ```vda_satelliteiv_00_000``` | Wall Switch |
 | VDA | [Vitrum Satellite VI](vda/satellitevi_0_0.md) |  | ```vda_satellitevi_00_000``` |  |
@@ -729,7 +734,7 @@ and links to more detailed information about each thing.
 | Vision Security | [ZL7101](vision/zl7101_0_0.md) |  | ```vision_zl7101_00_000``` |  |
 | Vision Security | [ZL7431](vision/zl7431_0_0.md) |  | ```vision_zl7431_00_000``` | Wall Switch |
 | Vision Security | [ZL7432](vision/zl7432_0_0.md) |  | ```vision_zl7432_00_000``` | Wall Switch |
-| Vision Security | [ZM1601](vision/zm1601_0_0.md) |  | ```vision_zm1601_00_000``` |  |
+| Vision Security | [ZM1601](vision/zm1601_0_0.md) |  | ```vision_zm1601_00_000``` | Siren |
 | Vision Security | [ZM1602](vision/zm1602_0_0.md) | 14.0 | ```vision_zm1602_00_000``` | Siren |
 | Vision Security | [ZM1602](vision/zm1602_15_0.md) | 15.0 | ```vision_zm1602_15_000``` |  |
 | Vision Security | [ZM1701](vision/zm1701_0_0.md) |  | ```vision_zm1701_00_000``` | Lock |
@@ -789,6 +794,7 @@ and links to more detailed information about each thing.
 | Zipato | [AB02Z](zipato/ab02z_0_0.md) |  | ```zipato_ab02z_00_000``` | Siren |
 | Zipato | [RGBWE2](zipato/bulb2rgbw_0_0.md) |  | ```zipato_bulb2rgbw_00_000``` | Light Bulb |
 | Zipato | [HM-HS1CA](zipato/hmhs1ca_0_0.md) |  | ```zipato_hmhs1ca_00_000``` | Smoke Detector |
+| Zipato | [HM-HS1CG-Z](zipato/hmhs1cgz_0_0.md) |  | ```zipato_hmhs1cgz_00_000``` | Sensor |
 | Zipato | [HM-HS1WL-Z](zipato/hmhs1wlz_0_0.md) |  | ```zipato_hmhs1wlz_00_000``` | Sensor |
 | Zipato | [HS1SA](zipato/hs1sa_0_0.md) |  | ```zipato_hs1sa_00_000``` | Smoke Detector |
 | Zipato | [MINI KEYPAD RFID](zipato/keypad_0_0.md) |  | ```zipato_keypad_00_000``` | Remote Control |
@@ -809,6 +815,7 @@ and links to more detailed information about each thing.
 | Zooz | [ZEN22](zooz/zen22_0_0.md) |  | ```zooz_zen22_00_000``` | Wall Switch |
 | Zooz | [ZEN23](zooz/zen23_0_0.md) |  | ```zooz_zen23_00_000``` | Wall Switch |
 | Zooz | [ZEN24](zooz/zen24_0_0.md) |  | ```zooz_zen24_00_000``` | Wall Switch |
+| Zooz | [ZEN26](zooz/zen26_0_0.md) |  | ```zooz_zen26_00_000``` | Wall Switch |
 | Zooz | [ZEN27](zooz/zen27_0_0.md) |  | ```zooz_zen27_00_000``` | Wall Switch |
 | Zooz | [ZSE08](zooz/zse08_0_0.md) |  | ```zooz_zse08_00_000``` | Door |
 | Zooz | [ZSE09](zooz/zse09_0_0.md) |  | ```zooz_zse09_00_000``` | Sensor |
@@ -834,6 +841,7 @@ and links to more detailed information about each thing.
 | Z-Wave.Me | [Z-Weather](zwaveme/zweather_0_0.md) |  | ```zwaveme_zweather_00_000``` |  |
 | Z Wave Products Inc. | [WD-100](zwaveproducts/wd100_0_0.md) |  | ```zwaveproducts_wd100_00_000``` |  |
 | Z Wave Products Inc. | [WS-100](zwaveproducts/ws100_0_0.md) |  | ```zwaveproducts_ws100_00_000``` |  |
+| Z Wave Products Inc. | [ZL-PA-100](zwaveproducts/zlpa100_0_0.md) |  | ```zwaveproducts_zlpa100_00_000``` | Power Outlet |
 | ZyXEL | [ST812](zyxel/st812_0_0.md) |  | ```zyxel_st812_00_000``` | Sensor |
 
 For information on adding devices to the database, refer to the 
