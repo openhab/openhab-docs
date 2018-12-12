@@ -3,7 +3,7 @@ id: habot
 label: HABot
 title: HABot - UIs
 type: ui
-description: "[![Build Status](https://travis-ci.org/ghys/habot.svg?branch=master)](https://travis-ci.org/ghys/habot)"
+description: "[![Build Status](https://travis-ci.org/openhab/org.openhab.ui.habot.svg?branch=master)](https://travis-ci.org/openhab/org.openhab.ui.habot)"
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # HABot
 
-[![Build Status](https://travis-ci.org/ghys/habot.svg?branch=master)](https://travis-ci.org/ghys/habot)
+[![Build Status](https://travis-ci.org/openhab/org.openhab.ui.habot.svg?branch=master)](https://travis-ci.org/openhab/org.openhab.ui.habot)
 
 HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://eclipse.org/smarthome/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org)). In that scenario it can even be added to the Android homescreen as a [Progressive Web App](https://developers.google.com/web/progressive-web-apps/), and adds features working only on "secure origins" like push notifications, speech recognition and resource caching.
 
@@ -33,9 +33,9 @@ It consists in:
 
 ### Install the bundle
 
-Grab the latest release from https://github.com/ghys/habot/releases and drop the .jar in openHAB's `addons` folder. The actual location of that folder depends on your installation and is documented in the installation instructions for [Linux](https://docs.openhab.org/installation/linux.html#file-locations) and [Windows](https://docs.openhab.org/installation/windows.html#file-locations).
+Grab the latest release from https://github.com/openhab/org.openhab.ui.habot/releases and drop the .jar in openHAB's `addons` folder. The actual location of that folder depends on your installation and is documented in the installation instructions for [Linux](https://docs.openhab.org/installation/linux.html#file-locations) and [Windows](https://docs.openhab.org/installation/windows.html#file-locations).
 
-To upgrade, just replace the .jar by the new version. Also go the web app's settings and hit _"Refresh the application"_ to make sure the old version doesn't remain cached. Verify the version by checking the build date under _About HABot_. You might encounter exceptions after upgrading (see https://github.com/ghys/habot/projects/5#card-8141287), this is known and will be fixed. Restarting openHAB should fix the problem.
+To upgrade, just replace the .jar by the new version. Also go the web app's settings and hit _"Refresh the application"_ to make sure the old version doesn't remain cached. Verify the version by checking the build date under _About HABot_. You might encounter exceptions after upgrading (see https://github.com/openhab/org.openhab.ui.habot/projects/5#card-8141287), this is known and will be fixed. Restarting openHAB should fix the problem.
 
 ### Configure named attributes on your items
 
@@ -165,7 +165,7 @@ Contact Window_FF_Office_Door   "Balcony Door [MAP(en.map):%s]"     <door>      
 
 ### Build cards to replace the defaults
 
-Once attributes are properly set on items, you can try chatting with HABot by asking questions and giving orders like _"what's the temperature in the kitchen?"_ or _"switch on the tv in the living room"_ (check the [training data](https://github.com/ghys/habot/tree/master/src/main/resources/train) for some clues about what it can do at the moment. It will reply with a natural language answer and present you with a card containing the matching items, but you can also alter those cards!
+Once attributes are properly set on items, you can try chatting with HABot by asking questions and giving orders like _"what's the temperature in the kitchen?"_ or _"switch on the tv in the living room"_ (check the [training data](https://github.com/openhab/org.openhab.ui.habot/tree/master/src/main/resources/train) for some clues about what it can do at the moment. It will reply with a natural language answer and present you with a card containing the matching items, but you can also alter those cards!
 
 Cards in HABot also have objects and locations attributes, and **if there is already a card with the same attributes as those extracted from a chat query saved in your "card deck", HABot will display the saved card instead of generating one.** You can save an auto-generated card to the card deck with the _"Add to Card deck"_ option its context menu while chatting, and it will have the same attributes (objects and locations) as recognized in the corresponding query, therefore from then on, subsequent queries with the same recognized object and/or location will reuse the saved card, not build a new one. This allows you to make the necessary changes to the card in the Card designer as you see fit, and bring it back by simply asking HABot the same query you used intially. Only remember if the matching items evolve (for example if some are added, renamed or removed), this won't be reflected automatically in the saved card, it's now your responsibility to add them to it.
 
@@ -207,5 +207,5 @@ Remember to cleanup the cache if you upgrade the app - to speed up the loading, 
 ## Roadmap
 
 HABot is very much a work in progress.
-You can check the roadmap in the [Projects](https://github.com/ghys/habot/projects) section. Contributions (PR) are welcome and appreciated!
+You can check the roadmap in the [Projects](https://github.com/openhab/org.openhab.ui.habot/projects) section. Contributions (PR) are welcome and appreciated!
 If you have feature requests or issues though, that's okay, but please consider the fact that it's first and foremost a personal pet project :)
