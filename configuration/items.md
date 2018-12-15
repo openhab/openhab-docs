@@ -668,7 +668,7 @@ With Profiles, you're able to change the behavior how Channels interact with you
 Profiles can be specified as a parameter for a given Channel on the Item configuration:
 
 ```java
-<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="MyScope:MyProfile"]}
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="<profileID>", <profile-parameterID>="MyValue", ...]}
 ```
 
 There are some built-in Profiles available which are described in the table below.
