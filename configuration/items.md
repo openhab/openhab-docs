@@ -589,7 +589,9 @@ These are all in plain text, so be careful who you share these with if some data
 
 openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
-Each Thing has one or more Channels, and Items are linked to one or more Channels. There are two different kinds of channels:
+Each Thing has one or more Channels, and Items are linked to one or more Channels.
+There are two different kinds of channels:
+There are two different kinds of channels:
 
 - State Channels will, as soon as linked to the Item, update the state of it and/or listen for Commands you send to it.
 For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
@@ -685,12 +687,11 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
 | `rawrocker-to-on-off` | Trigger | Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.
 | `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
-
-Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp ...
+Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
 Item Bedroom_Light { channel="hue:0210:1:bulb1:color" }
 ```
-... and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
+and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
 ```java
 when
     Channel "serialbutton:button:mybutton:button" triggered PRESSED
