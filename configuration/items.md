@@ -664,7 +664,7 @@ Switch Garage_Gate {binding="xxx", autoupdate="false"}
 
 #### Profiles
 
-With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* which on State Channels and *Trigger Profiles* on Trigger Channels.
+With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
 
 Profiles can be specified as a parameter for a given Channel on the Item configuration:
 
