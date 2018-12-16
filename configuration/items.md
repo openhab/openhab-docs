@@ -530,7 +530,7 @@ Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
 Tags will be ignored if no Items in the openHAB installation support it.
 
-See the [Hue Emulation Service]({{base}}/addons/integrations/hueemulation/) or [HomeKit Add-on]({{base}}addons/integrations/homekit/) documentation for more details.
+See the [Hue Emulation Service]({{base}}/addons/integrations/hueemulation/) or [HomeKit Add-on]({{base}}/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
