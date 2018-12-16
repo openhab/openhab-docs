@@ -7,7 +7,7 @@ description: "This binding allows openHAB to act as an MQTT client, so that open
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.mqtt/README.md
 since: 1x
 logo: images/addons/mqtt.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

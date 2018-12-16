@@ -53,7 +53,7 @@ The following table summarises the channels available for the WAPIRZ-1 -:
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Motion Alarm | alarm_motion | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -75,11 +75,11 @@ Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Alarm (burglar)
+### Motion Alarm
 
-Indicates if the burglar alarm is triggered.
+Indicates if a motion alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

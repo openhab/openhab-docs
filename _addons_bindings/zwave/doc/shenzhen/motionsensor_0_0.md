@@ -19,10 +19,8 @@ The Motion Sensor does not permanently listen for messages sent from the control
 
 ## Overview
 
-This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.
-
-In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.
-
+This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.  
+In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.  
 When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.
 
 ### Inclusion Information
@@ -46,16 +44,7 @@ The Motion Sensor does not permanently listen for messages sent from the control
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller.
-
-If press successfully, the LED will blink one time.
-
-The minimum wakeup interval is 300s
-
-The maximum wakeup interval is 16,777,200s (about 194 days)
-
-Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…
-
+You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time. The minimum wakeup interval is 300s, the maximum wakeup interval is 16,777,200s (about 194 days). Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…  
 Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
@@ -104,28 +93,29 @@ The ```battery-level``` channel supports the ```Number``` item and is in the ```
 
 ## Device Configuration
 
-The following table provides a summary of the 10 configuration parameters available in the Motion Sensor.
+The following table provides a summary of the 11 configuration parameters available in the Motion Sensor.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Sensitivity Level Setting | Defines the sensitivity of PIR sensor. Where 8 = highest & 255 = lowest sensitivity |
-| 2 | ON/OFF Duration Setting | Determined how long the associated devices should stay ON status. This Parameter value must be large than Parameter 6#. |
-| 3 | Basic Set Level | Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be. |
+| 1 | Sensitivity Level Setting | Defines the sensitivity of PIR sensor. |
+| 2 | ON/OFF Duration Setting | Determined how long the associated devices should stay ON status |
+| 3 | Basic Set Level | Basic Set Command will be sent when the door/window is opened or closed |
 | 4 | Enable/Disable PIR Function |  |
 | 5 | Lux Level Set | Set a lux level value which determines when the light sensor is activated. |
-| 6 | Re-trigger Interval | Adjust the interval of being re-triggered after the PIR detector has been triggered. No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#. |
+| 6 | Re-trigger Interval | Adjust the interval of PIR being re-triggered |
 | 7 | Light Sensor Polling Interval | The Intervall after which the Light Sensor Measure is polled. |
-| 8 | Lux Level Function Enable | 0 = Off, 1 =On and Lux Level must be less than #5 -> then send Basic Set(Parameter #3) |
-| 9 | Lux Level Changed Report | How much the Lux Level must change, in lux, to be reported to the main controller. |
-| 10 | LED Blink Enable | Defines whether the LED blinking is on / off. 1 = enable -> blink once when motion sensor detect movement, 0= disbale |
+| 8 | Lux Level Function Enable | 0 = Off, 1 =On |
+| 9 | Lux Level Changed Report | How much the Lux Level must change |
+| 10 | LED Blink Enable | Defines whether the LED blinking is on / off |
+| 99 | Ambient light intensity calibration | Define the calibrated scale for ambient light intensity |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
 ### Parameter 1: Sensitivity Level Setting
 
-Defines the sensitivity of PIR sensor. Where 8 = highest & 255 = lowest sensitivity
-
+Defines the sensitivity of PIR sensor.
+ Where 8 = highest & 255 = lowest sensitivity
 Values in the range 8 to 255 may be set.
 
 The manufacturer defined default value is ```12```.
@@ -135,14 +125,8 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: ON/OFF Duration Setting
 
-Determined how long the associated devices should stay ON status. This Parameter value must be large than Parameter 6#.
-For instance, this parameter is set to 30(second), the PIR detector will send a
-
-BASIC SET Command to an associated device with value basic set level if PIR
-
-detector is triggered and the associated device will be turned on 30(second) before it
-
-is turned off.
+Determined how long the associated devices should stay ON status
+For instance, this parameter is set to 30(second), the PIR detector will send a BASIC SET Command to an associated device with value basic set level if PIR detector is triggered and the associated device will be turned on 30(second) before it is turned off. This Parameter value must be large than Parameter #6.
 Values in the range 5 to 600 may be set.
 
 The manufacturer defined default value is ```30```.
@@ -152,14 +136,14 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 ### Parameter 3: Basic Set Level
 
-Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
+Basic Set Command will be sent when the door/window is opened or closed
+The receiver will take in for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
+
 Available Settings:
 
- 0 - Off, Alarm cancelling or turning a device OFF
-
-1~99 or 255 – ON (Binary Switch Device)
-
-                      Dim Level (Multilevel Switch Device)
+  * 0 - Off, Alarm cancelling or turning a device OFF
+  * 1~99 or 255 – ON (Binary Switch Device)
+  * Dim Level (Multilevel Switch Device)
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -186,13 +170,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Lux Level Set
 
 Set a lux level value which determines when the light sensor is activated.
-If the ambient illumination level falls below this value and a person moves
-
-across or within the detected area , PIR detector will send a Z-Wave ON
-
-command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate
-
-it.
+If the ambient illumination level falls below this value and a person moves across or within the detected area , PIR detector will send a Z-Wave ON command(i.e. BASIC_SET value = parameter 3#) to an associated device and activate it.
 Values in the range 0 to 1000 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -202,8 +180,8 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 
 ### Parameter 6: Re-trigger Interval
 
-Adjust the interval of being re-triggered after the PIR detector has been triggered. No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.
-
+Adjust the interval of PIR being re-triggered
+No report will be sent during this interval if a movement is presented. This Parameter value must be less than Parameter 2#.
 Values in the range 1 to 8 may be set.
 
 The manufacturer defined default value is ```8```.
@@ -224,14 +202,8 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 ### Parameter 8: Lux Level Function Enable
 
-0 = Off, 1 =On and Lux Level must be less than #5 -> then send Basic Set(Parameter #3)
-If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR
-
-detector will send a BASIC\_SET command frame(i.e. BASIC\_SET (value = parameter 3) to an
-
-associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR
-
-detector will not send a BASIC_SET command frame.
+0 = Off, 1 =On
+If this parameter is set to ‘1’, and when Lux level less than the value define by parameter #5, PIR detector will send a BASIC\_SET command frame(i.e. BASIC\_SET (value = parameter 3) to an associated device and activate it. If Lux Level greater than the value define by parameter #5, PIR detector will not send a BASIC_SET command frame.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -246,8 +218,8 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 ### Parameter 9: Lux Level Changed Report
 
+How much the Lux Level must change
 How much the Lux Level must change, in lux, to be reported to the main controller.
-
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -257,8 +229,8 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 ### Parameter 10: LED Blink Enable
 
-Defines whether the LED blinking is on / off. 1 = enable -> blink once when motion sensor detect movement, 0= disbale
-
+Defines whether the LED blinking is on / off
+ 1 = enable -> blink once when motion sensor detect movement,  0= disabled
 The following option values may be configured -:
 
 | Value  | Description |
@@ -269,6 +241,17 @@ The following option values may be configured -:
 The manufacturer defined default value is ```1``` (Enable LED blinking).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
+
+
+### Parameter 99: Ambient light intensity calibration
+
+Define the calibrated scale for ambient light intensity
+ This parameter defines the calibrated scale for ambient light intensity, to allow more or less granular light measurements
+Values in the range 1 to 65535 may be set.
+
+The manufacturer defined default value is ```1000```.
+
+This parameter has the configuration ID ```config_99_2``` and is of type ```INTEGER```.
 
 ### Wakeup Interval
 
@@ -298,15 +281,11 @@ The Motion Sensor supports 4 association groups.
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Is assigned to the device status - OPEN/CLOSED. It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
-NOTIFICATION_REPORT
-
-COMMAND\_CLASS\_SENSOR\_BINARY\_V2
-
-COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V7
-
-BATTERY_REPORT
-
-DEVICE\_RESET\_LOCALLY_NOTIFICATION
+  * NOTIFICATION_REPORT
+  * COMMAND\_CLASS\_SENSOR\_BINARY\_V2
+  * COMMAND\_CLASS\_SENSOR\_MULTILEVEL\_V7
+  * BATTERY_REPORT
+  * DEVICE\_RESET\_LOCALLY_NOTIFICATION
 
 Association group 1 supports 1 node.
 
