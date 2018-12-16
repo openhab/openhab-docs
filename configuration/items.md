@@ -591,7 +591,6 @@ openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/thing
 Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
 There are two different kinds of channels:
-There are two different kinds of channels:
 
 - State Channels will, as soon as linked to the Item, update the state of it and/or listen for Commands you send to it.
 For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
