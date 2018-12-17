@@ -177,12 +177,12 @@ The following channels are supported -:
 | Channel UID | ZigBee Cluster | Type     |Description                  |
 |-------------|----------------|----------|-----------------------------|
 | battery-level | ```POWER_CONFIGURATION``` (0x0001) | Number |   |
-| battery_voltage | ```POWER_CONFIGURATION``` (0x0001) | Number |   |
+| battery_voltage | ```POWER_CONFIGURATION``` (0x0001) | Number:ElectricPotential |   |
 | color_color | ```COLOR_CONTROL``` (0x0300) | Color |   |
 | color_temperature | ```COLOR_CONTROL``` (0x0300) | Dimmer |   |
-| electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number |   |
-| electrical_rmscurrent | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number |   |
-| electrical_rmsvoltage | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number |   |
+| electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number:Power |   |
+| electrical_rmscurrent | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricCurrent |   |
+| electrical_rmsvoltage | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricPotential |   |
 | ias_codetector | ```IAS_ZONE``` (0x0500)  | Switch |   |
 | ias_contactportal1 | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_fire | ```IAS_ZONE``` (0x0500)  | Switch |   |
@@ -192,7 +192,7 @@ The following channels are supported -:
 | ias_water | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_tamper | ```IAS_ZONE``` (0x0500) | Switch |  |
 | measurement_illuminance | ```ILLUMINANCE_MEASUREMENT``` (0x0400) | Number |   |
-| measurement_pressure | ```PRESSURE_MEASUREMENT``` (0x0403) | Number |   |
+| measurement_pressure | ```PRESSURE_MEASUREMENT``` (0x0403) | Number:Pressure |   |
 | measurement_relativehumidity | ```RELATIVE_HUMIDITY_MEASUREMENT``` (0x0405) | Number |   |
 | measurement_temperature | ```TEMPERATURE_MEASUREMENT``` (0x0402) | Number:Temperature |   |
 | sensor_occupancy | ```OCCUPANCY_SENSING``` (0x0406) | Switch  |  |
