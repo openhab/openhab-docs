@@ -6,6 +6,7 @@ type: binding
 description: "The Withings binding allows openHAB to synchronize data from the official"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.withings/README.md
 since: 1x
+logo: images/addons/withings.png
 install: manual
 ---
 
