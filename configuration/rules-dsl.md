@@ -244,6 +244,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
+If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to acces the information.
 
 Example:
 
@@ -680,6 +681,7 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
 - `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
 - `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
+- `receivedEvent` - will be implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 ### Early returns
@@ -839,6 +841,17 @@ when
 then
     if(receivedCommand == ON) Light.sendCommand(ON)
     else Light.sendCommand(OFF)
+end
+
+rule "Start wake up light on sunrise"
+when
+    Channel "astro:sun:home:rise#event" triggered
+then
+    switch(receivedEvent.getEvent()) {
+        case "START": {
+            Light.sendCommand(ON)
+        }
+    }
 end
 ```
 
