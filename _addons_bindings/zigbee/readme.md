@@ -116,6 +116,7 @@ The following devices have been tested with the binding
 | Hue Motion Sensor          | Motion and Luminance sensor                       |
 | Innr Bulbs                 | *note1*                                           |
 | Osram Bulbs                |                                                   |
+| Osram Motion Sensor        | Osram Smart+ Motion Sensor                        |
 | SmartThings Plug           | Metered Plug                                      |
 | SmartThings Motion Sensor  | CentraLite 3325-S Motion and Temperature sensor   |
 | SmartThings Contact Sensor | Contact and Temperature sensor                    |
