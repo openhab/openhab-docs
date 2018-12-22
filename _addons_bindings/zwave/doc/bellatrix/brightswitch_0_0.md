@@ -72,7 +72,15 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The BrightSwitch supports 1 association group.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Device Reset Locally, Switch Multilevel Report
+
+Association group 1 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints
@@ -84,7 +92,7 @@ The device does not support associations.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -102,7 +110,7 @@ The device does not support associations.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 
