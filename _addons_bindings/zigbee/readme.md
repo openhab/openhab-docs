@@ -27,18 +27,28 @@ Coordinators need to be installed manually and the serial port and baud rate mus
 
 #### Coordinator Configuration
 
+Note that not all configuration parameters are available with all coordinators.
+
 ##### Link Key (zigbee_linkkey)
 
 The key is defined as 16 hexadecimal values. If not defined, this will default to the well known ZigBee HA link key which is required for ZigBee HA 1.2 devices. Do not alter this key if using with a ZigBee HA 1.2 network unless you fully understand the impact.
 
 If defined with the word ```INSTALLCODE:``` before the key, this will create a link key from an install code which may be shorter than 16 bytes.
 
-eg ```5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39```
-eg ```INSTALLCODE:00 11 22 33 44 55 66 77```
+e.g. ```5A 69 67 42 65 65 41 6C 6C 69 61 6E 63 65 30 39```
+e.g. ```INSTALLCODE:00 11 22 33 44 55 66 77```
 
 ##### Network Key (zigbee_networkkey)
 
 The key is defined as 16 hexadecimal values. If not defined, a random key will be created.
+
+##### Child Aging (zigbee_childtimeout)
+
+ZigBee routers (and the coordinator) only have room to allow a certain number of devices to join the network via each router - once the child table in a router is full, devices will need to join via another router (assuming the child can communicate via another router). To avoid the child table becoming full of devices that no longer exist, routers will age out children that do not contact them within a specified period of time. 
+
+Once a child is removed from the child table of a router, it will be asked to rejoin if it tries to communicate with the parent again. Setting this time too large may mean that the router fills its tables with devices that no longer exist, while setting it too small can mean devices unnecessarily rejoining the network.
+
+Note that ZigBee compliant devices should rejoin the network seamlessly, however some non-compliant devices may not rejoin which may leave them unusable without a manual rejoin.
 
 #### Supported Coordinators
 
