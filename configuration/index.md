@@ -165,6 +165,8 @@ Configuration done in files will be used (and Things/Items become visible and ev
 Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied back into any `.things` file.
 openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
 
+**Important note:** All text files must be created with UTF-8 encoding. When using Visual Studio Code, this encoding is already set by default.
+
 ## Recommendations for New Users
 
 All interface options are supposed to work, still some of the more advanced settings might work better in one or the other setup.
