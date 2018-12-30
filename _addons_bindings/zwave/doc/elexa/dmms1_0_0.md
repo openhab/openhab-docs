@@ -5,7 +5,7 @@ title: DMMS1 - ZWave
 
 {% include base.html %}
 
-# DMMS1 Dome Z-Wave Plus Motion Detector with Light Sensor and Flexible Magnetic Mount (DMMS1)
+# DMMS1 Dome Z-Wave Plus Motion Detector with Light Sensor and Flexible Magnetic Mount
 This describes the Z-Wave device *DMMS1*, manufactured by *Elexa Consumer Products Inc.* with the thing type UID of ```elexa_dmms1_00_000```.
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
@@ -61,7 +61,8 @@ The following table summarises the channels available for the DMMS1 -:
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Sensor (luminance) | sensor_luminance |  | Number | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Tamper Alarm | alarm_tamper |  | Switch | 
+| Motion Alarm | alarm_motion | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
@@ -83,11 +84,24 @@ Indicates the current light reading.
 
 The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
-### Alarm (burglar)
+### Tamper Alarm
 
-Indicates if the burglar alarm is triggered.
+Indicates if the tamper alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Motion Alarm
+
+Indicates if a motion alarm is triggered.
+
+The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

@@ -57,11 +57,10 @@ The following table summarises the channels available for the Door/Window Sensor
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Door/Window Sensor | sensor_door | Door | Contact | 
-| Alarm (access) | alarm_access | Door | Switch | 
+| Door Sensor | sensor_door | Door | Contact | 
 | Battery Level | battery-level | Battery | Number |
 
-### Door/Window Sensor
+### Door Sensor
 
 Indicates if the door/window is open or closed.
 
@@ -73,19 +72,6 @@ The following state translation is provided for this channel to the ```Contact``
 |-------|-----------|
 | OPEN | Open |
 | CLOSED | Closed |
-
-### Alarm (access)
-
-Indicates if the access control alarm is triggered.
-
-The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
 
 ### Battery Level
 

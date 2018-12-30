@@ -17,7 +17,28 @@ The FGRGBW supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/131) to improve the documentation.
+Fibaro RGBW Controller is a universal, Z-Wave compatible RGB / RGBW controller. Fibaro RGBW Controller uses PWM output signal, which enables it to control LED, RGB, RGBW strips, halogen lights and fans. Controlled devices may be powered by 12 or 24 VDC. In addition the device supports up to four, 0V - 10V analog sensors, such as temperature sensors, humidity sensors, wind sensors, air quality sensors, light sensors etc. All IN and OUT terminals may be user configured for LED control or 0V-10V signal readouts.
+
+### Inclusion Information
+
+Triple click the B-button or any switch connected to I1-I4 inputs
+
+### Exclusion Information
+
+Triple click the B-button or any switch connected to I1-I4 inputs
+
+### General Usage Information
+
+**Warning!  
+  
+** 
+
+  1. Fibaro RGBW Controller is dedicated to operate in low voltage circuits of 12VDC or 24VDC. Connecting higher voltage load may result in Fibaro RGBW Controller damage.
+  2. Fibaro RGBW Controller must be powered by the same voltage as the connected light source. I.e. if controlling 12V LED strip, the module must be connected to 12V power supply. Similarly, if controlling 24V RGBW strip, Fibaro RGBW Controller must be powered by 24V voltage supply.
+  3. Fibaro RGBW Controller has 0-10V input. There is no 0-10V output. Output is controlled by PWM at 244Hz.
+  4. Fibaro RGBW Controller must be powered by 12VDC or 24 VDC stabilized power supply with outputs load capacity matched to loads voltage.
+  5. Sensors using 0-10V interface use wire connection to inputs I1 - I4. Maximum length of 0-10V connection line is 10 m. Observe sensor's manufacturer recommendations towards 0-10V line diameter.
+  6. In case of connecting long RGBW/RGB/LED strips voltage drops may occur, resulting in lower light brightness further from R/G/B/W outputs. To eliminate this effect it's recommended to connect few shorter strips in serial connection instead of one long strip connected parallel. Maximum recommended wire length, used to connect R/G/B/W outputs with a RGBW/RGB/LED strip is 10 m. Observe connected loads manufacturer recommendations towards connection wire diameter.
 
 ## Channels
 
@@ -113,47 +134,24 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | ALL ON / ALL OFF function activation | Activation/deactivation of ALL ON/ALL OFF functions. |
 | 6 | Associations command class choice | Associations command class choice. By default, Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP. Default setting: Normal (Dimmer) - BASIC\_SET/SWITCH\_MULTILEVEL\_START/STOP |
-| 8 | Outputs state change mode | MODE1, Example: change saturation level from 0% to 99% Parameter 9: Step = 5 Parameter 10: Time between steps: 10ms. Default setting: MODE1 |
-| 9 | Step value (relevant for MODE1) | Step value (relevant for MODE1).  
-Default setting: 1  
-Available settings: 1 - 255. |
-| 10 | Time between steps (relevant for MODE1) | Time between steps (relevant for MODE1).  
-Default setting: 10 ms  
-0 - immediate change of state  
-Available settings: 1 - 60000 ms. |
-| 11 | Time for changing from start to end value | Step value (relevant for MODE1).  
-Default setting: 67 (3s)  
-0: immediate change  
-1-63: 20-126 [ms] value*20ms  
-65-127: 1-63 \[s\] (value-64)*1s  
-129-191: 10-630 \[s\] (value-128)*10s |
-| 12 | Maximum Brightening level | Maximum Brightening level.  
-Default setting: 255  
-Available settings: 3 - 255. |
-| 13 | Minimum dim level | Minimum dim level. Default setting: 2 Available settings: 3 - 255. |
-| 14 | Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only | Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
-Default setting: 4369  
-Controlled device: RGBW, toggle switch inputs (NORMAL MODE). |
+| 8 | Outputs state change mode | MODE1, Example: change saturation level from 0% to 99% |
+| 9 | Step value (relevant for MODE1) | Step value (relevant for MODE1). Default setting: 1, available settings: 1 - 255. |
+| 10 | Time between steps (relevant for MODE1) | Time between steps (relevant for MODE1). |
+| 11 | Time for changing from start to end value | Step value (relevant for MODE1). |
+| 12 | Maximum Brightening level | Maximum Brightening level. |
+| 13 | Minimum dim level | Minimum dim level. |
+| 14 | Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only |  |
 | 16 | Remember device status after power failure | Define how will the Plug react after the power supply is back on. Default setting: 1 Available settings: 0 - Device does not memorize its state aft |
 | 30 | Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.) | Alarm of any type (General alarm, flood alarm, smoke alarm: CO, CO2, temperature alarm.) Default setting: INACTIVE |
-| 38 | Alarm sequence program | Alarm sequence program.  
-Default setting: 10  
-1-10 specifies alarm program number. |
-| 39 | Active PROGRAM alarm time | IActive PROGRAM alarm time.  
-Default setting: 600s  
-1-65534 specifies alarm time in seconds. |
+| 38 | Alarm sequence program | Alarm sequence program. |
+| 39 | Active PROGRAM alarm time | Active PROGRAM alarm time. |
 | 42 | Command class reporting Outputs status change | Command class reporting Outputs status change. Default setting: 0 |
-| 43 | Reporting 0-10v analog inputs change threshold | Parameter defines a value by which input voltage must change in order to be reported to the main controller.  
-New value is calculated based on last reported value.  
-Default setting: 5 |
-| 44 | Power load reporting frequency | Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.  
-Default setting: 3 600 (s) |
-| 45 | Reporting Changes in energy consumed by controlled devices | Defines the required change in power to generate an unsolicited power report.  
-New, reported energy value is calculated based on last reported value.  
-Default setting: 10 (0,1 kWh). |
+| 43 | Reporting 0-10v analog inputs change threshold | Defines which input voltage must change to be reported |
+| 44 | Power load reporting frequency | Parameter defines Time between reports. |
+| 45 | Reporting Changes in energy consumed by controlled devices | Required change in power to generate an unsolicited power report. |
 | 71 | Response to BRIGHTNESS set to 0% | Response to BRIGHTNESS set to 0%. Default setting: 1 |
-| 72 | Starting animation program | Starting animation programm. Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1 |
-| 73 | Triple click action | Triple click action. Default setting: 0 |
+| 72 | Starting animation program | Starting predefined program when device set to work in RGB/RGBW mode |
+| 73 | Triple click action | Triple click action, default setting: 0 |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: ALL ON / ALL OFF function activation
@@ -195,8 +193,8 @@ This parameter has the configuration ID ```config_6_1``` and is of type ```INTEG
 
 ### Parameter 8: Outputs state change mode
 
-MODE1, Example: change saturation level from 0% to 99% Parameter 9: Step = 5 Parameter 10: Time between steps: 10ms. Default setting: MODE1
-
+MODE1, Example: change saturation level from 0% to 99%
+Parameter 9: Step = 5, Parameter 10: Time between steps: 10ms, Default setting: MODE1
 The following option values may be configured -:
 
 | Value  | Description |
@@ -211,9 +209,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 ### Parameter 9: Step value (relevant for MODE1)
 
-Step value (relevant for MODE1).  
-Default setting: 1  
-Available settings: 1 - 255.
+Step value (relevant for MODE1). Default setting: 1, available settings: 1 - 255.
 
 Values in the range 1 to 255 may be set.
 
@@ -224,11 +220,8 @@ This parameter has the configuration ID ```config_9_1``` and is of type ```INTEG
 
 ### Parameter 10: Time between steps (relevant for MODE1)
 
-Time between steps (relevant for MODE1).  
-Default setting: 10 ms  
-0 - immediate change of state  
-Available settings: 1 - 60000 ms.
-
+Time between steps (relevant for MODE1).
+Default setting: 10 ms  0 - immediate change of state, available settings: 1 - 60000 ms.
 Values in the range 0 to 60000 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -238,14 +231,13 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 ### Parameter 11: Time for changing from start to end value
 
-Step value (relevant for MODE1).  
-Default setting: 67 (3s)  
-0: immediate change  
-1-63: 20-126 [ms] value*20ms  
-65-127: 1-63 \[s\] (value-64)*1s  
-129-191: 10-630 \[s\] (value-128)*10s
-
-Values in the range 1 to 255 may be set.
+Step value (relevant for MODE1).
+  * Default setting: 67 (3s)
+  * 0: immediate change
+  * 1-63: 20-126 [ms] value*20ms
+  * 65-127: 1-63 \[s\] (value-64)*1s
+  * 129-191: 10-630 \[s\] (value-128)*10s
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```67```.
 
@@ -254,10 +246,8 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 
 ### Parameter 12: Maximum Brightening level
 
-Maximum Brightening level.  
-Default setting: 255  
-Available settings: 3 - 255.
-
+Maximum Brightening level.
+Default setting: 255, available settings: 3 - 255.
 Values in the range 3 to 255 may be set.
 
 The manufacturer defined default value is ```255```.
@@ -267,8 +257,8 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 
 ### Parameter 13: Minimum dim level
 
-Minimum dim level. Default setting: 2 Available settings: 3 - 255.
-
+Minimum dim level.
+Default setting: 2, available settings: 3 - 255.
 Values in the range 2 to 255 may be set.
 
 The manufacturer defined default value is ```2```.
@@ -278,10 +268,9 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 
 ### Parameter 14: Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only
 
-Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
-Default setting: 4369  
-Controlled device: RGBW, toggle switch inputs (NORMAL MODE).
 
+Inputs/Outputs configuration - relevant for main controllers other than Home Center 2 only.  
+Default setting: 4369, Controlled device: RGBW, toggle switch inputs (NORMAL MODE).
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```4369```.
@@ -325,10 +314,8 @@ This parameter has the configuration ID ```config_30_1``` and is of type ```INTE
 
 ### Parameter 38: Alarm sequence program
 
-Alarm sequence program.  
-Default setting: 10  
-1-10 specifies alarm program number.
-
+Alarm sequence program.
+Default setting: 10, 1-10 specifies alarm program number.
 Values in the range 1 to 10 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -338,10 +325,8 @@ This parameter has the configuration ID ```config_38_1``` and is of type ```INTE
 
 ### Parameter 39: Active PROGRAM alarm time
 
-IActive PROGRAM alarm time.  
-Default setting: 600s  
-1-65534 specifies alarm time in seconds.
-
+Active PROGRAM alarm time.
+Default setting: 600s, 1-65534 specifies alarm time in seconds.
 Values in the range 1 to 65534 may be set.
 
 The manufacturer defined default value is ```600```.
@@ -368,10 +353,9 @@ This parameter has the configuration ID ```config_42_1``` and is of type ```INTE
 
 ### Parameter 43: Reporting 0-10v analog inputs change threshold
 
+Defines which input voltage must change to be reported
 Parameter defines a value by which input voltage must change in order to be reported to the main controller.  
-New value is calculated based on last reported value.  
-Default setting: 5
-
+New value is calculated based on last reported value, default setting: 5
 Values in the range 1 to 100 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -381,10 +365,9 @@ This parameter has the configuration ID ```config_43_1``` and is of type ```INTE
 
 ### Parameter 44: Power load reporting frequency
 
-Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling.  
-Default setting: 3 600 (s)
-
-Values in the range 1 to 65534 may be set.
+Parameter defines Time between reports.
+Parameter defines Time between reports. The report will be sent if last reported value differs from the current value, else reports will also be sent in case of polling. Default setting: 3 600 (s)
+Values in the range 0 to 65534 may be set.
 
 The manufacturer defined default value is ```30```.
 
@@ -393,11 +376,9 @@ This parameter has the configuration ID ```config_44_2``` and is of type ```INTE
 
 ### Parameter 45: Reporting Changes in energy consumed by controlled devices
 
-Defines the required change in power to generate an unsolicited power report.  
-New, reported energy value is calculated based on last reported value.  
-Default setting: 10 (0,1 kWh).
-
-Values in the range 1 to 255 may be set.
+Required change in power to generate an unsolicited power report.
+Defines the required change in power to generate an unsolicited power report. New, reported energy value is calculated based on last reported value. Default setting: 10 (0,1 kWh).
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
 
@@ -422,8 +403,8 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 
 ### Parameter 72: Starting animation program
 
-Starting animation programm. Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1
-
+Starting predefined program when device set to work in RGB/RGBW mode
+Starting predefined program when device set to work in RGB/RGBW mode (parameter 14) - relevant for main controllers other than Home Center 2 only. Default setting: 1
 Values in the range 1 to 10 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -433,7 +414,7 @@ This parameter has the configuration ID ```config_72_1``` and is of type ```INTE
 
 ### Parameter 73: Triple click action
 
-Triple click action. Default setting: 0
+Triple click action, default setting: 0
 
 The following option values may be configured -:
 
