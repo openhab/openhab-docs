@@ -690,7 +690,7 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 | `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
 Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
-Item Bedroom_Light { channel="hue:0210:1:bulb1:color" }
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
 ```
 and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
 ```java
@@ -707,7 +707,7 @@ end
 Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
 
 ```java
-Item Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
 ```
 
 This will make your Rule obsolete. So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.
