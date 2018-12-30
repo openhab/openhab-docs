@@ -1,7 +1,7 @@
 ---
 id: openuv
-label: Open UV
-title: Open UV - Bindings
+label: OpenUV
+title: OpenUV - Bindings
 type: binding
 description: "This binding uses the [OpenUV Index API service](https://www.openuv.io/) for providing UV Index information for any location worldwide."
 since: 2x
@@ -13,13 +13,17 @@ install: auto
 
 {% include base.html %}
 
-# Open UV Binding
+# OpenUV Binding
 
 This binding uses the [OpenUV Index API service](https://www.openuv.io/) for providing UV Index information for any location worldwide.
 
 To use this binding, you first need to [register and get your API token](https://www.openuv.io/auth/google).
 
-## Supported Things
+## Binding Installation
+
+This binding can be installed via the Add-ons section of the Paper UI. 
+
+Go to Bindings and search for `OpenUV`. Click on install. 
 
 ## Discovery
 
