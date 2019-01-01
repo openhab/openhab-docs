@@ -122,6 +122,7 @@ The following devices have been tested with the binding
 | Busch-Jaeger 6735/01       | Control Element (1-channel, battery-operated)     |
 | Busch-Jaeger 6736          | Control Element (2-channel)                       |
 | GE Bulbs                   |                                                   |
+| GE Tapt Wall Switch        | On/Off Switch                                     |
 | Hue Bulbs                  | Color LED Bulb                                    |
 | Hue Motion Sensor          | Motion and Luminance sensor                       |
 | Innr Bulbs                 | *note1*                                           |

@@ -304,6 +304,8 @@ If a device fails to respond to a poll, then it will be marked as DEAD and shown
 
 Keep the polling at a slow rate unless your device doesn't support *associations*. This will reduce network traffic, reduce the chance of timeouts and retries, and therefore improve the overall performance of the network.
 
+The binding can perform a poll of the device shortly after sending a command to make sure that the command was implemented, and the binding has the correct view of the devices state. This is called "Command Poll Period" and may need adjustment for some devices that may update their state slowly (e.g. dimmers that have a slow transition). This is defined in milliseconds, and can be set to 0 to disable this polling.
+
 
 ### Binding Maintenance Functions
 
