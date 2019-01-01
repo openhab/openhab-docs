@@ -87,7 +87,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
 -   **Snapshot Release**
 
-    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
 
     The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
@@ -154,7 +154,7 @@ You may add all three to the same file, but make sure the desired repo is is set
 
 -   **Snapshot Release**
 
-    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
 
     ```text
@@ -511,7 +511,7 @@ The output of `status` after a successful execution should be similar to:
 #### Installing add-ons
 
 When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
-Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
+Simply download the kar files (the latest builds can be found [here](https://ci.openhab.org/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
 #### Upgrade
 
