@@ -59,19 +59,16 @@ The following table summarises the channels available for the Motion Sensor -:
 | Battery Level | battery-level | Battery | Number |
 
 ### Luminance Sensor
-
 Indicates the current light reading.
 
 The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Temperature Sensor
-
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Motion Alarm
-
 Indicates if a motion alarm is triggered.
 
 The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -84,7 +81,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

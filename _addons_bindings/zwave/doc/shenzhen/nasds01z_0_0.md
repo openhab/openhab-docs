@@ -5,12 +5,12 @@ title: NAS-DS01Z - ZWave
 
 {% include base.html %}
 
-# NAS-DS01Z Cyrus Door Window Sensor
+# NAS-DS01Z Door/Window Sensor
 This describes the Z-Wave device *NAS-DS01Z*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_nasds01z_00_000```.
 
 The device is in the category of *Door*, defining Door sensors.
 
-![NAS-DS01Z product image](https://www.cd-jackson.com/zwave_device_uploads/458/458_default.jpg)
+![NAS-DS01Z product image](https://www.cd-jackson.com/zwave_device_uploads/400/400_default.jpg)
 
 
 The NAS-DS01Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -19,9 +19,10 @@ The NAS-DS01Z does not permanently listen for messages sent from the controller 
 
 ## Overview
 
-Contact sensor is an intelligent security equipment that can transmit the Z-Wave network which has particular frequency. In the Z-Wave network communications, contact sensor can be connected to any Z-wave main controller. The contact sensor can send messages to the Z-wave main controller, and realize association with other devices through the Z-wave main controller. Different countries or areas, the radio frequency is different.In the communication with the Z-wave main controller, the contact sensor can send messages to the Z-wave main controller, but it can not receive messages from the Z-wave main controller. When alarm is triggered, the contact sensor sends messages to the Z-wave main controller, the Z-wave main controller will displays the current status of contact sensor, so the contact sensor can associate with other devices. Contact sensor is battery powered, is small and can be installed on the window or door easily. When the door or window is open, the contact sensor is triggered and linkage alarm realized.
+The NEO Coolcam Door/Window Sensor provides information whether a door or window is opened or closed.  
+The battery operated sensor consits of the main unit and a magnetic element. The main unit should be installed on the frame and the magnetic element is placed on the door or window.
 
-**Technical parameters**
+Technical parameters:
 
   * Power: CR14250 x1
   * Standby current: 1uA
@@ -31,22 +32,21 @@ Contact sensor is an intelligent security equipment that can transmit the Z-Wave
   * Wireless distance：50m
   * Operation temperature: 0-40℃
   * Storage temperature: 0-60℃
-  * Size: Contact sensor main body (L x W x H): 70mmx20mmx20mm Contact sensor deputy body (L x W x H): 40mmx11mmx11mm 
+  * Size: Contact sensor main body (L x W x H): 70mmx20mmx20mm Contact sensor deputy body (L x W x H): 40mmx11mmx11mm
 
 ### Inclusion Information
 
-  1. Disassemble the contact sensor main body and insert the battery into the contact sensor. Make sure the device is located within the direct range of the controller.
-  2. Set the controller into the learning mode (see mail controller’s operating manual).
-  3. Quickly, triple click the code button, LED light will flash for 5 times.
-  4. Contact sensor will be detected and included in the Z-Wave network.
-  5. Wait for the main controller to configure the sensor.
+  1. Remove the sensor cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into inclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter inclusion mode. And the LED will flash on and off alternately five times.
 
 ### Exclusion Information
 
-  1. Make sure the sensor is connected to power source.
-  2. Set the main controller into the learning mode (see main controller’s operating manual).
-  3. Quickly, triple click the code button,LED light will flash for 5 times.
-  4. Wait for the main controller to delete the sensor.
+  1. Remove the device cover.
+  2. Make sure the sensor is powered.
+  3. Set Z‐Wave controller or Z‐Wave gateway into exclusion mode (Refer to the controller or gateway operating manual)
+  4. Press the button three times within 1.5 second, the device will enter exclusion mode.
 
 ### Wakeup Information
 
@@ -55,7 +55,12 @@ The NAS-DS01Z does not permanently listen for messages sent from the controller 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-Quickly, triple click the code button
+You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
+
+  * The minimum wakeup interval is 300s (5 minutes)
+  * The maximum wakeup interval is 16,777,200s (about 194 days)
+  * Allowable min step among each wakeup interval is 60 seconds, such as 360s, 420s, 480s…
+  * Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
 
@@ -63,22 +68,23 @@ The following table summarises the channels available for the NAS-DS01Z -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Door Sensor | sensor_door | Door | Contact | 
+| Binary Sensor | sensor_binary | Door | Switch | 
 | Tamper Alarm | alarm_tamper |  | Switch | 
+| Door Sensor | sensor_door | Door | Contact | 
 | Battery Level | battery-level | Battery | Number |
 
-### Door Sensor
+### Binary Sensor
 
-Indicates if the door/window is open or closed.
+Indicates if a sensor has triggered.
 
-The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
-The following state translation is provided for this channel to the ```Contact``` item type -:
+The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OPEN | Open |
-| CLOSED | Closed |
+| ON | Triggered |
+| OFF | Untriggered |
 
 ### Tamper Alarm
 
@@ -92,6 +98,19 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | OK |
 | ON | Alarm |
+
+### Door Sensor
+
+Indicates if the door/window is open or closed.
+
+The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Contact``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OPEN | Open |
+| CLOSED | Closed |
 
 ### Battery Level
 
@@ -108,15 +127,15 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | OFF Delay | Adjust the amount of delay before the OFF command is transmitted. |
-| 2 | Basic Set Level |  |
+| 1 | ON/OFF Delay | Delay before the OFF command is transmitted |
+| 2 | Basic Set Level | Basic Set Command sent when door/window is opened or closed |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
-### Parameter 1: OFF Delay
+### Parameter 1: ON/OFF Delay
 
-Adjust the amount of delay before the OFF command is transmitted.
-Description This configuration parameter that can be used to adjust the amount of delay before the OFF command is transmitted. This parameter can be configured with the value of 0 through 65535, where 0 means send OFF command immediately and 65535 means 65535 seconds of delay.
+Delay before the OFF command is transmitted
+Adjust the delay before the OFF command is transmitted. 0 means send OFF command immediately.
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -126,16 +145,17 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 ### Parameter 2: Basic Set Level
 
+Basic Set Command sent when door/window is opened or closed
+Basic Set Command will be sent when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module received the BSC of which value is decisive as to how bright of dim level of lamp module shall be.
 
+Available Settings:
 
-The following option values may be configured, in addition to values in the range -1 to 99 -:
+  * 0 - Off, Alarm cancelling or turning a device OFF
+  * 1 - 99 or 255 – ON (Binary Switch Device)
+  * Dim Level (Multilevel Switch Device)
+Values in the range 0 to 255 may be set.
 
-| Value  | Description |
-|--------|-------------|
-| -1 | ON (Binary Switch Device) |
-| 0 | OFF, Alarm cancelling or turning a device off |
-
-The manufacturer defined default value is ```-1``` (ON (Binary Switch Device)).
+The manufacturer defined default value is ```255```.
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -166,27 +186,34 @@ The NAS-DS01Z supports 4 association groups.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-GROUP 1 is lifeline service that assigned to Sensor (Door/Window detector) status – Open/Close
+Is assigned to the device status - OPEN/CLOSED.
+It enables the sensor to send reports and readings to Z-Wave Controller or Z-Wave Gateway whenever the sensor is triggered.
+
+  * NOTIFICATION_REPORT
+  * BATTERY_REPORT
+  * SENSOR\_BINARY\_REPORT
+  * DEVICE\_RESET\_LOCALLY_NOTIFICATION
 
 Association group 1 supports 5 nodes.
 
 ### Group 2: Group 2
 
-GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 1 and 2. This Group Support: BASIC_SET.
-GROUP 2 allows for sending control commands to associated devices such as relay module, lighting, etc. This association group is configured through the advanced parameters no. 1 and 2. This Group Support: BASIC_SET.
+Sending control commands to associated devices. This association group is configured through the advanced parameters no. 1 and 2.
+BASIC_SET
 
 Association group 2 supports 5 nodes.
 
 ### Group 3: Group 3
 
-GROUP 3 allows for Send Notification to associated devices in this group. This Group Support: NOTIFICATION_REPORT.
+Send Notification to associated devices.
+NOTIFICATION_REPORT
 
 Association group 3 supports 5 nodes.
 
 ### Group 4: Group 4
 
-GROUP 4 allows for Send Notification to associated devices in this group. This Group Support: SENSOR\_BINARY\_REPORT
-GROUP 4 allows for Send Notification to associated devices in this group. This Group Support: SENSOR\_BINARY\_REPORT
+Send Notification to associated devices.
+SENSOR\_BINARY\_REPORT
 
 Association group 4 supports 5 nodes.
 
@@ -211,14 +238,15 @@ Association group 4 supports 5 nodes.
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
-| COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_VERSION_V1| |
 
 ### Documentation Links
 
-* [German Manual](https://www.cd-jackson.com/zwave_device_uploads/458/Tuer-Fensterkontakt-Z-Wave-manual-DE.pdf)
-* [English Manual](https://www.cd-jackson.com/zwave_device_uploads/458/neo-coolcam-door-window-sensor-user-manual.pdf)
+* [ Instruction Manual Door/Window Sensor](https://www.cd-jackson.com/zwave_device_uploads/400/Manual-for-Door-sensor-Z-wave-Neo.pdf)
+* [Door/Window User Guide](https://www.cd-jackson.com/zwave_device_uploads/400/Door-Window-User-Guide.pdf)
+* [Door/Window User Guide - Version from 23.09.2016](https://www.cd-jackson.com/zwave_device_uploads/400/Door-Window-User-Guide.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/458).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/400).
