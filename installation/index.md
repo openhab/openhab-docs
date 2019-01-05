@@ -45,7 +45,7 @@ OpenJDK may also be used, but it has some [known limitations](https://community.
 
 | Java Platform | Advantages | Disadvantages |
 |---------------|------------|---------------|
-| [Zulu](https://www.azul.com/products/zulu/) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](http://www.azul.com/downloads/zulu-embedded/) |  |
+| [Zulu](https://zulu.org/download/?show=all) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](http://www.azul.com/downloads/zulu-embedded/) |  |
 | [Oracle Java](https://java.com/en/) | Full openHAB support on all platforms | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
 | [OpenJDK](http://openjdk.java.net) | Supported by many Linux distributions, packages [typically available](http://openjdk.java.net/install/index.html) | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates |
 
