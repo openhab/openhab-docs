@@ -29,7 +29,7 @@ The `owserver` is the bridge that connects to an existing OWFS installation.
 
 ### Things
 
-There are three types of things: the generic ones (`counter2`, `digitalio`, `digitalio2`, `digitalio8`, `ibutton`, `temperature`), multisensors built around the DS1923/DS2438 chip (`ms-tx`) and more advanced sensors from Elaborated Networks (www.wiregate.de) (`ams`, `bms`). 
+There are different types of things: the generic ones (`counter2`, `digitalio`, `digitalio2`, `digitalio8`, `ibutton`, `temperature`), multisensors built around the DS1923/DS2438 chip (`ms-tx`) and more advanced sensors from Elaborated Networks (www.wiregate.de) (`ams`, `bms`) and Embedded Data System (`edsenv`). 
 
 The thing types `ms-th`and `ms-tv` have been marked deprecated and will be updated to `ms-tx`automatically. 
 Manually (via textual configuration) defined things should be changed to `ms-tx`. 
@@ -45,6 +45,7 @@ Please note that:
 
 * All things need a bridge.
 * The sensor id parameter supports only the dotted format, including the family id (e.g. `28.7AA256050000`).
+DS2409 MicroLAN couplers (hubs) are supported by adding their id and the branch (`main` or `aux`) in a directory-like format in front of the sensor id (e.g. `1F.EDC601000000/main/28.945042000000`).
 * Refresh time is the minimum time in seconds between two checks of that thing.
 It defaults to 300s for analog channels and 10s for digital channels.
 * Some thing channels need additional configuration, please see below in the channels section.
@@ -59,6 +60,8 @@ It supports both, a hostname or an IP address.
 
 The `port` parameter is used to adjust non-standard OWFS installations.
 It defaults to `4304`, which is the default of each OWFS installation.  
+
+Bridges of type `owserver` are extensible with channels of type `owfs-number` and `owfs-string`. 
   
 ### Counter (`counter2`)
 
@@ -128,24 +131,36 @@ In that mode, a `current`  channel is provided.
 If set to `true`, a `light` channel is added to the thing.
 The correct formula for the ambient light is automatically determined from the sensor version.
 
+### Embedded Data System Environmental sensors (`edsenv`)
+
+This thing supports EDS0064, EDS0065, EDS0066 or EDS0067 sensors.
+It has two parameters: sensor id `id` and refresh time `refresh`.
+
+All things have a `temperature` channel.
+Additional channels (`light`, `pressure`, `humidity`, `dewpoint`, `abshumidity`) will be added if available from the sensor automatically.
+
+
 ## Channels
 
-| Type-ID             | Thing                  | Item                     | readonly   | Description                                        |
-|---------------------|------------------------|--------------------------|------------|----------------------------------------------------|
-| absolutehumidity    | ms-tx, ams, bms        | Number:Density           | yes        | absolute humidity                                  |
-| current             | ms-tx, ams             | Number:ElectricCurrent   | yes        | current                                            |
-| counter             | counter2               | Number                   | yes        | countervalue                                       |
-| dewpoint            | ms-tx, ams, bms        | Number:Temperature       | yes        | dewpoint                                           |
-| dio                 | digitalX, ams          | Switch                   | no         | digital I/O, can be configured as input or output  |
-| humidity            | ms-tx, ams, bms        | Number:Dimensionless     | yes        | relative humidity                                  |
-| humidityconf        | ms-tx                  | Number:Dimensionless     | yes        | relative humidity                                  |
-| light               | ams, bms               | Number:Illuminance       | yes        | lightness                                          |
-| present             | all                    | Switch                   | yes        | sensor found on bus                                |
-| supplyvoltage       | ms-tx                  | Number:ElectricPotential | yes        | sensor supplyvoltage                               |
-| temperature         | temperature, ms-tx     | Number:Temperature       | yes        | environmental temperature                          |
-| temperature-por     | temperature            | Number:Temperature       | yes        | environmental temperature                          |
-| temperature-por-res | temperature, ams, bms  | Number:Temperature       | yes        | environmental temperature                          |
-| voltage             | ms-tx, ams             | Number:ElectricPotential | yes        | voltage input                                      |
+| Type-ID             | Thing                      | Item                     | readonly   | Description                                        |
+|---------------------|----------------------------|--------------------------|------------|----------------------------------------------------|
+| absolutehumidity    | ms-tx, ams, bms, edsenv    | Number:Density           | yes        | absolute humidity                                  |
+| current             | ms-tx, ams                 | Number:ElectricCurrent   | yes        | current                                            |
+| counter             | counter2                   | Number                   | yes        | countervalue                                       |
+| dewpoint            | ms-tx, ams, bms, edsenv    | Number:Temperature       | yes        | dewpoint                                           |
+| dio                 | digitalX, ams              | Switch                   | no         | digital I/O, can be configured as input or output  |
+| humidity            | ms-tx, ams, bms, edsenv    | Number:Dimensionless     | yes        | relative humidity                                  |
+| humidityconf        | ms-tx                      | Number:Dimensionless     | yes        | relative humidity                                  |
+| light               | ams, bms, edsenv           | Number:Illuminance       | yes        | lightness                                          |
+| owfs-number         | owserver                   | Number                   | yes        | direct access to OWFS nodes                        |
+| owfs-string         | owserver                   | String                   | yes        | direct access to OWFS nodes                        |
+| present             | all                        | Switch                   | yes        | sensor found on bus                                |
+| pressure            | edsenv                     | Number:Pressure          | yes        | environmental pressure                             |
+| supplyvoltage       | ms-tx                      | Number:ElectricPotential | yes        | sensor supplyvoltage                               |
+| temperature         | temperature, ms-tx, edsenv | Number:Temperature       | yes        | environmental temperature                          |
+| temperature-por     | temperature                | Number:Temperature       | yes        | environmental temperature                          |
+| temperature-por-res | temperature, ams, bms      | Number:Temperature       | yes        | environmental temperature                          |
+| voltage             | ms-tx, ams                 | Number:ElectricPotential | yes        | voltage input                                      |
 
 ### Digital I/O (`dio`)
 
@@ -165,6 +180,16 @@ This is only relevant for DS2438-based sensors of thing-type `ms-tx`.
 Possible options are `/humidity` for HIH-3610 sensors, `/HIH4000/humidity` for HIH-4000 sensors, `/HTM1735/humidity` for HTM-1735 sensors and `/DATANAB/humidity` for sensors from Datanab.
 
 All humidity sensors also support `absolutehumidity` and `dewpoint`.
+
+### OWFS Direct Access (`owfs-number`, `owfs-string`)
+
+These channels allow direct access to OWFS nodes.
+They have two configuration parameters: `path` and `refresh`.
+
+The `path` parameter is mandatory and contains a full path inside the OWFS (e.g. `statistics/errors/CRC8_errors`).
+
+The `refresh` parameter is the number of seconds between two consecutive (successful) reads of the node.
+It defaults to 300s.
 
 ### Temperature (`temperature`, `temperature-por`, `temperature-por-res`)
 
@@ -217,6 +242,11 @@ Bridge onewire:owserver:mybridge [
                     resolution="9"
                 ]
         } 
+
+    Channels:
+        Type owfs-number : crc8errors [
+            path="statistics/errors/CRC8_errors"
+        ]
 }
 ```
 
@@ -226,6 +256,7 @@ Bridge onewire:owserver:mybridge [
 Number:Temperature MySensor "MySensor [%.1f %unit%]" { channel="onewire:temperature:mybridge:mysensor:temperature" }
 Number:Temperature MyBMS_T "MyBMS Temperature [%.1f %unit%]" { channel="onewire:bms:mybridge:mybms:temperature" }
 Number:Dimensionless MyBMS_H "MyBMS Humidity [%.1f %unit%]"  { channel="onewire:bms:mybridge:mybms:humidity" }
+Number  CRC8Errors "Bus-Errors [%d]" { channel="onewire:owserver:mybridge:crc8errors" }
 ```
 
 ### demo.sitemap:
@@ -237,6 +268,7 @@ sitemap demo label="Main Menu"
         Text item=MySensor
         Text item=MyBMS_T
         Text item=MyBMS_H
+        Text item=CRC8Errors
     }
 }
 ```
