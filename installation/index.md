@@ -76,7 +76,7 @@ Before you can start, three decisions have to be made:
 
 2.  Stable release or cutting edge:
     - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
-    - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org)).
+    - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org/job/openhab-linuxpkg/)).
 
 ## Installation
 
