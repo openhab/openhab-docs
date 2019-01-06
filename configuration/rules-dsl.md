@@ -294,9 +294,13 @@ The following table summarizes the impact of the two manipulator commands on the
 
 | Command \ Rule Trigger   | `received update` | `received command` | `changed` |
 |--------------------------|-------------------|--------------------|-----------|
-| postUpdate               | ⚡ rule fires      | ❌                 | (depends) |
-| sendCommand              | ❌                | ⚡ rule fires       | (depends) |
-| *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
+| postUpdate               | ⚡ rule fires     | ❌                | (depends) |
+| sendCommand              | ⚡ rule fires     | ⚡ rule fires     | (depends) |
+| *Change through Binding* | ⚡ rule fires     | ⚡ rule fires     | (depends) |
+
+* depends: triggered only when previous state was different from new
+
+* there is no given order when more triggers should be called
 
 **Beware:**
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
