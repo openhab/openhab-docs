@@ -6,7 +6,7 @@ type: binding
 description: "This binding provides support for relay board available from [ucprojects.eu](http://ucprojects.eu) (site in Polish)"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.ucprelayboard/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
