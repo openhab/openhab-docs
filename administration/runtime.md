@@ -107,7 +107,7 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 | Command | Description |
 |---------|-------------|
-| `smarthome:> <script to execute>` | Executes a script from the `$OPENHAB_CONF/scripts` folder
+| `smarthome:script <script to execute>` | Executes a script from the `$OPENHAB_CONF/scripts` folder
 
 ### Firmware
 
