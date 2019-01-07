@@ -309,7 +309,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```perl
-Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport]
+Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
@@ -319,6 +319,9 @@ This type presents a value as a user-adjustable control which slides from left (
 
 -   `switchSupport` is a parameter without an assignment (Classic UI only!).
     If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+
+-   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+-   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
 
 **Example:**
 
