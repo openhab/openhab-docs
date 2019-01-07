@@ -41,8 +41,8 @@ Keep your focus.
 For almost everything, there is more than one way in openHAB to achieve a goal or perform a task. 
 Initially, this can be frustrating and confusing, but it also gives great flexibility and does not mandate the use of certain devices or tools.
 
-You may need a desire to understand computers. 
-But, then, this may be a given, as you are reading the documentation of how to do home automation yourself.
+You may need to learn more about computers that you currently do.
+But this may not be a problem as you are reading the documentation of software that will enable you to do home automation yourself.
 
 Lastly, be prepared to start a new hobby: home automation. 
 Basic functions can be achieved in openHAB rather quickly, e.g., switch lights on at a certain time. 
@@ -67,7 +67,7 @@ The following table gives a high level description of the most important concept
 | Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
 | Sitemap | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Sitemaps]({{base}}/configuration/sitemaps.html) |
 
-While the table above gives an overview, please remember that it is a simplification of openHAB for the sake of this overview. 
+While the table above gives an overview, please remember that it is incomplete and a simplification of openHAB for the sake of this overview.
 More elements will be introduced in later chapters of the documentation. 
 All the above [Concepts]({{base}}/concepts/index.html) are explained in more depth on other pages that can be accessed either through the sidebar or the links in the table above.
 
@@ -107,6 +107,9 @@ If you feel serious about home automation it may be better to start with a dedic
 
 For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 2  or 3)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
+However, it is worth noting two main limitations for Raspberries. 
+They are limited in the RAM (memory) and may not perform well when additional database and data visaulization programs are installed.
+Running Raspberries from SD-cards only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions. 
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
@@ -139,7 +142,7 @@ Once you are getting a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-2. Chances are that you already own a device that is already supported by openHAB, but even if you don’t, you can try out openHAB
+2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](https://www.openhab.org/addons/) for any technologies or services you may recognize) 
 3. Install a binding (in openHAB)
 4. Define a “thing”
 5. Add a “channel” to the “thing” if not created by the binding
