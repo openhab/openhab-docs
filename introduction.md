@@ -107,7 +107,7 @@ If you feel serious about home automation it may be better to start with a dedic
 
 For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 2  or 3)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
-However, it is worth noting two main limitations for Raspberries. 
+However, it is worth noting two potential limitations of Raspberry Pis. 
 They are limited in the RAM (memory) and may not perform well when additional database and data visaulization programs are installed.
 Running Raspberries from SD-cards only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions. 
 
