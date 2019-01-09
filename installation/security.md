@@ -376,6 +376,17 @@ server {
 }
 ```
 
+It might be the case that you can't use standard ports. When trying to access a HTTPS port with HTTP, NGINX will respond with a `400 Bad Request`.
+We can redirect this gracefully using a "HTTPS [error page](http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page)" for the [non-standard HTTP error code 497](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#errors)
+
+```nginx
+server {
+    listen                          8084 ssl;
+    server_name                     mydomain_or_myip;
+    error_page                      497 =301 https://$host:$server_port$request_uri;
+}
+```
+
 {: #nginx-summary}
 #### Putting it All Together
 
