@@ -91,7 +91,7 @@ After saving the file, the add-on will be installed.
 > Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
 
 For this installation option you need a bundles `.jar` file.
-One way of retrieving those files is mentiones above in the openHAB console part.
+One way of retrieving those files is mentioned above in the openHAB console part.
 
 Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
