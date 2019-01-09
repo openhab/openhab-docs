@@ -140,6 +140,7 @@ server {
         proxy_set_header X-Real-IP            $remote_addr;
         proxy_set_header X-Forwarded-For      $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto    $scheme;
+        proxy_set_header X-Forwarded-Scheme   $scheme; # workaround for https://github.com/openhab/openhab-distro/issues/423
     }
 }
 ```
@@ -401,6 +402,7 @@ server {
         proxy_set_header X-Real-IP              $remote_addr;
         proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto      $scheme;
+		proxy_set_header X-Forwarded-Scheme     $scheme; # workaround for https://github.com/openhab/openhab-distro/issues/423
         satisfy                                 any;
         allow                                   192.168.0.1/24;
         allow                                   127.0.0.1;
