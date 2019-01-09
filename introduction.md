@@ -105,10 +105,10 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 2  or 3)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 2 or 3)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
 However, it is worth noting two potential limitations of Raspberry Pis. 
-They are limited in the RAM (memory) and may not perform well when additional database and data visaulization programs are installed.
+They are limited in RAM (memory) and may not perform well when additional database and data visualization programs are installed.
 Running Raspberries from SD-cards only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions. 
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
