@@ -51,10 +51,8 @@ Installing using the provided **package repository** (using `apt`, `apt-get`, `y
 
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
-
 ### openHABian project
-
-The easy step by step instruction can be found here: https://www.openhab.org/docs/installation/openhabian.html
+The easy step by step instruction can be found [here]: (openhabian.html).
 
 
 ### Package Repository Installation
