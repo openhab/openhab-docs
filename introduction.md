@@ -20,7 +20,7 @@ Some of openHAB's strengths are:
 Home automation is fascinating and requires a considerable investment of your time. 
 Here are some key considerations especially for new users. To be successful, you will need to:
 
-* **Start slowly and one step at a time.**
+* Start slowly and one step at a time
 * Be prepared to learn
 * Remain flexible in how you want to achieve your goal
 * Celebrate all the small successes
@@ -41,16 +41,14 @@ Keep your focus.
 For almost everything, there is more than one way in openHAB to achieve a goal or perform a task. 
 Initially, this can be frustrating and confusing, but it also gives great flexibility and does not mandate the use of certain devices or tools.
 
-You may need to learn more about computers that you currently do.
+You may need to learn more about computers than you currently do.
 But this may not be a problem as you are reading the documentation of software that will enable you to do home automation yourself.
 
 Lastly, be prepared to start a new hobby: home automation. 
+
 Basic functions can be achieved in openHAB rather quickly, e.g., switch lights on at a certain time. 
 Others will require much more efforts and thoughts, e.g., how do I determine that someone is home, including guests, but not counting pets? 
 The openHAB forum is a great place to learn and discuss. 
-But always remember: no one but you knows what you need and what you have as well as yourself. 
-Give plenty of background information if you have a question. 
-And please be courteous and respectful, this is an open-source community and everybody on the forum works with openHAB in their spare time.
 
 ## A quick overview
 
@@ -105,7 +103,7 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 2 or 3)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 3 for best experience)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
 However, it is worth noting two potential limitations of Raspberry Pis. 
 They are limited in RAM (memory) and may not perform well when additional database and data visualization programs are installed.
