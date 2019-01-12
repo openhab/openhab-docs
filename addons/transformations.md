@@ -19,6 +19,7 @@ They are often useful, to **interpret received Item values**, like sensor readin
 ## Usage
 
 Transformations are applicable in Item and Sitemap element labels and inside DSL rules.
+The relevant transformation service needs to be installed via the paperUI before use.
 Be aware, that some Transformation services rely on transformation files, while others work by directly providing the transformation logic.
 Transformation files need to be placed in the directory `$OPENHAB_CONF/transform`.
 
