@@ -54,7 +54,6 @@ The manual installation through a platform independent archive file is suited fo
 ### openHABian project
 The easy step by step instruction can be found [here]: (openhabian.html).
 
-
 ### Package Repository Installation
 
 Installation through a package repository is the recommended choice. You can select the appropriate installation instructions by expanding from the apt or yum instructions.
