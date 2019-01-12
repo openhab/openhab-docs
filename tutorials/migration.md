@@ -124,13 +124,13 @@ It will include the standard UIs, all transformation services and the 1.x compat
 If you are in doubt of the name of a binding, look in openhab.cfg for that binding's configurations. 
 The first part of the tag in openhab.cfg will be that name of the binding, then append a 1.
 For example, the configuration parameters for the MQTT Binding start with "mqtt" in openhab.cfg so the name of the binding is "mqtt1".
-You can find the list of bindings [here]({{base}}/addons/bindings.html).
+You can find the list of bindings [here](/addons/#bindings).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I recommend "habmin". 
-The list of UIs are [here]({{base}}/addons/uis.html).
-- `action = ` - the list of action add-ons.
-- `transformation = ` - the list of transformations you use. 
+The list of UIs are [here]({{base}}/docs/configuration/).
+- `action = ` - the list of action add-ons, see [here](/addons/#action) for list of possible actions.
+- `transformation = ` - the list of transformations you use, for a list of possible transformations, see [here](/addons/#transform). 
 Unlike in openHAB 1, one must install transformations separately.
-- `voice = ` - see [here]({{base}}/addons/voices.html)
+- `voice = ` - see [here](/addons#voice)
 - `misc = ` - homekit, etc. 
 Do not list myopenhab/openhabcloud at this time, instructions for it are below.
 Do not install any 2.x version binding at this time.
@@ -481,32 +481,33 @@ A Thing represents a configurable device/system/unit, which provides different f
 Each Channel corresponds exactly to one binding configuration string (stuff in { }) in openHAB 1.x.
 
 Let's look at a concrete example. 
-The [Yahoo Weather Binding]({{base}}/addons/bindings/yahooweather/readme.html) supports exactly one Thing which takes two parameters: a WOEID location and unit.
-
+The [Network Binding](addons/bindings/network) (the impoved binding to the OH1 Network Health binding) supports exaclty one Thing which takes one parameter: the IP number of the device on the network.
 Thus, as described in the Binding's readme one would manually define a Thing in a .things file (located in conf/things) with the line:
 
 ```java
-Thing yahooweather:weather:berlin [ location=638242 ]
+//For OH2 Network Binding
+Thing network:pingdevice:devicename [ hostname="192.168.0.42" ]
 ```
 
-As described in the Binding's readme, three Channels are supported: temperature, humidity, and pressure. 
-Thus, rather than the old openHAB 1.x syntax:
+As described in the Binding's documentation, two Channels are supported in the version for openHAB2: online status and latency.
+The older version 1 of the Network binding only supported online status 
+Thus, rather than the old openHAB 1.x syntax (Network Health):
 
 ```java
-// openHAB 1 Syntax
-Number Temperature   { yahooweather="woeid=638242,value=temperature,unit=c" }
-Number Humidity      { yahooweather="woeid=638242,value=humidity,unit=c" }
+// openHAB 1 Syntax for Network Health Binding
+Switch MyDevice "My Decive" { nh="192.168.0.42" }
 ```
 
 with everything defined on in the { } part of the Item, we now merely reference the Channels.
 
+
 ```java
-// openHAB 2 Syntax
-Number Temperature   { channel="yahooweather:weather:berlin:temperature" }
-Number Humidity      { channel="yahooweather:weather:berlin:humidity" }
+// openHAB 2 Syntax for Network Binding
+Switch MyDevice { channel="network:pingdevice:devicename:online" }
+Number MyDeviceResponseTime { channel="network:pingdevice:devicename:latency" }
 ```
 
-As you can see, the Channel ID consists of the Thing's name, a "#" and the Channel name.
+As you can see, the Channel ID consists of the Thing's name and the Channel name.
 
 For manually defined Things, you can find the syntax for defining a Thing on a given Item in that Binding's readme.
 
@@ -575,7 +576,8 @@ It should now show your system as being online and running openHAB 2.
 
 One is not required to use 2.x version addi-ons with openHAB 2. 
 It is highly recommended to do so as most cases where there is a 1.x and a 2.x add-on, only the 2.x binding is undergoing continued development. 
-On-the-other-hand, some of the 2.x bindings work significantly differently from their 1.x versions. See the add-on's 1.x [readme]({{base}}/addons/1xaddons.html) and 2.x [readme page]({{base}}/addons/bindings.html) to compare and contrast the two versions.
+On-the-other-hand, some of the 2.x bindings work significantly differently from their 1.x versions. All binding versions are available [here](/addons/bindings.html) to compare and contrast the two versions.
+It is worth noting, however, that where a version 2 binding exist, it is unlikely that the older version 1 binding continue to be updated.
 
 Identify an add-on where there is a 2.x version that you want to migrate to. 
 Begin by identifying those Items that use this binding. 

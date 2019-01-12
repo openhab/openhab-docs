@@ -23,10 +23,10 @@ This is the recommended package for the normal user. It contains the most common
 
 This package thus installs:
 
-- [Home Builder](homebuilder.html){:target="_blank"} as a getting-started generator for your home
-- [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, including item access
-- [Basic UI](../addons/uis/basic/readme.html){:target="_blank"} as the new modern web UI for mobile devices
-- [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for (e.g. wall-mounted) tablets
+- [Home Builder]({{base}}/configuration/homebuilder.html]) as a getting-started generator for your home
+- [Paper UI]({{base}}/configuration/paperui.html) for system administration, including item access
+- [Basic UI]({{base}}/configuration/ui/basic) as the new modern web UI for mobile devices
+- [HABPanel]({{base}}/configuration/habpanel.html) as a dashboard UI for (e.g. wall-mounted) tablets
 
 Additional add-ons can be installed through Paper UI or directly by defining them in `addons.cfg`.
 
@@ -38,11 +38,11 @@ All users coming from openHAB 1.x should choose this package. It contains everyt
 
 This package thus installs:
 
-- [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, including item access
-- [Classic UI](../addons/uis/classic/readme.html){:target="_blank"} as the well-known web UI from openHAB 1.x
-- [Basic UI](../addons/uis/basic/readme.html){:target="_blank"} as the new modern web UI for mobile devices
-- [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for (e.g. wall-mounted) tablets
-- [HABmin](../addons/uis/habmin/readme.html){:target="_blank"} as a powerful administration console, specifically suited for Z-Wave setups
+- [Paper UI]({{base}}/configuration/paperui.html) for system administration, including item access
+- [Classic UI]({{base}}/configuration/ui/classic/) as the well-known web UI from openHAB 1.x
+- [Basic UI]({{base}}/configuration/ui/basic) as the new modern web UI for mobile devices
+- [HABPanel]({{base}}/configuration/habpanel.html) as a dashboard UI for (e.g. wall-mounted) tablets
+- [HABmin]({{base}}/configuration/ui/habmin/) as a powerful administration console, specifically suited for Z-Wave setups
 - Interactive REST API that easily allows exploring the REST features through a documented UI
 - all available transformations as they used to be part of the core 1.x runtime
 
@@ -53,9 +53,9 @@ This package thus installs:
 This package contains only components that allow a fully UI-driven setup and configuration process.
 These are:
 
-- [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, configured with "simple linking", i.e. no items are exposed to the user
-- the [new rule engine](rules-ng.html){:target="_blank"} to set up automation rules without scripting
-- [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for daily use
+- [Paper UI]({{base}}/configuration/paperui.html) for system administration, configured with "simple linking", i.e. no items are exposed to the user
+- the [new rule engine]({{base}}/configuration/rules-ng.html) to set up automation rules without scripting
+- [HABPanel]({{base}}/configuration/habpanel.html) as a dashboard UI for daily use
 - only "native" openHAB 2 bindings are available, 1.x add-ons are excluded
 
 **WARNING**: Note that the UI-driven configuration features are new and still under development, so many features will be enhanced in upcoming versions.
@@ -67,13 +67,13 @@ This package therefore should only be used for very simple setups or as an demon
 
 ![demo](images/package_demo.jpg){:style="float: right;margin-left: 20px;margin-top: 7px;margin-bottom: 20px"}
 
-This package is suitable for demo purposes and for quickly checking out openHAB. It not only installs a few common bindings, but also defines sample textual configuration files, which are also used on the public [openHAB Demo Server](https://demo.openhab.org/){:target="_blank"}.
+This package is suitable for demo purposes and for quickly checking out openHAB. It not only installs a few common bindings, but also defines sample textual configuration files, which are also used on the public [openHAB Demo Server](https://demo.openhab.org/).
 
 This includes:
 
-- [Paper UI](../addons/uis/paper/readme.html){:target="_blank"} for system administration, configured in "simple" mode, such that newly added Things directly become available on the control UIs
-- [Basic UI](../addons/uis/basic/readme.html){:target="_blank"} as the new modern web UI for mobile devices
-- [HABPanel](../addons/uis/habpanel/readme.html){:target="_blank"} as a dashboard UI for tablets
+- [Paper UI]({{base}}/configuration/paperui.html) for system administration, configured in "simple" mode, such that newly added Things directly become available on the control UIs
+- [Basic UI]({{base}}/configuration/ui/basic) as the new modern web UI for mobile devices
+- [HABPanel]({{base}}/configuration/habpanel.html) as a dashboard UI for tablets
 - Bindings for Yahoo Weather, Belkin WeMo, Philips Hue, Sonos, IPP, Astro, AVM!Fritz and NTP
 - RRD4j persistence service for storing time-series locally
 - MAP transformation service as this is heavily used by the sample files

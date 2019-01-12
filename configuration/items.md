@@ -32,7 +32,7 @@ For example, an Item bound to a sensor receives updated sensor readings and an I
 
 There are two methods for defining Items:
 
-1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+1.  Through [Paper UI]({{base}}/configuration/paperui.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
     (Note that 1.x and legacy Bindings do not offer this option)
 
@@ -204,7 +204,7 @@ Two naming schemes are established in the community for Group names:
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/configuration/ui/basic/) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
@@ -648,7 +648,7 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [Expire Binding]({{base}}/addons/bindings/expire1/)
+The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 #### Parameter `autoupdate`

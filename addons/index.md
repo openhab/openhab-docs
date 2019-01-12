@@ -62,11 +62,11 @@ openhab-binding-network                   │ 2.2.0            │          │ 
 According to the [naming convention for bundles]({{base}}/administration/bundles.html#naming-convention-for-bundles) the *id* for the shown example is *network*.
 
 Another way to find the correct `id` is to look at the URL of the add-on documentation page.
-For example the url for the [mqtt Binding documentation]({{base}}/addons/bindings/mqtt1/readme.html) is
+For example the url for the [mqtt Binding documentation](/addons/bindings/mqtt1/) is
 
 ```text
-https://docs.openhab.org/addons/bindings/mqtt1/readme.html
-```
+https://www.openhab.org/addons/bindings/mqtt1/
+``` 
 
 In this case, the `id` would be "mqtt1".
 Did you notice the trailing *1* in this id?

@@ -7,7 +7,7 @@ title: Configuration though Paper UI
 
 # Configuration though Paper UI
 
-Please refer to the [Paper UI Addon documentation]({{docu}}/addons/uis/paper/readme.html).
+Please refer to the [Paper UI Addon documentation]({{base}}/configuration/paperui.html).
 
 The Paper UI is a new interface that helps setting up and configuring your openHAB instance.
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
