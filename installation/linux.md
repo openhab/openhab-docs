@@ -27,7 +27,7 @@ Linux file permissions is one of the biggest sources of issues, Linux novices ru
 If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
 Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions).
 
-**Meeting the Requirements:**
+## Meeting the Requirements: ##
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
 You may want to install Zulu, a fully certified Java build [as a package](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
 
@@ -40,9 +40,19 @@ When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to 
 
 ## Installation
 
-openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is **recommended** for end users.
+openHAB 2 can be installed though 
+ - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
+ - a package repository (apt, yum)
+ - manually from file.
+ 
+The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users. 
+
+Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manualconfiguration later on due to the missing openHABian configuration tool.
+
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
+
+### openHABian project
+The easy step by step instruction can be found [here]: (openhabian.html).
 
 ### Package Repository Installation
 
