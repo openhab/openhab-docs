@@ -1,17 +1,34 @@
 ---
+title: Introduction
 layout: documentation
 ---
 
-{% include base.html %}
+<style>
+@media (min-width: 720px) {
+  .intro-logo {
+    float: left;
+    padding: 30px;
+  }
+}
+h1.welcome {
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 300;
+  font-size: 36pt;
+}
+</style>
 
-# About openHAB
+<img src="/openhab-logo-square.png" width="150" height="150" class="intro-logo" />
+
+<h1 class="welcome">Welcome!</h1>
 
 The  **open H**ome  **A**utomation  **B**us (openHAB,  *pronounced ˈəʊpənˈhæb*) is an open source, technology agnostic home automation platform which runs as the center of your smart home! 
+
+<div style="clear:both"></div>
 
 Some of openHAB's strengths are:
 
 - Its ability to integrate a multitude of other devices and systems. openHAB includes other home automation systems, (smart) devices and other technologies into a single solution
-- To provide a uniform user interfaces and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
+- To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
 - Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
 
 ## What you need to know before you start
@@ -59,9 +76,9 @@ The following table gives a high level description of the most important concept
 | Concepts | Meaning | More Information |
 | --- | --- | --- |
 | Bindings | are the openHAB component that provides the interface to interact electronically with devices | _see below_ |
-| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things]({{base}}/concepts/things) |
+| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things]({{base}}/concepts/things.html) |
 | Channels | are the openHAB (software) connection between “Things” and “Items” (see below) | _see below_ |
-| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items) |
+| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items.html) |
 | Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
 | Sitemap | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Sitemaps]({{base}}/configuration/sitemaps.html) |
 
@@ -71,30 +88,30 @@ All the above [Concepts]({{base}}/concepts/index.html) are explained in more dep
 
 ### Channels
 
-Channels are for the logical link of a [Thing]({{base}}/concepts/things) to an [Item]({{base}}/concepts/items). 
-Channels originate from [Things]({{base}}/concepts/things) definition and define how your [Thing]({{base}}/concepts/things) can communicate with [Item]({{base}}/concepts/items) (and vice versa). 
-You will create channels when defining your [Thing]({{base}}/concepts/things).
+Channels are for the logical link of a [Thing]({{base}}/concepts/things.html) to an [Item]({{base}}/concepts/items.html). 
+Channels originate from [Things]({{base}}/concepts/things.html) definition and define how your [Thing]({{base}}/concepts/things.html) can communicate with [Item]({{base}}/concepts/items.html) (and vice versa). 
+You will create channels when defining your [Thing]({{base}}/concepts/things.html).
 
-During the definition of your [Thing]({{base}}/concepts/things) you will identify the channel to which your [Item]({{base}}/concepts/items) will be linked. 
-These two steps ensure that openHAB can transmit the information from the [Thing]({{base}}/concepts/things) to the [Item]({{base}}/concepts/items) (and vice versa).
+During the definition of your [Thing]({{base}}/concepts/things) you will identify the channel to which your [Item]({{base}}/concepts/items.html) will be linked. 
+These two steps ensure that openHAB can transmit the information from the [Thing]({{base}}/concepts/things.html) to the [Item]({{base}}/concepts/items.html) (and vice versa).
 
 ### Bindings
 
 Bindings are software packages that are installed by the user in openHAB. 
-The main purpose of Bindings are to establish the connection between your device and your [Thing]({{base}}/concepts/things). 
-Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things).
+The main purpose of Bindings are to establish the connection between your device and your [Thing]({{base}}/concepts/things.html). 
+Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things.html).
 
-Bindings are provided at the [Add-on section](https://www.openhab.org/addons/) of the [openHAB website](https://www.openhab.org). 
+Bindings are provided at the [Add-on section](https://www.openhab.org/addons/) of this website. 
 Here you will find a searchable list of several hundred bindings to support as many devices as possible. 
 New bindings are regularly added as developers integrate more devices into openHAB.
 
-For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide. 
-In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items) linked to those Channels and the use of these [Items]({{base}}/concepts/items) in a sitemap.
+For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide. 
+In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a sitemap.
 
 ## While you are getting started
 
 To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial). 
-That section provides you with a step-by-step instructions for your first easy setup. 
+That section provides you with step-by-step instructions for your first easy setup. 
 
 OpenHAB runs on most popular platforms such as Linux, Windows and MacOS and on almost any hardware ranging from Raspberry Pis to desktop computers and server PCs. 
 You can find specific installation instructions for these and other platforms in the [Installation Overview]({{base}}/installation/index.html) article. 
@@ -103,7 +120,7 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 3 for best experience)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 3 for the best experience)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
 However, it is worth noting two potential limitations of Raspberry Pis. 
 They are limited in RAM (memory) and may not perform well when additional database and data visualization programs are installed.
@@ -140,7 +157,7 @@ Once you are getting a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](https://www.openhab.org/addons/) for any technologies or services you may recognize) 
+2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize) 
 3. Install a binding (in openHAB)
 4. Define a “thing”
 5. Add a “channel” to the “thing” if not created by the binding
