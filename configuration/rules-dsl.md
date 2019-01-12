@@ -21,7 +21,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 
 ### File Location
 
-Rules are placed in the folder `${openhab.home}/conf/rules`.
+Rules are placed in the folder `$OPENHAB_CONF/rules`.
 The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
@@ -106,6 +106,7 @@ Before a rule starts working, it has to be triggered.
 There are different categories of rule triggers:
 
 - **Item**(-Event)-based triggers: They react on events on the openHAB event bus, i.e. commands and status updates for items
+- **Member of**(-Event)-based triggers: They react on events on the openHAB event bus for Items that are a member of the supplied Group
 - **Time**-based triggers: They react at special times, e.g. at midnight, every hour, etc.
 - **System**-based triggers: They react on certain system statuses.
 - **Thing**-based triggers: They react on thing status, i.e. change from ONLINE to OFFLINE.
@@ -125,7 +126,30 @@ Item <item> received update [<state>]
 Item <item> changed [from <state>] [to <state>]
 ```
 
-A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](../addons/actions.html).
+A simplistic explanation of the differences between `command` and `update` can be found in the article about [openHAB core actions](/docs/configuration/actions.html#event-bus-actions).
+
+An important warning is worth mentioning here.
+When using the `received command` trigger, the Rule will trigger **before** the Item's state is updated.
+Therefore, if the Rule needs to know what the command was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedCommand` instead of ItemName.state.
+
+{: #member-of-triggers}
+### Member of Triggers
+
+As with Item based event-based triggers discussed above, you can listen for commands, status updates, or status changes on the members of a given Group.
+You can also decide whether you want to catch only a specific command/status or any.
+All of the [implicit variables]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) get populated using the Item that caused the event.
+Of particular note, the implicit variable `triggeringItem` is populated with the Item that caused the Rule to trigger.
+
+```java
+Member of <group> received command [<command>]
+Member of <group> received update [<state>]
+Member of <group> changed [from <state>] [to <state>]
+```
+
+The `Member of` trigger only works with Items that are a direct member of the Group. 
+It does not work with members of nested subgroups.
+Also, as with Item event-based triggers, when using `received command`, the Rule will trigger before the Item's state is updated.
+So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
 
 {: #time-based-triggers}
 ### Time-based Triggers
@@ -190,8 +214,8 @@ Thing <thingUID> changed [from <status>] [to <status>]
 ```
 
 The status used in the trigger and the script is a string (no quotes).
-You can find all the possible values for status from [Thing Status]({{base}}/concepts/things.html).
-And refer to [Thing Status Action]({{base}}/addons/actions.html) to find how to get thing status in the script.
+You can find all the possible values for status from [Thing Status](/docs/concepts/things.html).
+And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from PaperUI or from Karaf remote console.
@@ -220,6 +244,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
+If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to acces the information.
 
 Example:
 
@@ -343,7 +368,7 @@ For example, `Group:Switch` will return an OnOffType for its state.
 Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
 There are two ways to discover these methods:
 
-- Use the [Eclipse SmartHome Designer]({{base}}/installation/designer.html) and the `<ctrl><space>` key combo to list all the available methods
+- Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
 For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
 Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
@@ -378,15 +403,15 @@ val newColor = new Color(red, blue, green) // where red, blue, and green are int
 MyColorItem.sendCommand(new HSBType(newColor))
 ```
 
-When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
-Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
+When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to divide the PercentType by 100 and multiply by 255 to obtain a standard 8-bit per color channel RGB.
+Correspondingly, for the 16 or 32 bit representation, the PercentType needs to divided by 100 and multiplied by 65535 (2 ^ 16 - 1) or 4294967295 (2 ^ 32 - 1), respectively.
 
 ```java
 //Example for conversion to 8-bit representation
 // In rule body
-val red = (MyColorItem.state as HSBType).red * 255
-val green = (MyColorItem.state as HSBType).green * 255
-val blue = (MyColorItem.state as HSBType).blue * 255
+val red = (MyColorItem.state as HSBType).red / 100 * 255
+val green = (MyColorItem.state as HSBType).green / 100 * 255
+val blue = (MyColorItem.state as HSBType).blue / 100 * 255
 ```
 
 ##### Contact Item
@@ -412,13 +437,14 @@ With epoch, one can compare two dates together, convert a Joda DateTime to a Dat
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).calendar.timeInMillis
+val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis
 
 // Get epoch from Joda DateTime
 val Number nowEpoch = now.millis
 
 // Convert DateTimeType to Joda DateTime
-val joda = new DateTime((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)
+val jodaVariantOne = new DateTime(MyDateTimeItem.state.toString)
+val jodaVariantTwo = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
 
 // Convert Joda DateTime to DateTimeType
 val calendar = java.util.Calendar::getInstance
@@ -449,13 +475,13 @@ For some examples:
 
 ```java
 // See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)) ...
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)) ...
 
 // See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis))...
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis))...
 
 // Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_OF_DAY)
+val hours = (MyDateTimeItem.state as DateTimeType).zonedDateTime.get(Calendar::HOUR_OF_DAY)
 // See the Calendar javadocs for the full set of parameters available
 ```
 
@@ -642,7 +668,7 @@ The different syntax for the generic and the objective-specific differs and is g
 | `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
 
 The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
-Using the method `MyTimes.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
+Using the method `MyItems.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
 For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
 Each of these separate methods is individually written to handle all of these different types of Objects. 
 MyItem will automatically apply the method that corresponds to the argument type.
@@ -655,6 +681,7 @@ Besides the implicitly available variables for items and commands/states, rules 
 - `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
 - `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
 - `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
+- `receivedEvent` - will be implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 ### Early returns
@@ -696,7 +723,7 @@ end
 {: #transformations}
 ### Transformations
 
-openHAB [Transformation services]({{base}}/addons/transformations.html) can be used in rules to transform/translate/convert data.
+openHAB [Transformation services](/addons/#transform) can be used in rules to transform/translate/convert data.
 
 The general syntax is as follows:
 
@@ -727,7 +754,7 @@ Example:
 
 ```java
 try {
-    var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+    var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
     logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
@@ -737,7 +764,7 @@ finally {
 }
 ```
 
-For all available Transformation services please refer to the list of [Transformation Add-ons]({{base}}/addons/transformations.html).
+For all available Transformation services please refer to the list of [Transformation Add-ons](/addons/#transform).
 
 
 {: #logging}
@@ -805,6 +832,26 @@ when
     Item SetCounterItem received command
 then
     counter = receivedCommand as DecimalType
+end
+
+// turns on a light when one of several motion sensors received command ON, turns it off when one of several received command OFF
+rule "Motion sensor light"
+when
+    Member of MotionSensors received command
+then
+    if(receivedCommand == ON) Light.sendCommand(ON)
+    else Light.sendCommand(OFF)
+end
+
+rule "Start wake up light on sunrise"
+when
+    Channel "astro:sun:home:rise#event" triggered
+then
+    switch(receivedEvent.getEvent()) {
+        case "START": {
+            Light.sendCommand(ON)
+        }
+    }
 end
 ```
 

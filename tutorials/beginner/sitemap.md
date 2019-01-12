@@ -13,11 +13,11 @@ But before that, you have to create an items file.
 Both the items and the sitemap files are edited in your editor of choice.
 The files' location is in the `$OPENHAB_CONF` directory, which is different on different operating systems.
 See the linux installation instructions for the [file locations]({{base}}/installation/linux.html#file-locations) specific to linux, or the Windows [file locations]({{base}}/installation/windows.html#file-locations) specific to Windows.
-Mac OSx files are located in the same place as Linux files.
+macOS files are located in the same place as Linux files.
 
 ```bash
-conf/items    <-- *.items files
-conf/sitemaps <-- *.sitemap files
+$OPENHAB_CONF/items    <-- *.items files
+$OPENHAB_CONF/sitemaps <-- *.sitemap files
 ```
 
 After a fresh installation these directories are empty (except for the readme files), so you have to create a file there. We'll use "default.items" as the items file and "default.sitemap" as the sitemap file in this tutorial.
@@ -28,8 +28,8 @@ After a fresh installation these directories are empty (except for the readme fi
 So we create the files:
 
 ```bash
-conf/items/default.items
-conf/sitemaps/default.sitemap
+$OPENHAB_CONF/items/default.items
+$OPENHAB_CONF/sitemaps/default.sitemap
 ```
 
 Let's start small.

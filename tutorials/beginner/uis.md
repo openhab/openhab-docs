@@ -10,7 +10,7 @@ openHAB offers different UIs in its standard configuration: the *Paper UI*, the 
 
 ## The Paper UI
 
-The Paper UI is a new interface that helps setting up and configuring your openHAB instance.
+The Paper UI is an interface that helps setting up and configuring your openHAB instance.
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
 
 -   Add-on management: Easily install or uninstall openHAB add-ons

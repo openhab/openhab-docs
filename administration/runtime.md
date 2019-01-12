@@ -89,8 +89,8 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 | Command | Description |
 |---------|-------------|
-| `smarthome:audio play [<sink>] <filename>` | plays a sound file from the `conf/sounds` folder through the optionally specified audio sink(s)
-| `smarthome:audio play <sink> <filename> <volume>` | plays a sound file from the `conf/sounds` folder through the specified audio sink(s) with the specified volume
+| `smarthome:audio play [<sink>] <filename>` | plays a sound file from the `$OPENHAB_CONF/sounds` folder through the optionally specified audio sink(s)
+| `smarthome:audio play <sink> <filename> <volume>` | plays a sound file from the `$OPENHAB_CONF/sounds` folder through the specified audio sink(s) with the specified volume
 | `smarthome:audio stream [<sink>] <url>` | streams the sound from the url through the optionally specified audio sink(s)
 | `smarthome:audio sources` | lists the audio sources
 | `smarthome:audio sinks` | lists the audio sinks
@@ -107,7 +107,7 @@ Usage: smarthome:send <item> <command> - sends a command for an item
 
 | Command | Description |
 |---------|-------------|
-| `smarthome:> <script to execute>` | Executes a script from the `conf/scripts` folder
+| `smarthome:script <script to execute>` | Executes a script from the `$OPENHAB_CONF/scripts` folder
 
 ### Firmware
 

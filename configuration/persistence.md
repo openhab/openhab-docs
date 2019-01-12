@@ -13,9 +13,9 @@ The data may be retrieved at a later time, for example to restore your system af
 openHAB persists Item states in a database, and most popular databases are supported.
 You may have more than one persistence add-on loaded, and each of these may be configured independently.
 
-A complete list of supported persistence add-ons may be found in the [persistence]({{base}}/addons/persistence.html) section of the on-line openHAB documentation.
+A complete list of supported persistence add-ons may be found in the [persistence](/addons/#persistence) section of the on-line openHAB documentation.
 
-Please refer to the [available persistence service add-on]({{base}}/addons/persistence.html) documentation for your selected persistence add-on for configuration instructions.
+Please refer to the [available persistence service add-on](/addons/#persistence) documentation for your selected persistence add-on for configuration instructions.
 
 ## Default Persistence Service
 
@@ -240,18 +240,13 @@ then
 end
 ```
 
-Create a refresh script `$OPENHAB_CONF/rules_refresh.sh` and make it executable (`chmod +x rules_refresh.sh`):
+Create a refresh script `$OPENHAB_CONF/rules/rules_refresh.sh` and make it executable (`chmod +x $OPENHAB_CONF/rules/rules_refresh.sh`):
 
 ```sh
 #!/bin/bash
 #This script is called by openHAB after the persistence service has started
 sleep 5
-cd [full_path_to_openhab_config_directory]/rules
-FileList="$(find *.rules | grep -v refresh.rules)"
-for File in $FileList
-do
-  touch $File
-done
+find "$OPENHAB_CONF/rules" -type f -name '*.rules' -not -name refresh.rules | xargs touch
 ```
 
 The script waits for five seconds and then touches all `*.rules` files (except `refresh.rules`).

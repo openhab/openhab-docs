@@ -76,7 +76,13 @@ You can find the syntax file and installation instructions on [openhab-vim](http
 Nano is a common editor in Linux systems.
 You can find the syntax file and installation instructions on [openhabnano](https://github.com/airix1/openhabnano).
 
-### Textwrangler
+### TextWrangler
 
-Textwrangler is a text and code editor for MAC OS X.
+TextWrangler is a text and code editor for macOS.
 You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
+
+### BBEdit
+
+BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
+You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
+

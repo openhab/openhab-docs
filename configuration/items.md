@@ -62,7 +62,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```
 
 - Fields must be entered in the order shown
-- `itemtype` and `itemname` are manadatory
+- `itemtype` and `itemname` are mandatory
 - All other fields are optional
 - Fields may be separated by one or more spaces, or tabs
 - An Item definition may span multiple lines
@@ -208,7 +208,7 @@ Graphical UIs will display the label text when the Item is included, e.g. in [Ba
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
-The label for the Item in the following example is "Temperature and the optional state representation is set to be displayed, e.g. as "23.9 °C":
+The label for the Item in the following example is "Temperature" and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]"
@@ -236,7 +236,7 @@ This section provides information about what a user can expect regarding the beh
 -   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-*N.B.*  Many openHAB users find that it can be very useful to use [Persistence]({{base}}/addons/persistence.html) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started](/docs/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
 #### Command vs. Status
@@ -280,10 +280,11 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    Livingroom_Temperature   "Temperature [%.1f °C]"     // e.g. "23.5 °C"
-String    Livingroom_TV_Channel    "Now Playing [%s]"          // e.g. "Lorem ipsum"
-DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:26"
-Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
+Number    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
+String    Livingroom_TV_Channel    "Now Playing [%s]"                  // e.g. "Lorem ipsum"
+DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]"         // e.g. "Sun 15:26"
+Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "50 %"
+Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g. "49.26°N 123.19°E 0m"
 ```
 
 {: #state-transformation}
@@ -297,7 +298,7 @@ In the example below, the entry `MAP(window_esp.map)` causes the output of the `
 Contact Livingroom_Window "Ventana del salón [MAP(window_esp.map):%s]"
 ```
 
-Please refer to the article on [Transformations](transform.html) for more usage details and a list of available transformation services.
+Please refer to the article on [Transformations](/docs/configuration/transformations.html) for more usage details and a list of available transformation services.
 
 {: #icons}
 ### Icons
@@ -310,7 +311,7 @@ In the example below, the "switch" icon has been selected:
 Switch Livingroom_Light "Livingroom Ceiling Light" <switch>
 ```
 
-openHAB provides a set of [classic icons]({{base}}/addons/iconsets/classic/readme.html) by default.
+openHAB provides a set of [classic icons](/docs/configuration/iconsets/classic/) by default.
 Users may add their own icons in either `png` or `svg` format in the openHAB icons configuration folder, `$OPENHAB_CONF/icons/classic/`.
 
 The following guidelines apply to user-added icon files:
@@ -391,8 +392,10 @@ Take note, that the Transformation used in the `Livingroom_Light_Connection` Ite
 
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
-For a dimmable light (0-100%), you might provide icons as in the example:
+The default icon will be used for negative numbers, or above 100 i.e. the available filename range is icon-0 to icon-99 only.
+Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
+For a dimmable light (0-100%), you might provide icons as in the example:
 | File name          | Description                                          |
 |--------------------|------------------------------------------------------|
 | `mydimmer.svg`     | Default icon (used in undefined states)              |
@@ -467,14 +470,14 @@ The general syntax for groups with a specific item type and aggregation function
 Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-- If the aggregation function is omitted, the function `EQUAL` will be used
-- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items
+- If the aggregation function is omitted, the function `EQUALITY` will be used.
+- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
 
 Group state aggregation functions can be any of the following:
 
 | Function               | Description |
 |------------------------|-------------|
-| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
+| `EQUALITY`             | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
 | `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
 | `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
 | `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
@@ -527,13 +530,13 @@ Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
 Tags will be ignored if no Items in the openHAB installation support it.
 
-See the [Hue Emulation]({{base}}/addons/ios/hueemulation/readme.html) or [HomeKit Add-on]({{base}}/addons/ios/homekit/readme.html) documentation for more details.
+See the [Hue Emulation Service]({{base}}/addons/integrations/hueemulation/) or [HomeKit Add-on]({{base}}/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
 
 One of the greatest strengths of an openHAB automation system is the sheer number of devices you can interact with.
-See "[currently available Bindings]({{base}}/addons/bindings.html)" for a list of available Bindings.
+See "[currently available Bindings](/addons/#binding)" for a list of available Bindings.
 This capability of interacting with real-world things is enabled through the association of Bindings with Items.
 
 Once an Item is associated with a Binding, the state of one aspect of a device is reflected in openHAB (e.g., you can see if a light is on or off in one of the user interfaces).
@@ -561,7 +564,7 @@ Switch Phone_Mobile {ns="192.168.1.123:80"}
 Where "ns" is the namespace for a certain Binding like "network", "netatmo", "zwave" etc.
 Every Binding defines what values must be given in the Binding configuration string.
 That can be the id of a sensor, an ip or mac address or anything else.
-The information required for each binding is specified in the configuration information provided for each of the available [Bindings]({{base}}/addons/bindings.html).
+The information required for each binding is specified in the configuration information provided for each of the available [Bindings](/addons/#binding).
 
 Examples:
 
@@ -589,13 +592,21 @@ These are all in plain text, so be careful who you share these with if some data
 openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
+There are two different kinds of channels:
+
+- State Channels will, as soon as linked to the Item, update the state of it and/or listen for Commands you send to it.
+For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
+- Trigger Channels will only send events that won't have any effect on the Item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event.
+For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `PRESSED` event when someone is pressing the button of the device.
+This event on it's own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
+Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
 Once accepted, the new Thing will appear under Configuration > Things.
 
 Other Bindings support defining Things in a `.things` file located in the `OPENHAB_CFG/things/` folder.
 
-See the [Bindings]({{base}}/addons/bindings.html) configuration section for more information on how to discover or manually define Things for a given Binding.
+See the [Bindings](/addons/#binding) configuration section for more information on how to discover or manually define Things for a given Binding.
 
 ##### Paper UI Linking
 
@@ -624,7 +635,7 @@ Number  Azimuth            "Azimuth"                       {channel="astro:sun:h
 Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:command=sensor_binary,respond_to_basic=true"}
 ```
 
-#### Multi Binding/Channel Linkage
+#### Multi Binding / Channel Linkage
 
 An Item may be linked to multiple Bindings and/or Channels.
 Commands and Updates from and to these Items will be combined, and can be used in interesting ways.
@@ -637,10 +648,10 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [expire Binding]({{base}}/addons/bindings/expire1/readme.html)
+The second example shows a common use case for the [Expire Binding]({{base}}/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
-##### Exception `autoupdate`
+#### Parameter `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
 This way, the Item is unchanged unless you explicitly post an *update* to the item.
@@ -650,3 +661,53 @@ Example:
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
+
+#### Profiles
+
+With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
+
+Profiles can be specified as a parameter for a given Channel on the Item configuration:
+
+```java
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="<profileID>", <profile-parameterID>="MyValue", ...]}
+```
+
+There are some built-in Profiles available which are described in the table below.
+Some Bindings will may offer additional Profiles for Binding-specific use cases.
+If this is the case, you'll find those within the documentation of the Binding.
+Also, all [Transformation Services]({{base}}/configuration/transformations.html) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
+You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you'd like to use.
+
+
+
+| ID            | Type    | Supported Item Types | Description                        |
+|---------------|---------|----------------------|------------------------------------|
+| `default`     | State   | All                  | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice-versia without any changes. For Trigger Channels, the Default Profile won't change anything on the Item. |
+| `follow`      | State   | All                  | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates.
+| `offset`      | State   | Number               | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.|
+| `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
+| `rawrocker-to-on-off` | Trigger | Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.
+| `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
+Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
+```java
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
+```
+and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
+```java
+when
+    Channel "serialbutton:button:mybutton:button" triggered PRESSED
+then
+    if (Light_Bedroom.getStateAs(OnOffType) != ON)
+        Light_Bedroom.sendCommand(ON)
+    else
+        Light_Bedroom.sendCommand(OFF)
+end
+```
+
+Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
+
+```java
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+```
+
+This will make your Rule obsolete. So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.

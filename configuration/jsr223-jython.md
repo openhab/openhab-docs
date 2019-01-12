@@ -103,19 +103,23 @@ The rule created in the script is triggered by an update to `TestString1` and,
 when triggered, the rule updates `TestString2`. 
 
 ```python
-scriptExtension.importPreset("RuleSimple")
 scriptExtension.importPreset("RuleSupport")
+scriptExtension.importPreset("RuleSimple")
 
 class MyRule(SimpleRule):
     def __init__(self):
         self.triggers = [
-             Trigger("MyTrigger", "core.ItemStateUpdateTrigger", 
-                    Configuration({ "itemName": "TestString1"}))
+            TriggerBuilder.create()
+                    .withId("MyTrigger")
+                    .withTypeUID("core.ItemStateUpdateTrigger")
+                    .withConfiguration(
+                        Configuration({
+                            "itemName": "TestString1"
+                        })).build()
         ]
         
     def execute(self, module, input):
         events.postUpdate("TestString2", "some data")
-
 automationManager.addRule(MyRule())
 ```
 

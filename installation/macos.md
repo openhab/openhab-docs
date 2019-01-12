@@ -1,11 +1,11 @@
 ---
 layout: documentation
-title: Mac OS X
+title: macOS
 ---
 
 {% include base.html %}
 
-# Installation on Mac OS X
+# Installation on macOS
 
 This page is structured as follows:
 
@@ -14,7 +14,7 @@ This page is structured as follows:
 - TOC
 {:toc}
 
-If you're unfamiliar with using the Mac OS terminal, then feel free to follow the many guides on the internet. For example:
+If you're unfamiliar with using the macOS terminal, then feel free to follow the many guides on the internet. For example:
 
 [Macworld: How to use Terminal on mac](http://www.macworld.co.uk/feature/mac-software/how-use-terminal-on-mac-3608274/)
 
@@ -28,13 +28,13 @@ You have the choice to use the current stable version or the latest snapshot bui
 -   **Stable**
 
     The stable builds have undergone testing, it is the recommended version to download.
-    Download the latest `openhab-2.x.x.zip` [here](https://bintray.com/openhab/mvn/openhab-distro/_latestVersion).
+    Download the latest `openhab-2.x.x.zip` [here](https://www.openhab.org/download/).
 
 -   **Snapshot (Unstable)**
 
     Snapshots are built daily, and contain the latest changes to openHAB's source code.
     These changes haven't undergone the same amount of testing as the stable releases, so only use them if you **need** a new feature.
-    Download the latest `openhab-2.x.x-SNAPSHOT.zip` [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution).
+    Download the latest `openhab-2.x.x-SNAPSHOT.zip` [here](https://www.openhab.org/download/).
 
 The following instructions are performed in a terminal window. At first launch of the terminal, you will be inside your home directory.
 

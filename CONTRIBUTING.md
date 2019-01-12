@@ -79,7 +79,10 @@ then you just add a line to every git commit message:
 
     Signed-off-by: Joe Smith <joe.smith@email.com> (github: github_handle)
 
-using your real name (sorry, no pseudonyms or anonymous contributions.)
+using your real name (sorry, no pseudonyms or anonymous contributions.) and an
+e-mail address under which you can be reached (sorry, no github noreply e-mail
+addresses (such as username@users.noreply.github.com) or other non-reachable
+addresses are allowed).
 
 #### Small patch exception
 

@@ -10,7 +10,7 @@ title: Things
 [Things]({{base}}/concepts/things.html) represent the physical layer of an openHAB system.
 From a configuration standpoint, Things tell openHAB which **physical entities** (devices, web services, information sources, etc.) are to be managed by the system.
 
-Things are connected to openHAB through [bindings]({{base}}/addons/bindings.html).
+Things are connected to openHAB through [bindings](/addons/#binding).
 In order to add a Thing to the system, you must first identify the appropriate binding which will provide the type of Thing you wish to add.
 For example, before adding a Thing for a Z-Wave device, the Z-Wave binding must first be installed.
 
@@ -62,7 +62,7 @@ See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html)
 ### Defining Things Using Files
 
 Things can also be defined manually by creating `.things` configuration text files.
-These files are stored in the `things` folder under the openHAB configuration path, e.g. `/etc/openhab2/things/` or `openhab2/conf/things`.
+These files are stored in `$OPENHAB_CONF/things`.
 
 Benefits of defining Things, Items and other aspects of openHAB in configuration text files are, that they are statically defined, unambiguous, flexible and easy to backup and restore.
 The main downsides of configuration files are the effort needed to compose them and the probability for typing errors.
@@ -90,7 +90,7 @@ Looking at the first example:
 - the physical location of the Thing is "Living Room"
 - the values inside the `[]` brackets are the Thing's configuration parameters, these are partly mandatory and optional
 
-Please check each individual binding's [documentation]({{base}}/addons/bindings.html) for details on what and how to define Things using the `*.things` configuration text files.
+Please check each individual binding's [documentation](/addons/#binding) for details on what and how to define Things using the `*.things` configuration text files.
 
 ### Linking Items
 

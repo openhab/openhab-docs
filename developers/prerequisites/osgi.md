@@ -106,13 +106,13 @@ We have talked so far about the OSGi specification. Here is the place to emphasi
 
 We will list the most popular OSGi containers with a short description of their goals. We can divide them into:
 
-- open source:
+- Open source:
   - [Equinox](https://www.eclipse.org/equinox/) - this is the reference implementation of the OSGi R4.x Core Specification and one of the mostly used. As it is used in the openHAB project, we have prepared a  [wiki page](equinox.html); 
   - [Apache Felix](http://felix.apache.org/) - implements OSGi R5 Core Specification, developed by the Apache Software Foundation. [Apache Karaf](http://karaf.apache.org/) is distribution based on Apache Felix that provides some additional features on top of it (e.g. folder based hot deployment, improved default console with remote SSH, maven plugins and others);
   - [Concierge](https://www.eclipse.org/concierge/) - implements OSGi R5 Core Specification and is aimed at mobile and embedded devices. With a size of around 250 kb it has the smallest footprint of the presented containers;
 
-- commercial:
-  - [ProSyst OSGi Framework](http://dz.prosyst.com/pdoc/mBS_SDK_8.1/modules/framework/overview/framework.html) - implements OSGi R5 Core and Compendium Specification. This implementation is low-footprint, optimized for embedded products, provides custom remote management agent and many more additional components. 
+- Commercial:
+  - [Bosch IoT Gateway Software](https://www.bosch-si.com/iot-platform/iot-platform/gateway/software.html) - implements OSGi R6 Core and Compendium Specification. This implementation is low-footprint, optimized for embedded products, provides custom remote management agent and many more additional components. The implementation was previously known as ProSyst OSGi Framework.
 
 Important Definitions
 ---------------------

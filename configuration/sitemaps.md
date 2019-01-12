@@ -309,7 +309,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```perl
-Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport]
+Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
@@ -319,6 +319,9 @@ This type presents a value as a user-adjustable control which slides from left (
 
 -   `switchSupport` is a parameter without an assignment (Classic UI only!).
     If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+
+-   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+-   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
 
 **Example:**
 
@@ -519,18 +522,18 @@ By using a Switch or Selection element with a mappings array, you can replace th
 This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
 
-In the third and forth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
+In the third and fourth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
 This limits the possible input values, which is yet another often occurring use case for mappings.
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/items.md#icons-dynamic), depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon](/docs/configuration/items.html#icons-dynamic), depending on certain Item states.
 A few practical use cases are:
 
 - Show a battery warning if the voltage level of a device is below 30%
 - Hide further control elements for the TV if it is turned off
 - Highlight a value with a warning color if it is outside accepted limits
-- Present a special icon, depending on the state of an item (a [dynamic icon]({{base}}/items.md#icons-dynamic))
+- Present a special icon, depending on the state of an item (a [dynamic icon](/docs/configuration/items.html#icons-dynamic))
 
 ### Visibility
 
@@ -544,10 +547,13 @@ visibility=[item_name operator value, item_name operator value, ... ]
 ```
 
 Valid comparison operators are:
+
 - equal to `==`, unequal to `!=`
 - less than or equal to `<=`, greater than or equal to`>=`
 - less than `<`, greater than `>`
+
 Expressions are evaluated from left to right.
+The Item will be visible if any one of the comparisons is evaluated as `true`, otherwise it will be hidden.
 
 **Examples:**
 
@@ -557,14 +563,9 @@ visibility=[TV_Power==ON]
 visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
-If any one of the comparisons is evaluated as `true`, the Item will be visible, otherwise it will be hidden.
-It is important to note that visibility may be determined based on only one condition at a time.
-If any one of the comparisons is evaluated as `true`, then the Item will be visible.
-Otherwise it will be hidden.
-
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
 Combining multiple conditions, for example Morning *AND* above 19 °C is not supported.
-To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional Item that is set by a Rule.
+To control visibility based upon combining multiple Items, or on more complex conditions, consider defining and using an additional intermediate Item that is set by a Rule.
 Rules have a rich set of features that can support more involved scenarios.
 
 ### Label and Value Colors
@@ -634,7 +635,7 @@ The color names above are agreed on between all openHAB UIs and are therefor you
 
 ### Icons
 
-openHAB allows a set of icons to be assigned to the different states of an Item and therefor to be presented in a Sitemap.
+openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
 Please refer to the documentation on [Item configuration](items.html) for details.
 
 ![battery-0]({{base}}/addons/iconsets/classic/icons/battery-0.png "battery-0")
@@ -691,7 +692,7 @@ Explanation:
 
 ## Further notes and comparison details
 
--   String comparisons are case sensitive, so `==ON` is not the same a `==on`.
+-   String comparisons are case sensitive, so `==ON` is not the same as `==on`.
 
 -   DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).

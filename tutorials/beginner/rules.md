@@ -9,11 +9,11 @@ layout: tutorial-beginner
 Now that we have the two items - "Presence_Mobile_John" aka "Johns mobile" and "Wallplug_FF_LR_TV" aka "TV wallplug LR" - we can create a simple rule.
 Let's assume we want to turn on the wallplug (and give some juice to the connected TV) as soon as John's mobile comes online, turn it off again when the mobile goes offline (this would be a very basic "presence" rule).
 
-Rules are defined in the conf/rules directory.
+Rules are defined in the `$OPENHAB_CONF/rules` directory.
 So we create the file default.rules there.
 
 ```bash
-conf/rules/default.rules
+$OPENHAB_CONF/rules/default.rules
 ```
 
 You can create as many .rules files as you want - this eases the overview of different rules/situations. For example:

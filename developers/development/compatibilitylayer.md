@@ -19,8 +19,8 @@ While the openHAB distribution already contains many add-ons of openHAB 1, there
 Test a not included add-on is very straight forward:
  - Start your runtime
  - Install the 1.x compatibility layer by running `feature:install openhab-runtime-compat1x` in the openHAB console
- - As with openHAB 1.x, simply take the jar file of your add-on and place it in the `${openhab.home}/addons` folder.
- - Copy your personal `openhab.cfg` file to `${openhab.home}/conf/services/openhab.cfg`.
+ - As with openHAB 1.x, simply take the jar file of your add-on and place it in the `$OPENHAB_HOME/addons` folder.
+ - Copy your personal `openhab.cfg` file to `$OPENHAB_CONF/services/openhab.cfg`.
 
 ## How to solve problems with a certain add-on?
 
@@ -34,11 +34,20 @@ Here is what you need to do:
 
 ## How to add a successfully tested 1.x Add-on to the distribution
 
+With bindings:
+
 1. The first step is to create a "Karaf feature" for it, in which required dependencies (i.e. to io.transport bundles) can also be declared. Such a feature can also include the required configuration, therefore you should create a file `<youraddon>.cfg` in `features/openhab-addons-external/src/main/resources/conf` with the same content as what is within `openhab.cfg`, but without the `<yourbinding>:` prefix on the lines of the parameters.
 This config file then needs to be added to `features/openhab-addons-external/pom.xml` so that the build is aware of it.
 The feature itself is then added to `features/openhab-addons/src/main/feature/feature.xml`, referencing the bundle, the config file and its dependencies (if any). The result should look [similar to this](https://github.com/openhab/openhab/pull/3988/files).
 This will automatically make the add-on a part of the distro with the next build.
 1. Note that with defining a Karaf feature, bindings are available for installation through the Paper UI in the "Extensions" menu, but they are not listed under "Configuration->Bindings" (although it is fully operational after installation). In order to have bindings listed there as well, you need to add some meta-information to the binding bundle. This information should be put into `ESH-INF/binding/binding.xml` and its content is [described here](https://www.eclipse.org/smarthome/documentation/development/bindings/xml-reference.html#xml-structure-for-binding-definitions). Do not forget to add `ESH-INF` to your `build.properties`, so that it is packaged in the bundle. See a [real life example of such meta-data here](https://github.com/openhab/openhab/blob/master/bundles/binding/org.openhab.binding.nest/ESH-INF/binding/binding.xml) - note the `service-id` element in the XML, which needs to point to the service id of your binding, which is by default `org.openhab.<bindingId>` for all 1.x bindings.
+
+With persistence addons:
+
+1. create a "Karaf feature" similar to bindings. See this [example](https://github.com/openhab/openhab1-addons/pull/5635/commits/42d1e8d29ffad75ef6a846306a71d10ee4d0f641)
+2. create config description to allow configuring the addon via Paper UI. See this [example](https://github.com/openhab/openhab1-addons/pull/5635/commits/98700634af34c52539aa877c0e4a254392baf674)
+3. ensure that persistence service is not set to `immediate`. See this [example](https://github.com/openhab/openhab1-addons/pull/5635/commits/39b47e7f2e8763ae72007d615e6675ea08cbe001)
+4. it is also good practice to declare `service.pid` and advice using it in the configuration template. See this  [example](https://github.com/openhab/openhab1-addons/pull/5635/commits/66b7f7f18a55abcba4215d490dd9239c729b3804).
 
 ## Future Plans
 
