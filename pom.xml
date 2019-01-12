@@ -432,12 +432,12 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/addons/ios/google-assistant</outputDirectory>
+              <outputDirectory>${basedir}/_addons_ios/ext/google-assistant</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-google-assistant</directory>
+                  <directory>${basedir}/.external-resources/openhab-google-assistant/docs</directory>
                   <includes>
-                    <include>docs/images/*.png</include>
+                    <include>images/*.png</include>
                   </includes>
                 </resource>
               </resources>
