@@ -14,6 +14,7 @@ h1.welcome {
   font-family: 'Open Sans', sans-serif;
   font-weight: 300;
   font-size: 36pt;
+  margin-top: 0 !important;
 }
 </style>
 
