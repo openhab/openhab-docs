@@ -19,9 +19,9 @@ openHAB offers a variety of frontends for user interaction, from administrative 
 
 | App     | Description          |
 |---------|----------------------|
-| [Android App]({{base}}/addons/uis/apps/android.html) | The native Android app to access openHAB on the go. |
-| [iOS App]({{base}}/addons/uis/apps/ios.html) | The native iOS app to access openHAB on the go. |
-| [Windows 10 App]({{base}}/addons/uis/apps/windows.html) | The native Windows 10 app to access openHAB on the go. |
+| [Android App]({{base}}/apps/android.html) | The native Android app to access openHAB on the go. |
+| [iOS App]({{base}}/apps/ios.html) | The native iOS app to access openHAB on the go. |
+| [Windows 10 App]({{base}}/apps/windows.html) | The native Windows 10 app to access openHAB on the go. |
 
 ## Iconsets
 
