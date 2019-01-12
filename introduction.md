@@ -4,7 +4,7 @@ layout: documentation
 
 {% include base.html %}
 
-# About openHAB
+# About openHAB  <img src="https://www.openhab.org/openhab-logo-square.png" width="30" height="30" class="intro-logo" />
 
 The  **open H**ome  **A**utomation  **B**us (openHAB,  *pronounced ˈəʊpənˈhæb*) is an open source, technology agnostic home automation platform which runs as the center of your smart home! 
 
@@ -59,9 +59,9 @@ The following table gives a high level description of the most important concept
 | Concepts | Meaning | More Information |
 | --- | --- | --- |
 | Bindings | are the openHAB component that provides the interface to interact electronically with devices | _see below_ |
-| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things]({{base}}/concepts/things) |
+| Things | are the first openHAB (software) generated representation of your devices | [click for more info on Things]({{base}}/concepts/things.html) |
 | Channels | are the openHAB (software) connection between “Things” and “Items” (see below) | _see below_ |
-| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items) |
+| Items | are the openHAB (software) generated representation of information about the devices | [click for more info on Items]({{base}}/concepts/items.html) |
 | Rules | that perform automatic actions (in its simplest form: if "this" happens, openHAB will do "that") | [click for more info on Rules]({{base}}/configuration/rules-dsl.html) |
 | Sitemap | is the openHAB (software) generated user interface (web site) that presents information and allows for interactions | [click for more info on Sitemaps]({{base}}/configuration/sitemaps.html) |
 
@@ -71,25 +71,25 @@ All the above [Concepts]({{base}}/concepts/index.html) are explained in more dep
 
 ### Channels
 
-Channels are for the logical link of a [Thing]({{base}}/concepts/things) to an [Item]({{base}}/concepts/items). 
-Channels originate from [Things]({{base}}/concepts/things) definition and define how your [Thing]({{base}}/concepts/things) can communicate with [Item]({{base}}/concepts/items) (and vice versa). 
-You will create channels when defining your [Thing]({{base}}/concepts/things).
+Channels are for the logical link of a [Thing]({{base}}/concepts/things.html) to an [Item]({{base}}/concepts/items.html). 
+Channels originate from [Things]({{base}}/concepts/things.html) definition and define how your [Thing]({{base}}/concepts/things.html) can communicate with [Item]({{base}}/concepts/items.html) (and vice versa). 
+You will create channels when defining your [Thing]({{base}}/concepts/things.html).
 
-During the definition of your [Thing]({{base}}/concepts/things) you will identify the channel to which your [Item]({{base}}/concepts/items) will be linked. 
-These two steps ensure that openHAB can transmit the information from the [Thing]({{base}}/concepts/things) to the [Item]({{base}}/concepts/items) (and vice versa).
+During the definition of your [Thing]({{base}}/concepts/things) you will identify the channel to which your [Item]({{base}}/concepts/items.html) will be linked. 
+These two steps ensure that openHAB can transmit the information from the [Thing]({{base}}/concepts/things.html) to the [Item]({{base}}/concepts/items.html) (and vice versa).
 
 ### Bindings
 
 Bindings are software packages that are installed by the user in openHAB. 
-The main purpose of Bindings are to establish the connection between your device and your [Thing]({{base}}/concepts/things). 
-Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things).
+The main purpose of Bindings are to establish the connection between your device and your [Thing]({{base}}/concepts/things.html). 
+Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things.html).
 
 Bindings are provided at the [Add-on section](https://www.openhab.org/addons/) of the [openHAB website](https://www.openhab.org). 
 Here you will find a searchable list of several hundred bindings to support as many devices as possible. 
 New bindings are regularly added as developers integrate more devices into openHAB.
 
-For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide. 
-In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items) linked to those Channels and the use of these [Items]({{base}}/concepts/items) in a sitemap.
+For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide. 
+In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a sitemap.
 
 ## While you are getting started
 
@@ -140,7 +140,7 @@ Once you are getting a first overview, it is time to practice.
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
-2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](https://www.openhab.org/addons/) for any technologies or services you may recognize) 
+2. If you already own a smart device, search the addons for the brand or technology used by that device (or simply browse the list of [add-ons](/addons/) for any technologies or services you may recognize) 
 3. Install a binding (in openHAB)
 4. Define a “thing”
 5. Add a “channel” to the “thing” if not created by the binding
