@@ -13,7 +13,7 @@ While a device or service might be quite specific, Items are unified substitutio
 Items can be Strings, Numbers, Switches or one of a few other basic [Item types](#type).
 A programmer can compare Item types with base variable data types of a programming language.
 
-A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
+A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](/addons/#binding).
 An Item does not simply store information that is set by software (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may also be set by actions that take place in your home.
 
 But let's not get ahead of ourselves.
@@ -27,12 +27,12 @@ The rest of this page contains details regarding Items and is structured as foll
 ## Introduction
 
 Items are basic data types and have a state which can be read from, or written to.
-Items can be linked to a [Binding](#binding) channel for interaction with the outside world.
+Items can be linked to a [Binding](/addons/#binding) channel for interaction with the outside world.
 For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer channel can set the brightness of the light bulb.
 
 There are two methods for defining Items:
 
-1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+1.  Through [Paper UI]({{base}}/configuration/ui/paperui.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
     (Note that 1.x and legacy Bindings do not offer this option)
 
@@ -86,7 +86,7 @@ The last example above defines an Item with the following fields:
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
 - Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("TargetTemperature")
-- Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
+- Item is [bound to](/addons/#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
 The remainder of this article provides additional information regarding Item definition fields.
 
@@ -204,7 +204,7 @@ Two naming schemes are established in the community for Group names:
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/configuration/ui/basic.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
@@ -236,7 +236,7 @@ This section provides information about what a user can expect regarding the beh
 -   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started](/docs/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
 #### Command vs. Status
@@ -530,7 +530,7 @@ Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
 Tags will be ignored if no Items in the openHAB installation support it.
 
-See the [Hue Emulation Service]({{base}}/addons/integrations/hueemulation/) or [HomeKit Add-on]({{base}}/addons/integrations/homekit/) documentation for more details.
+See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
@@ -648,7 +648,7 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [Expire Binding]({{base}}/addons/bindings/expire1/)
+The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
 #### Parameter `autoupdate`
@@ -675,7 +675,7 @@ Profiles can be specified as a parameter for a given Channel on the Item configu
 There are some built-in Profiles available which are described in the table below.
 Some Bindings will may offer additional Profiles for Binding-specific use cases.
 If this is the case, you'll find those within the documentation of the Binding.
-Also, all [Transformation Services]({{base}}/configuration/transformations.html) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
+Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you'd like to use.
 
 
