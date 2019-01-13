@@ -299,8 +299,8 @@ The following table summarizes the impact of the two manipulator commands on the
 | *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
 
 **Beware:**
-In most cases, a rule with a trigger of ```receveived update``` will fire following the command ```sendCommand``` as:
-- openHAB auto-updates the status of Items for which the item definition does not contain ```autoupdate="false"```
+In most cases, a rule with a trigger of `receveived update` will fire following the command `sendCommand` as:
+- openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
 - the Thing sends an status update to the Item.
 
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
