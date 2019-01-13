@@ -77,15 +77,15 @@ log:set LEVEL package.subpackage
 The **what** is defined by `package.subpackage` and is in most cases a binding (like `org.openhab.binding.zwave`).
 The **detail** of logging is defined by one of the following levels:
 
-| Log Level           | Log Weight    | When it should be used                                                                  |
-|---------------------|---------------|-----------------------------------------------------------------------------------------|
-| OFF                 | 0             | When no events will be logged                                                           |
-| ERROR               | 200           | When an error in the application, possibly recoverable                                  |
-| WARN                | 300           | When an event that might possible lead to an error                                      |
-| INFO                | 400           | When an event for informational purposes                                                |
-| DEBUG               | 500           | When a general debugging event required                                                 |
-| TRACE               | 600           | When a fine grained debug message, typically capturing the flow through the application |
-| ALL                 | MAX           | When all events should be logged                                                        |
+| Log Level | Log Weight | When it should be used                                                                  |
+|-----------|------------|-----------------------------------------------------------------------------------------|
+| OFF       | 0          | When no events will be logged                                                           |
+| ERROR     | 200        | When an error in the application, possibly recoverable                                  |
+| WARN      | 300        | When an event that might possible lead to an error                                      |
+| INFO      | 400        | When an event for informational purposes                                                |
+| DEBUG     | 500        | When a general debugging event required                                                 |
+| TRACE     | 600        | When a fine grained debug message, typically capturing the flow through the application |
+| ALL       | MAX        | When all events should be logged                                                        |
 
 The levels build a hierarchy with **ERROR** logging critical messages only and **DEBUG** logging nearly everything.
 **DEBUG** combines all logs from weight 100 to 500, while **TRACE** adds further messages in addition to what **DEBUG** displays.
