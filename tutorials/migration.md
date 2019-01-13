@@ -292,7 +292,7 @@ Make sure you include these in your installation as well.
 
 Skip this section if all the add-ons you need have been installed already.
 
-Be aware that all not all openHAB 1.8 and earlier Add-ons are expected to be compatible with openHAB 2.
+Be aware that not all openHAB 1.8 and earlier Add-ons are expected to be compatible with openHAB 2.
 Please note also, that support for these early bindings may not be available anymore and that for most an updated version will be availble (see [here](/addons#bindings) for a full list of supported bindings).
 Install the openHAB 1.x compatibility layer using the Karaf Console instructions above.
 
