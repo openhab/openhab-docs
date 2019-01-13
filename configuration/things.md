@@ -42,8 +42,8 @@ through [discovery]({{base}}/concepts/discovery.html) or by manual definition in
 
 *Note:* Some bindings do not fully support auto-discovery, others are hard to manually cover by the file based approach.
 Please consult the documentation for each binding to determine the best way to add that binding's Things and Items to openHAB.
-For some bindings (such as the [YahooWeater]({{base}}/addons/bindings/yahooweather/readme.html) binding), manual Thing definitions are required.
-Other bindings (such as the [ZWave]({{base}}/addons/bindings/zwave/readme.html) binding) currently prefer or require the discovery method.
+For some bindings, manual Thing definitions are required.
+Other bindings (such as the [ZWave](/addons/bindings/zwave/) binding) currently prefer or require the discovery method.
 
 ### Defining Things Using Discovery
 
@@ -83,7 +83,7 @@ Thing ntp:ntp:local [ hostname="de.pool.ntp.org" ]
 
 Looking at the first example:
 
-- the binding ID is "network" (using the [Network Binding]({{base}}/addons/bindings/network/readme.html))
+- the binding ID is "network" (using the [Network Binding](/addons/bindings/network/))
 - the type ID is "device", indicating the Thing is a device
 - the Thing ID is "webcam", which is an ID to uniquely identify the Thing
 - the label is "Webcam", this is how the Thing will be named in the various user interfaces
