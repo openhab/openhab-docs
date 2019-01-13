@@ -131,7 +131,7 @@ The list of UIs are [here]({{base}}/configuration/#versatility).
 - `transformation = ` - the list of transformations you use, see [here](/addons/#transform) for a list of possible transformations. 
 Unlike in openHAB 1, one must install transformations separately.
 - `voice = ` - see [here](/addons/#voice)
-- `System Intergrations = ` - homekit, Azure IoT, etc., see [here](/addons#io) 
+- `System Intergrations = ` - homekit, Azure IoT, etc., see [here](/addons/#io) 
 Do not list myopenhab/openhabcloud at this time, instructions for it are below.
 Do not install any 2.x version binding at this time.
 We want to get your current OH 1.x confiuguration running on the OH 2 core first.
