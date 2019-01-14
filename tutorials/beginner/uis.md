@@ -29,7 +29,7 @@ All these aspects are explained in the rest of this tutorial.
 
 Here you can find a small screencast about the Paper UI:
 
-[![Paper UI](http://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
+[![Paper UI](https://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
 
 ## The Basic UI
 
