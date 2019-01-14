@@ -44,10 +44,10 @@ Here are some key considerations especially for new users. To be successful, you
 * Celebrate all the small successes
 
 Remember, openHAB is just a computer program. 
-The computer will only do what *you* tell him to do.
+The computer will only do what *you* tell it to do.
 openHAB can provide many default solutions that are easy to setup. 
 On the flip side, the more you insist that everything should look and work exactly as you want it, the more work you will have to do. 
-openHAB is fully customizable, but doing so will require substantial efforts from you.
+openHAB is fully customizable, but doing so will require substantial effort on your part.
 
 After you have read the documentation for openHAB, you will have:
 
@@ -72,7 +72,7 @@ The openHAB forum is a great place to learn and discuss.
 
 openHAB communicates electronically with smart and not-so-smart devices, performs user-defined actions and provides web-pages with user-defined information as well as user-defined tools to interact with all devices. 
 To achieve this, openHAB segments and compartmentalizes certain functions and operations. 
-The following table gives a high level description of the most important concepts as well as a link to more information:
+The following table gives a top-level description of the most important concepts as well as a link to more information:
 
 | Concepts | Meaning | More Information |
 | --- | --- | --- |
@@ -99,7 +99,7 @@ These two steps ensure that openHAB can transmit the information from the [Thing
 ### Bindings
 
 Bindings are software packages that are installed by the user in openHAB. 
-The main purpose of Bindings are to establish the connection between your device and your [Thing]({{base}}/concepts/things.html). 
+The main purpose of Bindings is to establish the connection between your device and your [Thing]({{base}}/concepts/things.html). 
 Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things.html).
 
 Bindings are provided at the [Add-on section](https://www.openhab.org/addons/) of this website. 

@@ -1,0 +1,107 @@
+.navbar:not(.headroom--top):not(.transparent)
+    box-shadow rgba(10%,10%,10%,25%) 0 0 10px
+    background-color rgba(98%, 98%, 99%, 0.9) // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
+
+.homepage
+    .navbar:not(.headroom)
+      opacity 0
+      background transparent
+      color white
+      border-bottom none
+      box-shadow none
+      .logo
+        opacity 0
+      .nav-dropdown
+        color black
+      .nav-links > .nav-item:last-child
+        svg
+            color white
+      .dropdown-title .arrow
+          border-top 6px solid #fff
+
+.navbar
+    .links
+        background-color transparent !important
+
+    .nav-dropdown
+        // background-color white
+        background-color rgba(98%, 98%, 99%, 0.96) !important
+        box-shadow rgba(10%,10%,10%,25%) 0 0 5px
+    
+    .nav-item a
+        // font-family 'Open Sans', sans-serif
+        font-weight 400
+        font-size 1rem
+
+    .dropdown-subitem .nav-link a
+        font-weight normal
+
+    // not for docs preview!
+    // .site-name
+    //     display none
+
+.dropdown-wrapper .nav-dropdown .dropdown-item h4
+    margin-bottom .2rem
+
+.sidebar
+    background-color #f7f7f7 !important
+    // background linear-gradient(90deg, #fff0e0, #fff) !important
+
+@media (min-width: 719px)
+    .nav-item > a:hover, .nav-item > a.router-link-active
+        border-bottom 3px solid $accentColor
+
+@media (min-width: 720px) and (max-width: 1023px)
+    .search-box input:focus
+        width: 10.8rem // to cover the openHAB text (leaving the logo)
+
+@media (min-width: 1024px) and (max-width: 1280px)
+    .search-box input
+        width: 5.7rem
+
+@media (max-width: 360px)
+    .search-box input:focus
+        width: 9.4rem // to cover the openHAB text (leaving the logo)
+
+@media (max-width: 419px)
+    .search-box input:focus
+        width: 4rem
+
+.content:not(.custom)>h1:first-child
+    font-family 'Open Sans', sans-serif
+    font-weight 400
+
+@media print
+    .navbar
+        display none
+    .page-versions
+        display none
+    .page-nav
+        display none
+    .editLink
+        display none
+    .content pre
+        overflow hidden !important
+        white-space pre-wrap !important
+
+.content:not(.custom), .page-nav
+    max-width 1280px !important
+
+.page .content:not(.custom):not(.page-nav):not(.edit-link)
+    min-height 85vh !important
+
+.page .content.edit-link
+    display none
+
+.logo
+    width 160px
+    height 35px
+
+a[href*='.openhab.org'] .outbound
+        display none
+
+.nav-item > a.external:hover
+    border-bottom 2px solid #ff7214
+
+.custom-block.tip
+    border-color #2196f3 !important

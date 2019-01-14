@@ -111,7 +111,7 @@ For example:
 ```java
 var thingStatusInfo = getThingStatusInfo("zwave:device:c5155aa4:node2")
 
-if ((thingStatusInfo != null) && (thingStatusInfo.getStatus().toString() == "ONLINE")) {
+if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ONLINE")) {
     logInfo("ThingStatus", "The thing is online.")
 } else {
     logError("ThingStatus", "The thing is offline or doesn't exist.")

@@ -181,10 +181,10 @@ You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [Fre
 
 Two system-based triggers are provided as described in the table below:
 
-| Trigger           |  Description |
-|-------------------|--------------|
+| Trigger           | Description                                                                                                                                                                                        |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file. |
-| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down. |
+| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down.                                                                                                                       |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -294,11 +294,15 @@ The following table summarizes the impact of the two manipulator commands on the
 
 | Command \ Rule Trigger   | `received update` | `received command` | `changed` |
 |--------------------------|-------------------|--------------------|-----------|
-| postUpdate               | ⚡ rule fires      | ❌                 | (depends) |
-| sendCommand              | ❌                | ⚡ rule fires       | (depends) |
+| postUpdate               | ⚡ rule fires      | ❌                  | (depends) |
+| sendCommand              | (❌) see below     | ⚡ rule fires       | (depends) |
 | *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
 
 **Beware:**
+In most cases, a rule with a trigger of `receveived update` will fire following the command `sendCommand` as:
+- openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
+- the Thing sends an status update to the Item.
+
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
 {: #sendcommand-method-vs-action}
@@ -587,11 +591,11 @@ To avoid an error mentioning an "Ambiguous Method Call" always cast the state of
 The Player item allows to control players (e.g. audio players) with commands such as Play, Pause, Next, Previous, Rewind and Fastforward.
 The Player Item carries three types with predefined commands 
 
-State Type | Commands
-------------------|------------------
-**PlayPauseType** | PLAY, PAUSE
-**RewindFastforwardType** | REWIND, FASTFORWARD
-**NextPreviousType** | NEXT, PREVIOUS
+| State Type                | Commands            |
+|---------------------------|---------------------|
+| **PlayPauseType**         | PLAY, PAUSE         |
+| **RewindFastforwardType** | REWIND, FASTFORWARD |
+| **NextPreviousType**      | NEXT, PREVIOUS      |
 
 These types can be convert from Open and Closed to 1 and 0 with code similar to the Contact Item (OpenClosedType)
 

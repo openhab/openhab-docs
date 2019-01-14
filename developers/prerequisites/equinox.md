@@ -104,15 +104,15 @@ java -jar org.eclipse.osgi_3.x.x_xxxx.jar -console -configuration configuration
 Once you have Equinox running, you will see a prompt. Some of the basic
 osgi commands are:
 
-Command | Description
---------|-------
-*help*  | Basic command that will list all available commands
-*install* [bundle URL] | Installs the bundle from the given URL
-*start* [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id
-*stop* [bundle # or bundle name] | Stops the bundle with the given numeric or symbolic id
-*ss* | Reports a summary status of all installed bundles
-*diag* [bundle # or bundle name] | Reports any resolution problems for the bundle with the given numeric or symbolic id
-*services* [filter] | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having *virtage* in their class name)  
+| Command                           | Description                                                                                                                                                                                                                                                       |
+|-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| *help*                            | Basic command that will list all available commands                                                                                                                                                                                                               |
+| *install* [bundle URL]            | Installs the bundle from the given URL                                                                                                                                                                                                                            |
+| *start* [bundle # or bundle name] | Starts the bundle with the given numeric or symbolic id                                                                                                                                                                                                           |
+| *stop* [bundle # or bundle name]  | Stops the bundle with the given numeric or symbolic id                                                                                                                                                                                                            |
+| *ss*                              | Reports a summary status of all installed bundles                                                                                                                                                                                                                 |
+| *diag* [bundle # or bundle name]  | Reports any resolution problems for the bundle with the given numeric or symbolic id                                                                                                                                                                              |
+| *services* [filter]               | Lists all available services or only services matching to [LDAP-style filter](http://www.ldapexplorer.com/en/manual/109010000-ldap-filter-syntax.htm) (e.g. services (objectClass="\*virtage\*") - will print only services having *virtage* in their class name) |
 
 Table 1. Equinox commands (Source: <http://www.eclipse.org/equinox/documents/quickstart-framework.php>)
 
