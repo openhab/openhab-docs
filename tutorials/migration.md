@@ -124,14 +124,14 @@ It will include the standard UIs, all transformation services and the 1.x compat
 If you are in doubt of the name of a binding, look in openhab.cfg for that binding's configurations. 
 The first part of the tag in openhab.cfg will be that name of the binding, then append a 1.
 For example, the configuration parameters for the MQTT Binding start with "mqtt" in openhab.cfg so the name of the binding is "mqtt1".
-You can find the list of bindings [here]({{base}}/addons/bindings.html).
+You can find the list of bindings [here](/addons/#bindings).
 - `ui = ` - if you intend on using PaperUI include "paper", if you use zwave I recommend "habmin". 
-The list of UIs are [here]({{base}}/addons/uis.html).
-- `action = ` - the list of action add-ons.
-- `transformation = ` - the list of transformations you use. 
+The list of UIs are [here]({{base}}/configuration/#versatility).
+- `action = ` - the list of action add-ons, see [here](/addons/#action) for list of possible actions.
+- `transformation = ` - the list of transformations you use, see [here](/addons/#transform) for a list of possible transformations. 
 Unlike in openHAB 1, one must install transformations separately.
-- `voice = ` - see [here]({{base}}/addons/voices.html)
-- `misc = ` - homekit, etc. 
+- `voice = ` - see [here](/addons/#voice)
+- `System Intergrations = ` - homekit, Azure IoT, etc., see [here](/addons/#io) 
 Do not list myopenhab/openhabcloud at this time, instructions for it are below.
 Do not install any 2.x version binding at this time.
 We want to get your current OH 1.x confiuguration running on the OH 2 core first.
@@ -292,9 +292,9 @@ Make sure you include these in your installation as well.
 
 Skip this section if all the add-ons you need have been installed already.
 
-First check the [list of add-ons that are known not to work in openHAB 2]({{base}}/addons/1xaddons.html#currently-incompatible-1x-add-ons) and make sure yours is not among them.
-
-Next install the openHAB 1.x compatibility layer using the Karaf Console instructions above.
+Be aware that not all openHAB 1.8 and earlier Add-ons are expected to be compatible with openHAB 2.
+Please note also, that support for these early bindings may not be available anymore and that for most an updated version will be availble (see [here](/addons#bindings) for a full list of supported bindings).
+Install the openHAB 1.x compatibility layer using the Karaf Console instructions above.
 
 Copy your openhab.cfg file to `$OPENHAB_CONF/services`. 
 If you are running an apt-get installed openHAB 1.x openhab.cfg is located in `/etc/openhab/configurations`.
@@ -376,7 +376,7 @@ cp $OPENHAB1_CONF/configurations/sitemaps/* $OPENHAB_CONF/sitemaps/*
 
   * Not all of the default icons that came with openHAB 1.x are available in the default set for openHAB 2. 
   If you are missing an icon in your sitemap that could be the cause. 
-  The full list of openHAB 2 icons is [here]({{base}}/addons/iconsets/classic/readme.html).
+  The full list of openHAB 2 icons is [here]({{base}}/configuration/iconsets/classic/).
 
   * Dynamic icons must have a default. 
   For example, if one has a bunch of Wunderground icons (e.g. wunderground-chanceflurries.png) there must be a `wunderground.png` icon as well.
@@ -435,7 +435,7 @@ But because this is a brand new instance there are no values in the database to 
 Browse through your sitemap methodically and identify those entries that have a missing or wrong icon. 
 Select an alternative from the [defaults]({{base}}/addons/iconsets/classic/readme.html) or copy the ones you were using from openHAB 1.x to the conf/icons/classic folder. 
 Both BasicUI and ClassicUI pull their icons from that folder. 
-For details on custom icons make sure to check the icons section in the [Items]({{base}}/configuration/items.html#icons) documentation.
+For details on custom icons make sure to check the icons section in the [Items]({{base}}/configuration/iconsets/classic/) documentation.
 One important change since openHAB 1.x is that icon filenames need to be lowercase only in openHAB 2.
 
 Once you are satisfied that your new openHAB system is up and running take a deep breath and take a break. 
@@ -481,32 +481,33 @@ A Thing represents a configurable device/system/unit, which provides different f
 Each Channel corresponds exactly to one binding configuration string (stuff in { }) in openHAB 1.x.
 
 Let's look at a concrete example. 
-The [Yahoo Weather Binding]({{base}}/addons/bindings/yahooweather/readme.html) supports exactly one Thing which takes two parameters: a WOEID location and unit.
+The [Network Binding](addons/bindings/network) (the impoved binding to the OH1 Network Health binding) supports exactly one Thing which takes one parameter: the IP number of the device on the network.
 
-Thus, as described in the Binding's readme one would manually define a Thing in a .things file (located in conf/things) with the line:
+Thus, as described in the Binding's readme one would manually define a Thing in a .things file (located in conf/things) with the line (this can also be achieved through the PaperUI:
 
 ```java
-Thing yahooweather:weather:berlin [ location=638242 ]
++//for openHAB 2 Network binding
+Thing network:pingdevice:devicename [ hostname="192.168.0.42" ]
 ```
 
-As described in the Binding's readme, three Channels are supported: temperature, humidity, and pressure. 
-Thus, rather than the old openHAB 1.x syntax:
++As described in the Binding's documentation, two Channels are supported in the version for openHAB2: online status and latency.
+The older version 1 of the Network binding only supported online status.
+Thus, rather than the old openHAB 1.x syntax (Network Health):
 
 ```java
-// openHAB 1 Syntax
-Number Temperature   { yahooweather="woeid=638242,value=temperature,unit=c" }
-Number Humidity      { yahooweather="woeid=638242,value=humidity,unit=c" }
+// openHAB 1 Syntax Network Health binding
+Switch MyDevice "MyDevice { nh="192.168.0.42"}
 ```
 
 with everything defined on in the { } part of the Item, we now merely reference the Channels.
 
 ```java
-// openHAB 2 Syntax
-Number Temperature   { channel="yahooweather:weather:berlin:temperature" }
-Number Humidity      { channel="yahooweather:weather:berlin:humidity" }
+// openHAB 2 Syntax for Network Binding
+Switch MyDevice { channel="network:pingdevice:devicename:online" }
+Number MyDeviceResponseTime { channel="network:pingdevice:devicename:latency" }
 ```
 
-As you can see, the Channel ID consists of the Thing's name, a "#" and the Channel name.
+As you can see, the Channel ID consists of the Thing's name, and the Channel name.
 
 For manually defined Things, you can find the syntax for defining a Thing on a given Item in that Binding's readme.
 
@@ -575,7 +576,7 @@ It should now show your system as being online and running openHAB 2.
 
 One is not required to use 2.x version addi-ons with openHAB 2. 
 It is highly recommended to do so as most cases where there is a 1.x and a 2.x add-on, only the 2.x binding is undergoing continued development. 
-On-the-other-hand, some of the 2.x bindings work significantly differently from their 1.x versions. See the add-on's 1.x [readme]({{base}}/addons/1xaddons.html) and 2.x [readme page]({{base}}/addons/bindings.html) to compare and contrast the two versions.
+On-the-other-hand, some of the 2.x bindings work significantly differently from their 1.x versions. See the [add-on's 1.x](https://github.com/openhab/openhab1-addons/wiki) and [openHAB 2 addons](/addons/#bindings) to compare and contrast the two versions.
 
 Identify an add-on where there is a 2.x version that you want to migrate to. 
 Begin by identifying those Items that use this binding. 

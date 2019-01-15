@@ -13,13 +13,13 @@ These are described under *Installation of Add-ons* below
 
 | Add-on Type                             | Description                                                                                                               |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| [Bindings](bindings.html)               | Bindings integrate physical hardware, external systems and web services in openHAB                                        |
-| [User Interfaces](uis.html)             | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
-| [Persistence](persistence.html)         | Persistence services allow openHAB to store time series data for history-based actions or statistics                      |
-| [Actions](actions.html)                 | Actions are predefined methods for openHAB rules and scripts                                                              |
-| [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for Items                               |
-| [Voice Services](voices.html)           | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc.                                |
-| [3rd Party System Integration](io.html) | Expose openHAB to external systems                                                                                        |
+| [Bindings](/addons/#bindings)               | Bindings integrate physical hardware, external systems and web services in openHAB                                        |
+| [User Interfaces]({{base}}/configuration/#versatility)             | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
+| [Persistence](/addons/#persistence)         | Persistence services allow openHAB to store time series data for history-based actions or statistics                      |
+| [Actions](/addons/#actions)                 | Actions are predefined methods for openHAB rules and scripts                                                              |
+| [Transformations](/addons/#transform) | Transformations are used to translate between technical and human-readable values for Items                               |
+| [Voice Services](/addons/#voice)           | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc.                                |
+| [3rd Party System Integration](/addons/#ios) | Expose openHAB to external systems                                                                                        |
 
 ## Installation of Add-ons
 

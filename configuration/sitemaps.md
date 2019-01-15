@@ -9,7 +9,7 @@ title: Sitemaps
 
 In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.
 Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs),
-including [BasicUI]({{base}}/addons/uis/basic/readme.html),
+including [BasicUI](/configuration/ui/basic/),
 the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
 
 This page is structured as follows:
@@ -476,7 +476,7 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](https://www.openhab.org/addons/persistence/rrd4j)).
+- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
 
@@ -527,13 +527,13 @@ This limits the possible input values, which is yet another often occurring use 
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon](/docs/configuration/items.html#icons-dynamic), depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/configuration/items.html#icons-dynamic), depending on certain Item states.
 A few practical use cases are:
 
 - Show a battery warning if the voltage level of a device is below 30%
 - Hide further control elements for the TV if it is turned off
 - Highlight a value with a warning color if it is outside accepted limits
-- Present a special icon, depending on the state of an item (a [dynamic icon](/docs/configuration/items.html#icons-dynamic))
+- Present a special icon, depending on the state of an item (a [dynamic icon]({{base}}/configuration/items.html#icons-dynamic))
 
 ### Visibility
 
@@ -638,10 +638,10 @@ The color names above are agreed on between all openHAB UIs and are therefor you
 openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
 Please refer to the documentation on [Item configuration](items.html) for details.
 
-![battery-0]({{base}}/addons/iconsets/classic/icons/battery-0.png "battery-0")
-![battery-30]({{base}}/addons/iconsets/classic/icons/battery-30.png "battery-30")
-![battery-60]({{base}}/addons/iconsets/classic/icons/battery-60.png "battery-60")
-![battery-100]({{base}}/addons/iconsets/classic/icons/battery-100.png "battery-100")
+![battery-0](/iconsets/classic/battery-0.png "battery-0")
+![battery-30](/iconsets/classic/battery-30.png "battery-30")
+![battery-60](/iconsets/classic/battery-60.png "battery-60")
+![battery-100](/iconsets/classic/battery-100.png "battery-100")
 
 ## Full Example
 
