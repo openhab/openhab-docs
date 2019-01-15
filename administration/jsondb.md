@@ -82,13 +82,13 @@ The full directory path depends on the installation method:
 
 Within the `OPENHAB_USERDATA/jsondb/` directory, you will find the following files:
 
-| Filename                                                         | _Contents_                              |
-|------------------------------------------------------------------|-----------------------------------------|
-| org.eclipse.smarthome.config.discovery.**DiscoveryResult.json**  | _Results of Paper UI Discovery_         |
-| org.eclipse.smarthome.core.items.**Item.json**                   | _Items configurations_                  |
-| org.eclipse.smarthome.core.thing.link.**ItemChannelLink.json**   | _Item to Channel Link configurations_   |
-| org.eclipse.smarthome.core.thing.link.**ItemThingLink.json**     | _Item to Thing Link configurations_     |
-| org.eclipse.smarthome.core.thing.**Thing.json**                  | _Things configurations_                 |
+| Filename                                                        | _Contents_                            |
+|-----------------------------------------------------------------|---------------------------------------|
+| org.eclipse.smarthome.config.discovery.**DiscoveryResult.json** | _Results of Paper UI Discovery_       |
+| org.eclipse.smarthome.core.items.**Item.json**                  | _Items configurations_                |
+| org.eclipse.smarthome.core.thing.link.**ItemChannelLink.json**  | _Item to Channel Link configurations_ |
+| org.eclipse.smarthome.core.thing.link.**ItemThingLink.json**    | _Item to Thing Link configurations_   |
+| org.eclipse.smarthome.core.thing.**Thing.json**                 | _Things configurations_               |
 
 
 ## Example Use

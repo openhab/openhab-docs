@@ -26,6 +26,6 @@ Note that you still need to define your items, sitemaps, persistence configurati
 
 Here you can find a small screencast about the Paper UI:
 
-[![Paper UI](http://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
+[![Paper UI](https://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
 
 {% include contribution-wanted.html %}

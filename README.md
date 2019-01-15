@@ -59,7 +59,7 @@ So we are saving time for everyone by keeping those files at their original loca
 
 ### How the documentation build works
 
-We have set up our [build server](https://openhab.ci.cloudbees.com/view/Documentation/) to do the magic automatically.
+We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
 There are several triggers (mostly time based), which will then *gather the external contents* and move them to our *final* branch.
 You can find this migrated external content in the *final* branch under:
 

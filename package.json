@@ -1,0 +1,24 @@
+{
+  "name": "openhab-docs",
+  "version": "1.0.0",
+  "description": "openHAB Documentation",
+  "main": "index.js",
+  "scripts": {
+    "prepare-docs": "ruby prepare-docs.rb",
+    "build-preview": "ruby prepare-docs.rb --delete-sources && vuepress build .",
+    "build-only": "vuepress build ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/openhab/openhab-docs.git"
+  },
+  "author": "",
+  "license": "EPL-1.0",
+  "bugs": {
+    "url": "https://github.com/openhab/openhab-docs/issues"
+  },
+  "homepage": "https://github.com/openhab/openhab-docs#readme",
+  "dependencies": {
+    "vuepress": "^0.14.8"
+  }
+}

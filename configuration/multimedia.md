@@ -27,10 +27,10 @@ There are different options for output devices (so called audio sinks):
 
 The distribution comes with these options built-in:
 
-| Output Device       | Audio Sink                        | Description |
-|---------------------|-----------------------------------|-------------|
-| `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface. |
-| `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files. |
+| Output Device       | Audio Sink                        | Description                                                                                                                                                                                                                                                                                                                                         |
+|---------------------|-----------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `javasound`         | System Speaker                    | This uses the JRE sound drivers to play audio to the local sound interface.                                                                                                                                                                                                                                                                         |
+| `enhancedjavasound` | System Speaker (with mp3 support) | This uses the JRE sound drivers plus an additional 3rd party library, which adds support for mp3 files.                                                                                                                                                                                                                                             |
 | `webaudio`          | Web Audio                         | Convenient, if sounds should not be played on the server, but on the client: This sink sends the audio stream through HTTP to web clients, which then cause it to be played back by the browser. Obviously, the browser needs to be opened and have a compatible openHAB UI running. Currently, this feature is supported by Paper UI and HABPanel. |
 
 Additionally, certain bindings register their supported devices as audio sinks, e.g. Sonos speakers.
@@ -137,9 +137,9 @@ Human language interpreters are meant to process prose that e.g. is a result of 
 
 There are two implementations available by default:
 
-| Interpreter | Type                   | Description |
-|-------------|------------------------|-------------|
-| `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it. |
+| Interpreter | Type                   | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   |
+|-------------|------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `rulehli`   | Rule-based Interpreter | This mimics the behavior of the Android app - it sends the string as a command to a (configurable, default is "VoiceCommand") item and expects a rule to pick it up and further process it.                                                                                                                                                                                                                                                                                                                                   |
 | `system`    | Built-in Interpreter   | This is a simple implementation that understands basic home automation commands like "turn on the light" or "stop the music". It currently supports only English, German and French and the vocabulary is still very limited. The exact syntax still needs to be documented, for the moment you need to refer to the [source code](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.voice/src/main/java/org/eclipse/smarthome/core/voice/internal/text/StandardInterpreter.java#L37). |
 
 To test the interpreter, you can enter such a command on the console (assuming you have an item with label 'light'):

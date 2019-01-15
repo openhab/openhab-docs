@@ -100,20 +100,20 @@ This optimization is reflected in the data and command types.
 
 Available Item types are:
 
-| Type Name      | Description | Command Types |
-|----------------|-------------|---------------|
-| Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact        | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed |
-| DateTime       | Stores date and time | - |
-| Dimmer         | Percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
-| Group          | Item to nest other items / collect them in groups | - |
-| Image          | Binary data of an image | - |
-| Location       | GPS coordinates | Point |
-| Number         | Values in number format | Decimal |
-| Player         | Allows control of players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter  | Roller shutter Item, typically used for blinds | UpDown, StopMove, Percent |
-| String         | Stores texts | String |
-| Switch         | Switch Item, used for anything that needs to be switched ON and OFF | OnOff |
+| Type Name     | Description                                                                                   | Command Types                              |
+|---------------|-----------------------------------------------------------------------------------------------|--------------------------------------------|
+| Color         | Color information (RGB)                                                                       | OnOff, IncreaseDecrease, Percent, HSB      |
+| Contact       | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed                                 |
+| DateTime      | Stores date and time                                                                          | -                                          |
+| Dimmer        | Percentage value for dimmers                                                                  | OnOff, IncreaseDecrease, Percent           |
+| Group         | Item to nest other items / collect them in groups                                             | -                                          |
+| Image         | Binary data of an image                                                                       | -                                          |
+| Location      | GPS coordinates                                                                               | Point                                      |
+| Number        | Values in number format                                                                       | Decimal                                    |
+| Player        | Allows control of players (e.g. audio players)                                                | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter | Roller shutter Item, typically used for blinds                                                | UpDown, StopMove, Percent                  |
+| String        | Stores texts                                                                                  | String                                     |
+| Switch        | Switch Item, used for anything that needs to be switched ON and OFF                           | OnOff                                      |
 
 More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
@@ -177,13 +177,13 @@ The following naming style guide is recommended:
 
 Examples:
 
-| Item Name                         | Interpretation (assumed Item type, example value) |
-|-----------------------------------|---------------------------------------------------|
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
+| Item Name                         | Interpretation (assumed Item type, example value)                                                       |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------|
+| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
+| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
 | "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party) |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline) |
+| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
+| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
@@ -193,11 +193,11 @@ Two naming schemes are established in the community for Group names:
     Otherwise the word "Group" may be appended for clarity.
 2.  Prepend a lowercase "g" to the name (e.g. gBattery)
 
-| Group Name                                | Interpretation |
-|-------------------------------------------|----------------|
-| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items |
-| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room |
+| Group Name                                | Interpretation                                                        |
+|-------------------------------------------|-----------------------------------------------------------------------|
+| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
+| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
+| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
 | "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
@@ -377,11 +377,11 @@ String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]
 
 On the filesystem, the following icon files are provided by the user:
 
-| File name              | Description                                                        |
-|------------------------|--------------------------------------------------------------------|
-| `myswitch-off.svg`     | Matches `OFF` or "off" state                                       |
-| `myswitch-on.svg`      | Matches `ON` or "on" state                                         |
-| `myswitch.svg`         | Default icon, used when no matching icon is found (e.g. `UNDEF`)   |
+| File name          | Description                                                      |
+|--------------------|------------------------------------------------------------------|
+| `myswitch-off.svg` | Matches `OFF` or "off" state                                     |
+| `myswitch-on.svg`  | Matches `ON` or "on" state                                       |
+| `myswitch.svg`     | Default icon, used when no matching icon is found (e.g. `UNDEF`) |
 
 | File name              | Description                                                        |
 |------------------------|--------------------------------------------------------------------|
@@ -396,12 +396,12 @@ The default icon will be used for negative numbers, or above 100 i.e. the availa
 Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
 For a dimmable light (0-100%), you might provide icons as in the example:
-| File name          | Description                                          |
-|--------------------|------------------------------------------------------|
-| `mydimmer.svg`     | Default icon (used in undefined states)              |
-| `mydimmer-0.svg`   | Matches the turned off light (0%)                    |
-| `mydimmer-1.svg`   | Matches any dimmed light between 1% up to 74%        |
-| `mydimmer-75.svg`  | Matches the bright light state from 75% to full 100% |
+| File name         | Description                                          |
+|-------------------|------------------------------------------------------|
+| `mydimmer.svg`    | Default icon (used in undefined states)              |
+| `mydimmer-0.svg`  | Matches the turned off light (0%)                    |
+| `mydimmer-1.svg`  | Matches any dimmed light between 1% up to 74%        |
+| `mydimmer-75.svg` | Matches the bright light state from 75% to full 100% |
 
 Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
@@ -475,17 +475,17 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 
 Group state aggregation functions can be any of the following:
 
-| Function               | Description |
-|------------------------|-------------|
-| `EQUALITY`             | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
-| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| Function              | Description                                                                                                                                                             |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EQUALITY`            | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`.                                  |
+| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned.          |
 | `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
-| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
-| `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
-| `MAX`                  | Calculates the maximum value of all Item states of decimal type. |
-| `MIN`                  | Calculates the minimum value of all Item states of decimal type. |
-| `SUM`                  | Calculates the sum of all Item states in the Group. |
+| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation.                                           |
+| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation.                                              |
+| `AVG`                 | Calculates the numeric average over all Item states of decimal type.                                                                                                    |
+| `MAX`                 | Calculates the maximum value of all Item states of decimal type.                                                                                                        |
+| `MIN`                 | Calculates the minimum value of all Item states of decimal type.                                                                                                        |
+| `SUM`                 | Calculates the sum of all Item states in the Group.                                                                                                                     |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -680,14 +680,14 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 
 
 
-| ID            | Type    | Supported Item Types | Description                        |
-|---------------|---------|----------------------|------------------------------------|
-| `default`     | State   | All                  | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice-versia without any changes. For Trigger Channels, the Default Profile won't change anything on the Item. |
-| `follow`      | State   | All                  | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates.
-| `offset`      | State   | Number               | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.|
-| `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.
-| `rawrocker-to-on-off` | Trigger | Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.
-| `rawrocker-to-dimmer` | Trigger | Dimmer | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.
+| ID                        | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
+|---------------------------|---------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `default`                 | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice-versia without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                   |
+| `follow`                  | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates. |
+| `offset`                  | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.                                                                                                                                                                                                                  |
+| `rawbutton-toggle-switch` | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                  |
+| `rawrocker-to-on-off`     | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                            |
+| `rawrocker-to-dimmer`     | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                             |
 Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
 ```java
 Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }

@@ -72,14 +72,14 @@ OSGi is a dynamic platform. That means that bundles may be *installed, uninstall
 
 The framework introduces a different states, transitions between these states and rules how this states are affecting the packages exported by the bundle and the services, that it provides. The table below shows the possible states of an OSGi bundle with a short explanation:
 
-Status | Description
--------|---------
-INSTALLED | The bundle has been installed into the OSGi container, but some of it's dependencies are still not resolved. The bundle requires packages that have not been exported by any other bundle.
-RESOLVED | The bundle is installed and the all the dependencies at a class level are resolved and wired. The bundle can export the packages, that it provides.
-STARTING | A temporary state that the bundle goes through while the bundle is starting, after all dependencies have been resolved. The bundle is permitted to register services.
-ACTIVE | The bundle is running
-STOPPING | A temporary state that the bundle goes through while the bundle is stopping
-UNINSTALLED | The bundle has been removed from the OSGi container.  
+| Status      | Description                                                                                                                                                                                |
+|-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| INSTALLED   | The bundle has been installed into the OSGi container, but some of it's dependencies are still not resolved. The bundle requires packages that have not been exported by any other bundle. |
+| RESOLVED    | The bundle is installed and the all the dependencies at a class level are resolved and wired. The bundle can export the packages, that it provides.                                        |
+| STARTING    | A temporary state that the bundle goes through while the bundle is starting, after all dependencies have been resolved. The bundle is permitted to register services.                      |
+| ACTIVE      | The bundle is running                                                                                                                                                                      |
+| STOPPING    | A temporary state that the bundle goes through while the bundle is stopping                                                                                                                |
+| UNINSTALLED | The bundle has been removed from the OSGi container.                                                                                                                                       | 
 
 Table 1 Bundle states description
 

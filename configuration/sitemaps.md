@@ -109,22 +109,22 @@ sitemap <sitemapname> label="<title of the main screen>" {
 
 The following element types may be used in a Sitemap definition file.
 
-| Element                                   | Description                                               |
-|-------------------------------------------|-----------------------------------------------------------|
-| [Chart](#element-type-chart)              | Adds a time-series chart object for [persisted](persistence.html) data. |
-| [Colorpicker](#element-type-colorpicker)  | Allows the user to choose a color from a color wheel. |
-| [Default](#element-type-default)          | Renders an Item in the default UI representation specified by the type of the given Item. |
-| [Frame](#element-type-frame)              | Establishes an area containing various other Sitemap elements. |
-| [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
-| [Image](#element-type-image)              | Renders an image given by an URL. |
-| [Mapview](#element-type-mapview)          | Displays an OSM map based on a given Location Item. |
-| [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
-| [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
-| [Slider](#element-type-slider)            | Presents a value in a progress-bar-like slider. |
-| [Switch](#element-type-switch)            | Renders an Item as an ON/OFF or multi-button switch. |
-| [Text](#element-type-text)                | Renders an Item as text. |
-| [Video](#element-type-video)              | Displays a video stream, given a direct URL. |
-| [Webview](#element-type-webview)          | Displays the content of a webpage. |
+| Element                                  | Description                                                                               |
+|------------------------------------------|-------------------------------------------------------------------------------------------|
+| [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
+| [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
+| [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
+| [Frame](#element-type-frame)             | Establishes an area containing various other Sitemap elements.                            |
+| [Group](#element-type-group)             | Concentrates all elements of a given group in a nested block.                             |
+| [Image](#element-type-image)             | Renders an image given by an URL.                                                         |
+| [Mapview](#element-type-mapview)         | Displays an OSM map based on a given Location Item.                                       |
+| [Selection](#element-type-selection)     | Provides a dropdown or modal popup presenting values to choose from for an Item.          |
+| [Setpoint](#element-type-setpoint)       | Renders a value between an increase and a decrease buttons.                               |
+| [Slider](#element-type-slider)           | Presents a value in a progress-bar-like slider.                                           |
+| [Switch](#element-type-switch)           | Renders an Item as an ON/OFF or multi-button switch.                                      |
+| [Text](#element-type-text)               | Renders an Item as text.                                                                  |
+| [Video](#element-type-video)             | Displays a video stream, given a direct URL.                                              |
+| [Webview](#element-type-webview)         | Displays the content of a webpage.                                                        |
 
 <!-- TODO: check for new element types -->
 
@@ -609,25 +609,25 @@ Note also, the effect of omitting `Temperature` and the comparison operator in t
 
 Below is a list of standard colors and their respective RGB color codes.
 
-| Color Name  | Preview and RGB Color Code              |
-|-------------|-----------------------------------------|
-| maroon      | *`► #800000`*{: style="color: #800000"} |
-| red         | *`► #ff0000`*{: style="color: #ff0000"} |
-| orange      | *`► #ffa500`*{: style="color: #ffa500"} |
-| olive       | *`► #808000`*{: style="color: #808000"} |
-| yellow      | *`► #ffff00`*{: style="color: #ffff00"} |
-| purple      | *`► #800080`*{: style="color: #800080"} |
-| fuchsia     | *`► #ff00ff`*{: style="color: #ff00ff"} |
-| white       | *`► #ffffff`*{: style="color: #ffffff"} |
-| lime        | *`► #00ff00`*{: style="color: #00ff00"} |
-| green       | *`► #008000`*{: style="color: #008000"} |
-| navy        | *`► #000080`*{: style="color: #000080"} |
-| blue        | *`► #0000ff`*{: style="color: #0000ff"} |
-| teal        | *`► #008080`*{: style="color: #008080"} |
-| aqua        | *`► #00ffff`*{: style="color: #00ffff"} |
-| black       | *`► #000000`*{: style="color: #000000"} |
-| silver      | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
-| gray        | *`► #808080`*{: style="color: #808080"} |
+| Color Name | Preview and RGB Color Code              |
+|------------|-----------------------------------------|
+| maroon     | *`► #800000`*{: style="color: #800000"} |
+| red        | *`► #ff0000`*{: style="color: #ff0000"} |
+| orange     | *`► #ffa500`*{: style="color: #ffa500"} |
+| olive      | *`► #808000`*{: style="color: #808000"} |
+| yellow     | *`► #ffff00`*{: style="color: #ffff00"} |
+| purple     | *`► #800080`*{: style="color: #800080"} |
+| fuchsia    | *`► #ff00ff`*{: style="color: #ff00ff"} |
+| white      | *`► #ffffff`*{: style="color: #ffffff"} |
+| lime       | *`► #00ff00`*{: style="color: #00ff00"} |
+| green      | *`► #008000`*{: style="color: #008000"} |
+| navy       | *`► #000080`*{: style="color: #000080"} |
+| blue       | *`► #0000ff`*{: style="color: #0000ff"} |
+| teal       | *`► #008080`*{: style="color: #008080"} |
+| aqua       | *`► #00ffff`*{: style="color: #00ffff"} |
+| black      | *`► #000000`*{: style="color: #000000"} |
+| silver     | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
+| gray       | *`► #808080`*{: style="color: #808080"} |
 
 Please take note that colors other than those listed in the list above may be used.
 Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
