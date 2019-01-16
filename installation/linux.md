@@ -40,7 +40,7 @@ When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to 
 
 ## Installation
 
-openHAB 2 can be installed though 
+openHAB 2 can be installed through 
  - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
  - a package repository (apt, yum)
  - manually from file.
