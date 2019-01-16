@@ -10,7 +10,7 @@ title: Transformations Configuration
 Transformations are used to translate data from a cluttered or technical raw value to a processed or human-readable representation.
 They are often useful, to **interpret received Item values**, like sensor readings or state variables, and to translate them into a human-readable or better processible format.
 
-Details about the usage of Transformations and the available Transformation services can be found in the [main Transformation services article]({{base}}/addons/transformations.html).
+Details about the usage of Transformations and the available Transformation services can be found in the [main Transformation services article](/addons/#transform).
 
 Be aware that a transformation service just as any other openHAB add-on needs to be installed prior to first usage.
 

@@ -123,7 +123,7 @@ To demonstrate that, we'll proceed and install the Zwave binding in order to add
 However, this is a demonstration about how to install and configure add-ons.
 As mentioned before, the pure procedure to install and configure add-ons is mostly the same with other addons.**
 
-**More information about the Zwave binding and the other available bindings can be found [on the bindings page of the user manual]({{base}}/addons/bindings.html)!**
+**More information about the Zwave binding and the other available bindings can be found [on the bindings page of the user manual](/addons/#bindings)!**
 
 The installation is just like the example with the network binding above.
 Use the "Add-ons" menu item, search for the "Zwave" binding, click "INSTALL" and go directly to the "Inbox" afterwards.
