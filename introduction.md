@@ -181,7 +181,7 @@ But it comes with a rather steep learning curve.
 ## A deeper dive: openHAB Structure for advanced users
 
 openHAB 2 is developed in [Java](https:/www.java.com/) and uses [OSGi](https://www.osgi.org/) for modularity. 
-[Apache Karaf](http://karaf.apache.org/) serves as a container with with [Eclipse Equinox](https://www.eclipse.org/equinox/) as the OSGi runtime environment. 
+[Apache Karaf](http://karaf.apache.org/) serves as a container with [Eclipse Equinox](https://www.eclipse.org/equinox/) as the OSGi runtime environment. 
 [Jetty](https://www.eclipse.org/jetty/) is included as an HTTP server.
 
 openHAB is highly modular software that can be extended through "Add-ons". 
