@@ -180,16 +180,12 @@ But it comes with a rather steep learning curve.
 
 ## A deeper dive: openHAB Structure for advanced users
 
-openHAB 2 is developed in [Java](https:/www.java.com/) and mainly based on the [Eclipse SmartHome](https://eclipse.org/smarthome/) framework. 
-It uses [Apache Karaf](http://karaf.apache.org/) together with [Eclipse Equinox](https://www.eclipse.org/equinox/) to create an Open Services Gateway initiative [(OSGi)](https://www.osgi.org/) runtime environment. 
-[Jetty](https://www.eclipse.org/jetty/) is used as an HTTP server.
+openHAB 2 is developed in [Java](https:/www.java.com/) and uses [OSGi](https://www.osgi.org/) for modularity. 
+[Apache Karaf](http://karaf.apache.org/) serves as a container with [Eclipse Equinox](https://www.eclipse.org/equinox/) as the OSGi runtime environment. 
+[Jetty](https://www.eclipse.org/jetty/) is included as an HTTP server.
 
 openHAB is highly modular software that can be extended through "Add-ons". 
 Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things. 
-Add-ons may come from the openHAB 2 distribution, the Eclipse SmartHome project Extensions, or from the openHAB 1 distribution.
-
-The overall architecture of openHAB is shown in the figure below:
-
-![distribution overview](images/distro.png "Overall openHAB Architectural View")
+Add-ons may come from the openHAB 2 distribution, the legacy openHAB 1 distribution or from any other external source.
 
 If you are new to openHAB, we suggest you continue to the [Concepts]({{base}}/concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.

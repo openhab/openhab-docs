@@ -40,7 +40,7 @@ When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to 
 
 ## Installation
 
-openHAB 2 can be installed though 
+openHAB 2 can be installed through 
  - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
  - a package repository (apt, yum)
  - manually from file.
@@ -643,7 +643,7 @@ The need for these and the exact implementation on a specific system might diffe
 ### Privileges for Common Peripherals
 
 An openHAB setup will often rely on hardware like a modem, transceiver or adapter to interface with home automation hardware.
-Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
+Examples are a Bluetooth, Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
 In order to allow openHAB to communicate with additional peripherals, it has to be added to corresponding Linux groups.
 The following example shows how to add Linux user `openhab` to the often needed groups `dialout` and `tty`.
 Additional groups may be needed, depending on your hardware and software setup.
@@ -651,6 +651,7 @@ Additional groups may be needed, depending on your hardware and software setup.
 ```shell
 sudo adduser openhab dialout
 sudo adduser openhab tty
+sudo adduser openhab bluetooth
 ```
 
 If you are looking to enable sound privileges for openHAB, it will also be necessary to add openHAB to the "audio" group.
