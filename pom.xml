@@ -205,26 +205,6 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-esh-binding-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/_addons_bindings/oh2</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/smarthome/extensions/binding</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
-          <execution>
             <id>copy-esh-transform-docs</id>
             <phase>process-resources</phase>
             <goals>
@@ -234,7 +214,7 @@
               <outputDirectory>${basedir}/_addons_transformations/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/smarthome/extensions/transform</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/transform</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -254,7 +234,7 @@
               <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/smarthome/extensions/ui/iconset</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/ui/iconset</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
@@ -273,7 +253,7 @@
               <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/smarthome/extensions/ui</directory>
+                  <directory>${basedir}/.external-resources/openhab2-addons/addons/ui</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -307,14 +287,6 @@
             <configuration>
               <outputDirectory>${basedir}/_addons_voices/oh2</outputDirectory>
               <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/smarthome/extensions/voice</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                </resource>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab2-addons/addons/voice</directory>
                   <includes>
