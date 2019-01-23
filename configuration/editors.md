@@ -52,7 +52,7 @@ You can find all important information in the extensions [readme file](https://g
 {: #others}
 ## Other Editor Integrations
 
-The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality like the two tools above.
+The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality.
 
 ### mcedit
 
