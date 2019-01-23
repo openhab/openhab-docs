@@ -68,13 +68,12 @@ The following table summarises the channels available for the NAS-DS01Z -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
+| Binary Sensor  [Deprecated]| sensor_binary | Door | Switch | 
 | Tamper Alarm | alarm_tamper |  | Switch | 
 | Door Sensor | sensor_door | Door | Contact | 
 | Battery Level | battery-level | Battery | Number |
 
-### Binary Sensor
-
+### Binary Sensor [Deprecated]
 Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -86,8 +85,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Triggered |
 | OFF | Untriggered |
 
-### Tamper Alarm
+**Note:** This channel is marked as deprecated so should not be used.
 
+### Tamper Alarm
 Indicates if the tamper alarm is triggered.
 
 The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -100,7 +100,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Door Sensor
-
 Indicates if the door/window is open or closed.
 
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -113,7 +112,6 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

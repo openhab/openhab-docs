@@ -1,11 +1,11 @@
 ---
-id: exec
+id: org.openhab.transform.exec
 label: Exec
 title: Exec - Transformation Services
 type: transform
 description: "Transforms an input string with an external program."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

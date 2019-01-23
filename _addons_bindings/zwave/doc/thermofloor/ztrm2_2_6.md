@@ -90,8 +90,8 @@ The following table summarises the channels available for the Heatit Z-TRM 2 -:
 | Electric meter (volts) 1 | meter_voltage1 | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
-| Sensor (temperature) 3 | sensor_temperature3 | Temperature | Number:Temperature | 
+| External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
+| Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
 | Sensor (temperature) 4 | sensor_temperature4 | Temperature | Number:Temperature | 
 
 ### Switch
@@ -187,12 +187,12 @@ Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Sensor (temperature) 2
+### External sensor
 Indicates the current temperature.
 
 The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Sensor (temperature) 3
+### Floor sensor
 Indicates the current temperature.
 
 The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.

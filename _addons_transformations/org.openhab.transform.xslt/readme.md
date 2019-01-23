@@ -1,11 +1,11 @@
 ---
-id: xslt
+id: org.openhab.transform.xslt
 label: XSLT
 title: XSLT - Transformation Services
 type: transform
 description: "Transform input using the XML Stylesheet Language for Transformations (XSLT)."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -62,12 +62,11 @@ The following table summarises the channels available for the DWZWAVE25 -:
 |---------|------------|----------|-----------|
 | Binary Sensor | sensor_binary | Door | Switch | 
 | Alarm (tamper) | alarm_tamper |  | Switch | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
+| Sensor (Binary) | sensor_door | Door | Contact | 
 | Alarm (power) | alarm_power | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -80,7 +79,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (tamper)
-
 Indicates if the tamper alarm is triggered.
 
 The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -92,21 +90,19 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Alarm (burglar)
+### Sensor (Binary)
+Indicates if the door/window is open or closed.
 
-Indicates if the burglar alarm is triggered.
+The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
+The following state translation is provided for this channel to the ```Contact``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+| OPEN | Open |
+| CLOSED | Closed |
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -119,7 +115,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

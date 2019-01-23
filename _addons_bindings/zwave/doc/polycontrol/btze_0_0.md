@@ -66,7 +66,6 @@ The following table summarises the channels available for the Danalock V3-BTZE -
 | Battery Level | battery-level | Battery | Number |
 
 ### Door Lock
-
 Lock and unlock the door.
 
 The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
@@ -78,7 +77,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Unlocked |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

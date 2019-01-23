@@ -50,37 +50,31 @@ The following table summarises the channels available for the NAS-WR01ZE -:
 | Alarm (power) | alarm_power | Door | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (amps)
-
 Indicates the instantaneous current consumption.
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
-
 Indicates the instantaneous voltage.
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.

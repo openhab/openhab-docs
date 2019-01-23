@@ -68,7 +68,6 @@ The following table summarises the channels available for the WADWAZ-1 -:
 | Battery Level | battery-level | Battery | Number |
 
 ### Sensor (Binary)
-
 Indicates if the door/window is open or closed.
 
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -81,7 +80,6 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Sensor (Alarm)
-
 Indicates if the entry alarm is triggered.
 
 The ```alarm_entry``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -94,7 +92,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Closed |
 
 ### Tamper Alarm
-
 Indicates if the tamper alarm is triggered.
 
 The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -107,7 +104,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Sensor (External Switch)
-
 Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -120,7 +116,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

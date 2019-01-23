@@ -49,13 +49,38 @@ The following table summarises the channels available for the HS1DS-Z -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Binary Sensor | sensor_door | Door | Contact | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
-| Alarm (access) | alarm_access | Door | Switch | 
+| Binary Sensor  [Deprecated]| sensor_binary | Door | Switch | 
+| Tamper Alarm | alarm_tamper |  | Switch | 
+| Door Sensor | sensor_door | Door | Contact | 
 | Battery Level | battery-level | Battery | Number |
 
-### Binary Sensor
+### Binary Sensor [Deprecated]
+Indicates if a sensor has triggered.
 
+The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Triggered |
+| OFF | Untriggered |
+
+**Note:** This channel is marked as deprecated so should not be used.
+
+### Tamper Alarm
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Door Sensor
 Indicates if the door/window is open or closed.
 
 The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -67,34 +92,7 @@ The following state translation is provided for this channel to the ```Contact``
 | OPEN | Open |
 | CLOSED | Closed |
 
-### Alarm (burglar)
-
-Indicates if the burglar alarm is triggered.
-
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
-### Alarm (access)
-
-Indicates if the access control alarm is triggered.
-
-The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.

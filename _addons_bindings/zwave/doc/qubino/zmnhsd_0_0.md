@@ -41,30 +41,32 @@ The following table summarises the channels available for the ZMNHSD -:
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Electric meter (kWh)
+### Sensor (temperature)
+Indicates the current temperature.
 
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -410,6 +412,7 @@ Association group 5 supports 16 nodes.
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

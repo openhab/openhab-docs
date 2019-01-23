@@ -1,11 +1,11 @@
 ---
-id: xpath
+id: org.openhab.transform.xpath
 label: XPath
 title: XPath - Transformation Services
 type: transform
 description: "Transforms an [XML](https://www.w3.org/XML/) input using an [XPath](https://www.w3.org/TR/xpath/#section-Expressions) expression."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

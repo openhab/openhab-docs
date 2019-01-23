@@ -1,11 +1,11 @@
 ---
-id: regex
+id: org.openhab.transform.regex
 label: RegEx
 title: RegEx - Transformation Services
 type: transform
 description: "Transforms a source string on basis of the regular expression (regex) search pattern to a defined result string."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

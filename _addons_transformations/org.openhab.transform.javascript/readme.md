@@ -1,12 +1,11 @@
 ---
-id: javascript
+id: org.openhab.transform.javascript
 label: JavaScript
 title: JavaScript - Transformation Services
 type: transform
 description: "Transform an input to an output using JavaScript."
 since: 2x
-logo: images/addons/javascript.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

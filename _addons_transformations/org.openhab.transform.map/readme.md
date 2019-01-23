@@ -1,11 +1,11 @@
 ---
-id: map
+id: org.openhab.transform.map
 label: Map
 title: Map - Transformation Services
 type: transform
 description: "Transforms the input by mapping it to another string. It expects the mappings to be read from a file which is stored under the `transform` folder."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

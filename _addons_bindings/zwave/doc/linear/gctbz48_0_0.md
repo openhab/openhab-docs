@@ -17,7 +17,30 @@ The GoControl GC-TBZ48 supports routing. This allows the device to communicate u
 
 ## Overview
 
-The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming setings, as well as to display current conditions in the home or office.
+The Z-Wave Thermostat (GC-TBZ48) is a programmable, Z-Wave communications thermostat. It can be powered using 24VAC (if both “R”&”C”wires are available at the thermostat), or using four (4) AA batteries. Using Z-Wave technology, end users have the ability to use the 2GIG Go!Control panel to control the thermostat, configure programming settings, as well as to display current conditions in the home or office.
+
+### Inclusion Information
+
+  1. Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).
+  2. Press any button to take thermostat out of sleep mode.
+  3. Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.
+  4. Scroll to “Z-Wave” using up/down buttons. Press SELECT.
+  5. When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.
+  6. Press SELECT (mode button) to add thermostat to network.
+  7. Display line should flash WAIT then SUCCESS if Z-Wave connection is made.
+  8. If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line.
+  9. If thermostat fails to connect, repeat Steps three (3) through (7) to re-try connecting.
+
+### Exclusion Information
+
+  1. Set your primary controller to Include, add or Install mode, to add the thermostat as a node on your network (see your controller’s user manual for detailed instructions).
+  2. Press any button to take thermostat out of sleep mode.
+  3. Press and hold FAN button for 5 seconds. SETUP will be displayed in the status display line.
+  4. Scroll to “Z-Wave” using up/down buttons. Press SELECT.
+  5. When prompted by your Z-Wave controller, Press the YES button in the Z-Wave Install screen.
+  6. Press SELECT (mode button) to add thermostat to network.
+  7. Display line should fl ash WAIT then SUCCESS if Z-Wave connection is made.
+  8. If Z-Wave does not connect to controller, WAIT, then FAIL will flash in status display line. 
 
 ## Channels
 
@@ -37,19 +60,16 @@ The following table summarises the channels available for the GoControl GC-TBZ48
 | Clock Time Offset | time_offset | Temperature | Number | 
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
@@ -73,7 +93,6 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Operating State
-
 Sets the thermostat operating state.
 
 The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
@@ -90,33 +109,27 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (cooling)
-
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat fan mode
-
 Channel type information on this channel is not found.
 
 ### Thermostat fan state
-
 Channel type information on this channel is not found.
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
 
 ### Clock Time Offset
-
 Provides the current time difference for the devices time.
 
 The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
@@ -135,6 +148,7 @@ The GoControl GC-TBZ48 supports 3 association groups.
 
 ### Group 1: Group 1
 
+Lifeline
 
 Association group 1 supports 5 nodes.
 

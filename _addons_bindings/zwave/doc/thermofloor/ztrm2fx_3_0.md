@@ -83,8 +83,8 @@ The following table summarises the channels available for the Z-TRM2fx -:
 | Setpoint (cooling) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
 | Setpoint (furnace) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
 | Setpoint (heating) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
-| Sensor (temperature) 3 | sensor_temperature3 | Temperature | Number:Temperature | 
+| External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
+| Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
 | Switch 4 | switch_binary4 | Switch | Switch | 
 | Electric meter (volts) 4 | meter_voltage4 | Energy | Number | 
 | Electric meter (kWh) 4 | meter_kwh4 | Energy | Number | 
@@ -181,12 +181,12 @@ Sets the thermostat setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Sensor (temperature) 2
+### External sensor
 Indicates the current temperature.
 
 The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Sensor (temperature) 3
+### Floor sensor
 Indicates the current temperature.
 
 The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
@@ -544,44 +544,42 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The Z-TRM2fx supports 5 association groups.
 
+### Group 0: DELETE
+
+
+Association group 0 supports 1 node.
+
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 The main thermostat device
-Lifeline. (Normally used by the Z-Wave Controller)  
-Sends:  
-- Thermostat Setpoint Reports  
-- Thermostat Mode Reports
+Lifeline. (Normally used by the Z-Wave Controller) Sends:
 
-Association group 1 supports 1 node.
+  * Device Reset Notifications.
+  * Thermostat Setpoint Reports
+  * Thermostat Mode Reports
+  * Basic Reports
+  * Meter Reports
 
-### Group 2: Thermostat device 0
+Association group 1 supports 5 nodes.
 
-The main thermostat device
-Send Binary Switch Set commands representing the status of the internal relay.
+### Group 2: External temperature
 
-Association group 2 supports 7 nodes.
-
-### Group 3: Thermostat device 0
-
-The main thermostat device
-Send Multilevel Sensor Reports for internal temperature sensor.
-
-Association group 3 supports 7 nodes.
-
-### Group 4: Thermostat device 0
-
-The main thermostat device
 Send Multilevel Sensor Reports for external temperature sensor.
 
-Association group 4 supports 7 nodes.
+Association group 2 supports 5 nodes.
 
-### Group 5: Thermostat device 0
+### Group 3: Floor temperature
 
-The main thermostat device
 Send Multilevel Sensor Reports for floor temperature sensor.
 
-Association group 5 supports 7 nodes.
+Association group 3 supports 5 nodes.
+
+### Group 4: Internal relay status
+
+Send Binary Switch Set commands representing the status of the internal relay.
+
+Association group 4 supports 5 nodes.
 
 ## Technical Information
 
