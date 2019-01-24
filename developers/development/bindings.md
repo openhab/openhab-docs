@@ -52,7 +52,7 @@ If you have any special dependencies in your code, please check the [library rec
 This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
 
 _Note:_ Currently Eclipse SmartHome and openHAB use different license texts.
-The skeleton templates refers to SmartHome, while it should refer to openHAB.
+The skeleton template refers to SmartHome, while it should refer to openHAB.
 To compile a new openHAB binding without errors, you have to perform the following additional steps:
 
 - run `mvn -pl :<binding artifactId> license:format` in the root folder of your local Git repository (see [coding guidelines A.2](guidelines.html#a-code-style))
