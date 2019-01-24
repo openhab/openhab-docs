@@ -119,7 +119,7 @@ def process_addon_files = { features ->
     process_addon_type(features,        ['oh2'],        'iconset',     'addons_iconsets',        ' - Icon Sets',               [:],                         ['org.openhab.ui.iconset.']                    )
     process_addon_type(features, ['oh1', 'oh2', 'ext'], 'io',          'addons_ios',             ' - System Integrations',     [' Service'],                ['org.openhab.io.']           )
     process_addon_type(features, ['oh1'],               'persistence', 'addons_persistences',    ' - Persistence Services',    ['\\s*Persistence\\s*$'],    ['org.openhab.persistence.']                             )
-    process_addon_type(features,        ['oh2'],        'transform',   'addons_transformations', ' - Transformation Services', [' Transformation Service'], ['org.eclipse.smarthome.transform.']                     )
+    process_addon_type(features,        ['oh2'],        'transform',   'addons_transformations', ' - Transformation Services', [' Transformation Service'], ['org.openhab.transform.']                     )
     process_addon_type(features,        ['oh2'],        'ui',          'addons_uis',             ' - UIs',                     [:],                         ['org.openhab.ui.']          )
     process_addon_type(features,        ['oh2'],        'voice',       'addons_voices',          ' - Voices',                  [:],                         ['org.openhab.voice.','org.eclipse.smarthome.voice.']    )
 }
