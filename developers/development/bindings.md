@@ -51,12 +51,11 @@ Please especially note our [coding guidelines](guidelines), which must be respec
 If you have any special dependencies in your code, please check the [library recommendations](https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html) at Eclipse SmartHome.
 This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
 
-_Note:_ Currently Eclipse SmartHome and openHAB use different license versions (EPL-2.0 for ESH and EPL-1.0 for OH2).
-The skeleton templates use the newer EPL-2.0 version.
+_Note:_ Currently Eclipse SmartHome and openHAB use different license texts.
+The skeleton template refers to SmartHome, while it should refer to openHAB.
 To compile a new openHAB binding without errors, you have to perform the following additional steps:
 
-- replace `NOTICE` with `about.html` in the `build-properties` file
-- run `mvn license:format` in the root folder of your local Git repository (see [coding guidelines A.2](guidelines.html#a-code-style))
+- run `mvn -pl :<binding artifactId> license:format` in the root folder of your local Git repository (see [coding guidelines A.2](guidelines.html#a-code-style))
 
 ## Setup and Run the Binding
 
@@ -113,7 +112,7 @@ You will receive detailed information (path to the file, line and message) listi
 [ERROR] Failed to execute goal org.openhab.tools:static-code-analysis:0.0.4:report (default) on project org.openhab.binding.example: Code Analysis Tool has found 1 error(s)!
 [ERROR] Please fix the errors and rerun the build.
 [ERROR] Errors list:
-[ERROR] ERROR found by checkstyle: .binding.example.test/about.html:0 Missing about.html file.
+[ERROR] ERROR found by checkstyle: .binding.example.test/build.properties:0 Missing build.properties file.
 [ERROR] Detailed report can be found at: file////path_to_openhab/openhab2-addons/addons/binding/org.openhab.binding.example/target/code-analysis/report.html
 ...
 ```

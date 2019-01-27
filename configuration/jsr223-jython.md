@@ -9,7 +9,8 @@ title: JSR223 Jython Scripting
 
 ## Configuration
 
-[Download](http://www.jython.org/downloads.html) the Jython 2.7.x installer package. 
+[Download](https://jython.github.io/index) the Jython 2.7.0 standalone or installer package, or install through a package repository. 
+Newer versions are not yet supported. 
 Install Jython on the local filesystem and make note of the installation directory location.
 
 The Jython implementation will need to be added to openHAB's Java classpath. 
