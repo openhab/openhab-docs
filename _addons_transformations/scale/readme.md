@@ -1,11 +1,11 @@
 ---
-id: org.openhab.transform.scale
+id: scale
 label: Scale
 title: Scale - Transformation Services
 type: transform
 description: "The Scale Transformation Service is a an easy to handle tool that can help you with the discretization of number inputs."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

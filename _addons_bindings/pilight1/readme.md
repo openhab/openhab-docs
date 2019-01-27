@@ -6,7 +6,7 @@ type: binding
 description: "The pilight binding allows openHAB to communicate with a [pilight](http://www.pilight.org/) instance running pilight version 6.0 or greater."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.pilight/README.md
 since: 1x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

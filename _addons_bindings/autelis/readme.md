@@ -49,7 +49,9 @@ Thing autelis:jandy:myPool [ host="192.168.1.10", port="80", user="admin", passw
 ```
 
 ## Channels
+
 ### Pentair
+
 Pentair devices support the following channels:
 
 | Channel Type ID     | Item Type |
@@ -113,7 +115,9 @@ Pentair devices support the following channels:
 | chlor-chlorname     | String    |
 | lightscmd           | String    |
 | reboot              | Switch    |
+
 ### Jandy
+
 Jandy devices support the following channels:
 
 | Channel Type ID     | Item Type |

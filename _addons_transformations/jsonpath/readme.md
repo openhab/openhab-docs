@@ -1,11 +1,11 @@
 ---
-id: org.openhab.transform.jsonpath
+id: jsonpath
 label: JsonPath
 title: JsonPath - Transformation Services
 type: transform
 description: "Transforms a JSON structure on basis of the [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression to an JSON containing the requested data."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
