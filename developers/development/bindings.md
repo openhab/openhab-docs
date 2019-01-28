@@ -5,42 +5,29 @@ title: Developing bindings
 
 {% include base.html %}
 
-# Developing a Binding for openHAB 2
+# Developing a Binding for openHAB
 
-This page describes the necessary steps in order to implement a new binding for openHAB 2.
-
-_Note:_ Please note that in contrast to openHAB 1.x, openHAB 2 is based on the [Eclipse SmartHome](http://eclipse.org/smarthome/) project.
-So the APIs and concepts have changed, so please read this documentation carefully, if you are coming from openHAB 1.x development.
+This page describes the necessary steps in order to implement a new binding for openHAB.
 
 For information about code style and naming conventions, please see the [coding guidelines](guidelines).
 
-## Choosing a Namespace
-
-As a first step, you need to decide in which namespace you want to develop your binding - assuming that you want to contribute it back to the community, you have two options:
-
-* You can choose `org.eclipse.smarthome`, if you want to directly contribute it to the Eclipse SmartHome project.
-The advantage of this option is that you make it available to a wider audience as your binding will also be available for other solutions than openHAB that are based on Eclipse SmartHome.
-The disadvantage is that the contribution process is stricter as it involves intellectual property checks and in general makes it harder or even impossible to include third-party libraries with copy-left licenses such as LGPL or code that you have written by reverse engineering some protocol.
-* You can choose `org.openhab`, if you want it to be used for openHAB only.
-This is the better option, if your binding is not interesting for other solutions, requires special libraries or has technical dependencies on openHAB specific things (although this should be avoided as much as possible).
-
-## Creating a Skeleton
-
-For the openHAB namespace: Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and create a skeleton for your binding.
-To do this, go into your Git repository under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
+Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and create a skeleton for your binding.
+To do this, use a command line terminal and go to your Git repository folder under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
 It is important that your binding name is in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
 After the binding name, provide your name as the author (surrounded by quotes if you want to use whitespaces to separate your first and last name).
 Example: `~/git/openhab2-addons/addons/binding/create_openhab_binding_skeleton.sh BindingName "Firstname Lastname"`
 
-For the Eclipse SmartHome namespace: Choose the option "Eclipse SmartHome Extensions" in [your IDE setup](ide.html), and create a skeleton for your binding.
-To do this, go to `git/smarthome/tools/archetype`and run `mvn install` in order to install the archetype definition in your local Maven repo.
-Now go to `git/smarthome/extensions/binding` and call the script `create_binding_skeleton.sh` with two parameters.
-The first one is your binding name in camel case (e.g. 'ACMEProduct' or 'SomeSystem').
-The second one is your name as author (surrounded by quotes if you want to use whitespaces to separate your fist and last name).
-
-Now switch back to Eclipse and choose `File->Import->General->Existing Projects into Workspace`, enter the folder of the newly created skeleton as the root directory, and press "Finish".
+Now go back to the IDE and choose `File->Import->General->Existing Projects into Workspace`, enter the folder of the newly created skeleton as the root directory, and press "Finish".
 
 _Note:_ Here you can find a [screencast of the binding skeleton creation](http://youtu.be/30nhm0yIcvA).
+
+## Before You Start
+
+If you plan to contribute your binding to openHAB through a PR, here is what we suggest to help keeping the potential effort for changes due to reviews low:
+
+- Before you start with the implementation, create an issue on Github and talk about your plan to come up with a PR. Maybe there are others that have privately a similar binding before and would be ready to contribute it. Also, it might help finding collaborators for the implementation.
+- It is a good idea to start with modelling the Things for your binding, i.e. what kind of Bridge-Types, Thing-Types and Channel-Types it should have. Also, you should create the classes for the handlers that you need as well as potential discovery services (but no need to implement any working code at that stage). With this in place, you are invited to already create a PR and mark it as [WIP] (for: work in progress) and ask for a first review. You might get valuable input from maintainers and other experts and you avoid having to refactor all details of an implementation.
+- Once the general architecture/modelling of your binding is approved, go for the implementation details and ask for a final review in the end.
 
 ## Implement the Binding
 
@@ -50,12 +37,6 @@ To learn about the internal structure and the concepts of a binding, please see 
 Please especially note our [coding guidelines](guidelines), which must be respected for having pull requests approved.
 If you have any special dependencies in your code, please check the [library recommendations](https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html) at Eclipse SmartHome.
 This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
-
-_Note:_ Currently Eclipse SmartHome and openHAB use different license texts.
-The skeleton template refers to SmartHome, while it should refer to openHAB.
-To compile a new openHAB binding without errors, you have to perform the following additional steps:
-
-- run `mvn -pl :<binding artifactId> license:format` in the root folder of your local Git repository (see [coding guidelines A.2](guidelines.html#a-code-style))
 
 ## Setup and Run the Binding
 
@@ -97,9 +78,9 @@ mvn clean install
 from the repository root to ensure that the build works smoothly.
 If it does, it is time to [contribute your work](../contributing/contributing.html)!
 
-### Static code analysis
+### Static Code Analysis
 
-The Build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices.
+The build includes [Tooling for static code analysis](https://github.com/openhab/static-code-analysis) that will validate your code against the openHAB Coding Guidelines and some additional best practices.
 Information about the checks can be found [here](https://github.com/openhab/static-code-analysis#esh-guidelines-covered).
 
 The tool will generate an individual report for each binding, which you can find in `.../your_binding_directory/target/code-analysis/report.html` file and a report for the whole build that contains links to the individual reports in the `../openhab2-addons/target/summary_report.html`.
