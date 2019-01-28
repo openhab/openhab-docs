@@ -113,20 +113,12 @@ module.exports = [
       children: [
         ['developer/', 'Development Overview'],
         'developer/contributing/contributing',
-        'developer/prerequisites/osgi',
-        'developer/prerequisites/osgids',
-        'developer/prerequisites/configadmin',
-        'developer/prerequisites/osgitasks',
-        'developer/prerequisites/eventadmin',
-        'developer/prerequisites/tycho',
-        'developer/prerequisites/equinox',
-        'developer/prerequisites/targetplatform',
+        'developer/contributing/governance',
         'developer/development/ide',
         'developer/development/guidelines',
         'developer/development/conventions', // from v2.3 onwards
         'developer/development/bindings',
         'developer/development/logging',
-        'developer/development/evolution',
         'developer/development/compatibilitylayer',
       ]
     },
