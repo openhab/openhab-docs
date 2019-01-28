@@ -109,7 +109,7 @@ The sign-off is a simple line at the end of the explanation for the
 patch, which certifies that you wrote it or otherwise have the right to
 pass it on as an open-source patch.  The rules are pretty simple: if you
 can certify the below (from
-[developercertificate.org](http://developercertificate.org/)):
+[developercertificate.org](https://developercertificate.org/)):
 
 ```
 Developer Certificate of Origin
@@ -176,7 +176,7 @@ There are several exceptions to the signing requirement. Currently these are:
 
 * Step 1: learn the component inside out
 * Step 2: make yourself useful by contributing code, bugfixes, support etc.
-* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate Github project and have a [maintainer](governance#maintainers) [nominate you](governance#nominations).
+* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate Github project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
 
 Don't forget: being a maintainer is a time investment.
 Make sure you will have time to make yourself available.
