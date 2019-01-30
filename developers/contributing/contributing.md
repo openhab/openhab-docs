@@ -26,7 +26,7 @@ If you want to get involved with any of these, best check their respective READM
 We are always thrilled to receive pull requests, and do our best to process them as fast as possible.
 Not sure if that typo is worth a pull request? Do it! We will appreciate it.
 
-If your pull request is not accepted on the first try, don't bediscouraged!
+If your pull request is not accepted on the first try, don't be discouraged!
 If there's a problem with the implementation, hopefully you received feedback on what to improve.
 
 We're trying very hard to keep openHAB lean and focused.
