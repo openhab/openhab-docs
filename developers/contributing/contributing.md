@@ -176,7 +176,7 @@ There are several exceptions to the signing requirement. Currently these are:
 
 * Step 1: learn the component inside out
 * Step 2: make yourself useful by contributing code, bugfixes, support etc.
-* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate Github project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
+* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate GitHub project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
 
 Don't forget: being a maintainer is a time investment.
 Make sure you will have time to make yourself available.
