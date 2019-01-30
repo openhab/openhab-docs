@@ -100,7 +100,7 @@ or `Fixes #XXX`, which will automatically close the issue when merged.
 
 ### Merge Approval
 
-openHAB maintainers use the [Github review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
+openHAB maintainers use the [GitHub review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
 
 
 ### Sign your Work
