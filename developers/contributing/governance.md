@@ -64,7 +64,7 @@ A maintainer nomination should explain the candidate’s contributions to the co
 
 Only the component's maintainers may nominate a new maintainer or vote in a maintainer election. To be successful, the election must receive a minimum of three positive +1 votes. Any maintainer can veto the election by casting a -1 vote. For components with three or fewer committers all maintainers must vote. Maintainer elections run for one week, but will end prematurely if all project committers vote +1.
 
-Nominations must be done on the Github team discussion page (as a public post) and voting is done through _reactions_ on that post.
+Nominations must be done on the GitHub team discussion page (as a public post) and voting is done through _reactions_ on that post.
 
 #### Ending Maintainership
 
