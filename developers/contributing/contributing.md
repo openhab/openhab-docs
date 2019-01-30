@@ -9,30 +9,30 @@ title: Contribution
 
 ## The Repositories
 
-Note that the openHAB distribution repository does not contain any source code, but it rather aggregates features from different repos:
+The main parts of openHAB can be found in the following repositories:
 
-* [Eclipse SmartHome Framework](https://github.com/eclipse/smarthome): This repo holds the major parts of the core functionality.
-* [openHAB 2 Core](https://github.com/openhab/openhab-core): This repo contains a few small bundles that are not part of Eclipse SmartHome, but required for the openHAB runtime. This e.g. contains a compatibility layer for supporting openHAB 1 add-ons.
-* [openHAB 2 Add-ons](https://github.com/openhab/openhab2): Add-ons of openHAB that use the Eclipse SmartHome APIs can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
-* [openHAB 1 Add-ons](https://github.com/openhab/openhab): Add-ons developed for openHAB 1.x. Most of them are working smoothly on the openHAB 2 runtime and thus they are packaged within the distribution.
-* [Eclipse SmartHome Extensions](https://github.com/eclipse/smarthome/tree/master/extensions): Since openHAB uses the Eclipse SmartHome framework, it is automatically compatible with all extensions that are available for it and maintained within the Eclipse SmartHome repository. These are usually high-quality extensions that might be even used in commercial products.
+* [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
+* [openHAB 2 Add-ons](https://github.com/openhab/openhab2-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
+* [openHAB 1 Add-ons](https://github.com/openhab/openhab1-addons): Legacy add-ons that were developed for openHAB 1. Most of them are working smoothly on the openHAB 2 runtime and thus they are made available for backward compatibility reasons. They are not suggested for new users, though.
+* [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
+
+Besides those "main" repositories, there are a dozen further ones, which are not listed here in detail - just [check out the list](https://github.com/openhab) and you will find separate repos for openHAB Cloud, the Alexa skill, the Google Action, the Android and iOS apps, the Zigbee and ZWave bindings, HABPanel and HABot and many more.
+If you want to get involved with any of these, best check their respective README and CONTRIBUTING files in the root of the repos.
 
 ## Contribution Guidelines
 
 ### Pull Requests are Always Welcome
 
-We are always thrilled to receive pull requests, and do our best to
-process them as fast as possible. Not sure if that typo is worth a pull
-request? Do it! We will appreciate it.
+We are always thrilled to receive pull requests, and do our best to process them as fast as possible.
+Not sure if that typo is worth a pull request? Do it! We will appreciate it.
 
-If your pull request is not accepted on the first try, don't be
-discouraged! If there's a problem with the implementation, hopefully you
-received feedback on what to improve.
+If your pull request is not accepted on the first try, don't be discouraged!
+If there's a problem with the implementation, hopefully you received feedback on what to improve.
 
-We're trying very hard to keep openHAB lean and focused. We don't want it
-to do everything for everybody. This means that we might decide against
-incorporating a new feature. However, there might be a way to implement
-that feature *on top of* openHAB.
+We're trying very hard to keep openHAB lean and focused.
+We don't want it to do everything for everybody.
+This means that we might decide against incorporating a new feature.
+However, there might be a way to implement that feature *on top of* openHAB.
 
 ### Discuss your Design on the Mailing List
 
@@ -100,12 +100,8 @@ or `Fixes #XXX`, which will automatically close the issue when merged.
 
 ### Merge Approval
 
-openHAB maintainers use the [Github review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
+openHAB maintainers use the [GitHub review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
 
-A change requires approval from an absolute majority of the maintainers of each
-component affected. For example, if a change affects `addons/` and `features/`, it
-needs an absolute majority from the maintainers of `addons/` AND, separately, an
-absolute majority of the maintainers of `features/`.
 
 ### Sign your Work
 
@@ -113,7 +109,7 @@ The sign-off is a simple line at the end of the explanation for the
 patch, which certifies that you wrote it or otherwise have the right to
 pass it on as an open-source patch.  The rules are pretty simple: if you
 can certify the below (from
-[developercertificate.org](http://developercertificate.org/)):
+[developercertificate.org](https://developercertificate.org/)):
 
 ```
 Developer Certificate of Origin
@@ -180,9 +176,10 @@ There are several exceptions to the signing requirement. Currently these are:
 
 * Step 1: learn the component inside out
 * Step 2: make yourself useful by contributing code, bugfixes, support etc.
-* Step 3: volunteer on [in the community] (https://community.openhab.org/)
+* Step 3: volunteer [in the community] (https://community.openhab.org/c/development/misc) or in the appropriate GitHub project and have a [maintainer](governance.html#maintainers) [nominate you](governance.html#nominations).
 
-Don't forget: being a maintainer is a time investment. Make sure you will have time to make yourself available.
+Don't forget: being a maintainer is a time investment.
+Make sure you will have time to make yourself available.
 You don't have to be a maintainer to make a difference on the project!
 
 ## Community Guidelines
