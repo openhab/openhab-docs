@@ -28,7 +28,10 @@ If you plan to contribute your binding to openHAB through a PR, here is what we 
 - Before you start with the implementation, create an issue on GitHub and talk about your plan to come up with a PR.
 Maybe there are others that have privately a similar binding before and would be ready to contribute it.
 Also, it might help finding collaborators for the implementation.
-- It is a good idea to start with modelling the Things for your binding, i.e. what kind of Bridge-Types, Thing-Types and Channel-Types it should have. Also, you should create the classes for the handlers that you need as well as potential discovery services (but no need to implement any working code at that stage). With this in place, you are invited to already create a PR and mark it as [WIP] (for: work in progress) and ask for a first review. You might get valuable input from maintainers and other experts and you avoid having to refactor all details of an implementation.
+- It is a good idea to start with modelling the Things for your binding, i.e. what kind of Bridge-Types, Thing-Types and Channel-Types it should have.
+Also, you should create the classes for the handlers that you need as well as potential discovery services (but no need to implement any working code at that stage).
+With this in place, you are invited to already create a PR and mark it as [WIP] (for: work in progress) and ask for a first review.
+You might get valuable input from maintainers and other experts and you avoid having to refactor all details of an implementation.
 - Once the general architecture/modelling of your binding is approved, go for the implementation details and ask for a final review in the end.
 
 ## Implement the Binding
