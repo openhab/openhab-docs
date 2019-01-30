@@ -48,7 +48,7 @@ Maintainers take care of the respective repository, i.e. they
 - sync with other maintainer teams wrt cross-team changes
 - announce important news in the community
 
-In general, a maintainer team is free to define its own rules of how the work in the team is organised, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the Github team page, see [this one](https://github.com/orgs/openhab/teams/2-x-add-ons-maintainers) as an example.
+In general, a maintainer team is free to define its own rules of how the work in the team is organised, e.g. what is required for a PR to be accepted. Those rules should be written down as a pinned discussion on the GitHub team page, see [this one](https://github.com/orgs/openhab/teams/2-x-add-ons-maintainers) as an example.
 
 A [couple of rules](https://github.com/orgs/openhab/teams/maintainers/discussions/1) must be followed by all maintainer teams, they ensure that there's some consistency in the workflows across the different repositories.
 
