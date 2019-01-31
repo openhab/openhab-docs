@@ -58,9 +58,6 @@
             <fileset>
               <directory>${basedir}/_addons_iconsets/</directory>
             </fileset>
-            <fileset>
-              <directory>${basedir}/concepts/</directory>
-            </fileset>
           </filesets>
         </configuration>
       </plugin>
@@ -68,31 +65,6 @@
         <artifactId>maven-resources-plugin</artifactId>
         <version>3.0.2</version>
         <executions>
-          <execution>
-            <id>copy-esh-docs</id>
-            <phase>process-resources</phase>
-            <goals>
-              <goal>copy-resources</goal>
-            </goals>
-            <configuration>
-              <outputDirectory>${basedir}/concepts/</outputDirectory>
-              <resources>
-                <resource>
-                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/concepts</directory>
-                  <includes>
-                    <include>**/*.md</include>
-                    <include>**/*.png</include>
-                  </includes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/.external-resources/smarthome/docs/documentation/development</directory>
-                  <includes>
-                    <include>**/guidelines.md</include>
-                  </includes>
-                </resource>
-              </resources>
-            </configuration>
-          </execution>
           <execution>
             <id>copy-esh-csv</id>
             <phase>process-resources</phase>
@@ -205,7 +177,7 @@
             </configuration>
           </execution>
           <execution>
-            <id>copy-esh-transform-docs</id>
+            <id>copy-transform-docs</id>
             <phase>process-resources</phase>
             <goals>
               <goal>copy-resources</goal>
