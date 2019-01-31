@@ -64,14 +64,18 @@ See the [configuration tutorial]({{base}}/tutorials/beginner/configuration.html)
 Things can also be defined manually by creating `.things` configuration text files.
 These files are stored in `$OPENHAB_CONF/things`.
 
-Benefits of defining Things, Items and other aspects of openHAB in configuration text files are, that they are statically defined, unambiguous, flexible and easy to backup and restore.
-The main downsides of configuration files are the effort needed to compose them and the probability for typing errors.
-
 The syntax for `.things` files is defined as follows (parts in `<..>` are required):
 
 ```xtend
 Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 ```
+
+The first keyword defines whether the entry is a bridge or a thing. The next statement defines the UID of the thing which contains of the following three segments: binding id, thing type id, thing id. So the first two segments must match to thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
+
+To help organizing your things, you also may define a location (here: `Location`).
+
+Inside the squared brackets configuration parameters of the thing are defined. The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
+
 
 **Examples:**
 
@@ -90,7 +94,47 @@ Looking at the first example:
 - the physical location of the Thing is "Living Room"
 - the values inside the `[]` brackets are the Thing's configuration parameters, these are partly mandatory and optional
 
-Please check each individual binding's [documentation](/addons/#binding) for details on what and how to define Things using the `*.things` configuration text files.
+Please check each individual binding's [documentation](/addons/#binding) for details on what and how to define the Things configuration parameters (inside the `[]` brackets) using the `*.things` configuration text files.
+
+### Defining Bridges Using Files
+
+Bridges can be defined together with contained things. The following configuration shows the definition of a hue bridge with two hue lamps:
+
+```xtend
+Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
+	Thing 0210 bulb1 [ lightId="1" ]
+	Thing 0210 bulb2 [ lightId="2" ]
+}
+```
+
+Within the curly brackets things can be defined, that should be members of the bridge. For the contained thing only the thing type ID and thing ID must be defined (e.g. 0210 bulb1). So the syntax is `Thing <thingTypeId> <thingId> []`. The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
+
+Bridges that are defined somewhere else can also be referenced in the DSL:
+
+```xtend
+Thing hue:0210:mybridge:bulb (hue:bridge:mybridge) [lightId="3"]
+```
+
+The referenced bridge is specified in the parentheses. Please notice that the UID of the thing also contains the bridge ID as third segment. For the contained notation of things the UID will be inherited and the bridge ID is automatically taken as part of the resulting thing UID.
+
+**Example of a MQTT Bridge with Generic MQTT Things :**
+```xtend
+Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username="MyUserName", password="MyPassword"]
+{
+Thing topic sonoff_Dual_Thing "Light_Dual" @ "Sonoff" {  
+    Channels:
+        Type switch : PowerSwitch1  [ stateTopic="stat/sonoff_dual/POWER1" , commandTopic="cmnd/sonoff_dual/POWER1", on="ON", off="OFF"]
+        Type switch : PowerSwitch2  [ stateTopic="stat/sonoff_dual/POWER2" , commandTopic="cmnd/sonoff_dual/POWER2", on="ON", off="OFF"]
+        Type string : Version [stateTopic="stat/sonoff_dual/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      }     
+  Thing topic sonoff_TH_Thing "Light_TH" @ "Sonoff" {
+    Channels:
+        Type switch : PowerSwitch  [ stateTopic="stat/sonoff_TH/POWER", commandTopic="cmnd/sonoff_TH/POWER", on="ON", off="OFF" ]
+        Type string : Version [stateTopic="stat/sonoff_TH/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+        Type number : Temperature [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Temperature"]
+        Type number : Humidity [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Humidity"]
+      }   
+```
 
 ### Linking Items
 
