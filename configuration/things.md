@@ -70,11 +70,15 @@ The syntax for `.things` files is defined as follows (parts in `<..>` are requir
 Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 ```
 
-The first keyword defines whether the entry is a bridge or a thing. The next statement defines the UID of the thing which contains of the following three segments: binding id, thing type id, thing id. So the first two segments must match to thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
+The first keyword defines whether the entry is a bridge or a thing. 
+The next statement defines the UID of the thing which contains of the following three segments: binding id, thing type id, thing id. 
+So the first two segments must match to thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. 
+Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (here: `Location`).
 
-Inside the squared brackets configuration parameters of the thing are defined. The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
+Inside the squared brackets configuration parameters of the thing are defined. 
+The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
 
 **Examples:**
@@ -107,7 +111,10 @@ Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {
 }
 ```
 
-Within the curly brackets things can be defined, that should be members of the bridge. For the contained thing only the thing type ID and thing ID must be defined (e.g. 0210 bulb1). So the syntax is `Thing <thingTypeId> <thingId> []`. The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
+Within the curly brackets things can be defined, that should be members of the bridge. 
+For the contained thing only the thing type ID and thing ID must be defined (e.g. 0210 bulb1). 
+So the syntax is `Thing <thingTypeId> <thingId> []`. 
+The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
 
 Bridges that are defined somewhere else can also be referenced in the DSL:
 
@@ -115,7 +122,9 @@ Bridges that are defined somewhere else can also be referenced in the DSL:
 Thing hue:0210:mybridge:bulb (hue:bridge:mybridge) [lightId="3"]
 ```
 
-The referenced bridge is specified in the parentheses. Please notice that the UID of the thing also contains the bridge ID as third segment. For the contained notation of things the UID will be inherited and the bridge ID is automatically taken as part of the resulting thing UID.
+The referenced bridge is specified in the parentheses. 
+Please notice that the UID of the thing also contains the bridge ID as third segment. 
+For the contained notation of things the UID will be inherited and the bridge ID is automatically taken as part of the resulting thing UID.
 
 **Example of a MQTT Bridge with Generic MQTT Things :**
 ```xtend
