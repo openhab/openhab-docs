@@ -23,7 +23,7 @@ The list of all predefined categories can be found in our categories overview:
 
 | Category        | Description | Icon Example |
 |-----------------|-------------|{% for category in site.data.categories_thing %}
-|{{category.name}}|{{category.description}}|![{{category.icon}}](../features/ui/iconset/classic/icons/{{category.icon}}){:height="36px" width="36px"}|{% endfor %}
+|{{category.name}}|{{category.description}}|![{{category.icon}}](/iconsets/classic/{{category.icon}}){:height="36px" width="36px"}|{% endfor %}
 
 ### Channel Group Categories
 
@@ -45,5 +45,5 @@ There are different types of categories for Channels, which are listed below.
 
 | Category        | Icon Example |
 |-----------------|--------------|{% for category in site.data.categories %}{% if category.type == type %}
-|{{category.name}}|![{{category.name | downcase}}](../features/ui/iconset/classic/icons/{{category.name | downcase }}.png){:height="36px" width="36px"}|{% endif %}{% endfor %}
+|{{category.name}}|![{{category.name | downcase}}](/iconsets/classic/{{category.name | downcase }}.png){:height="36px" width="36px"}|{% endif %}{% endfor %}
 {% endfor %}
