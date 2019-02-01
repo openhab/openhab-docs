@@ -72,7 +72,7 @@ Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 
 The first keyword defines whether the entry is a bridge or a thing. 
 The next statement defines the UID of the thing which contains of the following three segments: `binding id`, `thing type id`, `thing id`. 
-So the first two segments must match to thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. 
+So the first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. 
 Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (here: `Location`).
