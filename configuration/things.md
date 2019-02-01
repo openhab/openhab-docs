@@ -145,6 +145,75 @@ Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username=
 }   
 ```
 
+### Defining Channels
+
+It is also possible to manually define channels. 
+Usually this is not needed, as channels will be automatically created by the binding based on the thing type description. 
+It is also possiblel to add additional channels to existing things and for bindings that allow to create generic things (for example the [MQTT Generic Thing Binding](/addons/bindings/mqtt.generic/)) all channels can be defined by the user.
+
+#### State channels 
+```xtend
+Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
+	Channels:
+		State String : customChannel1 "My Custom Channel" [
+			configParameter="Value"
+		]
+		State Number : customChannel2 []
+}
+```
+Each channel definition must be placed inside the curly braces and begin with the keyword State followed by the accepted item type (e.g. String). After this the channel ID follows with the configuration of a channel. The framework will merge the list of channels coming from the binding and the user-defined list in the DSL.
+
+As state channels are the default channels, you can omit the State keyword, the following example creates the same channels as the example above:
+```xtend
+Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
+	Channels:
+		String : customChannel1 "My Custom Channel" [
+			configParameter="Value"
+		]
+		Number : customChannel2 []
+}
+```
+You may optionally give the channel a proper label (like “My Custom Channel” in the example above) so you can distinguish the channels easily.
+
+#### Trigger channels
+```xtend
+Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
+	Channels:
+		Trigger String : customChannel1 [
+			configParameter="Value"
+		]
+}
+```
+Trigger channels are defined with the keyword Trigger and only support the type String.
+
+#### Referencing existing channel types
+
+Many bindings provide standalone channel type definitions like this:
+```xtend
+<thing:thing-descriptions bindingId="yahooweather" [...]>
+    <channel-type id="temperature">
+        <item-type>Number</item-type>
+        <label>Temperature</label>
+        <description>Current temperature in degrees celsius</description>
+        <category>Temperature</category>
+        <state readOnly="true" pattern="%.1f °C">
+        </state>
+    </channel-type>
+    [...]
+</thing:thing-descriptions>
+```
+
+They can be referenced within a thing’s channel definition, so that they need to be defined only once and can be reused for many channels. You may do so in the DSL as well:
+```xtend
+Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
+    Channels:
+        Type temperature : my_yesterday_temperature "Yesterday's Temperature"
+}
+```
+The Type keyword indicates a reference to an existing channel definition. The channel kind and accepted item types of course are takes from the channel definition, therefore they don’t need to be specified here again.
+
+You may optionally give the channel a proper label (like “Yesterday’s Temperature” in the example above) so you can distinguish the channels easily. If you decide not to, then the label from the referenced channel type definition will be used.
+
 ### Linking Items
 
 Items can be linked to Channels of discovered or manually defined Things inside Paper UI or inside configuration files.
