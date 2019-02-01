@@ -128,21 +128,21 @@ For the contained notation of things the UID will be inherited and the bridge ID
 
 **Example of a MQTT Bridge with Generic MQTT Things :**
 ```xtend
-Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username="MyUserName", password="MyPassword"]
-{
-Thing topic sonoff_Dual_Thing "Light_Dual" @ "Sonoff" {  
+Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username="MyUserName", password="MyPassword"] {
+  Thing topic sonoff_Dual_Thing "Light_Dual" @ "Sonoff" {  
     Channels:
-        Type switch : PowerSwitch1  [ stateTopic="stat/sonoff_dual/POWER1" , commandTopic="cmnd/sonoff_dual/POWER1", on="ON", off="OFF"]
-        Type switch : PowerSwitch2  [ stateTopic="stat/sonoff_dual/POWER2" , commandTopic="cmnd/sonoff_dual/POWER2", on="ON", off="OFF"]
-        Type string : Version [stateTopic="stat/sonoff_dual/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type switch : PowerSwitch1  [ stateTopic="stat/sonoff_dual/POWER1" , commandTopic="cmnd/sonoff_dual/POWER1", on="ON", off="OFF"]
+      Type switch : PowerSwitch2  [ stateTopic="stat/sonoff_dual/POWER2" , commandTopic="cmnd/sonoff_dual/POWER2", on="ON", off="OFF"]
+      Type string : Version [stateTopic="stat/sonoff_dual/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
       }     
   Thing topic sonoff_TH_Thing "Light_TH" @ "Sonoff" {
     Channels:
-        Type switch : PowerSwitch  [ stateTopic="stat/sonoff_TH/POWER", commandTopic="cmnd/sonoff_TH/POWER", on="ON", off="OFF" ]
-        Type string : Version [stateTopic="stat/sonoff_TH/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
-        Type number : Temperature [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Temperature"]
-        Type number : Humidity [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Humidity"]
-      }   
+      Type switch : PowerSwitch  [ stateTopic="stat/sonoff_TH/POWER", commandTopic="cmnd/sonoff_TH/POWER", on="ON", off="OFF" ]
+      Type string : Version [stateTopic="stat/sonoff_TH/STATUS2", transformationPattern="JSONPATH:$.StatusFWR.Version"]
+      Type number : Temperature [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Temperature"]
+      Type number : Humidity [stateTopic="tele/sonoff_TH/SENSOR", transformationPattern="JSONPATH:$.AM2301.Humidity"]
+   }
+}   
 ```
 
 ### Linking Items
