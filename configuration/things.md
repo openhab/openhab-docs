@@ -75,7 +75,7 @@ The next statement defines the UID of the thing which contains of the following 
 So the first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined. 
 Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
-To help organizing your things, you also may define a location (here: `Location`).
+To help organizing your things, you also may define a location (`Location` in the example above).
 
 Inside the squared brackets configuration parameters of the thing are defined. 
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
