@@ -127,6 +127,7 @@ Please notice that the UID of the thing also contains the bridge ID as third seg
 For the contained notation of things the UID will be inherited and the bridge ID is automatically taken as part of the resulting thing UID.
 
 **Example of a MQTT Bridge with Generic MQTT Things :**
+
 ```xtend
 Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username="MyUserName", password="MyPassword"] {
   Thing topic sonoff_Dual_Thing "Light_Dual" @ "Sonoff" {  
@@ -161,8 +162,8 @@ Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120
 		]
 		State Number : customChannel2 []
 }
-
 ```
+
 Each channel definition must be placed inside the curly braces and begin with the keyword `State` followed by the accepted item type (e.g. `String`). 
 After this the channel ID follows with the configuration of a channel. 
 The framework will merge the list of channels coming from the binding and the user-defined list in the DSL.
@@ -191,11 +192,13 @@ Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120
 		]
 }
 ```
+
 Trigger channels are defined with the keyword `Trigger` and only support the type `String`.
 
 #### Referencing existing channel types
 
 Many bindings provide standalone channel type definitions like this:
+
 ```xtend
 <thing:thing-descriptions bindingId="yahooweather" [...]>
     <channel-type id="temperature">
@@ -212,12 +215,14 @@ Many bindings provide standalone channel type definitions like this:
 
 They can be referenced within a thing’s channel definition, so that they need to be defined only once and can be reused for many channels. 
 You may do so in the DSL as well:
+
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
     Channels:
         Type temperature : my_yesterday_temperature "Yesterday's Temperature"
 }
 ```
+
 The Type keyword indicates a reference to an existing channel definition. 
 The channel kind and accepted item types of course are takes from the channel definition, therefore they don’t need to be specified here again.
 
