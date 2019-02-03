@@ -86,9 +86,6 @@ module.exports = {
         text: 'GitHub',
         link: 'https://github.com/openhab/openhab-docs',
       }
-    ],
-    sidebar: {
-      '/docs/': DocsSidebarNavigation.filter((s, i) => s.title !== 'Concepts')
-    }
+    ]
   }
 }
