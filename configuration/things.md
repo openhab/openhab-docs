@@ -149,9 +149,10 @@ Bridge mqtt:broker:MyMQTTBroker [ host="192.168.178.50", secure=false, username=
 
 It is also possible to manually define channels. 
 Usually this is not needed, as channels will be automatically created by the binding based on the thing type description. 
-It is also possiblel to add additional channels to existing things and for bindings that allow to create generic things (for example the [MQTT Generic Thing Binding](/addons/bindings/mqtt.generic/)) all channels can be defined by the user.
+It is also possible to add additional channels to existing things and for bindings that allow to create generic things (for example the [MQTT Generic Thing Binding](/addons/bindings/mqtt.generic/)) all channels can be defined by the user.
 
 #### State channels 
+
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
 	Channels:
@@ -160,10 +161,14 @@ Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120
 		]
 		State Number : customChannel2 []
 }
-```
-Each channel definition must be placed inside the curly braces and begin with the keyword State followed by the accepted item type (e.g. String). After this the channel ID follows with the configuration of a channel. The framework will merge the list of channels coming from the binding and the user-defined list in the DSL.
 
-As state channels are the default channels, you can omit the State keyword, the following example creates the same channels as the example above:
+```
+Each channel definition must be placed inside the curly braces and begin with the keyword `State` followed by the accepted item type (e.g. `String`). 
+After this the channel ID follows with the configuration of a channel. 
+The framework will merge the list of channels coming from the binding and the user-defined list in the DSL.
+
+As state channels are the default channels, you can omit the `State` keyword, the following example creates the same channels as the example above:
+
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
 	Channels:
@@ -173,9 +178,11 @@ Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120
 		Number : customChannel2 []
 }
 ```
+
 You may optionally give the channel a proper label (like “My Custom Channel” in the example above) so you can distinguish the channels easily.
 
 #### Trigger channels
+
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
 	Channels:
@@ -184,7 +191,7 @@ Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120
 		]
 }
 ```
-Trigger channels are defined with the keyword Trigger and only support the type String.
+Trigger channels are defined with the keyword `Trigger` and only support the type `String`.
 
 #### Referencing existing channel types
 
@@ -203,16 +210,19 @@ Many bindings provide standalone channel type definitions like this:
 </thing:thing-descriptions>
 ```
 
-They can be referenced within a thing’s channel definition, so that they need to be defined only once and can be reused for many channels. You may do so in the DSL as well:
+They can be referenced within a thing’s channel definition, so that they need to be defined only once and can be reused for many channels. 
+You may do so in the DSL as well:
 ```xtend
 Thing yahooweather:weather:losangeles [ location=2442047, unit="us", refresh=120 ] {
     Channels:
         Type temperature : my_yesterday_temperature "Yesterday's Temperature"
 }
 ```
-The Type keyword indicates a reference to an existing channel definition. The channel kind and accepted item types of course are takes from the channel definition, therefore they don’t need to be specified here again.
+The Type keyword indicates a reference to an existing channel definition. 
+The channel kind and accepted item types of course are takes from the channel definition, therefore they don’t need to be specified here again.
 
-You may optionally give the channel a proper label (like “Yesterday’s Temperature” in the example above) so you can distinguish the channels easily. If you decide not to, then the label from the referenced channel type definition will be used.
+You may optionally give the channel a proper label (like “Yesterday’s Temperature” in the example above) so you can distinguish the channels easily. 
+If you decide not to, then the label from the referenced channel type definition will be used.
 
 ### Linking Items
 
