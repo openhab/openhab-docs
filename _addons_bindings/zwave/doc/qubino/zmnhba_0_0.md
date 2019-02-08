@@ -61,61 +61,51 @@ The following table summarises the channels available for the ZMNHBA -:
 | Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
-
 Switch the power on and off.
 
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
-
 Switch the power on and off.
 
 The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (kWh) 2
-
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 2
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -135,26 +125,10 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | Automatic turning off relay Q1 after set time | Automatic turning off relay Q1 after set time |
 | 12 | Automatic turning off relay Q2 after set time | Automatic turning off relay Q2 after set time |
 | 30 | Saving Q1 and Q2 after a power failure | Saving the state of the relays Q1 and Q2 after a power failure |
-| 40 | Power reporting in Watts on power change for Q1 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
-
-
-  * 0 = Reporting Disabled
-  * 1–100 = 1% - 100% Reporti |
-| 41 | Power reporting in Watts on power change for Q2 | Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
-
-
-  * 0 = Reporting Disabled
-  * 1–100 = 1% - 100% Reporti |
-| 42 | Power reporting in Watts by time interval for Q1 | default value is 300 (power report in Watts is sent each 300s)  
-
-
-  * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
-| 43 | Power reporting in Watts by time interval for Q2 | default value is 300 (power report in Watts is sent each 300s)  
-
-
-  * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value. |
+| 40 | Power reporting in Watts on power change for Q1 | Power reporting in Watts on power change for Q1 |
+| 41 | Power reporting in Watts on power change for Q2 | Power reporting in Watts on power change for Q2 |
+| 42 | Power reporting in Watts by time interval for Q1 | Power reporting in Watts by time interval for Q1 |
+| 43 | Power reporting in Watts by time interval for Q2 | Power reporting in Watts by time interval for Q2 |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -243,22 +217,21 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Flush 2 relays module saves its state before power failure (it returns |
-| 1 | Flush 2 relays module does not save the state after a power failure, i |
+| 0 | Saves state before power failure |
+| 1 | Do not save state after a power failure |
 
-The manufacturer defined default value is ```0``` (Flush 2 relays module saves its state before power failure (it returns).
+The manufacturer defined default value is ```0``` (Saves state before power failure ).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 40: Power reporting in Watts on power change for Q1
 
-Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
-
+Power reporting in Watts on power change for Q1
+Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
   * 0 = Reporting Disabled
-  * 1–100 = 1% - 100% Reporti
-
+  * 1–100 = 1% - 100% Reporting enabled
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -268,12 +241,11 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 41: Power reporting in Watts on power change for Q2
 
-Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.  
-
+Power reporting in Watts on power change for Q2
+Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
   * 0 = Reporting Disabled
   * 1–100 = 1% - 100% Reporti
-
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -283,12 +255,13 @@ This parameter has the configuration ID ```config_41_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts by time interval for Q1
 
-default value is 300 (power report in Watts is sent each 300s)  
-
+Power reporting in Watts by time interval for Q1
+Default value is 300 (power report in Watts is sent each 300s)
 
   * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled.
 
+Power report is sent with time interval set by entered value.
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -298,12 +271,13 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 43: Power reporting in Watts by time interval for Q2
 
-default value is 300 (power report in Watts is sent each 300s)  
-
+Power reporting in Watts by time interval for Q2
+Default value is 300 (power report in Watts is sent each 300s)
 
   * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enabled. Power report is sent with time interval set by entered value.
+  * 1–65535 = 1 second – 65535 seconds. Reporting enabled.  
 
+Power report is sent with time interval set by entered value.
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```300```.

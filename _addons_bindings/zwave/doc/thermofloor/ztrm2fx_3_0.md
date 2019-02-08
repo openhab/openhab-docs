@@ -75,17 +75,15 @@ The following table summarises the channels available for the Z-TRM2fx -:
 | Electric meter (volts) | meter_voltage | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Thermostat mode 1 | thermostat_mode1 | Temperature | Number | 
-| Setpoint (cooling) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (furnace) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (heating) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Energy Saving Mode Setpoint (ECO) | config_decimal |  | Number | 
+| Heating mode setpoint (Comfort) | config_decimal |  | Number | 
+| Display brightness - dimmed | config_decimal |  | Number | 
+| Button brightness - dimmed | config_decimal |  | Number | 
+| Thermostat mode | thermostat_mode1 | Temperature | Number | 
+| Setpoint (cooling) | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint1 | Temperature | Number:Temperature | 
 | External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
 | Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
-| Switch 4 | switch_binary4 | Switch | Switch | 
 | Electric meter (volts) 4 | meter_voltage4 | Energy | Number | 
 | Electric meter (kWh) 4 | meter_kwh4 | Energy | Number | 
 | Electric meter (watts) 4 | meter_watts4 | Energy | Number | 
@@ -105,45 +103,27 @@ Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Energy Saving Mode Setpoint (ECO)
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
+
+### Heating mode setpoint (Comfort)
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
+
+### Display brightness - dimmed
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
+
+### Button brightness - dimmed
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel supports the ```Number``` item.
+
 ### Thermostat mode
-Sets the thermostat.
-
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
-The following state translation is provided for this channel to the ```Number``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| 0 | Off |
-| 1 | Heat |
-| 2 | Cool |
-| 3 | Auto |
-| 4 | Aux Heat |
-| 5 | Resume |
-| 6 | Fan Only |
-| 7 | Furnace |
-| 8 | Dry Air |
-| 9 | Moist Air |
-| 10 | Auto Changeover |
-| 11 | Heat Economy |
-| 12 | Cool Economy |
-| 13 | Away |
-
-### Setpoint (cooling)
-Sets the thermostat setpoint.
-
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Setpoint (furnace)
-Sets the thermostat setpoint.
-
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Setpoint (heating)
-Sets the thermostat setpoint.
-
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Thermostat mode 1
 Sets the thermostat.
 
 The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
@@ -166,17 +146,14 @@ The following state translation is provided for this channel to the ```Number```
 | 12 | Cool Economy |
 | 13 | Away |
 
-### Setpoint (cooling) 1
+### Setpoint (cooling)
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
-### Setpoint (furnace) 1
-Sets the thermostat setpoint.
+### Setpoint (heating)
+The heating setpoint, for currently selected heating mode (Comfort or ECO).
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Setpoint (heating) 1
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
@@ -190,11 +167,6 @@ The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item
 Indicates the current temperature.
 
 The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-### Switch 4
-Switch the power on and off.
-
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts) 4
 Indicates the instantaneous voltage.
@@ -542,12 +514,7 @@ This parameter has the configuration ID ```config_22_1``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Z-TRM2fx supports 5 association groups.
-
-### Group 0: DELETE
-
-
-Association group 0 supports 1 node.
+The Z-TRM2fx supports 4 association groups.
 
 ### Group 1: Lifeline
 
@@ -592,7 +559,6 @@ Association group 4 supports 5 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_METER_V3| |
-| COMMAND_CLASS_THERMOSTAT_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |

@@ -62,55 +62,46 @@ The following table summarises the channels available for the ZMNHTD -:
 | Switch Relay | switch_binary2 | Switch | Switch | 
 
 ### Power factor
-
 Indicates the instantaneous power factor.
 
 The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Voltage
-
 Indicates the instantaneous voltage.
 
 The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Power
-
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Energy Comsumption
-
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Apparent Energy Consumption
-
 Indicates the energy consumption (kVAh).
 
 The ```meter_kvah``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Current
-
 Indicates the instantaneous current consumption.
 
 The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset Meter Stats
-
 Reset the meter.
 
 The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### switch_binary
-
 Switch the power on and off.
 
 The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch Relay
-
 External relay ON
 
 External relay OFF
