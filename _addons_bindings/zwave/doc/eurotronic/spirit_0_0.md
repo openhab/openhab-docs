@@ -46,26 +46,22 @@ The following table summarises the channels available for the Spirit -:
 | Battery Level | battery-level | Battery | Number |
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Current temperature
-
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### External temperature
-
 Send report to device.
 
 The ```sensor_report``` channel supports the ```Number``` item.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
 The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
@@ -89,7 +85,6 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heat)
-
 Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
 Sets the thermostat setpoint.
@@ -97,7 +92,6 @@ Sets the thermostat setpoint.
 The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Setpoint (energy heat)
-
 Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
 Sets the thermostat setpoint.
@@ -105,7 +99,6 @@ Sets the thermostat setpoint.
 The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (system)
-
 Indicates if a system alarm is triggered.
 
 The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
@@ -118,7 +111,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -131,7 +123,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
@@ -152,7 +143,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Measured  Temperature report | Measured Temperature report |
 | 6 | Valve opening  percentage report | Valve opening percentage report |
 | 7 | Window open detection | Window open detection |
-| 8 | Measured  Temperature offset | Measured Temperature offset |
+| 8 | Temperature Offset | Measured Temperature offset |
 
 ### Parameter 1: LCD Invert
 
@@ -265,17 +256,17 @@ The manufacturer defined default value is ```2``` (Sensitivity medium).
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
-### Parameter 8: Measured  Temperature offset
+### Parameter 8: Temperature Offset
 
 Measured Temperature offset
--50 - +50: Offsets the measured temperature by-5,0°C – (+)5,0°C
+-50 - +50: Offsets the measured temp by-5,0°C – (+)5,0°C
 
-128: External temperature sensor will be used for regulation.
+128: External temp sensor will be used for regul.
 The following option values may be configured, in addition to values in the range -50 to 50 -:
 
 | Value  | Description |
 |--------|-------------|
-| 128 | External temperature sensor will be used for regulation. |
+| 128 | Ext temp sensor be used for regul |
 
 The manufacturer defined default value is ```0```.
 
@@ -314,7 +305,7 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V8| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

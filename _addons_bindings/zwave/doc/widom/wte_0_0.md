@@ -40,12 +40,24 @@ The following table summarises the channels available for the WTE -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Meter(watts) | meter_watts | Energy | Number | 
+| Meter(KWh) | meter_kwh | Energy | Number | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Meter(watts)
+Indicates the instantaneous power consumption.
+
+The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter(KWh)
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -192,6 +204,7 @@ Association group 2 supports 8 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
+| COMMAND_CLASS_METER_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

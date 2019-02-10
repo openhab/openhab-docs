@@ -277,7 +277,9 @@ String Process_name                  { channel="systeminfo:computer:work:process
 Number Process_threads               { channel="systeminfo:computer:work:process#threads" }
 String Process_path                  { channel="systeminfo:computer:work:process#path" }
 ```
+
 Sitemap:
+
 ```
     Frame label=Admin {
         Text label="SystemInfo" {

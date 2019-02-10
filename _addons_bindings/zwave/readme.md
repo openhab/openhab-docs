@@ -108,10 +108,10 @@ It is defined in seconds.
 
 This sets the network security key used in your network for securing communications using the secure command classes. It is a 16 byte value, specified in hexadecimal. The following formats -:
 
-* ```0011223344556677889900AABBCCDDEEFF```
-* ```00 11 22 33 44 55 66 77 88 99 00 AA BB CC DD EE FF```
-* ```00,11,22,33,44,55,66,77,88,99,00,AA,BB,CC,DD,EE,FF```
-* ```0x00 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 0x99 0x00 0xAA 0xBB 0xCC 0xDD 0xEE 0xFF```
+* ```00112233445566778899AABBCCDDEEFF```
+* ```00 11 22 33 44 55 66 77 88 99 AA BB CC DD EE FF```
+* ```00,11,22,33,44,55,66,77,88,99,AA,BB,CC,DD,EE,FF```
+* ```0x00 0x11 0x22 0x33 0x44 0x55 0x66 0x77 0x88 0x99 0xAA 0xBB 0xCC 0xDD 0xEE 0xFF```
 
 
 ### Thing Configuration

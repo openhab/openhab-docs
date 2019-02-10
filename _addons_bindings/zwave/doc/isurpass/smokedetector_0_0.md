@@ -19,11 +19,27 @@ The Smoke Detector does not permanently listen for messages sent from the contro
 
 ## Overview
 
+The smart smoke sensor detects smoke, and sends an alarm signals to alert of danger. When the smart smoke sensor detects smoke, it will send an alarm notification to your controller through wireless Z-Wave communication protocol.
+
+### Inclusion Information
+
+  * Press the pin 3 times within 1.5s, Green LED is Blinking 3 times within 1 second.
+  * If Inclusion Process is successful, Green led will turn off.
+
+### Exclusion Information
+
+  * Press the pin 3 times within 1.5s.
+  * If Exclusion Process is successful, Green led is Blinking 6 times, then turn off. 
+
 ### Wakeup Information
 
 The Smoke Detector does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+  * Wake up Notification is transmitted every 24 hours by default.
+  * Wake up Notification is transmitted after Notification Report is Transmitted.
 
 ## Channels
 
@@ -36,7 +52,6 @@ The following table summarises the channels available for the Smoke Detector -:
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
 The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -49,7 +64,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (smoke)
-
 Indicates if a smoke is triggered.
 
 The ```alarm_smoke``` channel supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -62,7 +76,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
@@ -77,7 +90,30 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The Smoke Detector supports 3 association groups.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Battery, Notification, Reset locally Notification, Binary report
+Association group 1: Lifeline association groupInclude command classes: Battery report, Notification report, and Device Reset Locally notification, Binary report.
+
+Association group 1 supports 1 node.
+
+### Group 2: Root device Group (binary sensor)
+
+Binary smoke sensor via lifeline and on status Chance of smoke detection
+Association group 2: Root Device group(Binary Sensor)Binary Sensor Command Class: Compatible with 300 series1-Binary Sensor reports status of smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
+
+Association group 2 supports 5 nodes.
+
+### Group 3: Root device Group (notification)
+
+smoke status as notification report and on status change of smoke detection
+Association group 3: Root Device group(Notification)1-Notification reports reports status of detect smoke or no smoke via Lifeline.2-When the sensor detects status change between smoke and no smoke, the device will be triggered.
+
+Association group 3 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints
@@ -87,11 +123,12 @@ The device does not support associations.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V2| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
-| COMMAND_CLASS_ALARM_V4| |
+| COMMAND_CLASS_ALARM_V4| Linked to BASIC|
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_BATTERY_V1| |
