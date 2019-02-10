@@ -73,8 +73,35 @@ Maintainers that are inactive for more than 3 months can be excluded from the ma
 
 ## Architecture Council
 
-The [openHAB Architecture Council](https://github.com/orgs/openhab/teams/architecture-council) serves the community by identifying and tackling any issues that hinder openHAB’s continued technological success and innovation, widespread adoption, and future growth. This involves technical architecture as well as open source processes and social aspects. Comprising the finest technical leaders from all community stake holders, it is the council’s goal to keep the project successful and healthy, the processes simple and smooth, and the communities vibrant and cohesive.
+The [openHAB Architecture Council](https://community.openhab.org/groups/architecture-council) (AC) serves the community by identifying and tackling any issues that hinder openHAB’s continued technological success and innovation, widespread adoption, and future growth.
+This involves technical architecture as well as open source processes and social aspects.
+Comprising the finest technical leaders from all community stake holders, it is the council’s goal to keep the project successful and healthy, the processes simple and smooth, and the communities vibrant and cohesive.
+
+### Responsibilities
 
 The Architecture Council is responsible for all decisions that have a significant impact across different components and which touch any fundamental concepts how openHAB works and behaves.
 
-Membership rules for the Architecture Council t.b.d. soon!
+Discussions and decisions are done in a [dedicated category](https://community.openhab.org/c/development/architecture) in the forum.
+Decisions are taken unanimously.
+This is the case if no member of the AC vetos against a proposed resolution within a week.
+
+The AC is the entity entitled to do changes to the governance rules.
+
+### Architecture Council Nominations & Elections
+
+The Architecture Council has 5 seats.
+The president and vice president of the openHAB Foundation are permanent members of the AC.
+Existing AC members nominate and vote new members.
+Any AC member can veto the election by casting a -1 vote.
+AC member elections run for one week, but will end prematurely if all AC members vote +1.
+
+Nominations must be done on the basis of meritocracy and according proof must be given.
+Nominations should furthermore ensure that the AC has a broad scope of knowledge about openHAB and that different perspectives are represented.
+
+#### Ending Architecture Council Membership
+
+An AC member can resign at any time without specifying reasons.
+AC members can be excluded from the AC through an unanimous vote by the other AC members which concludes without a veto after one week.
+When excluding a member, a reason has to be provided, such as inactivity, mis-behaviour, etc. and the excluded member must be given the chance to publicly respond to this.
+
+The openHAB Foundation's General Assembly can request that the AC is dissolved and has to be newly appointed.
