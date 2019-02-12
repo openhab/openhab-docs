@@ -83,7 +83,7 @@ The Architecture Council is responsible for all decisions that have a significan
 
 Discussions and decisions are done in a [dedicated category](https://community.openhab.org/c/development/architecture) in the forum.
 Decisions are taken unanimously.
-This is the case if no member of the AC vetos against a proposed resolution within a week.
+This is the case if no member of the AC vetos against a proposed resolution within a week of the call for votes on the topic.
 
 The AC is the entity entitled to do changes to the governance rules.
 
@@ -105,3 +105,16 @@ AC members can be excluded from the AC through an unanimous vote by the other AC
 When excluding a member, a reason has to be provided, such as inactivity, mis-behaviour, etc. and the excluded member must be given the chance to publicly respond to this.
 
 The openHAB Foundation's General Assembly can request that the AC is dissolved and has to be newly appointed.
+
+### Architecture Council Engagement
+
+Any member of the AC can generate a proposal for a decision to be made. 
+They do so by opening a topic in the [dedicated Architecutre category](https://community.openhab.org/c/development/architecture) on the forum.
+This topic is for AC specific discussion and for voting.
+They also create a parallel topic in the [Development category](https://community.openhab.org/c/development) for wider community discussion.
+This topic is for discussion and trying to come to a concensus on the proposal.
+The use of polls in the forum are recommended once discussion has reached a concensus.
+The two threads should have links back to the other.
+
+Any member of the community or developers can nominate a topic for AC consideration.
+If there is a change proposed by a developer that falls under the scope of the AC or there is a discussion about proposed changes that can not come to a concensus, tag a member of the AC using @username to bring the thread to their attention.
