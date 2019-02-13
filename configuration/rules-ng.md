@@ -19,7 +19,7 @@ Install the rule engine from Add-ons → Misc → Rule Engine (Experimental).
 
 ![rule engine addon](images/rules_ng_addons.png)
 
-When you now refresh your browser, you will see a `Rules` menu appearing in the main menu of the Paper UI.
+When you now refresh your browser, you will see a `Rules` menu appearing in the main menu of Paper UI.
 
 ![new rule](images/rules_ng_new_rule.png)
 
