@@ -30,7 +30,8 @@ The Eclipse IDE is used for openHAB developments. The Eclipse Installer automati
 ![Step 1](images/ide1.png)
 4. Expand "Github Projects", then "openHAB".
 
-From here, you can now follow two different paths: One for add-on/binding development (the right choice for most developers) or one for the core framework development. Both are currently based on different build systems and thus require separate IDE setups.
+From here, you can now follow two different paths: One for add-on/binding development (the right choice for most developers) or one for the core framework development.
+Both are currently based on different build systems and thus require separate IDE setups.
 
 ### Option 1: Installation of IDE for Add-on Development
 
@@ -40,11 +41,17 @@ From here, you can now follow two different paths: One for add-on/binding develo
 4. Once it is done, you will see the Eclipse Welcome Screen, which you can close by clicking "Workbench" on the top right. You will see that the installer not only set up an Eclipse IDE instance for you, but also checked out all selected git repositories and imported all projects into the workspace.
 5. Your workspace should now fully compile and you can start the runtime by launching the "openHAB_Runtime" launch configuration.
 
-In the Package Explorer tab you will see the openHAB components that were checked out from Git. Open the "Infrastructure > launch" folder. Right click on openHAB_Runtime.launch, select "Run as > openHAB_Runtime". You should now see output in the console window.
+In the Package Explorer tab you will see the openHAB components that were checked out from Git.
+Open the "Infrastructure > launch" folder.
+Right click on openHAB_Runtime.launch, select "Run as > openHAB_Runtime".
+You should now see output in the console window.
 
-Debugging is done in the same way as running, but instead of Run as, select "Debug as > openHAB_Runtime". openHAB will launch, and the debugger will stop at any breakpoint that you have set in the code.
+Debugging is done in the same way as running, but instead of Run as, select "Debug as > openHAB_Runtime".
+openHAB will launch, and the debugger will stop at any breakpoint that you have set in the code.
 
-Note that projects from your workspace are not by default started by the launch config. To add them, you must right click on openHAB_Runtime.launch > Run as > Run configurations ... and go to the Plug-ins tab. In the Workspace section, select all add-ons that you want to be included in the launch.
+Note that projects from your workspace are not by default started by the launch config.
+To add them, you must right click on openHAB_Runtime.launch > Run as > Run configurations ... and go to the Plug-ins tab.
+In the Workspace section, select all add-ons that you want to be included in the launch.
 
 ### Option 2: Installation of IDE for Core Development
 
@@ -54,7 +61,7 @@ Note that projects from your workspace are not by default started by the launch 
 4. Trust any certificate you are asked for.
 5. Once it is done, you will see the Eclipse Welcome Screen, which you can close by clicking "Workbench" on the top right. The initial tasks are executed. Wait until the bottom right corner of the IDE does not show "Build" or "Refreshing workspace" or any other progress messages.
 6. Select "Help", "Perform Setup Tasks..." and press "Finish".
-7. The dialog disappears but could be opened again using the icon in the (bottom) status bar (near to the left side). You should open it and check it, because the chance if high that a restart is requested. The process (perform setup tasks) continues after the restart has been done. You can bring the dialog to the front after the restart using the same icon. Wait until all tasks have finished (wait for an empty buttom right status field).
+7. The dialog disappears but could be opened again using the icon in the (bottom) status bar (near to the left side). You should open it and check it, because the chance is high that a restart is requested. The process (perform setup tasks) continues after the restart has been done. You can bring the dialog to the front after the restart using the same icon. Wait until all tasks have finished (wait for an empty buttom right status field).
 
 To launch the openHAB Core runtime from the IDE, open Demo -> org.openhab.core.demo.app and open "app.bndrun".
 In the opened editor either click "Run OSGi" or "Debug OSGi" and the runtime will be started up.
