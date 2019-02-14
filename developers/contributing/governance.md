@@ -73,7 +73,7 @@ Maintainers that are inactive for more than 3 months can be excluded from the ma
 
 ## Architecture Council
 
-The [openHAB Architecture Council](https://community.openhab.org/groups/architecture-council) (AC) serves the community by identifying and tackling any issues that hinder openHAB’s continued technological success and innovation, widespread adoption, and future growth.
+The [openHAB Architecture Council](https://github.com/orgs/openhab/teams/architecture-council) (AC) serves the community by identifying and tackling any issues that hinder openHAB’s continued technological success and innovation, widespread adoption, and future growth.
 This involves technical architecture as well as open source processes and social aspects.
 Comprising the finest technical leaders from all community stake holders, it is the council’s goal to keep the project successful and healthy, the processes simple and smooth, and the communities vibrant and cohesive.
 
@@ -81,9 +81,9 @@ Comprising the finest technical leaders from all community stake holders, it is 
 
 The Architecture Council is responsible for all decisions that have a significant impact across different components and which touch any fundamental concepts how openHAB works and behaves.
 
-Discussions and decisions are done in a [dedicated category](https://community.openhab.org/c/development/architecture) in the forum.
+Discussions and decisions are done on the [Github team page](https://github.com/orgs/openhab/teams/architecture-council).
 Decisions are taken unanimously.
-This is the case if no member of the AC vetos against a proposed resolution within a week.
+This is the case if no member of the AC vetos against a proposed resolution within a week of the call for votes on the topic.
 
 The AC is the entity entitled to do changes to the governance rules.
 
