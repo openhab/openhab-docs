@@ -27,31 +27,31 @@ When you now refresh your browser, you will see a `Rules` menu appearing in the 
 
 In general this rule engine aims to support rules defined with syntax similar to:
 
-```
+```text
 ON item_id state changed IF item_id.state == desired_value THEN item_id2.state = desired_value2 
 ```
 
-Each rule can have some basic information like name, tags, description and three module sections (**triggers, conditions, actions**)
+A rule consists of basic information like name, tags and a description. The main building blocks of rules are modules however, and each rule consists of one or more instances of each of the following modules:
 
+- **'trigger'** modules specify the events that trigger a rule execution.
+- **'condition'** modules act as a filter for rule execution.
+  Actions of the rule will be executed only if event data satisfies all conditions.
+  In case there are multiple conditions in the 'if' section then all of them must be satisfied.
+- **'action'** modules perform actual operations in openHAB.
+  If more than one action is specified in a rule they will be executed sequentially.
+  The output of the previous action can be used as an input for the next action.
+  An imaginary action can therefore also just be a conversion to make one action output compatible to another actions input.
 
-- The **'triggers'** section is the trigger (eventing) part. 
+Each module is created from a template called **Module type**.
+A module type specifies parameters for the template, like e.g. "eventTopic" for the "GenericEventTrigger" or "operator" for the "GenericCompareCondition".
 
+The automation engine provides some generic module types.
+Those can be extended by so called **composite module types**.
+Those use predefined configurations and/or modified module input/output objects.
 
-- The **'conditions'** section lists the conditions which act as a filter for the events - actions of the rule will be executed only if the conditions evaluating the event data are satisfied and return 'true'. In case there are multiple conditions in the 'if' section then all of them must be satisfied - logical AND is used 
+> An example is the module type "ItemStateChangeTrigger" which is based on the GenericEventTrigger but specifies in its configuration that it is triggered only by item's state change events.
 
-- The **'actions'** section contains the actions which specify what should be executed when the event is received (and all conditions are met, if any).
-
-
-One rule can invoke one and the same operation upon receiving each trigger event, or the operation can be dynamic using input parameters from the event itself or from the system objects
-
-The main building blocks of the rules are modules and each rule consists of one or more instances of each of the following modules:
-
-> **trigger** - specifies when to execute the rule, usually it is an event;
-> **condition** - acts like a filter depending on the defined condition type and its input and configuration. An example of a condition can be evaluation of trigger outputs or the state of the system / items;
-> **action** - specifies the operation of the rule which will be executed if the condition is statisfied. If more than one actions are specified in a rule they will be executed sequentially where the output of the previous action can be used as an input for the next action - like a processor modifying the data of the trigger output (e.g. converting temperature values from Celsius to Fahrenheit).
-
-Each module is created from a template called "module type" and can specify configuration parameters for the template, like e.g. "eventTopic" for the "GenericEventTrigger" or "operator" for the "GenericCompareCondition".
-Since there are system module types which are provided by the system, composite module types can be added which are extensions of these system module types and use predefined configurations and/or modified module input/output objects. An example is the module type "ItemStateChangeTrigger" which is based on the GenericEventTrigger but specifies in its configuration that it is triggered only by item's state change events.
+### Module Types
 
 A given **Module type** has the following elements:
 
@@ -105,7 +105,6 @@ The types in the **Configuration** object are restricted to the following:
 - INTEGER - The data type for a signed integer value in the range of Integer#MIN_VALUE, Integer#MAX_VALUE
 - DECIMAL - The data type for a signed floating point value (IEEE 754) in the range of Float#MIN_VALUE, Float#MAX_VALUE
 - BOOLEAN - The data type for a boolean: true or false
-
 
 ## Defining Rules via JSON
 
@@ -294,9 +293,7 @@ The types in the **Configuration** object are restricted to the following:
 ]
 ```
 
-
 ## Working with Rules
-
 
 There are several ways to add new rules:
 
@@ -306,21 +303,25 @@ There are several ways to add new rules:
   * using **REST API** - see the next chapter bellow.
 
 ## REST API
+
 * http://<host:port>/rest/module-types - lists module types.
 * http://<host:port>/rest/templates" - lists rule templates. 
 * http://<host:port>/rest/rules - lists rule instances.
 
 #### /rest/templates
+
  - GET /rest/templates - returns all registered rule templates.
  - GET /rest/templates/{templateUID} - returned response includes only the content of the specified template.
 
 #### /rest/module-types
+
  - GET /rest/module-types - returns all registered module types.
  - optional parameter 'type' with possible values: 'trigger', 'condition' or 'action' - filters the response to include only module definitions of specified type.
  - optional parameter 'tags' - filters the response to include only module types which have specified tags.
  - GET /rest/module-types/{moduleTypeUID} - returned response includes only the content of the specified module type.
   
 #### /rest/rules
+
  - GET /rest/rules - returns all registered rule instances.
  - POST /rest/rules - adds new rule instance to the rule registry.
  - DELETE /rest/rules/{ruleUID} - deletes the specified rule instance.
@@ -336,11 +337,11 @@ There are several ways to add new rules:
  - GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config - returns the configuration of the specified module instance.
  - GET /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - returns the value of specified module configuration parameter (media type is text/plain).
  - PUT /rest/rules/{ruleUID}/{moduleCategory}/{id}/config/{param} - updates the value of specified module configuration parameter (media type is text/plain).
- 
-
 
 ## JAVA API
-`org.openhab.automation.RuleRegistry` - provides main functionality to manage rules in the Rule Engine. It can add rules, get existing ones and remove them from the Rule Engine.
+
+`org.openhab.automation.RuleRegistry` - provides main functionality to manage rules in the Rule Engine.
+   It can add rules, get existing ones and remove them from the Rule Engine.
 
 `org.openhab.automation.type.ModuleTypeRegistry` - provides functionality to get module types from the Rule Engine.
 
@@ -348,6 +349,7 @@ There are several ways to add new rules:
 
 
 ## Text console commands
+
 `automation listModuleTypes [-st] <filter> ` - lists all Module Types. If filter is present, lists only matching Module Types.
 
 `automation listTemplates [-st] <filter> ` - lists all Templates. If filter is present, lists only matching Templates.
@@ -374,12 +376,13 @@ There are several ways to add new rules:
 
 `automation exportRules [-p] <parserType> [-st] <file> ` - Exports Rules in a file. If parser type missing, "json" parser will be set as default.
 
-`automation enableRule [-st] <uid> <enable> ` - Enables the Rule, specified by given UID. If enable parameter is missing, the result of the command will be visualization of enabled/disabled state of the rule, if its value is "true" or "false", the result of the command will be to set enable/disable on the Rule.
+`automation enableRule [-st] <uid> <enable> ` - Enables the Rule, specified by given UID.
+   If the enable parameter is missing, the result of the command will be visualization of enabled/disabled state of the rule.
+   If its value is "true" or "false", the result of the command will be to set enable/disable on the Rule.
 
- 
 ## Resource bundles
-Bundles that provide rules in json format should have the following folder structure:
 
+Bundles that provide rules in json format should have the following folder structure:
 
 `ESH-INF\automation\moduletypes` - folder for .json files with module types;
 
@@ -387,11 +390,12 @@ Bundles that provide rules in json format should have the following folder struc
 
 `ESH-INF\automation\templates` - folder for .json files with rule templates.
 
-
 ## Rule Templates
 
-
-Rule templates can simplify the definition of rules with similar behavior by providing additional configuration properties. Then rule instance definition only refers the rule template and provides the values of the configuration properties. The rule template is used only once when the rule is imported in the Rule Engine. After that the reference from the rule instance to the rule template is removed and a given rule may exist even if the rule template is removed or modified - this will not have any impact on the already imported rules.
+Rule templates can simplify the definition of rules with similar behavior by providing additional configuration properties. Then rule instance definition only refers the rule template and provides the values of the configuration properties.
+The rule template is used only once when the rule is imported in the Rule Engine.
+After that the reference from the rule instance to the rule template is removed and a given rule may exist even if the rule template is removed or modified.
+This will not have any impact on the already imported rules.
 
  * **Sample rule instance referencing rule template:**
 
@@ -476,11 +480,10 @@ Rule templates can simplify the definition of rules with similar behavior by pro
   }
 ```
 
-The above example uses two rule configuration properties: "condition_operator" and "condition_constraint" that update the configuration of the "SampleCondition".
-
+The above example uses two rule configuration properties:
+"condition_operator" and "condition_constraint" that update the configuration of the "SampleCondition".
 
 ## System Module Types
-
 
 ### GenericEventTrigger
 
@@ -582,10 +585,10 @@ and implement the necessary methods for creation of instances of the supported m
 - `org.openhab.automation.handler.ConditionHandler`
 - `org.openhab.automation.handler.ActionHandler`
 
-
 ## Composite module types
 
-Another way to extend the supported module types is by defining composite module types as an extension of the system module types. The composite module type wraps one or more instances of a system module type and defines new configuration parameters, inputs and outputs.
+Another way to extend the supported module types is by defining composite module types as an extension of the system module types.
+The composite module type wraps one or more instances of a system module type and defines new configuration parameters, inputs and outputs.
 
 
       {  
@@ -624,5 +627,7 @@ Another way to extend the supported module types is by defining composite module
          ]
       }
 
-This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger* and defines new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*, while the other config paramters `eventTopic` and `eventTypes` are fixed.
+This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger*.
+It defines the new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*.
+The other config paramters `eventTopic` and `eventTypes` are staticly defined.
 The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s). 
