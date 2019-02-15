@@ -377,8 +377,9 @@ There are several ways to add new rules:
 `automation exportRules [-p] <parserType> [-st] <file> ` - Exports Rules in a file. If parser type missing, "json" parser will be set as default.
 
 `automation enableRule [-st] <uid> <enable> ` - Enables the Rule, specified by given UID.
-   If the enable parameter is missing, the result of the command will be visualization of enabled/disabled state of the rule.
-   If its value is "true" or "false", the result of the command will be to set enable/disable on the Rule.
+  The use of the 'enable' argument is optional, and will accept a boolean value.
+  If used, the command will enable (true) or disable (false) the Rule.
+  If it is not used, the command will return the current status of the Rule.
 
 ## Resource bundles
 
@@ -629,5 +630,5 @@ The composite module type wraps one or more instances of a system module type an
 
 This example demonstrates a new module type *ItemStateChangeTrigger* which wraps the system module type *GenericEventTrigger*.
 It defines the new configuration property `itemName` which is used as the `eventSource` property of the *GenericEventTrigger*.
-The other config paramters `eventTopic` and `eventTypes` are staticly defined.
+The other config parameters `eventTopic` and `eventTypes` are staticly defined.
 The composite module type can also have inputs and outputs and can use a reference to map them to inputs and outputs of the nested system module type(s). 
