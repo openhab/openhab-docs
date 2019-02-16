@@ -103,7 +103,7 @@ Detailed information on each parameter can be found in the sections below.
 | 6 | Power Report Threshold | Power consumed change to be reported |
 | 7 | Remember Relay ON/OFF status after power failure. | Plug state after power-on |
 | 8 | Plug Time switch Function | Timer plug OFF after time period |
-| 9 | Time switch Period | Delay time after the plug is switched off |
+| 9 | Time switch Period | Delay time after the plug is switched off (in minutes) |
 | 10 | Button On/Off Enable | Enable/Disable top button function |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -218,7 +218,7 @@ This parameter has the configuration ID ```config_8_1``` and is of type ```INTEG
 
 ### Parameter 9: Time switch Period
 
-Delay time after the plug is switched off
+Delay time after the plug is switched off (in minutes)
 This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.
 Values in the range 1 to 65535 may be set.
 

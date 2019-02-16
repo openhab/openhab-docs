@@ -81,32 +81,22 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Input switch type |  |
-| 5 | Working mode | With this parameter it is possible to change the module presentation on the user interface. |
-| 10 | Activate / deactivate functions ALL ON / ALL OFF | DIN dimmer module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
-| 11 | Automatic turning off output after set time |  |
-| 12 | Automatic turning on output after set time |  |
-| 21 | Enable / Disable Double click function | If Double click function is enabled, a fast double click on the push button will set dimming power at maximum dimming value. |
-| 30 | Saving the state of the device after a power failure | If state saving is enabled, DIN dimmer module saves its state before power failure (it returns to the last position saved before a power failure). If state saving is disabled, DIN dimmer module does not save the state after a powe |
-| 40 | Power reporting in watts on power change | Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5. 0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled. Power report is sent (push) only when actual power in Watts in real time changes for more than set p |
-| 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 32767) in seconds, when power report is sent. |
-| 60 | Minimum dimming value |  |
-| 61 | Maximum dimming value |  |
-| 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet). 
-
-  * default value 100 = 1s
-  * 1 - 255 = 100 mseconds – 25500 mseconds (25.5 |
+| 5 | Working mode | Module presentation on the user interface. |
+| 10 | Activate / deactivate functions ALL ON / ALL OFF | DIN dimmer module responds to commands ALL ON / ALL OFF |
+| 11 | Automatic turning off output after set time | Automatic turning off output after set time |
+| 12 | Automatic turning on output after set time | Automatic turning on output after set time |
+| 21 | Enable / Disable Double click function | If Double click function is enabled, double click to maximum dimming power |
+| 30 | Save state of after a power failure | Saving the state of the device after a power failure |
+| 40 | Power reporting in watts on power change | Reporting the power in Watts on power change larger then the setpoint |
+| 42 | Power reporting in Watts by time interval | Power reporting in Watts by time interval according to setpoint |
+| 60 | Minimum dimming value | Minimum % dimming value of dimmer |
+| 61 | Maximum dimming value | Maximum % dimming value on dimmer |
+| 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming |
 | 66 | Dimming time when key pressed | Time to moving the Dimmer between min. and max values (in seconds). |
-| 67 | Ignore start level | This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1. |
+| 67 | Ignore start level | Ignore or respect start level when used together with association group 3 |
 | 68 | Dimming duration | This parameter is used with association group 3. |
-| 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. Available configuration parameters: 
-
-  * default value 32536
-  * 32536 – offset is 0.0C
-  * From 1 to 100 – value from 0.1 °C to 10.0 °C is added to |
-| 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters: 
-
-  * default value 5 = 0.5°C
-  * 0 – Reporting disabled |
+| 110 | Temperature sensor offset settings | Temperature sensor offset settings between -10.0 to 10.0 °C |
+| 120 | Digital temperature sensor reporting | Reporting temperature when change is larger than defined by this parameter |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input switch type
@@ -117,18 +107,18 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Mono-stable switch type (push button) |
-| 1 | 1 - Bi-stable switch type |
+| 0 | Mono-stable switch type (push button) |
+| 1 | Bi-stable switch type |
 
-The manufacturer defined default value is ```0``` (0 - Mono-stable switch type (push button)).
+The manufacturer defined default value is ```0``` (Mono-stable switch type (push button)).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 5: Working mode
 
+Module presentation on the user interface.
 With this parameter it is possible to change the module presentation on the user interface.
-
 The following option values may be configured -:
 
 | Value  | Description |
@@ -143,8 +133,14 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
 
-DIN dimmer module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
+DIN dimmer module responds to commands ALL ON / ALL OFF
+DIN dimmer module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. 
 
+  * default value 255
+  * 255 - ALL ON active, ALL OFF active.
+  * 0 - ALL ON is not active, ALL OFF is not active
+  * 1 - ALL ON is not active, ALL OFF active
+  * 2 - ALL ON active, ALL OFF is not active
 The following option values may be configured -:
 
 | Value  | Description |
@@ -161,7 +157,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 ### Parameter 11: Automatic turning off output after set time
 
-
+Automatic turning off output after set time
   * 0 - Auto OFF disabled
   * 1 – 32536 = 1 second – 32536 seconds Auto OFF enabled with defined time, step is 1 second.
 The following option values may be configured, in addition to values in the range 0 to 32536 -:
@@ -177,7 +173,7 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 ### Parameter 12: Automatic turning on output after set time
 
-
+Automatic turning on output after set time
   * 0 - Auto ON disabled
   * 1 – 32536 = 1 second – 32536 seconds Auto ON enabled with defined time, step is 1 second.
 The following option values may be configured, in addition to values in the range 0 to 32536 -:
@@ -193,40 +189,52 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 ### Parameter 21: Enable / Disable Double click function
 
+If Double click function is enabled, double click to maximum dimming power
 If Double click function is enabled, a fast double click on the push button will set dimming power at maximum dimming value.
-
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - double click disabled |
-| 1 | 1 - double click enabled |
+| 0 | double click disabled |
+| 1 | double click enabled |
 
-The manufacturer defined default value is ```0``` (0 - double click disabled).
+The manufacturer defined default value is ```0``` (double click disabled).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the device after a power failure
+### Parameter 30: Save state of after a power failure
 
-If state saving is enabled, DIN dimmer module saves its state before power failure (it returns to the last position saved before a power failure). If state saving is disabled, DIN dimmer module does not save the state after a powe
+Saving the state of the device after a power failure
+Available configuration parameters:
 
+  * default value 0
+  * 0 – DIN dimmer module saves its state before power failure (it returns to the last position saved before a power failure).
+  * 1 – DIN dimmer module does not save the state after a power failure, it returns to "off" position.
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Save state enabled |
-| 1 | 1 - Save state disabled |
+| 0 | Save state enabled |
+| 1 | Save state disabled |
 
-The manufacturer defined default value is ```0``` (0 - Save state enabled).
+The manufacturer defined default value is ```0``` (Save state enabled).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 40: Power reporting in watts on power change
 
-Set value means percentage, set value from 0 - 100 = 0% - 100%. Default value is 5. 0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled. Power report is sent (push) only when actual power in Watts in real time changes for more than set p
+Reporting the power in Watts on power change larger then the setpoint
+Set value means percentage, set value from 0 - 100=0% - 100%. 
 
+Available configuration parameters:
+
+  * default value 5
+  * 0 – Reporting Disabled
+  * 1 – 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
+
+NOTE: if power changed is less than 1W, the report is not send (pushed), independent of percentage set.
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -236,9 +244,14 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts by time interval
 
-Set value means time interval (0 – 32767) in seconds, when power report is sent.
+Power reporting in Watts by time interval according to setpoint
+Set value means time interval (0 – 32767) in seconds, when power report is send. 
+
+Available configuration parameters:
+
+  * default value 0
   * 0 – reporting disabled
-  * 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is sent with time interval set by entered
+  * 1 – 32767 = 1 second – 32767 seconds. Reporting enabled. Power report is send with time interval set by entered value. Please note, that too fast reporting can cause too much Z-Wave traffic resulting in Z-Wave poor response.
 Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -248,10 +261,13 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 60: Minimum dimming value
 
+Minimum % dimming value of dimmer
+Available configuration parameters:
 
-  * 1-98 = 1% – 98%, step is 1%. Minimum dimming value is set by entered value.
+  * default value 1 = 1% (minimum dimming value)
+  * 1- 98 = 1% – 98%, step is 1%. Minimum dimming values is set by entered value.
 
-NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z- Wave multilevel device class.
+NOTE: The minimum level may not be higher than the maximum level! 1% min. dimming value is defined by Z-Wave multilevel device class.
 Values in the range 1 to 98 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -261,10 +277,13 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 
 ### Parameter 61: Maximum dimming value
 
+Maximum % dimming value on dimmer
+Available configuration parameters:
 
-  * 2-99 = 2% – 99%, step is 1%. Maximum dimming value is set by entered value.
+  * default value 99 = 99% (Maximum dimming value)
+  * 2- 99 = 2% – 99%, step is 1%. Maximum dimming values is set by entered value.
 
-NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z- Wave multilevel device class.
+NOTE: The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z-Wave multilevel device class.
 Values in the range 2 to 99 may be set.
 
 The manufacturer defined default value is ```99```.
@@ -274,11 +293,11 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 
 ### Parameter 65: Dimming time (soft on/off)
 
-Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI (BasicSet). 
+Set value means time of moving the Dimmer between min. and max. dimming
+Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I or controlled through UI (BasicSet). Available configuration parameters (data type is 2 Byte DEC): 
 
   * default value 100 = 1s
-  * 1 - 255 = 100 mseconds – 25500 mseconds (25.5
-
+  * 1 - 255 = 100 mseconds – 25500 mseconds (25,5s), step is 100 mseconds
 Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -300,16 +319,24 @@ This parameter has the configuration ID ```config_66_2``` and is of type ```INTE
 
 ### Parameter 67: Ignore start level
 
-This parameter is used with association group 3. A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0. A receiving device MUST ignore the start level if the Ignore Start Level bit is 1.
+Ignore or respect start level when used together with association group 3
+This parameter is used with association group 3.
 
+A receiving device SHOULD respect the start level if the Ignore Start Level bit is 0.  
+A receiving device MUST ignore the start level if the Ignore Start
+
+Level bit is 1. Available configuration parameters:
+
+  * default value 0 = respect start level
+  * 1 = ignore start level
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - respect start level |
-| 1 | 1 - ignore start level |
+| 0 | respect start level |
+| 1 | ignore start level |
 
-The manufacturer defined default value is ```0``` (0 - respect start level).
+The manufacturer defined default value is ```0``` (respect start level).
 
 This parameter has the configuration ID ```config_67_1``` and is of type ```INTEGER```.
 
@@ -327,12 +354,15 @@ This parameter has the configuration ID ```config_68_1``` and is of type ```INTE
 
 ### Parameter 110: Temperature sensor offset settings
 
-Set value is added or subtracted to actual measured value by sensor. Available configuration parameters: 
+Temperature sensor offset settings between -10.0 to 10.0 °C
+Set value is added or subtracted to actual measured value by sensor.
 
-  * default value 32536
-  * 32536 – offset is 0.0C
-  * From 1 to 100 – value from 0.1 °C to 10.0 °C is added to
+Available configuration parameters:
 
+  * default value = 32536
+  * 32536 = offset is 0.0C
+  * 1 – 100 = value from 0.1 °C to 10.0 °C is added to actual measured temperature.
+  * 1001 – 1100 = value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.
 Values in the range 1 to 32536 may be set.
 
 The manufacturer defined default value is ```32536```.
@@ -342,11 +372,14 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 ### Parameter 120: Digital temperature sensor reporting
 
-If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. Available configuration parameters: 
+Reporting temperature when change is larger than defined by this parameter
+If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.
 
-  * default value 5 = 0.5°C
-  * 0 – Reporting disabled
+Available configuration parameters:
 
+  * default value 5 = 0,5°C change
+  * 0 = Reporting disabled
+  * 1- 127 = 0,1°C – 12,7°C, step is 0,1°C
 Values in the range 0 to 127 may be set.
 
 The manufacturer defined default value is ```5```.

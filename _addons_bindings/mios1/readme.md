@@ -755,8 +755,8 @@ when
 	Item MasterClosetZoneTripped changed from CLOSED to OPEN
 then
 	logInfo("house-master", "Master-Closet-Motion Timer lights ON")
-	sendCommand(MasterClosetLightsStatus, ON)
-	sendCommand(MasterClosetFibaroLightStatus, ON)
+	MasterClosetLightsStatus.sendCommand(ON)
+	MasterClosetFibaroLightStatus.sendCommand(ON)
 
 	mclLock.lock
 	if (mclTimer != null) {
@@ -766,8 +766,8 @@ then
 
 	mclTimer = createTimer(now.plusSeconds(MCL_DELAY_SECONDS)) [
 		logInfo("house-master", "Master-Closet-Motion Timer lights OFF")
-		sendCommand(MasterClosetLightsStatus, OFF)
-		sendCommand(MasterClosetFibaroLightStatus, OFF)
+		MasterClosetLightsStatus.sendCommand(OFF)
+		MasterClosetFibaroLightStatus.sendCommand(OFF)
 	]
 	mclLock.unlock
 end
@@ -822,12 +822,12 @@ then
 
 	if (night) {
 		logInfo("house-kitchen", "Kitchen-Motion Night Time")
-		sendCommand(KitchenSinkLightStatus, ON)
-		sendCommand(KitchenPantryLightStatus, ON)
+		KitchenSinkLightStatus.sendCommand(ON)
+		KitchenPantryLightStatus.sendCommand(ON)
 	}
 
 	logInfo("house-kitchen", "Kitchen-Motion Any Time")
-	sendCommand(PowerHotWaterPumpStatus, ON)
+	PowerHotWaterPumpStatus.sendCommand(ON)
 
 	kLock.lock
 	if (kTimer != null) {
@@ -837,9 +837,9 @@ then
 
 	kTimer = createTimer(now.plusSeconds(K_DELAY_SECONDS)) [
 		logInfo("house-kitchen", "Kitchen-Motion Timer OFF")
-		sendCommand(KitchenSinkLightStatus, OFF)
-		sendCommand(KitchenPantryLightStatus, OFF)
-		sendCommand(PowerHotWaterPumpStatus, OFF)
+		KitchenSinkLightStatus.sendCommand(OFF)
+		KitchenPantryLightStatus.sendCommand(OFF)
+		PowerHotWaterPumpStatus.sendCommand(OFF)
 	]
 	kLock.unlock
 end
@@ -889,7 +889,7 @@ when
 then
 	if (GWindow.members.filter(s|s.state==OPEN).size == 0) {
 		say("Attention: All Windows closed.")
-		sendCommand(Nest_away, "home")
+		Nest_away.sendCommand("home")
 	}
 end
 
@@ -909,7 +909,7 @@ when
 then
 	if (GWindow.members.filter(s|s.state==OPEN).size == 1) {
 		say("Attention: First Window opened.")
-		sendCommand(Nest_away, "away")
+		Nest_away.sendCommand("away")
 	}
 end
 ```

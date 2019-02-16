@@ -147,9 +147,9 @@ then
     // don't turn on heating if we are on 'holiday' (unless there is a house sitter)
     if (Holidays_Holiday.state != ON || Presence_HouseSitter.state == ON) {
         if (UFThermostat.state == ON)
-            sendCommand(UFHeatpump, ON)
+            UFHeatpump.sendCommand(ON)
         else
-            sendCommand(UFHeatpump, OFF)
+            UFHeatpump.sendCommand(OFF)
     }
 end
 
@@ -166,7 +166,7 @@ then
     if (Holidays_Holiday.state != ON || Presence_HouseSitter.state == ON) {
         // if the heat pump is currently off then check the weather forecast for today
         if (UFHeatpump.state == OFF && Weather_TodayMax.state < boostTempThreshold) {
-            sendCommand(UFHeatpump, ON)
+            UFHeatpump.sendCommand(ON)
             sendTweet("Boosting underfloor heating since it looks chilly today")
         }
     }
@@ -177,7 +177,7 @@ when
     Time cron "0 0 7 * * ?"
 then
     if (UFHeatpump.state == ON) {
-        sendCommand(UFHeatpump, OFF);
+        UFHeatpump.sendCommand(OFF);
     }
 end
 ```
@@ -198,7 +198,7 @@ then
 
     // release the garage door 'opener' after a short delay
     openGarageDoorTimer = createTimer(now.plusSeconds(1)) [|
-        sendCommand(GarageDoorOpener, OFF)
+        GarageDoorOpener.sendCommand(OFF)
     ]
 end
 
