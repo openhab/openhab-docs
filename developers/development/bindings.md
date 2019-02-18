@@ -9,7 +9,7 @@ title: Developing bindings
 
 This page describes the necessary steps in order to implement a new binding for openHAB.
 
-For information about code style and naming conventions, please see the [coding guidelines](guidelines).
+For information about code style and naming conventions, please see the [coding guidelines](guidelines.html).
 
 Choose the option "openHAB 2 Add-ons" in [your IDE setup](ide.html), and create a skeleton for your binding.
 To do this, use a command line terminal and go to your Git repository folder under `git/openhab2-addons/addons/binding` and call the script `create_openhab_binding_skeleton.sh` with two arguments.
