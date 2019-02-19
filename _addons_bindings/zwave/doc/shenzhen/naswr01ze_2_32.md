@@ -6,11 +6,12 @@ title: NAS-WR01ZE - ZWave
 {% include base.html %}
 
 # NAS-WR01ZE Metered Wall Plug Switch
-This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_powerplug_00_000```.
+This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_naswr01ze_02_032```.
+This version of the device is limited to firmware version 2.32
 
-The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![NAS-WR01ZE product image](https://www.cd-jackson.com/zwave_device_uploads/397/397_default.jpg)
+![NAS-WR01ZE product image](https://www.cd-jackson.com/zwave_device_uploads/1014/1014_default.jpg)
 
 
 The NAS-WR01ZE supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -22,7 +23,7 @@ This Plug provides line voltage, current load, power consumption and energy cons
   * **Voltage** – The Supply Power Voltage For Plug.
   * **Current** – The Current for the Electric Device Connect to Plug Consumption.
   * **Power** – Power Consumed by an Electric Device in an instant, unit: Watt (W).
-  * **Energy** – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh.
+  * **Energy** – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh. 
 
 ### Inclusion Information
 
@@ -43,9 +44,9 @@ The following table summarises the channels available for the NAS-WR01ZE -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
-| Electric meter (amps) | meter_current | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | Energy | Number | 
+| Electric meter (amps) | meter_current | Energy | Number | 
 | Electric meter (volts) | meter_voltage | Energy | Number | 
 | Alarm (power) | alarm_power | Energy | Switch | 
 
@@ -53,11 +54,6 @@ The following table summarises the channels available for the NAS-WR01ZE -:
 Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
-
-### Electric meter (amps)
-Indicates the instantaneous current consumption.
-
-The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
@@ -68,6 +64,11 @@ The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Ener
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (amps)
+Indicates the instantaneous current consumption.
+
+The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
 Indicates the instantaneous voltage.
@@ -298,26 +299,26 @@ Association group 3 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
-| COMMAND_CLASS_ALARM_V3| |
+| COMMAND_CLASS_ALARM_V8| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_ASSOCIATION_V1| |
-| COMMAND_CLASS_VERSION_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
+| COMMAND_CLASS_SECURITY_V1| |
 
 ### Documentation Links
 
-* [Instruction Manual Power Plug](https://www.cd-jackson.com/zwave_device_uploads/397/Manual-for-Power-plug-Z-wave-Neo.pdf)
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
-* [User Manual 23.09.2016](https://www.cd-jackson.com/zwave_device_uploads/397/Smart-Plug-User-Guide--EU-.pdf)
+* [Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/1014/Smart-Plug-User-Guide--EU-.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/397).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1014).
