@@ -23,9 +23,15 @@ The ZigBee binding supports an interface to a wireless ZigBee home automation ne
 
 A ZigBee Coordinator is the network controller, and is therefore the heart of the ZigBee network. It also acts as the trust centre to control security access to the network.
 
-Coordinators need to be installed manually and the serial port and baud rate must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device, you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases. 
+Coordinators need to be installed manually and the serial port (```zigbee_port```) and baud rate (```zigbee_baud```) must be set. These are set to match the configuration that the dongle is in. Should you wish to use a different baud rate than the default speed of the device (get default baud rate from the device manual) , you must change the configuration of the dongle using some other, and then configure the binding to match your change. If in doubt, you should leave the settings at their default values which should work in most cases.
 
 If you are running on Linux, then you probably need to add the user 'openhab' to the tty group, and enable `EXTRA_JAVA_OPTS` for the serial port your coordinator uses (see [Linux install guide](https://www.openhab.org/docs/installation/linux.html#privileges-for-common-peripherals)). Additionally for Docker users, you will need to pass the serial port through Docker to openHAB (see [Docker install guide](https://www.openhab.org/docs/installation/docker.html#explanation-of-arguments-passed-to-docker))
+
+demo.things:
+
+```java
+Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/ttyACM0", zigbee_baud="38400"]
+```
 
 #### Coordinator Configuration
 
@@ -46,7 +52,7 @@ The key is defined as 16 hexadecimal values. If not defined, a random key will b
 
 ##### Child Aging (zigbee_childtimeout)
 
-ZigBee routers (and the coordinator) only have room to allow a certain number of devices to join the network via each router - once the child table in a router is full, devices will need to join via another router (assuming the child can communicate via another router). To avoid the child table becoming full of devices that no longer exist, routers will age out children that do not contact them within a specified period of time. 
+ZigBee routers (and the coordinator) only have room to allow a certain number of devices to join the network via each router - once the child table in a router is full, devices will need to join via another router (assuming the child can communicate via another router). To avoid the child table becoming full of devices that no longer exist, routers will age out children that do not contact them within a specified period of time.
 
 Once a child is removed from the child table of a router, it will be asked to rejoin if it tries to communicate with the parent again. Setting this time too large may mean that the router fills its tables with devices that no longer exist, while setting it too small can mean devices unnecessarily rejoining the network.
 
@@ -98,7 +104,7 @@ Note that there are generally two versions of the Ember NCP firmware in use. One
 
 If the usb dongle is not recognized, it might be necessary to make the dongle's device id known to the CP240x driver by Silicon Labs:
 
-- Find the device id (as listed by the command ```lsusb```). For the Bitron Funkstick that might be 10c4 8b34. 
+- Find the device id (as listed by the command ```lsusb```). For the Bitron Funkstick that might be 10c4 8b34.
 - Unplug the device
 - Enter the following commands (replace the id 10c4 8b34 with the one listed by  ```lsusb```):
 ```
@@ -171,16 +177,16 @@ AAAAAAAAAAAAAAAA:CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-DDDD
 ```
 
 ZigBee 3 requires the install code to be 16 bytes long (8 blocks of characters) but some older systems using
-this method may use less bytes, but it should still be formatted as 2, 4, or 8 groups of 4 values. 
+this method may use less bytes, but it should still be formatted as 2, 4, or 8 groups of 4 values.
 Note that the last four characters in the install code are the checksum and may be provided separately.
 
 ## Leave
 
-When a thing is deleted, the binding will attempt to remove the device from the network by sending the *leave* command on the network. 
+When a thing is deleted, the binding will attempt to remove the device from the network by sending the *leave* command on the network.
 
 ## Thing Configuration
 
-The binding will attempt to automatically detect new devices, giving them a type based on the information they report, and will read their supported clusters to define the supported channels. 
+The binding will attempt to automatically detect new devices, giving them a type based on the information they report, and will read their supported clusters to define the supported channels.
 
 ### Thing Types
 
@@ -220,7 +226,7 @@ The following channels are supported -:
 
 ### Updates
 
-The binding will attempt to configure a connection with the device to receive automatic and instantaneous reports when the device status changes. Should this configuration fail, the binding will resort to using a fast polling (note that "fast" is approximately 30 seconds at this time). 
+The binding will attempt to configure a connection with the device to receive automatic and instantaneous reports when the device status changes. Should this configuration fail, the binding will resort to using a fast polling (note that "fast" is approximately 30 seconds at this time).
 
 
 ## When things don't appear to be working
