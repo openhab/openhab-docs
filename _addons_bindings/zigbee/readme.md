@@ -58,6 +58,12 @@ Once a child is removed from the child table of a router, it will be asked to re
 
 Note that ZigBee compliant devices should rejoin the network seamlessly, however some non-compliant devices may not rejoin which may leave them unusable without a manual rejoin.
 
+##### Concentrator Type (zigbee_concentrator)
+
+The Concentrator is used to improve routing within a ZigBee network, and is especially useful in a network where much of the traffic is sent to or from a central coordinator. If the coordinator has sufficient memory, it can store routing information, thus reducing network traffic.
+
+If supported, the High RAM concentrator should be used.
+
 ##### Mesh Update Period (zigbee_meshupdateperiod)
 
 The binding is able to search the network to get a list of what devices can communicate with other devices. This is a useful diagnostic feature as it allows users to see the links between devices, and the quality of these links. However, this can generate considerable traffic, and some battery devices may not poll their parents often enough to provide these updates, and users may consider that it is better to reduce the period, or disable this feature.
