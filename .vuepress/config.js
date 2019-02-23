@@ -88,7 +88,7 @@ module.exports = {
       }
     ],
     sidebar: {
-      '/docs/': DocsSidebarNavigation.filter((s, i) => s.title !== 'Concepts')
+      '/docs/': DocsSidebarNavigation
     }
   }
 }
