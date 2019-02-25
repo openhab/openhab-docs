@@ -80,10 +80,11 @@ The following table summarises the channels available for the Z-TRM2fx -:
 | Display brightness - dimmed | config_decimal |  | Number | 
 | Button brightness - dimmed | config_decimal |  | Number | 
 | Thermostat mode | thermostat_mode1 | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (heating) | thermostat_setpoint1 | Temperature | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint1 | Heating | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint1 | Heating | Number:Temperature | 
 | External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
 | Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
+| Switch binary | switch_binary4 | Switch | Switch | 
 | Electric meter (volts) 4 | meter_voltage4 | Energy | Number | 
 | Electric meter (kWh) 4 | meter_kwh4 | Energy | Number | 
 | Electric meter (watts) 4 | meter_watts4 | Energy | Number | 
@@ -149,14 +150,14 @@ The following state translation is provided for this channel to the ```Number```
 ### Setpoint (cooling)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (heating)
 The heating setpoint, for currently selected heating mode (Comfort or ECO).
 
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### External sensor
 Indicates the current temperature.
@@ -167,6 +168,11 @@ The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item
 Indicates the current temperature.
 
 The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Switch binary
+Switch the power on and off.
+
+The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts) 4
 Indicates the instantaneous voltage.

@@ -10,6 +10,9 @@ This describes the Z-Wave device *ZMNHVD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
+![ZMNHVD product image](https://www.cd-jackson.com/zwave_device_uploads/363/363_default.jpg)
+
+
 The ZMNHVD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -24,26 +27,23 @@ The following table summarises the channels available for the ZMNHVD -:
 |---------|------------|----------|-----------|
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (general) | sensor_general |  | Number | 
+| Temperature Sensor | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
-
 Switch the power on and off.
 
 The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Sensor (general)
+### Temperature Sensor
+Indicates the current temperature.
 
-
-
-The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 

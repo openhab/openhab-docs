@@ -40,8 +40,9 @@ The following table summarises the channels available for the WTE -:
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Meter(watts) | meter_watts | Energy | Number | 
-| Meter(KWh) | meter_kwh | Energy | Number | 
+| Meter (watts) | meter_watts | Energy | Number | 
+| Meter (KWh) | meter_kwh | Energy | Number | 
+| Meter Reset | meter_reset | Energy | Switch | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -49,15 +50,20 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Meter(watts)
+### Meter (watts)
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Meter(KWh)
+### Meter (KWh)
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Meter Reset
+Reset the meter.
+
+The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
 
 
 
