@@ -163,7 +163,7 @@ rule "open kitchen shutter if it is the morning"
 when
     Item LightSensor changed from dark to light
 then   
-    sendCommand(KitchenShutter,ON)
+    KitchenShutter.sendCommand(ON)
 end
 ```
 
@@ -185,7 +185,7 @@ Launch a scenario from a rule:
 
 ```
 ...
-sendCommand(ZibaseScenario26,ON)
+ZibaseScenario26.sendCommand(ON)
 ...
 ```
 
@@ -214,6 +214,6 @@ Set the value 50 to the variable in a rule:
 
 ```
 ...
-sendCommand(Variable14,50)
+Variable14.sendCommand(50)
 ...
 ```
