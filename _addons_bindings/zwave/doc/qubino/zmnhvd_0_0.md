@@ -28,6 +28,7 @@ The following table summarises the channels available for the ZMNHVD -:
 | Switch | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Temperature Sensor | sensor_temperature | Temperature | Number:Temperature | 
+| Input I1 | sensor_general |  | Number | 
 
 ### Switch
 Switch the power on and off.
@@ -44,6 +45,11 @@ The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```
 Indicates the current temperature.
 
 The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+### Input I1
+
+
+The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 

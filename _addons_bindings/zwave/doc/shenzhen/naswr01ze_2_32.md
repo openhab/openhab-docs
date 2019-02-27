@@ -97,7 +97,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 10 configuration parameters available in the NAS-WR01ZE.
+The following table provides a summary of the 12 configuration parameters available in the NAS-WR01ZE.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -112,6 +112,8 @@ Detailed information on each parameter can be found in the sections below.
 | 8 | Plug Time switch Function | Timer plug OFF after time period |
 | 9 | Time switch Period | Delay time after the plug is switched off (in minutes) |
 | 10 | Button On/Off Enable | Enable/Disable top button function |
+| 11 | Clear Accumulated Energy | Clear accumulated energy |
+| 12 | Meter Enable | Enables the meter function |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Meter Report Enable
@@ -249,6 +251,43 @@ The manufacturer defined default value is ```1``` (Enable Button).
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
+
+### Parameter 11: Clear Accumulated Energy
+
+Clear accumulated energy
+If this parameter is set to '0' or default, the accumulated energy saved in the plug will be cleared by '0'.  
+Other values will not change current accumulated energy value.  
+This parameter value cannot be saved in NVR mounted in the plug. The accumulated energy consumed will not be changed when the plug is added or removed from the Z-Wave network, but this value will be cleared after resetting the plug to factory default settings.
+
+Note: Users can also send METER_RESET (Meter Command Class) command to clear accumulated energy.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Save accumulated energy |
+| 1 | Clear Accumulated Energy |
+
+The manufacturer defined default value is ```0``` (Save accumulated energy).
+
+This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
+
+
+### Parameter 12: Meter Enable
+
+Enables the meter function
+'1' enables the meter function; '0' disables the meter function (includes metering current, voltage, power, accumulated power).  
+This configuration does not influence over-current protect monitor and energy accumulated.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disable metering |
+| 1 | Enable metering |
+
+The manufacturer defined default value is ```1``` (Enable metering).
+
+This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
+
 ### Switch All Mode
 
 Set the mode for the switch when receiving SWITCH ALL commands.
@@ -305,7 +344,7 @@ Association group 3 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
