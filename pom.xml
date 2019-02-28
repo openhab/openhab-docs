@@ -206,7 +206,7 @@
               <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab2-addons/addons/ui/iconset</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/iconset</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
