@@ -206,7 +206,7 @@
               <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab2-addons/addons/ui/iconset</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/iconset</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
@@ -225,7 +225,7 @@
               <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab2-addons/addons/ui</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -233,16 +233,6 @@
                   </includes>
                   <excludes>
                     <exclude>**/iconset/**</exclude>
-                  </excludes>
-                </resource>
-                <resource>
-                  <directory>${basedir}/.external-resources/openhab-bundles/uis</directory>
-                  <includes>
-                    <include>**/README.md</include>
-                    <include>**/doc/**</include>
-                    <include>**/cfg/**</include>
-                  </includes>
-                  <excludes>
                     <exclude>**/cordova/**</exclude>
                     <exclude>**/src/**</exclude>
                   </excludes>
@@ -342,7 +332,7 @@
               <outputDirectory>${basedir}/configuration</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-bundles/uis/org.openhab.ui.habpanel/doc</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/org.openhab.ui.habpanel/doc</directory>
                   <includes>
                     <include>habpanel.md</include>
                     <include>images/*.png</include>

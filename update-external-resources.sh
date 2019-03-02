@@ -54,6 +54,7 @@ pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git"
 pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git"
 pull_or_clone_repo "openhab-android" "openhab/openhab-android.git"
 pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git"
+pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git"
 
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
