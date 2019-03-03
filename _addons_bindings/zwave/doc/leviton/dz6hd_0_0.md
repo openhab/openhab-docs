@@ -62,14 +62,12 @@ The following table summarises the channels available for the DZ6HD -:
 | Scene Number | scene_number |  | Number | 
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
 The ```scene_number``` channel supports the ```Number``` item.
@@ -229,7 +227,7 @@ Association group 1 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SCENE_ACTIVATION_V1| |
 | COMMAND_CLASS_SCENE_ACTUATOR_CONF_V1| |

@@ -20,10 +20,10 @@ The NAS-WR01ZE supports routing. This allows the device to communicate using oth
 
 This Plug provides line voltage, current load, power consumption and energy consumption measuring. 
 
-  * **Voltage** – The Supply Power Voltage For Plug.
-  * **Current** – The Current for the Electric Device Connect to Plug Consumption.
-  * **Power** – Power Consumed by an Electric Device in an instant, unit: Watt (W).
-  * **Energy** – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh. 
+  * Voltage – The Supply Power Voltage For Plug.
+  * Current – The Current for the Electric Device Connect to Plug Consumption.
+  * Power – Power Consumed by an Electric Device in an instant, unit: Watt (W).
+  * Energy – Energy Consumed by an Electric Device through a Time Period. Most commonly measured in Kilowatt-hours (kWh). One kilowatt-hour is Equal to One Kilowatt of Power Consumed over a Period of One Hour, 1kWh = 1000Wh.0Wh. 
 
 ### Inclusion Information
 
@@ -97,157 +97,155 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 12 configuration parameters available in the NAS-WR01ZE.
+The following table provides a summary of the 11 configuration parameters available in the NAS-WR01ZE.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Meter Report Enable | This parameter defines Disable/Enable meter report measure data to controller. |
-| 2 | Meter Report Interval | Interval time reporting data to controller |
-| 3 | Maxium over-load current | maximum current the plug can provide to load |
-| 4 | Maximum alarm current | Max current for over-current notification |
-| 5 | LED enable | This parameter defines the LED indication Function ON/OFF. |
-| 6 | Power Report Threshold | Power consumed change to be reported |
-| 7 | Remember Relay ON/OFF status after power failure. | Plug state after power-on |
-| 8 | Plug Time switch Function | Timer plug OFF after time period |
-| 9 | Time switch Period | Delay time after the plug is switched off (in minutes) |
-| 10 | Button On/Off Enable | Enable/Disable top button function |
+| 1 | Relay On/Off State Saved Disable | Relay On/Off State Saved Disable |
+| 2 | Button Switch Function Disable | Button Switch Function Disable |
+| 3 | LED indication Disable | LED indication Disable |
+| 4 | Timer Enable | Timer Enable |
+| 5 | Timing Length Setting | Timing Length Setting |
+| 6 | Meter reporting function | Meter reporting function |
+| 7 | Interval of meter reporting setting | Interval of meter reporting setting |
+| 8 | Maximum output current setting | Maximum output current setting |
+| 9 | Current Differential Setting | Current Differential Setting |
+| 10 | Current Alarm Value | Current Alarm Value |
 | 11 | Clear Accumulated Energy | Clear accumulated energy |
-| 12 | Meter Enable | Enables the meter function |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
-### Parameter 1: Meter Report Enable
+### Parameter 1: Relay On/Off State Saved Disable
 
-This parameter defines Disable/Enable meter report measure data to controller.
+Relay On/Off State Saved Disable
 
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Disable Report |
-| 1 | Enable Report |
+| 0 | Do not save Relay State |
+| 1 | Save Relay State |
 
-The manufacturer defined default value is ```1``` (Enable Report).
+The manufacturer defined default value is ```1``` (Save Relay State).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
 
-### Parameter 2: Meter Report Interval
+### Parameter 2: Button Switch Function Disable
 
-Interval time reporting data to controller
-This parameter defines interval time (in seconds) that Meter report data to main controller.
-Values in the range 1 to 65535 may be set.
+Button Switch Function Disable
 
-The manufacturer defined default value is ```300```.
+The following option values may be configured -:
 
-This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Button disabled |
+| 1 | Button enabled |
+
+The manufacturer defined default value is ```1``` (Button enabled).
+
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
 
-### Parameter 3: Maxium over-load current
+### Parameter 3: LED indication Disable
 
-maximum current the plug can provide to load
-This parameter defines maximum current the plug can provide to load that be connected to plug. If the current consumed by load greater than maximum current, the plug will cut off power and send alarm.  
-Send Alarm NOTIFICATION\_EVENT\_POWER\_MANAGEMENT\_OVER\_LOAD\_DETECTED to associated devices in lifeline. Red Led will blink every seconds until current is normal (less than Parameter #3). You must remove the loader and turn on the Plug (press the button once) to enable current monitor and clear NOTIFICATION ALARM. This parameter value must be great than #4. If user set this parameter to default by Configure CC, the parameter #4 will be set to default value.
-Values in the range 1 to 16 may be set.
+LED indication Disable
 
-The manufacturer defined default value is ```13```.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disable LED |
+| 1 | Enable LED |
+
+The manufacturer defined default value is ```1``` (Enable LED).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
 
-### Parameter 4: Maximum alarm current
+### Parameter 4: Timer Enable
 
-Max current for over-current notification
-Defines maximum current, if the current plug provide to load great than this parameter, the plug will send over-current notification to main controller and the LED will be turn RED, but plug cannot cut-off power. Value must be less than parameter 3#.
-Values in the range 1 to 15 may be set.
+Timer Enable
 
-The manufacturer defined default value is ```12```.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Timer Disable |
+| 1 | Timer Enable |
+
+The manufacturer defined default value is ```0``` (Timer Disable).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
 
-### Parameter 5: LED enable
+### Parameter 5: Timing Length Setting
 
-This parameter defines the LED indication Function ON/OFF.
+Timing Length Setting
+
+Values in the range 0 to 32767 may be set.
+
+The manufacturer defined default value is ```120```.
+
+This parameter has the configuration ID ```config_5_2``` and is of type ```INTEGER```.
+
+
+### Parameter 6: Meter reporting function
+
+Meter reporting function
 
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Disable LED indication Function |
-| 1 | Enable LED indication Function |
+| 0 | Disable Meter Report |
+| 1 | Enable Meter Report |
 
-The manufacturer defined default value is ```1``` (Enable LED indication Function).
-
-This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
-
-
-### Parameter 6: Power Report Threshold
-
-Power consumed change to be reported
-How much the power consumed must change to be reported. If the rate of power consumed change ratio is greater than this parameter, the plug will report the results, voltage, current, power and energy.
-Values in the range 1 to 100 may be set.
-
-The manufacturer defined default value is ```5```.
+The manufacturer defined default value is ```1``` (Enable Meter Report).
 
 This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
 
 
-### Parameter 7: Remember Relay ON/OFF status after power failure.
+### Parameter 7: Interval of meter reporting setting
 
-Plug state after power-on
-Define how will the Plug react after the power supply is back on.  0 = will be off after the power supply is reconnected.  Others = remember relay status
-The following option values may be configured -:
+Interval of meter reporting setting
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Don’t remember relay state |
-| 1 | Remember the Relay Status. |
+Values in the range 30 to 32767 may be set.
 
-The manufacturer defined default value is ```1``` (Remember the Relay Status.).
+The manufacturer defined default value is ```300```.
 
-This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
 
 
-### Parameter 8: Plug Time switch Function
+### Parameter 8: Maximum output current setting
 
-Timer plug OFF after time period
-Defines if the timer function is enabled/disabled to switch the Plug OFF after the time period, which is defined in parameter 9#.
-The following option values may be configured -:
+Maximum output current setting
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Time switch Disable |
-| 1 | Time switch Enable |
+Values in the range 1 to 16 may be set.
 
-The manufacturer defined default value is ```0``` (Time switch Disable).
+The manufacturer defined default value is ```16```.
 
 This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
 
 
-### Parameter 9: Time switch Period
+### Parameter 9: Current Differential Setting
 
-Delay time after the plug is switched off (in minutes)
-This parameter defines the time after the plug is switched off. If Parameter 8# is set to ‘1’, and relay is turn ON, the relay will be turn OFF after delay this parameter.
-Values in the range 1 to 65535 may be set.
+Current Differential Setting
 
-The manufacturer defined default value is ```150```.
+Values in the range 1 to 1600 may be set.
+
+The manufacturer defined default value is ```50```.
 
 This parameter has the configuration ID ```config_9_2``` and is of type ```INTEGER```.
 
 
-### Parameter 10: Button On/Off Enable
+### Parameter 10: Current Alarm Value
 
-Enable/Disable top button function
-If this parameter is set to ‘1’, users can turn on and off the wall plug by pressing the button on the top of the wall plug. If this parameter is set to ‘0’, the wall plug cannot be turned on and off by pressing the button.
-The following option values may be configured -:
+Current Alarm Value
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Disable Button |
-| 1 | Enable Button |
+Values in the range 1 to 15 may be set.
 
-The manufacturer defined default value is ```1``` (Enable Button).
+The manufacturer defined default value is ```13```.
 
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
@@ -270,23 +268,6 @@ The following option values may be configured -:
 The manufacturer defined default value is ```0``` (Save accumulated energy).
 
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
-
-
-### Parameter 12: Meter Enable
-
-Enables the meter function
-'1' enables the meter function; '0' disables the meter function (includes metering current, voltage, power, accumulated power).  
-This configuration does not influence over-current protect monitor and energy accumulated.
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | Disable metering |
-| 1 | Enable metering |
-
-The manufacturer defined default value is ```1``` (Enable metering).
-
-This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 ### Switch All Mode
 
@@ -361,7 +342,7 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual (EN)](https://www.cd-jackson.com/zwave_device_uploads/1014/NEO-Coolcam-Z-Wave-Manual.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1014/nas-wr01z-S2-SmartPlug-Manual.pdf)
 
 ---
 

@@ -10,6 +10,9 @@ This describes the Z-Wave device *HS1MS-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
+![HS1MS-Z product image](https://www.cd-jackson.com/zwave_device_uploads/736/736_default.jpg)
+
+
 The HS1MS-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The HS1MS-Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -44,15 +47,14 @@ The following table summarises the channels available for the HS1MS-Z -:
 
 | Channel | Channel Id | Category | Item Type |
 |---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
+| Binary Sensor | sensor_binary |  | Switch | 
 | Alarm (burglar) | alarm_burglar | Door | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -62,7 +64,6 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
-
 Indicates if the burglar alarm is triggered.
 
 The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
@@ -75,7 +76,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
 The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
@@ -119,6 +119,10 @@ Association group 1 supports 5 nodes.
 | COMMAND_CLASS_WAKE_UP_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Heiman HS1MS Smart Motion Sensor Manual](https://www.cd-jackson.com/zwave_device_uploads/736/Heiman-Smart-Motion-Sensor-HSIMS-Z.pdf)
 
 ---
 
