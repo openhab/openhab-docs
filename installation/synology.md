@@ -41,6 +41,7 @@ Download the latest SPK package: [Releases](https://github.com/openhab/openhab-s
 The SPK is a wrapper to download the latest openHAB release and does not contain openHAB itself.
 
 1. Login and open the DiskStation Manager.
+2. Go to Control Panel → User → Advanced → User Home and check 'Enable user home service' 
 2. Go to Main Menu → Package Center.
 3. Click on the Manual Install button.
 4. Click "Choose File" and select the previously downloaded openHAB `.spk` file.
