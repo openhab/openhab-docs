@@ -97,13 +97,13 @@ SI:
 
 | Type                   | Unit                    | Symbol |
 |------------------------|-------------------------|--------|
-| Acceleration           | Metre per square Second | m/s2   |
+| Acceleration           | Metre per square Second | m/s²   |
 | AmountOfSubstance      | Mole                    | mol    |
 | Angle                  | Radian                  | rad    |
 | Angle                  | Degree                  | °      |
 | Angle                  | Minute Angle            | '      |
 | Angle                  | Second Angle            | ''     |
-| Area                   | Square Metre            | m2     |
+| Area                   | Square Metre            | m²     |
 | ArealDensity           | Dobson Unit             | DU     |
 | CatalyticActivity      | Katal                   | kat    |
 | Dimensionless          | Percent                 | %      |
@@ -153,7 +153,7 @@ SI:
 | Time                   | Day                     | d      |
 | Time                   | Week                    | week   |
 | Time                   | Year                    | y      |
-| Volume                 | Cubic Metre             | m3     |
+| Volume                 | Cubic Metre             | m³     |
 
 Prefixes:
 
