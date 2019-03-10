@@ -71,7 +71,7 @@ If you start the openHAB runtime including the binding now (make sure that your 
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 For the Maven build, please add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/addons/binding/pom.xml) at the alphabetically correct position.
-In order to have the binding being included by the distro, you furthermore need to add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
+In order to have the binding being included by the distro, you furthermore need to add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/karaf/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
 If you have a dependency on a transport bundle (e.g. upnp, mdns or serial), make sure to add a line for this dependency as well (see the other bindings as an example).
 
 Before you create a pull request on GitHub, you should now run
