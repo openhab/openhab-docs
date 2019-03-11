@@ -138,9 +138,22 @@ See [Transformations]({{base}}/configuration/transformations.html#usage) for ava
 Notification actions may be placed in Rules to send alerts to mobile devices registered with an [openHAB Cloud instance](https://github.com/openhab/openhab-cloud) such as [myopenHAB.org](https://myopenhab.org).
 Three different actions are available:
 
-- `sendNotification("your myopenHAB user email address here","message")`: Sends a notification containing 'message'
-- `sendBroadcastNotification("message")`: Sends a notification containing "message" to *all* devices of *all* users
-- `sendLogNotification("message")`: Sends a log notification containing "message" to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
+- `sendNotification(emailAddress, message)`: Sends a notification to a specific cloud instance user
+- `sendBroadcastNotification(message)`: Sends a notification to *all* devices of *all* users
+- `sendLogNotification(message)`: Sends a log notification to the `notifications` list at your openHAB Cloud instance.  Notifications are NOT sent to any registered devices
+
+For each of the three actions, there's another variant accepting an icon name and a severity:
+- `sendNotification(emailAddress, message, icon, severity)`
+- `sendBroadcastNotification(message, icon, severity)`
+- `sendLogNotification(message, icon, severity)`
+
+Icon and severity can potentially be used by cloud instance clients (such as the openHAB apps for Android or iOS) to be displayed in the list of notifications.
+
+The parameters for these actions have the following meaning:
+- `emailAddress`: String containing the email address the target user is registered with in the cloud instance
+- `message`: String containing the notification message text
+- `icon`: String containing the icon name (as described in [Items]({{base}}/configuration/items.html#icons))
+- `severity`: String containing a description of the severity of the incident
 
 **Example**
 
