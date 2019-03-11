@@ -74,7 +74,7 @@ The following coordinators are known to be supported.
 
 | Name and Link              | Coordinator | Comment                       |
 |----------------------------|-------------|-------------------------------|
-|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[CC2531](#cc2531-coordinator)|Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html)<br>Also CC2530, CC2538 or CC2650 may work with the correct firmware but are not suggested|
+|[Texas Instruments CC2531EMK](http://www.ti.com/tool/cc2531emk)|[CC2531](#cc2531-coordinator)|Needs extra hardware and correct firmware (might be hard to find) for flashing.<br>There are also cheap copies of the CC2531 Stick available on eBay, Aliexpress, etc. like [this](https://de.aliexpress.com/item/Drahtlose-Zigbee-CC2531-Sniffer-software-protokoll-analyse-Bareboard-Paket-Protokoll-Analyzer-Modul-Usb-schnittstelle-Dongle-Erfassen/32852226435.html) and a module to flash the firmware like [this](https://de.aliexpress.com/item/SmartRF04EB-CC1110-CC2530-ZigBee-Module-USB-Downloader-Emulator-MCU-M100/32673666126.html) including a [connector board](https://de.aliexpress.com/item/CC2531-CC2540-Zigbee-Sniffer-software-protokoll-analyse-Wireless-Board-Bluetooth-BLE-4-0-Dongle-Capture-Modul/32869263224.html)<br>Also CC2530, CC2538 or CC2650 may work with the correct firmware but are not suggested|
 |[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)| |
 |[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)| Use baud rate 57600 and software flow control. |
 |[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and ZigBee. Use baud rate 57600 and software flow control. |
@@ -101,6 +101,10 @@ The required dependencies can be installed with `sudo apt install build-essentia
 
 The firmware can be flashed with `./cc-tool -e -w CC2531ZNP-Pro-Secure_Standard.hex -v r`. Change the path to the firmware accordingly.
 
+##### Flashing on Windows
+
+For flashing the dongle using windows you need the [TI Flash Programmer](http://www.ti.com/tool/flash-programmer) (version 1, not version 2) and the Cebal drivers from [this TI site](http://www.ti.com/tool/cc-debugger) (available in section Software).
+Extract and install the TI Flash Programmer, connect the CC-Debugger trough USB, and with the dongle using the connector board. In the Windows device manager update the device driver with the Cebal drivers. Now the TI Flash Programmer should show your device. Select the firmware file, flash and verify your dongle firmware.
 
 #### Ember EZSP NCP Coordinator
 
@@ -142,6 +146,7 @@ The following devices have been tested with the binding
 | GE Bulbs                   |                                                   |
 | GE Tapt Wall Switch        | On/Off Switch                                     |
 | Hue Bulbs                  | Color LED Bulb                                    |
+| Hue Dimmer                 | Hue Dimmer Switch Remote *note2*                  |
 | Hue Motion Sensor          | Motion and Luminance sensor                       |
 | Innr Bulbs                 | *note1*                                           |
 | Osram Bulbs                |                                                   |
@@ -155,6 +160,8 @@ The following devices have been tested with the binding
 | Ubisys modules             | D1 Dimmer, S1/S2 Switch modules                   |
 
 Note 1: Some bulbs may not work with the Telegesis dongle.
+
+Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example. 
 
 ## Discovery
 
@@ -263,6 +270,28 @@ The syntax for the command strings is as in the examples above, where the possib
 
 Note that it is possible to dynamically add command descriptions for specific warning/squawk types to a `warning_device` channel by configuring the channel configuration property `zigbee_iaswd_commandOptions`, using String parameters of the form `label=>commandString`, where `label` is the label provided to UIs to render, e.g., buttons for the provided command options (as done, e.g., by PaperUI).
 Also note that solutions integrating the binding can add implementations of type `WarningTypeCommandDescriptionProvider` to provide warning/squawk types together with command descriptions for all channels of type `warning_device`. 
+
+
+## Channels triggered event & rules
+
+Some devices like the Philips Hue Dimmer can be discovered and added to openHAB through this binding but will not allow the Items to be created in PaperUI. These channels are set as Triggers and will generate output in the events.log that looks similar to this:
+
+```
+2019-03-08 20:51:18.609 [vent.ChannelTriggeredEvent] - zigbee:philips_rwl021:AAAAAAAA:BBBBBBBBBBBBBBBB:buttonI triggered SHORT_PRESSED
+```
+To utilize these events, no new Item is required and the rule can be used to directly trigger off of this event.
+The Channel that should be used can be copied directly from PaperUI under the Channels-section of the Thing or can be read from the events.log
+See the following example on how to integrate the Channel triggered event for a Hue Dimmer:
+
+```java
+rule "Philips Hue ButtonI"
+when
+    Channel 'zigbee:philips_rwl021:AAAAAAAA:BBBBBBBBBBBBBBBB:buttonI' triggered SHORT_PRESSED
+then
+    //execute your code here
+end
+```
+
 
 ## When things don't appear to be working
 

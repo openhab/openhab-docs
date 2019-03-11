@@ -8,220 +8,191 @@ title: ZMNHZD - ZWave
 # ZMNHZD Multifunctional Weather Station
 This describes the Z-Wave device *ZMNHZD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhzd_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
+![ZMNHZD product image](https://www.cd-jackson.com/zwave_device_uploads/364/364_default.jpg)
+
+
 The ZMNHZD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/364) to improve the documentation.
+Weather Station is used for measuring temperature, humidity, wind & rain properties and sending the measurement values to your Z-Wave network.The Weather Station can measure 10 different values: two sets of temperature/humidity sensors, wing gauge with 5 sensors (direction, velocity, wind gust, temperature and wind chill) and a rain sensor. With the use of the included Weather Station USB KEY all 10 values (end points) are sent and rendered in your home Z-Wave network. Qubino Weather Station Key is used for receiving Wireless data packages (from Thermo/ Hygro Sensor Ch1, Thermo/ Hygro Sensor Ch2, Rain Gauge, Wind Gauge) and sends it to the Z-Wave Controller. The Key is designed to be plugged into the USB Power Adapter. Module receives data for Temperature, Wind Chill, Velocity, Wind Gust, Wind Direction, Humidity, Rain Rate and Battery Level for each Sensor. It is designed to act as repeater in order to improve range and stability of Z-wave network.
+
+Remote Weather Sensors The remote weather sensors include a thermo-hygrometer, anemometer (wind sensor) and rain sensor. All data collected by the sensors are transmitted to the Weather Station Key by wireless RF, with a range up to 100 meters (open area). The Weather station Key supports a maximum of 2 thermo-hygrometers, allowing 2 channels of temperature/humidity display (Ch1 and Ch2)
+
+### Inclusion Information
+
+Connect module to USB Power Supply auto-inclusion (works for about 5 seconds after connected to power supply) or enable add/remove mode on main controller hold service button S between 1.5 and 4 seconds
+
+NOTE: For auto-inclusion procedure, first set main controller into inclusion mode and then connect module to USB power supply.
+
+### Exclusion Information
+
+Connect module to power supply enable add/remove mode on main controller, hold service button S between 4 seconds and 8 seconds By this function, all parameters of the module are set to default values and own ID is deleted.
+
+If service button S hold more than 1.5 and less than 4 seconds module is excluded, but configuration parameters are not set to default values.
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHZD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (velocity) | sensor_velocity |  | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
-| Sensor (direction) | sensor_direction |  | Number | 
-| Sensor (rain rate) | sensor_rainrate | Humidity | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (velocity) | sensor_velocity | sensor_velocity |  | Number | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
+| Sensor (direction) | sensor_direction | sensor_direction |  | Number | 
+| Sensor (rain rate) | sensor_rainrate | sensor_rainrate | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Thermo/ Hygro Sensor Ch1 – Temperature | sensor_temperature1 | Temperature | Number:Temperature | 
+| Thermo/ Hygro Sensor Ch1 – Temperature | sensor_temperature1 | sensor_temperature | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
-| Wind Gauge – Direction | sensor_direction2 |  | Number | 
+| Wind Gauge – Direction | sensor_direction2 | sensor_direction |  | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Wind Gauge – Velocity | sensor_velocity3 |  | Number | 
+| Wind Gauge – Velocity | sensor_velocity3 | sensor_velocity |  | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Wind Gauge – Wind gust | sensor_velocity4 |  | Number | 
+| Wind Gauge – Wind gust | sensor_velocity4 | sensor_velocity |  | Number | 
 | Battery Level | battery-level | Battery | Number |
-|  Wind Gauge – Temperature | sensor_temperature5 | Temperature | Number:Temperature | 
+|  Wind Gauge – Temperature | sensor_temperature5 | sensor_temperature | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
-| Wind Gauge – Wind Chill | sensor_temperature6 | Temperature | Number:Temperature | 
+| Wind Gauge – Wind Chill | sensor_temperature6 | sensor_temperature | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
-|  Rain Sensor | sensor_rainrate7 | Humidity | Number | 
+|  Rain Sensor | sensor_rainrate7 | sensor_rainrate | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
-|  Thermo/ Hygro Sensor Ch1 – Humidity | sensor_relhumidity8 | Humidity | Number | 
+|  Thermo/ Hygro Sensor Ch1 – Humidity | sensor_relhumidity8 | sensor_relhumidity | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
-| Thermo/ Hygro Sensor Ch2 – Temperature | sensor_temperature9 | Temperature | Number:Temperature | 
+| Thermo/ Hygro Sensor Ch2 – Temperature | sensor_temperature9 | sensor_temperature | Temperature | Number:Temperature | 
 | Battery Level | battery-level | Battery | Number |
-|  Thermo/ Hygro Sensor Ch2 – Humidity  | sensor_relhumidity10 | Humidity | Number | 
+|  Thermo/ Hygro Sensor Ch2 – Humidity  | sensor_relhumidity10 | sensor_relhumidity | Humidity | Number | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Sensor (velocity)
-
 Indicates the current velocity.
 
-The ```sensor_velocity``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_velocity``` channel and is of type ```sensor_velocity``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
-
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity``` channel and is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (direction)
-
 Indicates the direction.
 
-The ```sensor_direction``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_direction``` channel and is of type ```sensor_direction``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (rain rate)
-
 Indicates the current relative humidity.
 
-The ```sensor_rainrate``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_rainrate``` channel and is of type ```sensor_rainrate``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Thermo/ Hygro Sensor Ch1 – Temperature
-
 Endpoint 1 receives Temperature data from Thermo/ Hygro Sensor on Channel 1. It is capable of receiving data in range of -199.0 °C and 199.0 °C. However, the operating temperature of the 433 MHz sensor is from -10 °C to 60 °C
 
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature1``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level1``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Wind Gauge – Direction
-
 Endpoint 2 receives Direction data from Wind Gauge. The data is in range of 0.0° to 360.0°.
 
 Indicates the direction.
 
-The ```sensor_direction2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_direction2``` channel and is of type ```sensor_direction``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level2``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Wind Gauge – Velocity
-
 Endpoint 3 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s. 
 
 Indicates the current velocity.
 
-The ```sensor_velocity3``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_velocity3``` channel and is of type ```sensor_velocity``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level3``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Wind Gauge – Wind gust
-
 Endpoint 4 receives wind speed data from Wind Gauge. It is capable of receiving data in range of 0.00 m/s to 88.00 m/s. 
 
 Indicates the current velocity.
 
-The ```sensor_velocity4``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_velocity4``` channel and is of type ```sensor_velocity``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level4``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ###  Wind Gauge – Temperature
-
 Endpoint 5 receives Temperature data from Wind Gauge. It is capable of receiving data in range of -199.0 °C and 199.0 °C. However, the operating temperature of the sensor is from -10 °C to 60 °C
 
 Indicates the current temperature.
 
-The ```sensor_temperature5``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature5``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level5``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Wind Gauge – Wind Chill
-
 Endpoint 6 receives Temperature data from Wind Gauge. It is capable of receiving data in range of -199.0 °C and 199.0 °C. However, the operating temperature of the sensor is from -10 °C to 60 °C
 
 Indicates the current temperature.
 
-The ```sensor_temperature6``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature6``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level6``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ###  Rain Sensor
-
 Endpoint 7 receives and calculates rain rate. The rain rate is in range of 0.00 mm/h and 300.00 mm/h
 
 Indicates the current relative humidity.
 
-The ```sensor_rainrate7``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_rainrate7``` channel and is of type ```sensor_rainrate``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level7``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ###  Thermo/ Hygro Sensor Ch1 – Humidity
-
 Endpoint 8 receives Humidity data from Thermo/ Hygro Sensor on Channel 1. The data is in range of 0% and 100%
 
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity8``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity8``` channel and is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level8``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Thermo/ Hygro Sensor Ch2 – Temperature
-
 Endpoint 9 receives Temperature data from Thermo/ Hygro Sensor on Channel 2. It is capable of receiving data in range of -199.0 °C and 199.0 °C. However, the operating temperature of the sensor is from -10 °C to 60 °C.
 
 Indicates the current temperature.
 
-The ```sensor_temperature9``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature9``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level9``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ###  Thermo/ Hygro Sensor Ch2 – Humidity 
-
 Endpoint 10 receives Humidity data from Thermo/ Hygro Sensor on Channel 2. The data is in range of 0% and 100%.
 
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity10``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity10``` channel and is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level10``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 
 
@@ -471,9 +442,10 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The ZMNHZD supports 3 association groups.
 
-### Group 1: Lifeline group
+### Group 1: Lifeline
 
-reserved for the communication with the main controller
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Reserved for the communication with the main controller
 
 Association group 1 supports 1 node.
 
