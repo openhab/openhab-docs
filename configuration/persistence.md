@@ -135,11 +135,11 @@ Items {
 
 ## Restoring Item States on Restart
 
-When restarting your openHAB installation you may find there are times when your logs indicate some Items have the state, `NULL`.
+When restarting your openHAB installation you may find there are times when your logs indicate some Items have the state `NULL`.
 This is because, by default, Item states are not persisted when openHAB restarts - even if you have installed a persistence add-on.
-In order for items to be persisted across openHAB restarts, you must define a `restoreOnStartup` strategy for all your items.
-Then, whatever state they were in before the restart will be restored automatically.
-The following example persists two items on every change and restores them at startup:
+In order for items to be persisted across openHAB restarts, you must define a `restoreOnStartup` strategy for your items.  Then,
+whatever state they were in before the restart will be restored automatically.  The following example persists two items on every
+change and restores them at startup:
 
 ```java
 Strategies {
