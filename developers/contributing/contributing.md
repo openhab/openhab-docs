@@ -152,18 +152,20 @@ By making a contribution to this project, I certify that:
 
 then you just add a line to every git commit message:
 
-    Signed-off-by: Joe Smith <joe.smith@email.com> (github: github_handle)
+    Signed-off-by: Joe Smith <joe.smith@email.com>
 
 using your real name (sorry, no pseudonyms or anonymous contributions.) and an
 e-mail address under which you can be reached (sorry, no github noreply e-mail
 addresses (such as username@users.noreply.github.com) or other non-reachable
 addresses are allowed).
 
+Additionally can also sign off commits automatically by adding the `-s` or `--signoff` parameter to your usual git commit commands.
+
 If your commit contains code from others as well, please ensure that they certify the DCO as well and add them with an "Also-By" line to your commit message:
 
-    Also-by: Ted Nerd <ted.nerd@email.com> (github: github_handle_ted)
-    Also-by: Sue Walker <sue.walker@email.com> (github: github_handle_sue)
-    Signed-off-by: Joe Smith <joe.smith@email.com> (github: github_handle_joe)
+    Also-by: Ted Nerd <ted.nerd@email.com>
+    Also-by: Sue Walker <sue.walker@email.com>
+    Signed-off-by: Joe Smith <joe.smith@email.com>
 
 #### Small Patch Exception
 
