@@ -161,6 +161,14 @@
                   </includes>
                 </resource>
                 <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.binding.*/**/README.md</include>
+                    <include>org.openhab.binding.*/**/doc/**</include>
+                    <include>org.openhab.binding.*/**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
                   <directory>${basedir}/.external-resources/openhab-bundles/bindings</directory>
                   <includes>
                     <include>org.openhab.binding.zwave/README.md</include>
