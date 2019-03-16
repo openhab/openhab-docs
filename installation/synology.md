@@ -41,11 +41,12 @@ Download the latest SPK package: [Releases](https://github.com/openhab/openhab-s
 The SPK is a wrapper to download the latest openHAB release and does not contain openHAB itself.
 
 1. Login and open the DiskStation Manager.
-2. Go to Main Menu → Package Center.
-3. Click on the Manual Install button.
-4. Click "Choose File" and select the previously downloaded openHAB `.spk` file.
-5. On the confirmation page: If you would like the package to run immediately after installation, make sure the box next to "Run after Installation" is ticked.
-6. Click Apply to start installation.
+2. Go to Control Panel → User → Advanced → User Home and check 'Enable user home service'
+3. Go to Main Menu → Package Center.
+4. Click on the Manual Install button.
+5. Click "Choose File" and select the previously downloaded openHAB `.spk` file.
+6. On the confirmation page: If you would like the package to run immediately after installation, make sure the box next to "Run after Installation" is ticked.
+7. Click Apply to start installation.
 
 If your NAS cannot connect to the internet, the installer will tell you to download and place the ZIP file into your NAS public folder.
 
