@@ -40,39 +40,63 @@ To exclude the device, press the service button 3 times within 2 seconds. The g
 
 The following table summarises the channels available for the ZMNHWD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Color Control | color_color |  | Color | 
-| Color Temperature | color_temperature | ColorLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Color Control | color_color | color_color | ColorLight | Color | 
+| Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
+| Brightness 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Brightness 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
+| Brightness 3 | switch_dimmer3 | switch_dimmer | DimmableLight | Dimmer | 
+| Brightness 4 | switch_dimmer4 | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Color Control
-
 The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
 
-The ```color_color``` channel supports the ```Color``` item.
+The ```color_color``` channel and is of type ```color_color``` and supports the ```Color``` item and is in the ```ColorLight``` category.
 
 ### Color Temperature
-
 The color temperature channel allows to set the color
             temperature of a light from 0 (cold) to 100 (warm).
 
-The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
+The ```color_temperature``` channel and is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
+
+### Brightness 1
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer1``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Brightness 2
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer2``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Brightness 3
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer3``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### Brightness 4
+The brightness channel allows to control the brightness of a light.
+            It is also possible to switch the light on and off.
+
+The ```switch_dimmer4``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 
@@ -363,12 +387,54 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_MULTI_CHANNEL_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
+#### Endpoint 1
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V2| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
+#### Endpoint 2
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V2| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
+#### Endpoint 3
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V2| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
+#### Endpoint 4
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V2| Linked to BASIC|
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 
 ### Documentation Links
 

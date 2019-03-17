@@ -23,18 +23,17 @@ No device information is provided in the database. Consider [updating the databa
 
 The following table summarises the channels available for the Yale Smart Door Lock Z-Wave Module -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Door Lock | lock_door | Door | Switch | 
-| Alarm | alarm_general | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Door Lock | lock_door | lock_door | Door | Switch | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
 | Battery Level | battery-level | Battery | Number |
-| Clock Time Offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
 
 ### Door Lock
-
 Lock and unlock the door.
 
-The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The ```lock_door``` channel and is of type ```lock_door``` and supports the ```Switch``` item and is in the ```Door``` category.
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
@@ -43,10 +42,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Unlocked |
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel and is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -56,16 +54,12 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 ### Clock Time Offset
-
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel and is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
