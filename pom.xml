@@ -144,6 +144,26 @@
             </configuration>
           </execution>
           <execution>
+            <id>copy-oh2-persistence-docs</id>
+            <phase>process-resources</phase>
+            <goals>
+              <goal>copy-resources</goal>
+            </goals>
+            <configuration>
+              <outputDirectory>${basedir}/_addons_persistences/oh2</outputDirectory>
+              <resources>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.persistence.*/**/README.md</include>
+                    <include>org.openhab.persistence.*/**/doc/**</include>
+                    <include>org.openhab.persistence.*/**/cfg/**</include>
+                  </includes>
+                </resource>
+              </resources>
+            </configuration>
+          </execution>
+          <execution>
             <id>copy-oh2-binding-docs</id>
             <phase>process-resources</phase>
             <goals>
@@ -158,6 +178,14 @@
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
                     <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.binding.*/**/README.md</include>
+                    <include>org.openhab.binding.*/**/doc/**</include>
+                    <include>org.openhab.binding.*/**/cfg/**</include>
                   </includes>
                 </resource>
                 <resource>
@@ -191,6 +219,14 @@
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
                     <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.transform.*/**/README.md</include>
+                    <include>org.openhab.transform.*/**/doc/**</include>
+                    <include>org.openhab.transform.*/**/cfg/**</include>
                   </includes>
                 </resource>
               </resources>
@@ -257,6 +293,14 @@
                     <include>**/cfg/**</include>
                   </includes>
                 </resource>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.voice.*/**/README.md</include>
+                    <include>org.openhab.voice.*/**/doc/**</include>
+                    <include>org.openhab.voice.*/**/cfg/**</include>
+                  </includes>
+                </resource>
               </resources>
             </configuration>
           </execution>
@@ -298,6 +342,14 @@
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
                     <include>**/cfg/**</include>
+                  </includes>
+                </resource>
+                <resource>
+                  <directory>${basedir}/.external-resources/openhab2-addons/bundles</directory>
+                  <includes>
+                    <include>org.openhab.io.*/**/README.md</include>
+                    <include>org.openhab.io.*/**/doc/**</include>
+                    <include>org.openhab.io.*/**/cfg/**</include>
                   </includes>
                 </resource>
               </resources>
