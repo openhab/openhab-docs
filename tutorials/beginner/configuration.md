@@ -78,7 +78,7 @@ There you will find your network device thing, including the name "John's Mobile
 
 ![](images/picture_12.jpg)
 
-You can already see the status, "ONLINE", of the thing, so it's currently reachable by openHAB.
+You can already see the status, "ONLINE", of the thing, this is confusing for new beginners since "ONLINE" here means not that the Device is reachable through the network. Instead it means that the thing is "present" or "usable" for openhab. The online state of the network device is only accessible through the channel "online".
 If you click on the name, you'll get to the next page showing the available channels of the thing.
 Channels represent the different functions the items provide.
 In this case you can see two channels: "Online" and "Time", the description below it says it all :)
