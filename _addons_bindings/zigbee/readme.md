@@ -136,28 +136,32 @@ The thing type is ```coordinator_xbee```. Other XBee S2C devices should also be 
 
 The following devices have been tested with the binding
 
-| Device                     | Description                                       |
-|----------------------------|---------------------------------------------------|
-| Busch-Jaeger 6711 U        | Relay Insert                                      |
-| Busch-Jaeger 6715 U        | LED-Dimmer Insert                                 |
-| Busch-Jaeger 6735          | Control Element (1-channel)                       |
-| Busch-Jaeger 6735/01       | Control Element (1-channel, battery-operated)     |
-| Busch-Jaeger 6736          | Control Element (2-channel)                       |
-| GE Bulbs                   |                                                   |
-| GE Tapt Wall Switch        | On/Off Switch                                     |
-| Hue Bulbs                  | Color LED Bulb                                    |
-| Hue Dimmer                 | Hue Dimmer Switch Remote *note2*                  |
-| Hue Motion Sensor          | Motion and Luminance sensor                       |
-| Innr Bulbs                 | *note1*                                           |
-| Osram Bulbs                |                                                   |
-| Osram Motion Sensor        | Osram Smart+ Motion Sensor                        |
-| SmartThings Plug           | Metered Plug                                      |
-| SmartThings Motion Sensor  | CentraLite 3325-S Motion and Temperature sensor   |
-| SmartThings Contact Sensor | Contact and Temperature sensor                    |
-| Tradfri Bulbs              |                                                   |
-| Tradfri Motion Sensor      |                                                   |
-| Trust Bulbs                | *note1*                                           |
-| Ubisys modules             | D1 Dimmer, S1/S2 Switch modules                   |
+| Device                                       | Description                                       |
+|----------------------------------------------|---------------------------------------------------|
+| Busch-Jaeger 6711 U                          | Relay Insert                                      |
+| Busch-Jaeger 6715 U                          | LED-Dimmer Insert                                 |
+| Busch-Jaeger 6735                            | Control Element (1-channel)                       |
+| Busch-Jaeger 6735/01                         | Control Element (1-channel, battery-operated)     |
+| Busch-Jaeger 6736                            | Control Element (2-channel)                       |
+| GE Bulbs                                     |                                                   |
+| GE Tapt Wall Switch                          | On/Off Switch                                     |
+| Hue Bulbs                                    | Color LED Bulb                                    |
+| Hue Dimmer                                   | Hue Dimmer Switch Remote *note2*                  |
+| Hue Motion Sensor                            | Motion and Luminance sensor                       |
+| Innr Bulbs                                   | *note1*                                           |
+| Osram Bulbs                                  |                                                   |
+| Osram Motion Sensor                          | Osram Smart+ Motion Sensor                        |
+| SmartThings Plug                             | Metered Plug                                      |
+| SmartThings Motion Sensor                    | CentraLite 3325-S Motion and Temperature sensor   |
+| SmartThings Contact Sensor                   | Contact and Temperature sensor                    |
+| Tradfri Bulbs                                |                                                   |
+| Tradfri Motion Sensor                        |                                                   |
+| Trust Bulbs                                  | *note1*                                           |
+| Ubisys modules                               | D1 Dimmer, S1/S2 Switch modules                   |
+| Xiaomi Aqara Door and Window Sensor          |                                                   |
+| Xiaomi Aqara Temperature and Humidity Sensor |                                                   |
+| Xiaomi Aqara Wireless Mini Switch            |                                                   |
+| Xiaomi Aqara Wireless Remote Switch          | Double Rocker variant                             |
 
 Note 1: Some bulbs may not work with the Telegesis dongle.
 
