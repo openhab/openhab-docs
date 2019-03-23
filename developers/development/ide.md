@@ -35,6 +35,13 @@ Both are currently based on different build systems and thus require separate ID
 
 ### Option 1: Installation of IDE for Add-on Development
 
+[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
+
+Warning: The following step by step guide is only for the old build-system.
+* **A binding created via this old way will not be accepted in the official openhab2-addons repository!**
+* The migration to the new build-system is a work in progress. Migrated bindings will not be accessible in the IDE.
+* We are working on a new step by step guide after the migration is done. Watch [Issue 5005](https://github.com/openhab/openhab2-addons/issues/5005) for further information and progress.
+
 1. Select (double-click) the "openHAB Add-on Development" item and any other entries (apart from "openHAB Core Development") that you want to have available in your workspace (you can select multiple/all of them). Click "Next" when you are finished.
 2. Now provide an installation folder (don't use spaces in the path on Windows!) and your Github id (used to push your changesets to) and select "Next".
 3. The installation begins when you press "Finish".
