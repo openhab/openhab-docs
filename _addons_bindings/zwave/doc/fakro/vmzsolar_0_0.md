@@ -10,6 +10,9 @@ This describes the Z-Wave device *VMZ Solar*, manufactured by *Fakro* with the t
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
+![VMZ Solar product image](https://www.cd-jackson.com/zwave_device_uploads/670/670_default.jpg)
+
+
 The VMZ Solar supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 ## Overview
@@ -20,29 +23,24 @@ No device information is provided in the database. Consider [updating the databa
 
 The following table summarises the channels available for the VMZ Solar -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds control | blinds_control | Blinds | Rollershutter | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds control | blinds_control | blinds_control | Blinds | Rollershutter | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel and is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 
 

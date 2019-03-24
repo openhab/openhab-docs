@@ -6,7 +6,7 @@ title: NAS-WR01ZE - ZWave
 {% include base.html %}
 
 # NAS-WR01ZE Wall Plug Switch
-This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_naswr01ze_02_032```.
+This describes the Z-Wave device *NAS-WR01ZE*, manufactured by *[Shenzhen Neo Electronics Co., Ltd](http://www.szneo.com/)* with the thing type UID of ```shenzhen_coolcampwrplug_02_032```.
 This version of the device is limited to firmware version 2.32
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.

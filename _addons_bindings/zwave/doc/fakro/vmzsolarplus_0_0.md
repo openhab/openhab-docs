@@ -8,6 +8,11 @@ title: VMZ Solar z-wave plus - ZWave
 # VMZ Solar z-wave plus Awning Blind z-wave plus version
 This describes the Z-Wave device *VMZ Solar z-wave plus*, manufactured by *Fakro* with the thing type UID of ```fakro_vmzsolarplus_00_000```.
 
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
+
+![VMZ Solar z-wave plus product image](https://www.cd-jackson.com/zwave_device_uploads/750/750_default.jpg)
+
+
 The VMZ Solar z-wave plus supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 ## Overview
@@ -18,30 +23,27 @@ No device information is provided in the database. Consider [updating the databa
 
 The following table summarises the channels available for the VMZ Solar z-wave plus -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds control | blinds_control | Blinds | Rollershutter | 
-| Alarm (power) | alarm_power | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel and is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel and is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -51,10 +53,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 
 
@@ -312,11 +311,6 @@ The VMZ Solar z-wave plus supports 4 association groups.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-<commandClass>BATTERY</commandClass>  
-<commandClass>ALARM</commandClass>  
-<commandClass>DEVICE\_RESET\_LOCALLY</commandClass>  
-<commandClass>BASIC</commandClass>  
- 
 
 Association group 1 supports 1 node.
 
@@ -362,6 +356,10 @@ Association group 4 supports 5 nodes.
 | COMMAND_CLASS_BATTERY_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/750/VMZ-SOLAR-FAKRO-EN.pdf)
 
 ---
 
