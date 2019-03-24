@@ -35,7 +35,7 @@ Both are currently based on different build systems and thus require separate ID
 
 ### Option 1: Installation of IDE for Add-on Development
 
-[![deprecated](http://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
+[![deprecated](https://badges.github.io/stability-badges/dist/deprecated.svg)](http://github.com/badges/stability-badges)
 
 Warning: The following step by step guide is only for the old build-system.
 * **A binding created via this old way will not be accepted in the official openhab2-addons repository!**
