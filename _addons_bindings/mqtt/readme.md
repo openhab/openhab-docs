@@ -19,11 +19,14 @@ install: auto
 > It was designed as an extremely lightweight publish/subscribe messaging transport.
 
 MQTT is a server/client architecture.
-A server, also called broker is not provided within this binding,
-but it allows to detect running brokers and to manage connections.
-The hereby configured broker connections make it possible to link MQTT topics to Things and Channels.
 
-It has the following extensions:
+A server, also called broker is not provided within this binding.
+You can use any of the freely available MQTT Brokers like [Mosquitto](https://mosquitto.org/)
+or [Moquette](https://moquette-io.github.io/moquette/) or install the included Moquette broker as addon.
+
+This particular binding allows to configure connections to brokers via openHAB Things.
+This binding does NOT allow you to link Channels to MQTT topics or perform auto-discovery of available
+MQTT topics. Please check out the available extensions:
 
 <!--list-subs-->
 
@@ -78,30 +81,3 @@ Configuration parameters are:
 * __stateTopic__: This channel will trigger on this MQTT topic. This topic can contain wildcards like + and # for example "all/in/#" or "sensors/+/config".
 * __payload__: An optional condition on the value of the MQTT topic that must match before this channel is triggered.
 
-## Full Example
-
-In a first example a very secure connection to a broker is defined. It pins the returned certificate and public key.
-If someone tries a man in the middle attack later on, this broker connection will recognize it and refuse a connection.
-Be aware that if your brokers certificate changes, you need to remove the connection entry and add it again. 
-
-The second connection is a plain, unsecured one. Unsecure connections are default, if you do not provide the "secure" parameter. Use this only for local MQTT Brokers.
-
-A third connection uses a username and password for authentication.
-Secure is set to false as the username and password is requested by the broker.
-The credentials are plain values on the wire, therefore you should only use this on a secure connection.
-
-In a fourth connection, the public key pinning is enabled again.
-This time, a public key hash is provided to pin the connection to a specific server.
-It follows the form "hashname:hashvalue". Valid *hashnames* are SHA-1, SHA-224, SHA-256, SHA-384, SHA-512 and all others listed
-in [Java MessageDigest Algorithms](https://docs.oracle.com/javase/9/docs/specs/security/standard-names.html#messagedigest-algorithms).
-
-`mqttConnections.things`:
-
-```xtend
-mqtt:broker:mySecureBroker [ host="192.168.0.41", secure=true, certificatepin=true, publickeypin=true ]
-mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
-
-mqtt:broker:myAuthentificatedBroker [ host="192.168.0.43", secure=false, username="user", password="password" ]
-
-mqtt:broker:pinToPublicKey [ host="192.168.0.44", secure=true, publickeypin=true, publickey="SHA-256:9a6f30e67ae9723579da2575c35daf7da3b370b04ac0bde031f5e1f5e4617eb8" ]
-```

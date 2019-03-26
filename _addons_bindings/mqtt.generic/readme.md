@@ -1,9 +1,9 @@
 ---
 id: mqtt.generic
-label: MQTT Generic Thing
-title: MQTT Generic Thing - Bindings
+label: MQTT Things and Channels
+title: MQTT Things and Channels - Bindings
 type: binding
-description: "> MQTT is a machine-to-machine (M2M)/'Internet of Things' connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport."
+description: "MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport."
 since: 2x
 logo: images/addons/mqtt.generic.png
 install: manual
@@ -13,53 +13,61 @@ install: manual
 
 {% include base.html %}
 
-# MQTT Generic Thing Binding
+# MQTT Things and Channels Binding
 
-> MQTT is a machine-to-machine (M2M)/"Internet of Things" connectivity protocol. It was designed as an extremely lightweight publish/subscribe messaging transport.
+MQTT is one of the most commonly used protocols in IoT (Internet of Things) projects. It stands for Message Queuing Telemetry Transport.
 
-This binding allows to link MQTT topics to Things.
+It is designed as a lightweight messaging protocol that uses publish/subscribe operations to exchange data between clients and the server.
 
+[](doc/mqtt.jpg)
+
+MQTT servers are called brokers and the clients are simply the connected devices.
+
+* When a device (a client) wants to send data to the broker, we call this operation a “publish”.
+* When a device (a client) wants to receive data from the broker, we call this operation a “subscribe”.
+
+
+[](doc/subpub.png)
+
+openHAB itself is not an MQTT Broker and needs to connect to one as a regular client.
+Therefore you must have configured a *Broker Thing* first via the **MQTT Broker Binding**!
+
+## MQTT Topics
+
+If a client subscribes to a broker, it is certainly not interested in all published messages.
+Instead it subscribes to specific **topics**. A topic can look like this: "mydevice/temperature".
+
+Example:
+
+Let's assume there is an MQTT capable light bulb.
+
+It has a unique id amongst all light bulbs, say "device123". The manufacturer decided to accept new
+brightness values on "device123/brightness/set". In openHAB we call that a **command topic**.
+
+And now assume that we have a mobile phone (or openHAB itself) and we register with the MQTT broker,
+and want to retrieve the current brightness value. The manufacturer specified that this value can
+be found on "device123/brightness". In openHAB we call that a **state topic**.
+
+This pattern is very common, that you have a command and a state topic. A sensor would only have a state topic,
+naturally.
+
+Because every manufacturer can device on his own on which topic his devices publish, this
+binding can unfortunately not provide any auto-discovery means.
+
+If you use an open source IoT device, the chances are high,
+that it has the MQTT convention Homie or HomeAssistant implemented. Those conventions specify the topic
+topology and allow auto discovery. Please have a look at the specific openHAB bindings.  
+ 
 ## Supported Things
 
-There a few Things dedicated to MQTT conventions available and a Generic MQTT Thing.
-The last one is comparable to what was found in the mqtt 1.x binding. 
+Because of the very generic structure of MQTT, this binding allows you to add an arbitrary number
+of so called "Generic MQTT Things" to organize yourself.
 
-### Homie Thing
+On each of those things you can add an arbitrary number of channels.
 
-Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and better
-are auto-discovered and represented by this Homie Thing.
+Remember that you need a configured broker Thing first!
 
-Find the next table to understand the topology mapping from Homie to the Framework: 
-
-| Homie    | Framework     | Example MQTT topic                 |
-|----------|---------------|------------------------------------|
-| Device   | Thing         | homie/super-car                    |
-| Node     | Channel Group | homie/super-car/engine             |
-| Property | Channel       | homie/super-car/engine/temperature |
-
-System trigger channels are supported using non-retained properties, with *enum* data type and with the following formats:
-
-* Format: "PRESSED,RELEASED" -> system.rawbutton
-* Format: "SHORT\_PRESSED,DOUBLE\_PRESSED,LONG\_PRESSED" -> system.button
-* Format: "DIR1\_PRESSED,DIR1\_RELEASED,DIR2\_PRESSED,DIR2\_RELEASED" -> system.rawrocker
-
-### HomeAssistant Thing
-
-HomeAssistant MQTT Components are recognized as well. The base topic needs to be **homeassistant**. 
-The mapping is structured like this:
-
-
-| HA MQTT               | Framework     | Example MQTT topic                 |
-|-----------------------|---------------|------------------------------------|
-| Object                | Thing         | homeassistant/../../object         |
-| Component+Node        | Channel Group | homeassistant/component/node/object|
-| -> Component Features | Channel       | state/topic/defined/in/comp/config |
-
-### Generic MQTT Thing
-
-A generic MQTT Thing has no configuration and is a pure shell for channels that you add yourself.
-
-You can manually add the following channels:
+You can add the following channels:
 
 #### Supported Channels
 
@@ -75,11 +83,7 @@ You can manually add the following channels:
 * **datetime**: This channel handles date/time values.
 * **rollershutter**: This channel is for rollershutters.
 
-## Thing and Channel Configuration
-
-All things require a configured broker.
-
-### Common Channel Configuration Parameters
+## Channel Configuration
 
 * __stateTopic__: The MQTT topic that represents the state of the thing. This can be empty, the thing channel will be a state-less trigger then. You can use a wildcard topic like "sensors/+/event" to retrieve state from multiple MQTT topics. 
 * __transformationPattern__: An optional transformation pattern like [JSONPath](http://goessner.net/articles/JsonPath/index.html#e2) that is applied to all incoming MQTT values.
@@ -254,177 +258,3 @@ Here are a few examples:
 * If you use the Mosquitto broker: Please be aware that there is a relatively low setting 
 for retained messages. At some point messages will just not being delivered anymore: 
 Change the setting 
-
-## Examples
-
-Have a look at the following textual examples.
-
-### A broker Thing with a Generic MQTT Thing and a few channels 
-
-demo1.things:
-
-```xtend
-Bridge mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
-{
-    Thing topic mything {
-    Channels:
-        Type switch : lamp "Kitchen Lamp" [ stateTopic="lamp/enabled", commandTopic="lamp/enabled/set" ]
-        Type switch : fancylamp "Fancy Lamp" [ stateTopic="fancy/lamp/state", commandTopic="fancy/lamp/command", on="i-am-on", off="i-am-off" ]
-        Type string : alarmpanel "Alarm system" [ stateTopic="alarm/panel/state", commandTopic="alarm/panel/set", allowedStates="ARMED_HOME,ARMED_AWAY,UNARMED" ]
-        Type color : lampcolor "Kitchen Lamp color" [ stateTopic="lamp/color", commandTopic="lamp/color/set", rgb=true ]
-        Type dimmer : blind "Blind" [ stateTopic="blind/state", commandTopic="blind/set", min=0, max=5, step=1 ]
-    }
-}
-```
-
-demo2.things:
-
-```xtend
-Bridge mqtt:broker:WorkBroker "Work Broker" [ host="localhost", port="1883", secure=false, username="openhabian", password="ohmqtt", clientID="WORKOPENHAB24" ]
-
-Thing mqtt:topic:WorkBroker:WorkSonoff "Work Sonoff" (mqtt:broker:WorkBroker) @ "Home" {
-    Channels:
-        Type switch : WorkLight "Work Light" [ stateTopic="stat/worklight/POWER", commandTopic="cmnd/worklight/POWER" ]
-        Type switch : WorkLightTele "Work Tele" [ stateTopic="tele/worklight/STATE", transformationPattern="JSONPATH:$.POWER" ]
-}
-```
-
-When using .things and .items files for configuration, items and channels follow the format of:
-
-```xtend
-<ITEM-TYPE> <ITEM-NAME> "<FRIENDLY-NAME>" { channel="mqtt:topic:<BROKER-NAME>:<THING-NAME>:<CHANNEL-NAME>" }
-```
-
-demo1.items:
-
-```xtend
-Switch Kitchen_Light "Kitchen Light" { channel="mqtt:topic:myUnsecureBroker:mything:lamp" }
-Rollershutter shutter "Blind" { channel="mqtt:topic:myUnsecureBroker:mything:blind" }
-```
-
-demo2.items:
-
-```xtend
-Switch SW_WorkLight "Work Light Switch" { channel="mqtt:topic:WorkBroker:WorkSonoff:WorkLight", channel="mqtt:topic:WorkBroker:WorkSonoff:WorkLightTele" }
-```
-
-### Publish an MQTT value on startup
-
-An example "demo.rules" rule to publish to `system/started` with the value `true` on every start:
-
-```xtend
-rule "Send startup message"
-when
-  System started
-then
-  val actions = getActions("mqtt","mqtt:broker:myUnsecureBroker")
-  actions.publishMQTT("system/started","true")    
-end
-```
-
-### Synchronize two instances
-
-To synchronize item items from a SOURCE openHAB instance to a DESTINATION instance, do the following:
-
-Define a broker and a trigger channel for your DESTINATION openHAB installation (`thing` file):
-
-```xtend
-Bridge mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
-{
-    Channels:
-        Type publishTrigger : myTriggerChannel "Receive everything" [ stateTopic="allItems/#", separator="#" ]
-}
-```
-
-The trigger channel will trigger for each received message on the MQTT topic "allItems/".
-Now push those changes to your items in a `rules` file:
-
-```xtend
-rule "Receive all"
-when 
-      Channel "mqtt:broker:myUnsecureBroker:myTriggerChannel" triggered
-then 
-    //The receivedEvent String contains unneeded elements like the mqtt topic, we only need everything after the "/" as this is were item name and state are
-    val parts1 = receivedEvent.toString.split("/").get(1)
-    val parts2 = parts1.split("#")
-    sendCommand(parts2.get(0), parts2.get(1))
-end
-```
-
-On your SOURCE openHAB installation, you need to define a group `myGroupOfItems` and add all items
-to it that you want to synchronize. Then add this rule to a `rule` file:
-
-```xtend
-rule "Publish all"
-when 
-      Member of myGroupOfItems changed
-then
-   val actions = getActions("mqtt","mqtt:broker:myUnsecureBroker")
-   actions.publishMQTT("allItems/"+triggeringItem.name,triggeringItem.state.toString)
-end
-```
-
-## Converting an MQTT1 installation
-
-The conversion is straight forward, but need to be done for each item.
-You do not need to convert everything in one go. MQTT1 and MQTT2 can coexist.
-
-> For mqtt1 make sure you have enabled the Legacy 1.x repository and installed "mqtt1".
-
-### 1 Command / 1 State topic 
-
-Assume you have this item:
-
-```xtend
-Switch ExampleItem "Heatpump Power" { mqtt=">[mosquitto:heatpump/set:command:*:DEFAULT)],<[mosquitto:heatpump:JSONPATH($.power)]" }
-```
-
-This converts to an entry in your *.things file with a **Broker Thing** and a **Generic MQTT Thing** that uses the bridge:
-
-```xtend
-Bridge mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
-{
-    Thing topic mything "My Thing" {
-    Channels:
-        Type switch : heatpumpChannel "Heatpump Power" [ stateTopic="heatpump", commandTopic="heatpump/set", transformationPattern="JSONPATH:$.power" ]
-    }
-}
-```
-
-Add as many channels as you have items and add the *stateTopic* and *commandTopic* accordingly. 
-
-Your items change to:
-
-```xtend
-Switch ExampleItem "Heatpump Power" { channel="mqtt:topic:myUnsecureBroker:mything:heatpumpChannel" }
-```
-
-
-### 1 Command / 2 State topics 
-
-If you receive updates from two different topics, you need to create multiple channels now, 1 for each MQTT receive topic.
-
-```xtend
-Switch ExampleItem "Heatpump Power" { mqtt=">[mosquitto:heatpump/set:command:*:DEFAULT)],<[mosquitto:heatpump/state1:state:*:DEFAULT,<[mosquitto:heatpump/state2:state:*:DEFAULT" }
-```
-
-This converts to:
-
-```xtend
-Bridge mqtt:broker:myUnsecureBroker [ host="192.168.0.42", secure=false ]
-{
-    Thing topic mything "My Thing" {
-    Channels:
-        Type switch : heatpumpChannel "Heatpump Power" [ stateTopic="heatpump/state1", commandTopic="heatpump/set" ]
-        Type switch : heatpumpChannel2 "Heatpump Power" [ stateTopic="heatpump/state2" ]
-    }
-}
-```
-
-Link both channels to one item. That item will publish to "heatpump/set" on a change and
-receive values from "heatpump/state1" and "heatpump/state2".
-
-```xtend
-Switch ExampleItem "Heatpump Power" { channel="mqtt:topic:myUnsecureBroker:mything:heatpumpChannel",
-                                      channel="mqtt:topic:myUnsecureBroker:mything:heatpumpChannel2" }
-```
