@@ -85,7 +85,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 Season
 1 – summer  
 2 – winter
-Values in the range 0 to 1 may be set.
+Values in the range 1 to 2 may be set.
 
 The manufacturer defined default value is ```1```.
 
