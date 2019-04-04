@@ -9,7 +9,7 @@ title: Securing Communication and Access
 
 openHAB has mainly two ways to be accessed:
 
-1. Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the [Console documentation](/administration/console).
+1. Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the [Console documentation](/docs/administration/console.html).
 2. Through HTTP(S), which we will look at in the following.
 
 {::options toc_levels="2..3"/}
