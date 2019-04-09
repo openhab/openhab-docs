@@ -22,15 +22,16 @@ The following directory and file layout must be respected:
 .
 +-- pom.xml  The buildsystem (maven) file that contains the version and name of your extension
 |
-+-- NOTICE   license information
++-- NOTICE   License information
 |            3rd party content has to be given in the NOTICE file.
 |
-+-- lib      3rd party jar files - Avoid to use those, use maven dependencies instead
++-- lib      3rd party jar files - Avoid those, use maven dependencies instead
 |
 +-- src      Your source code
-|   +-- main/jave/...      The java sources
-|   +-- main/resources/... Other resource files like the binding.xml
-|   +-- test/jave/...      Your test code
+|   +-- main/jave/...            The java sources
+|   +-- main/resources/ESH_INF/  Binding and config xml description files like binding.xml
+|   +-- main/resources/...       Other resource files
+|   +-- test/jave/...            Your test code
 ```
 
 1. The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
@@ -41,33 +42,54 @@ The following directory and file layout must be respected:
 
 ## B. Code Style
 
-1. Generics must be used where applicable.
-1. Code MUST not show any warnings. Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
-1. Packages that contain classes that are not meant to be used by other bundles MUST have "internal" in their package name.
-1. Every class, except data-transfer-objects (DTO), must be annotated with `@NonNullByDefault`.
-and `@Nullable` should be used, for details see [Null annotation](#null-annotations).
-1. OSGi Declarative Services should be declared using annotations. 
+* Generics must be used where applicable. See example below:
+
+```java
+public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
+		return g1.get().equals(g2.get());
+}
+```
+
+* Code MUST not show any warnings. Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
+* Your classes are generally organised within an internal package
+
+```
+org.openhab.binding.coolbinding.internal
+org.openhab.binding.coolbinding.internal.handler
+org.openhab.binding.coolbinding.internal.discovery
+```
+
+Remember that classes that are meant to be used by scripts or other bindings must be non internal.
+
+* Every class, except data-transfer-objects (DTO), must be annotated with `@NonNullByDefault`.
+  For details see [Null annotation](#null-annotations).
+* OSGi Declarative Services annotations are to be used
+
+```java
+@Component(service=MyCoolService.class)
+public class MyCoolService {
+   @Reference
+   private @NonNullByDefault({}) ItemRegistry itemRegistry;
+}
+```
 
 ## C. Documentation
 
-The following is valid for every class, interface and enumeration (except inner classes and enums):
+JavaDoc is required to describe the purpose and usage of every:
 
-1. JavaDoc is required, describing the elements purpose and usage.
-   Data-transfer-objects (DTOs map from Json/XML to Java classes) do not need JavaDoc.
-1. An `@author` tag within the JavaDoc for every author that wrote a substantial part of the file is required.
+* class,
+* interface,
+* enumeration (except inner classes and enums),
+* constant, field and method with visibility of default, protected or public.
 
-We also require JavaDoc for
-
-* every constant,
-* field and
-* method with default, protected or public visibility.
+An @author tag is required within the JavaDoc for every author who made a substantial contribution to the file. New @author tags should be placed below the older ones. Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require JavaDoc.
 
 ## D. Language Levels and Libraries
 
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
- * To allow optimized runtimes, the set of Java packages to be used is furthermore restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
-2. The [OSGi R5](http://www.osgi.org/Download/Release5) release is targeted, no newer features should be used.
-3. slf4j is used for logging
+ * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
+2. The [OSGi R5](http://www.osgi.org/Download/Release5) release is targeted, and newer features should not be used.
+3. slf4j is used for logging.
 4. Some utility libraries are available which can be used throughout the code:
  - Apache Commons IO
  - Apache Commons Lang
@@ -82,8 +104,8 @@ We also require JavaDoc for
 ## F. Logging
 
 This section explains some logging usage patterns.
-The used logger allows to log to different severity levels (trace, info, debug, warn, error).
-Most of the time you want to use `warn` or `debug`. 
+The logger that is used allows logging at multiple severity levels (trace, info, debug, warn, error).
+Most of the time, a level of `warn` or `debug` will be used.
 Please remember that every logging statement adds to code size and runtime cost.
 
 * Loggers should be [non-static](http://slf4j.org/faq.html#declared_static), when ever possible and have the name ```logger```.
@@ -136,11 +158,16 @@ void myFun() {
 }
 ```
 
-Please keep the user informated via those `update*` methods if a connection drops etc and not abuse the logger.
+Please keep the user informed through those `update*` methods, when a connection drops, device is not accessible, etc.
+Do not over use the logger.
 
-* `warn` logging should only be used to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal, while possibly ignoring some faulty configuration/situation. It can also be used in situations, where a code section is reached, which is not expected by the implementation under normal circumstances (while being able to automatically recover from it).
+* `warn` logging should only be used
+  - to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal,
+  - in recoverable situations when a section of code that is not accessed under normal operating conditions is reached.
 
-* `error` logging is not allowed in extensions and is purely reserved to the framework. Except if something is going really, really wrong in your extension and you are going to affect the framework stability.
+* `error` logging is not allowed in extensions and is purely reserved to the framework.
+   The only exception would be if something is going really, really wrong in your extension,
+   and there is a possibility that the stability of the framework could be affected.
 
 ## Guideline details
 
