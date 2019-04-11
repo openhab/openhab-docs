@@ -38,7 +38,7 @@ The following directory and file layout must be respected:
 1. Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 1. Code must be formatted using the "ESH" code formatter (in Eclipse).
    - This is set up automatically by the official [IDE setup](ide.html)
-   - You can manually import [ESH.xml](ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
+   - You can manually import [ESH.xml]({base}/developer/contributing/ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
 
 ## B. Code Style
 
