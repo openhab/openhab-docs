@@ -50,7 +50,8 @@ public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
 }
 ```
 
-* Code MUST not show any warnings. Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
+* Code MUST not show any warnings.
+  Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
 * Your classes are generally organised within an internal package
 
 ```
@@ -82,7 +83,9 @@ JavaDoc is required to describe the purpose and usage of every:
 * enumeration (except inner classes and enums),
 * constant, field and method with visibility of default, protected or public.
 
-An @author tag is required within the JavaDoc for every author who made a substantial contribution to the file. New @author tags should be placed below the older ones. Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require JavaDoc.
+An @author tag is required within the JavaDoc for every author who made a substantial contribution to the file.
+New @author tags should be placed below the older ones.
+Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require JavaDoc.
 
 ## D. Language Levels and Libraries
 
@@ -197,7 +200,8 @@ Classes (except data transfer objects (DTO)) must be annotated with `@NonNullByD
 public class MyClass(){}
 ```
 
-This forces you to think about every field in your class if it can be null at any point, or should rather be default initialized. If you have fields that are neither marked as nullable, nor are initialized, the code will not compile.
+This forces you to think about every field in your class if it can be null at any point, or should rather be default initialized.
+If you have fields that are neither marked as nullable, nor are initialized, the code will not compile.
 
 Fields that can be null are to be annotated like this:
 
@@ -223,7 +227,8 @@ private @Nullable MyReturnType myMethod(){};
 ```
 
 If you reference an OSGi service, OSGi will already make sure that the field is non-null.
-The compiler doesn't know about that fact though. You must therefore disable null-checks for such references:
+The compiler doesn't know about that fact though.
+You must therefore disable null-checks for such references:
 
 ```java
 @Reference
