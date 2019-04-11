@@ -1,7 +1,7 @@
 ---
 layout: documentation
 title: Google Assistant
-source: https://github.com/openhab/openhab-google-assistant/blob/master/USAGE.md
+source: https://github.com/openhab/openhab-google-assistant/blob/master/docs/USAGE.md
 description: "Google Assistant is Google's virtual personal assistant and uses Actions on Google as the platform for \"Actions\" (software applications) to extend the functionality of the Google Assistant."
 ---
 
@@ -83,38 +83,38 @@ Notes Regarding Thermostat Items:
 * Start the updated Google Home app on your phone.
 * Go to the settings part: `Account > Settings`.
 
-![openHAB Google App](/images/Screenshot_1.png)
+![openHAB Google App](images/Screenshot_1.png)
 
 * Go to the home control part: `Assistant > Home control`.
 
-![openHAB Google App](/images/Screenshot_2.png)
+![openHAB Google App](images/Screenshot_2.png)
 
 * Press the `+` button.
 
-![openHAB Google App](/images/Screenshot_3.png)
+![openHAB Google App](images/Screenshot_3.png)
 
 * Select `openHAB`.
 
-![openHAB Google App](/images/Screenshot_4.png)
+![openHAB Google App](images/Screenshot_4.png)
 
 * Login at myopenhab.org with your username and password.
 
-![openHAB Google App](/images/Screenshot_5.png)
+![openHAB Google App](images/Screenshot_5.png)
 
 * Allow Google access to your account.
 
-![openHAB Google App](/images/Screenshot_6.png)
-![openHAB Google App](/images/Screenshot_7.png)
+![openHAB Google App](images/Screenshot_6.png)
+![openHAB Google App](images/Screenshot_7.png)
 
 * You will now be able to see your previously tagged items and devices. Assign them to a room. Press Done.
 
-![openHAB Google App](/images/Screenshot_8.png)
-![openHAB Google App](/images/Screenshot_9.png)
+![openHAB Google App](images/Screenshot_8.png)
+![openHAB Google App](images/Screenshot_9.png)
 
 * You can now control those devices from the Google Assistant.
 
-![openHAB Google App](/images/Screenshot_10.png)
-![openHAB Google App](/images/Screenshot_11.png)
+![openHAB Google App](images/Screenshot_10.png)
+![openHAB Google App](images/Screenshot_11.png)
 
 
 ## Example Voice Commands
@@ -145,7 +145,7 @@ Here are some example voice commands:
   * A group item with the tag [ "Thermostat" ]
   * A number or string item with the tag [ "homekit:HeatingCoolingMode" ]
   * A number item with the tag [ "CurrentTemperature" ]
-  * A number ityem with the tag [ "TargetTemperature" ]
+  * A number item with the tag [ "TargetTemperature" ]
   ```
   Group g_HK_Basement_TSTAT "Basement Thermostat" [ "Thermostat", "Fahrenheit" ]
     Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) [ "homekit:HeatingCoolingMode" ]
