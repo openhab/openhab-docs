@@ -242,7 +242,7 @@
               <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-webui/iconset</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.iconset.classic</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/icons/**</include>
@@ -261,7 +261,7 @@
               <outputDirectory>${basedir}/_addons_uis/oh2</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-webui</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/bundles</directory>
                   <includes>
                     <include>**/README.md</include>
                     <include>**/doc/**</include>
@@ -269,6 +269,7 @@
                   </includes>
                   <excludes>
                     <exclude>**/iconset/**</exclude>
+                    <exclude>**/org.openhab.ui.iconset.classic/**</exclude>
                     <exclude>**/cordova/**</exclude>
                     <exclude>**/src/**</exclude>
                   </excludes>
@@ -384,7 +385,7 @@
               <outputDirectory>${basedir}/configuration</outputDirectory>
               <resources>
                 <resource>
-                  <directory>${basedir}/.external-resources/openhab-webui/org.openhab.ui.habpanel/doc</directory>
+                  <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.habpanel/doc</directory>
                   <includes>
                     <include>habpanel.md</include>
                     <include>images/*.png</include>
