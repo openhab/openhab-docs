@@ -130,17 +130,21 @@ void myFun() {
 }
 ```
 
-* Where ever exceptions are caught and logged, the exception should be added as a last parameter to the logging. 
+* Decide on a case by case base, if you want exception stack traces in the log.
 
+If you add an exception as a last parameter to the logging, the stack trace will be printed.
+ 
 ```java
 void myFun() {
   try {
     doSomething();
   } catch (IOException e) {
-    logger.warn("Explain where we are in the code", e);  
+    logger.warn("Explain what went wrong and how to fix it. You can have arguments {}.", 12, e);  
   }
 }
 ```
+
+Exceptions with stacktraces in the log are considered to be bugs in your binding that should be reported and fixed. Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
 
 * Logging is not a replacement for using the debugger.
 
