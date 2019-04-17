@@ -116,7 +116,6 @@ module.exports = [
         'developer/contributing/governance',
         'developer/development/ide',
         'developer/development/guidelines',
-        'developer/development/conventions', // from v2.3 onwards
         'developer/development/bindings',
         'developer/development/logging',
         'developer/development/compatibilitylayer',
