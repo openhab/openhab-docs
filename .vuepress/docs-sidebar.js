@@ -113,10 +113,10 @@ module.exports = [
     children: [
       ['developer/', 'Overview & Introduction'],
       'developer/guidelines',
-      ['developer/bindings', 'Bindings'],
-      ['developer/module-types', 'Automation Modules'],
-      ['developer/transformations', 'Transformations / Profiles'],
-      ['developer/ioservices', 'IO Services'],
+      'developer/bindings/',
+      'developer/module-types/',
+      'developer/transformations/',
+      'developer/ioservices/',
     ]
   },
   {

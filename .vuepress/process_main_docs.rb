@@ -128,8 +128,12 @@ def process_main_docs(docs_source_dir)
     puts ">>> Migrating the Developer section"
     
 
-    process_file("#{docs_source_dir}/developers", "index.md", "docs/developer", "#{$docs_repo_root}/developer/index.md")
-    ["bindings", "contributing", "ioservices", "legacy", "module-types", "osgi"].each { |subsection|
+    Dir.glob("#{docs_source_dir}/developers/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/developers", file, "docs/developer", "#{$docs_repo_root}/developer/#{file}")
+    }
+    ["bindings", "contributing", "ioservices", "legacy", "transformations", "module-types", "osgi"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
             file = File.basename(path)
             puts " -> #{subsection}/#{file}"
