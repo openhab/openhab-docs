@@ -552,6 +552,10 @@ After the device was successfully unpaired, the binding must inform the framewor
 After the removal was requested (i.e. the thing is in  `REMOVING` state), it cannot be changed back anymore to `ONLINE`/`OFFLINE`/`UNKNOWN` by the binding.
 The binding may only initiate the status transition to `REMOVED`.
 
+## Automation Engine actions bound to a Thing
+
+TODO
+
 ## Implementing a Discovery Service
 
 Bindings can implement the `DiscoveryService` interface and register it as an OSGi service to inform the framework about devices and services, that can be added as things to the system (see also [Inbox & Discovery Concept](../../concepts/discovery.html)).
@@ -755,6 +759,13 @@ This method is called from the discovery service during result creation to provi
 This method is called from the discovery service to create the actual discovery result.
 It uses the `getThingUID` method to create the thing UID of the result.
 
+### Discovery that is bound to a Thing
+
+TODO
+
+## Frequently asked questions / FAQ
+
+Various binding related questions are answered in our [Binding development FAQ](faq.html).
 
 ## Include the Binding in the Build
 
