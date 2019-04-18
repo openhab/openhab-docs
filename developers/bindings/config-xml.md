@@ -38,9 +38,9 @@ These must be inside the XML escape sequence - eg.
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-descriptions
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:config-description="http://eclipse.org/smarthome/schemas/config-description/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/config-description/v1.0.0
-        http://eclipse.org/smarthome/schemas/config-description-1.0.0.xsd">
+    xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
+        https://openhab.org/schemas/config-description-1.0.0.xsd">
 
   <config-description uri="{binding|thing-type|channel-type|any_other}:bindingID:...">
     <parameter-group name="String">
@@ -171,7 +171,7 @@ Groups allow parameters to be grouped together into logical blocks so that the u
 </table>
 
 
-The full XML schema for configuration descriptions is specified in the [ESH config description XSD](http://eclipse.org/smarthome/schemas/config-description-1.0.0.xsd) file.
+The full XML schema for configuration descriptions is specified in the [openHAB config description XSD](https://openhab.org/schemas/config-description-1.0.0.xsd) file.
 
 **Hints:**
 
@@ -186,9 +186,9 @@ The following code gives an example for one configuration description.
 <?xml version="1.0" encoding="UTF-8"?>
 <config-description:config-description uri="thing-type:my-great-binding:my-bridge-name"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:config-description="http://eclipse.org/smarthome/schemas/config-description/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/config-description/v1.0.0
-        http://eclipse.org/smarthome/schemas/config-description-1.0.0.xsd">
+    xmlns:config-description="https://openhab.org/schemas/config-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
+        https://openhab.org/schemas/config-description-1.0.0.xsd">
 
   <parameter name="ipAddress" type="text" required="true">
     <context>network-address</context>

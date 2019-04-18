@@ -5,21 +5,19 @@ title: Equinox
 
 {% include base.html %}
 
-Equinox
-=======
-
-## Table of contents
+# Equinox
 {:.no_toc}
+
+[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core specification][OSGi-Core].
+It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse].
+It provides a set of bundles, that implement various optional OSGi services.
+
+The openHAB bundles are deployed on an Equinox runtime.
+Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process.
 
 {::options toc_levels="2,3"/}
 * TOC
 {:toc}
-
-## Introduction
-
-[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core 4.x specification][OSGi-4.x] and one of the most widely used. It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse]. It provides a set of bundles, that implement various optional OSGi services.
-
-The openHAB bundles are deployed on Equinox runtime. Knowledge about how to start the runtime and execute basic commands will help you to speedup the development process. Some of the bundles that you are going to use from Eclipse SmartHome**<sup>TM</sup>** and openHAB depend on Equinox bundles and this article will list some of the Equinox core bundles and the services that they provide.
 
 ## Start Equinox Runtime from Eclipse
 
@@ -109,7 +107,7 @@ OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of O
 
 Table 2. OSGi Bundles (Full list can be found at: <http://www.eclipse.org/equinox/bundles/>)
 
-## VII. Further Reading
+## Further Reading
 
 - <http://www.eclipse.org/equinox/>
 - <http://www.eclipse.org/equinox/bundles/>
@@ -128,7 +126,7 @@ Table 2. OSGi Bundles (Full list can be found at: <http://www.eclipse.org/equino
 - [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)
 
 [Equinox]: http://www.eclipse.org/equinox/
-[OSGi-4.x]: https://www.osgi.org/osgi-service-platform-release-4-downloads/
+[OSGi-Core]: https://osgi.org/download/r5/osgi.core-5.0.0.pdf
 [Equinox-repo]: http://git.eclipse.org/c/equinox/
 [Eclipse]: https://eclipse.org/eclipse/
 [Equinox-Bundles]: http://www.eclipse.org/equinox/bundles/

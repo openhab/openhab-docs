@@ -14,6 +14,8 @@ Exceptions can certainly be made, but they should be discussed and approved by a
 Note that this list also serves as a checklist for code reviews on pull requests.
 To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
+If you are just keen on binding development, you may skip this document first and come back later.
+
 ## A. Directory and file layout
 
 The following directory and file layout must be respected:

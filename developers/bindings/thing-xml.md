@@ -7,19 +7,23 @@ title: Thing Descriptions
 
 # Thing Type Definitions
 
-In order to work with things, some meta information about them is needed. This is provided through 'ThingType' definitions, which describe details about their functionality and configuration options.
+In order to work with things, some meta information about them is needed.
+This is provided through 'ThingType' definitions, which describe details about their functionality and configuration options.
 
-Technically, the thing types are provided by [ThingTypeProvider](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.thing/src/main/java/org/eclipse/smarthome/core/thing/binding/ThingTypeProvider.java)s. 
-Eclipse SmartHome comes with an implementation of such a provider that reads XML files from the folder `ESH-INF/thing` of bundles. Although we refer to this XML syntax in the following, you also have the option to provide directly object model instances through your own provider implementation. 
-The same applies for the channel types. 
-The [ChannelTypeProvider](https://github.com/eclipse/smarthome/blob/master/bundles/core/org.eclipse.smarthome.core.thing/src/main/java/org/eclipse/smarthome/core/thing/type/ChannelTypeProvider.java) interface can be registered as OSGi service to provide channel types programmatically. 
+Technically, the thing types are provided by `ThingTypeProvider`s (`org.eclipse.smarthome.core.thing.binding.ThingTypeProvider`).
+
+openHAB comes with an implementation of such a provider that reads XML files from the folder `ESH-INF/thing` of bundles.
+Although we refer to this XML syntax in the following, you also have the option to provide directly object model instances through your own provider implementation.
+
+The same applies for the channel types.
+The `ChannelTypeProvider` interface can be registered as OSGi service to provide channel types programmatically.
 When implementing a dynamic `ThingTypeProvider` you can also refer to the channel types that are defined inside XML files.
 
 ## Things
 
-Things represent devices or services that can be individually added to, configured or removed from the system. 
-They either contain a set of channels or a set of channel groups. 
-A bridge is a specific type of thing as it can additionally provide access to other Things as well. 
+Things represent devices or services that can be individually added to, configured or removed from the system.
+They either contain a set of channels or a set of channel groups.
+A bridge is a specific type of thing as it can additionally provide access to other Things as well.
 Which Things can be associated through which bridge type is defined within the description of a thing:
 
 ```xml
@@ -34,7 +38,8 @@ Which Things can be associated through which bridge type is defined within the d
     </thing-type>
 ```
 
-Bindings may optionally set the listing of a thing type. By doing do, they indicate to user interfaces whether it should be shown to the users or not, e.g. when pairing things manually:
+Bindings may optionally set the listing of a thing type.
+By doing do, they indicate to user interfaces whether it should be shown to the users or not, e.g. when pairing things manually:
 
 ```xml
     <thing-type id="thingTypeID" listed="false">
@@ -42,9 +47,9 @@ Bindings may optionally set the listing of a thing type. By doing do, they indic
     </thing-type>
 ```
 
-Thing types are listed by default, unless specified otherwise. 
-Hiding thing types potentially makes sense if they are deprecated and should not be used anymore. 
-Also, this can be useful if users should not be bothered with distinguishing similar devices which for technical reasons have to have separate thing types. 
+Thing types are listed by default, unless specified otherwise.
+Hiding thing types potentially makes sense if they are deprecated and should not be used anymore.
+Also, this can be useful if users should not be bothered with distinguishing similar devices which for technical reasons have to have separate thing types.
 In that way, a generic thing type could be listed for users and a corresponding thing handler would change the thing type immediately to a more concrete one, handing over control to the correct specialized handler.
 
 ### Thing Categories
@@ -131,11 +136,11 @@ There exist system-wide channel types that are available by default:
 
 For further information about categories see the [categories page](../../concepts/categories.html).
 
-The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing. 
-If `advanced` is set to `true` a user interface may hide this channel by default. 
-The default value is `false` and thus will be taken if the `advanced` attribute is not specified. 
-Especially for complex devices with a lot of channels, only a small set of channels - the most important ones - should be shown to the user to reduce complexity. 
-Whether a channel should be declared as `advanced` depends on the device and can be decided by the binding developer. 
+The `advanced` property indicates whether this channel is a basic or a more specific functionality of the thing.
+If `advanced` is set to `true` a user interface may hide this channel by default.
+The default value is `false` and thus will be taken if the `advanced` attribute is not specified.
+Especially for complex devices with a lot of channels, only a small set of channels - the most important ones - should be shown to the user to reduce complexity.
+Whether a channel should be declared as `advanced` depends on the device and can be decided by the binding developer.
 If a functionality is rarely used it should be better marked as `advanced`.
 
 The following XML snippet shows a trigger channel:
@@ -206,31 +211,31 @@ This library is still t.b.d., and only a very small set of tags are defined so f
 
 ### State Description
 
-The state description allows to specify restrictions and additional information for the state of an item, that is linked to the channel. 
-Some configuration options are only valid for specific item types. 
+The state description allows to specify restrictions and additional information for the state of an item, that is linked to the channel.
+Some configuration options are only valid for specific item types.
 The following XML snippet shows the definition for a temperature actuator channel:
 
 ```xml
 <state min="12" max="30" step="0.5" pattern="%.1f %unit%" readOnly="false"></state>
 ```
 
-The attributes `min` and `max` can only be declared for channel with the item type `Number`. 
-It defines the range of the numeric value. 
-The Java data type is a BigDecimal. 
-For example user interfaces can create sliders with an appropriate scale based on this information. 
-The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used. 
-The `readonly` attribute can be used for all item types and defines if the state of an item can be changed. 
-For all sensors the `readonly` attribute should be set to `true`. 
-The `pattern` attribute can be used for `Number` and  `String` items. 
-It gives user interface a hint how to render the item. 
-The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html). 
+The attributes `min` and `max` can only be declared for channel with the item type `Number`.
+It defines the range of the numeric value.
+The Java data type is a BigDecimal.
+For example user interfaces can create sliders with an appropriate scale based on this information.
+The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
+The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
+For all sensors the `readonly` attribute should be set to `true`.
+The `pattern` attribute can be used for `Number` and  `String` items.
+It gives user interface a hint how to render the item.
+The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
 The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
-The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support. 
-These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder. 
+The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
+These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
 
-Some channels might have only a limited and countable set of states. 
-These states can be specified as options. 
-A `String` item must be used as item type. 
+Some channels might have only a limited and countable set of states.
+These states can be specified as options.
+A `String` item must be used as item type.
 The following XML snippet defines a list of predefined state options:
 
 ```xml
@@ -243,7 +248,7 @@ The following XML snippet defines a list of predefined state options:
 </state>
 ```
 
-The user interface can use these values to render labels for values or to provide a selection of states, when the channel is writable. 
+The user interface can use these values to render labels for values or to provide a selection of states, when the channel is writable.
 The option labels can also be localized.
 
 #### Dynamic State Description
@@ -260,9 +265,9 @@ A description about channel categories as well as an overview about which catego
 
 ### Channel Groups
 
-Some devices might have a lot of channels. 
-There are also complex devices like a multi-channel actuator, which is installed inside the switchboard, but controls switches in other rooms. 
-Therefore channel groups can be used to group a set of channels together into one logical block. 
+Some devices might have a lot of channels.
+There are also complex devices like a multi-channel actuator, which is installed inside the switchboard, but controls switches in other rooms.
+Therefore channel groups can be used to group a set of channels together into one logical block.
 A thing can only have direct channels or channel groups, but not both.
 
 Inside the thing types XML file channel groups can be defined like this:
@@ -278,8 +283,8 @@ Inside the thing types XML file channel groups can be defined like this:
 </thing-type>    
 ```
 
-The channel group type is defined on the same level as the thing types and channel types. 
-The group type must have a label, an optional description, and an optional [category](../../concepts/categories.html). 
+The channel group type is defined on the same level as the thing types and channel types.
+The group type must have a label, an optional description, and an optional [category](../../concepts/categories.html).
 Moreover the list of contained channels must be specified:
 
 ```xml
@@ -299,7 +304,7 @@ Details about the category can be found in our [categories overview](../../conce
 
 ## Properties
 
-Solutions based on Eclipse SmartHome might require meta data from a device. 
+Solutions based on openHAB might require meta data from a device.
 These meta data could include:
 
 - general device information, e.g. the device vendor, the device series or the model ID, ...
@@ -307,8 +312,8 @@ These meta data could include:
 - physical descriptions, e.g. what is the size, the weight or the color of the device, ...
 - any other meta data that should be made available for the solution by the binding
 
-Depending on the solution the provided meta data can be used for different purposes. 
-Among others the one solution could use the data during a device pairing process whereas another solution might use the data to group the devices/things by the vendors or by the home automation protocols on a user interface. 
+Depending on the solution the provided meta data can be used for different purposes.
+Among others the one solution could use the data during a device pairing process whereas another solution might use the data to group the devices/things by the vendors or by the home automation protocols on a user interface.
 To define such thing meta data the thing type definition provides the possibility to specify so-called `properties`:
 
 ```xml
@@ -324,20 +329,20 @@ To define such thing meta data the thing type definition provides the possibilit
     </thing-type>
 ```
 
-In general each `property` must have a name attribute which should be written in camel case syntax. 
-The actual property value is defined as plain text and is placed as child node of the property element. 
-It is recommended that at least the vendor and the model id properties are specified here since they should be definable for the most of the devices. 
+In general each `property` must have a name attribute which should be written in camel case syntax.
+The actual property value is defined as plain text and is placed as child node of the property element.
+It is recommended that at least the vendor and the model id properties are specified here since they should be definable for the most of the devices.
 In contrast to the properties defined in the 'ThingType' definitions the thing handler [documentation](thing-handler.html) explains how properties can be set during runtime.
 
 ### Representation Property
 
-A thing type can contain a so-called `representation property`. 
+A thing type can contain a so-called `representation property`.
 This optional property contains the _name_ of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
-This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a unique device id (e.g. a Hue lamp) or some other property that is unique per device type. 
-This property is normally part of a discovery result for that specific thing type. 
+This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a unique device id (e.g. a Hue lamp) or some other property that is unique per device type.
+This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
 The `representation property` will be defined in the thing type XML: 
@@ -353,37 +358,37 @@ The `representation property` will be defined in the thing type XML:
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type. 
-The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization. 
+Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type.
+The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
-The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing. 
-This happens if a device is being added manually. 
-If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing. 
-If this is the case, the result in the inbox is automatically set to ignored. 
-Note that this result is automatically removed when the manual added thing is eventually removed. 
-A new discovery would then automatically find this device again and add it to the inbox properly. 
+The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing.
+This happens if a device is being added manually.
+If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
+If this is the case, the result in the inbox is automatically set to ignored.
+Note that this result is automatically removed when the manual added thing is eventually removed.
+A new discovery would then automatically find this device again and add it to the inbox properly.
 
 ## Formatting Labels and Descriptions
 
-The label and descriptions for things, channels and config descriptions should follow the following format. 
-The label should be short so that for most UIs it does not spread across multiple lines. 
-The description can contain longer text to describe the thing in more detail. 
+The label and descriptions for things, channels and config descriptions should follow the following format.
+The label should be short so that for most UIs it does not spread across multiple lines.
+The description can contain longer text to describe the thing in more detail.
 Limited use of HTML tags is permitted to enhance the description - if a long description is provided, the first line should be kept short, and a line break (```<br />```) placed at the end of the line to allow UIs to display a short description in limited space.
 
-Configuration options should be kept short so that they are displayable in a single line in most UIs. 
-If you want to provide a longer description of the options provided by a particular parameter, then this should be placed into the ```<description>``` of the parameter to keep the option label short. 
+Configuration options should be kept short so that they are displayable in a single line in most UIs.
+If you want to provide a longer description of the options provided by a particular parameter, then this should be placed into the ```<description>``` of the parameter to keep the option label short.
 The description can include limited HTML to enhance the display of this information.
 
-The following HTML tags are allowed : ```<b>, <br />, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <i>, <p>, <small>, <strong>, <sub>, <sup>, <ul>, <ol>, <li>```. 
+The following HTML tags are allowed : ```<b>, <br />, <em>, <h1>, <h2>, <h3>, <h4>, <h5>, <h6>, <i>, <p>, <small>, <strong>, <sub>, <sup>, <ul>, <ol>, <li>```.
 These must be inside the XML escape sequence - e.g. ```<description><![CDATA[ HTML marked up text here ]]></description>```.
 
 ## Auto Update Policies
 
-Channel types can optionally define a policy with respect to the auto update handling. 
+Channel types can optionally define a policy with respect to the auto update handling.
 This influences the decision within the framework if an auto-update of the item's state should be sent in case a command is received for it.
-The auto update policy typically is inherited by the channel from its channel type. 
+The auto update policy typically is inherited by the channel from its channel type.
 Nevertheless, this value can be overridden in the channel definition.
 
 In this example, an auto update policy is defined for the channel type, but is overridden in the channel definition:
@@ -407,9 +412,13 @@ In this example, an auto update policy is defined for the channel type, but is o
 
 The following policies are supported:
 
-* **veto**: No automatic state update should be sent by the framework. The thing handler will make sure it sends a state update and it can do it better than just converting the command to a state.
-* **default**: The binding does not care and the framework may do what it deems to be right. The state update which the framework will send out normally will correspond the command state anyway. This is the default if no other policy is set explicitly.
-* **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding. This usually is the case when devices don't expose their current state to the handler.
+* **veto**: No automatic state update should be sent by the framework.
+  The thing handler will make sure it sends a state update and it can do it better than just converting the command to a state.
+* **default**: The binding does not care and the framework may do what it deems to be right.
+  The state update which the framework will send out normally will correspond the command state anyway.
+  This is the default if no other policy is set explicitly.
+* **recommend**: An automatic state update should be sent by the framework because no updates are sent by the binding.
+  This usually is the case when devices don't expose their current state to the handler.
 
 
 ## Bridges and Thing Descriptions
@@ -430,9 +439,9 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 <?xml version="1.0" encoding="UTF-8"?>
 <thing:thing-descriptions bindingId="bindingID"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:thing="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/thing-description/v1.0.0
-        http://eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">
+    xmlns:thing="https://openhab.org/schemas/thing-description/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/thing-description/v1.0.0
+        https://openhab.org/schemas/thing-description-1.0.0.xsd">
 
   <bridge-type id="bridgeTypeID" listed="{true|false}" extensible="channelTypeId1,channelTypeId2,...">
     <supported-bridge-type-refs>
@@ -659,11 +668,11 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
   <tr><td>channel.typeId</td><td>An identifier of the channel type definition the bridge/<i>Thing</i> provides (mandatory).</td></tr>
 </table>
 
-The full XML schema for Thing type descriptions is specified in the <a href="https://www.eclipse.org/smarthome/schemas/thing-description-1.0.0.xsd">ESH thing description XSD</a> file.
+The full XML schema for Thing type descriptions is specified in the <a href="https://openhab.org/schemas/thing-description-1.0.0.xsd">openHAB thing description XSD</a> file.
 
 **Hints:**
 
 -  Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
 -  The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
-If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.
+If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
 -  If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.

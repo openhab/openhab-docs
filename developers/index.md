@@ -5,26 +5,29 @@ title: Addon Development
 
 # Overview
 
-In this section of the documentation you will learn how to develop an addon for openHAB.
+In this chapter of the documentation you will learn how to develop an addon for openHAB.
 A variety of different parts of openHAB can be extended, we go through all of them.
 
-openHAB uses [git] as its version control system and [github] for hosting the different repositories and source code.
+openHAB uses [git](https://git-scm.com/) as its version control system and [github](https://github.com/openhab) for hosting the different repositories and source code.
 You will get in contact with git in many places and it makes sense to get familiar with its basic commands and concepts.
+There are many pages to learn about Git.
+Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start.
 
-Addons and the core itself are written in Java. Java is not hard to learn, but
-it helps if you have a general technical understanding of programming languages.
+Addons and the core itself are written in Java.
+Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-This hands-on assumes that you are familiar with Java 8 and have basic understanding
-of how git works (eg "checkout", "branches", "push").
+The different guides of this chapter assume that you are familiar with Java 8 and a rough idea of Git's workflow(eg "checkout", "branches", "push").
 
 ## Chose the right concept for a problem
 
-openHAB allows you to implement
+openHAB allows you to build up on the following concepts:
 
-* **a binding**: A binding connects to external services or devices,
-* **an automation engine module-type**: A trigger, condition or action that can be used in automation rules,
-* **a transformation/profile**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*,
-* **an IO service**: Exposes openHAB internals via a defined interface (for example the HomeKit or Hue Emulation Service)
+* **Bindings**: A binding connects to external services or devices,
+* **Automation engine module**: A trigger, condition or action that can be used in automation rules (or scripts),
+* **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*,
+* **an IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service)
+* **Natural language processing skill**:
+  Executes something depending on the understood Intents and returns something back to the user,
 * and many more (not covered yet).
 
 Sometimes though its just not worth writing a binding and you are better off

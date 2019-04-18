@@ -21,9 +21,9 @@ Binding definitions must be placed as XML file(s) (with the ending `.xml`) in th
 <?xml version="1.0" encoding="UTF-8"?>
 <binding:binding id="bindingID"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:binding="http://eclipse.org/smarthome/schemas/binding/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/binding/v1.0.0
-        http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd">
+    xmlns:binding="https://openhab.org/schemas/binding/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/binding/v1.0.0
+        https://openhab.org/schemas/binding-1.0.0.xsd">
 
   <name>String</name>
   <description>String</description>

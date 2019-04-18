@@ -6,8 +6,15 @@ title: Automation Modules
 {% include base.html %}
 
 # Developing Automation Modules
+{:.no_toc}
 
 In this section you will be guided through developing *Module Types* and corresponding *Module Handlers* for the automation engine of openHAB.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
+
+## Module Types and Module Handlers
 
 Module Types describe Conditions, Triggers and Actions for the automation engine in terms of user visible strings like a label, a description, tags.
 But also what configuration values are available and what inputs and outputs a Module Type provides.

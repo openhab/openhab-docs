@@ -120,7 +120,7 @@ module.exports = [
     ]
   },
   {
-    title: 'Additional developer information',
+    title: 'Additional Developer Information',
     collapsable: false,
     children: [
       'developer/buildsystem',

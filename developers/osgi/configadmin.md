@@ -53,7 +53,7 @@ import org.osgi.service.event.EventHandler;
 public class TimeEventHandler implements EventHandler {
 
     // Use the default formatter
-    privateSimpleDateFormat dateFormatter = new SimpleDateFormat();
+    private SimpleDateFormat dateFormatter = new SimpleDateFormat();
 
     @Activated
     protected void activate(ComponentContext context, Map<String, Object> properties) {

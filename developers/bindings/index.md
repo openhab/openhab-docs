@@ -6,119 +6,68 @@ title: Bindings
 {% include base.html %}
 
 # Developing a Binding
+{:.no_toc}
 
-A binding is an extension to openHAB that integrates an external system like a service, a protocol or a single device. Therefore the main purpose of a binding is to translate events from the Eclipse SmartHome event bus to the external system and vice versa. The external system is represented as a set of *Things*. For each *Thing* the binding must provide a proper `ThingHandler` implementation that is able to handle the communication.
+A binding is an extension to openHAB that integrates an external system like a service, a protocol or a single device.
+The external system is represented as a set of *Things*.
+For each *Thing* the binding must provide a proper `ThingHandler` implementation that is able to handle the communication.
 
-In this tutorial you will learn how to implement a simple binding and you will get familiar with important concepts and APIs of Eclipse SmartHome. The [Yahoo Weather Binding](https://github.com/eclipse/smarthome/tree/master/extensions/binding/org.eclipse.smarthome.binding.yahooweather) is taken as example.
+In this chapter you will learn how to implement a simple binding and you will get familiar with important concepts and APIs of openHAB.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
 
 ## Structure of a Binding
 
-The structure of a binding follows the structure of a typical OSGi bundle project. Therefore there exists a `MANIFEST.MF` file inside the `META-INF` folder and other OSGi artefacts like the `build.properties` file. In the `ESH-INF` folder XML configuration files for Eclipse SmartHome are located. The Java source code is under `src/main/java`.
-
-The structure of the Yahoo Weather Binding:
+The structure of a binding follows the structure of a typical OSGi bundle project.
 
 ```
-|- ESH-INF
-|---- binding
-|------- binding.xml
-|---- thing
-|------- thing-types.xml
-|- META-INF
-|---- MANIFEST.MF
-|- OSGI-INF
-|---- YahooWeatherHandlerFactory.xml
-|- src
-|---- main
-|------- java
+|- src/main
+|------- java             Your Java code
 |---------- [...]
-|- build.properties
-|- pom.xml
+|------- tests            It's easy to write unit tests and fellow developers will thank you
+|---------- [...]
+|- src/main/resources/ESH-INF
+|---- binding
+|------- binding.xml      Binding name, description, author and other meta data
+|---- thing
+|------- thing-types.xml  One or more xml files with thing descriptions
+|- pom.xml                Build system file: Describe your dependencies here
 ```
 
-## Binding Definition
-
-Every binding needs to define a `binding.xml` file, which is located in the folder `/ESH-INF/binding/`. In this file meta information for a binding like the author and a description, that are accessible at runtime, can be defined. The binding ID is a unique identifier for the binding. The following `binding.xml` shows the binding definition of the Yahoo Weather Binding:
-
-```xml
-<binding:binding id="yahooweather"
-        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xmlns:binding="http://eclipse.org/smarthome/schemas/binding/v1.0.0"
-        xsi:schemaLocation="http://eclipse.org/smarthome/schemas/binding/v1.0.0 http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd">
-
-    <name>YahooWeather Binding</name>
-    <description>The Yahoo Weather Binding requests the Yahoo Weather Service
-		to show the current temperature, humidity and pressure.</description>
-    <author>Kai Kreuzer</author>
-
-</binding:binding>
-```
+Every binding needs to define a `binding.xml` file.
+Find more information in the respective [binding XML reference](binding-xml.html).
 
 ## Describing Things
 
-External systems are represented as *Things* in the Eclipse SmartHome runtime. When starting the implementation of an Eclipse SmartHome binding, you should think about the abstraction of your external system. Different services or devices should be represented as individual *Things* described by a *ThingType*. Each functionality of the *Thing* should be modelled as a `Channel`. A binding should define all *ThingTypes* that are supported by that binding.
+External systems are represented as *Things* in openHAB.
+When starting the implementation of a binding, you should think about the abstraction of your external system.
+Different services or devices should be represented as individual *Things*.
+Each functionality of the *Thing* should be modelled as a `Channel`.
 
-Eclipse SmartHome allows you to define your *ThingTypes* in a declarative way through XML files. The XML files must be located at `/ESH-INF/thing/`. A *ThingType* definition must contain the UID and optionally a description and a manufacturer. Moreover, supported channels must be specified. For channels it is important to specify which type of *Item* can be linked to the *Channel*. Below an excerpt of the Yahoo Weather service *ThingType* definition is shown:
+*Thing* and *Channel* structures need to be explained to the openHAB runtime.
+This is done in a declarative way via XML files, so called *ThingTypes* and *ChannelTypes*.
 
-```xml
-<thing-type id="weather">
-    <label>Weather Information</label>
-    <description>Provides various weather data from the Yahoo service</description>
-    <channels>
-        <channel id="temperature" typeId="temperature" />
-    </channels>
-    <config-description>
-        <parameter name="location" type="integer" required="true">
-            <label>Location</label>
-            <description>Location for the weather information.
-                Syntax is WOEID, see https://en.wikipedia.org/wiki/WOEID.
-            </description>
-        </parameter>
-        <parameter name="refresh" type="integer" min="1">
-            <label>Refresh interval</label>
-            <description>Specifies the refresh interval in seconds.</description>
-            <default>60</default>
-        </parameter>
-    </config-description>
-</thing-type>
-
-<channel-type id="temperature">
-    <item-type>Number:Temperature</item-type>
-    <label>Temperature</label>
-    <description>Current temperature</description>
-    <category>Temperature</category>
-    <state readOnly="true" pattern="%.1f %unit%" />
-</channel-type>
-```
-
-The channel type definition allows one to specify a category and additional meta information for the state of the linked item. 
-Together with the definition of the `readOnly` attribute, user interfaces get an idea how to render an item for this channel.
-For example, a channel with the category `Temperature` which is readable only, indicates that this is a sensor for temperature.
-In that case the user interface can render an appropriate icon and label for the current value. 
-
-The label is further described by the `state` tags `pattern` attribute: 
-In this case the temperature should be rendered with one decimal place followed by the unit the binding specifies for the current measurement. 
-The `Number:Temperature` item type describes this channels ability to send state updates using the type `QuantityType` with a value and a unit. 
-For detailed information about _dimensions_ and _units_ see the [QuantityType definition](../../concepts/units-of-measurement.html#quantitytype). 
-
-If the `readOnly` flag is set to `false` (which is the default value), the user interface could render a slider to change the temperature, since this means it is temperature actuator. 
-Restrictions of the state such as the minimum or maximum value can also be specified.
-
-In order to give user interfaces a chance to render good default UIs for things, the binding should specify as much meta data as possible. For a complete list of possible configuration options and categories please see the [Thing Definition](thing-definition.html#channels) section.
+Find more information in the respective [Thing & Channel XML reference](thing-xml.html).
 
 ## The ThingHandlerFactory
 
-The `ThingHandlerFactory` is responsible for creating `ThingHandler` instances. Every binding must implement a `ThingHandlerFactory` and register it as OSGi service so that the runtime knows which class needs to be called for creating and handling things. From the generated archetype there already exists a `ThingHandlerFactory`, which can be extended with further *ThingTypes*.
+The `ThingHandlerFactory` is responsible for creating `ThingHandler` instances.
 
-When a new *Thing* is added, the Eclipse SmartHome runtime queries every `ThingHandlerFactory` for support of the *ThingType* by calling the `supportsThingType` method. When the method returns `true`, the runtime calls `createHandler`, which should then return a proper `ThingHandler` implementation.
+Every binding must implement a `ThingHandlerFactory` and register it as OSGi service so that the runtime knows which class needs to be called for creating and handling things.
 
-The `YahooWeatherHandlerFactory` supports only one *ThingType* and instantiates a new `YahooWeatherHandler` for a given thing:
+When a new *Thing* is added, the openHAB runtime queries every `ThingHandlerFactory` for support of the *ThingType* by calling the `supportsThingType` method.
+When the method returns `true`, the runtime calls `createHandler`, which should then return a proper `ThingHandler` implementation.
+
+A weather bindings `WeatherHandlerFactory` for example supports only one *ThingType* and instantiates a new `WeatherHandler` for a given thing:
 
 ```java
 @NonNullByDefault
-@Component(configurationPid = "binding.yahooweather", service = ThingHandlerFactory.class)
-public class YahooWeatherHandlerFactory extends BaseThingHandlerFactory {
+@Component(configurationPid = "binding.myweatherbinding", service = ThingHandlerFactory.class)
+public class WeatherHandlerFactory extends BaseThingHandlerFactory {
     
-    private static final Collection<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Collections.singleton(YahooWeatherBindingConstants.THING_TYPE_WEATHER);
+    private static final Collection<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Collections.singleton(WeatherBindingConstants.THING_TYPE_WEATHER);
     
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
@@ -129,8 +78,8 @@ public class YahooWeatherHandlerFactory extends BaseThingHandlerFactory {
     protected @Nullable ThingHandler createHandler(Thing thing) {
         ThingTypeUID thingTypeUID = thing.getThingTypeUID();
 
-        if (YahooWeatherBindingConstants.THING_TYPE_WEATHER.equals(thingTypeUID)) {
-            return new YahooWeatherHandler(thing);
+        if (WeatherBindingConstants.THING_TYPE_WEATHER.equals(thingTypeUID)) {
+            return new WeatherHandler(thing);
         }
 
         return null;
@@ -140,15 +89,152 @@ public class YahooWeatherHandlerFactory extends BaseThingHandlerFactory {
 
 Constants like the `THING_TYPE_WEATHER` UID and also *Channel* UIDs are typically defined inside a public `BindingConstants` class.
 
-Depending on your implementation, each *ThingType* may use its own handler. It is also possible to use the same handler for different *Things*, or use different handlers for the same *ThingType*, depending on the configuration.
+Depending on your implementation, each *ThingType* may use its own handler.
+It is also possible to use the same handler for different *Things*, or use different handlers for the same *ThingType*, depending on the configuration.
 
 ## The ThingHandler
 
-The core part of a binding is the `ThingHandler` implementation. The handler is responsible for translating Eclipse SmartHome commands and states to the external system and vice versa. 
+A `ThingHandler` handles the communication between openHAB and an entity from the real world, e.g. a physical device, a web service, represented by a `Thing`. 
 
-### Handling Commands and Updating the State
+openHAB provides an abstract base class named `BaseThingHandler`.
+It is recommended to use this class, because it covers a lot of common logic.
+Most of the explanations are based on the assumption, that the binding inherits from the BaseThingHandler in all concrete `ThingHandler` implementations.
+Nevertheless if there are reasons why you can not use the base class, the binding can also directly implement the `ThingHandler` interface.
 
-For handling commands the `ThingHandler` interface defines the `handleCommand` method. This method is called when a command is sent to an item linked to a channel on a *Thing*. Inside the `handleCommand` method binding specific logic can be executed. The following code snippet shows the handle command method of the Yahoo Weather Binding:
+The communication between the framework and the ThingHandler is bidirectional.
+
+If the framework wants the binding to do something or just notfiy it about changes,
+it calls methods like `handleCommand`, `handleUpdate` or `thingUpdated`.
+
+If the ThingHandler wants to inform the framework about changes, it uses a callback
+ The `BaseThingHandler` provides convience methods like `updateState`, `updateStatus` `updateThing` or `triggerChannel`, that can be used to inform the framework about changes.
+
+The overall structure looks like this:
+
+```java
+TODO
+```
+
+### Lifecycle
+
+The `ThingHandler` has two important lifecycle methods: `initialize` and `dispose`.
+The `initialize` method is called when the handler is started and `dispose` just before the handler is stopped.
+Therefore these methods can be used to allocate and deallocate resources.
+For an example, our exemplary Weather binding starts and stops a scheduled job to update weather information within these methods.
+
+#### Startup
+
+The startup of a handler is divided in two essential steps:
+
+1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework. In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
+ 
+2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler. This method is only called if all 'required' configuration parameters of the Thing are present. The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
+
+The diagram below illustrates the startup of a handler in more detail. The life cycle is controlled by the `ThingManager`.
+
+![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
+
+The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding. The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`. Therefore, it tracks all `ThingHandlerFactory`s from the binding. 
+
+The `ThingManager` determines if the `Thing` is initializable or not. A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](xml-reference.html)) are available. If so, the method `ThingHandler.initialize()` is called.
+
+Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later. To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience. Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly. For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually. Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to *OFFLINE* with the corresponding status detail (e.g. *COMMUNICATION_ERROR* or *CONFIGURATION_ERROR* including a meaningful description) instead of throwing exceptions. 
+
+If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`. The binding has to notify the `ThingManager` about the updated configuration by a callback. The `ThingManager` tries to initialize the `ThingHandler` resp. `Thing` again.
+
+After the handler is initialized, the handler must be ready to handle methods calls like `handleCommand` and `handleUpdate`, as well as `thingUpdated`. 
+
+#### Shutdown
+
+The shutdown of a handler is also divided in two essential steps:
+
+1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework. The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
+
+2. Handler is disposed: `ThingHandler.disposed()` method is called. The framework expects `dispose()` to be non-blocking and to return quickly. For longer running disposals, the implementation has to take care of scheduling a separate job. 
+
+![thing_life_cycle_shutdown](images/thing_life_cycle_shutdown.png)
+
+After the handler is disposed, the framework will not call the handler anymore.
+
+#### Bridge Status Changes
+
+A `ThingHandler` is notified about Bridge status changes to *ONLINE* and *OFFLINE* after a `BridgeHandler` has been initialized.
+Therefore, the method `ThingHandler.bridgeStatusChanged(ThingStatusInfo)` must be implemented
+(this method is not called for a bridge status updated through the bridge initialization itself).
+If the Thing of this handler does not have a Bridge, this method is never called.
+
+If the bridge status has changed to OFFLINE, the status of the handled thing must also be updated to *OFFLINE* with detail *BRIDGE_OFFLINE*.
+If the bridge returns to *ONLINE*, the thing status must be changed at least to *OFFLINE* with detail *NONE* or to another thing specific status.
+
+### Configuration
+
+*Things* can be configured with parameters.
+To retrieve the configuration of a *Thing* one can call `getThing().getConfiguration()` inside the `ThingHandler`.
+The configuration class has the equivalent methods as the `Map` interface, thus the method `get(String key)` can be used to retrieve a value for a given key.
+
+Moreover the configuration class has a utility method `as(Class<T> configurationClass)` that transforms the configuration into a Java object of the given type.
+
+All configuration values will be mapped to properties of the class.
+The type of the property must match the type of the configuration.
+Only the following types are supported for configuration values: `Boolean`, `String` and `BigDecimal`.
+
+For example, the Yahoo Weather binding allows configuration of the location and the refresh frequency.
+
+### Properties
+
+*Things* can have properties.
+If you would like to add meta data to your thing, e.g. the vendor of the thing, then you can define your own thing properties by simply adding them to the thing type definition.
+The properties section [here](thing-definition.html#Properties) explains how to specify such properties.
+
+To retrieve the properties one can call the operation `getProperties` of the corresponding `org.eclipse.smarthome.core.thing.type.ThingType` instance.
+If a thing will be created for this thing type then its properties will be automatically copied into the new thing instance.
+Therefore the `org.eclipse.smarthome.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties.
+In contrast to the `getProperties` operation of the thing type instance the result of the thing´s `getProperties` operation will also contain the properties updated during runtime (cp. the thing handler [documentation](thing-handler.html)).
+
+### Handling Commands
+
+For handling commands the `ThingHandler` interface defines the `handleCommand` method.
+This method is called when a command is sent to an item, which is linked to a channel of the *Thing*.
+A Command represents the intention that an action should be executed on the external system,
+or that the state should be changed.
+Inside the `handleCommand` method binding specific logic can be executed.
+
+The ThingHandler implementation must be prepared to
+
+* handle different command types depending on the item types, that are defined by the channels,
+* be called at the same time from different threads.
+
+If an exception is thrown in the method, it will be caught by the framework and logged as an error.
+So it is better to handle communication errors within the binding and to update the thing status accordingly.
+
+The following code block shows a typical implementation of the `handleCommand` method:
+
+```java
+@Override
+public void handleCommand(ChannelUID channelUID, Command command) {
+    try {
+    	switch (channelUID.getId()) {
+	    	case CHANNEL_TEMPERATURE:
+	        	if(command instanceof OnOffType.class) {
+	        		// binding specific logic goes here
+	        		SwitchState deviceSwitchState = convert((OnOffType) command);
+	        		updateDeviceState(deviceSwitchState);
+	        	}
+	        	break;
+	    	// ...
+    	}
+    	statusUpdated(ThingStatus.ONLINE);
+	} catch(DeviceCommunicationException ex) {
+		// catch exceptions and handle it in your binding
+        statusUpdated(ThingStatus.OFFLINE, ThingStatusDetail.COMMUNICATION_ERROR, ex.getMessage());
+    }
+}
+```
+
+### Handling RefreshType Command
+
+If the framework requires the value of a channel, for example after bootup or because
+a user-interface requested a refreshed value, if will send a `RefreshType` command.
 
 ```java
 @Override
@@ -168,31 +254,206 @@ public void handleCommand(ChannelUID channelUID, Command command) {
 }
 ```
 
-When a `RefreshType` command is sent to the `ThingHandler` it updates the weather data by executing an HTTP call in the `updateWeatherData` method and sends a state update via the `updateState` method. This will update the state of the Item, which is linked to the channel for the given channel UID.
+In this example, when a `RefreshType` command is sent to the `ThingHandler` it updates the weather data by executing an HTTP call in the `updateWeatherData` method and sends a state update via the `updateState` method.
+This will update the state of the Item, which is linked to the channel for the given channel UID.
 
-### Lifecycle
+### Updating the Channel State
 
-The `ThingHandler` has two important lifecycle methods: `initialize` and `dispose`. The `initialize` method is called when the handler is started and `dispose` just before the handler is stopped. Therefore these methods can be used to allocate and deallocate resources. For an example, the Yahoo Weather binding starts and stops a scheduled job within these methods.
+State updates are sent from the binding to inform the framework, that the state of a channel has been updated.
+For this the binding developer can call a method from the `BaseThingHandler` class like this:
 
-### Configuration
+```java
+updateState("channelId", OnOffType.ON)
+```    
 
-*Things* can be configured with parameters. To retrieve the configuration of a *Thing* one can call `getThing().getConfiguration()` inside the `ThingHandler`. The configuration class has the equivalent methods as the `Map` interface, thus the method `get(String key)` can be used to retrieve a value for a given key. 
+The call will be delegated to the framework, which changes the state of all bound items.
+It is binding specific when the channel should be updated.
+If the device or service supports an event mechanism the ThingHandler should make use of it and update the state every time when the device changes its state.
 
-Moreover the configuration class has a utility method `as(Class<T> configurationClass)` that transforms the configuration into a Java object of the given type. All configuration values will be mapped to properties of the class. The type of the property must match the type of the configuration. Only the following types are supported for configuration values: `Boolean`, `String` and `BigDecimal`.
+### Polling for a State
 
-For example, the Yahoo Weather binding allows configuration of the location and the refresh frequency.
+If no event mechanism is available, the binding can poll for the state.
+The `BaseThingHandlerFactory` has an accessible `ScheduledExecutorService`, which can be used to schedule a job.
+The following code block shows how to start a polling job in the initialize method of a `ThingHandler`, which runs with an interval of 30 seconds:
 
-### Properties
+```java
+@Override
+public void initialize() {
+    Runnable runnable = new Runnable() {
+        @Override
+        public void run() {
+            // execute some binding specific polling code
+        }
+    };
+    pollingJob = scheduler.scheduleAtFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
+}
+```
 
-*Things* can have properties. If you would like to add meta data to your thing, e.g. the vendor of the thing, then you can define your own thing properties by simply adding them to the thing type definition. The properties section [here](thing-definition.html#Properties) explains how to specify such properties.
+Of course, the polling job must be cancelled in the dispose method:
 
-To retrieve the properties one can call the operation `getProperties` of the corresponding `org.eclipse.smarthome.core.thing.type.ThingType` instance. If a thing will be created for this thing type then its properties will be automatically copied into the new thing instance. Therefore the `org.eclipse.smarthome.core.thing.Thing` interface also provides the `getProperties` operation to retrieve the defined properties. In contrast to the `getProperties` operation of the thing type instance the result of the thing´s `getProperties` operation will also contain the properties updated during runtime (cp. the thing handler [documentation](thing-handler.html)).
+```java
+@Override
+public void dispose() {
+    pollingJob.cancel(true);
+}
+```
+
+Even if the state has not changed since the last update, the binding should inform the framework, because it indicates that the value is still present.
+
+### Trigger a channel
+
+The binding can inform the framework, that a channel has been triggered.
+For this the binding developer can call a method from the BaseThingHandler class like this:
+
+```java
+triggerChannel("channelId")
+```
+
+If an event payload is needed, use the overloaded version:
+
+```java
+triggerChannel("channelId", "PRESSED")
+```
+
+The call will be delegated to the framework.
+It is binding specific when the channel should be triggered.
+
+### Updating the Thing Status
+
+The *ThingHandler* must also manage the thing status (see also: [Thing Status Concept](../../concepts/things.html#thing-status)).
+If the device or service is not working correctly, the binding should change the status to *OFFLINE* and back to *ONLINE*, if it is working again.
+The status can be updated via an inherited method from the BaseThingHandler class by calling:
+
+```java
+updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR);
+```    
+
+The second argument of the method takes a `ThingStatusDetail` enumeration value, which further specifies the current status situation.
+A complete list of all thing statuses and thing status details is listed in the [Thing Status](../../concepts/things.html#thing-status) chapter.
+
+The binding should also provide additional status description, if available.
+This description might contain technical information (e.g. an HTTP status code, or any other protocol specific information, which helps to identify the current problem):
+
+```java
+updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR, "HTTP 403 - Access denied");
+```
+
+After the thing is created, the framework calls the `initialize` method of the handler.
+At this time the state of the thing is *INTIALIZING* as long as the binding sets it to something else.
+Because of this the default implementation of the `initialize()` method in the `BaseThingHandler` just changes the status to *ONLINE*.
+
+*Note:* A binding should not set any other state than ONLINE, OFFLINE and UNKNOWN.
+Additionally, REMOVED must be set after `handleRemoval()` has completed the removal process.
+All other states are managed by the framework.
+
+Furthermore bindings can specify a localized description of the thing status by providing the reference of the localization string, e.g &#64;text/rate_limit.
+The corresponding handler is able to provide placeholder values as a JSON-serialized array of strings:
+
+```
+&#64;text/rate_limit ["60", "10", "@text/hour"]
+```
+
+```
+rate_limit=Device is blocked by remote service for {0} minutes. Maximum limit of {1} configuration changes per {2} has been exceeded. For further info please refer to device vendor.
+```
+
+### Channel Links
+
+Some bindings might want to start specific functionality for a channel only if an item is linked to the channel.
+The `ThingHandler` has two callback methods `channelLinked(ChannelUID channelUID)` and `channelUnlinked(ChannelUID channelUID)`, which are called for every link that is added or removed to/from a channel.
+So please be aware of the fact that both methods can be called multiple times.
+
+The `channelLinked` method is only called, if the thing handler has been initialized (status ONLINE/OFFLINE/UNKNOWN).
+To actively check if a channel is linked, you can use the `isChannelLinked(ChannelUID channelUID)` method of the `ThingHandlerCallback`.
+
+## Updating the Thing from a Binding
+
+It can happen that the binding wants to update the configuration or even the whole structure of a thing. If the `BaseThingHandler` class is used, it provides some helper methods for modifying the thing.
+
+### Updating the Configuration
+
+Usually the configuration is maintained by the user and the binding is informed about the updated configuration.
+But if the configuration can also be changed in the external system, the binding should reflect this change and notify the framework about it.
+
+If the configuration should be updated, then the binding developer can retrieve a copy of the current configuration by calling `editConfiguration()`.
+The updated configuration can be stored as a whole by calling `updateConfiguration(Configuration)`.
+
+Suppose that an external system causes an update of the configuration, which is read in as a `DeviceConfig` instance. The following code shows how to update configuration:
+
+```java
+protected void deviceConfigurationChanged(DeviceConfig deviceConfig) {
+    Configuration configuration = editConfiguration();
+    configuration.put("parameter1", deviceConfig.getValue1());
+    configuration.put("parameter2", deviceConfig.getValue2());
+    updateConfiguration(configuration);
+}
+```
+
+### Updating Thing Properties
+
+Thing properties can be updated in the same way as the configuration. The following example shows how to modify two properties of a thing:
+
+```java
+protected void devicePropertiesChanged(DeviceInfo deviceInfo) {
+	Map<String, String> properties = editProperties();
+    properties.put(Thing.PROPERTY_SERIAL_NUMBER, deviceInfo.getSerialNumber());
+    properties.put(Thing.PROPERTY_FIRMWARE_VERSION, deviceInfo.getFirmwareVersion());
+    updateProperties(properties);
+}
+```
+
+If only one property must be changed, there is also a convenient method `updateProperty(String name, String value)`.
+Both methods will only inform the framework that the thing was modified, if at least one property was added, removed or updated.
+
+Thing handler implementations must not rely on properties to be persisted as not all providers support that.
+
+### Updating the Thing Structure
+
+The binding also has the possibility to change the thing structure by adding or removing channels.
+The following code shows how to use the ThingBuilder to add one channel to the thing:
+
+```java
+protected void thingStructureChanged() {
+    ThingBuilder thingBuilder = editThing();
+    Channel channel = ChannelBuilder.create(new ChannelUID("bindingId:type:thingId:1"), "String").build();
+    thingBuilder.withChannel(channel);
+    updateThing(thingBuilder.build());
+}
+```
+
+### Handling Thing Updates
+
+If the structure of a thing has been changed during runtime (after the thing was created), the binding is informed about this change in the ThingHandler within the `thingUpdated` method. The `BaseThingHandler` has a default implementation for this method:
+
+```java
+@Override
+public void thingUpdated(Thing thing) {
+    dispose();
+    this.thing = thing;
+    initialize();
+}
+```
+
+If your binding contains resource-intensive logic in your initialize method, you should think of implementing the method by yourself and figuring out what is the best way to handle the change.
+
+For configuration updates, which are triggered from the binding, like in the previous three section,
+the framework does not call the `thingUpdated` method to avoid infinite loops.
 
 ## Bridges
 
-In the domain of an IoT system there are often hierarchical structures of devices and services. For example, one device acts as a gateway that enables communication with other devices that use the same protocol. In Eclipse SmartHome this kind of device or service is called *Bridge*. Philips Hue is one example of a system that requires a bridge. The Hue gateway is an IP device with an HTTP API, which communicates over the ZigBee protocol with the Hue bulbs. In the Eclipse SmartHome model the Hue gateway is represented as a *Bridge* with connected *Things*, that represent the Hue bulbs. *Bridge* inherits from *Thing*, so that it also has *Channels* and all other features of a thing, with the addition that it also holds a list of things.
+In the domain of an IoT system there are often hierarchical structures of devices and services.
+For example, one device acts as a gateway that enables communication with other devices that use the same protocol.
+In openHAB this kind of device or service is called *Bridge*.
+Philips Hue is one example of a system that requires a bridge.
+The Hue gateway is an IP device with an HTTP API, which communicates over the ZigBee protocol with the Hue bulbs.
+In the openHAB model the Hue gateway is represented as a *Bridge* with connected *Things*, that represent the Hue bulbs.
+*Bridge* inherits from *Thing*, so that it also has *Channels* and all other features of a thing, with the addition that it also holds a list of things.
 
-When implementing a binding with *Bridges*, the logic to communicate with the external system is often shared between the different `ThingHandler` implementations. In that case it makes sense to implement a handler for the *Bridge* and delegate the actual command execution from the *ThingHandler* to the *BridgeHandler*. To access the *BridgeHandler* from the *ThingHandler*, call `getBridge().getHandler()`
+We have a FAQ, dicussing [Thing, Bridge and Channel modelling](faq.html#structuring-things-and-thing-types).
+
+When implementing a binding with *Bridges*, the logic to communicate with the external system is often shared between the different `ThingHandler` implementations.
+In that case it makes sense to implement a handler for the *Bridge* and delegate the actual command execution from the *ThingHandler* to the *BridgeHandler*.
+To access the *BridgeHandler* from the *ThingHandler*, call `getBridge().getHandler()`
 
 The following excerpt shows how the `HueLightHandler` delegates the command for changing the light state to the `HueBridgeHandler`:
 
@@ -217,49 +478,79 @@ Inside the `BridgeHandler` the list of *Things* can be retrieved via the `getThi
 
 ### Bridge Handler Implementation
 
-A `BridgeHandler` handles the communication between the Eclipse SmartHome framework and a *bridge*  (a device that acts as a gateway to enable the communication with other devices) represented by a `Bridge` instance.
+A `BridgeHandler` handles the communication between the openHAB framework and a *bridge*  (a device that acts as a gateway to enable the communication with other devices) represented by a `Bridge` instance.
  
-A bridge handler has the same properties as thing handler. Therefore, the `BridgeHandler` interface extends the `ThingHandler` interface.
+A bridge handler has the same properties as thing handler.
+Therefore, the `BridgeHandler` interface extends the `ThingHandler` interface.
  
 ### The BaseBridgeHandler
 
-Eclipse SmartHome provides an abstract implementation of the `BridgeHandler` interface named `BaseBridgeHandler`. It is recommended to use this class, because it covers a lot of common logic.
+openHAB provides an abstract implementation of the `BridgeHandler` interface named `BaseBridgeHandler`.
+It is recommended to use this class, because it covers a lot of common logic.
 
 
 ### Life cycle
 
-A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](thing-handler.html#life-cycle)). A bridge acts as a gateway in order to provide access to other devices, the *child things*. Hence, the life cycle of a child handler depends on the life cycle of a bridge handler. Bridge and child handlers are subject to the following restrictions: 
+A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](thing-handler.html#life-cycle)).
+A bridge acts as a gateway in order to provide access to other devices, the *child things*.
+Hence, the life cycle of a child handler depends on the life cycle of a bridge handler.
+Bridge and child handlers are subject to the following restrictions: 
 
 - A `BridgeHandler` of a bridge is initialized before `ThingHandler`s of its child things are initialized.
-- A `BridgeHandler` is disposed after all `ThingHandler`s of its child things are disposed.     
-
+- A `BridgeHandler` is disposed after all `ThingHandler`s of its child things are disposed.
 
 ### Handler initialization notification
-A `BridgeHandler` is notified about the initialization and disposal of child things. Therefore, the `BridgeHandler` interface provides the two methods `childHandlerInitialized(ThingHandler, Thing)` and `childHandlerDisposed(ThingHandler, Thing)`.  
+
+A `BridgeHandler` is notified about the initialization and disposal of child things.
+Therefore, the `BridgeHandler` interface provides the two methods `childHandlerInitialized(ThingHandler, Thing)` and `childHandlerDisposed(ThingHandler, Thing)`.
 
 These methods can be used to allocate and deallocate resources for child things.
 
-## Logging
-
-You can use a logger the following way:
-
-```java
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-public class HelloWorld {
-  static Logger logger = LoggerFactory.getLogger(this.getClass());
-  public static void main(String[] args) {
-    logger.info("Hello World");
-  }
-}
-```
-
 ## Config Status Provider
 
-Each entity that has a configuration can provide its current configuration status for UIs or specific services to point to issues or to provide further general information of the current configuration.
-For this purpose the handler of the entity has to implement the interface `org.eclipse.smarthome.config.core.status.ConfigStatusProvider` that has to be registered as OSGi service.
-The `org.eclipse.smarthome.config.core.status.ConfigStatusService` tracks each configuration status provider and delivers the corresponding `org.eclipse.smarthome.config.core.status.ConfigStatusInfo` by the operation `getConfigStatus(String, Locale)`.
+Each entity that has a configuration can provide its current configuration status to provide further information, especially in an error case.
+
+This information is available to user-interfaces to present configuration errors to the user.
+
+For this purpose the handler of the entity implements the interface `org.eclipse.smarthome.config.core.status.ConfigStatusProvider`.
+
+### Providing the Configuration Status
+
+A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.eclipse.smarthome.config.core.status.ConfigStatusProvider` interface.
+
+For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface. Currently the framework provides two base thing handler implementations for the configuration status provider interface:
+
+* `org.eclipse.smarthome.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
+* `org.eclipse.smarthome.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
+
+Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.eclipse.smarthome.config.core.status.ConfigStatusMessage`s.
+
+#### Internationalizing
+
+The framework will take care of internationalizing messagess.
+
+For this purpose there must be an i18n properties file inside the bundle of the configuration status provider that has a message declared for the message key of the `ConfigStatusMessage`.
+The actual message key is built by the operation `withMessageKeySuffix(String)` of the message´s builder in the manner that the given message key suffix is appended to *config-status."config-status-message-type."*.
+
+As a result depending on the type of the message the final constructed message keys are:
+
+* config-status.information.any-suffix
+* config-status.warning.any-suffix
+* config-status.error.any-suffix
+* config-status.pending.any-suffix
+
+## Handling Thing / Bridge Removal
+
+If a thing should be removed, the framework informs the binding about the removal request by calling `handleRemoval` at the thing/bridge handler.
+
+The thing will not be removed from the runtime until the binding confirms the deletion by setting the thing status to `REMOVED`.
+If no special removal handling is required by the binding, you do not have to care about removal because the default implementation of this method in the `BaseThingHandler` class just calls `updateStatus(ThingStatus.REMOVED)`.
+
+However, for some radio-based devices it is needed to communicate with the device in order to unpair it safely.
+After the device was successfully unpaired, the binding must inform the framework that the thing was removed by setting the thing status to `REMOVED`.
+
+After the removal was requested (i.e. the thing is in  `REMOVING` state), it cannot be changed back anymore to `ONLINE`/`OFFLINE`/`UNKNOWN` by the binding.
+The binding may only initiate the status transition to `REMOVED`.
 
 ## Implementing a Discovery Service
 
@@ -283,10 +574,10 @@ Most of the descriptions in this chapter refer to the `AbstractDiscoveryService`
 
 For UPnP and mDNS there already are generic discovery services available.
 Bindings only need to implement a `UpnpDiscoveryParticipant` resp. `mDNSDiscoveryParticipant`.
-For details refer to the chapters [UPnP Discovery](#upnp-discovery) and [mDNS Discovery](#mdns-discovery). 
+For details refer to the chapters [UPnP Discovery](#upnp-discovery) and [mDNS Discovery](#mdns-discovery).
 
 The following example is taken from the `HueLightDiscoveryService`, it calls `thingDiscovered` for each found light.
-It uses the `DiscoveryResultBuilder` to create the discovery result. 
+It uses the `DiscoveryResultBuilder` to create the discovery result.
 
 ```java
     private void onLightAddedInternal(FullLight light) {
@@ -305,7 +596,7 @@ It uses the `DiscoveryResultBuilder` to create the discovery result.
 ```
 
 The discovery service needs to provide the list of supported thing types, that can be found by the discovery service.
-This list will be given to the constructor of `AbstractDiscoveryService` and can be requested by using `DiscoveryService#getSupportedThingTypes` method. 
+This list will be given to the constructor of `AbstractDiscoveryService` and can be requested by using `DiscoveryService#getSupportedThingTypes` method.
 
 ### Registering as an OSGi service
 
@@ -392,18 +683,19 @@ If this behavior is not appropriate for the implemented discovery service, one c
 ### UPnP Discovery
 
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
-It is widely used in bindings. To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
+It is widely used in bindings.
+To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
 Here the developer only needs to implement three simple methods: 
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs. 
+The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the UPnP result or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result. 
+This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
 This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result. 
+It uses the `getThingUID` method to create the thing UID of the result.
 
-The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`. 
+The following example shows the implementation of the UPnP discovery participant for the Hue binding, the `HueBridgeDiscoveryParticipant`.
 
 ```java
 public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
@@ -456,12 +748,12 @@ Here the developer only needs to implement four simple methods:
 
 - `getServiceType` - Defines the [mDNS service type](http://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
-The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs. 
+The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
-This method is called from the discovery service during result creation to provide a unique thing UID for the result. 
+This method is called from the discovery service during result creation to provide a unique thing UID for the result.
 - `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
 This method is called from the discovery service to create the actual discovery result.
-It uses the `getThingUID` method to create the thing UID of the result. 
+It uses the `getThingUID` method to create the thing UID of the result.
 
 
 ## Include the Binding in the Build
