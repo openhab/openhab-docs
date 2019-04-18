@@ -69,9 +69,6 @@ Eclipse has a graphical interface for working with the target platform. It is lo
 
 Depending on the repositories that you have selected in the installation process, you might have many options in this window. For openHAB development choose `openHAB Target Platform`. Make sure that it is checked and that it is "Active".
 
-<img src="images/targetplatform.png" width="600"/>  
-Fig. 1. Target Platform dialog window
-
    Hint! If for some reason the target platform that you want to use is missing from this list, the easiest way to add it is to close this window and simply drag and drop the target definition file into Eclipse. In the top right corner you will see a button `Set as current target platform`. 
 
 ### Reloading 
@@ -96,8 +93,6 @@ You can edit the target definition file with any text editor that you want, but 
 - in the `Locations` tab select `Add..`;
 - Select `Folder` and follow the wizard.
 
-<img src="images/edittarget.png" width="600"/>  
-Fig. 2. Edit Target Definition dialog window
 
 ## Further Reading
 

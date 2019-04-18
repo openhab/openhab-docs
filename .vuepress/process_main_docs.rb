@@ -127,7 +127,7 @@ def process_main_docs(docs_source_dir)
     
     puts ">>> Migrating the Developer section"
     
-    
+
     process_file("#{docs_source_dir}/developers", "index.md", "docs/developer", "#{$docs_repo_root}/developer/index.md")
     ["bindings", "contributing", "ioservices", "legacy", "module-types", "osgi"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
@@ -138,8 +138,8 @@ def process_main_docs(docs_source_dir)
     }
 
     puts " -> images"
-    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developers/bindings/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developers/legacy/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developers/osgi/images")
-    
+    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developer/legacy/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi/images")
+
 end

@@ -29,6 +29,7 @@ within old xtend rules, scripts and automation engine rules.
 
 Just keep in mind, that this only describes your triggers, conditions and actions,
 but the automation engine will not yet know what to do when encountering such a module.
+We implement the handlers in a follow up section.
 
 ```java
 @NonNullByDefault
@@ -73,7 +74,9 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
 }
 ```
 
-The above factory is referencing all three *Module Types*.
+The above factory is exposing all three *Module Types* that we need for our scenario.
+We do not need to care about the `ProviderChangeListener` methods here, because our types are rather static. If module types change over time in your factory, you need to notify the automation engine.
+
 It is common practise to define the unique ID (UID) within the type class itself.
 
 Let's have a look at all of our type classes:
@@ -82,7 +85,7 @@ Let's have a look at all of our type classes:
 @NonNullByDefault
 public class TemperatureTriggerType extends TriggerType {
     public static final String UID = "TemperatureTriggerType";
-    public static final String DATA_CURRENT_TEMPERATURE = "currentTemperature";
+    public static final String DATA_CURRENT_TEMPERATURE = "temperature";
 
     public static final String CONFIG_OPERATOR = "operator";
     public static final String CONFIG_TEMPERATURE = "temperature";
@@ -117,45 +120,59 @@ public class TemperatureTriggerType extends TriggerType {
 
 As you can see the constructor of the extended `TriggerType` expects us to fill in a label and description text and lets us define if the trigger is for public use (`VISIBLE`).
 
+Configuration parameters are described to the user and to user-interfaces via `ConfigDescriptionParameter`s.
+A configuration parameter needs a unique ID, a label, optionally a description and a type (TEXT, INTEGER, BOOLEAN and so on).
+
 Triggers and Conditions can also output data.
 And our temperature trigger will not only trigger on a configured temperature, but also output it.
-Conditions and Actions can take inputs.
+
+To define an *Output* you need to pass at least an ID, a type, a label and a description to the constructor.
+The type is the fully qualified name of a class, in this case from the `Integer` class.
+
+Conditions and Actions can take inputs on the other hand.
 
 Speaking of which, let's have a look at the code.
 
 ```java
 public class PresenceConditionType extends ConditionType {
+   public static final String UID = "PresenceConditionType";
+   public static final String DATA_PRESENCE = "presence";
+   public static final String CONFIG_PRESENCE_ITEM = "presence";
 
-    public static final String UID = "PresenceConditionType";
-    public static final String DATA_PRESENCE = "presence";
+   public static ConditionType initialize() {
+      List<ConfigDescriptionParameter> config = new ArrayList<>();
 
-    public static final String OPERATOR_HEATING = "heating";
-    public static final String CONFIG_PRESENCE_ITEM = "item";
+      ConfigDescriptionParameter presenceItemConfig;
+      presenceItemConfig = ConfigDescriptionParameterBuilder.create(CONFIG_PRESENCE_ITEM, Type.TEXT)
+         .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Presence item")
+         .withDescription("The item that decides if this condition is satisfied").build();
 
-    public static ConditionType initialize() {
-        List<ConfigDescriptionParameter> config = new ArrayList<>();
+      config.add(presenceItemConfig);
 
-       final ConfigDescriptionParameter operator = ConfigDescriptionParameterBuilder.create(CONFIG_PRESENCE_ITEM, Type.TEXT)
-       .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Presence item")
-       .withDescription("The item that decides if this condition is satisfied").build();
+      List<Input> input = new ArrayList<>();
 
-        List<Input> input = new ArrayList<>();
-
-        List<Output> output = new ArrayList<>();
-        Output state = new Output(DATA_PRESENCE, String.class.getName(), "State",
+      List<Output> output = new ArrayList<>();
+      Output state = new Output(DATA_PRESENCE, "State", "Presence",
          "Indicates the state of the presence detector via an ON or OFF", null, null, null);
-        output.add(state);
+      output.add(state);
 
-        return new PresenceConditionType(config, input, output);
-    }
+      return new PresenceConditionType(config, input, output);
+   }
 
-    public PresenceConditionType(List<ConfigDescriptionParameter> config, List<Input> input, List<Input> output) {
-        super(UID, config, "Presence Condition", "This condition is satisfied when the configure presence item is in ON state", output, Visibility.VISIBLE, input);
-    }
+   public PresenceConditionType(List<ConfigDescriptionParameter> config, List<Input> input, List<Input> output) {
+      super(UID, config, "Presence Condition", "This condition is satisfied when the configure presence item is in ON state", output, Visibility.VISIBLE, input);
+   }
 }
 ```
 
-The Condition that we are going to implement in the Condition Handler latter on will use the state of an item to decide if the condition is satisfied.
+The Condition that we are going to implement in the Condition Handler latter on will use the state of an item to decide if this presence condition is satisfied.
+
+Notice that our output is of type "State" instead of a fully qualified class name like `java.lang.String`.
+The following openHAB classes have short forms:
+
+* "State" (an *Item* state)
+* "Event" (an openHAB event from the event bus)
+* "Command" (a command targeting an *Item*)
 
 And now let's have a look at the Action type.
 
@@ -177,8 +194,7 @@ public class AirConditionerActionType extends ActionType {
         config.add(temp1);
         config.add(temp2);
 
-        Input currentTemperature = new Input(TemperatureTriggerType.DATA_CURRENT_TEMPERATURE, Integer.class.getName(), "Current Temperature",
-                "Current room temperature", null, true, null, null);
+        Input currentTemperature = new Input(TemperatureTriggerType.DATA_CURRENT_TEMPERATURE, Integer.class.getName(), "Current Temperature", "Depending on this temperature input the AC will turn on", null, true, null, null);
         List<Input> input = new ArrayList<>();
         input.add(currentTemperature);
 
@@ -212,26 +228,34 @@ For our scenario we go with one file:
 
 ```json
 {  
-   "triggers":[  
+   "triggers":[
       {  
          "uid":"TemperatureTriggerType",
-         "label":"Demo Trigger",
-         "description":"Triggers the Rule on event from EventAdmin service",
+         "label":"Temperature Trigger",
+         "description":"This triggers when the temperature has reached a certain value",
          "configDescriptions":[  
             {  
-               "name":"eventTopic",
-               "type":"TEXT",
-               "label":"Topic",
-               "description":"This is the event topic that the trigger will listen for",
+               "name":"temperature",
+               "type":"INTEGER",
+               "label":"Temperature",
+               "description":"Trigger temperature",
                "required":true
+            },
+            {  
+               "name":"operator",
+               "type":"TEXT",
+               "label":"Operator",
+               "description":"Below/Above temperature",
+               "required":true,
+               "default": "above"
             }
          ],
          "outputs":[  
             {  
-               "name":"outputValue",
+               "name":"temperature",
                "type":"java.lang.Integer",
-               "label":"Output value",
-               "description":"Output value"
+               "label":"Current Temperature",
+               "description":"Indicates the current room temperature"
             }
          ]
       }
@@ -239,23 +263,23 @@ For our scenario we go with one file:
    "conditions":[  
       {  
          "uid":"PresenceConditionType",
-         "label":"Demo Trigger",
-         "description":"Triggers the Rule on event from EventAdmin service",
+         "label":"Presence Condition",
+         "description":"This condition is satisfied when the configure presence item is in ON state",
          "configDescriptions":[  
             {  
-               "name":"eventTopic",
+               "name":"presence",
                "type":"TEXT",
-               "label":"Topic",
-               "description":"This is the event topic that the trigger will listen for",
+               "label":"Presence item",
+               "description":"The item that decides if this condition is satisfied",
                "required":true
             }
          ],
          "outputs":[  
             {  
-               "name":"outputValue",
-               "type":"java.lang.Integer",
+               "name":"presence",
+               "type":"State",
                "label":"Output value",
-               "description":"Output value"
+               "description":"Indicates the state of the presence detector via an ON or OFF"
             }
          ]
       }
@@ -283,10 +307,10 @@ For our scenario we go with one file:
          ],
          "inputs":[  
             {  
-               "name":"outputValue",
+               "name":"temperature",
                "type":"java.lang.Integer",
                "label":"Current Temperature",
-               "description":"Current room temperature"
+               "description":"Depending on this temperature input the AC will turn on"
             }
          ]
       }
@@ -296,20 +320,146 @@ For our scenario we go with one file:
 
 ## Module Handlers
 
-Module Handlers are helpers of the Automation Engine.
-The automation engine forwards modules, created by module types, to module handlers.
-They do the real work.
+You now have semantically described your modules.
+
+The pieces of code that actually
+
+* trigger, in case of Trigger types,
+* decide on condition satisfaction for Condition types or
+* execute something in case of Action types
+
+are called *Module handlers*.
+
+We now go over the implementation for all of our custom modules.
+
+As usual, we need a factory that creates module handlers on demand for the automation engine:
+
+```java
+@NonNullByDefault
+@Component(service={ModuleHandlerFactory.class})
+public class MyHandlerFactory extends BaseModuleHandlerFactory {
+   public static final String MODULE_HANDLER_FACTORY_NAME = "[MyHandlerFactory]";
+   private static final Collection<String> TYPES;
+
+   private final Logger logger = LoggerFactory.getLogger(MyHandlerFactory.class);
+
+   @Reference
+   private @NonNullByDefault({}) ItemRegistry itemRegistry;
+
+   static {
+      List<String> temp = new ArrayList<String>();
+      temp.add(TemperatureTriggerType.UID);
+      temp.add(PresenceConditionType.UID);
+      temp.add(AirConditionerActionType.UID);
+      TYPES = Collections.unmodifiableCollection(temp);
+   }
+
+   // Tell the automation engine about our handlers
+   @Override public Collection<String> getTypes() { return TYPES; }
+
+   @Override
+   protected ModuleHandler internalCreate(Module module, String ruleUID) {
+      ModuleHandler moduleHandler = null;
+      if (TemperatureTriggerType.UID.equals(module.getTypeUID())) {
+         moduleHandler = new TemperatureTriggerHandler((Action) module);
+      } else if (PresenceConditionType.UID.equals(module.getTypeUID())) {
+         moduleHandler = new PresenceConditionHandler((Condition) module);
+      } else if (AirConditionerActionType.UID.equals(module.getTypeUID())) {
+         moduleHandler = new AirConditionerActionHandler((Condition) module);
+      } else {
+         logger.warn(MODULE_HANDLER_FACTORY_NAME + "Not supported moduleHandler: {}", module.getTypeUID());
+      }
+      return moduleHandler;
+   }
+}
+```
+
+In the next three sections we'll implement those three handlers.
 
 ### Trigger Handler
 
-Trigger Handler serves to notify the Automation Engine about firing the Triggers.
-Simple implementation of it can be seen into `WelcomeHomeTriggerHandler` class.
+A *Trigger Handler* is created by the automation engine for each trigger module type in actual rules,
+via the factory that we have implemented above. 
+
+The handler tells the rule engine that something happened.
+In our example scenario that is when the temperature of an imaginary external device has reached a specific value.
+
+```java
+public class TemperatureTriggerHandler extends BaseTriggerModuleHandler
+  implements ExternalDeviceTempChangeListener // We are listening to imaginary temp change events
+{
+   final double temperature;
+   final boolean onAbove;
+   // Evaluate your configuration in the constructor
+   public TemperatureTriggerHandler(Trigger module) {
+      super(module);
+      Number tempNumber = (Number) context.get(TemperatureTriggerType.CONFIG_TEMPERATURE);
+      temperature = (tempNumber!=null) ? tempNumber.doubleValue() : 20.0;
+
+      String tempOp = (String) context.get(TemperatureTriggerType.CONFIG_OPERATOR);
+      onAbove = (tempOp != null && "below".equals(tempOp)) ? false : true;
+      
+   }
+
+   // Setup your triggering stuff in here
+   @Override
+   public void setRuleEngineCallback(RuleEngineCallback ruleCallback) {
+      super.setRuleEngineCallback(ruleCallback);
+      // Register to temp change events on our imaginary external device
+      ExternalTemperatureDevice.registerTemperatureChangeListener(this);
+   }
+
+   @Override
+   public void dispose() { // Do your clean up here
+      ExternalTemperatureDevice.unregisterTemperatureChangeListener(this);
+   }
+
+   // Event from our imaginary temperature device. Triggers connected rules if temp is
+   // over the configured threshold.
+   @Override 
+   public void tempChangedOnImaginaryDevice(int tempInCelsius) {
+      if (
+            (tempInCelsius>temperature && onAbove) ||
+            (tempInCelsius<temperature && !onAbove)
+         ) {
+            ((TriggerHandlerCallback) callback).triggered(module, context);
+         }
+   }
+}
+```
+
 
 ### Condition Handler
 
 Condition Handler serves to help the Automation Engine to decide if it continues with the execution of the rule or to terminate it.
-Simple implementation of it can be seen into `StateConditionHandler` or `TemperatureConditionHandler` class.
 
+```java
+public class PresenceConditionHandler extends BaseModuleHandler<Condition> implements ConditionHandler {
+    final ItemRegistry itemRegistry;
+    public PresenceConditionHandler(Condition module, ItemRegistry itemRegistry) {
+        super(module);
+        this.itemRegistry = itemRegistry;
+    }
+
+    @Override
+    public boolean isSatisfied(Map<String, Object> context) {
+        Number left = (Number) context.get(TemperatureConditionType.INPUT_CURRENT_TEMPERATURE);
+        Number right = (Number) module.getConfiguration().get(TemperatureConditionType.CONFIG_TEMPERATURE);
+        String operator = (String) module.getConfiguration().get(TemperatureConditionType.CONFIG_OPERATOR);
+        if (TemperatureConditionType.OPERATOR_HEATING.equals(operator)) {
+            if (left != null && right != null && left.intValue() < right.intValue()) {
+                return true;
+            }
+        } else if (TemperatureConditionType.OPERATOR_COOLING.equals(operator)) {
+            if (left != null && right != null && left.intValue() > right.intValue()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+}
+```
 ### Action Handler
 
 Action Handler is used to help the Automation Engine to execute the specific Actions.
@@ -363,7 +513,7 @@ The rule that implements our application is declaratively described in the json 
 ]
 ```
 
-### Programatically define rules
+### Programmatically define rules
 
 You can also define rules programmatically and add them to the `RuleRegistry`.
 Rules defined and added to the registry like this can be changed via user-interfaces.
