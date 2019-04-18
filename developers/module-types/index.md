@@ -14,11 +14,12 @@ But also what configuration values are available and what inputs and outputs a M
 
 For each *Module Type* a corresponding *Module Handler* is in place to actually execute code.
 
-To better get into the topic, let's develop a rule for the automation engine that is compromised completely out of custom module types.
+To better get into the topic, let's develop a rule for the automation engine that is compromised completely out of custom module types (in contrast to core provided ones).
 
-In our hands-on application we will switch on a virtual air conditioner (`Action`) as soon as the outdoor temperature is
-over a certain value (`Trigger`), but only if a person is at home (`Condition`).
-For the sake of complexity we want the air conditioner to operate at different levels depending on the temperature.
+In our hands-on application we will switch on a virtual air conditioner (`Action`) as soon as the outdoor temperature is over a certain value (`Trigger`), but only if a person is at home (`Condition`).
+We want the air conditioner to operate at different levels depending on the temperature.
+
+First you want to create a new bundle for example via the skeleton.
 
 ## Module Type Provider
 
@@ -72,12 +73,139 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
 }
 ```
 
+The above factory is referencing all three *Module Types*.
+It is common practise to define the unique ID (UID) within the type class itself.
+
+Let's have a look at all of our type classes:
+
+```java
+@NonNullByDefault
+public class TemperatureTriggerType extends TriggerType {
+    public static final String UID = "TemperatureTriggerType";
+    public static final String DATA_CURRENT_TEMPERATURE = "currentTemperature";
+
+    public static final String CONFIG_OPERATOR = "operator";
+    public static final String CONFIG_TEMPERATURE = "temperature";
+
+    public static TriggerType initialize() { // Factory method Pattern
+        // Define outputs
+        List<Output> output = new ArrayList<>();
+        Output temperature = new Output(DATA_CURRENT_TEMPERATURE, Integer.class.getName(),
+                "Temperature", "Indicates the current room temperature", null, null, null);
+        output.add(temperature);
+
+        // Define configurations
+        final ConfigDescriptionParameter temperature = ConfigDescriptionParameterBuilder
+                .create(CONFIG_TEMPERATURE, Type.INTEGER).withRequired(true).withReadOnly(true).withMultiple(false)
+                .withLabel("Temperature").withDescription("Trigger temperature").build();
+        final ConfigDescriptionParameter operator = ConfigDescriptionParameterBuilder.create(CONFIG_OPERATOR, Type.TEXT)
+                .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Operator")
+                .withDescription("Below/Above temperature").withDefault("above").build();
+
+        final List<ConfigDescriptionParameter> config = new ArrayList<>();
+        config.add(temperature);
+        config.add(operator);
+
+        return new AirConditionerTriggerType(output,config);
+    }
+
+    public AirConditionerTriggerType(List<Output> output, List<ConfigDescriptionParameter> config) {
+        super(UID, config, "Temperature Trigger", "This triggers when the temperature has reached a certain value", null, Visibility.VISIBLE, output);
+    }
+}
+```
+
+As you can see the constructor of the extended `TriggerType` expects us to fill in a label and description text and lets us define if the trigger is for public use (`VISIBLE`).
+
+Triggers and Conditions can also output data.
+And our temperature trigger will not only trigger on a configured temperature, but also output it.
+Conditions and Actions can take inputs.
+
+Speaking of which, let's have a look at the code.
+
+```java
+public class PresenceConditionType extends ConditionType {
+
+    public static final String UID = "PresenceConditionType";
+    public static final String DATA_PRESENCE = "presence";
+
+    public static final String OPERATOR_HEATING = "heating";
+    public static final String CONFIG_PRESENCE_ITEM = "item";
+
+    public static ConditionType initialize() {
+        List<ConfigDescriptionParameter> config = new ArrayList<>();
+
+       final ConfigDescriptionParameter operator = ConfigDescriptionParameterBuilder.create(CONFIG_PRESENCE_ITEM, Type.TEXT)
+       .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Presence item")
+       .withDescription("The item that decides if this condition is satisfied").build();
+
+        List<Input> input = new ArrayList<>();
+
+        List<Output> output = new ArrayList<>();
+        Output state = new Output(DATA_PRESENCE, String.class.getName(), "State",
+         "Indicates the state of the presence detector via an ON or OFF", null, null, null);
+        output.add(state);
+
+        return new PresenceConditionType(config, input, output);
+    }
+
+    public PresenceConditionType(List<ConfigDescriptionParameter> config, List<Input> input, List<Input> output) {
+        super(UID, config, "Presence Condition", "This condition is satisfied when the configure presence item is in ON state", output, Visibility.VISIBLE, input);
+    }
+}
+```
+
+The Condition that we are going to implement in the Condition Handler latter on will use the state of an item to decide if the condition is satisfied.
+
+And now let's have a look at the Action type.
+
+```java
+public class AirConditionerActionType extends ActionType {
+    public static final String UID = "AirConditionerActionType";
+
+    public static final String CONFIG_LEVEL1_MIN_TEMP = "level1_min_temp";
+    public static final String CONFIG_LEVEL2_MIN_TEMP = "level2_min_temp";
+
+    public static ActionType initialize() {
+        final ConfigDescriptionParameter temp1 = ConfigDescriptionParameterBuilder.create(CONFIG_LEVEL1_MIN_TEMP, Type.INTEGER)
+                .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Temperature for level 1")
+                .withDescription("Level 1 on the given temperature in celsius").build();
+        final ConfigDescriptionParameter temp2 = ConfigDescriptionParameterBuilder.create(CONFIG_LEVEL2_MIN_TEMP, Type.INTEGER)
+                .withRequired(true).withReadOnly(true).withMultiple(false).withLabel("Temperature for level 2")
+                .withDescription("Level 2 on the given temperature in celsius").build();
+        List<ConfigDescriptionParameter> config = new ArrayList<ConfigDescriptionParameter>();
+        config.add(temp1);
+        config.add(temp2);
+
+        Input currentTemperature = new Input(TemperatureTriggerType.DATA_CURRENT_TEMPERATURE, Integer.class.getName(), "Current Temperature",
+                "Current room temperature", null, true, null, null);
+        List<Input> input = new ArrayList<>();
+        input.add(currentTemperature);
+
+        return new AirConditionerActionType(config, input);
+    }
+
+    public AirConditionerActionType(List<ConfigDescriptionParameter> config, List<Input> input) {
+        super(UID, config, "Switch an air conditioner", "Control an air conditioner. Depending on the configuration and inputs it is switched into different power levels.", null,
+                Visibility.VISIBLE, input, null);
+    }
+}
+```
+
+Our Action is quite simple. Our air conditioner is turned off by default, is going into power level 1 when a certain temperature is reached and into level 2 on a second configured temperature. 
+
+It is the task of a rule to wire outputs to inputs.
+In our module types we just have to make sure that output and input types are matching.
+In this action for example we have an input of type `TemperatureTriggerType.DATA_CURRENT_TEMPERATURE` which is exactly the output of our trigger module type.
+
 This is the programmatic way of exposing *Module Types*.
 It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
 
+The programmatic way is useful for dynamically appearing module types.
+
 ### Module types via json
 
-To describe your modules (triggers, conditions, actions), add json files to `ESH-INF/automation/moduletypes/` within your bundle.
+To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/ESH-INF/automation/moduletypes/` within your bundle.
 A module type file can contain one or multiple type descriptions.
 
 For our scenario we go with one file:
@@ -86,7 +214,7 @@ For our scenario we go with one file:
 {  
    "triggers":[  
       {  
-         "uid":"ConsoleTrigger",
+         "uid":"TemperatureTriggerType",
          "label":"Demo Trigger",
          "description":"Triggers the Rule on event from EventAdmin service",
          "configDescriptions":[  
@@ -96,12 +224,29 @@ For our scenario we go with one file:
                "label":"Topic",
                "description":"This is the event topic that the trigger will listen for",
                "required":true
-            },
+            }
+         ],
+         "outputs":[  
             {  
-               "name":"keyName",
+               "name":"outputValue",
+               "type":"java.lang.Integer",
+               "label":"Output value",
+               "description":"Output value"
+            }
+         ]
+      }
+   ],
+   "conditions":[  
+      {  
+         "uid":"PresenceConditionType",
+         "label":"Demo Trigger",
+         "description":"Triggers the Rule on event from EventAdmin service",
+         "configDescriptions":[  
+            {  
+               "name":"eventTopic",
                "type":"TEXT",
-               "label":"Key name",
-               "description":"The key for entry that contains a value for the output of this trigger.",
+               "label":"Topic",
+               "description":"This is the event topic that the trigger will listen for",
                "required":true
             }
          ],
@@ -111,6 +256,37 @@ For our scenario we go with one file:
                "type":"java.lang.Integer",
                "label":"Output value",
                "description":"Output value"
+            }
+         ]
+      }
+   ],
+   "actions":[  
+      {  
+         "uid":"AirConditionerActionType",
+         "label":"Switch an air conditioner",
+         "description":"Control an air conditioner. Depending on the configuration and inputs it is switched into different power levels",
+         "configDescriptions":[  
+            {  
+               "name":"level1_min_temp",
+               "type":"INTEGER",
+               "label":"Temperature for level 1",
+               "description":"Level 1 on the given temperature in celsius",
+               "required":true
+            },
+            {  
+               "name":"level2_min_temp",
+               "type":"INTEGER",
+               "label":"Temperature for level 2",
+               "description":"Level 2 on the given temperature in celsius",
+               "required":true
+            }
+         ],
+         "inputs":[  
+            {  
+               "name":"outputValue",
+               "type":"java.lang.Integer",
+               "label":"Current Temperature",
+               "description":"Current room temperature"
             }
          ]
       }
@@ -190,7 +366,7 @@ The rule that implements our application is declaratively described in the json 
 ### Programatically define rules
 
 You can also define rules programmatically and add them to the `RuleRegistry`.
-Rules defined like this can be changed via user-interfaces.
+Rules defined and added to the registry like this can be changed via user-interfaces.
 
 ```java
 @NonNullByDefault
@@ -296,5 +472,7 @@ This document does not yet cover all features of the automation engine.
 We skipped rule templates and did not cover existing module types for common tasks,
 like triggering on an item state change or post a command as an action.
 
-Please discover existing module types on your own from within the user interfaces.
-For rule templates you may just ask in our friendly community.
+Please discover existing module types on your own from within the user interfaces
+and by consulting our user documentation.
+
+For rule templates you may just ask in our friendly community or extend this document.

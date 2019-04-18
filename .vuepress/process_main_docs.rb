@@ -129,16 +129,17 @@ def process_main_docs(docs_source_dir)
     
     
     process_file("#{docs_source_dir}/developers", "index.md", "docs/developer", "#{$docs_repo_root}/developer/index.md")
-    ["prerequisites", "development", "contributing"].each { |subsection|
+    ["bindings", "contributing", "ioservices", "legacy", "module-types", "osgi"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
             file = File.basename(path)
             puts " -> #{subsection}/#{file}"
             process_file("#{docs_source_dir}/developers/#{subsection}", file, "docs/developer/#{subsection}", "#{$docs_repo_root}/developer/#{subsection}/#{file}")
         }
-        if subsection != "contributing" then
-            puts " -> #{subsection}/images"
-            FileUtils.cp_r("#{docs_source_dir}/developers/#{subsection}/images", "docs/developer/#{subsection}")
-        end
     }
+
+    puts " -> images"
+    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developers/bindings/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developers/legacy/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developers/osgi/images")
     
 end

@@ -20,6 +20,8 @@ protocol interaction to transform an incoming wire string to something that a ch
 Let's assume that we want to write a transformation that appends the string ",bro!" to every
 input.
 
+First you want to create a new bundle for example via the skeleton.
+
 You start by writing an OSGi service class that implements `TransformationService`.
 Also check out the openHAB JavaDoc class documentation, there might be a more specialized class for
 your needs like `AbstractFileTransformationService`.
@@ -54,9 +56,11 @@ public @Nullable String transform(String config, String input) throws Transforma
 
 The communication between the framework and the Thing handlers can be influenced by "Profiles".
 
-By their nature, profiles are correlated to links between Items and Channels (i.e. `ItemChannelLinks`).
-So if one Channel is linked to several Items it also will have several profile instances,
-each handling the communication to exactly one of these Items. 
+By their nature, profiles are correlated to links between Items and Channels (i.e. `ItemChannelLinks`),
+just like transformations.
+
+But in contrast to transformations, if one Channel is linked to several Items it also will have several profile instances.
+Each instance handling the communication to exactly one of these Items.
 The same applies for the situation where one Item is linked to multiple Channels. 
 
 Profiles are created by ProfileFactories and are retained for the lifetime of their link. 
@@ -83,7 +87,7 @@ Trigger profiles are powerful means to implement some immediate, straight-forwar
 Apart from that, they do not pass any commands or state updates to and from the Thing handler as by their nature trigger Channels are not capable of handling these.
 
 This section explains how custom `Profile`s can be created.
-For a general explanation of Profiles, please see the [concept section](../../concepts/profiles.html).
+First you want to create a new bundle for example via the skeleton.
 
 ## Profile Properties
 
