@@ -552,7 +552,81 @@ After the device was successfully unpaired, the binding must inform the framewor
 After the removal was requested (i.e. the thing is in  `REMOVING` state), it cannot be changed back anymore to `ONLINE`/`OFFLINE`/`UNKNOWN` by the binding.
 The binding may only initiate the status transition to `REMOVED`.
 
-## Automation Engine actions bound to a Thing
+## Actions bound to a Thing
+
+Quite often the device or service you expose via openHAB Things allows certain actions to be performed.
+
+Examples are:
+
+* Reboot / Restart device
+* Start searching for new lights for a Hue lights bridge
+* Send message (via E-Mail / SMS Gateway service / Instant Messanger)
+
+If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions. 
+
+Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the [Module Development](../module-types.html) chapter.
+
+You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`:
+
+```java
+@ThingActionsScope(name = "mqtt") // Your bindings id is usually the scope
+@NonNullByDefault
+public class MQTTActions implements ThingActions {
+    private @Nullable AbstractBrokerHandler handler;
+
+    @Override
+    public void setThingHandler(@Nullable ThingHandler handler) { handler = (AbstractBrokerHandler) handler; }
+
+    @Override
+    public @Nullable ThingHandler getThingHandler() { return handler; }
+}
+```
+
+The second step is to return this class in your Thing handlers `getServices()` method:
+
+```java
+public class MyThingHandler extends BaseThingHandler {
+    ...
+    @Override
+    public Collection<Class<? extends ThingHandlerService>> getServices() {
+        return Collections.singleton(MQTTActions.class);
+    }
+}
+```
+
+As you can see in the above `MqttActions` implementation, the framework will call you back with the `ThingHandler`.
+
+You are now free to specify as many actions as you want in `MqttActions`.
+
+In the following example we provide a "publishMQTT" action.
+An action must be annotated with `@RuleAction`, a label and a description must be provided.
+In this case we refer to translation, see [i18n](utils/i18n.html) support, instead of directly providing a string.
+
+```java
+@RuleAction(label = "@text/actionLabel", description = "@text/actionDesc")
+    public void publishMQTT(
+            @ActionInput(name = "topic", label = "@text/actionInputTopicLabel", description = "@text/actionInputTopicDesc") @Nullable String topic,
+            @ActionInput(name = "value", label = "@text/actionInputValueLabel", description = "@text/actionInputValueDesc") @Nullable String value) {
+        ...
+    }
+
+    public static void publishMQTT(@Nullable ThingActions actions, @Nullable String topic, @Nullable String value) {
+        if (actions instanceof MQTTActions) {
+            ((MQTTActions) actions).publishMQTT(topic, value);
+        } else {
+            throw new IllegalArgumentException("Instance is not an MQTTActions class.");
+        }
+    }
+```
+
+Each member method also requires a static method with the same name.
+This is to support the old DSL rules engine and make the action available there.
+
+Each parameter of an action member method must be annotated with `@ActionInput`.
+
+If you return values, you do so by returning a `Map<String,Object>` and annotate the method itself with as many `@ActionOutput`s as you will return map entries.
+
+## Firmware information / Firmware update
 
 TODO
 

@@ -21,7 +21,7 @@ But also what configuration values are available and what inputs and outputs a M
 
 For each *Module Type* a corresponding *Module Handler* is in place to actually execute code.
 
-To better get into the topic, let's develop a rule for the automation engine that is compromised completely out of custom module types (in contrast to core provided ones).
+To better get into the topic, let's develop a rule for the automation engine that is compromised completely out of custom modules (in contrast to core provided ones).
 
 In our hands-on application we will switch on a virtual air conditioner (`Action`) as soon as the outdoor temperature is over a certain value (`Trigger`), but only if a person is at home (`Condition`).
 We want the air conditioner to operate at different levels depending on the temperature.

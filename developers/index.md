@@ -28,12 +28,14 @@ openHAB allows you to build up on the following concepts:
 * **an IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service)
 * **Natural language processing skill**:
   Executes something depending on the understood Intents and returns something back to the user,
+* **Extension-Service**: Provides openHAB addons via some means.
+  The official openHAB2 addons or openHAB1 addons are made available via an Extension-Service.
 * and many more (not covered yet).
 
 Sometimes though its just not worth writing a binding and you are better off
 just using an http action in a rule or script to retrieve some values.
 
-Therefore: First think what you want to archive! Check our community forum
+Therefore: First think what you want to archive! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.

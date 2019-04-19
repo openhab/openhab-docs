@@ -117,6 +117,8 @@ module.exports = [
       'developer/module-types/',
       'developer/transformations/',
       'developer/ioservices/',
+      'developer/audio/',
+      'developer/extensionservices/',
     ]
   },
   {
@@ -125,8 +127,12 @@ module.exports = [
     children: [
       'developer/buildsystem',
       'developer/osgi/osgi',
-      'developer/contributing/contributing',
-      'developer/contributing/governance',
+      'developer/utils/tools',
+      'developer/utils/i18n',
+      'developer/utils/events',
+      'developer/tests',
+      'developer/contributing',
+      'developer/governance',
       'developer/legacy/compatibilitylayer',
     ]
   },
