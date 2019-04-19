@@ -122,7 +122,7 @@ OSGi events are based on the publish-subscribe messaging pattern.
 The *Event Admin Service* (`org.osgi.service.event.EventAdmin`) takes a central place in the communication between *Event Publishers* and subscribers (*Event Listeners*).
 It is responsible for keeping track of the listeners, and sending events to them.
 
-- [OSGi Event Admin](prerequisites/eventadmin.html)
+- [OSGi Event Admin](eventadmin.html)
 
 ## Popular OSGi Containers
 

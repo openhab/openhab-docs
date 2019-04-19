@@ -219,23 +219,24 @@ The following XML snippet shows the definition for a temperature actuator channe
 <state min="12" max="30" step="0.5" pattern="%.1f %unit%" readOnly="false"></state>
 ```
 
-The attributes `min` and `max` can only be declared for channel with the item type `Number`.
-It defines the range of the numeric value.
-The Java data type is a BigDecimal.
-For example user interfaces can create sliders with an appropriate scale based on this information.
-The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
-The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
-For all sensors the `readonly` attribute should be set to `true`.
-The `pattern` attribute can be used for `Number` and  `String` items.
-It gives user interface a hint how to render the item.
-The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
-The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
-The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
-These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
+* The attributes `min` and `max` can only be declared for channel with the item type `Number`.
+  It defines the range of the numeric value.
+  The Java data type is a BigDecimal.
+  For example user interfaces can create sliders with an appropriate scale based on this information.
+* The `step` attribute can be declared for `Number` and `Dimmer` items and defines what is the minimal step size that can be used.
+* The `readonly` attribute can be used for all item types and defines if the state of an item can be changed.
+  For all sensors the `readonly` attribute should be set to `true`.
+* The `pattern` attribute can be used for `Number` and  `String` items.
+  It gives user interface a hint how to render the item.
+  The format of the pattern must be compliant to the [Java Number Format](http://docs.oracle.com/javase/tutorial/java/data/numberformat.html).
+  The pattern can be localized (see also [Internationalization](../../features/internationalization.html)).
+  The special pattern placeholder `%unit%` is used for channels which bind to items of type `Number:<dimension>` which define a dimension for unit support.
+  These channels will send state updates of type [QuantityType](../../concepts/units-of-measurement.html#quantitytype) and the unit is then rendered for the placeholder.
 
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
 A `String` item must be used as item type.
+
 The following XML snippet defines a list of predefined state options:
 
 ```xml
@@ -251,13 +252,42 @@ The following XML snippet defines a list of predefined state options:
 The user interface can use these values to render labels for values or to provide a selection of states, when the channel is writable.
 The option labels can also be localized.
 
-#### Dynamic State Description
+### Command Description
 
-In situations where the static definition of a state description is not sufficient a binding may implement a `DynamicStateDescriptionProvider`.
-It allows to provide a StateDescription based on the specific `Channel`.
-Also implement this interface if you want to provide dynamic state options.
-The original `StateDescription` is available for modification and enhancement.
-The `StateDescriptionFragmentBuilder` can be used to only provide the information which is available at the time of construction.
+If the primary purpose of a channel is to send commands towards a device (i.e. the opposite direction of trigger channels),
+it can use command options.
+
+A `String` item must be used as item type.
+
+The following XML snippet defines a list of commands:
+
+```xml
+<command>
+    <options>
+        <option value="ALARM">Alarm</option>
+        <option value="LSELECT">Long Alarm</option>
+    </options>
+</command>
+```
+
+The user interface can use these values to render
+* a drop down and also represent the current state or
+* as push buttons to simply send a command to the ThingHandler.
+
+The option labels can also be localized.
+
+#### Dynamic State / Command Description
+
+In situations where the static definition of a state description is not sufficient a binding would implement a `DynamicStateDescriptionProvider` or a `DynamicCommandDescriptionProvider`.
+
+These providers allow to provide a `StateDescription` (or `CommandDescription` respectively) based on the specific `Channel`.
+
+Also implement this interface if you want to provide dynamic state / command options.
+The original `StateDescription`/`CommandDescription` is available for modification and enhancement.
+
+The `StateDescriptionFragmentBuilder` (and `CommandDescriptionFragmentBuilder`) can be used to only provide the information which is available at the time of construction.
+
+TODO: Add code example
 
 ### Channel Categories
 
