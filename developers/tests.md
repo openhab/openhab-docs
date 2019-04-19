@@ -7,18 +7,19 @@ title: Writing tests
 
 # Tests
 
-There are two different kinds of approaches for testing.
-
-You can either have unit tests or integration tests.
+There are two approaches for testing:
+Unit tests and integration tests.
 
 Integration tests start up parts of the openHAB framework and the test is performed with real OSGi services.
 Tests of this kind should be used rarely as they increase the overall test runtime considerably.
-But it usually makes sense to have at least one integration test for a complex extension, to make sure everything (all the OSGi services) start up correctly.
+But it usually makes sense to have at least one integration test for a complex extension,
+to make sure everything (all your OSGi services) start up correctly.
 
 ## Unit tests
 
-Each class with a name which ends with `Test`, inside the *test* folder will have all public methods with a `@Test` annotation  automatically executed as a test.
+Each class inside the `src/main/test` folder will have all public methods with a `@Test` annotation  automatically executed as a test.
 Inside the class one can refer to all classes from the host bundle and all imported classes.
+
 The following code snippet shows a simple JUnit test which tests the `toString` conversation of a PercentType.
 
 ```java
@@ -34,7 +35,7 @@ public class PercentTypeTest {
 Using the [hamcrest matcher library](http://hamcrest.org/JavaHamcrest/) is a good way to write expressive assertions.
 In contrast to the original assertion statements from JUnit the hamcrest matcher library allows to define the assertion in a more natural order:
 
-```(java)
+```java
 PercentType pt = new PercentType("0.0001");
 assertThat(pt.toString(), is(equalTo("0.0001")));
 ```

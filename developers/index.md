@@ -28,6 +28,8 @@ openHAB allows you to build up on the following concepts:
 * **an IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service)
 * **Natural language processing skill**:
   Executes something depending on the understood Intents and returns something back to the user,
+* **Audio sinks/sources**:
+  Extend where audio can be played on or implement audio sources.
 * **Extension-Service**: Provides openHAB addons via some means.
   The official openHAB2 addons or openHAB1 addons are made available via an Extension-Service.
 * and many more (not covered yet).

@@ -3,7 +3,11 @@ layout: developersguide
 title: Framework Tools
 ---
 
-# Unique Instance IDs
+# Framework Tools
+
+Find a few framework utilities listed in this chapter.
+
+# Unique Instance ID
 
 When communicating with external systems, it is often desirable to have a unique identifier.
 The `org.eclipse.smarthome.core.id` bundle is a mean to generate such an id, which is automatically persisted.
@@ -64,14 +68,18 @@ public void handleCommand(ChannelUID channelUID, Command command) {
 }
 ```
 
-The interesting part is the `updater`. If the value is not yet expired, the returned CompletableFuture will complete immediately and the given code is executed.
+The interesting part is the `updater`.
+If the value is not yet expired, the returned CompletableFuture will complete immediately and the given code is executed.
 If the value is expired, the updater will be used to request a refreshed value.
 
 An updater can be any class or lambda that implements the funtional interface of `Supplier<CompletableFuture<VALUE_TYPE>>`.
 
-In the following example the method `CompletableFuture<VALUE_TYPE> get()` is accordingly implemented. The example assumes that we deal
-with a still very common callback based device refreshing method `doSuperImportantAsyncStuffHereToGetRefreshedValue(listener)`. The listener is the class
-itself, which implements `DeviceStateUpdateListener`. We will be called back with a refreshed device state in `asyncCallbackFromDeviceStateRefresh`
+In the following example the method `CompletableFuture<VALUE_TYPE> get()` is accordingly implemented.
+The example assumes that we deal
+with a still very common callback based device refreshing method `doSuperImportantAsyncStuffHereToGetRefreshedValue(listener)`.
+The listener is the class
+itself, which implements `DeviceStateUpdateListener`.
+We will be called back with a refreshed device state in `asyncCallbackFromDeviceStateRefresh`
 and mark the Future as *complete*.
 
 ```java
@@ -98,4 +106,5 @@ class FetchValueFromDevice implements Supplier<CompletableFuture<double>>, Devic
     }
 }
 ```
-If you deal with a newer implementation with a CompletableFuture support, it is even easier. You would just return your CompletableFuture.
+If you deal with a newer implementation with a CompletableFuture support, it is even easier.
+You would just return your CompletableFuture.
