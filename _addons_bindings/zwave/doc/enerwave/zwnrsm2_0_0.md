@@ -17,35 +17,40 @@ The ZWN-RSM2 supports routing. This allows the device to communicate using other
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/465) to improve the documentation.
+This smart relay can be used to convert a continuous load into a remotely switched load or used in conjunction with the existing manual switches to add remote operability. For the advanced users of Z-Wave, the functions can be customized with programming codes.
+
+### Inclusion Information
+
+Put controller into inclusion mode, toggle ON and OFF 3 times
+
+### Exclusion Information
+
+Put controller into exclusion mode, toggle ON and OFF 3 times
 
 ## Channels
 
 The following table summarises the channels available for the ZWN-RSM2 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
@@ -56,13 +61,13 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 3 | Unsolicited Report Configuration | ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net |
+| 3 | Unsolicited Report Configuration | Send unsolicited status report to primary controller |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 3: Unsolicited Report Configuration
 
+Send unsolicited status report to primary controller
 ZWN-RSM2 can send unsolicited status report to primary controller (Node ID 0X01) when switch toggled due to some controllers designed as gateway. If your controller is not a gateway or does not need the status or you think it could confuse your Z-Wave net
-
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -88,7 +93,24 @@ This parameter has the configuration ID ```switchall_mode``` and is of type ```I
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The ZWN-RSM2 supports 3 association groups.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 1 node.
+
+### Group 2: Switch Binary Report EP1
+
+
+Association group 2 supports 3 nodes.
+
+### Group 3: Switch Binary Report EP2
+
+
+Association group 3 supports 3 nodes.
+
 ## Technical Information
 
 ### Endpoints

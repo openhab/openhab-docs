@@ -8,38 +8,49 @@ title: MH6-HP - ZWave
 # MH6-HP Programmable Thermostat
 This describes the Z-Wave device *MH6-HP*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh6hp_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
+![MH6-HP product image](https://www.cd-jackson.com/zwave_device_uploads/1044/1044_default.jpg)
+
+
 The MH6-HP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/729) to improve the documentation.
+MH6-HP programmable thermostat is a Z-Wave Plus enabled device for indoor temperature control. It is mainly applied to heat pump system for heating/cooling, with 3 modes easily switchable: Schedule, Hold and Holiday. The device is of high reliability and practicability, and it can support up to 3H/2C system. This product can be included and operated in any Z-Wave network with other Z-Wave certified devices from any other manufacturers.
+
+### Inclusion Information
+
+In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “\- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.
+
+### Exclusion Information
+
+In normal display, press and hold ^ button to enter interface for removing of Z-Wave network. A Node ID will display on the screen. Then press ^ button once, “\- - -” will display on the screen to show removal was successful.
 
 ## Channels
 
 The following table summarises the channels available for the MH6-HP -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Thermostat fan mode | thermostat_fanmode |  |  | 
-| Thermostat fan state | thermostat_fanstate |  |  | 
-| Clock Time Offset | time_offset | Temperature | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Operating State | thermostat_state | thermostat_state | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
+| Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
+| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel and is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -60,10 +71,9 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Operating State
-
 Sets the thermostat operating state.
 
-The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_state``` channel and is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -77,30 +87,25 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel and is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel and is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Thermostat fan mode
-
 Channel type information on this channel is not found.
 
 ### Thermostat fan state
-
 Channel type information on this channel is not found.
 
 ### Clock Time Offset
-
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel and is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 
@@ -130,24 +135,23 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
-| COMMAND_CLASS_THERMOSTAT_MODE_V1| Linked to BASIC|
+| COMMAND_CLASS_THERMOSTAT_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_OPERATING_STATE_V1| |
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_STATE_V1| |
-| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
-| COMMAND_CLASS_ASSOCIATION_V2| |
-| COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_ASSOCIATION_V1| |
+| COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_TIME_V1| |
 | COMMAND_CLASS_TIME_PARAMETERS_V1| |
+
+### Documentation Links
+
+* [MH6-HP programmable thermostat.](https://www.cd-jackson.com/zwave_device_uploads/1044/MH6-HP-User-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/729).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1044).

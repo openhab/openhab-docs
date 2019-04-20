@@ -49,57 +49,65 @@ By this function all parameters of the module are set to default values and own 
 
 The following table summarises the channels available for the ZMNHTD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Power factor | meter_powerfactor | Energy | Number | 
-| Voltage | meter_voltage | Energy | Number | 
-| Active Power | meter_watts | Energy | Number | 
-| Active Energy Comsumption | meter_kwh | Energy | Number | 
-| Apparent Energy Consumption | meter_kvah | Energy | Number | 
-| Current | meter_current | Energy | Number | 
-| Reset Meter Stats | meter_reset | Energy | Switch | 
-| switch_binary | switch_binary1 | Switch | Switch | 
-| Switch Relay | switch_binary2 | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Power factor | meter_powerfactor | meter_powerfactor | Energy | Number | 
+| Voltage | meter_voltage | meter_voltage | Energy | Number | 
+| Active Power | meter_watts | meter_watts | Energy | Number | 
+| Active Energy Comsumption | meter_kwh | meter_kwh | Energy | Number | 
+| Apparent Energy Consumption | meter_kvah | meter_kvah | Energy | Number | 
+| Current | meter_current | meter_current | Energy | Number | 
+| Reset Meter Stats | meter_reset | meter_reset | Energy | Switch | 
+| switch_binary | switch_binary1 | switch_binary | Switch | Switch | 
+| Power factor  [Deprecated]| meter_powerfactor1 | meter_powerfactor | Energy | Number | 
+| Switch Relay | switch_binary2 | switch_binary | Switch | Switch | 
 
 ### Power factor
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor``` channel and is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Voltage
 Indicates the instantaneous voltage.
 
-The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel and is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Power
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel and is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Energy Comsumption
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel and is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Apparent Energy Consumption
 Indicates the energy consumption (kVAh).
 
-The ```meter_kvah``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kvah``` channel and is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Current
 Indicates the instantaneous current consumption.
 
-The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current``` channel and is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset Meter Stats
 Reset the meter.
 
-The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel and is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### switch_binary
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Power factor [Deprecated]
+Indicates the instantaneous power factor.
+
+The ```meter_powerfactor1``` channel and is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Switch Relay
 External relay ON
@@ -108,7 +116,7 @@ External relay OFF
 
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
@@ -530,6 +538,7 @@ Association group 1 supports 1 node.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V2| Linked to BASIC|
+| COMMAND_CLASS_METER_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
