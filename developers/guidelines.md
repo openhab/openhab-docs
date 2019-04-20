@@ -6,6 +6,7 @@ title: Coding Guidelines
 {% include base.html %}
 
 # Coding Guidelines
+{:.no_toc}
 
 The following guidelines apply to all (Java) code of the openHAB project.
 They must be followed to ensure a consistent code base for easy readability and maintainability.
@@ -15,6 +16,10 @@ Note that this list also serves as a checklist for code reviews on pull requests
 To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
 If you are just keen on binding development, you may skip this document first and come back later.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
 
 ## A. Directory and file layout
 

@@ -5,10 +5,19 @@ title: Thing Descriptions
 
 {% include base.html %}
 
-# Thing Type Definitions
+# Binding Definitions
+{:.no_toc}
 
-In order to work with things, some meta information about them is needed.
-This is provided through 'ThingType' definitions, which describe details about their functionality and configuration options.
+In order to work with *Things* and *Channels*, some meta information about them is needed.
+
+These are provided through 'ThingType' and 'ChannelType' definitions,
+which describe details about their functionality and configuration options.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
+
+## ThingTypeProvider / ChannelTypeProvider
 
 Technically, the thing types are provided by `ThingTypeProvider`s (`org.eclipse.smarthome.core.thing.binding.ThingTypeProvider`).
 
