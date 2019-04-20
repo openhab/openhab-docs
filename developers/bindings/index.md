@@ -8,11 +8,15 @@ title: Bindings
 # Developing a Binding
 {:.no_toc}
 
-A binding is an extension to openHAB that integrates an external system like a service, a protocol or a single device.
-The external system is represented as a set of *Things*.
-For each *Thing* the binding must provide a proper `ThingHandler` implementation that is able to handle the communication.
+A binding is an extension to openHAB that integrates an external system like a software service or a hardware device.
+The external system is represented as a set of *Things* and sometimes *Bridges* with *Channels*.
 
-In this chapter you will learn how to implement a simple binding and you will get familiar with important concepts and APIs of openHAB.
+This chapter covers everything to know about binding development.
+It makes sense to briefly read over all sections to make you familiar with what the framework has to offer.
+
+![thing concept](images/concept.png)
+
+During development you might come back with specific questions.
 
 {::options toc_levels="2,3"/}
 * TOC
@@ -52,6 +56,8 @@ This is done in a declarative way via XML files, so called *ThingTypes* and *Cha
 Find more information in the respective [Thing & Channel XML reference](thing-xml.html).
 
 ## The ThingHandlerFactory
+
+For each *Thing* the binding must provide a proper `ThingHandler` implementation that is able to handle the communication.
 
 The `ThingHandlerFactory` is responsible for creating `ThingHandler` instances.
 
