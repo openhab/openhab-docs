@@ -239,7 +239,7 @@
               <goal>copy-resources</goal>
             </goals>
             <configuration>
-              <outputDirectory>${basedir}/_addons_iconsets/oh2</outputDirectory>
+              <outputDirectory>${basedir}/_addons_iconsets/oh2/classic</outputDirectory>
               <resources>
                 <resource>
                   <directory>${basedir}/.external-resources/openhab-webui/bundles/org.openhab.ui.iconset.classic</directory>
