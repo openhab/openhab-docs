@@ -60,7 +60,7 @@ So we are saving time for everyone by keeping those files at their original loca
 ### How the documentation build works
 
 We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
-There are several triggers (mostly time based), which will then *gather the external contents* and move them to our *final* branch.
+There are several triggers (mostly time based), which will then *gather the external contents* and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the *final* branch under:
 
 - `_addons_*`
@@ -73,6 +73,15 @@ The external content is updated by the following toolchain:
 
 Everything that gets updated in the *master* branch will be also merged over to the *final* branch automatically.
 Afterwards we will redeploy the website with the latest content from the *final* branch at regular intervals.
+
+#### Build triggers investigated
+
+There are two triggers available currently.
+The `merge docs` job is simply triggerd twice a day to fetch possible documentation updates.
+The `gather external docs` job is started with a **succesful** build of the openhab-distribution.
+A succesful disribution build will include all of the latest changes that have been made to external sources like addons.
+So when a distribution build is succesful, we will trigger the gathering of all external sources.
+When that process is finished, we will then notify our website hosting service, to start a new website build which then will include all the latest changes in the cods repository and in all external repositories.
 
 ## Documentation Versioning
 
