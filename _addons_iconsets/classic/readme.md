@@ -1,3 +1,17 @@
+---
+id: classic
+label: Classic Icon Set
+title: Classic Icon Set - Icon Sets
+type: iconset
+description: "This is a modernized version of the original icon set from openHAB 1.x."
+since: 2x
+install: manual
+---
+
+<!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
+
+{% include base.html %}
+
 # Classic Icon Set
 
 This is a modernized version of the original icon set from openHAB 1.x.
