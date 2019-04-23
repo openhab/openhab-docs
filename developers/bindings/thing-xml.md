@@ -631,87 +631,87 @@ The full Java API for bridge and *Thing* descriptions can be found in the Java p
 </thing:thing-descriptions>
 ```
 
-<table>
-  <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
-  <tr><td>thing-descriptions.bindingId</td><td>The identifier of the binding this types belong to (mandatory).</td></tr>
-</table>
+| Property                     | Description                                  | |
+|------------------------------|----------------------------------------------|--------|
+| thing-descriptions.bindingId | The identifier of the binding this types belong to | mandatory |
 
 **Bridges and Things:**
-<table>
-  <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
-  <tr><td>bridge-type.id | thing-type.id</td><td>An identifier for the bridge/<i>Thing</i> type (mandatory).</td></tr>
-  <tr><td>bridge-type.listed | thing-type.listed</td><td>Denotes if user interfaces should list the bridge/<i>Thing</i>, e.g. for pairing (optional, defaults to true).</td></tr>
-  <tr><td>bridge-type.extensible | thing-type.extensible</td><td>If the bridge/<i>Thing</i> supports a generic number of channels the allowed channelTypeIds can be listed here (optional). This provides a hint for UIs to support adding/removing channels. Channel groups are not supported.</td></tr>
-  <tr><td>supported-bridge-type-refs</td><td>The identifiers of the bridges this bridge/<i>Thing</i> can connect to (optional).</td></tr>
-  <tr><td>bridge-type-ref.id</td><td>The identifier of a bridge this bridge/<i>Thing</i> can connect to (mandatory).</td></tr>
-  <tr><td>label</td><td>A human-readable label for the bridge/<i>Thing</i> (mandatory).</td></tr>
-  <tr><td>description</td><td>A human-readable description for the bridge/<i>Thing</i> (optional).</td></tr>
-  <tr><td>category</td><td>Category this bridge/<i>Thing</i> belongs to, see <a href="../../concepts/categories.html">categories</a>) (optional).</td></tr>
-  <tr><td>channels</td><td>The channels the bridge/<i>Thing</i> provides (optional).</td></tr>
-  <tr><td>channel.id</td><td>An identifier of the channel the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>channel.typeId</td><td>An identifier of the channel type definition the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>label</td><td>A human-readable label for the channel (optional).</td></tr>
-  <tr><td>description</td><td>A human-readable description for the channel (optional).</td></tr>
-  <tr><td>channel-groups</td><td>The channel groups defining the channels the bridge/<i>Thing</i> provides (optional).</td></tr>
-  <tr><td>channel-group.id</td><td>An identifier of the channel group the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>channel-group.typeId</td><td>An identifier of the channel group type definition the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>properties</td><td>Name/value pairs for properties to be set to the thing (optional).</td></tr>
-  <tr><td>representation-property</td><td>The name of the property that contains a unique identifier of the thing (optional).</td></tr>
-  <tr><td>config-description</td><td>The configuration description for the bridge/<i>Thing</i> within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref</td><td>The reference to a configuration description for the bridge/<i>Thing</i> within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref.uri</td><td>The URI of the configuration description for the bridge/<i>Thing</i> within the ConfigDescriptionRegistry (mandatory).</td></tr>
-</table>
+
+| Property                       | Description                                  | |
+|--------------------------------|----------------------------------------------|--------|
+| bridge-type.id / thing-type.id | An identifier for the bridge/Thing type | mandatory |
+| bridge-type.listed / thing-type.listed | Denotes if user interfaces should list the bridge/Thing, e.g. for pairing | optional, defaults to true |
+| bridge-type.extensible / thing-type.extensible | If the bridge/Thing supports a generic number of channels the allowed channelTypeIds can be listed here. This provides a hint for UIs to support adding/removing channels. Channel groups are not supported. | optional |
+| supported-bridge-type-refs     | The identifiers of the bridges this bridge/Thing can connect to | optional |
+| bridge-type-ref.id             | The identifier of a bridge this bridge/Thing can connect to | mandatory |
+| label                          | A human-readable label for the bridge/Thing | mandatory |
+| description                    | A human-readable description for the bridge/Thing | optional |
+| category                       | Category this bridge/Thing belongs to, see categories) | optional |
+| channels                       | The channels the bridge/Thing provides | optional |
+| channel.id                     | An identifier of the channel the bridge/Thing provides | mandatory |
+| channel.typeId                 | An identifier of the channel type definition the bridge/Thing provides | mandatory |
+| label                          | A human-readable label for the channel | optional |
+| description                    | A human-readable description for the channel | optional |
+| channel-groups                 | The channel groups defining the channels the bridge/Thing provides | optional |
+| channel-group.id               | An identifier of the channel group the bridge/Thing provides | mandatory ||
+| channel-group.typeId           | An identifier of the channel group type definition the bridge/Thing provides | mandatory |
+| properties                     | Name/value pairs for properties to be set to the thing | optional |
+| representation-property        | The name of the property that contains a unique identifier of the thing | optional |
+| config-description             | The configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
+| config-description-ref         | The reference to a configuration description for the bridge/Thing within the ConfigDescriptionRegistry | optional |
+| config-description-ref.uri     | The URI of the configuration description for the bridge/Thing within the ConfigDescriptionRegistry | mandatory |
 
 **Channels:**
-<table>
-  <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
-  <tr><td>channel-type.id</td><td>An identifier for the channel type (mandatory).</td></tr>
-  <tr><td>channel-type.advanced</td><td>The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces (optional, default: false).</td></tr>
-  <tr><td>kind</td><td>The kind of channel. <code>state</code> for channels which have a state, <code>trigger</code> for trigger channels. <code>state</code> is the default.</td></tr>
-  <tr><td>item-type</td><td>An item type of the channel (mandatory if kind <code>state</code>, which is the default). All item types are specified in <code>ItemFactory</code> instances. The following items belong to the core: <code>Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image</code>.</td></tr>
-  <tr><td>label</td><td>A human-readable label for the channel (mandatory).</td></tr>
-  <tr><td>description</td><td>A human-readable description for the channel (optional).</td></tr>
-  <tr><td>category</td><td>The category for the channel, e.g. <code>TEMPERATURE</code> (optional).</td></tr>
-  <tr><td>tags</td><td>A list of default tags to be assigned to bound items (optional).</td></tr>
-  <tr><td>tag</td><td>A tag semantically describes the feature (typical usage) of the channel e.g. <code>AlarmSystem</code>. There are no pre-default tags, they are custom-specific (mandatory).</td></tr>
-  <tr><td>state</td><td>The restrictions of an item state which gives information how to interpret it (optional).</td></tr>
-  <tr><td>state.min</td><td>The minimum decimal value of the range for the state (optional).</td></tr>
-  <tr><td>state.max</td><td>The maximum decimal value of the range for the state (optional).</td></tr>
-  <tr><td>state.step</td><td>The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values (optional).</td></tr>
-  <tr><td>state.pattern</td><td>The pattern following the <code>printf</code> syntax to render the state (optional).</td></tr>
-  <tr><td>state.readOnly</td><td>The flag indicating if the state is read-only or can be modified (optional, default: false).</td></tr>
-  <tr><td>options</td><td>A list restricting all possible values (optional).</td></tr>
-  <tr><td>option</td><td>The description for the option (optional).</td></tr>
-  <tr><td>option.value</td><td>The value for the option (mandatory). Note that the value may be outside of the range specified in the min/max if this is specified.</td></tr>
-  <tr><td>command</td><td>Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state (optional).</td></tr>
-  <tr><td>options</td><td>A list defining the possible commands (optional).</td></tr>
-  <tr><td>option</td><td>The description for the option (optional).</td></tr>
-  <tr><td>option.value</td><td>The value for the option (mandatory). This is the actual command send to the channel.</td></tr>
-  <tr><td>event</td><td>The restrictions of an trigger event which gives information how to interpret it (optional).</td></tr>
-  <tr><td>autoUpdatePolicy</td><td>The auto update policy to use (optional).</td></tr>
-  <tr><td>config-description</td><td>The configuration description for the channel within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref</td><td>The reference to a configuration description for the channel within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref.uri</td><td>The URI of the configuration description for the channel within the ConfigDescriptionRegistry (mandatory).</td></tr>
-</table>
+
+| Property                      | Description                                  | |
+|-------------------------------|----------------------------------------------|--------|
+| channel-type.id               | An identifier for the channel type | mandatory |
+| channel-type.advanced         | The flag indicating if this channel contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
+| kind                          | The kind of channel. state for channels which have a state, trigger for trigger channels. state is the default. | |
+| item-type                     | An item type of the channel. All item types are specified in ItemFactory instances. The following items belong to the core: Switch, Rollershutter, Contact, String, Number, Dimmer, DateTime, Color, Image. | mandatory if kind state, which is the default |
+| label                         | A human-readable label for the channel | mandatory |
+| description                   | A human-readable description for the channel | optional |
+| category                      | The category for the channel, e.g. TEMPERATURE | optional |
+| tags                          | A list of default tags to be assigned to bound items | optional |
+| tag                           | A tag semantically describes the feature (typical usage) of the channel e.g. AlarmSystem. There are no pre-default tags, they are custom-specific | mandatory |
+| state                         | The restrictions of an item state which gives information how to interpret it | optional |
+| state.min                     | The minimum decimal value of the range for the state | optional |
+| state.max                     | The maximum decimal value of the range for the state | optional |
+| state.step                    | The increasing/decreasing decimal step size within the defined range, specified by the minimum/maximum values | optional |
+| state.pattern                 | The pattern following the printf syntax to render the state | optional |
+| state.readOnly                | The flag indicating if the state is read-only or can be modified | optional, default: false |
+| options                       | A list restricting all possible values | optional |
+| option                        | The description for the option | optional |
+| option.value                  | The value for the option. Note that the value may be outside of the range specified in the min/max if this is specified. | mandatory |
+| command                       | Commands this channel will send to the binding. This is used to model "write-only" channels and gives UIs a hint to display push-buttons without state | optional |
+| options                       | A list defining the possible commands | optional |
+| option                        | The description for the option | optional |
+| option.value                  | The value for the option. This is the actual command send to the channel. | mandatory |
+| event                         | The restrictions of an trigger event which gives information how to interpret it | optional |
+| autoUpdatePolicy              | The auto update policy to use | optional |
+| config-description            | The configuration description for the channel within the ConfigDescriptionRegistry | optional |
+| config-description-ref        | The reference to a configuration description for the channel within the ConfigDescriptionRegistry | optional |
+| config-description-ref.uri    | The URI of the configuration description for the channel within the ConfigDescriptionRegistry | mandatory |
 
 **Channel Groups:**
-<table>
-  <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
-  <tr><td>channel-group-type.id</td><td>An identifier for the channel group type (mandatory).</td></tr>
-  <tr><td>channel-group-type.advanced</td><td>The flag indicating if this channel group contains advanced functionalities which should be typically not shown in the basic view of user interfaces (optional, default: false).</td></tr>
-  <tr><td>label</td><td>A human-readable label for the channel group (mandatory).</td></tr>
-  <tr><td>description</td><td>A human-readable description for the channel group (optional).</td></tr>
-  <tr><td>category</td><td>The category for the channel group, e.g. <code>TEMPERATURE</code> (optional).</td></tr>
-  <tr><td>channels</td><td>The channels the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>channel.id</td><td>An identifier of the channel the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-  <tr><td>channel.typeId</td><td>An identifier of the channel type definition the bridge/<i>Thing</i> provides (mandatory).</td></tr>
-</table>
+
+| Property                    | Description                                  | |
+|-----------------------------|----------------------------------------------|--------|
+| channel-group-type.id       | An identifier for the channel group type | mandatory |
+| channel-group-type.advanced | The flag indicating if this channel group contains advanced functionalities which should be typically not shown in the basic view of user interfaces | optional, default: false |
+| label                       | A human-readable label for the channel group | mandatory |
+| description                 | A human-readable description for the channel group | optional |
+| category                    | The category for the channel group, e.g. TEMPERATURE | optional |
+| channels                    | The channels the bridge/Thing provides | mandatory |
+| channel.id                  | An identifier of the channel the bridge/Thing provides | mandatory |
+| channel.typeId              | An identifier of the channel type definition the bridge/Thing provides | mandatory |
+
 
 The full XML schema for Thing type descriptions is specified in the <a href="https://openhab.org/schemas/thing-description-1.0.0.xsd">openHAB thing description XSD</a> file.
 
 **Hints:**
 
--  Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
--  The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
+- Any identifiers of the types are automatically mapped to unique identifiers: `bindingID:id`.
+- The attribute `uri` in the section `config-description` is optional, it *should not* be specified in bridge/*Thing*/channel type definition files because it's an embedded configuration.
 If the `uri` is *not* specified, the configuration description is registered as `thing-type:bindingID:id` or `channel-type:bindingID:id` otherwise the given `uri` is used.s
--  If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
+- If a configuration description is already specified somewhere else and the bridge/*Thing*/channel type wants to (re-)use it, a `config-description-ref` should be used instead.
