@@ -207,7 +207,7 @@ The following snippet shows a 'Lighting' tag definition:
 ```
 
 Please note that only tags from a pre-defined tag library should be used.
-This library is still t.b.d., and only a very small set of tags are defined so far:
+This library is still in development., and only a very small set of tags are defined so far:
 
 | Tag                | Item Types                 | Description                                                                           |
 |--------------------|----------------------------|---------------------------------------------------------------------------------------|
