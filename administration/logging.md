@@ -254,7 +254,12 @@ As you can see from the example configuration file above, the level for jUPnP is
 
 ### Changing the Pattern of an Appender
 
-Another useful option is to change the pattern of an appender. This pattern defines what information will be logged. The logback logger provides many [predefined conversation words](http://logback.qos.ch/manual/layouts.html#conversionWord) for the most common use cases. Use the most appropriate ones for your specific case. For the purpose of exploring and debugging multi threaded applications you might need to see which thread has generated certain log event. In order to see this in the logs, you have to add the conversion word `t` to the pattern above:
+Another useful option is to change the pattern of an appender.
+This pattern defines what information will be logged.
+The logback logger provides many [predefined conversion words](http://logback.qos.ch/manual/layouts.html#conversionWord) for the most common use cases.
+Use the most appropriate ones for your specific case.
+For the purpose of exploring and debugging multithreaded applications you might need to see which thread has generated certain log event.
+In order to see this in the logs, you have to add the conversion word `t` to the pattern above:
 
 ```xml
 <pattern>%t %d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%-30.30logger{36}:%-5line] - %msg%ex{10}%n</pattern>
