@@ -38,17 +38,17 @@ Binding definitions must be placed as XML file(s) (with the ending `.xml`) in th
 </binding:binding>
 ```
 
-<table>
-  <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
-  <tr><td>binding.id</td><td>An identifier for the binding (mandatory).</td></tr>
-  <tr><td>name</td><td>A human-readable name for the binding (mandatory).</td></tr>
-  <tr><td>description</td><td>A human-readable description for the binding (optional).</td></tr>
-  <tr><td>author</td><td>The author of the binding (optional).</td></tr>
-  <tr><td>service-id</td><td>The ID (service.pid or component.name) of the main binding service, which can be configured through OSGi configuration admin service. Should only be used in combination with a config description definition (optional).</td></tr>
-  <tr><td>config-description</td><td>The configuration description for the binding within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref</td><td>The reference to a configuration description for the binding within the ConfigDescriptionRegistry (optional).</td></tr>
-  <tr><td>config-description-ref.uri</td><td>The URI of the configuration description for the binding within the ConfigDescriptionRegistry (mandatory).</td></tr>
-</table>
+| Property                   | Description                                  | |
+|----------------------------|----------------------------------------------|-----|
+| binding.id                 | An identifier for the binding                | mandatory |
+| name                       | A human-readable name for the binding        | mandatory |
+| description                | A human-readable description for the binding | optional  |
+| author                     | The author of the binding                    | optional  |
+| service-id                 | The ID (service.pid or component.name) of the main binding service, which can be configured through OSGi configuration admin service. Should only be used in combination with a config description definition | optional |
+| config-description         | The configuration description for the binding within the ConfigDescriptionRegistry | optional |
+| config-description-ref     | The reference to a configuration description for the binding within the ConfigDescriptionRegistry | optional |
+| config-description-ref.uri | The URI of the configuration description for the binding within the ConfigDescriptionRegistry | mandatory |
+
 
 The full XML schema for binding definitions is specified in the [ESH binding XSD](http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd) file.
 
