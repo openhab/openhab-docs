@@ -86,7 +86,6 @@ When one of these jobs is finished, we will then notify our website hosting serv
 This recognized due to new commits in the final branch of this repository.
 The new build will include all the latest changes in the cods repository and in all external repositories.
 
-
 ## Documentation Versioning
 
 Just as openHAB is released in versions, the documentation website provides fixed versions of the documentation articles, e.g., [https://www.openhab.org/v2.2/installation/linux.html](https://www.openhab.org/v2.2/installation/linux.html)
