@@ -82,9 +82,9 @@ The `gather external docs` job is started with a **succesful** build of the open
 A succesful disribution build will include all of the latest changes that have been made to external sources like addons.
 So when a distribution build is succesful, we will trigger the gathering of all external sources.
 
-When one of these jobs is finished, we will then notify our website hosting service, to start a new website build.
-This recognized due to new commits in the final branch of this repository.
-The new build will include all the latest changes in the cods repository and in all external repositories.
+When one of these jobs is finished, we will then notify our website hosting service to start a new website build.
+This is recognized due to new commits in the final branch of this repository.
+The new build will include all the latest changes in the code repository and in all external repositories.
 
 ## Documentation Versioning
 
