@@ -77,11 +77,15 @@ Afterwards we will redeploy the website with the latest content from the *final*
 #### Build triggers investigated
 
 There are two triggers available currently.
-The `merge docs` job is simply triggerd twice a day to fetch possible documentation updates.
+The `merge docs` job is triggerd after something has been added to the documentation through this repository.
 The `gather external docs` job is started with a **succesful** build of the openhab-distribution.
 A succesful disribution build will include all of the latest changes that have been made to external sources like addons.
 So when a distribution build is succesful, we will trigger the gathering of all external sources.
-When that process is finished, we will then notify our website hosting service, to start a new website build which then will include all the latest changes in the cods repository and in all external repositories.
+
+When one of these jobs is finished, we will then notify our website hosting service, to start a new website build.
+This recognized due to new commits in the final branch of this repository.
+The new build will include all the latest changes in the cods repository and in all external repositories.
+
 
 ## Documentation Versioning
 
