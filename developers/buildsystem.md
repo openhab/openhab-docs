@@ -1,6 +1,6 @@
 ---
 layout: developersguide
-title: Buildsystem
+title: Build System
 ---
 
 {% include base.html %}
