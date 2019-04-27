@@ -731,6 +731,16 @@ Next, add the desired share configurations to the end of the file:
       public=no
       create mask=0777
       directory mask=0777
+      
+    [openHAB2-logs]
+      comment=openHAB2 logs
+      path=/var/log/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
     ```
 
 -   Manual installation:
