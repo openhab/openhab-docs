@@ -11,13 +11,19 @@ As defined in the [OSGi Compendium specification][OSGi-cmpn] *configuration is t
 
 ### Configuration Admin Service
 
-In OSGi, configurations are stored in a central database that is being managed by a special service - the *Configuration Admin Service*(`org.osgi.service.cm.ConfigurationAdmin`). This service monitors the service registry and **provides a configuration to the services** that are registered with a *service.pid* property. Configuration changes are first made persistent, and then are passed to the target service. It is important to understand that **the target bundle receives updates from the Configuration Admin service**. Implementations should be aware that the update reception could be delayed if the Configuration Admin service is missing.
+In OSGi, configurations are stored in a central database that is being managed by a special service - the *Configuration Admin Service*(`org.osgi.service.cm.ConfigurationAdmin`).
+This service monitors the service registry and **provides a configuration to the services** that are registered with a *service.pid* property.
+Configuration changes are first made persistent, and then are passed to the target service.
+It is important to understand that **the target bundle receives updates from the Configuration Admin service**.
+Implementations should be aware that the update reception could be delayed if the Configuration Admin service is missing.
 
 ### Configuration properties
 
-Each configuration is uniquely identified by a PID (Persistent IDentifier) and stores properties. The properties can be edited, or new properties could be added during runtime by other bundle that uses the Configuration Admin service.
+Each configuration is uniquely identified by a PID (Persistent IDentifier) and stores properties.
+The properties can be edited, or new properties could be added during runtime by other bundle that uses the Configuration Admin service.
 
-In OSGi, configurations properties are key-value pairs that are accessible via `Map<String, Object>`. Please note that the following types of objects are supported:
+In OSGi, configurations properties are key-value pairs that are accessible via `Map<String, Object>`.
+Please note that the following types of objects are supported:
 
 - String;
 - Boolean;

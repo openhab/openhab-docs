@@ -14,8 +14,7 @@ OSGi events are based on the publish-subscribe messaging pattern.
 Let's use the definition for the pattern that can be found in the [OSGi Compendium Specification][OSGi-cmpn]:
 
 *This pattern decouples sources from their handlers by interposing an event channel between them.
-The publisher posts events to the channel,
-which identifies which handlers need to be notified and then takes care of the notification process.*
+The publisher posts events to the channel, which identifies which handlers need to be notified and then takes care of the notification process.*
 
 Both publishers and subscribers can disappear at any time.
 A central module to track the handlers availability is needed - the *Event Admin Service*. 

@@ -160,7 +160,8 @@ For example:
 </filter>
 ```
 
-Groups allow parameters to be grouped together into logical blocks so that the user can find the parameters they are looking for. A parameter can be placed into a group so that the UI knows how to display the information.
+Groups allow parameters to be grouped together into logical blocks so that the user can find the parameters they are looking for.
+A parameter can be placed into a group so that the UI knows how to display the information.
 <table>
   <tr><td><b>Property</b></td><td><b>Description</b></td></tr>
   <tr><td>group.name</td><td>The group name - this is used to link the parameters into the group, along with the groupName option in the parameter (mandatory).</td></tr>
@@ -175,7 +176,8 @@ The full XML schema for configuration descriptions is specified in the [openHAB 
 
 **Hints:**
 
-- Although the attribute `uri` is optional, it *must* be specified in configuration description files. Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
+- Although the attribute `uri` is optional, it *must* be specified in configuration description files.
+Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
 
 
 ## Example

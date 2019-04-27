@@ -100,7 +100,7 @@ It is also possible to use the same handler for different *Things*, or use diffe
 
 ## The ThingHandler
 
-A `ThingHandler` handles the communication between openHAB and an entity from the real world, e.g. a physical device, a web service, represented by a `Thing`. 
+A `ThingHandler` handles the communication between openHAB and an entity from the real world, e.g. a physical device, a web service, represented by a `Thing`.
 
 openHAB provides an abstract base class named `BaseThingHandler`.
 It is recommended to use this class, because it covers a lot of common logic.
@@ -132,31 +132,48 @@ For an example, our exemplary Weather binding starts and stops a scheduled job t
 
 The startup of a handler is divided in two essential steps:
 
-1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework. In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
+1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework.
+In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
  
-2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler. This method is only called if all 'required' configuration parameters of the Thing are present. The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
+2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
+This method is only called if all 'required' configuration parameters of the Thing are present.
+The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
 
-The diagram below illustrates the startup of a handler in more detail. The life cycle is controlled by the `ThingManager`.
+The diagram below illustrates the startup of a handler in more detail.
+The life cycle is controlled by the `ThingManager`.
 
 ![thing_life_cycle_startup](images/thing_life_cycle_startup.png)
 
-The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding. The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`. Therefore, it tracks all `ThingHandlerFactory`s from the binding. 
+The `ThingManager` mediates the communication between a `Thing` and a `ThingHandler` from the binding.
+The `ThingManager` creates for each Thing a `ThingHandler` instance using a `ThingHandlerFactory`.
+Therefore, it tracks all `ThingHandlerFactory`s from the binding.
 
-The `ThingManager` determines if the `Thing` is initializable or not. A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](xml-reference.html)) are available. If so, the method `ThingHandler.initialize()` is called.
+The `ThingManager` determines if the `Thing` is initializable or not.
+A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](xml-reference.html)) are available.
+If so, the method `ThingHandler.initialize()` is called.
 
-Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later. To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience. Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly. For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually. Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to *OFFLINE* with the corresponding status detail (e.g. *COMMUNICATION_ERROR* or *CONFIGURATION_ERROR* including a meaningful description) instead of throwing exceptions. 
+Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later.
+To achieve that, the status must be reported to the framework via the callback or `BaseThingHandler.updateStatus(...)` for convenience.
+Furthermore, the framework expects `initialize()` to be non-blocking and to return quickly.
+For longer running initializations, the implementation has to take care of scheduling a separate job which must guarantee to set the status eventually.
+Also, please note that the framework expects the `initialize()` method to handle anticipated error situations gracefully and set the thing to *OFFLINE* with the corresponding status detail (e.g. *COMMUNICATION_ERROR* or *CONFIGURATION_ERROR* including a meaningful description) instead of throwing exceptions.
 
-If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`. The binding has to notify the `ThingManager` about the updated configuration by a callback. The `ThingManager` tries to initialize the `ThingHandler` resp. `Thing` again.
+If the `Thing` is not initializable the configuration can be updated via `ThingHandler.handleConfigurationUpdate(Map)`.
+The binding has to notify the `ThingManager` about the updated configuration by a callback.
+The `ThingManager` tries to initialize the `ThingHandler` resp. `Thing` again.
 
-After the handler is initialized, the handler must be ready to handle methods calls like `handleCommand` and `handleUpdate`, as well as `thingUpdated`. 
+After the handler is initialized, the handler must be ready to handle methods calls like `handleCommand` and `handleUpdate`, as well as `thingUpdated`.
 
 #### Shutdown
 
 The shutdown of a handler is also divided in two essential steps:
 
-1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework. The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
+1. Handler is unregistered: `ThingHandler` instance is no longer tracked by the framework.
+The `ThingHandlerFactory` can unregister handler services (e.g. `FirmwareUpdateHandler` or `ConfigStatusProvider`) if registered, or release resources.
 
-2. Handler is disposed: `ThingHandler.disposed()` method is called. The framework expects `dispose()` to be non-blocking and to return quickly. For longer running disposals, the implementation has to take care of scheduling a separate job. 
+2. Handler is disposed: `ThingHandler.disposed()` method is called.
+The framework expects `dispose()` to be non-blocking and to return quickly.
+For longer running disposals, the implementation has to take care of scheduling a separate job.
 
 ![thing_life_cycle_shutdown](images/thing_life_cycle_shutdown.png)
 
@@ -360,7 +377,9 @@ The corresponding handler is able to provide placeholder values as a JSON-serial
 ```
 
 ```
-rate_limit=Device is blocked by remote service for {0} minutes. Maximum limit of {1} configuration changes per {2} has been exceeded. For further info please refer to device vendor.
+rate_limit=Device is blocked by remote service for {0} minutes.
+Maximum limit of {1} configuration changes per {2} has been exceeded.
+For further info please refer to device vendor.
 ```
 
 ### Channel Links
@@ -374,7 +393,8 @@ To actively check if a channel is linked, you can use the `isChannelLinked(Chann
 
 ## Updating the Thing from a Binding
 
-It can happen that the binding wants to update the configuration or even the whole structure of a thing. If the `BaseThingHandler` class is used, it provides some helper methods for modifying the thing.
+It can happen that the binding wants to update the configuration or even the whole structure of a thing.
+If the `BaseThingHandler` class is used, it provides some helper methods for modifying the thing.
 
 ### Updating the Configuration
 
@@ -384,7 +404,8 @@ But if the configuration can also be changed in the external system, the binding
 If the configuration should be updated, then the binding developer can retrieve a copy of the current configuration by calling `editConfiguration()`.
 The updated configuration can be stored as a whole by calling `updateConfiguration(Configuration)`.
 
-Suppose that an external system causes an update of the configuration, which is read in as a `DeviceConfig` instance. The following code shows how to update configuration:
+Suppose that an external system causes an update of the configuration, which is read in as a `DeviceConfig` instance.
+The following code shows how to update configuration:
 
 ```java
 protected void deviceConfigurationChanged(DeviceConfig deviceConfig) {
@@ -397,7 +418,8 @@ protected void deviceConfigurationChanged(DeviceConfig deviceConfig) {
 
 ### Updating Thing Properties
 
-Thing properties can be updated in the same way as the configuration. The following example shows how to modify two properties of a thing:
+Thing properties can be updated in the same way as the configuration.
+The following example shows how to modify two properties of a thing:
 
 ```java
 protected void devicePropertiesChanged(DeviceInfo deviceInfo) {
@@ -429,7 +451,8 @@ protected void thingStructureChanged() {
 
 ### Handling Thing Updates
 
-If the structure of a thing has been changed during runtime (after the thing was created), the binding is informed about this change in the ThingHandler within the `thingUpdated` method. The `BaseThingHandler` has a default implementation for this method:
+If the structure of a thing has been changed during runtime (after the thing was created), the binding is informed about this change in the ThingHandler within the `thingUpdated` method.
+The `BaseThingHandler` has a default implementation for this method:
 
 ```java
 @Override
@@ -524,7 +547,8 @@ For this purpose the handler of the entity implements the interface `org.eclipse
 
 A *ThingHandler* as handler for the thing entity can provide the configuration status of the thing by implementing the `org.eclipse.smarthome.config.core.status.ConfigStatusProvider` interface.
 
-For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface. Currently the framework provides two base thing handler implementations for the configuration status provider interface:
+For things that are created by sub-classes of the `BaseThingHandlerFactory` the provider is already automatically registered as an OSGi service if the concrete thing handler implements the configuration status provider interface.
+Currently the framework provides two base thing handler implementations for the configuration status provider interface:
 
 * `org.eclipse.smarthome.core.thing.binding.ConfigStatusThingHandler` extends the `BaseThingHandler` and is to be used if the configuration status is to be provided for thing entities
 * `org.eclipse.smarthome.core.thing.binding.ConfigStatusBridgeHandler` extends the `BaseBridgeHandler` and is to be used if the configuration status is to be provided for bridge entities
@@ -568,7 +592,7 @@ Examples are:
 * Start searching for new lights for a Hue lights bridge
 * Send message (via E-Mail / SMS Gateway service / Instant Messanger)
 
-If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions. 
+If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions.
 
 Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the [Module Development](../module-types.html) chapter.
 
@@ -701,7 +725,7 @@ The default implementations of both methods are empty and could be overridden by
 Depending on the concrete implementation the discovery service might start and stop a scheduler in these method or register a listener for an external protocol.
 The `thingDiscovered` method can be used to notify about a newly discovered thing.
 
-The following example shows the implementation of the above mentioned methods in the Wemo binding. 
+The following example shows the implementation of the above mentioned methods in the Wemo binding.
 
 ```java
     @Override

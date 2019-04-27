@@ -267,7 +267,10 @@ In order to see this in the logs, you have to add the conversion word `t` to the
 
 ### Redirect the Log to a Text File
 
-You might want to redirect your log to a text file. This gives you the flexibility to search easier for a specific log or to save your logs. If you have looked at the [default configuration file](#logback-configuration-file) you might have noticed that several appenders are listed there. The process of redirecting the log to a text file is as simple as :
+You might want to redirect your log to a text file.
+This gives you the flexibility to search easier for a specific log or to save your logs.
+If you have looked at the [default configuration file](#logback-configuration-file) you might have noticed that several appenders are listed there.
+The process of redirecting the log to a text file is as simple as :
 
 - adding a new `FileAppender` and specifying the path of the output file:
 
@@ -280,7 +283,8 @@ You might want to redirect your log to a text file. This gives you the flexibili
 	</encoder>
 </appender>
 ```
-- adding your logger, setting up the log level and adding `appender-ref` element to the logger element. For this example we will assume that you want to add the following logger with the name `com.logger.example`:
+- adding your logger, setting up the log level and adding `appender-ref` element to the logger element.
+For this example we will assume that you want to add the following logger with the name `com.logger.example`:
 
 ```xml
 <logger name="com.logger.example" level="INFO">

@@ -43,7 +43,8 @@ More details about the OSGi architecture can be found at <https://www.osgi.org/d
 
 Modules (called **bundles**) are the smallest unit of modularization. Technically a bundle is a JAR file with additional meta information. This information is stored in file called [**manifest**](#important-definitions) file. The manifest file is part of the standard [Java specification](http://docs.oracle.com/javase/7/docs/technotes/guides/jar/jar.html#), but OSGi adds additional metadata to it in form of specific headers. The *Bundle-SymbolicName* and the *Bundle-Version* headers uniquely identify a bundle. In OSGi is allowed to have **bundles with same name, but different version running at the same time.**
 
-Some of the most important information that the manifest contains are the bundle dependencies. **A bundle can depend on another bundle or on a package**. 
+Some of the most important information that the manifest contains are the bundle dependencies.
+**A bundle can depend on another bundle or on a package**. 
 
 The **OSGi runtime uses the information about the dependencies to *wire* the bundles and hides everything in this JAR unless it is explicitly exported**. The dependencies to the Java standard libraries are managed by the *Bundle-RequiredExecutionEnvironment* header, so it is not needed to import the Java core packages.
 

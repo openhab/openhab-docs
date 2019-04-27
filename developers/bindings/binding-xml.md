@@ -56,7 +56,8 @@ The full XML schema for binding definitions is specified in the [ESH binding XSD
 
 - The attribute `uri` in the section `config-description` is optional, it *should not* be specified in binding definition files because it's an embedded configuration. If the `uri` is *not* specified, the configuration description is registered as `binding:bindingID`, otherwise the given `uri` is used.
 - If a configuration description is already specified somewhere else and the binding wants to (re-)use it, a `config-description-ref` should be used instead.
-- Normally the service id must not be defined, because it is implicitly set to "binding.&lt;binding.id&gt;". A binding can register an OSGi service which implements the ManagedService interface and define the service.pid as e.g."binding.hue" to receive the configuration.
+- Normally the service id must not be defined, because it is implicitly set to "binding.&lt;binding.id&gt;".
+A binding can register an OSGi service which implements the ManagedService interface and define the service.pid as e.g."binding.hue" to receive the configuration.
 
 
 ### Example

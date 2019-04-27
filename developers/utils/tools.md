@@ -21,7 +21,8 @@ The id is provided through a static method and can be retrieved through
 
 # Network Address Service
 
-The `NetworkAddressService` is an OSGi service that can be used like any other OSGi service by adding a service reference to it. Its OSGi service name is `org.eclipse.smarthome.network`.
+The `NetworkAddressService` is an OSGi service that can be used like any other OSGi service by adding a service reference to it.
+Its OSGi service name is `org.eclipse.smarthome.network`.
 A user can configure his default network address via Paper UI under `Configuration -> System -> Network Settings`.
 One can obtain the configured address via the `getPrimaryIpv4HostAddress()` method on the service.
 This service is useful for example in the `ThingHandlerFactory` or an `AudioSink` where one needs a specific IP address of the host system to provide something like a `callback` URL.
@@ -30,7 +31,8 @@ Some static methods like `getAllBroadcastAddresses()` for retrieving all interfa
 
 ## Network Address Change Listener
 
-The `NetworkAddressChangeListener` is a consumer type OSGi service interface. If listeners want to be notified about network interface address changes, they can implement `NetworkAddressChangeListener` and register as an OSGi service.
+The `NetworkAddressChangeListener` is a consumer type OSGi service interface.
+If listeners want to be notified about network interface address changes, they can implement `NetworkAddressChangeListener` and register as an OSGi service.
 
 Please be aware that not all network interface changes are notified to the listeners, only "useful" network interfaces :--
 When a network interface status changes from "up" to "down", it is considered as "removed".
@@ -40,10 +42,14 @@ When a "loopback" or "down" interface is added, the listeners are not notified.
 
 The framework provides some caching solutions for common scenarios.
 
-A common usage case is in a `ThingHandler` to encapsulate one value of an internal state and attach an expire time on that value. A cache action will be called to refresh the value if it is expired. This is what `ExpiringCache` implements. If `handleCommand(ChannelUID channelUID, Command command)` is called with the "RefreshType" command, you just return `cache.getValue()`. 
+A common usage case is in a `ThingHandler` to encapsulate one value of an internal state and attach an expire time on that value.
+A cache action will be called to refresh the value if it is expired.
+This is what `ExpiringCache` implements.
+If `handleCommand(ChannelUID channelUID, Command command)` is called with the "RefreshType" command, you just return `cache.getValue()`. 
 
 It is a good practice to return as fast as possible from the `handleCommand(ChannelUID channelUID, Command command)` method to not block callers especially UIs.
-Use this type of cache only, if your refresh action is a quick to compute, blocking operation. If you deal with network calls, consider the asynchronously reloading cache implementation instead.
+Use this type of cache only, if your refresh action is a quick to compute, blocking operation.
+If you deal with network calls, consider the asynchronously reloading cache implementation instead.
 
 ## Expiring and asynchronously reloading cache
 

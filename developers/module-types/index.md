@@ -82,7 +82,8 @@ public class MyModuleTypeProvider implements ModuleTypeProvider {
 ```
 
 The above factory is exposing all three *Module Types* that we need for our scenario.
-We do not need to care about the `ProviderChangeListener` methods here, because our types are rather static. If module types change over time in your factory, you need to notify the automation engine.
+We do not need to care about the `ProviderChangeListener` methods here, because our types are rather static.
+If module types change over time in your factory, you need to notify the automation engine.
 
 It is common practise to define the unique ID (UID) within the type class itself.
 
@@ -215,7 +216,8 @@ public class AirConditionerActionType extends ActionType {
 }
 ```
 
-Our Action is quite simple. Our air conditioner is turned off by default, is going into power level 1 when a certain temperature is reached and into level 2 on a second configured temperature. 
+Our Action is quite simple.
+Our air conditioner is turned off by default, is going into power level 1 when a certain temperature is reached and into level 2 on a second configured temperature.
 
 It is the task of a rule to wire outputs to inputs.
 In our module types we just have to make sure that output and input types are matching.
@@ -386,7 +388,7 @@ In the next three sections we'll implement those three handlers.
 ### Trigger Handler
 
 A *Trigger Handler* is created by the automation engine for each trigger module type in actual rules,
-via the factory that we have implemented above. 
+via the factory that we have implemented above.
 
 The handler tells the rule engine that something happened.
 In our example scenario that is when the temperature of an imaginary external device has reached a specific value.
