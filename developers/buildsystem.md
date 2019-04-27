@@ -80,3 +80,5 @@ If the imported packages need to be exposed to other bundles (e.g. case 2 above)
 
 to the POM.
 If `version="1.0.0"` is not set, the packages are exported with the same version as the main bundle.
+Optional parameters available for importing/exporting packages (e.g. `foo.bar.*;resolution:="optional"`) are available, too.
+Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>' would prevent all packages starting with foo.bar from being imported). 
