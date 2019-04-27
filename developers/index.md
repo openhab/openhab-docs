@@ -8,7 +8,7 @@ title: Addon Development
 In this chapter of the documentation you will learn how to develop an addon for openHAB.
 A variety of different parts of openHAB can be extended, we go through all of them.
 
-openHAB uses [git](https://git-scm.com/) as its version control system and [github](https://github.com/openhab) for hosting the different repositories and source code.
+openHAB uses [git](https://git-scm.com/) as its version control system and [GitHub](https://github.com/openhab) for hosting the different repositories and source code.
 You will get in contact with git in many places and it makes sense to get familiar with its basic commands and concepts.
 There are many pages to learn about Git.
 Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start.
