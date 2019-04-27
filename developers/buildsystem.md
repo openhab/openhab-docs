@@ -35,7 +35,7 @@ In most cases they should be referenced in the project POM with scope `provided`
   </dependencies>
 ```
 
-In most cases these dependencies need to be added to the `feature.xml`:
+To ensure that they are available at runtime they also need to be added to the `feature.xml`:
 
 ```
   <bundle dependency="true">mvn:foo.bar/baz/1.0.0</bundle>
