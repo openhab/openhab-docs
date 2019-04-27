@@ -52,7 +52,7 @@ If the bundle is not an OSGi-bundle, you need to wrap it and provide proper name
 
 In two cases libraries can be added to the `/lib` directory:
 1. The bundle is not available for download
-2. The bundle is not an OSGi bundle but needs to be uses for integration tests.
+2. The bundle is not an OSGi bundle but needs to be used for integration tests.
 Unlike Karaf, BND is not able to wrap bundles on its own.
 In this case the binding works as wrapper.
 You need add the library and export all needed packages manually.
