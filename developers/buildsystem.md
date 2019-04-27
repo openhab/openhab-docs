@@ -5,7 +5,7 @@ title: Build System
 
 {% include base.html %}
 
-# Build system
+# Build System
 
 The buildsystem is based on maven.
 A very common tool for Java development.
