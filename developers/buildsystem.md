@@ -48,7 +48,7 @@ If the bundle is not an OSGi-bundle, you need to wrap it and provide proper name
   <bundle dependency="true">wrap:mvn:foo.bar/baz/1.0.0$Bundle-Name=Foobar%20Baz%20Library&amp;Bundle-SymbolicName=foo.bar.baz&amp;Bundle-Version=1.0.0</bundle>
 ```
 
-*** Internal dependency ***
+** Internal dependency **
 
 In two cases libraries can be added to the `/lib` directory:
 1. The bundle is not available for download
