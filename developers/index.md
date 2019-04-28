@@ -18,7 +18,7 @@ Java is not hard to learn, but it helps if you have a general technical understa
 
 The different guides of this chapter assume that you are familiar with Java 8 and a rough idea of Git's workflow(eg "checkout", "branches", "push").
 
-## Chose the right concept for a problem
+## Choose the Right Concept
 
 openHAB allows you to build up on the following concepts:
 
