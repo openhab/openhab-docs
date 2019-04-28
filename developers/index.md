@@ -31,8 +31,6 @@ openHAB allows you to build up on the following concepts:
   Executes something depending on the understood Intents and returns something back to the user,
 * **Audio sinks/sources**:
   Extend where audio can be played on or implement audio sources.
-* **Extension-Service**: Provides openHAB addons via some means.
-  The official openHAB2 addons or openHAB1 addons are made available via an Extension-Service.
 * and many more (not covered yet).
 
 Sometimes though its just not worth writing a binding and you are better off

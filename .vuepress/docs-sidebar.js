@@ -119,7 +119,6 @@ module.exports = [
       'developer/ioservices/',
       'developer/persistence/',
       'developer/audio/',
-      'developer/extensionservices/',
     ]
   },
   {
