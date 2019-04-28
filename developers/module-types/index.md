@@ -223,14 +223,15 @@ It is the task of a rule to wire outputs to inputs.
 In our module types we just have to make sure that output and input types are matching.
 In this action for example we have an input of type `TemperatureTriggerType.DATA_CURRENT_TEMPERATURE` which is exactly the output of our trigger module type.
 
-This is the programmatic way of exposing *Module Types*.
-It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
-
 The programmatic way is useful for dynamically appearing module types.
+You will learn an easier way in a moment for statically defined module types
 
 ### Module types via json
 
-To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/ESH-INF/automation/moduletypes/` within your bundle.
+In the last section we learned about the programmatic way of exposing *Module Types*.
+It is actually way easier to just descripe your module types in a declarative way via json and bundle them with your addon.
+
+To describe your modules (triggers, conditions, actions), add json files to `src/main/resources/ESH-INF/automation/moduletypes/`.
 A module type file can contain one or multiple type descriptions.
 
 For our scenario we go with one file:
@@ -484,7 +485,7 @@ We now need to write an actual rule to use our custom modules.
 
 ### Via json files
 
-The automation engine reads rule json files from the `{openhab-dir}/automation/*.js` directory.
+The automation engine reads rule json files from the `{openhab-dir}/automation/*.json` directory.
 
 The rule that implements our application is declaratively described in the json format like this:
 

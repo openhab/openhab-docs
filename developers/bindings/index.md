@@ -879,6 +879,8 @@ Once you are happy with your implementation, you need to integrate it in the Mav
 * Furthermore add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/karaf/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
 * If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency as well (see the other bindings as an example)
+* Add your binding to the CODEOWNERS at the alphabetically correct position.
+  This is so that you get notified by Github when someone adds a pull request towards your binding and hopefully can assist in reviewing that.
 
 Before you create a pull request on GitHub, you should now run
 

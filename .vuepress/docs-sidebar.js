@@ -117,6 +117,7 @@ module.exports = [
       'developer/module-types/',
       'developer/transformations/',
       'developer/ioservices/',
+      'developer/persistence/',
       'developer/audio/',
       'developer/extensionservices/',
     ]

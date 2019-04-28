@@ -26,6 +26,7 @@ openHAB allows you to build up on the following concepts:
 * **Automation engine module**: A trigger, condition or action that can be used in automation rules (or scripts),
 * **Transformation / Profiles**: Can be used to transform a *Thing Channel* value before it is assigned to an *Item*,
 * **an IO service**: Exposes openHAB internals via a defined interface (for example the REST interface, HomeKit or Hue Emulation Service)
+* **a Persistence service**: Persist item state updates and/or changes and allow them to be retrieved for specific points in time.
 * **Natural language processing skill**:
   Executes something depending on the understood Intents and returns something back to the user,
 * **Audio sinks/sources**:

@@ -6,13 +6,15 @@ title: Binding Descriptions
 ## Binding Definitions
 
 Every binding has to provide meta information such as binding id or name.
-The meta information of all bindings is accessible through the `org.eclipse.smarthome.core.binding.BindingInfoRegistry` service.
 
-Although binding definitions are usually specified in a declarative way (as described in this section), they can also be provided as `org.eclipse.smarthome.core.binding.BindingInfo`.
+Background information: The meta information of all bindings is accessible through the `org.eclipse.smarthome.core.binding.BindingInfoRegistry` service.
+
+Although binding definitions are usually specified in a declarative way (as described in this section),
+they can also be provided as `org.eclipse.smarthome.core.binding.BindingInfo`.
 Any `BindingInfo` must be registered as service at the *OSGi* service registry.
 The full Java API for binding definitions can be found in the Java package `org.eclipse.smarthome.core.binding`.
 
-Binding definitions must be placed as XML file(s) (with the ending `.xml`) in the bundle's folder `/ESH-INF/binding/`.
+For the declarative way, you add your binding information in form of a `binding.xml` file to the bundle's folder `/src/main/resources/ESH-INF/binding/binding.xml`.
 
 
 ### XML Structure for Binding Definitions
@@ -50,7 +52,7 @@ Binding definitions must be placed as XML file(s) (with the ending `.xml`) in th
 | config-description-ref.uri | The URI of the configuration description for the binding within the ConfigDescriptionRegistry | mandatory |
 
 
-The full XML schema for binding definitions is specified in the [ESH binding XSD](http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd) file.
+The full XML schema for binding definitions is specified in the [ESH binding XSD](https://openhab.org/schemas/binding-1.0.0.xsd) file.
 
 **Hints:**
 
@@ -66,11 +68,11 @@ The following code gives an example for a binding definition.
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
-<binding:binding id="hue"
+<binding:binding id="bindingID"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:binding="http://eclipse.org/smarthome/schemas/binding/v1.0.0"
-    xsi:schemaLocation="http://eclipse.org/smarthome/schemas/binding/v1.0.0
-        http://eclipse.org/smarthome/schemas/binding-1.0.0.xsd">
+    xmlns:binding="https://openhab.org/schemas/binding/v1.0.0"
+    xsi:schemaLocation="https://openhab.org/schemas/binding/v1.0.0
+        https://openhab.org/schemas/binding-1.0.0.xsd">
 
   <name>hue Binding</name>
   <description>The hue Binding integrates the Philips hue system. It allows to control hue bulbs.</description>
