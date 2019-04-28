@@ -5,6 +5,6 @@ title: IO Services
 
 {% include base.html %}
 
-# Developing an IO service
+# Developing an IO Service
 
 TODO
