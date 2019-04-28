@@ -16,7 +16,7 @@ Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start
 Addons and the core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
-The different guides of this chapter assume that you are familiar with Java 8 and a rough idea of Git's workflow(eg "checkout", "branches", "push").
+The different guides of this chapter assume that you are somewhat familiar with Java 8 and that you have a rough idea of Git's workflow (eg "checkout", "branches", "push").
 
 ## Choose the Right Concept
 
@@ -40,7 +40,7 @@ Therefore: First think what you want to archive! Check our [community forum](htt
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](development/guidelines.html) apply to all addon development.
+General [coding guidelines](development/guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 
