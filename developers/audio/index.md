@@ -16,7 +16,7 @@ Each binding for handling and controlling audio services can implement an audio 
 An audio sink is identified by an unique id which in general is similar to the thing type id.
 The framework itself can handle multiple audio sinks at the same time.
 
-## Build-in audio sinks
+## Build-in Audio Sinks
 
 The distribution comes with these built-in audio sinks options:
 
