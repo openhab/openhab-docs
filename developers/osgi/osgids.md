@@ -29,7 +29,7 @@ In order to understand this model, we will have to first explain a few terms, us
 - **Component Description** - The declaration of a component.
   It is contained within an XML document in a bundle.
 
-## DS container
+## DS Container
 
 In order to use the Declarative Services functionality you have to start a bundle with an implementation of the DS container.
 In [Equinox](http://www.eclipse.org/equinox/) (the reference implementation of OSGi that is used in openHAB) this bundle is called `org.eclipse.equinox.ds`.
