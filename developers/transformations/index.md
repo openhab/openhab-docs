@@ -5,7 +5,7 @@ title: Transformations / Profiles
 
 {% include base.html %}
 
-# Developing a transformation
+# Developing a Transformation Service
 
 Transformations and Profiles (see next section) are very similar in their nature. Usually
 if you implement a transformation, you also provide a profile for the same matter in the same bundle.
