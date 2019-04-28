@@ -21,7 +21,7 @@ If you are just keen on binding development, you may skip this document first an
 * TOC
 {:toc}
 
-## A. Directory and file layout
+## A. Directory and File Layout
 
 The following directory and file layout must be respected:
 
