@@ -244,7 +244,7 @@ You must therefore disable null-checks for such references:
 private @NonNullByDefault({}) MyService injectedService;
 ```
 
-### Default libraries
+### Default Libraries
 
 In order to not have every binding use a different library, the following packages are available by default:
 
