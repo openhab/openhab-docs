@@ -34,7 +34,7 @@ We don't want it to do everything for everybody.
 This means that we might decide against incorporating a new feature.
 However, there might be a way to implement that feature *on top of* openHAB.
 
-### Discuss your Design in the community
+### Discuss Your Design in the Community
 
 We recommend discussing your plans [in the discussion forum](https://community.openhab.org)
 before starting to code - especially for more ambitious contributions.
