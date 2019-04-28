@@ -44,7 +44,7 @@ and discuss your concept.
 Find the right abstraction and the corresponding link on the left navigation panel.
 General [coding guidelines](development/guidelines.html) apply to all addon development.
 
-## Setup your development environment
+## Setup the Development Environment
 
 You can use any IDE that is suitable for OSGi/Java development.
 We recomment the freely available [Eclipse IDE](https://wiki.eclipse.org/Eclipse_Installer).
