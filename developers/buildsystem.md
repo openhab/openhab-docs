@@ -17,7 +17,7 @@ ranging from OSGi specific ones (bnd) to publish and testing plugins.
 
 This section talks about some common buildsystem related topics and also some quirks that you will encounter.
 
-## Adding dependencies
+## Adding Dependencies
 
 Generally all dependencies should be OSGi-bundles and available on JCenter.
 
