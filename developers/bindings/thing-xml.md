@@ -293,10 +293,101 @@ These providers allow to provide a `StateDescription` (or `CommandDescription` r
 
 Also implement this interface if you want to provide dynamic state / command options.
 The original `StateDescription`/`CommandDescription` is available for modification and enhancement.
+The framework provides two abstract implementations for bindings to support translation and other basic features: `BaseDynamicStateDescriptionProvider` and `BaseDynamicCommandDescriptionProvider`.
 
-The `StateDescriptionFragmentBuilder` (and `CommandDescriptionFragmentBuilder`) can be used to only provide the information which is available at the time of construction.
+The `StateDescriptionFragmentBuilder` (and `CommandDescriptionBuilder`) can be used to only provide the information which is available at the time of construction.
 
-TODO: Add code example
+##### Example code for a `DynamicStateDescriptionProvider` implementation
+
+```java
+@Component(service = { DynamicStateDescriptionProvider.class, ExampleDynamicStateDescriptionProvider.class })
+public class ExampleDynamicStateDescriptionProvider implements DynamicStateDescriptionProvider {
+
+    private final Map<ChannelUID, @Nullable List<StateOption>> channelOptionsMap = new ConcurrentHashMap<>();
+
+    /**
+     * For a given channel UID, set a {@link List} of {@link StateOption}s that should be used for the channel, instead
+     * of the one defined statically in the {@link ChannelType}.
+     *
+     * @param channelUID the channel UID of the channel
+     * @param options a {@link List} of {@link StateOption}s
+     */
+    public void setStateOptions(ChannelUID channelUID, List<StateOption> options) {
+        channelOptionsMap.put(channelUID, options);
+    }
+
+    @Override
+    public @Nullable StateDescription getStateDescription(Channel channel, @Nullable StateDescription original,
+            @Nullable Locale locale) {
+        List<StateOption> options = channelOptionsMap.get(channel.getUID());
+        if (options == null) {
+            return null;
+        }
+
+        StateDescriptionFragmentBuilder builder = (original == null) ? StateDescriptionFragmentBuilder.create()
+                : StateDescriptionFragmentBuilder.create(original);
+        return builder.withOptions(options).build().toStateDescription();
+    }
+
+    @Deactivate
+    public void deactivate() {
+        channelOptionsMap.clear();
+    }
+}
+```
+
+##### Exampla code for a `DynamicStateDescriptionProvider` implementation which extends the `BaseDynamicStateDescriptionProvider`
+
+```java
+@Component(service = { DynamicStateDescriptionProvider.class, ExampleDynamicStateDescriptionProvider.class })
+public class ExampleDynamicStateDescriptionProvider extends BaseDynamicStateDescriptionProvider {
+
+    @Reference
+    protected void setChannelTypeI18nLocalizationService(
+            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+        this.channelTypeI18nLocalizationService = channelTypeI18nLocalizationService;
+    }
+
+    protected void unsetChannelTypeI18nLocalizationService(
+            final ChannelTypeI18nLocalizationService channelTypeI18nLocalizationService) {
+        this.channelTypeI18nLocalizationService = null;
+    }
+}
+```
+
+##### Example code for a `DynamicCommandDescriptionProvider` implementation
+
+```java
+@Component(service = { DynamicCommandDescriptionProvider.class, ExampleDynamicCommandDescriptionProvider.class })
+public class ExampleDynamicCommandDescriptionProvider implements DynamicCommandDescriptionProvider {
+
+    private final Map<ChannelUID, @Nullable List<CommandOption>> channelOptionsMap = new ConcurrentHashMap<>();
+
+    /**
+     * For a given channel UID, set a {@link List} of {@link CommandOption}s that should be used for the channel,
+     * instead of the one defined statically in the {@link ChannelType}.
+     *
+     * @param channelUID the channel UID of the channel
+     * @param options a {@link List} of {@link CommandOption}s
+     */
+    public void setCommandOptions(ChannelUID channelUID, List<CommandOption> options) {
+        channelOptionsMap.put(channelUID, options);
+    }
+
+    @Override
+    public @Nullable CommandDescription getCommandDescription(Channel channel,
+            @Nullable CommandDescription originalCommandDescription, @Nullable Locale locale) {
+        List<CommandOption> options = channelOptionsMap.get(channel.getUID());
+        if (options == null) {
+            return null;
+        }
+
+        CommandDescriptionBuilder builder = CommandDescriptionBuilder.create();
+        options.forEach(co -> builder.withCommandOption(co));
+        return builder.build();
+    }
+}
+```
 
 ### Channel Categories
 
