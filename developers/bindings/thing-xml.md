@@ -390,11 +390,12 @@ public class ExampleDynamicCommandDescriptionProvider implements DynamicCommandD
 ```
 
 Most of the times handlers need to modify those dynamic information.
-Therefore the `ThingHandlerFactory` has to reference the the bundle instance and pass it to the handler.
+Therefore the `ThingHandlerFactory` has to reference the bundle instance and pass it to the handler.
 
 ```java
 public class ExampleHandlerFactory extends BaseThingHandlerFactory {
 
+    @Reference
     private ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
 
     @Override
@@ -403,15 +404,6 @@ public class ExampleHandlerFactory extends BaseThingHandlerFactory {
             return new ExampleHandler(thing, stateDescriptionProvider);
         }
         return null;
-    }
-
-    @Reference
-    protected void setDynamicStateDescriptionProvider(ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
-        this.stateDescriptionProvider = stateDescriptionProvider;
-    }
-
-    protected void unsetDynamicStateDescriptionProvider(ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
-        this.stateDescriptionProvider = null;
     }
 }
 ```
