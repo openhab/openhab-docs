@@ -389,6 +389,33 @@ public class ExampleDynamicCommandDescriptionProvider implements DynamicCommandD
 }
 ```
 
+Most of the times handlers need to modify those dynamic information.
+Therefore the `ThingHandlerFactory` has to reference the the bundle instance and pass it to the handler.
+
+```java
+public class ExampleHandlerFactory extends BaseThingHandlerFactory {
+
+    private ExampleDynamicStateDescriptionProvider stateDescriptionProvider;
+
+    @Override
+    protected ThingHandler createHandler(Thing thing) {
+        if (EXAMPLE_THING_TYPE.equals(thing.getThingTypeUID())) {
+            return new ExampleHandler(thing, stateDescriptionProvider);
+        }
+        return null;
+    }
+
+    @Reference
+    protected void setDynamicStateDescriptionProvider(ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
+        this.stateDescriptionProvider = stateDescriptionProvider;
+    }
+
+    protected void unsetDynamicStateDescriptionProvider(ExampleDynamicStateDescriptionProvider stateDescriptionProvider) {
+        this.stateDescriptionProvider = null;
+    }
+}
+```
+
 ### Channel Categories
 
 A description about channel categories as well as an overview about which categories exist can be found in out [categories overview](../../concepts/categories.html).
