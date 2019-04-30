@@ -39,7 +39,7 @@ You might get valuable input from maintainers and other experts and you avoid ha
 The skeleton should give you an easy starting point for your developments.
 To learn about the internal structure and the concepts of a binding, please see the [Eclipse tutorial on binding development](https://www.eclipse.org/smarthome/documentation/development/bindings/how-to.html).
 
-Please especially note our [coding guidelines](guidelines), which must be respected for having pull requests approved.
+Please especially note our [coding guidelines](guidelines.html), which must be respected for having pull requests approved.
 If you have any special dependencies in your code, please check the [library recommendations](https://www.eclipse.org/smarthome/documentation/development/bindings/dependencies.html) at Eclipse SmartHome.
 This will ensure that everyone uses the same libraries for e.g. JSON and XML processing or for HTTP and websocket communication.
 
