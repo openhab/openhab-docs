@@ -6,6 +6,7 @@ title: Coding Guidelines
 {% include base.html %}
 
 # Coding Guidelines
+{:.no_toc}
 
 The following guidelines apply to all (Java) code of the openHAB project.
 They must be followed to ensure a consistent code base for easy readability and maintainability.
@@ -14,7 +15,13 @@ Exceptions can certainly be made, but they should be discussed and approved by a
 Note that this list also serves as a checklist for code reviews on pull requests.
 To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
-## A. Directory and file layout
+If you are just keen on binding development, you may skip this document first and come back later.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
+
+## A. Directory and File Layout
 
 The following directory and file layout must be respected:
 
@@ -93,9 +100,9 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
 2. The [OSGi R5](http://www.osgi.org/Download/Release5) release is targeted, and newer features should not be used.
 3. slf4j is used for logging.
-4. Some utility libraries are available which can be used throughout the code:
- - Apache Commons IO
- - Apache Commons Lang
+
+You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
+See [Default libraries](#default-libraries) for more details.
 
 ## E. Runtime Behavior
 
@@ -236,3 +243,40 @@ You must therefore disable null-checks for such references:
 @Reference
 private @NonNullByDefault({}) MyService injectedService;
 ```
+
+### Default Libraries
+
+In order to not have every binding use a different library, the following packages are available by default:
+
+For XML Processing
+
+* com.thoughtworks.xstream
+* com.thoughtworks.xstream.annotations
+* com.thoughtworks.xstream.converters
+* com.thoughtworks.xstream.io
+* com.thoughtworks.xstream.io.xml
+
+For JSON Processing
+
+* com.google.gson.*
+
+For HTTP Operations
+
+* org.eclipse.jetty.client.*
+* org.eclipse.jetty.client.api.*
+* org.eclipse.jetty.http.*
+* org.eclipse.jetty.util.*
+
+Note: HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+
+For Web Socket Operations
+
+* org.eclipse.jetty.websocket.client
+* org.eclipse.jetty.websocket.api
+
+Note: WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+
+Additionally these libraries are allowed
+
+* Apache Commons IO
+* Apache Commons Lang

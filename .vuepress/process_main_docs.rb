@@ -127,18 +127,23 @@ def process_main_docs(docs_source_dir)
     
     puts ">>> Migrating the Developer section"
     
-    
-    process_file("#{docs_source_dir}/developers", "index.md", "docs/developer", "#{$docs_repo_root}/developer/index.md")
-    ["prerequisites", "development", "contributing"].each { |subsection|
+
+    Dir.glob("#{docs_source_dir}/developers/*.md") { |path|
+        file = File.basename(path)
+        puts " -> #{file}"
+        process_file("#{docs_source_dir}/developers", file, "docs/developer", "#{$docs_repo_root}/developer/#{file}")
+    }
+    ["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
             file = File.basename(path)
             puts " -> #{subsection}/#{file}"
             process_file("#{docs_source_dir}/developers/#{subsection}", file, "docs/developer/#{subsection}", "#{$docs_repo_root}/developer/#{subsection}/#{file}")
         }
-        if subsection != "contributing" then
-            puts " -> #{subsection}/images"
-            FileUtils.cp_r("#{docs_source_dir}/developers/#{subsection}/images", "docs/developer/#{subsection}")
-        end
     }
-    
+
+    puts " -> images"
+    FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developer/legacy/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi/images")
+
 end
