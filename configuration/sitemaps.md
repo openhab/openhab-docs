@@ -8,9 +8,7 @@ title: Sitemaps
 # Sitemaps
 
 In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.
-Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs),
-including [BasicUI](/configuration/ui/basic/),
-the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
+Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs), including [BasicUI]({{base}}/configuration/ui/basic/), the [openHAB app for Android]({{base}}/apps/android.html) and others.
 
 This page is structured as follows:
 
