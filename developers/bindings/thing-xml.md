@@ -382,9 +382,7 @@ public class ExampleDynamicCommandDescriptionProvider implements DynamicCommandD
             return null;
         }
 
-        CommandDescriptionBuilder builder = CommandDescriptionBuilder.create();
-        options.forEach(co -> builder.withCommandOption(co));
-        return builder.build();
+        return CommandDescriptionBuilder.create().withCommandOptions(options).build();
     }
 }
 ```
