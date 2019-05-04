@@ -62,7 +62,7 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 {% include collapsible/start.html %}
 {% include collapsible/heading.html %}
 
-Apt Based Systems
+#### Apt Based Systems
 
 {% include collapsible/body.html %}
 
@@ -129,7 +129,7 @@ sudo apt-get install openhab2-addons
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
-Yum or Dnf Based Systems
+#### Yum or Dnf Based Systems
 
 {% include collapsible/body.html %}
 
