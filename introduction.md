@@ -32,7 +32,7 @@ Some of openHAB's strengths are:
 - To provide a uniform user interface and a common approach to automation rules across the entire system, regardless of the number of manufacturers and sub-systems involved
 - Giving you the most flexible tool available to make almost any home automation wish come true; if you can think it, odds are that you can implement it with openHAB.
 
-## What you need to know before you start
+## What You Need to Know Before You Start
 
 **When home automation just seems to work, it is always the result of hard work.** 
 Home automation is fascinating and requires a considerable investment of your time. 
@@ -68,7 +68,7 @@ Basic functions can be achieved in openHAB rather quickly, e.g., switch lights o
 Others will require much more efforts and thoughts, e.g., how do I determine that someone is home, including guests, but not counting pets? 
 The openHAB forum is a great place to learn and discuss. 
 
-## A quick overview
+## A Quick Overview
 
 openHAB communicates electronically with smart and not-so-smart devices, performs user-defined actions and provides web-pages with user-defined information as well as user-defined tools to interact with all devices. 
 To achieve this, openHAB segments and compartmentalizes certain functions and operations. 
@@ -109,7 +109,7 @@ New bindings are regularly added as developers integrate more devices into openH
 For each binding, detailed instructions and examples are provided that include guidance on configuration (if any) of the binding itself, the definition of [Things]({{base}}/concepts/things.html) supported by this binding and the Channels these [Things]({{base}}/concepts/things) provide. 
 In most cases, the description also contains a fully worked out example that includes a definition of [Things]({{base}}/concepts/things) and its Channels, [Items]({{base}}/concepts/items.html) linked to those Channels and the use of these [Items]({{base}}/concepts/items.html) in a sitemap.
 
-## While you are getting started
+## While You Are Getting Started
 
 To all newcomers: please read the section [New User Tutorial]({{base}}/tutorial). 
 That section provides you with step-by-step instructions for your first easy setup. 
@@ -178,7 +178,7 @@ And quite often, the investment will be significant.
 Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whichever they are. 
 But it comes with a rather steep learning curve.
 
-## A deeper dive: openHAB Structure for advanced users
+## A Deeper Dive: openHAB Structure for Advanced Users
 
 openHAB 2 is developed in [Java](https://www.java.com/) and uses [OSGi](https://www.osgi.org/) for modularity. 
 [Apache Karaf](http://karaf.apache.org/) serves as a container with [Eclipse Equinox](https://www.eclipse.org/equinox/) as the OSGi runtime environment. 
