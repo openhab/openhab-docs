@@ -87,12 +87,12 @@ For now follow these steps:
 1. Click "Resolve": a window with the list of resolved bundles will be shown. 
     Click Finish and save the file.
     
-    Now the IDE is ready to start openHAB with a minimum set of the core bindings, PaperUI and the selected binding 
+    Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, PaperUI and the selected binding 
 1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi".
    You can check openHAB is running going with your browser to: http://localhost:8080/paperui/
 1. Check the chosen binding is active in PaperUI -> Configuration -> Bindings
 
-## Develop a NEW binding in the IDE 
+## Develop a NEW binding with the IDE 
 
 To start developing a new binding follow these steps:
 
@@ -113,7 +113,7 @@ and add your new binding to the list (adapt the artifactid to your binding name!
     </dependency>
     ```
 1. From the `openhab2-addons` directory run: `mvn -DskipChecks -DskipTests install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the demo.app project
-1. Open Eclipse and follow from previous step 6. to import and run/debug your new binding in the Eclipse IDE
+1. Now open Eclipse and follow from previous step 6. to import and run/debug your new binding in the Eclipse IDE
 
 Now you can start developing your new binding. 
 
