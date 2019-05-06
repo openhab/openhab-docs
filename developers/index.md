@@ -64,6 +64,7 @@ For now follow these steps:
 
 1. Install the latest "Eclipse IDE for Java Developers", the installer [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
 1. Launch Eclipse and install Bndtools from the Eclipse Marketplace: Help -> Eclipse Marketplace -> Find "bndtools" -> Install:
+
    ![bndtools from marketplace](./ide-setup-imgs/eclipse_market.png)
    (Accept License and the Security warning about the software is not signed)
    
@@ -71,6 +72,7 @@ For now follow these steps:
 1. Using `git` from the command line, checkout the openHAB demo application: `git clone --depth=1 https://github.com/maggu2810/openhab-demo`
 1. Import the demo application from Eclipse: File -> Import -> Maven -> Existing Maven Projects -> select the root directory of the demo application project -> Finish.
    ![demo import](ide-setup-imgs/eclipse_import_demo.png)
+
    Leave Eclipse open and wait for the downloads and build to finish (about 5-10 minutes).
 1. Using git from the command line, checkout the `openhab2-addons` repository: `git clone --depth=1 https://github.com/openhab/openhab2-addons`
 1. Add the binding that you want to develop (in this guide we use `astro` as an example) to the Eclipse workspace: File -> Import -> Maven -> Existing maven projects -> select the root directory of the binding -> Finish.
