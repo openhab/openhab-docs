@@ -1,11 +1,10 @@
 ---
 layout: developersguide
-title: Addon Development
+title: Developer Guide
 ---
 
 # Overview
 
-In this chapter of the documentation you will learn how to develop an addon for openHAB.
 A variety of different parts of openHAB can be extended, we go through all of them.
 
 openHAB uses [git](https://git-scm.com/) as its version control system and [GitHub](https://github.com/openhab) for hosting the different repositories and source code.
@@ -13,7 +12,7 @@ You will get in contact with git in many places and it makes sense to get famili
 There are many pages to learn about Git.
 Try [git - the simple guide](http://rogerdudler.github.io/git-guide/) as a start.
 
-Addons and the core itself are written in Java.
+Add-ons and the core itself are written in Java.
 Java is not hard to learn, but it helps if you have a general technical understanding of programming languages.
 
 The different guides of this chapter assume that you are somewhat familiar with Java 8 and that you have a rough idea of Git's workflow (eg "checkout", "branches", "push").
