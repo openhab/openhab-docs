@@ -876,7 +876,7 @@ Various binding related questions are answered in our [Binding development FAQ](
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
 * Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml) at the alphabetically correct position.
-* Furthermore add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/karaf/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
+* Furthermore add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
 * If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency as well (see the other bindings as an example)
 * Add your binding to the CODEOWNERS at the alphabetically correct position.
