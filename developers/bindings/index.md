@@ -149,7 +149,7 @@ The `ThingManager` creates for each Thing a `ThingHandler` instance using a `Thi
 Therefore, it tracks all `ThingHandlerFactory`s from the binding.
 
 The `ThingManager` determines if the `Thing` is initializable or not.
-A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](xml-reference.html)) are available.
+A `Thing` is considered as *initializable* if all *required* configuration parameters (cf. property *parameter.required* in [Configuration Description](config-xml.html)) are available.
 If so, the method `ThingHandler.initialize()` is called.
 
 Only Things with status (cf. [Thing Status](../../concepts/things.html#thing-status)) *UNKNOWN*, *ONLINE* or *OFFLINE* are considered as *initialized* by the framework and therefore it is the handler's duty to assign one of these states sooner or later.
