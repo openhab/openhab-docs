@@ -30,7 +30,7 @@ In most cases they should be referenced in the project POM with scope `provided`
       <groupId>foo.bar</groupId>
       <artifactId>baz</artifactId>
       <version>1.0.0</version>
-      <scope>provided</provided>
+      <scope>provided</scope>
     </dependency>
   </dependencies>
 ```
