@@ -115,7 +115,7 @@ and add your new binding to the list (adapt the artifactid to your binding name!
         <version>${project.version}</version>
     </dependency>
     ```
-1. From the `openhab2-addons` directory run: `mvn -DskipChecks -DskipTests clean install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the demo.app project
+1. From the `openhab2-addons` directory run: ` mvn -DskipChecks -DskipTests clean install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the demo.app project
 1. Now open Eclipse and follow from previous step 6. to import and run/debug your new binding in the Eclipse IDE
 
 Now you can start developing your new binding. 
