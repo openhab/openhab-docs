@@ -65,13 +65,14 @@ For now follow these steps:
 1. Install the latest "Eclipse IDE for Java Developers", the installer [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
 1. Launch Eclipse and install Bndtools from the Eclipse Marketplace: Help -> Eclipse Marketplace -> Find "bndtools" -> Install:
 
-   ![bndtools from marketplace](./ide-setup-imgs/eclipse_market.png)
+   ![bndtools from marketplace](images/ide_setup_eclipse_market.png)
    (Accept License and the Security warning about the software is not signed)
    
    Restart Eclipse to activate Bndtools.
 1. Using `git` from the command line, checkout the openHAB demo application: `git clone --depth=1 https://github.com/maggu2810/openhab-demo`
 1. Import the demo application from Eclipse: File -> Import -> Maven -> Existing Maven Projects -> select the root directory of the demo application project -> Finish.
-   ![demo import](ide-setup-imgs/eclipse_import_demo.png)
+
+   ![demo import](images/ide_setup_eclipse_import_demo.png)
 
    Leave Eclipse open and wait for the downloads and build to finish (about 5-10 minutes).
 1. Using git from the command line, checkout the `openhab2-addons` repository: `git clone --depth=1 https://github.com/openhab/openhab2-addons`
@@ -85,7 +86,7 @@ For now follow these steps:
 1. In Eclipse Package Explorer: look for `app.bndrun` in the `org.openhab.demo.app` project.
    Double click to open `app.bndrun` (takes a few seconds)
 1. Under Browse Repos search for your binding (`astro`) and add it to the "Run Requirements" list using drag&drop from the "Browse Repos" list:
-    ![Bndtools](ide-setup-imgs/eclipse_bndtools.png)
+    ![Bndtools](images/ide_setup_eclipse_bndtools.png)
 1. Click "Resolve": a window with the list of resolved bundles will be shown. 
     Click Finish and save the file.
     
@@ -114,7 +115,7 @@ and add your new binding to the list (adapt the artifactid to your binding name!
         <version>${project.version}</version>
     </dependency>
     ```
-1. From the `openhab2-addons` directory run: `mvn -DskipChecks -DskipTests install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the demo.app project
+1. From the `openhab2-addons` directory run: `mvn -DskipChecks -DskipTests clean install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the demo.app project
 1. Now open Eclipse and follow from previous step 6. to import and run/debug your new binding in the Eclipse IDE
 
 Now you can start developing your new binding. 
