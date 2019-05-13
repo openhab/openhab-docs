@@ -6,7 +6,7 @@ type: io
 description: "This integration will allow openHAB things/items to be exposed to the NEEO Brain and allow the NEEO smart remote to control them."
 since: 2x
 logo: images/addons/neeo.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

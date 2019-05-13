@@ -5,7 +5,7 @@ title: Classic UI - UIs
 type: ui
 description: "The Classic UI is the original web user interface of openHAB 1 and thus is the most stable and widely used UI as of today."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -5,7 +5,7 @@ title: HABmin - UIs
 type: ui
 description: "HABmin is a modern, professional and portable user interface for openHAB, providing both user and administrative functions (e.g., sitemaps for users, and configuration utilities to aid setup)."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -6,7 +6,7 @@ type: binding
 description: "This binding is for the 'Intelligent Home Control' building automation system originally made by LK, but now owned by Schneider Electric and sold as 'IHC Intelligent Home Control'. It is based on a star-configured topology with wires to each device. The system is made up of a central controller and up to 8 input modules and 16 output modules. Each input module can have 16 digital inputs and each output module 8 digital outputs, resulting in a total of 128 input and 128 outputs per controller."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.ihc/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

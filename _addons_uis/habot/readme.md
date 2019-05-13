@@ -5,7 +5,7 @@ title: HABot - UIs
 type: ui
 description: "HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://eclipse.org/smarthome/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org))."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

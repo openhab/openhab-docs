@@ -5,7 +5,7 @@ title: CometVisu Backend for openHAB - UIs
 type: ui
 description: "This adds a backend for the web based visualization CometVisu <http://www.cometvisu.org>."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
