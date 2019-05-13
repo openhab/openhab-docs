@@ -9,7 +9,7 @@ def collect_feature_xml = { features, xml, attrs ->
 
 def collect_features = { features ->
     collect_feature_xml(features, '.external-resources/openhab-distro/features/addons/src/main/feature/feature.xml',                  ['install': 'auto',   'since': '2x'])
-    collect_feature_xml(features, '.external-resources/openhab2-addons/features/karaf/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '2x'])
+    collect_feature_xml(features, '.external-resources/jfrog-files/feature.xml',         ['install': 'auto',   'since': '2x'])
     collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons/src/main/feature/feature.xml',         ['install': 'auto',   'since': '1x'])
     collect_feature_xml(features, '.external-resources/openhab1-addons/features/openhab-addons-legacy/src/main/feature/feature.xml',  ['install': 'legacy', 'since': '1x'])
 }
