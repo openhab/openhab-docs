@@ -98,7 +98,7 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
-2. The [OSGi R5](http://www.osgi.org/Download/Release5) release is targeted, and newer features should not be used.
+2. The [OSGi R6](http://www.osgi.org/Download/Release6) release with OSGI Compendium R7 is targeted, and newer features should not be used.
 3. slf4j is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
@@ -180,6 +180,16 @@ Do not over use the logger.
 * `error` logging is not allowed in extensions and is purely reserved to the framework.
    The only exception would be if something is going really, really wrong in your extension,
    and there is a possibility that the stability of the framework could be affected.
+
+## G. Other code attributions
+
+If you copy code from somewhere make sure that the license is compatible to the Eclipse License version 2.
+This includes the Apache license, the Eclipse license v1, the MIT and BSD license.
+
+You may also use Stackoverflow snippets, because they are automatically MIT licensed.
+
+Please make sure to not remove author attributions or modify the license header in code files that you have copied.
+Add the filename, author and license to the NOTICE file of your addon (except for short snippets, eg from Stackoverflow etc).
 
 ## Guideline details
 
