@@ -56,9 +56,21 @@ We have prepared some step-by-step guides for the following IDEs:
 
 <table style="width:100%">
 <tr>
-<td style="width:30%"><a href="ide/vscode.html"><img alt="Visual Studio Code" src="ide/images/vscode.jpg"></a></td>
-<td style="width:30%"><a href="ide/eclipse.html"><img alt="Eclipse IDE" src="ide/images/eclipse.jpg"></a></td>
-<td style="width:30%"><a href="ide/intellij.html"><img alt="Intellij IDE" src="ide/images/intellij.jpg"></a></td>
+<td style="width:30%">
+
+[![Visual Studio Code](ide/images/vscode.jpg)](ide/vscode.html)
+
+</td>
+<td style="width:30%">
+
+[![Eclipse IDE](ide/images/vscode.jpg)](ide/eclipse.html)
+
+</td>
+<td style="width:30%">
+
+[![Intellij IDE](ide/images/intellij.jpg)](ide/intellij.html)
+
+</td>
 </tr>
 </table>
 
