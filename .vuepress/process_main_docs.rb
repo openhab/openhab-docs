@@ -133,7 +133,7 @@ def process_main_docs(docs_source_dir)
         puts " -> #{file}"
         process_file("#{docs_source_dir}/developers", file, "docs/developer", "#{$docs_repo_root}/developer/#{file}")
     }
-    ["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils"].each { |subsection|
+    ["audio", "bindings", "ioservices", "legacy", "module-types", "osgi", "persistence", "transformations", "utils", "ide"].each { |subsection|
         Dir.glob("#{docs_source_dir}/developers/#{subsection}/*.md") { |path|
             file = File.basename(path)
             puts " -> #{subsection}/#{file}"
@@ -145,6 +145,6 @@ def process_main_docs(docs_source_dir)
     FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings/images")
     FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developer/legacy/images")
     FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/images", "docs/developer/images")
+    FileUtils.cp_r("#{docs_source_dir}/developers/ide/images", "docs/developer/ide/images")
 
 end
