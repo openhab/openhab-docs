@@ -1,6 +1,6 @@
 ---
 layout: developersguide
-title: Visual Studio Code
+title: IntelliJ
 ---
 
 **TODO**: We are currently reworking how to setup a perfect development enviroment.
