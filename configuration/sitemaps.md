@@ -124,16 +124,12 @@ The following element types may be used in a Sitemap definition file.
 | [Video](#element-type-video)             | Displays a video stream, given a direct URL.                                              |
 | [Webview](#element-type-webview)         | Displays the content of a webpage.                                                        |
 
-<!-- TODO: check for new element types -->
-
 **Choosing the right element type:**
 Data presented by Sitemap elements will almost always originate from a referenced [Item]({{base}}/configuration/items.html).
 Each Item is of a certain Item type, for example `Switch`, `Number` or `String`.
 
 While not all combinations are meaningful, Items of one datatype may be linked to different Sitemap element types.
 This provides the flexibility to present Items in the way desired in your home automation user interface.
-
-<!-- TODO: an example of the above would be useful here -->
 
 **General remarks on parameters:**
 
@@ -201,7 +197,6 @@ Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
 
-<!-- TODO: specify what the default representation for each Item type is -->
 
 ### Element Type 'Text'
 
@@ -341,8 +336,6 @@ When the user clicks on the middle button, a color wheel will appear.
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
-<!-- TODO: This paragraph needs an update. What are the left and the right buttons for? -->
-
 **Example:**
 
 ```perl
@@ -448,8 +441,6 @@ Adds a time-series chart object for the display of logged data.
 If no service is specified, openHAB will use the first queryable persistence service it finds.
 Therefore, for an installation with only a single persistence service, this is not required.
 
-<!-- TODO: Is this statement correct?  Isn't there a default persistence setting in paperUI? -->
-
 -   `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 
 -   `begin` / `end` sets the beginning and end of the time axis.
@@ -459,13 +450,7 @@ Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = da
     Valid values are `true` (always show the legend) and `false` (never show the legend).
     If this parameter is not set, the legend is hidden if there is only one chart series.
 
-<!-- TODO: This paragraph needs an update -->
-
 Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for examples.
-
-<!-- TODO
-![Presentation of the Chart element in BasicUI](images/sitemap_demo_chart.png)
--->
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
@@ -477,17 +462,6 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 - When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
-
-<!-- TODO: This paragraph needs an update -->
-
-<!-- TODO: Element type list is not supported and throws NPE in BasicUI
-### Element Type 'List'
-
-```perl
-List item=<itemname> [label="<labelname>"] [icon="<iconname>"] [separator=""]
-```
-Splits a String Item at each separator into multiple rows.
--->
 
 ## Mappings
 
