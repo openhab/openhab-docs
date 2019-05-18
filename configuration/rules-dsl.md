@@ -154,7 +154,7 @@ So in Rules where the Rule needs to know what the command was, use the `received
 {: #time-based-triggers}
 ### Time-based Triggers
 
-You can either use some pre-defined expressions for timers or use a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06) instead:
+You can either use some pre-defined expressions for timers or use a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.7/tutorials/tutorial-lesson-06.html) instead:
 
 ```java
 Time is midnight
@@ -172,7 +172,7 @@ A cron expression takes the form of six or optionally seven fields:
 6. Day-of-Week
 7. Year (optional field)
 
-for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06).
+for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.7/tutorials/tutorial-lesson-06.html).
 
 You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
