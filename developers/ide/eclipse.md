@@ -4,7 +4,9 @@ title: Eclipse IDE
 ---
 
 **TODO**: We are currently reworking how to setup a perfect development enviroment.
-A new step by step guide will appear here soon. For now follow these steps:
+A new step by step guide will appear here soon.
+
+For now follow these steps:
 
 ### Eclipse IDE Setup
 
