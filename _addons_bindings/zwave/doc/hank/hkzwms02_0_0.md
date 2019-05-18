@@ -70,16 +70,15 @@ Actual range of the sensor can be influenced by environment conditions. Should f
 
 The following table summarises the channels available for the HKZW_MS02 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Motion Alarm | alarm_motion | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Motion Alarm | alarm_motion | alarm_motion | Motion | Switch | 
 | Battery Level | battery-level | Battery | Number |
 
 ### Motion Alarm
-
 Indicates if a motion alarm is triggered.
 
-The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel and is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -89,10 +88,7 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
-Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
-
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
+Channel type information on this channel is not found.
 
 
 
