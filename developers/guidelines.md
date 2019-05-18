@@ -45,7 +45,7 @@ The following directory and file layout must be respected:
 1. Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 1. Code must be formatted using the "ESH" code formatter (in Eclipse).
    - This is set up automatically by the official [IDE setup](ide.html)
-   - You can manually import <a href="ESH.xml" download>ESH.xml</a> via Eclipse Preferences -> Java -> Code Style -> Formatter.
+   - You can manually import [ESH.xml](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
 
 ## B. Code Style
 
