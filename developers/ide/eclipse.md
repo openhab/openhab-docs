@@ -43,7 +43,7 @@ For now follow these steps:
     Click Finish and save the file.
 
     Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, PaperUI and the selected binding
-1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi".
+1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi" (upper right of the `app.bndrun` dialog).
    You can check openHAB is running going with your browser to: http://localhost:8080/paperui/
 1. Check the chosen binding is active in PaperUI -> Configuration -> Bindings
 
