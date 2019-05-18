@@ -6,6 +6,7 @@ title: Coding Guidelines
 {% include base.html %}
 
 # Coding Guidelines
+{:.no_toc}
 
 The following guidelines apply to all (Java) code of the openHAB project.
 They must be followed to ensure a consistent code base for easy readability and maintainability.
@@ -14,7 +15,13 @@ Exceptions can certainly be made, but they should be discussed and approved by a
 Note that this list also serves as a checklist for code reviews on pull requests.
 To speed up the contribution process, we therefore advice to go through this checklist yourself before creating a pull request.
 
-## A. Directory and file layout
+If you are just keen on binding development, you may skip this document first and come back later.
+
+{::options toc_levels="2,3"/}
+* TOC
+{:toc}
+
+## A. Directory and File Layout
 
 The following directory and file layout must be respected:
 
@@ -38,7 +45,7 @@ The following directory and file layout must be respected:
 1. Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 1. Code must be formatted using the "ESH" code formatter (in Eclipse).
    - This is set up automatically by the official [IDE setup](ide.html)
-   - You can manually import [ESH.xml]({base}/developer/contributing/ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
+   - You can manually import [ESH.xml](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
 
 ## B. Code Style
 
@@ -91,11 +98,11 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
-2. The [OSGi R5](http://www.osgi.org/Download/Release5) release is targeted, and newer features should not be used.
+2. The [OSGi R6](http://www.osgi.org/Download/Release6) release with OSGI Compendium R7 is targeted, and newer features should not be used.
 3. slf4j is used for logging.
-4. Some utility libraries are available which can be used throughout the code:
- - Apache Commons IO
- - Apache Commons Lang
+
+You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
+See [Default libraries](#default-libraries) for more details.
 
 ## E. Runtime Behavior
 
@@ -130,14 +137,16 @@ void myFun() {
 }
 ```
 
-* Where ever exceptions are caught and logged, the exception should be added as a last parameter to the logging. 
+* Exceptions with stacktraces in the log are considered to be bugs in your binding that should be reported and fixed.
+If you add an exception as a last parameter to the logging, the stack trace will be printed.
+Configuration errors by users should only print log messages about what's wrong. In that case you would use `e.getMessage()`.
 
 ```java
 void myFun() {
   try {
     doSomething();
   } catch (IOException e) {
-    logger.warn("Explain where we are in the code", e);  
+    logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);  
   }
 }
 ```
@@ -171,6 +180,16 @@ Do not over use the logger.
 * `error` logging is not allowed in extensions and is purely reserved to the framework.
    The only exception would be if something is going really, really wrong in your extension,
    and there is a possibility that the stability of the framework could be affected.
+
+## G. Other code attributions
+
+If you copy code from somewhere make sure that the license is compatible to the Eclipse License version 2.
+This includes the Apache license, the Eclipse license v1, the MIT and BSD license.
+
+You may also use Stackoverflow snippets, because they are automatically MIT licensed.
+
+Please make sure to not remove author attributions or modify the license header in code files that you have copied.
+Add the filename, author and license to the NOTICE file of your addon (except for short snippets, eg from Stackoverflow etc).
 
 ## Guideline details
 
@@ -234,3 +253,40 @@ You must therefore disable null-checks for such references:
 @Reference
 private @NonNullByDefault({}) MyService injectedService;
 ```
+
+### Default Libraries
+
+In order to not have every binding use a different library, the following packages are available by default:
+
+For XML Processing
+
+* com.thoughtworks.xstream
+* com.thoughtworks.xstream.annotations
+* com.thoughtworks.xstream.converters
+* com.thoughtworks.xstream.io
+* com.thoughtworks.xstream.io.xml
+
+For JSON Processing
+
+* com.google.gson.*
+
+For HTTP Operations
+
+* org.eclipse.jetty.client.*
+* org.eclipse.jetty.client.api.*
+* org.eclipse.jetty.http.*
+* org.eclipse.jetty.util.*
+
+Note: HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+
+For Web Socket Operations
+
+* org.eclipse.jetty.websocket.client
+* org.eclipse.jetty.websocket.api
+
+Note: WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+
+Additionally these libraries are allowed
+
+* Apache Commons IO
+* Apache Commons Lang

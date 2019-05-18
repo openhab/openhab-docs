@@ -52,7 +52,7 @@ Installing using the provided **package repository** (using `apt`, `apt-get`, `y
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
 ### openHABian project
-The easy step by step instruction can be found [here]: (openhabian.html).
+The easy step by step instruction can be found [here](openhabian.html).
 
 ### Package Repository Installation
 
@@ -62,7 +62,7 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 {% include collapsible/start.html %}
 {% include collapsible/heading.html %}
 
-Apt Based Systems
+#### Apt Based Systems
 
 {% include collapsible/body.html %}
 
@@ -129,7 +129,7 @@ sudo apt-get install openhab2-addons
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
-Yum or Dnf Based Systems
+#### Yum or Dnf Based Systems
 
 {% include collapsible/body.html %}
 
@@ -725,6 +725,16 @@ Next, add the desired share configurations to the end of the file:
     [openHAB2-conf]
       comment=openHAB2 site configuration
       path=/etc/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
+      
+    [openHAB2-logs]
+      comment=openHAB2 logs
+      path=/var/log/openhab2
       browseable=Yes
       writeable=Yes
       only guest=no
