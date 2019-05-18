@@ -63,7 +63,7 @@ We have prepared some step-by-step guides for the following IDEs:
 </td>
 <td style="width:30%">
 
-[![Eclipse IDE](./ide/images/vscode.jpg)](ide/eclipse.html)
+[![Eclipse IDE](./ide/images/eclipse.jpg)](ide/eclipse.html)
 
 </td>
 <td style="width:30%">
