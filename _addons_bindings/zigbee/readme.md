@@ -35,7 +35,7 @@ Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/tty
 
 #### Coordinator Configuration
 
-Note that not all configuration parameters are available with all coordinators.
+Note that not all configuration parameters are available with all coordinators. If you are using thing configuration files, you MUST define the following configuration parameters, or the system will not work properly as random values will be used at each restart - zigbee_panid, zigbee_extendedpanid, zigbee_networkkey.
 
 ##### Link Key (zigbee_linkkey)
 
