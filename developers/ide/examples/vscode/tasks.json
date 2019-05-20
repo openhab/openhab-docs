@@ -1,0 +1,80 @@
+{
+    "version": "2.0.0",
+    "options": {
+        "env": {
+            "openhab_home": "c:\\\\openhab25",
+            "openhab_runtime": "c:\\\\openhab25\\runtime",
+            "openhab_addons": "c:\\\\openhab25\\addons",
+            "dist" : "org.openhab.binding.sony-2.5.0-SNAPSHOT.jar"
+        }
+    },
+    "tasks": [
+        {
+            "label": "Start openHAB (Debug)",
+            "type": "shell",
+            "isBackground": true,
+            "command": "$env:openhab_home/start.sh",
+            "windows": {
+                "command": "& $env:openhab_home\\start.bat debug",
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            }
+        },
+        {
+            "label": "Stop openHAB",
+            "type": "shell",
+            "command": "$env:openhab_runtime/bin/stop.sh",
+            "windows": {
+                "command": "& $env:openhab_runtime\\bin\\stop.bat"
+            },
+        },
+        {
+            "label": "mvn Compile (w/Checks)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "-o",
+                "clean",
+                "install"
+            ]
+        },
+        {
+            "label": "mvn Compile (No Checks)",
+            "type": "shell",
+            "command": "mvn",
+            "args": [
+                "-o",
+                "clean",
+                "install",
+                "-DskipChecks"
+            ]
+        },
+        {
+            "label": "Copy Distribution to Addons",
+            "type": "shell",
+            "command": "cp",
+            "args": [
+                "${workspaceFolder}/target/$env:dist",
+                "$env:openhab_addons"
+            ],
+            "windows": {
+                "command": "copy",
+                "args": [
+                    "${workspaceFolder}\\target\\$env:dist",
+                    "$env:openhab_addons"
+                ],
+            },
+            "dependsOn": [
+                "mvn Compile (No Checks)"
+            ]
+        },
+        {
+            "label": "Build",
+            "dependsOn": [
+                "Copy Distribution to Addons"
+            ]
+        }
+    ]
+}
