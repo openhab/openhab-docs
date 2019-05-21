@@ -18,6 +18,7 @@ This guide focuses on Add-on (binding) development.
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
 1. Launch the Installer and select `Advanced Mode...` on the menu (3 bars) on the right, then select `Eclipse IDE for Java Developers` then `Next>`
+Eclipse suggested version is "Latest Release" (currently 2019-06 does not support bndtools)
 1. Select `Github Projects > openHAB > openHAB Development`. 
     
     Do *NOT* select other projects for now.
