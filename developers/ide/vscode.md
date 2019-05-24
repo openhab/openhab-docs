@@ -30,12 +30,12 @@ The following steps will show you how to setup a specific bundle for development
 3. Create a ".vscode" directory under the bundle (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode`)   
     ![define .vscode](images/ide_setup_vscode_folder.png)
 
-4. Download [tasks.json](examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
-    ![define tasks.json](images/ide_setup_vscode_folder_tasks.png)
+4. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
+    ![define tasks.json](./images/ide_setup_vscode_folder_tasks.png)
    
 5. Edit tasks.json and ...
    
-    ![tasks.json changes](images/ide_setup_vscode_tasks.png)
+    ![tasks.json changes](./images/ide_setup_vscode_tasks.png)
    1. Set `openhab_*` to the directories for your openHAB installation 
    2. Set `dist` to the name of the JAR file maven is producing in the target directory
    3. Save and close tasks.json
@@ -45,13 +45,13 @@ The following steps will show you how to setup a specific bundle for development
 7.  Start the openHAB instance with the debug option - `start.bat debug` from a console in the openHAB home directory.  You should see the following line printed somewhere in the karaf console:
 	`Listening for transport dt_socket at address: xxxx` (where xxxx should be 5005)
 
-8.  Download [launch.json](examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
+8.  Download [launch.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/launch.json) to the .vscode directory  (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode\launch.json`)
 
-    ![define launch.json](images/ide_setup_vscode_folder_launch.png)
+    ![define launch.json](./images/ide_setup_vscode_folder_launch.png)
 
 9.  Edit launch.json and ...
     
-    ![launch.json changes](images/ide_setup_vscode_launch.png)
+    ![launch.json changes](./images/ide_setup_vscode_launch.png)
     1. Set the `port` to xxxx (from step 7).  This can be skipped if xxxx was 5005 from step 7.
     2. Set the `hostName` to the hostname running openHAB.  This can be skipped if running locally (localhost)
     3. Save and close launch.json
