@@ -85,6 +85,8 @@ The [tasks.json](examples/vscode/tasks.json) defines the following tasks that yo
 5. **mvn Compile (Release)** - this task will run a online maven compile with code checks.  Formally, will run `mvn clean install`
 6. **Copy Distribution to Addons** - this task will run the 'mvn Compile (Offline)' task and then copy the resulting target file (as defined by `dist`) to your openHAB addons directory (defined by `openhab_addons`)
 7. **Build** - this is an alias for `Copy Distribution to Addons` task.
+8. **Tail events.log** - this will tail the events.log in a new terminal.
+9. **Tail openhab.log** - this will tail the openhab.log in a new terminal.
 	
 ## Additional References
 

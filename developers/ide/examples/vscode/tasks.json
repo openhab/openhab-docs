@@ -2,9 +2,10 @@
     "version": "2.0.0",
     "options": {
         "env": {
-            "openhab_home": "c://openhab25",
-            "openhab_runtime": "c://openhab25/runtime",
-            "openhab_addons": "c://openhab25/addons",
+            "openhab_home": "c://openhab2",
+            "openhab_runtime": "c://openhab2/runtime",
+            "openhab_addons": "c://openhab2/addons",
+            "openhab_logs": "C://openhab2/userdata/logs",
             "dist" : "org.openhab.binding.sony-2.5.0-SNAPSHOT.jar"
         }
     },
@@ -82,6 +83,58 @@
             "dependsOn": [
                 "Copy Distribution to Addons"
             ]
+        },
+        {
+            "label": "Tail events.log",
+            "type": "shell",
+            "command": "tail",
+            "args": [
+                "-n",
+                "50",
+                "-f",
+                "$env:openhab_logs/events.log"
+            ],
+            "windows": {
+                "command": "Get-Content",
+                "args": [
+                    "-Last",
+                    "50",
+                    "-Path",
+                    "$env:openhab_logs/events.log",
+                    "-Wait"
+                ]
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Tail openhab.log",
+            "type": "shell",
+            "command": "tail",
+            "args": [
+                "-n",
+                "50",
+                "-f",
+                "$env:openhab_logs/openhab.log"
+            ],
+            "windows": {
+                "command": "Get-Content",
+                "args": [
+                    "-Last",
+                    "50",
+                    "-Path",
+                    "$env:openhab_logs/openhab.log",
+                    "-Wait"
+                ]
+            },
+            "presentation": {
+                "reveal": "always",
+                "panel": "new"
+            },
+           "problemMatcher": []
         }
     ]
 }
