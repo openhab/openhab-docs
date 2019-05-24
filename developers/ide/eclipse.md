@@ -23,7 +23,7 @@ Eclipse suggested version is "Latest Release" (currently 2019-06 does not suppor
     
     Do *NOT* select other projects for now.
 
-   ![select projects](images/ide_setup_eclipse_projects.png)
+   ![select projects](./images/ide_setup_eclipse_projects.png)
 
 1. Click `Next >`, `Finish` and then accept licences, "Unsigned Content" for Bndtools,  and Eclipse Foundation certificates when requested to complete IDE installation. 
 
