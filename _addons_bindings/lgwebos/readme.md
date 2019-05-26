@@ -189,13 +189,14 @@ Example
         logInfo("actions", "Actions not found, check thing ID")
         return
  }
- ```
+```
 
 ### showToast(text)
 
 Sends a toast message to a WebOS device with openHab icon.
 
 Parameters:
+
 | Name    | Description                                                          |
 |---------|----------------------------------------------------------------------|
 | text    | The text to display                                                  |
@@ -211,6 +212,7 @@ actions.showToast("Hello World")
 Sends a toast message to a WebOS device with custom icon.
 
 Parameters:
+
 | Name    | Description                                                          |
 |---------|----------------------------------------------------------------------|
 | icon    | The URL to the icon to display                                       |
@@ -227,6 +229,7 @@ actions.showToast("http://localhost:8080/icon/energy?format=png","Hello World")
 Opens the given URL in the TV's browser application.
 
 Parameters:
+
 | Name    | Description                                                          |
 |---------|----------------------------------------------------------------------|
 | url     | The URL to open                                                      |
@@ -241,7 +244,8 @@ actions.launchBrowser("https://www.openhab.org")
 
 Returns a list of Applications supported by this TV.
 
-Application Properties
+Application Properties:
+
 | Name    | Description                                                          |
 |---------|----------------------------------------------------------------------|
 | id      | The Application ID, which serves as parameter appId in other methods.|
@@ -259,6 +263,7 @@ apps.forEach[a| logInfo("action",a.toString)]
 Opens the application with given Application ID.
 
 Parameters:
+
 | Name    | Description                                                                    |
 |---------|--------------------------------------------------------------------------------|
 | appId   | The Application ID. getApplications provides available apps and their appIds.  |
@@ -278,6 +283,7 @@ actions.launchApplication("com.webos.app.hdmi3") // HDMI3
 Opens the application with given Application ID and passes an additional parameter.
 
 Parameters:
+
 | Name    | Description                                                                   |
 |---------|-------------------------------------------------------------------------------|
 | appId   | The Application ID. getApplications provides available apps and their appIds. |
@@ -296,9 +302,10 @@ actions.launchApplication("appId","{\"key\":\"value\"}")
 Sends a text input to a WebOS device.
 
 Parameters:
+
 | Name    | Description                                                          |
 |---------|----------------------------------------------------------------------|
-| text    | The text to input  |
+| text    | The text to input                                                    |
 
 Example:
 
@@ -311,6 +318,7 @@ actions.sendText("Some text")
 Sends a button press event to a WebOS device.
 
 Parameters:
+
 | Name    | Description                                                            |
 |---------|------------------------------------------------------------------------|
 | button  | Can be one of UP, DOWN, LEFT, RIGHT, BACK, DELETE, ENTER, HOME, or OK  |

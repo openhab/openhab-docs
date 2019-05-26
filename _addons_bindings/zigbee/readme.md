@@ -162,6 +162,7 @@ The following devices have been tested with the binding
 | Xiaomi Aqara Temperature and Humidity Sensor |                                                   |
 | Xiaomi Aqara Wireless Mini Switch            |                                                   |
 | Xiaomi Aqara Wireless Remote Switch          | Double Rocker variant                             |
+| Shenzhen Ksentry Electronics On Off Controller | Relay                                           |
 
 Note 1: Some bulbs may not work with the Telegesis dongle.
 
