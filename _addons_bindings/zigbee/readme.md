@@ -156,10 +156,13 @@ The following devices have been tested with the binding
 | SmartThings Contact Sensor                   | Contact and Temperature sensor                    |
 | Tradfri Bulbs                                |                                                   |
 | Tradfri Motion Sensor                        |                                                   |
+| Tradfri Outlet                               |                                                   |
+| Tradfri Repeater                             |                                                   |
 | Trust Bulbs                                  | *note1*                                           |
 | Ubisys modules                               | D1 Dimmer, S1/S2 Switch modules                   |
 | Xiaomi Aqara Door and Window Sensor          |                                                   |
 | Xiaomi Aqara Temperature and Humidity Sensor |                                                   |
+| Xiaomi Aqara Human Motion Sensor             |                                                   |
 | Xiaomi Aqara Wireless Mini Switch            |                                                   |
 | Xiaomi Aqara Wireless Remote Switch          | Double Rocker variant                             |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                           |

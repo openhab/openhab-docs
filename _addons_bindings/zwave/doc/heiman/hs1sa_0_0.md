@@ -49,12 +49,12 @@ The following table summarises the channels available for the HS1SA-Z -:
 |--------------|------------|--------------|----------|-----------|
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Alarm (smoke) | alarm_smoke | alarm_smoke | Smoke | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel and is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -66,7 +66,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm (smoke)
 Indicates if a smoke is triggered.
 
-The ```alarm_smoke``` channel and is of type ```alarm_smoke``` and supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_smoke``` channel is of type ```alarm_smoke``` and supports the ```Switch``` item and is in the ```Smoke``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -76,8 +76,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-Channel type information on this channel is not found.
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

@@ -25,7 +25,7 @@ This Z-Wave module is used for switching on or off two electrical devices (e.g. 
 
   * Connect module to power supply (with temperature sensor connected -if purchased)
   * Enable add/remove mode on main controller
-  * Auto-inclusion (works forabout 5 seconds after connected to power supply) or
+  * Auto-inclusion (works for about 5 seconds after connected to power supply) or
   * Press push button I1 three times within 3s (3 times change switch state within 3 seconds) or
   * Press service button **S** (only applicable for 24 V SELV supply voltage) for more than 2 seconds.
 
@@ -35,7 +35,7 @@ This Z-Wave module is used for switching on or off two electrical devices (e.g. 
 
 ### Exclusion Information
 
-**Module Exclusion/Reset (Removing from Z-Wavenetwork)**
+**Module Exclusion/Reset (Removing from Z-Wave network)**
 
   * Connect module to power supply
   * Bring module within maximum 1 meter (3 feet) of the main controller,
@@ -51,85 +51,74 @@ If push button I1 is pressed three times within 3s (or service button S is press
 
 The following table summarises the channels available for the ZMNHBD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
-| Electric meter (kWh) 2 | meter_kwh2 | Energy | Number | 
-| Sensor (temperature) | sensor_temperature3 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 2 | meter_kwh2 | meter_kwh | Energy | Number | 
+| Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 2
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature3``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -147,7 +136,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | Automatic turning on output Q1 after set time | When relay Q1 is OFF it goes automatically ON after defined time |
 | 13 | Automatic turning off relay Q2 after set time | When relay Q2 is ON it goes automatically OFF after defined time |
 | 14 | Automatic turning on output Q2 after set time | When relay Q2 is OFF it goes automatically ON after defined time |
-| 15 | Automatic turning off / on seconds or milliseconds selection | Automatic turning off / on seconds or milliseconds selection |
+| 15 | Seconds or milliseconds selection | Automatic turning off / on seconds or milliseconds selection |
 | 30 | Saving the state after a power failure | Saving the state of the relays Q1 and Q2 after a power failure |
 | 40 | Power reporting in Watts for Q1 | Power reporting in Watts on power change for Q1 |
 | 41 | Power reporting in Watts for Q2 | Power reporting in Watts on power change for Q2 |
@@ -265,7 +254,7 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_14_2``` and is of type ```INTEGER```.
 
 
-### Parameter 15: Automatic turning off / on seconds or milliseconds selection
+### Parameter 15: Seconds or milliseconds selection
 
 Automatic turning off / on seconds or milliseconds selection
 Available configuration parameters:
@@ -369,10 +358,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | When system is turned off the output is 0V (NC) |
-| 1 | When system is turned off the output is 230V or 24V (NO) |
+| 0 | System turned off, output 0V (NC) |
+| 1 | System turned off, output is 230V or 24V (NO) |
 
-The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC)).
+The manufacturer defined default value is ```0``` (System turned off, output 0V (NC)).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 
@@ -385,10 +374,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | When system is turned off the output is 0V (NC) |
-| 1 | When system is turned off the output is 230V or 24V (NO) |
+| 0 | System is turned off, output is 0V (NC) |
+| 1 | System turned off, output is 230V or 24V (NO) |
 
-The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC)).
+The manufacturer defined default value is ```0``` (System is turned off, output is 0V (NC)).
 
 This parameter has the configuration ID ```config_64_1``` and is of type ```INTEGER```.
 
