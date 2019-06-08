@@ -25,7 +25,7 @@ This guide focuses on existing Add-on (binding) development.
     
     Do *NOT* select other projects.
 
-   ![select projects](images/ide_setup_eclipse_projects.png)
+   ![select projects](./images/ide_setup_eclipse_projects.png)
 
 1. Click `Next >`, verify/modify Root and install folder name, click `Next >` and `Finish` to start installation. During install accept licence agreement, "Unsigned Content" for Bndtools, and Eclipse Foundation certificates when requested to complete IDE installation. 
 
