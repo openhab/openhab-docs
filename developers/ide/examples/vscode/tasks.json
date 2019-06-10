@@ -14,7 +14,7 @@
             "label": "Start openHAB (Debug)",
             "type": "shell",
             "isBackground": true,
-            "command": "$env:openhab_home/start.sh",
+            "command": "$openhab_home/start.sh",
             "windows": {
                 "command": "& $env:openhab_home/start.bat debug"
             },
@@ -27,7 +27,7 @@
         {
             "label": "Stop openHAB",
             "type": "shell",
-            "command": "$env:openhab_runtime/bin/stop.sh",
+            "command": "$openhab_runtime/bin/stop",
             "windows": {
                 "command": "& $env:openhab_runtime/bin/stop.bat"
             },
@@ -40,7 +40,8 @@
             "args": [
                 "clean",
                 "install"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "mvn Compile (Online)",
@@ -50,7 +51,8 @@
                 "clean",
                 "install",
                 "-DskipChecks"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "mvn Compile (Offline)",
@@ -61,28 +63,35 @@
                 "clean",
                 "install",
                 "-DskipChecks"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "Copy Distribution to Addons",
             "type": "shell",
             "command": "cp",
-            "windows": {
-                "command": "copy"
-            },
             "args": [
-                "${workspaceFolder}/target/$env:dist",
-                "$env:openhab_addons"
+                "${workspaceFolder}/target/$dist",
+                "$openhab_addons"
             ],
+            "windows": {
+                "command": "copy",
+                "args": [
+                    "${workspaceFolder}/target/$env:dist",
+                    "$env:openhab_addons"
+                ],
+            },
             "dependsOn": [
                 "mvn Compile (Offline)"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "Build",
             "dependsOn": [
                 "Copy Distribution to Addons"
-            ]
+            ],
+            "problemMatcher": []
         },
         {
             "label": "Tail events.log",
@@ -92,7 +101,7 @@
                 "-n",
                 "50",
                 "-f",
-                "$env:openhab_logs/events.log"
+                "$openhab_logs/events.log"
             ],
             "windows": {
                 "command": "Get-Content",
@@ -118,7 +127,7 @@
                 "-n",
                 "50",
                 "-f",
-                "$env:openhab_logs/openhab.log"
+                "$openhab_logs/openhab.log"
             ],
             "windows": {
                 "command": "Get-Content",
