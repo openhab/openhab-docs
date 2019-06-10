@@ -1,45 +1,42 @@
 # Amazon Alexa Smart Home Skill
+
 <img align="right" width="150px" src="https://images-na.ssl-images-amazon.com/images/I/51-cpfTnBzL._SL210_QL95_BG0,0,0,0_FMpng_.png">
 
 Alexa is an intelligent personal assistant developed by Amazon and designed to run on smart speakers and devices such as the Amazon Echo and Dot.
 
-<p></p>
-
 This certified Amazon Smart Home Skill allows users to control their openHAB powered smart home with natural voice commands.  Lights, locks, thermostats, AV devices, sensors and many other device types can be controlled through a user's Alexa powered device like the Echo or Dot.
-
-<p></p>
 
 This page describes how to use the [openHAB Alexa Smart Home Skill](https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L).
 The skill connects your openHAB setup through the [myopenHAB.org](http://myopenHAB.org) cloud service to Amazon Alexa.
 
 ## Table of Contents
-* [Requirements](#Requirements)
-* [Troubleshooting](#Troubleshooting)
-  * [Command Not Working](#Command-Not-Working)
-  * [Device Not Found](#Command-Not-Working)
-  * [Device Not Responding](#Device-Not-Responding)
-  * [Server Authentication Issue](#Server-Authentication-Issue)
-  * [Server Not Accessible](#Server-Not-Accessible)
-* [Setup](#Setup)
-  * [Item Label Recommendation](#Item-Label-Recommendation)
-  * [Item Configuration](#Item-Configuration)
-    * [Single items](#Single-items)
-    * [Group Items](#Group-Items)
-    * [Item Sensor](#Item-Sensor)
-    * [Item State](#Item-State)
-    * [Item Unit of Measurement](#Item-Unit-of-Measurement)
-    * [Supported Item Metadata](#Supported-Item-Metadata)
-      * [Display Categories](#Display-Categories)
-      * [Asset Catalog](#Asset-Catalog)
-      * [Friendly Names Not Allowed](#Friendly-Names-Not-Allowed)
-      * [Unit of Measurement Catalog](#Unit-of-Measurement-Catalog)
-    * [Supported Group Metadata](#Supported-Group-Metadata)
-    * [Supported Metadata Labels](#Supported-Metadata-Labels)
-  *  [Version 2 Item Tag Support](#Version-2-Item-Tag-Support)
-* [Example Voice Commands](#Example-Voice-Commands)
-* [Other openHAB Alexa Integrations](#Other-openHAB-Alexa-Integrations)
-  * [Amazon Echo Control Binding](#Amazon-Echo-Control-Binding)
-  * [Hue Emulation Service](#Hue-Emulation-Service)
+* [Requirements](#requirements)
+* [Troubleshooting](#troubleshooting)
+  * [Command Not Working](#command-not-working)
+  * [Device Not Found](#device-not-found)
+  * [Device Not Responding](#device-not-responding)
+  * [Server Authentication Issue](#server-authentication-issue)
+  * [Server Not Accessible](#server-not-accessible)
+* [Setup](#setup)
+  * [Item Label Recommendation](#item-label-recommendation)
+  * [Item Configuration](#item-configuration)
+    * [Single items](#single-items)
+    * [Group Items](#group-items)
+    * [Item Sensor](#item-sensor)
+    * [Item State](#item-state)
+    * [Item Unit of Measurement](#item-unit-of-measurement)
+    * [Supported Item Metadata](#supported-item-metadata)
+      * [Display Categories](#display-categories)
+      * [Asset Catalog](#asset-catalog)
+      * [Friendly Names Not Allowed](#friendly-names-not-allowed)
+      * [Unit of Measurement Catalog](#unit-of-measurement-catalog)
+    * [Supported Group Metadata](#supported-group-metadata)
+    * [Supported Metadata Labels](#supported-metadata-labels)
+  *  [Item Tag v2 Support](#item-tag-v2-support)
+* [Example Voice Commands](#example-voice-commands)
+* [Other openHAB Alexa Integrations](#other-openhab-alexa-integrations)
+  * [Amazon Echo Control Binding](#amazon-echo-control-binding)
+  * [Hue Emulation Service](#hue-emulation-service)
 
 ## Requirements
 
@@ -82,10 +79,10 @@ Here are some of the most common generic errors you may encounter while using th
 
 * NEW Alexa Version 3 API syntax (v3)
   * Version 3 of the Alex Skill API introduces a more rich and complex set of features that required a change in how items are configured by using the new metadata feature introduced in openaHAB 2.3
-  * Version 2 tags are still supported and are converted internally to V3 meta data
-  * Supported [item](#Supported-Item-Metadata) & [group](#Supported-Group-Metadata) V3 meta data
-  * Automatically determine number precision and unit based on [item state presentation](#Item-State) and [unit of measurement](#Item-Unit-of-Measurement).
-  * Decoupling between item receiving command and item state via an [item sensor](#Item-Sensor)
+  * Version 2 tags are still supported and are converted internally to v3 meta data
+  * Supported [item](#supported-item-metadata) & [group](#supported-group-metadata) v3 meta data
+  * Automatically determine number precision and unit based on [item state presentation](#item-state) and [unit of measurement](#item-unit-of-measurement).
+  * Decoupling between item receiving command and item state via an [item sensor](#item-sensor)
   * Improved Alexa response state accuracy
 
 ### Item Label Recommendation
@@ -109,7 +106,7 @@ Switch LightSwitch "Light Switch" {alexa="PowerController.powerState"}
 ```
 Setting this on a single item will create an Alexa endpoint with the spoken addressable name "Light Switch" and map the powerState property to our item. You can ask Alexa to turn "Light Switch" on or off.
 
-This can also be written using [metadata labels](#Supported-Metadata-Labels), which is a shorthand version of the full Alexa namespace:
+This can also be written using [metadata labels](#supported-metadata-labels), which is a shorthand version of the full Alexa namespace:
 ```
 Switch LightSwitch "Light Switch" {alexa="Switchable"}
 ```
@@ -121,7 +118,7 @@ Dimmer LightSwitch "Light Switch" {alexa="PowerController.powerState,BrightnessC
 
 You can ask Alexa to "Turn Light Switch .." on or off as well as "Set Light Switch to .." a certain percentage.
 
-Using [metadata labels](#Supported-Metadata-Labels) this would look like:
+Using [metadata labels](#supported-metadata-labels) this would look like:
 ```
 Dimmer LightSwitch "Light Switch" {alexa="Lighting"}
 ```
@@ -144,7 +141,7 @@ Number CoolSetpoint  "Cool Setpoint [%.0f F]"  (Thermostat)   {alexa="Thermostat
 Number Mode          "Mode [%s]"               (Thermostat)   {alexa="ThermostatController.thermostatMode"}
 ```
 
-The group metadata also describes the category for the endpoint, in this case a "Thermostat".  See the section below on Group mapping metadata and categories for a complete list.  In this example a single endpoint is created called "Bedroom", its various interfaces are mapped to different openHAB items.  You can ask Alexa "Set the Bedroom heat to 72" and the 'HeatSetpoint' will receive the command, likewise you can ask Alexa "What's the temperature of the Bedroom" and Alexa will query the 'Temperature' items for its value.
+The group metadata also describes the category for the endpoint, in this case a "Thermostat".  See the section below on supported [group metadata](#supported-group-metadata) and [categories](#display-categories) for a complete list.  In this example a single endpoint is created called "Bedroom", its various interfaces are mapped to different openHAB items.  You can ask Alexa "Set the Bedroom heat to 72" and the 'HeatSetpoint' will receive the command, likewise you can ask Alexa "What's the temperature of the Bedroom" and Alexa will query the 'Temperature' items for its value.
 
 When mapping items, sometime we need to pass additional parameters to Alexa to set things like what scale to use (Fahrenheit) or what values our items expect for certain states (thermostat modes). These parameters can be passed in the metadata properties, if they are omitted, then reasonable defaults are used.  In our above example we may wish to use Fahrenheit as our temperature scale, and map the mode strings to numbers.  This would look like:
 
@@ -165,7 +162,7 @@ Switch Mute     "Mute"    (Stereo)  {alexa="Speaker.muted"}
 Switch Power    "Power"   (Stereo)  {alexa="PowerController.powerState"}
 String Input    "Input"   (Stereo)  {alexa="InputController.input" [supportedInputs="HDMI1,TV"]}
 String Channel  "Channel" (Stereo)  {alexa="ChannelController.channel"}
-Player Player   "Player"  (Stereo)  {alexa="PlaybackController.playbackState"}
+Player Player   "Player"  (Stereo)  {alexa="PlaybackController.playback,PlaybackStateReporter.playbackState"}
 Number Bass     "Bass"    (Stereo)  {alexa="EqualizerController.bands:bass" [range="-10:10"]}
 Number Midrange "Mid"     (Stereo)  {alexa="EqualizerController.bands:midrange" [range="-10:10"]}
 Number Treble   "Treble"  (Stereo)  {alexa="EqualizerController.bands:treble" [range="-10:10"]}
@@ -223,7 +220,6 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
     * Supported item type:
       * Color
       * Dimmer
-      * Rollershutter
       * Switch
     * Default category: SWITCH
   * `BrightnessController.brightness`
@@ -394,11 +390,16 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
     * Supported item type:
       * Switch
     * Default category: SPEAKER
-  * `PlaybackController.playbackState`
-    * Items that represent the playback of a AV device. (Supported commands: Play, Pause, Next, Previous, Rewind, Fast Forward)
+  * `PlaybackController.playback`
+    * Items that represent the playback controls of a AV device. (Supported commands: Play, Pause, Next, Previous, Rewind, Fast Forward)
     * Supported item type:
       * Player
     * Default category: OTHER
+  * `PlaybackStateReporter.playbackState`
+    * Items that represent the playback state of a AV device. It should be used in combination with `PlaybackController.playback` to provide state back to Alexa.
+    * Supported item type:
+      * Player
+    * Default category: OTHER  
   * `EqualizerController.bands:{bass,midrange,treble}`
     * Items that represent the different equalizer bands and their ranges supported by an audio system. Use specific capability component (`bass`, `midrange` or `treble`) when configuring a band (e.g. `EqualizerController.bands:bass`). Add the band range values in the `range="-10:10"` parameter. For the reset default value, provide the setting in `default=0` parameter or it will be calculated by using midpoint range spread. Additionally, default adjust increment can be configured in `increment=2` parameter. When configuring multiple bands, make sure to synchronize the range parameter across relevant items as the same range values will be used for all bands due to Alexa restriction. However, the reset and increment default values can be different between bands.
     * Supported item type:
@@ -537,7 +538,6 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
     * Supported item type:
       * Color
       * Dimmer
-      * Rollershutter
       * Switch
     * Supported metadata parameters:
       * friendlyNames=`<names>`
@@ -666,7 +666,7 @@ Weight.Pounds |
 Weight.Ounces |
 
 #### Supported Group Metadata
-* Functional groups (no group type) can be labelled with one of Alexa categories listed above. It can be set using one of the two formats: `Endpoint.<category>` or `<category>`
+* Functional groups (no group type) can be labelled with one of Alexa [display categories](#display-categories). It can be set using one of the two formats: `Endpoint.<category>` or `<category>`
 * Example `{alexa="Endpoint.Thermostat"}` or `{alexa="Thermostat"}`
 * Child item categories are ignored and only the group category is used on items.
 * Case is ignored on the category part of the metadata and any value will be made all uppercase before its passed to the Alexa API.
@@ -688,7 +688,7 @@ Switch DeviceSwitch "Device Switch" {alexa="Switchable"}
 Rollershutter ShutterSwitch "Shutter Switch" {alexa="Switchable"}
 
 Switch DeviceSwitch "Device Switch" {alexa="PowerController.powerState" [category="SWITCH"]}
-Rollershutter ShutterSwitch "Shutter Switch" {alexa="PowerController.powerState,PercentageController.percentage" [category="SWITCH"]}
+Rollershutter ShutterSwitch "Shutter Switch" {alexa="PercentageController.percentage" [category="SWITCH"]}
 ```
 * Lighting (capabilities depending on item type)
 ```
@@ -793,7 +793,7 @@ String EqualizerMode "Equalizer Mode" {alexa="EqualizerController.modes"}
 ```
 Player MediaPlayer "Media Player" ["MediaPlayer"]
 
-Player MediaPlayer "Media Player" {alexa="PlaybackController.playbackState"}
+Player MediaPlayer "Media Player" {alexa="PlaybackController.playback,PlaybackStateReporter.playbackState"}
 ```
 * SpeakerMute
 ```
@@ -868,14 +868,14 @@ Switch ToggleComponent "Toggle Component" {alexa="ToggleComponent"}
 Switch ToggleComponent "Toggle Component" {alexa="ToggleController.toggleState"}
 ```
 
-### Version 2 Item Tag Support
+### Item Tag v2 Support
 
 Version 2 (v2) of the Alexa skill used openHAB [HomeKit](https://www.openhab.org/addons/integrations/homekit/#item-configuration) style tags to expose items to Alexa.
-Version 3 (v3) of the skill supports this by translating v2 style tags to v3 [metadata labels](#Supported-Metadata-Labels) internally.  These tags are still required if the items are being exposed to the [HomeKit](https://www.openhab.org/addons/integrations/homekit/#item-configuration) or [Google Assistant](https://www.openhab.org/docs/ecosystem/google-assistant/) integrations.  Below is the translation of v2 tags to v3 labels.
+Version 3 (v3) of the skill supports this by translating v2 style tags to v3 [metadata labels](#supported-metadata-labels) internally.  These tags are still required if the items are being exposed to the [HomeKit](https://www.openhab.org/addons/integrations/homekit/#item-configuration) or [Google Assistant](https://www.openhab.org/docs/ecosystem/google-assistant/) integrations.  Below is the translation of v2 tags to v3 labels.
 
 #### Supported v2 Item Tags
 
-| v2 Item Tag                     | v3 Metadata Label  |
+| v2 Item Tag                | v3 Metadata Label  |
 |----------------------------|--------------------|
 | Lighting                   | Lighting           |
 | Switchable                 | Switchable         |

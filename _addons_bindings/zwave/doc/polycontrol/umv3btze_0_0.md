@@ -1,19 +1,19 @@
 ---
 layout: documentation
-title: UMV3-BTZ-E/U/H - ZWave
+title: UMV3-BTZ - ZWave
 ---
 
 {% include base.html %}
 
-# UMV3-BTZ-E/U/H
-This describes the Z-Wave device *UMV3-BTZ-E/U/H*, manufactured by *[Poly-control](https://www.danalock.com/)* with the thing type UID of ```polycontrol_umv3btze_00_000```.
+# UMV3-BTZ Danalock Universal Module V3
+This describes the Z-Wave device *UMV3-BTZ*, manufactured by *[Poly-control](https://www.danalock.com/)* with the thing type UID of ```polycontrol_umv3btze_00_000```.
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![UMV3-BTZ-E/U/H product image](https://www.cd-jackson.com/zwave_device_uploads/1053/1053_default.jpg)
+![UMV3-BTZ product image](https://www.cd-jackson.com/zwave_device_uploads/1053/1053_default.jpg)
 
 
-The UMV3-BTZ-E/U/H supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+The UMV3-BTZ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 ## Overview
 
@@ -31,7 +31,7 @@ To remove or exclude the UMV3 into a Z-Wave network 1. Set the controller in exc
 
 ## Channels
 
-The following table summarises the channels available for the UMV3-BTZ-E/U/H -:
+The following table summarises the channels available for the UMV3-BTZ -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -71,7 +71,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 12 configuration parameters available in the UMV3-BTZ-E/U/H.
+The following table provides a summary of the 12 configuration parameters available in the UMV3-BTZ.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -242,7 +242,7 @@ This parameter has the configuration ID ```doorlock_timeout``` and is of type ``
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The UMV3-BTZ-E/U/H supports 1 association group.
+The UMV3-BTZ supports 1 association group.
 
 ### Group 1: Lifeline
 
