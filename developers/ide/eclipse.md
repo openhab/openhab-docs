@@ -21,33 +21,32 @@ This guide focuses on existing Add-on (binding) development.
 
     Eclipse version to use is "Latest Release (2019-03)" (currently version `2019-06` does not support bndtools)
 
-1. Select `Github Projects > openHAB > openHAB Development`. 
+1. Under `Github Projects > openHAB` select `openHAB Development` and `openHAB Add-ons`
     
-    Do *NOT* select other projects.
-
    ![select projects](./images/ide_setup_eclipse_projects.png)
 
-1. Click `Next >`, verify/modify Root and install folder name, click `Next >` and `Finish` to start installation. During install accept licence agreement, "Unsigned Content" for Bndtools, and Eclipse Foundation certificates when requested to complete IDE installation. 
+1. Click `Next>`, verify/modify Root and install folder name, click `Next>` and `Finish` to start installation. 
 
-    When the installation is finished the IDE is launched automatically.
+    During install accept licence agreement, "Unsigned Content" for Bndtools, and Eclipse Foundation certificates when requested to complete IDE installation. 
 
-1. **It's important**, during the first Eclipse IDE launch, to leave the Eclipse open until all Startup tasks / Download sources / Builds are completed. These tasks will setup the IDE with proper tools, configurations and download openHAB lastest distribution, the compiled `openhab2-addons` (bundles) and related maven dependencies.
+    When the Eclipse installation is finished the IDE is launched automatically.
+
+1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openaHAB related initial Startup tasks / Download sources / Builds are completed. 
+
+    These tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app. Initial tasks will also download openHAB lastest SNAPSHOT, the  `openhab2-addons` (bundles) code and related maven dependencies.
 (click bottom right button in the IDE for Progress).
 
-    **It may take 20-35mins depending on internet connection and your computer speed.
-    So go and grab a good cup of coffee and be patient until is finished**
+    ![startup tasks progress](./images/ide_setup_eclipse_startup_tasks.png)
 
-1. Using Git bash console move to the `git` folder under the chosen IDE install folder (the `openhab-distro` folder is already there).
+    When visible in the Package Explorer, select `OH2 Add-ons` and from right-click menu select "Close Projects": this will speed up a bit the first setup.
+    Leave open only the binding project(s) you would like to work on.
 
-1. Using the `git` command from the command line, checkout the `openhab2-addons` repository: `git clone --depth=1 https://github.com/openhab/openhab2-addons`
+    **It may take 30-45mins for all initial tasks to finsih, depending on internet connection and your computer speed.
+    So... go and grab a good cup of coffee and be patient until is finished**
 
-1. Go back to Eclipse and add the binding that you want to develop (in this guide we use `astro` as an example) to the Eclipse workspace: `File > Import > Maven > Existing Maven Projects >` select the root directory of the binding under `git\openahb2-addons\bundles` then `Finish`.
+   ![startup tasks finished](./images/ide_setup_eclipse_tasks_finished.png)
 
-    Leave Eclipse open and wait for all the "Importing Maven projects", downloads and build tasks to finish.
-
-    NOTE: You do not need to add all projects to the workspace, just the binding projects you want to work on.
-
-1. In the Eclipse Package Explorer in `Other Projects > launch > app` project folder look for `app.bndrun` file.
+1. After all stasks are finished, in the Eclipse Package Explorer in `Other Projects > launch > app` project folder look for `app.bndrun` file.
 
    Double click to open `app.bndrun` file (takes a few seconds)
 
@@ -66,7 +65,7 @@ This guide focuses on existing Add-on (binding) development.
 Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, PaperUI and the selected binding you want to run/debug.
 
 1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi" (upper right of the `app.bndrun` window).
-   You can check openHAB is running going with your browser to: http://localhost:8080/paperui/
+   You can check openHAB is running going with your browser to: http://localhost:8080/paperui/ (the last `/` is important!)
 1. Check the chosen binding is active in `PaperUI > Configuration > Bindings`
 
 ## Develop a NEW binding with the Eclipse IDE
