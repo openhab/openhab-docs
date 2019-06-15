@@ -5,13 +5,13 @@ title: MH8-FC - ZWave
 
 {% include base.html %}
 
-# MH8-FC Fan Coil Thermostat
-This describes the Z-Wave device *MH8-FC*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh8fc_00_000```.
-This version of the device is limited to firmware versions below 2.9
+# MH8-FC Fan Coil Thermostat (Zwave Plus)
+This describes the Z-Wave device *MH8-FC*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh8fcplus_03_000```.
+This version of the device is limited to firmware versions above 3.0
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![MH8-FC product image](https://www.cd-jackson.com/zwave_device_uploads/336/336_default.jpg)
+![MH8-FC product image](https://www.cd-jackson.com/zwave_device_uploads/1057/1057_default.jpg)
 
 
 The MH8-FC supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -142,7 +142,86 @@ Channel type information on this channel is not found.
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 5 configuration parameters available in the MH8-FC.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | Temperature Unit Setting | Temperature Unit Setting. 0 = C, 1 = F |
+| 2 | Upload Temperature Automatically | Upload Temperature Automatically |
+| 3 | Upload temperature difference | Upload temperature difference |
+| 4 | Upload time interval | Upload time interval in seconds |
+| 255 | Factory Setting | Factory Setting |
+
+### Parameter 1: Temperature Unit Setting
+
+Temperature Unit Setting. 0 = C, 1 = F
+
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Celcius |
+| 1 | Fahrenheit |
+
+The manufacturer defined default value is ```0``` (Celcius).
+
+This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+
+
+### Parameter 2: Upload Temperature Automatically
+
+Upload Temperature Automatically
+
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Off |
+| 1 | Upload the difference value only |
+| 2 | Timing upload mode only |
+| 3 | Upload the difference + timing upload mode |
+
+The manufacturer defined default value is ```3``` (Upload the difference + timing upload mode).
+
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+
+
+### Parameter 3: Upload temperature difference
+
+Upload temperature difference
+Base on 0.1C unit. 5 by default. 5 * 0.1C = 0.5C, 0x0003 to 0x03E8
+Values in the range 3 to 1000 may be set.
+
+The manufacturer defined default value is ```5```.
+
+This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
+
+
+### Parameter 4: Upload time interval
+
+Upload time interval in seconds
+Base is 1s unit. It is suggested to be set above 30s, 0x000A to 0xFFFF
+Values in the range 10 to 65535 may be set.
+
+The manufacturer defined default value is ```30```.
+
+This parameter has the configuration ID ```config_4_2``` and is of type ```INTEGER```.
+
+
+### Parameter 255: Factory Setting
+
+Factory Setting
+0x55 Restore the factory setting (write only)
+
+Parameters setting back to default value, association groups deleted
+Values in the range 85 to 85 may be set.
+
+The manufacturer defined default value is ```85```.
+
+This parameter has the configuration ID ```config_255_1_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
 
 ## Association Groups
 
@@ -173,15 +252,16 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_STATE_V1| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/336/MH8-FC-EU-User-Manual.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1057/MH8-FC-Zwave-Plus.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/336).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1057).
