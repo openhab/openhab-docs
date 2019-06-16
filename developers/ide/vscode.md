@@ -15,6 +15,11 @@ The following steps will only need to be done once to setup both VSCode and your
    
 2. Clone the addons (https://github.com/openhab/openhab2-addons.git or preferably your own fork) to %BASE%\openhab2-addons
    
+3. If you want to setup openHAB code formatting guidelines, add the following to the VSCode settings:
+         
+    ![define .vscode](images/ide_setup_vscode_settings.png)
+
+    Either globally define the formatting options via ```Files->Preferences->Settings->Extendions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
 ## Steps for each Bundle
 
@@ -27,15 +32,18 @@ The following steps will show you how to setup a specific bundle for development
    
 2. Open VSCode and then open the folder of the bundle.  From VSCode - use `File->Open Folder->choose bundle directory` (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound`)
    
-3. Create a ".vscode" directory under the bundle (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode`)   
+3. Create a ".vscode" directory under the bundle (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode`)
+      
     ![define .vscode](images/ide_setup_vscode_folder.png)
 
 4. Download [tasks.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/tasks.json) to the .vscode directory (example: `%BASE%\openhab2-addons\bundles\org.openhab.binding.russound\.vscode\tasks.json`)
+   
     ![define tasks.json](./images/ide_setup_vscode_folder_tasks.png)
    
 5. Edit tasks.json and ...
    
     ![tasks.json changes](./images/ide_setup_vscode_tasks.png)
+
    1. Set `openhab_*` to the directories for your openHAB installation 
    2. Set `dist` to the name of the JAR file maven is producing in the target directory
    3. Save and close tasks.json
@@ -52,6 +60,7 @@ The following steps will show you how to setup a specific bundle for development
 9.  Edit launch.json and ...
     
     ![launch.json changes](./images/ide_setup_vscode_launch.png)
+
     1. Set the `port` to xxxx (from step 7).  This can be skipped if xxxx was 5005 from step 7.
     2. Set the `hostName` to the hostname running openHAB.  This can be skipped if running locally (localhost)
     3. Save and close launch.json
