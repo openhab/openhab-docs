@@ -89,6 +89,7 @@ where `<itemlist>` is a comma-separated list consisting of one or more of the fo
 - `*` - this line should apply to all items in the system
 - `<itemName>` a single Item identified by its name. This Item can be a group Item.  But note that only the group value will be persisted.  The value of the individual group members will not be persisted using this option.
 - `<groupName>*` - all members of this group will be persisted, but not the group itself. If no strategies are provided, the default strategies that are declared in the first section are applied.  Optionally, an alias may be provided if the persistence service requires special names (e.g. a table to be used in a database, a feed id for an IoT service, etc.)
+Note that * is NOT a wildcard match character in this context.
 
 The example `Items` section below takes advantage of a `default` entry in the  `Strategies` section.
 Assume the `Strategies` section contains the line:
