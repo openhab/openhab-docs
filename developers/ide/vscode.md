@@ -5,7 +5,7 @@ title: Visual Studio Code
 
 # VSCode
 
-The following shows the steps for building a bundle using Visual Studio Code (VSCode).  Please note that the instructions show a Win10 system but should be similar for OSX/Linux.  This guide assumes you have a base development directory already defined (example: `c:/users/me/development`) and will reference that director as `%BASE%`.
+The following shows the steps for building a bundle using Visual Studio Code (VSCode).  Please note that the instructions show a Win10 system but should be similar for OSX/Linux.  This guide assumes you have a base development directory already defined (example: `c:/users/me/development`) and will reference that directory as `%BASE%`.
 
 ## One time setup
 
