@@ -57,6 +57,7 @@ At the moment only the following models are supported:
 -   TX-NR818
 -   TX-NR828
 -   TX-NR838
+-   TX-NR3007
 
 ## Binding Configuration
 
