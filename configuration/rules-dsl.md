@@ -244,7 +244,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
-If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to acces the information.
+If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to access the information.
 
 Example:
 
@@ -262,7 +262,7 @@ end
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
 
-The syntax is very similar to Java, but has many nice features that allows writing concise code.
+The syntax is very similar to Java, but has many nice features that allow writing concise code.
 It is especially powerful in handling collections.
 What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.
 
@@ -301,7 +301,7 @@ The following table summarizes the impact of the two manipulator commands on the
 **Beware:**
 In most cases, a rule with a trigger of `received update` will fire following the command `sendCommand` as:
 - openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
-- the Thing sends an status update to the Item.
+- the Thing sends a status update to the Item.
 
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
@@ -375,7 +375,7 @@ There are two ways to discover these methods:
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
 For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
-Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
+These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
 They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
 
 {: #conversions}
@@ -394,7 +394,7 @@ All Item states can be converted into a string by invoking `MyItem.state.toStrin
 
 A Color Item stores an **HSBType**.
 The HSB stands for Hue, Saturation, and Brightness. 
-Often one has the desired color as an RGB values (Red, Green, Blue). 
+Often one has the desired color as an RGB value (Red, Green, Blue). 
 The following code can be used to send an RGB value to a Color Item. 
 
 ```java
@@ -436,8 +436,8 @@ The problems stem from the fact that by default the Rules use a Joda DateTime cl
 However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
 
 The lowest common denominator when working with time is to get at the epoch value. 
-Epoch is the number of milliseconds that has passed since 1 January 1970 GMT and stored in a `long`. 
-With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and visa versa.
+Epoch is the number of milliseconds that have passed since 1 January 1970 GMT and stored in a `long`. 
+With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and vice versa.
 
 ```java
 // Get epoch from DateTimeType
@@ -799,7 +799,7 @@ log:set DEBUG org.eclipse.smarthome.model.script.kitchen
 
 ## Rule Examples
 
-Below some examples for common rules:
+Below some examples of common rules:
 
 ```java
 var Number counter
