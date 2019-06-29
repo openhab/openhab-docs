@@ -31,10 +31,11 @@ This guide focuses on existing Add-on (binding) development.
 
     When the Eclipse installation is finished the IDE is launched automatically.
 
-1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openHAB related initial Startup tasks / Download sources / Builds are completed. 
+1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openHAB related initial Setup tasks / Download sources / Builds are completed. 
 
-    These tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app. Initial tasks will also download openHAB lastest SNAPSHOT, the  `openhab2-addons` (bundles) code and related maven dependencies.
-(click bottom right button in the IDE for Progress).
+    Setup tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app.
+	Setup tasks will also download openHAB lastest `openhab2-addons` and `openhab-distro` rcode epositories and related maven dependencies. 
+	Click bottom right button in the IDE for Progress.
 
     ![startup tasks progress](./images/ide_setup_eclipse_startup_tasks.png)
 
@@ -57,7 +58,7 @@ This guide focuses on existing Add-on (binding) development.
 
     - using Git bash console go to `git\openhab2-addons\bom\openhab-addons`
     - recreate the BOM with: `mvn -DskipChecks -DskipTests clean install`
-    Now go back to Eclipse, close and re-open the `app.bndrun` file and you should be able to find the binding in the list now.
+    Now go back to Eclipse, close and re-open the `app.bndrun` file and now you should be able to find the binding in the list.
 
 1. Save and click "Resolve": a window with the list of resolved bundles will be shown.
     Click `Finish` and save the file.
