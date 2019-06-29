@@ -21,7 +21,7 @@ This guide focuses on existing Add-on (binding) development.
 
     Eclipse version to use is "Latest Release (2019-03)" (currently version `2019-06` does not support bndtools)
 
-1. Under `Github Projects > openHAB` select `openHAB Development` and `openHAB Add-ons`
+1. Under `Github Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab2-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
     
    ![select projects](./images/ide_setup_eclipse_projects.png)
 
@@ -31,22 +31,22 @@ This guide focuses on existing Add-on (binding) development.
 
     When the Eclipse installation is finished the IDE is launched automatically.
 
-1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openaHAB related initial Startup tasks / Download sources / Builds are completed. 
+1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openHAB related initial Startup tasks / Download sources / Builds are completed. 
 
     These tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app. Initial tasks will also download openHAB lastest SNAPSHOT, the  `openhab2-addons` (bundles) code and related maven dependencies.
 (click bottom right button in the IDE for Progress).
 
     ![startup tasks progress](./images/ide_setup_eclipse_startup_tasks.png)
 
-    When visible in the Package Explorer, select `OH2 Add-ons` and from right-click menu select "Close Projects": this will speed up a bit the first setup.
-    Leave open only the binding project(s) you would like to work on.
+    When visible in the Package Explorer, select `OH2 Add-ons` and from right-click menu select "Close Projects": this significantly speeds up the setup.
+    Re-open only the binding project(s) you would like to work on.
 
-    **It may take 30-45mins for all initial tasks to finsih, depending on internet connection and your computer speed.
+    **It may take 30-45mins for all initial tasks to finish, depending on internet connection and your computer speed.
     So... go and grab a good cup of coffee and be patient until is finished**
 
    ![startup tasks finished](./images/ide_setup_eclipse_tasks_finished.png)
 
-1. After all stasks are finished, in the Eclipse Package Explorer in `Other Projects > launch > app` project folder look for `app.bndrun` file.
+1. After all tasks are finished, look for `app.bndrun` file in the Eclipse Package Explorer in `Other Projects > launch > app` project folder.
 
    Double click to open `app.bndrun` file (takes a few seconds)
 
@@ -62,11 +62,11 @@ This guide focuses on existing Add-on (binding) development.
 1. Save and click "Resolve": a window with the list of resolved bundles will be shown.
     Click `Finish` and save the file.
 
-Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, PaperUI and the selected binding you want to run/debug.
+Now the IDE is ready to start openHAB with a minimum set of the openHAB core bindings, UIs and the selected binding you want to run/debug.
 
 1. Start openHAB from the IDE clicking "Run OSGi" or "Debug OSGi" (upper right of the `app.bndrun` window).
    You can check openHAB is running going with your browser to: http://localhost:8080/paperui/ (the last `/` is important!)
-1. Check the chosen binding is active in `PaperUI > Configuration > Bindings`
+1. Check the chosen binding is active in `Paper UI > Configuration > Bindings`
 
 ## Develop a NEW binding with the Eclipse IDE
 
