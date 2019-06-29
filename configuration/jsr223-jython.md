@@ -21,9 +21,7 @@ How this is done depends on the specific installation technique and operating sy
 Modify the `EXTRA_JAVA_OPTS` environment variable in `/etc/default/openhab2` to:
 
 ```bash
-EXTRA_JAVA_OPTS=-Xbootclasspath/a:/home/pi/jython2.7.0/jython.jar \
-  -Dpython.home=/home/pi/jython2.7.0 \
-  -Dpython.path=/etc/openhab2/lib/python
+EXTRA_JAVA_OPTS="-Xbootclasspath/a:/etc/openhab2/automation/jython/jython-standalone-2.7.0.jar -Dpython.home=/etc/openhab2/automation/jython -Dpython.path=/etc/openhab2/automation/lib/python"
 ```
 
 This will add the Jython library to the Java classpath, 
