@@ -6,7 +6,7 @@ type: action
 description: "This add-on provides SMTP services so your rules and scripts can send emails."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.mail/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
