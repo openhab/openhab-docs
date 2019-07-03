@@ -39,9 +39,7 @@ The UIs features are:
 
 - Responsive layout suitable for various screen sizes
 - AJAX navigation
-- Live update<sup>1</sup>
-
-<sup>1</sup>: as for now, only control states and icons are updated. Visibility changes require a page reload.
+- Live update
 
 ![](images/screenshot-1-full.png)
 
