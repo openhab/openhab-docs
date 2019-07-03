@@ -21,33 +21,24 @@ The SOS/Remote Control does not permanently listen for messages sent from the co
 
 Remote control/SOS is a smart security device that can communication with other devices via z-wave . 
 
-It is compatible with z-wave plus devices, battery powered , compact to carry .
-
-SOS is used for emergency；
+It is compatible with z-wave plus devices, battery powered , compact to carry .SOS is used for emergency；
 
 With 4 buttons, you can use Remote control for emergency call and set 6 different scenes .
 
 ### Inclusion Information
 
-1) Ensure remote control is in z-wave range.
-
-2) Set the controller in learning mode.(refer to the controller user manual)
-
-3) Quickly pressing the red button three times,Led will blink.
-
-4) The controller will recognize remote control and add it into z-wave network.
-
-5) Wait for the controller to configure.
+  1. Ensure remote control is in z-wave range.
+  2. Set the controller in learning mode.(refer to the controller user manual)
+  3. Quickly pressing the red button three times,Led will blink.
+  4. The controller will recognize remote control and add it into z-wave network.
+  5. Wait for the controller to configure.
 
 ### Exclusion Information
 
-1) Ensure the device is connected to power supply. 
-
-2) Set the controller in remove mode(refer to controller’s user manual)
-
-3) Quick pressing the red button for three times.
-
-4) Wait for removing SOS from the controller .
+  1. Ensure the device is connected to power supply. 
+  2. Set the controller in remove mode(refer to controller’s user manual)
+  3. Quick pressing the red button for three times.
+  4. Wait for removing SOS from the controller .
 
 ### Wakeup Information
 
@@ -59,18 +50,17 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 The following table summarises the channels available for the SOS/Remote Control -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Scene Number | scene_number |  | Number | 
-| Alarm (emergency) | alarm_emergency |  | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Alarm (emergency) | alarm_emergency | alarm_emergency | Alarm | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -80,10 +70,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -97,10 +86,9 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Alarm (emergency)
-
 Indicates Police, Fire, or Medical services should be contacted.
 
-The ```alarm_emergency``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_emergency``` channel is of type ```alarm_emergency``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -110,11 +98,10 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

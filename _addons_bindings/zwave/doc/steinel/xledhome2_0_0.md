@@ -49,36 +49,33 @@ mode.
 
 The following table summarises the channels available for the XLED Home 2 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Scene Number | scene_number |  | Number | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
-| Alarm (system) | alarm_system |  | Switch | 
-| Control: Key01 lamp (on/off) | switch_binary1 | Switch | Switch | 
-| Scene Number 1 | scene_number1 |  | Number | 
-| Alarm (burglar) motion | alarm_burglar2 | Door | Switch | 
-| Sensor (luminance)2 | sensor_luminance3 |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Control: Key01 lamp (on/off) | switch_binary1 | switch_binary | Switch | Switch | 
+| Scene Number 1 | scene_number1 | scene_number |  | Number | 
+| Alarm (burglar) motion | alarm_burglar2 | alarm_burglar | Door | Switch | 
+| Sensor (luminance)2 | sensor_luminance3 | sensor_luminance |  | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -88,16 +85,14 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -107,10 +102,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (system)
-
 Indicates if a system alarm is triggered.
 
-The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -120,22 +114,19 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Control: Key01 lamp (on/off)
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
-
 Triggers when a scene button is pressed.
 
-The ```scene_number1``` channel supports the ```Number``` item.
+The ```scene_number1``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Alarm (burglar) motion
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar2``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -145,10 +136,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Sensor (luminance)2
-
 Indicates the current light reading.
 
-The ```sensor_luminance3``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance3``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
