@@ -7,7 +7,7 @@ description: "The Pushbullet action allows you to notify iOS, Android & Windows 
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/action/org.openhab.action.pushbullet/README.md
 since: 1x
 logo: images/addons/pushbullet.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

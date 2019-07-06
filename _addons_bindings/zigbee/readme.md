@@ -30,8 +30,25 @@ If you are running on Linux, then you probably need to add the user 'openhab' to
 demo.things:
 
 ```java
-Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/ttyACM0", zigbee_baud="38400"]
+Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/ttyACM0", zigbee_baud=38400]
 ```
+
+Extended example:
+
+```java
+Thing zigbee:coordinator_ember:stick "Zigbee USB Stick" [zigbee_port="/dev/ttyUSB-Zigbee", zigbee_baud=57600, zigbee_flowcontrol="2", zigbee_childtimeout=864000, zigbee_concentrator=1, zigbee_meshupdateperiod=86400, zigbee_networkkey="14 c6 a2 c7 fb e0 c3 19 8e 7c 36 30 dc ad a5 96", zigbee_powermode=1, zigbee_txpower=8]
+```
+*NOTE*: Do not use the value for `zigbee_networkkey` from this example, create a random key for your own Zigbee network.
+
+#### Serial port Configuration
+
+If you are using a config file, the serial port needs to be configured as shown in the above example. Below is a list of the relevat settings concerning the serial port.
+
+| Setting               | Allowed values  |
+| --------------------- | --------------- |
+| `zigbee_baud`         | Ember controllers: `38400`, `57600`, `115200` <br/>Telegesis controllers: `19200`, `38400`, `57600`, `115200` <br/>Xbee controllers: `9600`, `57600`, `115200` <br/>CC2531 controllers: `38400`, `57600`, `115200` |
+| `zigbee_flowcontrol ` | `0` = None, <br/>`1` = Hardware (CTS/RTS), <br/>`2` = Software (XOn/XOff) |
+| `zigbee_port`         | The name of the serial port, e.g. `/dev/ttyUSB1` or `/dev/ttyZigbee` or whatever the port is named on your system |
 
 #### Coordinator Configuration
 
@@ -58,15 +75,55 @@ Once a child is removed from the child table of a router, it will be asked to re
 
 Note that ZigBee compliant devices should rejoin the network seamlessly, however some non-compliant devices may not rejoin which may leave them unusable without a manual rejoin.
 
+**Values:** Timeout time in seconds. The table below lists the options that are shown in PaperUI and the equivalent values that can be set in a configuration file:
+
+| Paper UI     | Config file |
+| ------------ | ------------|
+| _5 Minutes_  | `320`       |
+| _30 Minutes_ | `1800`      |
+| _2 Hours_    | `7200`      |
+| _12 Hours_   | `43200`     |
+| _1 Day_      | `86400`     |
+| _2 Days_     | `172800`    |
+| _5 Days_     | `432000`    |
+| _10 Days_    | `864000`    |
+| _2 Weeks_    | `1209600`   |
+| _4 Weeks_    | `2419200`   |
+| _7 Weeks_    | `4233600`   |
+
+Note that this value should be given as a number in the configuration file, without quotes. Also note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in PaperUI.
+
 ##### Concentrator Type (zigbee_concentrator)
 
 The Concentrator is used to improve routing within a ZigBee network, and is especially useful in a network where much of the traffic is sent to or from a central coordinator. If the coordinator has sufficient memory, it can store routing information, thus reducing network traffic.
 
 If supported, the High RAM concentrator should be used.
 
+**Values:**
+
+| Value  | Meaning |
+| ------ | ------- |
+| `0`    | Low RAM concentrator |
+| `1`    | High RAM concentrator |
+
+
 ##### Mesh Update Period (zigbee_meshupdateperiod)
 
 The binding is able to search the network to get a list of what devices can communicate with other devices. This is a useful diagnostic feature as it allows users to see the links between devices, and the quality of these links. However, this can generate considerable traffic, and some battery devices may not poll their parents often enough to provide these updates, and users may consider that it is better to reduce the period, or disable this feature.
+
+**Value:** the update period in seconds. ```0``` means "never update". In PaperUI, a drop down list is shown, the options from that list are shown in te table below, with their equivalent values that can be put in a config file.
+
+| Paper UI     | Config file |
+| ------------ | ------------|
+| _Never_      | `0`         |
+| _5 Minutes_  | `300`       |
+| _30 Minutes_ | `1800`      |
+| _1 Hour_     | `3600`      |
+| _6 Hours_    | `21600`     |
+| _1 Day_      | `86400`     |
+| _1 Week_     | `604800`    |
+
+Please note that, technically, you are not bound to using the values from the table. But if you use an arbitrary number of seconds, not corresponding to one of the predefined periods, it might not be possible to display the configured value correctly in PaperUI.
 
 #### Supported Coordinators
 
