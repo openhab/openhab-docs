@@ -36,9 +36,16 @@ Thing zigbee:coordinator_cc2531:stick1 "Zigbee USB Stick" [zigbee_port="/dev/tty
 Extended example:
 
 ```java
-Thing zigbee:coordinator_ember:stick "Zigbee USB Stick" [zigbee_port="/dev/ttyUSB-Zigbee", zigbee_baud=57600, zigbee_flowcontrol="2", zigbee_childtimeout=864000, zigbee_concentrator=1, zigbee_meshupdateperiod=86400, zigbee_networkkey="14 c6 a2 c7 fb e0 c3 19 8e 7c 36 30 dc ad a5 96", zigbee_powermode=1, zigbee_txpower=8]
+Thing zigbee:coordinator_ember:stick "Zigbee USB Stick" [zigbee_port="/dev/ttyUSB-Zigbee", zigbee_baud=57600, zigbee_flowcontrol=2, zigbee_childtimeout=864000, zigbee_concentrator=1, zigbee_meshupdateperiod=86400, zigbee_panid=35637, zigbee_extendedpanid="118E309DE90CC829", zigbee_networkkey="14 c6 a2 c7 fb e0 c3 19 8e 7c 36 30 dc ad a5 96", zigbee_powermode=1, zigbee_txpower=8]
 ```
-*NOTE*: Do not use the value for `zigbee_networkkey` from this example, create a random key for your own Zigbee network.
+
+*NOTE*: Do not use the values for `zigbee_networkkey`, `zigbee_panid` and `zigbee_extendedpanid` from this example, create random values for your own Zigbee network.
+
+*NOTE*: If you are using thing configuration files, you **MUST** define the following configuration parameters, or the system will not work properly as random values will be used at each restart:
+
+- `zigbee_panid`, 
+- `zigbee_extendedpanid`, 
+- `zigbee_networkkey`.
 
 #### Serial port Configuration
 
@@ -52,7 +59,7 @@ If you are using a config file, the serial port needs to be configured as shown 
 
 #### Coordinator Configuration
 
-Note that not all configuration parameters are available with all coordinators. If you are using thing configuration files, you MUST define the following configuration parameters, or the system will not work properly as random values will be used at each restart - zigbee_panid, zigbee_extendedpanid, zigbee_networkkey.
+Note that not all configuration parameters are available with all coordinators. 
 
 ##### Link Key (zigbee_linkkey)
 

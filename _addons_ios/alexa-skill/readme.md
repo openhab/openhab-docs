@@ -9,6 +9,12 @@ This certified Amazon Smart Home Skill allows users to control their openHAB pow
 This page describes how to use the [openHAB Alexa Smart Home Skill](https://www.amazon.com/openHAB-Foundation/dp/B01MTY7Z5L).
 The skill connects your openHAB setup through the [myopenHAB.org](http://myopenHAB.org) cloud service to Amazon Alexa.
 
+## Availability
+
+**Please note that the v3 skill is not available in the official Alexa store as of yet.**
+
+**If using the official skill, refer to [v2 tagging](#item-tag-v2-support) to configure your items.**
+
 ## Table of Contents
 * [Requirements](#requirements)
 * [Troubleshooting](#troubleshooting)
