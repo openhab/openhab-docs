@@ -334,14 +334,23 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * Color
     * Default category: LIGHT
   * `ColorTemperatureController.colorTemperatureInKelvin`
-    * Items that represents a color temperature, default increment value may be specified in metadata parameters. For dimmer typed items adjustments, INCREASE/DECREASE commands will be sent instead if increment value not defined, while number typed items will default to 500K increments.
+    * Items that represents a color temperature, default increment value may be specified in metadata parameters. For dimmer typed items adjustments, INCREASE/DECREASE commands will be sent instead if increment value not defined, while number typed items will default to 500K increments. Optionally, the supported temperature range in Kelvin can be provided using parameter `range="2700:6500"`. Preset-based range values will automatically be used based on the binding name and thing type (to differentiate color/white ranges), if the associated item is linked to one of the addons listed below (via channel metadata). Otherwise, to use these preset settings, use the parameter `binding=hue` or `binding=hue:white`. By default, the color type preset-based range values are used if the binding name is provided and the device/thing type cannot be determined. It is important to note that temperature adjustment requests for endpoints including a color item, will be rejected if the endpoint is in color mode (Dimmer => undefined temperature or color saturation > 0; Number => undefined temperature or temperature = 0). In that event, set the initial white level before requesting subsequent adjustments.
     * Supported item type:
-      * Dimmer: colder (0%) to warmer (100%) based of Alexa color temperature spectrum [Hue and LIFX support]
+      * Dimmer: colder (0%) to warmer (100%) based on defined temperature range [bindings integration]
       * Number: color temperature value in Kelvin [custom integration]
     * Supported metadata parameters:
       * increment=`<number>`
         * value in % for dimmer item/in Kelvin for number item
         * defaults to increment=INCREASE/DECREASE (Dimmer) or increment=500 (Number) if omitted
+      * range=`<minValue:maxValue>`
+        * values in Kelvin
+        * defaults to `1000:10000` if omitted or no binding preset-based range values found
+      * binding=`<value>`
+        * [hue](https://www.openhab.org/addons/bindings/hue/) [color=`2000:6500`, white=`2200:6500`]
+        * [lifx](https://www.openhab.org/addons/bindings/lifx/) [color=`2500:9000`, white=`2700:6500`]
+        * [milight](https://www.openhab.org/addons/bindings/milight/) [color=`2700:6500`, white=`2700:6500`]
+        * [tradfri](https://www.openhab.org/addons/bindings/tradfri/) [color=`1780:6000`, white=`2200:4000`]
+        * [yeelight](https://www.openhab.org/addons/bindings/yeelight/) [color=`1700:6500`, white=`2700:6500`]
     * Default category: LIGHT
   * `SceneController.scene`
     * Items that represent a scene or an activity depending on defined category and may be set not to support deactivation requests based on metadata parameters.
