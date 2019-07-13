@@ -1,31 +1,24 @@
 ---
 layout: documentation
-title: HS-FS100-L - ZWave
+title: HS-FS100+ Flex - ZWave
 ---
 
 {% include base.html %}
 
-# HS-FS100-L Homeseer Z-Wave Indicator Light Sensor
-This describes the Z-Wave device *HS-FS100-L*, manufactured by *[HomeSeer Technologies](http://www.homeseer.com/)* with the thing type UID of ```homeseer_hsfs100l_00_000```.
-This version of the device is limited to firmware versions below 5.17
+# HS-FS100+ Flex Flex Sensor
+This describes the Z-Wave device *HS-FS100+ Flex*, manufactured by *[HomeSeer Technologies](http://www.homeseer.com/)* with the thing type UID of ```homeseer_hsfs100flex_05_018```.
+This version of the device is limited to firmware versions above 5.18
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HS-FS100-L product image](https://www.cd-jackson.com/zwave_device_uploads/1026/1026_default.png)
+![HS-FS100+ Flex product image](https://www.cd-jackson.com/zwave_device_uploads/1069/1069_default.jpg)
 
 
-The HS-FS100-L supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
+The HS-FS100+ Flex supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-HS-FS100-L is a sensor designed to monitor indicator lights on appliances and other equipment in your home. It will send Z-Wave commands to your smart home system when things turn on, turn off or change their status.
-
-**Main Features**
-
-  * Indicator Light Sensor
-  * Temperature Sensor
-  * Z-Wave Controllable Buzzer
-  * Acts as a Z-Wave repeater when used on line power
+HS-FS100+ (“Flex Sensor”) is a multi functional module that includes a temperature sensor, controllable buzzer, and a port to connect external light or water sensors.
 
 ### Inclusion Information
 
@@ -39,7 +32,7 @@ HS-FS100-L is a sensor designed to monitor indicator lights on appliances and o
 
 ## Channels
 
-The following table summarises the channels available for the HS-FS100-L -:
+The following table summarises the channels available for the HS-FS100+ Flex -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
@@ -86,7 +79,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 4 configuration parameters available in the HS-FS100-L.
+The following table provides a summary of the 5 configuration parameters available in the HS-FS100+ Flex.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -95,6 +88,7 @@ Detailed information on each parameter can be found in the sections below.
 | 2 | Water Detecton beep frequency | Water Detecton beep frequency |
 | 3 | Temperature reportng interval when on line power | Temperature reportng interval when on line power |
 | 4 | Enable Notfcaton Buzzer | Enable Notfcaton Buzzer |
+| 5 | Flashing LED detection delay | Flashing LED detection delay |
 
 ### Parameter 1: Light Sensitvity
 
@@ -145,11 +139,22 @@ The manufacturer defined default value is ```1```.
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
 
+### Parameter 5: Flashing LED detection delay
+
+Flashing LED detection delay
+Set delay to avoid continuous notifications when detecting flashing LED’s. Flex Sensor will not send notification until flashing LED status changes.
+Values in the range 0 to 20 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The HS-FS100-L supports 1 association group.
+The HS-FS100+ Flex supports 2 association groups.
 
 ### Group 1: Lifeline
 
@@ -157,6 +162,11 @@ The Lifeline association group reports device status to a hub and is not designe
 Flex Sensor supports Group 1 association. Group 1 reports the sensor’s status and battery if running on batteries.
 
 Association group 1 supports 5 nodes.
+
+### Group 2: Basic Set Commands
+
+
+Association group 2 supports 5 nodes.
 
 ## Technical Information
 
@@ -184,10 +194,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [HS-FS100-L.pdf](https://www.cd-jackson.com/zwave_device_uploads/1026/HS-FS100-Manual-4.pdf)
-* [HS-FS100Plus Manual](https://www.cd-jackson.com/zwave_device_uploads/1026/HS-FS100Plus-Manual.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1069/FS100Flex-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1026).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1069).
