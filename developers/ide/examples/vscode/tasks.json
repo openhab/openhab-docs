@@ -14,7 +14,7 @@
             "label": "Start openHAB (Debug)",
             "type": "shell",
             "isBackground": true,
-            "command": "$openhab_home/start.sh",
+            "command": "$openhab_home/start.sh debug",
             "windows": {
                 "command": "& $env:openhab_home/start.bat debug"
             },
