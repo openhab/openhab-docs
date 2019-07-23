@@ -8,6 +8,8 @@ title: ZDS-UD10 - ZWave
 # ZDS-UD10 Dimming Switch Module
 This describes the Z-Wave device *ZDS-UD10*, manufactured by *Airline Mechanical Co., Ltd.* with the thing type UID of ```amc_zdsud10_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
 ![ZDS-UD10 product image](https://www.cd-jackson.com/zwave_device_uploads/184/184_default.png)
 
 
@@ -15,22 +17,29 @@ The ZDS-UD10 supports routing. This allows the device to communicate using other
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/184) to improve the documentation.
+Thank you for choosing ZDS-100 Z-Wave control product. Our Z-Wave enabled product allows user to remotely control lighting, home appliance, and make home control easy at low installation / maintenance cost. 
+
+### Inclusion Information
+
+Tap the button
+
+### Exclusion Information
+
+Tap the button
 
 ## Channels
 
 The following table summarises the channels available for the ZDS-UD10 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 

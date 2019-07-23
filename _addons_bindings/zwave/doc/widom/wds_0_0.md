@@ -62,44 +62,44 @@ Only a controller can remove a device from the network. WiDom Universal Double S
 
 The following table summarises the channels available for the WDS -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
 
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 2
 Indicates the instantaneous power consumption.
 
-The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -110,24 +110,24 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Outputs status upon receipt of 1 click on its command | Defines the status of the output O1/O2 after 1 Click |
-| 2 | Outputs status upon receipt of 2 clicks on its command | Defines the status of the output O1/O2 after 2 Clicks |
+| 1 | Status upon receipt of 1 click  | Defines the status of the output O1/O2 after 1 Click |
+| 2 | Status upon receipt of 2 clicks | Defines the status of the output O1/O2 after 2 Clicks |
 | 3 | Type of outputs | Defines how the outputs are controlled |
-| 4 | Clicks that activate the control of the associated devices | Defines the Clicks on the Switches that control associated devices |
+| 4 | Number of clicks that control the device | Defines the Clicks on the Switches that control associated devices |
 | 5 | Level used to control association group 2 and 3 | Defines how to control the devices associated to group 2 and 3. |
 | 6 | Level used to control association group 4 and 5. | Defines how to control the devices associated to group 4 and 5. |
 | 10 | Timer to switch OFF the Channel 1 | Defines the time after which the Channel 1 is switched OFF |
 | 11 | Timer to switch OFF the Channel 2 | Defines the time after which the Channel 2 is switched OFF |
 | 12 | Timer to switch ON the Channel 1 | Defines the time after which the Channel 1 is switched ON |
 | 13 | Timer to switch ON the Channel 2 | Defines the time after which the Channel 2 is switched ON |
-| 20 | Outputs status after Multi-Channel Basic Set command | Defines how Basic Set commands controlling outputs |
+| 20 | Status after Multi-Channel Basic Set command | Defines how Basic Set commands controlling outputs |
 | 21 | Outputs status upon receipt of a Basic Set command | Define which channels are controlled by Basic Set command |
 | 60 | Start-up status | Defines the status of the device following a restart. |
 | 61 | Configuration reset | Defines which parameters should be reset to default values |
 | 62 | Type of external switch | Defines the type of external switch connected to the device |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
-### Parameter 1: Outputs status upon receipt of 1 click on its command
+### Parameter 1: Status upon receipt of 1 click 
 
 Defines the status of the output O1/O2 after 1 Click
 Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 1 Click
@@ -151,7 +151,7 @@ The manufacturer defined default value is ```1``` (TOGGLE).
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
 
-### Parameter 2: Outputs status upon receipt of 2 clicks on its command
+### Parameter 2: Status upon receipt of 2 clicks
 
 Defines the status of the output O1/O2 after 2 Clicks
 Defines the status of the output O1/O2 when the switch connected to I1/I2 receives 2 Clicks
@@ -200,7 +200,7 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
 
-### Parameter 4: Clicks that activate the control of the associated devices
+### Parameter 4: Number of clicks that control the device
 
 Defines the Clicks on the Switches that control associated devices
 Defines the number of clicks on the Switch 1 or Switch 2 that enable the control of the correspondent associated devices
@@ -212,10 +212,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 1 | 1 CLICK |
-| 2 | 2 CLICKS |
+| 1 | Controlled by 1 Click |
+| 2 | Controlled by 2 Clicks |
 
-The manufacturer defined default value is ```2``` (2 CLICKS).
+The manufacturer defined default value is ```2``` (Controlled by 2 Clicks).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -393,7 +393,7 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 This is a read only parameter.
 
 
-### Parameter 20: Outputs status after Multi-Channel Basic Set command
+### Parameter 20: Status after Multi-Channel Basic Set command
 
 Defines how Basic Set commands controlling outputs
 The two channels can be controlled individually by Z-Wave network. The status of the channels upon receipt of a Multi-Channel Basic Set command is defined by the value set on the parameter.
@@ -401,12 +401,12 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 1 | AS RECEIVED |
-| 2 | IGNORE IF ON |
-| 3 | IGNORE IF OFF |
+| 1 | As Received |
+| 2 | Ignore if ON |
+| 3 | Ignore if OFF |
 | 4 | IGNORE |
 
-The manufacturer defined default value is ```1``` (AS RECEIVED).
+The manufacturer defined default value is ```1``` (As Received).
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
