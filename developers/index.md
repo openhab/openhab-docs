@@ -35,7 +35,7 @@ openHAB allows you to build up on the following concepts:
 Sometimes though its just not worth writing a binding and you are better off
 just using an http action in a rule or script to retrieve some values.
 
-Therefore: First think what you want to archive! Check our [community forum](https://community.openhab.org)
+Therefore: First think what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
