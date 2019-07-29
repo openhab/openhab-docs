@@ -18,9 +18,7 @@ This guide focuses on existing Add-on (binding) development.
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
 
-1. Launch the Installer and on the menu on the top right (3 bars) select `ADVANCED MODE...`, then select `Eclipse IDE for Java Developers` then `Next >`.
-
-    Eclipse version to use is "Latest Release (2019-03)" (currently version `2019-06` does not support bndtools)
+1. Launch the Installer and on the menu on the top right (3 bars) select `ADVANCED MODE...`, then select `Eclipse IDE for Java Developers`. Ensure that you select the Eclipse version to use to "2019-03" as version `2019-06` currently does not support bndtools. Finally select `Next >`.
 
 1. Under `Github Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab2-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
     
@@ -33,7 +31,7 @@ This guide focuses on existing Add-on (binding) development.
 1. **It's important**, during the first Eclipse IDE launch, to leave Eclipse open until all openHAB related initial Setup tasks / Download sources / Builds are completed. 
 
     Setup tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app.
-	Setup tasks will also download openHAB lastest `openhab2-addons` and `openhab-distro` rcode epositories and related maven dependencies. 
+	Setup tasks will also download openHAB lastest `openhab2-addons` and `openhab-distro` code repositories and related maven dependencies. 
 	Click bottom right button in the IDE for Progress.
 
     ![startup tasks progress](./images/ide_setup_eclipse_startup_tasks.png)
