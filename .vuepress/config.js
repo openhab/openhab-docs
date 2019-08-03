@@ -3,6 +3,7 @@ const DocsSidebarNavigation = require('./docs-sidebar.js')
 const fs = require ('fs-extra')
 const path = require('path')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
+const vuepressTabs = require('vuepress-tabs')
 
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
@@ -30,6 +31,7 @@ module.exports = {
   ],
   markdown: {
     config: (md) => {
+      vuepressTabs(md)
       md.options.linkify = true
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {
