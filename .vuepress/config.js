@@ -35,7 +35,12 @@ module.exports = {
       md.options.linkify = true
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {
-        if (['nginx', 'bash', 'python', 'js', 'groovy'].indexOf(lang) >= 0) return highlight(str, lang)
+        if (!Prism.languages.dsl || !Prism.languages.rules) {
+          Prism.languages.dsl = HighlightDsl
+          Prism.languages.rules = HighlightRules
+        }
+
+        if (['nginx', 'bash', 'python', 'js', 'javascript', 'groovy'].indexOf(lang) >= 0) return highlight(str, lang)
 
         /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
         if (str.match(/\b(?:Color|Contact|Dimmer|Group|Number|Player|Rollershutter|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
@@ -47,6 +52,8 @@ module.exports = {
         if ((str.match(/\brule\b/) && str.match(/\bwhen\b/) && str.match(/\bthen\b/) && str.match(/\bend\b/)) ||
           str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
+          
+          lang = 'rules'
         }
         if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
         if (lang === 'conf') lang = 'dsl'
@@ -55,11 +62,6 @@ module.exports = {
         //   console.log('Cannot determine language of code: ' + lang)
         //   console.log(str)
         // }
-
-        if (!Prism.languages.dsl || !Prism.languages.rules) {
-          Prism.languages.dsl = HighlightDsl
-          Prism.languages.rules = HighlightRules
-        }
 
         return highlight(str, lang)
       }
