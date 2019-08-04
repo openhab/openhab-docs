@@ -51,33 +51,31 @@ If push button I1 is pressed three times within 3s (or service button S is press
 
 The following table summarises the channels available for the ZMNHAD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Alarm (power) | alarm_power | Door | Switch | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Binary Sensor I2 | sensor_binary2 | Door | Switch | 
-| Alarm (power) 2 | alarm_power2 | Door | Switch | 
-| Binary Sensor I3 | sensor_binary3 | Door | Switch | 
-| Sensor (temperature) | sensor_temperature3 | Temperature | Number:Temperature | 
-| Sensor (temperature) | sensor_temperature4 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Binary Sensor I2 | sensor_binary2 | sensor_binary |  | Switch | 
+| Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
+| Binary Sensor I3 | sensor_binary3 | sensor_binary |  | Switch | 
+| Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) | sensor_temperature4 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -87,22 +85,19 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -112,28 +107,24 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor I2
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -143,10 +134,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (power) 2
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power2``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -156,10 +146,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Binary Sensor I3
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary3``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary3``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -169,16 +158,14 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature3``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature4``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature4``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -192,18 +179,18 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Input 1 switch type | Input 1 switch type |
 | 2 | Input 2 contact type | Input 2 contact type |
 | 3 | Input 3 contact type | Input 3 contact type |
-| 10 | Activate / deactivate functions ALL ON/ALL OFF | Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
-| 11 | Automatic turning off relay after set time | When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). 0 - Auto OFF disabled. 1 |
-| 12 | Automatic turning on relay after set time | When relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). 0 - Auto ON disabled. 1 – |
-| 15 | Automatic turning off / on seconds or milliseconds selection | NOTE: Parameter is the same for turning OFF or ON. |
-| 30 | Saving the state of the relay after a power failure | Saving the state of the relay after a power failure |
-| 40 | Power reporting in Watts on power change | 0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. NOTE: If power chan |
-| 42 | Power reporting in Watts on power change | Set value means time interval (0 – 32535) in seconds, when power report is send. Default value 300 (power report in Watts is send each 300s) 0 – Reporting Disabled 1 – 32535 = 1second – 32535 seconds. Reporting enabled. Power report is send with time |
-| 63 | Output Switch selection | Set value means the type of the device that is connected to the output. The device type can be normally open (NO) or normally close (NC). |
-| 100 | Enable / Disable Endpoints I2 or select Notification Type and Event | Enabling I2 means that Endpoint (I2) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Endpoint device type selec |
-| 101 | Enable / Disable Endpoints I3 or select Notification Type and Event | Enabling I3 means that Endpoint (I3) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Endpoint device type selec |
-| 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. 32536 – offset is 0.0C From 1 to 100–value from 0.1°C to 10.0°C is added to actual measured temperature. From 1001 to 1100 – value from -0.1 °C to -10.0 °C is subtracted to actual mea |
-| 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.0 – Reporting disabled1- 127 = 0,1°C – 12,7°C, step is 0,1°C |
+| 10 | Activate /deactivate ALL ON/ALL OFF | module responds to commands ALL ON / ALL OFF |
+| 11 | Automatic turning off relay after set time | When relay goes automatically OFF after this time |
+| 12 | Automatic turning on relay after set time | When relay goes automatically ON after this time |
+| 15 | Automatic switching units selection | NOTE: Parameter is the same for turning OFF or ON. |
+| 30 | Save the relay state after a power failure | Save the relay state after a power failure |
+| 40 | Power reporting in Watts on power change | Power reporting in Watts on power change |
+| 42 | Power reporting in Watts by Time interval | Set value means time interval when power report is send |
+| 63 | Output Switch selection | Set the type of the device connected to the output. (NO) / (NC) |
+| 100 | Endpoints I2 Notification Type and Event | Enable / Disable Endpoints I2 or select Notification Type and Event |
+| 101 |  Endpoints I3 Notification Type and Event | Enable / Disable Endpoints I3 or select Notification Type and Event |
+| 110 | Temperature sensor offset settings | Temperature sensor offset settings |
+| 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -254,9 +241,9 @@ The manufacturer defined default value is ```0``` (NO (normaly open) input type)
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
 
-### Parameter 10: Activate / deactivate functions ALL ON/ALL OFF
+### Parameter 10: Activate /deactivate ALL ON/ALL OFF
 
-Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
+module responds to commands ALL ON / ALL OFF
 
 The following option values may be configured -:
 
@@ -274,9 +261,12 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 ### Parameter 11: Automatic turning off relay after set time
 
-When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..). 0 - Auto OFF disabled. 1
+When relay goes automatically OFF after this time
+When relay is ON it goes automatically OFF after time defined by this parameter. Timer is reset to zero each time the module receive ON command regardless from where it comes (push button, associated module, controller,..)
 
-Values in the range 0 to 65535 may be set.
+  * 0 = disabled
+  * 1 - 32535 = time in units determined by parameter 15
+Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -285,19 +275,22 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 ### Parameter 12: Automatic turning on relay after set time
 
-When relay is OFF it goes automatically ON after time defined by this parameter. Timer is reset to zero each time the module receive OFF command regardless from where it comes (push button, associated module, controller,..). 0 - Auto ON disabled. 1 –
+When relay goes automatically ON after this time
+When relay is OFF it goes automatically ON after time defined by this parameter.Timer is reset to zero each time the module receive OFF command regardless from where it comes(push button, associated module, controller,..
 
-Values in the range 0 to 65535 may be set.
+  * 0 - Auto ON disabled
+  * 1 - 32535 time in units determined by parameter 15
+Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
 
-### Parameter 15: Automatic turning off / on seconds or milliseconds selection
+### Parameter 15: Automatic switching units selection
 
 NOTE: Parameter is the same for turning OFF or ON.
-
+Automatic turning off / on seconds or milliseconds selection
 The following option values may be configured -:
 
 | Value  | Description |
@@ -310,38 +303,48 @@ The manufacturer defined default value is ```0``` (Seconds selected).
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the relay after a power failure
+### Parameter 30: Save the relay state after a power failure
 
-Saving the state of the relay after a power failure
+Save the relay state after a power failure
 
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Flush 1relay module saves its state before power failure (it returns t |
-| 1 | Flush 1relay module does not save the state after a power failure, it |
+| 0 | Module saves its state before power failure |
+| 1 | Module stays OFF after a power failure |
 
-The manufacturer defined default value is ```0``` (Flush 1relay module saves its state before power failure (it returns t).
+The manufacturer defined default value is ```0``` (Module saves its state before power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 40: Power reporting in Watts on power change
 
-0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. NOTE: If power chan
+Power reporting in Watts on power change
+  * 0 – Reporting Disabled
+  * 1 – 100 = 1% - 100% Reporting enabled
 
-Values in the range 0 to 255 may be set.
+Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%.
+
+**NOTE:** if power changed is less than 1W, the report is not send (pushed), independent of percentage set
+Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 42: Power reporting in Watts on power change
+### Parameter 42: Power reporting in Watts by Time interval
 
-Set value means time interval (0 – 32535) in seconds, when power report is send. Default value 300 (power report in Watts is send each 300s) 0 – Reporting Disabled 1 – 32535 = 1second – 32535 seconds. Reporting enabled. Power report is send with time
+Set value means time interval when power report is send
+Set value means time interval (0 – 32535) in seconds, when power report is send.
 
-Values in the range 0 to 65535 may be set.
+  * Default value 300 (power report in Watts is send each 300s)
+  * 0 – Reporting Disabled
+  * 1 – 32535 = 1second – 32535 seconds.
+  * Reporting enabled. Power report is send with time 
+Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```300```.
 
@@ -350,68 +353,90 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 63: Output Switch selection
 
-Set value means the type of the device that is connected to the output. The device type can be normally open (NO) or normally close (NC).
+Set the type of the device connected to the output. (NO) / (NC)
+Set value means the type of the device that is connected to the output.
 
+The device type can be normally open (NO) or normally closed (NC).
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | When system is turned off the output is 0V (NC). |
-| 1 | When system is turned off the output is 230V or 24V (NO). |
+| 0 | 0V (NC). |
+| 1 | 230V or 240V (NO). |
 
-The manufacturer defined default value is ```0``` (When system is turned off the output is 0V (NC).).
+The manufacturer defined default value is ```0``` (0V (NC).).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 
 
-### Parameter 100: Enable / Disable Endpoints I2 or select Notification Type and Event
+### Parameter 100: Endpoints I2 Notification Type and Event
 
-Enabling I2 means that Endpoint (I2) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Endpoint device type selec
+Enable / Disable Endpoints I2 or select Notification Type and Event
+Enabling I2 means that Endpoint (I2) will be present on UI.
 
+Disabling it will result in hiding the endpoint according to the parameter set value.
+
+Additionally, a Notification Type and Event can be selected for the endpoint. 
+
+# **NOTE**:
+
+**After parameter change, module has to be re included into the network in order setting to take effect! **
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | Endpoint, I2 disabled |
-| 1 | Home Security; Motion Detection, unknown loc. |
-| 2 | Carbon Monoxide; Carbon Monoxide detected, unknown location. |
-| 3 | Carbon Dioxide; Carbon Dioxide detected, unknown location. |
-| 4 | Water Alarm; Water Leak detected, unknown lo.. |
-| 5 | Heat Alarm; Overheat detected, unknown loc. |
-| 6 | Smoke Alarm; Smoke detected, unknown loc. |
+| 1 | Home Security |
+| 2 | Carbon Monoxide |
+| 3 | Carbon Dioxide |
+| 4 | Water Alarm |
+| 5 | Heat Alarm |
+| 6 | Smoke Alarm |
 | 9 | Sensor binary. |
 
-The manufacturer defined default value is ```1``` (Home Security; Motion Detection, unknown loc.).
+The manufacturer defined default value is ```1``` (Home Security).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
 
 
-### Parameter 101: Enable / Disable Endpoints I3 or select Notification Type and Event
+### Parameter 101:  Endpoints I3 Notification Type and Event
 
-Enabling I3 means that Endpoint (I3) will be present on UI. Disabling it will result in hiding the endpoint according to the parameter set value. Additionally, a Notification Type and Event can be selected for the endpoint. Endpoint device type selec
+Enable / Disable Endpoints I3 or select Notification Type and Event
+Enabling I3 means that Endpoint (I3) will be present on UI.
 
+Disabling it will result in hiding the endpoint according to the parameter set value.
+
+Additionally, a Notification Type and Event can be selected for the endpoint
+
+# NOTE:
+
+**After parameter change, module has to be re included into the network in order setting to take effect!**
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
 | 0 | Endpoint, I3 disabled |
-| 1 | Home Security; Motion Detection, unknown loc. |
-| 2 | Carbon Monoxide; Carbon Monoxide detected, unknown location. |
-| 3 | Carbon Dioxide; Carbon Dioxide detected, unknown location. |
-| 4 | Water Alarm; Water Leak detected, unknown lo.. |
-| 5 | Heat Alarm; Overheat detected, unknown loc. |
-| 6 | Smoke Alarm; Smoke detected, unknown loc. |
+| 1 | Home Security |
+| 2 | Carbon Monoxide |
+| 3 | Carbon Dioxide |
+| 4 | Water Alarm |
+| 5 | Heat Alarm |
+| 6 | Smoke Alarm |
 | 9 | Sensor binary. |
 
-The manufacturer defined default value is ```1``` (Home Security; Motion Detection, unknown loc.).
+The manufacturer defined default value is ```1``` (Home Security).
 
 This parameter has the configuration ID ```config_101_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 110: Temperature sensor offset settings
 
-Set value is added or subtracted to actual measured value by sensor. 32536 – offset is 0.0C From 1 to 100–value from 0.1°C to 10.0°C is added to actual measured temperature. From 1001 to 1100 – value from -0.1 °C to -10.0 °C is subtracted to actual mea
+Temperature sensor offset settings
+Set value is added or subtracted to actual measured value by sensor.
 
+  *  default value 32536
+  * 32536 – offset is 0.0C - From 1 to 100–value from 0.1°C to 10.0°C is added to actual measured temperature.
+  * From 1001 to 1100 – value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```32536```.
@@ -421,8 +446,12 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 ### Parameter 120: Digital temperature sensor reporting
 
-If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.0 – Reporting disabled1- 127 = 0,1°C – 12,7°C, step is 0,1°C
+Digital temperature sensor reporting
+If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter
 
+  * default value 5 = 0,5°C
+  * 0 – Reporting disabled
+  * 1- 127 = 0,1°C – 12,7°C, step is 0,1°C
 Values in the range 0 to 127 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -453,54 +482,55 @@ The ZMNHAD supports 9 association groups.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-Lifeline group (reserved for communication with the main controller
+Lifeline group (reserved for communication with the main controller)
 
 Association group 1 supports 1 node.
 
-### Group 2: Basic on/off (triggered at change of the input Q 
-state and reflectin
+### Group 2: Basic on/off (triggered input Q state)
 
+basic on/off (triggered at change of the output Q state and reflecting its state) up to 16 nodes.
 
 Association group 2 supports 16 nodes.
 
-### Group 3: Basic on/off (triggered at change of the input I2 
-state and reflecti
+### Group 3: Basic on/off (triggered input I2 state)
 
+ basic on/off (triggered at change of the input I2 state and reflecting its state) up to 16 nodes.
 
 Association group 3 supports 16 nodes.
 
-### Group 4: Notification report (triggered at change of the input I2 
-state and r
+### Group 4: Notification report (triggered  input I2 state)
 
+Notification report (triggered at change of the input I2 state and reflecting its state) up to 16 nodes.
 
 Association group 4 supports 16 nodes.
 
-### Group 5: Binary Sensor (triggered at change of the input I2 
-state and reflect
+### Group 5: Binary Sensor (triggered  input I2 state)
 
+ Binary sensor (triggered at change of the input I2 state and reflecting its state) up to 16 nodes.
 
 Association group 5 supports 16 nodes.
 
-### Group 6: Basic on/off (triggered at change of the input I3 
-state and reflecti
+### Group 6: Basic on/off (triggered input I3 state)
 
+ basic on/off (triggered at change of the input I3 state and reflecting its state) up to 16 nodes
 
 Association group 6 supports 16 nodes.
 
-### Group 7: Notification report (triggered at change of the input I3
-state and re
+### Group 7: Notification report (triggered input I3 state)
 
+notification report (triggered at change of the input I3 state and reflecting its state) up to 16 nodes.
 
 Association group 7 supports 16 nodes.
 
-### Group 8: Binary Sensor report(triggered at change of the input I3 
-state and r
+### Group 8: Binary Sensor report (triggered  input I3 state)
 
+ binary sensor report (triggered at change of the input I3 state and reflecting its state) up to 16 nodes
 
 Association group 8 supports 16 nodes.
 
-### Group 9: Multilevel Sensor report (triggered at change of temperature sensor)
+### Group 9: Multilevel Sensor report (triggered temperature)
 
+ multilevel sensor report (triggered at change of temperature sensor) up to 16 nodes
 
 Association group 9 supports 16 nodes.
 

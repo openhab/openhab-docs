@@ -17,23 +17,36 @@ The YKFCON supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/292) to improve the documentation.
+The Yale Keyfree Connected smart lock gives you freedom to secure your home without the need for a key. Simple to use, you now have complete control on how you unlock your door.
+
+### Inclusion Information
+
+  1. Enter Master Code #
+  2. Enter 7 #
+  3. Keypad model will flash BLUE; press ‘1#’ to join the network ; lock will beep three times to indicate lock has joined the network successfully.
+  4. Touch model voice response will say” Network Mode”; lock screen will display ‘1’; select ‘1#’ to join the network . Voice response will say “Joining the wireless network” and then “Completed” when lock has successfully joined the network.
+
+### Exclusion Information
+
+  1. Enter Master Code #
+  2. Enter 7 #
+  3. Keypad model will flash RED; press ‘3#’ to leave the network ; lock will beep three times to indicate lock has left the network successfully.
+  4. Touch model voice response will say” Network Mode”; lock screen will display ‘3’; select ‘3#’ to leave the network . Voice response will say “Exit the wireless network” and then “Completed” when lock has successfully left the network
 
 ## Channels
 
 The following table summarises the channels available for the YKFCON -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Door Lock | lock_door | Door | Switch | 
-| Alarm | alarm_general | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Door Lock | lock_door | lock_door | Door | Switch | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
-
 Lock and unlock the door.
 
-The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The ```lock_door``` channel is of type ```lock_door``` and supports the ```Switch``` item and is in the ```Door``` category.
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
@@ -42,10 +55,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Unlocked |
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -55,11 +67,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

@@ -17,28 +17,36 @@ The Alarm Sound supports routing. This allows the device to communicate using ot
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/443) to improve the documentation.
+The Alarm Sound is a plug&play product developed by BeNext. Depending on present situations and scenes it sets off an alarm sound warning you and your family or scaring off unwanted activities. Use the Alarm Sound for security purposes and notifications indoors.
+
+Use the Alarm Sound in combination with the Door Sensor or MoLite Sensor to alert you when someone undesirably enters your home or work-space. The Alarm Sound possesses six different sound- and lighting-configurations to scare off any possible intruder. You can also customize personal preferred ‘scenes’ and ‘rules’ in our free of charge online manager in order to give the Alarm Sound dual functionality. You can even choose to create a new kind of alarm clock, which in combination with the Door Sensor or MoLite Sensor gives a wake up alarm if you haven’t left your bedroom after 09:00 am.
+
+### Inclusion Information
+
+Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process
+
+### Exclusion Information
+
+Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process
 
 ## Channels
 
 The following table summarises the channels available for the Alarm Sound -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Alarm | alarm_general | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -57,7 +65,7 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Set to Default | Set all configuration values to default values (factory settings) |
-| 2 | Destination routine on/off | Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound. |
+| 2 | Destination routine on/off | Test connection by sending a periodic test with sound on failure |
 | 3 | Desitnation routine succes time | Time it takes to send a new frame after the last frame has succesfully send |
 | 4 | Destination routine failed time | Time elapsed between failing to end a frame and sending a new frame. |
 | 7 | Select index sound/light mode | The index of the sound mode when a switch binary/basic set frame been received |
@@ -82,7 +90,9 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: Destination routine on/off
 
+Test connection by sending a periodic test with sound on failure
 Test connection by sending a periodic test. if the device doesn't react the user will be notified by a sound.
+
 0 this is turned off. 1-255 turn it on.
 Values in the range 0 to 255 may be set.
 
@@ -279,6 +289,7 @@ Association group 2 supports 1 node.
 ### Documentation Links
 
 * [Alarm Sound NL](https://www.cd-jackson.com/zwave_device_uploads/443/alarmsound-nl.pdf)
+* [Manual EN](https://www.cd-jackson.com/zwave_device_uploads/443/alarmsound.pdf)
 
 ---
 

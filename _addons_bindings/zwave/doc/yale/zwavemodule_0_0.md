@@ -17,7 +17,31 @@ The Yale Smart Door Lock Z-Wave Module supports routing. This allows the device 
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/810) to improve the documentation.
+Adds Z-Wave functionality to some locks.
+
+### Inclusion Information
+
+**Conexis L1**
+
+Press the R button on the lock 3 times quickly.
+
+**Keyless Connected or Keyfree Connected**
+
+  1. Enter the Master code on the lock followed by #
+  2. Press the 4 button followed by #
+  3. Press the 1 button followed by #
+
+### Exclusion Information
+
+**Conexis L1**
+
+Press the R button on the lock 3 times quickly.
+
+**Keyless Connected or Keyfree Connected**
+
+  1. Enter the Master code on the lock followed by #
+  2. Press the 4 button followed by #
+  3. Press the 3 button followed by #
 
 ## Channels
 
@@ -27,13 +51,13 @@ The following table summarises the channels available for the Yale Smart Door Lo
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
 | Alarm | alarm_general | alarm_general | Alarm | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 | Clock Time Offset | time_offset | time_offset | Temperature | Number | 
 
 ### Door Lock
 Lock and unlock the door.
 
-The ```lock_door``` channel and is of type ```lock_door``` and supports the ```Switch``` item and is in the ```Door``` category.
+The ```lock_door``` channel is of type ```lock_door``` and supports the ```Switch``` item and is in the ```Door``` category.
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
@@ -44,7 +68,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel and is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -54,12 +78,14 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-Channel type information on this channel is not found.
+Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel and is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 

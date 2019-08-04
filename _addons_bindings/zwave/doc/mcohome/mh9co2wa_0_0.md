@@ -1,19 +1,19 @@
 ---
 layout: documentation
-title: MH9-CO2-WD - ZWave
+title: MH9-CO2-WA - ZWave
 ---
 
 {% include base.html %}
 
-# MH9-CO2-WD CO2 Monitor Air quality detector
-This describes the Z-Wave device *MH9-CO2-WD*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh9co2wd_00_000```.
+# MH9-CO2-WA CO2 Monitor Air quality detector
+This describes the Z-Wave device *MH9-CO2-WA*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh9co2wa_00_000```.
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![MH9-CO2-WD product image](https://www.cd-jackson.com/zwave_device_uploads/455/455_default.png)
+![MH9-CO2-WA product image](https://www.cd-jackson.com/zwave_device_uploads/1078/1078_default.png)
 
 
-The MH9-CO2-WD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+The MH9-CO2-WA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
@@ -25,7 +25,7 @@ Device can be included into any Z-Wave network, and is compatible with any other
 
 **Specification**
 
-  * Power Supply：DC12V
+  * Power Supply：85~260VAC
   * CO2 display range: 0-2000ppm
   * Default threshold:1000ppm (adjustable)
   * Temperature range：-9.0～50 ℃
@@ -66,38 +66,31 @@ If a node ID displays, it means the device is already in a Z-Wave network.
 
 To press K2 once can remove it from the network. “\- - -” displays and press K1 once can return to normal work.
 
-### Wakeup Information
-
-The MH9-CO2-WD does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
-
-The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
-
 ## Channels
 
-The following table summarises the channels available for the MH9-CO2-WD -:
+The following table summarises the channels available for the MH9-CO2-WA -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
-| Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
 | Sensor (CO2) | sensor_co2 | sensor_co2 | CarbonDioxide | Number | 
+| Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (CO2) | alarm_co2 | alarm_co2 | CarbonDioxide | Switch | 
-| Alarm (general) | alarm_general | alarm_general | Alarm | Switch | 
 
-### Sensor (temperature)
-Indicates the current temperature.
+### Sensor (CO2)
+Indicates the CO2 level.
 
-The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_co2``` channel is of type ```sensor_co2``` and supports the ```Number``` item and is in the ```CarbonDioxide``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (relative humidity)
 Indicates the current relative humidity.
 
 The ```sensor_relhumidity``` channel is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Sensor (CO2)
-Indicates the CO2 level.
+### Sensor (temperature)
+Indicates the current temperature.
 
-The ```sensor_co2``` channel is of type ```sensor_co2``` and supports the ```Number``` item and is in the ```CarbonDioxide``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (CO2)
 Indicates if the carbon dioxide alarm is triggered.
@@ -111,23 +104,11 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Alarm (general)
-Indicates if an alarm is triggered.
-
-The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
 
 
 ## Device Configuration
 
-The following table provides a summary of the 1 configuration parameters available in the MH9-CO2-WD.
+The following table provides a summary of the 1 configuration parameters available in the MH9-CO2-WA.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -151,7 +132,7 @@ This parameter has the configuration ID ```config_1_2``` and is of type ```INTEG
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The MH9-CO2-WD supports 2 association groups.
+The MH9-CO2-WA supports 2 association groups.
 
 ### Group 1: Notification
 
@@ -184,19 +165,26 @@ Association group 2 supports 1 node.
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V5| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_ALARM_V4| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_ASSOCIATION_V1| |
-| COMMAND_CLASS_VERSION_V1| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_SENSOR_CONFIGURATION_V1| |
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/455/McoHomeCO2Monitor.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1078/20180531151046.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/455).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1078).
