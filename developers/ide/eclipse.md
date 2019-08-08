@@ -18,7 +18,8 @@ This guide focuses on existing Add-on (binding) development.
 
 1. Download the "Eclipse Installer": [can be downloaded from the Eclipse web site](https://wiki.eclipse.org/Eclipse_Installer)
 
-1. Launch the Installer and on the menu on the top right (3 bars) select `ADVANCED MODE...`, then select `Eclipse IDE for Java Developers`. Ensure that you select the Eclipse version to use to "2019-03" as version `2019-06` currently does not support bndtools. Finally select `Next >`.
+1. Launch the Installer and on the menu on the top right (3 bars) select `ADVANCED MODE...`, then select `Eclipse IDE for Java Developers`.
+Ensure that you select the Eclipse version to use to "2019-03" as version `2019-06` currently does not support bndtools. Finally select `Next >`.
 
 1. Under `Github Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab2-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
     
