@@ -398,7 +398,12 @@ cp $OPENHAB1_CONF/configurations/sitemaps/* $OPENHAB_CONF/sitemaps/*
   Add 'legend=true' to restore the chart's legend. 
 
 ### Rules
-Test your rules using commands in Karaf console. Use smarthome:send to send a command, smarthome:update to update an Item's state, and smarthome:status to get an Item's state. Use smarthome --help for more details. These can be used to simulate events that can trigger a rule, even in an installation without "active" devices.
+
+Test your rules using commands in Karaf console.
+Use smarthome:send to send a command, smarthome:update to update an Item's state, and smarthome:status to get an Item's state.
+Use smarthome --help for more details.
+These can be used to simulate events that can trigger a rule, even in an installation without "active" devices.
+
 Potential pitfalls in rules code:
   * All references to org.openhab.* in imports and class references should be removed. All of these classes are automatically included and have moved.
   * import org.joda.time.* statements should also be removed, they are also included by default.
