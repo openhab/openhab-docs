@@ -1,3 +1,5 @@
+@require '~vuepress-tabs/dist/themes/default.styl'
+
 .navbar:not(.headroom--top):not(.transparent)
     box-shadow rgba(10%,10%,10%,25%) 0 0 10px
     background-color rgba(98%, 98%, 99%, 0.9) // linear-gradient(180deg,hsla(0,0%,100%,.3),hsla(0,0%,100%,.3) 95%,rgba(0,0,0,.05) 99%,rgba(0,0,0,.04))
@@ -105,3 +107,49 @@ a[href*='.openhab.org'] .outbound
 
 .custom-block.tip
     border-color #2196f3 !important
+
+/* Tweaks for vuepress-tabs */
+
+.vuepress-tabs
+    .tabs-component
+        .tabs-component-tab.is-active .tabs-component-tab-a
+                color black
+        .tabs-component-panel
+            margin-top -8.4rem
+            padding-top 8.4rem
+
+@media (min-width: 700px)
+    .vuepress-tabs
+        .tabs-component-tab
+            border solid 1px #bbb
+            &.is-active
+                border-bottom solid 1px #fff
+                z-index 2
+                transform translateY(0)
+        .tabs-component-panels
+            border solid 1px #bbb
+
+@media (max-width: 699px)
+    .vuepress-tabs
+        .tabs-component-tabs
+            border 0
+            align-items center
+            display flex
+            justify-content flex-start
+            margin-bottom -2px
+            padding-left -1rem
+        .tabs-component-tab
+            background-color #fff
+            border solid 1px #bbb
+            border-radius 3px 3px 0 0
+            margin-right .25em
+            transition transform .3s ease
+            &.is-active
+                border-bottom solid 1px #fff
+                z-index 2
+                transform translateY(0)
+        .tabs-component-panels
+            background-color #fff
+            border-top solid 1px #bbb
+            padding-top 0
+            margin-top 1px
