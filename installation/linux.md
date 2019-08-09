@@ -156,7 +156,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     ```text
     [openHAB-Testing]
     name=openHAB 2.x.x Testing
-    baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
+    baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/testing
     gpgcheck=1
     gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
     enabled=1
