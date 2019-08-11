@@ -138,7 +138,7 @@ While single mapping items works for many use cases, occasionally multiple openH
 
 For this example we will use various use cases, a thermostat, a stereo, a security system, a washer and a fan.
 
-In openHAB a thermostat is modeled as many different items, typically there are items for set points (target, heat, cool), modes, and the current temperature. To map these items to a single endpoint in Alexa, we will add them to a group which also uses "Alexa" metadata. When items are Alexa-enabled, but are also a member of a group Alexa-enabled, they will be added to the group endpoint and not exposed as their own endpoints.
+In openHAB a thermostat is modeled as many different items, typically there are items for setpoints (target, heat, cool), modes, and the current temperature. To map these items to a single endpoint in Alexa, we will add them to a group which also uses "Alexa" metadata. When items are Alexa-enabled, but are also a member of a group Alexa-enabled, they will be added to the group endpoint and not exposed as their own endpoints.
 
 ```
 Group  Thermostat    "Bedroom"                                {alexa="Endpoint.Thermostat"}
@@ -247,38 +247,41 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * Rollershutter
     * Default category: OTHER
   * `ThermostatController.targetSetpoint`
-    * Items that represent a target set point for a thermostat, value may be in Celsius or Fahrenheit depending on how the item is configured (e.g., scale=Fahrenheit). If omitted, the scale will be determined based on: (1) unit of measurement unit if Number:Temperature item type; (2) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (3) defaults to Celsius.
+    * Items that represent a target setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
       * scale=`<scale>`
-        * Celsius
-        * Fahrenheit
-        * Kelvin
+        * Celsius [10°C -> 32°C]
+        * Fahrenheit [50°F -> 90°F]
+      * setpointRange=`<minValue:maxValue>`
+        * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.upperSetpoint`
-    * Items that represent a upper or HEAT set point for a thermostat, value may be in Celsius or Fahrenheit depending on how the item is configured (e.g., scale=Fahrenheit). If omitted, the scale will be determined based on: (1) unit of measurement unit if Number:Temperature item type; (2) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (3) defaults to Celsius.
+    * Items that represent a upper or HEAT setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
       * scale=`<scale>`
-        * Celsius
-        * Fahrenheit
-        * Kelvin
+        * Celsius [10°C -> 32°C]
+        * Fahrenheit [50°F -> 90°F]
       * comfortRange=`<number>`
         * When dual setpoints (upper, lower) are used this is the amount over the requested temperature when requesting Alexa to set or adjust the current temperature.  Defaults to comfortRange=1 if using Fahrenheit and comfortRange=.5 if using Celsius. Ignored if a targetSetpoint is included in the thermostat group.
+      * setpointRange=`<minValue:maxValue>`
+        * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.lowerSetpoint`
-    * Items that represent a lower or COOL set point for a thermostat, value may be in Celsius or Fahrenheit depending on how the item is configured (e.g., scale=Fahrenheit). If omitted, the scale will be determined based on: (1) unit of measurement unit if Number:Temperature item type; (2) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (3) defaults to Celsius.
+    * Items that represent a lower or COOL setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
       * scale=`<scale>`
-        * Celsius
-        * Fahrenheit
-        * Kelvin
+        * Celsius [10°C -> 32°C]
+        * Fahrenheit [50°F -> 90°F]
       * comfortRange=`<number>`
         * When dual setpoints (upper,lower) are used this is the amount under the requested temperature when requesting Alexa to set or adjust the current temperature.  Defaults to comfortRange=1 if using Fahrenheit and comfortRange=.5 if using Celsius.  Ignored if a targetSetpoint is included in the thermostat group.
+      * setpointRange=`<minValue:maxValue>`
+        * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.thermostatMode`
     * Items that represent the mode for a thermostat, default string values are "OFF=off,HEAT=heat,COOL=cool,ECO=eco,AUTO=auto", but these can be mapped to other values in the metadata. The mapping can be, in order of precedence, user-defined (AUTO=3,...) or preset-based related to the thermostat binding used (binding=`<value>`). For the binding parameter, it will be automatically determined if the associated item is using a 2.x addon (via channel metadata). If neither of these settings are provided, for thermostats that only support a subset of the standard modes, a comma delimited list of the Alexa supported modes should be set using the supportedModes parameter, otherwise, the supported list will be compiled based of the default mapping.
@@ -304,14 +307,13 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to, depending on the parameters provided, either user-based, preset-based or default item type-based mapping.
     * Default category: THERMOSTAT
   * `TemperatureSensor.temperature`
-    * Items that represent the current temperature, value may be in Celsius or Fahrenheit depending on how the item is configured (e.g., scale=Fahrenheit). If omitted, the scale will be determined based on: (1) unit of measurement unit if Number:Temperature item type; (2) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (3) defaults to Celsius.
+    * Items that represent the current temperature. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
       * scale=`<scale>`
         * Celsius
         * Fahrenheit
-        * Kelvin
     * Default category: TEMPERATURE_SENSOR
   * `LockController.lockState`
     * Items that represent the state of a lock (ON lock, OFF unlock). When associated to an [item sensor](#item-sensor), the state of that item will be returned instead of the original actionable item. Additionally, when linking to such item, multiple properties to one state can be mapped with column delimiter (e.g. for a Z-Wave lock: [LOCKED="1:3",UNLOCKED="2:4",JAMMED=11]).
