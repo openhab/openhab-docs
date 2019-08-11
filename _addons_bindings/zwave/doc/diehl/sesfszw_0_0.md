@@ -8,6 +8,11 @@ title: SES FS-ZW - ZWave
 # SES FS-ZW Plug Actuator
 This describes the Z-Wave device *SES FS-ZW*, manufactured by *Diehl AKO* with the thing type UID of ```diehl_sesfszw_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
+![SES FS-ZW product image](https://www.cd-jackson.com/zwave_device_uploads/671/671_default.png)
+
+
 The SES FS-ZW supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -16,11 +21,9 @@ The SES FS-ZW supports routing. This allows the device to communicate using othe
 
 The inclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
-1. Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).
-
-2. Start “Inclusion” mode on the chosen central unit.
-
-3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
+  1. Plug the plug actuator into a fixed mains outlet with grounding contacts (CEE 7/4).
+  2. Start “Inclusion” mode on the chosen central unit.
+  3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
 
 The Status LED lights up white.
 
@@ -30,11 +33,9 @@ During the next 5 seconds, the wireless connection is established and the inclus
 
 The exclusion process is controlled by the central unit – refer to the documentation for the central unit.
 
-1. Make sure that no device is plugged into the plug actuator.
-
-2. Start “Exclusion” mode on the chosen central unit.
-
-3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
+  1. Make sure that no device is plugged into the plug actuator.
+  2. Start “Exclusion” mode on the chosen central unit.
+  3. Press the button on the plug actuator 3 times within a period of around 2 seconds.
 
 The Status LED lights up white.
 
@@ -44,38 +45,34 @@ The exclusion process for disconnecting the plug actuator from the central unit 
 
 The following table summarises the channels available for the SES FS-ZW -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Alarm (system) | alarm_system |  | Switch | 
-| Alarm (heat) | alarm_heat |  | Switch | 
-| Alarm (power) | alarm_power | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Alarm (heat) | alarm_heat | alarm_heat | Fire | Switch | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (system)
-
 Indicates if a system alarm is triggered.
 
-The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -85,10 +82,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (heat)
-
 Indicates if a heat alarm is triggered.
 
-The ```alarm_heat``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_heat``` channel is of type ```alarm_heat``` and supports the ```Switch``` item and is in the ```Fire``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -98,10 +94,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

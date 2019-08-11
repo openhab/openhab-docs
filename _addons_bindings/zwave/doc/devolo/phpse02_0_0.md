@@ -70,29 +70,37 @@ FREQUENCY
   
 Source: https://www.zipato.com/product/multisound-indoor-siren
 
+### Inclusion Information
+
+Press the tamper key three times within 1.5 seconds to enter the inclusion mode.
+
+After successful inclusion, the LED will light up for 1 second.
+
+### Exclusion Information
+
+Press the tamper key three times within 1.5 seconds to enter the exclusion mode.
+
 ## Channels
 
 The following table summarises the channels available for the ph-pse02 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
-| Alarm (general) | alarm_general | Door | Switch | 
-| Start Sound | notification_send |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (general) | alarm_general | alarm_general | Alarm | Switch | 
+| Start Sound | notification_send | notification_send |  | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -102,10 +110,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm (burglar)
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -115,10 +122,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (general)
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -128,7 +134,6 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Start Sound
-
 <table>
   <tr>
     <td>
@@ -379,7 +384,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 Sends a notification.
 
-The ```notification_send``` channel supports the ```Number``` item.
+The ```notification_send``` channel is of type ```notification_send``` and supports the ```Number``` item.
 
 
 

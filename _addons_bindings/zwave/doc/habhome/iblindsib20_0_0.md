@@ -33,6 +33,10 @@ An intelligent Z-Wave blind motor that installs out of sight in existing Horizon
 
 If you are having issues with exclusion, please check our troubleshooting page here.
 
+### General Usage Information
+
+NOTE:  **The command polling period should be set to 'disabled' **
+
 ## Channels
 
 The following table summarises the channels available for the IB2.0 -:
@@ -62,7 +66,35 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 1 configuration parameters available in the IB2.0.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | Auto Calibration Torque | Adjust Torque Value for Auto Calibration |
+
+### Parameter 1: Auto Calibration Torque
+
+Adjust Torque Value for Auto Calibration
+Changing the Auto Calibration torque will allow you to change the initial calibration torque.  Reducing the torque helps improve calibration for small blinds and increasing the torque helps improve calibration for large blinds. 
+
+Calibration will automatically begin when the parameter value is received by iblinds.  After calibration is completed the parameter value will be set back to the default value of 1. 
+
+**\*\\*\* INCREASE TORQUE AT YOUR OWN RISK \*\****  Increasing torque can cause damage to lightweight and/or small blinds.  Only increase torque if the endpoints need adjusting. This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 1 | Calibrate using default torque |
+| 2 | Reduce calibration torque by 1 factor |
+| 3 | Reduce calibration torque by 2 factors |
+| 4 | Increase calibration torque by .5 factor |
+| 5 | Increase calibration torque by 1 factor |
+
+The manufacturer defined default value is ```1``` (Calibrate using default torque ).
+
+This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+
 
 ## Association Groups
 
@@ -92,6 +124,7 @@ Association group 1 supports 5 nodes.
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_BATTERY_V1| |

@@ -19,28 +19,52 @@ The doorSensor does not permanently listen for messages sent from the controller
 
 ## Overview
 
+Basic operations
+
+  * The Door Sensor can be placed on any door or window.
+  * The Door Sensor can report the status of the door (OPEN/CLOSED).
+  * The Door Sensor can measure the temperature.
+  * The Door Sensor also has a screw connector for an external (dry) contact.
+  * Indoor use only.
+
+How it operates
+
+After a successful inclusion the Door Sensor can be mounted on the wall or door/window. When opening the door the indicator light will blink shortly, this indicates that a z-wave message has been send successfully.
+
+With a controller you can request the temperature and battery level.
+
+### Inclusion Information
+
+Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. 
+
+### Exclusion Information
+
+Press and hold the tamper switch for two seconds and release to start the inclusion or exclude process. 
+
 ### Wakeup Information
 
 The doorSensor does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+
+It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for 4 seconds.
+
 ## Channels
 
 The following table summarises the channels available for the doorSensor -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Door Sensor | sensor_door | Door | Contact | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Alarm (CO) | alarm_co | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Door Sensor | sensor_door | sensor_door | Door | Contact | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Alarm (CO) | alarm_co | alarm_co |  | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Sensor
-
 Indicates if the door/window is open or closed.
 
-The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
 
@@ -50,16 +74,14 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (CO)
-
 Indicates if the carbon monoxide alarm is triggered.
 
-The ```alarm_co``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_co``` channel is of type ```alarm_co``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -69,11 +91,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration
@@ -168,13 +189,15 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The doorSensor supports 2 association groups.
 
-### Group 1: Send frame to every node in this group (internal contact)
+### Group 1: Send frame to (internal contact) nodes
 
+Send frame to every node in this group (internal contact)
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Send frame to every node in this group (external contact)
+### Group 2: Send frame to external contact nodes
 
+Send frame to every node in this group (external contact)
 
 Association group 2 supports 5 nodes.
 

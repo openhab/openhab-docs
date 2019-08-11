@@ -8,6 +8,8 @@ title: Molite - ZWave
 # Molite Movement sensor with temperature and light sensor
 This describes the Z-Wave device *Molite*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_molite_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
 ![Molite product image](https://www.cd-jackson.com/zwave_device_uploads/374/374_default.png)
 
 
@@ -17,29 +19,46 @@ The Molite does not permanently listen for messages sent from the controller - i
 
 ## Overview
 
+Basic operations
+
+  * The MoLiTe can detect movement,
+  * The MoLiTe can measure light intensity
+  * The MoLiTe can measure the temperature
+  * The MoLiTe can trigger a security system
+
+### Inclusion Information
+
+Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process
+
+### Exclusion Information
+
+Press and hold the tamper switch for 2 seconds and release to start the inclusion or exclude process
+
 ### Wakeup Information
 
 The Molite does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+
+It is possible to send a wake up notification on user interaction. To do this press and hold the tamper switch for four seconds (mount the device).
+
 ## Channels
 
 The following table summarises the channels available for the Molite -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Alarm | alarm_general | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -49,22 +68,19 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -74,11 +90,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration
@@ -89,21 +104,21 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 1 | Reset to factory settings | Set all configuration values to default values (factory settings). |
-| 2 | Mode timeout | The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen. |
-| 3 | Switch off time | The switch off time will start running as soon as mode timeout is done. The Motion sensor is turned on and when movement is detected again. The mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message |
+| 2 | Mode timeout | Mode timeout |
+| 3 | Switch off time | Switch off time |
 | 4 | sensitivity | the sensitivity of the motion circuit |
 | 5 | The mode | The mode that is entered after detection |
 | 6 | The temperature offset | An offset for the temperature. |
-| 7 | Light table 100 % | If a LDR resistance measured lower then this value the returned light percentage is 100%. See chapter light table for more information. |
-| 8 | Light table 90 % | If a LDR resistance measured lower then this value the returned light percentage is 90%. See chapter light table for more information. |
-| 9 | Light table 80 % | If a LDR resistance measured lower then this value the returned light percentage is 80%. See chapter light table for more information. |
-| 10 | Light table 70 % | If a LDR resistance measured lower then this value the returned light percentage is 70%. See chapter light table for more information. |
-| 11 | Light table 60 % | If a LDR resistance measured lower then this value the returned light percentage is 60%. See chapter light table for more information. |
-| 12 | Light table 50 % | If a LDR resistance measured lower then this value the returned light percentage is 50%. See chapter light table for more information. |
-| 13 | Light table 40 % | If a LDR resistance measured lower then this value the returned light percentage is 40%. See chapter light table for more information. |
-| 14 | Light table 30 % | If a LDR resistance measured lower then this value the returned light percentage is 30%. See chapter light table for more information. |
-| 15 | Light table 20 % | If a LDR resistance measured lower then this value the returned light percentage is 20%. See chapter light table for more information. |
-| 16 | Light table 10 % | If a LDR resistance measured lower then this value the returned light percentage is 10%. See chapter light table for more information. |
+| 7 | Light table 100 % | Light table 100 % |
+| 8 | Light table 90 % | Light table 90 % |
+| 9 | Light table 80 % | Light table 80 % |
+| 10 | Light table 70 % | Light table 70 % |
+| 11 | Light table 60 % | Light table 60 % |
+| 12 | Light table 50 % | Light table 50 % |
+| 13 | Light table 40 % | Light table 40 % |
+| 14 | Light table 30 % | Light table 30 % |
+| 15 | Light table 20 % | Light table 20 % |
+| 16 | Light table 10 % | Light table 10 % |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
@@ -120,8 +135,8 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: Mode timeout
 
+Mode timeout
 The time used in mode 2 to turn the sensor off. This time will start running as soon as detection is seen.
-
 Values in the range 0 to 900 may be set.
 
 The manufacturer defined default value is ```900```.
@@ -131,8 +146,14 @@ This parameter has the configuration ID ```config_2_2``` and is of type ```INTEG
 
 ### Parameter 3: Switch off time
 
-The switch off time will start running as soon as mode timeout is done. The Motion sensor is turned on and when movement is detected again. The mode timeout (cfg param 1) will start running all over again. When switch off time is done a basic off message
+Switch off time
+The switch off time will start running as soon as mode timeout is done.
 
+The Motion sensor is turned on and when movement is detected again.
+
+The mode timeout (cfg param 1) will start running all over again.
+
+When switch off time is done a basic off message is sent to the associated node
 Values in the range 0 to 2700 may be set.
 
 The manufacturer defined default value is ```2700```.
@@ -160,10 +181,10 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 1 | Mode 1: no detection possible. Battery save mode. |
-| 2 | Mode 2: normal operation mode: send on after detection and off after g |
-| 3 | Mode 3: Z-Wave chip is always on to request e.g. version or manufactur |
+| 2 | Mode 2: normal operation mode: |
+| 3 | Z-Wave chip is always on to request |
 
-The manufacturer defined default value is ```2``` (Mode 2: normal operation mode: send on after detection and off after g).
+The manufacturer defined default value is ```2``` (Mode 2: normal operation mode: ).
 
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
@@ -181,8 +202,10 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 
 ### Parameter 7: Light table 100 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 100%. See chapter light table for more information.
+Light table 100 %
+If a LDR resistance measured lower then this value the returned light percentage is 100%.
 
+See chapter light table for more information.
 Values in the range 0 to 17 may be set.
 
 The manufacturer defined default value is ```17```.
@@ -192,8 +215,10 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 
 ### Parameter 8: Light table 90 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 90%. See chapter light table for more information.
+Light table 90 %
+If a LDR resistance measured lower then this value the returned light percentage is 90%.
 
+See chapter light table for more information.
 Values in the range 0 to 38 may be set.
 
 The manufacturer defined default value is ```38```.
@@ -203,8 +228,10 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 
 ### Parameter 9: Light table 80 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 80%. See chapter light table for more information.
+Light table 80 %
+If a LDR resistance measured lower then this value the returned light percentage is 80%.
 
+See chapter light table for more information.
 Values in the range 0 to 85 may be set.
 
 The manufacturer defined default value is ```85```.
@@ -214,8 +241,10 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 
 ### Parameter 10: Light table 70 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 70%. See chapter light table for more information.
+Light table 70 %
+If a LDR resistance measured lower then this value the returned light percentage is 70%.
 
+See chapter light table for more information.
 Values in the range 0 to 186 may be set.
 
 The manufacturer defined default value is ```186```.
@@ -225,8 +254,10 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 
 ### Parameter 11: Light table 60 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 60%. See chapter light table for more information.
+Light table 60 %
+If a LDR resistance measured lower then this value the returned light percentage is 60%.
 
+See chapter light table for more information.
 Values in the range 0 to 407 may be set.
 
 The manufacturer defined default value is ```407```.
@@ -236,8 +267,10 @@ This parameter has the configuration ID ```config_11_2``` and is of type ```INTE
 
 ### Parameter 12: Light table 50 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 50%. See chapter light table for more information.
+Light table 50 %
+If a LDR resistance measured lower then this value the returned light percentage is 50%.
 
+See chapter light table for more information.
 Values in the range 0 to 891 may be set.
 
 The manufacturer defined default value is ```891```.
@@ -247,8 +280,10 @@ This parameter has the configuration ID ```config_12_2``` and is of type ```INTE
 
 ### Parameter 13: Light table 40 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 40%. See chapter light table for more information.
+Light table 40 %
+If a LDR resistance measured lower then this value the returned light percentage is 40%.
 
+See chapter light table for more information.
 Values in the range 0 to 1949 may be set.
 
 The manufacturer defined default value is ```1949```.
@@ -258,8 +293,10 @@ This parameter has the configuration ID ```config_13_2``` and is of type ```INTE
 
 ### Parameter 14: Light table 30 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 30%. See chapter light table for more information.
+Light table 30 %
+If a LDR resistance measured lower then this value the returned light percentage is 30%.
 
+See chapter light table for more information.
 Values in the range 0 to 4265 may be set.
 
 The manufacturer defined default value is ```4265```.
@@ -269,8 +306,10 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 ### Parameter 15: Light table 20 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 20%. See chapter light table for more information.
+Light table 20 %
+If a LDR resistance measured lower then this value the returned light percentage is 20%.
 
+See chapter light table for more information.
 Values in the range 0 to 9332 may be set.
 
 The manufacturer defined default value is ```9332```.
@@ -280,8 +319,10 @@ This parameter has the configuration ID ```config_15_2``` and is of type ```INTE
 
 ### Parameter 16: Light table 10 %
 
-If a LDR resistance measured lower then this value the returned light percentage is 10%. See chapter light table for more information.
+Light table 10 %
+If a LDR resistance measured lower then this value the returned light percentage is 10%.
 
+See chapter light table for more information.
 Values in the range 0 to 20417 may be set.
 
 The manufacturer defined default value is ```20417```.
@@ -312,8 +353,9 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The Molite supports 1 association group.
 
-### Group 1: Devices to be switched on when motion detected and off after on time
+### Group 1: Devices to be switched on when motion detected
 
+Devices to be switched on when motion detected and off after on time
 
 Association group 1 supports 5 nodes.
 

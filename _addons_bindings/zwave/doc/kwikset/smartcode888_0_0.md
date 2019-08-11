@@ -38,19 +38,18 @@ Kwikset®, the leader in residential security, introduces the SmartCode™ 888 T
 
 The following table summarises the channels available for the SmartCode 888 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Door Lock | lock_door | Door | Switch | 
-| Alarm (access) | alarm_access | Door | Switch | 
-| Alarm (power) | alarm_power | Door | Switch | 
-| Alarm (number) | alarm_raw |  | String | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Door Lock | lock_door | lock_door | Door | Switch | 
+| Alarm (access) | alarm_access | alarm_access | Door | Switch | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm (number) | alarm_raw | alarm_raw |  | String | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
-
 Lock and unlock the door.
 
-The ```lock_door``` channel supports the ```Switch``` item and is in the ```Door``` category.
+The ```lock_door``` channel is of type ```lock_door``` and supports the ```Switch``` item and is in the ```Door``` category.
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
@@ -59,10 +58,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Unlocked |
 
 ### Alarm (access)
-
 Indicates if the access control alarm is triggered.
 
-The ```alarm_access``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_access``` channel is of type ```alarm_access``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -72,10 +70,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -85,17 +82,15 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (number)
-
 Provides alarm parameters as json string.
 
-The ```alarm_raw``` channel supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_raw``` channel is of type ```alarm_raw``` and supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
 This channel sets, and provides the alarm state as a JSON string. It is designed for use in rules.
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration
@@ -207,14 +202,15 @@ This parameter has the configuration ID ```config_37_1``` and is of type ```INTE
 ### Parameter 40: Factory Default
 
 Reset to factory default settings
-Reset factory default settings, except for the anti-theft setting.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Reset factory default settings, except for the anti-theft setting.
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
+| 0 | Normal |
 | 1 | Factory Default |
 
-The manufacturer defined default value is ```0```.
+The manufacturer defined default value is ```0``` (Normal).
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 

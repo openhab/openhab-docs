@@ -31,55 +31,51 @@ Press the #1 button 3 times.
 
 The following table summarises the channels available for the Da Vinci Switch Default -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Blinds control | blinds_control | Blinds | Rollershutter | 
-| Scene Number | scene_number |  | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Scene Number 1 | scene_number1 |  | Number | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Scene Number 2 | scene_number2 |  | Number | 
-| Switch 3 | switch_binary3 | Switch | Switch | 
-| Scene Number 3 | scene_number3 |  | Number | 
-| Switch 4 | switch_binary4 | Switch | Switch | 
-| Scene Number 4 | scene_number4 |  | Number | 
-| Switch 5 | switch_binary5 | Switch | Switch | 
-| Scene Number 5 | scene_number5 |  | Number | 
-| Switch 6 | switch_binary6 | Switch | Switch | 
-| Scene Number 6 | scene_number6 |  | Number | 
-| Switch 7 | switch_binary7 | Switch | Switch | 
-| Scene Number 7 | scene_number7 |  | Number | 
-| Switch 8 | switch_binary8 | Switch | Switch | 
-| Scene Number 8 | scene_number8 |  | Number | 
-| Switch 9 | switch_binary9 | Switch | Switch | 
-| Scene Number 9 | scene_number9 |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Scene Number 1 | scene_number1 | scene_number |  | Number | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Scene Number 2 | scene_number2 | scene_number |  | Number | 
+| Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
+| Scene Number 3 | scene_number3 | scene_number |  | Number | 
+| Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
+| Scene Number 4 | scene_number4 | scene_number |  | Number | 
+| Switch 5 | switch_binary5 | switch_binary | Switch | Switch | 
+| Scene Number 5 | scene_number5 | scene_number |  | Number | 
+| Switch 6 | switch_binary6 | switch_binary | Switch | Switch | 
+| Scene Number 6 | scene_number6 | scene_number |  | Number | 
+| Switch 7 | switch_binary7 | switch_binary | Switch | Switch | 
+| Scene Number 7 | scene_number7 | scene_number |  | Number | 
+| Switch 8 | switch_binary8 | switch_binary | Switch | Switch | 
+| Scene Number 8 | scene_number8 | scene_number |  | Number | 
+| Switch 9 | switch_binary9 | switch_binary | Switch | Switch | 
+| Scene Number 9 | scene_number9 | scene_number |  | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Blinds control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -93,16 +89,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
-
 Triggers when a scene button is pressed.
 
-The ```scene_number1``` channel supports the ```Number``` item.
+The ```scene_number1``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -116,16 +110,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 2
-
 Triggers when a scene button is pressed.
 
-The ```scene_number2``` channel supports the ```Number``` item.
+The ```scene_number2``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -139,16 +131,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 3
-
 Switch the power on and off.
 
-The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 3
-
 Triggers when a scene button is pressed.
 
-The ```scene_number3``` channel supports the ```Number``` item.
+The ```scene_number3``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -162,16 +152,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 4
-
 Switch the power on and off.
 
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 4
-
 Triggers when a scene button is pressed.
 
-The ```scene_number4``` channel supports the ```Number``` item.
+The ```scene_number4``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -185,16 +173,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 5
-
 Switch the power on and off.
 
-The ```switch_binary5``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 5
-
 Triggers when a scene button is pressed.
 
-The ```scene_number5``` channel supports the ```Number``` item.
+The ```scene_number5``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -208,16 +194,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 6
-
 Switch the power on and off.
 
-The ```switch_binary6``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary6``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 6
-
 Triggers when a scene button is pressed.
 
-The ```scene_number6``` channel supports the ```Number``` item.
+The ```scene_number6``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -231,16 +215,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 7
-
 Switch the power on and off.
 
-The ```switch_binary7``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary7``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 7
-
 Triggers when a scene button is pressed.
 
-The ```scene_number7``` channel supports the ```Number``` item.
+The ```scene_number7``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -254,16 +236,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 8
-
 Switch the power on and off.
 
-The ```switch_binary8``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary8``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 8
-
 Triggers when a scene button is pressed.
 
-The ```scene_number8``` channel supports the ```Number``` item.
+The ```scene_number8``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -277,16 +257,14 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 6        | 5 x keypress       |
 
 ### Switch 9
-
 Switch the power on and off.
 
-The ```switch_binary9``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary9``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 9
-
 Triggers when a scene button is pressed.
 
-The ```scene_number9``` channel supports the ```Number``` item.
+The ```scene_number9``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -773,7 +751,7 @@ Association group 1 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -791,7 +769,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -802,7 +780,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -813,7 +791,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -824,7 +802,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -835,7 +813,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -846,7 +824,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -857,7 +835,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -868,7 +846,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
@@ -879,7 +857,7 @@ Association group 1 supports 5 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |

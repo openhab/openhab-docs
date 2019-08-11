@@ -8,6 +8,8 @@ title: Tag Reader - ZWave
 # Tag Reader Tag Reader
 This describes the Z-Wave device *Tag Reader*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_tagreader_00_000```.
 
+The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
+
 ![Tag Reader product image](https://www.cd-jackson.com/zwave_device_uploads/444/444_default.png)
 
 
@@ -17,34 +19,54 @@ The Tag Reader does not permanently listen for messages sent from the controller
 
 ## Overview
 
+Basic operations
+
+  * The Tag Reader 500 is a security enabled Z-Wave Plus product.
+  * The Tag Reader 500 can arm/disarm a security system.
+  * The Tag Reader 500 can read RFID-tags.
+  * The Tag Reader 500 has the possibility for the user to manually insert codes.
+  * The Tag Reader 500’s indicator light will react differently on each action.
+  * The Tag Reader 500 has a buzzer, which can be used as walk-in/walk-out notification (alarm is being disabled/activated).
+
+### Inclusion Information
+
+  1. Press and hold the enter button for two seconds (indication LED blinks shortly) and release to start the add routine.
+  2. The indication LED will start blinking twice when the Tag Reader 500 starts the add routine.
+
+### Exclusion Information
+
+  1. Press and hold the enter button for two seconds (indication LED blinks shortly) and release to start the remove routine.
+  2. The indication LED will blink 3 times when the Tag Reader 500 starts the remove routine
+
 ### Wakeup Information
 
 The Tag Reader does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+
+The enter button is pressed for 4 seconds. (led will go on for 1 second to confirm).
+
 ## Channels
 
 The following table summarises the channels available for the Tag Reader -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
-| Alarm (access) | notification_access_control |  | Number | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (access) | notification_access_control | notification_access_control |  | Number | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Alarm (burglar)
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -54,14 +76,13 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (access)
-
 Event ID 5 = Away
 
 Event ID 6 = Home
 
 Access Control.
 
-The ```notification_access_control``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```notification_access_control``` channel is of type ```notification_access_control``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Number``` item type -:
 
@@ -106,11 +127,10 @@ The following state translation is provided for this channel to the ```Number```
 | 76 | Barrier associated with non-Z-wave remote control |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

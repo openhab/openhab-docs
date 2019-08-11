@@ -8,25 +8,45 @@ title: powerSwitch - ZWave
 # powerSwitch Power Switch EU
 This describes the Z-Wave device *powerSwitch*, manufactured by *[BeNext](http://www.benext.eu/)* with the thing type UID of ```benext_powerswitch_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
+![powerSwitch product image](https://www.cd-jackson.com/zwave_device_uploads/224/224_default.png)
+
+
 The powerSwitch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/224) to improve the documentation.
+Basic operations
+
+  * The Power Switch can be remotely controlled.
+  * The Power Switch can be controlled by the push button on the front of the device.
+  * The Power Switch’s indicator light can indicate the status of the switch (ON or OFF).
+
+How it operates
+
+Control and monitor your lightning or any other appliance. Easy plug and play. 
+
+### Inclusion Information
+
+Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process.
+
+### Exclusion Information
+
+Press and hold the push button until the indicator light is blinking than release the button to start the inclusion or exclusion process.
 
 ## Channels
 
 The following table summarises the channels available for the powerSwitch -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
@@ -39,7 +59,7 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Set to Default | Set all configuration values to default values (factory settings) |
 | 4 | Start up with last known socket status | state in what the switch is when power is supplied |
-| 9 | Relay delay time | When the relay is switched it can't be switched again until the configured time has passed |
+| 9 | Relay delay time | Relay delay time |
 | 10 | Led indicator | Show the led compared to the relay state |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -67,11 +87,13 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 ### Parameter 9: Relay delay time
 
+Relay delay time
 When the relay is switched it can't be switched again until the configured time has passed
-Value * 10 milliseconds
-Values in the range 0 to 0 may be set.
 
-The manufacturer defined default value is ```0```.
+Value * 10 milliseconds
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```50```.
 
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 

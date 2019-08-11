@@ -221,7 +221,7 @@ This parameter defines the LED colour when the motor is running.
 
 6 – Cyan
 
-7 – MagentaThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+7 – Magenta
 Values in the range 0 to 7 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -246,7 +246,7 @@ This parameter defines the LED colour when the device motor is not running.
 
 6 – Cyan
 
-7 – MagentaThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+7 – Magenta
 Values in the range 0 to 7 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -259,7 +259,7 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 This parameter allows to adjust the LED frame brightness.
 0 – LED disabled
 
-1-100 (1-100% brightness)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-100 (1-100% brightness)
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -272,7 +272,7 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 This parameter allows reversing the operation of the buttons.
 0 – default (1st button UP, 2nd button DOWN)
 
-1 – reversed (1st button DOWN, 2nd button UP)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1 – reversed (1st button DOWN, 2nd button UP)
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -287,7 +287,7 @@ This parameter allows reversing the operation of Q1 and Q2 without changing the 
 
 0 - default (Q1 – UP, Q2 – DOWN)
 
-1 - reversed (Q1 – DOWN, Q2 – UP)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1 - reversed (Q1 – DOWN, Q2 – UP)
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -316,12 +316,12 @@ This parameter determines to which alarm frames and how the device should react.
   * 0x2X – LED frame blinks green,
   * 0x4X – LED frame blinks blue,
   * 0x8X – dis-able LED frame,
-  * 0xFX – LED frame LAPD signal (red-white-blue)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+  * 0xFX – LED frame LAPD signal (red-white-blue)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_30_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_30_4_0000000F``` and is of type ```INTEGER```.
 
 
 ### Parameter 31: Alarm configuration - 2nd slot
@@ -347,12 +347,12 @@ default: \[0x05, 0xFF, 0x00, 0x00\](Water Alarm, any notification, no action)
   * 0x2X – LED frame blinks green,
   * 0x4X – LED frame blinks blue,
   * 0x8X – dis-able LED frame,
-  * 0xFX – LED frame LAPD signal (red-white-blue)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+  * 0xFX – LED frame LAPD signal (red-white-blue)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_31_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_31_4_0000000F``` and is of type ```INTEGER```.
 
 
 ### Parameter 32: Alarm configuration - 3rd slot
@@ -378,12 +378,13 @@ Default: \[0x01, 0xFF, 0x00, 0x00\](Smoke Alarm, any notification, no action)
   * 0x2X – LED frame blinks green,
   * 0x4X – LED frame blinks blue,
   * 0x8X – dis-able LED frame,
-  * 0xFX – LED frame LAPD signal (red-white-blue)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+  * 0xFX – LED frame LAPD signal (red-white-blue)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_32_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_32_4_0000000F``` and is of type ```INTEGER```.
+This is a read only parameter.
 
 
 ### Parameter 33: Alarm configuration - 4th slot
@@ -409,12 +410,12 @@ default: \[0x02, 0xFF, 0x00, 0x00\](CO Alarm, any notification, no action)
   * 0x2X – LED frame blinks green,
   * 0x4X – LED frame blinks blue,
   * 0x8X – dis-able LED frame,
-  * 0xFX – LED frame LAPD signal (red-white-blue)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+  * 0xFX – LED frame LAPD signal (red-white-blue)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_33_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_33_4_0000000F``` and is of type ```INTEGER```.
 
 
 ### Parameter 34: Alarm configuration - 5th slot
@@ -440,12 +441,12 @@ default: 0x04, 0xFF, 0x00, 0x00](Heat Alarm, any notification, no action)
   * 0x2X – LED frame blinks green,
   * 0x4X – LED frame blinks blue,
   * 0x8X – dis-able LED frame,
-  * 0xFX – LED frame LAPD signal (red-white-blue)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 0 may be set.
+  * 0xFX – LED frame LAPD signal (red-white-blue)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_34_4``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_34_4_0000000F``` and is of type ```INTEGER```.
 
 
 ### Parameter 35: Alarm configuration – duration
@@ -455,7 +456,7 @@ This parameter defines duration of alarm se-quence. When time set in this parame
 
 0 – infinite
 
-1-32400 (1s-9h, 1s step) – durationThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-32400 (1s-9h, 1s step) – duration
 Values in the range 0 to 32400 may be set.
 
 The manufacturer defined default value is ```600```.
@@ -476,8 +477,8 @@ This parameter determines which actions result in sending scene IDs assigned to 
 
 4 – Key pressed 3 times
 
-8 – Key hold down and key releasedThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 8 may be set.
+8 – Key hold down and key released
+Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -497,8 +498,8 @@ This parameter determines which actions result in sending scene IDs assigned to 
 
 4 – Key pressed 3 times
 
-8 – Key hold down and key releasedThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 0 to 8 may be set.
+8 – Key hold down and key released
+Values in the range 0 to 15 may be set.
 
 The manufacturer defined default value is ```0```.
 
@@ -512,7 +513,7 @@ whether the power measurements should include power consumed by the device itsel
 
 0 – self-consumption not included
 
-1 – self-consumption includedThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1 – self-consumption included
 Values in the range 0 to 1 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -527,7 +528,7 @@ This parameter defines minimal change (from the last reported) in measured power
 
 0 - reporting on change disabled
 
-1-500 (1-500%, 1% step) – minimal changeThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-500 (1-500%, 1% step) – minimal change
 Values in the range 0 to 500 may be set.
 
 The manufacturer defined default value is ```15```.
@@ -542,7 +543,7 @@ This parameter defines reporting interval for measured power. Periodic reports a
 
 0 – periodic reports disabled
 
-30-32400 (30s-9h, 1s step) – time intervalThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+30-32400 (30s-9h, 1s step) – time interval
 Values in the range 0 to 32400 may be set.
 
 The manufacturer defined default value is ```3600```.
@@ -557,7 +558,7 @@ This parameter defines minimal change (from the last reported) in measured energ
 
 0 - reporting on change disabled
 
-1-500 (0.01-5kWh, 0.01kWh step) – minimal changeThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-500 (0.01-5kWh, 0.01kWh step) – minimal change
 Values in the range 0 to 500 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -572,7 +573,7 @@ This parameter defines reporting interval for measured energy. Periodic reports 
 
 0 – periodic reports disabled
 
-30-32400 (30s-9h, 1s step) – time intervalThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+30-32400 (30s-9h, 1s step) – time interval
 Values in the range 0 to 32400 may be set.
 
 The manufacturer defined default value is ```3600```.
@@ -589,7 +590,7 @@ By setting this parameter to 2 the device enters the calibration mode. The param
 
 1 - device is calibrated
 
-2 - force device calibrationThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+2 - force device calibration
 Values in the range 0 to 2 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -606,7 +607,7 @@ This parameter allows adjusting operation ac-cording to the connected device.
 
 5 – roller blind with built-in driver
 
-6 – roller blind with built-in driver (impulse)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+6 – roller blind with built-in driver (impulse)
 Values in the range 1 to 6 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -619,7 +620,7 @@ This parameter has the configuration ID ```config_151_1``` and is of type ```INT
 time of full turn cycle of the slats
 For Venetian blinds (parameter 151 set to 2) the parameter determines time of full turn cycle of the slats. The parameter is irrelevant for other modes.
 
-0-65535 (0 - 655.35s, every 0.01s) - time of turnThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+0-65535 (0 - 655.35s, every 0.01s) - time of turn
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```150```.
@@ -636,7 +637,7 @@ For Venetian blinds (parameter 151 set to 2) the parameter determines slats posi
 
 1 – slats return to previously set position in case of the main controller operation, momentary switch operation, or when the limit switch is reached
 
-2 – slats return to previously set position in case of the main controller operation, momen-tary switch operation, when the limit switch is reached or after receiving the Switch Multilevel Stop control frameThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+2 – slats return to previously set position in case of the main controller operation, momen-tary switch operation, when the limit switch is reached or after receiving the Switch Multilevel Stop control frame
 Values in the range 0 to 2 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -649,8 +650,8 @@ This parameter has the configuration ID ```config_153_1``` and is of type ```INT
 time after which the motor will be stopped after contacts closed
 The parameter determines the time after which the motor will be stopped after end switch contacts are closed.
 
-1-255 (0.1s - 25.5 seconds)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-Values in the range 1 to 255 may be set.
+1-255 (0.1s - 25.5 seconds)
+Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```10```.
 
@@ -662,7 +663,7 @@ This parameter has the configuration ID ```config_154_2``` and is of type ```INT
 Power threshold interpreted as reaching a limit switch.
 1-255 (1-255W) - report interval
 
-0 - no detectionThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+0 - no detection
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -675,7 +676,7 @@ This parameter has the configuration ID ```config_155_2``` and is of type ```INT
 time needed for roller blinds to reach the top
 This parameter determines the time needed for roller blinds to reach the top. For modes with positioning value is set automatically during calibration, otherwise, it must be set manually.
 
-1-65535 (0.01 - 655.35 seconds)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-65535 (0.01 - 655.35 seconds)
 Values in the range 1 to 65535 may be set.
 
 The manufacturer defined default value is ```6000```.
@@ -688,7 +689,7 @@ This parameter has the configuration ID ```config_156_4``` and is of type ```INT
 time needed for roller blinds to reach the bottom
 This parameter determines the time needed for roller blinds to reach the bottom.For modes with positioning value is set automatically during calibration, otherwise, it must be set manually.
 
-1-65535 (0.01 - 655.35 seconds)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+1-65535 (0.01 - 655.35 seconds)
 Values in the range 1 to 65535 may be set.
 
 The manufacturer defined default value is ```6000```.
