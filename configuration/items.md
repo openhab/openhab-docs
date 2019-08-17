@@ -322,7 +322,7 @@ The following guidelines apply to user-added icon files:
 - Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
 - Example filenames:
   - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+  - Bad: `PC-Display.svg`, `power-meter.png`, `tür⇔.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
