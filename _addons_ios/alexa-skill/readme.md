@@ -241,7 +241,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * Rollershutter
     * Default category: OTHER
   * `ThermostatController.targetSetpoint`
-    * Items that represent a target setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a target setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -252,7 +252,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.upperSetpoint`
-    * Items that represent a upper or HEAT setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a upper or HEAT setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -265,7 +265,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.lowerSetpoint`
-    * Items that represent a lower or COOL setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a lower or COOL setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -301,7 +301,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to, depending on the parameters provided, either user-based, preset-based or default item type-based mapping.
     * Default category: THERMOSTAT
   * `TemperatureSensor.temperature`
-    * Items that represent the current temperature. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of measurement unit if Number:Temperature item type; (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius.
+    * Items that represent the current temperature. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
