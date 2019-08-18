@@ -53,24 +53,25 @@ The following table summarises the channels available for the FGWREU-111 -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds Control  [Deprecated]| blinds_control | blinds_control | Blinds | Rollershutter | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
-| Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Blinds Control | blinds_control1 | blinds_control | Blinds | Rollershutter | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Alarm (power) 1 | alarm_power1 | alarm_power | Energy | Switch | 
 | Alarm (system) 1 | alarm_system1 | alarm_system |  | Switch | 
-| Dimmer 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
+| Slats Control | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 
-### Dimmer
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Blinds Control [Deprecated]
+Provides start / stop control of blinds.
 
-The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
@@ -122,11 +123,10 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Dimmer 1
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Blinds Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (watts) 1
 Indicates the instantaneous power consumption.
@@ -162,11 +162,10 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Dimmer 2
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+### Slats Control
+Provides start / stop control of blinds.
 
-The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control2``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 

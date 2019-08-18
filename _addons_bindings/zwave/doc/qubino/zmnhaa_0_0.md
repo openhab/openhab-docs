@@ -10,54 +10,62 @@ This describes the Z-Wave device *ZMNHAA*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
+![ZMNHAA product image](https://www.cd-jackson.com/zwave_device_uploads/205/205_default.jpg)
+
+
 The ZMNHAA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/205) to improve the documentation.
+This Z-Wave module is used for switching on or off the electrical device (e.g. light, fan, etc ...). The module can be controlled either through Z-wave network or through the wall switch.
+
+### Inclusion Information
+
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds).
+
+### Exclusion Information
+
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHAA -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Binary Sensor 1 | sensor_binary1 | Door | Switch | 
-| Binary Sensor 2 | sensor_binary2 | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Binary Sensor 1 | sensor_binary1 | sensor_binary |  | Switch | 
+| Binary Sensor 2 | sensor_binary2 | sensor_binary |  | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary1``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -67,10 +75,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -91,11 +98,11 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Input 1 switch type | Input 1 switch type |
 | 2 | Input 2 contact type | Input 2 contact type |
 | 3 | Input 3 contact type | Input 3 contact type |
-| 10 | Activate / deactivate functions ALL ON/ALL OFF | Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
-| 11 | Automatic turning off relay after set time | 0 - Auto OFF disabled 1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds |
-| 30 | Saving the state of the relay after a power failure | Saving the state of the relay after a power failure |
-| 40 | Power reporting in Watts on power change | 0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. NOTE: if power chan |
-| 42 | Power reporting in Watts on power change | default value 300 (power report in Watts is send each 300s) 0 – Reporting Disabled 1 – 65535 = 1second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value. |
+| 10 | Activate / deactivate functions ALL ON/ALL OFF | ctivate / deactivate functions ALL ON/ALL OFF |
+| 11 | Automatic turning off relay after set time | Automatic turning off relay after set time |
+| 30 | Relay state after a power failure | Relay state after a power failure |
+| 40 | Power reporting in Watts on power change | Power reporting in Watts on power change |
+| 42 | Power reporting in Watts on power change | Power reporting in Watts on power change |
 
 ### Parameter 1: Input 1 switch type
 
@@ -147,8 +154,8 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 ### Parameter 10: Activate / deactivate functions ALL ON/ALL OFF
 
+ctivate / deactivate functions ALL ON/ALL OFF
 Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
-
 The following option values may be configured -:
 
 | Value  | Description |
@@ -165,8 +172,11 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 ### Parameter 11: Automatic turning off relay after set time
 
-0 - Auto OFF disabled 1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds
+Automatic turning off relay after set time
+Default value 0
 
+  *  0 - Auto OFF disabled
+  *  1 – 65535 = 0,01second – 655,35 seconds Auto OFF enabled with define time, step is 10mseconds.
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -174,26 +184,29 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the relay after a power failure
+### Parameter 30: Relay state after a power failure
 
-Saving the state of the relay after a power failure
+Relay state after a power failure
 
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Flush 1relay module saves its state before power failure (it returns t |
-| 1 | Flush 1relay module does not save the state after a power failure, it |
+| 0 | Last saved state |
+| 1 | Power OFF |
 
-The manufacturer defined default value is ```0``` (Flush 1relay module saves its state before power failure (it returns t).
+The manufacturer defined default value is ```0``` (Last saved state).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 40: Power reporting in Watts on power change
 
-0 – Reporting Disabled 1 – 100 = 1% - 100% Reporting enabled Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. NOTE: if power chan
+Power reporting in Watts on power change
+  * 0 – Reporting Disabled
+  * 1 – 100 = 1% - 100% Reporting enabled
 
+Power report is send (push) only when actual power in Watts in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%
 Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```3```.
@@ -203,8 +216,12 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts on power change
 
-default value 300 (power report in Watts is send each 300s) 0 – Reporting Disabled 1 – 65535 = 1second – 65535 seconds. Reporting enabled. Power report is send with time interval set by entered value.
+Power reporting in Watts on power change
+  * default value 300 (power report in Watts is send each 300s)
+  * 0 – Reporting Disabled
+  * 1 – 65535 = 1second – 65535 seconds.
 
+Reporting enabled. Power report is send with time interval set by entered value. 
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -218,23 +235,24 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The ZMNHAA supports 4 association groups.
 
-### Group 1: basic on/off (triggered at change of the output 
-Q state and reflecti
+### Group 1: basic on/off 
 
+triggered at change of the output Q state and reflecting its state
+e
 
-Association group 1 supports 4 nodes.
+Association group 1 supports 16 nodes.
 
-### Group 2:  basic on/off (triggered at change of the input I2 
-state and reflect
+### Group 2:  basic on/off 
 
+(triggered at change of the input I2 state and reflecting its state)
 
-Association group 2 supports 4 nodes.
+Association group 2 supports 16 nodes.
 
-### Group 3:  basic on/off (triggered at change of the input I3 
-state and reflect
+### Group 3:  basic on/off 
 
+ttriggered at change of the input I3 state and reflecting its state)
 
-Association group 3 supports 4 nodes.
+Association group 3 supports 16 nodes.
 
 ### Group 4: Controller Updates
 

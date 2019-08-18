@@ -8,6 +8,8 @@ title: EZMotion Express - ZWave
 # EZMotion Express Wireless 3-in-1 Sensor
 This describes the Z-Wave device *EZMotion Express*, manufactured by *Express Controls* with the thing type UID of ```homeseer_ezmotionexpress_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
 ![EZMotion Express product image](https://www.cd-jackson.com/zwave_device_uploads/140/140_default.jpg)
 
 
@@ -17,31 +19,43 @@ The EZMotion Express does not permanently listen for messages sent from the cont
 
 ## Overview
 
+EZMotion™ enables fully automated lighting that turns on the lights when you enter a room and turns them off shortly after you leave. Sophisticated lighting, Audio, Video and heating/cooling are enabled with the EZMotion™ three-sensors-in-one Z-Wave® device.  
+
+### Inclusion Information
+
+Press and release the Join Button.
+
+### Exclusion Information
+
+Press and release the Join Button.
+
 ### Wakeup Information
 
 The EZMotion Express does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+
+ If you need additional time to complete the configuration, just press the join button again to wake EZ-Motion up for another 10 minutes.
+
 ## Channels
 
 The following table summarises the channels available for the EZMotion Express -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Motion Sensor | alarm_motion | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
-| Battery Level | battery-level | Battery | Number |
-| Illumination Sensor | sensor_luminance2 |  | Number | 
-| Battery Level | battery-level | Battery | Number |
-| Temperature Sensor | sensor_temperature3 | Temperature | Number:Temperature | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Motion Sensor | alarm_motion | alarm_motion | Motion | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
+| Battery Level | battery-level | system.battery_level | Battery | Number |
+| Illumination Sensor | sensor_luminance2 | sensor_luminance |  | Number | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
+| Temperature Sensor | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Motion Sensor
-
 Indicates if a motion alarm is triggered.
 
-The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -51,41 +65,35 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level1``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level1``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Illumination Sensor
-
 Indicates the current light reading.
 
-The ```sensor_luminance2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance2``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level2``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level2``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Temperature Sensor
-
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature3``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level3``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level3``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

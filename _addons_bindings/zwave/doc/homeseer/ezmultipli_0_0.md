@@ -41,37 +41,33 @@ Follow the procedure of the Z-Wave primary controller to begin the exclusion pro
 
 The following table summarises the channels available for the EZMultiPli -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
-| Color | color_color |  | Color | 
-| Motion Alarm | alarm_motion | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Color | color_color | color_color | ColorLight | Color | 
+| Motion Alarm | alarm_motion | alarm_motion | Motion | Switch | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Color
-
 The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
 
-The ```color_color``` channel supports the ```Color``` item.
+The ```color_color``` channel is of type ```color_color``` and supports the ```Color``` item and is in the ```ColorLight``` category.
 
 ### Motion Alarm
-
 Indicates if a motion alarm is triggered.
 
-The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -89,15 +85,15 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | OnTime | OnTime sets the number of minutes that the lights stay on when motion has not been detected. |
-| 2 | OnLevel | OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected. |
-| 3 | LiteMin | A Luminance report is sent to the system controller every LiteMin minutes. |
+| 1 | OnTime | OnTime |
+| 2 | OnLevel | OnLevel |
+| 3 | LiteMin | LiteMin |
 | 4 | TempMin | A Temperature report is sent to the controller every TempMin minutes. |
-| 5 | TempAdj | TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. |
+| 5 | TempAdj | TempAdj |
 
 ### Parameter 1: OnTime
 
-OnTime sets the number of minutes that the lights stay on when motion has not been detected.
+OnTime
 OnTime sets the number of minutes that the lights stay on when motion has not been detected.
 
 A value of 0 is a special mode where the lights are constantly sent a command to turn them on whenever motion is detected. EZMultiPli will NOT turn the lights off in this mode.
@@ -116,7 +112,7 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 ### Parameter 2: OnLevel
 
-OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.
+OnLevel
 OnLevel is the value sent by the Z-Wave BASIC_SET command to all Association Group 2 nodes when motion is detected.
 
 A value of 0 will turn the lights off (not recommended). A value between 1 and 99 will set the dim level to between 1% and 99% (99% is full on).
@@ -131,7 +127,7 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 ### Parameter 3: LiteMin
 
-A Luminance report is sent to the system controller every LiteMin minutes.
+LiteMin
 A Luminance report is sent to the system controller every LiteMin minutes.
 
 A value of zero turns this mode off. Luminance values can still be obtained at any time by the home control application in this mode
@@ -157,7 +153,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 ### Parameter 5: TempAdj
 
-TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate.
+TempAdj
 TempAdj is a twos-complement number that is used to adjust the temperature reading to make it more accurate. The value is in tenths of degree Fahrenheit. The temperature reading can be adjusted by +12.7F to -12.8F. A value of 1 will adjust the temperature reading by +0.1F. A value of -1 will adjust the temperature by -0.1F. A value of 123 will adjust the temperature by +12.3F. 
 Values in the range -127 to 128 may be set.
 

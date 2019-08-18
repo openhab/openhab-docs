@@ -17,6 +17,8 @@ The SES FS-ZW supports routing. This allows the device to communicate using othe
 
 ## Overview
 
+Smart outlet with energy monitoring.
+
 ### Inclusion Information
 
 The inclusion process is controlled by the central unit – refer to the documentation for the central unit.
@@ -299,7 +301,7 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The SES FS-ZW supports 1 association group.
 
-### Group 1: reportd
+### Group 1: Group 1
 
 
 Association group 1 supports 1 node.

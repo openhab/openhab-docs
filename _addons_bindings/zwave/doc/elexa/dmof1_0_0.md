@@ -17,63 +17,64 @@ The DMOF1 supports routing. This allows the device to communicate using other ro
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/645) to improve the documentation.
+The Dome On/Off Plug-In Switch is a Z-Wave Plus device that plugs into a standard 3-prong power outlet and lets you turn on or off any connected electronic device. The On/Off Plug-In Switch also monitors how much energy the attached device uses, and reports the data to your Z-Wave Hub.
+
+### Inclusion Information
+
+Quickly press the BUTTON 3 times. A yellow LED will flash five times indicating inclusion.
+
+### Exclusion Information
+
+Press the BUTTON quickly 3 times in a row. A yellow LED will flash five times indicating exclusion/disconnection.
 
 ## Channels
 
 The following table summarises the channels available for the DMOF1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (amps) | meter_current | Energy | Number | 
-| Electric meter (volts) | meter_voltage | Energy | Number | 
-| Reset Meter | meter_reset | Energy | Switch | 
-| Alarm (power) | alarm_power | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (amps) | meter_current | meter_current | Energy | Number | 
+| Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
+| Reset Meter | meter_reset | meter_reset | Energy | Switch | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps)
-
 Indicates the instantaneous current consumption.
 
-The ```meter_current``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts)
-
 Indicates the instantaneous voltage.
 
-The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset Meter
-
 Reset the meter.
 
-The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -287,7 +288,7 @@ Association group 3 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |

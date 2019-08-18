@@ -8,11 +8,26 @@ title: DMMZ1 - ZWave
 # DMMZ1 Dome Battery powered Z-Wave Plus enabled mousetrap
 This describes the Z-Wave device *DMMZ1*, manufactured by *Elexa Consumer Products Inc.* with the thing type UID of ```elexa_dmmz1_00_000```.
 
+The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
+
+![DMMZ1 product image](https://www.cd-jackson.com/zwave_device_uploads/684/684_default.png)
+
+
 The DMMZ1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
 The DMMZ1 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
+
+The Dome Mouser is a battery powered Z-Wave Plus enabled mousetrap that works by electrocution and is designed to be humane and painless to the rodent. After a mouse is caught, the Mouser will send a Z-Wave signal to its controller to notify the user, and will not retrigger until the trap is reset. 
+
+### Inclusion Information
+
+Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating inclusion
+
+### Exclusion Information
+
+Press the CONNECT BUTTON quickly 3 times in a row. The LED INDICATOR will flash five times indicating exclusion/disconnection. 
 
 ### Wakeup Information
 
@@ -20,21 +35,39 @@ The DMMZ1 does not permanently listen for messages sent from the controller - it
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
+
+The device can be forced to wake up to submit reports or accept new settings immediately by simply pressing and holding the BUTTON for two seconds. The LED INDICATOR will flash once indicating successful wake up
+
+### General Usage Information
+
+# How to Use—Baiting the Trap
+
+  1. Lift the BAIT HOLDER from the Mouser.
+  2. Add bait - dry foods (like peanuts) leave less mess.
+  3. Replace the BAIT HOLDER.
+
+How to Use—Setting the Trap
+
+  1. Bait the Mouser.
+  2. Place the Mouser in the desired location - rodents usually scurry around walls and other corners.
+  3. Flip On/Off Button to the On position - the LED will stay lit for two seconds indicating the Mouser is armed. A flashing LED indicates low battery.
+  4. When the Mouser is tripped. the LED will blink every five seconds, and an alert will be sent to your Z-Wave Controller.
+  5. Flip the On/Off Button to the Off position to empty the Mouser, andit is ready to use again immediately
+
 ## Channels
 
 The following table summarises the channels available for the DMMZ1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Alarm | alarm_general | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -44,10 +77,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -57,11 +89,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

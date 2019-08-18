@@ -8,6 +8,11 @@ title: MIMO2+ - ZWave
 # MIMO2+ Dual Digital or Analog Voltage input and Dual Contact Relay
 This describes the Z-Wave device *MIMO2+*, manufactured by *FortrezZ LLC* with the thing type UID of ```fortrezz_mimo2_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
+![MIMO2+ product image](https://www.cd-jackson.com/zwave_device_uploads/700/700_default.png)
+
+
 The MIMO2+ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -32,33 +37,30 @@ The output relay is typically commanded via Z-WaveTM commands. In addition, the 
 
 The following table summarises the channels available for the MIMO2+ -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Sensor | sensor_general |  | Number | 
-| Alarm (power) | alarm_power | Door | Switch | 
-| Sensor 1 | sensor_general1 |  | Number | 
-| Sensor 2 | sensor_general2 |  | Number | 
-| Relay 1 | switch_binary3 | Switch | Switch | 
-| Relay 2 | switch_binary4 | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Sensor | sensor_general | sensor_general |  | Number | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Sensor 1 | sensor_general1 | sensor_general |  | Number | 
+| Sensor 2 | sensor_general2 | sensor_general |  | Number | 
+| Relay 1 | switch_binary3 | switch_binary | Switch | Switch | 
+| Relay 2 | switch_binary4 | switch_binary | Switch | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor
 
 
-
-The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_general``` channel is of type ```sensor_general``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -70,26 +72,22 @@ The following state translation is provided for this channel to the ```Switch```
 ### Sensor 1
 
 
-
-The ```sensor_general1``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_general1``` channel is of type ```sensor_general``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor 2
 
 
-
-The ```sensor_general2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_general2``` channel is of type ```sensor_general``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Relay 1
-
 Switch the power on and off.
 
-The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Relay 2
-
 Switch the power on and off.
 
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
