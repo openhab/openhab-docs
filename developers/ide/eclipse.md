@@ -45,7 +45,7 @@ Ensure that you select the Eclipse version to use to "2019-03" as version `2019-
 
    ![startup tasks finished](./images/ide_setup_eclipse_tasks_finished.png)
 
-1. After all tasks are finished, look for `app.bndrun` file in the Eclipse Package Explorer in `Other Projects > launch > app` project folder.
+1. After all tasks are finished, look for `app.bndrun` file in the Eclipse Package Explorer in `Infrastructure > launch > app` project folder.
    Double click to open `app.bndrun` file (takes a few seconds)
 
 1. Under Browse Repos search for the binding you want to run/debug (`astro` in our case) and add it to the "Run Requirements" list using drag&drop from the "Browse Repos" list:
