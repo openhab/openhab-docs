@@ -83,6 +83,7 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
 
     ```shell
     echo 'deb https://dl.bintray.com/openhab/apt-repo2 stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+    echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg stable main' | sudo tee /etc/apt/sources.list.d/openhab2.list
     ```
 
 -   **Testing Release**
