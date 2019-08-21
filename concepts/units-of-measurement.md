@@ -97,63 +97,93 @@ SI:
 
 | Type                   | Unit                    | Symbol |
 |------------------------|-------------------------|--------|
-| Acceleration           | Metre per square Second | m/s²   |
-| AmountOfSubstance      | Mole                    | mol    |
-| Angle                  | Radian                  | rad    |
-| Angle                  | Degree                  | °      |
-| Angle                  | Minute Angle            | '      |
-| Angle                  | Second Angle            | ''     |
-| Area                   | Square Metre            | m²     |
-| ArealDensity           | Dobson Unit             | DU     |
-| CatalyticActivity      | Katal                   | kat    |
-| Dimensionless          | Percent                 | %      |
-| Dimensionless          | Parts per Million       | ppm    |
-| Dimensionless          | Decibel                 | dB     |
-| ElectricPotential      | Volt                    | V      |
-| ElectricCapacitance    | Farad                   | F      |
-| ElectricCharge         | Coulomb                 | C      |
-| ElectricConductance    | Siemens                 | S      |
-| ElectricCurrent        | Ampere                  | A      |
-| ElectricInductance     | Henry                   | H      |
-| ElectricResistance     | Ohm                     | Ω      |
-| Energy                 | Joule                   | J      |
-| Energy                 | Watt Second             | Ws     |
-| Energy                 | Watt Hour               | Wh     |
-| Energy                 | KiloWatt Hour           | kWh    |
-| Force                  | Newton                  | N      |
-| Frequency              | Hertz                   | Hz     |
-| Illuminance            | Lux                     | lx     |
-| Intensity              | Irradiance              | W/m²   |
-| Length                 | Metre                   | m      |
-| Length                 | Kilometre               | km     |
-| LuminousFlux           | Lumen                   | lm     |
-| LuminousIntensity      | Candela                 | cd     |
-| MagneticFlux           | Weber                   | Wb     |
-| MagneticFluxDensity    | Tesla                   | T      |
-| Mass                   | Kilogram                | kg     |
-| Mass                   | Gram                    | g      |
-| Power                  | Watt                    | W      |
-| Pressure               | Pascal                  | Pa     |
-| Pressure               | hectoPascal             | hPa    |
-| Pressure               | Millimetre of Mercury   | mmHg   |
-| Pressure               | Bar                     | bar    |
-| Pressure               | milliBar                | mbar   |
-| Radioactivity          | Becquerel               | Bq     |
-| RadiationDoseAbsorbed  | Gray                    | Gy     |
-| RadiationDoseEffective | Sievert                 | Sv     |
-| SolidAngle             | Steradian               | sr     |
-| Speed                  | Metre per Second        | m/s    |
-| Speed                  | Kilometre per Hour      | km/h   |
-| Speed                  | Knot                    | kn     |
-| Temperature            | Kelvin                  | K      |
-| Temperature            | Celsius                 | °C     |
-| Time                   | Second                  | s      |
-| Time                   | Minute                  | min    |
-| Time                   | Hour                    | h      |
-| Time                   | Day                     | d      |
-| Time                   | Week                    | week   |
-| Time                   | Year                    | y      |
-| Volume                 | Cubic Metre             | m³     |
+| Acceleration           | Metre per square Second          | m/s²   |
+| Acceleration           | Standard Gravity                 | ɡₙ     |
+| AmountOfSubstance      | Mole                             | mol    |
+| AmountOfSubstance      | Deutscher Härtegrad              | °dH    |
+| Angle                  | Radian                           | rad    |
+| Angle                  | Degree                           | °      |
+| Angle                  | Minute Angle                     | '      |
+| Angle                  | Second Angle                     | ''     |
+| Area                   | Square Metre                     | m²     |
+| ArealDensity           | Dobson Unit                      | DU     |
+| CatalyticActivity      | Katal                            | kat    |
+| DataAmount             | Bit                              | bit    |
+| DataAmount             | Megabit                          | Mbit   |
+| DataAmount             | Kilobit                          | kbit   |
+| DataAmount             | Gigabit                          | Gbit   |
+| DataAmount             | Terabit                          | Tbit   |
+| DataAmount             | Byte                             | B      |
+| DataAmount             | Octet                            | o      |
+| DataAmount             | Kibioctet                        | Kio    |
+| DataAmount             | Mebioctet                        | Mio    |
+| DataAmount             | Gibioctet                        | Gio    |
+| DataTransferRate       | Bit per Second                   | bit/s  |
+| DataTransferRate       | Kilobit per Second               | kbit/s |
+| DataTransferRate       | Megabit per Second               | Mbit/s | 
+| DataTransferRate       | Gigabit per Second               | Gbit/s | 
+| DataTransferRate       | Terabit per Second               | Tbit/s | 
+| Density                | Microgram per Cubic Metre        | µg/m³  |
+| Density                | Kilogram per Cubic Metre         | kg/m³  |
+| Dimensionless          | Percent                          | %      |
+| Dimensionless          | Parts per Million                | ppm    |
+| Dimensionless          | Decibel                          | dB     |
+| ElectricPotential      | Volt                             | V      |
+| ElectricCapacitance    | Farad                            | F      |
+| ElectricCharge         | Coulomb                          | C      |
+| ElectricConductance    | Siemens                          | S      |
+| ElectricCurrent        | Ampere                           | A      |
+| ElectricInductance     | Henry                            | H      |
+| ElectricResistance     | Ohm                              | Ω      |
+| Energy                 | Joule                            | J      |
+| Energy                 | Watt Second                      | Ws     |
+| Energy                 | Watt Hour                        | Wh     |
+| Energy                 | KiloWatt Hour                    | kWh    |
+| Energy                 | Megawatt Hour                    | MWh    |
+| Energy                 | Kilovar Hour                     | kvarh  |
+| Force                  | Newton                           | N      |
+| Frequency              | Hertz                            | Hz     |
+| Illuminance            | Lux                              | lx     |
+| Intensity              | Irradiance                       | W/m²   |
+| Intensity              | microWatt per square centimeter  | µW/cm² |
+| Length                 | Metre                            | m      |
+| Length                 | Kilometre                        | km     |
+| LuminousFlux           | Lumen                            | lm     |
+| LuminousIntensity      | Candela                          | cd     |
+| MagneticFlux           | Weber                            | Wb     |
+| MagneticFluxDensity    | Tesla                            | T      |
+| Mass                   | Kilogram                         | kg     |
+| Mass                   | Gram                             | g      |
+| Power                  | Watt                             | W      |
+| Power                  | Kilovar                          | kvar   |
+| Power                  | Decibel-milliwatts               | dBm    |
+| Pressure               | Pascal                           | Pa     |
+| Pressure               | hectoPascal                      | hPa    |
+| Pressure               | Millimetre of Mercury            | mmHg   |
+| Pressure               | Bar                              | bar    |
+| Pressure               | milliBar                         | mbar   |
+| Radioactivity          | Becquerel                        | Bq     |
+| RadiationDoseAbsorbed  | Gray                             | Gy     |
+| RadiationDoseEffective | Sievert                          | Sv     |
+| SolidAngle             | Steradian                        | sr     |
+| Speed                  | Metre per Second                 | m/s    |
+| Speed                  | Kilometre per Hour               | km/h   |
+| Speed                  | Knot                             | kn     |
+| Temperature            | Kelvin                           | K      |
+| Temperature            | Celsius                          | °C     |
+| Time                   | Second                           | s      |
+| Time                   | Minute                           | min    |
+| Time                   | Hour                             | h      |
+| Time                   | Day                              | d      |
+| Time                   | Week                             | week   |
+| Time                   | Year                             | y      |
+| Volume                 | Litre                            | l      |
+| VolumetricFlowRate     | Litre per Minute                 | l/min  |
+| VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
+| VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
+| VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
+| VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
+
 
 Prefixes:
 
