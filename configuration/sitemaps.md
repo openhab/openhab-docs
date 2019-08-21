@@ -583,23 +583,23 @@ Below is a list of standard colors and their respective RGB color codes.
 
 | Color Name | Preview                                       | RGB Color Code |
 |------------|-----------------------------------------------|----------------|
-| maroon     | <p style="color: #800000;">&#11044;</p>       | `#800000`      |
-| red        | <p style="color: #ff0000;">&#11044;</p>       | `#ff0000`      |
-| orange     | <p style="color: #ffa500;">&#11044;</p>       | `#ffa500`      |
-| olive      | <p style="color: #808000;">&#11044;</p>       | `#808000`      |
-| yellow     | <p style="color: #ffff00;">&#11044;</p>       | `#ffff00`      |
-| purple     | <p style="color: #800080;">&#11044;</p>       | `#800080`      |
-| fuchsia    | <p style="color: #ff00ff;">&#11044;</p>       | `#ff00ff`      |
-| white      | <p style="color: #ffffff;">&#11044;</p>       | `#ffffff`      |
-| lime       | <p style="color: #00ff00;">&#11044;</p>       | `#00ff00`      |
-| green      | <p style="color: #008000;">&#11044;</p>       | `#008000`      |
-| navy       | <p style="color: #000080;">&#11044;</p>       | `#000080`      |
-| blue       | <p style="color: #0000ff;">&#11044;</p>       | `#0000ff`      |
-| teal       | <p style="color: #008080;">&#11044;</p>       | `#008080`      |
-| aqua       | <p style="color: #00ffff;">&#11044;</p>       | `#00ffff`      |
-| black      | <p style="color: #000000;">&#11044;</p>       | `#000000`      |
-| silver     | <p style="color: #c0c0c0;">&#11044;</p>       | `#c0c0c0`      |
-| gray       | <p style="color: #808080;">&#11044;</p>       | `#808080`      |
+| maroon     | <div style="color: #800000;">&#11044;</div>   | `#800000`      |
+| red        | <div style="color: #ff0000;">&#11044;</div>   | `#ff0000`      |
+| orange     | <div style="color: #ffa500;">&#11044;</div>   | `#ffa500`      |
+| olive      | <div style="color: #808000;">&#11044;</div>   | `#808000`      |
+| yellow     | <div style="color: #ffff00;">&#11044;</div>   | `#ffff00`      |
+| purple     | <div style="color: #800080;">&#11044;</div>   | `#800080`      |
+| fuchsia    | <div style="color: #ff00ff;">&#11044;</div>   | `#ff00ff`      |
+| white      | <div style="color: #ffffff;">&#11044;</div>   | `#ffffff`      |
+| lime       | <div style="color: #00ff00;">&#11044;</div>   | `#00ff00`      |
+| green      | <div style="color: #008000;">&#11044;</div>   | `#008000`      |
+| navy       | <div style="color: #000080;">&#11044;</div>   | `#000080`      |
+| blue       | <div style="color: #0000ff;">&#11044;</div>   | `#0000ff`      |
+| teal       | <div style="color: #008080;">&#11044;</div>   | `#008080`      |
+| aqua       | <div style="color: #00ffff;">&#11044;</div>   | `#00ffff`      |
+| black      | <div style="color: #000000;">&#11044;</div>   | `#000000`      |
+| silver     | <div style="color: #c0c0c0;">&#11044;</div>   | `#c0c0c0`      |
+| gray       | <div style="color: #808080;">&#11044;</div>   | `#808080`      |
 
 Please take note that colors other than those listed in the list above may be used.
 Generally, you can expected that valid HTML colors will be accepted (e.g. `green`, `lightgrey`, `#334455`), but note that a UI may only accept internally defined colors, or work with a special theme.
