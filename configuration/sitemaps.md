@@ -581,29 +581,29 @@ Note also, the effect of omitting `Temperature` and the comparison operator in t
 
 Below is a list of standard colors and their respective RGB color codes.
 
-| Color Name | Preview and RGB Color Code              |
-|------------|-----------------------------------------|
-| maroon     | *`► #800000`*{: style="color: #800000"} |
-| red        | *`► #ff0000`*{: style="color: #ff0000"} |
-| orange     | *`► #ffa500`*{: style="color: #ffa500"} |
-| olive      | *`► #808000`*{: style="color: #808000"} |
-| yellow     | *`► #ffff00`*{: style="color: #ffff00"} |
-| purple     | *`► #800080`*{: style="color: #800080"} |
-| fuchsia    | *`► #ff00ff`*{: style="color: #ff00ff"} |
-| white      | *`► #ffffff`*{: style="color: #ffffff"} |
-| lime       | *`► #00ff00`*{: style="color: #00ff00"} |
-| green      | *`► #008000`*{: style="color: #008000"} |
-| navy       | *`► #000080`*{: style="color: #000080"} |
-| blue       | *`► #0000ff`*{: style="color: #0000ff"} |
-| teal       | *`► #008080`*{: style="color: #008080"} |
-| aqua       | *`► #00ffff`*{: style="color: #00ffff"} |
-| black      | *`► #000000`*{: style="color: #000000"} |
-| silver     | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
-| gray       | *`► #808080`*{: style="color: #808080"} |
+| Color Name | Preview                                       | RGB Color Code |
+|------------|-----------------------------------------------|----------------|
+| maroon     | <p style="color: #800000;">&#11044;</p>       | `#800000`      |
+| red        | <p style="color: #ff0000;">&#11044;</p>       | `#ff0000`      |
+| orange     | <p style="color: #ffa500;">&#11044;</p>       | `#ffa500`      |
+| olive      | <p style="color: #808000;">&#11044;</p>       | `#808000`      |
+| yellow     | <p style="color: #ffff00;">&#11044;</p>       | `#ffff00`      |
+| purple     | <p style="color: #800080;">&#11044;</p>       | `#800080`      |
+| fuchsia    | <p style="color: #ff00ff;">&#11044;</p>       | `#ff00ff`      |
+| white      | <p style="color: #ffffff;">&#11044;</p>       | `#ffffff`      |
+| lime       | <p style="color: #00ff00;">&#11044;</p>       | `#00ff00`      |
+| green      | <p style="color: #008000;">&#11044;</p>       | `#008000`      |
+| navy       | <p style="color: #000080;">&#11044;</p>       | `#000080`      |
+| blue       | <p style="color: #0000ff;">&#11044;</p>       | `#0000ff`      |
+| teal       | <p style="color: #008080;">&#11044;</p>       | `#008080`      |
+| aqua       | <p style="color: #00ffff;">&#11044;</p>       | `#00ffff`      |
+| black      | <p style="color: #000000;">&#11044;</p>       | `#000000`      |
+| silver     | <p style="color: #c0c0c0;">&#11044;</p>       | `#c0c0c0`      |
+| gray       | <p style="color: #808080;">&#11044;</p>       | `#808080`      |
 
 Please take note that colors other than those listed in the list above may be used.
-Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
-The color names above are agreed on between all openHAB UIs and are therefor your safest choice.
+Generally, you can expected that valid HTML colors will be accepted (e.g. `green`, `lightgrey`, `#334455`), but note that a UI may only accept internally defined colors, or work with a special theme.
+The color names above are agreed on between all openHAB UIs and are therefore your safest choice. Colors defined by a human-readable name may be adjusted for higher contrast, e.g. on a dark theme `black` may be displayed as white.
 
 ### Icons
 
