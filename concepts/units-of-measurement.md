@@ -70,7 +70,9 @@ The state description pattern "%.1f %unit%" describes the value format as floati
 ## Implementing UoM
 When creating QuantityType states the framework offers some useful packages and classes:
 The `org.eclipse.smarthome.core.library.unit` package contains the classes `SIUnits`, `ImperialUnits` and `SmartHomeUnits` which provide units unique to either of the measurement systems and common units used in both systems.
-The `MetricPrefix` class provides prefixes like MILLI, CENTI, HECTO, etc. which are wrappers to create derived units.
+
+The `MetricPrefix` class provides prefixes like MILLI, CENTI, HECTO, etc. and the `BinaryPrefix` class provides prefixes like KIBI, MEBI, etc. both of which are wrappers to create derived units.
+
 The `org.eclipse.smarthome.core.library.dimension` and `javax.measure.quantity` packages provide interfaces which are used to type the generic QuantityType and units. 
 
 ## List of Units
@@ -95,8 +97,8 @@ Imperial:
 
 SI:
 
-| Type                   | Unit                    | Symbol |
-|------------------------|-------------------------|--------|
+| Type                   | Unit                             | Symbol |
+|------------------------|----------------------------------|--------|
 | Acceleration           | Metre per square Second          | m/s²   |
 | Acceleration           | Standard Gravity                 | ɡₙ     |
 | AmountOfSubstance      | Mole                             | mol    |
@@ -123,8 +125,8 @@ SI:
 | DataTransferRate       | Megabit per Second               | Mbit/s | 
 | DataTransferRate       | Gigabit per Second               | Gbit/s | 
 | DataTransferRate       | Terabit per Second               | Tbit/s | 
-| Density                | Microgram per Cubic Metre        | µg/m³  |
-| Density                | Kilogram per Cubic Metre         | kg/m³  |
+| Density                | Microgram per cubic Metre        | µg/m³  |
+| Density                | Kilogram per cubic Metre         | kg/m³  |
 | Dimensionless          | Percent                          | %      |
 | Dimensionless          | Parts per Million                | ppm    |
 | Dimensionless          | Decibel                          | dB     |
@@ -138,14 +140,14 @@ SI:
 | Energy                 | Joule                            | J      |
 | Energy                 | Watt Second                      | Ws     |
 | Energy                 | Watt Hour                        | Wh     |
-| Energy                 | KiloWatt Hour                    | kWh    |
+| Energy                 | Kilowatt Hour                    | kWh    |
 | Energy                 | Megawatt Hour                    | MWh    |
 | Energy                 | Kilovar Hour                     | kvarh  |
 | Force                  | Newton                           | N      |
 | Frequency              | Hertz                            | Hz     |
 | Illuminance            | Lux                              | lx     |
 | Intensity              | Irradiance                       | W/m²   |
-| Intensity              | microWatt per square centimeter  | µW/cm² |
+| Intensity              | Microwatt per square Centimeter  | µW/cm² |
 | Length                 | Metre                            | m      |
 | Length                 | Kilometre                        | km     |
 | LuminousFlux           | Lumen                            | lm     |
@@ -156,12 +158,12 @@ SI:
 | Mass                   | Gram                             | g      |
 | Power                  | Watt                             | W      |
 | Power                  | Kilovar                          | kvar   |
-| Power                  | Decibel-milliwatts               | dBm    |
+| Power                  | Decibel-Milliwatts               | dBm    |
 | Pressure               | Pascal                           | Pa     |
-| Pressure               | hectoPascal                      | hPa    |
+| Pressure               | Hectopascal                      | hPa    |
 | Pressure               | Millimetre of Mercury            | mmHg   |
 | Pressure               | Bar                              | bar    |
-| Pressure               | milliBar                         | mbar   |
+| Pressure               | Millibar                         | mbar   |
 | Radioactivity          | Becquerel                        | Bq     |
 | RadiationDoseAbsorbed  | Gray                             | Gy     |
 | RadiationDoseEffective | Sievert                          | Sv     |
@@ -184,36 +186,46 @@ SI:
 | VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
 | VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
 
+Metric Prefixes:
 
-Prefixes:
+| Name  | Symbol | Factor |
+|-------|--------|--------|
+| Yotta | Y      | 10²⁴   |
+| Zetta | Z      | 10²¹   |
+| Exa   | E      | 10¹⁸   |
+| Peta  | P      | 10¹⁵   |
+| Tera  | T      | 10¹²   |
+| Giga  | G      | 10⁹    |
+| Mega  | M      | 10⁶    |
+| Kilo  | k      | 10³    |
+| Hecto | h      | 10²    |
+| Deca  | da     | 10     |
+| Deci  | d      | 10⁻¹   |
+| Centi | c      | 10⁻²   |
+| Milli | m      | 10⁻³   |
+| Micro | µ      | 10⁻⁶   |
+| Nano  | n      | 10⁻⁹   |
+| Pico  | p      | 10⁻¹²  |
+| Femto | f      | 10⁻¹⁵  |
+| Atto  | a      | 10⁻¹⁸  |
+| Zepto | z      | 10⁻²¹  |
+| Yocto | y      | 10⁻²⁴  |
 
-| Name  | Symbol | Value |
-|-------|--------|-------|
-| Yotta | Y      | 10²⁴  |
-| Zetta | Z      | 10²¹  |
-| Exa   | E      | 10¹⁸  |
-| Peta  | P      | 10¹⁵  |
-| Tera  | T      | 10¹²  |
-| Giga  | G      | 10⁹   |
-| Mega  | M      | 10⁶   |
-| Kilo  | k      | 10³   |
-| Hecto | h      | 10²   |
-| Deca  | da     | 10    |
-| Deci  | d      | 10⁻¹  |
-| Centi | c      | 10⁻²  |
-| Milli | m      | 10⁻³  |
-| Micro | µ      | 10⁻⁶  |
-| Nano  | n      | 10⁻⁹  |
-| Pico  | p      | 10⁻¹² |
-| Femto | f      | 10⁻¹⁵ |
-| Atto  | a      | 10⁻¹⁸ |
-| Zepto | z      | 10⁻²¹ |
-| Yocto | y      | 10⁻²⁴ |
+Binary Prefixes:
 
+| Name | Symbol | Factor |
+| ---- | ------ | ------ |
+| Kibi | Ki     | 2¹⁰    |
+| Mebi | Mi     | 2²⁰    |
+| Gibi | Gi     | 2³⁰    |
+| Tebi | Ti     | 2⁴⁰    |
+| Pebi | Pi     | 2⁵⁰    |
+| Exbi | Ei     | 2⁶⁰    |
+| Zebi | Zi     | 2⁷⁰    |
+| Yobi | Yi     | 2⁸⁰    |
 
-To use the prefixes simply add the prefix to the unit symbol e.g.
-
-Examples:
--milliAmpere - `mA`
--centiMetre - `cm`
--kiloWatt - `kW`
+To use the prefixes simply add the prefix to the unit symbol - for example:
+* milliAmpere - `mA`
+* centiMetre - `cm`
+* kiloWatt - `kW`
+* KibiByte - `KiB`
