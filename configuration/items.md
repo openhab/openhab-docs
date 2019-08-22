@@ -320,8 +320,8 @@ The following guidelines apply to user-added icon files:
 - Icon filenames may include lowercase letters, numbers and underscores (`_`)
 - Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons)
 - Example filenames:
-  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-  - Bad: `MySwitch.svg`, `power-meter.png`, `tür.svg`
+  - Good: `myswitch.svg`, `power_meter.png`, `tuer23.svg`
+  - Bad: `MySwitch.svg`, `power-meter.png`, `tür23.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
