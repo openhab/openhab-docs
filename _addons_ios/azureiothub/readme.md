@@ -6,7 +6,7 @@ type: io
 description: "The Azure IoT Hub connector replicates your local things to a [Microsoft Azure IoT Hub](https://azure.microsoft.com/en-us/services/iot-hub/)."
 since: 2x
 logo: images/addons/azureiothub.png
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

@@ -367,6 +367,16 @@ then
 end
 ```
 
+## Reporting and Polling
+
+ZigBee has a standard way of configuring how a device sends status reports to the binding - this is called Reporting. Reporting is configured using three pieces of information -:
+
+* Minimum Reporting Period: This is the minimum time between reports that the device will send updates. So, if data is changing regularly, this will prevent the binding receiving a flood of reports.
+* Maximum Reporting Period: This is the maximum time between reports that the device will send updates. If the data never changes, then the device will still send an update at this rate. This is important so that the binding knows the device has not failed, so it should not be set too long (normally a couple of hours will be fine).
+* Change: This is only applicable for "Analogue" data such as temperature, humidity, power. If the value changes by this amount since the last update, then an update will be sent so long as the minimum reporting period has passed.
+
+Polling may be used by the binding to request data from the device. Polling is normally only used if reporting doesn't work for some reason. This may happen if the reporting table in a device is full - if the binding detects this, it will increase the polling rate.
+
 
 ## When things don't appear to be working
 
