@@ -10,88 +10,91 @@ This describes the Z-Wave device *ZMNHCA*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
+![ZMNHCA product image](https://www.cd-jackson.com/zwave_device_uploads/635/635_default.png)
+
+
 The ZMNHCA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/635) to improve the documentation.
+Flush Shutter module is used to control the motor of blinds, rollers, shades, garage doors, gates, venetian blinds (including slates tilting positioning), etc… The module can be controlled either through a Z-Wave network or through the wall switch.
+
+### Inclusion Information
+
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds)
+
+### Exclusion Information
+
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHCA -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds Control | blinds_control | Blinds | Rollershutter | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| switch | switch_binary1 | Switch | Switch | 
-| Blinds Control | blinds_control1 | Blinds | Rollershutter | 
-| Temperatur Sensor | sensor_temperature1 | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) | meter_kwh1 | Energy | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| switch | switch_binary1 | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control1 | blinds_control | Blinds | Rollershutter | 
+| Temperatur Sensor | sensor_temperature1 | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh1 | meter_kwh | Energy | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### switch
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Temperatur Sensor
-
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature1``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -103,8 +106,8 @@ Detailed information on each parameter can be found in the sections below.
 | Param | Name  | Description |
 |-------|-------|-------------|
 | 10 | ALL ON / ALL OFF | Responds to commands ALL ON / ALL OFF from Main Controller |
-| 40 | - Power reporting in Watts on power change for Q1 or Q2 | Power consumption change threshold for sending updates |
-| 42 | Power reporting in Watts by time interval for Q1 or Q2 | Power reporting in Watts by time interval for Q1 or Q2 |
+| 40 | Reporting in Watts on power change for Q1 or Q2 | Power consumption change threshold for sending updates |
+| 42 | Reporting in Watts by time interval for Q1 or Q2 | Power reporting in Watts by time interval for Q1 or Q2 |
 | 71 | Operating modes | Operation Mode (Shutter or Venetian) |
 | 72 | Slats tilting full turn time | Slat full turn time in tenths of a second. |
 | 73 | Slats position | Slats position |
@@ -132,17 +135,17 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - ALL ON is not active ALL OFF is not active |
-| 1 | 1 - ALL ON is not active ALL OFF active |
-| 2 | 2 - ALL ON is not active ALL OFF is not active |
-| 255 | 255 - ALL ON active, ALL OFF active |
+| 0 | ALL ON is not active ALL OFF is not active |
+| 1 | ALL ON is not active ALL OFF active |
+| 2 | ALL ON is inactive ALL OFF is inactive |
+| 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is ```255``` (255 - ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
 
-### Parameter 40: - Power reporting in Watts on power change for Q1 or Q2
+### Parameter 40: Reporting in Watts on power change for Q1 or Q2
 
 Power consumption change threshold for sending updates
 Power report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
@@ -161,7 +164,7 @@ The manufacturer defined default value is ```1```.
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 42: Power reporting in Watts by time interval for Q1 or Q2
+### Parameter 42: Reporting in Watts by time interval for Q1 or Q2
 
 Power reporting in Watts by time interval for Q1 or Q2
 Set value means time interval (0 – 32767) in seconds, when power report is send. Available configuration parameters (data type is 2 Byte DEC):
@@ -188,10 +191,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 – Shutter mode |
-| 1 | 1 – Venetian mode (up/down and slate rotation) |
+| 0 | Shutter mode |
+| 1 | Venetian mode (up/down and slate rotation) |
 
-The manufacturer defined default value is ```0``` (0 – Shutter mode).
+The manufacturer defined default value is ```0``` (Shutter mode).
 
 This parameter has the configuration ID ```config_71_1``` and is of type ```INTEGER```.
 

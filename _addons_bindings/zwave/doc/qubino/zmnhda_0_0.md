@@ -48,52 +48,48 @@ If service button S is pressed more than 2 and less than 6 second module is excl
 
 The following table summarises the channels available for the ZMNHDA -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Binary Sensor 1 | sensor_binary1 | Door | Switch | 
-| Binary Sensor 2 | sensor_binary2 | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch  [Deprecated]| switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Binary Sensor 1 | sensor_binary1 | sensor_binary |  | Switch | 
+| Binary Sensor 2 | sensor_binary2 | sensor_binary |  | Switch | 
 
-### Switch
-
+### Switch [Deprecated]
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 1
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary1``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -103,10 +99,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -127,28 +122,14 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | Input 1 switch type | Switch type (input I1) |
 | 2 | Input 2 contact type | Input 2 contact type |
 | 3 | Input 3 contact type | Input 3 contact type |
-| 10 | Activate / deactivate functions ALL ON/ALL OFF | Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
-| 30 | Saving the state of the device after a power failure | Saving the state of the device after a power failure |
-| 40 | Power reporting in Watts on power change for Q1 | Set value means percentage, set value from 0-100 = 0%-100%. Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%. |
-| 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)  
-
-
-  * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enab |
-| 60 | Minimum dimming value | Range is 1% – 98%, step is 1%.  
-Default value is 1 (Minimum dimming value is 1%)  
-NOTE: The maximum level may not be lower than the minimum level!  
-1% min. dimming value is defined by Z-Wave multilevel device class. |
-| 61 | Maximum dimming value | Range is 2% – 99%, step is 1%.  
-Default value 99 (Maximum dimming value is 99 %)  
-NOTE: The maximum level may not be lower than the minimum level!  
-99% max. dimming value is defined by Z-Wave multilevel device class. |
-| 65 | Dimming time (soft on/off) | Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.  
-Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
-Default value 100 (Dimming time between m |
-| 66 | Dimming time when key pressed | Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.  
-Range is 1-255 = 1-255s, step is 1s.  
-Default value 3 (Dimming time between min. and max. dimming values is 3s) |
+| 10 | Activate / deactivate functions ALL ON/ALL OFF | Activate / deactivate functions ALL ON/ALL OFF |
+| 30 | State of the device after a power failure | State of the device after a power failure |
+| 40 | Power reporting in Watts on power change | Set value means percentage |
+| 42 | Power reporting in Watts by time interval | Power reporting in Watts by time interval |
+| 60 | Minimum dimming value | Minimum dimming value |
+| 61 | Maximum dimming value | Maximum dimming value |
+| 65 | Dimming time (soft on/off) | Dimming time (soft on/off) |
+| 66 | Dimming time when key pressed | Dimming time when key pressed |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -201,8 +182,8 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 
 ### Parameter 10: Activate / deactivate functions ALL ON/ALL OFF
 
+Activate / deactivate functions ALL ON/ALL OFF
 Flush 1 relay module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
-
 The following option values may be configured -:
 
 | Value  | Description |
@@ -217,27 +198,30 @@ The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF acti
 This parameter has the configuration ID ```config_10_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the device after a power failure
+### Parameter 30: State of the device after a power failure
 
-Saving the state of the device after a power failure
+State of the device after a power failure
 
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Flush dimmer module saves its state before power failure (it returns t |
-| 1 | Flush dimmer module does not save the state after a power failure, it |
+| 0 | Saves its state before power failure |
+| 1 | Off |
 
-The manufacturer defined default value is ```0``` (Flush dimmer module saves its state before power failure (it returns t).
+The manufacturer defined default value is ```0``` (Saves its state before power failure).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
-### Parameter 40: Power reporting in Watts on power change for Q1
+### Parameter 40: Power reporting in Watts on power change
 
-Set value means percentage, set value from 0-100 = 0%-100%. Power report is sent (pushed) only when actual power in Watts in real time changed for more than set percentage comparing to previous actual power in Watts, step is 1%.
+Set value means percentage
+  * 0 – Reporting Disabled
+  * 1 – 100 = 1% - 100% Reporting enabled.
 
-Values in the range 0 to 255 may be set.
+Power report is send (push) only when actual power in Watts in real time change for more than set percentage comparing to previous actual power in Watts, step is 1%. 
+Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```5```.
 
@@ -246,12 +230,14 @@ This parameter has the configuration ID ```config_40_1``` and is of type ```INTE
 
 ### Parameter 42: Power reporting in Watts by time interval
 
-Set value means time interval (0 – 65535) in seconds, when power report is sent. Default value is 300 (power report in Watts is sent each 300s)  
+Power reporting in Watts by time interval
+Set value means time interval (0 – 65535) in seconds, when power report is send.
 
+  * default value 300 (power report in Watts is send each 300s)
+  * 0 – Reporting Disabled
+  * 1 – 65535 = 1 second – 65535 seconds. Reporting enabled.
 
-  * 0 = Reporting Disabled
-  * 1–65535 = 1 second – 65535 seconds. Reporting enab
-
+Power report is send with time interval set by entered value. 
 Values in the range 0 to 65535 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -261,12 +247,12 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 60: Minimum dimming value
 
-Range is 1% – 98%, step is 1%.  
-Default value is 1 (Minimum dimming value is 1%)  
-NOTE: The maximum level may not be lower than the minimum level!  
-1% min. dimming value is defined by Z-Wave multilevel device class.
+Minimum dimming value
+  *  Default value 1 (Minimum dimming value is 1%)
+  * 1- 98 = 1% – 98%, step is 1%. Minimum dimming values is set by entered value.
 
-Values in the range 0 to 255 may be set.
+**NOTE**: The maximum level may not be lower than the minimum level! 1% min. dimming value is defined by Z-Wave multilevel device class
+Values in the range 0 to 98 may be set.
 
 The manufacturer defined default value is ```1```.
 
@@ -275,12 +261,12 @@ This parameter has the configuration ID ```config_60_1``` and is of type ```INTE
 
 ### Parameter 61: Maximum dimming value
 
-Range is 2% – 99%, step is 1%.  
-Default value 99 (Maximum dimming value is 99 %)  
-NOTE: The maximum level may not be lower than the minimum level!  
-99% max. dimming value is defined by Z-Wave multilevel device class.
+Maximum dimming value
+  * Default value 99 (Maximum dimming value is 99 %)
+  * 2- 99 = 2% – 99%, step is 1%. Maximum dimming values is set by entered value.
 
-Values in the range 0 to 255 may be set.
+**NOTE:** The maximum level may not be lower than the minimum level! 99% max. dimming value is defined by Z-Wave multilevel device class
+Values in the range 2 to 99 may be set.
 
 The manufacturer defined default value is ```99```.
 
@@ -289,11 +275,12 @@ This parameter has the configuration ID ```config_61_1``` and is of type ```INTE
 
 ### Parameter 65: Dimming time (soft on/off)
 
-Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.  
-Range is 1-255 = 10-2550ms (2.55s), step is 10ms.  
-Default value 100 (Dimming time between m
+Dimming time (soft on/off)
+Set value means time of moving the Dimmer between min. and max. dimming values by short press of push button I1 or controlled through UI.
 
-Values in the range 0 to 255 may be set.
+  * Default value 100 (Dimming time between min. and max. dimming values is 1s)
+  * 1- 255 = 10mseconds – 2550mseconds (2,55s), step is 10mseconds 
+Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```100```.
 
@@ -302,11 +289,13 @@ This parameter has the configuration ID ```config_65_1``` and is of type ```INTE
 
 ### Parameter 66: Dimming time when key pressed
 
-Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.  
-Range is 1-255 = 1-255s, step is 1s.  
+Dimming time when key pressed
+Time of moving the Dimmer between min. and max dimming values by continues hold of push button I1.
+
 Default value 3 (Dimming time between min. and max. dimming values is 3s)
 
-Values in the range 0 to 255 may be set.
+ 1- 255 = 1 second – 255 seconds
+Values in the range 1 to 255 may be set.
 
 The manufacturer defined default value is ```3```.
 
@@ -333,17 +322,18 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The ZMNHDA supports 4 association groups.
 
-### Group 1: multilevel (triggered at changes of state/value of the Flush dimmer)
+### Group 1: multilevel
 
+ (triggered at changes of state/value of the Flush dimmer)
 
 Association group 1 supports 4 nodes.
 
-### Group 2: basic on/off (triggered at change of the input I2 state and reflecting
+### Group 2: basic on/off triggered by the input I2 state
 
 
 Association group 2 supports 4 nodes.
 
-### Group 3: basic on/off (triggered at change of the input I3 state and reflecting
+### Group 3: basic on/off triggered by the input I3 state
 
 
 Association group 3 supports 4 nodes.

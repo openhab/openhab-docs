@@ -9,6 +9,11 @@ title: ZMNHCD - ZWave
 This describes the Z-Wave device *ZMNHCD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhcd_00_000```.
 This version of the device is limited to firmware versions below 4.0
 
+The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
+
+![ZMNHCD product image](https://www.cd-jackson.com/zwave_device_uploads/614/614_default.png)
+
+
 The ZMNHCD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
@@ -26,75 +31,76 @@ To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:
   7. add the Thing to openhab via HABmin
   8. Be patient until the binding until processed all your nodes again
 
+### Inclusion Information
+
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds) or
+  * press service button S (only applicable for 24 V SELV supply voltage) for more than 2 second.
+
+### Exclusion Information
+
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply or
+  * press service button S (only applicable for 24 V SELV supply voltage) for more than 6 second. 
+
 ## Channels
 
 The following table summarises the channels available for the ZMNHCD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds Control | blinds_control | Blinds | Rollershutter | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Blinds Control 1 | blinds_control1 | Blinds | Rollershutter | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Blinds Control 2 | blinds_control2 | Blinds | Rollershutter | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Blinds Control 1 | blinds_control1 | blinds_control | Blinds | Rollershutter | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Blinds Control 2 | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control 1
-
 Provides start / stop control of blinds.
 
-The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control 2
-
 Provides start / stop control of blinds.
 
-The ```blinds_control2``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control2``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 
@@ -137,12 +143,12 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - ALL ON is not active ALL OFF is not active |
-| 1 | 1 - ALL ON is not active ALL OFF active |
-| 2 | 2 - ALL ON is not active ALL OFF is not active |
-| 255 | 255 - ALL ON active, ALL OFF active |
+| 0 | ALL ON is not active ALL OFF is not active |
+| 1 | ALL ON is not active ALL OFF active |
+| 2 | ALL ON is not active ALL OFF is not active |
+| 255 | ALL ON active, ALL OFF active |
 
-The manufacturer defined default value is ```255``` (255 - ALL ON active, ALL OFF active).
+The manufacturer defined default value is ```255``` ( ALL ON active, ALL OFF active).
 
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
@@ -186,17 +192,17 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 Operation Mode (Shutter or Venetian)
 This parameter defines selection between two available operating modes. Available configuration parameters (data type is 1 Byte DEC):
 
-  *  default value 0
-  *  0 - Shutter mode
-  *  1 - venetian mode (up/down and slate rotation) NOTE1: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!
+  * default value 0
+  * 0 - Shutter mode
+  * 1 - venetian mode (up/down and slate rotation) NOTE1: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 – Shutter mode |
-| 1 | 1 – Venetian mode (up/down and slate rotation) |
+| 0 | Shutter mode |
+| 1 | Venetian mode (up/down and slate rotation) |
 
-The manufacturer defined default value is ```0``` (0 – Shutter mode).
+The manufacturer defined default value is ```0``` (Shutter mode).
 
 This parameter has the configuration ID ```config_71_1``` and is of type ```INTEGER```.
 
@@ -206,9 +212,9 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 Slat full turn time in tenths of a second.
 This parameter defines the time necessary for slats to make full turn (180 degrees). Available configuration parameters (data type is 2 Byte DEC):
 
-  *  default value 150 = 1,5 seconds
-  *  0 - tilting time disabled
-  *  1 - 32767 = 0,01seconds - 327,67 seconds
+  * default value 150 = 1,5 seconds
+  * 0 - tilting time disabled
+  * 1 - 32767 = 0,01seconds - 327,67 seconds
 
 NOTE: If time set is too high, this will result that after full turn, Shutter will start move up/down, for time remaining.
 Values in the range 0 to 32767 may be set.
@@ -230,11 +236,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - return to previous position for Z-wave control only |
-| 0 |  |
-| 1 | 1 - return to previous position in all cases |
+| 0 | ret. to previous position for Z-wave control only |
+| 1 | return to previous position in all cases |
 
-The manufacturer defined default value is ```1``` (1 - return to previous position in all cases).
+The manufacturer defined default value is ```1``` (return to previous position in all cases).
 
 This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
 
@@ -289,10 +294,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Default |
-| 1 | 1 - Start Calibration Process |
+| 0 | Default |
+| 1 | Start Calibration Process |
 
-The manufacturer defined default value is ```0``` (0 - Default).
+The manufacturer defined default value is ```0``` (Default).
 
 This parameter has the configuration ID ```config_78_1``` and is of type ```INTEGER```.
 
@@ -308,10 +313,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Reporting to Controller Disabled |
-| 1 | 1 - Reporting to Controller Enabled |
+| 0 | Reporting to Controller Disabled |
+| 1 | Reporting to Controller Enabled |
 
-The manufacturer defined default value is ```1``` (1 - Reporting to Controller Enabled).
+The manufacturer defined default value is ```1``` (Reporting to Controller Enabled).
 
 This parameter has the configuration ID ```config_80_1``` and is of type ```INTEGER```.
 

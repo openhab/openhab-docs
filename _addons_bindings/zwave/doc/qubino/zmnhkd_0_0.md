@@ -51,38 +51,34 @@ NOTE: If the module is included with parameters 100 or 101 with values different
 
 The following table summarises the channels available for the ZMNHKD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -103,16 +99,14 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 
 
@@ -130,8 +124,8 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Activate / deactivate ALL ON/ALL OFF | Activate / deactivate ALL ON/ALL OFF |
 | 11 | I1 Functionality selection | I1 Functionality selection |
 | 12 | I2 Functionality selection | I2 Functionality selection |
-| 40 | Watt Power Consumption Reporting Threshold for Q⬆ Load | Watt Power Consumption Reporting Threshold for Q⬆ Load |
-| 42 | Watt Power Consumption Reporting Time Threshold for Q⬆ | Watt Power Consumption Reporting Time Threshold for Q⬆ |
+| 40 | Watt Power Consumption Threshold for Q⬆ | Watt Power Consumption Threshold for Q⬆ |
+| 42 | Watt Power Time Threshold for Q⬆ | Watt Power Time Threshold for Q⬆ |
 | 43 | Hysteresis heating On | Hysteresis heating On |
 | 44 | Hysteresis Heating Off | Hysteresis Heating Off |
 | 45 | Hysteresis Cooling On | Hysteresis Cooling On |
@@ -145,10 +139,10 @@ Detailed information on each parameter can be found in the sections below.
 | 71 | Input I1 status off delay | Input I1 status off delay |
 | 72 | Input I2 status on delay | Input I2 status on delay |
 | 73 | Input I2 status off delay | Input I2 status off delay |
-| 76 | Association group 2, 10 - reporting on time interval | Association group 2, 10 - reporting on time interval |
-| 77 | Association group 10 - delay before sending Basic Set ON | Association group 10 - delay before sending Basic Set ON |
+| 76 | group 2, 10 - reporting on time interval | group 2, 10 - reporting on time interval |
+| 77 | group 10 delay before sending Basic Set ON | group 10 delay before sending Basic Set ON |
 | 78 | Scale Selection | Scale Selection |
-| 100 | Enable/Disable Endpoint I1 or select the Type and Event | Enable/Disable Endpoint I1 or select the Notification Type and Event |
+| 100 |  Endpoint I1 Enable/Disable or Type and Event | Endpoint I1 Enable/Disable or Type and Event |
 | 101 | Enable/Disable Endpoint I2 or select type | Enable/Disable Endpoint I2 or select type |
 | 110 | Temperature sensor offset settings | Temperature sensor offset settings |
 | 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
@@ -249,11 +243,11 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 1 | Input I1 changes the mode between Off and Heat/Cool |
+| 1 | Input I1 changes between Off and Heat/Cool |
 | 2 | Input I1 influences the heating/cooling valves |
-| 32767 | Input I1 doesnt influence on the Heat/Cool process |
+| 32767 | Input I1 doesn't influence the process |
 
-The manufacturer defined default value is ```1``` (Input I1 changes the mode between Off and Heat/Cool ).
+The manufacturer defined default value is ```1``` (Input I1 changes between Off and Heat/Cool ).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -269,7 +263,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 2000 | Input I2 influences the cooling value with condense sensor |
+| 2000 | Input I2 influences cooling with condense sensor |
 | 32767 | Input I2 doesnt influence on the Heat/Cool process |
 
 The manufacturer defined default value is ```32767``` (Input I2 doesnt influence on the Heat/Cool process).
@@ -277,9 +271,9 @@ The manufacturer defined default value is ```32767``` (Input I2 doesnt influence
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
 
-### Parameter 40: Watt Power Consumption Reporting Threshold for Q⬆ Load
+### Parameter 40: Watt Power Consumption Threshold for Q⬆
 
-Watt Power Consumption Reporting Threshold for Q⬆ Load
+Watt Power Consumption Threshold for Q⬆
 Choose by how much power consumption needs to increase or decrease to be reported. Values correspond to percentages so if 10 is set, for example, the device will report any power consumption changes of 10% or more compared to the last reading. Power consumption needs to increase or decrease by at least 1 Watt to be reported, REGARDLESS of percentage set in this parameter.  
 0 - Power consumption reporting disabled  
 1 - 100 = 1% - 100% Power consumption reporting enabled. New value is reported only when Wattage in real time changes by more than the percentage value set in this parameter compared to the previous Wattage reading, starting at 1% (the lowest value possible).
@@ -294,11 +288,10 @@ The manufacturer defined default value is ```0``` (Power consumption reporting d
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 42: Watt Power Consumption Reporting Time Threshold for Q⬆
+### Parameter 42: Watt Power Time Threshold for Q⬆
 
-Watt Power Consumption Reporting Time Threshold for Q⬆
-Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).  
-
+Watt Power Time Threshold for Q⬆
+Set value refers to the time interval with which power consumption in Watts is reported (0 – 32767 seconds). If for example 300 is entered, energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
 0 - report disabled  
 1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval
@@ -448,10 +441,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | When system is turned off the output is 0V(NC). |
-| 1 | When system is turned off the output is 230V or 24V(NO). |
+| 0 | When system is off the output is 0V(NC). |
+| 1 | When system is off the output is 230V or 24V(NO). |
 
-The manufacturer defined default value is ```0``` (When system is turned off the output is 0V(NC).).
+The manufacturer defined default value is ```0``` (When system is off the output is 0V(NC).).
 
 This parameter has the configuration ID ```config_65_1``` and is of type ```INTEGER```.
 
@@ -505,9 +498,9 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_73_2``` and is of type ```INTEGER```.
 
 
-### Parameter 76: Association group 2, 10 - reporting on time interval
+### Parameter 76: group 2, 10 - reporting on time interval
 
-Association group 2, 10 - reporting on time interval
+group 2, 10 - reporting on time interval
 Determinates the time interval of sending device status ON/OFF to the associated device.  
 If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).  
 • Default value 30 = 30 minutes  
@@ -520,9 +513,9 @@ The manufacturer defined default value is ```30```.
 This parameter has the configuration ID ```config_76_1``` and is of type ```INTEGER```.
 
 
-### Parameter 77: Association group 10 - delay before sending Basic Set ON
+### Parameter 77: group 10 delay before sending Basic Set ON
 
-Association group 10 - delay before sending Basic Set ON
+group 10 delay before sending Basic Set ON
 Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.  
 If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.  
 • Default value 180 = 3 minutes  
@@ -552,9 +545,9 @@ The manufacturer defined default value is ```0``` (degrees Celsius).
 This parameter has the configuration ID ```config_78_1``` and is of type ```INTEGER```.
 
 
-### Parameter 100: Enable/Disable Endpoint I1 or select the Type and Event
+### Parameter 100:  Endpoint I1 Enable/Disable or Type and Event
 
-Enable/Disable Endpoint I1 or select the Notification Type and Event
+Endpoint I1 Enable/Disable or Type and Event
 Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).  
 After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!  
 When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.  
@@ -636,7 +629,7 @@ The following option values may be configured -:
 | 2 | temperature is grabbed from ext battery sensor |
 | 4 | setpoint is grabbed by sensor with assoc 5 |
 | 8 | setpoint is grabbed from ext battery sensor |
-| 10 | temperature an setpoint are grabbed from ext batt sensor |
+| 10 | temperature & setpoint from ext batt sensor |
 
 The manufacturer defined default value is ```0``` (internal sensor is mounted).
 

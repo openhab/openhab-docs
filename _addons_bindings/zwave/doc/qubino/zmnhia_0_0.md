@@ -17,45 +17,51 @@ The ZMNHIA supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/211) to improve the documentation.
+This Z-Wave module is used to regulate temperature. The module can be controlled either through Z-wave network or through the wall switch
+
+### Inclusion Information
+
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds
+
+### Exclusion Information
+
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds).
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHIA -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Binary Sensor 1 | sensor_binary1 | Door | Switch | 
-| Binary Sensor 2 | sensor_binary2 | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Binary Sensor 1 | sensor_binary1 | sensor_binary |  | Switch | 
+| Binary Sensor 2 | sensor_binary2 | sensor_binary |  | Switch | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -76,16 +82,14 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Binary Sensor 1
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary1``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary1``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -95,10 +99,9 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Binary Sensor 2
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -124,7 +127,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Activate / deactivate functions ALL ON/ALL OFF | Module responds to commands ALL ON / ALL OFF |
 | 11 | Set point set by I2 | Set point set by I2 |
 | 12 | Set point set by I3 | Set point set by I3 |
-| 30 | Saving the state of the relay after a power failure | Saving the state of the relay after a power failure |
+| 30 | Saving the state after a power failure | Saving the state after a power failure |
 | 40 | Power reporting in Watts on power change for Q1 | Power reporting in Watts on power change |
 | 42 | Power reporting in Watts by time interval for Q1 | Power reporting in Watts by time interval |
 | 43 | Hysteresis On | Hysteresis On |
@@ -270,9 +273,9 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_12_2``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the relay after a power failure
+### Parameter 30: Saving the state after a power failure
 
-Saving the state of the relay after a power failure
+Saving the state after a power failure
 
 The following option values may be configured -:
 

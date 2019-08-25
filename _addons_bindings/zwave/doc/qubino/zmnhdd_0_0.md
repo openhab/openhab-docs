@@ -53,7 +53,7 @@ The following table summarises the channels available for the ZMNHDD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Switch  [Deprecated]| switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
@@ -61,7 +61,7 @@ The following table summarises the channels available for the ZMNHDD -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Reset the total power consumption | meter_reset | meter_reset | Energy | Switch | 
 | Alarm | alarm_general | alarm_general | Alarm | Switch | 
-| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Switch 1  [Deprecated]| switch_binary1 | switch_binary | Switch | Switch | 
 | Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
@@ -70,21 +70,23 @@ The following table summarises the channels available for the ZMNHDD -:
 | Binary Sensor 3 | sensor_binary3 | sensor_binary |  | Switch | 
 | Alarm 3 | alarm_general3 | alarm_general | Alarm | Switch | 
 
-### Switch
+### Switch [Deprecated]
 Switch the power on and off.
 
-The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel and is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -96,27 +98,27 @@ The following state translation is provided for this channel to the ```Switch```
 ### Sensor (temperature)
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel and is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel and is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset the total power consumption
 Reset the meter.
 
-The ```meter_reset``` channel and is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel and is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -125,31 +127,33 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Switch 1
+### Switch 1 [Deprecated]
 Switch the power on and off.
 
-The ```switch_binary1``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 1
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer1``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Electric meter (kWh) 1
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel and is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel and is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Binary Sensor 2
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel and is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -161,7 +165,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm 2
 Indicates if an alarm is triggered.
 
-The ```alarm_general2``` channel and is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general2``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -173,7 +177,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Binary Sensor 3
 Indicates if a sensor has triggered.
 
-The ```sensor_binary3``` channel and is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary3``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -185,7 +189,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm 3
 Indicates if an alarm is triggered.
 
-The ```alarm_general3``` channel and is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general3``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -212,7 +216,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | Automatic turning on output after set time | Auto ON enabled with defined time, step is 1 second. |
 | 20 | Enable / Disable 3-way switch | Dimming is done by push button or switch connected to I1. |
 | 21 | Enable / Disable Double click function | A fast double click on the push button will set dimming power at maximum. |
-| 30 | Saving the state of the device after a power failure | If enabled, flush dimmer module saves its state before power failure. |
+| 30 | Saving the state after a power failure | Saving the state after a power failure |
 | 40 | Power reporting in watts on power change | Set value is percentage, set value from 0 - 100 = 0% - 100%. |
 | 42 | Power reporting in Watts by time interval | Set value means time interval (0 – 32767) in seconds. |
 | 60 | Minimum dimming value | Minimum dimming value is set by entered value. |
@@ -225,7 +229,7 @@ Detailed information on each parameter can be found in the sections below.
 | 101 | Enable / Disable Endpoints I3 | Enabling I3 means that Endpoint (I3) will be present on UI. |
 | 110 | Temperature sensor offset settings | Offset to actual measured value |
 | 120 | Digital temperature sensor reporting | Module reports measured temperature on defined temperature change |
-| 250 | Unsecure / Secure Inclusion |  |
+| 250 | Unsecure / Secure Inclusion | Unsecure / Secure Inclusion |
 
 ### Parameter 1: Input 1 switch type
 
@@ -236,7 +240,7 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | Mono-stable switch type (push button) |
-| 1 | 1 - Bi-stable switch type |
+| 1 | Bi-stable switch type |
 
 The manufacturer defined default value is ```0``` (Mono-stable switch type (push button)).
 
@@ -251,10 +255,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Mono-stable switch type (push button) |
-| 1 | 1 - Bi-stable switch type |
+| 0 | Mono-stable switch type (push button) |
+| 1 | Bi-stable switch type |
 
-The manufacturer defined default value is ```0``` (0 - Mono-stable switch type (push button)).
+The manufacturer defined default value is ```0``` (Mono-stable switch type (push button)).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -267,10 +271,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - NO (normally open) input type |
-| 1 | 1 - NC (normally closed) input type |
+| 0 | NO (normally open) input type |
+| 1 | NC (normally closed) input type |
 
-The manufacturer defined default value is ```0``` (0 - NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -283,10 +287,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - NO (normally open) input type |
-| 1 | 1 - NC (normally closed) input type |
+| 0 | NO (normally open) input type |
+| 1 | NC (normally closed) input type |
 
-The manufacturer defined default value is ```0``` (0 - NO (normally open) input type).
+The manufacturer defined default value is ```0``` (NO (normally open) input type).
 
 This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
 
@@ -343,11 +347,11 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - single push button (connected to I1) |
-| 1 | 1 - 3-way switch (connected to I1 and I2) |
-| 2 | 2 - Additional switch connected to I2 |
+| 0 | single push button (connected to I1) |
+| 1 | 3-way switch (connected to I1 and I2) |
+| 2 | Additional switch connected to I2 |
 
-The manufacturer defined default value is ```0``` (0 - single push button (connected to I1)).
+The manufacturer defined default value is ```0``` (single push button (connected to I1)).
 
 This parameter has the configuration ID ```config_20_1``` and is of type ```INTEGER```.
 
@@ -360,17 +364,17 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - double click disabled |
-| 1 | 1 - double click enabled |
+| 0 | double click disabled |
+| 1 | double click enabled |
 
-The manufacturer defined default value is ```0``` (0 - double click disabled).
+The manufacturer defined default value is ```0``` (double click disabled).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the device after a power failure
+### Parameter 30: Saving the state after a power failure
 
-If enabled, flush dimmer module saves its state before power failure.
+Saving the state after a power failure
 If state saving is enabled, flush dimmer module saves its state before power failure (it returns to the last position saved before a power failure).
 
 If state saving is disabled, flush dimmer module does not save the state after a power failure.
@@ -378,10 +382,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - Save state enabled |
-| 1 | 1 - Save state disabled |
+| 0 | Save state enabled |
+| 1 | Save state disabled |
 
-The manufacturer defined default value is ```0``` (0 - Save state enabled).
+The manufacturer defined default value is ```0``` (Save state enabled).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
@@ -482,10 +486,10 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 - respect start level |
-| 1 | 1 - ignore start level |
+| 0 | respect start level |
+| 1 | ignore start level |
 
-The manufacturer defined default value is ```0``` (0 - respect start level).
+The manufacturer defined default value is ```0``` (respect start level).
 
 This parameter has the configuration ID ```config_67_1``` and is of type ```INTEGER```.
 
@@ -513,16 +517,16 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 – Disabled |
-| 1 | 1 – Home Security |
-| 2 | 2 – Carbon Monoxide |
-| 3 | 3 – Carbon Dioxide |
-| 4 | 4 – Water Alarm |
-| 5 | 5 – Heat Alarm |
-| 6 | 6 - Smoke Alarm |
-| 9 | 9 – Sensor binary |
+| 0 | Disabled |
+| 1 | Home Security |
+| 2 | Carbon Monoxide |
+| 3 | Carbon Dioxide |
+| 4 | Water Alarm |
+| 5 | Heat Alarm |
+| 6 | Smoke Alarm |
+| 9 | Sensor binary |
 
-The manufacturer defined default value is ```0``` (0 – Disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_100_1``` and is of type ```INTEGER```.
 
@@ -539,16 +543,16 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0 – Disabled |
-| 1 | 1 – Home Security |
-| 2 | 2 – Carbon Monoxide |
-| 3 | 3 – Carbon Dioxide |
-| 4 | 4 – Water Alarm |
-| 5 | 5 – Heat Alarm |
-| 6 | 6 - Smoke Alarm |
-| 9 | 9 – Sensor binary |
+| 0 | Disabled |
+| 1 | Home Security |
+| 2 | Carbon Monoxide |
+| 3 | Carbon Dioxide |
+| 4 | Water Alarm |
+| 5 | Heat Alarm |
+| 6 | Smoke Alarm |
+| 9 | Sensor binary |
 
-The manufacturer defined default value is ```0``` (0 – Disabled).
+The manufacturer defined default value is ```0``` (Disabled).
 
 This parameter has the configuration ID ```config_101_1``` and is of type ```INTEGER```.
 
@@ -585,7 +589,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 
 ### Parameter 250: Unsecure / Secure Inclusion
 
-
+Unsecure / Secure Inclusion
 The Flush dimmer supports both, the secure and unsecure inclusion. Even if the controller does not support security command classes, a dimmer could be included as unsecure and keep all the functionalityThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 The following option values may be configured -:
 
