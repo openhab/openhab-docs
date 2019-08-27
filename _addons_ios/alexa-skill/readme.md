@@ -273,12 +273,12 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * Celsius [10°C -> 32°C]
         * Fahrenheit [50°F -> 90°F]
       * comfortRange=`<number>`
-        * When dual setpoints (upper,lower) are used this is the amount under the requested temperature when requesting Alexa to set or adjust the current temperature.  Defaults to comfortRange=1 if using Fahrenheit and comfortRange=.5 if using Celsius.  Ignored if a targetSetpoint is included in the thermostat group.
+        * When dual setpoints (upper,lower) are used this is the amount under the requested temperature when requesting Alexa to set or adjust the current temperature.  Defaults to `comfortRange=1` if using Fahrenheit and `comfortRange=.5` if using Celsius.  Ignored if a targetSetpoint is included in the thermostat group.
       * setpointRange=`<minValue:maxValue>`
         * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.thermostatMode`
-    * Items that represent the mode for a thermostat, default string values are "OFF=off,HEAT=heat,COOL=cool,ECO=eco,AUTO=auto", but these can be mapped to other values in the metadata. The mapping can be, in order of precedence, user-defined (AUTO=3,...) or preset-based related to the thermostat binding used (binding=`<value>`). For the binding parameter, it will be automatically determined if the associated item is using a 2.x addon (via channel metadata). If neither of these settings are provided, for thermostats that only support a subset of the standard modes, a comma delimited list of the Alexa supported modes should be set using the supportedModes parameter, otherwise, the supported list will be compiled based of the default mapping.
+    * Items that represent the mode for a thermostat, default string values are `OFF="off",HEAT="heat",COOL="cool",ECO="eco",AUTO="auto"`, but these can be mapped to other values in the metadata. The mapping can be, in order of precedence, user-defined (AUTO=3,...) or preset-based related to the thermostat binding used (binding=`<value>`). For the binding parameter, it will be automatically determined if the associated item is using a 2.x addon (via channel metadata). If neither of these settings are provided, for thermostats that only support a subset of the standard modes, a comma delimited list of the Alexa supported modes should be set using the supportedModes parameter, otherwise, the supported list will be compiled based of the default mapping.
     * Supported item type:
       * Number
       * String
@@ -290,14 +290,14 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * ECO=`<state>`
       * AUTO=`<state>`
       * binding=`<value>`
-        * [daikin](https://www.openhab.org/addons/bindings/daikin/) [HEAT=HEAT, COOL=COLD, AUTO=AUTO]
-        * [ecobee1](https://www.openhab.org/addons/bindings/ecobee1/) [OFF=off, HEAT=heat, COOL=cool, AUTO=auto]
-        * [max](https://www.openhab.org/addons/bindings/max/) [HEAT=MANUAL, ECO=VACATION, AUTO=AUTOMATIC]
-        * [nest](https://www.openhab.org/addons/bindings/nest/) [OFF=OFF, HEAT=HEAT, COOL=COOL, ECO=ECO, AUTO=HEAT_COOL]
-        * [nest1](https://www.openhab.org/addons/bindings/nest1/) [OFF=off, HEAT=heat, COOL=cool, ECO=eco, AUTO=heat-cool]
+        * [daikin](https://www.openhab.org/addons/bindings/daikin/) [HEAT="HEAT", COOL="COLD", AUTO="AUTO"]
+        * [ecobee1](https://www.openhab.org/addons/bindings/ecobee1/) [OFF="off", HEAT="heat", COOL="cool", AUTO="auto"]
+        * [max](https://www.openhab.org/addons/bindings/max/) [HEAT="MANUAL", ECO="VACATION", AUTO="AUTOMATIC"]
+        * [nest](https://www.openhab.org/addons/bindings/nest/) [OFF="OFF", HEAT="HEAT", COOL="COOL", ECO="ECO", AUTO="HEAT_COOL"]
+        * [nest1](https://www.openhab.org/addons/bindings/nest1/) [OFF="off", HEAT="heat", COOL="cool", ECO="eco", AUTO="heat-cool"]
         * [zwave](https://www.openhab.org/addons/bindings/zwave/) [OFF=0, HEAT=1, COOL=2, AUTO=3]
         * [zwave1](https://www.openhab.org/addons/bindings/zwave1/) [OFF=0, HEAT=1, COOL=2, AUTO=3]
-        * defaults to [OFF=off, HEAT=heat, COOL=cool, ECO=eco, AUTO=auto] if omitted
+        * defaults to [OFF="off", HEAT="heat", COOL="cool", ECO="eco", AUTO="auto"] if omitted
       * supportedModes=`<values>`
         * defaults to, depending on the parameters provided, either user-based, preset-based or default item type-based mapping.
     * Default category: THERMOSTAT
@@ -311,14 +311,14 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * Fahrenheit
     * Default category: TEMPERATURE_SENSOR
   * `LockController.lockState`
-    * Items that represent the state of a lock (ON lock, OFF unlock). When associated to an [item sensor](#item-sensor), the state of that item will be returned instead of the original actionable item. Additionally, when linking to such item, multiple properties to one state can be mapped with column delimiter (e.g. for a Z-Wave lock: [LOCKED="1:3",UNLOCKED="2:4",JAMMED=11]).
+    * Items that represent the state of a lock (ON lock, OFF unlock). When associated to an [item sensor](#item-sensor), the state of that item will be returned instead of the original actionable item. Additionally, when linking to such item, multiple properties to one state can be mapped with column delimiter (e.g. for a Z-Wave lock: `LOCKED="1:3",UNLOCKED="2:4",JAMMED=11`).
     * Supported item type:
       * Switch
     * Supported sensor type:
-      * Contact [LOCKED=CLOSED, UNLOCKED=OPEN]
+      * Contact [LOCKED="CLOSED", UNLOCKED="OPEN"]
       * Number [LOCKED=1, UNLOCKED=2, JAMMED=3]
-      * String [LOCKED=locked, UNLOCKED=unlocked, JAMMED=jammed]
-      * Switch [LOCKED=ON, UNLOCKED=OFF]
+      * String [LOCKED="locked", "UNLOCKED"="unlocked", JAMMED="jammed"]
+      * Switch [LOCKED="ON", UNLOCKED="OFF"]
     * Supported metadata parameters:
       * LOCKED=`<state>`
       * UNLOCKED=`<state>`
@@ -374,7 +374,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * String
     * Supported metadata parameters:
       * supportedInputs=`<inputs>`
-        * required list of supported input values (e.g. "HMDI1,TV,XBOX")
+        * required list of supported input values (e.g. `"HMDI1,TV,XBOX"`)
     * Default category: TV
   * `Speaker.volume`
     * Items that represent a volume level, default increment may be specified in metadata parameters
@@ -415,7 +415,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * Number
     * Supported metadata parameters:
       * range=`<minValue:maxValue>`
-        * defaults to `[0:100]` for Dimmer and `[-10:10]` for Number item types if omitted
+        * defaults to `"0:100"` for Dimmer and `"-10:10"` for Number item types if omitted
       * default=`<number>`
         * defaults to midpoint range spread if omitted
       * increment=`<number>`
@@ -425,7 +425,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
     * Items that represent a list of equalizer modes supported by an audio system. Set supported modes using `supportedModes="MOVIE,MUSIC,TV"` parameter. The mode listed in additional properties are the only ones supported by the Alexa API currently. For the mapping, default item type mapping (listed below) can be used or if necessary, add each state to the parameters similar to how it is done with other interfaces.
     * Supported item type:
       * Number [MOVIE=1, MUSIC=2, NIGHT=3, SPORT=4, TV=5]
-      * String [MOVIE=movie, MUSIC=music, NIGHT=night, SPORT=sport, TV=tv]
+      * String [MOVIE="movie", MUSIC="music", NIGHT="night", SPORT="sport", TV="tv"]
     * Supported metadata parameters:
       * MOVIE=`<state>`
       * MUSIC=`<state>`
@@ -450,8 +450,8 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
     * Items that represent a device that controls a security system. Set supported arm states using `supportedArmStates="DISARMED,ARMED_STAY,ARMED_AWAY"` parameter. For the mapping, default item type mapping (listed below) can be used or if necessary, add each state to the parameters similar to how it is done with other interfaces. If using a String item type, supports for pin codes (ability to have the disarm pin code verification done in openHAB) can be configured using `supportsPinCodes=true`. For system that have an exit delay, provide the delay in seconds using parameter `exitDelay=180`. If defined, the delay is provided to Alexa during arm away requests only. For the pin code, you will need to enable voice pin in the Alexa app for the relevant device. If pin codes support is set to true, disarm request will include the pin code in item command delimited by a column sign (e.g. `disarm:1234`), otherwise, the verification is done by Alexa based on the voice pin code you configured. When the pin code is attached to the item command, it is your responsibility to validate the code on the openHAB side and change the item status to UNAUTHORIZED corresponding state in order to indicate that the code is invalid. Otherwise, if no action is taken, the skill will consider the request successful. Other errors state can also be used based on the list of additional properties below. These should only be used when arm/disarm commands are received. When associated to an [item sensor](#item-sensor), the item command and state can be decoupled. Although at this time, the skill doesn't support delayed responses, so there should be no delay in updating the relevant item state.
     * Supported item type:
       * Number [DISARMED=0, ARMED_STAY=1, ARMED_AWAY=2, ARMED_NIGHT=3, NOT_READY=4, UNCLEARED_ALARM=5, UNCLEARED_TROUBLE=6, BYPASS_NEEDED=7]
-      * String [DISARMED=disarm, ARMED_STAY=stay, ARMED_AWAY=away, ARMED_NIGHT=night, AUTHORIZATION_REQUIRED=authreq, UNAUTHORIZED=unauth, NOT_READY=notrdy, UNCLEARED_ALARM=alarm, UNCLEARED_TROUBLE=trouble, BYPASS_NEEDED=bypass]
-      * Switch [DISARMED=OFF, ARMED_STAY=ON]
+      * String [DISARMED="disarm", ARMED_STAY="stay", ARMED_AWAY="away", ARMED_NIGHT="night", AUTHORIZATION_REQUIRED="authreq", UNAUTHORIZED="unauth", NOT_READY="notrdy", UNCLEARED_ALARM="alarm", UNCLEARED_TROUBLE="trouble", BYPASS_NEEDED="bypass"]
+      * Switch [DISARMED="OFF", ARMED_STAY="ON"]
     * Supported metadata parameters:
       * DISARMED=`<state>`
       * ARMED_STAY=`<state>`
@@ -535,7 +535,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * each name formatted as `<@assetIdOrName>`
         * defaults to item label name
       * supportedRange=`<minValue:maxValue:precision>`
-        * defaults to `[0:100:1]` for Dimmer/Rollershutter, `[0:10:1]` for Number* item types
+        * defaults to `"0:100:1"` for Dimmer/Rollershutter, `"0:10:1"` for Number* item types
       * presets=`<presets>` (optional)
         * each preset formatted as `<presetValue>=<@assetIdOrName1>:<@assetIdOrName2>:...`
       * unitOfMeasure=`<unitId>` (optional)
@@ -828,7 +828,7 @@ String EqualizerMode "Equalizer Mode" {alexa="EqualizerController.modes"}
 ```
 * MediaPlayer
 ```
-Player MediaPlayer "Media Player" ["MediaPlayer"]
+Player MediaPlayer "Media Player" {alexa="MediaPlayer"}
 
 Player MediaPlayer "Media Player" {alexa="PlaybackController.playback"}
 ```
@@ -890,7 +890,7 @@ Contact WaterAlarm "Water Alarm" {alexa="SecurityPanelController.waterAlarm"}
 ```
 String ModeComponent "Mode Component" {alexa="ModeComponent"}
 
-String ModeComponent "Mode Component" {alexa="ModeController.range"}
+String ModeComponent "Mode Component" {alexa="ModeController.mode"}
 ```
 * RangeComponent
 ```
