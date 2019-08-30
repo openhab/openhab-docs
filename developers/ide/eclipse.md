@@ -22,7 +22,7 @@ This guide focuses on existing Add-on (binding) development.
 Ensure that you select the Eclipse version to use to "2019-03" as version `2019-06` currently does not support bndtools. Finally select `Next >`.
 
 1. Under `Github Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab2-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
-    
+
    ![select projects](./images/ide_setup_eclipse_projects.png)
 
 1. Click `Next>`, verify/modify Root and install folder name, click `Next>` and `Finish` to start installation. 
@@ -67,34 +67,3 @@ Now the IDE is ready to start openHAB with a minimum set of the openHAB core bin
 1. You can check openHAB is running going with your browser to: http://localhost:8080/paperui/ (the last `/` is important!)
 
 1. Check the chosen binding is active in `Paper UI > Configuration > Bindings`
-
-## Develop a NEW binding with the Eclipse IDE
-
-To start developing a new binding follow these steps:
-
-1. Close Eclipse
-1. From the command line in `openhab2-addons/bundles` directory run:
-
-    `$ ./create_openhab_binding_skeleton.sh  MyNewBinding <Author> <GitHubUsername>`
-
-    to create a skeleton of a new binding `mynewbinding`.
-    Accept with `Y` the skeleton configuration.
-
-1. Edit file `openhab2-addons/bom/openhab-addons/pom.xml` and add your new binding to the list (adapt the artifactid to your binding name!):
-    ```
-    <dependency>
-        <groupId>org.openhab.addons.bundles</groupId>
-        <artifactId>org.openhab.binding.mynewbinding</artifactId>
-        <version>${project.version}</version>
-    </dependency>
-    ```
-
-1. From the `git\openhab2-addons\bom\openhab-addons` directory run: `mvn -DskipChecks -DskipTests clean install` to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the IDE launch configuration
-
-1. Open Eclipse and import your new binding project 
-
-1. Follow from previous step 7. to select and run/debug your new binding in the Eclipse IDE
-
-Now you can start developing your NEW binding.
-
-In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](../buildsystem.html#adding-dependencies) for more information.
