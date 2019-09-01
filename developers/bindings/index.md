@@ -859,7 +859,7 @@ Here the developer only needs to implement four simple methods:
 The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
 This method is called from the discovery service during result creation to provide a unique thing UID for the result.
-- `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
+- `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
 This method is called from the discovery service to create the actual discovery result.
 It uses the `getThingUID` method to create the thing UID of the result.
 
@@ -875,12 +875,13 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml) at the alphabetically correct position.
-* Furthermore add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
+* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml).
+* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bom/openhab-addons/pom.xml).
 * If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
-  make sure to add a line for this dependency as well (see the other bindings as an example)
-* Add your binding to the CODEOWNERS at the alphabetically correct position.
-  This is so that you get notified by Github when someone adds a pull request towards your binding and hopefully can assist in reviewing that.
+  make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
+* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab2-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+
+> Please make sure you add the above entries at their alphabetically correct position!
 
 Before you create a pull request on GitHub, you should now run
 
