@@ -330,8 +330,10 @@ Slider item=KI_Temperature label="Kitchen"
 Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=<sendFrequency>]
 ```
 
-This element provides the ability to select a color.
-When the user clicks on the middle button, a color wheel will appear.
+This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
+The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
+The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
+
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
