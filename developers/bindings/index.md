@@ -28,16 +28,27 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 
 ```
 |- src/main
+|------- feature
+|---------- feature.xml   Your OSGI feature file
 |------- java             Your Java code
-|---------- [...]
-|------- tests            It's easy to write unit tests and fellow developers will thank you
-|---------- [...]
+|---------- org/openhab/[...]
 |- src/main/resources/ESH-INF
 |---- binding
 |------- binding.xml      Binding name, description, author and other meta data
-|---- thing
-|------- thing-types.xml  One or more xml files with thing descriptions
+|-----config              Configuration description files when not in things files
+|------- *.xml
+|---- i18n                Your localized binding texts
+|------- *_<local>.properties
+|---- thing               One or more xml files with thing descriptions
+|------- *.xml
+|- src/test
+|------- java             It's easy to write unit tests and fellow developers will thank you
+|---------- org/openhab/[...]
+|------- resources        Any resource files used in your unit tests, like test data
+|---------- [...]
+|- NOTICE                 The license file
 |- pom.xml                Build system file: Describe your dependencies here
+|- README.md              The file describing your binding
 ```
 
 Every binding needs to define a `binding.xml` file.
