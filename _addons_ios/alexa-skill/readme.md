@@ -241,7 +241,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * Rollershutter
     * Default category: OTHER
   * `ThermostatController.targetSetpoint`
-    * Items that represent a target setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a target setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -252,7 +252,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.upperSetpoint`
-    * Items that represent a upper or HEAT setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a upper or HEAT setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -265,7 +265,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to defined scale range listed above if omitted
     * Default category: THERMOSTAT
   * `ThermostatController.lowerSetpoint`
-    * Items that represent a lower or COOL setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
+    * Items that represent a lower or COOL setpoint for a thermostat. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius. By default, the temperature range is limited to predefined setpoint values based on the scale parameter. If necessary, the temperature range can be customized using parameter `setpointRange="60:90"`.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -302,7 +302,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to, depending on the parameters provided, either user-based, preset-based or default item type-based mapping.
     * Default category: THERMOSTAT
   * `TemperatureSensor.temperature`
-    * Items that represent the current temperature. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) unit of measurement unit if Number:Temperature item type; (4) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (5) defaults to Celsius.
+    * Items that represent the current temperature. The scale is determined based on: (1) value set in parameter `scale="Fahrenheit"`; (2) unit of item state presentation (`°F`=Fahrenheit; `°C`=Celsius); (3) your openHAB server regional measurement system or region settings (US=Fahrenheit; SI=Celsius); (4) defaults to Celsius.
     * Supported item type:
       * Number(:Temperature)
     * Supported metadata parameters:
@@ -519,7 +519,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to false
     * Default category: OTHER
   * `RangeController.rangeValue`
-    * Items that represent components of a device that are characterized by numbers within a minimum and maximum range. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well  prefixing with an @ sign (e.g. `friendlyNames="@Setting.FanSpeed,Speed"`). To set the supported range, provide a column delimited list including minimum, maximum and precision values. The latter value will be use as default increment when requesting adjusted range values. Optionally, to name specific presets, like fan speeds low [1] & high value [10], can be added in `presets` parameter and provide a comma delimited list of preset mappings composed of range value and the associated names/asset ids they should be called, delimited by equal and column signs (e.g. `presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest"`). Another optional settings is `unitOfMeasure` parameter which gives a unit of measure to the range values. By default if omitted, it is based on the unit of measurement number item type that have a supported unit, otherwise, a [unit id](#unit-of-measurement-catalog) can be used. (e.g. `unitOfMeasure=Angle.Degrees`)
+    * Items that represent components of a device that are characterized by numbers within a minimum and maximum range. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well  prefixing with an @ sign (e.g. `friendlyNames="@Setting.FanSpeed,Speed"`). To set the supported range, provide a column delimited list including minimum, maximum and precision values. The latter value will be use as default increment when requesting adjusted range values. Optionally, to name specific presets, like fan speeds low [1] & high value [10], can be added in `presets` parameter and provide a comma delimited list of preset mappings composed of range value and the associated names/asset ids they should be called, delimited by equal and column signs (e.g. `presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest"`). Another optional settings is `unitOfMeasure` parameter which gives a unit of measure to the range values. It is determined based on: (1) [unit id](#unit-of-measurement-catalog) set in parameter `unitOfMeasure=Angle.Degrees`; (2) supported unit of item state presentation; (3) default unit of measurement for item type with dimension based on your openHAB server regional settings; (4) defaults to empty.
     * Supported item type:
       * Dimmer
       * Number
@@ -539,7 +539,10 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * presets=`<presets>` (optional)
         * each preset formatted as `<presetValue>=<@assetIdOrName1>:<@assetIdOrName2>:...`
       * unitOfMeasure=`<unitId>` (optional)
-        * defaults to item state unit of measurement symbol for Number:* item types
+        * defaults to unit of item state presentation or default unit of measurement for the Number:* item types listed below:
+          * Number:Angle [`Angle.Degrees`]
+          * Number:Length [`Distance.Meters` (SI); `Distance.Inches` (US)]
+          * Number:Temperature [`Temperature.Celsius` (SI); `Temperature.Fahrenheit` (US)]
     * Default category: OTHER
   * `ToggleController.toggleState`
     * Items that represent components of a device that can be turned on or off. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well with an @ sign prefix (e.g. `friendlyNames="@Setting.Oscillate,Rotate"`).

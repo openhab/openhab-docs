@@ -19,8 +19,8 @@ No device information is provided in the database. Consider [updating the databa
 
 The following table summarises the channels available for the ZMEERAZ2 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
 
 
 

@@ -99,7 +99,47 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 1 configuration parameters available in the Heatit Z-Push Button 8.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | factory reset | factory reset |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
+
+### Parameter 1: factory reset
+
+factory reset
+
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | normal operation |
+| 21930 | factory reset |
+
+The manufacturer defined default value is ```0``` (normal operation).
+
+This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
 
 ## Association Groups
 

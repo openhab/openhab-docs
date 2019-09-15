@@ -17,42 +17,278 @@ The Curtain Motor supports routing. This allows the device to communicate using 
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/654) to improve the documentation.
+JTB-1007 is a Z-Wave enabled curtain motor support scene setting.
+
+### Inclusion Information
+
+Click the PB-button once, located near by motor power socket.
+
+### Exclusion Information
+
+Click the PB-button once, located near by motor power socket.
 
 ## Channels
 
 The following table summarises the channels available for the Curtain Motor -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
-### Dimmer
+### Blinds Control
+Provides start / stop control of blinds.
 
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
-
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 9 configuration parameters available in the Curtain Motor.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 17 | Motor Open, Go to Direction B | Motor Open, Go to Direction B |
+| 18 | Motor Stop | Motor Stop |
+| 19 | Motor Close, Go to Direction A | Motor Close, Go to Direction A |
+| 20 | Motor Position | Return motor current position |
+| 22 | Motor revert direction | Motor revert direction |
+| 23 | Clear motor lead tail endpoint setting | Clear motor lead tail endpoint setting |
+| 32 | Return motor status flag | Return motor status flag |
+| 33 | Enable manual pulling function | Enable manual pulling function |
+| 34 | Disable manual pulling function | Disable manual pulling function |
+
+### Parameter 17: Motor Open, Go to Direction B
+
+Motor Open, Go to Direction B
+Set only, any value possible
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_17_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 18: Motor Stop
+
+Motor Stop
+
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_18_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 19: Motor Close, Go to Direction A
+
+Motor Close, Go to Direction A
+
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_19_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 20: Motor Position
+
+Return motor current position
+
+Values in the range 0 to 99 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_20_2``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 22: Motor revert direction
+
+Motor revert direction
+
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_22_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 23: Clear motor lead tail endpoint setting
+
+Clear motor lead tail endpoint setting
+
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_23_1_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 32: Return motor status flag
+
+Return motor status flag
+<table>
+  <tr>
+    <td>
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      motor is closing, go to direction A
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      1
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      motor is opening, go to direction B
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      2
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      motor endpoint A has setting
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      3
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      motor endpoint B has setting
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      4
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      (Reserved)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      5
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      (Reserved)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      6
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      (Reserved)
+    </td>
+  </tr>
+  
+  <tr>
+    <td>
+      7
+    </td>
+    
+    <td>
+        ->  
+    </td>
+    
+    <td>
+      direction revert
+    </td>
+  </tr>
+</table>This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_32_1``` and is of type ```INTEGER```.
+This is a read only parameter.
+
+
+### Parameter 33: Enable manual pulling function
+
+Enable manual pulling function
+
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_33_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
+
+### Parameter 34: Disable manual pulling function
+
+Disable manual pulling function
+
+Values in the range 0 to 4294967295 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_34_4_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
 
 ## Association Groups
 

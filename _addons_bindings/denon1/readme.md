@@ -7,7 +7,7 @@ description: "The openHAB Denon Binding allows interaction with Denon AV receive
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.denon/README.md
 since: 1x
 logo: images/addons/denon.png
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

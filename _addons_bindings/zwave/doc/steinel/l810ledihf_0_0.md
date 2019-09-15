@@ -17,42 +17,49 @@ The L 810 LED iHF supports routing. This allows the device to communicate using 
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/705) to improve the documentation.
+A high-quality product is cleverly thought through and made from materials that last. Its value also extends beyond today, it has permanency and constancy. The L 810 iHF outdoor SensorLight is an LED uplight and downlight that translates intelligent technology into form and function. For the first time, we have managed to make a light's sensor completely invisible – without compromising on first-class design and technological perfection. For stunning upward and downward lighting. New: optional manual override for 4 hours.  
+  
+The optional Smart Friends box and the free Smart Friends app make it easy to set the L 810 LED iHF Z-Wave via smart phone or tablet. The light can also be switched ON or OFF via app. Other Steinel products can also be interconnected. If you wish, this also works via remote control when you are out. That completes your own light management system.
+
+### Inclusion Information
+
+4) Briefly press the device's button to set the light to inclusion mode.
+
+### Exclusion Information
+
+Briefly press the device's button to set the light to exclusion mode. 
 
 ## Channels
 
 The following table summarises the channels available for the L 810 LED iHF -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number |  | Number | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
-| Alarm (burglar) | alarm_burglar | Door | Switch | 
-| Alarm (system) | alarm_system |  | Switch | 
-| Dimmer 1 | switch_dimmer1 | DimmableLight | Dimmer | 
-| Scene Number 1 | scene_number1 |  | Number | 
-| Alarm (burglar) 2 | alarm_burglar2 | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Scene Number 1 | scene_number1 | scene_number |  | Number | 
+| Alarm (burglar) 2 | alarm_burglar2 | alarm_burglar | Door | Switch | 
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -62,16 +69,14 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Alarm (burglar)
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -81,10 +86,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Alarm (system)
-
 Indicates if a system alarm is triggered.
 
-The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -94,23 +98,20 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Dimmer 1
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number 1
-
 Triggers when a scene button is pressed.
 
-The ```scene_number1``` channel supports the ```Number``` item.
+The ```scene_number1``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Alarm (burglar) 2
-
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar2``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

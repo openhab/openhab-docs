@@ -74,13 +74,151 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 8 configuration parameters available in the ADC-S2000-T-RA.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | Wake Up Period | Seconds to stay awake following button press |
+| 2 | Low Battery Level | Battery level |
+| 3 | Temperature Reporting Threshold | Tenths of a degree Fahrenheit. A value of 10 would be 1.0F. |
+| 4 | Configuration Bitmask | Configuration Bitmask |
+| 5 | Battery Reporting Interval | Battery Reporting Interval |
+| 7 | Temperature Reporting Interval | Temperature Reporting Interval |
+| 8 | Temperature Calibration Offset | Temperature Calibration Offset |
+| 9 | Mandatory Temperature Reporting Interval | Mandatory Temperature Reporting Interval |
+|  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
+|  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
+
+### Parameter 1: Wake Up Period
+
+Seconds to stay awake following button press
+
+Values in the range 10 to 32768 may be set.
+
+The manufacturer defined default value is ```32768```.
+
+This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
+
+
+### Parameter 2: Low Battery Level
+
+Battery level
+
+Values in the range 1000 to 2500 may be set.
+
+The manufacturer defined default value is ```2500```.
+
+This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
+
+
+### Parameter 3: Temperature Reporting Threshold
+
+Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.
+
+Values in the range 0 to 100 may be set.
+
+The manufacturer defined default value is ```100```.
+
+This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
+
+
+### Parameter 4: Configuration Bitmask
+
+Configuration Bitmask
+
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Will not send temperature reports |
+| 2 | Send reports when the temperature changes. |
+
+The manufacturer defined default value is ```2``` (Send reports when the temperature changes.).
+
+This parameter has the configuration ID ```config_4_2``` and is of type ```INTEGER```.
+
+
+### Parameter 5: Battery Reporting Interval
+
+Battery Reporting Interval
+Number of wake up intervals between autonomous battery reports. The wake up interval is set in the Wake Up Command Class.
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_5_2``` and is of type ```INTEGER```.
+
+
+### Parameter 7: Temperature Reporting Interval
+
+Temperature Reporting Interval
+The number of wake up intervals between autonomous temperature reports. 
+
+If this value is zero, autonomous temperature reporting based on wake up interval is disabled.
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
+
+
+### Parameter 8: Temperature Calibration Offset
+
+Temperature Calibration Offset
+Tenths of a degree Fahrenheit. A value of 10 would be 1.0F.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range -100 to 100 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_8_2``` and is of type ```INTEGER```.
+
+
+### Parameter 9: Mandatory Temperature Reporting Interval
+
+Mandatory Temperature Reporting Interval
+The number of seconds between temperature reports.
+Values in the range 60 to 64800 may be set.
+
+The manufacturer defined default value is ```64800```.
+
+This parameter has the configuration ID ```config_9_2``` and is of type ```INTEGER```.
+
+### Wakeup Interval
+
+The wakeup interval sets the period at which the device will listen for messages from the controller. This is required for battery devices that sleep most of the time in order to conserve battery life. The device will wake up at this interval and send a message to the controller to tell it that it can accept messages - after a few seconds, it will go back to sleep if there is no further communications. 
+
+This setting is defined in *seconds*. It is advisable not to set this interval too short or it could impact battery life. A period of 1 hour (3600 seconds) is suitable in most instances.
+
+Note that this setting does not affect the devices ability to send sensor data, or notification events.
+
+This parameter has the configuration ID ```wakeup_interval``` and is of type ```INTEGER```.
+
+### Wakeup Node
+
+When sleeping devices wake up, they send a notification to a listening device. Normally, this device is the network controller, and normally the controller will set this automatically to its own address.
+In the event that the network contains multiple controllers, it may be necessary to configure this to a node that is not the main controller. This is an advanced setting and should not be changed without a full understanding of the impact.
+
+This parameter has the configuration ID ```wakeup_node``` and is of type ```INTEGER```.
+
 
 ## Association Groups
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The ADC-S2000-T-RA supports 2 association groups.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 5 nodes.
+
+### Group 2: Sensor Multilevel Temperature Report.
+
+
+Association group 2 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints

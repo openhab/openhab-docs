@@ -9,6 +9,8 @@ title: HTP-4S1-FB - ZWave
 This describes the Z-Wave device *HTP-4S1-FB*, manufactured by *[Hogar Controls](http://hogarcontrols.com/)* with the thing type UID of ```hogar_htp4s1fb_02_002```.
 This version of the device is limited to firmware versions above 2.2
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
 ![HTP-4S1-FB product image](https://www.cd-jackson.com/zwave_device_uploads/545/545_default.jpg)
 
 
@@ -56,43 +58,38 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 The following table summarises the channels available for the HTP-4S1-FB -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Switch 3 | switch_binary3 | Switch | Switch | 
-| Switch 4 | switch_binary4 | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
+| Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 3
-
 Switch the power on and off.
 
-The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 4
-
 Switch the power on and off.
 
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
@@ -147,6 +144,10 @@ The device does not support associations.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
+
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/545/4Touch.pdf)
 
 ---
 

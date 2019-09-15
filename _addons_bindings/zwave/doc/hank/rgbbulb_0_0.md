@@ -10,49 +10,56 @@ This describes the Z-Wave device *RGB bulb*, manufactured by *[Hank](http://www.
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
+![RGB bulb product image](https://www.cd-jackson.com/zwave_device_uploads/598/598_default.png)
+
+
 The RGB bulb supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/598) to improve the documentation.
+A smart bulb with over 16 million colors
+
+### Inclusion Information
+
+Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On
+
+### Exclusion Information
+
+Toggle the wall switch off and on 3 times quickly (within 3 seconds) ending with On
 
 ## Channels
 
 The following table summarises the channels available for the RGB bulb -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number |  | Number | 
-| Color Control | color_color |  | Color | 
-| Color Temperature | color_temperature | ColorLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Color Control | color_color | color_color | ColorLight | Color | 
+| Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Color Control
-
 The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
 
-The ```color_color``` channel supports the ```Color``` item.
+The ```color_color``` channel is of type ```color_color``` and supports the ```Color``` item and is in the ```ColorLight``` category.
 
 ### Color Temperature
-
 The color temperature channel allows to set the color
             temperature of a light from 0 (cold) to 100 (warm).
 
-The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
+The ```color_temperature``` channel is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 
 
@@ -78,11 +85,11 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | RGB BULB memorizes its state after a power failure |
-| 1 | Device will be on after power supply is reconnected |
-| 2 | Device will be off after power supply is reconnected |
+| 0 | Memorizes its state |
+| 1 | On |
+| 2 | Off |
 
-The manufacturer defined default value is ```0``` (RGB BULB memorizes its state after a power failure).
+The manufacturer defined default value is ```0``` (Memorizes its state ).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
@@ -146,7 +153,7 @@ This parameter has the configuration ID ```config_61_4``` and is of type ```INTE
 
 RGB BULB will exclude from the Z-Wave network with this particular command
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 1 to 1431655765 -:
 
 | Value  | Description |
 |--------|-------------|

@@ -44,56 +44,114 @@ Press the All Off (Inclusion) button one time
 
 The following table summarises the channels available for the RFWC5 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch Button 1 | switch_binary | Switch | Switch | 
-| Scene Number 1 | scene_number |  | Number | 
-| Indicator Light Control 1 | indicator_level |  | Dimmer | 
-| Switch Button 2 | switch_binary1 | Switch | Switch | 
-| Scene Number 2 | scene_number1 |  | Number | 
-| Indicator Light Control 2 | indicator_level1 |  | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch Button 1 | switch_binary | switch_binary | Switch | Switch | 
+| Scene Number 1 | scene_number | scene_number |  | Number | 
+| Indicator Light Control 1 | indicator_level | indicator_level |  | Dimmer | 
+| Switch Button 2 | switch_binary1 | switch_binary | Switch | Switch | 
+| Scene Number 2 | scene_number1 | scene_number |  | Number | 
+| Indicator Light Control 2 | indicator_level1 | indicator_level |  | Dimmer | 
 
 ### Switch Button 1
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 1
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Indicator Light Control 1
-
 Sets the indicator brightness.
 
-The ```indicator_level``` channel supports the ```Dimmer``` item.
+The ```indicator_level``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
 
 ### Switch Button 2
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Scene Number 2
-
 Triggers when a scene button is pressed.
 
-The ```scene_number1``` channel supports the ```Number``` item.
+The ```scene_number1``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Indicator Light Control 2
-
 Sets the indicator brightness.
 
-The ```indicator_level1``` channel supports the ```Dimmer``` item.
+The ```indicator_level1``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
 
 
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 5 configuration parameters available in the RFWC5.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | Group 1 Level | Group 1 Level |
+| 2 | Group 2 Level | Group 2 Level |
+| 3 | Group 3 Level | Group 3 Level |
+| 4 | Group 4 Level | Group 4 Level |
+| 5 | Group 5 Level | Group 5 Level |
+
+### Parameter 1: Group 1 Level
+
+Group 1 Level
+Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 1
+Values in the range 1 to 255 may be set.
+
+The manufacturer defined default value is ```10```.
+
+This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+
+
+### Parameter 2: Group 2 Level
+
+Group 2 Level
+Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 2
+Values in the range 1 to 255 may be set.
+
+The manufacturer defined default value is ```20```.
+
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+
+
+### Parameter 3: Group 3 Level
+
+Group 3 Level
+Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 3
+Values in the range 1 to 255 may be set.
+
+The manufacturer defined default value is ```30```.
+
+This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
+
+
+### Parameter 4: Group 4 Level
+
+Group 4 Level
+Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 4
+Values in the range 1 to 255 may be set.
+
+The manufacturer defined default value is ```40```.
+
+This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
+
+
+### Parameter 5: Group 5 Level
+
+Group 5 Level
+Value 0x00-0x63 or 0xFF is the level for all nodes listed in the Group 5
+Values in the range 1 to 255 may be set.
+
+The manufacturer defined default value is ```50```.
+
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
 
 ## Association Groups
 
@@ -126,10 +184,10 @@ Association group 4 supports 232 nodes.
 
 Association group 5 supports 232 nodes.
 
-### Group 127: Group 255
+### Group 255: Group 255
 
 
-Association group 127 supports 1 node.
+Association group 255 supports 1 node.
 
 ## Technical Information
 

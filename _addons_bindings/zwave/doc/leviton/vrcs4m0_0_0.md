@@ -5,7 +5,7 @@ title: VRCS4-M0 - ZWave
 
 {% include base.html %}
 
-# VRCS4-M0 4 scene controller with load control
+# VRCS4-M0 4-Scene controller with load control
 This describes the Z-Wave device *VRCS4-M0*, manufactured by *Leviton* with the thing type UID of ```leviton_vrcs4m0_00_000```.
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
@@ -45,15 +45,14 @@ If the LEDs on the 4-Zone controller turn red while excluding, there has been a 
 
 The following table summarises the channels available for the VRCS4-M0 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Scene Number | scene_number |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 

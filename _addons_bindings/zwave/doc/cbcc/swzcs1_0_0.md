@@ -17,21 +17,32 @@ The SW-ZCS-1 supports routing. This allows the device to communicate using other
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/236) to improve the documentation.
+The wall switch is in “Gateway” Mode as soon as it is added in a Z-Wave® network managed by a home automation gateway.
+
+The wall switch becomes then the gateway’s assistant, capable to launch up to 16 different scenes through it (SCENE Profile) or directly associated to your Z-Wave® compatible devices (MONO or DUO Profile).
+
+### Inclusion Information
+
+  1. Simultaneously push on 1 and 2, during 1sec. The LED glows in pink to confirm the selection
+  2. Push on 1, within 10 seconds. The LED blinks in pink to confirm your choice The LED blinks in green to confirm the procedure
+
+### Exclusion Information
+
+  1. Simultaneously push on 1 and 2, during 1sec. The LED glows in pink to confirm the selection
+  2. Push on 1, within 10 seconds. The LED blinks in pink to confirm your choice The LED blinks in green to confirm the procedure
 
 ## Channels
 
 The following table summarises the channels available for the SW-ZCS-1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 
@@ -105,6 +116,7 @@ Association group 2 supports 5 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |

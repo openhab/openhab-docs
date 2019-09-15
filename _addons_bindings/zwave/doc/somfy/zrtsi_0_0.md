@@ -10,16 +10,28 @@ This describes the Z-Wave device *ZRTSI*, manufactured by *[Somfy](http://www.so
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
+![ZRTSI product image](https://www.cd-jackson.com/zwave_device_uploads/369/369_default.png)
+
+
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/369) to improve the documentation.
+Somfy's new Z-Wave® to Radio Technology Somfy® Interface, or ZRTSI, is a Z-Wave certified device that receives Z-Wave signals and converts them to Radio Technology Somfy® (RTS). The ZRTSI was developed to integrate Somfy's range of RTS motors into TaHomATM. The ZRTSI can be used with up to 16 individual or groups of motorized products and plugs into any standard 120VAC 60Hz outlet. (Cat. No: 1870202)
+
+### Inclusion Information
+
+On the ZRTSI, Activate the “Base Node Include” command by pressing the Select Button.
+
+### Exclusion Information
+
+  1. From the ZRTSI's Home Screen, navigate to the Base Node Exclude screen. 
+  2. Activate the “Base Node Exclude” command by pressing the Select Button. 
 
 ## Channels
 
 The following table summarises the channels available for the ZRTSI -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
 
 
 

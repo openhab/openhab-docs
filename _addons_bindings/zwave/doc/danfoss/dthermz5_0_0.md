@@ -90,12 +90,11 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 12 configuration parameters available in the DTHERMZ5.
+The following table provides a summary of the 11 configuration parameters available in the DTHERMZ5.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Valve Type | Type of Valve being controlled |
 | 1 | Temperature Report threshold | Range is from 0.1 to 10°C 1=0.1°C 100=10°C |
 | 2 | Set-point display resolution | range from 0.1 to 10°C 1=0.1°C 100=10°C |
 | 3 | Min Set-point and override limit | from min 0°C to max setpoint override limit 0=0°C 40=40°C |
@@ -109,24 +108,6 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | LED color | 1=Green 2=Red |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
-
-### Parameter 1: Valve Type
-
-Type of Valve being controlled
-Parameter 1: Valve type:
-
-  * 0 = Normal Closed (NC) default
-  * 1 = Normal Open (NO)
-
-Mix of NC and NO types of valves is not supported
-
-Most systems use NC valves
-Values in the range 0 to 0 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_1_0``` and is of type ```INTEGER```.
-
 
 ### Parameter 1: Temperature Report threshold
 

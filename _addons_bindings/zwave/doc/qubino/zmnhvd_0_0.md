@@ -17,39 +17,49 @@ The ZMNHVD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/363) to improve the documentation.
+Universal dimmer module with a standard 0-10V output and a multi-function input, which may be a push button / switch, a potentiometer or 0-10V signal 
+
+### Inclusion Information
+
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds)
+
+### Exclusion Information
+
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s ( 5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHVD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Temperature Sensor | sensor_temperature | Temperature | Number:Temperature | 
-| Input I1 | sensor_general |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Temperature Sensor | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Input I1 | sensor_general | sensor_general |  | Number | 
 
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Temperature Sensor
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Input I1
 
 
-The ```sensor_general``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_general``` channel is of type ```sensor_general``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -60,11 +70,11 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Input 1 Switch Type | By this parameter the user can set input based on device type (switch, potentiometer, 0-10V sensor,...) |
+| 1 | Input 1 Switch Type | Input 1 Switch Type |
 | 11 | Automatic turning off output after set time |  |
 | 12 | Automatic turning on output after set time |  |
 | 21 | Enable/Disable Double click function |  |
-| 30 | Saving the state of the device after a power failure |  |
+| 30 | Saving the state after a power failure |  |
 | 52 | Auto or manual selection |  |
 | 53 | PID value inside deadband |  |
 | 54 | PID deadband  |  |
@@ -88,8 +98,8 @@ Detailed information on each parameter can be found in the sections below.
 
 ### Parameter 1: Input 1 Switch Type
 
+Input 1 Switch Type
 By this parameter the user can set input based on device type (switch, potentiometer, 0-10V sensor,...)
-
 The following option values may be configured -:
 
 | Value  | Description |
@@ -139,13 +149,18 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the device after a power failure
+### Parameter 30: Saving the state after a power failure
 
 
 
-Values in the range 0 to 1 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | Module saves it state |
+| 1 | Module turns OFF |
+
+The manufacturer defined default value is ```0``` (Module saves it state).
 
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 

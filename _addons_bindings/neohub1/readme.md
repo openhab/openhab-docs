@@ -6,7 +6,7 @@ type: binding
 description: "The NeoHub binding allows you to connect openhab via TCP/IP to Heatmiser's NeoHub and integrate your NeoStat thermostats onto the bus."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.neohub/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

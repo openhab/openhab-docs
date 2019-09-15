@@ -51,25 +51,23 @@ NOTE: If the module is included with parameters 100 or 101 with values different
 
 The following table summarises the channels available for the ZMNHLD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Thermostat setpoint | thermostat_setpoint | Temperature | Number:Temperature | 
-| Temperature Sensor | sensor_temperature1 | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode1 | Temperature | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Thermostat setpoint | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Temperature Sensor | sensor_temperature1 | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode1 | thermostat_mode | Temperature | Number | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -90,22 +88,19 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Thermostat setpoint
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Temperature Sensor
-
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature1``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode1``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -166,10 +161,10 @@ Detailed information on each parameter can be found in the sections below.
 | 73 | Input I2 status off delay | Input I2 status off delay |
 | 74 | Input 3 status ON delay | Input 3 status ON delay |
 | 75 | Input I3 status off delay | Input I3 status off delay |
-| 76 | Association group 2, 10 - reporting on time interval | Association group 2, 10 - reporting on time interval |
-| 77 | Association group 10 - delay before sending Basic Set ON | Association group 10 - delay before sending Basic Set ON |
+| 76 | Reporting on time interval | Reporting on time interval |
+| 77 | Group 10 - delay before sending Basic Set ON | Group 10 - delay before sending Basic Set ON |
 | 78 | Scale Selection | Scale Selection |
-| 100 | Enable/Disable Endpoint I1 or select the Type and Event | Enable/Disable Endpoint I1 or select the Notification Type and Event |
+| 100 | Enable/Disable I1 or select Type and Event | Enable/Disable I1 or select Type and Event |
 | 101 | Enable/Disable Endpoint I2 or select type | Enable/Disable Endpoint I2 or select type |
 | 102 | Enable/Disable Endpoint I3 or select type | Enable/Disable Endpoint I3 or select type |
 | 110 | Temperature sensor offset settings | Temperature sensor offset settings |
@@ -307,11 +302,11 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 1 | Input I1 changes the mode between Off and Heat/Cool |
+| 1 | Input I1 changes between Off and Heat/Cool |
 | 2 | Input I1 influences the heating/cooling valves |
-| 32767 | Input I1 doesnt influence on the Heat/Cool process |
+| 32767 | No influence on the Heat/Cool process |
 
-The manufacturer defined default value is ```1``` (Input I1 changes the mode between Off and Heat/Cool ).
+The manufacturer defined default value is ```1``` (Input I1 changes between Off and Heat/Cool ).
 
 This parameter has the configuration ID ```config_11_2``` and is of type ```INTEGER```.
 
@@ -327,7 +322,7 @@ The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 2000 | Input I2 influences the cooling value with condense sensor |
+| 2000 | Input I2 influences the cooling value |
 | 32767 | Input I2 doesnt influence on the Heat/Cool process |
 
 The manufacturer defined default value is ```32767``` (Input I2 doesnt influence on the Heat/Cool process).
@@ -350,9 +345,9 @@ The following option values may be configured -:
 |--------|-------------|
 | 1 | input I3 changes the mode of the thermostat |
 | 2 | input I3 influences on heating/cooling valves |
-| 32767 | input I3 does not influence on the heat/cool process |
+| 32767 | Does not influence on the heat/cool process |
 
-The manufacturer defined default value is ```32767``` (input I3 does not influence on the heat/cool process).
+The manufacturer defined default value is ```32767``` (Does not influence on the heat/cool process).
 
 This parameter has the configuration ID ```config_13_2``` and is of type ```INTEGER```.
 
@@ -568,7 +563,7 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | When system is turned off the output is 0V(NC). |
-| 1 | When system is turned off the output is 230V or 24V(NO). |
+| 1 | System OFF the output is 230V or 24V(NO). |
 
 The manufacturer defined default value is ```0``` (When system is turned off the output is 0V(NC).).
 
@@ -647,9 +642,11 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_75_2``` and is of type ```INTEGER```.
 
 
-### Parameter 76: Association group 2, 10 - reporting on time interval
+### Parameter 76: Reporting on time interval
 
+Reporting on time interval
 Association group 2, 10 - reporting on time interval
+
 Determinates the time interval of sending device status ON/OFF to the associated device.  
 If the Association groups 2 or 10 are set, the device is reporting its state (Basic Set ON/ OFF) on change and on time interval (if this parameter is set).  
 • Default value 30 = 30 minutes  
@@ -662,9 +659,11 @@ The manufacturer defined default value is ```30```.
 This parameter has the configuration ID ```config_76_1``` and is of type ```INTEGER```.
 
 
-### Parameter 77: Association group 10 - delay before sending Basic Set ON
+### Parameter 77: Group 10 - delay before sending Basic Set ON
 
+Group 10 - delay before sending Basic Set ON
 Association group 10 - delay before sending Basic Set ON
+
 Set a time delay before sent Basic set ON to the associated device. The same time frame also applies for the Basic set OFF.  
 If this parameter is set, Basic Set ON/OFF Report is delayed for the time defined in this parameter.  
 • Default value 180 = 3 minutes  
@@ -694,9 +693,9 @@ The manufacturer defined default value is ```0``` (degrees Celsius).
 This parameter has the configuration ID ```config_78_1``` and is of type ```INTEGER```.
 
 
-### Parameter 100: Enable/Disable Endpoint I1 or select the Type and Event
+### Parameter 100: Enable/Disable I1 or select Type and Event
 
-Enable/Disable Endpoint I1 or select the Notification Type and Event
+Enable/Disable I1 or select Type and Event
 Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).  
 After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!  
 When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.  
@@ -800,7 +799,7 @@ The following option values may be configured -:
 | 2 | temperature is grabbed from ext battery sensor |
 | 4 | setpoint is grabbed by sensor with assoc 5 |
 | 8 | setpoint is grabbed from ext battery sensor |
-| 10 | temperature an setpoint are grabbed from ext batt sensor |
+| 10 | temperature & setpoint from ext batt sensor |
 
 The manufacturer defined default value is ```0``` (internal sensor is mounted).
 

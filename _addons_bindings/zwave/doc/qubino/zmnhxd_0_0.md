@@ -105,148 +105,128 @@ The installation process, tested and approved by professional electricians, cons
 
 The following table summarises the channels available for the ZMNHXD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Electric meter (power factor) | meter_powerfactor | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (kVAh) | meter_kvah | Energy | Number | 
-| Electric meter (power factor) 1 | meter_powerfactor1 | Energy | Number | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Electric meter (kVAh) 1 | meter_kvah1 | Energy | Number | 
-| Electric meter (power factor) 2 | meter_powerfactor2 | Energy | Number | 
-| Electric meter (amps) 2 | meter_current2 | Energy | Number | 
-| Electric meter (watts) 2 | meter_watts2 | Energy | Number | 
-| Electric meter (volts) 2 | meter_voltage2 | Energy | Number | 
-| Electric meter (power factor) 3 | meter_powerfactor3 | Energy | Number | 
-| Electric meter (amps) 3 | meter_current3 | Energy | Number | 
-| Electric meter (watts) 3 | meter_watts3 | Energy | Number | 
-| Electric meter (volts) 3 | meter_voltage3 | Energy | Number | 
-| Electric meter (power factor) 4 | meter_powerfactor4 | Energy | Number | 
-| Electric meter (amps) 4 | meter_current4 | Energy | Number | 
-| Electric meter (watts) 4 | meter_watts4 | Energy | Number | 
-| Electric meter (volts) 4 | meter_voltage4 | Energy | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Electric meter (power factor) | meter_powerfactor | meter_powerfactor | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (kVAh) | meter_kvah | meter_kvah | Energy | Number | 
+| Electric meter (power factor) 1 | meter_powerfactor1 | meter_powerfactor | Energy | Number | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Electric meter (kVAh) 1 | meter_kvah1 | meter_kvah | Energy | Number | 
+| Electric meter (power factor) 2 | meter_powerfactor2 | meter_powerfactor | Energy | Number | 
+| Electric meter (amps) 2 | meter_current2 | meter_current | Energy | Number | 
+| Electric meter (watts) 2 | meter_watts2 | meter_watts | Energy | Number | 
+| Electric meter (volts) 2 | meter_voltage2 | meter_voltage | Energy | Number | 
+| Electric meter (power factor) 3 | meter_powerfactor3 | meter_powerfactor | Energy | Number | 
+| Electric meter (amps) 3 | meter_current3 | meter_current | Energy | Number | 
+| Electric meter (watts) 3 | meter_watts3 | meter_watts | Energy | Number | 
+| Electric meter (volts) 3 | meter_voltage3 | meter_voltage | Energy | Number | 
+| Electric meter (power factor) 4 | meter_powerfactor4 | meter_powerfactor | Energy | Number | 
+| Electric meter (amps) 4 | meter_current4 | meter_current | Energy | Number | 
+| Electric meter (watts) 4 | meter_watts4 | meter_watts | Energy | Number | 
+| Electric meter (volts) 4 | meter_voltage4 | meter_voltage | Energy | Number | 
 
 ### Electric meter (power factor)
-
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kVAh)
-
 Indicates the energy consumption (kVAh).
 
-The ```meter_kvah``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kvah``` channel is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (power factor) 1
-
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor1``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kVAh) 1
-
 Indicates the energy consumption (kVAh).
 
-The ```meter_kvah1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kvah1``` channel is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (power factor) 2
-
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor2``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps) 2
-
 Indicates the instantaneous current consumption.
 
-The ```meter_current2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current2``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 2
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts) 2
-
 Indicates the instantaneous voltage.
 
-The ```meter_voltage2``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage2``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (power factor) 3
-
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor3``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps) 3
-
 Indicates the instantaneous current consumption.
 
-The ```meter_current3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current3``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 3
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts3``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts) 3
-
 Indicates the instantaneous voltage.
 
-The ```meter_voltage3``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage3``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (power factor) 4
-
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor4``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (amps) 4
-
 Indicates the instantaneous current consumption.
 
-The ```meter_current4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current4``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 4
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts4``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (volts) 4
-
 Indicates the instantaneous voltage.
 
-The ```meter_voltage4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage4``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 

@@ -6,7 +6,7 @@ type: binding
 description: "The SNMP binding allows SNMP GET (polling) and SNMP SET (commanding), and the reception of SNMP TRAPs (asynchronous events). SNMP is often found in network equipment, and the binding can be used to ensure your network is operating correctly. The out binding can be used to configure network settings."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.snmp/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

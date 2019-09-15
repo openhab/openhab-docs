@@ -8,18 +8,33 @@ title: HRVCCM - ZWave
 # HRVCCM Air CCM
 This describes the Z-Wave device *HRVCCM*, manufactured by *Danfoss* with the thing type UID of ```danfoss_hrvccm_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
+![HRVCCM product image](https://www.cd-jackson.com/zwave_device_uploads/166/166_default.png)
+
+
 The HRVCCM supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/166) to improve the documentation.
+Manages the HRV unit based on algorithms and input from the HRV AirDial and the optional HRV PC Tool
+
+**For use only with Danfoss Air Dial controllers.**
+
+### Inclusion Information
+
+**For use only with Danfoss Air Dial controllers.**
+
+### Exclusion Information
+
+**For use only with Danfoss Air Dial controllers.**
 
 ## Channels
 
 The following table summarises the channels available for the HRVCCM -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
 
 
 
@@ -44,6 +59,10 @@ The device does not support associations.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_VERSION_V1| |
 | COMMAND_CLASS_MANUFACTURER_PROPRIETARY_V1| |
+
+### Documentation Links
+
+* [Installation](https://www.cd-jackson.com/zwave_device_uploads/166/AIR-installation-guide-VIEWA402-hi-res.pdf)
 
 ---
 

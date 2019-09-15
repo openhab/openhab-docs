@@ -213,7 +213,14 @@ This parameter has the configuration ID ```switchall_mode``` and is of type ```I
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The HKZW_SO03 supports 1 association group.
+
+### Group 1: Lifeline
+
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+
+Association group 1 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints

@@ -35,13 +35,12 @@ You can also reset the device, but only use this if your main controller is not 
 
 The following table summarises the channels available for the Shuttle S/L -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
 
 ### Switch
-
 Switch binary command can be used to turn the Shuttle LZ fully open or fully closed.
 
 Value:
@@ -52,10 +51,9 @@ Value:
 
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
-### Dimmer
-
+### Blinds Control
 Values 0-99 (%) are used to set the rail to the preferred position.
 
 Value 255 is used to set the curtain fully open.
@@ -76,10 +74,9 @@ Primary switch type: 0x03
 
 Secondary switch type: 0x00 (NOT SUPPORTED)
 
-The brightness channel allows to control the brightness of a light.
-            It is also possible to switch the light on and off.
+Provides start / stop control of blinds.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 

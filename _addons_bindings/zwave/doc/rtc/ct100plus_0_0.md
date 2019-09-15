@@ -17,46 +17,59 @@ The CT100 Plus supports routing. This allows the device to communicate using oth
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/641) to improve the documentation.
+The CT100 Plus is a sleek, modern thermostat design for home automation systems. It’s clean user interface compliments app-enabled systems. It features adjustable real-time alerts to enable cloud triggers, a robust data stream of HVAC information for cloud monitoring, and configurable comfort response settings to customize home control scenes. The CT100 Plus is compatible with all popular HVAC systems and is battery-operated without the need for a C-wire.
+
+### Inclusion Information
+
+  1.  From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.
+  2. Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.
+
+When the CT100 has successfully joined a Z-Wave network, the MATE icon is replaced by the LINK icon under the radio tower. 
+
+### Exclusion Information
+
+  1.  From the CT100’s Menu screen, touch MATE under the radio icon. The Network Include screen displays a large r1.
+  2. Touch MATE again. This initiates the network connection (mating) process. The MATE icon and the status indicator LEDs will blink.
+
+When you are trying to disconnect from (leave) a network, the LINK icon disappears when the node has successfully left the network.
 
 ## Channels
 
 The following table summarises the channels available for the CT100 Plus -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (relative humidity) | sensor_relhumidity | Humidity | Number | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (dry air) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Thermostat fan mode | thermostat_fanmode |  |  | 
-| Thermostat fan state | thermostat_fanstate |  |  | 
-| Battery Level | battery-level | Battery | Number |
-| Clock Time Offset | time_offset | Temperature | Number | 
-| Sensor (relative humidity) 1 | sensor_relhumidity1 | Humidity | Number | 
-| Sensor (temperature) 1 | sensor_temperature1 | Temperature | Number:Temperature | 
-| Thermostat mode 1 | thermostat_mode1 | Temperature | Number | 
-| Operating State 1 | thermostat_state1 | Temperature | Number | 
-| Setpoint (heating) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (cooling) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (dry air) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Setpoint (furnace) 1 | thermostat_setpoint1 | Temperature | Number:Temperature | 
-| Thermostat fan mode 1 | thermostat_fanmode1 |  |  | 
-| Thermostat fan state 1 | thermostat_fanstate1 |  |  | 
-| Clock Time Offset 1 | time_offset1 | Temperature | Number | 
-| Sensor (relative humidity) 2 | sensor_relhumidity2 | Humidity | Number | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Operating State | thermostat_state | thermostat_state | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (dry air) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (furnace) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
+| Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
+| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Sensor (relative humidity) 1 | sensor_relhumidity1 | sensor_relhumidity | Humidity | Number | 
+| Sensor (temperature) 1 | sensor_temperature1 | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode 1 | thermostat_mode1 | thermostat_mode | Temperature | Number | 
+| Operating State 1 | thermostat_state1 | thermostat_state | Temperature | Number | 
+| Setpoint (heating) 1 | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) 1 | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (dry air) 1 | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (furnace) 1 | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Thermostat fan mode 1 | thermostat_fanmode1 | thermostat_fanmode |  |  | 
+| Thermostat fan state 1 | thermostat_fanstate1 | thermostat_fanstate |  |  | 
+| Clock Time Offset 1 | time_offset1 | time_offset | Temperature | Number | 
+| Sensor (relative humidity) 2 | sensor_relhumidity2 | sensor_relhumidity | Humidity | Number | 
+| Sensor (temperature) 2 | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -66,22 +79,19 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (relative humidity)
-
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity``` channel is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -102,10 +112,9 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Operating State
-
 Sets the thermostat operating state.
 
-The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_state``` channel is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -119,66 +128,55 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (dry air)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (furnace)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Thermostat fan mode
-
 Channel type information on this channel is not found.
 
 ### Thermostat fan state
-
 Channel type information on this channel is not found.
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Clock Time Offset
-
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 1
-
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity1``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity1``` channel is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 1
-
 Indicates the current temperature.
 
-The ```sensor_temperature1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature1``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode 1
-
 Sets the thermostat.
 
-The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode1``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -199,10 +197,9 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Operating State 1
-
 Sets the thermostat operating state.
 
-The ```thermostat_state1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_state1``` channel is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -216,54 +213,45 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating) 1
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling) 1
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (dry air) 1
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (furnace) 1
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Thermostat fan mode 1
-
 Channel type information on this channel is not found.
 
 ### Thermostat fan state 1
-
 Channel type information on this channel is not found.
 
 ### Clock Time Offset 1
-
 Provides the current time difference for the devices time.
 
-The ```time_offset1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset1``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity) 2
-
 Indicates the current relative humidity.
 
-The ```sensor_relhumidity2``` channel supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_relhumidity2``` channel is of type ```sensor_relhumidity``` and supports the ```Number``` item and is in the ```Humidity``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 2
-
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 

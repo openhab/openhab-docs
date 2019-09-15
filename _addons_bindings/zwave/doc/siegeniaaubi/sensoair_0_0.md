@@ -8,6 +8,8 @@ title: Sensoair - ZWave
 # Sensoair Air quality sensor for indoor use
 This describes the Z-Wave device *Sensoair*, manufactured by *[SIEGENIA-AUBI KG](https://www.siegenia.com)* with the thing type UID of ```siegeniaaubi_sensoair_00_000```.
 
+The device is in the category of *Sensor*, defining Device used to measure something.
+
 ![Sensoair product image](https://www.cd-jackson.com/zwave_device_uploads/451/451_default.jpg)
 
 
@@ -15,21 +17,28 @@ The Sensoair supports routing. This allows the device to communicate using other
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/451) to improve the documentation.
+This device measures levels og carbon dioxide & VOCs.
+
+### Inclusion Information
+
+Press the push-button on the bottom of the unit once.
+
+### Exclusion Information
+
+Press the push-button on the bottom of the unit once.
 
 ## Channels
 
 The following table summarises the channels available for the Sensoair -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (CO2) | sensor_co2 |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (CO2) | sensor_co2 | sensor_co2 | CarbonDioxide | Number | 
 
 ### Sensor (CO2)
-
 Indicates the CO2 level.
 
-The ```sensor_co2``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_co2``` channel is of type ```sensor_co2``` and supports the ```Number``` item and is in the ```CarbonDioxide``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 

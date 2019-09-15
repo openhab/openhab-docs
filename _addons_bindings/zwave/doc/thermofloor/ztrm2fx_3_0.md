@@ -70,64 +70,72 @@ Leave programming mode by choosing ESC in menu.
 
 The following table summarises the channels available for the Z-TRM2fx -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Electric meter (volts) | meter_voltage | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Energy Saving Mode Setpoint (ECO) | config_decimal |  | Number | 
-| Heating mode setpoint (Comfort) | config_decimal |  | Number | 
-| Display brightness - dimmed | config_decimal |  | Number | 
-| Button brightness - dimmed | config_decimal |  | Number | 
-| Thermostat mode | thermostat_mode1 | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint1 | Heating | Number:Temperature | 
-| Setpoint (heating) | thermostat_setpoint1 | Heating | Number:Temperature | 
-| External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
-| Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
-| Switch binary | switch_binary4 | Switch | Switch | 
-| Electric meter (volts) 4 | meter_voltage4 | Energy | Number | 
-| Electric meter (kWh) 4 | meter_kwh4 | Energy | Number | 
-| Electric meter (watts) 4 | meter_watts4 | Energy | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Clear Accumulated Energy | meter_reset | meter_reset | Energy | Switch | 
+| Energy Saving Mode Setpoint (ECO) | config_decimal | config_decimal |  | Number | 
+| Heating mode setpoint (Comfort) | config_decimal | config_decimal |  | Number | 
+| Display brightness - dimmed | config_decimal | config_decimal |  | Number | 
+| Button brightness - dimmed | config_decimal | config_decimal |  | Number | 
+| Thermostat mode | thermostat_mode1 | thermostat_mode | Temperature | Number | 
+| Setpoint (cooling) | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (Furnace) | thermostat_setpoint1 | thermostat_setpoint | Heating | Number:Temperature | 
+| External sensor | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
+| Floor sensor | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
+| Switch binary | switch_binary4 | switch_binary | Switch | Switch | 
+| Electric meter (volts) 4 | meter_voltage4 | meter_voltage | Energy | Number | 
+| Electric meter (kWh) 4 | meter_kwh4 | meter_kwh | Energy | Number | 
+| Electric meter (watts) 4 | meter_watts4 | meter_watts | Energy | Number | 
+| Resets Device Usage 4  [Deprecated]| meter_reset4 | meter_reset | Energy | Switch | 
 
 ### Electric meter (volts)
 Indicates the instantaneous voltage.
 
-The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Clear Accumulated Energy
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Energy Saving Mode Setpoint (ECO)
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Heating mode setpoint (Comfort)
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Display brightness - dimmed
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Button brightness - dimmed
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Thermostat mode
 Sets the thermostat.
 
-The ```thermostat_mode1``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode1``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -150,44 +158,56 @@ The following state translation is provided for this channel to the ```Number```
 ### Setpoint (cooling)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (heating)
 The heating setpoint, for currently selected heating mode (Comfort or ECO).
 
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint1``` channel supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+
+### Setpoint (Furnace)
+Sets the thermostat setpoint.
+
+The ```thermostat_setpoint1``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### External sensor
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Floor sensor
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature3``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Switch binary
 Switch the power on and off.
 
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts) 4
 Indicates the instantaneous voltage.
 
-The ```meter_voltage4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage4``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 4
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh4``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 4
 Indicates the instantaneous power consumption.
 
-The ```meter_watts4``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts4``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Resets Device Usage 4 [Deprecated]
+Reset the meter.
+
+The ```meter_reset4``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 
 
@@ -584,7 +604,7 @@ Association group 4 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_THERMOSTAT_MODE_V1| |
-| COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
+| COMMAND_CLASS_THERMOSTAT_SETPOINT_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -624,6 +644,7 @@ Association group 4 supports 5 nodes.
 ### Documentation Links
 
 * [Manual FW 3.4 Ver. 2018-A](https://www.cd-jackson.com/zwave_device_uploads/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
+* [A4_Manual_Heatit_Z-TRM2fx_FW-3.6_Ver2019-A_ENG](https://www.cd-jackson.com/zwave_device_uploads/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-6-Ver2019-A-ENG.pdf)
 
 ---
 

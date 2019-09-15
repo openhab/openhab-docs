@@ -17,43 +17,50 @@ The ZMNHOD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/214) to improve the documentation.
+This Z-Wave module is used to control the motor of blinds, rollers, shades, venetian blinds, etc.. The module can be controlled either through a Z-Wave network or through the wall switch.
+
+### Inclusion Information
+
+  * press service button S for more than 2 second or
+  * press push button I1 three times within 3s (3 times change switch state within 3 seconds)
+
+### Exclusion Information
+
+  * press service button S for more than 6 second or
+  * press push button I1 five times within 3s (5 times change switch state within 3 seconds) in the first 60 seconds after the module is connected to the power supply.
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHOD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds control | blinds_control | Blinds | Rollershutter | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Blinds control 1 | blinds_control1 | Blinds | Rollershutter | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Blinds control 1 | blinds_control1 | blinds_control | Blinds | Rollershutter | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Sensor (temperature) 2 | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -63,52 +70,44 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control 1
-
 Provides start / stop control of blinds.
 
-The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (temperature) 2
-
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -119,59 +118,26 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 10 | Activate/deactivate functions ALL ON / ALL OFF  | Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system. |
-| 40 | Power reporting in Watts on power change for Q1 or Q2 | Set value 0 – 100 as percentage.  
-Available configuration parameters.  
-
-
-  * 0 = Reporting Disabled
-  * 1–100 = 1% - 100% Reporting enabled Power report is sent only when actual power (in Watts) in real |
-| 42 | Power reporting in Watts by time interval for Q1 or Q2 | Set value determines interval in seconds, when power report is send.  
-Available configuration parameters.  
-
-
-  * default value 300 = 300s
-  * 0 – Reporting Disabled
-  * 1 – 32767 = 1 second – 32767 seconds |
-| 71 | Operating modes | This parameter defines selection between two available operating modes.  
-NOTE: When setting parameter, module needs to be excluded and included again! Please check detailed description in this manual. |
-| 72 | Slats tilting full turn time | This parameter defines the time necessary for slats to make full turn (180 degrees)  
-NOTE: If time set is too high, this will result that after full turn, shutter will start move up or down, for time remaining. 
-
-  * default value 15 |
-| 73 | Slats position | This parameter defines slats position after up/down movement through Z-wave or push-buttons. |
-| 74 | Motor moving up/down time | This parameter defines shutter motor moving time of complete opening or complete closing.  
-NOTE: If time set is too high, this will result that after full turn, shutter will start move up or down, for time remaining. 
-
-  * defau |
-| 76 | Motor operation detection | Power threshold to be interpreted when motor reaches the limit switch. 
-
-  * default value 6 = 0,6W
-  * 5 - 100 (0,5W - 10W), step is 0,1W.
-  * The value 0 means reaching a limit switch will not be detected |
-| 78 | Forced Shutter DC calibration | Setting value 0 or 1 a Shutter DC module enters the calibration mode.  
-When calibration process is finished, completing full cycle - up, down and up, set parameter 78 back to default of 0. |
-| 85 | Power consumption max delay time | This parameter defines the max time before motor power consumption is read after one of the relays is switched ON.  
-If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, mo |
-| 86 | Power consumption at limit switch delay time | This parameter defines the max time at limit switch, when power consumption is below power threshold.  
-If the power consumption during this time is below power threshold (par. 76), the active output will switch off, means that limit sw |
-| 90 | Time delay for next motor movement | This parameter defines the minimum time delay between next motor movemen.  
-(minimum time between switching motor off and on again) 
-
-  * default value 5 = 500ms
-  * 1 – 30 = 0,1seconds – 3seconds (100ms resolution) |
-| 110 | Temperature sensor offset settings | Set value is added or subtracted to actual measured value by sensor. default value 32536 32536 – offset is 0.0C From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature. |
-| 120 | Digital temperature sensor reporting | If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. 
-
-  * Default value 5 = 0,5°C
-  * 32536 – offset is 0.0C
-  * 0 – Reporting disabled |
+| 10 | Activate/deactivate functions ALL ON / ALL OFF  | Activate/deactivate functions ALL ON / ALL OFF |
+| 40 | Power report (Watts) on power change for Q1 or Q2 | Power report (Watts) on power change for Q1 or Q2 |
+| 42 | Power report (Watts) by time interval for Q1 or Q2 | Power report (Watts) by time interval for Q1 or Q2 |
+| 71 | Operating modes | Operating modes |
+| 72 | Slats tilting full turn time | Slats tilting full turn time |
+| 73 | Slats position | Slats position |
+| 74 | Motor moving up/down time | Motor moving up/down time |
+| 76 | Motor operation detection | Motor operation detection |
+| 78 | Forced Shutter DC calibration | Forced Shutter DC calibration |
+| 85 | Power consumption max delay time | Power consumption max delay time |
+| 86 | Power consumption at limit switch delay time | Power consumption at limit switch delay time |
+| 90 | Time delay for next motor movement | Time delay for next motor movement |
+| 110 | Temperature sensor offset settings | Temperature sensor offset settings |
+| 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 10: Activate/deactivate functions ALL ON / ALL OFF 
 
-Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controller belonging to the system.
-
+Activate/deactivate functions ALL ON / ALL OFF
+Module responds to commands ALL ON / ALL OFF that may be sent by the main controller or by other controllerbelonging to the system.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -186,15 +152,18 @@ The manufacturer defined default value is ```255``` (ALL ON active, ALL OFF acti
 This parameter has the configuration ID ```config_10_2``` and is of type ```INTEGER```.
 
 
-### Parameter 40: Power reporting in Watts on power change for Q1 or Q2
+### Parameter 40: Power report (Watts) on power change for Q1 or Q2
 
-Set value 0 – 100 as percentage.  
-Available configuration parameters.  
+Power report (Watts) on power change for Q1 or Q2
+Set value means percentage, set value from 0 – 100 = 0% - 100%.
 
+Available configuration parameters 
 
-  * 0 = Reporting Disabled
-  * 1–100 = 1% - 100% Reporting enabled Power report is sent only when actual power (in Watts) in real
+  * default value 1
+  * 0 - reporting disabled
+  * 1 - 100 = 1% - 100% Reporting enabled. Power report is send (push) only when actual power (in Watts) in real time changes for more than set percentage comparing to previous actual power in Watts, step is 1%.
 
+**NOTE**: if power changed is less than 1W, the report is not send (pushed), independent of percentage set. 
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```1```.
@@ -202,16 +171,16 @@ The manufacturer defined default value is ```1```.
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 42: Power reporting in Watts by time interval for Q1 or Q2
+### Parameter 42: Power report (Watts) by time interval for Q1 or Q2
 
-Set value determines interval in seconds, when power report is send.  
-Available configuration parameters.  
+Power report (Watts) by time interval for Q1 or Q2
+Set value means time interval (0 – 32767) in seconds, when power report is send.
 
+Available configuration parameters
 
   * default value 300 = 300s
-  * 0 – Reporting Disabled
-  * 1 – 32767 = 1 second – 32767 seconds
-
+  * 0 - Reporting Disabled
+  * 1 - 32767 = 1 second - 32767 seconds. Reporting enabled, power report is send with time interval set by entered value. 
 Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```300```.
@@ -221,9 +190,16 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 
 ### Parameter 71: Operating modes
 
-This parameter defines selection between two available operating modes.  
-NOTE: When setting parameter, module needs to be excluded and included again! Please check detailed description in this manual.
+Operating modes
+This parameter defines selection between two available operating modes.
 
+Available configuration parameters 
+
+  * default value 0
+  * 0 - Shutter mode
+  * 1 - venetian mode (up/down and slate rotation)
+
+**NOTE1**: After parameter change, first exclude module (without setting parameters to default value) then wait at least 30s and then re include the module!
 The following option values may be configured -:
 
 | Value  | Description |
@@ -238,11 +214,16 @@ This parameter has the configuration ID ```config_71_1``` and is of type ```INTE
 
 ### Parameter 72: Slats tilting full turn time
 
-This parameter defines the time necessary for slats to make full turn (180 degrees)  
-NOTE: If time set is too high, this will result that after full turn, shutter will start move up or down, for time remaining. 
+Slats tilting full turn time
+This parameter defines the time necessary for slats to make full turn (180 degrees).
 
-  * default value 15
+Available configuration parameters 
 
+  * default value 150 = 1,5 seconds
+  * 0 - tilting time disabled
+  * 1 - 32767 = 0,01seconds - 327,67 seconds
+
+**NOTE**: If time set is too high, this will result that after full turn, Shutter will start move up/down, for time remaining. 
 Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```150```.
@@ -252,27 +233,32 @@ This parameter has the configuration ID ```config_72_2``` and is of type ```INTE
 
 ### Parameter 73: Slats position
 
+Slats position
 This parameter defines slats position after up/down movement through Z-wave or push-buttons.
-
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Slats return to previously set position only in case of Z-wave control |
-| 1 | Slats return to previously set position in case of Z-wave control, pus |
+| 0 | Return to previous position only with Z-wave |
+| 1 | Return to previous position with Z-wave or button |
 
-The manufacturer defined default value is ```1``` (Slats return to previously set position in case of Z-wave control,	pus).
+The manufacturer defined default value is ```1``` (Return to previous position with Z-wave or button).
 
 This parameter has the configuration ID ```config_73_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 74: Motor moving up/down time
 
-This parameter defines shutter motor moving time of complete opening or complete closing.  
-NOTE: If time set is too high, this will result that after full turn, shutter will start move up or down, for time remaining. 
+Motor moving up/down time
+This parameter defines Shutter motor moving time of complete opening or complete closing.
 
-  * defau
+Available configuration parameters
 
+  * default value 0
+  * 0 - moving time disabled (working with limit switches)
+  * 1 - 32767 = 0,1seconds - 3276,7seconds. After that time motor is stopped (relay goes to off state)
+
+**NOTE**: Important is that the reference position to manually set moving time is always Shutter lower position!
 Values in the range 0 to 32767 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -282,12 +268,15 @@ This parameter has the configuration ID ```config_74_2``` and is of type ```INTE
 
 ### Parameter 76: Motor operation detection
 
-Power threshold to be interpreted when motor reaches the limit switch. 
+Motor operation detection
+Power threshold to be interpreted when motor reach the limit switch.
 
-  * default value 6 = 0,6W
+Available configuration parameters
+
+  *  default value 6 = 0,6W
   * 5 - 100 (0,5W - 10W), step is 0,1W.
-  * The value 0 means reaching a limit switch will not be detected
 
+**NOTE**: Motors with power consumption less than 0,5W could not be auto calibrated. In that case set time manually (par. 74).
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```6```.
@@ -297,9 +286,13 @@ This parameter has the configuration ID ```config_76_1``` and is of type ```INTE
 
 ### Parameter 78: Forced Shutter DC calibration
 
-Setting value 0 or 1 a Shutter DC module enters the calibration mode.  
-When calibration process is finished, completing full cycle - up, down and up, set parameter 78 back to default of 0.
+Forced Shutter DC calibration
+By modifying the parameters setting from 0 to 1 a Shutter DC module enters the calibration mode.
 
+Available configuration parameters 
+
+  * default value 0
+  * 1 - Start calibration process (when calibration process is finished, completing full cycle - up, down and up, set the parameter 78 (Forced Shutter calibration) value back to 0
 The following option values may be configured -:
 
 | Value  | Description |
@@ -314,9 +307,13 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 ### Parameter 85: Power consumption max delay time
 
-This parameter defines the max time before motor power consumption is read after one of the relays is switched ON.  
-If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, mo
+Power consumption max delay time
+This parameter defines the max time before motor power consumption is read after one of the relays is switched ON. If there is no power consumption during this max time (motor not connected, damaged or requires higher time to start, motor in end position,...) the relay will switch OFF. Time is defined by entering it manually.
 
+Available configuration parameters
+
+  * default value 8 = 800ms
+  * 3 - 50 = 0,3seconds - 5seconds (100ms resolution)
 Values in the range 3 to 50 may be set.
 
 The manufacturer defined default value is ```8```.
@@ -326,9 +323,13 @@ This parameter has the configuration ID ```config_85_1``` and is of type ```INTE
 
 ### Parameter 86: Power consumption at limit switch delay time
 
-This parameter defines the max time at limit switch, when power consumption is below power threshold.  
-If the power consumption during this time is below power threshold (par. 76), the active output will switch off, means that limit sw
+Power consumption at limit switch delay time
+This parameter defines the max time at limit switch, when power consumption is below power threshold. If the power consumption during this time is below power threshold (par. 76), the active output will switch off, means that limit switch is reached.
 
+Available configuration parameters 
+
+  * default value 8 = 800ms
+  * 3 - 50 = 0,3seconds - 5seconds (100ms resolution) 
 Values in the range 3 to 50 may be set.
 
 The manufacturer defined default value is ```8```.
@@ -338,12 +339,13 @@ This parameter has the configuration ID ```config_86_1``` and is of type ```INTE
 
 ### Parameter 90: Time delay for next motor movement
 
-This parameter defines the minimum time delay between next motor movemen.  
-(minimum time between switching motor off and on again) 
+Time delay for next motor movement
+This parameter defines the minimum time delay between next motor movement (minimum time between switching motor off and on again).
+
+Available configuration parameters 
 
   * default value 5 = 500ms
-  * 1 – 30 = 0,1seconds – 3seconds (100ms resolution)
-
+  * 1 - 30 = 0,1seconds - 3seconds (100ms resolution)
 Values in the range 1 to 30 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -353,8 +355,14 @@ This parameter has the configuration ID ```config_90_1``` and is of type ```INTE
 
 ### Parameter 110: Temperature sensor offset settings
 
-Set value is added or subtracted to actual measured value by sensor. default value 32536 32536 – offset is 0.0C From 1 to 100 – value from 0.1 °C to 10.0 °C is added to actual measured temperature.
+Temperature sensor offset settings
+Set value is added or subtracted to actual measured value by sensor.
 
+Available configuration parameters
+
+  * default value 32536  32536 - offset is 0.0C
+  * From 1 to 100 - value from 0.1 °C to 10.0 °C is added to actual measured temperature.
+  * From 1001 to 1100 - value from -0.1 °C to -10.0 °C is subtracted to actual measured temperature.
 Values in the range 1 to 32536 may be set.
 
 The manufacturer defined default value is ```32536```.
@@ -364,12 +372,14 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 
 ### Parameter 120: Digital temperature sensor reporting
 
-If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter. 
+Digital temperature sensor reporting
+If digital temperature sensor is connected, module reports measured temperature on temperature change defined by this parameter.
+
+Available configuration parameters (data type is 1 Byte DEC):
 
   * Default value 5 = 0,5°C
-  * 32536 – offset is 0.0C
-  * 0 – Reporting disabled
-
+  * 0 - reporting disabled
+  * 1-127 = 0,1°C - 12,7°C, step is 0,1°C
 Values in the range 0 to 127 may be set.
 
 The manufacturer defined default value is ```5```.

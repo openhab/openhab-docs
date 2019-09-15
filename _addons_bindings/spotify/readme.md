@@ -1,7 +1,7 @@
 ---
 id: spotify
-label: for Spotify and Spotify Connect Devices
-title: for Spotify and Spotify Connect Devices - Bindings
+label: Spotify
+title: Spotify - Bindings
 type: binding
 description: "This binding implements a bridge to the Spotify Player Web API and makes it possible to discover Spotify Connect Devices available on your Spotify Premium account."
 since: 2x
@@ -12,7 +12,7 @@ install: auto
 
 {% include base.html %}
 
-# Binding for Spotify and Spotify Connect Devices
+# Spotify Binding
 
 This binding implements a bridge to the Spotify Player Web API and makes it possible to discover Spotify Connect Devices available on your Spotify Premium account.
 

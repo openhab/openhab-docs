@@ -8,40 +8,51 @@ title: ZMNHUD - ZWave
 # ZMNHUD Flush pilot (DIN version)
 This describes the Z-Wave device *ZMNHUD*, manufactured by *[Goap](http://www.qubino.com/)* with the thing type UID of ```qubino_zmnhud_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
+![ZMNHUD product image](https://www.cd-jackson.com/zwave_device_uploads/715/715_default.png)
+
+
 The ZMNHUD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/715) to improve the documentation.
+The ZMNHUD is used to control electric Radiators with 6 different working modes by pilot wire control signal. The module can be controlled either through a Z-Wave network or through the wall switch.  
+The module is designed to be mounted inside an electrical cabinet onto DIN rail.
+
+### Inclusion Information
+
+Press the S button for 2 seconds
+
+### Exclusion Information
+
+Press the S button for 6 seconds
 
 ## Channels
 
 The following table summarises the channels available for the ZMNHUD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Binary Sensor | sensor_binary | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -68,7 +79,7 @@ Detailed information on each parameter can be found in the sections below.
 | 11 | Input 1 operation mode selection |  |
 | 12 | Input 2 operation mode selection |  |
 | 13 | Input 3 operation mode selection |  |
-| 30 | Saving the state of the device after a power failure |  |
+| 30 | Device state after pwr failure | Saving the state of the device after a power failure |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input 1 switch type
@@ -230,9 +241,9 @@ The manufacturer defined default value is ```5``` (Frost Protection).
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
 
-### Parameter 30: Saving the state of the device after a power failure
+### Parameter 30: Device state after pwr failure
 
-
+Saving the state of the device after a power failure
 
 The following option values may be configured -:
 
@@ -266,8 +277,9 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The ZMNHUD supports 5 association groups.
 
-### Group 1: Lifeline group
+### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Reserved for communication with the main controller
 
 Association group 1 supports 1 node.
@@ -315,6 +327,10 @@ Association group 5 supports 99 nodes.
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
+
+### Documentation Links
+
+* [Manual (French)](https://www.cd-jackson.com/zwave_device_uploads/715/Qubino-DIN-pilot-wire-PLUS-user-manual-V1-0-fra.pdf)
 
 ---
 
