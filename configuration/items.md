@@ -72,7 +72,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```java
 Switch Kitchen_Light "Kitchen Light" {mqtt="<[...], >[...]" }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
-Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
+Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
 Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
@@ -181,7 +181,7 @@ Examples:
 |-----------------------------------|---------------------------------------------------------------------------------------------------------|
 | "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
 | "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
-| "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`GF_BR_WashingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
 | "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
 | "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
