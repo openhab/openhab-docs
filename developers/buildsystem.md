@@ -19,10 +19,11 @@ This section talks about some common buildsystem related topics and also some qu
 
 ## Adding Dependencies
 
-Generally all dependencies should be OSGi-bundles and available on JCenter.
+Generally all dependencies should be available on JCenter.
 
 ** External dependency **
-In most cases they should be referenced in the project POM with scope `provided`:
+
+In most cases they should be referenced in the project POM with scope `compile`:
 
 ```
   <dependencies>
@@ -30,33 +31,43 @@ In most cases they should be referenced in the project POM with scope `provided`
       <groupId>foo.bar</groupId>
       <artifactId>baz</artifactId>
       <version>1.0.0</version>
-      <scope>provided</scope>
+      <scope>compile</scope>
     </dependency>
   </dependencies>
 ```
 
+These depenencies are embedded in the resulting bundle automatically.
+
+There are two exceptions: 
+
+1) Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/2.5.0-SNAPSHOT`).
+2) Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
+
+Dependencies on other openHAB bundles should have the scope `provided`.
 To ensure that they are available at runtime they also need to be added to the `feature.xml`:
 
 ```
-  <bundle dependency="true">mvn:foo.bar/baz/1.0.0</bundle>
+  <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT</bundle>
 ```
 
-If the bundle is not an OSGi-bundle, you need to wrap it and provide proper names
+Bundles that are used in more than one binding should use the same version that is already present. 
+You need to exclude those bundles from embedding by adding an exclusion to the `pom.xml`:
 
 ```
-  <feature prerequisite="true">wrap</feature>
-  <bundle dependency="true">wrap:mvn:foo.bar/baz/1.0.0$Bundle-Name=Foobar%20Baz%20Library&amp;Bundle-SymbolicName=foo.bar.baz&amp;Bundle-Version=1.0.0</bundle>
+  <properties>
+    <dep.noembedding>netty-common</dep.noembedding>
+  </properties>
 ```
+
+It is also necessary to add them to the `feature.xml`(see above).
+If the version that is used in other openHAB bundles is incompatible with your library, check if you can use a different version of your library.
+In case this is not possible, please ask if an exception can be made and a different version can be bundled within your binding.
+Technically you just need to omit the exclusion-statement above.
+If you only depend on shared bundles you can also omit the exclusion statement and add a `noEmbedDependencies.profile` file in the root directory of your binding.
 
 ** Internal dependency **
 
-In two cases libraries can be added to the `/lib` directory:
-1. The bundle is not available for download
-2. The bundle is not an OSGi bundle but needs to be used for integration tests.
-Unlike Karaf, BND is not able to wrap bundles on its own.
-In this case the binding works as wrapper.
-You need add the library and export all needed packages manually.
-
+In two cases libraries can be added to the `/lib` directory only if the bundle is not available for download.
 The build system automatically picks up all JAR files in `/lib` and embeds them in the new bundle.
 In this case they must not be added to the feature.
 
@@ -81,4 +92,4 @@ If the imported packages need to be exposed to other bundles (e.g. case 2 above)
 to the POM.
 If `version="1.0.0"` is not set, the packages are exported with the same version as the main bundle.
 Optional parameters available for importing/exporting packages (e.g. `foo.bar.*;resolution:="optional"`) are available, too.
-Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>' would prevent all packages starting with foo.bar from being imported). 
+Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>` would prevent all packages starting with foo.bar from being imported). 
