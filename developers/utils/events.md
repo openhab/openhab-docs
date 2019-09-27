@@ -31,6 +31,7 @@ If there is no filter all subscribed event types are received.
 The event itself will be subclassed for each event type, which exists in the System (e.g. ItemCommandEvent, ItemUpdatedEvent, ThingStatusInfoEvent).
 
 ### The Core Events
+
 This section lists the core events provided by openHAB which can be divided into the categories _Item Events_, _Thing Events_ and _Inbox Events_.
 
 An event consists of a `topic`, a `type`, a `payload` and a `source`.
@@ -99,7 +100,7 @@ It contains the old and the new status of the thing.
 ## Receive Events
 
 This section describes how to receive openHAB events in Java.
-If you want to receive events "outside" openHAB, e.g. with JavaScript, please refer to the [Server Sent Events section](../features/rest.html).
+If you want to receive events "outside" openHAB, e.g. with [cURL](https://en.wikipedia.org/wiki/CURL), please refer to the [REST API Examples](../../configuration/restdocs.html#rest-api-examples) section.
 
 An event subscriber defines the callback interface for receiving events from the openHAB event bus.
 The following Java snippet shows how to receive `ItemStateEvent`s and `ItemCommandEvent`s from the event bus.
@@ -137,12 +138,13 @@ public class SomeItemEventSubscriber implements EventSubscriber {
     }
 }
 ```
+
 The `SomeItemEventSubscriber` is subscribed to the event types `ItemStateEvent` and `ItemCommandEvent`, provided by the method `getSubscribedEventTypes()`.
 A string representation of an event type can be found by a public member `TYPE` which usually presents the name of the class.
 To subscribe to all available event types, use the public member `ALL_EVENT_TYPES` of the event subscriber interface.
 
 The event subscriber provides a `TopicEventFilter` which is a default openHAB `EventFilter` implementation that ensures filtering of events based on a topic.
-The argument of the filter is a [Java regular expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
+The argument of the filter is a [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
 The filter method `EventFilter.apply()` will be called for each event on the event bus to which the event subscriber is subscribed (in the example above ItemStateEvent and ItemCommandEvent).
 If the filter applies (in the given example for all item events with the item name "ItemX"), the event will be received by the `EventSubscriber.receive()` method.
 Received events can be cast to the event implementation class for further processing.
@@ -165,7 +167,7 @@ To receive an already cast event the `receiveTypedEvent(T)` method must be imple
 To provide an event filter the method `getEventFilter()` can be overridden.
 - openHAB provides an `AbstractItemEventSubscriber` class in order to receive ItemStateEvents and ItemCommandEvents (more information can be obtained in the next chapter).
 - To filter events based on a topic the  `org.eclipse.smarthome.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
-The filtering is based on [Java regular expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
+The filtering is based on [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
 - The subscribed event types and the filter should be stored as class members (see example above) due to performance reasons.
 - If the subscribed event types are sufficient in order to receive all interested events, do not return any filter (in that case the method getFilter() returns null) due to performance reasons.
 - Avoid the creation of too many event subscribers.
@@ -322,6 +324,7 @@ public class SunEventFactory extends AbstractEventFactory {
     }
 }
 ```
+
 The listing below summarizes some guidelines as illustrated in the example above:
 
 - Provide the supported event types (`SunriseEvent.TYPE`) via an `AbstractEventFactory` constructor call.
