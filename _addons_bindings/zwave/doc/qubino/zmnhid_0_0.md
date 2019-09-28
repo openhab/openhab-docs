@@ -62,37 +62,33 @@ different to default and module reset is done, wait at least 30s before next inc
 
 The following table summarises the channels available for the ZMNHID -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -113,10 +109,9 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 
 

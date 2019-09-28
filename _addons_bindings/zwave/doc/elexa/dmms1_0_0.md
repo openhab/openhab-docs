@@ -57,19 +57,18 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 The following table summarises the channels available for the DMMS1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (luminance) | sensor_luminance |  | Number | 
-| Tamper Alarm | alarm_tamper |  | Switch | 
-| Motion Alarm | alarm_motion | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Tamper Alarm | alarm_tamper | alarm_tamper |  | Switch | 
+| Motion Alarm | alarm_motion | alarm_motion | Motion | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -79,16 +78,14 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Sensor (luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Tamper Alarm
-
 Indicates if the tamper alarm is triggered.
 
-The ```alarm_tamper``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -98,10 +95,9 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Motion Alarm
-
 Indicates if a motion alarm is triggered.
 
-The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -111,11 +107,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

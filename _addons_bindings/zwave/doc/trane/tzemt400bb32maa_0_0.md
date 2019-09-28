@@ -35,29 +35,27 @@ Thermostat for Heating and Cooling HVAC System control
 
 The following table summarises the channels available for the TZEMT400BB32MAA -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Operating State | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Thermostat fan mode | thermostat_fanmode |  |  | 
-| Thermostat fan state | thermostat_fanstate |  |  | 
-| Schedule Mode | config_decimal |  | Number | 
-| Clock Time Offset | time_offset | Temperature | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Operating State | thermostat_state | thermostat_state | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
+| Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
+| Schedule Mode | config_decimal | config_decimal |  | Number | 
+| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -78,10 +76,9 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Operating State
-
 Sets the thermostat operating state.
 
-The ```thermostat_state``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_state``` channel is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -95,38 +92,32 @@ The following state translation is provided for this channel to the ```Number```
 | 6 | Vent / Economiser |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Thermostat fan mode
-
 Channel type information on this channel is not found.
 
 ### Thermostat fan state
-
 Channel type information on this channel is not found.
 
 ### Schedule Mode
-
 Send 0 to Hold and 1 to Run Schedule.
 
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Clock Time Offset
-
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 

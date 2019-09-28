@@ -34,30 +34,27 @@ Serial interface to z-wave over RS-232. Frequently used for integration with old
 
 The following table summarises the channels available for the VRC0P (v1) -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 

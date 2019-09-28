@@ -111,29 +111,29 @@ To exclude device from a system quickly press Dis/Exc button twice in 1s 
 
 The following table summarises the channels available for the LDM32 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Dimmer 1 | switch_dimmer1 | DimmableLight | Dimmer | 
-| Dimmer 2 | switch_dimmer2 | DimmableLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
+| Dimmer 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 1
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer1``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Dimmer 2
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer2``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 

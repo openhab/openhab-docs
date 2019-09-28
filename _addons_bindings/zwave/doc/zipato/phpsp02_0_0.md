@@ -57,20 +57,19 @@ Any action.
 
 The following table summarises the channels available for the PSP02 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Door/Window sensor | sensor_door | Door | Contact | 
-| Sensor(temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Sensor(luminance) | sensor_luminance |  | Number | 
-| Motion Alarm | alarm_motion | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
-| Alarm(general) | alarm_general | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Door/Window sensor | sensor_door | sensor_door | Door | Contact | 
+| Sensor(temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor(luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Motion Alarm | alarm_motion | alarm_motion | Motion | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
+| Alarm(general) | alarm_general | alarm_general | Alarm | Switch | 
 
 ### Door/Window sensor
-
 Indicates if the door/window is open or closed.
 
-The ```sensor_door``` channel supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Contact``` item type -:
 
@@ -80,22 +79,19 @@ The following state translation is provided for this channel to the ```Contact``
 | CLOSED | Closed |
 
 ### Sensor(temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor(luminance)
-
 Indicates the current light reading.
 
-The ```sensor_luminance``` channel supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Motion Alarm
-
 Indicates if a motion alarm is triggered.
 
-The ```alarm_motion``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_motion``` channel is of type ```alarm_motion``` and supports the ```Switch``` item and is in the ```Motion``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -105,16 +101,14 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 ### Alarm(general)
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

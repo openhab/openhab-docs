@@ -33,29 +33,26 @@ Start EXCLUDE procedure with the controller of existing network and then press p
 
 The following table summarises the channels available for the ARF -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds control | blinds_control | Blinds | Rollershutter | 
-| Alarm (power) | alarm_power | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Alarm (power)
-
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

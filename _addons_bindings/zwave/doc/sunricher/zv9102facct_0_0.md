@@ -35,46 +35,41 @@ Click the “prog” key on the receiver -> there shall be an indication on the 
 
 The following table summarises the channels available for the ZV9102FA-CCT -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Scene Number | scene_number |  | Number | 
-| Color Control | color_color |  | Color | 
-| Color Temperature | color_temperature | ColorLight | Dimmer | 
-| Alarm (system) | alarm_system |  | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Color Control | color_color | color_color | ColorLight | Color | 
+| Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 ### Color Control
-
 The color channel allows to control the color of a light.
             It is also possible to dim values and switch the light on and off.
 
-The ```color_color``` channel supports the ```Color``` item.
+The ```color_color``` channel is of type ```color_color``` and supports the ```Color``` item and is in the ```ColorLight``` category.
 
 ### Color Temperature
-
 The color temperature channel allows to set the color
             temperature of a light from 0 (cold) to 100 (warm).
 
-The ```color_temperature``` channel supports the ```Dimmer``` item and is in the ```ColorLight``` category.
+The ```color_temperature``` channel is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
 ### Alarm (system)
-
 Indicates if a system alarm is triggered.
 
-The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

@@ -37,15 +37,14 @@ Vizia RF + 4-Button Zone Controller for Multi-Location Control with IR Remote Ca
 
 The following table summarises the channels available for the VRCZ4 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Scene Number | scene_number |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 

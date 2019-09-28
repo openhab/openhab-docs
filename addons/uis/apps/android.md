@@ -65,25 +65,66 @@ The time is sent as a number containing the number of milliseconds since the epo
 The Item name's default is `AlarmClock`, but you can change it in the settings.
 
 Example item definition:
-```
+```java
 Number AlarmClock
 ```
 
 Example rule:
-```
-rule "Alarm Trigger"
+```java
+var Timer timerAlarm = null
+
+rule "Alarm Clock"
 when
-    Time cron "*/10 * * * * ?" // Every 10 seconds
+    Item AlarmClock changed
 then
     if (AlarmClock.state as Number == 0) {
-        // Alarm is turned off
-        return;
+        if (timerAlarm !== null) {
+            timerAlarm.cancel
+            timerAlarm = null
+        }
+        logInfo("alarm", "All alarms are cancelled")
+    } else {
+        var epoch = new DateTime((AlarmClock.state as Number).longValue)
+        logInfo("alarm", "Scheduling alarm for " +  epoch.toString)
+
+        if (timerAlarm !== null) {
+            logInfo("alarm", "Reschedule alarm")
+            timerAlarm.reschedule(epoch)
+        } else {
+            logInfo("alarm", "New Alarm")
+            timerAlarm = createTimer(epoch,
+                [ k |
+                    // Turn on stuff, e.g. radio or light
+                    Light.sendCommand(ON)
+                    logInfo("alarm", "alarm is expired")
+                ]
+            )
+        }
     }
-    val diff = AlarmClock.state as Number - now().millis
-    if (diff <= 15000) {
-        // Turn on stuff, e.g. radio or light
-        logInfo('AlarmLogger', 'Turn on light')
-        Light.sendCommand(ON)
+end
+```
+
+## Call State
+
+The openHAB app will send the current call state to the server.
+
+Example item definition:
+```java
+String CallState
+```
+
+Example rule:
+```java
+rule "Call State Trigger"
+when
+    Item CallState changed
+then
+    if (CallState.state == "IDLE") {
+        // No call activity
+    } else if (CallState.state == "RINGING") {
+        // A new call arrived and is ringing or waiting. In the latter case, another call is already active.
+    } else if (CallState.state == "OFFHOOK") {
+        // At least one call exists that is dialing, active, or on hold, and no calls are ringing or waiting.
     }
 
 end
@@ -107,6 +148,11 @@ Please have a look at [dontkillmyapp.com](https://dontkillmyapp.com/) how to mak
 ### My voice command rule isn't run
 
 Please make sure `Default Human Language Interpreter` is set to `Rule-based Interpreter` (http://openhab:8080/paperui/index.html#/configuration/system) and `Rule Voice Interpreter` => `Configure` => Select correct item (http://openhab:8080/paperui/index.html#/configuration/services?tab=voice).
+
+### Chart loading is too slow
+
+Generating charts can be taxing to the server.
+If you experience slow chart loading times and your server isn't powerful, open `Settings` and disable `High resolution charts` to improve loading times.
 
 ## Trademark Disclaimer
 

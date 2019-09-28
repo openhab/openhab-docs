@@ -38,27 +38,25 @@ Follow the instructions for your Z-Wave controller to enter exclusion mode. Whe
 
 The following table summarises the channels available for the DMWV1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 
 ### Switch
-
 Binary Switch commands will open and close the Water Main Shut-Off.  Binary Switch Report commands are also used to communicate changes in device status (e.g. the Valve opening/closing) to the controller.  See below for Binary Switch status values and their corresponding meaning within the Shut-Off:  
 Valve Open: FF  
 Valve Closed: 00
 
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 

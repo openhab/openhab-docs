@@ -51,25 +51,25 @@ If push button I1 is pressed three times within 3s (or service button S is press
 
 The following table summarises the channels available for the ZMNHND -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Sensor Binary | sensor_binary2 | Door | Switch | 
-| Sensor (temperature) 2 | sensor_temperature2 | Temperature | Number:Temperature | 
-| Burglar | alarm_burglar2 | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Sensor Binary | sensor_binary2 | sensor_binary |  | Switch | 
+| Sensor (temperature) 2 | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
+| Burglar | alarm_burglar2 | alarm_burglar | Door | Switch | 
 
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Binary Sensor
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -81,17 +81,17 @@ The following state translation is provided for this channel to the ```Switch```
 ### Sensor (temperature)
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Switch 1
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor Binary
 Indicates if a sensor has triggered.
 
-The ```sensor_binary2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary2``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -103,12 +103,12 @@ The following state translation is provided for this channel to the ```Switch```
 ### Sensor (temperature) 2
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Burglar
 Indicates if the burglar alarm is triggered.
 
-The ```alarm_burglar2``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_burglar2``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

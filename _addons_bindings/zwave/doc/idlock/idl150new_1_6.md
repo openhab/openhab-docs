@@ -59,6 +59,9 @@ The following table summarises the channels available for the ID-150 -:
 | Door Lock | lock_door | lock_door | Door | Switch | 
 | Door State | sensor_door | sensor_door | Door | Contact | 
 | Alarm (access) | alarm_access | alarm_access | Door | Switch | 
+| Alarm (emergency)  [Deprecated]| alarm_emergency | alarm_emergency | Alarm | Switch | 
+| Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
+| Alarm (raw)  [Deprecated]| alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
@@ -95,6 +98,39 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | OK |
 | ON | Alarm |
+
+### Alarm (emergency) [Deprecated]
+Indicates Police, Fire, or Medical services should be contacted.
+
+The ```alarm_emergency``` channel is of type ```alarm_emergency``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | EMERGENCY |
+| OFF | OK |
+
+**Note:** This channel is marked as deprecated so should not be used.
+
+### Alarm (burglar)
+Indicates if the burglar alarm is triggered.
+
+The ```alarm_burglar``` channel is of type ```alarm_burglar``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Alarm (raw) [Deprecated]
+Provides alarm parameters as json string.
+
+The ```alarm_raw``` channel is of type ```alarm_raw``` and supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
+This channel sets, and provides the alarm state as a JSON string. It is designed for use in rules.
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

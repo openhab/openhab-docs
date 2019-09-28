@@ -65,12 +65,12 @@ The following table summarises the channels available for the DZ6HD -:
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel and is of type ```scene_number``` and supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 

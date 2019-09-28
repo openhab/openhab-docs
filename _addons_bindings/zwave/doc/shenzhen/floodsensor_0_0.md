@@ -53,16 +53,15 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 The following table summarises the channels available for the Flood sensor -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Flood Alarm | alarm_flood | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Flood Alarm | alarm_flood | alarm_flood | Water | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Flood Alarm
-
 Indicates if the flood alarm is triggered.
 
-The ```alarm_flood``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_flood``` channel is of type ```alarm_flood``` and supports the ```Switch``` item and is in the ```Water``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -72,52 +71,122 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Alarm |
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration
 
-The following table provides a summary of the 2 configuration parameters available in the Flood sensor.
+The following table provides a summary of the 7 configuration parameters available in the Flood sensor.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Basic setting command | Basic setting command to be transmitted |
-| 2 | OFF delay | The amount of delay before the OFF command is transmitted |
+| 1 | Alarm Duration Time | Alarm Duration Time |
+| 2 | Alarm Interval | Alarm Interval |
+| 3 | First Alarm On Time Duration | First Alarm On Time Duration |
+| 4 | Alarm on Time Duration | Alarm on Time Duration |
+| 5 | Alarm Enable/Disable | Alarm Enable/Disable |
+| 6 | Water Leakage Detection | Water Leakage Detection |
+| 7 | Basic Set Level | Basic Set Level |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
-### Parameter 1: Basic setting command
+### Parameter 1: Alarm Duration Time
 
-Basic setting command to be transmitted
-When the water sensor trigger alarm, it will send basic setting with these parameters. The receiver will execute this parameters. For example when the lamp receive the basic setting command, the parameters decide the brightness of the lamp.
-The following option values may be configured -:
+Alarm Duration Time
+This configuration parameter that can be used to adjust the time for beep and LED turned on when water leakage is detected.
 
-| Value  | Description |
-|--------|-------------|
-| 0 | Off |
-| 1 | Dim level (lower bound) (multilevel switch) |
-| 99 | Dim level (upper bound) (multilevel switch) |
-| 255 | ON (Binary switch) |
+If this parameter is set to ‘0’, the beep and LED will be turn on always until water leakage is not detected
+Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```99``` (Dim level (upper bound) (multilevel switch)).
+The manufacturer defined default value is ```120```.
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
 
-### Parameter 2: OFF delay
+### Parameter 2: Alarm Interval
 
-The amount of delay before the OFF command is transmitted
-Adjust the amount of delay before the OFF command is transmitted
-Values in the range 1 to 65535 may be set.
+Alarm Interval
+This Parameter defines beep on /off interval time when water leakage is detected.
+Values in the range 1 to 255 may be set.
 
-The manufacturer defined default value is ```30```.
+The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_2_2``` and is of type ```INTEGER```.
+
+
+### Parameter 3: First Alarm On Time Duration
+
+First Alarm On Time Duration
+This parameter defines beep on duration first time when water leakage is detected.
+Values in the range 10 to 255 may be set.
+
+The manufacturer defined default value is ```60```.
+
+This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
+
+
+### Parameter 4: Alarm on Time Duration
+
+Alarm on Time Duration
+This parameter defines beep on duration after first beep on when water leakage is detected.
+Values in the range 5 to 255 may be set.
+
+The manufacturer defined default value is ```5```.
+
+This parameter has the configuration ID ```config_4_1``` and is of type ```INTEGER```.
+
+
+### Parameter 5: Alarm Enable/Disable
+
+Alarm Enable/Disable
+This parameter defines beep on is enabled or disabled when water leakage is detected.
+
+  * ‘0’ indicate beep on is disable, but LED will be turned on when water leakage detected.
+  * ‘1’ indicate beep on is enabled, the BEEP and LED will be turned on when water leakage detected.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Beep Disabled |
+| 1 | Beep Enabled |
+
+The manufacturer defined default value is ```1``` (Beep Enabled).
+
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+
+### Parameter 6: Water Leakage Detection
+
+Water Leakage Detection
+This parameter defines the function than water leakage detect is enabled or disabled.
+
+  * ‘0’ indicate disable water leakage detect,
+  * ‘1’ indicate enable water  leakage detect.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Disabled |
+| 1 | Enabled |
+
+The manufacturer defined default value is ```1``` (Enabled).
+
+This parameter has the configuration ID ```config_6_1``` and is of type ```INTEGER```.
+
+
+### Parameter 7: Basic Set Level
+
+Basic Set Level
+Basic Set Command will be sent where contains a value when the door/window is opened or closed, the receiver will take it for consideration; for instance, if a lamp module is received the Basic Set Command of which value is decisive as to how bright of dim level of lamp module shall be.
+Values in the range 0 to 255 may be set.
+
+The manufacturer defined default value is ```255```.
+
+This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 ### Wakeup Interval
 
@@ -143,27 +212,24 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The Flood sensor supports 4 association groups.
 
-### Group 1: Device status
+### Group 1: Lifeline
 
-Sends the BASIC SET control frame when the probe detects water
-Association group 1 is assigned the status of the device - it sends the BASIC SET control frame to the associated devices when the probe has detected water.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Controller updates
+### Group 2: BASIC_SET
 
 
 Association group 2 supports 1 node.
 
-### Group 3: Send Notification Report
+### Group 3: NOTIFICATION_REPORT_V4
 
-Allows sending notification reports
 
 Association group 3 supports 5 nodes.
 
-### Group 4: Send Basic Report
+### Group 4: SENSOR_BINARY_REPORT_V2
 
-Allows sending basic reports
 
 Association group 4 supports 5 nodes.
 

@@ -33,38 +33,38 @@ Start Exclusion mode of your primary Z-Wave Controller. Now press and hold the b
 
 The following table summarises the channels available for the Spirit -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Current temperature | sensor_temperature | Temperature | Number:Temperature | 
-| External temperature | sensor_report |  | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heat) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (energy heat) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Alarm (system) | alarm_system |  | Switch | 
-| Alarm (power) | alarm_power | Door | Switch | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Current temperature | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| External temperature | sensor_report | sensor_report |  | Number | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (heat) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (energy heat) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Current temperature
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### External temperature
 Send report to device.
 
-The ```sensor_report``` channel supports the ```Number``` item.
+The ```sensor_report``` channel is of type ```sensor_report``` and supports the ```Number``` item.
 
 ### Thermostat mode
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -89,19 +89,19 @@ Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (energy heat)
 Precision 0,1 and 2 Scale Celsius and Fahrenheit Temp. Range 8°C-28°C
 
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Alarm (system)
 Indicates if a system alarm is triggered.
 
-The ```alarm_system``` channel supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -113,7 +113,7 @@ The following state translation is provided for this channel to the ```Switch```
 ### Alarm (power)
 Indicates if a power alarm is triggered.
 
-The ```alarm_power``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -125,8 +125,8 @@ The following state translation is provided for this channel to the ```Switch```
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

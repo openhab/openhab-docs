@@ -17,6 +17,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Device Not Responding](#device-not-responding)
   * [Server Authentication Issue](#server-authentication-issue)
   * [Server Not Accessible](#server-not-accessible)
+  * [Temperature Out Of Range](#temperature-out-of-range)
 * [Setup](#setup)
   * [Item Label Recommendation](#item-label-recommendation)
   * [Item Configuration](#item-configuration)
@@ -75,6 +76,11 @@ Here are some of the most common generic errors you may encounter while using th
 * Alexa will respond with "Sorry the hub that _device_ is connected to is not responding, please check its network connection and power supply"
 * It indicates that your openHAB server is not accessible through [myopenHAB](https://myopenhab.org) cloud service.
 * To resolve this error, make sure that your server is running and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was added to the lambda function config.js.
+
+#### Temperature Out Of Range
+* Alexa will respond with "I can only set the temperature between _minValue_ and _maxValue_"
+* It indicates that a requested target temperature is out of range, based on the default range values listed in the [supported item metadata](#supported-item-metadata) section.
+* To resolve this error, add the metadata parameter `setpointRange="<minValue>:<maxValue>"` on your relevant thermostat setpoint items to customize your range values and run a discovery update either through the Alexa app or just by asking "Alexa, discover" on your echo device.
 
 ## Setup
 

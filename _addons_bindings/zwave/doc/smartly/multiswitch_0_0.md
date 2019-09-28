@@ -61,23 +61,23 @@ The following table summarises the channels available for the FMS01 -:
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (temperature)
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (power)
 Indicates the energy consumption (kWh).
 
-The ```sensor_power``` channel and is of type ```sensor_power``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_power``` channel is of type ```sensor_power``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (current)
 Channel type information on this channel is not found.
@@ -88,17 +88,17 @@ Channel type information on this channel is not found.
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel and is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel and is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 Sets the thermostat.
 
-The ```thermostat_mode``` channel and is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -121,12 +121,12 @@ The following state translation is provided for this channel to the ```Number```
 ### Setpoint (heating)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel and is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Scene Number
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel and is of type ```scene_number``` and supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
 
 | Event ID | Event Description  |
@@ -142,57 +142,57 @@ This channel provides the scene, and the event as a decimal value in the form ``
 ### Switch 1
 Switch the power on and off.
 
-The ```switch_binary1``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 1
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer1``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Switch 2
 Switch the power on and off.
 
-The ```switch_binary2``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 2
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer2``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Switch 3
 Switch the power on and off.
 
-The ```switch_binary3``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 3
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer3``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer3``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Switch 4
 Switch the power on and off.
 
-The ```switch_binary4``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 4
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer4``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer4``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Switch 5
 Switch the power on and off.
 
-The ```switch_binary5``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer 5
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer5``` channel and is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer5``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 
 

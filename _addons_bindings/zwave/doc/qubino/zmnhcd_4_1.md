@@ -70,85 +70,74 @@ FACTORY RESET
 
 The following table summarises the channels available for the ZMNHCD -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Blinds Control | blinds_control | Blinds | Rollershutter | 
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Blinds control 1 | blinds_control1 | Blinds | Rollershutter | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Blinds control 2 | blinds_control2 | Blinds | Rollershutter | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Blinds Control | blinds_control | blinds_control | Blinds | Rollershutter | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Blinds control 1 | blinds_control1 | blinds_control | Blinds | Rollershutter | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Blinds control 2 | blinds_control2 | blinds_control | Blinds | Rollershutter | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds Control
-
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control 1
-
 Provides start / stop control of blinds.
 
-The ```blinds_control1``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control1``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 ### Electric meter (kWh) 1
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control 2
-
 Provides start / stop control of blinds.
 
-The ```blinds_control2``` channel supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control2``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 

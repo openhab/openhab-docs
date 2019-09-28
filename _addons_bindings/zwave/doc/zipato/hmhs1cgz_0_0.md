@@ -35,15 +35,14 @@ This Smart Combustible Gas Sensor adopts super low power consumption Z-Wave Wire
 
 The following table summarises the channels available for the HM-HS1CG-Z -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Alarm | alarm_general | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

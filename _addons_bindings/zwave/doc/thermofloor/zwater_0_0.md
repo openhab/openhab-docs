@@ -46,44 +46,41 @@ It is possible to configure the level and the indication of the status indicator
 
 The following table summarises the channels available for the Heatit Z Water -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Binary Sensor | sensor_binary | Door | Switch | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Switch 2 | switch_binary2 | Switch | Switch | 
-| Switch 3 | switch_binary3 | Switch | Switch | 
-| Switch 4 | switch_binary4 | Switch | Switch | 
-| Switch 5 | switch_binary5 | Switch | Switch | 
-| Switch 6 | switch_binary6 | Switch | Switch | 
-| Switch 7 | switch_binary7 | Switch | Switch | 
-| Switch 8 | switch_binary8 | Switch | Switch | 
-| Switch 9 | switch_binary9 | Switch | Switch | 
-| Switch 10 | switch_binary10 | Switch | Switch | 
-| Sensor (temperature) 11 | sensor_temperature11 | Temperature | Number:Temperature | 
-| Sensor (temperature) 12 | sensor_temperature12 | Temperature | Number:Temperature | 
-| Sensor (temperature) 13 | sensor_temperature13 | Temperature | Number:Temperature | 
-| Sensor (temperature) 14 | sensor_temperature14 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
+| Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
+| Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
+| Switch 5 | switch_binary5 | switch_binary | Switch | Switch | 
+| Switch 6 | switch_binary6 | switch_binary | Switch | Switch | 
+| Switch 7 | switch_binary7 | switch_binary | Switch | Switch | 
+| Switch 8 | switch_binary8 | switch_binary | Switch | Switch | 
+| Switch 9 | switch_binary9 | switch_binary | Switch | Switch | 
+| Switch 10 | switch_binary10 | switch_binary | Switch | Switch | 
+| Sensor (temperature) 11 | sensor_temperature11 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) 12 | sensor_temperature12 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) 13 | sensor_temperature13 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) 14 | sensor_temperature14 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
-
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Binary Sensor
-
 Indicates if a sensor has triggered.
 
-The ```sensor_binary``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_binary``` channel is of type ```sensor_binary``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
@@ -93,88 +90,74 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | Untriggered |
 
 ### Switch 1
-
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 2
-
 Switch the power on and off.
 
-The ```switch_binary2``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 3
-
 Switch the power on and off.
 
-The ```switch_binary3``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 4
-
 Switch the power on and off.
 
-The ```switch_binary4``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 5
-
 Switch the power on and off.
 
-The ```switch_binary5``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 6
-
 Switch the power on and off.
 
-The ```switch_binary6``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary6``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 7
-
 Switch the power on and off.
 
-The ```switch_binary7``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary7``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 8
-
 Switch the power on and off.
 
-The ```switch_binary8``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary8``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 9
-
 Switch the power on and off.
 
-The ```switch_binary9``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary9``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Switch 10
-
 Switch the power on and off.
 
-The ```switch_binary10``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary10``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Sensor (temperature) 11
-
 Indicates the current temperature.
 
-The ```sensor_temperature11``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature11``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 12
-
 Indicates the current temperature.
 
-The ```sensor_temperature12``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature12``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 13
-
 Indicates the current temperature.
 
-The ```sensor_temperature13``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature13``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 14
-
 Indicates the current temperature.
 
-The ```sensor_temperature14``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature14``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 
@@ -412,145 +395,98 @@ This parameter has the configuration ID ```config_14_2``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The Heatit Z Water supports 14 association groups.
+The Heatit Z Water supports 13 association groups.
 
-### Group 1: Control device 0
+### Group 1: Lifeline
 
-Main control device
-Lifeline.
-
-Sends Device Reset notifications and Basic Report On / Off when relay output 1 is activated.
-
-Max. nodes in the group: 5
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Sends Device Reset notifications, Central Scene notifications and Basic Report On / Off to the controller
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Control device 0
+### Group 2: Input 1
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 2 is activated.
-
-Max. nodes in the group: 5
+Basic Set On / Off
+Sends Basic Set On / Off when input 1 is activated.
 
 Association group 2 supports 5 nodes.
 
-### Group 3: Control device 0
+### Group 3: Input 1
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 3 is activated.
-
-Max. nodes in the group: 5
+Switch Binary Set On / Off
+Sends Switch Binary Set On / Off when input 1 is activated.
 
 Association group 3 supports 5 nodes.
 
-### Group 4: Control device 0
+### Group 4: Input 1
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 4 is activated.
-
-Max. nodes in the group: 5
+Multilevel Switch Set
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 1 is activated. Is typically used for controlling light dimmers, curtain controllers, etc
 
 Association group 4 supports 5 nodes.
 
-### Group 5: Control device 0
+### Group 5: Input 2
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 5 is activated.
-
-Max. nodes in the group: 5
+Basic Set On / Off
+Sends Basic Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 5 supports 5 nodes.
 
-### Group 6: Control device 0
+### Group 6: Input 2
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 6 is activated.
-
-Max. nodes in the group: 5
+Switch Binary Set On / Off
+Sends Switch Binary Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 6 supports 5 nodes.
 
-### Group 7: Control device 0
+### Group 7: Input 2
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 7 is activated.
-
-Max. nodes in the group: 5
+Multilevel Switch Set
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 2 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 7 supports 5 nodes.
 
-### Group 8: Control device 0
+### Group 8: Input 3
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 8 is activated.
-
-Max. nodes in the group: 5
+Basic Set On / Off
+Sends Basic Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 8 supports 5 nodes.
 
-### Group 9: Control device 0
+### Group 9: Input 3
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 9 is activated.
-
-Max. nodes in the group: 5
+Switch Binary Set On / Off
+Sends Switch Binary Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 9 supports 5 nodes.
 
-### Group 10: Control device 0
+### Group 10: Input 3
 
-Main control device
-Lifeline.
-
-Sends Basic Report On / Off when relay output 10 is activated.
-
-Max. nodes in the group: 5
+Multilevel Switch Set
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 3 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 10 supports 5 nodes.
 
-### Group 11: Control device 0
+### Group 11: Input 4
 
-Main control device
-Sends Multilevel Sensor Reports for input 1. Max. nodes in the group: 5
+Basic Set On / Off
+Sends Basic Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 11 supports 5 nodes.
 
-### Group 12: Control device 0
+### Group 12: Input 4
 
-Main control device
-Sends Multilevel Sensor Reports for input 2. Max. nodes in the group: 5
+Switch Binary Set On / Off
+Sends Switch Binary Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 12 supports 5 nodes.
 
-### Group 13: Control device 0
+### Group 13: Input 4
 
-Main control device
-Sends Multilevel Sensor Reports for input 3. Max. nodes in the group: 5
+Multilevel Switch Set
+Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 4 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 13 supports 5 nodes.
-
-### Group 14: Control device 0
-
-Main control device
-Sends Multilevel Sensor Reports for input 4. Max. nodes in the group: 5
-
-Association group 14 supports 5 nodes.
 
 ## Technical Information
 
@@ -722,6 +658,7 @@ Association group 14 supports 5 nodes.
 ### Documentation Links
 
 * [User manual](https://www.cd-jackson.com/zwave_device_uploads/886/Manual-Heatit-Z-Water-analog-inputs-FW-1-0.pdf)
+* [Manual 2.0](https://www.cd-jackson.com/zwave_device_uploads/886/Manual-Heatit-Z-Water-digital-inputs-FW-2-0.pdf)
 
 ---
 

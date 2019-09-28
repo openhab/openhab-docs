@@ -45,12 +45,12 @@ The following table summarises the channels available for the MH6-HP -:
 ### Sensor (temperature)
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel and is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
 Sets the thermostat.
 
-The ```thermostat_mode``` channel and is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -73,7 +73,7 @@ The following state translation is provided for this channel to the ```Number```
 ### Operating State
 Sets the thermostat operating state.
 
-The ```thermostat_state``` channel and is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_state``` channel is of type ```thermostat_state``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -89,12 +89,12 @@ The following state translation is provided for this channel to the ```Number```
 ### Setpoint (heating)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel and is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel and is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Thermostat fan mode
 Channel type information on this channel is not found.
@@ -105,7 +105,7 @@ Channel type information on this channel is not found.
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel and is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
 
 
 

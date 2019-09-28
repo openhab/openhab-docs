@@ -73,51 +73,51 @@ Leave programming mode by choosing ESC in the menu.
 
 The following table summarises the channels available for the Heatit Z-TRM 2 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Switch | switch_binary | Switch | Switch | 
-| Electric meter (volts) | meter_voltage | Energy | Number | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (cooling) | thermostat_setpoint | Temperature | Number:Temperature | 
-| P Setting | config_decimal |  | Number | 
-| Display brightness | config_decimal |  | Number | 
-| Energy saving mode setpoint | config_decimal |  | Number | 
-| Switch 1 | switch_binary1 | Switch | Switch | 
-| Electric meter (volts) 1 | meter_voltage1 | Energy | Number | 
-| Electric meter (watts) 1 | meter_watts1 | Energy | Number | 
-| Electric meter (kWh) 1 | meter_kwh1 | Energy | Number | 
-| External sensor | sensor_temperature2 | Temperature | Number:Temperature | 
-| Floor sensor | sensor_temperature3 | Temperature | Number:Temperature | 
-| Sensor (temperature) 4 | sensor_temperature4 | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (furnace) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| P Setting | config_decimal | config_decimal |  | Number | 
+| Display brightness | config_decimal | config_decimal |  | Number | 
+| Energy saving mode setpoint | config_decimal | config_decimal |  | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Electric meter (volts) 1 | meter_voltage1 | meter_voltage | Energy | Number | 
+| Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
+| External sensor | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
+| Floor sensor | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) 4 | sensor_temperature4 | sensor_temperature | Temperature | Number:Temperature | 
 
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts)
 Indicates the instantaneous voltage.
 
-The ```meter_voltage``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Thermostat mode
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -140,67 +140,67 @@ The following state translation is provided for this channel to the ```Number```
 ### Setpoint (furnace)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (heating)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (cooling)
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### P Setting
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Display brightness
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Energy saving mode setpoint
 Generic class for configuration parameter.
 
-The ```config_decimal``` channel supports the ```Number``` item.
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Switch 1
 Switch the power on and off.
 
-The ```switch_binary1``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (volts) 1
 Indicates the instantaneous voltage.
 
-The ```meter_voltage1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage1``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts) 1
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh) 1
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh1``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### External sensor
 Indicates the current temperature.
 
-The ```sensor_temperature2``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Floor sensor
 Indicates the current temperature.
 
-The ```sensor_temperature3``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature3``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (temperature) 4
 Indicates the current temperature.
 
-The ```sensor_temperature4``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature4``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 
 

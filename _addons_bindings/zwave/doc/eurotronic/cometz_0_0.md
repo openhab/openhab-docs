@@ -42,35 +42,32 @@ Click the button in the battery compartment of the Comet Z-wave once.
 
 The following table summarises the channels available for the CometZ -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Openness Of The Valve | switch_dimmer | DimmableLight | Dimmer | 
-| Temperature measured by the device | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Temperature for Heat (Eco) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Temperature for Heat (Comfort) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Battery Level | battery-level | Battery | Number |
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Openness Of The Valve | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Temperature measured by the device | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Temperature for Heat (Eco) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Temperature for Heat (Comfort) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Openness Of The Valve
-
  openness of the valve 0% equates to a closed valve, 100% an open valve
 
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Temperature measured by the device
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -91,23 +88,20 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Temperature for Heat (Eco)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Temperature for Heat (Comfort)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Battery Level
-
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
-The ```battery-level``` channel supports the ```Number``` item and is in the ```Battery``` category.
-
+The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
+This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
 
 
 ## Device Configuration

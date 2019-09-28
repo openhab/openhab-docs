@@ -65,47 +65,47 @@ The following table summarises the channels available for the ZMNHTD -:
 ### Power factor
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor``` channel and is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Voltage
 Indicates the instantaneous voltage.
 
-The ```meter_voltage``` channel and is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Power
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel and is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Active Energy Comsumption
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel and is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Apparent Energy Consumption
 Indicates the energy consumption (kVAh).
 
-The ```meter_kvah``` channel and is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kvah``` channel is of type ```meter_kvah``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Current
 Indicates the instantaneous current consumption.
 
-The ```meter_current``` channel and is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_current``` channel is of type ```meter_current``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset Meter Stats
 Reset the meter.
 
-The ```meter_reset``` channel and is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### switch_binary
 Switch the power on and off.
 
-The ```switch_binary1``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Power factor [Deprecated]
 Indicates the instantaneous power factor.
 
-The ```meter_powerfactor1``` channel and is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_powerfactor1``` channel is of type ```meter_powerfactor``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 **Note:** This channel is marked as deprecated so should not be used.
 
@@ -116,7 +116,7 @@ External relay OFF
 
 Switch the power on and off.
 
-The ```switch_binary2``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 
 

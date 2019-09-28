@@ -8,6 +8,8 @@ title: ZME_FT - ZWave
 # ZME_FT Floor Thermostat
 This describes the Z-Wave device *ZME_FT*, manufactured by *Z-Wave.Me* with the thing type UID of ```zwaveme_zmeft_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
 ![ZME_FT product image](https://www.cd-jackson.com/zwave_device_uploads/151/151_default.png)
 
 
@@ -21,24 +23,22 @@ No device information is provided in the database. Consider [updating the databa
 
 The following table summarises the channels available for the ZME_FT -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | Temperature | Number:Temperature | 
-| Thermostat mode | thermostat_mode | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | Temperature | Number:Temperature | 
-| Setpoint (furnace) | thermostat_setpoint | Temperature | Number:Temperature | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
+| Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (furnace) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 
 ### Sensor (temperature)
-
 Indicates the current temperature.
 
-The ```sensor_temperature``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Thermostat mode
-
 Sets the thermostat.
 
-The ```thermostat_mode``` channel supports the ```Number``` item and is in the ```Temperature``` category.
+The ```thermostat_mode``` channel is of type ```thermostat_mode``` and supports the ```Number``` item and is in the ```Temperature``` category.
 The following state translation is provided for this channel to the ```Number``` item type -:
 
 | Value | Label     |
@@ -59,16 +59,14 @@ The following state translation is provided for this channel to the ```Number```
 | 13 | Away |
 
 ### Setpoint (heating)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 ### Setpoint (furnace)
-
 Sets the thermostat setpoint.
 
-The ```thermostat_setpoint``` channel supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
 
 
@@ -209,6 +207,10 @@ Association group 1 supports 10 nodes.
 | COMMAND_CLASS_NODE_NAMING_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V1| |
+
+### Documentation Links
+
+* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/151/ZMR-FT-1-4.pdf)
 
 ---
 

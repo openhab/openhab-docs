@@ -37,33 +37,33 @@ Only a controller can remove the device from the network. After activating the e
 
 The following table summarises the channels available for the WTE -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Meter (watts) | meter_watts | Energy | Number | 
-| Meter (KWh) | meter_kwh | Energy | Number | 
-| Meter Reset | meter_reset | Energy | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
+| Meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Meter (KWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Meter Reset | meter_reset | meter_reset | Energy | Switch | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
-The ```switch_dimmer``` channel supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Meter (KWh)
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Meter Reset
 Reset the meter.
 
-The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 
 

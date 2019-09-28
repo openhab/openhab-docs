@@ -42,15 +42,14 @@ If the LEDs on the 4-Zone controller turn red while excluding, there has been a 
 
 The following table summarises the channels available for the VRCS4 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-| Scene Number | scene_number |  | Number | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+| Scene Number | scene_number | scene_number |  | Number | 
 
 ### Scene Number
-
 Triggers when a scene button is pressed.
 
-The ```scene_number``` channel supports the ```Number``` item.
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
 
 
 

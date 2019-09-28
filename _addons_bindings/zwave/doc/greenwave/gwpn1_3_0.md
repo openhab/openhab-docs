@@ -38,43 +38,38 @@ On the PowerNode, press and hold the **Sync** button for approximately one sec
 
 The following table summarises the channels available for the GWPN1 -:
 
-| Channel | Channel Id | Category | Item Type |
-|---------|------------|----------|-----------|
-|  Switch | switch_binary | Switch | Switch | 
-| Electric meter (watts) | meter_watts | Energy | Number | 
-| Electric meter (kWh) | meter_kwh | Energy | Number | 
-| Reset total power consumption | meter_reset | Energy | Switch | 
-| Alarm | alarm_general | Door | Switch | 
+| Channel Name | Channel ID | Channel Type | Category | Item Type |
+|--------------|------------|--------------|----------|-----------|
+|  Switch | switch_binary | switch_binary | Switch | Switch | 
+| Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset total power consumption | meter_reset | meter_reset | Energy | Switch | 
+| Alarm | alarm_general | alarm_general | Alarm | Switch | 
 
 ###  Switch
-
 Switch the power on and off.
 
-The ```switch_binary``` channel supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Electric meter (watts)
-
 Indicates the instantaneous power consumption.
 
-The ```meter_watts``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
-
 Indicates the energy consumption (kWh).
 
-The ```meter_kwh``` channel supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Reset total power consumption
-
 Reset the meter.
 
-The ```meter_reset``` channel supports the ```Switch``` item and is in the ```Energy``` category.
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
 
 ### Alarm
-
 Indicates if an alarm is triggered.
 
-The ```alarm_general``` channel supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 

@@ -39,12 +39,12 @@ The following table summarises the channels available for the ARZ -:
 ### Switch
 Switch the power on and off.
 
-The ```switch_binary``` channel and is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Blinds control
 Provides start / stop control of blinds.
 
-The ```blinds_control``` channel and is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
+The ```blinds_control``` channel is of type ```blinds_control``` and supports the ```Rollershutter``` item and is in the ```Blinds``` category.
 
 
 
