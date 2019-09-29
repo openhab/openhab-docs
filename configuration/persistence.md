@@ -175,7 +175,7 @@ Here is the full list of available persistence extensions:
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `<item>.persist`                        | Persists the current State of the Item                                                                                                                                     |
 | `<item>.lastUpdate`                     | Queries for the last update timestamp of a given Item                                                                                                                      |
-| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time                                                                                                                  |
+| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                            |
 | `<item>.changedSince(AbstractInstant)`  | Checks if the State of the Item has (ever) changed since a certain point in time                                                                                           |
 | `<item>.updatedSince(AbstractInstant)`  | Checks if the state of the Item has been updated since a certain point in time                                                                                             |
 | `<item>.maximumSince(AbstractInstant)`  | Gets the maximum value of the State of a persisted Item since a certain point in time                                                                                      |
@@ -193,6 +193,8 @@ You may specify a different persistence service by appending a String as an opti
 **Example**
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
+
+The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
 
 ### Date and Time Extensions
 
