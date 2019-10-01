@@ -113,7 +113,7 @@ This script is specific for binding addons. Folllow these steps to generate your
    * `-am`: Builds all projects in openhab2-addons your project dependends on.
    * `-o`: Won't update any dependencies.
    * `-DskipChecks`: Skips the static analysis checks
-   * `skipTests`: Skips the unit tests
+   * `-DskipTests`: Skips the unit tests
 
 1. To start your new binding it's a good practise to commit your code on a new git branch:
    ```
