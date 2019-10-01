@@ -118,7 +118,7 @@ The logger that is used allows logging at multiple severity levels (trace, info,
 Most of the time, a level of `warn` or `debug` will be used.
 Please remember that every logging statement adds to code size and runtime cost.
 
-* Loggers should be [non-static](http://slf4j.org/faq.html#declared_static), when ever possible and have the name ```logger```.
+* Loggers should be [non-static](http://slf4j.org/faq.html#declared_static), `final` when ever possible and have the name `logger`.
 
 ```java
 class MyCoolClass {
@@ -170,16 +170,35 @@ void myFun() {
 }
 ```
 
-Please keep the user informed through those `update*` methods, when a connection drops, device is not accessible, etc.
-Do not over use the logger.
+Logging levels should focus on the system itself and describe its state.
+As every bundle is only one out of many, logging should be done very scarce.
+It should be up to the user to increase the logging level for specific bundles, packages or classes if necessary.
+This means in detail:
+
+* `error` logging should only be used
+  - to inform the user that something is tremendously wrong in his setup, the system cannot function normally anymore, and there is a need for immediate action.
+  - in case some code fails irrecoverably and the user should report it as a severe bug.
 
 * `warn` logging should only be used
   - to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal,
   - in recoverable situations when a section of code that is not accessed under normal operating conditions is reached.
 
-* `error` logging is not allowed in extensions and is purely reserved to the framework.
-   The only exception would be if something is going really, really wrong in your extension,
-   and there is a possibility that the stability of the framework could be affected.
+* `info` logging should be used sparsely.
+  e.g. a newly started component or a user file that has been loaded.
+
+* `debug` logging should be used for detailed logging
+  - to give the user debug information in cases of unexpected behavior.
+  - to log exceptions in case of temporary problems, like connection problems.
+    In case of such exceptions this should be reflected in an updated state of the binding.
+
+* `trace` logging should be used for verbose debug logging.
+   For example printing output values that can be large, but can help when debugging changed external apis.
+
+In general bindings should NOT log to error/warn if e.g. connections are dropped -
+this is considered to be an external problem and from a system perspective to be a normal and expected situation.
+The correct way to inform users about such events is to update the Thing status accordingl
+
+Note that all events (including Thing status events) are anyhow already logged.
 
 ## G. Other code attributions
 
