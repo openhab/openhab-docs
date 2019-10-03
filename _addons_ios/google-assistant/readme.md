@@ -17,7 +17,7 @@ With the Action you can voice control your openHAB items and it supports lights,
 
 ## Requirements
 
-* [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org.
+* [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org. (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only needed for the IFTTT service!) 
 * Google account.
 * Google Home or Google Home mini.
 
