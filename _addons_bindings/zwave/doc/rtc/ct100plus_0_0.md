@@ -257,7 +257,7 @@ The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and su
 
 ## Device Configuration
 
-The following table provides a summary of the 15 configuration parameters available in the CT100 Plus.
+The following table provides a summary of the 12 configuration parameters available in the CT100 Plus.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -271,10 +271,7 @@ Detailed information on each parameter can be found in the sections below.
 | 7 | Thermostat Swing Temperature | Variance allowed from setpoint to engage HVAC |
 | 8 | Thermostat Diff Temperature | Configures additional stages |
 | 9 | Thermostat Recovery Mode | Fast or Economy recovery mode |
-| 10 | Temperature Filter Upper Bound | Upper/Lower bounds for thermostat temperature reporting |
-| 10 | Temperature Filter Lower Bound Unit | Upper/Lower bounds for thermostat temperature reporting |
-| 10 | Temperature Filter Upper Bound Unit | Upper/Lower bounds for thermostat temperature reporting |
-| 10 | Temperature Filter Lower Bound | Upper/Lower bounds for thermostat temperature reporting |
+| 10 | Temperature Reporting Filter | Upper/Lower bounds for thermostat temperature reporting |
 | 11 | Simple UI Mode | Simple mode enable/disable |
 | 12 | Multicast | Enable or disables Multicast |
 
@@ -430,50 +427,7 @@ The manufacturer defined default value is ```2``` (Economy recovery mode).
 This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
 
-### Parameter 10: Temperature Filter Upper Bound
-
-Upper/Lower bounds for thermostat temperature reporting
-The thermostat will report ambient temperature changes for temperature values greater than the upper bound. This field must be between 0F and 124F. By default, this value is 0F (report all temperature changes).
-Values in the range 0 to 124 may be set.
-
-The manufacturer defined default value is ```0```.
-
-This parameter has the configuration ID ```config_10_4_000000FF``` and is of type ```INTEGER```.
-
-
-### Parameter 10: Temperature Filter Lower Bound Unit
-
-Upper/Lower bounds for thermostat temperature reporting
-Specifies unit for lower bound parameter. If set to 1, lower bound is Celsius. If set to 9, lower bound is Fahrenheit.
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Celsius |
-| 9 | Fahreheit |
-
-The manufacturer defined default value is ```9``` (Fahreheit).
-
-This parameter has the configuration ID ```config_10_4_0000F000``` and is of type ```INTEGER```.
-
-
-### Parameter 10: Temperature Filter Upper Bound Unit
-
-Upper/Lower bounds for thermostat temperature reporting
-Specifies unit for upper bound parameter. If set to 1, upper bound is Celsius. If set to 9, upper bound is Fahrenheit.
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Celsius |
-| 9 | Fahrenheit |
-
-The manufacturer defined default value is ```9``` (Fahrenheit).
-
-This parameter has the configuration ID ```config_10_4_0000FF00``` and is of type ```INTEGER```.
-
-
-### Parameter 10: Temperature Filter Lower Bound
+### Parameter 10: Temperature Reporting Filter
 
 Upper/Lower bounds for thermostat temperature reporting
 The thermostat will report ambient temperature changes for temperature values less than the lower bound. This field must be between 0F and 124F. By default, this value is 124F (report all temperature changes).
@@ -481,7 +435,7 @@ Values in the range 0 to 124 may be set.
 
 The manufacturer defined default value is ```124```.
 
-This parameter has the configuration ID ```config_10_4_00FF0000``` and is of type ```INTEGER```.
+This parameter has the configuration ID ```config_10_4``` and is of type ```INTEGER```.
 
 
 ### Parameter 11: Simple UI Mode

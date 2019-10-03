@@ -578,9 +578,9 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The Heatit Z-TRM 2 supports 5 association groups.
 
-### Group 1: Thermostat device 0
+### Group 1: Lifeline
 
-Main thermostat device
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 Lifeline. (Normally used by the Z-Wave Controller)  
 Sends:  
 - Device Reset Notifications  
@@ -589,30 +589,26 @@ Sends:
 
 Association group 1 supports 7 nodes.
 
-### Group 2: Thermostat device 0
+### Group 2: Thermostat Binary Switch Set
 
-The main thermostat device
 Send Binary Switch Set commands representing the status of the internal relay.
 
 Association group 2 supports 7 nodes.
 
-### Group 3: Thermostat device 0
+### Group 3: Thermostat Internal Multilevel Sensor Reports
 
-The main thermostat device
 Send Multilevel Sensor Reports for internal temperature sensor.
 
 Association group 3 supports 7 nodes.
 
-### Group 4: Thermostat device 0
+### Group 4: Thermostat External Multilevel Sensor Reports
 
-The main thermostat device
 Send Multilevel Sensor Reports for external temperature sensor.
 
 Association group 4 supports 7 nodes.
 
-### Group 5: Thermostat device 0
+### Group 5: Thermostat Floor Multilevel Sensor Reports
 
-The main thermostat device
 Send Multilevel Sensor Reports for floor temperature sensor.
 
 Association group 5 supports 7 nodes.

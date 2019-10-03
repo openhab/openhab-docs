@@ -25,7 +25,7 @@ From a firmware side, this switch has it all (literally). Scene control, notific
 
 ### Inclusion Information
 
-Once the inclusion preocess has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.
+Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.
 
 ### Exclusion Information
 
@@ -41,6 +41,7 @@ The following table summarises the channels available for the LZW30-SN -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Scene Number | scene_number | scene_number |  | Number | 
+| LED strip effect | config_decimal | config_decimal |  | Number | 
 
 ### Switch
 Switch the power on and off.
@@ -73,11 +74,16 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
 
+### LED strip effect
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
 
 
 ## Device Configuration
 
-The following table provides a summary of the 14 configuration parameters available in the LZW30-SN.
+The following table provides a summary of the 16 configuration parameters available in the LZW30-SN.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -89,10 +95,12 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | LED Indicator Color | LED Indicator Color |
 | 6 | LED Indicator Intensity | LED Indicator Intensity |
 | 7 | LED Indicator Intensity (When Off) | LED Indicator Intensity (When Off) |
+| 8 | LED Strip Effect | LED Strip Effect |
 | 8 | LED Strip Effect (Color) | LED Strip Effect (Color) |
 | 8 | LED Strip Effect (Brightness) | LED Strip Effect (Brightness) |
 | 8 | LED Strip Effect (Duration) | LED Strip Effect (Duration) |
 | 8 | LED Strip Effect (Effect) | LED Strip Effect (Effect) |
+| 9 | LED Strip Timeout | LED Strip Timeout |
 | 10 | Active Power Reports | Active Power Reports |
 | 11 | Periodic Power & Energy Reports | Periodic Power & Energy Reports |
 | 12 | Energy Reports | Energy Reports |
@@ -174,9 +182,36 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 
 LED Indicator Color
 This will set the default color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).  Se website for more info.
-Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```170```.
+0 = Red
+
+21 = Orange
+
+42 = Yellow
+
+85 = Green
+
+127 = Cyan
+
+170 = Blue
+
+212 = Violet
+
+234 = Pink
+The following option values may be configured, in addition to values in the range 0 to 255 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Red |
+| 21 | Orange |
+| 42 | Yellow |
+| 85 | Green |
+| 127 | Cyan |
+| 170 | Blue |
+| 212 | Violet |
+| 234 | Pink |
+
+The manufacturer defined default value is ```170``` (Blue).
 
 This parameter has the configuration ID ```config_5_2``` and is of type ```INTEGER```.
 
@@ -247,15 +282,61 @@ The manufacturer defined default value is ```1``` (10%).
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
+### Parameter 8: LED Strip Effect
+
+LED Strip Effect
+This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)
+
+Byte 1 = Color.  This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).
+
+Byte 2 = Brightness.  Sets the brightness in 10% increments.
+
+Byte 3 = Duration. 
+
+Byte 4 = Effect. Sets the effect: 0 = Off, 1 = Solid, 2 = Fast Blink, 3 = Slow Blink, 4 = PulseThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 83823359 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_8_4``` and is of type ```INTEGER```.
+
+
 ### Parameter 8: LED Strip Effect (Color)
 
 LED Strip Effect (Color)
 This will allow you to add some sweet effects to your LED bar (ie: pulse, chase, solid, etc)
 
 This will set the color of the LED bar.  Calculated by using a hue color circle (Value / 255 * 360).
-Values in the range 0 to 255 may be set.
 
-The manufacturer defined default value is ```0```.
+0 = Red
+
+21 = Orange
+
+42 = Yellow
+
+85 = Green
+
+127 = Cyan
+
+170 = Blue
+
+212 = Violet
+
+234 = Pink
+The following option values may be configured, in addition to values in the range 0 to 255 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Red |
+| 21 | Orange |
+| 42 | Yellow |
+| 85 | Green |
+| 127 | Cyan |
+| 170 | Blue |
+| 212 | Violet |
+| 234 | Pink |
+
+The manufacturer defined default value is ```0``` (Red).
 
 This parameter has the configuration ID ```config_8_4_000000FF``` and is of type ```INTEGER```.
 
@@ -335,8 +416,7 @@ Values in the range 0 to 255 may be set.
 
 The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_8_4_00FF0000_wo``` and is of type ```INTEGER```.
-This is a write only parameter.
+This parameter has the configuration ID ```config_8_4_00FF0000``` and is of type ```INTEGER```.
 
 
 ### Parameter 8: LED Strip Effect (Effect)
@@ -368,6 +448,31 @@ The manufacturer defined default value is ```0``` (Off).
 This parameter has the configuration ID ```config_8_4_7F000000``` and is of type ```INTEGER```.
 
 
+### Parameter 9: LED Strip Timeout
+
+LED Strip Timeout
+When the LED strip is disabled (LED Strip Intensity is set to 0), this setting allows the LED strip to turn on temporarily while being adjusted.  Time is in seconds.
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Stay Off |
+| 1 | One Second |
+| 2 | Two Seconds |
+| 3 | Three Seconds |
+| 4 | Four Seconds |
+| 5 | Five Seconds |
+| 6 | Six Seconds |
+| 7 | Seven Seconds |
+| 8 | Eight Seconds |
+| 9 | Nine Seconds |
+| 10 | Ten Seconds |
+
+The manufacturer defined default value is ```0``` (Stay Off).
+
+This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
+
+
 ### Parameter 10: Active Power Reports
 
 Active Power Reports
@@ -388,7 +493,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 ### Parameter 11: Periodic Power & Energy Reports
 
 Periodic Power & Energy Reports
-Time period between consecutive power and energy reports being ent (in seconds)
+Time period between consecutive power and energy reports being sent (in seconds)
 
 0 = 0 seconds
 

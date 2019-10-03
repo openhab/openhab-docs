@@ -147,7 +147,7 @@ Detailed information on each parameter can be found in the sections below.
 | 1 | TIME | Duration of light after motion detection [s] |
 | 2 | LIGHT | Light threshold [lx] |
 | 5 | SENSITIVITY | Motion Radar Sensitivity [%] |
-| 6 | BRIGHTNES MEAS INTERVAL | Brightness measuring interval [min] |
+| 6 | Brightness measuring interval  | Brightness measuring interval [min] |
 | 8 | GLOBAL_LIGHT | Use external Ambient Light Value |
 | 9 | SLAVE_MODE | Disable local control |
 | 10 | OFF_BEHAVIOUR | Off behaviour ( timeout ) |
@@ -204,7 +204,7 @@ The manufacturer defined default value is ```100```.
 This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
 
 
-### Parameter 6: BRIGHTNES MEAS INTERVAL
+### Parameter 6: Brightness measuring interval 
 
 Brightness measuring interval [min]
 Interval for measuring ambient light when lamp is on ( lamp switches off briefly and measures ): 5 - 120 min. 0 = function is off.This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.

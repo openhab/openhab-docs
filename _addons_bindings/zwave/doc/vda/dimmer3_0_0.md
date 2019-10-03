@@ -8,6 +8,8 @@ title: Vitrum III EU Dimmer - ZWave
 # Vitrum III EU Dimmer
 This describes the Z-Wave device *Vitrum III EU Dimmer*, manufactured by *VDA* with the thing type UID of ```vda_dimmer3_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
 ![Vitrum III EU Dimmer product image](https://www.cd-jackson.com/zwave_device_uploads/475/475_default.jpg)
 
 

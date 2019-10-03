@@ -8,11 +8,16 @@ title: AZEMT500BB32MA - ZWave
 # AZEMT500BB32MA American Standard Z-Wave Programmable Thermostat
 This describes the Z-Wave device *AZEMT500BB32MA*, manufactured by *Trane Corporation* with the thing type UID of ```trane_azemt500bb32ma_00_000```.
 
+The device is in the category of *HVAC*, defining Air condition devices, Fans.
+
+![AZEMT500BB32MA product image](https://www.cd-jackson.com/zwave_device_uploads/572/572_default.png)
+
+
 The AZEMT500BB32MA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/572) to improve the documentation.
+T500B Z-Wave Thermostat. The ComfortLink™ control is an innovative product that is compatible with Trane products as well as any other brand of standard central heating and air conditioning systems. It works through the Nexia™ Home Intelligence system
 
 ## Channels
 
@@ -168,6 +173,10 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_CLOCK_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
+
+### Documentation Links
+
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/572/TZEMT500AB32MAA-.pdf)
 
 ---
 

@@ -404,86 +404,74 @@ Sends Device Reset notifications, Central Scene notifications and Basic Report O
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Input 1
+### Group 2: Input 1 Basic Set On / Off 
 
-Basic Set On / Off
 Sends Basic Set On / Off when input 1 is activated.
 
 Association group 2 supports 5 nodes.
 
-### Group 3: Input 1
+### Group 3: Input 1 Switch Binary Set On / Off
 
-Switch Binary Set On / Off
 Sends Switch Binary Set On / Off when input 1 is activated.
 
 Association group 3 supports 5 nodes.
 
-### Group 4: Input 1
+### Group 4: Input 1 Multilevel Switch Set 
 
-Multilevel Switch Set
 Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 1 is activated. Is typically used for controlling light dimmers, curtain controllers, etc
 
 Association group 4 supports 5 nodes.
 
-### Group 5: Input 2
+### Group 5: Input 2 Basic Set On / Off
 
-Basic Set On / Off
 Sends Basic Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 5 supports 5 nodes.
 
-### Group 6: Input 2
+### Group 6: Input 2 Switch Binary Set On / Off 
 
-Switch Binary Set On / Off
 Sends Switch Binary Set On / Off when input 2 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 6 supports 5 nodes.
 
-### Group 7: Input 2
+### Group 7: Input 2 Multilevel Switch Set 
 
-Multilevel Switch Set
 Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 2 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 7 supports 5 nodes.
 
-### Group 8: Input 3
+### Group 8: Input 3 Basic Set On / Off
 
-Basic Set On / Off
 Sends Basic Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 8 supports 5 nodes.
 
-### Group 9: Input 3
+### Group 9: Input 3 Switch Binary Set On / Off 
 
-Switch Binary Set On / Off
 Sends Switch Binary Set On / Off when input 3 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 9 supports 5 nodes.
 
-### Group 10: Input 3
+### Group 10: Input 3 Multilevel Switch Set 
 
-Multilevel Switch Set
 Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 3 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 10 supports 5 nodes.
 
-### Group 11: Input 4
+### Group 11: Input 4 Basic Set On / Off 
 
-Basic Set On / Off
 Sends Basic Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 11 supports 5 nodes.
 
-### Group 12: Input 4
+### Group 12: Input 4 Switch Binary Set On / Off
 
-Switch Binary Set On / Off
 Sends Switch Binary Set On / Off when input 4 is activated. Can be used for controlling other Z-Wave devices, e.g. relay modules.
 
 Association group 12 supports 5 nodes.
 
-### Group 13: Input 4
+### Group 13: Input 4 Multilevel Switch Set 
 
-Multilevel Switch Set
 Sends Multilevel Switch Set / Multilevel Switch Start Level Change / Multilevel Switch Stop Level Change when input 4 is activated. Is typically used for controlling light dimmers, curtain controllers, etc.
 
 Association group 13 supports 5 nodes.

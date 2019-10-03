@@ -411,37 +411,38 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The HEATIT Z-RELAY supports 6 association groups.
 
-### Group 1: RELAY OUTPUT
+### Group 1: Lifeline
 
-Lifeline. Lifeline group for the entire module. Sends Basic Report On / Off when the relay is turned on or off. Sends Meter Report with energy data for the load connected to the relay output.
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
+Lifeline group for the entire module. Sends Basic Report On / Off when the relay is turned on or off. Sends Meter Report with energy data for the load connected to the relay output.
 
 Association group 1 supports 1 node.
 
-### Group 2: TEMPERATURE INPUT 1 
+### Group 2: Sensor Multilevel Report Input 1
 
 Sends Sensor Multilevel Report for input 1. Nodes in this group will receive information of the current temperature measured by the NTC connected to input 1.
 
 Association group 2 supports 5 nodes.
 
-### Group 3: TEMPERATURE INPUT 2 
+### Group 3: Sensor Multilevel Report for Input 2
 
 Sends Sensor Multilevel Report for input 2. Nodes in this group will receive information of the current temperature measured by the NTC connected to input 2.
 
 Association group 3 supports 5 nodes.
 
-### Group 4: FLOOD SENSOR INPUT 
+### Group 4: Basic Report On / Off
 
 Nodes in this group receives Basic Report On / Off when the flood sensor detects a flood. Normally used for visualization in the Controller.
 
 Association group 4 supports 5 nodes.
 
-### Group 5: FLOOD SENSOR INPUT 
+### Group 5: Basic Set On / Off
 
 Nodes in this group receives Basic Set On / Off when the flood sensor detects a flood.
 
 Association group 5 supports 5 nodes.
 
-### Group 6: FLOOD SENSOR INPUT
+### Group 6: Notification Report
 
 Nodes in this group receives Notification Report when the flood sensor detects a flood. The notification events reported are: ”Water leak detected ”0x02 and ”ldle” 0x00.
 

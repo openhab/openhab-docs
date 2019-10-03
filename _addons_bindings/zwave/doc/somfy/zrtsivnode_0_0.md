@@ -15,7 +15,21 @@ The device is in the category of *Blinds*, defining Roller shutters, window blin
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/370) to improve the documentation.
+The Somfy Z-Wave to Radio Technology Somfy Interface (ZRTSI) is a Z-Wave bridge controller that receives Z-Wave transmissions and translates them to motor control commands for Somfy's range of Radio Technology Somfy (RTS) motors. The ZRTSI resides as a bridge controller node within a Z-Wave Network and becomes a repeating node in the mesh network. The ZRTSI also features Network Wide Inclusion (NWI) which allows inclusion and exclusion to take advantage of the mesh topology of Z-Wave networks. Z-wave devices from all manufacturers can be used in the same network togethe
+
+### Inclusion Information
+
+  1. From the ZRTSI's Home Screen, navigate to the Base Node Include screen.
+  2. Enable Inclusion Mode on the Primary Z-Wave Controller.
+  3. On the ZRTSI, Activate the “Base Node Include” command by pressing the Select Button.
+  4. The LCD Screen will display “BASE NODE INCLUDING” then either “BASE INCLUDE SUCCESS!” or “BASE INCLUDE FAIL” and return to the Base Node Sub Menu.  
+
+### Exclusion Information
+
+  1. Enable the Exclusion Mode on the Primary Z-Wave Controller.
+  2. From the ZRTSI's Home Screen, navigate to the Base Node Exclude screen
+  3. Activate the “Base Node Exclude” command by pressing the Select Button.
+  4. The LCD Screen will display “BASE NODE EXCLUDING” and then either “BASE EXCLUDE SUCCESS!” or “BASE EXCLUDE FAIL” and return to the Base Node Sub Menu. 
 
 ## Channels
 
