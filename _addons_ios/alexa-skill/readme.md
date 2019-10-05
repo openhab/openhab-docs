@@ -63,7 +63,7 @@ Here are some of the most common generic errors you may encounter while using th
 #### Device Not Responding
 * Alexa will respond with "_device_ isn't responding, please check its network connection and power supply", and in some rare occasions, no response or acknowledgement will be given.
 * It indicates that the state of one or more of the endpoint properties retrieved from the openHAB server are considered invalid, mostly because it is in either uninitialized `NULL` or undefined `UNDEF` state.
-* To resolve this error, make sure that all items interfacing with Alexa have a defined state.
+* To resolve this error, make sure that all items interfacing with Alexa have a defined state. If necessary, use [item sensors](#item-sensor), or if the state is not available in openHAB, set the [item state](#item-state) to not be retrievable.
 * For group endpoints, partial properties responses will be send back to Alexa excluding items with invalid state. This will allow Alexa to acknowledge a command request assuming that the relevant item state is accurate. However, it will cause Alexa to generate this error when requesting the status of a device configured with an interface supporting that feature. For example, using a thermostat group endpoint, a request to set its mode will succeed but requesting its mode status will fail if one of its property state, such as its temperature sensor, is not defined in openHAB.
 * This is the default error.
 
@@ -211,6 +211,7 @@ Switch Power  "Power"  (Fan) {alexa="ToggleController.toggleState" [friendlyName
 
 #### Item State
 * Item states, reported back to Alexa, are formatted based on their [item state presentation](https://www.openhab.org/docs/configuration/items.html#state-presentation) definition if configured. This means you can control the precision of number values (e.g. `%.1f °C` will limit reported temperature value to one decimal point).
+* For items that don't have a state, these can be configured as not retrievable, automatically when the item is set as `autoupdate=false` or by using metadata parameter `itemStateRetrievable=false`. In that case, Alexa will not retrieve the given item state, and when a command is issued against that item, the requested state will be returned back without checking the current state in openHAB. If using this feature in a group endpoint, keep in mind that all associated items will need to be configured to either report or not report a state, otherwise the Alexa integration for that endpoint will be broken.
 
 #### Item Unit of Measurement
 * With the introduction of the [unit of measurement](https://www.openhab.org/docs/concepts/units-of-measurement.html) concept, the item unit can be automatically determined for thermostat and temperature using that feature, removing the need of having to set the metadata scale parameter for each of the relevant items or groups.
