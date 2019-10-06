@@ -278,7 +278,7 @@ The process of redirecting the log to a text file is as simple as :
 <appender name="YOUR_APPENDER_NAME" class="ch.qos.logback.core.FileAppender">
 <file>relative/path/to/file.log</file>
 	<encoder>
-		<!--Pick up a pattern that will log the information taht you will need -->
+		<!--Pick up a pattern that will log the information that you will need -->
 		<pattern>%d{yyyy-MM-dd HH:mm:ss.SSS} [%-5level] [%-30.30logger{36}:%-5line] - %msg%ex{10}%n</pattern>
 	</encoder>
 </appender>
