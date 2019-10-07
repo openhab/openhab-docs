@@ -60,7 +60,6 @@ The following table summarises the channels available for the ZWN-BDS -:
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Alarm (general) | alarm_general | alarm_general | Alarm | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
-| Alarm (general) | alarm_general | alarm_general | Alarm | Switch | 
 
 ### Binary Sensor
 Indicates if a sensor has triggered.
@@ -91,18 +90,6 @@ Represents the battery level as a percentage (0-100%). Bindings for things suppo
 
 The ```system.battery-level``` channel is of type ```system.battery-level``` and supports the ```Number``` item and is in the ```Battery``` category.
 This channel provides the battery level as a percentage and also reflects the low battery warning state. If the battery state is in low battery warning state, this will read 0%.
-### Alarm (general)
-Indicates if an alarm is triggered.
-
-The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
 
 
 ## Device Configuration
@@ -113,7 +100,13 @@ The device has no configuration parameters defined.
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The device does not support associations.
+The ZWN-BDS supports 1 association group.
+
+### Group 1: Group 1
+
+
+Association group 1 supports 5 nodes.
+
 ## Technical Information
 
 ### Endpoints

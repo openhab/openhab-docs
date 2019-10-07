@@ -101,7 +101,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Activate / deactivate functions ALL ON/ALL OFF | ctivate / deactivate functions ALL ON/ALL OFF |
 | 11 | Automatic turning off relay after set time | Automatic turning off relay after set time |
 | 30 | Relay state after a power failure | Relay state after a power failure |
-| 40 | Power reporting in Watts on power change | Power reporting in Watts on power change |
+| 40 | Power reporting in Watts on percentage change | Power reporting in Watts on percentage change |
 | 42 | Power reporting in Watts on power change | Power reporting in Watts on power change |
 
 ### Parameter 1: Input 1 switch type
@@ -200,9 +200,9 @@ The manufacturer defined default value is ```0``` (Last saved state).
 This parameter has the configuration ID ```config_30_1``` and is of type ```INTEGER```.
 
 
-### Parameter 40: Power reporting in Watts on power change
+### Parameter 40: Power reporting in Watts on percentage change
 
-Power reporting in Watts on power change
+Power reporting in Watts on percentage change
   * 0 – Reporting Disabled
   * 1 – 100 = 1% - 100% Reporting enabled
 
@@ -242,13 +242,13 @@ e
 
 Association group 1 supports 16 nodes.
 
-### Group 2:  basic on/off 
+### Group 2:  basic on/off -  input I2
 
 (triggered at change of the input I2 state and reflecting its state)
 
 Association group 2 supports 16 nodes.
 
-### Group 3:  basic on/off 
+### Group 3:  basic on/off -  input I3
 
 ttriggered at change of the input I3 state and reflecting its state)
 

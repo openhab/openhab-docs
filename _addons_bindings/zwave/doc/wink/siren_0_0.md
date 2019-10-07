@@ -155,11 +155,11 @@ The following option values may be configured -:
 |--------|-------------|
 | -1 | Chime Will Not Play |
 | 0 | Does Not Stop |
-| 1 | 1 min |
-| 2 | 2 Min |
-| 5 | 5 Min |
+| 1 | Time 1 min |
+| 2 | Time 2 Min |
+| 5 | Time 5 Min |
 
-The manufacturer defined default value is ```1``` (1 min).
+The manufacturer defined default value is ```1``` (Time 1 min).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -269,13 +269,13 @@ Group 1 is the “Lifeline” group, which can hold five members, typically incl
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Siren
+### Group 2: Group 2
 
 Group 2 can hold five members, and the Siren sends a single command to this Association Group, the Binary Switch Report, whenever the Siren is turned on or off
 
 Association group 2 supports 5 nodes.
 
-### Group 3: Siren
+### Group 3: Group 3
 
 Group 2 can hold five members, and the Siren sends a single command to this Association Group, a Notification Report, whenever the Siren is turned on or off
 

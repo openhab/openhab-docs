@@ -225,8 +225,8 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Wind Gauge | Wind Gauge, Wind Gust Top Value |
-| 2 | Rain Gauge | Rain Rate top value |
+| 1 | Wind Gauge - Gust Top Value | Wind Gauge, Wind Gust Top Value |
+| 2 | Rain Gauge - Rate top value | Rain Rate top value |
 | 3 | Wind Gauge | Wind Gust |
 | 4 | Rain Gauge | Rain Rate |
 | 5 | End Point 1 | Unsolicited report |
@@ -242,7 +242,7 @@ Detailed information on each parameter can be found in the sections below.
 | 15 | Random ID enable | enables/disables random ID |
 | 250 | Unsecure / Secure Inclusion  | Unsecure / Secure Inclusion |
 
-### Parameter 1: Wind Gauge
+### Parameter 1: Wind Gauge - Gust Top Value
 
 Wind Gauge, Wind Gust Top Value
 Wind Gauge, Wind Gust Top Value, if the Wind Gust is Higher than the Parameter Value, a device triggers an Association
@@ -253,7 +253,7 @@ The manufacturer defined default value is ```1000```.
 This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
 
 
-### Parameter 2: Rain Gauge
+### Parameter 2: Rain Gauge - Rate top value
 
 Rain Rate top value
 If the sensor Rain Rate is higher than the parameter value, a device triggers a association.
@@ -471,13 +471,13 @@ Reserved for the communication with the main controller
 
 Association group 1 supports 1 node.
 
-### Group 2: Basic on/off
+### Group 2: Basic on/off - wind
 
 triggered when the wind gust of the wind gauge exceed the configuration parameter 1 value
 
 Association group 2 supports 16 nodes.
 
-### Group 3: Basic on/off
+### Group 3: Basic on/off - rain
 
 triggered when the rain rate exceed the configuration parameter 2 value
 

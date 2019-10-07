@@ -140,7 +140,7 @@ This parameter has the configuration ID ```wakeup_node``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The 32563 supports 3 association groups.
+The 32563 supports 1 association group.
 
 ### Group 1: Lifeline
 
@@ -148,18 +148,6 @@ The Lifeline association group reports device status to a hub and is not designe
 Lifeline
 
 Association group 1 supports 5 nodes.
-
-### Group 2: Control
-
-For Control
-
-Association group 2 supports 5 nodes.
-
-### Group 3: Control
-
-For Control
-
-Association group 3 supports 5 nodes.
 
 ## Technical Information
 

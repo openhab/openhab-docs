@@ -487,7 +487,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Temperature offset | Temperature offset |
 | 6 | Temperature Units | Temperature Units |
 | 7 | Basic Set Value (Group 2) | Basic Set Value (Group 2) |
-| 8 | Basic Set Value (Group 2) | Basic Set Value (Group 2) |
+| 8 | Basic Set Value (Group 3) | Basic Set Value (Group 3) |
 | 9 | Basic Set Value (Group 4) | Basic Set Value (Group 4) |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
@@ -860,10 +860,10 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
 
 
-### Parameter 8: Basic Set Value (Group 2)
+### Parameter 8: Basic Set Value (Group 3)
 
-Basic Set Value (Group 2)
-This parameter sets the value sent by the Basic Set command to Association Group 4. The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)
+Basic Set Value (Group 3)
+This parameter sets the value sent by the Basic Set command to Association Group 3. The Door/Window Sensor sends a Basic Set command to Association Group 4 when the door or window opens (for more information, see “Association Group Info”.)
 
 <table>
   <tr>

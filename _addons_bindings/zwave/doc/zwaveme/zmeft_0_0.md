@@ -17,7 +17,21 @@ The ZME_FT supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/151) to improve the documentation.
+Underfloor heating thermostat allows you to control the heating mat or other load in the on / off mode to maintain the set temperature. The device can operate in two control circuits:
+
+  * autonomous maintenance of the set floor temperature  
+    
+  * controlled by Z-Wave to maintain the set room temperature (requires an external Z-Wave thermostat,installed indoors)
+
+The kit includes a temperature sensor. In all modes, the thermostat protects the floor structure from overheating, turning off load when the temperature threshold is reached
+
+### Inclusion Information
+
+press and hold the central round mode change button for 5 seconds
+
+### Exclusion Information
+
+press and hold the central round mode change button for 5 seconds
 
 ## Channels
 
@@ -82,7 +96,7 @@ Detailed information on each parameter can be found in the sections below.
 | 3 | Basic mode |  |
 | 4 | Temperature control interval |  |
 | 5 | Maximum allowed temperature deviation |  |
-| 6 | Maximal allowed temperature | In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree. |
+| 6 | Maximal allowed temperature | Maximal allowed temperature |
 | 10 | Typical click timeout | Typical time used to differenciate click from hold |
 
 ### Parameter 1: Boost Dry mode duration
@@ -124,8 +138,8 @@ The following option values may be configured -:
 | 0 | Toggle Normal Heating / Off |
 | 1 | Toggle Normal Heating / Energy Save |
 | 2 | Toggle Boost Dry |
-| 3 | Set Normal Heating set point temperature (in 0.1 C units) |
-| 4 | Switch on/off relay directly (only if Thermostat Mode is in Off state) |
+| 3 | Set Normal Heating set point temperature |
+| 4 | Switch on/off relay directly |
 
 The manufacturer defined default value is ```0``` (Toggle Normal Heating / Off).
 
@@ -156,8 +170,8 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 6: Maximal allowed temperature
 
+Maximal allowed temperature
 In all modes the thermostat will switch off heating until temperature drops below this limit. For wooden and laminate floor maximal allowed temperature is 27 degree. For tile and concrete floor maximal allowed temperature value is 45 degree.
-
 Values in the range 20 to 55 may be set.
 
 The manufacturer defined default value is ```27```.

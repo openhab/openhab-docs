@@ -412,26 +412,26 @@ The ZMNHOD supports 9 association groups.
 
 Association group 1 supports 1 node.
 
-### Group 2: Basic on/off 
+### Group 2: Basic on/off -  input I1
 
 Triggered at change of the input I1 state and reflecting its state
 
 Association group 2 supports 16 nodes.
 
-### Group 3: Basic on/off
+### Group 3: Basic on/off - input I2
 
 Triggered at change of the input I2 state and reflecting its state
 
 Association group 3 supports 16 nodes.
 
-### Group 4: Basic on/off
+### Group 4: Basic on/off - direction of roller
 
 Triggered at sensing moving direction of roller
 up=FF, down=0
 
 Association group 4 supports 16 nodes.
 
-### Group 5: Basic on/off
+### Group 5: Basic on/off - roller position
 
 Triggered at reaching roller position
 bottom=FF, top=0

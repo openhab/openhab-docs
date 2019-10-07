@@ -27,24 +27,6 @@ Separately from working with RFID Tags, the Tag Reader also has a numerical keyp
 
 By using the Tag Reader intelligently you can secure your house and save money on your energy bill at the same time. You can actually let your house ‘fall asleep’ when enabling the ‘Away Scene’. This is especially noted when u are using energy saving products of BeNext such as Radiator Control and of course a Energy Switch.
 
-  * Class: 0x85 COMMAND\_CLASS\_ASSOCIATION
-  * Class: 0x80 COMMAND\_CLASS\_BATTERY
-  * Class: 0x84 COMMAND\_CLASS\_WAKE_UP
-  * Class: 0x86 COMMAND\_CLASS\_VERSION
-  * Class: 0x72 COMMAND\_CLASS\_MANUFACTURER\_SPECIFIC\_V2
-  * Class: 0x71 COMMAND\_CLASS\_ALARM_V2
-  * Class: 0x70 COMMAND\_CLASS\_CONFIGURATION
-  * Class: 0x25 COMMAND\_CLASS\_SWITCH_BINARY
-  * Class: 0x63 COMMAND\_CLASS\_USER_CODE
-
-Some link
-
-http://www.openzwave.com/device-database/0097%3A4501%3A6131
-
-http://www.fhemwiki.de/wiki/Z-Wave-ZIP\_WT-RFID\_Keypad
-
-HASH DEVICE 0097:4501:6131
-
 ### Inclusion Information
 
 Press and hold the tamper for 1 seconds and release to start the inclusion/exclusion process.
@@ -61,6 +43,16 @@ The wakeup period does not impact the devices ability to report events or sensor
 
 
 Tap a button. The always awake mode can be activated by: CONFIGURATION_SET / Parameter: 0x05 / Size: 0x01 (can’t be different from 1) / Value: 0x03 (mode 3)
+
+### General Usage Information
+
+Some link
+
+http://www.openzwave.com/device-database/0097%3A4501%3A6131
+
+http://www.fhemwiki.de/wiki/Z-Wave-ZIP\_WT-RFID\_Keypad
+
+HASH DEVICE 0097:4501:6131
 
 ## Channels
 
@@ -128,7 +120,7 @@ Detailed information on each parameter can be found in the sections below.
 
 Set all configuration to factory settings
 
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range -128 to 127 -:
 
 | Value  | Description |
 |--------|-------------|

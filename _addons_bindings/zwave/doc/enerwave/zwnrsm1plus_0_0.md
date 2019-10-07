@@ -17,8 +17,6 @@ The ZWN-RSM1-PLUS supports routing. This allows the device to communicate using 
 
 ## Overview
 
-ZWN-RSM1-Plus
-
 Transform any home into a connected home with the Enerwave Z-Wave Plus Smart Single Relay Wireless Lighting Control Module. The lighting control enables wireless control of on/off functions for standard table and floor lamps, and is compatible with incandescent, LED, Xenon, Halogen, fluorescent and compact fluorescent bulbs. The Z-Wave Plus Module provides ultimate flexibility for your home lighting by creating custom scenes and scheduling timed events when you’re either home or away. Compared to Z-Wave Classic models, the Enerwave Z-Wave Plus Smart Meter Module offers 50% more wireless range and energy efficiency a 250% faster processor and 400% more memory
 
 Take charge of your home’s appliances power outlet by installed directly behind your wall sockets.  The Z-Wave Plus Smart Relay Module offers all the power of intelligent automation and remote control.  Discrete and smart, the Smart Module Switch work invisibly behind your existing switches without the need to replace them.
@@ -29,31 +27,28 @@ Never worry if you accidentally left the lights on because you can turn them off
 
 ### Inclusion Information
 
-DEVICE INCLUSION/ EXCLUSION
-
 The process of "Inclusion/ Exclusion" is to Add or Remove the device from the Hub. All Z-Wave devices must be "Included" on the Controller (Hub) before it can be controlled from a smart device. The Hub should be brought physically closer to the device just for the "Inclusion" process (recommended within 10ft). When finished, the Hub and device can be moved back to final installation location. Download the App or log onto the website associated with the Hub you are using and follow their Inclusion/ Exclusion instructions as each Hub's programming and features are different.
 
-• During the Inclusion/ Exclusion process, the Program Button on the relay or the ON/OFF toggle on the switch can be used for including/ excluding the device.
-
-o When using the ON/OFF toggle, the toggle must be toggled ON and OFF 3 times.
-
-• It is best to perform an Exclusion of the device prior to performing an Inclusion.
+  * During the Inclusion/ Exclusion process, the Program Button on the relay or the ON/OFF toggle on the switch can be used for including/ excluding the device.
+  * When using the ON/OFF toggle, the toggle must be toggled ON and OFF 3 times.
+  * It is best to perform an Exclusion of the device prior to performing an Inclusion.
 
 Step 1. From the Control Panel, go the the device Exclusion page.
 
-o Select "Exclude Device".
-
-o When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.
+  * Select "Exclude Device".
+  * When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.
 
 Step 2. Go to the "Add Device" page.
 
-o Select "Include Device".
+  * Select "Include Device".
+  * When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.
+  * The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat from Step 1. Once the relay is part of the network, the same basic procedure is used to add the relay to groups & scenes or change advanced functions. Refer to the Hub’s instructions for details.
 
-o When prompted, press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times.
+Step 3. Follow the On-Screen instructions in the Control Panel on adding or removing rooms, scenes, other devices, and other functions and features.
 
-The primary controller should indicate that the action was successful. If the controller indicates the action was unsuccessful, please repeat from Step 1. Once the relay is part of the network, the same basic procedure is used to add
+### Exclusion Information
 
-the relay to groups & scenes or change advanced functions. Refer to the Hub’s instructions for details. Step 3. Follow the On-Screen instructions in the Control Panel on adding or removing rooms, scenes, other devices, and other functions and features.
+ press the Program Button on the Relay once or the ON/OFF toggle on the switch 3 times
 
 ## Channels
 

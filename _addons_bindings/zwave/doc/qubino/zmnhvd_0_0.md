@@ -419,13 +419,13 @@ triggered at changes of state/value of the Flush Dimmer 0-10V
 
 Association group 4 supports 16 nodes.
 
-### Group 5:  multilevel sensor report
+### Group 5:  multilevel sensor report -  analogue sensor
 
 triggered at change of analogue sensor
 
 Association group 5 supports 16 nodes.
 
-### Group 6:  multilevel sensor report
+### Group 6:  multilevel sensor report - temperature sensor
 
 triggered at change of temperature sensor
 

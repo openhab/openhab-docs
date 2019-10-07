@@ -148,343 +148,411 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The SmoothRemote supports 68 association groups.
 
-### Group 1: BASIC SET
+### Group 1: Click I
 
+BASIC SET
 
 Association group 1 supports 30 nodes.
 
-### Group 2: BASIC SET
+### Group 2: Click II
 
+BASIC SET
 
 Association group 2 supports 30 nodes.
 
-### Group 3: BASIC SET
+### Group 3: Click III
 
+BASIC SET
 
 Association group 3 supports 30 nodes.
 
-### Group 4: BASIC SET
+### Group 4: Click IV
 
+BASIC SET
 
 Association group 4 supports 30 nodes.
 
-### Group 5: BASIC SET
+### Group 5: Click V
 
+BASIC SET
 
 Association group 5 supports 30 nodes.
 
-### Group 6: BASIC SET
+### Group 6: Click VI
 
+BASIC SET
 
 Association group 6 supports 30 nodes.
 
-### Group 7: BASIC SET
+### Group 7: Click VII
 
+BASIC SET
 
 Association group 7 supports 30 nodes.
 
-### Group 8: SWITCH ALL ON
+### Group 8: Click VIII
 
+SWITCH ALL ON
 
 Association group 8 supports 30 nodes.
 
-### Group 9: HAIL
+### Group 9: Click Shift
 
+HAIL
 
 Association group 9 supports 30 nodes.
 
-### Group 10: BASIC SET
+### Group 10: Double Click I
 
+BASIC SET
 
 Association group 10 supports 30 nodes.
 
-### Group 11: BASIC SET
+### Group 11: Double Click II
 
+BASIC SET
 
 Association group 11 supports 30 nodes.
 
-### Group 12: BASIC SET
+### Group 12: Double Click III
 
+BASIC SET
 
 Association group 12 supports 30 nodes.
 
-### Group 13: BASIC SET
+### Group 13: Double Click IV
 
+BASIC SET
 
 Association group 13 supports 30 nodes.
 
-### Group 14: BASIC SET
+### Group 14: Double Click V
 
+BASIC SET
 
 Association group 14 supports 30 nodes.
 
-### Group 15: BASIC SET
+### Group 15: Double Click VI
 
+BASIC SET
 
 Association group 15 supports 30 nodes.
 
-### Group 16: BASIC SET
+### Group 16: Double Click VII
 
+BASIC SET
 
 Association group 16 supports 30 nodes.
 
-### Group 17: SWITCH ALL OFF
+### Group 17: Double Click VIII
 
+SWITCH ALL OFF
 
 Association group 17 supports 30 nodes.
 
-### Group 18: HAIL
+### Group 18: Double Click Shift
 
+HAIL
 
 Association group 18 supports 30 nodes.
 
-### Group 19: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 19: Hold I
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 19 supports 30 nodes.
 
-### Group 20: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 20: Hold II
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 20 supports 30 nodes.
 
-### Group 21: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 21: Hold III
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 21 supports 30 nodes.
 
-### Group 22: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 22: Hold IV
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 22 supports 30 nodes.
 
-### Group 23: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 23: Hold V
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 23 supports 30 nodes.
 
-### Group 24: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 24: Hold VI
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 24 supports 30 nodes.
 
-### Group 25: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 25: Hold VII
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 25 supports 30 nodes.
 
-### Group 26: HAIL
+### Group 26: Hold VIII
 
+HAIL
 
 Association group 26 supports 30 nodes.
 
-### Group 27: HAIL
+### Group 27: Hold Shift
 
+HAIL
 
 Association group 27 supports 30 nodes.
 
-### Group 28: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 28: Click followed by Hold I
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 28 supports 30 nodes.
 
-### Group 29: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 29: Click followed by Hold II
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 29 supports 30 nodes.
 
-### Group 30: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 30: Click followed by Hold III
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 30 supports 30 nodes.
 
-### Group 31: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 31: Click followed by Hold IV
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 31 supports 30 nodes.
 
-### Group 32: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 32: Click followed by Hold V
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 32 supports 30 nodes.
 
-### Group 33: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 33: Click followed by Hold VI
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 33 supports 30 nodes.
 
-### Group 34: SWITCH MULTILEVEL START LEVEL CHANGE
+### Group 34: Click followed by Hold VII
 
+SWITCH MULTILEVEL START LEVEL CHANGE
 
 Association group 34 supports 30 nodes.
 
-### Group 35: HAIL
+### Group 35: Click followed by Hold VIII
 
+HAIL
 
 Association group 35 supports 30 nodes.
 
-### Group 36: HAIL
+### Group 36: Click followed by Hold Shift
 
+HAIL
 
 Association group 36 supports 30 nodes.
 
-### Group 37: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 37: Release I
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 37 supports 30 nodes.
 
-### Group 38: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 38: Release II
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 38 supports 30 nodes.
 
-### Group 39: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 39: Release III
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 39 supports 30 nodes.
 
-### Group 40: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 40: Release IV
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 40 supports 30 nodes.
 
-### Group 41: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 41: Release V
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 41 supports 30 nodes.
 
-### Group 42: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 42: Release VI
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 42 supports 30 nodes.
 
-### Group 43: SWITCH MULTILEVEL STOP LEVEL CHANGE
+### Group 43: Release VII
 
+SWITCH MULTILEVEL STOP LEVEL CHANGE
 
 Association group 43 supports 30 nodes.
 
-### Group 44: HAIL
+### Group 44: Release VIII
 
+HAIL
 
 Association group 44 supports 30 nodes.
 
-### Group 45: HAIL
+### Group 45: Release Shift
 
+HAIL
 
 Association group 45 supports 30 nodes.
 
-### Group 46: HAIL
+### Group 46: Click (Shift) followed by Click I
 
+HAIL
 
 Association group 46 supports 30 nodes.
 
-### Group 47: HAIL
+### Group 47: Click (Shift) followed by Click II
 
+HAIL
 
 Association group 47 supports 30 nodes.
 
-### Group 48: HAIL
+### Group 48: Click (Shift) followed by Click III
 
+HAIL
 
 Association group 48 supports 30 nodes.
 
-### Group 49: HAIL
+### Group 49: Click (Shift) followed by Click IV
 
+HAIL
 
 Association group 49 supports 30 nodes.
 
-### Group 50: HAIL
+### Group 50: Click (Shift) followed by Click V
 
+HAIL
 
 Association group 50 supports 30 nodes.
 
-### Group 51: HAIL
+### Group 51: Click (Shift) followed by Click VI
 
+HAIL
 
 Association group 51 supports 30 nodes.
 
-### Group 52: HAIL
+### Group 52: Click (Shift) followed by Click VII
 
+HAIL
 
 Association group 52 supports 30 nodes.
 
-### Group 53: HAIL
+### Group 53: Click (Shift) followed by Click VIII
 
+HAIL
 
 Association group 53 supports 30 nodes.
 
-### Group 54: HAIL
+### Group 54: Double Click (Shift) followed by Click I
 
+HAIL
 
 Association group 54 supports 30 nodes.
 
-### Group 55: HAIL
+### Group 55: Double Click (Shift) followed by Click II
 
+HAIL
 
 Association group 55 supports 30 nodes.
 
-### Group 56: HAIL
+### Group 56: Double Click (Shift) followed by Click III
 
+HAIL
 
 Association group 56 supports 30 nodes.
 
-### Group 57: HAIL
+### Group 57: Double Click (Shift) followed by Click IV
 
+HAIL
 
 Association group 57 supports 30 nodes.
 
-### Group 58: HAIL
+### Group 58: Double Click (Shift) followed by Click V
 
+HAIL
 
 Association group 58 supports 30 nodes.
 
-### Group 59: HAIL
+### Group 59: Double Click (Shift) followed by Click VI
 
+HAIL
 
 Association group 59 supports 30 nodes.
 
-### Group 60: HAIL
+### Group 60: Double Click (Shift) followed by Click VII
 
+HAIL
 
 Association group 60 supports 30 nodes.
 
-### Group 61: HAIL
+### Group 61: Double Click (Shift) followed by Click VIII
 
+HAIL
 
 Association group 61 supports 30 nodes.
 
-### Group 62: HAIL
+### Group 62: Triple Click VIII
 
+HAIL
 
 Association group 62 supports 30 nodes.
 
-### Group 63: HAIL
+### Group 63: Triple Click Shift
 
+HAIL
 
 Association group 63 supports 30 nodes.
 
-### Group 64: HAIL
+### Group 64: 4x Click VIII
 
+HAIL
 
 Association group 64 supports 30 nodes.
 
-### Group 65: HAIL
+### Group 65: 4x Click Shift
 
+HAIL
 
 Association group 65 supports 30 nodes.
 
-### Group 66: HAIL
+### Group 66: Double Click followed by Hold (Shift)
 
+HAIL
 
 Association group 66 supports 30 nodes.
 
-### Group 67: HAIL
+### Group 67: Triple Click followed by Hold (Shift)
 
+HAIL
 
 Association group 67 supports 30 nodes.
 
-### Group 68: HAIL
+### Group 68: Triple Click (Shift) followed by Triple Click VIII
 
+HAIL
 
 Association group 68 supports 30 nodes.
 

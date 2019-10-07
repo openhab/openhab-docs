@@ -331,13 +331,13 @@ Triggered at change of the input I1 state and reflecting its state
 
 Association group 3 supports 99 nodes.
 
-### Group 4: Basic on/off
+### Group 4: Basic on/off - input I2
 
 Triggered at change of the input I2 state and reflecting its state
 
 Association group 4 supports 99 nodes.
 
-### Group 5: Basic on/off
+### Group 5: Basic on/off -  input I3
 
 Triggered at change of the input I3 state and reflecting its state
 

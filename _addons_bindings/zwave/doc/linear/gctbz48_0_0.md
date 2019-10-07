@@ -158,7 +158,7 @@ Detailed information on each parameter can be found in the sections below.
 | 13 | H Delta Stage 2 ON | H Delta Stage 2 ON |
 | 14 | H Delta Stage 2 OFF | H Delta Stage 2 OFF |
 | 15 | H Delta Aux ON | H Delta Aux ON |
-| 16 | H Delta Stage 2 OFF | H Delta Stage 2 OFF |
+| 16 | H Delta Stage 3 OFF | H Delta Stage 3 OFF |
 | 17 | C Delta Stage 1 ON | C Delta Stage 1 ON |
 | 18 | C Delta Stage 1 OFF | C Delta Stage 1 OFF |
 | 19 | C Delta Stage 2 ON | C Delta Stage 2 ON |
@@ -383,9 +383,9 @@ The manufacturer defined default value is ```3```.
 This parameter has the configuration ID ```config_15_1``` and is of type ```INTEGER```.
 
 
-### Parameter 16: H Delta Stage 2 OFF
+### Parameter 16: H Delta Stage 3 OFF
 
-H Delta Stage 2 OFF
+H Delta Stage 3 OFF
 Sets the delta from setpoint that stage 3 heating stops
 Values in the range 0 to 7 may be set.
 

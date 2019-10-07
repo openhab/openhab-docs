@@ -8,11 +8,26 @@ title: DHSZWDMIW01 - ZWave
 # DHSZWDMIW01 DHS Z-Wave Micro Dimmer
 This describes the Z-Wave device *DHSZWDMIW01*, manufactured by *Wintop* with the thing type UID of ```wintop_dhszwdmiw01_00_000```.
 
+The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
+
+![DHSZWDMIW01 product image](https://www.cd-jackson.com/zwave_device_uploads/398/398_default.png)
+
+
 The DHSZWDMIW01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/398) to improve the documentation.
+The DHS In-Wall Dimmer DHS-ZW-DMIW-01 is eff ective Z-Wave dimming device specifi cally designed for use in smart homes and offi ces. The product allows to dim and switch on/off attached lighting wirelessly using a Z-wave enabled (AUS/NZ version 921.42 MHz) controllers (compatible universal remote controllers, control panels, gateways, PC with Z-Wave USB dongle) or manually via connected manual switch.
+
+The dimmer can act as a wireless repeater to ensure that commands intended for another device in the network are received. This is useful to eliminate “RF deadspots” when the radio range of the Z-Wave network is infl uenced. This function is part of the Z-Wave network functionality and is set up via Z-Wave controller.
+
+### Inclusion Information
+
+press and release the round button on the product’s enclosure
+
+### Exclusion Information
+
+press and release the round button on the product’s enclosure
 
 ## Channels
 

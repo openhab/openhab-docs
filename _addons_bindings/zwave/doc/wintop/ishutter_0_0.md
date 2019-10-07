@@ -17,7 +17,15 @@ The iShutter supports routing. This allows the device to communicate using other
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/329) to improve the documentation.
+Shutter Control
+
+### Inclusion Information
+
+Continuously switch on and switch off the external switch 3 times quickly to start the inclusion or exclusion process
+
+### Exclusion Information
+
+Continuously switch on and switch off the external switch 3 times quickly to start the inclusion or exclusion process
 
 ## Channels
 
@@ -63,7 +71,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Full close time | Time to go from opened to closed state. |
 | 11 | Full open time | Time to go from closed to open state |
 | 12 | Node Id of the blocking device | Id of the device which commands would not be Open/Close, but as block/unblock. |
-| 13 | which command from blocking node to enable the protection | Which command from blocking device is closed door and hence, unprotected. |
+| 13 | Protected command | Protected command |
 | 14 | Invert open and close relays | Allow exchanging open and close relays |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -239,9 +247,11 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 
-### Parameter 13: which command from blocking node to enable the protection
+### Parameter 13: Protected command
 
+Protected command
 Which command from blocking device is closed door and hence, unprotected.
+
 0 -> on On
 
 1 -> on Off
@@ -318,6 +328,8 @@ Association group 2 supports 10 nodes.
 | Command Class | Comment |
 |---------------|---------|
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_CONFIGURATION_V1| |
+| COMMAND_CLASS_ASSOCIATION_V1| |
 #### Endpoint 1
 
 | Command Class | Comment |
@@ -333,7 +345,6 @@ Association group 2 supports 10 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/329/iModuleDouble--11222R-12.pdf)
 * [User manual for iShutter](https://www.cd-jackson.com/zwave_device_uploads/329/iModuleShutter-11222RA-94-V0-4.pdf)
 
 ---

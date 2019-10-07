@@ -34,14 +34,8 @@ The following table summarises the channels available for the ZMNHUD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch | switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
-
-### Switch
-Switch the power on and off.
-
-The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -290,19 +284,19 @@ Triggered at changes of state/value of the Flush pilot wire
 
 Association group 2 supports 99 nodes.
 
-### Group 3: Basic on/off 
+### Group 3: Basic on/off - input I1
 
 Triggered at change of the input I1 state and reflecting its state
 
 Association group 3 supports 99 nodes.
 
-### Group 4: Basic on/off
+### Group 4: Basic on/off -  input I2
 
 Triggered at change of the input I2 state and reflecting its state
 
 Association group 4 supports 99 nodes.
 
-### Group 5: Basic on/off
+### Group 5: Basic on/off - input I3
 
 Triggered at change of the input I3 state and reflecting its state
 

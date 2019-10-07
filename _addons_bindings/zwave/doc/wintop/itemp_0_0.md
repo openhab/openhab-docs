@@ -19,11 +19,24 @@ The ITEMP does not permanently listen for messages sent from the controller - it
 
 ## Overview
 
+Binary & Temperature sensor
+
+### Inclusion Information
+
+Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.
+
+### Exclusion Information
+
+Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.
+
 ### Wakeup Information
 
 The ITEMP does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+Remove the cover and press the tamper switch for 3 seconds until the red LED blinks.
 
 ## Channels
 
@@ -81,8 +94,8 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Reset to factory default | Delete configuration but keeps inclusion |
 | 2 | Command sent on external dry contact | Configure what te external contact sends when trigger |
-| 5 | Operating Mode | Defines if the sensor is in normal wakeup mode or always on (drains battery fast) |
-| 6 | Temperature Offset | Can be used to calibrate the temperature sensors function. Calibrated as factory default. |
+| 5 | Operating Mode | Operating Mode |
+| 6 | Temperature Offset | Temperature Offset |
 |  | Wakeup Interval | Sets the interval at which the device will accept commands from the controller |
 |  | Wakeup Node | Sets the node ID of the device to receive the wakeup notifications |
 
@@ -120,8 +133,8 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 ### Parameter 5: Operating Mode
 
+Operating Mode
 Defines if the sensor is in normal wakeup mode or always on (drains battery fast)
-
 The following option values may be configured -:
 
 | Value  | Description |
@@ -136,8 +149,8 @@ This parameter has the configuration ID ```config_5_1``` and is of type ```INTEG
 
 ### Parameter 6: Temperature Offset
 
+Temperature Offset
 Can be used to calibrate the temperature sensors function. Calibrated as factory default.
-
 Values in the range 0 to 15300 may be set.
 
 The manufacturer defined default value is ```0```.

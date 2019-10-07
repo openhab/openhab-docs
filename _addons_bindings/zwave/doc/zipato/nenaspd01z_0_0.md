@@ -19,11 +19,24 @@ The NE-NAS-PD01Z does not permanently listen for messages sent from the controll
 
 ## Overview
 
+Zipato PIR Motion Sensor is a passive infrared detector or physical sensor, the sensor doesn’t emit any energy, but only passively receive and detect infrared radiation. Sensor sends messages via Z-Wave network to the Z-Wave main controller. In the communication between the PIR and Z-Wave main controller, PIR sensor can only send messages and not receive them. When sensor is triggered, it will send message to the main controller and associate devices to work through the Z-Wave main controller. Sensor is battery powered, small and can be installed easily
+
+### Inclusion Information
+
+ Press the button 3 times within 1.5 seconds and the device will enter inclusion mode. LED will flash on and off 5 times.
+
+### Exclusion Information
+
+ Press the button 3 times within 1.5 seconds and the device will enter exclusion mode.
+
 ### Wakeup Information
 
 The NE-NAS-PD01Z does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
+
+
+You can press the button once to wake up the device and send wakeup notification to controller. LED will blink once.
 
 ## Channels
 

@@ -109,7 +109,7 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Sensor 1 Lower Threshold Low |  |
 | 6 | Sensor 1 Upper Threshold High |  |
 | 7 | Sensor 1 Upper Threshold Low |  |
-| 9 | Sensor 1 Report Interval | Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m) |
+| 9 | Sensor 2 Report Interval | Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m) |
 | 9 | Sensor 2 Report Mode | Report state periodically or on change |
 | 9 | Sensor 2 Trigger Mode | Trigger Inside or Outside Low/High Thresholds |
 | 10 | Sensor 2 Lower Threshold High |  |
@@ -266,7 +266,7 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_7_2``` and is of type ```INTEGER```.
 
 
-### Parameter 9: Sensor 1 Report Interval
+### Parameter 9: Sensor 2 Report Interval
 
 Report sensor state every (30s resolution, 0=none, 1=30s, 10=5m, 63=31.5m)
 

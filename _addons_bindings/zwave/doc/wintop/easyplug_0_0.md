@@ -8,11 +8,27 @@ title: EasyPlug - ZWave
 # EasyPlug Wall Plug
 This describes the Z-Wave device *EasyPlug*, manufactured by *Wintop* with the thing type UID of ```wintop_easyplug_00_000```.
 
+The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
+
+![EasyPlug product image](https://www.cd-jackson.com/zwave_device_uploads/218/218_default.png)
+
+
 The EasyPlug supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
 
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/218) to improve the documentation.
+  * Power supply, home automation
+  * Expansion to easy starter pack contains:
+  * 1x EASYPlug surface-mounted dim adapter
+  * Power supply accessory
+
+### Inclusion Information
+
+Press and hold the button on the front side of the device for 1 second (count 21).
+
+### Exclusion Information
+
+Not provided
 
 ## Channels
 
@@ -82,6 +98,10 @@ Association group 1 supports 5 nodes.
 | COMMAND_CLASS_PROTECTION_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |
+
+### Documentation Links
+
+* [Manual Text](https://www.cd-jackson.com/zwave_device_uploads/218/Easyplug-Manual.pdf)
 
 ---
 

@@ -97,13 +97,13 @@ Association Group 1 supports Lifeline, Binary Switch Report
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Basic Set
+### Group 2: Group 2
 
 Association Group 2 supports Basic Set and is controlled by pressing the On or Off button with the local load
 
 Association group 2 supports 5 nodes.
 
-### Group 3: Basic Set
+### Group 3: Group 3
 
 Association Group 3 supports Basic Set and is controlled by double pressing the On or Off button
 

@@ -81,7 +81,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Full close time | Time to go from opened to closed state |
 | 11 | Full open time | Time to go from closed to open state |
 | 12 | Node Id of the blocking device | Node Id of the blocking device |
-| 13 | On which command from blocking node to enable the protection | On which command from blocking node to enable the protection |
+| 13 | Blocking mode command | Blocking mode command |
 | 14 | Invert open and close relays | Invert open and close relays |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
@@ -230,9 +230,9 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 
-### Parameter 13: On which command from blocking node to enable the protection
+### Parameter 13: Blocking mode command
 
-On which command from blocking node to enable the protection
+Blocking mode command
 Defines which command from blocking device to interpret as closed door and hence, unprotected.
 The following option values may be configured -:
 

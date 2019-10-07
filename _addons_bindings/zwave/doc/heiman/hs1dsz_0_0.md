@@ -115,7 +115,7 @@ The Lifeline association group reports device status to a hub and is not designe
 
 Association group 1 supports 5 nodes.
 
-### Group 2: Root Device group (Binary Sensor)
+### Group 2: Binary Door status change
 
 Description: Binary Sensor Command Classes:Compatible with 300 series  
 1-Binary Sensor reports status of open or close door via Lifeline.  
@@ -123,7 +123,7 @@ Description: Binary Sensor Command Classes:Compatible with 300 series
 
 Association group 2 supports 5 nodes.
 
-### Group 3: Root Device group (Binary Sensor)
+### Group 3: Binary Tamper
 
 Description: Binary Sensor Command Classes:Compatible with 300 series  
 1-Binary Sensor reports the removed status of door sensor.  
@@ -131,14 +131,14 @@ Description: Binary Sensor Command Classes:Compatible with 300 series
 
 Association group 3 supports 5 nodes.
 
-### Group 4: Root Device group (Notification)
+### Group 4: Notification Door status change
 
 1-Notification report open door or close status via Lifeline.  
 2- When the sensor detects status change between close door and open door, the device will be triggered
 
 Association group 4 supports 5 nodes.
 
-### Group 5: Root Device group (Notification)
+### Group 5: Notification Tamper
 
 1-Binary Sensor reports the removed status of door sensor.  
 2- When the sensor detects status change of tamper, the device will be triggered
