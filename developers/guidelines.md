@@ -23,22 +23,32 @@ If you are just keen on binding development, you may skip this document first an
 
 ## A. Directory and File Layout
 
-The following directory and file layout must be respected:
+The structure of a binding follows the structure of a typical OSGi bundle project.
 
 ```
-.
-+-- pom.xml  The buildsystem (maven) file that contains the version and name of your extension
-|
-+-- NOTICE   License information
-|            3rd party content has to be given in the NOTICE file.
-|
-+-- lib      3rd party jar files - Avoid those, use maven dependencies instead
-|
-+-- src      Your source code
-|   +-- main/jave/...            The java sources
-|   +-- main/resources/ESH_INF/  Binding and config xml description files like binding.xml
-|   +-- main/resources/...       Other resource files
-|   +-- test/jave/...            Your test code
+|- src/main
+|------- feature
+|---------- feature.xml   Your OSGI feature file
+|------- java             Your Java code
+|---------- org/openhab/[...]
+|- src/main/resources/ESH-INF
+|---- binding
+|------- binding.xml      Binding name, description, author and other meta data
+|-----config              Configuration description files when not in things files
+|------- *.xml
+|---- i18n                Your localized binding texts
+|------- *_<local>.properties
+|---- thing               One or more xml files with thing descriptions
+|------- *.xml
+|- src/test
+|------- java             It's easy to write unit tests and fellow developers will thank you
+|---------- org/openhab/[...]
+|------- resources        Any resource files used in your unit tests, like test data
+|---------- [...]
+|- NOTICE                 License information
+|                         3rd party content has to be given in the NOTICE file
+|- pom.xml                Build system file: Describe your dependencies here
+|- README.md              The file describing your binding
 ```
 
 1. The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
