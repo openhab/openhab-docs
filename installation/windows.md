@@ -73,7 +73,7 @@ Which can be used any time after a failure.
 ## Updating the openHAB Runtime
 
 To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
-Assuming you have openHAB saved in `C:\openHAB`:
+Assuming you have openHAB installed in `C:\openHAB`:
 
 ```shell
 cd C:\openHAB
