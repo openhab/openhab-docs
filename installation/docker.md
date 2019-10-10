@@ -92,7 +92,7 @@ docker run \
         -v /etc/timezone:/etc/timezone:ro \
         -v /opt/openhab/conf:/openhab/conf \
         -v /opt/openhab/userdata:/openhab/userdata \
-        -v /opt/openhab/addons:/openhab/addons\
+        -v /opt/openhab/addons:/openhab/addons \
         -d \
         -e USER_ID=<uid> \
         -e GROUP_ID=<gid> \
