@@ -61,7 +61,7 @@ Rules are enforced as part of the build process using [Spotless Maven Plugin] (h
 To check if your code is following the code style run `mvn spotless:check`
 To reformat you code run `mvn spotless:apply`
 
-Code styles files are located in here: https://raw.githubusercontent.com/openhab/openhab-core/master/tools/codestyle/src/main/resources/
+Code styles files are located in here: https://github.com/openhab/openhab-core/tree/master/tools/codestyle/src/main/resources
 
 ### Java Code
 
