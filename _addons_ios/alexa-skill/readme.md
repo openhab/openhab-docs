@@ -521,6 +521,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * each name formatted as `<@assetIdOrName>`
         * defaults to item label name
       * nonControllable=`<boolean>`
+        * when set to true, supportedModes and ordered parameters are ignored
         * defaults to false
       * supportedModes=`<modes>`
         * each mode formatted as `<modeValue>=<@assetIdOrName1>:<@assetIdOrName2>:...`
@@ -545,6 +546,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * each name formatted as `<@assetIdOrName>`
         * defaults to item label name
       * nonControllable=`<boolean>`
+        * when set to true, supportedRange and presets parameters are ignored
         * defaults to false
       * supportedRange=`<minValue:maxValue:precision>`
         * defaults to `"0:100:1"` for Dimmer/Rollershutter, `"0:10:1"` for Number* item types
@@ -728,7 +730,6 @@ Weight.Ounces |
 #### Supported Metadata Labels
 Item metadata labels translate to a set of capabilities and can be used as a convenience to using the longer meta data format configuration.  These add additional functions and provide the ability to add customization through additional properties which take precedence over the default ones. Here are some examples:
 ```
-Switch OutletPlug "Outlet Plug" {alexa="Switchable" [category="SMARTPLUG"]}
 Switch TelevisionPower "Television Power" {alexa="Switchable" [category="TV"]}
 
 Color LightColor "Light Color" {alexa="Lighting"}
@@ -752,12 +753,23 @@ Color LightColor "Light Color" {alexa="Lighting"}
 Dimmer LightDimmer "Light Dimmer" {alexa="PowerController.powerState,BrightnessController.brightness" [category="LIGHT"]}
 Color LightColor "Light Color" {alexa="PowerController.powerState,BrightnessController.brightness,ColorController.color" [category="LIGHT"]}
 ```
-
 * Lock
 ```
 Switch DoorLock "Door Lock" {alexa="Lock"}
 
 Switch DoorLock "Door Lock" {alexa="LockController.lockState"}
+```
+* Outlet
+```
+Switch OutletPlug "Outlet Plug" {alexa="Outlet"}
+
+Switch OutletPlug "Outlet Plug" {alexa="PowerController.powerState" [category="SMARTPLUG"]}
+```
+* CurrentHumidity
+```
+Number CurrentHumidity "Current Humidity" {alexa="CurrentHumidity"}
+
+Number CurrentHumidity "Current Humidity" {alexa="RangeController.rangeValue" [friendlyNames="Humidity", nonControllable=true, unitOfMeasure="Percent"]}
 ```
 * CurrentTemperature
 ```
