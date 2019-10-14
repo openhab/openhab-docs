@@ -42,19 +42,23 @@ The following table summarises the channels available for the ZMNHWD -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch | switch_binary | switch_binary | Switch | Switch | 
+| Switch  [Deprecated]| switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Color Control | color_color | color_color | ColorLight | Color | 
 | Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
+| Scene | config_decimal | config_decimal |  | Number | 
+| Scene Color Change Duration | config_decimal | config_decimal |  | Number | 
 | Brightness 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
 | Brightness 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
 | Brightness 3 | switch_dimmer3 | switch_dimmer | DimmableLight | Dimmer | 
 | Brightness 4 | switch_dimmer4 | switch_dimmer | DimmableLight | Dimmer | 
 
-### Switch
+### Switch [Deprecated]
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -73,6 +77,20 @@ The color temperature channel allows to set the color
             temperature of a light from 0 (cold) to 100 (warm).
 
 The ```color_temperature``` channel is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
+
+### Scene
+Select one of 6 pre-defined scenes; 1 – Ocean (soft flowing between shades of blue color) 2 – Lightning (fast flashing of white color) 3 – Rainbow (flowing between colors of rainbow) 4 – Snow (flowing between shades of white and cyan color) 5 – Romantic (soft flowing of the red color) 6 – Party scene (random flashing between colors)
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### Scene Color Change Duration
+Duration between color change in scenes. Has no effect on Lighting and Party Scene. 1-127 – delay duration is 1 sec to 127 sec 1001-1127 – delay duration is from 1 min to 127 min.
+
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Brightness 1
 The brightness channel allows to control the brightness of a light.

@@ -40,7 +40,7 @@ The DMWS1 does not permanently listen for messages sent from the controller - it
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up.
+Remove cover from device, then press and hold the button for two seconds. The LED INDICATOR will flash once indicating successful wake up. If this doesn't wake up the device, try triple-clicking the button. This causes the device to emit a NIF frame, which the binding treats as a wake up.
 
 ## Channels
 

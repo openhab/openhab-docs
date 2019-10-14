@@ -23,9 +23,8 @@ The knob smart dimmer is a Z-Wave device designed to work with various types of 
 
 There are two methods to set the dimmer into inclusion mode:
 
-1)Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.
-
-2)Triple press reset button on the dimmer, it will set the dimmer into inclusion mode. The connected light will stay solid on for 3 seconds to indicate successful inclusion.
+  1. Repower on the dimmer, it will be set into inclusion mode automatically, and waiting to be included.
+  2. Triple press reset button on the dimmer, it will set the dimmer into inclusion mode. The connected light will stay solid on for 3 seconds to indicate successful inclusion.
 
 ### Exclusion Information
 
@@ -33,9 +32,8 @@ There are two exclusion methods:
 
 Method 1: Exclusion from the primary controller/gateway as follows:
 
-1. Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).
-
-2. Triple press reset button, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.
+  1. Set the primary controller/gateway into exclusion mode (Please refer to your primary controllers manual on how to set your controller into exclusion).
+  2. Triple press reset button, the dimmer will be set to exclusion mode, and waiting to be excluded, then the dimmer will be excluded from the network.
 
 Method 2: Factory reset the dimmer will force it to be excluded from a network. (please refer to the part “Factory Reset” of this manual) Note: Factory reset is not recommended for exclusion, please use this procedure only if the primary controller/gateway is missing or otherwise inoperable.
 

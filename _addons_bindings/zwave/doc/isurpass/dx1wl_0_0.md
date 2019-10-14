@@ -164,7 +164,7 @@ Root Device group (Binary Sensor)
 
 Association group 3 supports 5 nodes.
 
-### Group 4: Root Device group (Notification) 
+### Group 4: Root Device group (Water Notification) 
 
 Root Device group (Notification)
 1-Notification reports reports status of detect water or no water via Lifeline.   
@@ -172,7 +172,7 @@ Root Device group (Notification)
 
 Association group 4 supports 5 nodes.
 
-### Group 5: Root Device group (Notification) 
+### Group 5: Root Device group (Water & Tamper Notification) 
 
 Root Device group (Notification)
 1-Binary Sensor reports the removed status of water sensor   

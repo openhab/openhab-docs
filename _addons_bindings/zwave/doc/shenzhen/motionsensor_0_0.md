@@ -19,9 +19,7 @@ The Motion Sensor does not permanently listen for messages sent from the control
 
 ## Overview
 
-This product can be included and operated in any Z‐Wave network with other Z‐Wave certified devices from other manufacturers and/or other applications. All non‐battery operated nodes within the network will act as repeaters regardless of vendor to increase reliability of the network.  
-In the Back casing, there is a button that is used to carry out include, exclude, wakeup device or reset factory default settings.  
-When power is first supplied, the LED will flash on and off alternately at one second intervals within 5 seconds if the detector has not been added a Z‐Wave network. Please get familiar with the terms below before starting the operations.
+Motion Sensor with illuminance and temperature feature.
 
 ### Inclusion Information
 

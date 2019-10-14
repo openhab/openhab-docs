@@ -10,9 +10,20 @@ This describes the Z-Wave device *HS1DS*, manufactured by *Z-Wave.Me* with the t
 
 The device is in the category of *Window*, defining Window.
 
+![HS1DS product image](https://www.cd-jackson.com/zwave_device_uploads/783/783_default.png)
+
+
 ## Overview
 
-No device information is provided in the database. Consider [updating the database](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/783) to improve the documentation.
+This is a intelligent door sensor , adopts super low power Z-Wave wireless networking technology, makes a longer battery life-span, Feel open or close state of the door or window through the near and separation between sensor and magnetic. Dual sensor design, makes the installation more flexible and adaptable. Products are suitable for home, villas, factories, shops, warehouses, office buildings, banks, room and other places of safety prevention
+
+### Inclusion Information
+
+ press the device networking hole for 3 times in 1.5 seconds, then the green LED flashes quickly
+
+### Exclusion Information
+
+Not provided
 
 ## Channels
 
