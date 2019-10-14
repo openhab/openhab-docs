@@ -6,7 +6,7 @@ type: binding
 description: "The primary goal of the [Network UPS Tools](http://www.networkupstools.org/) (NUT) project is to provide support for power devices, such as uninterruptible power supplies (UPS), Power Distribution Units and Solar Controllers."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.networkupstools/README.md
 since: 1x
-install: auto
+install: legacy
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
