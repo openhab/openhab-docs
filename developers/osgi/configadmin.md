@@ -7,7 +7,7 @@ title: Configuration Admin
 
 # Configuration Admin Service
 
-As defined in the [OSGi Compendium specification][OSGi-cmpn] *configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform.*
+As defined in the [OSGi Compendium Release 7][OSGi-cmpn] *configuration is the process of defining the configuration data of bundles and assuring that those bundles receive that data when they are active in the OSGi Service Platform.*
 
 ### Configuration Admin Service
 
@@ -25,17 +25,17 @@ The properties can be edited, or new properties could be added during runtime by
 In OSGi, configurations properties are key-value pairs that are accessible via `Map<String, Object>`.
 Please note that the following types of objects are supported:
 
-- String;
-- Boolean;
-- Byte;
-- Short;
-- Integer;
-- Long;
-- Float;
-- Double;
-- Character.
+- `String`
+- `Boolean`
+- `Byte`
+- `Short`
+- `Integer`
+- `Long`
+- `Float`
+- `Double`
+- `Character`
 
-If the Configuration Admin service detects an unsupported property type, it will throw `IllegalArgumentException`.
+If the Configuration Admin service detects an unsupported property type, it will throw an `IllegalArgumentException`.
 
 ## Configuring Declarative Services
 
@@ -136,8 +136,9 @@ After the call to `update` the Configuration Admin service persists the new conf
 
 ## Further Reading
 
-- <http://enroute.osgi.org/services/org.osgi.service.cm.html>
+- [OSGi Compendium Release 7][OSGi-cmpn]
+- <https://enroute.osgi.org/Tutorial/>
+- <http://blog.vogella.com/2016/06/21/getting-started-with-osgi-declarative-services/>
 - <http://blog.vogella.com/2016/09/26/configuring-osgi-declarative-services/>
-- [OSGi Service Platform Service Compendium, Release 5][OSGi-cmpn]
 
-[OSGi-cmpn]: https://osgi.org/download/r5/osgi.cmpn-5.0.0.pdf
+[OSGi-cmpn]: https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf

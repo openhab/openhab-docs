@@ -52,7 +52,7 @@ A component requires the following artifacts in a bundle:
 - **Service-Component manifest header**, which contains the location of the XML description;
 - An **implementation class** that is specified in the component description.
 
-Because we do not write the xml files or the manifest ourselves,
+Because we do not write the XML files or the manifest ourselves,
 we will concentrate on the Java annotations in the examples below.
 
 ## Example - Reference Service via Fields
@@ -141,7 +141,7 @@ public class MyServiceImpl {
 
 ## Example - Provide Service
 
-Very often you will have to register a service, that implements an interface defined in the framework (e.g [*EventHandler*](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventHandler.html)) or interface, that you have defined.
+Very often you will have to register a service, that implements an interface defined in the framework (e.g [*EventHandler*](https://osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/event/EventHandler.html)) or interface, that you have defined.
 An interface allows you to change the implementation easily or register multiple implementations in the Service Registry.
 
 We will use DS to register an implementation of the EventHandler service in the OSGi Service Registry.
@@ -178,7 +178,8 @@ Three type of components are defined:
 - **immediate** - with ```immediate``` attribute set to ```true``` - see the [example component description](#service-component-description);  
 - **delayed** - with ```immediate``` attribute set to ```false```;  
 - **factory** - we will not discuss the lifecycle of this type in this article.
-  You can find information in the [OSGi Compendium Specification, Chapter Factory Component][OSGi-cmpn].
+
+You can find more information in the [OSGi Compendium Release 7, Chapter 112.2: Components][OSGi-cmpn].
 
 ## Component Lifecycle
 
@@ -256,9 +257,9 @@ You might review again the [Equinox commands](equinox.html#iv-commands) before y
 
 ## Further Reading
 
-- [*OSGi Service Platform Service Compendium, Release 5][OSGi-cmpn]
-- [Lars Vogel - Declarative services](http://www.vogella.com/tutorials/OSGiServices/article.html#declarativeservices)  
+- [OSGi Compendium Release 7][OSGi-cmpn]
+- [Lars Vogel - Declarative services](http://www.vogella.com/tutorials/OSGiServices/article.html#declarativeservices)
 - [Getting Started with OSGi: Declarative Services](http://www.eclipsezone.com/eclipse/forums/t97690.rhtml)
-- <http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services>  
+- <http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services>
 
-[OSGi-cmpn]: https://osgi.org/download/r5/osgi.cmpn-5.0.0.pdf
+[OSGi-cmpn]: https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf
