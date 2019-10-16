@@ -59,6 +59,11 @@ Here are some of the most common generic errors you may encounter while using th
 * Alexa will respond with "I couldn't find a device or group named _device_ in your profile"
 * It indicates that, either a device currently setup in your Alexa account, no longer exists in your openHAB server, or vice-versa.
 * To resolve this error, make sure to run a discovery update either through the Alexa app or just by asking "Alexa, discover" on your echo device. Keep in mind that previously discovered devices that have been removed from the openHAB configuration will show as offline under your Alexa account and not be automatically removed. To prevent potential device name conflicts, it is highly recommended to remove these devices through the Alexa app.
+* If all your Alexa-enabled devices in openHAB aren't discovered or getting updated:
+  * Check that your [server is available](#server-not-accessible).
+  * Look for any relevant errors in your openHAB server logs.
+  * If only new devices aren't found, make sure your last Alexa-related config changes are valid.
+  * If necessary, stagger the discovery process by adding a couple devices at a time to isolate the culprit.
 
 #### Device Not Responding
 * Alexa will respond with "_device_ isn't responding, please check its network connection and power supply", and in some rare occasions, no response or acknowledgement will be given.
@@ -75,7 +80,7 @@ Here are some of the most common generic errors you may encounter while using th
 #### Server Not Accessible
 * Alexa will respond with "Sorry the hub that _device_ is connected to is not responding, please check its network connection and power supply"
 * It indicates that your openHAB server is not accessible through [myopenHAB](https://myopenhab.org) cloud service.
-* To resolve this error, make sure that your server is running and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was added to the lambda function config.js.
+* To resolve this error, make sure that your server is running, your openHAB cloud service is configured with mode set to "Notifications & Remote Access", and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was added to the lambda function config.js.
 
 #### Temperature Out Of Range
 * Alexa will respond with "I can only set the temperature between _minValue_ and _maxValue_"
@@ -521,10 +526,10 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * each name formatted as `<@assetIdOrName>`
         * defaults to item label name
       * nonControllable=`<boolean>`
-        * when set to true, supportedModes and ordered parameters are ignored
         * defaults to false
       * supportedModes=`<modes>`
         * each mode formatted as `<modeValue>=<@assetIdOrName1>:<@assetIdOrName2>:...`
+        * requires two modes to be specified at least
         * defaults to item state description options `supportedModes="value1=label1,..."`, if defined, otherwise no supported modes
       * ordered=`<boolean>`
         * defaults to false
@@ -546,7 +551,6 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * each name formatted as `<@assetIdOrName>`
         * defaults to item label name
       * nonControllable=`<boolean>`
-        * when set to true, supportedRange and presets parameters are ignored
         * defaults to false
       * supportedRange=`<minValue:maxValue:precision>`
         * defaults to `"0:100:1"` for Dimmer/Rollershutter, `"0:10:1"` for Number* item types
@@ -586,20 +590,20 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
 | InputController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | LockController (lock) | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | LockController (unlock) | :x: | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: |
-| ModeController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| ModeController | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
 | MotionSensor | :x: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
 | PercentageController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | PlaybackController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | PowerController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | PowerLevelController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| RangeController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| RangeController | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
 | SceneController | :x: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: | :heavy_check_mark: |
 | SecurityPanelController | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :x: | :x: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | Speaker | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | StepSpeaker | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: | :heavy_check_mark: | :x: | :x: | :heavy_check_mark: |
 | TemperatureSensor | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
 | ThermostatController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: |
-| ToggleController | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :heavy_check_mark: | :x: | :heavy_check_mark: |
+| ToggleController | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :x: | :heavy_check_mark: |
 
 ##### Display Categories
   * Alexa has certain categories that effect how voice control and their mobile/web UI's display or control endpoints.  An example of this is when you create "Smart Device Groups" in the Alex app and associate a specific Echo or Dot to that Group (typically a room).  When a user asks to turn the lights ON, Alexa looks for devices in that group that have the category "LIGHT" to send the command to.  
@@ -769,7 +773,7 @@ Switch OutletPlug "Outlet Plug" {alexa="PowerController.powerState" [category="S
 ```
 Number CurrentHumidity "Current Humidity" {alexa="CurrentHumidity"}
 
-Number CurrentHumidity "Current Humidity" {alexa="RangeController.rangeValue" [friendlyNames="Humidity", nonControllable=true, unitOfMeasure="Percent"]}
+Number CurrentHumidity "Current Humidity" {alexa="RangeController.rangeValue" [friendlyNames="Humidity", nonControllable=true, supportedRange="0:100:1", unitOfMeasure="Percent"]}
 ```
 * CurrentTemperature
 ```
