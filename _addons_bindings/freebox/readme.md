@@ -3,7 +3,7 @@ id: freebox
 label: Freebox
 title: Freebox - Bindings
 type: binding
-description: "This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation."
+description: "This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHab installation."
 since: 2x
 logo: images/addons/freebox.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Freebox Binding
 
-This binding integrates the [Freebox Revolution](http://www.free.fr/adsl/freebox-revolution.html) to your openHab installation.
+This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHab installation.
 
 ## Supported Things
 
