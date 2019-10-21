@@ -338,3 +338,4 @@ If the payload is serialized with JSON, the method `deserializePayload(String pa
 - Provide a static method to create event instances based on a domain object (Item, Thing, or in the example above `Sunrise`).
 This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
 If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
+Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.
