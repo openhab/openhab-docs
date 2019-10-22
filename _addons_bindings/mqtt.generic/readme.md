@@ -228,6 +228,7 @@ Here are a few examples to unwrap a value from a complex response:
 | `THEVALUE:23.2°C`                                                   | REGEX       | `REGEX::(.*?)°`                           |
 
 Transformations can be chained by separating them with the mathematical intersection character "∩".
+Please note that the incoming value will be discarded if one transformation fails (e.g. REGEX did not match).
 
 ## Outgoing Value Transformation
 
@@ -257,6 +258,4 @@ Here are a few examples:
 ## Troubleshooting
 
 * If you get the error "No MQTT client": Please update your installation.
-* If you use the Mosquitto broker: Please be aware that there is a relatively low setting 
-for retained messages. At some point messages will just not being delivered anymore: 
-Change the setting 
+* If you use the Mosquitto broker: Please be aware that there is a relatively low setting for retained messages. At some point messages will just not being delivered anymore: Change the setting. 
