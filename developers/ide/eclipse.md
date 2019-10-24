@@ -51,7 +51,7 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     Select `OH2 Add-ons` and from right-click menu select "Close Projects": *this significantly speeds up the setup*.
     Re-open only the binding project(s) you would like to work on.
 
-    If you want to develop a new binding or a specific binding it is recommended to clone your own fork of openHAB2-addons and import only the projects you work on.
+    If you want to develop a new binding or a specific binding it is recommended to clone your own fork of [openHAB 2.x Add-ons](https://github.com/openhab/openhab2-addons/) and import only the projects you work on.
     :::
 
 
