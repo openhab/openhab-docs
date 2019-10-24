@@ -98,7 +98,7 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     It may take some time as it updates all SNAPSHOT versions of openHAB.
     :::
 
-1. If you want to develop a new binding. Read about the [skeleton script](../#develop-a-new-binding) to generates the basis for your binding, creating all required files.
+1. If you want to develop a new binding. Read about the [Skeleton Script](../#develop-a-new-binding) to generate the base for your binding, creating all required files.
 
 1. If you need additional libraries see the [Build System](../buildsystem.html) documentation.
 For other libraries supported out-of-the-box check the [Default Libraries](../guidelines.html#default-libraries) on the guidelines page.
