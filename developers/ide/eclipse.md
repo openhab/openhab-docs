@@ -46,7 +46,7 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     | openHAB Core Framework  | Core Framework Development            |
 
     ::: warning Attention
-    If you have selected `openHAB Add-ons` the installer will check out the openHAB2-addons repository  and all add-on projects are imported in Eclipse.
+    If you have selected `openHAB Add-ons` the installer will check out the [openHAB 2.x Add-ons](https://github.com/openhab/openhab2-addons/) repository and all add-on projects are imported in Eclipse.
 
     Select `OH2 Add-ons` and from right-click menu select "Close Projects": *this significantly speeds up the setup*.
     Re-open only the binding project(s) you would like to work on.
