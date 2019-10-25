@@ -39,7 +39,7 @@ Please check the menu to the left for all available options.
 
 Make sure that you have an up to date Java 8 platform installed on your host system.
 Zulu is currently the recommended Java platform for openHAB.
-[Download](https://zulu.org/download/?show=all) and [installation](http://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/Title.htm) instructions can be found on Azul Systems' Zulu website.
+[Download](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) and [installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
 Oracle Java is also suitable for most configurations but licencing restrictions may apply.
 OpenJDK may also be used, but it has some [known limitations](https://community.openhab.org/t/running-openhab-2-on-openjdk/21443/8?u=gatekeeper6838) with openHAB and is not recommended.
 
