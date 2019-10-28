@@ -3,7 +3,7 @@ id: hdpowerview
 label: Hunter Douglas PowerView
 title: Hunter Douglas PowerView - Bindings
 type: binding
-description: "This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](http://www.hunterdouglas.com/operating-systems/powerview-motorization/support) via the PowerView Hub."
+description: "This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) via the PowerView Hub."
 since: 2x
 logo: images/addons/hdpowerview.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Hunter Douglas PowerView Binding
 
-This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](http://www.hunterdouglas.com/operating-systems/powerview-motorization/support) via the PowerView Hub.
+This is an openHAB binding for the [Hunter Douglas PowerView Motorized Shades](https://www.hunterdouglas.com/operating-systems/motorized/powerview-motorization/overview) via the PowerView Hub.
 
 PowerView shades have motorization control for their vertical position, as well as vane controls on the shade's slats.
 Make sure your Shades are visible in the dedicated PowerView app before attempting discovery.
@@ -32,7 +32,7 @@ By using a Scene to control multiple shades at once, the shades will all begin m
 
 ## Discovery
 
-The PowerView Hub is discovered via a NetBios query.
+The PowerView Hub is discovered via a NetBIOS query.
 This is the same method used by the dedicated PowerView app.
 After the Hub is added, Shades and Scenes will be discovered by querying the Hub.
 

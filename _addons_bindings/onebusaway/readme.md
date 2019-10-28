@@ -19,8 +19,8 @@ install: auto
 
 ## Preparation
 
-You'll need to obtain an API key from the transit provider you want to load data from.
-Different providers of the service have different policies, so you'll have to figure this part out for each [deployment](https://github.com/OneBusAway/onebusaway/wiki/OneBusAway-Deployments).
+You will need to obtain an API key from the transit provider you want to load data from.
+Different providers of the service have different policies, so you will have to figure this part out for each [deployment](https://github.com/OneBusAway/onebusaway/wiki/OneBusAway-Deployments).
 
 ## Supported Things
 
@@ -60,7 +60,7 @@ The Route Thing supports the following state channels:
 |------------------|--------------|-----------|----------------------------------------------------------------------------------------------------------|
 | arrival          | state        | DateTime  | The arrival time of a Route at a Stop.                                                                   |
 | departure        | state        | DateTime  | The departure time of a Route at a Stop.                                                                 |
-| update           | state        | DateTime  | The last time this data was updated (per the data provider, not the last time OpenHAB updated the data). |
+| update           | state        | DateTime  | The last time this data was updated (per the data provider, not the last time openHAB updated the data). |
 | arrivalDeparture | trigger      | DateTime  | Triggered when a Route arrives or departs a Stop.                                                        |
 
 
@@ -70,7 +70,7 @@ The `arrival`, `departure`, and `arrivalDeparture` channels can be configured wi
 
 ## Full Example
 
-Here's an example of a configuration for a bus stop in Seattle, WA, USA that has three routes configured.
+Here is an example of a configuration for a bus stop in Seattle, WA, USA that has three routes configured.
 
 `demo.things`:
 

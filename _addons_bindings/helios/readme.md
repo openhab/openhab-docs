@@ -3,7 +3,7 @@ id: helios
 label: Helios
 title: Helios - Bindings
 type: binding
-description: "This binding integrates the Heliop door/videophone system (http://www.2n.cz)."
+description: "This binding integrates the Heliop door/videophone system (https://www.2n.cz)."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # Helios Binding
 
-This binding integrates the Heliop door/videophone system (http://www.2n.cz).
+This binding integrates the Heliop door/videophone system (https://www.2n.cz).
 
 ## Supported Things
 
@@ -56,12 +56,13 @@ In addition, devices running the v2.13 firmware support the following channels a
 
 | Channel Type ID | Item Type | Description                                                                   |
 |-----------------|-----------|-------------------------------------------------------------------------------|
-| audiolooptest   | Switch    | Initiate a audio loop test                                                    |
+| audiolooptest   | Switch    | Initiate an audio loop test                                                   |
 | motion          | Switch    | Indicates if motion was detected by the videophone                            |
 | noise           | Switch    | Indicates if noise was detected by the videophone                             |
 | switchstate     | Switch    | Indicates the state of an internal switch in the videophone                   |
 
-For most of the channels a "stamp" channel (of Type DateTime) (e.g. "keypressedstamp") is available and will be updated with the time stamp the relevant event happened on the device. For switchstate, there are as well the switchstateswitch and switchstateoriginator channels indicating the number of the switch that changed state (1 to 4, depending on the hardware configuration) and the source of the switch state change (keypad, DTMF signal,...)
+For most of the channels a "stamp" channel (of Type DateTime) (e.g. "keypressedstamp") is available and will be updated with the time stamp the relevant event happened on the device.
+For switchstate, there are as well the switchstateswitch and switchstateoriginator channels indicating the number of the switch that changed state (1 to 4, depending on the hardware configuration) and the source of the switch state change (keypad, DTMF signal,...)
 
 ## Full Example
 
@@ -91,6 +92,6 @@ when
     Channel "helios:ipvario221:gate:keypressed" triggered 
 then
     var actionName = receivedEvent.getEvent()
-    logInfo("org.openhab","Rule trigger " + actionName)                 
+    logInfo("org.openhab","Rule trigger " + actionName)
 end
 ```

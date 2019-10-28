@@ -3,7 +3,7 @@ id: tesla
 label: Tesla
 title: Tesla - Bindings
 type: binding
-description: "This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com)."
+description: "This binding integrates the [Tesla Electrical Vehicle](https://www.tesla.com)."
 since: 2x
 logo: images/addons/tesla.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Tesla Binding
 
-This binding integrates the [Tesla Electrical Vehicle](http://www.teslamotors.com).
+This binding integrates the [Tesla Electrical Vehicle](https://www.tesla.com).
 The integration happens through the Tesla Owners Remote API.
 
 ## Supported Things
@@ -31,7 +31,8 @@ This is the same email address and password as used in the Tesla smartphone app,
 
 ## Alternative secure configuration
 
-After a successful connection (Thing is online), you can clear the username and password field from the configuration, leaving only the VIN. Instead of using the username and password, from now on, only the access token will be stored and used (access token + refresh token).
+After a successful connection (Thing is online), you can clear the username and password field from the configuration, leaving only the VIN.
+Instead of using the username and password, from now on, only the access token will be stored and used (access token + refresh token).
 This is a better approach for many reasons, one being that you cannot start the car without the password.
 If you really don't like the thought of your username and password being stored temporarily, there is also a third option: Leave username/password blank, go into the openHAB console (ssh -p 8101 openhab@localhost), and run the following command:
 

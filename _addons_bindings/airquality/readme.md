@@ -3,7 +3,7 @@ id: airquality
 label: Air Quality
 title: Air Quality - Bindings
 type: binding
-description: "This binding uses the [AQIcn.org service](http://aqicn.org) for providing air quality information for any location worldwide."
+description: "This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide."
 since: 2x
 logo: images/addons/airquality.png
 install: auto
@@ -15,13 +15,14 @@ install: auto
 
 # Air Quality Binding
 
-This binding uses the [AQIcn.org service](http://aqicn.org) for providing air quality information for any location worldwide.
+This binding uses the [AQIcn.org service](https://aqicn.org) for providing air quality information for any location worldwide.
 
-The World Air Quality Index project is a social enterprise project started in 2007. Its mission is to promote Air Pollution awareness and provide a unified Air Quality information for the whole world.
+The World Air Quality Index project is a social enterprise project started in 2007.
+Its mission is to promote Air Pollution awareness and provide a unified Air Quality information for the whole world.
 
-The project is proving a transparent Air Quality information for more than 70 countries, covering more than 9000 stations in 600 major cities, via those two websites: [aqicn.org](http://aqicn.org) and [waqi.info](http://waqi.info).
+The project is proving a transparent Air Quality information for more than 70 countries, covering more than 9000 stations in 600 major cities, via those two websites: [aqicn.org](https://aqicn.org) and [waqi.info](https://waqi.info).
 
-To use this binding, you first need to [register and get your API token](http://aqicn.org/data-platform/token/).
+To use this binding, you first need to [register and get your API token](https://aqicn.org/data-platform/token/).
 
 ## Supported Things
 
@@ -32,7 +33,7 @@ Of course, you can add multiple Things, e.g. for measuring AQI for different loc
 ## Discovery
 
 Local Air Quality can be autodiscovered based on system location.
-You'll have complete default configuration with your apiKey.
+You will have complete default configuration with your apiKey.
 
 ## Binding Configuration
 

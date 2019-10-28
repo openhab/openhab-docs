@@ -16,7 +16,7 @@ install: auto
 
 This binding allows openHAB to interact with the Nikobus home automation system.
 
-[![Demo Video Nikobus](https://img.youtube.com/vi/QiNb-8QxXpo/0.jpg)](http://www.youtube.com/watch?v=QiNb-8QxXpo)
+[![Demo Video Nikobus](https://img.youtube.com/vi/QiNb-8QxXpo/0.jpg)](https://www.youtube.com/watch?v=QiNb-8QxXpo)
 
 More specifically, it allows openHAB to:
 

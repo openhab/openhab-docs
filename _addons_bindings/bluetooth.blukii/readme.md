@@ -3,7 +3,7 @@ id: bluetooth.blukii
 label: Blukii
 title: Blukii - Bindings
 type: binding
-description: "This extension adds support for [Blukii](http://www.blukii.com/) Sensor Beacons."
+description: "This extension adds support for [Blukii](https://www.blukii.com/) Sensor Beacons."
 since: 2x
 logo: images/addons/bluetooth.blukii.png
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # Blukii
 
-This extension adds support for [Blukii](http://www.blukii.com/) Sensor Beacons. 
+This extension adds support for [Blukii](https://www.blukii.com/) Sensor Beacons. 
 
 ## Supported Things
 

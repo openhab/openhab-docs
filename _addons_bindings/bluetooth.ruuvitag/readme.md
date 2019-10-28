@@ -3,7 +3,7 @@ id: bluetooth.ruuvitag
 label: Ruuvi Tag
 title: Ruuvi Tag - Bindings
 type: binding
-description: "This extension adds support for [Ruuvi Tag](http://www.ruuvitag.com/) Sensor Beacons."
+description: "This extension adds support for [Ruuvi Tag](https://ruuvi.com/) Sensor Beacons."
 since: 2x
 install: manual
 ---
@@ -14,7 +14,7 @@ install: manual
 
 # Ruuvi Tag
 
-This extension adds support for [Ruuvi Tag](http://www.ruuvitag.com/) Sensor Beacons. 
+This extension adds support for [Ruuvi Tag](https://ruuvi.com/) Sensor Beacons. 
 
 ## Supported Things
 

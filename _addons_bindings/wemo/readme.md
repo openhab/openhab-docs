@@ -3,7 +3,7 @@ id: wemo
 label: Belkin Wemo
 title: Belkin Wemo - Bindings
 type: binding
-description: "This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/)."
+description: "This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/)."
 since: 2x
 logo: images/addons/wemo.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Belkin Wemo Binding
 
-This binding integrates the [Belkin WeMo Family](http://www.belkin.com/us/Products/c/home-automation/).
+This binding integrates the [Belkin WeMo Family](https://www.belkin.com/us/Products/c/home-automation/).
 The integration happens either through the WeMo-Link bridge, which acts as an IP gateway to the ZigBee devices or through WiFi connection to standalone devices.
 
 ## Supported Things

@@ -3,7 +3,7 @@ id: hue
 label: Philips Hue
 title: Philips Hue - Bindings
 type: binding
-description: "This binding integrates the [Philips Hue Lighting system](http://www.meethue.com)."
+description: "This binding integrates the [Philips Hue Lighting system](https://www.meethue.com)."
 since: 2x
 logo: images/addons/hue.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Philips Hue Binding
 
-This binding integrates the [Philips Hue Lighting system](http://www.meethue.com).
+This binding integrates the [Philips Hue Lighting system](https://www.meethue.com).
 The integration happens through the Hue bridge, which acts as an IP gateway to the ZigBee devices.
 
 ![Philips Hue](doc/hue.jpg)

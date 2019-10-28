@@ -3,7 +3,7 @@ id: avmfritz
 label: AVM FRITZ!
 title: AVM FRITZ! - Bindings
 type: binding
-description: "The binding integrates the AHA ( [AVM Home Automation](http://avm.de/ratgeber/smart-home/) ) system."
+description: "The binding integrates the AHA ( [AVM Home Automation](https://avm.de/ratgeber/smart-home/) ) system."
 since: 2x
 logo: images/addons/avmfritz.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # AVM FRITZ! Binding
 
-The binding integrates the AHA ( [AVM Home Automation](http://avm.de/ratgeber/smart-home/) ) system.  
+The binding integrates the AHA ( [AVM Home Automation](https://avm.de/ratgeber/smart-home/) ) system.  
 
 ## Supported Things
 
@@ -38,7 +38,7 @@ It only supports temperature readings.
 
 ### FRITZ!Powerline 546E
 
-This [powerline adapter](http://avm.de/produkte/fritzpowerline/fritzpowerline-546e/) can be used via the bridge or in stand-alone mode.
+This [powerline adapter](https://avm.de/produkte/fritzpowerline/fritzpowerline-546e/) can be used via the bridge or in stand-alone mode.
 It supports switching the outlet and reading the current power, current voltage and accumulated energy consumption.
 This device does not contain a temperature sensor.
 **NOTE:** The `voltage` channel will be added to the thing during runtime - if the interface supports it (FRITZ!OS 7 or higher).

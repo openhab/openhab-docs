@@ -50,7 +50,7 @@ Additionally the binding have two types of bridge things which correspond to ava
 Devices which is added to *Telldus Core* and *Telldus Live* can be discovered by openHAB.
 
 When you add this binding it will try to discover the *Telldus Core Bridge*.
-If it's installed correct its devices will show up.
+If it is installed correct its devices will show up.
 If you want to use the *Telldus Live* its bridge, *Telldus Live bridge* need to be added manually.
 
 ## Binding Configuration
@@ -75,7 +75,7 @@ The binding implements two different API:
 **1)** *Telldus Core* which is a local only interface supported by USB based device. <br>
 **2)** *Telldus Live* which is a REST based cloud service maintained by Telldus. <br>
 
-> Not implemented yet but supported by some new devices, contributions are welcome. [API documention.](http://api.telldus.net/localapi/api.html) <br>
+> Not implemented yet but supported by some new devices, contributions are welcome. [API documention.](https://api.telldus.net/localapi/api.html) <br>
 > **3)** *Local Rest API* is a local API which would work similar to Telldus Live but local.
 
 Depending on your Tellstick model, different bridge-types are available:
@@ -93,7 +93,7 @@ Depending on your Tellstick model, different bridge-types are available:
 
 > To enable communication between openhab and tellstick-core service (Telldus center) they must use same architecture, eg. 32-bit or 64-bit. The supplied version from Telldus is compiled against 32-bit architecture. Therefore, it is better to use 32-bit java for openHAB. To check which version of Java is currently in use, run: `java -d32 -version`
 >
-> *For changing architecture in linux check out: `dpkg --add-architecture`* 
+> *For changing architecture in Linux check out: `dpkg --add-architecture`* 
 
 The telldus-core bridge uses a library on the local computer which is a `.dll` file for Windows and a `.so` file for Linux. The default one is usually correct.
 
@@ -108,8 +108,8 @@ Optional:
 
 #### Telldus Live Bridge
 
-To configure Telldus Live you have request OAuth tokens from Telldus. Goto this page
-<http://api.telldus.com/keys/index> and request your keys and update the config.
+To configure Telldus Live you have request OAuth tokens from Telldus.
+Goto this page <https://api.telldus.com/keys/index> and request your keys and update the config.
 
 ```
 Bridge tellstick:telldus-live:2 "Tellstick ZWave" [publicKey="XXX", privateKey="YYYY", token= "ZZZZ", tokenSecret="UUUU"]

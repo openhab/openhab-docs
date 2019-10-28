@@ -3,7 +3,7 @@ id: bigassfan
 label: BigAssFan
 title: BigAssFan - Bindings
 type: binding
-description: "The [BigAssFan](http://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans'  Haiku family of residential fans and lights that implement the SenseME technology."
+description: "The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans'  Haiku family of residential fans and lights that implement the SenseME technology."
 since: 2x
 logo: images/addons/bigassfan.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # BigAssFan Binding
 
-The [BigAssFan](http://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans'  Haiku family of residential fans and lights that implement the SenseME technology.
+The [BigAssFan](https://www.bigassfans.com/) binding is used to enable communication between openHAB and Big Ass Fans'  Haiku family of residential fans and lights that implement the SenseME technology.
 
 ## Overview
 
@@ -44,7 +44,7 @@ However, in the event that any of this information changes, the configuration mu
 
 ### Manual Thing Creation
 
-Fans and lights can be manually created in the *PaperUI* or *HABmin*, or by placing a *.things* file in the *conf/things* directory.
+Fans and lights can be manually created in the *Paper UI* or *HABmin*, or by placing a *.things* file in the *conf/things* directory.
 See example below.
 
 ## Channels

@@ -3,7 +3,7 @@ id: scale
 label: Scale
 title: Scale - Transformation Services
 type: transform
-description: "The Scale Transformation Service is a an easy to handle tool that can help you with the discretization of number inputs."
+description: "The Scale Transformation Service is an easy to handle tool that can help you with the discretization of number inputs."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # Scale Transformation Service
 
-The Scale Transformation Service is a an easy to handle tool that can help you with the discretization of number inputs.
+The Scale Transformation Service is an easy to handle tool that can help you with the discretization of number inputs.
 It transforms a given input by matching it to specified ranges.
 The input string must be in numerical format.
 

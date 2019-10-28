@@ -3,7 +3,7 @@ id: meteostick
 label: Meteostick
 title: Meteostick - Bindings
 type: binding
-description: "This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle."
+description: "This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # Meteostick Binding
 
-This is the binding for the [Meteostick](http://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle.
+This is the binding for the [Meteostick](https://www.smartbedded.com/wiki/index.php/Meteostick) weather receiver dongle.
 This is an RF receiver that can receive data directly from Davis weather devices (and others).
 
 ## Supported Things
@@ -100,7 +100,7 @@ This example uploads weather data to for your personal weather station at Weathe
 
 Steps:
 
-1. Install the [MeteoStick](http://www.smartbedded.com/wiki/index.php/Meteostick) binding for use with your [Davis Vantage Vue Integrated Sensor Suite (ISS)](https://www.davisnet.com/solution/vantage-vue/).
+1. Install the [MeteoStick](https://www.smartbedded.com/wiki/index.php/Meteostick) binding for use with your [Davis Vantage Vue Integrated Sensor Suite (ISS)](https://www.davisnet.com/solution/vantage-vue/).
 1. [Register](https://www.wunderground.com/personal-weather-station/signup.asp) your personal weather station with Weather Underground and make note of the station ID and password issued.
 1. Add the following files to your openHAB configuration:
 

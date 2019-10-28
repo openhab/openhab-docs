@@ -3,7 +3,7 @@ id: onewiregpio
 label: OneWire GPIO
 title: OneWire GPIO - Bindings
 type: binding
-description: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry PI."
+description: "This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry Pi."
 since: 2x
 install: auto
 ---
@@ -14,18 +14,18 @@ install: auto
 
 # OneWire GPIO Binding
 
-This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry PI. 
+This binding reads temperature values from OneWire bus sensors connected to the GPIO bus on Raspberry Pi.
 
 
 ## Supported Things
 
 Temperature sensors. 
-Tested successfully with DS18B20 sensor on Raspberry PI 3.
+Tested successfully with DS18B20 sensor on Raspberry Pi 3.
 
 
 ## Binding Configuration
 
-The binding requires OneWire sensor to be properly connected to Raspberry PI GPIO bus,
+The binding requires OneWire sensor to be properly connected to Raspberry Pi GPIO bus,
 "w1_gpio" and "wire" kernel modules should be loaded.
 Configuration is proper when /sys/bus/w1/devices folder is present, and contains sensor's data. 
 

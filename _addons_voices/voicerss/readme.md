@@ -3,7 +3,7 @@ id: voicerss
 label: VoiceRSS Text-to-Speech
 title: VoiceRSS Text-to-Speech - Voices
 type: voice
-description: "VoiceRSS is an Internet based TTS service hosted at <http://api.voicerss.org>."
+description: "VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>."
 since: 2x
 logo: images/addons/voicerss.png
 install: auto
@@ -17,7 +17,7 @@ install: auto
 
 ## Overview
 
-VoiceRSS is an Internet based TTS service hosted at <http://api.voicerss.org>.
+VoiceRSS is an Internet based TTS service hosted at <https://api.voicerss.org>.
 You must obtain an API Key to get access to this service.
 The free version allows you to make up to 350 requests per day; for more you may need a commercial subscription.
 

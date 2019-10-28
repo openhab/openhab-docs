@@ -3,7 +3,7 @@ id: hdanywhere
 label: HDanywhere
 title: HDanywhere - Bindings
 type: binding
-description: "This binding integrates with [HDanywhere](http://www.hdanywhere.co.uk) HDMI matrices."
+description: "This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices."
 since: 2x
 logo: images/addons/hdanywhere.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # HDanywhere Binding
 
-This binding integrates with [HDanywhere](http://www.hdanywhere.co.uk) HDMI matrices.
+This binding integrates with [HDanywhere](https://www.hdanywhere.co.uk) HDMI matrices.
 
 HDanywhere is a manufacturer of multiroom/distributed audio/video equipment.
 This binding supports their V3 of the Multiroom+ HDMI matrix running firmware V1.2(20131222), as well as the newer MHUB series of matrices.

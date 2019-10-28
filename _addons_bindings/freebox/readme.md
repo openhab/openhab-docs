@@ -3,7 +3,7 @@ id: freebox
 label: Freebox
 title: Freebox - Bindings
 type: binding
-description: "This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHab installation."
+description: "This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHAB installation."
 since: 2x
 logo: images/addons/freebox.png
 install: auto
@@ -15,7 +15,7 @@ install: auto
 
 # Freebox Binding
 
-This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHab installation.
+This binding integrates the [Freebox Revolution](https://www.free.fr/freebox/freebox-revolution/) to your openHAB installation.
 
 ## Supported Things
 
@@ -100,7 +100,7 @@ The *airplay* thing requires the following configuration parameters:
 
 ## Authentication
 
-You'll have to authorize openHAB to connect to your Freebox. Here is the process described :
+You will have to authorize openHAB to connect to your Freebox. Here is the process described :
 
 **Step 1** At binding startup, if no token is recorded in the Freebox Server (bridge) configuration, the following message will be displayed in the OSGi console :
 
@@ -116,7 +116,7 @@ You'll have to authorize openHAB to connect to your Freebox. Here is the process
 
 **Step 3** Record the apptoken in the Freebox Server (bridge) configuration
 
-**Optionally** you can log in your Freebox admin console to allocate needed rights to openhab
+**Optionally** you can log in your Freebox admin console to allocate needed rights to openHAB
 
 Once initialized, the thing will generate all available channels.
 
