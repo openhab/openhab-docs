@@ -186,11 +186,11 @@ It should be up to the user to increase the logging level for specific bundles, 
 This means in detail:
 
 * `error` logging should only be used
-  - to inform the user that something is tremendously wrong in his setup, the system cannot function normally anymore, and there is a need for immediate action.
+  - to inform the user that something is tremendously wrong in the setup, the system cannot function normally anymore, and there is a need for immediate action.
   - in case some code fails irrecoverably and the user should report it as a severe bug.
 
 * `warn` logging should only be used
-  - to inform the user that something seems to be wrong in his overall setup, but the system can nonetheless function as normal,
+  - to inform the user that something seems to be wrong in the overall setup, but the system can nonetheless function as normal,
   - in recoverable situations when a section of code that is not accessed under normal operating conditions is reached.
 
 * `info` logging should be used sparsely.
