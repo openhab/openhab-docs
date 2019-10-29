@@ -147,7 +147,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 Defines the time after which the device is turned to last known state.
 0 – disabled
 
-1 – 32535 = 1 – 32535 seconds after which the device turns on
+30 – 32535 = 30 – 32535 seconds after which the device turns on
 Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -160,7 +160,7 @@ This parameter has the configuration ID ```config_10_2``` and is of type ```INTE
 Defines the time after which the device is turned to last known state.
 0 – disabled
 
-1 – 32535 = 1 – 32535 seconds after which the device turns off
+30 – 32535 = 30 – 32535 seconds after which the device turns off
 Values in the range 0 to 32535 may be set.
 
 The manufacturer defined default value is ```0```.

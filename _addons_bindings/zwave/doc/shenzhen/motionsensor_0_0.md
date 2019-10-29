@@ -19,7 +19,7 @@ The Motion Sensor does not permanently listen for messages sent from the control
 
 ## Overview
 
-Motion Sensor with illuminance and temperature feature.
+Motion Sensor with illuminance and sometimes a temperature feature.
 
 ### Inclusion Information
 
@@ -42,7 +42,7 @@ The Motion Sensor does not permanently listen for messages sent from the control
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time. The minimum wakeup interval is 300s, the maximum wakeup interval is 16,777,200s (about 194 days). Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…  
+You can press the button  three times within 1.5 second to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time. The minimum wakeup interval is 300s, the maximum wakeup interval is 16,777,200s (about 194 days). Allowable interval among each wakeup interval is 60 second, such as 360, 420, 480…  
 Note: The default value is 12 hours. This value is longer, the battery life is greater.
 
 ## Channels
