@@ -11,9 +11,6 @@ title: Next-Gen Rules
 
 Since openHAB 2.4 another Rule Engine has been added. It works fundamentally different than what you find with our current [Rules](https://www.openhab.org/docs/configuration/rules-dsl.html). It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
-::: tip Note
-If you use it, this is at your own risk. Especially, you should not expect any documentation or community experience besides what you find on this page.
-:::
 
 ## Installation
 
