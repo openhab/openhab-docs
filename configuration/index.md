@@ -162,8 +162,10 @@ You can still run these but you need to use file configuration for them.
 Things and Items can either be defined and managed in configuration files or handled by Paper UI in a [system-side database](/docs/administration/jsondb.html).
 Both of the above described methods could be used parallel, e.g. a Thing can be discovered and created by Paper UI and the Items that link to that very same Thing (that Thing's Channels, actually) can be manually defined in a `.items` configuration file.
 
-> While it's technically possible to use both methods in parallel, we recommend to choose only one of them to avoid confusion and a loss of overview of your openHAB environment.
-> It would work to mix but you may easily forget about what is your "source of truth" when you reconfigure Things or Items at a later stage.
+::: warning
+While it's technically possible to use both methods in parallel, we recommend to choose only one of them to avoid confusion and a loss of overview of your openHAB environment.
+It would work to mix but you may easily forget about what is your "source of truth" when you reconfigure Things or Items at a later stage.
+:::
 
 Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it. 
 Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied back into any `.things` file.
