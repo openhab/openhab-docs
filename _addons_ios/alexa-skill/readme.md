@@ -81,6 +81,7 @@ Here are some of the most common generic errors you may encounter while using th
 * Alexa will respond with "Sorry the hub that _device_ is connected to is not responding, please check its network connection and power supply"
 * It indicates that your openHAB server is not accessible through [myopenHAB](https://myopenhab.org) cloud service.
 * To resolve this error, make sure that your server is running, your openHAB cloud service is configured with mode set to "Notifications & Remote Access", and showing online under your myopenHAB account. For users that have setup their own custom skill, make sure that the proper server base URL was added to the lambda function config.js.
+* For users running openHAB 2.4, there is a known issue when running the [Amazon Echo Control](https://www.openhab.org/addons/bindings/amazonechocontrol/) binding, associated to that release, that affects the server accessibility. The workaround is to use the latest stable [release candidate](https://community.openhab.org/t/release-candidate-and-support-amazon-echo-control-binding/37844) version of that binding instead.
 
 #### Temperature Out Of Range
 * Alexa will respond with "I can only set the temperature between _minValue_ and _maxValue_"
