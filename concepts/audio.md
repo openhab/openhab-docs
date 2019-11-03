@@ -9,7 +9,7 @@ title: Audio & Voice
 
 Audio and voice features are an important aspect of any smart home solution as it is a very natural way to interact with the user.
 
-Eclipse SmartHome comes with a very modular architecture that enables all kinds of different use cases. 
+openHAB comes with a very modular architecture that enables all kinds of different use cases. 
 At its core, there is the notion of an *audio stream*. 
 Audio streams are provided by *audio sources* and consumed by *audio sinks*.  
 
