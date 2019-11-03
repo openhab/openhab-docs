@@ -69,7 +69,7 @@ Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
 
 ## Setup variants
 
-Before you can start, three decisions have to be made:
+Before you can start, two decisions have to be made:
 
 1.  openHAB 2 is available as a platform independent archive file or through a package repository:
     - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
