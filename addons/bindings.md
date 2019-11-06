@@ -20,7 +20,7 @@ Bindings connect your smart home's devices and technologies to openHAB.
       </td>
       <td>
         <p>
-        Bindings developed for openHAB 2 use the <a href="https://www.eclipse.org/smarthome/" target="_blank">Eclipse SmartHome</a> APIs.
+        Bindings developed for openHAB 2 use the openHAB APIs.
         They support <a href="{{base}}/concepts/things.html">things and channels</a>, and many support automatic discovery of things.
         These newer bindings can be the easiest to use.
         </p>

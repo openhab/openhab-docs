@@ -7,28 +7,28 @@ title: Items
 
 # Items
 
-Eclipse SmartHome has a strict separation between the physical world (the "Things", see below) and the application, which is built around the notion of "Items" (also called the virtual layer).
+openHAB has a strict separation between the physical world (the "Things", see below) and the application, which is built around the notion of "Items" (also called the virtual layer).
 
 Items represent functionality that is used by the application (mainly user interfaces or automation logic).
 Items have a state and are used through events.
   
 The following Item types are currently available (alphabetical order):
 
-| Item Name          | Description | Command Types |
-|--------------------|-------------|---------------|
-| Color              | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact            | Item storing status of e.g. door/window contacts | OpenClosed |
-| DateTime           | Stores date and time | - |
-| Dimmer             | Item carrying a percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
-| Group              | Item to nest other Items / collect them in Groups | - |
-| Image              | Holds the binary data of an image | - |
-| Location           | Stores GPS coordinates | Point |
-| Number             | Stores values in number format, takes an optional dimension suffix  | Decimal |
-| Number:<dimension> | like Number, additional dimension information for unit support | Quantity |
-| Player             | Allows to control players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter      | Typically used for blinds | UpDown, StopMove, Percent |
-| String             | Stores texts | String |
-| Switch             | Typically used for lights (on/off) | OnOff |
+| Item Name          | Description                                                        | Command Types                              |
+|--------------------|--------------------------------------------------------------------|--------------------------------------------|
+| Color              | Color information (RGB)                                            | OnOff, IncreaseDecrease, Percent, HSB      |
+| Contact            | Item storing status of e.g. door/window contacts                   | OpenClosed                                 |
+| DateTime           | Stores date and time                                               | -                                          |
+| Dimmer             | Item carrying a percentage value for dimmers                       | OnOff, IncreaseDecrease, Percent           |
+| Group              | Item to nest other Items / collect them in Groups                  | -                                          |
+| Image              | Holds the binary data of an image                                  | -                                          |
+| Location           | Stores GPS coordinates                                             | Point                                      |
+| Number             | Stores values in number format, takes an optional dimension suffix | Decimal                                    |
+| Number:<dimension> | like Number, additional dimension information for unit support     | Quantity                                   |
+| Player             | Allows to control players (e.g. audio players)                     | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter      | Typically used for blinds                                          | UpDown, StopMove, Percent                  |
+| String             | Stores texts                                                       | String                                     |
+| Switch             | Typically used for lights (on/off)                                 | OnOff                                      |
 
 ## Group Items
 
@@ -85,11 +85,11 @@ Examples for derived states on Group Items when declared in the Item DSL:
 4. `yyyy-MM-dd'T'HH:mm:ssz`
 5. `yyyy-MM-dd'T'HH:mm:ss`
 
-Literal | Standard | Example
---------|----------|--------
-z | General time zone | Pacific Standard Time; PST; GMT-08:00
-Z | RFC 822 time zone | -0800
-X | ISO 8601 time zone | -08; -0800; -08:00
+| Literal | Standard           | Example                               |
+|---------|--------------------|---------------------------------------|
+| z       | General time zone  | Pacific Standard Time; PST; GMT-08:00 |
+| Z       | RFC 822 time zone  | -0800                                 |
+| X       | ISO 8601 time zone | -08; -0800; -08:00                    |
 
 ### DecimalType, PercentType
 
@@ -147,7 +147,7 @@ Such metadata can be attached to Items using disjunct namespaces so they won't c
 Each metadata entry has a main value and optionally additional key/value pairs. 
 There can be metadata attached to an Item for as many namespaces as desired, like in the following example: 
 
-    Switch "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
+    Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
 
 The metadata can be maintained via a dedicated REST endpoint and is included in the `EnrichedItemDTO` responses.
 

@@ -7,7 +7,7 @@ title: Categories
 
 # Categories
 
-Categories in Eclipse SmartHome are used to provide meta information about Things, Channels, etc. UIs can use this information to render specific icons or provide a search functionality to for example filter all Things for a certain category.
+Categories in openHAB are used to provide meta information about Things, Channels, etc. UIs can use this information to render specific icons or provide a search functionality to for example filter all Things for a certain category.
 
 ## Differences between categories
 
@@ -21,9 +21,9 @@ User interfaces can parse this category to get an idea how to render this Thing.
 A Binding can classify each Thing into one of the existing categories. 
 The list of all predefined categories can be found in our categories overview:
 
-| Category        | Description | Icon Example |
-|-----------------|-------------|{% for category in site.data.categories_thing %}
-|{{category.name}}|{{category.description}}|![{{category.icon}}](/iconsets/classic/{{category.icon}}){:height="36px" width="36px"}|{% endfor %}
+| Category          | Description              | Icon Example                                                                           |              |
+|-------------------|--------------------------|-{% for category in site.data.categories_thing %}---------------------------------------|--------------|
+| {{category.name}} | {{category.description}} | ![{{category.icon}}](/iconsets/classic/{{category.icon}}){:height="36px" width="36px"} | {% endfor %} |
 
 ### Channel Group Categories
 
@@ -43,7 +43,7 @@ There are different types of categories for Channels, which are listed below.
 {% for type in types %}
 #### {{ type }}
 
-| Category        | Icon Example |
-|-----------------|--------------|{% for category in site.data.categories %}{% if category.type == type %}
-|{{category.name}}|![{{category.name | downcase}}](/iconsets/classic/{{category.name | downcase }}.png){:height="36px" width="36px"}|{% endif %}{% endfor %}
+| Category          | Icon Example      |                                                                          |                                               |                         |
+|-------------------|-------------------|-{% for category in site.data.categories %}{% if category.type == type %}-|-----------------------------------------------|-------------------------|
+| {{category.name}} | ![{{category.name | downcase}}](/iconsets/classic/{{category.name                            | downcase }}.png){:height="36px" width="36px"} | {% endif %}{% endfor %} |
 {% endfor %}
