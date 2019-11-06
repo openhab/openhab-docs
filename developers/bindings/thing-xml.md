@@ -336,7 +336,7 @@ public class ExampleDynamicStateDescriptionProvider implements DynamicStateDescr
 }
 ```
 
-##### Exampla code for a `DynamicStateDescriptionProvider` implementation which extends the `BaseDynamicStateDescriptionProvider`
+##### Example code for a `DynamicStateDescriptionProvider` implementation which extends the `BaseDynamicStateDescriptionProvider`
 
 ```java
 @Component(service = { DynamicStateDescriptionProvider.class, ExampleDynamicStateDescriptionProvider.class })
@@ -521,6 +521,12 @@ A new discovery would then automatically find this device again and add it to th
 
 The label and descriptions for things, channels and config descriptions should follow the following format.
 The label should be short so that for most UIs it does not spread across multiple lines.
+Labels should be capitalized using the following rules:
+* Always capitalize the first and the last word.
+* Lowercase articles, coordinating conjunctions, and prepositions (`a, an, the, and, as, but, by, for, from, in, into, like, near, nor, of, onto, or, out, over, past, so, till, to, up, upon, with, yet`).
+* Capitalize all other words.
+* Brand- or product names that starts with a lowercase character can be written using their official spelling.
+
 The description can contain longer text to describe the thing in more detail.
 Limited use of HTML tags is permitted to enhance the description - if a long description is provided, the first line should be kept short, and a line break (```<br />```) placed at the end of the line to allow UIs to display a short description in limited space.
 
