@@ -436,7 +436,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
         * defaults to increment=INCREASE/DECREASE (Dimmer) or increment=1 (Number) if omitted
     * Default category: SPEAKER
   * `EqualizerController.modes`
-    * Items that represent a list of equalizer modes supported by an audio system. Set supported modes using `supportedModes="MOVIE,MUSIC,TV"` parameter. The mode listed in additional properties are the only ones supported by the Alexa API currently. For the mapping, default item type mapping (listed below) can be used or if necessary, add each state to the parameters similar to how it is done with other interfaces.
+    * Items that represent a list of equalizer modes supported by an audio system. Set supported modes using `supportedModes="MOVIE,MUSIC,TV"` parameter. The mode listed in additional properties (MOVIE, MUSIC, NIGHT, SPORT, TV) are the only ones supported by the Alexa API currently. For the mapping, default item type mapping (listed below) can be used or if necessary, add each state to the parameters similar to how it is done with other interfaces.
     * Supported item type:
       * Number [MOVIE=1, MUSIC=2, NIGHT=3, SPORT=4, TV=5]
       * String [MOVIE="movie", MUSIC="music", NIGHT="night", SPORT="sport", TV="tv"]
@@ -445,6 +445,7 @@ Number:Temperature Temperature2 "Temperature"           {alexa="TemperatureSenso
       * MUSIC=`<state>`
       * NIGHT=`<state>`
       * SPORT=`<state>`
+      * TV=`<state>`
       * supportedModes=`<modes>`
         * defaults to, depending on the parameters provided, either user-based or default item type-based mapping.
     * Default category: SPEAKER
