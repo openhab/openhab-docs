@@ -27,24 +27,24 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 
 ```
 |- src/main
-|------- feature
-|---------- feature.xml   Your OSGI feature file
-|------- java             Your Java code
-|---------- org/openhab/[...]
+|---- feature
+|-------- feature.xml   Your OSGI feature file
+|---- java             Your Java code
+|-------- org/openhab/[...]
 |- src/main/resources/ESH-INF
 |---- binding
-|------- binding.xml      Binding name, description, author and other meta data
-|-----config              Configuration description files when not in things files
-|------- *.xml
+|-------- binding.xml      Binding name, description, author and other meta data
+|---- config              Configuration description files when not in things files
+|-------- *.xml
 |---- i18n                Your localized binding texts
-|------- *_<local>.properties
+|-------- *_<local>.properties
 |---- thing               One or more xml files with thing descriptions
-|------- *.xml
+|-------- *.xml
 |- src/test
-|------- java             It's easy to write unit tests and fellow developers will thank you
-|---------- org/openhab/[...]
-|------- resources        Any resource files used in your unit tests, like test data
-|---------- [...]
+|---- java             It's easy to write unit tests and fellow developers will thank you
+|-------- org/openhab/[...]
+|---- resources        Any resource files used in your unit tests, like test data
+|-------- [...]
 |- NOTICE                 License information
 |                         3rd party content has to be given in the NOTICE file
 |- pom.xml                Build system file: Describe your dependencies here
@@ -90,7 +90,7 @@ The rules are defined at https://github.com/openhab/static-code-analysis/tree/ma
 
 ```java
 public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
-		return g1.get().equals(g2.get());
+    return g1.get().equals(g2.get());
 }
 ```
 
@@ -98,7 +98,7 @@ public static <T> boolean isEqual(GenericsType<T> g1, GenericsType<T> g2){
   Warnings that cannot be circumvented should be suppressed by using the `@SuppressWarnings` annotation.
 * Your classes are generally organised within an internal package
 
-```
+```java
 org.openhab.binding.coolbinding.internal
 org.openhab.binding.coolbinding.internal.handler
 org.openhab.binding.coolbinding.internal.discovery
@@ -113,8 +113,8 @@ Remember that classes that are meant to be used by scripts or other bindings mus
 ```java
 @Component(service=MyCoolService.class)
 public class MyCoolService {
-   @Reference
-   private @NonNullByDefault({}) ItemRegistry itemRegistry;
+    @Reference
+    private @NonNullByDefault({}) ItemRegistry itemRegistry;
 }
 ```
 
@@ -134,8 +134,8 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 ## D. Language Levels and Libraries
 
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
- * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
-2. The [OSGi R6](http://www.osgi.org/Download/Release6) release with OSGI Compendium R7 is targeted, and newer features should not be used.
+ * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
+2. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
 3. slf4j is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
@@ -143,10 +143,16 @@ See [Default libraries](#default-libraries) for more details.
 
 ## E. Runtime Behavior
 
-1. Overridden methods from abstract classes or interfaces are expected to return fast unless otherwise stated in their JavaDoc. Expensive operations should therefore rather be scheduled as a job.
-1. Creation of threads must be avoided. Instead, resort into using existing schedulers which use pre-configured thread pools. If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself. For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)).
-1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning. This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
-1. Bundles must not require any substantial CPU time. Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
+1. Overridden methods from abstract classes or interfaces are expected to return fast unless otherwise stated in their JavaDoc.
+Expensive operations should therefore rather be scheduled as a job.
+2. Creation of threads must be avoided.
+Instead, resort into using existing schedulers which use pre-configured thread pools.
+If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself.
+For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](https://docs.oracle.com/javase/8/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)).
+3. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning.
+This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
+4. Bundles must not require any substantial CPU time.
+Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
 
 ## F. Logging
 
@@ -159,7 +165,7 @@ Please remember that every logging statement adds to code size and runtime cost.
 
 ```java
 class MyCoolClass {
-   private final Logger logger = LoggerFactory.getLogger(MyCoolClass.class);
+    private final Logger logger = LoggerFactory.getLogger(MyCoolClass.class);
 }
 ```
 
@@ -167,9 +173,9 @@ class MyCoolClass {
 
 ```java
 void myFun() {
-  String someValue = "abc";
-  int someInt = 12;
-  logger.log("Current value is {} and int is {}", someValue, someInt);
+    String someValue = "abc";
+    int someInt = 12;
+    logger.log("Current value is {} and int is {}", someValue, someInt);
 }
 ```
 
@@ -179,11 +185,11 @@ Configuration errors by users should only print log messages about what's wrong.
 
 ```java
 void myFun() {
-  try {
-    doSomething();
-  } catch (IOException e) {
-    logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);  
-  }
+    try {
+        doSomething();
+    } catch (IOException e) {
+        logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);  
+    }
 }
 ```
 
@@ -191,9 +197,9 @@ void myFun() {
 
 ```java
 void myFun() {
-  logger.trace("Enter myfun"); // DONT, DONT, really DONT do that
-  doSomething();
-  logger.trace("Leave myfun"); // DONT, DONT, really DONT do that
+    logger.trace("Enter myfun"); // DONT, DONT, really DONT do that
+    doSomething();
+    logger.trace("Leave myfun"); // DONT, DONT, really DONT do that
 }
 ```
 
@@ -201,8 +207,8 @@ void myFun() {
 
 ```java
 void myFun() {
-  logger.debug("And now the thing goes online"); // DONT, DONT, really DONT do that
-  updateState(ThingState.ONLINE);
+    logger.debug("And now the thing goes online"); // DONT, DONT, really DONT do that
+    updateState(ThingState.ONLINE);
 }
 ```
 
@@ -287,10 +293,10 @@ The compiler will force you to check if `myField` is null, before using it:
 
 ```java
 private void myFunction() {
-  final MyType myField = this.myField; // You need a local copy of the field for thread safety.
-  if (myField != null) {
-    myField.soSomething();
-  }
+    final MyType myField = this.myField; // You need a local copy of the field for thread safety.
+    if (myField != null) {
+        myField.soSomething();
+    }
 }
 ```
 
