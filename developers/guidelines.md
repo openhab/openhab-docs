@@ -136,7 +136,7 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](https://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html).
 2. The [OSGi Core Release 7](https://osgi.org/download/r7/osgi.core-7.0.0.pdf) with [OSGI Compendium Release 7](https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf) is targeted, and newer features should not be used.
-3. slf4j is used for logging.
+3. [slf4j](http://slf4j.org) is used for logging.
 
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
 See [Default libraries](#default-libraries) for more details.
