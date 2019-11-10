@@ -53,33 +53,37 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 
 * Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 
-## B. Code formatting
+## B. Code formatting rules & style
+
+### Code format
 
 In order to keep the code layout consistent, code formatting rules have been defined.
-Rules are enforced as part of the build process using [Spotless Maven Plugin] (https://github.com/diffplug/spotless).
+Rules are enforced as part of the build process using [Spotless Maven Plugin](https://github.com/diffplug/spotless).
 
-To check if your code is following the code style run `mvn spotless:check`
+To check if your code is following the code style run `mvn spotless:check`. If Maven prints `[INFO] Spotless check skipped` then run `mvn spotless:check -Dspotless.check.skip=false` instead as the check isn't mandatory yet.
 To reformat you code run `mvn spotless:apply`
 
-Code styles files are located in here: https://github.com/openhab/openhab-core/tree/master/tools/codestyle/src/main/resources
+Code styles files are located in here: https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources
 
-### Java Code
+#### Java Code
 
 The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
 
-* Official OpenHAB Eclipse IDE [IDE setup](ide.html) is preconfigured
+* Official [openHAB Eclipse IDE setup](ide.html) is preconfigured
 * Eclipse standalone installation
-  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/openhab-core/master/tools/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/openhab-core/master/tools/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
+  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
 * IntelliJ using plugin https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter
-  - Same files as for the Eclipse standalone installation
+  - Same files as for the Eclipse standalone installation. Be sure to follow *all* the plugin configuration steps.
 
-### XML files
+#### XML files
 
 * Maven `pom.xml` files shall have 2 space indentation
 * Other `xml` files shall have 1 tab indentation
 * Line length shall be 120 characters
 
-## C. Java Coding Style
+The rules are defined at https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
+
+### Java Coding Style
 
 * The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
 * Generics must be used where applicable. See example below:
@@ -114,7 +118,7 @@ public class MyCoolService {
 }
 ```
 
-## D. Documentation
+## C. Documentation
 
 JavaDoc is required to describe the purpose and usage of every:
 
@@ -127,7 +131,7 @@ An @author tag is required within the JavaDoc for every author who made a substa
 New @author tags should be placed below the older ones.
 Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require JavaDoc.
 
-## E. Language Levels and Libraries
+## D. Language Levels and Libraries
 
 1. openHAB generally targets the long time supported Java 8 and Java 11 releases with the following restrictions:
  * To allow optimized runtimes, the set of Java packages to be used is further restricted to [Compact Profile 2](http://www.oracle.com/technetwork/java/embedded/resources/tech/compact-profiles-overview-2157132.html)
@@ -137,14 +141,14 @@ Data-transfer-objects (DTOs map from Json/XML to Java classes) do not require Ja
 You might also have the need to use other libraries for specific use cases like XML processing, networking etc.
 See [Default libraries](#default-libraries) for more details.
 
-## F. Runtime Behavior
+## E. Runtime Behavior
 
 1. Overridden methods from abstract classes or interfaces are expected to return fast unless otherwise stated in their JavaDoc. Expensive operations should therefore rather be scheduled as a job.
 1. Creation of threads must be avoided. Instead, resort into using existing schedulers which use pre-configured thread pools. If there is no suitable scheduler available, start a discussion in the forum about it rather than creating a thread by yourself. For periodically executed jobs that do not require a fixed rate [scheduleWithFixedDelay](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleWithFixedDelay(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)) should be preferred over [scheduleAtFixedRate](http://docs.oracle.com/javase/7/docs/api/java/util/concurrent/ScheduledExecutorService.html#scheduleAtFixedRate(java.lang.Runnable,%20long,%20long,%20java.util.concurrent.TimeUnit)).
 1. Bundles need to cleanly start and stop without throwing exceptions or malfunctioning. This can be tested by manually starting and stopping the bundle from the console (```stop <bundle-id>``` resp. ```start <bundle-id>```).
 1. Bundles must not require any substantial CPU time. Test this e.g. using "top" or VisualVM and compare CPU utilization with your bundle stopped vs. started.
 
-## G. Logging
+## F. Logging
 
 This section explains some logging usage patterns.
 The logger that is used allows logging at multiple severity levels (trace, info, debug, warn, error).
@@ -165,7 +169,6 @@ class MyCoolClass {
 void myFun() {
   String someValue = "abc";
   int someInt = 12;
-
   logger.log("Current value is {} and int is {}", someValue, someInt);
 }
 ```
@@ -233,7 +236,7 @@ The correct way to inform users about such events is to update the Thing status 
 
 Note that all events (including Thing status events) are anyhow already logged.
 
-## H. Other code attributions
+## G. Other code attributions
 
 If you copy code from somewhere make sure that the license is compatible to the Eclipse License version 2.
 This includes the Apache license, the Eclipse license v1, the MIT and BSD license.
@@ -243,7 +246,7 @@ You may also use Stackoverflow snippets, because they are automatically MIT lice
 Please make sure to not remove author attributions or modify the license header in code files that you have copied.
 Add the filename, author and license to the NOTICE file of your addon (except for short snippets, eg from Stackoverflow etc).
 
-## I. Guideline details
+## Guideline details
 
 This sections provides some background and more detailed information about parts of the guideline.
 
