@@ -51,14 +51,41 @@ The structure of a binding follows the structure of a typical OSGi bundle projec
 |- README.md              The file describing your binding
 ```
 
-1. The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
-1. Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
-1. Code must be formatted using the "ESH" code formatter (in Eclipse).
-   - This is set up automatically by the official [IDE setup](ide.html)
-   - You can manually import [ESH.xml](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ESH.xml) via Eclipse Preferences -> Java -> Code Style -> Formatter.
+* Every Java file must have a license header. You can run ```mvn license:format``` on the root of the repo to automatically add missing headers.
 
-## B. Code Style
+## B. Code formatting rules & style
 
+### Code format
+
+In order to keep the code layout consistent, code formatting rules have been defined.
+Rules are enforced as part of the build process using [Spotless Maven Plugin](https://github.com/diffplug/spotless).
+
+To check if your code is following the code style run `mvn spotless:check`. If Maven prints `[INFO] Spotless check skipped` then run `mvn spotless:check -Dspotless.check.skip=false` instead as the check isn't mandatory yet.
+To reformat you code run `mvn spotless:apply`
+
+Code styles files are located in here: https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources
+
+#### Java Code
+
+The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
+
+* Official [openHAB Eclipse IDE setup](ide.html) is preconfigured
+* Eclipse standalone installation
+  - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
+* IntelliJ using plugin https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter
+  - Same files as for the Eclipse standalone installation. Be sure to follow *all* the plugin configuration steps.
+
+#### XML files
+
+* Maven `pom.xml` files shall have 2 space indentation
+* Other `xml` files shall have 1 tab indentation
+* Line length shall be 120 characters
+
+The rules are defined at https://github.com/openhab/static-code-analysis/tree/master/codestyle/src/main/resources for the Eclipse WTP formatter, but will have to be manually entered into your IDE.
+
+### Java Coding Style
+
+* The [Java naming conventions](http://java.about.com/od/javasyntax/a/nameconventions.htm) should be used for source files.
 * Generics must be used where applicable. See example below:
 
 ```java
@@ -142,7 +169,6 @@ class MyCoolClass {
 void myFun() {
   String someValue = "abc";
   int someInt = 12;
-  
   logger.log("Current value is {} and int is {}", someValue, someInt);
 }
 ```
