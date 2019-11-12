@@ -242,7 +242,7 @@ Field | Description
 -|-
 `country` | Country to use to get the built in list of bank holidays, uses the standard two letter country code.
 `region` | Uses the appropriate two letter region code if applicable.
-`dayset-<name>` | List of the days of that are in this custom dayset. The days are put into a list (i.e. surrounded by `[ ]`) and the English names for the days of the week should be used, in all caps. See the example below.
+`dayset-<name>` | List of the days of that are in this custom dayset. The days are put into a list (i.e. surrounded by `[ ]` and separated by a comma) and the English names for the days of the week should be used, in all caps. See the example below.
 
 If in doubt on what values to use, see the links above to find the XML file for your country, open the XML file, and find the `tns:SubConfigurations` for your region and use the “hierarchy” value for `region`.
 
