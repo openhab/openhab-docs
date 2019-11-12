@@ -170,40 +170,45 @@ For information on making use of the [openHAB Cloud service](https://github.com/
 
 ## Ephemeris
 
-Ephemeris is a way to determine what type of day today or a number of days before or after today is. For example, to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
+Ephemeris is a way to determine what type of day today or a number of days before or after today is.
+For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
 The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
 
 ### Actions
 
 #### Rules DSL
 
-- `getBankHolidayName`: returns the name of the holiday today, or `null` if today is not a bank holiday.
-- `getBankHolidayName(<offset>)`: returns the name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday.
-- `getBankHolidayName(<datetime>)`: returns the name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday.
-- `getBankHolidayName(<offset>, <file>)`: returns the name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`.
-- `getBankHolidayName(<datetime>, <file>)`: returns the name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`.
-- `getDaysUntil(<holiday name>)`: returns the number of days from today to the given `<holiday name>`.
-- `getDaysUntil(<holiday name>, <file>)`: returns the number of days from today to the given `<holiday name>` defined in `<file>`.
-- `getDaysUntil(<datetime>, <holiday name>)`: returns the number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`.
-- `getDaysUntil(<datetime>, <holiday name>, <file>)`: returns the number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`.
-- `getHolidayDescription(<holiday name>)`: Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`.
-- `getNextBankHoliday`: returns the name of the next bank holiday.
-- `getNextBankHoliday(<file>)`: returns the name of the next bank holiday defined in `<file>`.
-- `getNextBankHoliday(<offset>)`: returns the name of the next bank holiday after `<offset>` days from today.
-- `getNextBankHoliday(<offset>, <file>)`: returns the name of the next bank holiday after `<offset>` days from today defined in `<file>`.
-- `getNextBankHoliday(<datetime>)`: returns the name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`.
-- `getNextBankHoliday(<datetime>, <file>)`: returns the name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`.
-- `isBankHoliday`: returns `true` if today is a bank holiday (see below); returns `false` otherwise.
-- `isBankHoliday(<offset>)`: returns `true` if the day `<offset>` days from today is a bank holiday; returns `false` otherwise.
-- `isBankHoliday(<datetime>)`: returns `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday; returns `false` otherwise.
-- `isBankHoliday(<offset>, <file>)`: returns `true` if the day `<offset>` days from today is a day defined in `<file>`; use 0 for `<offset>` for today; returns `false` otherwise.
-- `isBankHoliday(<datetime>, <file>)`: returns `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`; returns `false` otherwise.
-- `isInDayset("<set>")`: returns `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`; returns `false` otherwise.
-- `isInDayset("<set>", <offset>)`: returns `true` if the day `<offset>` days from today is in dayset `<set>`; returns `false` otherwise.
-- `isInDayset("<set>", <datetime>)`: returns `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`; returns `false` otherwise.
-- `isWeekend`: returns `true` if today is a weekend, `false` otherwise.
-- `isWeekend(<offset>)`: returns true if the day `<offset>` days from today is a weekend. Use a negative value to check days in the past.
-- `isWeekend(<datetime>)`: returns `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise.
+Action | Returns
+-|-
+`getBankHolidayName` | name of the holiday today, or `null` if today is not a bank holiday
+`getBankHolidayName(<offset>)` | name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday
+`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday
+`getBankHolidayName(<offset>, <file>)` | name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`
+`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`
+`getDaysUntil(<holiday name>)` | number of days from today to the given `<holiday name>`
+`getDaysUntil(<holiday name>, <file>)` | number of days from today to the given `<holiday name>` defined in `<file>`
+`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`
+`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`
+`getHolidayDescription(<holiday name>)` | Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`
+`getNextBankHoliday` | name of the next bank holiday
+`getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
+`getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
+`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
+`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`
+`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`
+`isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
+`isBankHoliday(<offset>)` | `true` if the day `<offset>` days from today is a bank holiday, `false` otherwise
+`isBankHoliday(<datetime>)` | `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday, `false` otherwise.
+`isBankHoliday(<offset>, <file>)` | `true` if the day `<offset>` days from today is a day defined in `<file>`, use 0 for `<offset>` for today; returns `false` otherwise
+`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`, `false` otherwise
+`isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
+`isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`, `false` otherwise
+`isWeekend` | `true` if today is a weekend, `false` otherwise
+`isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
+`isWeekend(<datetime>)` | `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise
+
+In all examples that take `<offset>`, use a negative value to check days in the past.
 
 #### Scripted Automation
 
@@ -217,35 +222,38 @@ In PaperUI one has the ability to configure which days of the week are considere
 If no country is provided the service uses your system default locale settings.
 Browse to Configuration and System and scroll down to the Ephemeris section.
 Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/svendiedrichsen/jollyday).
-You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays) and the localized mapping files that map between the holiday name in the XML and your preferred language are located [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
+You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays).
+You can find the localized mapping files that map between the holiday name in the XML and your preferred language [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
 
-When filling in the country, region and city, if there isn’t a drop down list for one after choosing the one(s) higher up (e.g. there is no drop down list for city after choosing country and region), leave that field blank.
+When filling in the country, region and city in that order, if there isn’t a drop down list leave that field blank.
 There are no special bank holidays defined by Jollyday for that level.
 
 #### `ephemeris.cfg`
 
 By default Ephemeris supports a weekend dayset and a school dayset.
 You can define additional daysets or modify the school dayset.
-If you need to define custom daysets, you must do all your configuration through the ephemeris.cfg file instead of using PaperUI as described above so make sure to at least redefine the weekend dayset.
+If you need to define custom daysets, you must do all your configuration through the `ephemeris.cfg` file instead of using PaperUI as described above so make sure to at least redefine the weekend dayset.
 If there is no `dayset-weekend` defined, calls to `isWeekend` will generate errors.
 
 Config file location: `$OH_CONF/services/ephemeris.cfg`.
 
 Fields:
-- `country`: country to use to get the built in list of bank holidays, uses the standard two letter country code.
-- `region`: uses the appropriate two letter region code.
-- `dayset-<name>`: list of the days of that are in this custom dayset.
+Field | Description
+-|-
+`country` | Country to use to get the built in list of bank holidays, uses the standard two letter country code.
+`region` | Uses the appropriate two letter region code if applicable.
+`dayset-<name>` | List of the days of that are in this custom dayset. The days are put into a list (i.e. surrounded by `[ ]`) and the English names for the days of the week should be used, in all caps. See the example below.
 
-If in doubt on what values to use, see the links above to find the XML file for your country, open the XML file, and find the tns:SubConfigurations for your region and use the “hierarchy” value for region.
+If in doubt on what values to use, see the links above to find the XML file for your country, open the XML file, and find the `tns:SubConfigurations` for your region and use the “hierarchy” value for `region`.
 
 For example:
 
-```
+```text
 country=de
 region=nw
-dayset-workday=Monday,Tuesday,Wednesday,Thursday,Friday
-dayset-weekend=Saturday,Sunday
-dayset-trash=Monday
+dayset-workday=[MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
+dayset-weekend=[SATURDAY,SUNDAY]
+dayset-trash=[MONDAY]
 ```
 #### Custom Bank Holidays
 
