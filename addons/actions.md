@@ -119,11 +119,11 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 ```
 
 ### openHAB Subsystem Actions
-openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, and scripts.
+openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
 - `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
 
-Scripts are small pieces of Rules DSL code that can be called from Rules. 
+Scripts are small pieces of Rules DSL code that can be called from Rules.
 However, Scripts have limitations.
 Scripts cannot accept arguments.
 Scripts cannot return a value.
@@ -167,6 +167,111 @@ end
 ```
 
 For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](http://www.myopenhab.org).
+
+## Ephemeris
+
+Ephemeris is a way to determine what type of day today or a number of days before or after today is. For example, to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
+The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
+
+### Actions
+
+#### Rules DSL
+
+- `getBankHolidayName`: returns the name of the holiday today, or `null` if today is not a bank holiday.
+- `getBankHolidayName(<offset>)`: returns the name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday.
+- `getBankHolidayName(<datetime>)`: returns the name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday.
+- `getBankHolidayName(<offset>, <file>)`: returns the name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`.
+- `getBankHolidayName(<datetime>, <file>)`: returns the name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`.
+- `getDaysUntil(<holiday name>)`: returns the number of days from today to the given `<holiday name>`.
+- `getDaysUntil(<holiday name>, <file>)`: returns the number of days from today to the given `<holiday name>` defined in `<file>`.
+- `getDaysUntil(<datetime>, <holiday name>)`: returns the number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`.
+- `getDaysUntil(<datetime>, <holiday name>, <file>)`: returns the number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`.
+- `getHolidayDescription(<holiday name>)`: Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`.
+- `getNextBankHoliday`: returns the name of the next bank holiday.
+- `getNextBankHoliday(<file>)`: returns the name of the next bank holiday defined in `<file>`.
+- `getNextBankHoliday(<offset>)`: returns the name of the next bank holiday after `<offset>` days from today.
+- `getNextBankHoliday(<offset>, <file>)`: returns the name of the next bank holiday after `<offset>` days from today defined in `<file>`.
+- `getNextBankHoliday(<datetime>)`: returns the name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`.
+- `getNextBankHoliday(<datetime>, <file>)`: returns the name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`.
+- `isBankHoliday`: returns `true` if today is a bank holiday (see below); returns `false` otherwise.
+- `isBankHoliday(<offset>)`: returns `true` if the day `<offset>` days from today is a bank holiday; returns `false` otherwise.
+- `isBankHoliday(<datetime>)`: returns `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday; returns `false` otherwise.
+- `isBankHoliday(<offset>, <file>)`: returns `true` if the day `<offset>` days from today is a day defined in `<file>`; use 0 for `<offset>` for today; returns `false` otherwise.
+- `isBankHoliday(<datetime>, <file>)`: returns `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`; returns `false` otherwise.
+- `isInDayset("<set>")`: returns `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`; returns `false` otherwise.
+- `isInDayset("<set>", <offset>)`: returns `true` if the day `<offset>` days from today is in dayset `<set>`; returns `false` otherwise.
+- `isInDayset("<set>", <datetime>)`: returns `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`; returns `false` otherwise.
+- `isWeekend`: returns `true` if today is a weekend, `false` otherwise.
+- `isWeekend(<offset>)`: returns true if the day `<offset>` days from today is a weekend. Use a negative value to check days in the past.
+- `isWeekend(<datetime>)`: returns `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise.
+
+#### Scripted Automation
+
+One must import the Ephemeris Action and then call the above functions using `Ephemeris.<function>`, for example `Ephemeris.getNextBankHoliday()`.
+
+### Configuration
+
+#### PaperUI
+
+In PaperUI one has the ability to configure which days of the week are considered weekends and set your country, region, and city.
+If no country is provided the service uses your system default locale settings.
+Browse to Configuration and System and scroll down to the Ephemeris section.
+Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/svendiedrichsen/jollyday).
+You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays) and the localized mapping files that map between the holiday name in the XML and your preferred language are located [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
+
+When filling in the country, region and city, if there isn’t a drop down list for one after choosing the one(s) higher up (e.g. there is no drop down list for city after choosing country and region), leave that field blank.
+There are no special bank holidays defined by Jollyday for that level.
+
+#### `ephemeris.cfg`
+
+By default Ephemeris supports a weekend dayset and a school dayset.
+You can define additional daysets or modify the school dayset.
+If you need to define custom daysets, you must do all your configuration through the ephemeris.cfg file instead of using PaperUI as described above so make sure to at least redefine the weekend dayset.
+If there is no `dayset-weekend` defined, calls to `isWeekend` will generate errors.
+
+Config file location: `$OH_CONF/services/ephemeris.cfg`.
+
+Fields:
+- `country`: country to use to get the built in list of bank holidays, uses the standard two letter country code.
+- `region`: uses the appropriate two letter region code.
+- `dayset-<name>`: list of the days of that are in this custom dayset.
+
+If in doubt on what values to use, see the links above to find the XML file for your country, open the XML file, and find the tns:SubConfigurations for your region and use the “hierarchy” value for region.
+
+For example:
+
+```
+country=de
+region=nw
+dayset-workday=Monday,Tuesday,Wednesday,Thursday,Friday
+dayset-weekend=Saturday,Sunday
+dayset-trash=Monday
+```
+#### Custom Bank Holidays
+
+In addition to the ability to define custom daysets, one can define a custom list of holidays or other important days.
+If you have opened the Jollyday XML file for your country already, you have seen an example of what your custom file should look like.
+The following is an example listing a few custom days.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Configuration hierarchy="us" description="United States"
+    xmlns:tns="http://www.example.org/Holiday" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/Holiday /Holiday.xsd">
+    <tns:Holidays>
+        <tns:Fixed month="MARCH" day="20" descriptionPropertiesKey="Rich Birthday" />
+        <tns:Fixed month="MARCH" day="27" descriptionPropertiesKey="Son's Birthday" />
+        <tns:Fixed month="JUNE" day="12" descriptionPropertiesKey="Wife's Birthday" />
+        <tns:Fixed month="DECEMBER" day="27" descriptionPropertiesKey="Anniversary" />
+        <tns:FixedWeekday which="FIRST" weekday="TUESDAY" month="NOVEMBER" descriptionPropertiesKey="Election Day"/>
+    </tns:Holidays>
+</tns:Configuration>
+```
+For further examples and other types of holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd).
+
+You can place these XML files anywhere on your file system that openHAB has permission to read.
+In the calls to the Actions, use the fully qualified path.
+We recommend placing these custom files somewhere inside your `$OH_CONF` folder, such as `$OH_CONF/services`.
 
 ## Installable Actions
 
