@@ -79,8 +79,8 @@ These must be inside the XML escape sequence - eg.
   <tr><td>parameter</td><td>The description of a concrete configuration parameter (optional).</td></tr>
   <tr><td>parameter.name</td><td>The name of the configuration parameter (mandatory).</td></tr>
   <tr><td>parameter.type</td><td>The data type of the configuration parameter (mandatory).</td></tr>
-  <tr><td>parameter.min</td><td>The minimal value for numeric types, or the minimal length of strings. Note that the value of any options may be outside of this value. (optional).</td></tr>
-  <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value. (optional).</td></tr>  
+  <tr><td>parameter.min</td><td>The minimal value for numeric types, or the minimal length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>
+  <tr><td>parameter.max</td><td>The maximum value for numeric types, or the maximum length of strings. Note that the value of any options may be outside of this value (optional).</td></tr>  
   <tr><td>parameter.step</td><td>The value granularity for a numeric value (optional).</td></tr>
   <tr><td>parameter.pattern</td><td>The regular expression for a text type (optional).</td></tr>
   <tr><td>parameter.required</td><td>Specifies whether the value is required (optional).</td></tr>
@@ -89,16 +89,16 @@ These must be inside the XML escape sequence - eg.
   <tr><td>parameter.groupName</td><td>Sets a group name for this parameter (optional).</td></tr>
   <tr><td>parameter.unit</td><td>Specifies the unit of measurements. The unit declaration in the parameter definition shown above contains the set of valid units. The unit must only be set if the type of the parameter is either integer or decimal (optional).</td></tr>
   <tr><td>advanced</td><td>Specifies that this is an advanced parameter. Advanced parameters may be hidden by a UI (optional).</td></tr>
-  <tr><td>verify</td><td>Specifies that this is parameter requires a verification stage with the user before sending. Parameters flagged with *verify=true* could be considered dangerous and should be protected from accidental use by a UI - eg by adding an "Are you sure" prompt (optional).</td></tr>
+  <tr><td>verify</td><td>Specifies that this is parameter requires a verification stage with the user before sending. Parameters flagged with *verify=true* could be considered dangerous and should be protected from accidental use by a UI - e.g. by adding an "Are you sure" prompt (optional).</td></tr>
   <tr><td>context</td><td>The context of the configuration parameter (optional).</td></tr>
   <tr><td>required</td><td>The flag indicating if the configuration parameter has to be set or not (deprecated, optional, default: false).</td></tr>
-  <tr><td>default</td><td>The default value of the configuration parameter (optional).</td></tr>
+  <tr><td>default</td><td>The default value of the configuration parameter (optional). If `multiple` is true you can define a list of default values, separating them by a comma (`,`).</td></tr>
   <tr><td>label</td><td>A human-readable label for the configuration parameter (optional).</td></tr>
   <tr><td>description</td><td>A human-readable description for the configuration parameter (optional).</td></tr>
   <tr><td>unitLabel</td><td>The unit label represents a human-readable label for the unit. It can also be used to provide unit labels for natural language units as iterations, runs, etc. The unit label must only be set if the type of the parameter is either integer or decimal (optional).</td></tr>
   <tr><td>option</td><td>The element definition of a static selection list (optional).</td></tr>
   <tr><td>option.value</td><td>The value of the selection list element. Note that the value may be outside of the range specified in the min/max if this is specified.</td></tr>
-  <tr><td>multipleLimit</td><td>If multiple is true, sets the maximum number of options that can be selected (optional).</td></tr>
+  <tr><td>multipleLimit</td><td>If `multiple` is true, sets the maximum number of options that can be selected (optional).</td></tr>
   <tr><td>limitToOptions</td><td>If true (default) will only allow the user to select items in the options list. If false, will allow the user to enter other text (optional).</td></tr>
   <tr><td>criteria</td><td>The filter criteria for values of a dynamic selection list (optional).</td></tr>  
   <tr><td>criteria.name</td><td>The name of the context related filter.</td></tr>  
@@ -106,7 +106,9 @@ These must be inside the XML escape sequence - eg.
 
 ### Supported Contexts
 
-Context is used to provide some semantic details about the parameter. The UIs use it to render different kind of input widgets. The following contexts require a specific format of the content:
+Context is used to provide some semantic details about the parameter.
+The UIs use it to render different kind of input widgets.
+The following contexts require a specific format of the content:
 
 <table><tr><th>Name</th><th>Type</th><th>Format</th><th>Sample implementation</th></tr>
   <tr><td>network-address</td><td>text</td><td>IPv4,IPv6, domain name</td><td><code>&lt;input type="text"/></code></td></tr>
@@ -131,7 +133,6 @@ Context is used to provide some semantic details about the parameter. The UIs us
   <tr><td>channel</td><td>text</td><td>UID of a channel<br></td><td>custom input field</td></tr>
   <tr><td>rule</td><td>text</td><td>UID of a rule<br></td><td>custom input field</td></tr>
   <tr><td>location</td><td>text</td><td>latitude,longitude[,altitude]<br></td><td>custom input field</td></tr>
-  
 </table>
 
 Further, the <strong>item</strong> context can contain criteria to filter the list of items. For example:
@@ -171,14 +172,12 @@ A parameter can be placed into a group so that the UI knows how to display the i
   <tr><td>advanced</td><td>Specifies that this is an advanced group. The UI may hide this group from the user (optional).</td></tr>
 </table>
 
-
 The full XML schema for configuration descriptions is specified in the [openHAB config description XSD](https://openhab.org/schemas/config-description-1.0.0.xsd) file.
 
 **Hints:**
 
 - Although the attribute `uri` is optional, it *must* be specified in configuration description files.
 Only for embedded configuration descriptions in documents for binding definitions and `Thing` type descriptions, the attribute is optional.
-
 
 ## Example
 
@@ -192,17 +191,32 @@ The following code gives an example for one configuration description.
     xsi:schemaLocation="https://openhab.org/schemas/config-description/v1.0.0
         https://openhab.org/schemas/config-description-1.0.0.xsd">
 
-  <parameter name="ipAddress" type="text" required="true">
+  <parameter-group name="connection">
+    <label>Connection</label>
+    <description>Connection settings.</description>
+  </parameter-group>
+
+  <parameter-group name="authentication">
+    <label>Authentication</label>
+    <description>Authentication settings.</description>
+  </parameter-group>
+
+  <parameter name="ipAddress" type="text" required="true" groupName="connection">
     <context>network-address</context>
     <label>Network Address</label>
     <description>Network address of the device.</description>
   </parameter>
 
-  <parameter name="userName" type="text" required="true">
+  <parameter name="port" type="integer" min="0" max="65535" multiple="true" groupName="connection">
+    <label>Port</label>
+    <default>80,443,8080</default>
+  </parameter>
+
+  <parameter name="userName" type="text" required="true" groupName="authentication">
     <label>User Name</label>
   </parameter>
 
-  <parameter name="password" type="text" required="false">
+  <parameter name="password" type="text" required="false" groupName="authentication">
     <context>password</context>
   </parameter>
 
