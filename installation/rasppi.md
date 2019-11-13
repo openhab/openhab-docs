@@ -17,7 +17,7 @@ These including the official [raspberrypi.org help articles](https://www.raspber
 
 Recommendations for a ["headless"](https://en.wikipedia.org/wiki/Headless_computer) hardware setup:
 
-- [Raspberry Pi 2 or newer](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
+- [Raspberry Pi 2 or better](https://en.wikipedia.org/wiki/Raspberry_Pi#Specifications), compare your existing device [here](https://en.wikipedia.org/wiki/Raspberry_Pi#Connectors) if you are unsure.
 - SD card (16GB or more to support [wear-leveling](https://en.wikipedia.org/wiki/Wear_leveling))
 - Steady power supply
 - Ethernet connection
