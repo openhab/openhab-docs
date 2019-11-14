@@ -804,7 +804,7 @@ Association group 1 supports 1 node.
 
 allows to synchronize state of other FIBARO RGBW Controller devices (FGRGBW-442 and FGRGBWM- 441)
 
- **- do not use with other devices.**
+- do not use with other devices.
 
 Association group 2 supports 5 nodes.
 

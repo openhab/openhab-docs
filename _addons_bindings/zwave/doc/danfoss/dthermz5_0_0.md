@@ -95,7 +95,7 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 1 | Temperature Report threshold | Range is from 0.1 to 10°C 1=0.1°C 100=10°C |
+| 1 | Temperature Report threshold | Temperature Report threshold |
 | 2 | Set-point display resolution | range from 0.1 to 10°C 1=0.1°C 100=10°C |
 | 3 | Min Set-point and override limit | from min 0°C to max setpoint override limit 0=0°C 40=40°C |
 | 4 | Max Set-point and override limit | from min setpoint override limit to max 40°C 0=0°C 40=40°C |
@@ -111,11 +111,11 @@ Detailed information on each parameter can be found in the sections below.
 
 ### Parameter 1: Temperature Report threshold
 
-Range is from 0.1 to 10°C 1=0.1°C 100=10°C
-Default value 5 = 0.5 °C
-Values in the range 0 to 1 may be set.
+Temperature Report threshold
+Range is from 0.1 to 10°C 1=0.1°C 100=10°C, default value 5 = 0.5 °C
+Values in the range 1 to 100 may be set.
 
-The manufacturer defined default value is ```0```.
+The manufacturer defined default value is ```5```.
 
 This parameter has the configuration ID ```config_1_2``` and is of type ```INTEGER```.
 

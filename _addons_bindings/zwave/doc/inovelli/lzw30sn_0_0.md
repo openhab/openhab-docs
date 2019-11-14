@@ -293,7 +293,9 @@ Byte 2 = Brightness.  Sets the brightness in 10% increments.
 
 Byte 3 = Duration. 
 
-Byte 4 = Effect. Sets the effect: 0 = Off, 1 = Solid, 2 = Fast Blink, 3 = Slow Blink, 4 = PulseThis is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Byte 4 = Effect. Sets the effect: 0 = Off, 1 = Solid, 2 = Fast Blink, 3 = Slow Blink, 4 = Pulse
+
+Addition:  To get the final code for the desired color/effect/duration, use this calculator:  https://nathanfiscus.github.io/inovelli-notification-calc/This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 83823359 may be set.
 
 The manufacturer defined default value is ```0```.
