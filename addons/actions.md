@@ -47,10 +47,10 @@ They can be found in the article about [openHAB multimedia]({{base}}/configurati
 - `logWarn(String loggername, String logText)`: Logs logText on level WARN to openhab.log
 - `logError(String loggername, String logText)`: Logs logText on level ERROR to openhab.log
 
-`logText` can be a compete String, constructed through concatination, or through arguments.
+`logText` can be a compete String, constructed through concatenation, or through arguments.
 
 - **Complete String Example:** `logInfo("Garage", "This is a complete String")`
-- **Concatination Example:** `logDebug("Lighting", "This is a string concatination:" + Light.name)`
+- **Concatenation Example:** `logDebug("Lighting", "This is a string concatenation:" + Light.name)`
 - **Arguments Example:** `logWarn("Alarm", "The {} window has been open for {} hours!", Window.name, timeOpen)`
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
