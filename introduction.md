@@ -127,7 +127,7 @@ However, it is worth noting two potential limitations of Raspberry Pis:
 RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are installed.
 Two or more GB should be fine.
 Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions.
-So as right now that you're reading this, enable the [ZRAM feature](https://community.openhab.org/t/zram-status/80996) in openHABian (menu option 38) to mitigate SD wearout/corruption and also enable delayed rules loading (option 44).
+If you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
