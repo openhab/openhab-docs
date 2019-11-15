@@ -823,61 +823,72 @@ Switch ToggleComponent "Toggle Component" {alexa="ToggleController.toggleState"}
   `Switch LightSwitch "Light Switch" {alexa="PowerController.powerState" [category="OTHER"]}`
   * List of Alexa categories currently supported from [Alexa Skill API](https://developer.amazon.com/docs/device-apis/alexa-discovery.html#display-categories) docs:
 
-Category | Description | Notes
----------|-------------|-------
-ACTIVITY_TRIGGER | Describes a combination of devices set to a specific state, when the state change must occur in a specific order. |For example, a "watch Netflix" scene might require the: 1. TV to be powered on & 2. Input set to HDMI1. | Applies to Scenes
-CAMERA | Indicates media devices with video or photo capabilities.  
-CONTACT_SENSOR | Indicates an endpoint that detects and reports changes in contact between two surfaces.
-DOOR | Indicates a door.  
-DOORBELL | Indicates a doorbell.
-LIGHT | Indicates light sources or fixtures.
-MICROWAVE | Indicates a microwave oven endpoint.  
-MOTION_SENSOR | Indicates an endpoint that detects and reports movement in an area.
-OTHER | An endpoint that cannot be described in on of the other categories.  
-SCENE_TRIGGER | Describes a combination of devices set to a specific state, when the order of the state change is not important. For example a bedtime scene might include turning off lights and lowering the thermostat, but the order is unimportant. | Applies to Scenes
-SECURITY_PANEL | Indicates a security panel.
-SMARTLOCK | Indicates an endpoint that locks.  
-SMARTPLUG | Indicates modules that are plugged into an existing electrical outlet. | Can control a variety of devices.
-SPEAKER | Indicates the endpoint is a speaker or speaker system.  
-SWITCH | Indicates in-wall switches wired to the electrical system. | Can control a variety of devices.
-TEMPERATURE_SENSOR | Indicates endpoints that report the temperature only.  
-THERMOSTAT | Indicates endpoints that control temperature, stand-alone air conditioners, or heaters with direct temperature control.  
-TV | Indicates the endpoint is a television.  
+Category | Description
+---------|------------
+ACTIVITY_TRIGGER | A combination of devices set to a specific state. Use activity triggers for scenes when the state changes must occur in a specific order. For example, for a scene named "watch Netflix" you might power on the TV first, and then set the input to HDMI1.
+CAMERA | A media device with video or photo functionality.
+CONTACT_SENSOR | An endpoint that detects and reports changes in contact between two surfaces.
+DOOR | A door.
+DOORBELL | A doorbell.
+EXTERIOR_BLIND | A window covering on the outside of a structure.
+FAN | A fan.
+INTERIOR_BLIND | A window covering on the inside of a structure.
+LIGHT | A light source or fixture.
+MICROWAVE | A microwave oven.
+MOTION_SENSOR | An endpoint that detects and reports movement in an area.
+OTHER | An endpoint that doesn't belong to one of the other categories.
+OVEN | An oven cooking appliance.
+SCENE_TRIGGER | A combination of devices set to a specific state. Use scene triggers for scenes when the order of the state change is not important. For example, for a scene named "bedtime" you might turn off the lights and lower the thermostat, in any order.
+SCREEN | A projector screen.
+SECURITY_PANEL | A security panel.
+SMARTLOCK | An endpoint that locks.
+SMARTPLUG | A module that is plugged into an existing electrical outlet, and then has a device plugged into it. For example, a user can plug a smart plug into an outlet, and then plug a lamp into the smart plug. A smart plug can control a variety of devices.
+SPEAKER | A speaker or speaker system.
+SWITCH | A switch wired directly to the electrical system. A switch can control a variety of devices.
+TEMPERATURE_SENSOR | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint is not shown in the Alexa app.
+THERMOSTAT | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control.
+TV | A television.
 
 ### Asset Catalog
   * List of Alexa asset catalog from [Alexa Skill API](https://developer.amazon.com/docs/device-apis/resources-and-assets.html#global-alexa-catalog) docs:
 
 Asset Identifier | Supported Friendly Names
 -----------------|-------------------------
-DeviceName.Shower | Shower
-DeviceName.Washer | Washer<br>Washing Machine
-DeviceName.Router | Router<br>Internet Router<br>Network Router<br>Wifi Router<br>Net Router
-DeviceName.Fan | Fan<br>Blower
 DeviceName.AirPurifier | Air Purifier<br>Air Cleaner<br>Clean Air Machine
+DeviceName.Fan | Fan<br>Blower
+DeviceName.Router | Router<br>Internet Router<br>Network Router<br>Wifi Router<br>Net Router
+DeviceName.Shade | Shade<br>Blind<br>Curtain<br>Roller<br>Shutter<br>Drape<br>Awning<br>Window shade<br>Interior blind
+DeviceName.Shower | Shower
 DeviceName.SpaceHeater | Space Heater<br>Portable Heater
-Shower.RainHead | Rain Head<br>Overhead shower<br>Rain Shower<br>Rain Spout<br>Rain Faucet
-Shower.HandHeld | Handheld Shower<br>Shower Wand<br>Hand Shower
-Setting.WaterTemperature | Water Temperature<br>Water Temp<br>Water Heat
-Setting.Temperature | Temperature<br>Temp
-Setting.WashCycle | Wash Cycle<br>Wash Preset<br>Wash setting
+DeviceName.Washer | Washer<br>Washing Machine
 Setting.2GGuestWiFi | 2.4G Guest Wi-Fi<br>2.4G Guest Network<br>Guest Network 2.4G<br>2G Guest Wifi
 Setting.5GGuestWiFi | 5G Guest Wi-Fi<br>5G Guest Network<br>Guest Network 5G<br>5G Guest Wifi
-Setting.GuestWiFi | Guest Wi-fi<br>Guest Network<br>Guest Net
 Setting.Auto | Auto<br>Automatic<br>Automatic Mode<br>Auto Mode
-Setting.Night | Night<br>Night Mode
-Setting.Quiet | Quiet<br>Quiet Mode<br>Noiseless<br>Silent
-Setting.Oscillate | Oscillate<br>Swivel<br>Oscillation<br>Spin<br>Back and forth
-Setting.FanSpeed | Fan Speed<br>Airflow speed<br>Wind Speed<br>Air speed<br>Air velocity<br>
-Setting.Preset | Preset<br>Setting
-Setting.Mode | Mode
 Setting.Direction | Direction
+Setting.DryCycle | Dry Cycle<br>Dry Preset<br>Dry Setting<br>Dryer Cycle<br>Dryer Preset<br>Dryer Setting
+Setting.FanSpeed | Fan Speed<br>Airflow speed<br>Wind Speed<br>Air speed<br>Air velocity
+Setting.GuestWiFi | Guest Wi-fi<br>Guest Network<br>Guest Net
+Setting.Heat | Heat
+Setting.Mode | Mode
+Setting.Night | Night<br>Night Mode
+Setting.Opening | Opening<br>Height<br>Lift<br>Width
+Setting.Oscillate | Oscillate<br>Swivel<br>Oscillation<br>Spin<br>Back and forth
+Setting.Preset | Preset<br>Setting
+Setting.Quiet | Quiet<br>Quiet Mode<br>Noiseless<br>Silent
+Setting.Temperature | Temperature<br>Temp
+Setting.WashCycle | Wash Cycle<br>Wash Preset<br>Wash setting
+Setting.WaterTemperature | Water Temperature<br>Water Temp<br>Water Heat
+Shower.HandHeld | Handheld Shower<br>Shower Wand<br>Hand Shower
+Shower.RainHead | Rain Head<br>Overhead shower<br>Rain Shower<br>Rain Spout<br>Rain Faucet
+Value.Close | Close
 Value.Delicate | Delicates<br>Delicate
-Value.QuickWash | Quick Wash<br>Fast Wash<br>Wash Quickly<br>Speed Wash
-Value.Maximum | Maximum<br>Max
-Value.Minimum | Minimum<br>Min
 Value.High | High
 Value.Low | Low
+Value.Maximum | Maximum<br>Max
 Value.Medium | Medium<br>Mid
+Value.Minimum | Minimum<br>Min
+Value.Open | Open
+Value.QuickWash | Quick Wash<br>Fast Wash<br>Wash Quickly<br>Speed Wash
 
 ### Unit of Measurement Catalog
   * List of Alexa unit of measurement catalog from [Alexa Skill API](https://developer.amazon.com/docs/device-apis/alexa-rangecontroller.html#supported-values-for-unitofmeasure) docs:
