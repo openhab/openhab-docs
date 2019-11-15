@@ -97,13 +97,7 @@ This script is specific for binding addons. Folllow these steps to generate your
 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
-1. From the `/openhab2-addons/bom/openhab-addons` directory run:
-   ```
-   mvn -DskipChecks -DskipTests clean install
-   ```
-   to rebuild the list of bindings in the BOM (Bill Of Material) and make your new binding visible from the IDE launch configuration
-
-1. From `openhab2-addons` root you can build your binding with maven:
+1. From `openhab2-addons` root you can build only your binding with maven using the `-pl` option:
     ```
     mvn clean install -pl :org.openhab.binding.mynewbinding
     ```
