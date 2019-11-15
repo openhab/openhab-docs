@@ -124,7 +124,8 @@ If you feel serious about home automation it may be better to start with a dedic
 For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 4 with 2 or 4 GB for the best experience, but a RPi 2 or 3 is fine, too)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
 However, it is worth noting two potential limitations of Raspberry Pis:
-RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as database and data visualization programs are installed. 2 or more GB should be fine.
+RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are installed.
+Two or more GB should be fine.
 Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions.
 So as right now that you're reading this, enable the [ZRAM feature](https://community.openhab.org/t/zram-status/80996) in openHABian (menu option 38) to mitigate SD wearout/corruption and also enable delayed rules loading (option 44).
 
