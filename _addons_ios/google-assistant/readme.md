@@ -17,22 +17,39 @@ With the Action you can voice control your openHAB items and it supports lights,
 
 ## Requirements
 
-* [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org. (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only needed for the IFTTT service!) 
+* [openHAB Cloud Connector](http://docs.openhab.org/addons/ios/openhabcloud/readme.html) configured using myopenHAB.org. (Items DO NOT need to be exposed to and will not show up on myopenHAB.org, this is only needed for the IFTTT service!)
 * Google account.
 * Google Home or Google Home mini.
 
 ## Item configuration
 In openHAB 2 Items are exposed via [tags](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax). Currently the following Tags are supported (also depending on Googles API capabilities):
-* ["Lighting"]
-* ["Switchable"]
-* ["Blinds"]
-* ["Scene"]
-* ["Outlet"]
-* ["Thermostat"] 
-* ["CurrentTemperature"] as part of Thermostat or standalone.
-* ["CurrentHumidity"] as part of Thermostat.
-* ["TargetTemperature"] as part of Thermostat.
-* ["homekit:HeatingCoolingMode"] as part of Thermostat.
+
+* Switch / Dimmer / Color ["Lighting"]
+* Switch ["Switchable"]
+* Switch ["Outlet"]
+* Switch ["Fan"]
+* Switch ["CoffeeMaker"]
+* Switch ["WaterHeater"]
+* Switch ["Fireplace"]
+* Switch ["Valve"]
+* Switch ["Sprinkler"]
+* Switch ["Vacuum"]
+* Switch ["Scene"]
+* Switch ["Lock"]
+* Rollershutter ["Awning"]
+* Rollershutter ["Blinds"]
+* Rollershutter ["Curtain"]
+* Rollershutter ["Door"]
+* Rollershutter ["Garage"]
+* Rollershutter ["Gate"]
+* Rollershutter ["Pergola"]
+* Rollershutter ["Shutter"]
+* Rollershutter ["Window"]
+* Group ["Thermostat"]
+* Number ["CurrentTemperature"] as part of Thermostat.
+* Number ["CurrentHumidity"] as part of Thermostat.
+* Number ["homekit:TargetTemperature"] as part of Thermostat.
+* Number / String ["homekit:TargetHeatingCoolingMode"] as part of Thermostat.
 
   ```
   Switch KitchenLights "Kitchen Lights" <light> (gKitchen) [ "Switchable" ]
@@ -40,19 +57,17 @@ In openHAB 2 Items are exposed via [tags](https://www.openhab.org/docs/configura
   Color LivingroomLights "Livingroom Lights" <light> (gLivingroom) [ "Lighting" ]
   Switch SceneMovie "Scene Movie" (gLivingroom) [ "Scene" ]
   Switch CristmasTree "Cristmas Tree" (gLivingroom) [ "Outlet" ]
-  
-  //Standalone Thermostat Sensor (just reports current ambient temperature)
-  Number HK_SF_Bedroom_Temp "Bedroom Temperature [%.1f]" [ "CurrentTemperature", "Fahrenheit"]
-  
-  //Thermostat Setup (Google requires a mode, even if you manually set it up in Openhab)
+  Switch DoorLock "Door Lock" [ "Lock" ]
+
+  //Thermostat Setup (Google requires a mode, even if you manually set it up in openHAB)
   Group g_HK_Basement_TSTAT "Basement Thermostat" [ "Thermostat", "Fahrenheit" ]
-    Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) [ "homekit:HeatingCoolingMode" ]
-    Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) [ "CurrentTemperature" ]
-    Number HK_Basement_Humid "Basement Humidity" (g_HK_Basement_TSTAT) [ "CurrentHumidity" ]
-    Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) [ "TargetTemperature" ]
+  Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) [ "homekit:TargetHeatingCoolingMode" ]
+  Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) [ "CurrentTemperature" ]
+  Number HK_Basement_Humid "Basement Humidity" (g_HK_Basement_TSTAT) [ "CurrentHumidity" ]
+  Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) [ "homekit:TargetTemperature" ]
   ```
 
-Item labels are not mandatory in openhab, but for the Google Assistant Action they are absolutely necessary!
+Item labels are not mandatory in openHAB, but for the Google Assistant Action they are absolutely necessary!
 
 It is the "label text" (e.g. "Kitchen Lights" for example above) and not the item's name that will be available to you via vocal commands or in the Google Home app, so make it unique and easy to say!
 
@@ -135,26 +150,26 @@ Here are some example voice commands:
  ## Frequently Asked Question
 
  My New items did not appear in the Google Home app.
- 
+
  * Say: Hey Google, sync my devices.
 
- I'm not able to connect OpenHAB to Google Home.
+ I'm not able to connect openHAB to Google Home.
 
 * Check, recheck and after that check again your items!
 * The items that you want to expose to Google Assistant should have the right tags.
 * The items that you want to expose to Google Assistant must have a item label! [Item Definition and Syntax](https://www.openhab.org/docs/configuration/items.html#item-definition-and-syntax)
 * If you expose thermostats make sure than you have:
   * A group item with the tag [ "Thermostat" ]
-  * A number or string item with the tag [ "homekit:HeatingCoolingMode" ]
+  * A number or string item with the tag [ "homekit:TargetHeatingCoolingMode" ]
   * A number item with the tag [ "CurrentTemperature" ]
-  * A number item with the tag [ "TargetTemperature" ]
+  * A number item with the tag [ "homekit:TargetTemperature" ]
   ```
   Group g_HK_Basement_TSTAT "Basement Thermostat" [ "Thermostat", "Fahrenheit" ]
-    Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) [ "homekit:HeatingCoolingMode" ]
-    Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) [ "CurrentTemperature" ]
-    Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) [ "TargetTemperature" ]
+  Number HK_Basement_Mode "Basement Heating/Cooling Mode" (g_HK_Basement_TSTAT) [ "homekit:TargetHeatingCoolingMode" ]
+  Number HK_Basement_Temp "Basement Temperature" (g_HK_Basement_TSTAT) [ "CurrentTemperature" ]
+  Number HK_Basement_Setpoint "Basement Setpoint" (g_HK_Basement_TSTAT) [ "homekit:TargetTemperature" ]
   ```
-* If none of the above solutions works for you: 
+* If none of the above solutions works for you:
   * Remove all the tags.
   * Make a new .item file with 1 item to expose.
   ```
