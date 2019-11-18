@@ -121,11 +121,13 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 4 with 2 or 4 GB for the best experience, but a RasPi 2 or 3 is fine, too)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 4 with 2 or 4 GB for the best experience, but a RPi 2 or 3 is fine, too)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
-However, it is worth noting two potential limitations of Raspberry Pis. 
-They are limited in RAM (memory) and may not perform well when additional database and data visualization programs are installed.
-Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions. Use the ZRAM feature in openHABian to mitigate.
+However, it is worth noting two potential limitations of Raspberry Pis:
+RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are installed.
+Two or more GB should be fine.
+Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions.
+If you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
@@ -141,7 +143,8 @@ Along the way, you may have some questions; the openHAB community is here to hel
 
 openHAB is not just software - it is also a **community** of users, contributors and maintainers, working together on an open-source, interoperable approach to home automation. 
 The center of this community is the [openHAB community forum](https://community.openhab.org). 
-It is an active and responsive community of developers and maintainers who generally respond quite quickly to forum questions. 
+It is an active and responsive community of experienced users who generally respond quite quickly to forum questions.
+[Mind the rules](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396), please.
 
 Remember that openHAB is an open-source development, driven exclusively by volunteers. 
 Please be kind and courteous, it will be most appreciated by those that will try to help you.
