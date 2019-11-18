@@ -578,7 +578,7 @@ Examples are:
 
 If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions.
 
-Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the [Module Development](../module-types.html) chapter.
+Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the developing [Module Types](../module-types/) chapter.
 
 You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`:
 
