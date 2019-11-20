@@ -310,10 +310,10 @@ This type presents a value as a user-adjustable control which slides from left (
 -   `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
--   `switchSupport` is a parameter without an assignment
+-   `switchSupport` is a parameter without an assignment.
     - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
     - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
-    - This has no effect in other UIs.
+    - This parameter has no effect in other UIs.
 
 -   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
 -   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
