@@ -109,9 +109,9 @@ The types in the **Configuration** object are restricted to the following:
 
 **JSON schemas for:**
 
- * [module types](../development/rules/ModuleTypes_schema.json)
- * [rule templates](../development/rules/Templates_schema.json)
- * [rule instances](../development/rules/Rules_schema.json)
+ * [module types](../../schemas/ModuleTypes_schema.json)
+ * [rule templates](../../schemas/Templates_schema.json)
+ * [rule instances](../../schemas/Rules_schema.json)
 
 ### Sample Rules
 
