@@ -40,7 +40,7 @@ The following table summarises the channels available for the YKFCON -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
-| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Raw Alarm | alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
@@ -54,18 +54,11 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Locked |
 | OFF | Unlocked |
 
-### Alarm
-Indicates if an alarm is triggered.
+### Raw Alarm
+Provides alarm parameters as json string.
 
-The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
-
+The ```alarm_raw``` channel is of type ```alarm_raw``` and supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
+This channel sets, and provides the alarm state as a JSON string. It is designed for use in rules.
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 
