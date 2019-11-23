@@ -5,6 +5,7 @@ title: Amazon Echo Control - Bindings
 type: binding
 description: "This binding can control Amazon Echo devices (Alexa)."
 since: 2x
+logo: images/addons/amazonechocontrol.png
 install: auto
 ---
 
