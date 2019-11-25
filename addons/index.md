@@ -4,7 +4,7 @@ layout: documentation
 
 {% include base.html %}
 
-# Add-ons
+# Add-ons for automated label assignment testing !!!!11!
 
 All add-ons for openHAB 2 are part of the distribution.
 This includes all 2.x Bindings as well as all 1.x add-ons that were reported to be compatible.
