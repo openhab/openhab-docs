@@ -42,11 +42,8 @@ The following table summarises the channels available for the LZW31-SN -:
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED Strip Effect | config_decimal | config_decimal |  | Number | 
-<<<<<<< HEAD
-=======
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
->>>>>>> dde47a6d... Database update
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -85,8 +82,6 @@ Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
-<<<<<<< HEAD
-=======
 ### Default Level (Local)
 Generic class for configuration parameter.
 
@@ -97,31 +92,19 @@ Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
->>>>>>> dde47a6d... Database update
 
 
 ## Device Configuration
 
-<<<<<<< HEAD
-The following table provides a summary of the 21 configuration parameters available in the LZW31-SN.
-=======
 The following table provides a summary of the 22 configuration parameters available in the LZW31-SN.
->>>>>>> dde47a6d... Database update
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-<<<<<<< HEAD
-| 1 | Dimming Speed | Dimming Speed |
-| 2 | Dimming Speed (Z-Wave) | Dimming Speed (Z-Wave) |
-| 3 | Ramp Rate | Ramp Rate |
-| 4 | Ramp Rate (Z-Wave) | Ramp Rate (Z-Wave) |
-=======
 | 1 | Dimming Speed (Z-Wave) | Dimming Speed (Z-Wave) |
 | 2 | Dimming Speed (from switch) | Dimming Speed (from switch) |
 | 3 | Ramp Rate (Z-Wave) | Ramp Rate (Z-Wave) |
 | 4 | Ramp Rate (from switch) | Ramp Rate (from switch) |
->>>>>>> dde47a6d... Database update
 | 5 | Minimum Dim Level | Minimum Dim Level |
 | 6 | Maximum Dim Level | Maximum Dim Level |
 | 7 | Invert Switch | Invert Switch |
@@ -129,10 +112,7 @@ Detailed information on each parameter can be found in the sections below.
 | 9 | Default Level (Local) | Default Level (Local) |
 | 10 | Default Level (Z-Wave) | Default Level (Z-Wave) |
 | 11 | Power On State | Power On State |
-<<<<<<< HEAD
-=======
 | 12 | Association Behavior | Association Behavior |
->>>>>>> dde47a6d... Database update
 | 13 | LED Indicator Color | LED Indicator Color |
 | 14 | LED Indicator Intensity | LED Indicator Intensity |
 | 15 | LED Indicator Intensity (When Off) | LED Indicator Intensity (When Off) |
@@ -144,15 +124,9 @@ Detailed information on each parameter can be found in the sections below.
 | 21 | AC Power Type | AC Power Type |
 | 22 | Switch Type | Switch Type |
 
-<<<<<<< HEAD
-### Parameter 1: Dimming Speed
-
-Dimming Speed
-=======
 ### Parameter 1: Dimming Speed (Z-Wave)
 
 Dimming Speed (Z-Wave)
->>>>>>> dde47a6d... Database update
 
 Values in the range 0 to 100 may be set.
 
@@ -161,15 +135,9 @@ The manufacturer defined default value is ```3```.
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
 
-<<<<<<< HEAD
-### Parameter 2: Dimming Speed (Z-Wave)
-
-Dimming Speed (Z-Wave)
-=======
 ### Parameter 2: Dimming Speed (from switch)
 
 Dimming Speed (from switch)
->>>>>>> dde47a6d... Database update
 
 Values in the range 0 to 101 may be set.
 
@@ -178,15 +146,9 @@ The manufacturer defined default value is ```101```.
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
 
-<<<<<<< HEAD
-### Parameter 3: Ramp Rate
-
-Ramp Rate
-=======
 ### Parameter 3: Ramp Rate (Z-Wave)
 
 Ramp Rate (Z-Wave)
->>>>>>> dde47a6d... Database update
 
 Values in the range 0 to 101 may be set.
 
@@ -195,15 +157,9 @@ The manufacturer defined default value is ```101```.
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
 
-<<<<<<< HEAD
-### Parameter 4: Ramp Rate (Z-Wave)
-
-Ramp Rate (Z-Wave)
-=======
 ### Parameter 4: Ramp Rate (from switch)
 
 Ramp Rate (from switch)
->>>>>>> dde47a6d... Database update
 
 Values in the range 0 to 101 may be set.
 
@@ -296,8 +252,6 @@ The manufacturer defined default value is ```0```.
 This parameter has the configuration ID ```config_11_1``` and is of type ```INTEGER```.
 
 
-<<<<<<< HEAD
-=======
 ### Parameter 12: Association Behavior
 
 Association Behavior
@@ -311,7 +265,6 @@ The manufacturer defined default value is ```15```.
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
 
->>>>>>> dde47a6d... Database update
 ### Parameter 13: LED Indicator Color
 
 LED Indicator Color
@@ -349,11 +302,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 
 LED Strip Effect
 This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
-<<<<<<< HEAD
-Values in the range 0 to 83823359 may be set.
-=======
 Values in the range 0 to 100600575 may be set.
->>>>>>> dde47a6d... Database update
 
 The manufacturer defined default value is ```0```.
 
