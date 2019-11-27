@@ -1,23 +1,17 @@
-# Add 'priority: middle :soon::tm:' label to any file change
-"priority:: middle ::soon::::tm::":
-  - '**'
-  - '.*'
-  - '.*/**'
-
-"section:: add-ons":
+section => add-ons:
   - addons/*
 
-"section:: administration":
+section => administration:
   - administration/*
 
-"section:: configuration":
+section => configuration:
   - configuration/*
 
-"section:: development":
+section => development:
   - developers/*
 
-"section:: installation":
+section => installation:
   - installation/*
 
-"section:: tutorials":
+section => tutorials:
   - tutorials/*
