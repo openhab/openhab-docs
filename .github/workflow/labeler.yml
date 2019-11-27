@@ -1,5 +1,7 @@
 name: Pull request labeler
 on:
+  pull_request:
+    types: [opened, synchronize, reopened]
   schedule:
     - cron: '*/15 * * * *'
 
