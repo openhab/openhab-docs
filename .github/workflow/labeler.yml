@@ -1,7 +1,7 @@
 name: Pull request labeler
 on:
   schedule:
-    - cron: '0/15 * * * *'
+    - cron: '*/15 * * * *'
 
 jobs:
   labeler:
