@@ -1,14 +1,16 @@
-name: Pull request labeler
+name: Labeler
 on:
+  pull_request:
+    types: [open,synchronize,reopen]
   schedule:
-    - cron: '*/15 * * * *'
+    - cron: '0/15 * * * *'
 
 jobs:
-  labeler:
+  label:
     runs-on: ubuntu-latest
     steps:
-      - uses: paulfantom/periodic-labeler@v0.0.1
-        env:
+    - uses: paulfantom/periodic-labeler@v0.0.1
+      env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_REPOSITORY: ${{ github.repository }}
           LABEL_MAPPINGS_FILE: .github/labeler.yml

@@ -1,17 +1,23 @@
-section => add-ons:
+# Add 'priority: middle 🔜' label to any file change
+"priority: middle 🔜":
+  - '**'
+  - '.*'
+  - '.*/**'
+  
+"section => add-ons":
   - addons/*
 
-section => administration:
+"section => administration":
   - administration/*
 
-section => configuration:
+"section => configuration":
   - configuration/*
 
-section => development:
+"section => development":
   - developers/*
 
-section => installation:
+"section => installation":
   - installation/*
 
-section => tutorials:
+"section => tutorials":
   - tutorials/*
