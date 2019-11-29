@@ -5,6 +5,7 @@ title: JsonPath - Transformation Services
 type: transform
 description: "Transforms a JSON structure on basis of the [JsonPath](https://github.com/jayway/JsonPath#jayway-jsonpath) expression to an JSON containing the requested data."
 since: 2x
+logo: images/addons/jsonpath.png
 install: auto
 ---
 
