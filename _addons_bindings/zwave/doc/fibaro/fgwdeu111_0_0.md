@@ -120,7 +120,6 @@ Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
 |-------|-------|-------------|
-| 0 | ON/OFF mode | ON/OFF mode |
 | 1 | Remember device state | Determines how the device will react in the event of power supply failure |
 | 2 | Overload safety switch | Turn off the controlled device in case of exceeding the defined power |
 | 10 | LED frame – power limit | Determines maximum active power. |
@@ -159,6 +158,7 @@ Detailed information on each parameter can be found in the sections below.
 | 165 | Double click – set level | Double click – set level |
 | 170 | Load control mode | Load control mode |
 | 171 | Load control mode recognized  | Load control mode recognized during auto-calibration |
+| 172 | ON/OFF mode | ON/OFF mode |
 | 173 | Dimmability of the load (read only) | Dimmability of the load (read only) |
 | 174 | Soft-start functionality | Soft-start functionality |
 | 175 | Auto-calibration after power on | Auto-calibration after power on |
@@ -166,29 +166,6 @@ Detailed information on each parameter can be found in the sections below.
 | 177 | Brightness level correction flickering  | Brightness level correction for flickering loads |
 | 178 | Method of calculating the active power | Method of calculating the active power |
 | 179 | Approximated power at max brightness | Approximated power at the maximum brightness level |
-
-### Parameter 0: ON/OFF mode
-
-ON/OFF mode
-This mode is necessary while connecting non-dimmable light sources. Setting this parameter to 1 automatically ignores brightening/dimming time settings. Forced auto-calibration will set this parameter’s value to 2.
-
-Parameter size: 1B
-
-Default value: 2
-
-Available values:
-
-0 – ON/OFF mode disabled (dimming is possible)
-
-1 – ON/OFF mode enabled (dimming is not possible)
-
-2 – mode selected automatically
-Values in the range 0 to 2 may be set.
-
-The manufacturer defined default value is ```2```.
-
-This parameter has the configuration ID ```config_0_1``` and is of type ```INTEGER```.
-
 
 ### Parameter 1: Remember device state
 
@@ -218,6 +195,9 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 Turn off the controlled device in case of exceeding the defined power
 This function allows to turn off the controlled device in case of exceeding the defined power. Controlled device can be turned back on via the button or sending a control frame.
+
+0 – function disabled  
+10-5000 (1.0-500.0W, step 0.1W) – power  threshold
 Values in the range 0 to 5000 may be set.
 
 The manufacturer defined default value is ```3500```.
@@ -1074,6 +1054,29 @@ The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_171_1``` and is of type ```INTEGER```.
 This is a read only parameter.
+
+
+### Parameter 172: ON/OFF mode
+
+ON/OFF mode
+This mode is necessary while connecting non-dimmable light sources. Setting this parameter to 1 automatically ignores brightening/dimming time settings. Forced auto-calibration will set this parameter’s value to 2.
+
+Parameter size: 1B
+
+Default value: 2
+
+Available values:
+
+0 – ON/OFF mode disabled (dimming is possible)
+
+1 – ON/OFF mode enabled (dimming is not possible)
+
+2 – mode selected automatically
+Values in the range 0 to 2 may be set.
+
+The manufacturer defined default value is ```2```.
+
+This parameter has the configuration ID ```config_172_1``` and is of type ```INTEGER```.
 
 
 ### Parameter 173: Dimmability of the load (read only)

@@ -236,6 +236,7 @@ The following devices have been tested by openHAB users with the binding. The ab
 | Xiaomi Aqara Temperature and Humidity Sensor   |                                                       |
 | Xiaomi Aqara Human Motion Sensor               |                                                       |
 | Xiaomi Aqara Wireless Mini Switch              |                                                       |
+| Xiaomi Aqara Wired Wall Switch                 |                                                       |
 | Xiaomi Aqara Wireless Remote Switch            | Double Rocker variant                                 |
 | Shenzhen Ksentry Electronics On Off Controller | Relay                                                 |
 
@@ -300,6 +301,7 @@ The following channels are supported -:
 | electrical_activepower | ```ELECTRICAL_MEASUREMENT``` (0x0B04) | Number:Power |   |
 | electrical_rmscurrent | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricCurrent |   |
 | electrical_rmsvoltage | ```ELECTRICAL_MEASUREMENT``` (0x0B04)  | Number:ElectricPotential |   |
+| binaryinput | ```BINARY_INPUT__BASIC``` (0x000F)  | Switch |   |
 | ias_codetector | ```IAS_ZONE``` (0x0500)  | Switch |   |
 | ias_contactportal1 | ```IAS_ZONE``` (0x0500) | Switch |  |
 | ias_fire | ```IAS_ZONE``` (0x0500)  | Switch |   |

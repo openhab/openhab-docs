@@ -573,8 +573,8 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: OTHER
 
 ### Supported Group Metadata
-* Functional groups (no group type) can be labelled with one of Alexa [display categories](#display-categories). It can be set using one of the two formats: `Endpoint.<category>` or `<category>`
-* Example `{alexa="Endpoint.Thermostat"}` or `{alexa="Thermostat"}`
+* Functional groups (no group type) can be labelled with one of Alexa [display categories](#display-categories). It can be set using one of the two formats: `Endpoint.<category>` or `<category>` (e.g `{alexa="Endpoint.Thermostat"}` or `{alexa="Thermostat"}`).
+* Display categories with underscores can be defined in camel cased format (e.g. `{alexa="Endpoint.SecurityPanel"}` => `SECURITY_PANEL`).
 * Child item categories are ignored and only the group category is used on items.
 * Case is ignored on the category part of the metadata and any value will be made all uppercase before its passed to the Alexa API.
 
