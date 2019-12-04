@@ -474,24 +474,27 @@ The following instructions are intended for a Linux init system based on **syste
 This will allow you to register openHAB as a service, so that it runs at startup and automatically restarts if openHAB crashes.
 The service will be running with the privileges of the user "openhab" and expects the openHAB files under `/opt/openhab2`.
 
-Create the file `/lib/systemd/system/openhab2.service` with the following content:
+Create the file `/usr/lib/systemd/system/openhab2.service` with the following content:
 
 ```ini
 [Unit]
-Description=The openHAB 2 Home Automation Bus Solution
-Documentation=http://docs.openhab.org
+Description=openHAB 2 - empowering the smart home
+Documentation=https://www.openhab.org/docs/
+Documentation=https://community.openhab.org
 Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=simple
 User=openhab
 Group=openhab
+
 WorkingDirectory=/opt/openhab2
-#EnvironmentFile=/etc/default/openhab2
-ExecStart=/opt/openhab2/start.sh server
-ExecStop=/bin/kill -SIGINT $MAINPID
+#EnvironmentFile=-/etc/default/openhab2
+
+ExecStart=/opt/openhab2/runtime/bin/karaf daemon
+ExecStop=/opt/openhab2/runtime/bin/karaf stop
 Restart=on-failure
+SuccessExitStatus=0 143
 
 [Install]
 WantedBy=multi-user.target
@@ -512,10 +515,11 @@ sudo systemctl status openhab2.service
 The output of `status` after a successful execution should be similar to:
 
 ```text
- openhab2.service - The openHAB 2 Home Automation Bus Solution
-   Loaded: loaded (/lib/systemd/system/openhab2.service; enabled)
+ openhab2.service - openHAB 2 - empowering the smart home
+   Loaded: loaded (/usr/lib/systemd/system/openhab2.service; enabled)
    Active: active (running) since Thu 2016-08-14 01:16:00 GMT; 18h ago
-     Docs: http://docs.openhab.org
+     Docs: https://www.openhab.org/docs/
+           https://community.openhab.org
 ```
 
 #### Installing add-ons
@@ -573,7 +577,9 @@ To uninstall (or more precisely remove) openHAB 2 after being manually set up, t
 sudo systemctl stop openhab2.service
 sudo systemctl disable openhab2.service
 sudo rm -rf /opt/openhab2/
+sudo rm /usr/lib/systemd/system/openhab2.service
 sudo rm /lib/systemd/system/openhab2.service
+sudo systemctl daemon-reload
 ```
 
 ### File Locations
