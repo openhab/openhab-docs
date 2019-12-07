@@ -58,7 +58,7 @@ To enable debug logging, use the [Karaf logging]({{base}}/administration/logging
 enable debug logging for the automation functionality:
 
 ```text
-log:set DEBUG org.eclipse.smarthome.automation
+log:set DEBUG org.openhab.core.automation
 ```
 
 ## Script Examples
@@ -72,15 +72,15 @@ The openHAB server uses the [SLFJ](https://www.slf4j.org/) library for logging.
 ```python
 from org.slf4j import LoggerFactory
 
-LoggerFactory.getLogger("org.eclipse.smarthome.automation.examples").info("Hello world!")
+LoggerFactory.getLogger("org.openhab.core.automation.examples").info("Hello world!")
 ```
 
 Jython can [import Java classes](http://www.jython.org/jythonbook/en/1.0/ModulesPackages.html). 
 Depending on the openHAB logging configuration, 
-you may need to prefix logger names with `org.eclipse.smarthome.automation` 
+you may need to prefix logger names with `org.openhab.core.automation` 
 for them to show up in the log file (or you modify the logging configuration).
 
-> NOTE: Be careful with using wildcards when importing Java packages (e.g., `import org.sl4j.*`). 
+> NOTE: Be careful with using wildcards when importing Java packages (e.g., `import org.sl4j.*`).
 > This will work in some cases, but it might not work in some situations. 
 > It's best to use explicit imports with Java packages. 
 > For more details, see the Jython documentation on 
@@ -90,7 +90,7 @@ The script then uses the [LoggerFactory](https://www.slf4j.org/apidocs/org/slf4j
 to obtain a named logger and then logs a message like:
 
 ```text
-    ... [INFO ] [.smarthome.automation.examples:-2   ] - Hello world!
+    ... [INFO ] [.openhab.core.automation.examples:-2   ] - Hello world!
 ```
 
 Notice that no rules were required for this simple script. 
