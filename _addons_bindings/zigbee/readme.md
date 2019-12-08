@@ -222,6 +222,7 @@ The following devices have been tested by openHAB users with the binding. The ab
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor     |
 | Osram Bulbs                                    |                                                       |
 | Osram Motion Sensor                            | Osram Smart+ Motion Sensor *[<sup>[1]</sup>](#note1)* |
+| Securifi Peanut Plug                           | Metered Plug                                          |
 | SmartThings Plug                               | Metered Plug                                          |
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor       |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                        |
