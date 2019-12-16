@@ -79,7 +79,7 @@ Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.ecl
 ## Develop a NEW binding
 
 To start developing a new binding a script is available to generate the basis for your new binding.
-This script is specific for binding addons. Folllow these steps to generate your binding:
+This script is specific for binding addons. Follow these steps to generate your binding:
 
 1. From the command line in `openhab2-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
 
