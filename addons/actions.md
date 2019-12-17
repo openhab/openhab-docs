@@ -275,7 +275,7 @@ The following is an example listing a few custom days.
     </tns:Holidays>
 </tns:Configuration>
 ```
-For further examples and other types of holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd).
+For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
 
 You can place these XML files anywhere on your file system that openHAB has permission to read.
 In the calls to the Actions, use the fully qualified path.
