@@ -149,14 +149,12 @@ public class TimeEventHandler {
 
 After the call to `update` the Configuration Admin service persists the new configuration data and sends an update to the ManagedService registered with the service PID asynchronously.
 
-    Hint!
-    Configuration objects have a security feature called `Location` that prevents other
-    bundles from modifying their configuration. In the example above we have created a
-    configuration using the `Configuration config = configurationAdmin.getConfiguration
-    ("com.example.handler", null);`. The second parameter ('null') guarantees that the
-    location for the configuration will be set when the service with this PID is
-    registered for the first time. If the location is not set correctly the Config
-    Admin may not send the update to the bundle.
+::: tip Hint!
+Configuration objects have a security feature called `Location` that prevents other bundles from modifying their configuration.
+In the example above we have created a configuration using the `Configuration config = configurationAdmin.getConfiguration("com.example.handler", null);`.
+The second parameter ('null') guarantees that the location for the configuration will be set when the service with this PID is registered for the first time.
+If the location is not set correctly the Config Admin may not send the update to the bundle.
+:::
 
 ## Further Reading
 
