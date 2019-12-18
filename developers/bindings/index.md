@@ -881,4 +881,4 @@ Please fix all the priority 1 issues and all issues with priority 2 and 3 that a
 You can always run the above command from within your bindings directory to speed the build up and fix and check reported errors.
 
 Re-run the build to confirm that the checks are passing.
-If it does, it is time to [contribute your work](../contributing/contributing.html)!
+If it does, it is time to [contribute your work](../contributing.html)!
