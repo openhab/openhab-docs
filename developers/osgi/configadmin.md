@@ -52,16 +52,21 @@ import java.util.Date;
 import java.util.Map;
 
 import org.osgi.service.component.ComponentContext;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Deactivate;
+import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.event.Event;
 import org.osgi.service.event.EventHandler;
 
-@Component(service={TimeEventHandler.class, EventHandler.class}, property={"event.topics=some/topic"})
+@Component(service = { TimeEventHandler.class, EventHandler.class }, property = { "event.topics=some/topic" })
+@NonNullByDefault
 public class TimeEventHandler implements EventHandler {
 
     // Use the default formatter
     private SimpleDateFormat dateFormatter = new SimpleDateFormat();
 
-    @Activated
+    @Activate
     protected void activate(ComponentContext context, Map<String, Object> properties) {
         modified(properties);
     }
@@ -78,13 +83,13 @@ public class TimeEventHandler implements EventHandler {
         }
     }
 
-    @Deactivated
+    @Deactivate
     protected void deactivate(ComponentContext context, Map<String, Object> properties) {
         modified(properties);
     }
 
     @Override
-    public void handleEvent(Event event) {
+    public void handleEvent(@Nullable Event event) {
         Long timeInMillis = (Long) event.getProperty("time");
         Date date = new Date(timeInMillis);
         System.out.println("The current time is: " + dateFormatter.format(date));
@@ -99,40 +104,57 @@ It can be used to update the configuration (or create if it is missing) as well.
 The flow is the following:
 
 ```java
-@Component(service={TimeEventHandler.class})
-public class TimeEventHandler{
+package com.example;
+
+import java.io.IOException;
+import java.util.Dictionary;
+import java.util.Hashtable;
+
+import org.eclipse.jdt.annotation.NonNullByDefault;
+import org.osgi.service.cm.Configuration;
+import org.osgi.service.cm.ConfigurationAdmin;
+import org.osgi.service.component.annotations.Activate;
+import org.osgi.service.component.annotations.Component;
+import org.osgi.service.component.annotations.Reference;
+
+@Component(service = TimeEventHandler.class)
+@NonNullByDefault
+public class TimeEventHandler {
+
     @Reference
-    ConfigurationAdmin configurationAdmin;
+    private @NonNullByDefault({}) ConfigurationAdmin configurationAdmin;
 
     // Here we perform a configuration update as soon as this service gets activated
-    @Activated
+    @Activate
     protected void activate() {
-        Configuration config = configurationAdmin.getConfiguration("com.example.handler", null);
-        Dictionary<String, Object> props = config.getProperties();
+        try {
+            Configuration config = configurationAdmin.getConfiguration("com.example.handler", null);
+            Dictionary<String, Object> props = config.getProperties();
 
-        if (props == null) { // if null, the configuration is new
-            props = new Hashtable();
+            if (props == null) { // if null, the configuration is new
+                props = new Hashtable<>();
+            }
+
+            // set some properties
+            props.put("formatting", "EEE, d MMM yyyy HH:mm:ss Z");
+
+            // update the configuration, the target bundle will be notified for the change
+            config.update(props);
+        } catch (IOException e) {
+            // TODO: handle exception
         }
-
-        // set some properties
-        props.put("formatting", "EEE, d MMM yyyy HH:mm:ss Z");
-
-        // update the configuration, the target bundle will be notified for the change
-        config.update(props);
     }
 }
 ```
 
 After the call to `update` the Configuration Admin service persists the new configuration data and sends an update to the ManagedService registered with the service PID asynchronously.
 
-    Hint!
-    Configuration objects have a security feature called `Location` that prevents other
-    bundles from modifying their configuration. In the example above we have created a
-    configuration using the `Configuration config = configurationAdmin.getConfiguration
-    ("com.example.handler", null);`. The second parameter ('null') guarantees that the
-    location for the configuration will be set when the service with this PID is
-    registered for the first time. If the location is not set correctly the Config
-    Admin may not send the update to the bundle.
+::: tip Hint!
+Configuration objects have a security feature called `Location` that prevents other bundles from modifying their configuration.
+In the example above we have created a configuration using the `Configuration config = configurationAdmin.getConfiguration("com.example.handler", null);`.
+The second parameter ('null') guarantees that the location for the configuration will be set when the service with this PID is registered for the first time.
+If the location is not set correctly the Config Admin may not send the update to the bundle.
+:::
 
 ## Further Reading
 
