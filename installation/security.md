@@ -434,11 +434,11 @@ To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) prov
 
 This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#nginx-https), **but you need to follow at least one of them first**.
 
-First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: this will take a few minutes to complete:**
+First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: depending on your hardware this will take up to few minutes to complete:**
 
 ```shell
 mkdir -p /etc/nginx/ssl
-openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 ```
 
 Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``.
