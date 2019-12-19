@@ -38,6 +38,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Command Not Working](#command-not-working)
   * [Device Not Found](#device-not-found)
   * [Device Not Responding](#device-not-responding)
+  * [Request Not Supported](#request-not-supported)
   * [Server Authentication Issue](#server-authentication-issue)
   * [Server Not Accessible](#server-not-accessible)
   * [Temperature Out Of Range](#temperature-out-of-range)
@@ -110,7 +111,7 @@ NOTE: the Alexa skill has 3 different percentage interfaces, BrightnessControlle
 ### Group Endpoint
 While single mapping items works for many use cases, occasionally multiple openHAB items need to be mapped to a single endpoint in Alexa. When using a group item, keep in mind that there can only be one specific interface capability per group. If you need to have more than one instance of a given capability, you should use the [building block APIs](#building-block-apis) controllers.
 
-Below are examples for various use cases, such as a thermostat, a stereo and a security system.
+Below are examples for various use cases, such as a thermostat, a smart bulb, a stereo and a security system.
 
 In openHAB a thermostat is modeled as many different items, typically there are items for setpoints (target, heat, cool), modes, and the current temperature. To map these items to a single endpoint in Alexa, we will add them to a group which also uses "Alexa" metadata. When items are Alexa-enabled, but are also a member of a group Alexa-enabled, they will be added to the group endpoint and not exposed as their own endpoints.
 
@@ -145,6 +146,20 @@ Number LowSetpoint     "Low Setpoint [%.0f °F]"      (Thermostat)  {alexa="Ther
 Number EcoHighSetpoint "High Eco Setpoint [%.0f °F]" (Thermostat)  {alexa="ThermostatController.upperSetpoint#eco"}
 Number EcoLowSetpoint  "Low Eco Setpoint [%.0f °F]"  (Thermostat)  {alexa="ThermostatController.lowerSetpoint#eco"}
 Number Mode            "Mode [%s]"                   (Thermostat)  {alexa="ThermostatController.thermostatMode" [binding="nest"]}
+```
+
+A smart bulb is another example when it supports shade of colors. Below are two ways to set up a color and a dimmable white bulb with color temperature capability.
+
+```
+Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
+Color  Color       "Color"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState,ColorController.color"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
+```
+
+```
+Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
+Dimmer White       "White"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
 ```
 
 A Stereo is another example of a single endpoint that needs many items to function properly.  Power, volume, input, speakers and player controllers are all typical use cases for a stereo that a user may wish to control.
@@ -1112,6 +1127,11 @@ Here are some of the most common generic errors you may encounter while using th
 * To resolve this error, make sure that all items interfacing with Alexa have a defined state. If necessary, use [item sensors](#item-sensor), or if the state is not available in openHAB, set the [item state](#item-state) to not be retrievable.
 * For group endpoints, partial properties responses will be send back to Alexa excluding items with invalid state. This will allow Alexa to acknowledge a command request assuming that the relevant item state is accurate. However, it will cause Alexa to generate this error when requesting the status of a device configured with an interface supporting that feature. For example, using a thermostat group endpoint, a request to set its mode will succeed but requesting its mode status will fail if one of its property state, such as its temperature sensor, is not defined in openHAB.
 * This is the default error.
+
+### Request Not Supported
+* Alexa will respond with "_device_ doesn't support that"
+* It indicates that a requested command is not supported by any of the device configured interfaces.
+* To resolve this error, make sure that the relevant interfaces are configured properly on the given device. If this is the case, the response implies a limitation on the Alexa side. This will happen for a device with specific interfaces that don't support certain voice requests as of yet, such as the state of a PowerController or BrightnessController interface.
 
 ### Server Authentication Issue
 * Alexa will respond with "Sorry something wrong, to control _device_ try disabling the skill and re-enabling it from your Alexa app"
