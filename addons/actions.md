@@ -77,6 +77,13 @@ Note: The commandLine variable often has to use a special format where @@ needs 
 
 Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
 
+For example:
+```javascript
+val headers = <String, String>newHashMap
+headers.put("Cache-control", "no-cache")
+val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
+```
+
 ### Timers
 
 `createTimer(AbstractInstant instant, Procedure procedure)`: schedules a block of code to execute at a future time
