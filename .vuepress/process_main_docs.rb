@@ -143,7 +143,6 @@ def process_main_docs(docs_source_dir)
 
     puts " -> images"
     FileUtils.cp_r("#{docs_source_dir}/developers/bindings/images", "docs/developer/bindings/images")
-    FileUtils.cp_r("#{docs_source_dir}/developers/legacy/images", "docs/developer/legacy/images")
     FileUtils.cp_r("#{docs_source_dir}/developers/osgi/images", "docs/developer/osgi/images")
     FileUtils.cp_r("#{docs_source_dir}/developers/ide/images", "docs/developer/ide/images")
 
