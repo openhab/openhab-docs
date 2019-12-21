@@ -859,11 +859,11 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml).
-* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bom/openhab-addons/pom.xml).
+* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab-addons/blob/master/bundles/pom.xml).
+* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab-addons/blob/master/bom/openhab-addons/pom.xml).
 * If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
   make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
-* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab2-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
 
 > Please make sure you add the above entries at their alphabetically correct position!
 
