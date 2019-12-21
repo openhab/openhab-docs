@@ -79,8 +79,7 @@ Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sen
 
 For example:
 ```javascript
-val headers = <String, String>newHashMap
-headers.put("Cache-control", "no-cache")
+val headers = newHashMap("Cache-control" -> "no-cache")
 val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
 ```
 
