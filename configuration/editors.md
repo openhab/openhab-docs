@@ -64,7 +64,7 @@ You can find the syntax files and installation instructions on [openhab-mcedit](
 
 Notepad++ is a free source code editor for Windows.
 Version 6.2 or above is required.
-You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
+You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [notepad++ user manual](https://npp-user-manual.org/docs/user-defined-language-system/).
 
 ### Vim
 
