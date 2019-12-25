@@ -539,11 +539,11 @@ Currently the framework provides two base thing handler implementations for the 
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.eclipse.smarthome.config.core.status.ConfigStatusMessage`s.
 
-#### Internationalizing
+#### Internationalization
 
-The framework will take care of internationalizing messagess.
+The framework will take care of internationalizing messages.
 
-For this purpose there must be an i18n properties file inside the bundle of the configuration status provider that has a message declared for the message key of the `ConfigStatusMessage`.
+For this purpose there must be an [i18n](../utils/i18n.html) properties file inside the bundle of the configuration status provider that has a message declared for the message key of the `ConfigStatusMessage`.
 The actual message key is built by the operation `withMessageKeySuffix(String)` of the message´s builder in the manner that the given message key suffix is appended to *config-status."config-status-message-type."*.
 
 As a result depending on the type of the message the final constructed message keys are:
@@ -614,7 +614,7 @@ You are now free to specify as many actions as you want in `MqttActions`.
 
 In the following example we provide a "publishMQTT" action.
 An action must be annotated with `@RuleAction`, a label and a description must be provided.
-In this case we refer to translation, see [i18n](utils/i18n.html) support, instead of directly providing a string.
+In this case we refer to translation, see [i18n](../utils/i18n.html) support, instead of directly providing a string.
 
 ```java
 @RuleAction(label = "@text/actionLabel", description = "@text/actionDesc")
@@ -695,10 +695,10 @@ This list will be given to the constructor of `AbstractDiscoveryService` and can
 The `Discovery` class of a binding which implements `AbstractDiscoveryService` should be annotated with
 
 ```java
-@Component(service = DiscoveryService.class, immediate = true, configurationPid = "discovery.<bindingID>")
+@Component(service = DiscoveryService.class, immediate = true, configurationPid = "discovery.<binding-id>")
 ```
 
-where `<bindingID>` is the id of the binding, i.e. `astro` for the Astro binding.
+where `<binding-id>` is the id of the binding, i.e. `astro` for the Astro binding.
 Such a registered service will be picked up automatically by the framework.
 
 ### Background Discovery 
@@ -771,6 +771,22 @@ If this behavior is not appropriate for the implemented discovery service, one c
         removeOlderResults(getTimestampOfLastScan());
     }
 ```
+
+### Internationalization
+
+The framework will take care of internationalizing labels of discovery results if you extend the `AbstractDiscoveryService`.
+See [i18n](../utils/i18n.html#discovery) for more information.
+
+::: tip Hint!
+To make it work you have to inject references to the `LocaleProvider` and the `TranslationProvider` services into your implementation.
+The `AbstractDiscoveryService` already provides `protected` properties, which are not yet linked to a service.
+The devoloper has to take care about that.
+
+```java
+    protected @NonNullByDefault({}) TranslationProvider i18nProvider;
+    protected @NonNullByDefault({}) LocaleProvider localeProvider;
+```
+:::
 
 ### UPnP Discovery
 
