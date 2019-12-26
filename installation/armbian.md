@@ -9,11 +9,11 @@ title: Armbian
 
 ## Recommended hardware
 
-OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend those minimal specifications:
+OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend to sue only boards that meets those specifications:
 
-- 512Mb of memory
+- 1Gb of memory
 - 4 core 
-- wired networking
+- powered with regular power connector
 
 ![Armbian](images/boards1.png)
 
