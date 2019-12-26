@@ -37,7 +37,7 @@ Armbian Xenial, Bionic, Disco, Eoan, Focal, Stretch
 Prepare Armbian as usual:
 https://docs.armbian.com/User-Guide_Getting-Started/
 
-You don't need to do any other steps - Armbian comes fully optimised out of the box!
+You don't need to do any other steps. Armbian is fully optimised out of the box!
 
 ```shell
 sudo apt-get update
