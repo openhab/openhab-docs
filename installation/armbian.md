@@ -29,6 +29,10 @@ https://docs.armbian.com/User-Guide_Getting-Started/
 ![Armbian config](images/step1.png)
 ![System and 3rd party software](images/step2.png)
 ![Softy](images/step3.png)
-![Openhab](images/step4.png)
 
 Select Openhab2 with <SPACE> and press <ENTER>
+
+![Openhab](images/step4.png)
+
+Wait 5-15 minutes depending on your hardware.
+
