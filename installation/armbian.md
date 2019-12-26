@@ -25,3 +25,10 @@ https://docs.armbian.com/User-Guide_Getting-Started/
 2. sudo apt-get upgrade
 3. sudo armbian-config
 ```
+
+![Armbian config](images/step1.png)
+![System and 3rd party software](images/step2.png)
+![Softy](images/step3.png)
+![Openhab](images/step4.png)
+
+Select Openhab2 with <SPACE> and press <ENTER>
