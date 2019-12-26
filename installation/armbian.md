@@ -45,13 +45,13 @@ sudo apt-get upgrade
 sudo armbian-config
 ```
 
-![Armbian config](images/step1.png)
-![System and 3rd party software](images/step2.png)
-![Softy](images/step3.png)
+![Armbian config](images/armbian-step1.png)
+![System and 3rd party software](images/armbian-step2.png)
+![Softy](images/armbian-step3.png)
 
 Select OpenHAB with **SPACE** and press **ENTER**
 
-![Openhab](images/step4.png)
+![Openhab](images/armbian-step4.png)
 
 Wait 5-15 minutes depending on your hardware. During this time you can check if installation was succesfull by checking if openhab is doing something:
 
@@ -59,7 +59,7 @@ Wait 5-15 minutes depending on your hardware. During this time you can check if 
 sudo htop -u openhab
 ```
 
-![Observe activities with htop](images/step5.png)
+![Observe activities with htop](images/armbian-step5.png)
 
 If you don't see any openhab activities, something went wrong.
 
