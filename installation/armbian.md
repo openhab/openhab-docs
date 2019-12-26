@@ -5,24 +5,31 @@ title: Armbian
 
 {% include base.html %}
 
-# Armbian
+![Armbian](images/armbian-logo.png)
 
 ## Recommended hardware
 
-Due to superb optimisations OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend those minimal specifications:
+![Armbian](images/boards1.png)
+
+OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend those minimal specifications:
+
 - 512Mb of memory
 - 4 core 
 - wired networking
 
 ## Supported images
 
-Armbian Xenial, Bionic, Disco, Eoan, Focal, Stretch 
+Armbian Xenial, Bionic, Disco, Eoan, Focal, Stretch
+
+**Note:** Buster and Bullseye are not supported!
 
 ## Setup
 
 **First Steps:**
 Prepare Armbian as usual:
 https://docs.armbian.com/User-Guide_Getting-Started/
+
+You don't need to do any other steps - Armbian comes fully optimised out of the box!
 
 ```shell
 sudo apt-get update
