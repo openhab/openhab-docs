@@ -34,11 +34,12 @@ Select Openhab2 with <SPACE> and press <ENTER>
 
 ![Openhab](images/step4.png)
 
-Wait 5-15 minutes depending on your hardware.
+Wait 5-15 minutes depending on your hardware. During this time you can check if installation was succesfull by checking if openhab is doing something:
 
 ```shell
 sudo htop -u openhab
 ```
 
 ![Observe activities with htop](images/step5.png)
+
 If you don't see any openhab activities, something went wrong.
