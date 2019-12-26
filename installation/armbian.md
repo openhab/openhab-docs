@@ -17,11 +17,9 @@ Armbian is a base operating system platform for single board computers.
 
 ## Recommended hardware
 
-OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend to sue only boards that meets those specifications:
+OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend to choose boards that have at least:
 
-- 1Gb of memory
-- 4 core 
-- powered with regular power connector
+1Gb of memory, eMMC, 4 core 
 
 ![Armbian](images/boards1.png)
 
