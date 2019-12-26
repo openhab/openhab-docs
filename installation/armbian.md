@@ -21,9 +21,9 @@ Prepare Armbian as usual:
 https://docs.armbian.com/User-Guide_Getting-Started/
 
 ```shell
-1. sudo apt-get update
-2. sudo apt-get upgrade
-3. sudo armbian-config
+sudo apt-get update
+sudo apt-get upgrade
+sudo armbian-config
 ```
 
 ![Armbian config](images/step1.png)
@@ -36,3 +36,8 @@ Select Openhab2 with <SPACE> and press <ENTER>
 
 Wait 5-15 minutes depending on your hardware.
 
+```shell
+sudo htop -u openhab
+```
+
+![Observe activities with htop](images/step4.png)
