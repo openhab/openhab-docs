@@ -19,7 +19,9 @@ Armbian is a base operating system platform for single board computers.
 
 OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend to choose boards that have at least:
 
-1Gb of memory, eMMC, 4 core 
+
+**1Gb of memory, eMMC, 4 core**
+
 
 ![Armbian](images/boards1.png)
 
@@ -47,7 +49,7 @@ sudo armbian-config
 ![System and 3rd party software](images/step2.png)
 ![Softy](images/step3.png)
 
-Select Openhab2 with <SPACE> and press <ENTER>
+Select OpenHAB with **SPACE** and press **ENTER**
 
 ![Openhab](images/step4.png)
 
