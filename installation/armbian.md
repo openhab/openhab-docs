@@ -40,4 +40,5 @@ Wait 5-15 minutes depending on your hardware.
 sudo htop -u openhab
 ```
 
-![Observe activities with htop](images/step4.png)
+![Observe activities with htop](images/step5.png)
+If you don't see any openhab activities, something went wrong.
