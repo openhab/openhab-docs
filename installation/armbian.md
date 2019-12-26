@@ -29,6 +29,8 @@ OpenHab will run on any [supported hardware](https://www.armbian.com/download/?d
 
 Armbian Xenial, Bionic, Disco, Eoan, Focal, Stretch
 
+CLI, desktop or minimal. If you choose a minimal image, you will need to install armbian-config first.
+
 **Note:** Buster and Bullseye are not supported!
 
 ## Setup
