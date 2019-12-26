@@ -12,7 +12,7 @@ title: Armbian
 Armbian is a base operating system platform for single board computers.
 
 - Lightweight Debian or Ubuntu based distribution specialized for ARM developing boards.
-- Each system is compiled, assembled and optimized by [Armbian Build Tools](https://github.com/armbian/build) 
+- Each system is compiled, assembled and improved/optimized by [Armbian Build Tools](https://github.com/armbian/build) 
 - A vibrant community.
 
 ## Recommended hardware
