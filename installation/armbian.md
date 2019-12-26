@@ -5,7 +5,7 @@ title: Armbian
 
 {% include base.html %}
 
-![Armbian](images/armbian-logo.png)
+# Armbian
 
 ## What is Armbian?
 
