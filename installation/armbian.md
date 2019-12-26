@@ -7,6 +7,14 @@ title: Armbian
 
 ![Armbian](images/armbian-logo.png)
 
+## What is Armbian?
+
+Armbian is a base operating system platform for single board computers.
+
+- Lightweight Debian or Ubuntu based distribution specialized for ARM developing boards.
+- Each system is compiled, assembled and optimized by [Armbian Build Tools](https://github.com/armbian/build) 
+- A vibrant community.
+
 ## Recommended hardware
 
 OpenHab will run on any [supported hardware](https://www.armbian.com/download/?device_support=Supported) but we recommend to sue only boards that meets those specifications:
