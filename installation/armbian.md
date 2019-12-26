@@ -14,6 +14,10 @@ Due to superb optimisations OpenHab will run on any [supported hardware](https:/
 - 4 core 
 - wired networking
 
+## Supported images
+
+Armbian Xenial, Bionic, Disco, Eoan, Focal, Stretch 
+
 ## Setup
 
 **First Steps:**
