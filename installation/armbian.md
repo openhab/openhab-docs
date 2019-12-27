@@ -25,7 +25,7 @@ OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/dow
 
 
 - 512 Kb of memory (on minimal or server image)
-- eMMC or [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
+- eMMC or a [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
 - 4 core
 - wired networking
 
