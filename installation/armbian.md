@@ -34,7 +34,7 @@ OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/dow
 
 ## Supported images
 
-CLI, desktop or minimal. If you choose a minimal image, you need to install armbian-config first.
+You can [DOWNLOAD](https://www.armbian.com/download/?device_support=Supported) and use server, desktop or minimal. If you choose a minimal image, you need to install armbian-config first.
 
 ## Setup
 
