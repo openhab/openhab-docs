@@ -188,7 +188,7 @@ void myFun() {
     try {
         doSomething();
     } catch (IOException e) {
-        logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);  
+        logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);
     }
 }
 ```
@@ -338,14 +338,18 @@ For HTTP Operations
 * org.eclipse.jetty.http.*
 * org.eclipse.jetty.util.*
 
-Note: HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+::: tip Note
+HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+:::
 
 For Web Socket Operations
 
 * org.eclipse.jetty.websocket.client
 * org.eclipse.jetty.websocket.api
 
-Note: WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+::: tip Note
+WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+:::
 
 Additionally these libraries are allowed
 
