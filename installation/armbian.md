@@ -11,17 +11,21 @@ title: Armbian
 
 Armbian is a base operating system platform for single board computers.
 
-- Lightweight Debian compatible distribution specialized for ARM developing boards.
-- Each system is compiled, assembled and improved/optimized by [Armbian Build Tools](https://github.com/armbian/build) 
-- A vibrant community.
+- comes in desktop, minimal or server variant,
+- it has clean and highly optimised user space,
+- is Ubuntu and Debian compatible,
+- supported with vibrant community,
+- come with a powerful SDK which allows reproduction and customisation,
+- supports many 3rd party wireless drivers with advanced functionalities that are not part of the Linux kernel,
+- supports Docker, disk encryption, Wireguard VPN any many other features.
 
 ## Recommended hardware
 
-OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/download/?device_support=Supported) but performance will vary. It is recommended to choose boards that have at least:
+OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/download/?device_support=Supported) but performance will vary due to hardware limitations. It is recommended to choose boards that have at least:
 
 
 - 1024 Kb of memory
-- eMMC
+- eMMC or [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
 - 4 core
 
 
