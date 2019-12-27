@@ -169,6 +169,7 @@ SI:
 | RadiationDoseEffective | Sievert                          | Sv     |
 | SolidAngle             | Steradian                        | sr     |
 | Speed                  | Metre per Second                 | m/s    |
+| Speed                  | Millimetre per Hour              | mm/h   |
 | Speed                  | Kilometre per Hour               | km/h   |
 | Speed                  | Knot                             | kn     |
 | Temperature            | Kelvin                           | K      |
