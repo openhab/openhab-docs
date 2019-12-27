@@ -417,7 +417,7 @@ Allows you to display a video as part of your Sitemap.
 ::: tip Note
 Not all video encodings (formats) are supported; you may need to transcode your video.
 The video must be reachable directly via URL.
-An embedded and/or protected video are not supported.
+An embedded and/or protected video is not supported.
 :::
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.

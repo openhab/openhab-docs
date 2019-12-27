@@ -60,7 +60,8 @@ We change the (automatically added during the discovery) name of the thing on th
 ::: tip Note
 If your network devices use a DHCP server to obtain ther IP addresses automatically, please make sure to define a DHCP reservation for a device which you want to use in openHAB.
 Otherwise it's IP address may change in the future and your thing definiton won't work any more.
-Information about how to define a DHCP reservation can be normally be found in the manual of your network router.*
+
+*Information about how to define a DHCP reservation can be normally be found in the manual of your network router.*
 :::
 
 ![](images/picture_10.jpg)
