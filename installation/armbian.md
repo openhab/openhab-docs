@@ -47,7 +47,6 @@ You can [download](https://www.armbian.com/download/?device_support=Supported) a
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
-sudo armbian-config
 ```
 
 3. Run armbian-config
