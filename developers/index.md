@@ -118,4 +118,4 @@ This script is specific for binding addons. Follow these steps to generate your 
 
 Now you can start developing your NEW binding. We're looking forward to your pull request!
 
-In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](../buildsystem.html#adding-dependencies) for more information.
+In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.
