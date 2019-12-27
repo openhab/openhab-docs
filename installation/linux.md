@@ -36,16 +36,18 @@ If you're unsure which manual file you should download, using `dpkg --print-arch
 
 When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
-**Note:** Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9. 
+::: tip Note
+Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9.
+:::
 
 ## Installation
 
-openHAB 2 can be installed through 
+openHAB 2 can be installed through
  - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
  - a package repository (apt, yum)
  - manually from file.
- 
-The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users. 
+
+The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users.
 
 Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manualconfiguration later on due to the missing openHABian configuration tool.
 
@@ -279,7 +281,7 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
   # Stop the openHAB background service
   sudo systemctl stop openhab2.service
-  
+
   # Get the service log since the last boot
   sudo journalctl -u openhab2.service -b
 
@@ -737,7 +739,7 @@ Next, add the desired share configurations to the end of the file:
       public=no
       create mask=0777
       directory mask=0777
-      
+
     [openHAB2-logs]
       comment=openHAB2 logs
       path=/var/log/openhab2

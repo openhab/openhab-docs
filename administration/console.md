@@ -33,9 +33,11 @@ To reach the console using SSH, use the following command to connect to the loca
 ssh -p 8101 openhab@localhost
 ```
 
-*Note:* By default, connection is only allowed from localhost, i.e. only from the machine running openHAB.
+::: tip Note
+By default, connection is only allowed from localhost, i.e. only from the machine running openHAB.
 Connections are intentionally not allowed from remote hosts due to security concerns.
 To change this, see [Bind Console to All Interfaces](#bind-console-to-all-interfaces).
+:::
 
 A security warning is expected upon the first connection:
 
@@ -57,8 +59,10 @@ The default username/password is **openhab:habopen**, so enter `habopen` at the 
 
 The first successful connection triggers generation of the Karaf remote console key and will take a few seconds longer than subsequent attempts.
 
-*Note:* On slower systems, such as Raspberry Pi or Pine64, this first SSH connection may even time out.
+::: tip Note
+On slower systems, such as Raspberry Pi or Pine64, this first SSH connection may even time out.
 If this happens, simply try connecting again until successful.
+:::
 
 ## Using the Console
 
@@ -174,7 +178,7 @@ To enable binding to all interfaces, uncomment the line
 ```#org.apache.karaf.shell:sshHost = 0.0.0.0```
 
 in `services/runtime.cfg`.
- 
+
 
 ### Change the Port Number
 

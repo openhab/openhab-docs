@@ -14,7 +14,9 @@ It is possible to query and even change the state of entities like items or thin
 * TOC
 {:toc}
 
-**Please note: Some of the described commands are executed on the internal database and could break your installation. Please use this functionality only if you know what you are doing!**
+::: tip Note
+Some of the described commands are executed on the internal database and could break your installation. Please use this functionality only if you know what you are doing!
+:::
 
 
 ## Examples

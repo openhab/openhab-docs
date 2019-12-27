@@ -60,12 +60,14 @@ The event source is optional and represents the name of the source identifying t
 | ItemStateChangedEvent      | The state of an item has changed.                       | smarthome/items/{itemName}/statechanged              |
 | GroupItemStateChangedEvent | The state of a group item has changed through a member. | smarthome/items/{itemName}/{memberName}/statechanged |
 
-**Note:** The `ItemStateEvent` is always sent if the state of an item is updated, even if the state did not change.
+::: tip Note
+The `ItemStateEvent` is always sent if the state of an item is updated, even if the state did not change.
 `ItemStateChangedEvent` is sent only if the state of an item was really changed.
 It contains the old and the new state of the item.
 
 The `GroupItemStateChangedEvent` is sent only if the state of a group item was changed by a member.
 It contains the old and the new state of the group item as well as the member.
+:::
 
 #### Thing Events
 
@@ -77,9 +79,11 @@ It contains the old and the new state of the group item as well as the member.
 | ThingStatusInfoEvent        | The status of a thing is updated.                 | smarthome/things/{thingUID}/status        |
 | ThingStatusInfoChangedEvent | The status of a thing changed.                    | smarthome/things/{thingUID}/statuschanged |
 
-**Note:** The `ThingStatusInfoEvent` is always sent if the status info of a thing is updated, even if the status did not change.
+::: tip Note
+The `ThingStatusInfoEvent` is always sent if the status info of a thing is updated, even if the status did not change.
 `ThingStatusInfoChangedEvent` is sent only if the status of a thing was really changed.
 It contains the old and the new status of the thing.
+:::
 
 #### Inbox Events
 
@@ -163,7 +167,7 @@ Each event subscriber must be registered via OSGi Declarative Services (DS) unde
       <provide interface="org.eclipse.smarthome.core.events.EventSubscriber"/>
    </service>
 </scr:component>
-```  
+```
 
 The listing below summarizes some best practices in order to implement event subscribers:
 
@@ -196,7 +200,7 @@ public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
         return eventFilter;
     }
 
-    @Override    
+    @Override
     protected void receiveCommand(ItemCommandEvent commandEvent) {
         // do something
     }
@@ -249,7 +253,7 @@ The following Java snippet shows a new event type extending the class `AbstractE
 public class SunriseEvent extends AbstractEvent {
 
     public static final String TYPE = SunriseEvent.class.getSimpleName();
-    
+
     private final SunriseDTO sunriseDTO;
 
     SunriseEvent(String topic, String payload, SunriseDTO sunriseDTO) {
@@ -261,7 +265,7 @@ public class SunriseEvent extends AbstractEvent {
     public String getType() {
         return TYPE;
     }
-    
+
     public SunriseDTO getSunriseDTO() {
         return sunriseDTO;
     }
@@ -290,7 +294,7 @@ Event factories can be added by implementing the `EventFactory` interface or ext
 The `AbstractEventFactory` provides some useful utility for parameter validation and payload serialization & deserialization with JSON.
 The classes are located in the openHAB core bundle.
 
-```java 
+```java
 public class SunEventFactory extends AbstractEventFactory {
 
     private static final String SUNRISE_EVENT_TOPIC = "smarthome/sun/{time}/sunrise";
@@ -303,15 +307,15 @@ public class SunEventFactory extends AbstractEventFactory {
     protected Event createEventByType(String eventType, String topic, String payload, String source) throws Exception {
         if (SunriseEvent.TYPE.equals(eventType)) {
             return createSunriseEvent(topic, payload);
-        } 
+        }
         return null;
     }
-    
+
     private Event createSunriseEvent(String topic, String payload) {
         SunriseDTO sunriseDTO = deserializePayload(payload, SunriseDTO.class);
         return new SunriseEvent(topic, payload, sunriseDTO);
     }
-    
+
     public static SunriseEvent createSunriseEvent(Sunrise sunrise) {
         String topic = buildTopic(SUNRISE_EVENT_TOPIC, sunrise.getTime());
         SunriseDTO sunriseDTO = map(sunrise);

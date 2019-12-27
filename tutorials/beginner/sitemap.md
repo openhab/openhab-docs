@@ -40,7 +40,10 @@ Open the default.items file and define your first item:
 Switch Presence_Mobile_John "Johns Mobile" <network> { channel="network:device:192_168_1_103:online" }
 ```
 
-*Note: Item names have to be unique! You should follow a certain naming convention concerning your items.
+::: tip Note
+Item names have to be unique! You should follow a certain naming convention concerning your items.
+:::
+
 In this example, we used the purpose of the item, "Presence", followed by the device type, "_Mobile", and finally the owner's name, "_John", to construct the final item name.
 
 Another suggestion for different items, for example a wallplug which is plugged-in in the living room in the first floor providing power to a TV, is to use the type, the floor, the room and the usage of the item.
