@@ -97,6 +97,12 @@ This script is specific for binding addons. Follow these steps to generate your 
 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
+1. Check the content of `openhab-addons/bundles/pom.xml` file and eventually add the following entry under `<modules>` tag, to let maven find your new binding project in the reactor:
+
+    ```
+    <module>org.openhab.binding.mynewbinding</module>
+    ```
+
 1. From `openhab2-addons` root you can build only your binding with maven using the `-pl` option:
     ```
     mvn clean install -pl :org.openhab.binding.mynewbinding
