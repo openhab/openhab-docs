@@ -61,7 +61,7 @@ One can configure whether specific log entries are logged out and where they get
 - `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
 ::: tip Note
-Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`. 
+Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`.
 When one or more arguments contain spaces, use `@@` instead of a space as the argument separator.
 For example the bash command `touch -t 01010000 "some file with space.txt"` will have to be written as `touch@@-t@@01010000@@some file with space.txt`.
 :::
@@ -79,7 +79,9 @@ For example the bash command `touch -t 01010000 "some file with space.txt"` will
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
 - `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
 
-Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+::: tip Note
+All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+:::
 
 For example:
 ```javascript

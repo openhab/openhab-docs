@@ -414,9 +414,11 @@ Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encod
 ```
 
 Allows you to display a video as part of your Sitemap.
-Note: not all video encodings (formats) are supported; you may need to transcode your video.
+::: tip Note
+Not all video encodings (formats) are supported; you may need to transcode your video.
 The video must be reachable directly via URL.
 An embedded and/or protected video are not supported.
+:::
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.

@@ -34,7 +34,7 @@ This behavior will be changed in future.
 
 ## Configuration
 
-The marketplace integration can be configured to only provide add-ons of certain types (Note: Currently only bindings are supported!) and of a certain maturity level.
+The marketplace integration can be configured to only provide add-ons of certain types (*Note:* Currently only bindings are supported!) and of a certain maturity level.
 
 To do so, you can add a configuration file `$OPENHAB_CONF/services/marketplace.cfg` with content like:
 
