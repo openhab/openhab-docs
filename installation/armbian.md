@@ -40,7 +40,7 @@ CLI, desktop or minimal. If you choose a minimal image, you need to install armb
 
 **First Steps:**
 
-1. Prepare Armbian [as usual](https://docs.armbian.com/User-Guide_Getting-Started/). You don't need to perform any other steps. Armbian comes fully optimised out of the box!
+1. Prepare Armbian as usual - [login as root / 1234, change root password, create username. You don't need to perform any other steps](https://docs.armbian.com/User-Guide_Getting-Started/).
 
 2. Update
 
