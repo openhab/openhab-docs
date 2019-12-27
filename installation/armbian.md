@@ -12,11 +12,11 @@ title: Armbian
 Armbian is a base operating system platform for single board computers.
 
 - comes in desktop, minimal or server variant,
-- it has clean and highly optimised user space,
+- has clean and highly optimised user space,
 - is Ubuntu and Debian compatible,
-- supported with vibrant community,
-- come with a powerful SDK which allows reproduction and customisation,
-- supports many 3rd party wireless drivers with advanced functionalities that are not part of the Linux kernel,
+- is supported with vibrant community,
+- comes with a powerful SDK which allows reproduction and customisation,
+- supports many 3rd party wireless drivers with advanced functionalities,
 - supports Docker, disk encryption, Wireguard VPN any many other features.
 
 ## Recommended hardware
@@ -24,24 +24,23 @@ Armbian is a base operating system platform for single board computers.
 OpenHab will run on any Armbian [supported hardware](https://www.armbian.com/download/?device_support=Supported) but performance will vary due to hardware limitations. It is recommended to choose boards that have at least:
 
 
-- 512 Kb of memory (when using 32bit minimal or server image)
+- 512 Kb of memory (on minimal or server image)
 - eMMC or [quality SD card](https://docs.armbian.com/User-Guide_Getting-Started/#how-to-prepare-a-sd-card)
 - 4 core
+- wired networking
 
 
 ![Armbian](images/boards1.png)
 
 ## Supported images
 
-CLI, desktop or minimal. If you choose a minimal image, you will need to install armbian-config first.
+CLI, desktop or minimal. If you choose a minimal image, you need to install armbian-config first.
 
 ## Setup
 
 **First Steps:**
-Prepare Armbian as usual:
-https://docs.armbian.com/User-Guide_Getting-Started/
 
-You don't need to do any other steps. Armbian is fully optimised out of the box!
+Prepare Armbian [as usual](https://docs.armbian.com/User-Guide_Getting-Started/). You don't need to perform any other steps. Armbian comes fully optimised out of the box!
 
 ```shell
 sudo apt-get update
