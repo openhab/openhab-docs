@@ -60,7 +60,11 @@ One can configure whether specific log entries are logged out and where they get
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
 - `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
-Note: The commandLine variable often has to use a special format where @@ needs to be used in place of spaces. For example the bash command touch somefile will have to be written as touch@@somefile.
+::: tip Note
+Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`. 
+When one or more arguments contain spaces, use `@@` instead of a space as the argument separator.
+For example the bash command `touch -t 01010000 "some file with space.txt"` will have to be written as `touch@@-t@@01010000@@some file with space.txt`.
+:::
 
 ### HTTP Actions
 
