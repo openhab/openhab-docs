@@ -75,4 +75,4 @@ or by working on your own configuration.
 The very active [openHAB Community Forum](https://community.openhab.org) provides many more details and hints.
 If you run into any problems, use the search function or open a new thread with your detailed question.
 
-In case you run into a problem that is board hardware related, please use [Armbian Community bug tracker forums](https://forum.armbian.com/forum/1-bug-tracker/).
+In case you run into a problem that is board hardware related, please use [Armbian Community forums](https://forum.armbian.com/forum/1-bug-tracker/).
