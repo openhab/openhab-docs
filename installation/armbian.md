@@ -40,11 +40,19 @@ CLI, desktop or minimal. If you choose a minimal image, you need to install armb
 
 **First Steps:**
 
-Prepare Armbian [as usual](https://docs.armbian.com/User-Guide_Getting-Started/). You don't need to perform any other steps. Armbian comes fully optimised out of the box!
+1. Prepare Armbian [as usual](https://docs.armbian.com/User-Guide_Getting-Started/). You don't need to perform any other steps. Armbian comes fully optimised out of the box!
+
+2. Update
 
 ```shell
 sudo apt-get update
 sudo apt-get upgrade
+sudo armbian-config
+```
+
+3. Run armbian-config
+
+```shell
 sudo armbian-config
 ```
 
@@ -56,7 +64,7 @@ Select OpenHAB with **SPACE** and press **ENTER**
 
 ![Openhab](images/armbian-step4.png)
 
-Wait 5-15 minutes depending on your hardware. During this time you can check if installation was succesfull by checking if openhab is doing something:
+Wait 5 to 10 minutes depending on your hardware. During this time you can leave armbian-config and check if installation was succesfull by checking what openhab is doing on the system:
 
 ```shell
 sudo htop -u openhab
