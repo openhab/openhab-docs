@@ -74,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text`, `Group` or `Switch`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
