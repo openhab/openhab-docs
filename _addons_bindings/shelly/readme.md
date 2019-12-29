@@ -3,7 +3,7 @@ id: shelly
 label: Shelly
 title: Shelly - Bindings
 type: binding
-description: "This Binding integrates [Shelly devices](https://shelly.cloud/)."
+description: "This Binding integrated Shelly devices."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # Shelly Binding
 
-This Binding integrates [Shelly devices](https://shelly.cloud/).
+This Binding integrated Shelly devices.
 
 ## Supported Devices
 
@@ -39,9 +39,9 @@ This Binding integrates [Shelly devices](https://shelly.cloud/).
 | shellysense        | Shelly Motion and IR Controller                        |
 | shellydevice       | A password protected Shelly device or an unknown type  |
 
-### Firmware
+## Firmware
 
-To utilize all features, the binding requires firmware version 1.5.2 or newer.
+To utilize all features the binding requires firmware version 1.5.2 or newer.
 This should be available for all devices.
 Older versions work in general, but have impacts to functionality (e.g. no events for battery powered devices).
 

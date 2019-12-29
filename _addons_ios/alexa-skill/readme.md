@@ -70,7 +70,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
 Matching of voice commands to items happens based on the item label (e.g. "Kitchen Light"). If it is not specified, the item will be ignored. It is therefore advisable, to choose labels that can be used to form natural commands. As an example, compare "Alexa, turn on the Kitchen Light" vs. "Alexa, turn on the Ground Floor LEDs Kitchen".
 
 ### Regional Settings
-In order for the skill to determine your default locale and measurement system to use, during the discovery process, for some of the controllers supporting friendly locale-based names and unit of measurement, it is important to set your server regional settings including the language, country/region and measurement system properties. These can either be accomplished by using Paper UI (Configuration > System > Regional Settings) or adding `org.eclipse.smarthome.core.i18nprovider:{language,region,measurementSystem}` properties to `$OPENHAB_CONF/services/runtime.cfg`. If these settings aren't defined, the skill will either use the item level configuration, if available, to determine these properties, or fallback to `en-US` locale and `SI` measurement system, as default values.
+In order for the skill to determine your default language and measurement system to use, during the discovery process, for some of the controllers supporting friendly language-based names and unit of measurement, it is important to set your server regional settings including the language, country/region and measurement system properties. These can either be accomplished by using Paper UI (Configuration > System > Regional Settings) or setting the `language`, `region` and `measurementSystem` properties for `org.eclipse.smarthome.i18n` or `org.eclipse.smarthome.core.i18nprovider` service (depending on release version) in `$OPENHAB_CONF/services/runtime.cfg`. If these settings aren't defined, the skill will either use the item level configuration, if available, to determine these properties, or fallback to `en` language and `SI` measurement system, as default values.
 
 ## Concept
 
@@ -190,7 +190,7 @@ Switch WaterAlarm          "Water"           (SecuritySystem) {alexa="SecurityPa
 ```
 
 ### Building Block APIs
-For components of a device, which isn't covered by the existing interfaces, that have more than one setting, characterized by a number within a range or just turn on and off, the [Mode](#modecontroller-mode), [Range](#rangecontroller-rangevalue) and [Toggle](#togglecontroller-togglestate) controllers can be used to highly customize how you interact with that device via Alexa. These capabilities can be used like building blocks to model the full feature set of a complex device. With the expansion of these controllers support to other languages, the skill will use your server [regional settings](#regional-settings) if available, falling back to `en-US`, to determine your default locale setting.
+For components of a device, which isn't covered by the existing interfaces, that have more than one setting, characterized by a number within a range or just turn on and off, the [Mode](#modecontroller-mode), [Range](#rangecontroller-rangevalue) and [Toggle](#togglecontroller-togglestate) controllers can be used to highly customize how you interact with that device via Alexa. These capabilities can be used like building blocks to model the full feature set of a complex device. With the expansion of these controllers support to other languages, the skill will use your server [regional settings](#regional-settings) if available, falling back to `en`, to determine your default language setting.
 
 A washer and its settings modeled with multiple mode/toggle interface capabilities.
 
@@ -209,6 +209,15 @@ Group Fan     "Fan"          {alexa="Endpoint.Fan"}
 Number Speed  "Speed"  (Fan) {alexa="RangeController.rangeValue" [supportedRange="1:10:1",presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest",friendlyNames="@Setting.FanSpeed,Speed"]}
 Switch Rotate "Rotate" (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.Oscillate,Rotate"]}
 Switch Power  "Power"  (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Fan"]}
+```
+
+A router and its settings modeled with multiple toggle interface capabilities.
+
+```
+Group Router       "Router"                 {alexa="Endpoint.NetworkHardware"}
+Switch 2GGuestWiFi "2G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.2GGuestWiFi"]}
+Switch 5GGuestWiFi "5G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.5GGuestWiFi"]}
+Switch Power       "Power"         (Router) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Router"]}
 ```
 
 ### Semantic Extensions
@@ -591,22 +600,25 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: SECURITY_PANEL
 
 #### `ModeController.mode`
-* Items that represent components of a device that have more than one setting. Multiple instances can be configured in a group endpoint. By default, to ask for a specific mode, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well prefixing with an @ sign (e.g. `friendlyNames="Wash Temperature,@Setting.WaterTemperature"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. In regards to supported modes and their mappings, by default if omitted, the openHAB item state description options, if defined, are used to determine these configurations. To configure it, use `supportedModes` parameter and provide a comma delimited list of mode mappings composed of openHAB item states and the associated names/asset ids they should be called, delimited by equal and column signs (e.g. `supportedModes="0=Cold:Cool,1=Warm,2=Hot"`). For string based modes, if the mapping state value and name are the same (case sensitive), a shortened format can be used, where the name doesn't need to be added to the list by either leaving the first element empty or not providing the names at all (e.g. `supportedModes="Normal=:Cottons,Whites"` <=> `supportedModes="Normal=Normal:Cottons,Whites=Whites`). Additionally, if the mode can be adjusted incrementally (e.g. temperature control), set parameter `ordered=true`, otherwise only requests to set a specific mode will be accepted. For text-based value locale support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally add the locale setting at the end of names or modes using @ sign (e.g. `friendlyNames="Wash Temperature@en-US,@Setting.WaterTemperature"` or `supportedModes="0=Cold@en-US:Cool@en-US,1=Warm@en-US,2=Hot@en-US"`). For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=Down,Open=Up,Lower=Down,Raise=Up"` and states in parameter `stateMappings="Closed=Down,Open=Up"`. For actions, you can configure a set request by providing the mode or an adjust request, if `ordered=true`, by providing the delta value in parentheses.
+* Items that represent components of a device that have more than one setting. Multiple instances can be configured in a group endpoint. By default, to ask for a specific mode, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well prefixing with an @ sign (e.g. `friendlyNames="Wash Temperature,@Setting.WaterTemperature"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. In regards to supported modes and their mappings, by default if omitted, the openHAB item state description options, if defined, are used to determine these configurations. To configure it, use `supportedModes` parameter and provide a comma delimited list of mode mappings composed of openHAB item states and the associated names/asset ids they should be called, delimited by equal and column signs (e.g. `supportedModes="0=Cold:Cool,1=Warm,2=Hot"`). For string based modes, if the mapping state value and name are the same (case sensitive), a shortened format can be used, where the name doesn't need to be added to the list by either leaving the first element empty or not providing the names at all (e.g. `supportedModes="Normal=:Cottons,Whites"` <=> `supportedModes="Normal=Normal:Cottons,Whites=Whites`). Additionally, if the mode can be adjusted incrementally (e.g. temperature control), set parameter `ordered=true`, otherwise only requests to set a specific mode will be accepted. For text-based name language support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally set the language in parameter `language="en"`. For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=Down,Open=Up,Lower=Down,Raise=Up"` and states in parameter `stateMappings="Closed=Down,Open=Up"`. For actions, you can configure a set request by providing the mode or an adjust request, if `ordered=true`, by providing the delta value in parentheses.
 * Supported item type:
   * Number
   * String
 * Supported metadata parameters:
   * friendlyNames=`<names>`
-    * each name formatted as `<@assetIdOrName[@locale]>`
+    * each name formatted as `<@assetIdOrName>`
     * defaults to item label name
   * nonControllable=`<boolean>`
     * defaults to false
   * supportedModes=`<modes>`
-    * each mode formatted as `<mode>=<@assetIdOrName1[@locale]>:<@assetIdOrName2[@locale]>:...`
+    * each mode formatted as `<mode>=<@assetIdOrName1>:<@assetIdOrName2>:...`
     * requires two modes to be specified at least
     * defaults to item state description options `supportedModes="value1=label1,..."`, if defined, otherwise no supported modes
   * ordered=`<boolean>`
     * defaults to false
+  * language=`<code>`
+    * two letter language code [`de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`]
+    * defaults to your server [regional settings](#regional-settings), if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each mapping formatted as, based on action type:
       * set => `<action>=<mode>`
@@ -616,7 +628,7 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: OTHER
 
 #### `RangeController.rangeValue`
-* Items that represent components of a device that are characterized by numbers within a minimum and maximum range. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well prefixing with an @ sign (e.g. `friendlyNames="@Setting.FanSpeed,Speed"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. To set the supported range, provide a column delimited list including minimum, maximum and precision values (e.g. `supportedRange="0:100:1"`). The latter value will be use as default increment when requesting adjusted range values. Optionally, named presets can be defined, by providing a list of comma delimited preset mappings composed of a range value and its friendly names/asset ids column delimited (e.g. fan speeds => `presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest"`). Another optional settings is `unitOfMeasure` parameter which gives a unit of measure to the range values. It is determined based on: (1) [unit id](#unit-of-measurement-catalog) set in parameter `unitOfMeasure=Angle.Degrees`; (2) supported unit of item state presentation; (3) default unit of measurement for item type with dimension based on your openHAB server regional settings; (4) defaults to empty. For text-based value locale support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally add the locale setting at the end of names or presets using @ sign (e.g. `friendlyNames="@Setting.FanSpeed,Speed@en-US` or `presets="1=@Value.Minimum:@Value.Low:Lowest@en-US,10=@Value.Maximum:@Value.High:Highest@en-US"`). For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=0,Open=100,Lower=(-10),Raise=(+10)"` and states in parameter `stateMappings="Closed=0,Open=1:100"`. For actions, you can configure a set request by providing the number value or an adjust request by providing the delta value in parentheses. For states, you can configure a specific number value or a range by providing a column delimited list including minimum and maximum values.
+* Items that represent components of a device that are characterized by numbers within a minimum and maximum range. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well prefixing with an @ sign (e.g. `friendlyNames="@Setting.FanSpeed,Speed"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. To set the supported range, provide a column delimited list including minimum, maximum and precision values (e.g. `supportedRange="0:100:1"`). The latter value will be use as default increment when requesting adjusted range values. Optionally, named presets can be defined, by providing a list of comma delimited preset mappings composed of a range value and its friendly names/asset ids column delimited (e.g. fan speeds => `presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest"`). Another optional settings is `unitOfMeasure` parameter which gives a unit of measure to the range values. It is determined based on: (1) [unit id](#unit-of-measurement-catalog) set in parameter `unitOfMeasure=Angle.Degrees`; (2) supported unit of item state presentation; (3) default unit of measurement for item type with dimension based on your openHAB server regional settings; (4) defaults to empty. For text-based name language support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally set the language in parameter `language="en"`. For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=0,Open=100,Lower=(-10),Raise=(+10)"` and states in parameter `stateMappings="Closed=0,Open=1:100"`. For actions, you can configure a set request by providing the number value or an adjust request by providing the delta value in parentheses. For states, you can configure a specific number value or a range by providing a column delimited list including minimum and maximum values.
 * Supported item type:
   * Dimmer
   * Number
@@ -629,19 +641,22 @@ The following are a list of supported metadata. It is important to note that not
   * Rollershutter
 * Supported metadata parameters:
   * friendlyNames=`<names>`
-    * each name formatted as `<@assetIdOrName[@locale]>`
+    * each name formatted as `<@assetIdOrName>`
     * defaults to item label name
   * nonControllable=`<boolean>`
     * defaults to false
   * supportedRange=`<minValue:maxValue:precision>`
     * defaults to `"0:100:1"` for Dimmer/Rollershutter, `"0:10:1"` for Number* item types
   * presets=`<presets>` (optional)
-    * each preset formatted as `<presetValue>=<@assetIdOrName1[@locale]>:<@assetIdOrName2[@locale]>:...`
+    * each preset formatted as `<presetValue>=<@assetIdOrName1>:<@assetIdOrName2>:...`
   * unitOfMeasure=`<unitId>` (optional)
     * defaults to unit of item state presentation or default unit of measurement for the Number:* item types listed below:
       * Number:Angle [`Angle.Degrees`]
       * Number:Length [`Distance.Meters` (SI); `Distance.Inches` (US)]
       * Number:Temperature [`Temperature.Celsius` (SI); `Temperature.Fahrenheit` (US)]
+  * language=`<code>`
+    * two letter language code [`de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`]
+    * defaults to your server [regional settings](#regional-settings), if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each mapping formatted as, based on action type:
       * set => `<action>=<value>`
@@ -653,17 +668,20 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: OTHER
 
 #### `ToggleController.toggleState`
-* Items that represent components of a device that can be turned on or off. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well with an @ sign prefix (e.g. `friendlyNames="@Setting.Oscillate,Rotate"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. For text-based value locale support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally add the locale setting at the end of names using @ sign (e.g. `friendlyNames="@Setting.Oscillate,Rotate@en-US`). For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=OFF,Open=ON"` and states in parameter `stateMappings="Closed=OFF,Open=ON"`. Actions and states values must be set to either `ON` or `OFF`.
+* Items that represent components of a device that can be turned on or off. Multiple instances can be configured in a group endpoint. By default, to ask for a specific range, the item label will be used as the friendly name. To configure it, use `friendlyNames` parameter and provide a comma delimited list of different labels (Keep in mind that some names are [not allowed](#friendly-names-not-allowed)). Additionally, pre-defined [asset ids](#asset-catalog) can be used to label a mode as well with an @ sign prefix (e.g. `friendlyNames="@Setting.Oscillate,Rotate"`). If the component isn't controllable through openHAB, set parameter `nonControllable=true`, that way only status requests will be processed. For text-based name language support, your server [regional settings](#regional-settings) should be setup, otherwise, you can optionally set the language in parameter `language="en"`. For [semantic extensions](#semantic-extensions) support, set actions in parameter `actionMappings="Close=OFF,Open=ON"` and states in parameter `stateMappings="Closed=OFF,Open=ON"`. Actions and states values must be set to either `ON` or `OFF`.
 * Supported item type:
   * Color
   * Dimmer
   * Switch
 * Supported metadata parameters:
   * friendlyNames=`<names>`
-    * each name formatted as `<@assetIdOrName[@locale]>`
+    * each name formatted as `<@assetIdOrName>`
     * defaults to item label name
   * nonControllable=`<boolean>`
     * defaults to false
+  * language=`<code>`
+    * two letter language code [`de`, `en`, `es`, `fr`, `hi`, `it`, `ja`, `pt`]
+    * defaults to your server [regional settings](#regional-settings), if defined, otherwise `en`
   * actionMappings=`<mappings>`
     * each mapping formatted as `<action>=ON` or `<action>=OFF`
   * stateMappings=`<mappings>`
@@ -935,27 +953,38 @@ Category | Description
 ---------|------------
 ACTIVITY_TRIGGER | A combination of devices set to a specific state. Use activity triggers for scenes when the state changes must occur in a specific order. For example, for a scene named "watch Netflix" you might power on the TV first, and then set the input to HDMI1.
 CAMERA | A media device with video or photo functionality.
+COMPUTER | A non-mobile computer, such as a desktop computer.
 CONTACT_SENSOR | An endpoint that detects and reports changes in contact between two surfaces.
 DOOR | A door.
 DOORBELL | A doorbell.
 EXTERIOR_BLIND | A window covering on the outside of a structure.
 FAN | A fan.
+GAME_CONSOLE | A game console, such as Microsoft Xbox or Nintendo Switch
+GARAGE_DOOR | A garage door. Garage doors must implement the [ModeController](modecontroller-mode) interface to open and close the door.
 INTERIOR_BLIND | A window covering on the inside of a structure.
+LAPTOP | A laptop or other mobile computer.
 LIGHT | A light source or fixture.
 MICROWAVE | A microwave oven.
+MOBILE_PHONE | A mobile phone.
 MOTION_SENSOR | An endpoint that detects and reports movement in an area.
+MUSIC_SYSTEM | A network-connected music system.
+NETWORK_HARDWARE | A network router.
 OTHER | An endpoint that doesn't belong to one of the other categories.
 OVEN | An oven cooking appliance.
+PHONE | A non-mobile phone, such as landline or an IP phone.
 SCENE_TRIGGER | A combination of devices set to a specific state. Use scene triggers for scenes when the order of the state change is not important. For example, for a scene named "bedtime" you might turn off the lights and lower the thermostat, in any order.
 SCREEN | A projector screen.
 SECURITY_PANEL | A security panel.
 SMARTLOCK | An endpoint that locks.
 SMARTPLUG | A module that is plugged into an existing electrical outlet, and then has a device plugged into it. For example, a user can plug a smart plug into an outlet, and then plug a lamp into the smart plug. A smart plug can control a variety of devices.
 SPEAKER | A speaker or speaker system.
+STREAMING_DEVICE | A streaming device such as Apple TV, Chromecast, or Roku.
 SWITCH | A switch wired directly to the electrical system. A switch can control a variety of devices.
+TABLET | A tablet computer.
 TEMPERATURE_SENSOR | An endpoint that reports temperature, but does not control it. The temperature data of the endpoint is not shown in the Alexa app.
 THERMOSTAT | An endpoint that controls temperature, stand-alone air conditioners, or heaters with direct temperature control.
 TV | A television.
+WEARABLE | A network-connected wearable device, such as an Apple Watch, Fitbit, or Samsung Gear.
 
 ### Asset Catalog
   * List of Alexa asset catalog from [Alexa Skill API](https://developer.amazon.com/docs/device-apis/resources-and-assets.html#global-alexa-catalog) docs:
@@ -1007,8 +1036,8 @@ Setting.Humidity | Humidity
 ### Semantic Catalog
   * List of Alexa semantic catalog from [Alexa Skill API](https://developer.amazon.com/docs/device-apis/alexa-discovery.html#semantics-object) docs:
 
-Semantic Type | Names
---------------|------
+Semantic Type | Identifiers
+--------------|------------
 Actions | Close<br>Open<br>Lower<br>Raise
 States | Closed<br>Open
 

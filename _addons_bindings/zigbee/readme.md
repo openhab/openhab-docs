@@ -146,7 +146,7 @@ The following coordinators are known to be supported.
 |[Bitron Video ZigBee USB Funkstick](http://www.bitronvideo.eu/index.php/produkte/smart-home-produkte/zb-funkstick/)|[Ember](#ember-ezsp-ncp-coordinator)| |
 |[Cortet EM358 USB Stick](https://www.cortet.com/iot-hardware/cortet-usb-sticks/em358-usb-stick)|[Ember](#ember-ezsp-ncp-coordinator)| Use baud rate 57600 and software flow control. |
 |[Nortek Security & Control HUSBZB-1](https://nortekcontrol.com/products/2gig/husbzb-1-gocontrol-quickstick-combo/)|[Ember](#ember-ezsp-ncp-coordinator)|Stick contains both Z-Wave and ZigBee. Use baud rate 57600 and software flow control. |
-|[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)| |
+|[Telegesis ETRX357USB ZigBee® USB Stick](https://www.silabs.com/products/wireless/mesh-networking/telegesis-modules-gateways/etrx3-zigbee-usb-sticks)|[Telegesis](#telegesis-etrx3)| At least firmware version R309 is required. With debug [logging](#when-things-dont-appear-to-be-working) enabled, the firmware version will be logged during startup. |
 |[QIVICON ZigBee-Funkstick](https://www.qivicon.com/de/produkte/produktinformationen/zigbee-funkstick/)|[Telegesis](#telegesis-etrx3)|Only working on Linux devices|
 |[Digi XStick](https://www.digi.com/products/xbee-rf-solutions/boxed-rf-modems-adapters/xstick)|[XBee](#digi-xbee-x-stick)| |
 
@@ -221,6 +221,7 @@ The following devices have been tested by openHAB users with the binding. The ab
 | Innr SP 120                                    | Smart Plug *[<sup>[1]</sup>](#note1)*                 |
 | Lupus Small Zigbee Temperature Sensor 12314    | Lupus-Electronics Temperature and Humidity sensor     |
 | Osram Bulbs                                    |                                                       |
+| Osram Flex 3P Multicolor                       | Osram Smart+ LED Strip                                |
 | Osram Motion Sensor                            | Osram Smart+ Motion Sensor *[<sup>[1]</sup>](#note1)* |
 | Securifi Peanut Plug                           | Metered Plug                                          |
 | SmartThings Plug                               | Metered Plug                                          |

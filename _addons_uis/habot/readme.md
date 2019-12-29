@@ -3,7 +3,7 @@ id: habot
 label: HABot
 title: HABot - UIs
 type: ui
-description: "HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://eclipse.org/smarthome/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org))."
+description: "HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://openhab.org/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org))."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # HABot
 
-HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://eclipse.org/smarthome/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org)).
+HABot is a chatbot for [openHAB](https://openhab.org), running inside the [Eclipse SmartHome](https://openhab.org/) runtime with no dependency; it can run offline and keep your data out of third-party clouds, but works very well remotely if served from an openHAB Cloud instance (like [myopenhab.org](https://www.myopenhab.org)).
 In that scenario it can even be added to the Android homescreen as a [Progressive Web App](https://developers.google.com/web/progressive-web-apps/), and adds features working only on "secure origins" like push notifications, speech recognition and resource caching.
 
 It consists in:

@@ -118,8 +118,8 @@ Each item tag supports different command, here is the summary:
 |                        | put         | on, off             |
 |                        | dim         |                     |
 |                        | dim by      | value in percentage |
-|                        | brighten    |                     |
-|                        | brighten by | value in percentage |
+|                        | bright      |                     |
+|                        | bright by   | value in percentage |
 |                        |             |                     |
 | `Thermostat`           | adjust to   | values in degrees   |
 |                        | regulate to | values in degrees   |
@@ -136,22 +136,25 @@ Each item tag supports different command, here is the summary:
 
 With references to the above item definitions, here are an examples of working commands:
 
-- *"Hey Mycroft, turn on Diningroom Light"*
-- *"Hey Mycroft, switch off Kitchen Light"*
-- *"Hey Mycroft, put on Good Night"*
-- *"Hey Mycroft, what is Good Night status?"*
-- *"Hey Mycroft, set Diningroom to 50 percent"*
-- *"Hey Mycroft, dim Kitchen"*
-- *"Hey Mycroft, brighten Kitchen"*
-- *"Hey Mycroft, dim Kitchen by 20 percent"*
-- *"Hey Mycroft, what's Bedroom temperature?"*
-- *"Hey Mycroft, what's Bedroom humidity?"*
-- *"Hey Mycroft, adjust Main Thermostat to 21 degrees"*
-- *"Hey Mycroft, regulate Main Thermostat to 20 degrees"*
-- *"Hey Mycroft, decrease Main Thermostat by 2 degrees"*
-- *"Hey Mycroft, increase Main Thermostat by 1 degrees"*
-- *"Hey Mycroft, what is Main Thermostat regulated to?"*
-- *"Hey Mycroft, what is Main Thermostat tuned to?"*
+- * "Hey Mycroft, turn on Diningroom Light"
+- * "Hey Mycroft, switch off Kitchen Light"
+- * "Hey Mycroft, put on Good Night"
+- * "Hey Mycroft, what is Good Night status?"
+- * "Hey Mycroft, what is the status of Good Night?"
+- * "Hey Mycroft, set Diningroom to 50 percent"
+- * "Hey Mycroft, dim Kitchen"
+- * "Hey Mycroft, bright Kitchen"
+- * "Hey Mycroft, dim Kitchen by 20 percent"
+- * "Hey Mycroft, what's Bedroom temperature?"
+- * "Hey Mycroft, tell me the temperature of Bedroom"
+- * "Hey Mycroft, what's the Bedroom humidity?"
+- * "Hey Mycroft, I'd like to know the humidity of Bedroom"
+- * "Hey Mycroft, adjust Main Thermostat to 21 degrees"
+- * "Hey Mycroft, regulate Main Thermostat to 20 degrees"
+- * "Hey Mycroft, decrease Main Thermostat by 2 degrees"
+- * "Hey Mycroft, increase Main Thermostat by 1 degrees"
+- * "Hey Mycroft, what is Main Thermostat is regulated to?"
+- * "Hey Mycroft, how the Main Thermostat tuned to?"
 
 ### Additional Comments
 
