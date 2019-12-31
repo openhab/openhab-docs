@@ -72,7 +72,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```java
 Switch Kitchen_Light "Kitchen Light" {mqtt="<[...], >[...]" }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
-Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
+Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
 Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
@@ -181,7 +181,7 @@ Examples:
 |-----------------------------------|---------------------------------------------------------------------------------------------------------|
 | "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
 | "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
-| "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`GF_BR_WashingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
 | "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
 | "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
@@ -318,11 +318,10 @@ The following guidelines apply to user-added icon files:
 
 - Only `png` or `svg` file formats may be used
 - Icon filenames may include lowercase letters, numbers and underscores (`_`)
-- Uppercase letters and special characters are prohibited
-- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons)
 - Example filenames:
-  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+  - Good: `myswitch.svg`, `power_meter.png`, `tuer23.svg`
+  - Bad: `MySwitch.svg`, `power-meter.png`, `tür23.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
@@ -680,10 +679,11 @@ You can find the documentation of these Profiles within the [Add-On documentatio
 
 | ID                                                                                            | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
 |-----------------------------------------------------------------------------------------------|---------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                   |
+| `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                    |
 | `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates. |
 | `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.                                                                                                                                                                                                                  |
-| `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive                                                                                                                                                                                                                                 |
+| `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                              |
+| `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                |
 | `rawbutton-toggle-rollershutter`                                                              | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                            |
 | `rawbutton-toggle-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                  |
 | `rawrocker-to-on-off`                                                                         | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                            |

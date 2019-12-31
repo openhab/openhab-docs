@@ -74,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text`, `Group` or `Switch`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
@@ -310,8 +310,10 @@ This type presents a value as a user-adjustable control which slides from left (
 -   `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
--   `switchSupport` is a parameter without an assignment (Classic UI only!).
-    If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+-   `switchSupport` is a parameter without an assignment.
+    - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+    - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+    - This parameter has no effect in other UIs.
 
 -   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
 -   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
@@ -327,11 +329,13 @@ Slider item=KI_Temperature label="Kitchen"
 ### Element Type 'Colorpicker'
 
 ```perl
-Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=""]
+Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=<sendFrequency>]
 ```
 
-This element provides the ability to select a color.
-When the user clicks on the middle button, a color wheel will appear.
+This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
+The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
+The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
+
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
@@ -410,9 +414,11 @@ Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encod
 ```
 
 Allows you to display a video as part of your Sitemap.
-Note: not all video encodings (formats) are supported; you may need to transcode your video.
+::: tip Note
+Not all video encodings (formats) are supported; you may need to transcode your video.
 The video must be reachable directly via URL.
-An embedded and/or protected video are not supported.
+An embedded and/or protected video is not supported.
+:::
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
@@ -581,29 +587,32 @@ Note also, the effect of omitting `Temperature` and the comparison operator in t
 
 Below is a list of standard colors and their respective RGB color codes.
 
-| Color Name | Preview and RGB Color Code              |
-|------------|-----------------------------------------|
-| maroon     | *`► #800000`*{: style="color: #800000"} |
-| red        | *`► #ff0000`*{: style="color: #ff0000"} |
-| orange     | *`► #ffa500`*{: style="color: #ffa500"} |
-| olive      | *`► #808000`*{: style="color: #808000"} |
-| yellow     | *`► #ffff00`*{: style="color: #ffff00"} |
-| purple     | *`► #800080`*{: style="color: #800080"} |
-| fuchsia    | *`► #ff00ff`*{: style="color: #ff00ff"} |
-| white      | *`► #ffffff`*{: style="color: #ffffff"} |
-| lime       | *`► #00ff00`*{: style="color: #00ff00"} |
-| green      | *`► #008000`*{: style="color: #008000"} |
-| navy       | *`► #000080`*{: style="color: #000080"} |
-| blue       | *`► #0000ff`*{: style="color: #0000ff"} |
-| teal       | *`► #008080`*{: style="color: #008080"} |
-| aqua       | *`► #00ffff`*{: style="color: #00ffff"} |
-| black      | *`► #000000`*{: style="color: #000000"} |
-| silver     | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
-| gray       | *`► #808080`*{: style="color: #808080"} |
+| Color Name | Preview                                       | RGB Color Code |
+|------------|-----------------------------------------------|----------------|
+| maroon     | <div style="color: #800000;">&#11044;</div>   | `#800000`      |
+| red        | <div style="color: #ff0000;">&#11044;</div>   | `#ff0000`      |
+| orange     | <div style="color: #ffa500;">&#11044;</div>   | `#ffa500`      |
+| olive      | <div style="color: #808000;">&#11044;</div>   | `#808000`      |
+| yellow     | <div style="color: #ffff00;">&#11044;</div>   | `#ffff00`      |
+| purple     | <div style="color: #800080;">&#11044;</div>   | `#800080`      |
+| fuchsia    | <div style="color: #ff00ff;">&#11044;</div>   | `#ff00ff`      |
+| pink       | <div style="color: #ffc0cb;">&#11044;</div>   | `#ffc0cb`      |
+| white      | <div style="color: #ffffff;">&#11044;</div>   | `#ffffff`      |
+| lime       | <div style="color: #00ff00;">&#11044;</div>   | `#00ff00`      |
+| green      | <div style="color: #008000;">&#11044;</div>   | `#008000`      |
+| navy       | <div style="color: #000080;">&#11044;</div>   | `#000080`      |
+| blue       | <div style="color: #0000ff;">&#11044;</div>   | `#0000ff`      |
+| teal       | <div style="color: #008080;">&#11044;</div>   | `#008080`      |
+| aqua       | <div style="color: #00ffff;">&#11044;</div>   | `#00ffff`      |
+| black      | <div style="color: #000000;">&#11044;</div>   | `#000000`      |
+| silver     | <div style="color: #c0c0c0;">&#11044;</div>   | `#c0c0c0`      |
+| gray       | <div style="color: #808080;">&#11044;</div>   | `#808080`      |
+| gold       | <div style="color: #ffd700;">&#11044;</div>   | `#ffd700`      |
 
 Please take note that colors other than those listed in the list above may be used.
-Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
-The color names above are agreed on between all openHAB UIs and are therefor your safest choice.
+Generally, you can expected that valid HTML colors will be accepted (e.g. `green`, `lightgrey`, `#334455`), but note that a UI may only accept internally defined colors, or work with a special theme.
+The color names above are agreed on between all openHAB UIs and are therefore your safest choice.
+Colors defined by a human-readable name may be adjusted for higher contrast, e.g. on a dark theme `black` may be displayed as white, because white has a higher contrast to the dark background compared to black.
 
 ### Icons
 

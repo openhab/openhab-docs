@@ -72,35 +72,16 @@ Which can be used any time after a failure.
 
 ## Updating the openHAB Runtime
 
-There is currently no automatic update script for Windows.
-To update manually, download a later version of the openHAB distribution zip file and follow these steps:
+To start the update process, run PowerShell as an administrator and use the following commands, while replacing `x.x.x` with the wanted openHAB version.
+Assuming you have openHAB installed in `C:\openHAB2`:
 
-1.  Stop the openHAB process if it is currently running.
+```shell
+cd C:\openHAB2
+. .\runtime\bin\update.ps1
+Update-openHAB -OHVersion x.x.x
+```
 
-2.  Backup openHAB as described above.
-
-3.  Delete the following files and folders from your existing install:
-    - `userdata\etc\all.policy`
-    - `userdata\etc\branding.properties`
-    - `userdata\etc\branding-ssh.properties`
-    - `userdata\etc\config.properties`
-    - `userdata\etc\custom.properties`
-    - `userdata\etc\custom.system.properties`
-    - `userdata\etc\distribution.info`
-    - `userdata\etc\jre.properties`
-    - `userdata\etc\org.openhab.addons.cfg`
-    - `userdata\etc\org.ops4j.pax.url.mvn.cfg`
-    - `userdata\etc\overrides.properties`
-    - `userdata\etc\profile.cfg`
-    - `userdata\etc\startup.properties`
-    - `userdata\etc\system.properties`
-    - `userdata\etc\version.properties`
-    - Any file in `userdata\etc` that starts with `org.apache.karaf`
-    - The `userdata\cache` folder
-    - The `userdata\tmp` folder
-    - The `runtime` folder
-
-4.  Copy and paste the contents of the zip file over your existing install, when prompted **do not overwrite existing files**
+Now that openHAB has updated, you only need to run the above commands again for future versions.
 
 ## Starting openHAB as a Service
 

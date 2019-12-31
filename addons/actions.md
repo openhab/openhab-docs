@@ -47,10 +47,10 @@ They can be found in the article about [openHAB multimedia]({{base}}/configurati
 - `logWarn(String loggername, String logText)`: Logs logText on level WARN to openhab.log
 - `logError(String loggername, String logText)`: Logs logText on level ERROR to openhab.log
 
-`logText` can be a compete String, constructed through concatination, or through arguments.
+`logText` can be a compete String, constructed through concatenation, or through arguments.
 
 - **Complete String Example:** `logInfo("Garage", "This is a complete String")`
-- **Concatination Example:** `logDebug("Lighting", "This is a string concatination:" + Light.name)`
+- **Concatenation Example:** `logDebug("Lighting", "This is a string concatenation:" + Light.name)`
 - **Arguments Example:** `logWarn("Alarm", "The {} window has been open for {} hours!", Window.name, timeOpen)`
 
 One can configure whether specific log entries are logged out and where they get logged to (e.g. to a separate file) by [editing the logger configuration]({{base}}/administration/logging.html).
@@ -60,18 +60,34 @@ One can configure whether specific log entries are logged out and where they get
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
 - `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
-Note: The commandLine variable often has to use a special format where @@ needs to be used in place of spaces. For example the bash command touch somefile will have to be written as touch@@somefile.
+::: tip Note
+Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`.
+When one or more arguments contain spaces, use `@@` instead of a space as the argument separator.
+For example the bash command `touch -t 01010000 "some file with space.txt"` will have to be written as `touch@@-t@@01010000@@some file with space.txt`.
+:::
 
 ### HTTP Actions
 
-- `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
+- `sendHttpGetRequest(String url)`: Sends a GET-HTTP request and returns the result as a String
+- `sendHttpGetRequest(String url, Map<String, String> headers, int timeout)`: Sends a GET-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
 - `sendHttpPutRequest(String url)`: Sends a PUT-HTTP request and returns the result as a String
-- `sendHttpPutRequest(String url, Sting contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PUT-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpPostRequest(String url)`: Sends a POST-HTTP request and returns the result as a String
 - `sendHttpPostRequest(String url, String contentType, String content)`: Sends a POST-HTTP request with the given content and returns the result as a String
+- `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
+- `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
 
-Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+::: tip Note
+All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+:::
+
+For example:
+```javascript
+val headers = newHashMap("Cache-control" -> "no-cache")
+val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
+```
 
 ### Timers
 
@@ -119,11 +135,11 @@ if ((thingStatusInfo !== null) && (thingStatusInfo.getStatus().toString() == "ON
 ```
 
 ### openHAB Subsystem Actions
-openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, and scripts.
+openHAB has several subsystems that can be accessed from Rules. These include persistence, see [Persistence Extensions in Scripts and Rules]({{base}}/configuration/persistence.html#persistence-extensions-in-scripts-and-rules), transformations, scripts.
 
 - `callScript(String scriptName)`: Calls a script which must be located in the `$OPENHAB_CONF/scripts` folder.
 
-Scripts are small pieces of Rules DSL code that can be called from Rules. 
+Scripts are small pieces of Rules DSL code that can be called from Rules.
 However, Scripts have limitations.
 Scripts cannot accept arguments.
 Scripts cannot return a value.
@@ -167,6 +183,119 @@ end
 ```
 
 For information on making use of the [openHAB Cloud service](https://github.com/openhab/openhab-cloud/blob/master/README.md) hosted by the [openHAB Foundation e.V.](https://www.openhabfoundation.org/), visit the [myopenhab.org website](http://www.myopenhab.org).
+
+## Ephemeris
+
+Ephemeris is a way to determine what type of day today or a number of days before or after today is.
+For example, a way to determine if today is a weekend, a bank holiday, someone’s birthday, trash day, etc.
+The default bank holidays and configuration syntax is defined by the [Jollyday library](https://github.com/svendiedrichsen/jollyday).
+
+### Actions
+
+#### Rules DSL
+
+Action | Returns
+-|-
+`getBankHolidayName` | name of the holiday today, or `null` if today is not a bank holiday
+`getBankHolidayName(<offset>)` | name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday
+`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday
+`getBankHolidayName(<offset>, <file>)` | name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`
+`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`
+`getDaysUntil(<holiday name>)` | number of days from today to the given `<holiday name>`
+`getDaysUntil(<holiday name>, <file>)` | number of days from today to the given `<holiday name>` defined in `<file>`
+`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`
+`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`
+`getHolidayDescription(<holiday name>)` | Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`
+`getNextBankHoliday` | name of the next bank holiday
+`getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
+`getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
+`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
+`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`
+`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`
+`isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
+`isBankHoliday(<offset>)` | `true` if the day `<offset>` days from today is a bank holiday, `false` otherwise
+`isBankHoliday(<datetime>)` | `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday, `false` otherwise.
+`isBankHoliday(<offset>, <file>)` | `true` if the day `<offset>` days from today is a day defined in `<file>`, use 0 for `<offset>` for today; returns `false` otherwise
+`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`, `false` otherwise
+`isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
+`isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`, `false` otherwise
+`isWeekend` | `true` if today is a weekend, `false` otherwise
+`isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
+`isWeekend(<datetime>)` | `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise
+
+In all examples that take `<offset>`, use a negative value to check days in the past.
+
+#### Scripted Automation
+
+One must import the Ephemeris Action and then call the above functions using `Ephemeris.<function>`, for example `Ephemeris.getNextBankHoliday()`.
+
+### Configuration
+
+#### PaperUI
+
+In PaperUI one has the ability to configure which days of the week are considered weekends and set your country, region, and city.
+If no country is provided the service uses your system default locale settings.
+Browse to Configuration and System and scroll down to the Ephemeris section.
+Setting the country, region and optionally city will cause Ephemeris to use the list of bank holidays defined for that location by [Jollyday](https://github.com/svendiedrichsen/jollyday).
+You can find the XML file for your country [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/holidays).
+You can find the localized mapping files that map between the holiday name in the XML and your preferred language [here](https://github.com/svendiedrichsen/jollyday/tree/master/src/main/resources/descriptions).
+
+When filling in the country, region and city in that order, if there isn’t a drop down list leave that field blank.
+There are no special bank holidays defined by Jollyday for that level.
+
+#### `ephemeris.cfg`
+
+By default Ephemeris supports a weekend dayset and a school dayset.
+You can define additional daysets or modify the school dayset.
+If you need to define custom daysets, you must do all your configuration through the `ephemeris.cfg` file instead of using PaperUI as described above so make sure to at least redefine the weekend dayset.
+If there is no `dayset-weekend` defined, calls to `isWeekend` will generate errors.
+
+Config file location: `$OH_CONF/services/ephemeris.cfg`.
+
+Fields:
+Field | Description
+-|-
+`country` | Country to use to get the built in list of bank holidays, uses the standard two letter country code.
+`region` | Uses the appropriate two letter region code if applicable.
+`dayset-<name>` | List of the days of that are in this custom dayset. The days are put into a list (i.e. surrounded by `[ ]` and separated by a comma) and the English names for the days of the week should be used, in all caps. See the example below.
+
+If in doubt on what values to use, see the links above to find the XML file for your country, open the XML file, and find the `tns:SubConfigurations` for your region and use the “hierarchy” value for `region`.
+
+For example:
+
+```text
+country=de
+region=nw
+dayset-workday=[MONDAY,TUESDAY,WEDNESDAY,THURSDAY,FRIDAY]
+dayset-weekend=[SATURDAY,SUNDAY]
+dayset-trash=[MONDAY]
+```
+#### Custom Bank Holidays
+
+In addition to the ability to define custom daysets, one can define a custom list of holidays or other important days.
+If you have opened the Jollyday XML file for your country already, you have seen an example of what your custom file should look like.
+The following is an example listing a few custom days.
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<tns:Configuration hierarchy="us" description="United States"
+    xmlns:tns="http://www.example.org/Holiday" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.example.org/Holiday /Holiday.xsd">
+    <tns:Holidays>
+        <tns:Fixed month="MARCH" day="20" descriptionPropertiesKey="Rich Birthday" />
+        <tns:Fixed month="MARCH" day="27" descriptionPropertiesKey="Son's Birthday" />
+        <tns:Fixed month="JUNE" day="12" descriptionPropertiesKey="Wife's Birthday" />
+        <tns:Fixed month="DECEMBER" day="27" descriptionPropertiesKey="Anniversary" />
+        <tns:FixedWeekday which="FIRST" weekday="TUESDAY" month="NOVEMBER" descriptionPropertiesKey="Election Day"/>
+    </tns:Holidays>
+</tns:Configuration>
+```
+For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
+
+You can place these XML files anywhere on your file system that openHAB has permission to read.
+In the calls to the Actions, use the fully qualified path.
+We recommend placing these custom files somewhere inside your `$OH_CONF` folder, such as `$OH_CONF/services`.
 
 ## Installable Actions
 

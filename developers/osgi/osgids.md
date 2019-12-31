@@ -52,23 +52,54 @@ A component requires the following artifacts in a bundle:
 - **Service-Component manifest header**, which contains the location of the XML description;
 - An **implementation class** that is specified in the component description.
 
-Because we do not write the xml files or the manifest ourselves,
-we will concentrate on the Java annotations in the examples below.
+Because we do not write the XML files or the manifest ourselves, we will concentrate on the Java annotations in the examples below.
+A component may use different strategies to access the bound services: _Constructor injection_, _Field injection_ or _Method injection_ (see [OSGi Compendium Release 7, Chapter 112.3: References to Services][OSGi-cmpn]).
 
-## Example - Reference Service via Fields
+### Example - Reference a Service
 
 In this example our component needs the openHAB `ItemRegistry` (`org.openhab.core.items.ItemRegistry`).
 We will use DS to inject an implementation of this service in our class.
 
+### Constructor Injection
+
+Bound services and activation objects can be parameters to the constructor.
+
 ```java
-@Component(service={MyService.class}, immediate=true)
+@Component(service = MyService.class, immediate = true)
+@NonNullByDefault
+public class MyService {
+    protected final ItemRegistry itemRegistry;
+
+    @Activate
+    public MyService(final @Reference ItemRegistry itemRegistry) {
+        this.itemRegistry = itemRegistry;
+    }
+
+    @Activate
+    protected void activate(BundleContext context) {
+        System.out.println("Bundle is activated!");
+    }
+
+    @Deactivate
+    protected void deactivate(BundleContext context) {
+        System.out.println("Bundle is deactivated!");
+    }
+}
+```
+
+### Field Injection
+
+```java
+@Component(service = MyService.class, immediate = true)
+@NonNullByDefault
 public class MyService {
     @Reference // you can add some configuration parameters to this annotation
     protected @NonNullByDefault({}) ItemRegistry itemRegistry;
 
+
     @Activate
     protected void activate(BundleContext context) {
-        System.out.println("Bundle is activated and itemRegistry is available!");
+        System.out.println("Bundle is activated!");
     }
 
     @Deactivate
@@ -92,62 +123,53 @@ Let's take a look at some configuration parameters, that we can apply:
     - *static* - the default policy. Component configuration are deactivated every time, when a reference with static policy becomes unavailable. This causes the activating and deactivating of the component. It can be very expensive, when we have multiple bound services, or when a service is often unregistered and re-registered;
     - *dynamic* - with this policy the component is not deactivated, when a referenced service is changed. It is slightly more complex, as the component implementation has to properly handle changes in the set of bound services.
 
-### Reference service via methods
+### Method Injection
 
 If you want to react when a service got resolved, you may use annotated methods instead of fields like in the example below.
 
-The annotated `activate()` and `deactivate()` methods are called from DS,
-when the component configuration is activated and deactivated (more about [activation](osgids.html#activation)):
+The annotated `activate()` and `deactivate()` methods are called from DS, when the component configuration is activated and deactivated (more about [activation](osgids.html#activation)):
  
 ```java
-package com.example.consumer;
-
-import org.osgi.framework.BundleContext;
-import org.osgi.service.log.LogService;
-
-@Component(service = MyServiceImpl.class, immediate = true)
-public class MyServiceImpl {
-    private LogService log;
-
-    public MyServiceImpl() {
-    }
+@Component(service = MyService.class, immediate = true)
+@NonNullByDefault
+public class MyService {
+    protected @NonNullByDefault({}) ItemRegistry itemRegistry;
 
     @Activate
     protected void activate(BundleContext context) {
         System.out.println("Bundle is activated!");
-        // No specific action is needed here in this case
     }
 
     @Deactivate
     protected void deactivate(BundleContext context) {
         System.out.println("Bundle is deactivated!");
-        // No specific action is needed here in this case
     }
 
     @Reference
-    public void setLog(LogService l) {
-        log = l;
+    public void setItemRegistry(ItemRegistry itemRegistry) {
+        // We store a reference to the ItemRegistry !
+        this.itemRegistry = itemRegistry;
         System.out.println("Log service is available!");
-        // We store a reference to the LogService !
     }
 
-    public void unsetLog(LogService l) {
-        log = null;
-        System.out.println("Log service isn`t available anymore!");
+    public void unsetItemRegistry(ItemRegistry itemRegistry) {
+        System.out.println("Log service is not available anymore!");
         // We have to clean up after ourselves, when the reference is not needed anymore !
+        this.itemRegistry = null;
     }
 }
 ```
 
-## Example - Provide Service
+### Example - Provide a Service
 
-Very often you will have to register a service, that implements an interface defined in the framework (e.g [*EventHandler*](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventHandler.html)) or interface, that you have defined.
+Very often you will have to register a service, that implements an interface defined in the framework (e.g [*EventHandler*](https://osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/event/EventHandler.html)) or interface, that you have defined.
 An interface allows you to change the implementation easily or register multiple implementations in the Service Registry.
 
 We will use DS to register an implementation of the EventHandler service in the OSGi Service Registry.
 
 ```java
-@Component(service={MyService.class,EventHandler.class}, immediate=true, property = { "event.topics=some/topic" })
+@Component(service = {MyService.class, EventHandler.class}, immediate = true, property = { "event.topics=some/topic" })
+@NonNullByDefault
 public class MyService implements EventHandler {
     @Activate
     protected void activate(BundleContext context) {
@@ -178,7 +200,8 @@ Three type of components are defined:
 - **immediate** - with ```immediate``` attribute set to ```true``` - see the [example component description](#service-component-description);  
 - **delayed** - with ```immediate``` attribute set to ```false```;  
 - **factory** - we will not discuss the lifecycle of this type in this article.
-  You can find information in the [OSGi Compendium Specification, Chapter Factory Component][OSGi-cmpn].
+
+You can find more information in the [OSGi Compendium Release 7, Chapter 112.2: Components][OSGi-cmpn].
 
 ## Component Lifecycle
 
@@ -193,7 +216,6 @@ Fig.1 Immediate component lifecycle
 
 <img src="images/delayedcomponent.png" width="400" height="200" />  
 Fig.2 Delayed component lifecycle 
-
 
 ### States
 
@@ -225,7 +247,6 @@ Activation consists of following steps:
 After the activation, the component is in ACTIVE state.
 From this state the component can go back to the *REGISTERED* state (or to the *UNSATISFIED* state), if the component configuration becomes unsatisfied.
 
-
 ### Deactivation 
 
 Deactivation consists of the following actions:
@@ -256,9 +277,9 @@ You might review again the [Equinox commands](equinox.html#iv-commands) before y
 
 ## Further Reading
 
-- [*OSGi Service Platform Service Compendium, Release 5][OSGi-cmpn]
-- [Lars Vogel - Declarative services](http://www.vogella.com/tutorials/OSGiServices/article.html#declarativeservices)  
+- [OSGi Compendium Release 7][OSGi-cmpn]
+- [Lars Vogel - Declarative services](http://www.vogella.com/tutorials/OSGiServices/article.html#declarativeservices)
 - [Getting Started with OSGi: Declarative Services](http://www.eclipsezone.com/eclipse/forums/t97690.rhtml)
-- <http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services>  
+- <http://stackoverflow.com/questions/8886430/what-is-the-difference-between-osgi-components-and-services>
 
-[OSGi-cmpn]: https://osgi.org/download/r5/osgi.cmpn-5.0.0.pdf
+[OSGi-cmpn]: https://osgi.org/download/r7/osgi.cmpn-7.0.0.pdf

@@ -17,7 +17,9 @@ No special configuration is needed, you can use the COM port number (e.g. `COM4`
 
 ## Linux
 
-**Note:** openHABian comes with a menu option to configure the serial ports automatically. So all the rest here is only relevant for non-openHABian users.
+::: tip Note
+openHABian comes with a menu option to configure the serial ports automatically. So all the rest here is only relevant for non-openHABian users.
+:::
 
 If you can see issues related to opening the serial port with Linux, and you are using **non standard serial ports** (e.g. `/dev/ttyAMA0`) you might have to configure openHAB to detect and access the port correctly:
 

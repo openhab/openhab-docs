@@ -28,78 +28,88 @@ The `EventSubscriber` defines the callback interface to receive  events of speci
 The EventPublisher and the EventSubscribers are registered as OSGi services.
 An event subscriber can provide an `EventFilter` in order to filter events based on the topic or the content.
 If there is no filter all subscribed event types are received.
-The event itself will be subclassed for each event type, which exists in the System (e.g. ItemCommandEvent, ItemUpdatedEvent, ThingStatusInfoEvent).
+The event itself will be subclassed for each event type, which exists in the System (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`, `ThingStatusInfoEvent`).
 
 ### The Core Events
+
 This section lists the core events provided by openHAB which can be divided into the categories _Item Events_, _Thing Events_ and _Inbox Events_.
 
 An event consists of a `topic`, a `type`, a `payload` and a `source`.
-The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. ItemCommandEvent, ItemUpdatedEvent).
+The payload can be serialized with any String representation and is determined by its concrete event type implementation (e.g. `ItemCommandEvent`, `ItemUpdatedEvent`).
 The payloads of the openHAB core events are serialized with JSON.
 Each event implementation provides the payload as high level methods as well, usually presented by a data transfer object (DTO).
 
 A topic clearly defines the target of the event and its structure is similar to a REST URI, except the last part, the action.
 The topics of openHAB events are divided into the following four parts: `{namespace}/{entityType}/{entity}/{action}`, e.g. `smarthome/items/{itemName}/command`.
 
-The type of an event is represented by a string, usually the name of the concrete event implementation class, e.g. ItemCommandEvent, ItemUpdatedEvent.
+The type of an event is represented by a string, usually the name of the concrete event implementation class, e.g. `ItemCommandEvent`, `ItemUpdatedEvent` .
 This string type presentation is used by event subscribers for event subscription (see chapter "Receive Events") and by the framework for the creation of concrete event instances.
 
 The event source is optional and represents the name of the source identifying the sender.
 
 #### Item Events
 
-| Event                 |Description                                      |Topic                                   |
-|-----------------------|-------------------------------------------------|----------------------------------------|
-| ItemAddedEvent        |An item has been added to the item registry.     |smarthome/items/{itemName}/added        |
-| ItemRemovedEvent      |An item has been removed from the item registry. |smarthome/items/{itemName}/removed      |
-| ItemUpdatedEvent      |An item has been updated in the item registry.   |smarthome/items/{itemName}/updated      |
-| ItemCommandEvent      |A command is sent to an item via a channel.      |smarthome/items/{itemName}/command      |
-| ItemStateEvent        |The state of an item is updated.                 |smarthome/items/{itemName}/state        |
-| ItemStateChangedEvent |The state of an item has changed.                |smarthome/items/{itemName}/statechanged |
+| Event                      | Description                                             | Topic                                                |
+|----------------------------|---------------------------------------------------------|------------------------------------------------------|
+| ItemAddedEvent             | An item has been added to the item registry.            | smarthome/items/{itemName}/added                     |
+| ItemRemovedEvent           | An item has been removed from the item registry.        | smarthome/items/{itemName}/removed                   |
+| ItemUpdatedEvent           | An item has been updated in the item registry.          | smarthome/items/{itemName}/updated                   |
+| ItemCommandEvent           | A command is sent to an item via a channel.             | smarthome/items/{itemName}/command                   |
+| ItemStateEvent             | The state of an item is updated.                        | smarthome/items/{itemName}/state                     |
+| ItemStatePredictedEvent    | The state of an item predicted to be updated.           | smarthome/items/{itemName}/statepredicted            |
+| ItemStateChangedEvent      | The state of an item has changed.                       | smarthome/items/{itemName}/statechanged              |
+| GroupItemStateChangedEvent | The state of a group item has changed through a member. | smarthome/items/{itemName}/{memberName}/statechanged |
 
-**Note:** The ItemStateEvent is always sent if the state of an item is updated, even if the state did not change.
-ItemStateChangedEvent is sent only if the state of an item was really changed.
+::: tip Note
+The `ItemStateEvent` is always sent if the state of an item is updated, even if the state did not change.
+`ItemStateChangedEvent` is sent only if the state of an item was really changed.
 It contains the old and the new state of the item.
+
+The `GroupItemStateChangedEvent` is sent only if the state of a group item was changed by a member.
+It contains the old and the new state of the group item as well as the member.
+:::
 
 #### Thing Events
 
-| Event                 |Description                                       |Topic                                   |
-|-----------------------|-------------------------------------------------|-----------------------------------|
-| ThingAddedEvent         |A thing has been added to the thing registry.    |smarthome/things/{thingUID}/added  |
-| ThingRemovedEvent      |A thing has been removed from the thing registry.|smarthome/things/{thingUID}/removed|
-| ThingUpdatedEvent     |A thing has been updated in the thing registry.  |smarthome/things/{thingUID}/updated|
-| ThingStatusInfoEvent    |The status of a thing is updated.                  |smarthome/things/{thingUID}/status |
-| ThingStatusInfoChangedEvent    |The status of a thing changed.                  |smarthome/things/{thingUID}/statuschanged |
+| Event                       | Description                                       | Topic                                     |
+|-----------------------------|---------------------------------------------------|-------------------------------------------|
+| ThingAddedEvent             | A thing has been added to the thing registry.     | smarthome/things/{thingUID}/added         |
+| ThingRemovedEvent           | A thing has been removed from the thing registry. | smarthome/things/{thingUID}/removed       |
+| ThingUpdatedEvent           | A thing has been updated in the thing registry.   | smarthome/things/{thingUID}/updated       |
+| ThingStatusInfoEvent        | The status of a thing is updated.                 | smarthome/things/{thingUID}/status        |
+| ThingStatusInfoChangedEvent | The status of a thing changed.                    | smarthome/things/{thingUID}/statuschanged |
 
-**Note:** The ThingStatusInfoEvent is always sent if the status info of a thing is updated, even if the status did not change.
-ThingStatusInfoChangedEvent is sent only if the status of a thing was really changed.
+::: tip Note
+The `ThingStatusInfoEvent` is always sent if the status info of a thing is updated, even if the status did not change.
+`ThingStatusInfoChangedEvent` is sent only if the status of a thing was really changed.
 It contains the old and the new status of the thing.
+:::
 
 #### Inbox Events
 
-| Event                 |Description                                         |Topic                                   |
-|-----------------------|---------------------------------------------------|-----------------------------------|
-| InboxAddedEvent         |A discovery result has been added to the inbox.     |smarthome/inbox/{thingUID}/added   |
-| InboxRemovedEvent     |A discovery result has been removed from the inbox. |smarthome/inbox/{thingUID}/removed |
-| InboxUpdateEvent         |A discovery result has been updated in the inbox.   |smarthome/inbox/{thingUID}/updated |
+| Event                 | Description                                         | Topic                              |
+|-----------------------|-----------------------------------------------------|------------------------------------|
+| InboxAddedEvent       | A discovery result has been added to the inbox.     | smarthome/inbox/{thingUID}/added   |
+| InboxRemovedEvent     | A discovery result has been removed from the inbox. | smarthome/inbox/{thingUID}/removed |
+| InboxUpdateEvent      | A discovery result has been updated in the inbox.   | smarthome/inbox/{thingUID}/updated |
 
 #### Link Events
 
-| Event                       |Description                                              |Topic                                           |
-|-----------------------------|---------------------------------------------------------|------------------------------------------------|
-| ItemChannelLinkAddedEvent   |An item channel link has been added to the registry.     |smarthome/links/{itemName}-{channelUID}/added   |
-| ItemChannelLinkRemovedEvent |An item channel link has been removed from the registry. |smarthome/links/{itemName}-{channelUID}/removed |
+| Event                       | Description                                              | Topic                                           |
+|-----------------------------|----------------------------------------------------------|-------------------------------------------------|
+| ItemChannelLinkAddedEvent   | An item channel link has been added to the registry.     | smarthome/links/{itemName}-{channelUID}/added   |
+| ItemChannelLinkRemovedEvent | An item channel link has been removed from the registry. | smarthome/links/{itemName}-{channelUID}/removed |
 
 #### Channel Events
 
-| Event                       |Description                                              |Topic                                           |
-|-----------------------------|---------------------------------------------------------|------------------------------------------------|
-| ChannelTriggeredEvent       |A channel has been triggered.                            |smarthome/channels/{channelUID}/triggered       |
+| Event                       | Description                                              | Topic                                           |
+|-----------------------------|----------------------------------------------------------|-------------------------------------------------|
+| ChannelTriggeredEvent       | A channel has been triggered.                            | smarthome/channels/{channelUID}/triggered       |
 
 ## Receive Events
 
 This section describes how to receive openHAB events in Java.
-If you want to receive events "outside" openHAB, e.g. with JavaScript, please refer to the [Server Sent Events section](../features/rest.html).
+If you want to receive events "outside" openHAB, e.g. with [cURL](https://en.wikipedia.org/wiki/CURL), please refer to the [REST API Examples](../../configuration/restdocs.html#rest-api-examples) section.
 
 An event subscriber defines the callback interface for receiving events from the openHAB event bus.
 The following Java snippet shows how to receive `ItemStateEvent`s and `ItemCommandEvent`s from the event bus.
@@ -137,13 +147,14 @@ public class SomeItemEventSubscriber implements EventSubscriber {
     }
 }
 ```
+
 The `SomeItemEventSubscriber` is subscribed to the event types `ItemStateEvent` and `ItemCommandEvent`, provided by the method `getSubscribedEventTypes()`.
 A string representation of an event type can be found by a public member `TYPE` which usually presents the name of the class.
 To subscribe to all available event types, use the public member `ALL_EVENT_TYPES` of the event subscriber interface.
 
 The event subscriber provides a `TopicEventFilter` which is a default openHAB `EventFilter` implementation that ensures filtering of events based on a topic.
-The argument of the filter is a [Java regular expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
-The filter method `EventFilter.apply()` will be called for each event on the event bus to which the event subscriber is subscribed (in the example above ItemStateEvent and ItemCommandEvent).
+The argument of the filter is a [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
+The filter method `EventFilter.apply()` will be called for each event on the event bus to which the event subscriber is subscribed (in the example above `ItemStateEvent` and `ItemCommandEvent`).
 If the filter applies (in the given example for all item events with the item name "ItemX"), the event will be received by the `EventSubscriber.receive()` method.
 Received events can be cast to the event implementation class for further processing.
 
@@ -156,16 +167,16 @@ Each event subscriber must be registered via OSGi Declarative Services (DS) unde
       <provide interface="org.eclipse.smarthome.core.events.EventSubscriber"/>
    </service>
 </scr:component>
-```  
+```
 
 The listing below summarizes some best practices in order to implement event subscribers:
 
 - To subscribe to only one event type openHAB provides the `org.eclipse.smarthome.core.events.AbstractTypedEventSubscriber` implementation.
 To receive an already cast event the `receiveTypedEvent(T)` method must be implemented.
 To provide an event filter the method `getEventFilter()` can be overridden.
-- openHAB provides an `AbstractItemEventSubscriber` class in order to receive ItemStateEvents and ItemCommandEvents (more information can be obtained in the next chapter).
+- openHAB provides an `AbstractItemEventSubscriber` class in order to receive `ItemStateEvents` and `ItemCommandEvents` (more information can be obtained in the next chapter).
 - To filter events based on a topic the  `org.eclipse.smarthome.core.events.TopicEventFilter` implementation from the openHAB core bundle can be used.
-The filtering is based on [Java regular expression](http://docs.oracle.com/javase/7/docs/api/java/util/regex/Pattern.html).
+The filtering is based on [Java regular expression](https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html).
 - The subscribed event types and the filter should be stored as class members (see example above) due to performance reasons.
 - If the subscribed event types are sufficient in order to receive all interested events, do not return any filter (in that case the method getFilter() returns null) due to performance reasons.
 - Avoid the creation of too many event subscribers.
@@ -175,10 +186,9 @@ Thrown exceptions will be handled in the framework by logging an error message w
 - The receive method should terminate quickly, since it blocks other event subscribers.
 Create a thread for long running operations.
 
-
 ### Receive ItemStateEvents and ItemCommandEvents
 
-Due to the fact that receiving ItemStateEvents and ItemCommandEvents is a common use case, openHAB provides an abstract event subscriber implementation via the core bundle.
+Due to the fact that receiving `ItemStateEvents` and `ItemCommandEvents` is a common use case, openHAB provides an abstract event subscriber implementation via the core bundle.
 The class `org.eclipse.smarthome.core.items.events.AbstractItemEventSubscriber` provides two methods `receiveUpdate(ItemStateEvent)` and `receiveCommand(ItemCommandEvent)` which can be implemented in order to receive and handle such events.
 
 ```java
@@ -190,7 +200,7 @@ public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
         return eventFilter;
     }
 
-    @Override    
+    @Override
     protected void receiveCommand(ItemCommandEvent commandEvent) {
         // do something
     }
@@ -205,8 +215,8 @@ public class SomeItemEventSubscriber extends AbstractItemEventSubscriber {
 ## Send Events
 
 Usually the core events are only sent by the openHAB framework.
-However, it is possible to sent events explicitly, e.g. ItemCommandEvents and ItemStateEvents.
-The Java snippet below illustrates how to send events via the EventPublisher.
+However, it is possible to sent events explicitly, e.g. `ItemCommandEvent`s and `ItemStateEvent`s.
+The Java snippet below illustrates how to send events via the `EventPublisher`.
 The openHAB core events can only be created via the corresponding event factory.
 
 ```java
@@ -228,15 +238,7 @@ public class SomeComponentWantsToPost {
 }
 ```
 
-The EventPublisher will be injected via OSGi Declarative Services.
-
-```xml
-<scr:component xmlns:scr="http://www.osgi.org/xmlns/scr/v1.1.0" immediate="true" name="SomeComponentWantsToPost">
-    <!-- ... -->
-   <reference bind="setEventPublisher" cardinality="1..1" interface="org.eclipse.smarthome.core.events.EventPublisher"
-           name="EventPublisher" policy="static" unbind="unsetEventPublisher"/>
-</scr:component>
-```
+The `EventPublisher` will be injected via OSGi Declarative Services.
 
 ## Define new Event Types
 
@@ -251,7 +253,7 @@ The following Java snippet shows a new event type extending the class `AbstractE
 public class SunriseEvent extends AbstractEvent {
 
     public static final String TYPE = SunriseEvent.class.getSimpleName();
-    
+
     private final SunriseDTO sunriseDTO;
 
     SunriseEvent(String topic, String payload, SunriseDTO sunriseDTO) {
@@ -263,7 +265,7 @@ public class SunriseEvent extends AbstractEvent {
     public String getType() {
         return TYPE;
     }
-    
+
     public SunriseDTO getSunriseDTO() {
         return sunriseDTO;
     }
@@ -292,7 +294,7 @@ Event factories can be added by implementing the `EventFactory` interface or ext
 The `AbstractEventFactory` provides some useful utility for parameter validation and payload serialization & deserialization with JSON.
 The classes are located in the openHAB core bundle.
 
-```java 
+```java
 public class SunEventFactory extends AbstractEventFactory {
 
     private static final String SUNRISE_EVENT_TOPIC = "smarthome/sun/{time}/sunrise";
@@ -305,15 +307,15 @@ public class SunEventFactory extends AbstractEventFactory {
     protected Event createEventByType(String eventType, String topic, String payload, String source) throws Exception {
         if (SunriseEvent.TYPE.equals(eventType)) {
             return createSunriseEvent(topic, payload);
-        } 
+        }
         return null;
     }
-    
+
     private Event createSunriseEvent(String topic, String payload) {
         SunriseDTO sunriseDTO = deserializePayload(payload, SunriseDTO.class);
         return new SunriseEvent(topic, payload, sunriseDTO);
     }
-    
+
     public static SunriseEvent createSunriseEvent(Sunrise sunrise) {
         String topic = buildTopic(SUNRISE_EVENT_TOPIC, sunrise.getTime());
         SunriseDTO sunriseDTO = map(sunrise);
@@ -322,6 +324,7 @@ public class SunEventFactory extends AbstractEventFactory {
     }
 }
 ```
+
 The listing below summarizes some guidelines as illustrated in the example above:
 
 - Provide the supported event types (`SunriseEvent.TYPE`) via an `AbstractEventFactory` constructor call.
@@ -335,3 +338,4 @@ If the payload is serialized with JSON, the method `deserializePayload(String pa
 - Provide a static method to create event instances based on a domain object (Item, Thing, or in the example above `Sunrise`).
 This method can be used by components in order to create events based on domain objects which should be sent by the EventPublisher.
 If the data transfer object should be serialized into a JSON payload, the method `serializePayload(Object payloadObject)` can be used.
+Custom event factories must be registered as an OSGi Service (eg. by using the @Component annotation) in order to receive the custom events.

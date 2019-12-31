@@ -1,0 +1,17 @@
+"section => add-ons":
+  - addons/*
+
+"section => administration":
+  - administration/*
+
+"section => configuration":
+  - configuration/*
+
+"section => development":
+  - developers/*
+
+"section => installation":
+  - installation/*
+
+"section => tutorials":
+  - tutorials/*

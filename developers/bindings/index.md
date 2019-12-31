@@ -24,22 +24,6 @@ During development you might come back with specific questions.
 
 ## Structure of a Binding
 
-The structure of a binding follows the structure of a typical OSGi bundle project.
-
-```
-|- src/main
-|------- java             Your Java code
-|---------- [...]
-|------- tests            It's easy to write unit tests and fellow developers will thank you
-|---------- [...]
-|- src/main/resources/ESH-INF
-|---- binding
-|------- binding.xml      Binding name, description, author and other meta data
-|---- thing
-|------- thing-types.xml  One or more xml files with thing descriptions
-|- pom.xml                Build system file: Describe your dependencies here
-```
-
 Every binding needs to define a `binding.xml` file.
 Find more information in the respective [binding XML reference](binding-xml.html).
 
@@ -72,9 +56,9 @@ A weather bindings `WeatherHandlerFactory` for example supports only one *ThingT
 @NonNullByDefault
 @Component(configurationPid = "binding.myweatherbinding", service = ThingHandlerFactory.class)
 public class WeatherHandlerFactory extends BaseThingHandlerFactory {
-    
+
     private static final Collection<ThingTypeUID> SUPPORTED_THING_TYPES_UIDS = Collections.singleton(WeatherBindingConstants.THING_TYPE_WEATHER);
-    
+
     @Override
     public boolean supportsThingType(ThingTypeUID thingTypeUID) {
         return SUPPORTED_THING_TYPES_UIDS.contains(thingTypeUID);
@@ -134,7 +118,7 @@ The startup of a handler is divided in two essential steps:
 
 1. Handler is registered: `ThingHandler` instance is created by a `ThingHandlerFactory` and tracked by the framework.
 In addition, the handler can be registered as a service if required, e.g. as `FirmwareUpdateHandler` or `ConfigStatusProvider`.
- 
+
 2. Handler is initialized: `ThingHandler.initialize()` is called by the framework in order to initialize the handler.
 This method is only called if all 'required' configuration parameters of the Thing are present.
 The handler is ready to work (methods like `handleCommand`, `handleUpdate` or `thingUpdated` can be called).
@@ -263,9 +247,9 @@ a user-interface requested a refreshed value, if will send a `RefreshType` comma
 @Override
 public void handleCommand(ChannelUID channelUID, Command command) {
     if (command instanceof RefreshType) {
-        
+
         updateWeatherData();
-        
+
         switch (channelUID.getId()) {
             case CHANNEL_TEMPERATURE:
                 updateState(channelUID, getTemperature());
@@ -287,7 +271,7 @@ For this the binding developer can call a method from the `BaseThingHandler` cla
 
 ```java
 updateState("channelId", OnOffType.ON)
-```    
+```
 
 The call will be delegated to the framework, which changes the state of all bound items.
 It is binding specific when the channel should be updated.
@@ -349,7 +333,7 @@ The status can be updated via an inherited method from the BaseThingHandler clas
 
 ```java
 updateStatus(ThingStatus.OFFLINE, ThingStatusDetail.OFFLINE.COMMUNICATION_ERROR);
-```    
+```
 
 The second argument of the method takes a `ThingStatusDetail` enumeration value, which further specifies the current status situation.
 A complete list of all thing statuses and thing status details is listed in the [Thing Status](../../concepts/things.html#thing-status) chapter.
@@ -365,9 +349,11 @@ After the thing is created, the framework calls the `initialize` method of the h
 At this time the state of the thing is *INTIALIZING* as long as the binding sets it to something else.
 Because of this the default implementation of the `initialize()` method in the `BaseThingHandler` just changes the status to *ONLINE*.
 
-*Note:* A binding should not set any other state than ONLINE, OFFLINE and UNKNOWN.
+::: tip Note
+A binding should not set any other state than ONLINE, OFFLINE and UNKNOWN.
 Additionally, REMOVED must be set after `handleRemoval()` has completed the removal process.
 All other states are managed by the framework.
+:::
 
 Furthermore bindings can specify a localized description of the thing status by providing the reference of the localization string, e.g &#64;text/rate_limit.
 The corresponding handler is able to provide placeholder values as a JSON-serialized array of strings:
@@ -494,10 +480,10 @@ public void handleCommand(ChannelUID channelUID, Command command) {
 
     switch (channelUID.getId()) {
         case CHANNEL_ID_COLOR_TEMPERATURE:
-            StateUpdate lightState = lightStateConverter.toColorLightState(command);    
+            StateUpdate lightState = lightStateConverter.toColorLightState(command);
             hueBridgeHandler.updateLightState(getLight(), lightState);
-            break;    
-        case CHANNEL_ID_COLOR: 
+            break;
+        case CHANNEL_ID_COLOR:
             // ...
     }
 }
@@ -508,10 +494,10 @@ Inside the `BridgeHandler` the list of *Things* can be retrieved via the `getThi
 ### Bridge Handler Implementation
 
 A `BridgeHandler` handles the communication between the openHAB framework and a *bridge*  (a device that acts as a gateway to enable the communication with other devices) represented by a `Bridge` instance.
- 
+
 A bridge handler has the same properties as thing handler.
 Therefore, the `BridgeHandler` interface extends the `ThingHandler` interface.
- 
+
 ### The BaseBridgeHandler
 
 openHAB provides an abstract implementation of the `BridgeHandler` interface named `BaseBridgeHandler`.
@@ -523,7 +509,7 @@ It is recommended to use this class, because it covers a lot of common logic.
 A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](thing-handler.html#life-cycle)).
 A bridge acts as a gateway in order to provide access to other devices, the *child things*.
 Hence, the life cycle of a child handler depends on the life cycle of a bridge handler.
-Bridge and child handlers are subject to the following restrictions: 
+Bridge and child handlers are subject to the following restrictions:
 
 - A `BridgeHandler` of a bridge is initialized before `ThingHandler`s of its child things are initialized.
 - A `BridgeHandler` is disposed after all `ThingHandler`s of its child things are disposed.
@@ -555,11 +541,11 @@ Currently the framework provides two base thing handler implementations for the 
 
 Sub-classes of these handlers must only override the operation `getConfigStatus` to provide the configuration status in form of a collection of `org.eclipse.smarthome.config.core.status.ConfigStatusMessage`s.
 
-#### Internationalizing
+#### Internationalization
 
-The framework will take care of internationalizing messagess.
+The framework will take care of internationalizing messages.
 
-For this purpose there must be an i18n properties file inside the bundle of the configuration status provider that has a message declared for the message key of the `ConfigStatusMessage`.
+For this purpose there must be an [i18n](../utils/i18n.html) properties file inside the bundle of the configuration status provider that has a message declared for the message key of the `ConfigStatusMessage`.
 The actual message key is built by the operation `withMessageKeySuffix(String)` of the message´s builder in the manner that the given message key suffix is appended to *config-status."config-status-message-type."*.
 
 As a result depending on the type of the message the final constructed message keys are:
@@ -594,7 +580,7 @@ Examples are:
 
 If you implement the `ThingActions` interface, you can tell the framework about your Thing related actions.
 
-Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the [Module Development](../module-types.html) chapter.
+Please note that for actions not related to Things you will instead implement an `ActionHandler` as described in the developing [Module Types](../module-types/) chapter.
 
 You start things off by implementing `ThingActions` and annotate your class with `@ThingActionsScope`:
 
@@ -630,7 +616,7 @@ You are now free to specify as many actions as you want in `MqttActions`.
 
 In the following example we provide a "publishMQTT" action.
 An action must be annotated with `@RuleAction`, a label and a description must be provided.
-In this case we refer to translation, see [i18n](utils/i18n.html) support, instead of directly providing a string.
+In this case we refer to translation, see [i18n](../utils/i18n.html) support, instead of directly providing a string.
 
 ```java
 @RuleAction(label = "@text/actionLabel", description = "@text/actionDesc")
@@ -665,14 +651,14 @@ TODO
 Bindings can implement the `DiscoveryService` interface and register it as an OSGi service to inform the framework about devices and services, that can be added as things to the system (see also [Inbox & Discovery Concept](../../concepts/discovery.html)).
 
 A discovery service provides discovery results.
-The following table gives an overview about the main parts of a `DiscoveryResult`: 
+The following table gives an overview about the main parts of a `DiscoveryResult`:
 
 | Field | Description |
 |-------|-------------|
-| `thingUID` | The `thingUID` is the unique identifier of the specific discovered thing (e.g. a device's serial number). It  *must not* be constructed out of properties, that can change (e.g. IP addresses). A typical `thingUID` could look like this: `hue:bridge:001788141f1a` 
-| `thingTypeUID` | Contrary to the `thingUID` is the `thingTypeUID` that specifies the type the discovered thing belongs to. It could be constructed from e.g. a product number. A typical `thingTypeUID` could be the following: `hue:bridge`. 
-| `bridgeUID` | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge. 
-| `properties` | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing. 
+| `thingUID` | The `thingUID` is the unique identifier of the specific discovered thing (e.g. a device's serial number). It  *must not* be constructed out of properties, that can change (e.g. IP addresses). A typical `thingUID` could look like this: `hue:bridge:001788141f1a`
+| `thingTypeUID` | Contrary to the `thingUID` is the `thingTypeUID` that specifies the type the discovered thing belongs to. It could be constructed from e.g. a product number. A typical `thingTypeUID` could be the following: `hue:bridge`.
+| `bridgeUID` | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge.
+| `properties` | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing.
 | `label` | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead. |
 | `representationProperty` | The name of one of the properties which discriminates the discovery result best against other results of the same type. Typically this is a serial number, IP or MAC address. The representationProperty often matches a configuration parameter and is also explicitly given in the thing-type definition. |
 
@@ -711,13 +697,13 @@ This list will be given to the constructor of `AbstractDiscoveryService` and can
 The `Discovery` class of a binding which implements `AbstractDiscoveryService` should be annotated with
 
 ```java
-@Component(service = DiscoveryService.class, immediate = true, configurationPid = "discovery.<bindingID>")
+@Component(service = DiscoveryService.class, immediate = true, configurationPid = "discovery.<binding-id>")
 ```
 
-where `<bindingID>` is the id of the binding, i.e. `astro` for the Astro binding.
+where `<binding-id>` is the id of the binding, i.e. `astro` for the Astro binding.
 Such a registered service will be picked up automatically by the framework.
 
-### Background Discovery 
+### Background Discovery
 
 If the implemented discovery service enables background discovery, the `AbstractDiscoveryService` class automatically starts it.
 If background discovery is enabled, the framework calls `AbstractDiscoveryService#startBackgroundDiscovery` when the binding is activated and `AbstractDiscoveryService#stopBackgroundDiscovery` when the component is deactivated.
@@ -778,7 +764,7 @@ With this, dynamic discoveries (like UPnP or mDNS) can re-discover existing thin
 ### Remove older results
 
 Normally, older discovery results already in the inbox are left untouched by a newly triggered scan.
-If this behavior is not appropriate for the implemented discovery service, one can override the method `stopScan` to call `removeOlderResults` as shown in the following example from the Hue binding: 
+If this behavior is not appropriate for the implemented discovery service, one can override the method `stopScan` to call `removeOlderResults` as shown in the following example from the Hue binding:
 
 ```java
     @Override
@@ -788,12 +774,28 @@ If this behavior is not appropriate for the implemented discovery service, one c
     }
 ```
 
+### Internationalization
+
+The framework will take care of internationalizing labels of discovery results if you extend the `AbstractDiscoveryService`.
+See [i18n](../utils/i18n.html#discovery) for more information.
+
+::: tip Hint!
+To make it work you have to inject references to the `LocaleProvider` and the `TranslationProvider` services into your implementation.
+The `AbstractDiscoveryService` already provides `protected` properties, which are not yet linked to a service.
+The devoloper has to take care about that.
+
+```java
+    protected @NonNullByDefault({}) TranslationProvider i18nProvider;
+    protected @NonNullByDefault({}) LocaleProvider localeProvider;
+```
+:::
+
 ### UPnP Discovery
 
 UPnP discovery is implemented in the framework as `UpnpDiscoveryService`.
 It is widely used in bindings.
 To facilitate the development, binding developers only need to implement a `UpnpDiscoveryParticipant`.
-Here the developer only needs to implement three simple methods: 
+Here the developer only needs to implement three simple methods:
 
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
 The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
@@ -852,14 +854,14 @@ public class HueBridgeDiscoveryParticipant implements UpnpDiscoveryParticipant {
 
 mDNS discovery is implemented in the framework as `MDNSDiscoveryService`.
 To facilitate the development, binding developers only need to implement a `MDNSDiscoveryParticipant`.
-Here the developer only needs to implement four simple methods: 
+Here the developer only needs to implement four simple methods:
 
 - `getServiceType` - Defines the [mDNS service type](http://www.dns-sd.org/ServiceTypes.html).
 - `getSupportedThingTypeUIDs` - Returns the list of thing type UIDs that this participant supports.
 The discovery service uses this method of all registered discovery participants to return the list of currently supported thing type UIDs.
 - `getThingUID` - Creates a thing UID out of the mDNS service info or returns `null` if this is not possible.
 This method is called from the discovery service during result creation to provide a unique thing UID for the result.
-- `createResult` - Creates the `DiscoveryResult` out of the UPnP result.
+- `createResult` - Creates the `DiscoveryResult` out of the mDNS result.
 This method is called from the discovery service to create the actual discovery result.
 It uses the `getThingUID` method to create the thing UID of the result.
 
@@ -875,12 +877,13 @@ Various binding related questions are answered in our [Binding development FAQ](
 
 Once you are happy with your implementation, you need to integrate it in the Maven build and add it to the official distro.
 
-* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml) at the alphabetically correct position.
-* Furthermore add it to the [feature.xml](https://github.com/openhab/openhab2-addons/blob/master/features/openhab-addons/src/main/feature/feature.xml), again at the alphabetically correct position.
+* Add a new line in the [bundle pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bundles/pom.xml).
+* Add a new line in the [binding pom.xml](https://github.com/openhab/openhab2-addons/blob/master/bom/openhab-addons/pom.xml).
 * If you have a dependency on a transport bundle (e.g. upnp, mdns or serial) or an external library,
-  make sure to add a line for this dependency as well (see the other bindings as an example)
-* Add your binding to the CODEOWNERS at the alphabetically correct position.
-  This is so that you get notified by Github when someone adds a pull request towards your binding and hopefully can assist in reviewing that.
+  make sure to add a line for this dependency in the `/src/main/feature/feature.xml` file in your binding folder. See the other bindings as an example.
+* Add your binding to the [CODEOWNERS](https://github.com/openhab/openhab2-addons/blob/master/CODEOWNERS) file so that you get notified by Github when someone adds a pull request towards your binding.
+
+> Please make sure you add the above entries at their alphabetically correct position!
 
 Before you create a pull request on GitHub, you should now run
 
@@ -896,4 +899,4 @@ Please fix all the priority 1 issues and all issues with priority 2 and 3 that a
 You can always run the above command from within your bindings directory to speed the build up and fix and check reported errors.
 
 Re-run the build to confirm that the checks are passing.
-If it does, it is time to [contribute your work](../contributing/contributing.html)!
+If it does, it is time to [contribute your work](../contributing.html)!

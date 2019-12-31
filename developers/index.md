@@ -35,7 +35,7 @@ openHAB allows you to build up on the following concepts:
 Sometimes though its just not worth writing a binding and you are better off
 just using an http action in a rule or script to retrieve some values.
 
-Therefore: First think what you want to archive! Check our [community forum](https://community.openhab.org)
+Therefore: First think what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
@@ -75,3 +75,47 @@ We have prepared some step-by-step guides for the following IDEs:
 </table>
 
 Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.eclipse.org/Eclipse_Installer).
+
+## Develop a NEW binding
+
+To start developing a new binding a script is available to generate the basis for your new binding.
+This script is specific for binding addons. Follow these steps to generate your binding:
+
+1. From the command line in `openhab2-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
+
+   On Linux:
+    ```
+    ./create_openhab_binding_skeleton.sh  MyNewBinding "<Author>" <GitHubUsername>
+    ```
+
+   On Windows:
+    ```
+    create_openhab_binding_skeleton.cmd MyNewBinding "<Author>" <GitHubUsername>
+    ```
+
+    _Use your full name for `<Author>`_.
+
+1. Accept with `Y` when the skeleton configuration asks for it.
+
+1. From `openhab2-addons` root you can build only your binding with maven using the `-pl` option:
+    ```
+    mvn clean install -pl :org.openhab.binding.mynewbinding
+    ```
+   Where `mynewbinding` is the name of your new binding.
+   Some additional maven options that may help:
+   * `-U`: Forces all dependencies to be downloaded again.
+   * `-am`: Builds all projects in openhab2-addons your project dependends on.
+   * `-o`: Won't update any dependencies.
+   * `-DskipChecks`: Skips the static analysis checks
+   * `-DskipTests`: Skips the unit tests
+
+1. To start your new binding it's a good practise to commit your code on a new git branch:
+   ```
+   git checkout -b <mynewbranch>
+   ```
+
+1. Open Eclipse or your favorite editor and import your new binding project
+
+Now you can start developing your NEW binding. We're looking forward to your pull request!
+
+In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.

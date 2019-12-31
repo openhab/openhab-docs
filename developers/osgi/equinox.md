@@ -8,7 +8,7 @@ title: Equinox
 # Equinox
 {:.no_toc}
 
-[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core specification][OSGi-Core].
+[Equinox][Equinox] is considered to be a reference implementation of the [OSGi Core Release 7][OSGi-core].
 It is an [open source project][Equinox-repo], part of the [Eclipse project][Eclipse].
 It provides a set of bundles, that implement various optional OSGi services.
 
@@ -41,10 +41,9 @@ Knowledge about how to start the runtime and execute basic commands will help yo
 
 The **org.eclipse.osgi** bundle is the framework implementation of the Core Framework specification in a standalone package.
 
-If you have compiled openHAB once either via command line (`mvn install`) or the Eclipse IDE,
-maven will have downloaded Equinox for you already.
-Find it in your maven cache directory (linux `.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.13.300/org.eclipse.osgi-3.13.300.jar`
-and windows `C:\Users\your.name\.m2\...`).
+If you have compiled openHAB once either via command line (`mvn install`) or the Eclipse IDE, maven will have downloaded Equinox for you already.
+Find it in your maven cache directory (linux `~/.m2/repository/org/eclipse/platform/org.eclipse.osgi/3.15.0/org.eclipse.osgi-3.15.0.jar`
+and windows `C:\Users\your.name\.m2\..`).
 
  1. Create `configuration` folder in that directory.
  2. Inside the `configuration` folder create a file `config.ini`.
@@ -71,13 +70,13 @@ and windows `C:\Users\your.name\.m2\...`).
  6. Use the following command line to run Equinox:
 
 ```shell
-java -jar org.eclipse.osgi-3.x.x_xxxx.jar -console -configuration configuration
+java -jar org.eclipse.osgi-3.x.x.jar -console -configuration configuration
 ```
 
 ## Commands
 
-Once you have Equinox running, you will see a prompt. Some of the basic
-osgi commands are:
+Once you have Equinox running, you will see a prompt.
+Some of the basic OSGi commands are:
 
 | Command                           | Description                                                                                                                                                                                                                                                       |
 |-----------------------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -96,14 +95,15 @@ Table 1. Equinox commands (Source: <http://www.eclipse.org/equinox/documents/qui
 Another part of the Equinox project is [Equinox Bundles][Equinox-Bundles].
 It consists of bundles that implement all add-on services from the OSGi specification and additional services defined in various OSGi expert groups.
 
-Some of the core bundles are listed in the table below. Some or all of these bundles must be included in your runtime configuration, if you want to use the services that they provide.
+Some of the core bundles are listed in the table below.
+Some or all of these bundles must be included in your runtime configuration, if you want to use the services that they provide.
 
  Name | Bundle Symbolic Name | Description
  -------- | -------- | --------
 Declarative Services | org.eclipse.equinox.ds | An implementation of the OSGi [Declarative Services](osgids.html) specification
-Event Admin Service | org.eclipse.equinox.event | OSGi R4 [Event Admin](https://osgi.org/javadoc/r4v42/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
+Event Admin Service | org.eclipse.equinox.event | OSGi Compendium Release 7 [Event Admin](https://osgi.org/javadoc/osgi.cmpn/7.0.0/org/osgi/service/event/EventAdmin.html) Service provides an inter-bundle communication mechanism based on an event publish and subscribe model
 Equinox Utilities | org.eclipse.equinox.util | A library of utility classes that are frequently used from the Equinox OSGi Service implementation bundles
-OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs.  
+OSGi Services API | org.eclipse.osgi.service | This bundle contains the set of OSGi specified service APIs
 
 Table 2. OSGi Bundles (Full list can be found at: <http://www.eclipse.org/equinox/bundles/>)
 
@@ -126,7 +126,7 @@ Table 2. OSGi Bundles (Full list can be found at: <http://www.eclipse.org/equino
 - [RT meets p2](https://bkapukaranov.wordpress.com/category/tech/virgo/)
 
 [Equinox]: http://www.eclipse.org/equinox/
-[OSGi-Core]: https://osgi.org/download/r5/osgi.core-5.0.0.pdf
+[OSGi-Core]: https://osgi.org/download/r7/osgi.core-7.0.0.pdf
 [Equinox-repo]: http://git.eclipse.org/c/equinox/
 [Eclipse]: https://eclipse.org/eclipse/
 [Equinox-Bundles]: http://www.eclipse.org/equinox/bundles/

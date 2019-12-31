@@ -3,6 +3,7 @@ const DocsSidebarNavigation = require('./docs-sidebar.js')
 const fs = require ('fs-extra')
 const path = require('path')
 // const CopyWebpackPlugin = require('copy-webpack-plugin')
+const vuepressTabs = require('vuepress-tabs')
 
 const HighlightDsl = require('./highlight-dsl')
 const HighlightRules = require('./highlight-rules')
@@ -30,9 +31,17 @@ module.exports = {
   ],
   markdown: {
     config: (md) => {
+      vuepressTabs(md)
       md.options.linkify = true
       const highlight = md.options.highlight
       md.options.highlight = (str, lang) => {
+        if (!Prism.languages.dsl || !Prism.languages.rules) {
+          Prism.languages.dsl = HighlightDsl
+          Prism.languages.rules = HighlightRules
+        }
+
+        if (['nginx', 'bash', 'python', 'js', 'javascript', 'groovy'].indexOf(lang) >= 0) return highlight(str, lang)
+
         /* Simple heuristics to detect rules & other openHAB DSL code snippets and override the language */
         if (str.match(/\b(?:Color|Contact|Dimmer|Group|Number|Player|Rollershutter|Switch|Location|Frame|Default|Text|Group|Selection|Setpoint|Slider|Colorpicker|Chart|Webview|Mapview|Image|Video|Item|Thing|Bridge|Time|Type|Sitemap|sitemap)\b/)) {
           lang = 'dsl'
@@ -44,7 +53,7 @@ module.exports = {
           str.match(/received update/) || str.match(/changed.*(?:from|to)/) || str.match(/Channel.*triggered/) ||
           str.match(/\bval\b/) || str.match(/\bvar\b/) /* <-- dangerous! */) {
           
-          if (lang !== 'nginx' && lang !== 'shell') lang = 'rules'
+          lang = 'rules'
         }
         if (lang === 'shell' || lang === 'sh' || lang === 'shell_session') lang = 'bash'
         if (lang === 'conf') lang = 'dsl'
@@ -53,11 +62,6 @@ module.exports = {
         //   console.log('Cannot determine language of code: ' + lang)
         //   console.log(str)
         // }
-
-        if (!Prism.languages.dsl || !Prism.languages.rules) {
-          Prism.languages.dsl = HighlightDsl
-          Prism.languages.rules = HighlightRules
-        }
 
         return highlight(str, lang)
       }

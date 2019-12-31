@@ -11,7 +11,6 @@ title: Next-Gen Rules
 
 Since openHAB 2.4 another Rule Engine has been added. It works fundamentally different than what you find with our current [Rules](https://www.openhab.org/docs/configuration/rules-dsl.html). It allows Rules to be edited in a graphical fashion and to interact with [JSR223 Scripts (Javascript, Jypthon, etc)](https://www.openhab.org/docs/configuration/jsr223.html).
 
-> Note: If you use it, this is at your own risk. Especially, you should not expect any documentation or community experience besides what you find on this page.
 
 ## Installation
 
@@ -110,9 +109,9 @@ The types in the **Configuration** object are restricted to the following:
 
 **JSON schemas for:**
 
- * [module types](../development/rules/ModuleTypes_schema.json)
- * [rule templates](../development/rules/Templates_schema.json)
- * [rule instances](../development/rules/Rules_schema.json)
+ * [module types](../../schemas/ModuleTypes_schema.json)
+ * [rule templates](../../schemas/Templates_schema.json)
+ * [rule instances](../../schemas/Rules_schema.json)
 
 ### Sample Rules
 
