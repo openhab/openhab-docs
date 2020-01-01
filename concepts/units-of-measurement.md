@@ -181,6 +181,7 @@ SI:
 | Time                   | Week                             | week   |
 | Time                   | Year                             | y      |
 | Volume                 | Litre                            | l      |
+| Volume                 | Cubic Metre                      | m³     |
 | VolumetricFlowRate     | Litre per Minute                 | l/min  |
 | VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
 | VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
