@@ -133,7 +133,9 @@ SI:
 | ElectricPotential      | Volt                             | V      |
 | ElectricCapacitance    | Farad                            | F      |
 | ElectricCharge         | Coulomb                          | C      |
+| ElectricCharge         | Ampere Hour                      | A h    |
 | ElectricConductance    | Siemens                          | S      |
+| ElectricConductivity   | Siemens per Metre                | S/m    |
 | ElectricCurrent        | Ampere                           | A      |
 | ElectricInductance     | Henry                            | H      |
 | ElectricResistance     | Ohm                              | Ω      |
@@ -181,6 +183,7 @@ SI:
 | Time                   | Week                             | week   |
 | Time                   | Year                             | y      |
 | Volume                 | Litre                            | l      |
+| Volume                 | Cubic Metre                      | m³     |
 | VolumetricFlowRate     | Litre per Minute                 | l/min  |
 | VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
 | VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |

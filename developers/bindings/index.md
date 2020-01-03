@@ -506,7 +506,7 @@ It is recommended to use this class, because it covers a lot of common logic.
 
 ### Life cycle
 
-A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](thing-handler.html#life-cycle)).
+A `BridgeHandler` has the same life cycle than a `ThingHandler` (created by a `ThingHandlerFactory`, well defined life cycle by handler methods `initialize()` and `dispose()`, see chapter [Life Cycle](#lifecycle)).
 A bridge acts as a gateway in order to provide access to other devices, the *child things*.
 Hence, the life cycle of a child handler depends on the life cycle of a bridge handler.
 Bridge and child handlers are subject to the following restrictions:
