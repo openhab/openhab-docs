@@ -133,7 +133,9 @@ SI:
 | ElectricPotential      | Volt                             | V      |
 | ElectricCapacitance    | Farad                            | F      |
 | ElectricCharge         | Coulomb                          | C      |
+| ElectricCharge         | Ampere Hour                      | A h    |
 | ElectricConductance    | Siemens                          | S      |
+| ElectricConductivity   | Siemens per Metre                | S/m    |
 | ElectricCurrent        | Ampere                           | A      |
 | ElectricInductance     | Henry                            | H      |
 | ElectricResistance     | Ohm                              | Ω      |
