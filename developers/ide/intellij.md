@@ -10,7 +10,7 @@ title: IntelliJ
 
 ### Install OpenHAB distribution
 1. Install the official [openHAB distribution](https://www.openhab.org/download/)
-1. Start the distribution **in debug mode** (use `./start_debug.sh instead of `./start.sh` in step 4)
+1. Start the distribution **in debug mode** (use `./start_debug.sh` instead of `./start.sh` in step 4)
 
 I will refer to the directory where you installed the distribution as <DISTRO_DIR>.
 
