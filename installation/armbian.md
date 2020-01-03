@@ -73,11 +73,6 @@ sudo htop -u openhab
 
 If you don't see any openhab activities, something went wrong.
 
-## Getting started
-
-With the openHAB up and running, you should now continue with the [Beginner Tutorial]({{base}}/tutorial)
-or by working on your own configuration.
-
 ## Help
 
 The very active [openHAB Community Forum](https://community.openhab.org) provides many more details and hints.
