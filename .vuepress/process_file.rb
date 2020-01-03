@@ -57,10 +57,7 @@ def process_file(indir, file, outdir, source)
                             addon_type = outdir_parts[1]
                             addon = file.split('/')[0]
                             source = ""
-                            if addon == "habmin" then
-                                puts "    (add-on is habmin)"
-                                source = "https://github.com/openhab/org.openhab.ui.habmin/blob/master/README.md"
-                            elsif addon == "habpanel" then
+                            if addon == "habpanel" then
                                 puts "    (add-on is habpanel)"
                                 source = "https://github.com/openhab/org.openhab.ui.habpanel/blob/master/README.md"
                             elsif addon == "zigbee" then
@@ -127,8 +124,6 @@ def process_file(indir, file, outdir, source)
             if outdir == 'docs/configuration' && file =~ /packages/ then
                 line = line.gsub('(../addons/uis/paper/readme.html)', '(paperui.html)')
                 line = line.gsub('(../addons/uis/basic/readme.html)', '(ui/basic/)')
-                line = line.gsub('(../addons/uis/classic/readme.html)', '(ui/classic/)')
-                line = line.gsub('(../addons/uis/habmin/readme.html)', '(ui/habmin/)')
                 line = line.gsub('(../addons/uis/habpanel/readme.html)', '(habpanel.html)')
             end
 
@@ -184,7 +179,6 @@ def process_file(indir, file, outdir, source)
             # Misc replaces (relative links, remove placeholder interpreted as custom tags)
             line = line.gsub('http://docs.openhab.org/addons/uis/paper/readme.html', '/docs/configuration/paperui.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/habpanel/readme.html', '/docs/configuration/habpanel.html')
-            line = line.gsub('http://docs.openhab.org/addons/uis/habmin/readme.html', '/docs/configuration/habmin.html')
             line = line.gsub('http://docs.openhab.org/addons/uis/basic/readme.html', '/docs/configuration/ui/basic/')
             line = line.gsub(/http:\/\/docs\.openhab\.org\/addons\/(.*)\/(.*)\/readme\.html/, '/addons/\1/\2/')
             line = line.gsub('http://docs.openhab.org/', '/docs/')
