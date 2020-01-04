@@ -49,7 +49,7 @@ You can read a bit more below about our external ressources and how we get them.
 ### Automatically Generated Parts
 
 Those parts include __all__ add-on documentation files, no matter if they are from the `openhab-core` repo, the
-`openhab1-addons` repo, the `openhab2-addons` repo or any special binding repo like *habmin*, *zwave* or the *alexa skill*.
+`openhab1-addons` repo, the `openhab-addons` repo or any special binding repo like *habmin*, *zwave* or the *alexa skill*.
 
 We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
 Imagine you want to do an improvement of the zwave binding and have to update the readme file in a completely different place.

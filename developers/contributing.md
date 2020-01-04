@@ -12,7 +12,7 @@ title: Contribution
 The main parts of openHAB can be found in the following repositories:
 
 * [openHAB Core](https://github.com/openhab/openhab-core): This repo contains the core framework bundles of which the openHAB runtime is constructed.
-* [openHAB 2 Add-ons](https://github.com/openhab/openhab2-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
+* [openHAB Add-ons](https://github.com/openhab/openhab-addons): Add-ons (such as bindings, voice services, etc.) of openHAB can be found within this repository. They cannot be used with an openHAB 1.x runtime, since they provide features that the old runtime does not support.
 * [openHAB 1 Add-ons](https://github.com/openhab/openhab1-addons): Legacy add-ons that were developed for openHAB 1. Most of them are working smoothly on the openHAB 2 runtime and thus they are made available for backward compatibility reasons. They are not suggested for new users, though.
 * [openHAB Distro](https://github.com/openhab/openhab-distro): This repo contains all parts that are required for assembling the binary distribution of openHAB.
 
