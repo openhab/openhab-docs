@@ -12,15 +12,15 @@ title: IntelliJ
 1. Install the official [openHAB distribution](https://www.openhab.org/download/)
 1. Start the distribution **in debug mode** (use `./start_debug.sh` instead of `./start.sh` in step 4)
 
-I will refer to the directory where you installed the distribution as <DISTRO_DIR>.
+This article refers to the directory where you installed the distribution as `<DISTRO_DIR>`.
 
 ### Build the addons repostory
-1. fork and clone the [openhab addons repository](http://www.github.com/openhab/openhab2-addons) into a new directory (I'll refer to by <ADDON_DIR> from now on)
-    - `git clone https://github.com/<yourgitusername>/openhab2-addons`  (replace git user name accordingly)
-1. open IntelliJ and create a new Project from existing sources (File | New | Project from existing sources) and pick <ADDON_DIR>/pom.xml
+1. fork and clone the [openhab addons repository](http://www.github.com/openhab/openhab-addons) into a new directory (Reference `<ADDON_DIR>` from now on for this arcticle)
+    - `git clone https://github.com/<yourgitusername>/openhab-addons`  (replace git user name accordingly)
+1. open IntelliJ and create a new Project from existing sources (File | New | Project from existing sources) and pick `<ADDON_DIR>`/pom.xml
     - IntelliJ will start importing, indexing and building, it will take while, wait until finished (see status bar)
 1. Use Maven to clean & install the addons project
-    - mvn clean install in the root of <ADDON_DIR> using commandline Maven (or IntelliJ Maven view)
+    - mvn clean install in the root of `<ADDON_DIR>` using commandline Maven (or IntelliJ Maven view)
     - some of the addons might fail to build - if it's not the one, you're interested in that should not bother you
     - when the Maven project finished, you should find the freshly built addon JAR in the target directory
 
@@ -38,4 +38,4 @@ I will refer to the directory where you installed the distribution as <DISTRO_DI
     - the IntelliJ console should log: `Connected to the target VM, address: 'localhost:5005', transport: 'socket'`
 ![Remote Debug Run Configuration](images/ide_setup_intellij_debug_configuration.png)
 
-You can now add breakpoints to your project now and your test distro should stop there...
+You can now add breakpoints to your project now and your test distro should stop there.
