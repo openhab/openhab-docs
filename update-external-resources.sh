@@ -35,7 +35,7 @@ echo_process "Updating the base openhab-docs repo... (skipping)"
 pull_or_clone_repo() {
   if [ -d "$resourcefolder/$1" ]; then
     echo_process "Updating the '$1' repo... "
-    git -C "$resourcefolder/$1" checkout $3
+    git -C "$resourcefolder/$1" checkout $(echo "${3//[$'\t\r\n ']}")
     git -C "$resourcefolder/$1" pull
   else
     echo_process "Cloning the '$1' repo... "
