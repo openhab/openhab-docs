@@ -40,7 +40,7 @@ pull_or_clone_repo() {
   else
     echo_process "Cloning the '$1' repo... "
     mkdir "$resourcefolder/$1"
-    git clone "https://github.com/$2" "$resourcefolder/$1"
+    git clone --branch $3 "https://github.com/$2" "$resourcefolder/$1"
   fi
 }
 
