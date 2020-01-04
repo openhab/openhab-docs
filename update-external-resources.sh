@@ -44,17 +44,17 @@ pull_or_clone_repo() {
   fi
 }
 
-pull_or_clone_repo "smarthome" "eclipse/smarthome.git" "master"
-pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" "2.5.x"
-pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git" "master"
-pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" "2.5.x"
-pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git" "2.5.x"
-pull_or_clone_repo "openhabian" "openhab/openhabian.git" "master"
-pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" "master"
-pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" "master"
-pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" "master"
-pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" "master"
-pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" "2.5.x"
+pull_or_clone_repo "smarthome" "eclipse/smarthome.git" master
+pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" 2.5.x
+pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git" master
+pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" 2.5.x
+pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git" 2.5.x
+pull_or_clone_repo "openhabian" "openhab/openhabian.git" master
+pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" master
+pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" master
+pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" master
+pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" master
+pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" 2.5.x
 
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
