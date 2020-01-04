@@ -35,7 +35,7 @@ echo_process "Updating the base openhab-docs repo... (skipping)"
 pull_or_clone_repo() {
   if [ -d "$resourcefolder/$1" ]; then
     echo_process "Updating the '$1' repo... "
-    git -C "$resourcefolder/$1" checkout master
+    git -C "$resourcefolder/$1" checkout $3
     git -C "$resourcefolder/$1" pull
   else
     echo_process "Cloning the '$1' repo... "
@@ -44,17 +44,17 @@ pull_or_clone_repo() {
   fi
 }
 
-pull_or_clone_repo "smarthome" "eclipse/smarthome.git"
-pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git"
-pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git"
-pull_or_clone_repo "openhab2-addons" "openhab/openhab2-addons.git"
-pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git"
-pull_or_clone_repo "openhabian" "openhab/openhabian.git"
-pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git"
-pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git"
-pull_or_clone_repo "openhab-android" "openhab/openhab-android.git"
-pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git"
-pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git"
+pull_or_clone_repo "smarthome" "eclipse/smarthome.git" "master"
+pull_or_clone_repo "openhab-distro" "openhab/openhab-distro.git" "2.5.x"
+pull_or_clone_repo "openhab1-addons" "openhab/openhab1-addons.git" "master"
+pull_or_clone_repo "openhab-addons" "openhab/openhab-addons.git" "2.5.x"
+pull_or_clone_repo "openhab-bundles" "openhab/openhab-bundles.git" "2.5.x"
+pull_or_clone_repo "openhabian" "openhab/openhabian.git" "master"
+pull_or_clone_repo "openhab-alexa" "openhab/openhab-alexa.git" "master"
+pull_or_clone_repo "openhab-mycroft" "openhab/openhab-mycroft.git" "master"
+pull_or_clone_repo "openhab-android" "openhab/openhab-android.git" "master"
+pull_or_clone_repo "openhab-google-assistant" "openhab/openhab-google-assistant.git" "master"
+pull_or_clone_repo "openhab-webui" "openhab/openhab-webui.git" "2.5.x"
 
 echo_process "Updating submodules of the 'openhab-bundles' repo... "
 git -C "$resourcefolder/openhab-bundles" submodule update --recursive --remote --init
