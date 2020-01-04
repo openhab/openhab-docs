@@ -225,3 +225,18 @@ Any changes between the two files will trigger and upgrade.
 
 The upgrade process first creates a backup of the entire mapped in userdata folder (skipping the backup folder) and places it as a dated tar file into userdata/backup.
 It then performs all the same steps that the upgrade script and which are performed by an apt-get/yum upgrade.
+
+## Troubleshooting
+
+### USB sticks
+
+If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default. In Docker Openhab2 is running in name of `openhab`, a restricted user. There is a solution for that. The stick will work if you run the following command right after docker image is started.
+
+```bash
+docker exec \
+    -d \
+    openhab \
+    /bin/chmod o+rw /dev/ttyACM0
+```
+
+This changes permission of the specific device as expected (readable and writable for everyone). The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system.
