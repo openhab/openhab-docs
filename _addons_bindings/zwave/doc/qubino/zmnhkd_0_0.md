@@ -126,7 +126,7 @@ Detailed information on each parameter can be found in the sections below.
 | 12 | I2 Functionality selection | I2 Functionality selection |
 | 40 | Watt Power Consumption Threshold for Q⬆ | Watt Power Consumption Threshold for Q⬆ |
 | 42 | Watt Power Time Threshold for Q⬆ | Watt Power Time Threshold for Q⬆ |
-| 43 | Hysteresis heating On | Hysteresis heating On |
+| 43 | Hysteresis - Heating On | Hysteresis - temperature to set the heating On |
 | 44 | Hysteresis Heating Off | Hysteresis Heating Off |
 | 45 | Hysteresis Cooling On | Hysteresis Cooling On |
 | 46 | Hysteresis Cooling Off | Hysteresis Cooling Off |
@@ -142,12 +142,12 @@ Detailed information on each parameter can be found in the sections below.
 | 76 | group 2, 10 - reporting on time interval | group 2, 10 - reporting on time interval |
 | 77 | group 10 delay before sending Basic Set ON | group 10 delay before sending Basic Set ON |
 | 78 | Scale Selection | Scale Selection |
-| 100 |  Endpoint I1 Enable/Disable or Type and Event | Endpoint I1 Enable/Disable or Type and Event |
-| 101 | Enable/Disable Endpoint I2 or select type | Enable/Disable Endpoint I2 or select type |
+| 100 |  Endpoint I1 Enable/Disable or Type and Event | Enable/Disable Endpoint I1 or select NotificationType and Event |
+| 101 | Enable/Disable Endpoint I2 or select type | Enable/Disable Endpoint I2 or select Notification Type and Event |
 | 110 | Temperature sensor offset settings | Temperature sensor offset settings |
 | 120 | Digital temperature sensor reporting | Digital temperature sensor reporting |
 | 121 | Digital temperature sensor / setpoint selector | Digital temperature sensor / setpoint selector |
-| 122 | Node Id of external battery powered sensor | Node Id of external battery powered sensor |
+| 122 | Node ID of external battery powered sensor | Node ID of external battery powered room sensor |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 1: Input I1 switch type
@@ -258,8 +258,12 @@ I2 Functionality selection
 0-990 - Temperature setpoint from 0,0 to 99,0 °C  
 1001-1150 - Temperature setpoint -0.1 to -15°C  
 2000 - Input I2 influences on the cooling value according to the status of condense sensor.  
-32767 - input I2 does not influence on the Heat/Cool process  If "Condense Sensor" selected (value set to "2000"), parameter 101 (enable/disable endpoint) must be set to non-zero value and device re-included!
-The following option values may be configured -:
+32767 - input I2 does not influence on the Heat/Cool process
+
+If this parameter is set to the value in range of 0-990 or 1001-1150, then pressing I2 automatically sets temperature setpoint according to value defined here. In this case functionality of condense sensor is disabled.
+
+If "Condense Sensor" selected (value set to "2000"), parameter 101 (enable/disable endpoint) must be set to non-zero value and device re-included!
+The following option values may be configured, in addition to values in the range 0 to 32767 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -281,9 +285,9 @@ The following option values may be configured, in addition to values in the rang
 
 | Value  | Description |
 |--------|-------------|
-| 0 | Power consumption reporting disabled |
+| 0 | reporting disabled |
 
-The manufacturer defined default value is ```0``` (Power consumption reporting disabled).
+The manufacturer defined default value is ```0``` (reporting disabled).
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
@@ -295,26 +299,25 @@ Set value refers to the time interval with which power consumption in Watts is r
 
 0 - report disabled  
 1-32767 = 1 second - 32767 seconds interval. Reporting enabled with time interval
-Values in the range 0 to 32767 may be set.
+The following option values may be configured, in addition to values in the range 0 to 32767 -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | reporting disabled |
+
+The manufacturer defined default value is ```0``` (reporting disabled).
 
 This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
 
 
-### Parameter 43: Hysteresis heating On
+### Parameter 43: Hysteresis - Heating On
 
-Hysteresis heating On
+Hysteresis - temperature to set the heating On
 This parameter defines temperature difference between measured temperature and set-point temperature to turn heating on.  
 default value 1010 (-1.0 °C)  
 0 - 255 = 0,0°C to 25,5 °C  
 1001 - 1255 = - 0,1°C to - 25,5 °C
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | mono-stable switch type |
-| 1 | bi-stable switch type |
+Values in the range 0 to 1255 may be set.
 
 The manufacturer defined default value is ```1010```.
 
@@ -328,12 +331,7 @@ This parameter defines temperature difference between measured temperature and s
 • default value 2 (+0.2 °C)  
 • 0 - 255 = 0,0°C to 25,5 °C  
 • 1001 - 1255 = - 0,1°C to - 25,5 °C
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 0 | normally open |
-| 1 | normally closed |
+Values in the range 0 to 1255 may be set.
 
 The manufacturer defined default value is ```2```.
 
@@ -361,13 +359,7 @@ This parameter defines temperature difference between measured temperature and s
 • default value 1002 (-0.2 °C)  
 • 0 - 255 = 0,0°C to 25,5 °C  
 • 1001 - 1255 = - 0,1°C to - 25,5 °C
-The following option values may be configured -:
-
-| Value  | Description |
-|--------|-------------|
-| 1 | Input I3 changes the mode between Heat and Cool |
-| 2 | Input I3 influences the heating/cooling valves |
-| 32767 | Input I3 doesnt influence on the Heat/Cool process |
+Values in the range 0 to 1255 may be set.
 
 The manufacturer defined default value is ```1002```.
 
@@ -393,10 +385,10 @@ This parameter has the configuration ID ```config_47_2``` and is of type ```INTE
 
 Too low temperature limit
 This parameter determines the temperature at which the device sends a command to the associated device - to turn ON device or to turn OFF device.  
-Too low temperature limit is used with Association Group 4.  
 • Default value 50 (Too low temperature limit is 5.0 °C)  
 • 1 - 1000 = 0.1 °C to 100.0 °C, step is 0.1 °C.  
-• 1001 - 1150: - 0.1 °C to – 15.0 °C
+• 1001 - 1150: - 0.1 °C to – 15.0 °C  
+Too low temperature limit is used with Association Group 4.
 Values in the range 1 to 1150 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -409,7 +401,8 @@ This parameter has the configuration ID ```config_60_2``` and is of type ```INTE
 Too high temperature limit
 This parameter determines the temperature at which the device sends a command to the associated device, to turn ON device or to turn OFF device.  
 • default value 700 (too high temperature limit is 70.0 °C)  
-• 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.
+• 1 - 1000 = 0.1 °C - 100.0 °C, step is 0.1 °C. Too high temperature limit is used with Association Group 4.  
+Too high temperature limit is used with Association Group 4.
 Values in the range 1 to 1000 may be set.
 
 The manufacturer defined default value is ```700```.
@@ -452,7 +445,11 @@ This parameter has the configuration ID ```config_65_1``` and is of type ```INTE
 ### Parameter 70: Input I1 status on delay
 
 Input I1 status on delay
-This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.  
+This parameter specifies the delay before the device executes command, after input I1 is activated. For example, if you set the parameter to 30 seconds and close the window, heater will turn ON after 30 seconds.
+
+  * default value 0 (no delay)
+  * 1 - 32000 for delay of 1 to 32000 seconds (8.88 hours)
+
 If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.  
 Device status on UI change immediately, but the command will be sent after time set.
 Values in the range 0 to 32000 may be set.
@@ -465,7 +462,11 @@ This parameter has the configuration ID ```config_70_2``` and is of type ```INTE
 ### Parameter 71: Input I1 status off delay
 
 Input I1 status off delay
-This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.  
+This parameter specifies the delay before the device executes command after input I1 is deactivated. For example, if you set the parameter to 30 seconds and close the window, heater will turn OFF after 30 seconds.
+
+  * default value 0 (no delay)
+  * 1 - 32000 for delay of 1 to 32000 seconds (8.88 hours)
+
 If the value of parameter is different to 0, means that the Influence of this input to heating or cooling will react after inserted time. This parameter has influence only when the window sensor functionality is selected by the parameter no. 11.Device status on UI change immediately but the command will be send after the set time.
 Values in the range 0 to 32000 may be set.
 
@@ -477,7 +478,11 @@ This parameter has the configuration ID ```config_71_2``` and is of type ```INTE
 ### Parameter 72: Input I2 status on delay
 
 Input I2 status on delay
-This parameter specifies the delay before the device execute command after input I2 is activated.  
+This parameter specifies the delay before the device execute command after input I2 is activated.
+
+  * default value 0 (no delay)
+  * 1 - 32000 for delay of 1 to 32000 seconds (8.88 hours)
+
 This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
 Values in the range 0 to 32000 may be set.
 
@@ -489,7 +494,11 @@ This parameter has the configuration ID ```config_72_2``` and is of type ```INTE
 ### Parameter 73: Input I2 status off delay
 
 Input I2 status off delay
-This parameter specifies the delay before the device execute command after input I2 is deactivated.  
+This parameter specifies the delay before the device execute command after input I2 is deactivated.
+
+  * default value 0 (no delay)
+  * 1 - 32000 for delay of 1 to 32000 seconds (8.88 hours)
+
 This parameter has influence only when the condense sensor functionality is selected by the parameter no. 12.
 Values in the range 0 to 32000 may be set.
 
@@ -523,7 +532,7 @@ If this parameter is set, Basic Set ON/OFF Report is delayed for the time define
 • 1-32767 = 1 second– 32767 seconds, reporting enabled
 Values in the range 0 to 32767 may be set.
 
-The manufacturer defined default value is ```3```.
+The manufacturer defined default value is ```180```.
 
 This parameter has the configuration ID ```config_77_2``` and is of type ```INTEGER```.
 
@@ -547,7 +556,7 @@ This parameter has the configuration ID ```config_78_1``` and is of type ```INTE
 
 ### Parameter 100:  Endpoint I1 Enable/Disable or Type and Event
 
-Endpoint I1 Enable/Disable or Type and Event
+Enable/Disable Endpoint I1 or select NotificationType and Event
 Choose whether the Endpoint I1 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).  
 After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!  
 When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.  
@@ -572,8 +581,11 @@ This parameter has the configuration ID ```config_100_1``` and is of type ```INT
 
 ### Parameter 101: Enable/Disable Endpoint I2 or select type
 
-Enable/Disable Endpoint I2 or select type
-
+Enable/Disable Endpoint I2 or select Notification Type and Event
+Choose whether the Endpoint I2 is disabled (and not shown on the UI) or enabled (and displayed on the UI). By enabling this endpoint (setting it to be either a notification sensor or a binary sensor), the user also selects a Notification Type and a Notification Event for which notification reports will be sent (in case the endpoint is configured as a notification sensor).  
+After changing the values of the parameter, first exclude the device (without setting the parameters to their default values), then wait at least 30s and then re-include the device!  
+When the parameter is set to the value 9 the notifications are sent for the Home Security notification type.  
+If "endpoint enabled" (value set to 1..9), parameter 12 must be set to "2000" as "Condense Sensor"!
 The following option values may be configured -:
 
 | Value  | Description |
@@ -598,9 +610,13 @@ Temperature sensor offset settings
 32536 = offset is 0.0°C  
 1..100 = offset is 0.1..10.0°C added to actual measuring value  
 1001..1100 = offset is -0.1..-10.0°C subtracted to actual measuring value
-Values in the range 0 to 32536 may be set.
+The following option values may be configured, in addition to values in the range 0 to 32536 -:
 
-The manufacturer defined default value is ```32536```.
+| Value  | Description |
+|--------|-------------|
+| 32536 | offset 0.0°C (default value) |
+
+The manufacturer defined default value is ```32536``` (offset 0.0°C (default value)).
 
 This parameter has the configuration ID ```config_110_2``` and is of type ```INTEGER```.
 
@@ -608,10 +624,19 @@ This parameter has the configuration ID ```config_110_2``` and is of type ```INT
 ### Parameter 120: Digital temperature sensor reporting
 
 Digital temperature sensor reporting
-If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter
-Values in the range 0 to 127 may be set.
+If digital teperature sensor is connected, module reports measured temperature on temperture change defined by this parameter.
 
-The manufacturer defined default value is ```5```.
+  * default value 5 - report temperature change of 0.5 °C
+  * 0 - reporting baset on temperature change is disabled
+  * 1- 127 = 0,1°C - 12,7°C, step is 0,1°C
+The following option values may be configured, in addition to values in the range 0 to 127 -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | reporting baset on temperature change disabled |
+| 5 | report change of 0.5 °C (default value) |
+
+The manufacturer defined default value is ```5``` (report change of 0.5 °C (default value)).
 
 This parameter has the configuration ID ```config_120_1``` and is of type ```INTEGER```.
 
@@ -619,7 +644,7 @@ This parameter has the configuration ID ```config_120_1``` and is of type ```INT
 ### Parameter 121: Digital temperature sensor / setpoint selector
 
 Digital temperature sensor / setpoint selector
-
+If digital temperature sensor is not connected, module can grab measured temperature from external secondary module.
 The following option values may be configured -:
 
 | Value  | Description |
@@ -636,12 +661,15 @@ The manufacturer defined default value is ```0``` (internal sensor is mounted).
 This parameter has the configuration ID ```config_121_1``` and is of type ```INTEGER```.
 
 
-### Parameter 122: Node Id of external battery powered sensor
+### Parameter 122: Node ID of external battery powered sensor
 
-Node Id of external battery powered sensor
-0 - disabled
+Node ID of external battery powered room sensor
+If digital temperature sensor is not connected, module can grab measured temperature from external battery powered room sensor defined by this parameter.
 
-1..254 = NodeId of external battery powered room sensor
+  * 0 - external battery powered room sensor not in function
+  * 1..254 = Node ID of external battery powered room sensor
+
+Get sensor node_id from controller and set parameter 122 immediately after sensor weak up (after button press on it etc.)
 Values in the range 0 to 254 may be set.
 
 The manufacturer defined default value is ```0```.

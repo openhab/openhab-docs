@@ -23,6 +23,10 @@ From a hardware side we’ve upgraded our Z-Wave module for better distance and 
 
 From a firmware side, this switch has it all (literally). Scene control, notifications (flashes if your garage door is left open) and can be configured on any HUB.
 
+==
+
+Important:  If you have a neutral wire, set parameter 21 correctly.  If setting the switch up in a 3-way configuration, set parameter 22 (you may need to enable advanced settings to see this).
+
 ### Inclusion Information
 
 Once the inclusion process has started press the config button 3X and the LED bar will flash blue.  If the switch was included successfully the bar will turn GREEN, however if the switch was not included successfully it will turn RED.
@@ -301,7 +305,7 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 ### Parameter 16: LED Strip Effect
 
 LED Strip Effect
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Addition:  To get the final code for the desired color/effect/duration, use this calculator:  https://nathanfiscus.github.io/inovelli-notification-calc/This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
 Values in the range 0 to 100600575 may be set.
 
 The manufacturer defined default value is ```0```.

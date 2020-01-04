@@ -5,7 +5,7 @@ title: Dashboard - UIs
 type: ui
 description: "The openHAB dashboard is a landing page for the user where all openHAB UIs can be found."
 since: 2x
-install: auto
+install: manual
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->

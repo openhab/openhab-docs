@@ -92,6 +92,14 @@ The following table summarises the channels available for the FGWDS -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
+| Switch Binary  [Deprecated]| switch_binary | switch_binary | Switch | Switch | 
+
+### Switch Binary [Deprecated]
+Switch the power on and off.
+
+The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 
 

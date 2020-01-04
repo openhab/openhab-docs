@@ -43,6 +43,7 @@ The following table summarises the channels available for the Spirit -:
 | Setpoint (energy heat) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Local Device Protection  [Deprecated]| protection_local | protection_local |  | Number | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Dimmer
@@ -121,6 +122,20 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | OFF | OK |
 | ON | Alarm |
+
+### Local Device Protection [Deprecated]
+Sets the local protection mode.
+
+The ```protection_local``` channel is of type ```protection_local``` and supports the ```Number``` item.
+The following state translation is provided for this channel to the ```Number``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| 0 | Unprotected |
+| 1 | Protection by sequence |
+| 2 | No operation possible |
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

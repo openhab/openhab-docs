@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGWDSEU*, manufactured by *[Fibargroup](http:/
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FGWDSEU product image](https://www.cd-jackson.com/zwave_device_uploads/1064/1064_default.jpg)
+![FGWDSEU product image](https://www.cd-jackson.com/zwave_device_uploads/1181/1181_default.jpg)
 
 
 The FGWDSEU supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -59,41 +59,102 @@ The following table summarises the channels available for the FGWDSEU -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
-| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
-| Switch | switch_binary1 | switch_binary | Switch | Switch | 
-| Electric meter (kWh) | meter_kwh1 | meter_kwh | Energy | Number | 
+| Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Scene Number | scene_number | scene_number |  | Number | 
+| Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Alarm (system) | alarm_system | alarm_system |  | Switch | 
+| Switch Binary | switch_binary1 | switch_binary | Switch | Switch | 
 | Electric meter (watts) | meter_watts1 | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh1 | meter_kwh | Energy | Number | 
+| Switch Binary | switch_binary2 | switch_binary | Switch | Switch | 
+| Electric meter (watts) | meter_watts2 | meter_watts | Energy | Number | 
+| Electric meter (kWh) | meter_kwh2 | meter_kwh | Energy | Number | 
 
 ### Switch
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
 
-### Electric meter (kWh)
-Indicates the energy consumption (kWh).
-
-The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
-
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
 The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
-### Switch
+### Electric meter (kWh)
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Scene Number
+Triggers when a scene button is pressed.
+
+The ```scene_number``` channel is of type ```scene_number``` and supports the ```Number``` item.
+This channel provides the scene, and the event as a decimal value in the form ```<scene>.<event>```. The scene number is set by the device, and the event is as follows -:
+
+| Event ID | Event Description  |
+|----------|--------------------|
+| 0        | Single key press   |
+| 1        | Key released       |
+| 2        | Key held down      |
+| 3        | Double keypress    |
+| 4        | Tripple keypress   |
+| 5        | 4 x keypress       |
+| 6        | 5 x keypress       |
+
+### Alarm (power)
+Indicates if a power alarm is triggered.
+
+The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Alarm (system)
+Indicates if a system alarm is triggered.
+
+The ```alarm_system``` channel is of type ```alarm_system``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Switch Binary
 Switch the power on and off.
 
 The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Electric meter (watts)
+Indicates the instantaneous power consumption.
+
+The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (kWh)
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh1``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
+### Switch Binary
+Switch the power on and off.
+
+The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
 
-The ```meter_watts1``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```meter_watts2``` channel is of type ```meter_watts``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Electric meter (kWh)
+Indicates the energy consumption (kWh).
+
+The ```meter_kwh2``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -898,21 +959,26 @@ Association group 5 supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
+| COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V3| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_MULTI_CHANNEL_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
-| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V2| |
+| COMMAND_CLASS_ALARM_V8| |
+| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_PROTECTION_V2| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V4| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_MULTI_CHANNEL_ASSOCIATION_V3| |
 | COMMAND_CLASS_SECURITY_V1| |
 #### Endpoint 1
 
@@ -920,26 +986,26 @@ Association group 5 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
-| COMMAND_CLASS_METER_V3| |
-| COMMAND_CLASS_CRC_16_ENCAP_V1| |
-| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
-| COMMAND_CLASS_CENTRAL_SCENE_V3| |
-| COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
-| COMMAND_CLASS_CONFIGURATION_V1| |
-| COMMAND_CLASS_MANUFACTURER_SPECIFIC_V2| |
-| COMMAND_CLASS_POWERLEVEL_V1| |
-| COMMAND_CLASS_PROTECTION_V2| |
-| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V4| |
-| COMMAND_CLASS_ASSOCIATION_V2| |
-| COMMAND_CLASS_VERSION_V2| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_METER_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
+| COMMAND_CLASS_SECURITY_V1| |
+#### Endpoint 2
+
+| Command Class | Comment |
+|---------------|---------|
+| COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_APPLICATION_STATUS_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_METER_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_SECURITY_V1| |
 
 ### Documentation Links
 
-* [FGWDSEU-221 Manual](https://www.cd-jackson.com/zwave_device_uploads/1064/FGWDSEU-221-T-EN-0-16.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1181/FGWDSEU-221-T-EN-0-16.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1064).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1181).
