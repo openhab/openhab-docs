@@ -31,14 +31,14 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
 
     ![select](./images/ide_setup_eclipse_3_select_ide.png)
 
-1. Under `GitHub Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab2-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
+1. Under `GitHub Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
 
    ![select projects](./images/ide_setup_eclipse_4_openhab.png)
 
     | Selection               | Install if                            |
     |-------------------------|---------------------------------------|
     | **openHAB Development** | **Debug/Demo Environment (Required)** |
-    | openHAB Add-ons         | Installs all openHAB 2 Add-ons        |
+    | openHAB Add-ons         | Installs all openHAB Add-ons        |
     | openHAB ZigBee Binding  | ZigBee Binding Development            |
     | openHAB Z-Wave Binding  | Z-Wave Binding Development            |
     | openHAB BACNet Binding  | BACNet Binding Development            |
@@ -46,12 +46,12 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     | openHAB Core Framework  | Core Framework Development            |
 
     ::: warning Attention
-    If you have selected `openHAB Add-ons` the installer will check out the [openHAB 2.x Add-ons](https://github.com/openhab/openhab2-addons/) repository and all add-on projects are imported in Eclipse.
+    If you have selected `openHAB Add-ons` the installer will check out the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository and all add-on projects are imported in Eclipse.
 
     Select `OH2 Add-ons` and from right-click menu select "Close Projects": *this significantly speeds up the setup*.
     Re-open only the binding project(s) you would like to work on.
 
-    If you want to develop a new binding or a specific binding it is recommended to clone your own fork of [openHAB 2.x Add-ons](https://github.com/openhab/openhab2-addons/) and import only the projects you work on.
+    If you want to develop a new binding or a specific binding it is recommended to clone your own fork of [openHAB Add-ons](https://github.com/openhab/openhab-addons/) and import only the projects you work on.
     :::
 
 
@@ -77,7 +77,7 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     :::
 
     Setup tasks will personalize the IDE with openHAB code formatting tools, configurations and a demo app.
-    Setup tasks will also download openHAB latest projects you have selected during installation. Like `openhab-distro` and the add-ons `openhab2-addons` project if you have selected it.
+    Setup tasks will also download openHAB latest projects you have selected during installation. Like `openhab-distro` and the add-ons `openhab-addons` project if you have selected it.
 
     Click bottom right button in the IDE for Progress.
 
