@@ -69,7 +69,7 @@ Code styles files are located in here: https://github.com/openhab/static-code-an
 
 The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
 
-* Official [openHAB Eclipse IDE setup](ide.html) is preconfigured
+* Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
 * Eclipse standalone installation
   - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
 * IntelliJ using plugin https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter

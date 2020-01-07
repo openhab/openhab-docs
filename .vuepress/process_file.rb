@@ -73,8 +73,8 @@ def process_file(indir, file, outdir, source)
                                 puts "    (add-on is from ESH)"
                                 source = "https://github.com/eclipse/smarthome/blob/master/extensions/#{addon_type}/org.eclipse.smarthome.#{addon_type}.#{addon}/README.md"
                             elsif !(file =~ /things/) then
-                                puts "    (add-on is from openhab2-addons)"
-                                source = "https://github.com/openhab/openhab2-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
+                                puts "    (add-on is from openhab-addons)"
+                                source = "https://github.com/openhab/openhab-addons/blob/master/addons/#{addon_type}/org.openhab.#{addon_type}.#{addon}/README.md"
                             end
 
                             out.puts "source: #{source}" if source != ""
