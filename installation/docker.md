@@ -230,7 +230,9 @@ It then performs all the same steps that the upgrade script and which are perfor
 
 ### USB sticks
 
-If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default. In Docker Openhab2 is running in name of `openhab`, a restricted user. There is a solution for that. The stick will work if you run the following command right after docker image is started.
+If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
+In Docker openHAB is running in name of `openhab`, a restricted user.
+The stick will work if you run the following command right after docker image is started.
 
 ```bash
 docker exec \
@@ -239,4 +241,9 @@ docker exec \
     /bin/chmod o+rw /dev/ttyACM0
 ```
 
-This changes permission of the specific device as expected (readable and writable for everyone). The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system.
+
+This command changes permissions of the specific device as expected (readable and writable for everyone).
+
+::: tip Note
+The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, command can be modified accordingly.
+:::
