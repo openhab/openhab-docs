@@ -21,6 +21,8 @@ The following steps will only need to be done once to setup both VSCode and your
 
     Either globally define the formatting options via ```Files->Preferences->Settings->Extendions->Java configuration``` (or in the global ```settings.json```).  You can also define them local to a specific bundle by putting those lines in the ```.vscode/settings.json``` file in the bundle (similar to ```tasks.json```/```launch.json``` below).
 
+	Download [settings.json](https://raw.githubusercontent.com/openhab/openhab-docs/master/developers/ide/examples/vscode/settings.json) if you recommended settings (or simply wish to copy the URLs in the above image).
+
 ## Steps for each Bundle
 
 The following steps will show you how to setup a specific bundle for development with VSCode.  These steps will show how to setup the Russound bundle but are generic to any bundle in the system.
