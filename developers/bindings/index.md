@@ -591,7 +591,7 @@ public class MQTTActions implements ThingActions {
     private @Nullable AbstractBrokerHandler handler;
 
     @Override
-    public void setThingHandler(@Nullable ThingHandler handler) { handler = (AbstractBrokerHandler) handler; }
+    public void setThingHandler(@Nullable ThingHandler handler) { this.handler = (AbstractBrokerHandler) handler; }
 
     @Override
     public @Nullable ThingHandler getThingHandler() { return handler; }
