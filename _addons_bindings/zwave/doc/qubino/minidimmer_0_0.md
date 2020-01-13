@@ -76,6 +76,44 @@ Press and hold the S (Service) button between 2 and 6 seconds if connected to 24
 
 **NOTE: Please wait at least 30 seconds between each inclusion and exclusion.**
 
+### General Usage Information
+
+**FACTORY RESET**
+
+  1. Connect the device to the power supply.
+  2. Within the first minute (60seconds) the device is connected to the power supply, toggle the switch connected to the I1 terminal 5 times within 3 seconds.
+
+OR
+
+Press and hold the S (Service) button for at least 6 seconds if connected to 24-30VDC.
+
+**NOTE:** By resetting the device, all custom parameters previously set on the device will return to their default values, and the node ID will be deleted. Use this reset procedure only when the main gateway (hub) is missing or otherwise inoperable.
+
+**NOTE:** the reset with switch connected to I1 is possible only in the first minute after the device is connected to the power.
+
+**NOTE:** after the reset is successfully done the autocalibration will trigger and the green LED will start blinking.
+
+**LED SIGNALIZATION FOR INCLUSION/EXCLUSION**
+
+LED (green)
+
+  * LED is blinking (1 sec ON, 1 sec OFF) = module is excluded
+  * LED is ON = module is included
+
+LED (red)
+
+  * LED is OFF = normal operation
+  * LED is ON = overload
+  * LED is blinking (1 sec ON, 1 sec OFF) = over temperature
+
+LED (blue)
+
+  * LED is OFF = normal operation
+  * LED is blinking (1 sec ON, 1 sec OFF) = calibration in progress
+  * LED is ON = calibration failed
+
+**NOTE:** After each power cycle all 3 LEDs will blink once before resuming normal operation.
+
 ## Channels
 
 The following table summarises the channels available for the ZMNHHD -:
