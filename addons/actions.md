@@ -198,31 +198,31 @@ Action | Returns
 -|-
 `getBankHolidayName` | name of the holiday today, or `null` if today is not a bank holiday
 `getBankHolidayName(<offset>)` | name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday
-`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday
+`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not a bank holiday
 `getBankHolidayName(<offset>, <file>)` | name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`
-`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`
+`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not defined in `<file>`
 `getDaysUntil(<holiday name>)` | number of days from today to the given `<holiday name>`
 `getDaysUntil(<holiday name>, <file>)` | number of days from today to the given `<holiday name>` defined in `<file>`
-`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`
-`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`
+`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>`
+`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>` defined in `<file>`
 `getHolidayDescription(<holiday name>)` | Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`
 `getNextBankHoliday` | name of the next bank holiday
 `getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
 `getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
 `getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
-`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`
-`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`
+`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>`
+`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>` defined in `<file>`
 `isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
 `isBankHoliday(<offset>)` | `true` if the day `<offset>` days from today is a bank holiday, `false` otherwise
-`isBankHoliday(<datetime>)` | `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday, `false` otherwise.
+`isBankHoliday(<datetime>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is a bank holiday, `false` otherwise.
 `isBankHoliday(<offset>, <file>)` | `true` if the day `<offset>` days from today is a day defined in `<file>`, use 0 for `<offset>` for today; returns `false` otherwise
-`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`, `false` otherwise
+`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is in `<file>`, `false` otherwise
 `isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
 `isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
-`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` os in dayset `<set>`, `false` otherwise
 `isWeekend` | `true` if today is a weekend, `false` otherwise
 `isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
-`isWeekend(<datetime>)` | `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise
+`isWeekend(<datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` is a weekend, `false` otherwise
 
 In all examples that take `<offset>`, use a negative value to check days in the past.
 
