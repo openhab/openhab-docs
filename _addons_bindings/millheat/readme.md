@@ -5,7 +5,7 @@ title: Millheat - Bindings
 type: binding
 description: "This binding integrates the Mill Wi-Fi enabled panel heaters."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
