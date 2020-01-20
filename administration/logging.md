@@ -124,8 +124,8 @@ Examples for typical logging lines found in rules:
 
 ```text
 logInfo("heating-control.rules", "Heating mode set to normal")
-logError("heating-control.rules", "Heating control failed while in mode " + Heating_Mode.state)
-logDebug("heating-control.rules", "Bedroom: Temperature: %1$.1f°C, Mode %2$s", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
+logWarn("heating-control.rules", "Heating control failed while in mode {}", Heating_Mode.state)
+logDebug("heating-control.rules", "Bedroom: Temperature: {}, Mode: {}", Bedroom_Temp.state, Bedroom_Heater_Mode.state)
 ```
 
 An example output of the last log statement above is:
