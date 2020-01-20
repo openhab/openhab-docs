@@ -65,7 +65,7 @@ The commands above have been copied from the REST API documentation for illustra
 
 The REST API documentation is available on your openHAB installation as a custom user interface.
 
-You can add it by opening the PaperUI interace, clicking "Add-ons", selecting "Misc".
+You can add it by opening the PaperUI interace, clicking "Add-ons", selecting "USER INTERFACES".
 You will see an addon called "REST Documentation" that can be easily installed.
 
 On the welcome screen of openHAB, you will now see a new interface called "REST API" where you can easily see the documentation of the REST API and test it!
