@@ -33,27 +33,22 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
 
 1. Under `GitHub Projects > openHAB` select `openHAB Development` and any desired option from `openHAB Add-ons` (includes all add-ons from openhab-addons repo), `openHAB ZigBee Binding` or `openHAB Z-Wave Binding`.
 
-   ![select projects](./images/ide_setup_eclipse_4_openhab.png)
+    ![select projects](./images/ide_setup_eclipse_4_openhab.png)
 
-    | Selection               | Install if                            |
-    |-------------------------|---------------------------------------|
-    | **openHAB Development** | **Debug/Demo Environment (Required)** |
-    | openHAB Add-ons         | Installs all openHAB Add-ons        |
-    | openHAB ZigBee Binding  | ZigBee Binding Development            |
-    | openHAB Z-Wave Binding  | Z-Wave Binding Development            |
-    | openHAB BACNet Binding  | BACNet Binding Development            |
-    | openHAB Web UIs         | Web UIs Development                   |
-    | openHAB Core Framework  | Core Framework Development            |
+    | Selection               | Install if                            | Branches   |
+    |-------------------------|---------------------------------------|------------|
+    | **openHAB Development** | **Debug/Demo Environment (Required)** | 2.5.x, 3.0 |
+    | openHAB Add-ons         | Add-ons Development                   | 2.5.x, 3.0 |
+    | openHAB ZigBee Binding  | ZigBee Binding Development            | 2.5.x, 3.0 |
+    | openHAB Z-Wave Binding  | Z-Wave Binding Development            | 2.5.x, 3.0 |
+    | openHAB BACNet Binding  | BACNet Binding Development            |            |
+    | openHAB Web UIs         | Web UIs Development                   | 2.5.x, 3.0 |
+    | openHAB Core Framework  | Core Framework Development            | 3.0        |
 
     ::: warning Attention
-    If you have selected `openHAB Add-ons` the installer will check out the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository and all add-on projects are imported in Eclipse.
-
-    Select `OH2 Add-ons` and from right-click menu select "Close Projects": *this significantly speeds up the setup*.
-    Re-open only the binding project(s) you would like to work on.
-
-    If you want to develop a new binding or a specific binding it is recommended to clone your own fork of [openHAB Add-ons](https://github.com/openhab/openhab-addons/) and import only the projects you work on.
+    Select `2.5.x` if you want to develop for 2.5.x.
+    The Core Framework only has a master branch (3.0 development).
     :::
-
 
 1. Click `Next>`, verify/modify Root and install folder name. Click on `Show all variables` to open the window shown below.
 
@@ -81,13 +76,6 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
 
     Click bottom right button in the IDE for Progress.
 
-    ::: warning Attention
-    If you have selected `openHAB Add-ons` during the installation.
-    It may take 30-45mins for all initial tasks to finish, depending on internet connection and your computer speed.
-    Be aware of what you select during installation!
-    And go and grab a good cup of coffee and be patient until is finished
-    :::
-
    ![startup tasks finished](./images/ide_setup_eclipse_6_tasks_finished.png)
 
 1. After all tasks are finished you are ready to start developing.
@@ -97,6 +85,10 @@ This guide describes the steps to setup Eclipse and how to debug an add-on in Ec
     As a result when you restart Eclipse the other day.
     It may take some time as it updates all SNAPSHOT versions of openHAB.
     :::
+
+1. If you have selected `openHAB Add-ons` the installer will clone the [openHAB Add-ons](https://github.com/openhab/openhab-addons/) repository.
+    To get an existing binding project into Eclipse import it as a Maven project.
+    Goto `File` -> `Import...` -> `Maven` -> `Existing Maven projects` and follow the wizard to select the directory of the binding or bindings to import.
 
 1. If you want to develop a new binding. Read about the [Skeleton Script](../#develop-a-new-binding) to generate the base for your binding, creating all required files.
 
@@ -141,15 +133,21 @@ Here is an example for the `astro` binding:
         </dependency>
     ```
 
+    ::: tip
+    To only run a binding in the demo you don't need to import the binding in Eclipse.
+    Add the binding to the pom.xml and follow the steps below and you will be able to use that binding in the demo.
+    :::
+
 1. To debug the add-on with the `app.bndrun` run configuration.
-Double click to open `app.bndrun` file (takes a few seconds):
+    Double click to open `app.bndrun` file (takes a few seconds):
 
     ![Bndtools](images/ide_debug_eclipse_1_bndtools.png)
 
 1. Under `Browse Repos` search for the binding you want to run/debug (`astro` in our case) and add it to the `Run Requirements` list using drag&drop from the `Browse Repos` list:
 
     ::: tip
-    If you cannot find the binding you want run/debug in the Browse Repos list, or the list is empty, then it is likely either the `pom.xml` of the demo project contains an error or there is a build problem with your project.
+    If you cannot find the binding you want run/debug in the Browse Repos list, or the list is empty,
+    then it is likely either the `pom.xml` of the demo project contains an error or there is a build problem with your project.
     Check if your project has no compile errors.
     Or run Maven on the command line to check if it reports any errors.
     :::
