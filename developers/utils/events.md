@@ -228,17 +228,18 @@ public class SomeComponentWantsToPost {
         eventPublisher.post(itemCommandEvent);
     }
 
-    protected void setEventPublisher(EventPublisher eventPublisher) {
+    @Reference
+    public void setEventPublisher(EventPublisher eventPublisher) {
         this.eventPublisher = eventPublisher;
     }
 
-    protected void unsetEventPublisher(EventPublisher eventPublisher) {
+    public void unsetEventPublisher(EventPublisher eventPublisher) {
         this.eventPublisher = null;
     }
 }
 ```
 
-The `EventPublisher` will be injected via OSGi Declarative Services.
+The `EventPublisher` will be injected via [OSGi Declarative Services](../osgi/osgids.html#declarative-services).
 
 ## Define new Event Types
 
