@@ -47,6 +47,15 @@ By this function all parameters of the module are set to default values and own 
 
 If push button I1 is pressed three times within 3s (or service button S is pressed more than 2 and less than 6 seconds) module is excluded, but configuration parameters are not set to default values.
 
+### General Usage Information
+
+Note regarding the temperatur channels:
+
+  * Temperature sensor connected (device becomes multi channel, temperature reports are sent from endpoint2, if multi channel lifeline is enabled)
+  * I2 enabled via parameter 100, temperature sensor connected and reinclusion is performed (device becomes multi channel, temperature is sent from endpoint3)
+  * I2 and I3 enabled via parameters 100 and 101, temeprature sensor connected and reinclusion is performed (device becomes multi channel, temperature is sent from endpoint4)  
+    Source: qubino support
+
 ## Channels
 
 The following table summarises the channels available for the ZMNHAD -:
@@ -62,6 +71,7 @@ The following table summarises the channels available for the ZMNHAD -:
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Binary Sensor I2 | sensor_binary2 | sensor_binary |  | Switch | 
+| Sensor (temperature)  [Deprecated]| sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 | Binary Sensor I3 | sensor_binary3 | sensor_binary |  | Switch | 
 | Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
@@ -132,6 +142,13 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Triggered |
 | OFF | Untriggered |
+
+### Sensor (temperature) [Deprecated]
+Indicates the current temperature.
+
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Alarm (power) 2
 Indicates if a power alarm is triggered.
@@ -577,6 +594,7 @@ Association group 9 supports 16 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V2| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_ALARM_V3| |

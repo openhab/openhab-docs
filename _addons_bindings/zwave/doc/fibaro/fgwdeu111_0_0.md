@@ -548,7 +548,7 @@ Available values:
 4 – Key pressed 3 times
 
 8 – Key hold down and key released
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 15 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -561,7 +561,6 @@ The following option values may be configured -:
 The manufacturer defined default value is ```0``` (no scenes).
 
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
-This is a read only parameter.
 
 
 ### Parameter 41: Second button – scenes sent
@@ -573,7 +572,6 @@ Values in the range 0 to 15 may be set.
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_41_1``` and is of type ```INTEGER```.
-This is a read only parameter.
 
 
 ### Parameter 60: Power reports – include self-consumption

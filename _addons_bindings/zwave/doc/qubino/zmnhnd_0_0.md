@@ -57,6 +57,7 @@ The following table summarises the channels available for the ZMNHND -:
 | Binary Sensor | sensor_binary | sensor_binary |  | Switch | 
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
+| Sensor (temperature) 1 | sensor_temperature1 | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor Binary | sensor_binary2 | sensor_binary |  | Switch | 
 | Sensor (temperature) 2 | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 | Burglar | alarm_burglar2 | alarm_burglar | Door | Switch | 
@@ -87,6 +88,11 @@ The ```sensor_temperature``` channel is of type ```sensor_temperature``` and sup
 Switch the power on and off.
 
 The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
+
+### Sensor (temperature) 1
+Indicates the current temperature.
+
+The ```sensor_temperature1``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor Binary
 Indicates if a sensor has triggered.
@@ -420,6 +426,7 @@ Association group 6 supports 16 nodes.
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_SWITCH_ALL_V1| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |

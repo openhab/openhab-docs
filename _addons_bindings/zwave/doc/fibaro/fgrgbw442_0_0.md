@@ -36,12 +36,13 @@ The following table summarises the channels available for the FGRGBW-442 -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (voltage) | sensor_voltage | sensor_voltage |  |  | 
+| Sensor (voltage) | sensor_voltage | sensor_voltage |  | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Color Control | color_color | color_color | ColorLight | Color | 
 | Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
 | Scene Number | scene_number | scene_number |  | Number | 
+| Start programmed sequence | config_decimal | config_decimal |  | Number | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
@@ -55,10 +56,10 @@ The following table summarises the channels available for the FGRGBW-442 -:
 | Dimmer 3 | switch_dimmer3 | switch_dimmer | DimmableLight | Dimmer | 
 | Dimmer 4 | switch_dimmer4 | switch_dimmer | DimmableLight | Dimmer | 
 | Dimmer 5 | switch_dimmer5 | switch_dimmer | DimmableLight | Dimmer | 
-| Sensor (voltage) 6 | sensor_voltage6 | sensor_voltage |  |  | 
-| Sensor (voltage) 7 | sensor_voltage7 | sensor_voltage |  |  | 
-| Sensor (voltage) 8 | sensor_voltage8 | sensor_voltage |  |  | 
-| Sensor (voltage) 9 | sensor_voltage9 | sensor_voltage |  |  | 
+| Sensor (voltage) 6 | sensor_voltage6 | sensor_voltage |  | Number | 
+| Sensor (voltage) 7 | sensor_voltage7 | sensor_voltage |  | Number | 
+| Sensor (voltage) 8 | sensor_voltage8 | sensor_voltage |  | Number | 
+| Sensor (voltage) 9 | sensor_voltage9 | sensor_voltage |  | Number | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -67,7 +68,9 @@ The brightness channel allows to control the brightness of a light.
 The ```switch_dimmer``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (voltage)
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.
@@ -106,6 +109,11 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 4        | Tripple keypress   |
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
+
+### Start programmed sequence
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
 
 ### Alarm (power)
 Indicates if a power alarm is triggered.
@@ -208,16 +216,24 @@ The brightness channel allows to control the brightness of a light.
 The ```switch_dimmer5``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
 ### Sensor (voltage) 6
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage6``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (voltage) 7
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage7``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (voltage) 8
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage8``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Sensor (voltage) 9
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage9``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 
@@ -870,7 +886,7 @@ Association group 10 supports 5 nodes.
 | COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V10| |
 | COMMAND_CLASS_METER_V3| |
-| COMMAND_CLASS_SWITCH_COLOR_V3| |
+| COMMAND_CLASS_SWITCH_COLOR_V3| Linked to BASIC|
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
@@ -893,7 +909,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_SWITCH_COLOR_V3| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -909,7 +925,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -921,7 +937,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -933,7 +949,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -945,7 +961,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -957,7 +973,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -969,7 +985,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -981,7 +997,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
@@ -993,7 +1009,7 @@ Association group 10 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| |
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V10| Linked to BASIC|
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |

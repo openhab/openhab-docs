@@ -555,7 +555,7 @@ Available values
 2 – Key pressed 2 times  
 4 – Key pressed 3 times  
 8 – Key hold down and key released
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 15 -:
 
 | Value  | Description |
 |--------|-------------|
@@ -578,7 +578,7 @@ Available values
 2 – Key pressed 2 times  
 4 – Key pressed 3 times  
 8 – Key hold down and key released
-The following option values may be configured -:
+The following option values may be configured, in addition to values in the range 0 to 15 -:
 
 | Value  | Description |
 |--------|-------------|

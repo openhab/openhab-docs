@@ -101,7 +101,7 @@ The following state translation is provided for this channel to the ```Switch```
 
 ## Device Configuration
 
-The following table provides a summary of the 7 configuration parameters available in the Smart Plug 16A.
+The following table provides a summary of the 11 configuration parameters available in the Smart Plug 16A.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -113,6 +113,10 @@ Detailed information on each parameter can be found in the sections below.
 | 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
 | 41 | Treshold time for power reporting | Treshold time for power reporting [Watt] |
+| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Watt] |
+| 50 | Down value | Down value [watt] |
+| 51 | Up value | Upper power threshold used in parameter no. 52 |
+| 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
 |  | Switch All Mode | Set the mode for the switch when receiving SWITCH ALL commands |
 
 ### Parameter 10: Activate / deactivate functions ALL ON / ALL OFF
@@ -234,6 +238,93 @@ Values in the range 0 to 32535 may be set.
 The manufacturer defined default value is ```0```.
 
 This parameter has the configuration ID ```config_41_2``` and is of type ```INTEGER```.
+
+
+### Parameter 42: Power Consumption Reporting Time Threshold
+
+Power Consumption Reporting Time Threshold [Watt]
+Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).
+
+If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
+
+Values :
+
+  * 0 : Power consumption reporting disabled 
+  * 30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
+Values in the range 0 to 32535 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_42_2``` and is of type ```INTEGER```.
+
+
+### Parameter 50: Down value
+
+Down value [watt]
+Lower power threshold used in parameter no. 52. 
+
+Values:
+
+  * default value 30 : 30 W  
+    
+  * 0 – 4000 : 0W – 4000 W  
+    
+
+Down value cannot be higher than a value specified in parameter no. 51  
+
+
+NOTE:
+
+  * if parameter no. 50 value is 100W and if measured power is lower than 100W, the association is send association is send again if measured power will rise above 105W
+  * Power threshold step is 1W
+Values in the range 0 to 4000 may be set.
+
+The manufacturer defined default value is ```30```.
+
+This parameter has the configuration ID ```config_50_2``` and is of type ```INTEGER```.
+
+
+### Parameter 51: Up value
+
+Upper power threshold used in parameter no. 52
+Values
+
+  * default value 50 : 50 W
+  * 0 – 4000 : 0 W – 400 W 
+
+Up value cannot be lower than a value specified in the parameter no. 50.
+
+NOTE:
+
+  * If parameter no. 51 value is 200W and if measured power is higher than 200W the association is send
+  * Association is send again if measured power will fall below 190W
+  * Power threshold step is 1W
+Values in the range 0 to 4000 may be set.
+
+The manufacturer defined default value is ```50```.
+
+This parameter has the configuration ID ```config_51_2``` and is of type ```INTEGER```.
+
+
+### Parameter 52: Action in case of exceeding defined power values
+
+Action in case of exceeding defined power values (parameters 50 and 51)
+
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | Inactive |
+| 1 | Turn the associated devices on if underpowered |
+| 2 | Turn the associated devices off if underpowered |
+| 3 | Turn the associated devices on if overpowered |
+| 4 | Turn the associated devices off if overpowered |
+| 5 | Turn the associated devices on/off |
+| 6 | Turn the associated devices off/on |
+
+The manufacturer defined default value is ```6``` (Turn the associated devices off/on).
+
+This parameter has the configuration ID ```config_52_1``` and is of type ```INTEGER```.
 
 ### Switch All Mode
 

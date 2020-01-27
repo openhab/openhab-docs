@@ -66,6 +66,7 @@ The following table summarises the channels available for the ZMNHDD -:
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Binary Sensor 2 | sensor_binary2 | sensor_binary |  | Switch | 
+| Sensor (temperature) 2 | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm 2 | alarm_general2 | alarm_general | Alarm | Switch | 
 | Binary Sensor 3 | sensor_binary3 | sensor_binary |  | Switch | 
 | Alarm 3 | alarm_general3 | alarm_general | Alarm | Switch | 
@@ -161,6 +162,11 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Triggered |
 | OFF | Untriggered |
+
+### Sensor (temperature) 2
+Indicates the current temperature.
+
+The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm 2
 Indicates if an alarm is triggered.
@@ -712,6 +718,7 @@ Association group 11 supports 16 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SENSOR_BINARY_V1| Linked to BASIC|
+| COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
 | COMMAND_CLASS_ALARM_V1| |
 | COMMAND_CLASS_ASSOCIATION_V1| |
 | COMMAND_CLASS_VERSION_V1| |

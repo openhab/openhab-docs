@@ -17,7 +17,7 @@ The KONOzw supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-ONOzw is the smart hub thermostat made with you in mind. It seamlessly connects to many smart hubs and blends in or stands out with its interchangeable Décorsnap covers™. KONOzw makes it easier than ever to personalize your comfort, décor, and savings.
+KONOzw is the smart hub thermostat made with you in mind. It seamlessly connects to many smart hubs and blends in or stands out with its interchangeable Décorsnap covers™. KONOzw makes it easier than ever to personalize your comfort, décor, and savings.
 
 ### Inclusion Information
 
@@ -56,7 +56,7 @@ The following table summarises the channels available for the KONOzw -:
 | Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Sensor (temperature)
 Indicates the current temperature.
@@ -148,7 +148,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -386,7 +386,7 @@ Association group 1 supports 5 nodes.
 
 | Command Class | Comment |
 |---------------|---------|
-| COMMAND_CLASS_NO_OPERATION_V1| |
+| COMMAND_CLASS_NO_OPERATION_V1| Linked to BASIC|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V7| |
