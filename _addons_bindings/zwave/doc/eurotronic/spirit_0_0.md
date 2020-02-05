@@ -35,6 +35,7 @@ The following table summarises the channels available for the Spirit -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
+| Basic  [Deprecated]| basic_number | basic_number |  | Number | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Current temperature | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | External temperature | sensor_report | sensor_report |  | Number | 
@@ -43,8 +44,15 @@ The following table summarises the channels available for the Spirit -:
 | Setpoint (energy heat) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Alarm (system) | alarm_system | alarm_system |  | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
-| Local Device Protection  [Deprecated]| protection_local | protection_local |  | Number | 
+| Local Device Protection | protection_local | protection_local |  | Number | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
+
+### Basic [Deprecated]
+
+
+The ```basic_number``` channel is of type ```basic_number``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -123,7 +131,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Local Device Protection [Deprecated]
+### Local Device Protection
 Sets the local protection mode.
 
 The ```protection_local``` channel is of type ```protection_local``` and supports the ```Number``` item.
@@ -134,8 +142,6 @@ The following state translation is provided for this channel to the ```Number```
 | 0 | Unprotected |
 | 1 | Protection by sequence |
 | 2 | No operation possible |
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

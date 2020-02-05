@@ -25,15 +25,37 @@ Control options also include special modes like 'all on/off' or always controlli
 
 ### Inclusion Information
 
-When in factory default push Button 3 (secure) or Button 4 (normal) for one second to enter inclusion mode. 
+KFOB
 
-The inclusion mode is indicated by a blinking green LED. From second device on you need to enter management mode  push all four buttons together for one second - green led blinks slowly), hit button 3 ( enter primary controller functions - green led blinks faster) and then button 1 (secure) or button 2 (normal).
+When in factory default push Button 3 (secure) or Button 4 (normal) for one second to enter inclusion mode. Inclusion mode is indicated by a blinking green LED.
+
+From second device on you need to enter management mode:
+
+  1. Push all four buttons together for one second - green led blinks slowly)
+  2. Hit button 3 ( enter primary controller functions - green led blinks faster)
+  3. Then button 1 (secure) or button 2 (normal).
+
+KFOB2
+
+When in factory default push any button for one second to enter inclusion mode. The inclusion mode is indicated by a blinking green LED.
+
+From second device on you need to enter management mode:
+
+  1. Enter management mode by pushing all four buttons together for 5 seconds (until green led blinks slowly)
+  2. Hit button 1 (enter primary controller functions - green led blinks faster)
 
 ### Exclusion Information
 
-  1. Enter management mode  by push all four buttons together for one second - green led blinks slowly), 
-  2. hit button 3 ( enter primary controller functions - green led blinks faster) and 
-  3. then button 3 again.
+KFOB
+
+  1. Enter management mode by pushing all four buttons together for one second - green led blinks slowly),
+  2. Hit button 3 ( enter primary controller functions - green led blinks faster) and
+  3. Then button 3 again.
+
+KFOB2
+
+  1. Enter management mode by pushing all four buttons together for 5 seconds (until green led blinks slowly)
+  2. Hit button 1 ( enter primary controller functions - green led blinks faster)
 
 ### Wakeup Information
 
@@ -42,8 +64,8 @@ The KFOB does not permanently listen for messages sent from the controller - it 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-  1. Enter management mode  by push all four buttons together for one second - green led blinks slowly), 
-  2. then hit button 2 .
+  1. Enter management mode by pushing all four buttons together for one second - green led blinks slowly),
+  2. Then hit button 2 .
 
 ## Channels
 
@@ -359,6 +381,7 @@ Association group 5 supports 10 nodes.
 |---------------|---------|
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
+| COMMAND_CLASS_SCENE_ACTIVATION_V1| |
 | COMMAND_CLASS_CENTRAL_SCENE_V1| Linked to BASIC|
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |

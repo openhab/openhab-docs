@@ -46,7 +46,7 @@ The following table summarises the channels available for the ZMNHQD -:
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Color Control | color_color | color_color | ColorLight | Color | 
 | Color Temperature | color_temperature | color_temperature | ColorLight | Dimmer | 
-| Alarm | alarm_general | alarm_general | Alarm | Switch | 
+| Alarm (SIREN) 0 | notification_siren | notification_siren |  | Switch | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -66,17 +66,10 @@ The color temperature channel allows to set the color
 
 The ```color_temperature``` channel is of type ```color_temperature``` and supports the ```Dimmer``` item and is in the ```ColorLight``` category.
 
-### Alarm
-Indicates if an alarm is triggered.
+### Alarm (SIREN) 0
+Indicates the siren notification has been triggered.
 
-The ```alarm_general``` channel is of type ```alarm_general``` and supports the ```Switch``` item and is in the ```Alarm``` category. This is a read only channel so will only be updated following state changes from the device.
-
-The following state translation is provided for this channel to the ```Switch``` item type -:
-
-| Value | Label     |
-|-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+The ```notification_siren``` channel is of type ```notification_siren``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 
 

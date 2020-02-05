@@ -960,7 +960,7 @@ DOORBELL | A doorbell.
 EXTERIOR_BLIND | A window covering on the outside of a structure.
 FAN | A fan.
 GAME_CONSOLE | A game console, such as Microsoft Xbox or Nintendo Switch
-GARAGE_DOOR | A garage door. Garage doors must implement the [ModeController](modecontroller-mode) interface to open and close the door.
+GARAGE_DOOR | A garage door. Garage doors must implement the [ModeController](#modecontroller-mode) interface to open and close the door.
 INTERIOR_BLIND | A window covering on the inside of a structure.
 LAPTOP | A laptop or other mobile computer.
 LIGHT | A light source or fixture.

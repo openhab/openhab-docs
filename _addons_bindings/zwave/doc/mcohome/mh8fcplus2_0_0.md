@@ -6,12 +6,11 @@ title: MH8-FC - ZWave
 {% include base.html %}
 
 # MH8-FC Fan Coil Thermostat
-This describes the Z-Wave device *MH8-FC*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh8fcplus_03_000```.
-This version of the device is limited to firmware versions above 3.0
+This describes the Z-Wave device *MH8-FC*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh8fcplus2_00_000```.
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![MH8-FC product image](https://www.cd-jackson.com/zwave_device_uploads/1057/1057_default.jpg)
+![MH8-FC product image](https://www.cd-jackson.com/zwave_device_uploads/1201/1201_default.jpg)
 
 
 The MH8-FC supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -73,8 +72,8 @@ The following table summarises the channels available for the MH8-FC -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | thermostat_state | Temperature | Number | 
-| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
 
@@ -122,12 +121,12 @@ The following state translation is provided for this channel to the ```Number```
 | 5 | Pending Cool |
 | 6 | Vent / Economiser |
 
-### Setpoint (cooling)
+### Setpoint (heating)
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
-### Setpoint (heating)
+### Setpoint (cooling)
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
@@ -149,8 +148,8 @@ Detailed information on each parameter can be found in the sections below.
 |-------|-------|-------------|
 | 1 | Temperature Unit Setting | Temperature Unit Setting. 0 = C, 1 = F |
 | 2 | Upload Temperature Automatically | Upload Temperature Automatically |
-| 3 | Upload temperature difference | Upload temperature difference |
-| 4 | Upload time interval | Upload time interval in seconds |
+| 3 | Upload the difference | Upload the difference |
+| 4 | Upload time interval regularly | Upload time interval in seconds (10-65535) |
 | 255 | Factory Setting | Factory Setting |
 
 ### Parameter 1: Temperature Unit Setting
@@ -163,6 +162,7 @@ The following option values may be configured -:
 |--------|-------------|
 | 0 | Celcius |
 | 1 | Fahrenheit |
+| 2 | Follow the main display |
 
 The manufacturer defined default value is ```0``` (Celcius).
 
@@ -180,16 +180,16 @@ The following option values may be configured -:
 | 0 | Off |
 | 1 | Upload the difference value only |
 | 2 | Timing upload mode only |
-| 3 | Upload the difference + timing upload mode |
+| 3 | Upload the difference+timing upload mode |
 
-The manufacturer defined default value is ```3``` (Upload the difference + timing upload mode).
+The manufacturer defined default value is ```3``` (Upload the difference+timing upload mode).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
 
-### Parameter 3: Upload temperature difference
+### Parameter 3: Upload the difference
 
-Upload temperature difference
+Upload the difference
 Base on 0.1C unit. 5 by default. 5 * 0.1C = 0.5C, 0x0003 to 0x03E8
 Values in the range 3 to 1000 may be set.
 
@@ -198,9 +198,9 @@ The manufacturer defined default value is ```5```.
 This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
 
 
-### Parameter 4: Upload time interval
+### Parameter 4: Upload time interval regularly
 
-Upload time interval in seconds
+Upload time interval in seconds (10-65535)
 Base is 1s unit. It is suggested to be set above 30s, 0x000A to 0xFFFF
 Values in the range 10 to 65535 may be set.
 
@@ -212,15 +212,13 @@ This parameter has the configuration ID ```config_4_2``` and is of type ```INTEG
 ### Parameter 255: Factory Setting
 
 Factory Setting
-0x55 Restore the factory setting (write only)
-
+0x55 Restore the factory setting (write only)  
 Parameters setting back to default value, association groups deleted
-Values in the range 85 to 85 may be set.
+Values in the range 0 to 85 may be set.
 
-The manufacturer defined default value is ```85```.
+The manufacturer defined default value is ```0```.
 
-This parameter has the configuration ID ```config_255_1_wo``` and is of type ```INTEGER```.
-This is a write only parameter.
+This parameter has the configuration ID ```config_255_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
@@ -232,7 +230,7 @@ The MH8-FC supports 1 association group.
 ### Group 1: Lifeline
 
 The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
-For sending temperature, working mode, etc. notifications
+For sending temperature, working mode, notifications, etc.
 
 Association group 1 supports 1 node.
 
@@ -252,16 +250,21 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_STATE_V1| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_ASSOCIATION_V1| |
-| COMMAND_CLASS_VERSION_V1| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1057/MH8-FC-Zwave-Plus.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1201/MH8-FC-Zwave-Plus.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1057).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1201).

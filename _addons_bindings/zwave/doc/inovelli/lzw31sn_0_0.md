@@ -48,6 +48,7 @@ The following table summarises the channels available for the LZW31-SN -:
 | LED Strip Effect | config_decimal | config_decimal |  | Number | 
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
+| Protection Local | protection_local | protection_local |  | Number | 
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -95,6 +96,18 @@ The ```config_decimal``` channel is of type ```config_decimal``` and supports th
 Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### Protection Local
+Sets the local protection mode.
+
+The ```protection_local``` channel is of type ```protection_local``` and supports the ```Number``` item.
+The following state translation is provided for this channel to the ```Number``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| 0 | Unprotected |
+| 1 | Protection by sequence |
+| 2 | No operation possible |
 
 
 
@@ -404,8 +417,6 @@ Members of this group will receive unsolicited messages related to the status of
 Association group 1 supports 5 nodes.
 
 ### Group 2: Basic Set
-
-Sends start and stop level change to associated devices.
 
 Single press UP button sends BasicSet (0xFF) and single press Down sends BasicSet (0x00)
 

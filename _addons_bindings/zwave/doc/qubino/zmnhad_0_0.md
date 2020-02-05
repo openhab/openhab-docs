@@ -71,7 +71,7 @@ The following table summarises the channels available for the ZMNHAD -:
 | Electric meter (watts) 1 | meter_watts1 | meter_watts | Energy | Number | 
 | Electric meter (kWh) 1 | meter_kwh1 | meter_kwh | Energy | Number | 
 | Binary Sensor I2 | sensor_binary2 | sensor_binary |  | Switch | 
-| Sensor (temperature)  [Deprecated]| sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
+| Sensor (temperature) | sensor_temperature2 | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (power) 2 | alarm_power2 | alarm_power | Energy | Switch | 
 | Binary Sensor I3 | sensor_binary3 | sensor_binary |  | Switch | 
 | Sensor (temperature) | sensor_temperature3 | sensor_temperature | Temperature | Number:Temperature | 
@@ -143,12 +143,10 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Triggered |
 | OFF | Untriggered |
 
-### Sensor (temperature) [Deprecated]
+### Sensor (temperature)
 Indicates the current temperature.
 
 The ```sensor_temperature2``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Alarm (power) 2
 Indicates if a power alarm is triggered.
