@@ -64,6 +64,10 @@ On slower systems, such as Raspberry Pi or Pine64, this first SSH connection may
 If this happens, simply try connecting again until successful.
 :::
 
+::: tip Note
+If you are using the openHABian installation image, the [default login username/password](https://www.openhab.org/docs/installation/openhabian.html#raspberry-pi-prepackaged-sd-card-image) is **openhabian:openhabian**
+:::
+
 ## Using the Console
 
 After successful connection and authentication, the console will appear:
