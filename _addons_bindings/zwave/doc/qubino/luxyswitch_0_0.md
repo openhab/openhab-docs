@@ -17,15 +17,7 @@ The ZMNKAD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-<table>
-  <tr>
-    <td>
-      <p>
-        The Qubino LUXY Smart Switch is ideal for gentle illumination of any room, for visual and sound notifications, and for controlling various loads, using the built-in relay.
-      </p>
-    </td>
-  </tr>
-</table>
+The Qubino LUXY Smart Switch is ideal for gentle illumination of any room, for visual and sound notifications, and for controlling various loads, using the built-in relay.
 
 ### Inclusion Information
 
@@ -522,7 +514,7 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Dummy version of the manual](https://www.cd-jackson.com/zwave_device_uploads/1196/20200120-QUBINO-LUXY-SMART-SWITCH-DUMMY-MANUAL.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1196/Qubino-Luxy-Smart-Light-extended-manual-eng.pdf)
 
 ---
 

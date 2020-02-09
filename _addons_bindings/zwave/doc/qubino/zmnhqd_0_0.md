@@ -17,7 +17,7 @@ The ZMNHQD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-The Qubino LUXY Smart Light is ideal for gentle illumination of any room and for visual and sound notifications.  
+The Qubino LUXY Smart Light is ideal for gentle illumination of any room and for visual and sound notifications.
 
 ### Inclusion Information
 
@@ -254,7 +254,7 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [dummy manual](https://www.cd-jackson.com/zwave_device_uploads/1126/Qubino-RGBW-Night-Light-With-Sound-Alerts-DUMMY-MANUAL.pdf)
+* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1126/Qubino-Luxy-Smart-Light-extended-manual-eng.pdf)
 
 ---
 

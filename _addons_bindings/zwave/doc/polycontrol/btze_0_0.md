@@ -63,6 +63,7 @@ The following table summarises the channels available for the Danalock V3-BTZE -
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
+| Entry Alarm | alarm_entry | alarm_entry | Door | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
@@ -75,6 +76,18 @@ The following state translation is provided for this channel to the ```Switch```
 |-------|-----------|
 | ON | Locked |
 | OFF | Unlocked |
+
+### Entry Alarm
+Indicates if the entry alarm is triggered.
+
+The ```alarm_entry``` channel is of type ```alarm_entry``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| ON | Open |
+| OFF | Closed |
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
@@ -231,6 +244,7 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_ZWAVEPLUS_INFO_V2| |
 | COMMAND_CLASS_DOOR_LOCK_V2| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
+| COMMAND_CLASS_ALARM_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V2| |
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V4| |

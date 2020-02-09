@@ -36,7 +36,7 @@ The following table summarises the channels available for the UMV3-BTZ -:
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
 | Door Lock | lock_door | lock_door | Door | Switch | 
-| Alarm (access) | alarm_access | alarm_access | Door | Switch | 
+| Entry Alarm | alarm_entry | alarm_entry | Door | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Door Lock
@@ -50,17 +50,17 @@ The following state translation is provided for this channel to the ```Switch```
 | ON | Locked |
 | OFF | Unlocked |
 
-### Alarm (access)
-Indicates if the access control alarm is triggered.
+### Entry Alarm
+Indicates if the entry alarm is triggered.
 
-The ```alarm_access``` channel is of type ```alarm_access``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```alarm_entry``` channel is of type ```alarm_entry``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+| ON | Open |
+| OFF | Closed |
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
