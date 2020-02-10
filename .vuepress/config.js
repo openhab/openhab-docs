@@ -11,7 +11,7 @@ const HighlightRules = require('./highlight-rules')
 const base = process.env.OH_DOCS_VERSION ? `/v${process.env.OH_DOCS_VERSION}/` : '/'
 
 module.exports = {
-  title: 'Documentation Preview',
+  title: 'v3 Documentation Preview',
   description: 'This is a preview of the main parts of the documentation, found in the openhab/openhab-docs repository',
   dest: 'vuepress',
   host: 'localhost',
