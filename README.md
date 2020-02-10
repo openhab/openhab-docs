@@ -13,7 +13,7 @@ The result is available at [https://www.openhab.org/docs/](https://www.openhab.o
 ## How it works
 
 In this repo you can find and improve all *general* documentation contents.
-In fact that is all you can see in the `master` branch.
+In fact that is all you can see in the `2.5.x` branch.
 There are also other *read-only* branches, which hold external content like the *add-ons* and *concepts* documentation.
 We will read about them later.
 
