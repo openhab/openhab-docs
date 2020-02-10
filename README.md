@@ -1,14 +1,10 @@
-# openHAB 2.x Documentation Project
-
-![](https://img.shields.io/badge/markdown_errors-0-orange.svg)
-[![](https://img.shields.io/badge/linkchecker_errors-89-red.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
-[![](https://img.shields.io/badge/linkchecker_warnings-421-yellow.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
+# openHAB 3.x Documentation Project
 
 ## Introduction
 
-This repository contains the documentation for openHAB.
+This repository contains the documentation for openHAB 3.x.
 
-The result is available at [https://www.openhab.org/docs/](https://www.openhab.org/docs/) and [https://www.openhab.org/addons/](https://www.openhab.org/addons/).
+The result is available at [https://next.openhab.org/docs/](https://www.openhab.org/docs/) and [https://next.openhab.org/addons/](https://www.openhab.org/addons/).
 
 ## How it works
 
@@ -22,7 +18,7 @@ We will read about them later.
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
 This is fairly easy: 
-on most of the documentation pages on https://www.openhab.org/, 
+on most of the documentation pages on https://next.openhab.org/, 
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
 ![Contribution link to a specific page](./images/contribution_link.png)
@@ -56,9 +52,15 @@ Imagine you want to do an improvement of the zwave binding and have to update th
 That's twice the effort and also we would have to coordinate two Pull Requests.
 So we are saving time for everyone by keeping those files at their original location along with the code.
 
+::: tip UNDER REVIEW
+
+The process below is subject to changes until the openHAB 3.x website become the production one.
+
+:::
+
 ### How the documentation build works
 
-We have set up our [build server](https://ci.openhab.org/view/Documentation/) to do the magic automatically.
+We have set up our [build server](https://ci.openhab.org/view/Documentation%20(3.x)/) to do the magic automatically.
 There are several triggers (mostly time based), which will then *gather the external contents* and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the *final* branch under:
 
