@@ -281,6 +281,7 @@ To be able to do something useful with the scripts, openHAB provides access to
 Combining these features, you can easily write code like:
 
 ```java
+val Number Temperature
 if (Temperature.state < 20) {
     Heating.sendCommand(ON)
 }
