@@ -29,7 +29,7 @@ In an apt installation, you would best do this in the file `/etc/default/openhab
 
 ### SSL Certificates
 
-On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in `${USER_DATA}etc/keystore`).
+On the very first start, openHAB generates a personal (self-signed, 256-bit ECC) SSL certificate and stores it in the Jetty keystore (in `$OPENHAB_USERDATA/etc/keystore`).
 This process makes sure that every installation has an individual certificate, so that nobody else can falsely mimic your server.
 Note that on slow hardware, this certificate generation can take up to several minutes, so be patient on a first start - it is all for your own security.
 
