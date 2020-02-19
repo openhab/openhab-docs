@@ -145,6 +145,8 @@ SI:
 | Energy                 | Watt Hour                        | Wh     |
 | Energy                 | Kilowatt Hour                    | kWh    |
 | Energy                 | Megawatt Hour                    | MWh    |
+| Energy                 | Volt-Ampere Hour                 | VAh    |
+| Energy                 | Volt-Ampere Reactive Hour        | varh   |
 | Energy                 | Kilovar Hour                     | kvarh  |
 | Force                  | Newton                           | N      |
 | Frequency              | Hertz                            | Hz     |
@@ -160,6 +162,8 @@ SI:
 | Mass                   | Kilogram                         | kg     |
 | Mass                   | Gram                             | g      |
 | Power                  | Watt                             | W      |
+| Power                  | Volt-Ampere                      | VA     |
+| Power                  | Volt-Ampere Reactive             | var    |
 | Power                  | Kilovar                          | kvar   |
 | Power                  | Decibel-Milliwatts               | dBm    |
 | Pressure               | Pascal                           | Pa     |
