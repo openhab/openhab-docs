@@ -5,6 +5,7 @@ title: Bluetooth BlueZ Adapter - Bindings
 type: binding
 description: "This extension supports Bluetooth access via BlueZ on Linux (ARMv6hf)."
 since: 2x
+logo: images/addons/bluetooth.bluez.png
 install: manual
 ---
 

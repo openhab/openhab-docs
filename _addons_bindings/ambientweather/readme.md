@@ -5,6 +5,7 @@ title: Ambient Weather - Bindings
 type: binding
 description: "The Ambient Weather binding integrates weather station data that's stored on the Ambient Weather online service."
 since: 2x
+logo: images/addons/ambientweather.png
 install: auto
 ---
 

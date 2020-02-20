@@ -5,6 +5,7 @@ title: Dark Sky - Bindings
 type: binding
 description: "This binding integrates the [Dark Sky API](https://darksky.net/dev/docs)."
 since: 2x
+logo: images/addons/darksky.png
 install: auto
 ---
 
