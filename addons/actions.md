@@ -209,7 +209,7 @@ Action | Returns
 `getNextBankHoliday` | name of the next bank holiday
 `getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
 `getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
-`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
+`getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`.  **Note:** this action is broken in OH 2.5.x. Use `getNextBankHoliday(<datetime>, <file>)` instead by replacing `<datetime>` with `ZonedDateTime.now().plusDays(<offset>)`
 `getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>`
 `getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>` defined in `<file>`
 `isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
