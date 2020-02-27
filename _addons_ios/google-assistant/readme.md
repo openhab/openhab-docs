@@ -129,7 +129,6 @@ To change the temperature unit to Fahrenheit, add the config option `[ useFahren
 There must be at least three items as members of the group:
 
 * (Mandatory) Mode: Number (Zwave THERMOSTAT_MODE Format) or String (off, heat, cool, on, ...). `{ ga="thermostatMode" }`
-  * you can define the supported modes with the config option `[ modes="on,off,heat,cool" ]`
 * (Mandatory) Temperature Ambient: Number. `{ ga="thermostatTemperatureAmbient" }`
 * (Mandatory) Temperature Setpoint: Number. `{ ga="thermostatTemperatureSetpoint" }`
 * (Optional) Humidity Setpoint High: Number. `{ ga="thermostatTemperatureSetpointHigh" }`
@@ -137,6 +136,10 @@ There must be at least three items as members of the group:
 * (Optional) Humidity Ambient: Number. `{ ga="thermostatHumidityAmbient" }`
 
 If your thermostat does not have a mode, you should create one and manually assign a value (e.g. heat, cool, on, etc.) to have proper functionality.
+
+To map the [default thermostat modes of Google](https://developers.google.com/assistant/smarthome/traits/temperaturesetting.html) (on, off, heat, cool, etc.) to custom ones for your specific setup, you can use the _modes_ config option on the thermostat group.
+E.g. `[ modes="off=OFF:WINDOW_OPEN,heat=COMFORT:BOOST,eco=ECO,on=ON,auto" ]` will enable the following five modes in Google Home `"off, heat, eco, on, auto"` that will be translated to `"OFF, COMFORT, ECO, ON, auto"`. You can specify alternative conversions using the colon sign, so that in the former example "BOOST" in openHAB would also be translated to "heat" in Google. For the translation of Google modes to openHAB always the first option after the equal sign is used.
+By default the integration will provide `"off,heat,cool,on,heatcool,auto,eco"`.
 
 You can also set up a Thermostat for using it as a temperature sensor. To do so, create a Thermostat group and only add one item member as "thermostatTemperatureAmbient".
 
