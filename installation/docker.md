@@ -100,12 +100,12 @@ docker run \
         openhab/openhab:<version>-<architecture>-<distribution>
 ```
 
-Where 
+Where
 
-- `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, 
-- `<gid>` is the group ID number for the `openhab` user, 
-- `<version>` is the version of openHAB, 
-- `<architecture>` is the architecture of your system and 
+- `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`,
+- `<gid>` is the group ID number for the `openhab` user,
+- `<version>` is the version of openHAB,
+- `<architecture>` is the architecture of your system and
 - `<distribution>` is the base system (debian or alpine).
 
 It is important that the ID number is passed in.
@@ -174,7 +174,7 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `--net=host` : by default Docker will place a container into its own network stack. However, openHAB 2 requires UPnP discovery so this parameter makes the Docker container use the host's network stack.
 - `-v /etc/localtime:/etc/localtime:ro` : ties the time of the container to the host's time, read only so the container cannot change the host's time
 - `-v /etc/timezone:/etc/timezone:ro` : ties the timezone of the container to the host's time zone, read only so the container cannot change the host's time zone
-- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (NOTE: you must create these folders on the host before running the container)
+- `-v /opt/openhab/conf:/openhab/conf` : location of the conf folder for openHAB configurations (*Note:* you must create these folders on the host before running the container)
 - `-v /opt/openhab/userdata:/openhab/userdata` : location for logs, cache, persistence databases, etc.
 - `-v /opt/openhab/addons:/openhab/addons` : only needed if installing addons unavailable via PaperUI or the Karaf Console
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token
@@ -225,3 +225,25 @@ Any changes between the two files will trigger and upgrade.
 
 The upgrade process first creates a backup of the entire mapped in userdata folder (skipping the backup folder) and places it as a dated tar file into userdata/backup.
 It then performs all the same steps that the upgrade script and which are performed by an apt-get/yum upgrade.
+
+## Troubleshooting
+
+### USB sticks
+
+If you want use an USB stick (for example for Z-Wave network), then it will be not available for the dockerized system by default.
+In Docker openHAB is running in name of `openhab`, a restricted user.
+The stick will work if you run the following command right after docker image is started.
+
+```bash
+docker exec \
+    -d \
+    openhab \
+    /bin/chmod o+rw /dev/ttyACM0
+```
+
+
+This command changes permissions of the specific device as expected (readable and writable for everyone).
+
+::: tip Note
+The device path (`/dev/ttyACM0`) or container name (`openhab`) could be different in your system, command can be modified accordingly.
+:::

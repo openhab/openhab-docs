@@ -66,12 +66,11 @@ The file could look like this (depending on your choosen package and already ins
 
 ```text
 package = standard
-ui = basic,paper,habpanel
+ui = basic,paper,habpanel,restdocs
 action = pushover
 binding = astro,mqtt1
 transformation = jsonpath
 persistence = influxdb
-misc = restdocs
 ```
 
 To install the network Binding like we want in this example, we just need to add the id *network* to the Binding section.

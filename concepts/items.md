@@ -104,7 +104,7 @@ See the concept on [Units of Measurement](units-of-measurement.html) for more de
 
 ### HSBType
 
-HSB string values consist of three comma-separated values for hue (0-360°), saturation (0-100%), and value (0-100%) respectively, e.g. `240,100,100` for blue.
+HSB string values consist of three comma-separated values for hue (0-360°), saturation (0-100%), and brightness (0-100%) respectively, e.g. `240,100,100` for "maximum" blue.
 
 ### PointType
 

@@ -69,7 +69,7 @@ Code styles files are located in here: https://github.com/openhab/static-code-an
 
 The rules are defined using the Eclipse Java Formatter definitions. There are plugins available for several IDEs that support these definitons.
 
-* Official [openHAB Eclipse IDE setup](ide.html) is preconfigured
+* Official [openHAB Eclipse IDE setup](ide/eclipse.html) is preconfigured
 * Eclipse standalone installation
   - You can manually import [openhab_codestyle.xml](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab_codestyle.xml) via `Eclipse Preferences -> Java -> Code Style -> Formatter` and [openhab.importorder](https://raw.githubusercontent.com/openhab/static-code-analysis/master/codestyle/src/main/resources/openhab.importorder) via `Eclipse Preferences -> Java -> Code Style -> Organize Imports`
 * IntelliJ using plugin https://plugins.jetbrains.com/plugin/6546-eclipse-code-formatter
@@ -188,7 +188,7 @@ void myFun() {
     try {
         doSomething();
     } catch (IOException e) {
-        logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);  
+        logger.warn("Explain what went wrong and how to avoid it. You can have arguments {}.", someVariable, e);
     }
 }
 ```
@@ -338,14 +338,18 @@ For HTTP Operations
 * org.eclipse.jetty.http.*
 * org.eclipse.jetty.util.*
 
-Note: HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+::: tip Note
+HttpClient instances should be obtained by the handler factory through the HttpClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+:::
 
 For Web Socket Operations
 
 * org.eclipse.jetty.websocket.client
 * org.eclipse.jetty.websocket.api
 
-Note: WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+::: tip Note
+WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
+:::
 
 Additionally these libraries are allowed
 

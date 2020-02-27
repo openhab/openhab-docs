@@ -60,18 +60,34 @@ One can configure whether specific log entries are logged out and where they get
 - `executeCommandLine(String commandLine)`: Executes a command on the command line without waiting for the command to complete
 - `executeCommandLine(String commandLine, int timeout)`: Executes a command on the command and waits timeout milliseconds for the command to complete, returning the output from the command as a String
 
-Note: The commandLine variable often has to use a special format where @@ needs to be used in place of spaces. For example the bash command touch somefile will have to be written as touch@@somefile.
+::: tip Note
+Simple arguments that contain no spaces can be separated with spaces, for example `executeCommandLine("touch file.txt")`.
+When one or more arguments contain spaces, use `@@` instead of a space as the argument separator.
+For example the bash command `touch -t 01010000 "some file with space.txt"` will have to be written as `touch@@-t@@01010000@@some file with space.txt`.
+:::
 
 ### HTTP Actions
 
-- `sendHttpGetRequest(String url)`: Sends an GET-HTTP request and returns the result as a String
+- `sendHttpGetRequest(String url)`: Sends a GET-HTTP request and returns the result as a String
+- `sendHttpGetRequest(String url, Map<String, String> headers, int timeout)`: Sends a GET-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
 - `sendHttpPutRequest(String url)`: Sends a PUT-HTTP request and returns the result as a String
 - `sendHttpPutRequest(String url, String contentType, String content)`: Sends a PUT-HTTP request with the given content and returns the result as a String
+- `sendHttpPutRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a PUT-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpPostRequest(String url)`: Sends a POST-HTTP request and returns the result as a String
 - `sendHttpPostRequest(String url, String contentType, String content)`: Sends a POST-HTTP request with the given content and returns the result as a String
+- `sendHttpPostRequest(String url, String contentType, String content, Map<String, String> headers, int timeout)`: Sends a POST-HTTP request with the given content, request headers, and timeout in ms, and returns the result as a String
 - `sendHttpDeleteRequest(String url)`: Sends a DELETE-HTTP request and returns the result as a String
+- `sendHttpDeleteRequest(String url, Map<String, String> headers, int timeout)`: Sends a DELETE-HTTP request with the given request headers, and timeout in ms, and returns the result as a String
 
-Note: All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+::: tip Note
+All HTTP Actions can have a last `timeout` parameter added in ms. eg. `sendHttpPostRequest(String url, String contentType, String content, int timeout)`
+:::
+
+For example:
+```javascript
+val headers = newHashMap("Cache-control" -> "no-cache")
+val output = sendHttpGetRequest("https://example.com/?id=1", headers, 1000)
+```
 
 ### Timers
 
@@ -182,31 +198,31 @@ Action | Returns
 -|-
 `getBankHolidayName` | name of the holiday today, or `null` if today is not a bank holiday
 `getBankHolidayName(<offset>)` | name of the holiday `<offset>` days from today, `null` if that day is not a bank holiday
-`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the Joda DateTime `<datetime>`, `null` if that day is not a bank holiday
+`getBankHolidayName(<datetime>)` | name of the holiday on the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not a bank holiday
 `getBankHolidayName(<offset>, <file>)` | name of the day defined in `<file>` `<offest>` days from today, `null` if that day is not defined in `<file>`
-`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the Joda DateTime `<datetime>`, `null` if that day is not defined in `<file>`
+`getBankHolidayName(<datetime>, <file>)` | name of the day defined in `<file>` for the day defined by the `ZonedDateTime` `<datetime>`, `null` if that day is not defined in `<file>`
 `getDaysUntil(<holiday name>)` | number of days from today to the given `<holiday name>`
 `getDaysUntil(<holiday name>, <file>)` | number of days from today to the given `<holiday name>` defined in `<file>`
-`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>`
-`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the Joda DateTime `<datetime>` and `<holiday name>` defined in `<file>`
+`getDaysUntil(<datetime>, <holiday name>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>`
+`getDaysUntil(<datetime>, <holiday name>, <file>)` | number of days from the day defined by the `ZonedDateTime` `<datetime>` and `<holiday name>` defined in `<file>`
 `getHolidayDescription(<holiday name>)` | Jollyday defines a mapping between the holiday name and a description. This will return the description based on the holiday name returned by `getBankHolidayName`
 `getNextBankHoliday` | name of the next bank holiday
 `getNextBankHoliday(<file>)` | name of the next bank holiday defined in `<file>`
 `getNextBankHoliday(<offset>)` | name of the next bank holiday after `<offset>` days from today
 `getNextBankHoliday(<offset>, <file>)` | name of the next bank holiday after `<offset>` days from today defined in `<file>`
-`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>`
-`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the Joda DateTime `<datetime>` defined in `<file>`
+`getNextBankHoliday(<datetime>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>`
+`getNextBankHoliday(<datetime>, <file>)` | name of the next bank holiday after the day defined by the `ZonedDateTime` `<datetime>` defined in `<file>`
 `isBankHoliday` | `true` if today is a bank holiday (see below), `false` otherwise
 `isBankHoliday(<offset>)` | `true` if the day `<offset>` days from today is a bank holiday, `false` otherwise
-`isBankHoliday(<datetime>)` | `true` if the day defined by the Joda DateTime `<datetime>` is a bank holiday, `false` otherwise.
+`isBankHoliday(<datetime>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is a bank holiday, `false` otherwise.
 `isBankHoliday(<offset>, <file>)` | `true` if the day `<offset>` days from today is a day defined in `<file>`, use 0 for `<offset>` for today; returns `false` otherwise
-`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the Joda DateTime `<datetime>` is in `<file>`, `false` otherwise
+`isBankHoliday(<datetime>, <file>)` | `true` if the day defined by the `ZonedDateTime` `<datetime>` is in `<file>`, `false` otherwise
 `isInDayset("<set>")` | `true` if today is in the custom dayset `<set>` (see below), for example `isInDayset("school")`, `false` otherwise
 `isInDayset("<set>", <offset>)` | `true` if the day `<offset>` days from today is in dayset `<set>`, `false` otherwise
-`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in Joda DateTime `<datetime>` os in dayset `<set>`, `false` otherwise
+`isInDayset("<set>", <datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` os in dayset `<set>`, `false` otherwise
 `isWeekend` | `true` if today is a weekend, `false` otherwise
 `isWeekend(<offset>)` | `true` if the day `<offset>` days from today is a weekend
-`isWeekend(<datetime>)` | `true` if the day defined by the passed in Joda DateTime is a weekend, `false` otherwise
+`isWeekend(<datetime>)` | `true` if the day defined by the passed in `ZonedDateTime` `<datetime>` is a weekend, `false` otherwise
 
 In all examples that take `<offset>`, use a negative value to check days in the past.
 
@@ -275,7 +291,7 @@ The following is an example listing a few custom days.
     </tns:Holidays>
 </tns:Configuration>
 ```
-For further examples and other types of holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd).
+For further examples and to find the list of elements to reference holidays that require more complicated calculations (e.g. holidays based on a lunar calendar, Easter, etc.) see the [XSD that defines the structures of the XML](https://github.com/svendiedrichsen/jollyday/blob/b78fa20e75d48bdf14e3fa8107befe44e3bacf3a/src/main/xsd/Holiday.xsd) or the XML file for your country or others.
 
 You can place these XML files anywhere on your file system that openHAB has permission to read.
 In the calls to the Actions, use the fully qualified path.

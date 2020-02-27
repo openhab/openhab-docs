@@ -7,13 +7,13 @@ title: JsonDB Storage
 
 # JsonDB Storage
 
-JsonDB provides a system database for storage of configuration data. 
-All configuration data stored into the system through the REST interface that is used by the user interfaces will be stored into the JsonDB. 
+JsonDB provides a system database for storage of configuration data.
+All configuration data stored into the system through the REST interface that is used by the user interfaces will be stored into the JsonDB.
 JsonDB provides a high performance, human readable data store that is primarily meant for system use but can be edited manually, or stored in a version control system such as Git.
 
 ## Technical Overview
 
-The system stores different data into separate tables. 
+The system stores different data into separate tables.
 JsonDB maps these tables into separate files - in this way each file contains a different type of data (eg. Things, Items, Links).
 The system also keeps a number of backups in a ```backup``` folder.
 Each time a file is updated, the current version will be moved to the ```backup``` folder and timestamped so that the system can retain the most recent files.
@@ -48,7 +48,9 @@ openHAB stores configuration information in JSON (JavaScript Object Notation) fo
 
 All configuration information regarding _**Items, Links, and Things**_ are defined via the User Interfaces (Paper UI, HABmin, REST) or via internal openHAB services.
 
-Note: The JSON DB does NOT store information for manually configured _**Items, Links, or Things**_, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab2/items/`).
+::: tip Note
+The JSON DB does NOT store information for manually configured _**Items, Links, or Things**_, since these are already stored in files within the `OPENHAB_CONF` sub-directories (e.g. `/etc/openhab2/items/`).
+:::
 
 ## Storage Purpose
 
@@ -69,7 +71,7 @@ The parameters for the two mechanisms may be modified in Paper UI :arrow_right: 
 This can reduce the number of writes when many changes are being introduced within a short period, and
 2. _Maximum write delay_ (defaults to 30000 ms): Sets the maximum period the service will wait to write data in cases where changes are happening continually.
 
-The service keeps up to five backups of each table. 
+The service keeps up to five backups of each table.
 The outdated file is copied to the backup folder and then that file is overwritten with the new content.
 
 ## Storage Location
@@ -192,5 +194,5 @@ Step 3. Using Paper UI :arrow_right: Configuration :arrow_right: Things, edit th
 and save:
 ![Edit_Thing_Paper_UI](./images/edit_thing_paper_ui.png)
 
-Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file: 
+Step 4. Check the configuration properties again in the `OPENHAB_USERDATA/jsondb/org.eclipse.smarthome.core.thing.Thing.json` file:
 ![New_Json](./images/new_json_file.png)

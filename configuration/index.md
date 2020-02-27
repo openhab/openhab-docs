@@ -167,11 +167,13 @@ While it's technically possible to use both methods in parallel, we recommend to
 It would work to mix but you may easily forget about what is your "source of truth" when you reconfigure Things or Items at a later stage.
 :::
 
-Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it. 
+Configuration done in files will be used (and Things/Items become visible and even changeable in Paper UI) if no Thing/Item of the same name was already created in PaperUI, but you can NOT create a Thing or Item using files and then use Paper UI to **permanently** change it.
 Configuration done in PaperUI will be used and permanently stored in the internal database if no Thing/Item of the same name already exists in files, but those additions or changes will not be copied back into any `.things` file.
 openHAB settings as defined in `services/addons.cfg` and `services/runtime.cfg` will override any settings made in PaperUI's Configuration/System pane.
 
-**Important note:** All text files must be created with UTF-8 encoding. When using Visual Studio Code, this encoding is already set by default.
+::: warning Important
+All text files must be created with UTF-8 encoding. When using Visual Studio Code, this encoding is already set by default.
+:::
 
 ## Recommendations for New Users
 

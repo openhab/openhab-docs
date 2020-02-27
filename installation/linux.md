@@ -36,16 +36,18 @@ If you're unsure which manual file you should download, using `dpkg --print-arch
 
 When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
-**Note:** Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9. 
+::: tip Note
+Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9.
+:::
 
 ## Installation
 
-openHAB 2 can be installed through 
+openHAB 2 can be installed through
  - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
  - a package repository (apt, yum)
  - manually from file.
- 
-The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users. 
+
+The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users.
 
 Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manualconfiguration later on due to the missing openHABian configuration tool.
 
@@ -279,7 +281,7 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
   # Stop the openHAB background service
   sudo systemctl stop openhab2.service
-  
+
   # Get the service log since the last boot
   sudo journalctl -u openhab2.service -b
 
@@ -649,7 +651,7 @@ The need for these and the exact implementation on a specific system might diffe
 ### Privileges for Common Peripherals
 
 An openHAB setup will often rely on hardware like a modem, transceiver or adapter to interface with home automation hardware.
-Examples are a Bluetooth, Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
+Examples are a Z-Wave, Enocean or RXFcom USB Stick or a Raspberry Pi add-on board connected to the serial port on its GPIOs.
 In order to allow openHAB to communicate with additional peripherals, it has to be added to corresponding Linux groups.
 The following example shows how to add Linux user `openhab` to the often needed groups `dialout` and `tty`.
 Additional groups may be needed, depending on your hardware and software setup.
@@ -657,7 +659,6 @@ Additional groups may be needed, depending on your hardware and software setup.
 ```shell
 sudo adduser openhab dialout
 sudo adduser openhab tty
-sudo adduser openhab bluetooth
 ```
 
 If you are looking to enable sound privileges for openHAB, it will also be necessary to add openHAB to the "audio" group.
@@ -737,7 +738,7 @@ Next, add the desired share configurations to the end of the file:
       public=no
       create mask=0777
       directory mask=0777
-      
+
     [openHAB2-logs]
       comment=openHAB2 logs
       path=/var/log/openhab2

@@ -70,7 +70,9 @@ The state description pattern "%.1f %unit%" describes the value format as floati
 ## Implementing UoM
 When creating QuantityType states the framework offers some useful packages and classes:
 The `org.eclipse.smarthome.core.library.unit` package contains the classes `SIUnits`, `ImperialUnits` and `SmartHomeUnits` which provide units unique to either of the measurement systems and common units used in both systems.
-The `MetricPrefix` class provides prefixes like MILLI, CENTI, HECTO, etc. which are wrappers to create derived units.
+
+The `MetricPrefix` class provides prefixes like MILLI, CENTI, HECTO, etc. and the `BinaryPrefix` class provides prefixes like KIBI, MEBI, etc. both of which are wrappers to create derived units.
+
 The `org.eclipse.smarthome.core.library.dimension` and `javax.measure.quantity` packages provide interfaces which are used to type the generic QuantityType and units. 
 
 ## List of Units
@@ -95,95 +97,144 @@ Imperial:
 
 SI:
 
-| Type                   | Unit                    | Symbol |
-|------------------------|-------------------------|--------|
-| Acceleration           | Metre per square Second | m/s²   |
-| AmountOfSubstance      | Mole                    | mol    |
-| Angle                  | Radian                  | rad    |
-| Angle                  | Degree                  | °      |
-| Angle                  | Minute Angle            | '      |
-| Angle                  | Second Angle            | ''     |
-| Area                   | Square Metre            | m²     |
-| ArealDensity           | Dobson Unit             | DU     |
-| CatalyticActivity      | Katal                   | kat    |
-| Dimensionless          | Percent                 | %      |
-| Dimensionless          | Parts per Million       | ppm    |
-| Dimensionless          | Decibel                 | dB     |
-| ElectricPotential      | Volt                    | V      |
-| ElectricCapacitance    | Farad                   | F      |
-| ElectricCharge         | Coulomb                 | C      |
-| ElectricConductance    | Siemens                 | S      |
-| ElectricCurrent        | Ampere                  | A      |
-| ElectricInductance     | Henry                   | H      |
-| ElectricResistance     | Ohm                     | Ω      |
-| Energy                 | Joule                   | J      |
-| Energy                 | Watt Second             | Ws     |
-| Energy                 | Watt Hour               | Wh     |
-| Energy                 | KiloWatt Hour           | kWh    |
-| Force                  | Newton                  | N      |
-| Frequency              | Hertz                   | Hz     |
-| Illuminance            | Lux                     | lx     |
-| Intensity              | Irradiance              | W/m²   |
-| Length                 | Metre                   | m      |
-| Length                 | Kilometre               | km     |
-| LuminousFlux           | Lumen                   | lm     |
-| LuminousIntensity      | Candela                 | cd     |
-| MagneticFlux           | Weber                   | Wb     |
-| MagneticFluxDensity    | Tesla                   | T      |
-| Mass                   | Kilogram                | kg     |
-| Mass                   | Gram                    | g      |
-| Power                  | Watt                    | W      |
-| Pressure               | Pascal                  | Pa     |
-| Pressure               | hectoPascal             | hPa    |
-| Pressure               | Millimetre of Mercury   | mmHg   |
-| Pressure               | Bar                     | bar    |
-| Pressure               | milliBar                | mbar   |
-| Radioactivity          | Becquerel               | Bq     |
-| RadiationDoseAbsorbed  | Gray                    | Gy     |
-| RadiationDoseEffective | Sievert                 | Sv     |
-| SolidAngle             | Steradian               | sr     |
-| Speed                  | Metre per Second        | m/s    |
-| Speed                  | Kilometre per Hour      | km/h   |
-| Speed                  | Knot                    | kn     |
-| Temperature            | Kelvin                  | K      |
-| Temperature            | Celsius                 | °C     |
-| Time                   | Second                  | s      |
-| Time                   | Minute                  | min    |
-| Time                   | Hour                    | h      |
-| Time                   | Day                     | d      |
-| Time                   | Week                    | week   |
-| Time                   | Year                    | y      |
-| Volume                 | Cubic Metre             | m³     |
+| Type                   | Unit                             | Symbol |
+|------------------------|----------------------------------|--------|
+| Acceleration           | Metre per square Second          | m/s²   |
+| Acceleration           | Standard Gravity                 | ɡₙ     |
+| AmountOfSubstance      | Mole                             | mol    |
+| AmountOfSubstance      | Deutscher Härtegrad              | °dH    |
+| Angle                  | Radian                           | rad    |
+| Angle                  | Degree                           | °      |
+| Angle                  | Minute Angle                     | '      |
+| Angle                  | Second Angle                     | ''     |
+| Area                   | Square Metre                     | m²     |
+| ArealDensity           | Dobson Unit                      | DU     |
+| CatalyticActivity      | Katal                            | kat    |
+| DataAmount             | Bit                              | bit    |
+| DataAmount             | Megabit                          | Mbit   |
+| DataAmount             | Kilobit                          | kbit   |
+| DataAmount             | Gigabit                          | Gbit   |
+| DataAmount             | Terabit                          | Tbit   |
+| DataAmount             | Byte                             | B      |
+| DataAmount             | Octet                            | o      |
+| DataAmount             | Kibioctet                        | Kio    |
+| DataAmount             | Mebioctet                        | Mio    |
+| DataAmount             | Gibioctet                        | Gio    |
+| DataTransferRate       | Bit per Second                   | bit/s  |
+| DataTransferRate       | Kilobit per Second               | kbit/s |
+| DataTransferRate       | Megabit per Second               | Mbit/s | 
+| DataTransferRate       | Gigabit per Second               | Gbit/s | 
+| DataTransferRate       | Terabit per Second               | Tbit/s | 
+| Density                | Microgram per cubic Metre        | µg/m³  |
+| Density                | Kilogram per cubic Metre         | kg/m³  |
+| Dimensionless          | Percent                          | %      |
+| Dimensionless          | Parts per Million                | ppm    |
+| Dimensionless          | Decibel                          | dB     |
+| ElectricPotential      | Volt                             | V      |
+| ElectricCapacitance    | Farad                            | F      |
+| ElectricCharge         | Coulomb                          | C      |
+| ElectricCharge         | Ampere Hour                      | Ah     |
+| ElectricCharge         | Milliampere Hour                 | mAh    |
+| ElectricConductance    | Siemens                          | S      |
+| ElectricConductivity   | Siemens per Metre                | S/m    |
+| ElectricCurrent        | Ampere                           | A      |
+| ElectricInductance     | Henry                            | H      |
+| ElectricResistance     | Ohm                              | Ω      |
+| Energy                 | Joule                            | J      |
+| Energy                 | Watt Second                      | Ws     |
+| Energy                 | Watt Hour                        | Wh     |
+| Energy                 | Kilowatt Hour                    | kWh    |
+| Energy                 | Megawatt Hour                    | MWh    |
+| Energy                 | Volt-Ampere Hour                 | VAh    |
+| Energy                 | Volt-Ampere Reactive Hour        | varh   |
+| Energy                 | Kilovar Hour                     | kvarh  |
+| Force                  | Newton                           | N      |
+| Frequency              | Hertz                            | Hz     |
+| Illuminance            | Lux                              | lx     |
+| Intensity              | Irradiance                       | W/m²   |
+| Intensity              | Microwatt per square Centimeter  | µW/cm² |
+| Length                 | Metre                            | m      |
+| Length                 | Kilometre                        | km     |
+| LuminousFlux           | Lumen                            | lm     |
+| LuminousIntensity      | Candela                          | cd     |
+| MagneticFlux           | Weber                            | Wb     |
+| MagneticFluxDensity    | Tesla                            | T      |
+| Mass                   | Kilogram                         | kg     |
+| Mass                   | Gram                             | g      |
+| Power                  | Watt                             | W      |
+| Power                  | Volt-Ampere                      | VA     |
+| Power                  | Volt-Ampere Reactive             | var    |
+| Power                  | Kilovar                          | kvar   |
+| Power                  | Decibel-Milliwatts               | dBm    |
+| Pressure               | Pascal                           | Pa     |
+| Pressure               | Hectopascal                      | hPa    |
+| Pressure               | Millimetre of Mercury            | mmHg   |
+| Pressure               | Bar                              | bar    |
+| Pressure               | Millibar                         | mbar   |
+| Radioactivity          | Becquerel                        | Bq     |
+| RadiationDoseAbsorbed  | Gray                             | Gy     |
+| RadiationDoseEffective | Sievert                          | Sv     |
+| SolidAngle             | Steradian                        | sr     |
+| Speed                  | Metre per Second                 | m/s    |
+| Speed                  | Millimetre per Hour              | mm/h   |
+| Speed                  | Kilometre per Hour               | km/h   |
+| Speed                  | Knot                             | kn     |
+| Temperature            | Kelvin                           | K      |
+| Temperature            | Celsius                          | °C     |
+| Time                   | Second                           | s      |
+| Time                   | Minute                           | min    |
+| Time                   | Hour                             | h      |
+| Time                   | Day                              | d      |
+| Time                   | Week                             | week   |
+| Time                   | Year                             | y      |
+| Volume                 | Litre                            | l      |
+| Volume                 | Cubic Metre                      | m³     |
+| VolumetricFlowRate     | Litre per Minute                 | l/min  |
+| VolumetricFlowRate     | Cubic Metre per Second           | m³/s   |
+| VolumetricFlowRate     | Cubic Metre per Minute           | m³/min |
+| VolumetricFlowRate     | Cubic Metre per Hour             | m³/h   |
+| VolumetricFlowRate     | Cubic Metre per Day              | m³/d   |
 
-Prefixes:
+Metric Prefixes:
 
-| Name  | Symbol | Value |
-|-------|--------|-------|
-| Yotta | Y      | 10²⁴  |
-| Zetta | Z      | 10²¹  |
-| Exa   | E      | 10¹⁸  |
-| Peta  | P      | 10¹⁵  |
-| Tera  | T      | 10¹²  |
-| Giga  | G      | 10⁹   |
-| Mega  | M      | 10⁶   |
-| Kilo  | k      | 10³   |
-| Hecto | h      | 10²   |
-| Deca  | da     | 10    |
-| Deci  | d      | 10⁻¹  |
-| Centi | c      | 10⁻²  |
-| Milli | m      | 10⁻³  |
-| Micro | µ      | 10⁻⁶  |
-| Nano  | n      | 10⁻⁹  |
-| Pico  | p      | 10⁻¹² |
-| Femto | f      | 10⁻¹⁵ |
-| Atto  | a      | 10⁻¹⁸ |
-| Zepto | z      | 10⁻²¹ |
-| Yocto | y      | 10⁻²⁴ |
+| Name  | Symbol | Factor |
+|-------|--------|--------|
+| Yotta | Y      | 10²⁴   |
+| Zetta | Z      | 10²¹   |
+| Exa   | E      | 10¹⁸   |
+| Peta  | P      | 10¹⁵   |
+| Tera  | T      | 10¹²   |
+| Giga  | G      | 10⁹    |
+| Mega  | M      | 10⁶    |
+| Kilo  | k      | 10³    |
+| Hecto | h      | 10²    |
+| Deca  | da     | 10     |
+| Deci  | d      | 10⁻¹   |
+| Centi | c      | 10⁻²   |
+| Milli | m      | 10⁻³   |
+| Micro | µ      | 10⁻⁶   |
+| Nano  | n      | 10⁻⁹   |
+| Pico  | p      | 10⁻¹²  |
+| Femto | f      | 10⁻¹⁵  |
+| Atto  | a      | 10⁻¹⁸  |
+| Zepto | z      | 10⁻²¹  |
+| Yocto | y      | 10⁻²⁴  |
 
+Binary Prefixes:
 
-To use the prefixes simply add the prefix to the unit symbol e.g.
+| Name | Symbol | Factor |
+| ---- | ------ | ------ |
+| Kibi | Ki     | 2¹⁰    |
+| Mebi | Mi     | 2²⁰    |
+| Gibi | Gi     | 2³⁰    |
+| Tebi | Ti     | 2⁴⁰    |
+| Pebi | Pi     | 2⁵⁰    |
+| Exbi | Ei     | 2⁶⁰    |
+| Zebi | Zi     | 2⁷⁰    |
+| Yobi | Yi     | 2⁸⁰    |
 
-Examples:
--milliAmpere - `mA`
--centiMetre - `cm`
--kiloWatt - `kW`
+To use the prefixes simply add the prefix to the unit symbol - for example:
+* milliAmpere - `mA`
+* centiMetre - `cm`
+* kiloWatt - `kW`
+* KibiByte - `KiB`

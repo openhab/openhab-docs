@@ -81,7 +81,7 @@ Not sure what to choose?: openHAB maintainers use [Eclipse IDE](https://wiki.ecl
 To start developing a new binding a script is available to generate the basis for your new binding.
 This script is specific for binding addons. Follow these steps to generate your binding:
 
-1. From the command line in `openhab2-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
+1. From the command line in `openhab-addons/bundles` directory to create a skeleton of a new binding `mynewbinding` run:
 
    On Linux:
     ```
@@ -97,14 +97,14 @@ This script is specific for binding addons. Follow these steps to generate your 
 
 1. Accept with `Y` when the skeleton configuration asks for it.
 
-1. From `openhab2-addons` root you can build only your binding with maven using the `-pl` option:
+1. From `openhab-addons` root you can build only your binding with maven using the `-pl` option:
     ```
     mvn clean install -pl :org.openhab.binding.mynewbinding
     ```
    Where `mynewbinding` is the name of your new binding.
    Some additional maven options that may help:
    * `-U`: Forces all dependencies to be downloaded again.
-   * `-am`: Builds all projects in openhab2-addons your project dependends on.
+   * `-am`: Builds all projects in openhab-addons your project dependends on.
    * `-o`: Won't update any dependencies.
    * `-DskipChecks`: Skips the static analysis checks
    * `-DskipTests`: Skips the unit tests
@@ -118,4 +118,4 @@ This script is specific for binding addons. Follow these steps to generate your 
 
 Now you can start developing your NEW binding. We're looking forward to your pull request!
 
-In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](../buildsystem.html#adding-dependencies) for more information.
+In case the new binding has dependencies to other bundles/libraries see [Adding Dependencies](buildsystem.html#adding-dependencies) for more information.

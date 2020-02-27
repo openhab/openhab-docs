@@ -74,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text`, `Group` or `Switch`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
@@ -414,9 +414,11 @@ Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encod
 ```
 
 Allows you to display a video as part of your Sitemap.
-Note: not all video encodings (formats) are supported; you may need to transcode your video.
+::: tip Note
+Not all video encodings (formats) are supported; you may need to transcode your video.
 The video must be reachable directly via URL.
-An embedded and/or protected video are not supported.
+An embedded and/or protected video is not supported.
+:::
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.

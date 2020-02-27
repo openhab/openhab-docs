@@ -61,7 +61,8 @@ These are:
 **WARNING**: Note that the UI-driven configuration features are new and still under development, so many features will be enhanced in upcoming versions.
 Specifically the rule engine is in an early stage and has several functional limitations.
 Most features of openHAB still require textual configuration (e.g. the sitemaps and complex rules).
-This package therefore should only be used for very simple setups or as an demonstrator what there is to come.
+This package therefore should only be used for very simple setups or as a demonstration of what there is to come.
+
 
 ## Demo Package (Sample Setup)
 

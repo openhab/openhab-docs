@@ -193,6 +193,8 @@ You may specify a different persistence service by appending a String as an opti
 **Example**
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
+To get the average temperature over the last 5 minues from the Item called `Temperature` in the influxdb persistence service, you would use:
+`Temperature.averageSince(now.minusMinutes(5,"influxdb"))`
 
 The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
 
