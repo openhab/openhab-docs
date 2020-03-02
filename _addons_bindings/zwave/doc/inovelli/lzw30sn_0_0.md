@@ -40,6 +40,7 @@ The following table summarises the channels available for the LZW30-SN -:
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset Meter  [Deprecated]| meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED strip effect | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
@@ -58,6 +59,13 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter [Deprecated]
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Scene Number
 Triggers when a scene button is pressed.
@@ -89,7 +97,7 @@ The ```config_decimal``` channel is of type ```config_decimal``` and supports th
 
 ## Device Configuration
 
-The following table provides a summary of the 17 configuration parameters available in the LZW30-SN.
+The following table provides a summary of the 16 configuration parameters available in the LZW30-SN.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -110,7 +118,6 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Active Power Reports | Active Power Reports |
 | 11 | Periodic Power & Energy Reports | Periodic Power & Energy Reports |
 | 12 | Energy Reports | Energy Reports |
-| 12 | *DELETE ME*  was added to wrong device | Association Behavior |
 
 ### Parameter 1: Power On State
 
@@ -531,19 +538,6 @@ The energy level change that will result in a new energy report being sent (% of
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```10```.
-
-This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
-
-
-### Parameter 12: *DELETE ME*  was added to wrong device
-
-Association Behavior
-When should the switch send commands to the associated devices:
-
-01 = Local, 02 = 3-Way, 03 = 3-Way & Local, 04 = Z-Wave Hub, 05 = Z-Wave Hub & Local, 06 = Z-Wave Hub & 3-Way, 07 = Z-Wave Hub & Local & 3-Way, 08 = Timer, 09 = Timer & Local, 10 = Timer & 3-Way, 11 =Timer & 3-Way & Local, 12 = Timer & Z-Wave Hub, 13 = Timer & Z-Wave Hub & Local, 14 = Timer & Z-Wave Hub & 3-Way, 15 = All
-Values in the range 0 to 15 may be set.
-
-The manufacturer defined default value is ```15```.
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 

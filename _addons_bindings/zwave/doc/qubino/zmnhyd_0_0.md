@@ -109,8 +109,8 @@ Detailed information on each parameter can be found in the sections below.
 | 15 | Timer Settings Unit | Set Timer Units to Seconds or Milliseconds |
 | 30 | Restore state ofter power failure | Restore on/off status for Smart plug 16A after power failure |
 | 40 | Treshold Change in Power  for reporting | Change of power consumption [Watt] reporting threshold |
-| 41 | Treshold time for power reporting | Treshold time for power reporting [Watt] |
-| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Watt] |
+| 41 | Threshold time for power reporting | Threshold time for power reporting [Seconds] |
+| 42 | Power Consumption Reporting Time Threshold | Power Consumption Reporting Time Threshold [Seconds] |
 | 50 | Down value | Down value [watt] |
 | 51 | Up value | Upper power threshold used in parameter no. 52 |
 | 52 | Action in case of exceeding defined power values | Action in case of exceeding defined power values (parameters 50 and 51) |
@@ -221,9 +221,9 @@ The manufacturer defined default value is ```20```.
 This parameter has the configuration ID ```config_40_1``` and is of type ```INTEGER```.
 
 
-### Parameter 41: Treshold time for power reporting
+### Parameter 41: Threshold time for power reporting
 
-Treshold time for power reporting [Watt]
+Threshold time for power reporting [Seconds]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds). If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
   * 0 - Power consumption reporting disabled
@@ -239,14 +239,14 @@ This parameter has the configuration ID ```config_41_2``` and is of type ```INTE
 
 ### Parameter 42: Power Consumption Reporting Time Threshold
 
-Power Consumption Reporting Time Threshold [Watt]
+Power Consumption Reporting Time Threshold [Seconds]
 Set value refers to the time interval with which power consumption in Watts is reported (0 – 32535 seconds).
 
 If 300 is entered (by default), energy consumption reports will be sent to the gateway (hub) every 300 seconds (or 5 minutes).
 
 Values :
 
-  * 0 : Power consumption reporting disabled 
+  * 0 : Power consumption reporting disabled
   * 30 - 32535 : 30 - 32535 seconds. Power consumption reporting enabled. Report is sent according to time interval (value) set here.
 Values in the range 0 to 32535 may be set.
 

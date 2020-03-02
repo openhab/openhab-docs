@@ -44,6 +44,7 @@ The following table summarises the channels available for the LZW31-SN -:
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
+| Reset Meter  [Deprecated]| meter_reset | meter_reset | Energy | Switch | 
 | Scene Number | scene_number | scene_number |  | Number | 
 | LED Strip Effect | config_decimal | config_decimal |  | Number | 
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
@@ -65,6 +66,13 @@ The ```meter_watts``` channel is of type ```meter_watts``` and supports the ```N
 Indicates the energy consumption (kWh).
 
 The ```meter_kwh``` channel is of type ```meter_kwh``` and supports the ```Number``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+### Reset Meter [Deprecated]
+Reset the meter.
+
+The ```meter_reset``` channel is of type ```meter_reset``` and supports the ```Switch``` item and is in the ```Energy``` category.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Scene Number
 Triggers when a scene button is pressed.

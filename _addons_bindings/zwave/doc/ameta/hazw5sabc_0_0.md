@@ -1,40 +1,41 @@
 ---
 layout: documentation
-title: LZW60 - ZWave
+title: HA-ZW-5SABC - ZWave
 ---
 
 {% include base.html %}
 
-# LZW60 4-in-1 motion sensor
-This describes the Z-Wave device *LZW60*, manufactured by *Inovelli* with the thing type UID of ```inovelli_lzw60_00_000```.
+# HA-ZW-5SABC 4 In 1 Motion Sensor
+This describes the Z-Wave device *HA-ZW-5SABC*, manufactured by *Ameta International* with the thing type UID of ```ameta_hazw5sabc_00_000```.
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-![LZW60 product image](https://www.cd-jackson.com/zwave_device_uploads/1204/1204_default.png)
+![HA-ZW-5SABC product image](https://www.cd-jackson.com/zwave_device_uploads/1211/1211_default.png)
 
 
-The LZW60 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
+The HA-ZW-5SABC supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
 
-The LZW60 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
+The HA-ZW-5SABC does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
 
 ## Overview
 
-  * Light: Save energy by making sure lights don’t turn on if it’s bright enough.
-  * Motion: Be notified when you’re away and automate your lighting.
-  * Humidity: To avoid excess moisture, trigger fans and dehumidifiers.
-  * Temperature: Smarter climate control by monitoring every room in your home.
+The 4-in-1 motion sensor is designed for using with scenes in home automation systems, integrate motion, light, temperature and humidity sensors, powered by CR123A battery or MicroUSB cable. The Motion Sensor lets you know when movement is detected in a certain area and can trigger different actions in response to that movement (or lack of movement). It also lets you know the ambient temperature and humidity to trigger different actions to make you more comfort. 
 
 ### Inclusion Information
 
-Put your hub into inclusion mode and press the button on the back of the 4-in-1 sensor one time.
+  * Put your primary controller in inclusion mode
+  * Short press the button at the back of the sensor once.
+  * The 4-in-1 Motion Sensor LED will blink, If the inclusion is successful, then LED will stay on for 2 seconds. Otherwise, the LED will blink until timeout, in which case you need to repeat the process from step b.
 
 ### Exclusion Information
 
-Put your hub into exclusion mode and press the button on the back of the 4-in-1 sensor one time.
+  * Put your primary controller in exclusion mode
+  * Short press the button at the back of the sensor once.
+  * The 4-in-1 Motion Sensor LED will blink, If the exclusion is successful, then LED will stay on for 2 seconds. Otherwise, the LED will blink until timeout, in which case you need to repeat the process from step b.
 
 ### Wakeup Information
 
-The LZW60 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
+The HA-ZW-5SABC does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. The wakeup period can be configured in the user interface - it is advisable not to make this too short as it will impact battery life - a reasonable compromise is 1 hour.
 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
@@ -43,21 +44,16 @@ To wake up the sensor so that your hub can send it configuration parameters quic
 
 ## Channels
 
-The following table summarises the channels available for the LZW60 -:
+The following table summarises the channels available for the HA-ZW-5SABC -:
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (relative humidity) | sensor_relhumidity | sensor_relhumidity | Humidity | Number | 
 | Sensor (luminance) | sensor_luminance | sensor_luminance |  | Number | 
+| Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Motion Alarm | alarm_motion | alarm_motion | Motion | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
-
-### Sensor (temperature)
-Indicates the current temperature.
-
-The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Sensor (relative humidity)
 Indicates the current relative humidity.
@@ -68,6 +64,11 @@ The ```sensor_relhumidity``` channel is of type ```sensor_relhumidity``` and sup
 Indicates the current light reading.
 
 The ```sensor_luminance``` channel is of type ```sensor_luminance``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
+
+### Sensor (temperature)
+Indicates the current temperature.
+
+The ```sensor_temperature``` channel is of type ```sensor_temperature``` and supports the ```Number:Temperature``` item and is in the ```Temperature``` category.
 
 ### Alarm (burglar)
 Indicates if the burglar alarm is triggered.
@@ -102,7 +103,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 15 configuration parameters available in the LZW60.
+The following table provides a summary of the 15 configuration parameters available in the HA-ZW-5SABC.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -142,7 +143,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 
 Values in the range 0 to 10 may be set.
 
-The manufacturer defined default value is ```8```.
+The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
 
@@ -275,7 +276,7 @@ This parameter has the configuration ID ```config_110_1``` and is of type ```INT
 Temperature Threshold
 Set the threshold of the temperature for your sensor
 
-1 = .1 degree Celsius (I know... wish it was Fahrenheit), 500 = 50 degrees Celsius
+1 = 0.1 degree Celsius, 500 = 50 degrees Celsius
 Values in the range 1 to 500 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -343,7 +344,7 @@ This parameter has the configuration ID ```wakeup_node``` and is of type ```INTE
 
 Association groups allow the device to send unsolicited reports to the controller, or other devices in the network. Using association groups can allow you to eliminate polling, providing instant feedback of a device state change without unnecessary network traffic.
 
-The LZW60 supports 2 association groups.
+The HA-ZW-5SABC supports 2 association groups.
 
 ### Group 1: Group 1
 
@@ -384,16 +385,16 @@ Association group 2 supports 5 nodes.
 | COMMAND_CLASS_POWERLEVEL_V1| |
 | COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
 | COMMAND_CLASS_BATTERY_V1| |
-| COMMAND_CLASS_WAKE_UP_V2| |
+| COMMAND_CLASS_WAKE_UP_V1| |
 | COMMAND_CLASS_ASSOCIATION_V2| |
 | COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_SECURITY_V1| |
 
 ### Documentation Links
 
-* [Device Manual](https://www.cd-jackson.com/zwave_device_uploads/1204/LZW60-Manual.pdf)
+* [Device Manual](https://www.cd-jackson.com/zwave_device_uploads/1211/AIBASE-Z-Wave-Multi-Sensor-UserGuide-20180606.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1204).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1211).
