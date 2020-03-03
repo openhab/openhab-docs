@@ -125,6 +125,8 @@ Simply follow the next step to add the add-on.
 Here is an example for the `astro` binding:
 
     ```xml
+        <version>x.x.x-SNAPSHOT</version> <!-- insure x.x.x matches current snapshot version checked out -->
+
         <dependency>
         <groupId>org.openhab.addons.bundles</groupId>
         <artifactId>org.openhab.binding.astro</artifactId>
