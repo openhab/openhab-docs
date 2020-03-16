@@ -39,7 +39,7 @@ Therefore: First think what you want to achieve! Check our [community forum](htt
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](development/guidelines.html) apply to all types of addon development.
+General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 
