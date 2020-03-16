@@ -71,13 +71,16 @@ Thing lgwebos:WebOSTV:tv1 [host="192.168.2.119", key="6ef1dff6c7c936c8dc5056fc85
 | power           | Switch    | Current power setting. TV can only be powered off, not on.                                                                                                                                                              | RW         |
 | mute            | Switch    | Current mute setting.                                                                                                                                                                                                   | RW         |
 | volume          | Dimmer    | Current volume setting. Setting and reporting absolute percent values only works when using internal speakers. When connected to an external amp, the volume should be controlled using increase and decrease commands. | RW         |
-| channel         | String    | Current channel number.                                                                                                                                                                                                 | RW         |
-| channelName     | String    | Current channel name.                                                                                                                                                                                                   | R          |
+| channel         | String    | Current channel. Use only the channel number as command to update the channel.                                                                                                                                          | RW         |
 | toast           | String    | Displays a short message on the TV screen. See also rules section.                                                                                                                                                      | W          |
 | mediaPlayer     | Player    | Media control player                                                                                                                                                                                                    | W          |
 | mediaStop       | Switch    | Media control stop                                                                                                                                                                                                      | W          |
 | appLauncher     | String    | Application ID of currently running application. This also allows to start applications on the TV by sending a specific Application ID to this channel.                                                                 | RW         |
 | rcButton        | String    | Simulates pressing of a button on the TV's remote control. See below for a list of button names.                                                                                                                        | W          |
+
+The list of available application IDs for your TV is logged when the binding is started.
+You have to use one of these IDs as command for the appLauncher channel.
+Here are examples of values that could be available for your TV: airplay, amazon, com.apple.appletv, com.webos.app.browser, com.webos.app.externalinput.av1, com.webos.app.externalinput.av2, com.webos.app.externalinput.component, com.webos.app.hdmi1, com.webos.app.hdmi2, com.webos.app.hdmi3, com.webos.app.hdmi4, com.webos.app.homeconnect, com.webos.app.igallery, com.webos.app.livetv, com.webos.app.music, com.webos.app.photovideo, com.webos.app.recordings, com.webos.app.screensaver, googleplaymovieswebos, netflix, youtube.leanback.v4.
 
 ### Remote Control Buttons
 
@@ -123,7 +126,6 @@ Dimmer LG_TV0_Volume "Volume [%d]"           { channel="lgwebos:WebOSTV:3aab9eea
 Number LG_TV0_VolDummy "VolumeUpDown"
 String LG_TV0_Channel "Channel [%s]"         { channel="lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:channel" }
 Number LG_TV0_ChannelDummy "ChannelUpDown"
-String LG_TV0_ChannelName "Channel [%S]"     { channel="lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:channelName"}
 String LG_TV0_Toast                          { channel="lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:toast"}
 Switch LG_TV0_Stop "Stop"                    { autoupdate="false", channel="lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:mediaStop" }
 String LG_TV0_Application "Application [%s]" { channel="lgwebos:WebOSTV:3aab9eea-953b-4272-bdbd-f0cd0ecf4a46:appLauncher"}
@@ -145,7 +147,6 @@ sitemap demo label="Main Menu"
         Switch item=LG_TV0_VolDummy icon="soundvolume" label="Volume" mappings=[1="▲", 0="▼"]
         Default item=LG_TV0_Channel
         Switch item=LG_TV0_ChannelDummy icon="television" label="Channel" mappings=[1="▲", 0="▼"]
-        Text item=LG_TV0_ChannelName
         Default item=LG_TV0_Player
         Default item=LG_TV0_Application
     }
