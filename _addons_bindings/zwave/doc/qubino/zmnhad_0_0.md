@@ -369,17 +369,18 @@ This parameter has the configuration ID ```config_42_2``` and is of type ```INTE
 ### Parameter 63: Output Switch selection
 
 Set the type of the device connected to the output. (NO) / (NC)
-Set value means the type of the device that is connected to the output.
+Controls the active state of the output switch.
 
-The device type can be normally open (NO) or normally closed (NC).
+  * Normally Open (NO), load is not connected to power when inactive (“off”). 
+  * Normally Closed (NC), load is connected to power when inactive (“off”), the inverse of usual operation.
 The following option values may be configured -:
 
 | Value  | Description |
 |--------|-------------|
-| 0 | 0V (NC). |
-| 1 | 230V or 240V (NO). |
+| 0 | Normal -NO when inactive (“off") |
+| 1 | Inverse -NC when inactive (“on”) |
 
-The manufacturer defined default value is ```0``` (0V (NC).).
+The manufacturer defined default value is ```0``` (Normal -NO when inactive (“off")).
 
 This parameter has the configuration ID ```config_63_1``` and is of type ```INTEGER```.
 

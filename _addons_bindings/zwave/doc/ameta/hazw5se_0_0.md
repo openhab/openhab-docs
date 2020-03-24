@@ -75,7 +75,7 @@ The following table summarises the channels available for the HA-ZW-5SE -:
 |--------------|------------|--------------|----------|-----------|
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
-| Alarm (access) | alarm_access | alarm_access | Door | Switch | 
+| Sensor Door | sensor_door | sensor_door | Door | Contact | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Alarm (burglar)
@@ -102,17 +102,17 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Alarm (access)
-Indicates if the access control alarm is triggered.
+### Sensor Door
+Indicates if the door/window is open or closed.
 
-The ```alarm_access``` channel is of type ```alarm_access``` and supports the ```Switch``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
+The ```sensor_door``` channel is of type ```sensor_door``` and supports the ```Contact``` item and is in the ```Door``` category. This is a read only channel so will only be updated following state changes from the device.
 
-The following state translation is provided for this channel to the ```Switch``` item type -:
+The following state translation is provided for this channel to the ```Contact``` item type -:
 
 | Value | Label     |
 |-------|-----------|
-| OFF | OK |
-| ON | Alarm |
+| OPEN | Open |
+| CLOSED | Closed |
 
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.

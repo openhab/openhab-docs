@@ -4,7 +4,7 @@ label: Insteon
 title: Insteon - Bindings
 type: binding
 description: "Insteon is a home area networking technology developed primarily for connecting light switches and loads."
-since: 1x
+since: 2x
 install: auto
 ---
 
