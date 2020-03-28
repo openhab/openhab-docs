@@ -761,6 +761,17 @@ The `getThingUID` method of the discovery service should create a consistent UID
 This way existing discovery results and existing things with this UID will be updated with the properties from the current scan.
 With this, dynamic discoveries (like UPnP or mDNS) can re-discover existing things and update communication properties like host names or TCP ports.
 
+### Ending an Active Scan
+
+As described above an active scan is initiated via `startScan`.
+There is no explicit end to an active scan and discovery results can be provided even after `startScan` completes (e.g. from a separate thread).
+If you would like assistance with enforcing a scan end pass a timeout to the `AbstractDiscoveryService` constructor.
+`stopScan` will then be called on your discovery service upon timeout expiration allowing you to stop your scan however needed.
+If a timeout is specified the scan will be considered active until the timeout expires even if `startScan` completed beforehand.
+In particular UIs such as the Paper UI will show the scan as in progress throughout the timeout.
+If you override `stopScan` don't forget to call `super.stopScan` as `AbstractDiscoveryService` performs some cleanup in its version.
+If the timeout is set to 0 `stopScan` will not be called.
+
 ### Remove older results
 
 Normally, older discovery results already in the inbox are left untouched by a newly triggered scan.
