@@ -8,12 +8,12 @@ layout: tutorial-beginner
 
 We left at the [start page]({{base}}/tutorials/beginner/1sttimesetup.html) before showing you the differences of the UIs.
 Now click on the "PAPER UI" link and you will be taken to the "Inbox".
-The inbox is the place where you can discover/add new "things" (i.e. Zwave devices, Hue lamps, network devices and so on).
+The inbox is the place where you can discover/add new "things" (i.e. Z-Wave devices, Hue lamps, network devices and so on).
 
 ![](images/picture_04.jpg)
 
 In order to be able to add new things, at first you must install the corresponding binding for that type of thing.
-I.e. if you want to control your Zwave devices, you have to install the Zwave binding.
+I.e. if you want to control your Z-Wave devices, you have to install the Z-Wave binding.
 If you want to control your Hue lamps, you have to install the Hue binding etc.
 
 The installation is done on the "Add-ons" page in the left menu.
@@ -120,31 +120,31 @@ If you want to set a lower value there, feel free.
 
 **These are the basics to configure openHAB via Paper UI, meaning that the process is pretty much the same with other bindings.**
 
-To demonstrate that, we'll proceed and install the Zwave binding in order to add Zwave things to openHAB.
+To demonstrate that, we'll proceed and install the Z-Wave binding in order to add Z-Wave things to openHAB.
 
-**If you do not own a Zwave controller you won't be able to follow the next steps.
+**If you do not own a Z-Wave controller you won't be able to follow the next steps.
 However, this is a demonstration about how to install and configure add-ons.
 As mentioned before, the pure procedure to install and configure add-ons is mostly the same with other addons.**
 
-**More information about the Zwave binding and the other available bindings can be found [on the bindings page of the user manual](/addons/#bindings)!**
+**More information about the Z-Wave binding and the other available bindings can be found [on the bindings page of the user manual](/addons/#bindings)!**
 
 The installation is just like the example with the network binding above.
-Use the "Add-ons" menu item, search for the "Zwave" binding, click "INSTALL" and go directly to the "Inbox" afterwards.
-There, we click the "+" icon again and can now choose between the "Network Binding" and the "Zwave Binding".
+Use the "Add-ons" menu item, search for the "Z-Wave" binding, click "INSTALL" and go directly to the "Inbox" afterwards.
+There, we click the "+" icon again and can now choose between the "Network Binding" and the "Z-Wave Binding".
 
 ![](images/picture_17.jpg)
 
-The difference to the network binding is, that we have to configure the Zwave controller first.
-So we are taken directly to the Zwave controller config page after clicking on the "Zwave Binding" link.
+The difference to the network binding is, that we have to configure the Z-Wave controller first.
+So we are taken directly to the Z-Wave controller config page after clicking on the "Z-Wave Binding" link.
 Here we configure the port and basic settings and click the check icon afterwards.
 
 ![](images/picture_18.jpg)
 
-openHAB immediately starts discovering Zwave things via the Zwave controller and shows them in the inbox.
+openHAB immediately starts discovering Z-Wave things via the Z-Wave controller and shows them in the inbox.
 This only happens if they already have been included.
-If this is a completely new Zwave controller, you'll have to include your Zwave things first.
+If this is a completely new Z-Wave controller, you'll have to include your Z-Wave things first.
 To set the controller into incusion mode, press the "+" icon again.
-Please refer to the manual of your Zwave device in order to find out how the inclusion works there (most of the time it's pressing the tamper button thrice).
+Please refer to the manual of your Z-Wave device in order to find out how the inclusion works there (most of the time it's pressing the tamper button thrice).
 
 Let's assume we bought a new wallplug and included it, it's "Node 30".
 For a simple sitemap and rule example on the next page, we'll configure this thing now:
@@ -156,7 +156,7 @@ For a simple sitemap and rule example on the next page, we'll configure this thi
 ![](images/picture_21.jpg)
 
 Basically we gave the thing a name ("Wallplug TV") and linked the "Switch" channel.
-Now we can see the wallplug (and the Zwave controller) on the "Control" page, too.
+Now we can see the wallplug (and the Z-Wave controller) on the "Control" page, too.
 Its switch is currently turned off:
 
 ![](images/picture_22.jpg)
