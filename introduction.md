@@ -51,7 +51,7 @@ openHAB is fully customizable, but doing so will require substantial effort on y
 
 After you have read the documentation for openHAB, you will have:
 
-* Identified on which computer you will run openHAB
+* Identified a computer on which to run openHAB
 * Learned how to install openHAB, as well as all other software that is needed to run openHAB (e.g., JAVA)
 * Learned how your smart devices communicate with openHAB; how to make openHAB give commands to your smart devices; and how you can interact with openHAB
 
@@ -65,7 +65,7 @@ But this may not be a problem as you are reading the documentation of software t
 Lastly, be prepared to start a new hobby: home automation. 
 
 Basic functions can be achieved in openHAB rather quickly, e.g., switch lights on at a certain time. 
-Others will require much more efforts and thoughts, e.g., how do I determine that someone is home, including guests, but not counting pets? 
+Others will require much more effort and thought, e.g., how do I determine that someone is home, including guests, but not counting pets?
 The openHAB forum is a great place to learn and discuss. 
 
 ## A Quick Overview
@@ -89,7 +89,7 @@ All the above [Concepts]({{base}}/concepts/index.html) are explained in more dep
 
 ### Channels
 
-Channels are for the logical link of a [Thing]({{base}}/concepts/things.html) to an [Item]({{base}}/concepts/items.html). 
+Channels are the logical link between a [Thing]({{base}}/concepts/things.html) and an [Item]({{base}}/concepts/items.html).
 Channels originate from [Things]({{base}}/concepts/things.html) definition and define how your [Thing]({{base}}/concepts/things.html) can communicate with [Item]({{base}}/concepts/items.html) (and vice versa). 
 You will create channels when defining your [Thing]({{base}}/concepts/things.html).
 
@@ -102,7 +102,7 @@ Bindings are software packages that are installed by the user in openHAB.
 The main purpose of Bindings is to establish the connection between your device and your [Thing]({{base}}/concepts/things.html). 
 Bindings communicate with your device and translate all commands to and from openHAB between your device and your [Thing]({{base}}/concepts/things.html).
 
-Bindings are provided at the [Add-on section](https://www.openhab.org/addons/) of this website. 
+Bindings are provided in the [Add-on section](https://www.openhab.org/addons/) of this website.
 Here you will find a searchable list of several hundred bindings to support as many devices as possible. 
 New bindings are regularly added as developers integrate more devices into openHAB.
 
@@ -153,7 +153,7 @@ In many occasions, you will notice that your problem has already been raised by 
 You can search previous conversations and issues to see if your question has already been answered. 
 It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting your own question.
 
-If it is your first time posting a question, please read [How to help us helping you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) for information on what information you will need to provide.
+If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) for information on what information you will need to provide.
 
 ## Putting it into Practice
 
@@ -175,10 +175,10 @@ But remember, there is always more than one way to achieve your goal in openHAB.
 A final word for the DIY enthusiasts. openHAB is very flexible and can support many DIY devices. 
 However, you will quickly realize that DIY often literally means that you _"do it yourself"_. 
 Working with DIY solutions often requires a deeper level of understanding, as well as more patience and perseverance than the integration of ready-to-use devices from commercial providers. 
-The choice is yours of course, but you will need to be prepared spending either money or time (and sometimes both) to make your home automation goals a reality. 
+The choice is yours of course, but you will need to be prepared to spend either money or time (and sometimes both) to make your home automation goals a reality.
 And quite often, the investment will be significant.
 
-Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whichever they are. 
+Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whatever they are.
 But it comes with a rather steep learning curve.
 
 ## A Deeper Dive: openHAB Structure for Advanced Users
@@ -189,6 +189,6 @@ openHAB 2 is developed in [Java](https://www.java.com/) and uses [OSGi](https://
 
 openHAB is highly modular software that can be extended through "Add-ons". 
 Add-ons give openHAB a wide array of capabilities, from User Interfaces, to the ability to interact with a large and growing number of physical Things. 
-Add-ons may come from the openHAB 2 distribution, the legacy openHAB 1 distribution or from any other external source.
+Add-ons may come from the openHAB 2 distribution, the legacy openHAB 1 distribution or from other external sources.
 
 If you are new to openHAB, we suggest you continue to the [Concepts]({{base}}/concepts/index.html) chapter where we introduce many fundamental ideas that are used throughout openHAB.
