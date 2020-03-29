@@ -662,7 +662,7 @@ The following table gives an overview about the main parts of a `DiscoveryResult
 | `label` | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead. |
 | `representationProperty` | The name of one of the properties which discriminates the discovery result best against other results of the same type. Typically this is a serial number, IP or MAC address. The representationProperty often matches a configuration parameter and is also explicitly given in the thing-type definition. |
 
-To simplify the implementation of own discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService`, that must only be extended.
+To simplify the implementation of custom discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService` and just needs to be extended.
 Subclasses of `AbstractDiscoveryService` do not need to handle the `DiscoveryListeners` themselves, they can use the methods `thingDiscovered` and `thingRemoved` to notify the registered listeners.
 Most of the descriptions in this chapter refer to the `AbstractDiscoveryService`.
 
@@ -760,6 +760,17 @@ Already discovered things are identified by the ThingUID the DiscoveryResult was
 The `getThingUID` method of the discovery service should create a consistent UID every time the same thing gets discovered.
 This way existing discovery results and existing things with this UID will be updated with the properties from the current scan.
 With this, dynamic discoveries (like UPnP or mDNS) can re-discover existing things and update communication properties like host names or TCP ports.
+
+### Ending an Active Scan
+
+As described above an active scan is initiated via `startScan`.
+There is no explicit end to an active scan and discovery results can be provided even after `startScan` completes (e.g. from a separate thread).
+If you would like assistance with enforcing a scan end pass a timeout to the `AbstractDiscoveryService` constructor.
+`stopScan` will then be called on your discovery service upon timeout expiration allowing you to stop your scan however needed.
+If a timeout is specified the scan will be considered active until the timeout expires even if `startScan` completed beforehand.
+In particular UIs such as the Paper UI will show the scan as in progress throughout the timeout.
+If you override `stopScan` don't forget to call `super.stopScan` as `AbstractDiscoveryService` performs some cleanup in its version.
+If the timeout is set to 0 `stopScan` will not be called.
 
 ### Remove older results
 
