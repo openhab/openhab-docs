@@ -153,13 +153,13 @@ A smart bulb is another example when it supports shade of colors. Below are two 
 ```
 Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
 Color  Color       "Color"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState,ColorController.color"}
-Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperatureController.colorTemperatureInKelvin"}
 ```
 
 ```
 Group  Bulb        "Bulb"                {alexa="Endpoint.Light"}
 Dimmer White       "White"       (Bulb)  {alexa="BrightnessController.brightness,PowerController.powerState"}
-Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperature.colorTemperatureInKelvin"}
+Dimmer Temperature "Temperature" (Bulb)  {alexa="ColorTemperatureController.colorTemperatureInKelvin"}
 ```
 
 A Stereo is another example of a single endpoint that needs many items to function properly.  Power, volume, input, speakers and player controllers are all typical use cases for a stereo that a user may wish to control.

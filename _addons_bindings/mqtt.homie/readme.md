@@ -3,7 +3,7 @@ id: mqtt.homie
 label: MQTT Homie
 title: MQTT Homie - Bindings
 type: binding
-description: "Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and better"
+description: "NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding."
 since: 2x
 install: manual
 ---
@@ -13,6 +13,8 @@ install: manual
 {% include base.html %}
 
 # MQTT Homie Binding
+
+NOTE: This binding is provided by the [MQTT binding](https://www.openhab.org/addons/bindings/mqtt/), and therefore no explicit installation is necessary beyond installing the MQTT binding.
 
 Devices that follow the [Homie convention](https://homieiot.github.io/) 3.x and better
 are auto-discovered and represented by this binding and the Homie Thing.
