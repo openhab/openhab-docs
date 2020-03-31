@@ -1,5 +1,6 @@
 ---
 layout: intro
+description: Step-by-step tutorial for migrating an existing openHAB 1.x installation to openHAB 2
 ---
 
 {% include base.html %}

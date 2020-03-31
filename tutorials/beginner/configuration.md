@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+description: This article explains first time configuration in openHAB after installtion as a part of the beginners Tutorial.
 ---
 
 {% include base.html %}

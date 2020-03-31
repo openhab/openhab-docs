@@ -1,5 +1,6 @@
 ---
 layout: tutorial-beginner
+description: This article explains basic steps for creating an own sitemap in openHAB as a part of the beginners Tutorial.
 ---
 
 {% include base.html %}
