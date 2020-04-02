@@ -3,7 +3,7 @@ id: bluetooth.am43
 label: AM43
 title: AM43 - Bindings
 type: binding
-description: "This extension adds support for AM43 Blind Drive Motors."
+description: "This extension adds support for [AM43 Blind Drive Motors](https://www.a-okmotors.com/am-43/)."
 since: 2x
 install: manual
 ---
@@ -14,7 +14,7 @@ install: manual
 
 # AM43
 
-This extension adds support for AM43 Blind Drive Motors.
+This extension adds support for [AM43 Blind Drive Motors](https://www.a-okmotors.com/am-43/).
 
 ## Supported Things
 
