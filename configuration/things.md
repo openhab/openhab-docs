@@ -123,7 +123,7 @@ The resulting UID of the thing is `hue:0210:mybridge:bulb1`.
 Bridges that are defined somewhere else can also be referenced in the DSL:
 
 ```xtend
-Thing hue:0210:mybridge:bulb (hue:bridge:mybridge) [lightId="3"]
+Thing hue:0210:mybridge:bulb "Label" (hue:bridge:mybridge) @ "Location" [lightId="3"]
 ```
 
 The referenced bridge is specified in the parentheses.
