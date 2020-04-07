@@ -136,6 +136,16 @@ Please note that, technically, you are not bound to using the values from the ta
 
 Some coordinators may need to allocate memory to handle each node in the network. This is an integer setting, and should be set to the maximum number of nodes expected to be added to the network. It should be noted that this will consume memory on the coordinator which may impact on other services such as packet buffers, so it is not advised to simply set this to the maximum value.
 
+##### Trust Centre Join Mode
+
+Sets the Trust Centre join/rejoin mode.
+
+* TC_JOIN_DENY: Deny all joins.
+* TC_JOIN_SECURE: Allow only secure joining. Devices should join with the TC Link Key or a Device Specific Link Key via an install code.
+* TC_JOIN_INSECURE: Allow all joins.
+* TC_JOIN_INSTALLCODE: Only join with install code. Devices attempting to join with the TC Link Key will be rejected.
+
+
 #### Supported Coordinators
 
 The following coordinators are known to be supported.
@@ -248,6 +258,8 @@ The following devices have been tested by openHAB users with the binding. The ab
 
 ## Discovery
 
+Discovery is performed by putting the binding into join mode (by starting an inbox search), and then putting the device into join mode. Generally, it is best to reset the device to do this. Resetting the device ensures that it is no longer joined to a previous network, will ensure it is awake if it is a battery device, and will restart any channel and network search that the device may perform.
+ 
 Once the binding is installed, and an adapter is added, it automatically reads all devices that are set up on the ZigBee controller and puts them in the Inbox. When the binding is put into discovery mode via the user interface, the network will have join enabled for 60 seconds.
 
 The binding will store the list of devices that have joined the network locally between restarts to allow them to be found again later. A ZigBee coordinator does not store a list of known devices, so rediscovery of devices following a restart may not be seemless if the dongle is moved to another system.
@@ -256,9 +268,9 @@ When a ZigBee device restarts (e.g. a bulb is powered on), it will send an annou
 
 ### Install Codes
 
-Note: Currently only Ember coordinators support Zigbee 3, it does not look like the Telegesis coordinators will receive an update to support it.
+Note: Currently only Ember coordinators support Zigbee 3.0, it does not look like the Telegesis coordinators will receive an update to support it.
 
-ZigBee 3 requires that devices use an install code to securely join the network. This must be added
+ZigBee 3.0 requires that devices use an install code to securely join the network. This must be added
 to the binding before the discovery starts. Install codes should be printed on the box the device came
 in, or possibly on the device itself. Note that there is no standard format for how these codes may be
 displayed on the device or its packaging. You may need to use a QR reader to read the code - again these
@@ -272,7 +284,7 @@ The format is ```IEEE Address:Install Code``` in the following format -:
 AAAAAAAAAAAAAAAA:CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-CCCC-DDDD
 ```
 
-ZigBee 3 requires the install code to be 16 bytes long (8 blocks of characters) but some older systems using
+ZigBee 3.0 requires the install code to be 16 bytes long (8 blocks of characters) but some older systems using
 this method may use less bytes, but it should still be formatted as 2, 4, or 8 groups of 4 values.
 Note that the last four characters in the install code are the checksum and may be provided separately.
 
