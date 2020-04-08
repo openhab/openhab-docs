@@ -270,7 +270,7 @@ The state presentation for the Item in the following example is "`%.1f °C`":
 Number Livingroom_Temperature "Temperature [%.1f °C]"
 ```
 
-If no state presentation and no square brackets are given, the Item will not provide a textual presentation of it's internal state (i.e. in UIs no state is shown).
+If no state presentation and no square brackets are given, the Item will not provide a textual presentation of its internal state (i.e. in UIs no state is shown).
 This is often meaningful when an Item is presented by a non-textual UI elements like a switch or a diagram.
 
 Formatting of the presentation is done applying [Java formatter class syntax](http://docs.oracle.com/javase/7/docs/api/java/util/Formatter.html#syntax).
@@ -514,7 +514,7 @@ The third example computes the average temperature of all room temperature Items
 {: #tags}
 ### Tags
 
-Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond it's basic Item type.
+Tags added to an Item definition allow a user to characterize the specific nature of the Item beyond its basic Item type.
 Tags can then be used by add-ons to interact with Items in context-sensitive ways.
 
 Example:
@@ -597,7 +597,7 @@ There are two different kinds of channels:
 For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
 - Trigger Channels will only send events that won't have any effect on the Item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event.
 For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `PRESSED` event when someone is pressing the button of the device.
-This event on it's own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
+This event on its own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
 Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.

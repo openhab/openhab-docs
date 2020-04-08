@@ -59,7 +59,7 @@ Let's assume this is John's mobile phone which we want to use for presence detec
 We change the (automatically added during the discovery) name of the thing on the next page to "John's Mobile" and click on the "ADD AS THING" button.
 ::: tip Note
 If your network devices use a DHCP server to obtain ther IP addresses automatically, please make sure to define a DHCP reservation for a device which you want to use in openHAB.
-Otherwise it's IP address may change in the future and your thing definiton won't work any more.
+Otherwise its IP address may change in the future and your thing definiton won't work any more.
 
 *Information about how to define a DHCP reservation can be normally be found in the manual of your network router.*
 :::
@@ -107,7 +107,7 @@ You can save changed values by clicking the check icon at the top.
 
 Now that we linked the two channels in the previous step, we can have a look at the "Control" menu item at the top left.
 On the "Control" page you can see all your linked items.
-So far we added only one thing ("John's Mobile") and linked it's two channels, so that's all we see:
+So far we added only one thing ("John's Mobile") and linked its two channels, so that's all we see:
 
 ![](images/picture_16.jpg)
 

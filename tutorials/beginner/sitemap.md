@@ -23,7 +23,7 @@ $OPENHAB_CONF/sitemaps <-- *.sitemap files
 After a fresh installation these directories are empty (except for the readme files), so you have to create a file there. We'll use "default.items" as the items file and "default.sitemap" as the sitemap file in this tutorial.
 
 **In fact, you can have multiple .items files to sort your items logically, for example lamps.items, contacts.items, network.items etc.**
-**As long as the file extension is .items, it's definitions will be loaded in openHAB. The same applies to .sitemap and .rules files as well**
+**As long as the file extension is .items, its definitions will be loaded in openHAB. The same applies to .sitemap and .rules files as well**
 
 So we create the files:
 
