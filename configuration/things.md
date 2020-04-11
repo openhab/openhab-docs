@@ -76,12 +76,12 @@ Thing <binding_id>:<type_id>:<thing_id> "Label" @ "Location" [ <parameters> ]
 
 The first keyword defines whether the entry is a bridge or a thing.
 The next statement defines the UID of the thing which contains of the following three segments: `binding id`, `thing type id`, `thing id`.
-So the first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
+The first two segments must match to a thing type supported by a binding (e.g. `network:device` or `astro:moon`), whereas the thing id can be freely defined.
 Optionally, you may provide a label in order to recognize it easily, otherwise the default label from the thing type will be displayed.
 
 To help organizing your things, you also may define a location (`Location` in the example above).
 
-Inside the squared brackets configuration parameters of the thing are defined.
+Inside the square brackets configuration parameters of the thing are defined.
 The type of the configuration parameter is determined by the binding and must be specified accordingly in the DSL.
 
 
@@ -106,7 +106,7 @@ Please check each individual binding's [documentation](/addons/#binding) for det
 
 ### Defining Bridges Using Files
 
-Bridges can be defined together with contained things. The following configuration shows the definition of a hue bridge with two hue lamps:
+Bridges can be defined together with contained things. The following configuration shows the definition of a Hue bridge with two Hue lamps:
 
 ```xtend
 Bridge hue:bridge:mybridge [ ipAddress="192.168.3.123" ] {

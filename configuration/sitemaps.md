@@ -247,7 +247,7 @@ Switch item=<itemname> [label="<labelname>"] [icon="<iconname>"] [mappings="<map
 ```
 
 Switches are one of the more common elements of a typical Sitemap.
-A Switch will present a discrete state Item and allow changing of it's value.
+A Switch will present a discrete state Item and allow changing of its value.
 Note that Switch elements can be rendered differently on the user interface, based on the Item type and the `mappings` parameter.
 
 - `mappings` comes as an array of value-to-string translations, [documented further down](#mappings).
