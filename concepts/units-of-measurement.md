@@ -17,8 +17,8 @@ This way the framework and/or the user is able to convert the quantified value t
 
 A weather binding which reads temperature values in °C would use the `QuantityType` to indicate the unit as °C.
 The framework is then able to convert the values to either °F or Kelvin according to the configuration of the system.
-The default conversion the framework will use is locale based: 
-Depended on the configured locale the framework tries to convert a `QuantityType` to the default unit of the matching measurement system. 
+The default conversion the framework will use is locale-based:
+The framework tries to convert a `QuantityType` to the default unit of the configured locale.
 This is the imperial system for the United States (locale US) and Liberia (language tag "en-LR"). 
 The metric system with SI units is used for the rest of the world. 
 This conversion will convert the given `QuantityType` into a default unit for the specific dimension of the type. 
@@ -39,19 +39,19 @@ This is:
 In addition to the automated conversion the `NumberItem` linked to a Channel delivering `QuantityTypes` can be configured to always have state updates converted to a specific unit. 
 The unit given in the state description is parsed and then used for conversion (if necessary).
 The framework assumes that the unit to parse is always the last token in the state description.
-If the parsing failed the locale based default conversion takes place.
+If the parsing failed the locale-based default conversion takes place.
 
     Number:Temperature temperature "Outside [%.2f °F]" { channel="...:current#temperature" }
     
 In the example the `NumberItem` is specified to bind to Channels which offer values from the dimension `Temperature`.
 Without the dimension information the `NumberItem` only will receive updates of type `DecimalType` without a unit and any conversion.
 The state description defines two decimal places for the value and the fix unit °F.
-In case the state description should display the unit the binding delivers or the framework calculates through locale based conversion the pattern will look like this:
+In case the state description should display the unit the binding delivers or the framework calculates through locale-based conversion the pattern will look like this:
     
     "Outside [%.2f %unit%]"
     
 The special placeholder `%unit%` will then be replaced by the actual unit symbol.
-In addition the placeholder `%unit%` can be placed anywhere in the state description.
+The placeholder `%unit%` can be placed anywhere in the state description.
  
 #### Defining ChannelTypes
 
@@ -99,7 +99,7 @@ SI:
 
 | Type                   | Unit                             | Symbol |
 |------------------------|----------------------------------|--------|
-| Acceleration           | Metre per square Second          | m/s²   |
+| Acceleration           | Metre per Second squared         | m/s²   |
 | Acceleration           | Standard Gravity                 | ɡₙ     |
 | AmountOfSubstance      | Mole                             | mol    |
 | AmountOfSubstance      | Deutscher Härtegrad              | °dH    |

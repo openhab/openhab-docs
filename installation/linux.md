@@ -679,7 +679,7 @@ Please contact the community forum for more detailed information regarding indiv
 
 ### Java Network Permissions
 
-The Java Virtual Machine hosting openHAB is restricted in it's permissions to interact on network level for security reasons.
+The Java Virtual Machine hosting openHAB is restricted in its permissions to interact on network level for security reasons.
 Some openHAB add-ons, like the Network or AmazonDash bindings, need elevated permissions to work.
 If needed, grand these permissions by executing the following command:
 
@@ -697,7 +697,7 @@ The [openHAB VS Code Extension]({{base}}/configuration/editors.html#openhab-vs-c
 
 We will now guide you through the Samba network shares setup process.
 Start by installing Samba.
-Afterwards open it's configuration file in your favorite editor:
+Afterwards open its configuration file in your favorite editor:
 
 ```shell
 sudo apt-get install samba samba-common-bin

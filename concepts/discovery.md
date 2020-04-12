@@ -9,11 +9,11 @@ title: Thing Discovery
 
 Many devices, technologies and systems can be automatically discovered on the network or browsed through some API. It therefore makes a lot of sense to use these features for a smart home solution.
 
-In openHAB bindings therefore implement _Discovery Services_ for Things, which provide _Discovery Results_. All _Discovery Results_ are regarded as suggestions to the user and are put into the _inbox_.
+openHAB bindings therefore implement _Discovery Services_ for Things, which provide _Discovery Results_. All _Discovery Results_ are regarded as suggestions to the user and are put into the _inbox_.
 
 ### Background Discovery
 
-A couple of discovery services support automatic discovery in the background, while for others a scan needs to be triggered manually.
+Some discovery services support automatic discovery in the background, while for others a scan needs to be triggered manually.
 Services that support background discovery usually have it enabled by default. 
 It is possible to override this setting and deactivate background discovery for individual services by setting `discovery.<serviceid>:background=false`, where `serviceid` is usually identical to a binding id, e.g. the LIFX background discovery can be disabled through `discovery.lifx:background=false`.
 
@@ -33,7 +33,7 @@ This service is enabled by default but can be disabled by setting `org.eclipse.s
 
 ### Auto Approve
 
-If the manual acceptance of discovery results by the user is not wished, it is possible to turn on the auto-approval feature of the inbox. 
+If the manual acceptance of discovery results by the user is not desired, it is possible to turn on the auto-approval feature of the inbox.
 In this case, every new entry gets automatically approved immediately (unless it has been marked as ignored as a duplicate).
 
 The auto approval can be enabled by the setting `org.eclipse.smarthome.inbox:autoApprove=true`; the default is false.

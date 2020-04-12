@@ -99,7 +99,7 @@ Examples for derived states on Group Items when declared in the Item DSL:
 ### QuantityType
 
 A numerical type which carries a unit in addition to its value.
-The framework is capable of automatic conversion between units depending on the users locale settings.
+The framework is capable of automatic conversion between units depending on the user's locale settings.
 See the concept on [Units of Measurement](units-of-measurement.html) for more details.
 
 ### HSBType
