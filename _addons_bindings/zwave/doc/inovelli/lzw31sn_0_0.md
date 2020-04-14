@@ -49,6 +49,7 @@ The following table summarises the channels available for the LZW31-SN -:
 | LED Strip Effect | config_decimal | config_decimal |  | Number | 
 | Default Level (Local) | config_decimal | config_decimal |  | Number | 
 | LED Indicator Color | config_decimal | config_decimal |  | Number | 
+| LED Indicator Intensity  [Deprecated]| config_decimal | config_decimal |  | Number | 
 | Protection Local | protection_local | protection_local |  | Number | 
 
 ### Dimmer
@@ -104,6 +105,13 @@ The ```config_decimal``` channel is of type ```config_decimal``` and supports th
 Generic class for configuration parameter.
 
 The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+### LED Indicator Intensity [Deprecated]
+Generic class for configuration parameter.
+
+The ```config_decimal``` channel is of type ```config_decimal``` and supports the ```Number``` item.
+
+**Note:** This channel is marked as deprecated so should not be used.
 
 ### Protection Local
 Sets the local protection mode.
@@ -381,7 +389,7 @@ This parameter has the configuration ID ```config_20_1``` and is of type ```INTE
 ### Parameter 21: AC Power Type
 
 AC Power Type
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+
 The following option values may be configured -:
 
 | Value  | Description |
@@ -397,7 +405,7 @@ This parameter has the configuration ID ```config_21_1``` and is of type ```INTE
 ### Parameter 22: Switch Type
 
 Switch Type
-This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+
 The following option values may be configured -:
 
 | Value  | Description |
