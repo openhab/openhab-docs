@@ -133,7 +133,7 @@ In this case, the `RuleSimple` extension is used to import the `SimpleRule` base
 The `RuleSupport` extensions provides the `automationManager` that allows you to register rule instances with openHAB.
 
 The Jython rule class uses the `SimpleRule` subclass to simplify some aspects of the openHAB interface for use with JSR223.
-n the constructor, the triggers atribute is set to a list of [triggers](jsr223.html#trigger_types).
+In the constructor, the `triggers` atribute is set to a list of [triggers](jsr223.html#trigger_types).
 In this example, the trigger is a state update trigger.
 The trigger name identifies the trigger and the configuration direction provides trigger-specific options.
 For the item update trigger, the configuration provides the item name of the monitored item.
