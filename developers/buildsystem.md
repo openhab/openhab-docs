@@ -82,7 +82,7 @@ A "fits-most-cases" `feature.xml` is automatically generated.
 
 In some cases additional entries need to be added.
 
-### Shared dependencies (JNA, Netty, etc.)
+### Shared Dependencies (JNA, Netty, etc.)
 
 Bundles that are shared by different openHAB bundles are excluded from embedding.
 The need to be added to the feature to make them available at runtime.
