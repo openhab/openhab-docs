@@ -20,9 +20,6 @@ This section talks about some common buildsystem related topics and also some qu
 ## Adding Dependencies
 
 Generally all dependencies should be available on JCenter.
-
-** External dependency **
-
 In most cases they should be referenced in the project POM with scope `compile`:
 
 ```
@@ -36,9 +33,9 @@ In most cases they should be referenced in the project POM with scope `compile`:
   </dependencies>
 ```
 
-These depenencies are embedded in the resulting bundle automatically.
+These dependencies are embedded in the resulting bundle automatically.
 
-There are two exceptions: 
+There are two exceptions:
 
 1) Dependencies to other openHAB bundles (e.g. `org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT` or `org.openhab.addons.bundles/org.openhab.transform.map/2.5.0-SNAPSHOT`).
 2) Bundles that are used by more than one binding (e.g. Netty-bundles like `io.netty/netty-common/4.1.34.Final`).
@@ -50,7 +47,7 @@ To ensure that they are available at runtime they also need to be added to the `
   <bundle dependency="true">mvn:org.openhab.addons.bundles/org.openhab.binding.bluetooth/2.5.0-SNAPSHOT</bundle>
 ```
 
-Bundles that are used in more than one binding should use the same version that is already present. 
+Bundles that are used in more than one binding should use the same version that is already present.
 You need to exclude those bundles from embedding by adding an exclusion to the `pom.xml`:
 
 ```
@@ -65,22 +62,6 @@ In case this is not possible, please ask if an exception can be made and a diffe
 Technically you just need to omit the exclusion-statement above.
 If you only depend on shared bundles you can also omit the exclusion statement and add a `noEmbedDependencies.profile` file in the root directory of your binding.
 
-** Internal dependency **
-
-In two cases libraries can be added to the `/lib` directory only if the bundle is not available for download.
-The build system automatically picks up all JAR files in `/lib` and embeds them in the new bundle.
-In this case they must not be added to the feature.
-
-If the bundles manifest is not properly exporting all needed packages, you can import them manually by adding 
-
-```
-  <properties>
-    <bnd.importpackage>foo.bar.*,foo.baz.*</bnd.importpackage>
-  </properties>
-```
-
-to the POM.
-
 If the imported packages need to be exposed to other bundles (e.g. case 2 above), this has to be done manually by adding
 
 ```
@@ -92,4 +73,41 @@ If the imported packages need to be exposed to other bundles (e.g. case 2 above)
 to the POM.
 If `version="1.0.0"` is not set, the packages are exported with the same version as the main bundle.
 Optional parameters available for importing/exporting packages (e.g. `foo.bar.*;resolution:="optional"`) are available, too.
-Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>` would prevent all packages starting with foo.bar from being imported). 
+Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>` would prevent all packages starting with foo.bar from being imported).
+
+## Karaf feature
+
+Each bundle needs a `feature.xml` which is used for the bundle-installation in openHAB.
+A "fits-most-cases" `feature.xml` is automatically generated.
+
+In some cases additional entries need to be added.
+
+### Shared dependencies (JNA, Netty, etc.)
+
+Bundles that are shared by different openHAB bundles are excluded from embedding.
+The need to be added to the feature to make them available at runtime.
+Two cases need to be treated differently:
+
+1. Bundles that have a core feature are referenced by the feature (e.g. `<feature>openhab-runtime-jna</feature>` or `<feature>openhab-transport-upnp</feature>`).
+2. Bundles that do not have a core feature are added directly (e.g. `<bundle dependency="true">mvn:commons-codec/commons-codec/1.10</bundle>`).
+
+### Multi-bundle features / Sub-Bundles
+
+In some cases a binding consists of several bundles (e.g. `mqtt`).
+The `feature.xml` of the sub-bundle (e.g. `mqtt.homie`) needs to add all bundles from the parent-bundle to make sure that the feature verification suceeds:
+
+```
+<feature>openhab-transport-mqtt</feature>
+<bundle start-level="80">mvn:org.openhab.addons.bundles/org.openhab.binding.mqtt/${project.version}</bundle>
+```
+
+To  make sure that all sub-bundles are installed together with the main-bundle, the `feature.xml` of the bundles needs to be excluded from the aggregation.
+Therefore an exclusion needs to be added to `features/openhab-addons/pom.xml` (starting from l. 47):
+
+```
+<exclude name="**/org.openhab.binding.mqtt*/**/feature.xml"/>
+```
+
+An "aggregated" feature then needs to be created in `features/openhab-addons/src/main/resources/footer.xml`.
+The feature is named like the base-bundle and lists all sub-bundles.
+
