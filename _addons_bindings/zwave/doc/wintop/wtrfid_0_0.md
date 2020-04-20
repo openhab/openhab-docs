@@ -64,7 +64,8 @@ The following table summarises the channels available for the WTRFID -:
 |--------------|------------|--------------|----------|-----------|
 | Switch | switch_binary | switch_binary | Switch | Switch | 
 | Alarm (burglar) | alarm_burglar | alarm_burglar | Door | Switch | 
-| Alarm (access) | notification_access_control | notification_access_control |  | Number | 
+| Alarm (access)  [Deprecated]| notification_access_control | notification_access_control |  | Number | 
+| Alarm (raw) | alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Switch
@@ -84,7 +85,7 @@ The following state translation is provided for this channel to the ```Switch```
 | OFF | OK |
 | ON | Alarm |
 
-### Alarm (access)
+### Alarm (access) [Deprecated]
 Event ID 5 = Away
 
 Event ID 6 = Home
@@ -135,6 +136,13 @@ The following state translation is provided for this channel to the ```Number```
 | 75 | Barrier detected short in WallStation wires |
 | 76 | Barrier associated with non-Z-wave remote control |
 
+**Note:** This channel is marked as deprecated so should not be used.
+
+### Alarm (raw)
+Provides alarm parameters as json string.
+
+The ```alarm_raw``` channel is of type ```alarm_raw``` and supports the ```String``` item. This is a read only channel so will only be updated following state changes from the device.
+This channel sets, and provides the alarm state as a JSON string. It is designed for use in rules.
 ### Battery Level
 Represents the battery level as a percentage (0-100%). Bindings for things supporting battery level in a different format (e.g. 4 levels) should convert to a percentage to provide a consistent battery level reading.
 

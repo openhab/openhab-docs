@@ -6,12 +6,12 @@ title: MH6-HP - ZWave
 {% include base.html %}
 
 # MH6-HP Programmable Thermostat
-This describes the Z-Wave device *MH6-HP*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh6hp_00_000```.
-This version of the device is limited to firmware versions below 1.255
+This describes the Z-Wave device *MH6-HP*, manufactured by *[McoHome Technology Co., Ltd](http://www.mcohome.com/)* with the thing type UID of ```mcohome_mh6hp_02_000```.
+This version of the device is limited to firmware versions above 2.0
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![MH6-HP product image](https://www.cd-jackson.com/zwave_device_uploads/1044/1044_default.jpg)
+![MH6-HP product image](https://www.cd-jackson.com/zwave_device_uploads/1235/1235_default.jpg)
 
 
 The MH6-HP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -22,7 +22,15 @@ MH6-HP programmable thermostat is a Z-Wave Plus enabled device for indoor temper
 
 ### Inclusion Information
 
-In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “\- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.
+<table>
+  <tr>
+    <td>
+      <p>
+        In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.
+      </p>
+    </td>
+  </tr>
+</table>
 
 ### Exclusion Information
 
@@ -37,8 +45,8 @@ The following table summarises the channels available for the MH6-HP -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | thermostat_state | Temperature | Number | 
-| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Setpoint (cooling) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
+| Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
 | Thermostat fan mode | thermostat_fanmode | thermostat_fanmode |  |  | 
 | Thermostat fan state | thermostat_fanstate | thermostat_fanstate |  |  | 
 | Clock Time Offset | time_offset | time_offset | Time | Number | 
@@ -87,12 +95,12 @@ The following state translation is provided for this channel to the ```Number```
 | 5 | Pending Cool |
 | 6 | Vent / Economiser |
 
-### Setpoint (heating)
+### Setpoint (cooling)
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
 
-### Setpoint (cooling)
+### Setpoint (heating)
 Sets the thermostat setpoint.
 
 The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and supports the ```Number:Temperature``` item and is in the ```Heating``` category.
@@ -120,8 +128,9 @@ Association groups allow the device to send unsolicited reports to the controlle
 
 The MH6-HP supports 1 association group.
 
-### Group 1: Report
+### Group 1: Lifeline
 
+The Lifeline association group reports device status to a hub and is not designed to control other devices directly. When using the Lineline group with a hub, in most cases, only the lifeline group will need to be configured and normally the hub will perform this automatically during the device initialisation.
 
 Association group 1 supports 1 node.
 
@@ -141,18 +150,23 @@ Association group 1 supports 1 node.
 | COMMAND_CLASS_THERMOSTAT_SETPOINT_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_MODE_V1| |
 | COMMAND_CLASS_THERMOSTAT_FAN_STATE_V1| |
+| COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
+| COMMAND_CLASS_DEVICE_RESET_LOCALLY_V1| |
+| COMMAND_CLASS_ZWAVEPLUS_INFO_V1| |
 | COMMAND_CLASS_CONFIGURATION_V1| |
 | COMMAND_CLASS_MANUFACTURER_SPECIFIC_V1| |
-| COMMAND_CLASS_ASSOCIATION_V1| |
-| COMMAND_CLASS_VERSION_V1| |
+| COMMAND_CLASS_POWERLEVEL_V1| |
+| COMMAND_CLASS_FIRMWARE_UPDATE_MD_V1| |
+| COMMAND_CLASS_ASSOCIATION_V2| |
+| COMMAND_CLASS_VERSION_V2| |
 | COMMAND_CLASS_TIME_V1| |
 | COMMAND_CLASS_TIME_PARAMETERS_V1| |
 
 ### Documentation Links
 
-* [MH6-HP programmable thermostat.](https://www.cd-jackson.com/zwave_device_uploads/1044/MH6-HP-User-Manual.pdf)
+* [MH6-HP](https://www.cd-jackson.com/zwave_device_uploads/1235/User-manual-3830222.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1044).
+You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1235).
