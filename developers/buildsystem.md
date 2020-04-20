@@ -75,7 +75,7 @@ If `version="1.0.0"` is not set, the packages are exported with the same version
 Optional parameters available for importing/exporting packages (e.g. `foo.bar.*;resolution:="optional"`) are available, too.
 Packages can be excluded from import/export by prepending `!` in front of the name (e.g. `<bnd.importpackage>!foo.bar.*</bnd.importpackage>` would prevent all packages starting with foo.bar from being imported).
 
-## Karaf feature
+## Karaf Feature
 
 Each bundle needs a `feature.xml` which is used for the bundle-installation in openHAB.
 A "fits-most-cases" `feature.xml` is automatically generated.
@@ -110,4 +110,3 @@ Therefore an exclusion needs to be added to `features/openhab-addons/pom.xml` (s
 
 An "aggregated" feature then needs to be created in `features/openhab-addons/src/main/resources/footer.xml`.
 The feature is named like the base-bundle and lists all sub-bundles.
-
