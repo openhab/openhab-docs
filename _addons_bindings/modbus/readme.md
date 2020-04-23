@@ -3,7 +3,7 @@ id: modbus
 label: Modbus
 title: Modbus - Bindings
 type: binding
-description: "This is the binding to access Modbus TCP and serial slaves. RTU, ASCII and BIN variants of Serial Modbus are supported."
+description: "This is the binding to access Modbus TCP and serial slaves."
 since: 2x
 logo: images/addons/modbus.png
 install: auto
@@ -15,7 +15,8 @@ install: auto
 
 # Modbus Binding
 
-This is the binding to access Modbus TCP and serial slaves. RTU, ASCII and BIN variants of Serial Modbus are supported.
+This is the binding to access Modbus TCP and serial slaves.
+RTU, ASCII and BIN variants of Serial Modbus are supported.
 Modbus TCP slaves are usually also called as Modbus TCP servers.
 
 The binding can act as
@@ -25,6 +26,11 @@ The binding can act as
 
 The Modbus binding polls the slave data with an configurable poll period.
 openHAB commands are translated to write requests.
+
+The binding has the following extensions:
+
+<!--list-subs-->
+
 
 ## Main Features
 
