@@ -536,9 +536,9 @@ The Item will be visible if any one of the comparisons is evaluated as `true`, o
 **Examples:**
 
 ```perl
-visibility=[Battery_Level<30]
-visibility=[TV_Power==ON]
-visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
+Text item=BatteryWarning visibility=[Battery_Level<30]
+Switch item=CinemaLight "Cinema light" visibility=[TV_Power==ON]
+Switch item=LawnSprinkler visibility=[Day_Time=="Morning", Day_Time=="Afternoon", Temperature>19]
 ```
 
 In the third example above, a control for a lawn sprinkler will be visible if it is Morning, *OR* if it is Afternoon, *OR* if the temperature is above 19 °C.
