@@ -239,9 +239,9 @@ The following option values may be configured -:
 | Value  | Description |
 |--------|-------------|
 | 0 | Off |
-| 1 | Heating mode (default) |
+| 1 | Heating mode |
 
-The manufacturer defined default value is ```1``` (Heating mode (default)).
+The manufacturer defined default value is ```1``` (Heating mode).
 
 This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
 
@@ -250,9 +250,17 @@ This parameter has the configuration ID ```config_1_1``` and is of type ```INTEG
 
 Sensor Mode
 
-Values in the range 0 to 4 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```1```.
+| Value  | Description |
+|--------|-------------|
+| 0 | F-mode, floor sensor mode |
+| 1 | A-mode, internal room sensor mode |
+| 2 | AF-mode, internal roomsensor with floor limitation |
+| 3 | A2-mode, external room sensor mode |
+| 4 | A2F-mode, external sensor with floor limitation |
+
+The manufacturer defined default value is ```1``` (A-mode, internal room sensor mode).
 
 This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
 
@@ -261,9 +269,18 @@ This parameter has the configuration ID ```config_2_1``` and is of type ```INTEG
 
 Floor Sensor Type
 
-Values in the range 0 to 5 may be set.
+The following option values may be configured -:
 
-The manufacturer defined default value is ```0```.
+| Value  | Description |
+|--------|-------------|
+| 0 | 10K NTC |
+| 1 | 12K NTC |
+| 2 | 15K NTC |
+| 3 | 22K NTC |
+| 4 | 33K NTC |
+| 5 | 47K NTC |
+
+The manufacturer defined default value is ```0``` (10K NTC).
 
 This parameter has the configuration ID ```config_3_1``` and is of type ```INTEGER```.
 
@@ -271,7 +288,7 @@ This parameter has the configuration ID ```config_3_1``` and is of type ```INTEG
 ### Parameter 4: Temperature Control Hysteresis
 
 Temperature Control Hysteresis
-
+0.3°C to 3.0°C. Default is 5 (0.5°C)
 Values in the range 3 to 30 may be set.
 
 The manufacturer defined default value is ```5```.
@@ -282,7 +299,7 @@ This parameter has the configuration ID ```config_4_1``` and is of type ```INTEG
 ### Parameter 5: Floor Minimum Temperature Limit
 
 Floor Minimum Temperature Limit
-
+5.0°C to 40.0°C. Default is 50 (5.0°C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -293,7 +310,7 @@ This parameter has the configuration ID ```config_5_2``` and is of type ```INTEG
 ### Parameter 6: Floor MaximumTemperature Limit
 
 Floor MaximumTemperature Limit
-
+5.0°C to 40.0°C. Default is 400 (40.0°C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```400```.
@@ -304,7 +321,7 @@ This parameter has the configuration ID ```config_6_2``` and is of type ```INTEG
 ### Parameter 7: Air Minimum Temp Limit (ALo)
 
 Air Minimum Temp Limit (ALo)
-
+5.0°C to 40.0°C. Default is 50 (5.0°C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -315,7 +332,7 @@ This parameter has the configuration ID ```config_7_2``` and is of type ```INTEG
 ### Parameter 8: Air Maximum Temp Limit (AHi)
 
 Air Maximum Temp Limit (AHi)
-
+5.0°C to 40.0°C. Default is 400 (40.0°C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```400```.
@@ -326,7 +343,7 @@ This parameter has the configuration ID ```config_8_2``` and is of type ```INTEG
 ### Parameter 9: Heating Mode Setpoint
 
 Heating Mode Setpoint
-
+5.0°C to 40.0°C. Default is 210 (21.0°C)
 Values in the range 50 to 400 may be set.
 
 The manufacturer defined default value is ```210```.
@@ -337,7 +354,7 @@ This parameter has the configuration ID ```config_9_2``` and is of type ```INTEG
 ### Parameter 10: Room Sensor Calibration
 
 Room Sensor Calibration
-
+-6.0°C to 6.0°C. Default is 0 (0.0°C)
 Values in the range -60 to 60 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -348,7 +365,7 @@ This parameter has the configuration ID ```config_10_1``` and is of type ```INTE
 ### Parameter 11: Floor Sensor Calibration
 
 Floor Sensor Calibration
-
+-6.0°C to 6.0°C. Default is 0 (0.0°C)
 Values in the range -60 to 60 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -359,7 +376,7 @@ This parameter has the configuration ID ```config_11_1``` and is of type ```INTE
 ### Parameter 12: External Sensor Calibration
 
 External Sensor Calibration
-
+-6.0°C to 6.0°C. Default is 0 (0.0°C)
 Values in the range -60 to 60 may be set.
 
 The manufacturer defined default value is ```0```.
@@ -370,10 +387,15 @@ This parameter has the configuration ID ```config_12_1``` and is of type ```INTE
 ### Parameter 13: Temperature Display
 
 Temperature Display
+Selects which temperature is shown on the display. Refer to Chapter 11 ”Standby and main screen”.
+The following option values may be configured -:
 
-Values in the range 0 to 1 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | Display setpoint temperature (Default) |
+| 1 | Display measured temperature |
 
-The manufacturer defined default value is ```0```.
+The manufacturer defined default value is ```0``` (Display setpoint temperature (Default)).
 
 This parameter has the configuration ID ```config_13_1``` and is of type ```INTEGER```.
 
@@ -381,7 +403,9 @@ This parameter has the configuration ID ```config_13_1``` and is of type ```INTE
 ### Parameter 14: Button brighness dimmed state
 
 Button brighness dimmed state
+Configure the brightness of the buttons in dimmed state.
 
+0 to 100% (Default 50%)
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -392,7 +416,9 @@ This parameter has the configuration ID ```config_14_1``` and is of type ```INTE
 ### Parameter 15: Button brighness active state
 
 Button brighness active state
+Configure the brightness of the buttons in active state.
 
+0 to 100% (Default 100%)
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -403,7 +429,9 @@ This parameter has the configuration ID ```config_15_1``` and is of type ```INTE
 ### Parameter 16: Display brighness dimmed state
 
 Display brighness dimmed state
+Configure the brightness of the display in dimmed state.
 
+0 to 100% (Default 100%)  
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```50```.
@@ -414,7 +442,9 @@ This parameter has the configuration ID ```config_16_1``` and is of type ```INTE
 ### Parameter 17: Display brighness active state
 
 Display brighness active state
+Configure the brightness of the display, in active state.
 
+0 to 100% (Default 100%)  
 Values in the range 0 to 100 may be set.
 
 The manufacturer defined default value is ```100```.
@@ -425,7 +455,11 @@ This parameter has the configuration ID ```config_17_1``` and is of type ```INTE
 ### Parameter 18: Temperature report interval
 
 Temperature report interval
+Time interval between consecutive temperature reports.
 
+Temperature reports can also be sent as a result of polling.
+
+30 seconds to 32767 seconds. Default is 60 seconds  
 Values in the range 30 to 32767 may be set.
 
 The manufacturer defined default value is ```60```.
@@ -436,7 +470,9 @@ This parameter has the configuration ID ```config_18_2``` and is of type ```INTE
 ### Parameter 19: Temperature report hysteresis
 
 Temperature report hysteresis
+The temperature report will be sent if there is a difference in temperature value from the previous value reported, defined in this parameter (hysteresis). Temperature reports can also be sent as a result of polling.
 
+0.1°C to 10.0°C. Default is 10 (1.0°C)  
 Values in the range 1 to 100 may be set.
 
 The manufacturer defined default value is ```10```.
@@ -447,7 +483,11 @@ This parameter has the configuration ID ```config_19_1``` and is of type ```INTE
 ### Parameter 20: Meter report interval
 
 Meter report interval
+Time interval between consecutive meter reports.
 
+Meter reports can also be sent as a result of polling.
+
+30 seconds to 32767 seconds. Default is 90 seconds  
 Values in the range 30 to 32767 may be set.
 
 The manufacturer defined default value is ```90```.
@@ -458,10 +498,15 @@ This parameter has the configuration ID ```config_20_2``` and is of type ```INTE
 ### Parameter 21: Meter report delta value
 
 Meter report delta value
+Delta value in kWh between consecutive meter reports. Meter reports can also be sent as a result of polling.
+The following option values may be configured -:
 
-Values in the range 0 to 255 may be set.
+| Value  | Description |
+|--------|-------------|
+| 0 | Reporting meter based on change is disabled |
+| 10 | A delta value of 0 to 25.5 kWh |
 
-The manufacturer defined default value is ```10```.
+The manufacturer defined default value is ```10``` (A delta value of 0 to 25.5 kWh ).
 
 This parameter has the configuration ID ```config_21_1``` and is of type ```INTEGER```.
 

@@ -27,7 +27,7 @@ Pushing the upper left button 3 times (triple click) will activate Inclusion Mod
 
 ### Exclusion Information
 
- The inclusion and exclusion of the device is confirmed by sending out a Node Information Frame. Beside this, it may be necessary for certain network operations to send out a Node Information Frame. Triple clicking the button inside the module through a little hole (normally covered by GIRA module) or the upper left button will issue a Node Information Frame.
+The inclusion and exclusion of the device is confirmed by sending out a Node Information Frame. Beside this, it may be necessary for certain network operations to send out a Node Information Frame. Triple clicking the button inside the module through a little hole (normally covered by GIRA module) or the upper left button will issue a Node Information Frame.
 
 ### Wakeup Information
 
@@ -41,28 +41,47 @@ The following table summarises the channels available for the Heatit Z-Scene Con
 
 | Channel Name | Channel ID | Channel Type | Category | Item Type |
 |--------------|------------|--------------|----------|-----------|
-| Switch  [Deprecated]| switch_binary | switch_binary | Switch | Switch | 
+| Switch | switch_binary | switch_binary | Switch | Switch | 
 | Dimmer | switch_dimmer | switch_dimmer | DimmableLight | Dimmer | 
 | Scene Number | scene_number | scene_number |  | Number | 
-| Switch 1  [Deprecated]| switch_binary1 | switch_binary | Switch | Switch | 
+| LCD Backlight (Level) | indicator_level | indicator_level |  | Dimmer | 
+| LCD Backlight (Period) | indicator_period | indicator_period |  | Number | 
+| LCD Backlight (Flash) | indicator_flash | indicator_flash |  | Number | 
+| Switch 1 | switch_binary1 | switch_binary | Switch | Switch | 
 | Dimmer 1 | switch_dimmer1 | switch_dimmer | DimmableLight | Dimmer | 
-| Switch 2  [Deprecated]| switch_binary2 | switch_binary | Switch | Switch | 
+| LED 1 (Level) | indicator_level1 | indicator_level |  | Dimmer | 
+| LED 1 (Period) | indicator_period1 | indicator_period |  | Number | 
+| LED 1 (Flash) | indicator_flash1 | indicator_flash |  | Number | 
+| Switch 2 | switch_binary2 | switch_binary | Switch | Switch | 
 | Dimmer 2 | switch_dimmer2 | switch_dimmer | DimmableLight | Dimmer | 
-| Switch 3  [Deprecated]| switch_binary3 | switch_binary | Switch | Switch | 
+| LED 2 (Level) | indicator_level2 | indicator_level |  | Dimmer | 
+| LED 2 (Period) | indicator_period2 | indicator_period |  | Number | 
+| LED 2 (Flash) | indicator_flash2 | indicator_flash |  | Number | 
+| Switch 3 | switch_binary3 | switch_binary | Switch | Switch | 
 | Dimmer 3 | switch_dimmer3 | switch_dimmer | DimmableLight | Dimmer | 
-| Switch 4  [Deprecated]| switch_binary4 | switch_binary | Switch | Switch | 
+| LED 3 (Level) | indicator_level3 | indicator_level |  | Dimmer | 
+| LED 3 (Period) | indicator_period3 | indicator_period |  | Number | 
+| LED 3 (Flash) | indicator_flash3 | indicator_flash |  | Number | 
+| Switch 4 | switch_binary4 | switch_binary | Switch | Switch | 
 | Dimmer 4 | switch_dimmer4 | switch_dimmer | DimmableLight | Dimmer | 
-| Switch 5  [Deprecated]| switch_binary5 | switch_binary | Switch | Switch | 
+| LED 4 (Level) | indicator_level4 | indicator_level |  | Dimmer | 
+| LED 4 (Period) | indicator_period4 | indicator_period |  | Number | 
+| LED 4 (Flash) | indicator_flash4 | indicator_flash |  | Number | 
+| Switch 5 | switch_binary5 | switch_binary | Switch | Switch | 
 | Dimmer 5 | switch_dimmer5 | switch_dimmer | DimmableLight | Dimmer | 
-| Switch 6  [Deprecated]| switch_binary6 | switch_binary | Switch | Switch | 
+| LED 5 (Level) | indicator_level5 | indicator_level |  | Dimmer | 
+| LED 5 (Period) | indicator_period5 | indicator_period |  | Number | 
+| LED 5 (Flash) | indicator_flash5 | indicator_flash |  | Number | 
+| Switch 6 | switch_binary6 | switch_binary | Switch | Switch | 
 | Dimmer 6 | switch_dimmer6 | switch_dimmer | DimmableLight | Dimmer | 
+| LED 6 (Level) | indicator_level6 | indicator_level |  | Dimmer | 
+| LED 6 (Period) | indicator_period6 | indicator_period |  | Number | 
+| LED 6 (Flash) | indicator_flash6 | indicator_flash |  | Number | 
 
-### Switch [Deprecated]
+### Switch
 Switch the power on and off.
 
 The ```switch_binary``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer
 The brightness channel allows to control the brightness of a light.
@@ -86,12 +105,25 @@ This channel provides the scene, and the event as a decimal value in the form ``
 | 5        | 4 x keypress       |
 | 6        | 5 x keypress       |
 
-### Switch 1 [Deprecated]
+### LCD Backlight (Level)
+Sets the indicator brightness.
+
+The ```indicator_level``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LCD Backlight (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LCD Backlight (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 1
 Switch the power on and off.
 
 The ```switch_binary1``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 1
 The brightness channel allows to control the brightness of a light.
@@ -99,12 +131,25 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer1``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Switch 2 [Deprecated]
+### LED 1 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level1``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 1 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period1``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 1 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash1``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 2
 Switch the power on and off.
 
 The ```switch_binary2``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 2
 The brightness channel allows to control the brightness of a light.
@@ -112,12 +157,25 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer2``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Switch 3 [Deprecated]
+### LED 2 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level2``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 2 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period2``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 2 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash2``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 3
 Switch the power on and off.
 
 The ```switch_binary3``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 3
 The brightness channel allows to control the brightness of a light.
@@ -125,12 +183,25 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer3``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Switch 4 [Deprecated]
+### LED 3 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level3``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 3 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period3``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 3 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash3``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 4
 Switch the power on and off.
 
 The ```switch_binary4``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 4
 The brightness channel allows to control the brightness of a light.
@@ -138,12 +209,25 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer4``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Switch 5 [Deprecated]
+### LED 4 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level4``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 4 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period4``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 4 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash4``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 5
 Switch the power on and off.
 
 The ```switch_binary5``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 5
 The brightness channel allows to control the brightness of a light.
@@ -151,18 +235,46 @@ The brightness channel allows to control the brightness of a light.
 
 The ```switch_dimmer5``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
 
-### Switch 6 [Deprecated]
+### LED 5 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level5``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 5 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period5``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 5 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash5``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
+
+### Switch 6
 Switch the power on and off.
 
 The ```switch_binary6``` channel is of type ```switch_binary``` and supports the ```Switch``` item and is in the ```Switch``` category.
-
-**Note:** This channel is marked as deprecated so should not be used.
 
 ### Dimmer 6
 The brightness channel allows to control the brightness of a light.
             It is also possible to switch the light on and off.
 
 The ```switch_dimmer6``` channel is of type ```switch_dimmer``` and supports the ```Dimmer``` item and is in the ```DimmableLight``` category.
+
+### LED 6 (Level)
+Sets the indicator brightness.
+
+The ```indicator_level6``` channel is of type ```indicator_level``` and supports the ```Dimmer``` item.
+
+### LED 6 (Period)
+Sets the indicator On/Off period.
+
+The ```indicator_period6``` channel is of type ```indicator_period``` and supports the ```Number``` item.
+
+### LED 6 (Flash)
+Sets the number of indicator flash cycles.
+
+The ```indicator_flash6``` channel is of type ```indicator_flash``` and supports the ```Number``` item.
 
 
 

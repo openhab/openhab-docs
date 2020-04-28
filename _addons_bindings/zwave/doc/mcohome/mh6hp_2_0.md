@@ -22,15 +22,7 @@ MH6-HP programmable thermostat is a Z-Wave Plus enabled device for indoor temper
 
 ### Inclusion Information
 
-<table>
-  <tr>
-    <td>
-      <p>
-        In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.
-      </p>
-    </td>
-  </tr>
-</table>
+In normal display, press and hold ^ button to enter interface for adding Z-Wave network. Before device added into network, “\- - -” will display on the screen. Then press ^ once, device will enter learning mode to get a node ID. If adding is successful, a Node ID will display on the screen in a few seconds.
 
 ### Exclusion Information
 
@@ -120,7 +112,84 @@ The ```time_offset``` channel is of type ```time_offset``` and supports the ```N
 
 ## Device Configuration
 
-The device has no configuration parameters defined.
+The following table provides a summary of the 6 configuration parameters available in the MH6-HP.
+Detailed information on each parameter can be found in the sections below.
+
+| Param | Name  | Description |
+|-------|-------|-------------|
+| 1 | Upload temperature format automatically | Upload temperature format automatically |
+| 2 | Upload temperature and humidity automatically | Upload temperature and humidity automatically |
+| 3 | Upload temperature difference | Upload temperature difference |
+| 4 | Upload time interval regularly | Upload time interval regularly |
+| 5 | Upload humidity difference | Upload humidity difference |
+| 255 | Factory reset | Factory reset |
+
+### Parameter 1: Upload temperature format automatically
+
+Upload temperature format automatically
+
+Values in the range 0 to 2 may be set.
+
+The manufacturer defined default value is ```2```.
+
+This parameter has the configuration ID ```config_1_1``` and is of type ```INTEGER```.
+
+
+### Parameter 2: Upload temperature and humidity automatically
+
+Upload temperature and humidity automatically
+
+Values in the range 0 to 3 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_2_1``` and is of type ```INTEGER```.
+
+
+### Parameter 3: Upload temperature difference
+
+Upload temperature difference
+Base on 0.1℃unit, 0x0005 by default, 5*0.1℃=0.5℃, 0x0003~0x03E8 (3-1000)
+Values in the range 3 to 1000 may be set.
+
+The manufacturer defined default value is ```5```.
+
+This parameter has the configuration ID ```config_3_2``` and is of type ```INTEGER```.
+
+
+### Parameter 4: Upload time interval regularly
+
+Upload time interval regularly
+
+Values in the range 10 to 65535 may be set.
+
+The manufacturer defined default value is ```30```.
+
+This parameter has the configuration ID ```config_4_2``` and is of type ```INTEGER```.
+
+
+### Parameter 5: Upload humidity difference
+
+Upload humidity difference
+
+Values in the range 2 to 255 may be set.
+
+The manufacturer defined default value is ```3```.
+
+This parameter has the configuration ID ```config_5_1``` and is of type ```INTEGER```.
+
+
+### Parameter 255: Factory reset
+
+Factory reset
+0x55 (85) Restore the factory setting(write only)This is an advanced parameter and will therefore not show in the user interface without entering advanced mode.
+Values in the range 0 to 85 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_255_1_wo``` and is of type ```INTEGER```.
+This is a write only parameter.
+
 
 ## Association Groups
 

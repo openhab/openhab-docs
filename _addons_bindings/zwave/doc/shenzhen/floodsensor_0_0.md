@@ -221,7 +221,7 @@ Association group 1 supports 5 nodes.
 ### Group 2: BASIC_SET
 
 
-Association group 2 supports 1 node.
+Association group 2 supports 5 nodes.
 
 ### Group 3: NOTIFICATION_REPORT_V4
 
