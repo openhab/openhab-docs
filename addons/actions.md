@@ -107,6 +107,7 @@ var Timer myTimer = createTimer(now.plusMinutes(5), [ |
 The Timer object supports the following methods:
 
 - `cancel`: prevents the scheduled timer from executing
+- `isActive`: returns true if the timer will be executed as scheduled, i.e. it has not been cancelled or completed
 - `isRunning`: returns true if the code is currently executing (i.e. the timer activated the code but it is not done running)
 - `hasTerminated`: returns true if the code has run and completed
 - `reschedule(AbstractInstant instant)`: reschedules the timer to execute at the new time. If the Timer has terminated this method does nothing.
