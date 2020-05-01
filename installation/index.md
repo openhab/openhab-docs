@@ -73,7 +73,7 @@ Before you can start, two decisions have to be made:
 
 1.  openHAB 2 is available as a platform independent archive file or through a package repository:
     - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
-    - **Package setup:** Install though a package repository, including automatic updates.
+    - **Package setup:** Install through a package repository, including automatic updates.
     This option is only available for Debian or Ubuntu derivatives and the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
 2.  Stable release or cutting edge:
