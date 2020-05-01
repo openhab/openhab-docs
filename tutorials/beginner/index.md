@@ -11,7 +11,7 @@ This part covers all the basics to use openHAB after you installed it: how to pe
 The goal of this tutorial is to cover the first steps for new users.
 After performing the first-time setup, you will learn how to install a very simple "binding", the "Network Binding".
 A binding is an additional package for openHAB to be able to interact with all kinds of devices or situations.
-To show you the use and configuriation of a more complex binding, we'll guide you through the installation of the "Zwave Binding", a binding to control devices in a Zwave network.
+To show you the use and configuration of a more complex binding, we'll guide you through the installation of the "Zwave Binding", a binding to control devices in a Zwave network.
 At the end of this tutorial, you will be able to create a local sitemap and your first simple rules.
 
 **This tutorial assumes that you already installed openHAB on your preferred system.

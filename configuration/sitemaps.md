@@ -8,9 +8,7 @@ title: Sitemaps
 # Sitemaps
 
 In openHAB a collection of [Things]({{base}}/concepts/things.html) and [Items]({{base}}/concepts/items.html) represent physical or logical objects in the user's home automation setup.
-Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs),
-including [BasicUI]({{base}}/addons/uis/basic/readme.html),
-the [Android openHAB app](https://play.google.com/store/apps/details?id=org.openhab.habdroid) and others.
+Sitemaps are used to select and prepare these elements in order to compose a user-oriented presentation of this setup for various User Interfaces (UIs), including [BasicUI]({{base}}/configuration/ui/basic/), the [openHAB app for Android]({{base}}/apps/android.html) and others.
 
 This page is structured as follows:
 
@@ -76,7 +74,7 @@ To avoid very long or unstructured lines of element definition, parameters can b
 By encapsulating elements with curly brackets, multiple elements can be nested inside or behind others.
 The `Frame` element type is often used in combination with element blocks.
 Frames are used to visually distinguish multiple elements of the same topic on one interface page.
-When using code blocks behind other element types such as `Text`, `Group` or `Switch`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements.
+When using code blocks behind other element types such as `Text` or `Group`, these UI elements will, in addition to their normal function, be links to a new view, presenting the nested elements. 
 In the above example, multiple Frames are defined and some elements are not visible on the main view but are accessible behind their parent element.
 These are indicated by the ">" control icon on the right of an element.
 
@@ -109,24 +107,22 @@ sitemap <sitemapname> label="<title of the main screen>" {
 
 The following element types may be used in a Sitemap definition file.
 
-| Element                                   | Description                                               |
-|-------------------------------------------|-----------------------------------------------------------|
-| [Chart](#element-type-chart)              | Adds a time-series chart object for [persisted](persistence.html) data. |
-| [Colorpicker](#element-type-colorpicker)  | Allows the user to choose a color from a color wheel. |
-| [Default](#element-type-default)          | Renders an Item in the default UI representation specified by the type of the given Item. |
-| [Frame](#element-type-frame)              | Establishes an area containing various other Sitemap elements. |
-| [Group](#element-type-group)              | Concentrates all elements of a given group in a nested block. |
-| [Image](#element-type-image)              | Renders an image given by an URL. |
-| [Mapview](#element-type-mapview)          | Displays an OSM map based on a given Location Item. |
-| [Selection](#element-type-selection)      | Provides a dropdown or modal popup presenting values to choose from for an Item. |
-| [Setpoint](#element-type-setpoint)        | Renders a value between an increase and a decrease buttons. |
-| [Slider](#element-type-slider)            | Presents a value in a progress-bar-like slider. |
-| [Switch](#element-type-switch)            | Renders an Item as an ON/OFF or multi-button switch. |
-| [Text](#element-type-text)                | Renders an Item as text. |
-| [Video](#element-type-video)              | Displays a video stream, given a direct URL. |
-| [Webview](#element-type-webview)          | Displays the content of a webpage. |
-
-<!-- TODO: check for new element types -->
+| Element                                  | Description                                                                               |
+|------------------------------------------|-------------------------------------------------------------------------------------------|
+| [Chart](#element-type-chart)             | Adds a time-series chart object for [persisted](persistence.html) data.                   |
+| [Colorpicker](#element-type-colorpicker) | Allows the user to choose a color from a color wheel.                                     |
+| [Default](#element-type-default)         | Renders an Item in the default UI representation specified by the type of the given Item. |
+| [Frame](#element-type-frame)             | Establishes an area containing various other Sitemap elements.                            |
+| [Group](#element-type-group)             | Concentrates all elements of a given group in a nested block.                             |
+| [Image](#element-type-image)             | Renders an image given by an URL.                                                         |
+| [Mapview](#element-type-mapview)         | Displays an OSM map based on a given Location Item.                                       |
+| [Selection](#element-type-selection)     | Provides a dropdown or modal popup presenting values to choose from for an Item.          |
+| [Setpoint](#element-type-setpoint)       | Renders a value between an increase and a decrease buttons.                               |
+| [Slider](#element-type-slider)           | Presents a value in a progress-bar-like slider.                                           |
+| [Switch](#element-type-switch)           | Renders an Item as an ON/OFF or multi-button switch.                                      |
+| [Text](#element-type-text)               | Renders an Item as text.                                                                  |
+| [Video](#element-type-video)             | Displays a video stream, given a direct URL.                                              |
+| [Webview](#element-type-webview)         | Displays the content of a webpage.                                                        |
 
 **Choosing the right element type:**
 Data presented by Sitemap elements will almost always originate from a referenced [Item]({{base}}/configuration/items.html).
@@ -134,8 +130,6 @@ Each Item is of a certain Item type, for example `Switch`, `Number` or `String`.
 
 While not all combinations are meaningful, Items of one datatype may be linked to different Sitemap element types.
 This provides the flexibility to present Items in the way desired in your home automation user interface.
-
-<!-- TODO: an example of the above would be useful here -->
 
 **General remarks on parameters:**
 
@@ -203,7 +197,6 @@ Default item=<itemname> [label="<labelname>"] [icon="<iconname>"]
 Presents an Item using the default UI representation specified by the type of the given Item.
 E.g., a `Dimmer` Item will be represented as a [Slider](#element-type-slider) element while a `Player` Item will be rendered with player button controls (Previous/Pause/Play/Next).
 
-<!-- TODO: specify what the default representation for each Item type is -->
 
 ### Element Type 'Text'
 
@@ -309,7 +302,7 @@ Setpoint item=KI_Temperature label="Kitchen [%.1f °C]" minValue=4.5 maxValue=30
 ### Element Type 'Slider'
 
 ```perl
-Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport]
+Slider item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency="frequency"] [switchSupport] [minValue=<min value>] [maxValue=<max value>] [step=<step value>]
 ```
 
 This type presents a value as a user-adjustable control which slides from left (0) to right (100).
@@ -317,8 +310,13 @@ This type presents a value as a user-adjustable control which slides from left (
 -   `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
     This parameter defines the interval in milliseconds for sending increase/decrease requests.
 
--   `switchSupport` is a parameter without an assignment (Classic UI only!).
-    If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+-   `switchSupport` is a parameter without an assignment.
+    - Classic UI: If specified, a short press on the "up" or "down" button switches the item "on" or "off" (0 or 100) respectively.
+    - Android app: If specified, a short press on the item row (except the slider itself) switches the item "on" or "off".
+    - This parameter has no effect in other UIs.
+
+-   `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+-   `step` (defaults to 1) defines the distance between two possible/selectable datapoints on the slider.
 
 **Example:**
 
@@ -331,16 +329,16 @@ Slider item=KI_Temperature label="Kitchen"
 ### Element Type 'Colorpicker'
 
 ```perl
-Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=""]
+Colorpicker item=<itemname> [label="<labelname>"] [icon="<iconname>"] [sendFrequency=<sendFrequency>]
 ```
 
-This element provides the ability to select a color.
-When the user clicks on the middle button, a color wheel will appear.
+This element is a combined control for something like a rgb or rgbw light where you can adjust brightness as well es the color hue.
+The down-button decreases brightness to zero and switches the light off. The up-button sets brightness to full but keeps the previous color (hue).
+The middle button opens an overlay to finetune your color. A color wheel let you pick the hue and a slider allows to set the brightness.
+
 
 - `sendFrequency` is used to distinguish between long and short button presses in the classic (web) frontend.
   This parameter defines the interval in milliseconds for sending increase/decrease requests.
-
-<!-- TODO: This paragraph needs an update. What are the left and the right buttons for? -->
 
 **Example:**
 
@@ -416,9 +414,11 @@ Video [item=<itemname>] [icon="<iconname>"] url="<url of video to embed>" [encod
 ```
 
 Allows you to display a video as part of your Sitemap.
-Note: not all video encodings (formats) are supported; you may need to transcode your video.
+::: tip Note
+Not all video encodings (formats) are supported; you may need to transcode your video.
 The video must be reachable directly via URL.
-An embedded and/or protected video are not supported.
+An embedded and/or protected video is not supported.
+:::
 
 - `item` can refer to a String Item whose state is a URL to a video. Some clients may not (yet) consider `item`.
 - `url` is the default URL from which to retrieve the video if there is no associated Item or if the associated item's state is not a URL.
@@ -447,8 +447,6 @@ Adds a time-series chart object for the display of logged data.
 If no service is specified, openHAB will use the first queryable persistence service it finds.
 Therefore, for an installation with only a single persistence service, this is not required.
 
-<!-- TODO: Is this statement correct?  Isn't there a default persistence setting in paperUI? -->
-
 -   `period` is the scale of the time axis. Valid values are `h, 4h, 8h, 12h, D, 2D, 3D, W, 2W, M, 2M, 4M or Y`.
 
 -   `begin` / `end` sets the beginning and end of the time axis.
@@ -458,13 +456,7 @@ Valid values are in the format: "yyyyMMddHHmm" (yyyy = year, MM = month, dd = da
     Valid values are `true` (always show the legend) and `false` (never show the legend).
     If this parameter is not set, the legend is hidden if there is only one chart series.
 
-<!-- TODO: This paragraph needs an update -->
-
 Visit [Charts](https://github.com/openhab/openhab/wiki/Charts) in the Wiki for examples.
-
-<!-- TODO
-![Presentation of the Chart element in BasicUI](images/sitemap_demo_chart.png)
--->
 
 **Other options to look out for:**
 The Chart element type is a good way to present time series data quickly.
@@ -473,20 +465,9 @@ See this [Tutorial](https://community.openhab.org/t/13761/1) for more details.
 
 **Technical constraints and details:**
 
-- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](https://www.openhab.org/addons/persistence/rrd4j)).
+- When using rrd4j persistence, the strategy `everyMinute` (60 seconds) has to be used. Otherwise no data will be persisted (stored) and the chart will not be drawn properly (see [rrd4j Persistence](/addons/persistence/rrd4j)).
 - The visibility of multiple Chart objects may be toggled to simulate changing the Chart period; non-visible Chart widgets are NOT generated behind the scenes until they become visible.
 - When charting a group of item, make sure that every label is unique. If the label contains spaces, the first word of the label must be unique. Identical labels result in an empty chart.
-
-<!-- TODO: This paragraph needs an update -->
-
-<!-- TODO: Element type list is not supported and throws NPE in BasicUI
-### Element Type 'List'
-
-```perl
-List item=<itemname> [label="<labelname>"] [icon="<iconname>"] [separator=""]
-```
-Splits a String Item at each separator into multiple rows.
--->
 
 ## Mappings
 
@@ -519,18 +500,18 @@ By using a Switch or Selection element with a mappings array, you can replace th
 This mapping changes the displayed power state of the TV from "ON" and "OFF" to the more accurate terms, "on" and "standby".
 Similarly, mapping above changes the numbers "1", "2", and "3" to "DasErste", "BBC One", and "Cartoon Network" respectively.
 
-In the third and forth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
+In the third and fourth examples above, only a subset of the possible values of items belonging to a heating system are presented to the user.
 This limits the possible input values, which is yet another often occurring use case for mappings.
 
 ## Dynamic Sitemaps
 
-All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon](/docs/configuration/items.html#icons-dynamic), depending on certain Item states.
+All Sitemap elements can be configured to be hidden, color highlighted or to have a [dynamic icon]({{base}}/configuration/items.html#dynamic-icons), depending on certain Item states.
 A few practical use cases are:
 
 - Show a battery warning if the voltage level of a device is below 30%
 - Hide further control elements for the TV if it is turned off
 - Highlight a value with a warning color if it is outside accepted limits
-- Present a special icon, depending on the state of an item (a [dynamic icon](/docs/configuration/items.html#icons-dynamic))
+- Present a special icon, depending on the state of an item (a [dynamic icon]({{base}}/configuration/items.html#dynamic-icons))
 
 ### Visibility
 
@@ -606,39 +587,42 @@ Note also, the effect of omitting `Temperature` and the comparison operator in t
 
 Below is a list of standard colors and their respective RGB color codes.
 
-| Color Name  | Preview and RGB Color Code              |
-|-------------|-----------------------------------------|
-| maroon      | *`► #800000`*{: style="color: #800000"} |
-| red         | *`► #ff0000`*{: style="color: #ff0000"} |
-| orange      | *`► #ffa500`*{: style="color: #ffa500"} |
-| olive       | *`► #808000`*{: style="color: #808000"} |
-| yellow      | *`► #ffff00`*{: style="color: #ffff00"} |
-| purple      | *`► #800080`*{: style="color: #800080"} |
-| fuchsia     | *`► #ff00ff`*{: style="color: #ff00ff"} |
-| white       | *`► #ffffff`*{: style="color: #ffffff"} |
-| lime        | *`► #00ff00`*{: style="color: #00ff00"} |
-| green       | *`► #008000`*{: style="color: #008000"} |
-| navy        | *`► #000080`*{: style="color: #000080"} |
-| blue        | *`► #0000ff`*{: style="color: #0000ff"} |
-| teal        | *`► #008080`*{: style="color: #008080"} |
-| aqua        | *`► #00ffff`*{: style="color: #00ffff"} |
-| black       | *`► #000000`*{: style="color: #000000"} |
-| silver      | *`► #c0c0c0`*{: style="color: #c0c0c0"} |
-| gray        | *`► #808080`*{: style="color: #808080"} |
+| Color Name | Preview                                       | RGB Color Code |
+|------------|-----------------------------------------------|----------------|
+| maroon     | <div style="color: #800000;">&#11044;</div>   | `#800000`      |
+| red        | <div style="color: #ff0000;">&#11044;</div>   | `#ff0000`      |
+| orange     | <div style="color: #ffa500;">&#11044;</div>   | `#ffa500`      |
+| olive      | <div style="color: #808000;">&#11044;</div>   | `#808000`      |
+| yellow     | <div style="color: #ffff00;">&#11044;</div>   | `#ffff00`      |
+| purple     | <div style="color: #800080;">&#11044;</div>   | `#800080`      |
+| fuchsia    | <div style="color: #ff00ff;">&#11044;</div>   | `#ff00ff`      |
+| pink       | <div style="color: #ffc0cb;">&#11044;</div>   | `#ffc0cb`      |
+| white      | <div style="color: #ffffff;">&#11044;</div>   | `#ffffff`      |
+| lime       | <div style="color: #00ff00;">&#11044;</div>   | `#00ff00`      |
+| green      | <div style="color: #008000;">&#11044;</div>   | `#008000`      |
+| navy       | <div style="color: #000080;">&#11044;</div>   | `#000080`      |
+| blue       | <div style="color: #0000ff;">&#11044;</div>   | `#0000ff`      |
+| teal       | <div style="color: #008080;">&#11044;</div>   | `#008080`      |
+| aqua       | <div style="color: #00ffff;">&#11044;</div>   | `#00ffff`      |
+| black      | <div style="color: #000000;">&#11044;</div>   | `#000000`      |
+| silver     | <div style="color: #c0c0c0;">&#11044;</div>   | `#c0c0c0`      |
+| gray       | <div style="color: #808080;">&#11044;</div>   | `#808080`      |
+| gold       | <div style="color: #ffd700;">&#11044;</div>   | `#ffd700`      |
 
 Please take note that colors other than those listed in the list above may be used.
-Generally, you can expected that valid HTML colors will be accepted (e.g. "green", "lightgrey", "#334455"), but note that a UI may only accept internally defined colors, or work with a special theme.
-The color names above are agreed on between all openHAB UIs and are therefor your safest choice.
+Generally, you can expected that valid HTML colors will be accepted (e.g. `green`, `lightgrey`, `#334455`), but note that a UI may only accept internally defined colors, or work with a special theme.
+The color names above are agreed on between all openHAB UIs and are therefore your safest choice.
+Colors defined by a human-readable name may be adjusted for higher contrast, e.g. on a dark theme `black` may be displayed as white, because white has a higher contrast to the dark background compared to black.
 
 ### Icons
 
-openHAB allows a set of icons to be assigned to the different states of an Item and therefor to be presented in a Sitemap.
+openHAB allows a set of icons to be assigned to the different states of an Item and therefore to be presented in a Sitemap.
 Please refer to the documentation on [Item configuration](items.html) for details.
 
-![battery-0]({{base}}/addons/iconsets/classic/icons/battery-0.png "battery-0")
-![battery-30]({{base}}/addons/iconsets/classic/icons/battery-30.png "battery-30")
-![battery-60]({{base}}/addons/iconsets/classic/icons/battery-60.png "battery-60")
-![battery-100]({{base}}/addons/iconsets/classic/icons/battery-100.png "battery-100")
+![battery-0](/iconsets/classic/battery-0.png "battery-0")
+![battery-30](/iconsets/classic/battery-30.png "battery-30")
+![battery-60](/iconsets/classic/battery-60.png "battery-60")
+![battery-100](/iconsets/classic/battery-100.png "battery-100")
 
 ## Full Example
 
@@ -689,7 +673,7 @@ Explanation:
 
 ## Further notes and comparison details
 
--   String comparisons are case sensitive, so `==ON` is not the same a `==on`.
+-   String comparisons are case sensitive, so `==ON` is not the same as `==on`.
 
 -   DateTime comparisons are relative to the current time and specified in seconds.
     So the expression `Lights_On_Time > 300` will return true if the DateTime Item is set to a value that's newer than the past 5 minutes (300 seconds).

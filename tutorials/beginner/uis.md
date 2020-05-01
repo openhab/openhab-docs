@@ -10,7 +10,7 @@ openHAB offers different UIs in its standard configuration: the *Paper UI*, the 
 
 ## The Paper UI
 
-The Paper UI is a new interface that helps setting up and configuring your openHAB instance.
+The Paper UI is an interface that helps setting up and configuring your openHAB instance.
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
 
 -   Add-on management: Easily install or uninstall openHAB add-ons
@@ -29,7 +29,7 @@ All these aspects are explained in the rest of this tutorial.
 
 Here you can find a small screencast about the Paper UI:
 
-[![Paper UI](http://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
+[![Paper UI](https://img.youtube.com/vi/MV2a5qwtmRE/0.jpg)](http://www.youtube.com/watch?v=MV2a5qwtmRE)
 
 ## The Basic UI
 
@@ -39,9 +39,7 @@ The UIs features are:
 
 - Responsive layout suitable for various screen sizes
 - AJAX navigation
-- Live update<sup>1</sup>
-
-<sup>1</sup>: as for now, only control states and icons are updated. Visibility changes require a page reload.
+- Live update
 
 ![](images/screenshot-1-full.png)
 

@@ -17,3 +17,8 @@ project.pbxproj
 
 #vscode
 .vscode
+
+# Built docs
+docs
+addons/integrations
+vuepress

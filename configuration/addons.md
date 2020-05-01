@@ -58,7 +58,7 @@ This is because the mqtt Binding is a 1.x add-on.
 The trailing `1` has to be appended for `binding`- and `misc`-addons.
 It is *not needed* for other addon types like `persistence`.
 
-With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
+With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CONF/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux](/docs/installation/linux.html#file-locations) or [Windows](/docs/installation/windows.html#file-locations).
 
@@ -66,12 +66,11 @@ The file could look like this (depending on your choosen package and already ins
 
 ```text
 package = standard
-ui = basic,paper,habpanel
+ui = basic,paper,habpanel,restdocs
 action = pushover
 binding = astro,mqtt1
 transformation = jsonpath
 persistence = influxdb
-misc = restdocs
 ```
 
 To install the network Binding like we want in this example, we just need to add the id *network* to the Binding section.
@@ -85,14 +84,14 @@ After saving the file, the add-on will be installed.
 
 ## Through manually provided add-ons
 
-> Attention:
-> This option is adressed to advanced users.
-> Installing add-on's with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
-> Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
-
+::: warning Attention
+This option is adressed to advanced users.
+Installing add-on's with a `.jar`file can lead to problems, because add-on dependencies may not be installed.
+Please make sure to use this option only in special cases (like add-on testing for an upcoming version) or when you know what you are doing.
+:::
 For this installation option you need a bundles `.jar` file.
-One way of retrieving those files is mentiones above in the openHAB console part.
+One way of retrieving those files is mentioned above in the openHAB console part.
 
-Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
+Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
-Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macosx.html#file-locations)).
+Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macos.html#file-locations)).

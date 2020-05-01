@@ -52,7 +52,7 @@ You can find all important information in the extensions [readme file](https://g
 {: #others}
 ## Other Editor Integrations
 
-The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality like the two tools above.
+The here summarized projects provide syntax highlighting for different text editors, but have no _on top_ functionality.
 
 ### mcedit
 
@@ -64,7 +64,7 @@ You can find the syntax files and installation instructions on [openhab-mcedit](
 
 Notepad++ is a free source code editor for Windows.
 Version 6.2 or above is required.
-You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [editors documentation](http://docs.notepad-plus-plus.org/index.php/User_Defined_Language_Files#How_to_install_user_defined_language_files).
+You can find the syntax files on [openhab-samples](https://github.com/thefrip/openhab-samples) and install the files like it is described in the [notepad++ user manual](https://npp-user-manual.org/docs/user-defined-language-system/).
 
 ### Vim
 
@@ -76,7 +76,13 @@ You can find the syntax file and installation instructions on [openhab-vim](http
 Nano is a common editor in Linux systems.
 You can find the syntax file and installation instructions on [openhabnano](https://github.com/airix1/openhabnano).
 
-### Textwrangler
+### TextWrangler
 
-Textwrangler is a text and code editor for MAC OS X.
+TextWrangler is a text and code editor for macOS.
 You can find the syntax file and installation instructions on [openhab-syntax-textwrangler](https://github.com/GrisoMG/openhab-syntax-textwrangler).
+
+### BBEdit
+
+BBEdit is a text and code editor for macOS and the offical successor of TextWrangler.
+You can find the syntax file and installation instructions on [BBEdit-openHAB-language](https://github.com/mjmeijer/BBEdit-openHAB-language).
+

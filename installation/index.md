@@ -7,9 +7,9 @@ title: Installation Overview
 
 # Installation Overview
 
-openHAB 2 is based on the Eclipse SmartHome framework and is fully written in Java.
+openHAB 2 is fully written in Java.
 As such, it only depends on a Java Virtual Machine, which is available for many platforms.
-openHAB can be executed on different versions of **Mac OS X** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
+openHAB can be executed on different versions of **macOS** and **Windows** and many different variants of **Linux** (Ubuntu, Raspbian, ...).
 
 Please be aware of the fact, that openHAB 2 is based on a new core and introduces new concepts.
 Therefore, tutorials and help you may find on the internet for openHAB 1 **might** be outdated!
@@ -37,24 +37,27 @@ Please check the menu to the left for all available options.
 
 ## Prerequisites
 
-Make sure that you have an up to date Java platform installed on your host system.
+Make sure that you have an up to date **Java 8** platform installed on your host system.
 Zulu is currently the recommended Java platform for openHAB.
-[Download](https://zulu.org/download/?show=all) and [installation](http://zulu.org/zuludocs-folder/Content/ZuluInstallationGuide/InstallingZulu/InstallZulu.htm) instructions can be found on Azul Systems' Zulu website.
-Oracle Java is also suitable for most configurations but licencing restrictions may apply.
+[Download](https://www.azul.com/downloads/zulu-community/?&architecture=x86-64-bit&package=jdk#) and [installation](https://docs.azul.com/zulu/zuludocs/ZuluUserGuide/InstallingZulu/InstallationWindowsUsingZuluMSIFile.htm) instructions can be found on Azul Systems' Zulu website.
+Oracle Java is also suitable for most configurations but licensing restrictions may apply.
 OpenJDK may also be used, but it has some [known limitations](https://community.openhab.org/t/running-openhab-2-on-openjdk/21443/8?u=gatekeeper6838) with openHAB and is not recommended.
 
-| Java Platform | Advantages | Disadvantages |
-|---------------|------------|---------------|
-| [Zulu](https://www.azul.com/products/zulu/) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](http://www.azul.com/downloads/zulu-embedded/) |  |
-| [Oracle Java](https://java.com/en/) | Full openHAB support on all platforms | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
-| [OpenJDK](http://openjdk.java.net) | Supported by many Linux distributions, packages [typically available](http://openjdk.java.net/install/index.html) | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates |
+| Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
+|---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| [Zulu](https://zulu.org/download/?show=all) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](http://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
+| [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
+| [OpenJDK](http://openjdk.java.net)          | Supported by many Linux distributions, packages [typically available](http://openjdk.java.net/install/index.html)                                                                     | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates                                                                           |
 
-Please use the **32-bit version** of the JVM for ARM platforms, even on 64-bit operating systems.
-Serial connections won't work with a 64-bit JVM, preventing bindings like Z-Wave from functioning.
+Please download and install the **Java 8** version of the JVM.
+openHAB does not work well with newer Java versions such as Java 9 or Java 11.
 
-As for now, a pre-release **Java 9** installation is not recommended and is not yet supported by openHAB 2.
+The **64-bit version** of the JVM is recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
-For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org), the minimum recommended Java 8 revision is "101".
+The **32-bit version** of the JVM is recommended on ARM platforms such as the Raspberry Pi.
+The 32-bit JVM performs better on the ARM platform and some add-ons use libraries that do not work with a 64-bit JVM on the ARM platform.
+
+For best compatibility, namely with the openHAB Cloud service [myopenhab.org](http://www.myopenhab.org) and the [Eclipse IoT Marketplace]({{base}}/configuration/eclipseiotmarket.html), the minimum recommended Java 8 revision is "161".
 Attention: Most package managers serve an **older revision**.
 Check your current Java version by opening a command line console and typing `java -version`:
 
@@ -66,16 +69,16 @@ Java HotSpot(TM) Client VM (build 25.121-b13, mixed mode)
 
 ## Setup variants
 
-Before you can start, three decisions have to be made:
+Before you can start, two decisions have to be made:
 
 1.  openHAB 2 is available as a platform independent archive file or through a package repository:
-    - **Manual setup:** Download and extract a platform independent zip archive: [Mac OS X](macosx.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
+    - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
     - **Package setup:** Install though a package repository, including automatic updates.
     This option is only available for Debian or Ubuntu derivatives and the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
 2.  Stable release or cutting edge:
     - **Stable:** Use the latest official release ([hosted on Bintray](https://bintray.com/openhab/mvn/openhab-distro)).
-    - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on CloudBees](https://openhab.ci.cloudbees.com/job/openHAB-Distribution)).
+    - **Snapshot:** Benefit from the latest changes in the daily created snapshot ([hosted on openhab.org](https://ci.openhab.org/)).
 
 ## Installation
 

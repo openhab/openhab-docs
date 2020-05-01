@@ -1,19 +1,15 @@
-# openHAB 2.x Documentation Project
-
-![](https://img.shields.io/badge/markdown_errors-0-orange.svg)
-[![](https://img.shields.io/badge/linkchecker_errors-89-red.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
-[![](https://img.shields.io/badge/linkchecker_warnings-421-yellow.svg)](https://htmlpreview.github.io/?https://github.com/openhab/openhab-docs/blob/gh-pages/invalidlinks.html)
+# openHAB 3.x Documentation Project
 
 ## Introduction
 
-This repository contains the documentation for openHAB.
+This repository contains the documentation for openHAB 3.x.
 
-The result is available at [https://www.openhab.org/docs/](https://www.openhab.org/docs/), [https://www.openhab.org/addons/](https://www.openhab.org/addons/) and [http://docs.openhab.org/](http://docs.openhab.org/) [Deprecated]
+The result is available at [https://next.openhab.org/docs/](https://www.openhab.org/docs/) and [https://next.openhab.org/addons/](https://www.openhab.org/addons/).
 
 ## How it works
 
 In this repo you can find and improve all *general* documentation contents.
-In fact that is all you can see in the `master` branch.
+In fact that is all you can see in the `2.5.x` branch.
 There are also other *read-only* branches, which hold external content like the *add-ons* and *concepts* documentation.
 We will read about them later.
 
@@ -22,7 +18,7 @@ We will read about them later.
 Correct, this is done in the original repository of the add-on.
 You may want to know how to find the right file in all of those repos?
 This is fairly easy: 
-on most of the documentation pages on https://www.openhab.org/, 
+on most of the documentation pages on https://next.openhab.org/, 
 you will find the following link at the bottom, which will point you directly to the file you want to improve.
 
 ![Contribution link to a specific page](./images/contribution_link.png)
@@ -37,7 +33,7 @@ This is done exactly the same way as for the code repositories, simply through p
 When editing a page through the _"Edit this page on GitHub"_ link on the website, you will be given the opportunity to
 create a pull request directly from GitHub. 
 Please read our [contribution guidelines](CONTRIBUTING.md) and try to follow
-them as bext as you can before submitting a change for review - but don't worry if you don't understand all of them, we
+them as best as you can before submitting a change for review - but don't worry if you don't understand all of them, we
 will help you to get it right.
 
 ## So what are the other branches for?
@@ -48,19 +44,23 @@ You can read a bit more below about our external ressources and how we get them.
 
 ### Automatically Generated Parts
 
-Those parts include __all__ add-on documentation files, no matter if they are from the Eclipse SmartHome repo, the
-`openhab1-addons` repo, the `openhab2-addons` repo or any special binding repo like *habmin*, *zwave* or the *alexa skill*.
-The "Concepts" articles also come from Eclipse SmartHome and are maintained there.
+Those parts include __all__ add-on documentation files, no matter if they are from the `openhab-core` repo, the `openhab-addons` repo or any special binding repo like *habmin*, *zwave* or the *alexa skill*.
 
 We are keeping all those files at their original location, because it simply doesn't make sense to keep them here.
 Imagine you want to do an improvement of the zwave binding and have to update the readme file in a completely different place.
 That's twice the effort and also we would have to coordinate two Pull Requests.
 So we are saving time for everyone by keeping those files at their original location along with the code.
 
+::: tip UNDER REVIEW
+
+The process below is subject to changes until the openHAB 3.x website become the production one.
+
+:::
+
 ### How the documentation build works
 
-We have set up our [build server](https://openhab.ci.cloudbees.com/view/Documentation/) to do the magic automatically.
-There are several triggers (mostly time based), which will then *gather the external contents* and move them to our *final* branch.
+We have set up our [build server](https://ci.openhab.org/view/Documentation%20(3.x)/) to do the magic automatically.
+There are several triggers (mostly time based), which will then *gather the external contents* and move them to our [final](https://github.com/openhab/openhab-docs/tree/final) branch.
 You can find this migrated external content in the *final* branch under:
 
 - `_addons_*`
@@ -73,6 +73,18 @@ The external content is updated by the following toolchain:
 
 Everything that gets updated in the *master* branch will be also merged over to the *final* branch automatically.
 Afterwards we will redeploy the website with the latest content from the *final* branch at regular intervals.
+
+#### Build triggers investigated
+
+There are two triggers available currently.
+The `merge docs` job is triggerd after something has been added to the documentation through this repository.
+The `gather external docs` job is started with a **succesful** build of the openhab-distribution.
+A succesful disribution build will include all of the latest changes that have been made to external sources like addons.
+So when a distribution build is succesful, we will trigger the gathering of all external sources.
+
+When one of these jobs is finished, we will then notify our website hosting service to start a new website build.
+This is recognized due to new commits in the final branch of this repository.
+The new build will include all the latest changes in the code repository and in all external repositories.
 
 ## Documentation Versioning
 

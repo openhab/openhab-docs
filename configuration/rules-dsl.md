@@ -21,7 +21,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 
 ### File Location
 
-Rules are placed in the folder `${openhab.home}/conf/rules`.
+Rules are placed in the folder `$OPENHAB_CONF/rules`.
 The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
@@ -36,8 +36,10 @@ This makes the creation of rules very easy!
 
 ### The Syntax
 
-Note: The rule syntax is based on [Xbase](http://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](http://www.eclipse.org/xtend/), which is built on top of Xbase as well.
+::: tip Note
+The rule syntax is based on [Xbase](http://www.eclipse.org/Xtext/#xbase) and as a result it is sharing many details with [Xtend](http://www.eclipse.org/xtend/), which is built on top of Xbase as well.
 As a result, we will often point to the Xtend documentation for details.
+:::
 
 A rule file is a text file with the following structure:
 
@@ -146,7 +148,7 @@ Member of <group> received update [<state>]
 Member of <group> changed [from <state>] [to <state>]
 ```
 
-The `Member of` trigger only works with Items that are a direct member of the Group. 
+The `Member of` trigger only works with Items that are a direct member of the Group.
 It does not work with members of nested subgroups.
 Also, as with Item event-based triggers, when using `received command`, the Rule will trigger before the Item's state is updated.
 So in Rules where the Rule needs to know what the command was, use the `receivedCommand` implicit variable instead of `triggeringItem.state`.
@@ -154,7 +156,7 @@ So in Rules where the Rule needs to know what the command was, use the `received
 {: #time-based-triggers}
 ### Time-based Triggers
 
-You can either use some pre-defined expressions for timers or use a [cron expression](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06) instead:
+You can either use some pre-defined expressions for timers or use a [cron expression](https:////www.quartz-scheduler.org/documentation/quartz-2.2.2/tutorials/tutorial-lesson-06.html) instead:
 
 ```java
 Time is midnight
@@ -172,7 +174,7 @@ A cron expression takes the form of six or optionally seven fields:
 6. Day-of-Week
 7. Year (optional field)
 
-for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.x/tutorials/tutorial-lesson-06).
+for more information see the [Quartz documentation](http://www.quartz-scheduler.org/documentation/quartz-2.1.7/tutorials/tutorial-lesson-06.html).
 
 You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [FreeFormatter.com](http://www.freeformatter.com/cron-expression-generator-quartz.html) to generate cron expressions.
 
@@ -181,10 +183,10 @@ You may also use [CronMaker](http://www.cronmaker.com/) or the generator at [Fre
 
 Two system-based triggers are provided as described in the table below:
 
-| Trigger           |  Description |
-|-------------------|--------------|
-| System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) related to that rule file are modified in a .items file. |
-| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down. |
+| Trigger           | Description                                                                                                                                                                                        |
+|-------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| System started    | System started is triggered upon openHAB startup, after the rule file containing the System started trigger is modified, or after item(s) are modified in a .items file. |
+| System shuts down | Rules using the 'System shuts down' trigger execute when openHAB shuts down.                                                                                                                       |
 
 You may wish to use the 'System started' trigger to initialize values at startup if they are not already set.
 
@@ -215,13 +217,15 @@ Thing <thingUID> changed [from <status>] [to <status>]
 
 The status used in the trigger and the script is a string (no quotes).
 You can find all the possible values for status from [Thing Status](/docs/concepts/things.html).
-And refer to [Thing Status Action](/addons/#action) to find how to get thing status in the script.
+And refer to [Thing Status Action](/docs/configuration/actions.html#thing-status-action) to find how to get thing status in the script.
 
 The `thingUID` is the identifier assigned to the Thing, manually in your configuration or automatically during auto discovery.
 You can find it from PaperUI or from Karaf remote console.
 For example, one z-wave device can be "zwave:device:c5155aa4:node14".
 
-> Note: You need to use quotes around `thingUID` if it contains special characters such as ':'.
+::: tip Note
+You need to use quotes around `thingUID` if it contains special characters such as ':'.
+:::
 
 {: #channel-based-triggers}
 ### Channel-based Triggers
@@ -233,7 +237,9 @@ Your rules can take actions based upon trigger events generated by these trigger
 You can decide whether you want to catch only a specific or any trigger the channel provides.
 Here is the syntax for these cases (parts in square brackets are optional):
 
-> Note: You need to use quotes around `triggerChannel` if it contains special characters such as `:`.
+::: tip Note
+You need to use quotes around `triggerChannel` if it contains special characters such as `:`.
+:::
 
 ```java
 Channel "<triggerChannel>" triggered [<triggerEvent>]
@@ -244,6 +250,7 @@ Channel "<triggerChannel>" triggered [<triggerEvent>]
 When a binding provides such channels, you can find the needed information in the corresponding binding documentation.
 There is no generic list of possible values for `triggerEvent`,
 The `triggerEvent`(s) available depend upon the specific implementation details of the binding.
+If the Rule needs to know what the received event was, use the [implicit variable]({{base}}/configuration/rules-dsl.html#implicit-variables-inside-the-execution-block) `receivedEvent` to access the information.
 
 Example:
 
@@ -261,7 +268,7 @@ end
 
 The expression language used within scripts is the same that is used in the Xtend language - see the [documentation of expressions](http://www.eclipse.org/xtend/documentation/203_xtend_expressions.html) on the Xtend homepage.
 
-The syntax is very similar to Java, but has many nice features that allows writing concise code.
+The syntax is very similar to Java, but has many nice features that allow writing concise code.
 It is especially powerful in handling collections.
 What makes it a good match for openHAB from a technical perspective is the fact that there is no need to compile the scripts as they can be interpreted at runtime.
 
@@ -293,11 +300,15 @@ The following table summarizes the impact of the two manipulator commands on the
 
 | Command \ Rule Trigger   | `received update` | `received command` | `changed` |
 |--------------------------|-------------------|--------------------|-----------|
-| postUpdate               | ⚡ rule fires      | ❌                 | (depends) |
-| sendCommand              | ❌                | ⚡ rule fires       | (depends) |
+| postUpdate               | ⚡ rule fires      | ❌                  | (depends) |
+| sendCommand              | (❌) see below     | ⚡ rule fires       | (depends) |
 | *Change through Binding* | ⚡ rule fires      | ⚡ rule fires       | (depends) |
 
 **Beware:**
+In most cases, a rule with a trigger of `received update` will fire following the command `sendCommand` as:
+- openHAB auto-updates the status of Items for which the item definition does not contain `autoupdate="false"`
+- the Thing sends a status update to the Item.
+
 Besides the specific manipulator command methods `MyItem.sendCommand(<new_state>)` and `MyItem.postUpdate(<new_state>)`, generic manipulators in the form of `sendCommand(MyItem, <new_state>)` and `postUpdate(MyItem, <new_state>)` are available. The specific versions is normally recommended.
 
 {: #sendcommand-method-vs-action}
@@ -338,59 +349,59 @@ sendCommand("My_Lamp_" + index, ON)
 {: #using-state-of-items-in-rules}
 ### Using the States of Items in Rules
 
-Often it is desired to calculate other values from Item states or to compare Item states against other values 
+Often it is desired to calculate other values from Item states or to compare Item states against other values
 
 In openHAB, every item carries a state.
 The state of an Item is an Object itself and can be accessed with `MyItem.state`.
-A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html). 
-To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations. 
+A complete and up-to-date list of item types are currently allowed in OpenHAB and the command types each item can accept is given in the [openHab documentation for items]({{base}}/concepts/items.html).
+To use the state of an Item in rules it is often necessary to know what type of state the Item is carrying and how to convert it into types that can be used in such operations.
 Conversely, to use the result of a calculation to modify the state of an item may require its transformation into a suitable type.
 
-This section differentiates between command type and state type. 
-For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type. 
-For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType. 
+This section differentiates between command type and state type.
+For ease of reading, it is possible to simply add “type” to the end of a command type thereby obtaining the state type.
+For example, a Color Item can receive an OnOffType, IncreaseDecreaseType, PercentType, or HSBType.
 Therefore the following are all valid commands one can send to a Color Item:
 - `MyColorItem.sendCommand(ON)`
 - `MyColorItem.sendCommand(INCREASE)`
 - `MyColorItem.sendCommand(new PercentType(50))`
 - `MyColorItem.sendCommand(new HSBType(new DecimalType(123), new PercentType(45), new PercentType(67)))`
 
-An alternative way to command or update the state of an item is through the use of specially formatted strings. 
-The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting. 
+An alternative way to command or update the state of an item is through the use of specially formatted strings.
+The section in the [item documentation on formatting]({{base}}/concepts/items.html#state-and-command-type-formatting) details the requirements for the formatting.
 
-Even though many Items accept commands and updates of various different types, each stores its state internally using only one type. 
-The Color Item from the example above will accept various command types, but will only return an HSBType. 
+Even though many Items accept commands and updates of various different types, each stores its state internally using only one type.
+The Color Item from the example above will accept various command types, but will only return an HSBType.
 
-Groups can be declared with any Item type and the internal state of the Group will match that type. 
+Groups can be declared with any Item type and the internal state of the Group will match that type.
 For example, `Group:Switch` will return an OnOffType for its state.
 
-Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations. 
+Each State Type provides a number of convenience methods that will greatly aid in conversion and calculations.
 There are two ways to discover these methods:
 
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
 For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
-Thse methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`. 
-They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.  
+These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`.
+They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
 
 {: #conversions}
 #### Working with Item States: Conversions
 
 *Reminder: For a complete and up-to-date list of what item types are currently allowed in openHAB and the command types each item can accept refer to the section on [items in the openHAB documentation]({{base}}/concepts/items.html).*
 
-Below a **non-exhaustive** list of some more common conversions. 
+Below a **non-exhaustive** list of some more common conversions.
 The interested reader is encouraged to also visit the [forum](https://community.openhab.org) where many more examples can be found.
 
 ##### Conversion of Item.state to String
 
-All Item states can be converted into a string by invoking `MyItem.state.toString`. 
+All Item states can be converted into a string by invoking `MyItem.state.toString`.
 
 ##### Color Item
 
 A Color Item stores an **HSBType**.
-The HSB stands for Hue, Saturation, and Brightness. 
-Often one has the desired color as an RGB values (Red, Green, Blue). 
-The following code can be used to send an RGB value to a Color Item. 
+The HSB stands for Hue, Saturation, and Brightness.
+Often one has the desired color as an RGB value (Red, Green, Blue).
+The following code can be used to send an RGB value to a Color Item.
 
 ```java
 import java.awt.Color
@@ -402,21 +413,21 @@ val newColor = new Color(red, blue, green) // where red, blue, and green are int
 MyColorItem.sendCommand(new HSBType(newColor))
 ```
 
-When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to multiply that PercentType by 255 to obtain a standard 8-bit per color channel RGB. 
-Correspondingly, the for 16 or 32 bit representation, the percent type needs to be multiplied the percent type by 16^2 or 32^2, respectively.
+When individual color values from a HSBType as a PercentType are retrieved, it will be necessary to divide the PercentType by 100 and multiply by 255 to obtain a standard 8-bit per color channel RGB.
+Correspondingly, for the 16 or 32 bit representation, the PercentType needs to divided by 100 and multiplied by 65535 (2 ^ 16 - 1) or 4294967295 (2 ^ 32 - 1), respectively.
 
 ```java
 //Example for conversion to 8-bit representation
 // In rule body
-val red = (MyColorItem.state as HSBType).red * 255
-val green = (MyColorItem.state as HSBType).green * 255
-val blue = (MyColorItem.state as HSBType).blue * 255
+val red = (MyColorItem.state as HSBType).red / 100 * 255
+val green = (MyColorItem.state as HSBType).green / 100 * 255
+val blue = (MyColorItem.state as HSBType).blue / 100 * 255
 ```
 
 ##### Contact Item
 
 A Contact Item carries a  OpenClosedType.
-OpenClosedType is an Enumeration. 
+OpenClosedType is an Enumeration.
 One can convert from Open and Closed to 1 and 0 with code similar to:
 
 ```java
@@ -426,23 +437,24 @@ val contactNum = if (MyContactItem.state == OPEN) 1 else 0
 ##### DateTime Item
 
 A DateTime Item carries a **DateTimeType**.
-DateTimeType presents the biggest challenge when converting and performing calculations. 
-The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`. 
+DateTimeType presents the biggest challenge when converting and performing calculations.
+The problems stem from the fact that by default the Rules use a Joda DateTime class to represent time, most notably `now`.
 However, DateTimeType is not a Joda DateTime and in fact the two are incompatible, requiring some conversion in order to use the two together.
 
-The lowest common denominator when working with time is to get at the epoch value. 
-Epoch is the number of milliseconds that has passed since 1 January 1970 GMT and stored in a `long`. 
-With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and visa versa.
+The lowest common denominator when working with time is to get at the epoch value.
+Epoch is the number of milliseconds that have passed since 1 January 1970 GMT and stored in a `long`.
+With epoch, one can compare two dates together, convert a Joda DateTime to a DateTimeType and vice versa.
 
 ```java
 // Get epoch from DateTimeType
-val Number epoch = (MyDateTimeItem.state as DateTimeType).calendar.timeInMillis
+val Number epoch = (MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis
 
 // Get epoch from Joda DateTime
 val Number nowEpoch = now.millis
 
 // Convert DateTimeType to Joda DateTime
-val joda = new DateTime((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)
+val jodaVariantOne = new DateTime(MyDateTimeItem.state.toString)
+val jodaVariantTwo = new DateTime((MyDateTimeItem.state as DateTimeType).zonedDateTime.toInstant.toEpochMilli)
 
 // Convert Joda DateTime to DateTimeType
 val calendar = java.util.Calendar::getInstance
@@ -450,7 +462,7 @@ calendar.timeInMillis = now.millis
 val dtt = new DateTimeType(calendar)
 ```
 
-In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item. 
+In certain cases it is needed to convert an epoch timestamp to a human readable and/or store it in a DateTimeType and a DateTime Item.
 Here an option to do so utilizing SimpleDateFormat:
 
 ```java
@@ -468,25 +480,25 @@ val DateTimeType timestamp = DateTimeType.valueOf(timestampString)
 val String datetime_string  = DateTime_Item.state.format("%1$td.%1$tm.%1$ty %1$tH:%1$tM"))
 ```
 
-Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date. 
+Both Joda DateTime as well as DateTimeType provide a number of useful methods for comparing date times together and/or extracting parts of the date.
 For some examples:
 
 ```java
 // See if DateTimeType is before Joda DateTime
-if(now.isBefore((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis)) ...
+if(now.isBefore((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis)) ...
 
 // See if DateTimeType is after Joda DateTime
-if(now.isAfter((MyDateTimeItem.state as DateTimeType).calendar.timeInMillis))...
+if(now.isAfter((MyDateTimeItem.state as DateTimeType).zonedDateTime.timeInMillis))...
 
 // Get the hour in the day from a DateTimeType
-val hours = (MyDateTimeItem.state as DateTimeType).calendar.get(Calendar::HOUR_OF_DAY)
+val hours = (MyDateTimeItem.state as DateTimeType).zonedDateTime.get(Calendar::HOUR_OF_DAY)
 // See the Calendar javadocs for the full set of parameters available
 ```
 
 ##### Dimmer Item
 
 A Dimmer Item carries a **PercentType**.
-PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value. 
+PercentType can be cast to and treated like a java.lang.Number, where Number represents any type of numerical value.
 The Rules language supports doing mathematical and logical operations with Numbers
 The Number Object supports methods for getting primitive versions of that Number if needed.
 
@@ -502,7 +514,7 @@ val float dimAsFloat = dimVal.floatValue
 If the conversion from or into hexadecimal values is necessary, the following examples may be useful:
 
 ```java
-// to convert a hex_code (a number expressed in hexadecimals) to a Number type 
+// to convert a hex_code (a number expressed in hexadecimals) to a Number type
 val dimVal =  Integer.parseInt(hex_code, 16) as Number
 //for very large_hex_codes use
 val dimVal = Long.valueOf(large_hex_code, 16).longValue() as Number
@@ -516,7 +528,7 @@ Additional conversions that might be useful are listed below under NumberItem
 ##### Location Item
 
 A Location Items carries a **PointType**.
-A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters. 
+A PointType consist of two or three DecimalType numbers representing latitude and longitude in degrees, and an optional altitude in meters.
 Here are a few examples:
 
 ```java
@@ -576,20 +588,20 @@ var isQuantity = myItem.state instanceof QuantityType
 
 Other useful conversions can be found under Dimmer Item.
 
-One warning comes with DecimalType (also holds true for QuantityType). 
-The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4). 
+One warning comes with DecimalType (also holds true for QuantityType).
+The full explanation is [beyond the scope of this introduction](https://community.openhab.org/t/ambiguous-feature-call-whats-wrong-designer-user-or-bug/9477/4).
 To avoid an error mentioning an "Ambiguous Method Call" always cast the state of a DecimalType to a Number, not DecimalType.
 
 ##### Player Item
 
 The Player item allows to control players (e.g. audio players) with commands such as Play, Pause, Next, Previous, Rewind and Fastforward.
-The Player Item carries three types with predefined commands 
+The Player Item carries three types with predefined commands
 
-State Type | Commands
-------------------|------------------
-**PlayPauseType** | PLAY, PAUSE
-**RewindFastforwardType** | REWIND, FASTFORWARD
-**NextPreviousType** | NEXT, PREVIOUS
+| State Type                | Commands            |
+|---------------------------|---------------------|
+| **PlayPauseType**         | PLAY, PAUSE         |
+| **RewindFastforwardType** | REWIND, FASTFORWARD |
+| **NextPreviousType**      | NEXT, PREVIOUS      |
 
 These types can be convert from Open and Closed to 1 and 0 with code similar to the Contact Item (OpenClosedType)
 
@@ -626,7 +638,7 @@ val itemvalue = new java.math.BigDecimal(Integer::parseInt(myHexValue, 16))
 ##### Switch Item
 
 A Switch Item carries a OnOffType.
-OnOffType is an Enumeration. 
+OnOffType is an Enumeration.
 One can convert from ON and OFF to 1 and 0 with code similar to:
 
 ```java
@@ -636,27 +648,27 @@ val SwitchNum = if (MySwitchItem.state == ON) 1 else 0
 
 #### Deeper Dive
 
-While interacting with Item states, care must be taken to understand the difference between Objects and primitives. 
-As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance. 
+While interacting with Item states, care must be taken to understand the difference between Objects and primitives.
+As all object-oriented computer languages, Java and the Rules DSL have implemented the concept of inheritance.
 However, inheritance only applies to Objects and does **not** apply to primitives; examples for primitives are `integer` and `boolean`.
-Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different. 
-This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do. 
-The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`. 
+Inheritance allows to take an existing Object type, called a Class, and adding to it to make it into something different.
+This “something different” becomes a Child of the original Class, the parent. The Child still can do everything the parent could do.
+The top level base Class for all Objects in Java and the Rules DSL is called simply `Object`.
 
-In addition to other useful things, the class `Object` implements a method called `toString`. 
-And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method. 
-_However primitives do not inherit from Object. 
+In addition to other useful things, the class `Object` implements a method called `toString`.
+And since `Object` is the parent of all Objects, ALL Classes also implement a `toString` method.
+_However primitives do not inherit from Object.
 They don't inherit from anything and they don't have any methods at all which includes the lack of a toString Method._
 
-Objects are typically equipped with many more type conversion methods, while primitives do not support any type conversion. 
+Objects are typically equipped with many more type conversion methods, while primitives do not support any type conversion.
 This distinction is very relevant when trying to use the result of a calculation and apply it to an Item state.
-The `sendCommand` is a generic action and needs to be able to work with all Item types. 
-Actions only support two String arguments as all Objects will support the conversion `toString`. 
-`sendCommand (MyItem, new_state)` will automatically use the `MyItem.toString` method to convert MyItem into a String. 
-It will also attempt to do so with the second argument if `new_state` is not already a String. 
-However, if the second argument is a primitive, and not an Object, it does not carry a method `toString`. 
-Thus, Rules DSL will not be able to cast `new_state` as a String. 
-As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive as the second argument, will almost always fail. 
+The `sendCommand` is a generic action and needs to be able to work with all Item types.
+Actions only support two String arguments as all Objects will support the conversion `toString`.
+`sendCommand (MyItem, new_state)` will automatically use the `MyItem.toString` method to convert MyItem into a String.
+It will also attempt to do so with the second argument if `new_state` is not already a String.
+However, if the second argument is a primitive, and not an Object, it does not carry a method `toString`.
+Thus, Rules DSL will not be able to cast `new_state` as a String.
+As a consequence, the use of `sendCommand(MyItem, primitive)`, using a primitive as the second argument, will almost always fail.
 
 The different syntax for the generic and the objective-specific differs and is given in the table below:
 
@@ -665,10 +677,10 @@ The different syntax for the generic and the objective-specific differs and is g
 | `postUpdate(MyItem, new_state)`  | `MyItem.postUpdate(new_state)`  |
 | `sendCommand(MyItem, new_state)` | `MyItem.sendCommand(new_state)` |
 
-The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires. 
+The benefit of using Objects over primitives is apparent through the following type conversions that are automatically invoked by Object as the context requires.
 Using the method `MyItems.sendCommand()` that is owned by MyItem will use the `sendCommand` method that is suitable to make the necessary type conversions.
-For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method. 
-Each of these separate methods is individually written to handle all of these different types of Objects. 
+For example, the `NumberItem` class would have a `sendCommand(int)`, `sendCommand(long)`, `sendCommand(float)`, `sendCommand(double)`, `sendCommand(Number)`, `sendCommand(DecimalType)`, and `sendCommand(String)` method.
+Each of these separate methods is individually written to handle all of these different types of Objects.
 MyItem will automatically apply the method that corresponds to the argument type.
 
 {: #implicit-variables}
@@ -678,7 +690,9 @@ Besides the implicitly available variables for items and commands/states, rules 
 
 - `receivedCommand` - will be implicitly available in every rule that has at least one command event trigger.
 - `previousState` - will be implicitly available in every rule that has at least one status change event trigger.
+- `newState` - will be implicitly available in every rule that has at least one status update or status change event trigger.
 - `triggeringItem` - will be implicitly available in every rule that has at least one command, status update, or status change event trigger.
+- `receivedEvent` - will be implicitly available in every rule that has a channel-based trigger.
 
 {: #return}
 ### Early returns
@@ -751,7 +765,7 @@ Example:
 
 ```java
 try {
-    var temperature = transform("JSONPATH", "$.temperature", jsonstring)
+    var temperature = transformRaw("JSONPATH", "$.temperature", jsonstring)
 }
 catch(TransformationException e) {
     logError("Error", "Some bad stuff happened in my rule: " + e.getMessage)
@@ -792,7 +806,7 @@ log:set DEBUG org.eclipse.smarthome.model.script.kitchen
 
 ## Rule Examples
 
-Below some examples for common rules:
+Below some examples of common rules:
 
 ```java
 var Number counter
@@ -838,6 +852,17 @@ when
 then
     if(receivedCommand == ON) Light.sendCommand(ON)
     else Light.sendCommand(OFF)
+end
+
+rule "Start wake up light on sunrise"
+when
+    Channel "astro:sun:home:rise#event" triggered
+then
+    switch(receivedEvent.getEvent()) {
+        case "START": {
+            Light.sendCommand(ON)
+        }
+    }
 end
 ```
 

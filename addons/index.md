@@ -13,13 +13,13 @@ These are described under *Installation of Add-ons* below
 
 | Add-on Type                             | Description                                                                                                               |
 |-----------------------------------------|---------------------------------------------------------------------------------------------------------------------------|
-| [Bindings](bindings.html)               | Bindings integrate physical hardware, external systems and web services in openHAB                                        |
-| [User Interfaces](uis.html)             | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
-| [Persistence](persistence.html)         | Persistence services allow openHAB to store time series data for history-based actions or statistics                      |
-| [Actions](actions.html)                 | Actions are predefined methods for openHAB rules and scripts                                                              |
-| [Transformations](transformations.html) | Transformations are used to translate between technical and human-readable values for Items                               |
-| [Voice Services](voices.html)           | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc.                                |
-| [3rd Party System Integration](io.html) | Expose openHAB to external systems                                                                                        |
+| [Bindings](/addons/#bindings)               | Bindings integrate physical hardware, external systems and web services in openHAB                                        |
+| [User Interfaces]({{base}}/configuration/#versatility)             | User interfaces are either native smartphone apps or web applications that access the openHAB server through the REST API |
+| [Persistence](/addons/#persistence)         | Persistence services allow openHAB to store time series data for history-based actions or statistics                      |
+| [Actions](/addons/#actions)                 | Actions are predefined methods for openHAB rules and scripts                                                              |
+| [Transformations](/addons/#transform) | Transformations are used to translate between technical and human-readable values for Items                               |
+| [Voice Services](/addons/#voice)           | Services that provide voice enabling features, such as text-to-speech, speech-to-text etc.                                |
+| [3rd Party System Integration](/addons/#ios) | Expose openHAB to external systems                                                                                        |
 
 ## Installation of Add-ons
 
@@ -75,7 +75,7 @@ This is because the mqtt Binding is a 1.x add-on.
 The trailing `1` has to be appended for `binding`- and `misc`-addons.
 It is *not needed* for other addon types like `persistence`.
 
-With this information we can now edit the *addons.cfg* file in the `config/services` folder on the machine you are running openHAB on.
+With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CONF/services` folder on the machine you are running openHAB on.
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux]({{base}}/installation/linux.html#file-locations) or [Windows]({{base}}/installation/windows.html#file-locations).
 
@@ -110,6 +110,6 @@ After saving the file, the add-on will be installed.
 For this installation option you need a bundles `.jar` file.
 One way of retrieving those files is mentiones above in the openHAB console part.
 
-Place the `.jar` file in the `add-ons` folder on the machine you are running openHAB on.
+Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
 As described already for the addons.cfg option, the path is depending on your installation.
-Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux]({{base}}/installation/linux.html#file-locations), [Windows]({{base}}/installation/windows.html#file-locations) or [macOS]({{base}}/installation/macosx.html#file-locations)).
+Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux]({{base}}/installation/linux.html#file-locations), [Windows]({{base}}/installation/windows.html#file-locations) or [macOS]({{base}}/installation/macos.html#file-locations)).

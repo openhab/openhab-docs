@@ -27,22 +27,34 @@ Linux file permissions is one of the biggest sources of issues, Linux novices ru
 If you find yourself in a situation, where you have **no write access** to the openHAB configuration or system files wrong permissions and/or the incorrect use of `sudo` are often the cause.
 Train your understanding of Linux permissions at [linuxjourney.com/lesson/file-permissions](https://linuxjourney.com/lesson/file-permissions).
 
-**Meeting the Requirements:**
+## Meeting the Requirements: ##
 As a first step, please verify, that your system meets the [prerequisites](index.html#prerequisites).
-You may want to install Zulu, a fully certified Java build [as a package](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/PrepareZuluPlatform/AttachAzulPackageRepositories.htm) or [manually](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
+You may want to install Zulu, a fully certified Java build [as a package](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/InstallingZulu/InstallOnLinuxUsingAPTRepository.htm) or [manually](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/InstallingZulu/InstallLinuxUsingZuluZIPFile.htm).
 
 Alternatively, Zulu Embedded can be installed for small systems either from the same package repository as above or [manually](http://www.azul.com/downloads/zulu-embedded/).
 If you're unsure which manual file you should download, using `dpkg --print-architecture` or `rpm -q --qf '%{ARCH}\n' rpm` in your Linux terminal should point you in the right direction (e.g. armhf means ARM Hard Float).
 
-When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](http://zulu.org/zuludocs-folder/Content/ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
+When installing Zulu or Zulu Embedded from a .zip or .tar archive, make sure to [set Zulu as the main Java "alternative"](https://docs.azul.com/zulu/zuludocs/#ZuluUserGuide/SwitchingBetweenJavaAlternatives/SwitchBetweenJavaAlts.htm).
 
-**Note:** Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9. 
+::: tip Note
+Make sure to download Zulu or Java **8**, as openHAB is not yet compatible with Java 9.
+:::
 
 ## Installation
 
-openHAB 2 can be installed though a package repository or manually from file.
-The installation through a provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is **recommended** for end users.
+openHAB 2 can be installed through
+ - the openHABian project **(easiest method, ships with the openHABian configuration tool)**
+ - a package repository (apt, yum)
+ - manually from file.
+
+The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users.
+
+Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manualconfiguration later on due to the missing openHABian configuration tool.
+
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
+
+### openHABian project
+The easy step by step instruction can be found [here](openhabian.html).
 
 ### Package Repository Installation
 
@@ -52,7 +64,7 @@ Alternatively resort to the [manual installation approach](#manual-installation)
 {% include collapsible/start.html %}
 {% include collapsible/heading.html %}
 
-Apt Based Systems
+#### Apt Based Systems
 
 {% include collapsible/body.html %}
 
@@ -82,12 +94,12 @@ Then, you can choose between, *Official (Stable)*, *Beta* or *Snapshot* builds:
     Add the **openHAB 2 Beta Repository** to your systems apt sources list:
 
     ```shell
-    echo 'deb https://dl.bintray.com/openhab/apt-repo2 testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
+    echo 'deb https://openhab.jfrog.io/openhab/openhab-linuxpkg testing main' | sudo tee /etc/apt/sources.list.d/openhab2.list
     ```
 
 -   **Snapshot Release**
 
-    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
 
     The snapshot repository is hosted in openHAB's [JFrog Artifactory instance](https://www.jfrog.com/Artifactory).
@@ -119,7 +131,7 @@ sudo apt-get install openhab2-addons
 {% include collapsible/item-end.html %}
 {% include collapsible/heading.html %}
 
-Yum or Dnf Based Systems
+#### Yum or Dnf Based Systems
 
 {% include collapsible/body.html %}
 
@@ -146,7 +158,7 @@ You may add all three to the same file, but make sure the desired repo is is set
     ```text
     [openHAB-Testing]
     name=openHAB 2.x.x Testing
-    baseurl=https://dl.bintray.com/openhab/rpm-repo2/testing
+    baseurl=https://openhab.jfrog.io/openhab/openhab-linuxpkg-rpm/testing
     gpgcheck=1
     gpgkey=https://bintray.com/user/downloadSubjectPublicKey?username=openhab
     enabled=1
@@ -154,7 +166,7 @@ You may add all three to the same file, but make sure the desired repo is is set
 
 -   **Snapshot Release**
 
-    The snapshot build is created [almost daily](https://openhab.ci.cloudbees.com/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
+    The snapshot build is created [almost daily](https://ci.openhab.org/job/openhab-linuxpkg/), and include the latest changes to the openHAB 2 core and add-ons.
     These changes are often unstable, so you should use this branch only for testing or development purposes.
 
     ```text
@@ -269,7 +281,7 @@ Systems based on **systemd** (e.g. Debian 8, Ubuntu 15.x, Raspbian Jessie and ne
 
   # Stop the openHAB background service
   sudo systemctl stop openhab2.service
-  
+
   # Get the service log since the last boot
   sudo journalctl -u openhab2.service -b
 
@@ -464,25 +476,27 @@ The following instructions are intended for a Linux init system based on **syste
 This will allow you to register openHAB as a service, so that it runs at startup and automatically restarts if openHAB crashes.
 The service will be running with the privileges of the user "openhab" and expects the openHAB files under `/opt/openhab2`.
 
-Create the file `/lib/systemd/system/openhab2.service` with the following content:
+Create the file `/usr/lib/systemd/system/openhab2.service` with the following content:
 
 ```ini
 [Unit]
-Description=The openHAB 2 Home Automation Bus Solution
-Documentation=http://docs.openhab.org
+Description=openHAB 2 - empowering the smart home
+Documentation=https://www.openhab.org/docs/
+Documentation=https://community.openhab.org
 Wants=network-online.target
 After=network-online.target
 
 [Service]
-Type=simple
 User=openhab
 Group=openhab
-GuessMainPID=yes
+
 WorkingDirectory=/opt/openhab2
-#EnvironmentFile=/etc/default/openhab2
-ExecStart=/opt/openhab2/start.sh server
-ExecStop=/bin/kill -SIGINT $MAINPID
+#EnvironmentFile=-/etc/default/openhab2
+
+ExecStart=/opt/openhab2/runtime/bin/karaf daemon
+ExecStop=/opt/openhab2/runtime/bin/karaf stop
 Restart=on-failure
+SuccessExitStatus=0 143
 
 [Install]
 WantedBy=multi-user.target
@@ -503,16 +517,17 @@ sudo systemctl status openhab2.service
 The output of `status` after a successful execution should be similar to:
 
 ```text
- openhab2.service - The openHAB 2 Home Automation Bus Solution
-   Loaded: loaded (/lib/systemd/system/openhab2.service; enabled)
+ openhab2.service - openHAB 2 - empowering the smart home
+   Loaded: loaded (/usr/lib/systemd/system/openhab2.service; enabled)
    Active: active (running) since Thu 2016-08-14 01:16:00 GMT; 18h ago
-     Docs: http://docs.openhab.org
+     Docs: https://www.openhab.org/docs/
+           https://community.openhab.org
 ```
 
 #### Installing add-ons
 
 When running a manual installation, it is possible to pre-download add-ons or legacy add-ons if you want to install any bindings at a later date without connecting to the internet.
-Simply download the kar files (the latest builds can be found [here](https://openhab.ci.cloudbees.com/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
+Simply download the kar files (the latest builds can be found [here](https://ci.openhab.org/job/openHAB-Distribution/)) and move them to the `/opt/openhab2/addons` folder.
 
 #### Upgrade
 
@@ -564,7 +579,9 @@ To uninstall (or more precisely remove) openHAB 2 after being manually set up, t
 sudo systemctl stop openhab2.service
 sudo systemctl disable openhab2.service
 sudo rm -rf /opt/openhab2/
+sudo rm /usr/lib/systemd/system/openhab2.service
 sudo rm /lib/systemd/system/openhab2.service
+sudo systemctl daemon-reload
 ```
 
 ### File Locations
@@ -721,6 +738,16 @@ Next, add the desired share configurations to the end of the file:
       public=no
       create mask=0777
       directory mask=0777
+
+    [openHAB2-logs]
+      comment=openHAB2 logs
+      path=/var/log/openhab2
+      browseable=Yes
+      writeable=Yes
+      only guest=no
+      public=no
+      create mask=0777
+      directory mask=0777
     ```
 
 -   Manual installation:
@@ -772,7 +799,7 @@ Check the network devices manager of your local operating system to find and acc
 These might however not be auto-discovered.
 You can also manually connect:
 
-- **On Mac OS X:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
+- **On macOS:** Open Finder → Go → Connect to Server: `smb://openhab@openhab-device.local`
 - **On Windows:** Open Windows Explorer → Address bar: `\\openhab-device.local` → Right click a share and assign a drive letter
 
 Be sure to use the actual host name instead of `openhab-device`.

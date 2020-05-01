@@ -57,9 +57,12 @@ But if you start a new discovery process later, the thing will reappear.
 In this example, we click on the check icon of the thing with the IP address 192.168.1.103.
 Let's assume this is John's mobile phone which we want to use for presence detection.
 We change the (automatically added during the discovery) name of the thing on the next page to "John's Mobile" and click on the "ADD AS THING" button.
-*Please note: If your network devices use a DHCP server to obtain ther IP addresses automatically, please make sure to define a DHCP reservation for a device which you want to use in openHAB.
+::: tip Note
+If your network devices use a DHCP server to obtain ther IP addresses automatically, please make sure to define a DHCP reservation for a device which you want to use in openHAB.
 Otherwise it's IP address may change in the future and your thing definiton won't work any more.
-Information about how to define a DHCP reservation can be normally be found in the manual of your network router.*
+
+*Information about how to define a DHCP reservation can be normally be found in the manual of your network router.*
+:::
 
 ![](images/picture_10.jpg)
 
@@ -123,7 +126,7 @@ To demonstrate that, we'll proceed and install the Zwave binding in order to add
 However, this is a demonstration about how to install and configure add-ons.
 As mentioned before, the pure procedure to install and configure add-ons is mostly the same with other addons.**
 
-**More information about the Zwave binding and the other available bindings can be found [on the bindings page of the user manual]({{base}}/addons/bindings.html)!**
+**More information about the Zwave binding and the other available bindings can be found [on the bindings page of the user manual](/addons/#bindings)!**
 
 The installation is just like the example with the network binding above.
 Use the "Add-ons" menu item, search for the "Zwave" binding, click "INSTALL" and go directly to the "Inbox" afterwards.

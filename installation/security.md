@@ -9,7 +9,7 @@ title: Securing Communication and Access
 
 openHAB has mainly two ways to be accessed:
 
-1. Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the [Console documentation](/administration/console).
+1. Through the command line console, which is done through SSH and thus always authenticated and encrypted. You will find all details about this in the [Console documentation](/docs/administration/console.html).
 2. Through HTTP(S), which we will look at in the following.
 
 {::options toc_levels="2..3"/}
@@ -172,8 +172,10 @@ sudo service nginx restart
 For further security, you may wish to ask for a **username and password** before users have access to openHAB.
 This is fairly simple in NGINX once you have the reverse proxy setup, you just need to provide the server with a basic authentication user file.
 
-**Note:** There is currently an issue with Proxy Authentication and HABmin when using some browsers.
+::: tip Note
+There is currently an issue with Proxy Authentication and HABmin when using some browsers.
 If you require HABmin, consider connecting locally or using Safari for now.
+:::
 
 {: #nginx-auth-user}
 ##### Creating the First User
@@ -376,6 +378,17 @@ server {
 }
 ```
 
+It might be the case that you can't use standard ports. When trying to access a HTTPS port with HTTP, NGINX will respond with a `400 Bad Request`.
+We can redirect this gracefully using a "HTTPS [error page](http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page)" for the [non-standard HTTP error code 497](http://nginx.org/en/docs/http/ngx_http_ssl_module.html#errors)
+
+```nginx
+server {
+    listen                          8084 ssl;
+    server_name                     mydomain_or_myip;
+    error_page                      497 =301 https://$host:$server_port$request_uri;
+}
+```
+
 {: #nginx-summary}
 #### Putting it All Together
 
@@ -401,6 +414,8 @@ server {
         proxy_set_header X-Real-IP              $remote_addr;
         proxy_set_header X-Forwarded-For        $proxy_add_x_forwarded_for;
         proxy_set_header X-Forwarded-Proto      $scheme;
+        proxy_set_header Upgrade                $http_upgrade;
+        proxy_set_header Connection             "Upgrade";
         satisfy                                 any;
         allow                                   192.168.0.1/24;
         allow                                   127.0.0.1;
@@ -423,11 +438,15 @@ To test your security settings [SSL Labs](https://www.ssllabs.com/ssltest/) prov
 
 This optional section is for those who would like to strengthen the HTTPS security on openHAB, it can be applied regardless of which HTTPS method you used [above](#nginx-https), **but you need to follow at least one of them first**.
 
-First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL **Note: this will take a few minutes to complete:**
+First, we need to generate a stronger key exchange, to do this we can generate an additional key with OpenSSL.
+
+::: tip Note
+Depending on your hardware this will take up to few minutes to complete:
+:::
 
 ```shell
 mkdir -p /etc/nginx/ssl
-openssl dhparam -out /etc/nginx/ssl/dhparam.pem 4096
+openssl dhparam -out /etc/nginx/ssl/dhparam.pem 2048
 ```
 
 Now we can configure NGINX to use this key, as well as telling the client to use specific cyphers and SSL settings, just add the following under your `ssl_certificate **` settings but above ``location *``.

@@ -13,7 +13,7 @@ While a device or service might be quite specific, Items are unified substitutio
 Items can be Strings, Numbers, Switches or one of a few other basic [Item types](#type).
 A programmer can compare Item types with base variable data types of a programming language.
 
-A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](#binding).
+A unique feature of openHAB Items is the ability to connect them to the outside world via [Bindings](/addons/#binding).
 An Item does not simply store information that is set by software (e.g., `OFF`, 3.141 or "No Error"); the information stored by an Item may also be set by actions that take place in your home.
 
 But let's not get ahead of ourselves.
@@ -27,12 +27,12 @@ The rest of this page contains details regarding Items and is structured as foll
 ## Introduction
 
 Items are basic data types and have a state which can be read from, or written to.
-Items can be linked to a [Binding](#binding) channel for interaction with the outside world.
+Items can be linked to a [Binding](/addons/#binding) channel for interaction with the outside world.
 For example, an Item bound to a sensor receives updated sensor readings and an Item linked to a light's dimmer channel can set the brightness of the light bulb.
 
 There are two methods for defining Items:
 
-1.  Through [Paper UI]({{base}}/addons/uis/paper/readme.html).
+1.  Through [Paper UI]({{base}}/configuration/ui/paperui.html).
     Generally all 2.x version Bindings can be configured through Paper UI.
     (Note that 1.x and legacy Bindings do not offer this option)
 
@@ -62,7 +62,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```
 
 - Fields must be entered in the order shown
-- `itemtype` and `itemname` are manadatory
+- `itemtype` and `itemname` are mandatory
 - All other fields are optional
 - Fields may be separated by one or more spaces, or tabs
 - An Item definition may span multiple lines
@@ -72,7 +72,7 @@ itemtype itemname "labeltext [stateformat]" <iconname> (group1, group2, ...) ["t
 ```java
 Switch Kitchen_Light "Kitchen Light" {mqtt="<[...], >[...]" }
 String Bedroom_Sonos_CurrentTitle "Title [%s]" (gBedRoom) {channel="sonos:..."}
-Number Bathroom_WaschingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
+Number Bathroom_WashingMachine_Power "Power [%.0f W]" <energy> (gPower) {channel="homematic:..."}
 
 Number Livingroom_Temperature "Temperature [%.1f °C]" <temperature> (gTemperature, gLivingroom) ["TargetTemperature"] {knx="1/0/15+0/0/15"}
 ```
@@ -86,7 +86,7 @@ The last example above defines an Item with the following fields:
 - Item [icon](#icons) with the name `temperature`
 - Item belongs to [groups](#groups) `gTemperature` and `gLivingroom` (definition not shown in the example)
 - Item is [tagged](#tags) as a thermostat with the ability to set a target temperature ("TargetTemperature")
-- Item is [bound to](#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
+- Item is [bound to](/addons/#binding) the openHAB Binding `knx` with binding specific settings ("1/0/15+0/0/15")
 
 The remainder of this article provides additional information regarding Item definition fields.
 
@@ -100,20 +100,20 @@ This optimization is reflected in the data and command types.
 
 Available Item types are:
 
-| Type Name      | Description | Command Types |
-|----------------|-------------|---------------|
-| Color          | Color information (RGB) | OnOff, IncreaseDecrease, Percent, HSB |
-| Contact        | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed |
-| DateTime       | Stores date and time | - |
-| Dimmer         | Percentage value for dimmers | OnOff, IncreaseDecrease, Percent |
-| Group          | Item to nest other items / collect them in groups | - |
-| Image          | Binary data of an image | - |
-| Location       | GPS coordinates | Point |
-| Number         | Values in number format | Decimal |
-| Player         | Allows control of players (e.g. audio players) | PlayPause, NextPrevious, RewindFastforward |
-| Rollershutter  | Roller shutter Item, typically used for blinds | UpDown, StopMove, Percent |
-| String         | Stores texts | String |
-| Switch         | Switch Item, used for anything that needs to be switched ON and OFF | OnOff |
+| Type Name     | Description                                                                                   | Command Types                              |
+|---------------|-----------------------------------------------------------------------------------------------|--------------------------------------------|
+| Color         | Color information (RGB)                                                                       | OnOff, IncreaseDecrease, Percent, HSB      |
+| Contact       | Status of contacts, e.g. door/window contacts. Does not accept commands, only status updates. | OpenClosed                                 |
+| DateTime      | Stores date and time                                                                          | -                                          |
+| Dimmer        | Percentage value for dimmers                                                                  | OnOff, IncreaseDecrease, Percent           |
+| Group         | Item to nest other items / collect them in groups                                             | -                                          |
+| Image         | Binary data of an image                                                                       | -                                          |
+| Location      | GPS coordinates                                                                               | Point                                      |
+| Number        | Values in number format                                                                       | Decimal                                    |
+| Player        | Allows control of players (e.g. audio players)                                                | PlayPause, NextPrevious, RewindFastforward |
+| Rollershutter | Roller shutter Item, typically used for blinds                                                | UpDown, StopMove, Percent                  |
+| String        | Stores texts                                                                                  | String                                     |
+| Switch        | Switch Item, used for anything that needs to be switched ON and OFF                           | OnOff                                      |
 
 More details about all of the available Item types and their commands are available under Concepts, see:
 [Item Types Overview]({{base}}/concepts/items.html)
@@ -177,13 +177,13 @@ The following naming style guide is recommended:
 
 Examples:
 
-| Item Name                         | Interpretation (assumed Item type, example value) |
-|-----------------------------------|---------------------------------------------------|
-| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON) |
-| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white) |
-| "`GF_BR_WaschingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
-| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party) |
-| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline) |
+| Item Name                         | Interpretation (assumed Item type, example value)                                                       |
+|-----------------------------------|---------------------------------------------------------------------------------------------------------|
+| "`Livingroom_CeilingLight`"       | Living room light (Switch, e.g. ON)                                                                     |
+| "`Livingroom_CeilingLight_Color`" | Living room light color (Color, e.g. warm white)                                                        |
+| "`GF_BR_WashingMachine_Power`"   | Electric power consumed by the washing machine located in the ground floor bathroom (Number, e.g. 100W) |
+| "`Lighting_Scene`"                | Overall lighting scene of the house (String, e.g. Party)                                                |
+| "`Presence_John_Smartphone`"      | An Item indicating if John is home or not, based on smartphone detection (Switch, e.g. Offline)         |
 
 [Group](#groups) is a special Item type that may be used to nest or combine Items.
 Users are encouraged to apply the style guide above to group names as well as Item names.
@@ -193,22 +193,22 @@ Two naming schemes are established in the community for Group names:
     Otherwise the word "Group" may be appended for clarity.
 2.  Prepend a lowercase "g" to the name (e.g. gBattery)
 
-| Group Name                                | Interpretation |
-|-------------------------------------------|----------------|
-| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items |
-| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items |
-| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room |
+| Group Name                                | Interpretation                                                        |
+|-------------------------------------------|-----------------------------------------------------------------------|
+| "`Batteries`" or "`gBattery`"             | Group combining the states of all battery Items                       |
+| "`Maintenance_Group`" or "`gMaintenance`" | Group containing all maintenance-related Items                        |
+| "`Livingroom_Lights`" or "`gLR_Light`"    | Group containing all light Items belonging to the living room         |
 | "`Livingroom`" or "`gLR`"                 | Group for *all* Items (including lights) belonging to the living room |
 
 {: #label}
 ### Label
 
 Label text is used to describe an Item in a human-readable way.
-Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/addons/uis/basic/readme.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
+Graphical UIs will display the label text when the Item is included, e.g. in [Basic UI]({{base}}/configuration/ui/basic.html) in a [Sitemap]({{base}}/configuration/sitemaps.html) definition.
 Some I/O services (e.g. the Amazon Alexa skill) also use the label to match an external voice command to an Item.
 
 In textual configurations the label, in quotation marks, appears next to the optional state presentation field in square brackets (see below).
-The label for the Item in the following example is "Temperature and the optional state representation is set to be displayed, e.g. as "23.9 °C":
+The label for the Item in the following example is "Temperature" and the optional state representation is set to be displayed, e.g. as "23.9 °C":
 
 ```java
 Number Livingroom_Temperature "Temperature [%.1f °C]"
@@ -236,7 +236,7 @@ This section provides information about what a user can expect regarding the beh
 -   A Binding may set the state of an Item to `UNDEF` if it looses communications with a Thing (for example, a Z-wave doorbell with a dead battery).
 The Binding may also set the state to `UNDEF` if an error exists in the binding configuration, or under other conditions
 
-*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started](/docs/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
+*N.B.*  Many openHAB users find that it can be very useful to use [Persistence](/addons/#persistence) and [System started]({{base}}/configuration/rules-dsl.html#system-based-triggers) rules so that their systems behaves in a predictable way after an openHAB restart.
 
 {: #command-vs-status}
 #### Command vs. Status
@@ -280,10 +280,11 @@ Free text, like a unit, can be added before or after the formatter string.
 A few examples are given below:
 
 ```java
-Number    Livingroom_Temperature   "Temperature [%.1f °C]"     // e.g. "23.5 °C"
-String    Livingroom_TV_Channel    "Now Playing [%s]"          // e.g. "Lorem ipsum"
-DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]" // e.g. "Sun 15:26"
-Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"    // e.g. "50 %"
+Number    Livingroom_Temperature   "Temperature [%.1f °C]"             // e.g. "23.5 °C"
+String    Livingroom_TV_Channel    "Now Playing [%s]"                  // e.g. "Lorem ipsum"
+DateTime  Livingroom_TV_LastUpdate "Last Update [%1$ta %1$tR]"         // e.g. "Sun 15:26"
+Number    Livingroom_Clock_Battery "Battery Charge [%d %%]"            // e.g. "50 %"
+Location  My_Location              "My Location [%2$s°N %3$s°E %1$sm]" // e.g. "49.26°N 123.19°E 0m"
 ```
 
 {: #state-transformation}
@@ -317,11 +318,10 @@ The following guidelines apply to user-added icon files:
 
 - Only `png` or `svg` file formats may be used
 - Icon filenames may include lowercase letters, numbers and underscores (`_`)
-- Uppercase letters and special characters are prohibited
-- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons) (see below)
+- Hyphens (`-`) are reserved for [Dynamic Icons](#dynamic-icons)
 - Example filenames:
-  - Good: `myswitch.svg`, `power_meter.png`, `error23.svg`
-  - Bad: `PC_Display.svg`, `power-meter.png`, `tür⇔.svg`
+  - Good: `myswitch.svg`, `power_meter.png`, `tuer23.svg`
+  - Bad: `MySwitch.svg`, `power-meter.png`, `tür23.svg`
 
 **Bitmaps or Vector Graphics:**
 openHAB can work with either Bitmap (`png`) or Vector (`svg`) icon files.
@@ -376,11 +376,11 @@ String Livingroom_Light_Connection "Livingroom Ceiling Light [MAP(error.map):%s]
 
 On the filesystem, the following icon files are provided by the user:
 
-| File name              | Description                                                        |
-|------------------------|--------------------------------------------------------------------|
-| `myswitch-off.svg`     | Matches `OFF` or "off" state                                       |
-| `myswitch-on.svg`      | Matches `ON` or "on" state                                         |
-| `myswitch.svg`         | Default icon, used when no matching icon is found (e.g. `UNDEF`)   |
+| File name          | Description                                                      |
+|--------------------|------------------------------------------------------------------|
+| `myswitch-off.svg` | Matches `OFF` or "off" state                                     |
+| `myswitch-on.svg`  | Matches `ON` or "on" state                                       |
+| `myswitch.svg`     | Default icon, used when no matching icon is found (e.g. `UNDEF`) |
 
 | File name              | Description                                                        |
 |------------------------|--------------------------------------------------------------------|
@@ -391,14 +391,16 @@ Take note, that the Transformation used in the `Livingroom_Light_Connection` Ite
 
 **Number State Matching Rule:**
 For Number Items the equal or next lowest state icon that can be found will be used.
-For a dimmable light (0-100%), you might provide icons as in the example:
+The default icon will be used for negative numbers, or above 100 i.e. the available filename range is icon-0 to icon-99 only.
+Dimmer type Items work in the same way, being limited to 0-100 anyway.
 
-| File name          | Description                                          |
-|--------------------|------------------------------------------------------|
-| `mydimmer.svg`     | Default icon (used in undefined states)              |
-| `mydimmer-0.svg`   | Matches the turned off light (0%)                    |
-| `mydimmer-1.svg`   | Matches any dimmed light between 1% up to 74%        |
-| `mydimmer-75.svg`  | Matches the bright light state from 75% to full 100% |
+For a dimmable light (0-100%), you might provide icons as in the example:
+| File name         | Description                                          |
+|-------------------|------------------------------------------------------|
+| `mydimmer.svg`    | Default icon (used in undefined states)              |
+| `mydimmer-0.svg`  | Matches the turned off light (0%)                    |
+| `mydimmer-1.svg`  | Matches any dimmed light between 1% up to 74%        |
+| `mydimmer-75.svg` | Matches the bright light state from 75% to full 100% |
 
 Just as with regular icons, user-defined dynamic icon sets may be configured via the custom icons folder `$OPENHAB_CONF/icons/classic/`.
 
@@ -467,22 +469,22 @@ The general syntax for groups with a specific item type and aggregation function
 Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group2, ...)]
 ```
 
-- If the aggregation function is omitted, the function `EQUAL` will be used
-- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items
+- If the aggregation function is omitted, the function `EQUALITY` will be used.
+- If the aggregation function and `itemtype` are omitted, no group state will be aggregated from member Items.
 
 Group state aggregation functions can be any of the following:
 
-| Function               | Description |
-|------------------------|-------------|
-| `EQUAL`                | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`. |
-| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned. |
+| Function              | Description                                                                                                                                                             |
+|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EQUALITY`            | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`.                                  |
+| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned.          |
 | `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation. |
-| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation. |
-| `AVG`                  | Calculates the numeric average over all Item states of decimal type. |
-| `MAX`                  | Calculates the maximum value of all Item states of decimal type. |
-| `MIN`                  | Calculates the minimum value of all Item states of decimal type. |
-| `SUM`                  | Calculates the sum of all Item states in the Group. |
+| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation.                                           |
+| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation.                                              |
+| `AVG`                 | Calculates the numeric average over all Item states of decimal type.                                                                                                    |
+| `MAX`                 | Calculates the maximum value of all Item states of decimal type.                                                                                                        |
+| `MIN`                 | Calculates the minimum value of all Item states of decimal type.                                                                                                        |
+| `SUM`                 | Calculates the sum of all Item states in the Group.                                                                                                                     |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -527,7 +529,7 @@ Tagging is a new feature and only a few I/O add-ons have implemented it.
 The easiest way to determine if tags have been implemented in a specific add-on is to see if the add-on documentation explicitly discusses their usage.
 Tags will be ignored if no Items in the openHAB installation support it.
 
-See the [Hue Emulation]({{base}}/addons/ios/hueemulation/readme.html) or [HomeKit Add-on]({{base}}/addons/ios/homekit/readme.html) documentation for more details.
+See the [Hue Emulation Service](/addons/integrations/hueemulation/) or [HomeKit Add-on](/addons/integrations/homekit/) documentation for more details.
 
 {: #binding}
 ### Binding Configuration
@@ -589,6 +591,14 @@ These are all in plain text, so be careful who you share these with if some data
 openHAB2 introduces the concept of [Things and Channels]({{base}}/concepts/things.html).
 Unlike 1.x version Bindings which each define their own format for the Binding config that is defined on the Item itself, 2.x Bindings define those parameters in a Thing.
 Each Thing has one or more Channels, and Items are linked to one or more Channels.
+There are two different kinds of channels:
+
+- State Channels will, as soon as linked to the Item, update the state of it and/or listen for Commands you send to it.
+For example, if you have a `Player` Item, a State Channel could be responsible for propagating the state of an audio player (`PLAYING`, `PAUSED`) to your Item as well as listening for proper Commands (`PLAY`, `PAUSE`, `PREVIOUS`, `NEXT`)
+- Trigger Channels will only send events that won't have any effect on the Item unless you treat them with Rules or use a Trigger Profile to do state changes or commands based on your event.
+For example, when you use a Binding that integrates buttons or wall switches, a Trigger Channel could be responsible for sending a `PRESSED` event when someone is pressing the button of the device.
+This event on it's own won't change anything on the Item, but you could use, for example, the Trigger Profile "rawbutton-toggle-switch" to toggle a lamp on or off when the button is clicked.
+Also, you could e.g. define a Rule that is triggered by this event and calculates the color of the lamp based on the sun position.
 
 Some Bindings support automatic discovery of Things, in which case discovered Things will appear in the Inbox in the Paper UI.
 Once accepted, the new Thing will appear under Configuration > Things.
@@ -624,7 +634,7 @@ Number  Azimuth            "Azimuth"                       {channel="astro:sun:h
 Contact Garage             "Garage is [MAP(en.map):%s]"    {channel="zwave:21:command=sensor_binary,respond_to_basic=true"}
 ```
 
-#### Multi Binding/Channel Linkage
+#### Multi Binding / Channel Linkage
 
 An Item may be linked to multiple Bindings and/or Channels.
 Commands and Updates from and to these Items will be combined, and can be used in interesting ways.
@@ -637,10 +647,10 @@ Number Temperature {mysensors="24;1;V_TEMP", expire="5m,-999"}
 ```
 
 The first example shows a symbiosis of the network health Binding and the Wake-on-LAN Binding to interact with a PC.
-The second example shows a common use case for the [expire Binding]({{base}}/addons/bindings/expire1/readme.html)
+The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
-##### Exception `autoupdate`
+#### Parameter `autoupdate`
 
 `autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
 This way, the Item is unchanged unless you explicitly post an *update* to the item.
@@ -650,3 +660,59 @@ Example:
 ```java
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
+
+#### Profiles
+
+With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
+
+Profiles can be specified as a parameter for a given Channel on the Item configuration:
+
+```java
+<item-type> MyItem { channel="<bindingID>:<thing-typeID>:MyThing:myChannel"[profile="<profileID>", <profile-parameterID>="MyValue", ...]}
+```
+
+There are some built-in Profiles available which are described in the table below.
+Some Bindings will may offer additional Profiles for Binding-specific use cases.
+If this is the case, you'll find those within the documentation of the Binding.
+Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
+You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you'd like to use.
+
+| ID                                                                                            | Type    | Supported Item Types  | Description                                                                                                                                                                                                                                                                                                                                                                                                               |
+|-----------------------------------------------------------------------------------------------|---------|-----------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `default`                                                                                     | State   | All                   | If you don't specify any Profile, this Profile will be used. For State Channels, this means that states and commands are just propagated from the Channel to the Item and vice versa without any changes. For Trigger Channels, the Default Profile won't change anything on the Item.                                                                                                                                    |
+| `follow`                                                                                      | State   | All                   | If one device should "follow" the actions of another device, this can be used. The term "follow" in this case means that any state that is sent to an Item will be forwarded from this Item to any linked Channel with the `follow` Profile. It takes state updates on an Item and sends them as a command onto the Channel. In the direction from the ThingHandler towards the Item, this Profile ignores state updates. |
+| `offset`                                                                                      | State   | Number                | An offset can be specified via the parameter `offset` which has to be a `QuantityType` or `DecimalType`. The specificed offset will be added to the value from the device before it arrives at the item.                                                                                                                                                                                                                  |
+| `rawbutton-on-off-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will set the Item state to `ON` when a `PRESSED` event arrives and to `OFF` when a `RELEASED` event arrives.                                                                                                                                                                                                              |
+| `rawbutton-toggle-player`                                                                     | Trigger | Player                | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Player Item state between `PLAY` and `PAUSE` when `PRESSED` events arrive.                                                                                                                                                                                                                                |
+| `rawbutton-toggle-rollershutter`                                                              | Trigger | Rollershutter         | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Rollershutter Item state between `UP` and `DOWN` when `PRESSED` events arrive.                                                                                                                                                                                                                            |
+| `rawbutton-toggle-switch`                                                                     | Trigger | Color, Dimmer, Switch | This Profile can only be used on Channels of the type `system.rawbutton`. On those channels, it will toggle the Item state when `PRESSED` events arrive. This Profile can e.g. be used to add button channels to a lighting item which will enable you to turn the lighting on and off with your button.                                                                                                                  |
+| `rawrocker-to-on-off`                                                                         | Trigger | Dimmer, Switch        | This Profile can only be used on Channels of the type `system.rawrocker`. On those channels, it will convert a press on the first rocker button to an `ON` command while the second one will be converted to an `OFF` command.                                                                                                                                                                                            |
+| `rawrocker-to-dimmer`                                                                         | Trigger | Dimmer                | Same as `rawrocker-to-on-off`, but additionally it allows to dim by holding the respective button. Technically, this Profile sends an `INCREASE` or `DECREASE` Command every 500 milliseconds while you hold.                                                                                                                                                                                                             |
+| `rawrocker-to-play-pause`, `rawrocker-to-next-previous` and `rawrocker-to-rewind-fastforward` | Trigger | Player                | These Profiles can only be used on Channels of the type `system.rawrocker` and Player Items. They will convert a press on the first rocker button to an `PLAY` / `NEXT` / `FASTFORWARD` command while the second one will be converted to an `PAUSE` / `PREVIOUS` / `REWIND` command.                                                                                                                                     |
+| `rawrocker-to-stop-move` and `rawrocker-to-up-down`                                           | Trigger | Rollershutter         | These Profiles can only be used on Channels of the type `system.rawrocker` and Rollershutter Items. They will convert a press on the first rocker button to an `MOVE` / `UP` command while the second one will be converted to an `STOP` / `DOWN` command.                                                                                                                                                                |
+| `timestamp-update`                                                                            | State   | All                   | This profile will update a DateTime Item to track every update of the state of a given channel, whatever the state is.                                                                                                                                                                                                                                                                                                    |
+| `timestamp-change`                                                                            | State   | All                   | This profile will update a DateTime Item to track every change of the state of a given channel.                                                                                                                                                                                                                                                                                                                           |
+
+Example: You have an Item called `Bedroom_Light` that is connected to a Hue lamp
+```java
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color" }
+```
+and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a serial button:
+```java
+when
+    Channel "serialbutton:button:mybutton:button" triggered PRESSED
+then
+    if (Light_Bedroom.getStateAs(OnOffType) != ON)
+        Light_Bedroom.sendCommand(ON)
+    else
+        Light_Bedroom.sendCommand(OFF)
+end
+```
+
+Instead of using this Rule, you can also use the `rawbutton-toggle-switch` Profile in combination with [Multi-Channel Linking](#multi-binding-channel-linkage):
+
+```java
+Color Bedroom_Light { channel="hue:0210:1:bulb1:color", channel="serialbutton:button:mybutton:button" [profile="rawbutton-toggle-switch"] }
+```
+
+This will make your Rule obsolete. So with Profiles, you can significantly reduce the amount of Rules you need for your Smart Home which helps you to keep your configuration short and clear.
