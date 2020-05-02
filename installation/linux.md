@@ -49,7 +49,7 @@ openHAB 2 can be installed through
 
 The installation through the **openHABian project** and the use of the provided openHABian configuration tool is recommended for end users.
 
-Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manualconfiguration later on due to the missing openHABian configuration tool.
+Installing using the provided **package repository** (using `apt`, `apt-get`, `yum` or `dnf`) is easier, but requires more manual configuration later on due to the missing openHABian configuration tool.
 
 The manual installation through a platform independent archive file is suited for users who know what they are doing.
 
