@@ -178,7 +178,7 @@ Working with DIY solutions often requires a deeper level of understanding, as we
 The choice is yours of course, but you will need to be prepared to spend either money or time (and sometimes both) to make your home automation goals a reality.
 And quite often, the investment will be significant.
 
-Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whatever they are.
+Don’t give up, openHAB is very powerful and flexible and will help you achieve your home automation goals, whatever they are.
 But it comes with a rather steep learning curve.
 
 ## A Deeper Dive: openHAB Structure for Advanced Users
