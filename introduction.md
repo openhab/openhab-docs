@@ -157,7 +157,7 @@ If it is your first time posting a question, please read [How to help us help yo
 
 ## Putting it into Practice
 
-Once you are getting a first overview, it is time to practice. 
+Once you have got a first overview, it is time to practice. 
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
