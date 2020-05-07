@@ -133,7 +133,7 @@ Once you have openHAB up and running, the [Configuration]({{base}}/configuration
 
 You will quickly discover that you may want to learn more about Things, Channels, Items, and more. 
 To do so, we highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html). 
-It provides a more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
+It provides more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
 
 The amount of information provided here can be overwhelming, so please come back to these sections often as you develop your home automation system.
 
@@ -149,11 +149,11 @@ It is an active and responsive community of experienced users who generally resp
 Remember that openHAB is an open-source development, driven exclusively by volunteers. 
 Please be kind and courteous, it will be most appreciated by those that will try to help you.
 
-In many occasions, you will notice that your problem has already been raised by others; and discussed and resolved by the community before. 
-You can search previous conversations and issues to see if your question has already been answered. 
-It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting your own question.
+In many occasions, you will notice that your problem has already been raised, discussed and resolved by the community before. 
+You can search previous conversations and issues to see if your questions have already been answered. 
+It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting an own question.
 
-If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) for information on what information you will need to provide.
+If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) to see what information you will need to provide with your post.
 
 ## Putting it into Practice
 
