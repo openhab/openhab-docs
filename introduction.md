@@ -46,7 +46,7 @@ Here are some key considerations especially for new users. To be successful, you
 Remember, openHAB is just a computer program. 
 The computer will only do what *you* tell it to do.
 openHAB can provide many default solutions that are easy to setup. 
-On the flip side, the more you insist that everything should look and work exactly as you want it, the more work you will have to do. 
+On the flip side, the more you insist that everything should look and work exactly the way you want it, the more work you will have to invest. 
 openHAB is fully customizable, but doing so will require substantial effort on your part.
 
 After you have read the documentation for openHAB, you will have:
