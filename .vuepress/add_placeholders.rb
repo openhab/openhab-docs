@@ -13,7 +13,7 @@ def add_placeholder_pages()
         "docs/ecosystem/ifttt",
         "docs/ecosystem/mycroft",
         "addons/integrations/homekit",
-        "addons/uis/apps/android.md"
+        "docs/apps/android.md"
     ].each { |path|
         puts " -> #{path}"
         page = path
