@@ -86,7 +86,7 @@ module.exports = [
       'configuration/rules-ng',
       'configuration/eclipseiotmarket',
       ['configuration/restdocs', 'REST API'],
-      'apps/android',
+      ['apps/android', 'Android App'],
       'apps/ios',
       'apps/windows',
       ['ecosystem/alexa/', 'Amazon Alexa'],
