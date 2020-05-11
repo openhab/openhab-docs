@@ -55,7 +55,7 @@ The NAS-DS01Z does not permanently listen for messages sent from the controller 
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller. If press successfully, the LED will blink one time.
+Press the button three times within 1.5 second to wake the device. If pressed successfully, the LED will blink one time.
 
   * The minimum wakeup interval is 300s (5 minutes)
   * The maximum wakeup interval is 16,777,200s (about 194 days)

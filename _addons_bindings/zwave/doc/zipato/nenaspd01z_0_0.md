@@ -36,7 +36,7 @@ The NE-NAS-PD01Z does not permanently listen for messages sent from the controll
 The wakeup period does not impact the devices ability to report events or sensor data. The device can be manually woken with a button press on the device as described below - note that triggering a device to send an event is not the same as a wakeup notification, and this will not allow the controller to communicate with the device.
 
 
-You can press the button once to wake up the device and send wakeup notification to controller. LED will blink once.
+ Press the button 3 times within 1.5 seconds to wake the device. LED will blink once.
 
 ## Channels
 
