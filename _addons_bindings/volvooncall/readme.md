@@ -54,6 +54,7 @@ The 'VolvoOnCall API' bridge uses the owner's email address and password in orde
 
 
 ## Channels
+
 All numeric channels use the [UoM feature](https://www.eclipse.org/smarthome/blog/2018/02/22/units-of-measurement.html).
 This means you can easily change the desired unit e.g. miles/h instead of km/h just in your item definition.
 
@@ -194,6 +195,7 @@ Example 1a: If Thing has been created using autodiscovery
         actions.openCarCommand()
  }
 ```
+
 Example 1b: If Thing has been created using script
 
 ```

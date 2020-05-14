@@ -246,7 +246,7 @@ The following devices have been tested by openHAB users with the binding. The ab
 | Ubisys modules                                 | D1 Dimmer, S1/S2 Switch modules                       |
 | Xiaomi Aqara Door and Window Sensor            |                                                       |
 | Xiaomi Aqara Temperature and Humidity Sensor   |                                                       |
-| Xiaomi Aqara Human Motion Sensor               |                                                       |
+| Xiaomi Aqara Human Motion Sensor               | *[<sup>[3]</sup>](#note3)*                            |
 | Xiaomi Aqara Wireless Mini Switch              |                                                       |
 | Xiaomi Aqara Wired Wall Switch                 |                                                       |
 | Xiaomi Aqara Wireless Remote Switch            | Double Rocker variant                                 |
@@ -255,6 +255,8 @@ The following devices have been tested by openHAB users with the binding. The ab
 <a name="note1"></a> *Note 1: Some devices may not work with the Telegesis dongle.*
 
 <a name="note2"></a> *Note 2: The Hue Dimmer can be integrated but needs additional rule-configuration to work properly. See below for example.*
+
+<a name="note3"></a> *Note 3: The illuminance channel value is being reported incorrectly. Transform by 10000\*log10(measuredValue+1) to get the correct illuminance in lux.*
 
 ## Discovery
 
