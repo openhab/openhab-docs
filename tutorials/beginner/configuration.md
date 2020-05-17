@@ -38,6 +38,7 @@ Because we only installed the network binding so far, it's the only binding to c
 ![](images/picture_08.jpg)
 
 As soon as you click on "Network Binding", the binding will start an automatic discovery of all (reachable) network devices in the same subnet as your openHAB installation resides via ICMP (ping).
+Please make sure that the computer(server) running openhab has arping installed, as ping does not reliable detect some mobile devices. 
 
 ![](images/picture_09.jpg)
 
@@ -113,7 +114,7 @@ So far we added only one thing ("John's Mobile") and linked its two channels, so
 
 Items which are linked to channels of the same thing are displayed together, represented by the thing's name.
 Here you can see the state of the "Online" and the "Time" channel.
-John's mobile is online, and the ping time is 10ms.
+John's mobile is online, and the time is 10ms.
 As you can see in the screenshot with the configuration parameters of the thing above, the refresh interval is set to 60000ms by default.
 This means that openHAB pings the device every 60 seconds.
 If you want to set a lower value there, feel free.
