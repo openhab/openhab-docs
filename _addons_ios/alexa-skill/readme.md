@@ -456,7 +456,7 @@ The following are a list of supported metadata. It is important to note that not
 * Default category: TV
 
 #### `InputController.input`
-* Items that represent a source input (e.g. "HDMI 1", or "TUNER" on a stereo). A list of [supported input values](https://developer.amazon.com/docs/device-apis/alexa-property-schemas.html#input-values) needs to be provided using the supportedInputs parameter. The space between the input name and number is not sent to OH (e.g. "HDMI 1" [alexa] => "HDMI1" [OH]). That space can also be omitted in the supported list as well.
+* Items that represent a source input (e.g. "HDMI 1", or "TUNER" on a stereo). A list of [supported input values](https://developer.amazon.com/en-US/docs/alexa/device-apis/alexa-inputcontroller.html#input-values) needs to be provided using the supportedInputs parameter. The space between the input name and number is not sent to OH (e.g. "HDMI 1" [alexa] => "HDMI1" [OH]). That space can also be omitted in the supported list as well.
 * Supported item type:
   * String
 * Supported metadata parameters:
