@@ -199,7 +199,7 @@ You don't even need to know Git.
 * The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well. 
 Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith <joe.smith@email.com>" at the end of your change description at the bottom of the editor.  
 Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
-* Click the "Propose file change" button at the bottom of the editor.
+* Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
 
 If you prefer to use Git you can of course use the code contribution process for documentation contributions as well. 
 
