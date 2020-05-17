@@ -112,7 +112,7 @@ ElementType item=ItemName label="Description of the item shown on the webpage"
 
 where ItemName must be the same as defined in default.items
 
-You can find a detailed overview of the different element types [here]({{base}}/docs/configuration/sitemaps.html#element-types)
+You can find a detailed overview of the different element types [here]({{base}}/configuration/sitemaps.html#element-types)
 
 One last thing to do is setting the default sitemap for the "Basic UI" via "Paper UI".
 Browse to "Configuration -> Services" in Paper UI and click the "Configure" button of Basic UI
