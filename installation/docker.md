@@ -97,7 +97,7 @@ docker run \
         -e USER_ID=<uid> \
         -e GROUP_ID=<gid> \
         --restart=always \
-        openhab/openhab:<version>-<architecture>-<distribution>
+        openhab/openhab:<version>-<distribution>
 ```
 
 Where
@@ -105,7 +105,6 @@ Where
 - `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`,
 - `<gid>` is the group ID number for the `openhab` user,
 - `<version>` is the version of openHAB,
-- `<architecture>` is the architecture of your system and
 - `<distribution>` is the base system (debian or alpine).
 
 It is important that the ID number is passed in.
@@ -149,14 +148,14 @@ ExecStart=/usr/bin/docker run --name=%n --net=host \
   --device=/dev/ttyUSB0 \
   -e USER_ID=<uid_of_openhab> \
   -e GROUP_ID=<gid_of_openhab> \
-  openhab/openhab:<version>-<architecture>-<distribution>
+  openhab/openhab:<version>-<distribution>
 ExecStop=/usr/bin/docker stop -t 2 %n ; /usr/bin/docker rm -f %n
 
 [Install]
 WantedBy=multi-user.target
 ```
 
-Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB, `<architecture>` is the architecture of your system and `<distribution>` is the base system (debian or alpine).
+Where `<uid>` is the user ID number for the `openhab` user which you can obtain using the command `id openhab`, `<version>` is the version of openHAB and `<distribution>` is the base system (debian or alpine).
 It is important that the ID number is passed in.
 The ID for the `openhab` user inside the container will not match the ID of the user on your host system and file permissions may be a bit odd (e.g. why does www-data own my openHAB config files?).
 
@@ -180,8 +179,8 @@ Note, always review the README on [Docker Hub](https://hub.docker.com/r/openhab/
 - `-v /opt/openhab/.java:/openhab/.java` : needed by the Nest 1.x binding (and others?), location of the security token
 - `--device=/dev/ttyUSB0` : location of my zwave controller, change and/or add more --device tags to pass all your devices needed by openHAB to the container
 - `--restart=always` : if the container crashes or the system reboots the container is restarted
-- `openhab/openhab:<version>-<architecture>-<distribution>` : name of the Docker Image
-- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<architecture>-<distribution> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
+- `openhab/openhab:<version>-<distribution>` : name of the Docker Image
+- `start_debug.sh` : You can start the container with the command ``docker run -it openhab/openhab:<version>-<distribution> ./start_debug.sh`` to get into the debug shell. You might need to mount additional volumes and parameters as described above.
 
 ## Environment Variables
 
@@ -212,10 +211,10 @@ Delete the container:
 Pull down the latest image:
 
 ```bash
-docker pull openhab/openhab:<version>-<architecture>-<distribution>
+docker pull openhab/openhab:<version>-<distribution>
 ```
 
-where `<version>` is the version of openHAB, `<architecture>` is your architecture and `<distribution>` is the base system (debian or alpine).
+where `<version>` is the version of openHAB and `<distribution>` is the base system (debian or alpine).
 
 Restart the container using the full command above.
 

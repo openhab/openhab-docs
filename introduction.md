@@ -46,7 +46,7 @@ Here are some key considerations especially for new users. To be successful, you
 Remember, openHAB is just a computer program. 
 The computer will only do what *you* tell it to do.
 openHAB can provide many default solutions that are easy to setup. 
-On the flip side, the more you insist that everything should look and work exactly as you want it, the more work you will have to do. 
+On the flip side, the more you insist that everything should look and work exactly the way you want it, the more work you will have to invest. 
 openHAB is fully customizable, but doing so will require substantial effort on your part.
 
 After you have read the documentation for openHAB, you will have:
@@ -133,7 +133,7 @@ Once you have openHAB up and running, the [Configuration]({{base}}/configuration
 
 You will quickly discover that you may want to learn more about Things, Channels, Items, and more. 
 To do so, we highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html). 
-It provides a more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
+It provides more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
 
 The amount of information provided here can be overwhelming, so please come back to these sections often as you develop your home automation system.
 
@@ -149,15 +149,15 @@ It is an active and responsive community of experienced users who generally resp
 Remember that openHAB is an open-source development, driven exclusively by volunteers. 
 Please be kind and courteous, it will be most appreciated by those that will try to help you.
 
-In many occasions, you will notice that your problem has already been raised by others; and discussed and resolved by the community before. 
-You can search previous conversations and issues to see if your question has already been answered. 
-It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting your own question.
+In many occasions, you will notice that your problem has already been raised, discussed and resolved by the community before. 
+You can search previous conversations and issues to see if your questions have already been answered. 
+It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting an own question.
 
-If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) for information on what information you will need to provide.
+If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) to see what information you will need to provide with your post.
 
 ## Putting it into Practice
 
-Once you are getting a first overview, it is time to practice. 
+Once you have got a first overview, it is time to practice. 
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
@@ -178,7 +178,7 @@ Working with DIY solutions often requires a deeper level of understanding, as we
 The choice is yours of course, but you will need to be prepared to spend either money or time (and sometimes both) to make your home automation goals a reality.
 And quite often, the investment will be significant.
 
-Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whatever they are.
+Don’t give up, openHAB is very powerful and flexible and will help you achieve your home automation goals, whatever they are.
 But it comes with a rather steep learning curve.
 
 ## A Deeper Dive: openHAB Structure for Advanced Users
