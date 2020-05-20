@@ -3,7 +3,7 @@ id: insteonplm
 label: Insteon PLM
 title: Insteon PLM - Bindings
 type: binding
-description: "Insteon is a home area networking technology developed primarily for connecting light switches and loads. Insteon devices send messages either via the power line, or by means of radio frequency (RF) waves, or both (dual-band). A considerable number of Insteon compatible devices such as switchable relays, thermostats, sensors etc are available. More about Insteon can be found on [Wikipedia](http://en.wikipedia.org/wiki/Insteon)."
+description: ">DO NOT USE THIS BINDING. It is no longer supported, and has been replaced by the Insteon binding."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.insteonplm/README.md
 since: 1x
 logo: images/addons/insteonplm.png
@@ -15,6 +15,8 @@ install: auto
 {% include base.html %}
 
 # Insteon PLM Binding
+
+>DO NOT USE THIS BINDING. It is no longer supported, and has been replaced by the Insteon binding.
 
 Insteon is a home area networking technology developed primarily for connecting light switches and loads. Insteon devices send messages either via the power line, or by means of radio frequency (RF) waves, or both (dual-band). A considerable number of Insteon compatible devices such as switchable relays, thermostats, sensors etc are available. More about Insteon can be found on [Wikipedia](http://en.wikipedia.org/wiki/Insteon).
 

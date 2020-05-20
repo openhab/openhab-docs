@@ -3,7 +3,7 @@ id: insteonhub
 label: Insteon Hub
 title: Insteon Hub - Bindings
 type: binding
-description: "DO NOT USE THIS BINDING. The InsteonHub binding is outdated and no longer supported. Use the InsteonPLM binding instead."
+description: ">DO NOT USE THIS BINDING. It is no longer supported, and has been replaced by the Insteon binding"
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/binding/org.openhab.binding.insteonhub/README.md
 since: 1x
 install: manual
@@ -15,7 +15,7 @@ install: manual
 
 # Insteon Hub Binding
 
-DO NOT USE THIS BINDING. The InsteonHub binding is outdated and no longer supported. Use the InsteonPLM binding instead.
+>DO NOT USE THIS BINDING. It is no longer supported, and has been replaced by the Insteon binding
 
 ## Introduction
 
