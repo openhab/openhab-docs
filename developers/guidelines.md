@@ -350,8 +350,3 @@ For Web Socket Operations
 ::: tip Note
 WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
 :::
-
-Additionally these libraries are allowed
-
-* Apache Commons IO
-* Apache Commons Lang
