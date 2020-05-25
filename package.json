@@ -1,6 +1,6 @@
 {
   "name": "openhab-docs",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "description": "openHAB Documentation",
   "main": "index.js",
   "scripts": {
@@ -13,15 +13,16 @@
     "url": "git+https://github.com/openhab/openhab-docs.git"
   },
   "author": "",
-  "license": "EPL-1.0",
+  "license": "EPL-2.0",
   "bugs": {
     "url": "https://github.com/openhab/openhab-docs/issues"
   },
   "homepage": "https://github.com/openhab/openhab-docs#readme",
   "dependencies": {
     "vue-tabs-component": "^1.5.0",
-    "vuepress": "^0.14.11",
-    "vuepress-tabs": "^0.1.6",
+    "vuepress": "^1.5.0",
+    "vuepress-plugin-container": "^2.1.4",
+    "vuepress-plugin-tabs": "^0.3.0",
     "webpack-serve": "^3.1.1"
   }
 }

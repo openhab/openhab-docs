@@ -146,27 +146,6 @@ def process_file(indir, file, outdir, source)
                 end
             end
 
-            if !in_frontmatter && line =~ /^# / then
-                # Put a warning banner for obsolete bindings
-                out.puts line
-                if obsolete_binding then
-                    out.puts
-                    out.puts "::: danger OBSOLETE BINDING"
-                    new_addon = file.split('/')[0].gsub('1', '')
-                    out.puts "This 1.x binding is obsolete; it has been replaced by the 2.x [#{new_addon}](../#{new_addon}/) binding which you should use instead."
-                    out.puts ":::"
-                    out.puts
-                    obsolete_binding = false
-                end
-                # Add the logo if specified
-                if has_logo then
-                    out.puts
-                    out.puts '<AddonLogo/>'
-                    has_logo = false
-                end
-                next
-            end
-
             # Expand <!--list-subs--> comments with a list of links
             # (https://github.com/eclipse/smarthome/issues/5571)
             if line =~ /<!--\s*list-subs\s*-->/ then
@@ -233,7 +212,6 @@ def process_file(indir, file, outdir, source)
 
         # Add the components for the versions dropdown and the edit link
         out.puts
-        out.puts '<DocPreviousVersions/>' unless file == "introduction.md" and outdir == "docs"
         out.puts '<EditPageLink/>'
     }
 end
