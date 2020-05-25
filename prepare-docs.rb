@@ -36,7 +36,8 @@ add_placeholder_pages()
 
 if (ARGV[0] && ARGV[0] == "--delete-sources") then
     puts ">>> !!! Deleting source files - for ephemeral clones only!"
-    ["addons/*.md", "administration", "appendix", "community", "configuration", "developers", "installation", "tutorials"].each { |d|
+    FileUtils.rm_rf(Dir.glob("addons/*.md"))
+    ["administration", "appendix", "community", "configuration", "developers", "installation", "tutorials"].each { |d|
         FileUtils.rm_rf(d)
     }
 end
