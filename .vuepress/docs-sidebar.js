@@ -135,6 +135,7 @@ module.exports = [
       'developer/contributing',
       'developer/governance',
       'developer/legacy/compatibilitylayer',
+      ['https://next.openhab.org/javadoc/latest/', 'Javadoc']
     ]
   },
 ]
