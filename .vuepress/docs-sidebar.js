@@ -91,7 +91,7 @@ module.exports = [
       'apps/windows',
       ['ecosystem/alexa/', 'Amazon Alexa'],
       ['ecosystem/google-assistant/', 'Google Assistant'], // from v2.3 onwards
-      ['../addons/integrations/homekit/', 'Apple HomeKit'],
+      // ['../addons/integrations/homekit/', 'Apple HomeKit'],
       ['ecosystem/ifttt/', 'IFTTT'],
       ['ecosystem/mycroft/', 'Mycroft.AI'],
     ]
