@@ -5,7 +5,7 @@ title: Enigma2 - Bindings
 type: binding
 description: "The binding integrates Enigma2 devices."
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
