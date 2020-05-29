@@ -725,7 +725,7 @@ The following example shows the implementation of the above mentioned methods in
     @Override
     protected void stopBackgroundDiscovery() {
         logger.debug("Stop WeMo device background discovery");
-        if (wemoDiscoveryJob != null && !wemoDiscoveryJob.isCancelled()) {
+        if (wemoDiscoveryJob != null) {
             wemoDiscoveryJob.cancel(true);
             wemoDiscoveryJob = null;
         }
