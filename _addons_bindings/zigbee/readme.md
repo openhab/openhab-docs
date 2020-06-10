@@ -238,6 +238,7 @@ The following devices have been tested by openHAB users with the binding. The ab
 | SmartThings Motion Sensor                      | CentraLite 3325-S Motion and Temperature sensor       |
 | SmartThings Contact Sensor                     | Contact and Temperature sensor                        |
 | Telkonet EcoInsight Thermostat                 | Intelligent HVAC Thermostat                           |
+| Ikea Fyrtur Blinds                             | Roller blinds                                         |
 | Tradfri Bulbs                                  |                                                       |
 | Tradfri Motion Sensor                          |                                                       |
 | Tradfri Outlet                                 |                                                       |

@@ -65,7 +65,7 @@ If you want to use openHAB Android on a wall mounted tablet, go to settings and 
 You have to enable every information you want to send in the settings.
 Every settings has a default item name which is also used for example item definitions and rules below.
 
-If you have more than one device, it's recommended to fill out the prefix settings.
+If you have more than one device, it's recommended to fill out the [device identifier](#device-identifier) on the main settings page.
 This prefixes every item name, e.g. with the Prefix `John` the item `AlarmClock` becomes `JohnAlarmClock`.
 This way you don't have to change every item name.
 
@@ -248,6 +248,14 @@ then
 end
 ```
 
+### Device identifier
+
+The device identifier can be any string and should be unique for all devices accessing your openHAB server.
+You can use it to distinguish between multiple clients:
+* Prefix the voice command with `<Device identifier>|`
+* Prefix the item names of [Send device information to openHAB](#send-device-information-to-openhab)
+* Use it as state on NFC tags
+
 ### Tasker Action Plugin
 
 The Tasker Action Plugin can be used to send Item commands to the server.
@@ -280,6 +288,15 @@ If it claims that your device is successfully registered at FCM, please open an 
 All notifications are sent as "high priority" messages, which means that the device and the openHAB app are waken up and display the notification.
 However vendors/third parties can implement custom "cleanup", "optimization" and "battery saver" apps, which might lead to delayed notifications.
 Please have a look at [dontkillmyapp.com](https://dontkillmyapp.com/) how to make an exception for openHAB in these apps.
+
+### Notifications in FOSS version
+
+The version on Play Store uses [FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) to receive push notifications in real time.
+In the FOSS version this library has to be removed and has been replaced by a polling mechanism.
+This has a few disadvantages:
+* Notifications are only fetched every 6 hours by default. It uses the same schedule than [Send device information to openHAB](#Send device information to openHAB).
+* Read status aren't synced between devices.
+* The maximum number of messages that can be received during one fetch is limited to 20.
 
 ### My voice command rule isn't run
 
