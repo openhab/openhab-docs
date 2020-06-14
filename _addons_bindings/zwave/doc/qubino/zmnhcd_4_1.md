@@ -18,16 +18,7 @@ The ZMNHCD supports routing. This allows the device to communicate using other r
 
 ## Overview
 
-To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:
-
-  1. set Param 71 to 0 -> save ( make sure it has been set really )
-  2. set Param 71 to 1 -> save ( make sure it has been set really )
-  3. exclude device from network and delete Node xml, stop openHAB
-  4. switch off the power supply of the device ( according to the support team this is an alternative to wait 30s )
-  5. switch on the power supply again and start openHAB
-  6. include device to the network
-  7. add the Thing to openhab via HABmin
-  8. Be patient until the binding until processed all your nodes again
+The Qubino Flush Shutter DC device is ideal for remotely controlling 12–24V DC motors of blinds, rollers, shades, venetian blinds and similar sunscreens.
 
 ### Inclusion Information
 
@@ -65,6 +56,19 @@ FACTORY RESET
 
   
 ⓘ By resetting the device, all custom parameters previously set on the device will return to their default values, and the owner ID will be deleted. Use this reset procedure only when the main gateway (hub) is missing or otherwise inoperable.
+
+### General Usage Information
+
+To enable endpoint 2 (lamella tilt for venetian blinds), follow the procedure:
+
+  1. set Param 71 to 0 -> save ( make sure it has been set really )
+  2. set Param 71 to 1 -> save ( make sure it has been set really )
+  3. exclude device from network and delete Node xml, stop openHAB
+  4. switch off the power supply of the device ( according to the support team this is an alternative to wait 30s )
+  5. switch on the power supply again and start openHAB
+  6. include device to the network
+  7. add the Thing to openhab via HABmin
+  8. Be patient until the binding until processed all your nodes again
 
 ## Channels
 
@@ -488,7 +492,7 @@ Association group 5 supports 16 nodes.
 | COMMAND_CLASS_NO_OPERATION_V1| |
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_SWITCH_BINARY_V1| |
-| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| Linked to BASIC|
+| COMMAND_CLASS_SWITCH_MULTILEVEL_V3| |
 | COMMAND_CLASS_SWITCH_ALL_V1| |
 | COMMAND_CLASS_SENSOR_MULTILEVEL_V1| |
 | COMMAND_CLASS_METER_V3| |
