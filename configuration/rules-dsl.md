@@ -380,7 +380,7 @@ There are two ways to discover these methods:
 
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
-For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
+For example, the [JavaDoc for HSBType](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/core/library/types/hsbtype) shows getRed, getBlue, and getGreen methods.
 These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`.
 They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
 
