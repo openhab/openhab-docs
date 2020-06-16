@@ -92,11 +92,37 @@ The levels build a hierarchy with **ERROR** logging critical messages only and *
 **ALL** includes every log level from weight 100 to 600.
 Setting the log level to **DEFAULT** will log to the level defined in the package.subpackage (in most cases a binding).
 
+If the name of `package.subpackage` is not known, the name can be found out in the console:
+```text
+list -s
+```
+returns a list of all modules and the last column contains the information about the symbolic name of the bundle:
+```text
+openhab> list -s
+START LEVEL 100 , List Threshold: 50
+ ID │ State  │ Lvl │ Version                 │ Symbolic name
+────┼────────┼─────┼─────────────────────────┼───────────────────────────────────────────────────────────────────────────────────────────────────────────────────
+ 19 │ Active │  80 │ 5.3.1.201602281253      │ com.eclipsesource.jaxrs.publisher
+ 20 │ Active │  80 │ 2.8.2.v20180104-1110    │ com.google.gson
+ 21 │ Active │  80 │ 18.0.0                  │ com.google.guava
+ 22 │ Active │  80 │ 27.1.0.jre              │ com.google.guava
+ 23 │ Active │  80 │ 1.0.1                   │ com.google.guava.failureaccess
+ 24 │ Active │  80 │ 3.0.0.v201312141243     │ com.google.inject
+
+```
+The list can be also filtered with grep. To find out the Z-Wave binding the following command can be used
+```Text
+openhab> list -s | grep zwave
+253 x Active x  80 x 2.5.5                   x org.openhab.binding.zwave
+
+```
+
 Following example sets the logging for the Z-Wave binding to **DEBUG**
 
 ```text
 log:set DEBUG org.openhab.binding.zwave
 ```
+
 
 Note that the log levels set using the `log:set` commands are persistent and will be applied upon restart.
 To modify the stored log levels, use the console or edit the [configuration file](#config-file).
