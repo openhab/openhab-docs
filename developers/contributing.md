@@ -197,7 +197,7 @@ You don't even need to know Git.
 * You can preview your changes under the "Preview changes" tab.
 * Add a title and optional description for your proposed change at the bottom of the editor.
 * The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well. 
-Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith <joe.smith@email.com>" at the end of your change description at the bottom of the editor.  
+Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.  
 Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
 * Click the "Propose file change" button at the bottom of the editor.
 
