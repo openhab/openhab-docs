@@ -26,6 +26,7 @@ If you are just keen on binding development, you may skip this document first an
 The structure of a binding follows the structure of a typical OSGi bundle project.
 
 ```
+|- doc                   Images and other assets used in the Readme.md
 |- src/main
 |---- feature
 |-------- feature.xml   Your OSGI feature file
