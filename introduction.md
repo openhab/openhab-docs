@@ -121,13 +121,15 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 4 with 2 or 4 GB for the best experience, but a RPi 2 or 3 is fine, too)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with 2 GB and a 16 GB SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
+A RPi 2 or 3 is fine, too, but a RPi4/8GB is overkill, as are larger SD cards.
+
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
-However, it is worth noting two potential limitations of Raspberry Pis:
-RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are installed.
+It is worth noting two potential limitations of Raspberry Pis, however:
+RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
 Two or more GB should be fine.
-Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions.
-If you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
+Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions (infamous 'wearout').
+When you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
