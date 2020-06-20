@@ -251,7 +251,7 @@ To generate a trusted certificate, you need to own a domain. To acquire your own
 |:-------------------------------- |:------------- |:---- |
 | Purchasing a domain name         | [GoDaddy](http://www.godaddy.com), [Namecheap](http://www.namecheap.com), [Enom](http://www.enom.com), [Register](http://www.register.com) | You should have an IP adress that doesn't change (i.e. fixed), or changes rarely, and then update the DNS *A record* so that your domain/subdomain to point towards your IP. |
 | Obtaining a free domain | [FreeNom](http://www.freenom.com) | Setup is the same as above. |
-| Using a "Dynamic DNS" sevice | [No-IP](http://www.noip.com), [Dyn](http://www.dyn.com/dns) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services offer a free domain too. |
+| Using a "Dynamic DNS" sevice | [No-IP](http://www.noip.com), [Dyn](http://www.dyn.com/dns), [FreeDNS](http://freedns.afraid.org) | Uses a client to automatically update your IP to a domain of you choice, some Dynamic DNS services (like FreeDNS) offer a free domain too. |
 
 {: #nginx-https}
 #### Enabling HTTPS
