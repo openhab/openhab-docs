@@ -234,12 +234,12 @@ These lines are placed in the `location{}` block. For example, by adding the lin
 
 ```nginx
         satisfy  any;
-        allow    192.168.0.1/24;
+        allow    192.168.0.0/24;
         allow    127.0.0.1;
         deny     all;
 ```
 
-NGINX will allow anyone within the 192.168.0.1/24 range **and** the localhost to connect without a password.
+NGINX will allow anyone within the 192.168.0.0/24 range **and** the localhost to connect without a password.
 If you have setup a password following the previous section, then the rest will be prompted for a password for access.
 
 {: #nginx-domain}
