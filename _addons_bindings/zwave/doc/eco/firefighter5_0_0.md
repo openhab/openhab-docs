@@ -149,6 +149,7 @@ The following table summarises the channels available for the FF-ZWAVE5-ECO -:
 | Alarm (smoke) | alarm_smoke | alarm_smoke | Smoke | Switch | 
 | Alarm (CO) | alarm_co | alarm_co |  | Switch | 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
+| Tamper Alarm | alarm_tamper | alarm_tamper |  | Switch | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
 
 ### Binary Sensor
@@ -225,6 +226,18 @@ The following state translation is provided for this channel to the ```Switch```
 Indicates if a power alarm is triggered.
 
 The ```alarm_power``` channel is of type ```alarm_power``` and supports the ```Switch``` item and is in the ```Energy``` category. This is a read only channel so will only be updated following state changes from the device.
+
+The following state translation is provided for this channel to the ```Switch``` item type -:
+
+| Value | Label     |
+|-------|-----------|
+| OFF | OK |
+| ON | Alarm |
+
+### Tamper Alarm
+Indicates if the tamper alarm is triggered.
+
+The ```alarm_tamper``` channel is of type ```alarm_tamper``` and supports the ```Switch``` item. This is a read only channel so will only be updated following state changes from the device.
 
 The following state translation is provided for this channel to the ```Switch``` item type -:
 
