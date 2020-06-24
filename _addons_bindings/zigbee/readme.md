@@ -210,6 +210,8 @@ The thing type is ```coordinator_telegesis```.
 
 The thing type is ```coordinator_xbee```. Other XBee S2C devices should also be supported.
 
+The XBee must be run with API mode firmware and not the AT firmware.
+
 ### Devices
 
 The following devices have been tested by openHAB users with the binding. The absence of a device in this list does not mean it will not work - if the device is a standard ZigBee device similar to ones on this list, then it should work.

@@ -86,7 +86,7 @@ The time is sent as a number containing the number of milliseconds since the epo
 
 Example item definition:
 ```java
-DateTime AlarmClock
+DateTime AlarmClock "Alarm Clock [%s]" <time>
 ```
 
 Example rule:
@@ -125,7 +125,7 @@ end
 
 Example item definition:
 ```java
-String CallState
+String CallState "Call State [%s]" <soundvolume>
 ```
 
 Example rule:
@@ -148,7 +148,7 @@ end
 
 Example item definition:
 ```java
-Number BatteryLevel
+Number BatteryLevel "Battery Level [%d %%]" <batterylevel>
 ```
 
 Example rule:
@@ -167,7 +167,7 @@ end
 
 Example item definition:
 ```java
-String ChargingState
+String ChargingState "Charging State [%s]" <poweroutlet_eu>
 ```
 
 Example rule:
@@ -195,7 +195,7 @@ end
 
 Example item definition:
 ```java
-String WifiName
+String WifiName "Wi-Fi Name [%s]" <network>
 ```
 
 Example rule:
@@ -222,7 +222,7 @@ Sending the DND mode requires Android 6 or higher.
 
 Example item definition:
 ```java
-String DndMode
+String DndMode "DND Mode [%s]" <soundvolume_mute>
 ```
 
 Example rule:
@@ -291,7 +291,7 @@ Please have a look at [dontkillmyapp.com](https://dontkillmyapp.com/) how to mak
 The version on Play Store uses [FCM](https://en.wikipedia.org/wiki/Firebase_Cloud_Messaging) to receive push notifications in real time.
 In the FOSS version this library has to be removed and has been replaced by a polling mechanism.
 This has a few disadvantages:
-* Notifications are only fetched every 6 hours by default. It uses the same schedule than [Send device information to openHAB](#Send device information to openHAB).
+* Notifications are only fetched every 6 hours by default. It uses the same schedule than [Send device information to openHAB](#send-device-information-to-openhab).
 * Read status aren't synced between devices.
 * The maximum number of messages that can be received during one fetch is limited to 20.
 
