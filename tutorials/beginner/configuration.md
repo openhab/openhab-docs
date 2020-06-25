@@ -88,12 +88,15 @@ There you will find all created things
 
 You can already see the status, "__ONLINE__", of the thing, so it's currently reachable by openHAB.
 If you click on the name, you'll get to the next page showing the available channels of the thing.
-Channels represent the different functions provided by the things and can be linked to items. Those items then can be used to interact with the thing or read data from the things
+Channels represent the different functions provided by the things and can be linked to items. 
+Those items then can be used to interact with the thing or read data from the things.
 In our case you see 
 
 ![](images/create_item_simple_2.png)
 
-On a fresh installation,  __simple mode__ is enabled by default. That means all available channels of the thing get automatically linked to items. You can see that by the icon of each channel:
+On a fresh installation,  __simple mode__ is enabled by default. 
+That means all available channels of the thing get automatically linked to items. 
+You can see that by the icon of each channel:
 
 |    Icon     	|     Meaning       
 | ------------- | ------------- |
@@ -106,7 +109,8 @@ Navigate to the ```CONTROL``` section and you should see the following:
 ![](images/control_1.png)
 
 ::: tip Note
-PaperUI is purely for administration purposes. You see all things in the control section and can interact with them, but there's no customization possibility. 
+PaperUI is purely for administration purposes. 
+You see all things in the control section and can interact with them, but there's no customization possibility. 
 To create your own beautiful UIs you need to switch to the chapter [Creating a sitemap]({{base}}/tutorials/beginner/sitemap.html)
 :::
 
@@ -115,14 +119,19 @@ If you want to have more control over your items like
 - item name
 - item type (switch / contact /...)
 
-you need to disable __simple mode__ first. To do this, navigate to ```Configuration --> System``` (1) and scroll down to the __Item Linking__ section. Disable simple mode (2) and click on __SAVE__ (3) to apply the changes. 
+you need to disable __simple mode__ first. 
+To do this, navigate to ```Configuration --> System``` (1) and scroll down to the __Item Linking__ section. 
+Disable simple mode (2) and click on __SAVE__ (3) to apply the changes. 
 You also see that the navigation bar shows a new element called ```ITEMS``` (4)
 
 ![](images/disable_simple_mode.png)
 
-With that, we can create now the items on our things manually. To do that, go back to "John's Mobile". You see that the previous items - which were created manually - remain untouched by disabling simple mode.
+With that, we can create now the items on our things manually. 
+To do that, go back to "John's Mobile". 
+You see that the previous items - which were created manually - remain untouched by disabling simple mode.
 
-If you now click on the blue button before the channel name the you will see all items that are linked to this channel. The highlighted item is the automatically created item when simple mode was switched on.
+If you now click on the blue button before the channel name the you will see all items that are linked to this channel. 
+The highlighted item is the automatically created item when simple mode was switched on.
 ![](images/create_item_1.png)
 
 You can also change this item by using the icons next to it:
