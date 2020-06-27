@@ -434,7 +434,8 @@ server {
 {: #synology-remote-config}
 #### Configuration on Synology DiskStation
 
-Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required. The majority of the configuration mentioned above can be completed through the DSM GUI, but SSH access is required to implement authentication (**authentication is essential for remote access to your openHAB instance**).
+Synology DSM (as of 6.2) has the ability to automatically acquire certificates from Let's Encrypt and renew them every 90 days as required. 
+The majority of the configuration mentioned above can be completed through the DSM GUI, but SSH access is required to implement authentication (**authentication is essential for remote access to your openHAB instance**).
 
 Before you continue, make sure you have the below conditions:
 
@@ -443,9 +444,12 @@ Before you continue, make sure you have the below conditions:
 - Access to your DiskStation by SSH ([How to login to DSM with root permission via SSH/Telnet](https://www.synology.com/en-global/knowledgebase/DSM/tutorial/General_Setup/How_to_login_to_DSM_with_root_permission_via_SSH_Telnet/))
 - Ports 80 and 443 forwarded from your router to your DiskStation (make sure you reconfigure the router web UI to a different port first, so you don't lose access!)
 
-Log into the GUI of your DiskStation as administrator, and open the package center. Install Apache HTTP Server. This is needed to generate the password files.
+Log into the GUI of your DiskStation as administrator, and open the package center. 
+Install Apache HTTP Server. 
+This is needed to generate the password files.
 
-Go to Control Panel > Application Portal > Reverse Proxy. We will set up two reverse proxies, one for HTTP and one for HTTPS. The HTTP one can be disabled later if desired (not at all essential if you will only use the app remotely, and never a browser).
+Go to Control Panel > Application Portal > Reverse Proxy. We will set up two reverse proxies, one for HTTP and one for HTTPS. 
+The HTTP one can be disabled later if desired (not at all essential if you will only use the app remotely, and never a browser).
 
 Create two reverse proxies as follows:
 
@@ -486,11 +490,13 @@ Put in your domain name and email address. Add a 'Subject Alternative Name' if y
 Click Apply, and wait a few minutes - your certificate is done!
 
 ::: tip Note
-Sometimes you may receive an error at the end of the certificate wizard - the first time this happens, click on 'cancel and see if you have a certificate anyway. If the certifcate has been generated, you are good to go.
+Sometimes you may receive an error at the end of the certificate wizard - the first time this happens, click on 'cancel and see if you have a certificate anyway.
+If the certifcate has been generated, you are good to go.
 :::
 
 Select the certificate that has just been created, and click on 'Configure'.
-Ensure that the new certificate is listed next to your-hostname.com in the table - something like the below. If it's not selected, update it.
+Ensure that the new certificate is listed next to your-hostname.com in the table - something like the below. 
+If it's not selected, update it.
 
 | Services                  | Certificate     |
 |:------------------------- |:--------------- |
@@ -502,14 +508,17 @@ Ensure that the new certificate is listed next to your-hostname.com in the table
 Once this is done, update the CAA record for your-hostname.com with your registrar (exact process will vary by registrar).
 Within an hour or so, you should not receive the security warning for https://your-hostname.com.
 
-Next, you must add authentication to the reverse proxy. There's no GUI way to do this, so we need to create another small NGINX virtual host on the DiskStation.
+Next, you must add authentication to the reverse proxy. 
+There's no GUI way to do this, so we need to create another small NGINX virtual host on the DiskStation.
 
-Log into your DiskStation by SSH. Use the admin username and password.
+Log into your DiskStation by SSH. 
+Use the admin username and password.
 Create a .htpasswd file in your openHAB userdata folder (your userdata location may vary, update accordingly):
 ```shell
 htpasswd -c /volume1/SmartHome/openHAB/userdata/.htpasswd username
 ```
-Next, add a very simple NGINX configuration similar to that created above, but without the SSL parameters. DSM comes with vi installed by default, but you may wish to [install nano](https://anto.online/other/how-to-install-nano-on-your-synology-nas/)
+Next, add a very simple NGINX configuration similar to that created above, but without the SSL parameters. 
+DSM comes with vi installed by default, but you may wish to [install nano](https://anto.online/other/how-to-install-nano-on-your-synology-nas/)
 
 ```shell
 sudo nano /usr/local/etc/nginx/sites-enabled/openHAB-auth
@@ -553,7 +562,9 @@ Once you are done, save the file, restart and test NGINX:
 ```shell
 sudo nginx -s reload && sudo nginx -t
 ```
-As above, the first part of the file redirects any HTTP queries to HTTPS directly. If you don't get any errors, update the reverse proxy settings in the DSM GUI to point to these new endpoints. Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make the updates below:
+As above, the first part of the file redirects any HTTP queries to HTTPS directly. 
+If you don't get any errors, update the reverse proxy settings in the DSM GUI to point to these new endpoints. 
+Back in the GUI, go to Control Panel > Application Portal > Reverse Proxy, make the updates below:
 
 | Parameter                 | Value           |
 |:------------------------- |:--------------- |
