@@ -485,8 +485,11 @@ Next, acquire certificates from Let's Encrypt using the GUI in DSM.
 
 Go to Control Panel > Security > Certificate, and click on 'Add'.
 Select the option to 'Add a new Certificate'.
-Put in a description, something like 'openHAB SSL Cert' (it doesn't matter). Select 'Get a certificate from Let's Encrypt' and check the box to set it as default. Click next.
-Put in your domain name and email address. Add a 'Subject Alternative Name' if you want a different topic in the subject line when Let's Encrypt email you about that certificate (not essential).
+Put in a description, something like 'openHAB SSL Cert' (it doesn't matter). 
+Select 'Get a certificate from Let's Encrypt' and check the box to set it as default. 
+Click next.
+Put in your domain name and email address. 
+Add a 'Subject Alternative Name' if you want a different topic in the subject line when Let's Encrypt email you about that certificate (not essential).
 Click Apply, and wait a few minutes - your certificate is done!
 
 ::: tip Note
