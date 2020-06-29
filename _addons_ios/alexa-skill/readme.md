@@ -45,6 +45,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
   * [Command Not Working](#command-not-working)
   * [Device Not Found](#device-not-found)
   * [Device Not Responding](#device-not-responding)
+  * [Duplicate Device Names](#duplicate-device-names)
   * [Request Not Supported](#request-not-supported)
   * [Server Authentication Issue](#server-authentication-issue)
   * [Server Not Accessible](#server-not-accessible)
@@ -74,7 +75,7 @@ The skill connects your openHAB setup through the [myopenHAB.org](http://myopenH
 ## Recommendations
 
 ### Item Labels
-Matching of voice commands to items happens based on the item label (e.g. "Kitchen Light"). If it is not specified, the item will be ignored. It is therefore advisable, to choose labels that can be used to form natural commands. As an example, compare "Alexa, turn on the Kitchen Light" vs. "Alexa, turn on the Ground Floor LEDs Kitchen".
+Matching of voice commands to items happens based on the item label (e.g. "Kitchen Light"). If it is not specified, the item will be ignored. It is therefore advisable, to choose labels that can be used to form natural commands. It is important to note that each of these labels needs to be unique to prevent any [duplicate issues](#duplicate-device-names). As an example, compare "Alexa, turn on the Kitchen Light" vs. "Alexa, turn on the Ground Floor LEDs Kitchen".
 
 ### Regional Settings
 In order for the skill to determine your default language and measurement system to use, during the discovery process, for some of the controllers supporting friendly language-based names and unit of measurement, it is important to set your server regional settings including the language, country/region and measurement system properties. These can either be accomplished by using Paper UI (Configuration > System > Regional Settings) or setting the `language`, `region` and `measurementSystem` properties for `org.eclipse.smarthome.i18n` or `org.eclipse.smarthome.core.i18nprovider` service (depending on release version) in `$OPENHAB_CONF/services/runtime.cfg`. If these settings aren't defined, the skill will either use the item level configuration, if available, to determine these properties, or fallback to `en` language and `SI` measurement system, as default values.
@@ -1163,6 +1164,11 @@ Here are some of the most common generic errors you may encounter while using th
 * To resolve this error, make sure that all items interfacing with Alexa have a defined state. If necessary, use [item sensors](#item-sensor), or if the state is not available in openHAB, set the [item state](#item-state) to not be retrievable.
 * For group endpoints, partial properties responses will be send back to Alexa excluding items with invalid state. This will allow Alexa to acknowledge a command request assuming that the relevant item state is accurate. However, it will cause Alexa to generate this error when requesting the status of a device configured with an interface supporting that feature. For example, using a thermostat group endpoint, a request to set its mode will succeed but requesting its mode status will fail if one of its property state, such as its temperature sensor, is not defined in openHAB.
 * This is the default error.
+
+### Duplicate Device Names
+* Alexa will respond with "A few things share the name _device_, which one did you want?"
+* It indicates that more than one device on your Alexa account matches the device name requested.
+* To resolve this error, make sure that all the [item labels](#item-labels) related to your Alexa-enabled items are unique. Additionally, check your Alexa account for discovered devices from other skills or local integrations (e.g. Philips Hue bridge), that may have overlapping names.
 
 ### Request Not Supported
 * Alexa will respond with "_device_ doesn't support that"
