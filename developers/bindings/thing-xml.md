@@ -78,6 +78,8 @@ The granularity of channel types should be on its semantic level, i.e. very fine
 If a Thing measures two temperature values, one for indoor and one for outdoor, this should be modelled as two different channel types.
 Overriding labels of a channel type must only be done if the very same functionality is offered multiple times, e.g. having an actuator with 5 relays, which each is a simple "switch", but you want to individually name the channels (1-5).
 
+### State Channel Types
+
 The following XML snippet shows a thing type definition with 2 channels and one referenced channel type:
 
 ```xml
@@ -151,6 +153,8 @@ The default value is `false` and thus will be taken if the `advanced` attribute 
 Especially for complex devices with a lot of channels, only a small set of channels - the most important ones - should be shown to the user to reduce complexity.
 Whether a channel should be declared as `advanced` depends on the device and can be decided by the binding developer.
 If a functionality is rarely used it should be better marked as `advanced`.
+
+### Trigger Channel Types
 
 The following XML snippet shows a trigger channel:
 

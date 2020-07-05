@@ -46,7 +46,7 @@ Here are some key considerations especially for new users. To be successful, you
 Remember, openHAB is just a computer program. 
 The computer will only do what *you* tell it to do.
 openHAB can provide many default solutions that are easy to setup. 
-On the flip side, the more you insist that everything should look and work exactly as you want it, the more work you will have to do. 
+On the flip side, the more you insist that everything should look and work exactly the way you want it, the more work you will have to invest. 
 openHAB is fully customizable, but doing so will require substantial effort on your part.
 
 After you have read the documentation for openHAB, you will have:
@@ -121,19 +121,21 @@ If you have a strong preference towards a particular platform, then that platfor
 You can install openHAB on your desktop computer for evaluation purposes if you already have any of these systems available for use, but we recommend using a dedicated system in the long run. 
 If you feel serious about home automation it may be better to start with a dedicated system right away.
 
-For anyone undecided: many people find that the simplest way to experiment with openHAB is to get a [Raspberry Pi (Version 4 with 2 or 4 GB for the best experience, but a RPi 2 or 3 is fine, too)](https://raspberrypi.org) and install [openHABian]({{base}}/installation/openhabian.html); a "hassle-free openHAB setup". 
+If you have no strong preference, get a [Raspberry Pi 4](https://www.raspberrypi.org/products/raspberry-pi-4-model-b/) with 2 GB and a 16 GB SD card and install [openHABian]({{base}}/installation/openhabian.html) for the best experience.
+A RPi 2 or 3 is fine, too, but a RPi4/8GB is overkill, as are larger SD cards.
+
 While openHABian offers a streamlined and simplified way to get up and running quickly, it is a complete openHAB home automation system easily capable of automating your entire home.
-However, it is worth noting two potential limitations of Raspberry Pis:
-RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are installed.
+It is worth noting two potential limitations of Raspberry Pis, however:
+RPi 3 and older are limited in RAM (1 GB of memory or less) and may not perform well when additional memory hungry applications such as databases and data visualization programs are being used.
 Two or more GB should be fine.
-Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions.
-If you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
+Running Raspberries off the internal SD card only may result in system instabilities as these memory cards can degrade quickly under openHAB's use conditions (infamous 'wearout').
+When you choose to deploy openHABian, there's the ZRAM feature available to mitigate.
 
 Once you have openHAB up and running, the [Configuration]({{base}}/configuration/index.html) article contains everything you need to know to get your openHAB installation talking to different devices around your home. 
 
 You will quickly discover that you may want to learn more about Things, Channels, Items, and more. 
 To do so, we highly recommend that you read the next chapter titled [Concepts]({{base}}/concepts/index.html). 
-It provides a more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
+It provides more in-depth descriptions of Things, Items, Bindings, etc. that will help you as you dive deeper into openHAB.
 
 The amount of information provided here can be overwhelming, so please come back to these sections often as you develop your home automation system.
 
@@ -149,15 +151,15 @@ It is an active and responsive community of experienced users who generally resp
 Remember that openHAB is an open-source development, driven exclusively by volunteers. 
 Please be kind and courteous, it will be most appreciated by those that will try to help you.
 
-In many occasions, you will notice that your problem has already been raised by others; and discussed and resolved by the community before. 
-You can search previous conversations and issues to see if your question has already been answered. 
-It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting your own question.
+In many occasions, you will notice that your problem has already been raised, discussed and resolved by the community before. 
+You can search previous conversations and issues to see if your questions have already been answered. 
+It is best practice and generally considered to be good etiquette to check fairly thoroughly before posting an own question.
 
-If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) for information on what information you will need to provide.
+If it is your first time posting a question, please read [How to help us help you](https://community.openhab.org/t/how-to-ask-a-good-question-help-us-help-you/58396) to see what information you will need to provide with your post.
 
 ## Putting it into Practice
 
-Once you are getting a first overview, it is time to practice. 
+Once you have got a first overview, it is time to practice. 
 Here a short list of the steps that you will need to consider to get openHAB up and running as your home automation system:
 
 1. Install openHAB
@@ -178,7 +180,7 @@ Working with DIY solutions often requires a deeper level of understanding, as we
 The choice is yours of course, but you will need to be prepared to spend either money or time (and sometimes both) to make your home automation goals a reality.
 And quite often, the investment will be significant.
 
-Don’t give up, openHAB is very powerful and flexible and most likely can help you achieve your home automation goals, whatever they are.
+Don’t give up, openHAB is very powerful and flexible and will help you achieve your home automation goals, whatever they are.
 But it comes with a rather steep learning curve.
 
 ## A Deeper Dive: openHAB Structure for Advanced Users

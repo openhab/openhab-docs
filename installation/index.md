@@ -45,20 +45,19 @@ OpenJDK may also be used, but it has some [known limitations](https://community.
 
 | Java Platform                               | Advantages                                                                                                                                                                            | Disadvantages                                                                                                                                                                                                                                                                                                                        |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| [Zulu](https://www.azul.com/downloads/) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
+| [Azul Zulu](https://www.azul.com/downloads/) | Completely open source, fully certified Java SE compliant build of OpenJDK, embedded version optimized for ARM devices [available here](https://www.azul.com/downloads/zulu-embedded/) |                                                                                                                                                                                                                                                                                                                                      |
 | [Oracle Java](https://java.com/en/)         | Full openHAB support on all platforms                                                                                                                                                 | [Licensing restrictions](https://blog.takipi.com/running-java-on-docker-youre-breaking-the-law/), manual installation required on many Linux systems: [Ubuntu](https://help.ubuntu.com/community/Java), [Mint](https://community.linuxmint.com/tutorial/view/1091), and [Debian](https://wiki.debian.org/Java/Sun) are some examples |
-| [OpenJDK](https://openjdk.java.net)          | Supported by many Linux distributions, packages [typically available](https://openjdk.java.net/install/index.html)                                                                     | [Performance issues](https://github.com/openhab/openhab-distro/issues/10#issuecomment-223786506) on ARM platforms, [compatibility issues](https://community.openhab.org/t/openhab-is-offline-message-fixed/17441/8) with certain bindings and certificates                                                                           |
+| [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
 Please download and install the **Java 8** version of the JVM.
-openHAB does not work well with newer Java versions such as Java 9 or Java 11.
+openHAB 3 will use Java 11 and you *can* go for it with 2.X, too, but be aware that although developers are working hard to make this workl, there might be problems with the oldest parts of openHAB such as some of the v1 bindings due to non-backward compatible changes in Java 11.
 
 The **64-bit version** of the JVM is recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
 The **32-bit version** of the JVM is recommended on ARM platforms such as the Raspberry Pi.
-The 32-bit JVM performs better on the ARM platform and some add-ons use libraries that do not work with a 64-bit JVM on the ARM platform.
+The 32-bit JVM performs better on the ARM platform. Some add-ons use libraries that do not work with a 64-bit JVM on ARM.
 
 For best compatibility, namely with the openHAB Cloud service [myopenhab.org](https://www.myopenhab.org) and the [Eclipse IoT Marketplace]({{base}}/configuration/eclipseiotmarket.html), the minimum recommended Java 8 revision is "161".
-Attention: Most package managers serve an **older revision**.
 Check your current Java version by opening a command line console and typing `java -version`:
 
 ```text
@@ -73,7 +72,7 @@ Before you can start, two decisions have to be made:
 
 1.  openHAB 2 is available as a platform independent archive file or through a package repository:
     - **Manual setup:** Download and extract a platform independent zip archive: [macOS](macos.html), [Windows](windows.html), [Linux](linux.html#manual-installation)
-    - **Package setup:** Install though a package repository, including automatic updates.
+    - **Package setup:** Install through a package repository, including automatic updates.
     This option is only available for Debian or Ubuntu derivatives and the recommended choice: [Linux (apt/deb)](linux.html#package-repository-installation)
 
 2.  Stable release or cutting edge:

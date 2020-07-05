@@ -119,7 +119,7 @@ More details about all of the available Item types and their commands are availa
 [Item Types Overview]({{base}}/concepts/items.html)
 
 To learn about the technical internals of the individual Item types, please refer to:
-[Javadoc on Generic Item and its subclasses](https://eclipse.org/smarthome/documentation/javadoc/org/eclipse/smarthome/core/items/GenericItem.html)
+[Javadoc on Generic Item and its subclasses](https://www.openhab.org/javadoc/v2.5/org/openhab/core/items/genericitem)
 
 <!-- TODO: Random content. Doesn't make sense here. Might be changed to be a more general example for diverse Items
 
@@ -457,7 +457,7 @@ Because of the hierarchical structure of your group items, the rule will be clea
 Additionally, the rule will not need to be modified when a new Item is added to the `Temperatures` group.
 
 {: #group-type}
-#### Group Type and State
+### Derive Group State from Member Items
 
 As you are now aware, an Item can have a state (e.g. "ON", "OFF").
 A Group Item can also have a state.
@@ -474,17 +474,13 @@ Group[:itemtype[:function]] groupname ["labeltext"] [<iconname>] [(group1, group
 
 Group state aggregation functions can be any of the following:
 
-| Function              | Description                                                                                                                                                             |
-|-----------------------|-------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| `EQUALITY`            | Default if no function is specified. If ALL members have state X the group state will be X, otherwise the group state will be `UNDEF`.                                  |
-| `AND(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) AND operation. If all item states are 'value1', 'value1' is returned, otherwise 'value2' is returned.          |
-| `OR(value1,value2)`   | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) OR operation. If at least one item state is of 'value1', 'value1' is returned, otherwise 'value2' is returned. |
-| `NAND(value1,value2)` | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NAND (not AND) operation. Returns the opposite of the AND operation.                                           |
-| `NOR(value1,value2)`  | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) NOR (not OR) operation. Returns the opposite of the OR operation.                                              |
-| `AVG`                 | Calculates the numeric average over all Item states of decimal type.                                                                                                    |
-| `MAX`                 | Calculates the maximum value of all Item states of decimal type.                                                                                                        |
-| `MIN`                 | Calculates the minimum value of all Item states of decimal type.                                                                                                        |
-| `SUM`                 | Calculates the sum of all Item states in the Group.                                                                                                                     |
+| Function                   | Parameters                    | Base Item                                   | Description                                                                                                                                                                                                           |
+|----------------------------|-------------------------------|---------------------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `EQUALITY`                 | -                             | \<all\>                                     | Default if no function is specified. Sets the state of the members if all have equal state. Otherwise `UNDEF` is set. In the Item DSL `EQUALITY` is the default and may be omitted.                                   |
+| `AND`, `OR`, `NAND`, `NOR` | <activeState>, <passiveState> | \<all\> (must match active & passive state) | [Boolean](https://en.wikipedia.org/wiki/Boolean_algebra) operation. Sets the \<activeState\>, if the members state \<activeState\> evaluates to `true` under the boolean term. Otherwise the \<passiveState\> is set. |
+| `SUM`, `AVG`, `MIN`, `MAX` | -                             | Number                                      | [Arithmetic](https://en.wikipedia.org/wiki/Arithmetic) operation. Sets the state according to the arithmetic function over all members states.                                                                        |
+| `COUNT`                    | <regular expression>          | Number                                      | Sets the state to the number of members matching the given regular expression with their states.                                                                                                                      |
+| `LATEST`, `EARLIEST`       | -                             | DateTime                                    | Sets the state to the latest/earliest date from all members states                                                                                                                                                    |
 
 Boolean group state functions additionally return a number representing the count of member Items of value 'value1' (see example below).
 
@@ -495,21 +491,33 @@ Incompatible Item types within a Group may result in the invalid aggregation res
 
 **Examples:**
 
+Examples for derived states on Group Items when declared in the Item DSL:
+
 ```java
-Group:Number             Lights       "Active Lights [%d]"              // e.g. "2"
-Group:Switch:OR(ON,OFF)  Lights       "Active Lights [%d]"              // e.g. ON and "2"
-Group:Number:AVG         Temperatures "All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
+Group:Number             			Lights       	"Active Lights [%d]"              // e.g. "2"
+Group:Switch:OR(ON,OFF)  			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
+Group:Switch:AND(ON,OFF) 			Lights       	"Active Lights [%d]"              // e.g. ON and "2"
+Group:Number:AVG         			Temperatures 	"All Room Temperatures [%.1f °C]" // e.g. "21.3 °C"
+Group:DateTime:EARLIEST  			LatestUpdate	"Latest Update [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:DateTime:LATEST    			LastSeen		"Last Seen [%1$tY.%1$tm.%1$tY %1$tH:%1$tM:%1$tS]"
+Group:String:COUNT("OFFLINE")	    OfflineDevices	"Offline Devices [%d]"			  // e.g. "2"
 ```
 
-The first two examples above compute the number of active lights and store them as group state.
-However, the second group is of type switch and has an aggregation function of OR.
+The first three examples above compute the number of active lights and store them as group state.
+However, the second group is of type switch and has an aggregation function of `OR`.
 This means that the state of the group will be `ON` as soon as any of the member lights are turned on.
+The third uses `AND` and sets the Group state to `ON` if all of its members have the state `ON`, `OFF` if any of the Group members has a different state than `ON`.
 
 Groups do not only aggregate information from individual member Items, they can also accept commands.
 Sending a command to a Group causes the command to be sent to all Group members.
 An example of this is shown by the second group above; sending a single `ON` or `OFF` command to that group turns all lights in the group on or off.
 
-The third example computes the average temperature of all room temperature Items in the group.
+The fourth example computes the average temperature of all room temperature Items in the group.
+
+Assuming we have a Group containing three timestamps: `now().minusDays(10)`, `now()` and `now().plusSeconds(30)`.
+The `EARLIEST` function returns `now().minusDays(10)`, the `LATEST` function returns `now().plusSeconds(30)`.
+
+The last Group counts all members of it matching the given regular expression, here any character or state (simply counts all members).
 
 {: #tags}
 ### Tags
