@@ -521,7 +521,7 @@ If this is the case, the thing in the inbox is automatically set to ignored.
 Note that this thing is automatically removed when the manually added thing is eventually removed.
 A new discovery would then automatically find this thing again and add it to the inbox properly.
 
-When the auto-ignore service checks the `representation property`, it first checks if the thing has `property` of the same name, and then it checks if the thing has `configuration parameter` of the same name.
+When the auto-ignore service checks the `representation property`, it first checks if the thing has `property` of the same name, and then it checks if the thing has a `configuration parameter` of the same name.
 If the latter is used, then the respective `parameter` should be described in the `configuration-description` part of the XML:
 
 ```xml
