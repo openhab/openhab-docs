@@ -488,7 +488,7 @@ In contrast to the properties defined in the 'ThingType' definitions the thing h
 ### Representation Property
 
 A thing type can contain a so-called `representation property`.
-This optional property contains the _name_ of a property whose value can be used to uniquely identify a device.
+This optional property contains the _**name**_ of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
@@ -514,12 +514,30 @@ The name of the `representation property` identifies a property that is added to
 
 ### Representation Property and Discovery
 
-The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing.
-This happens if a device is being added manually.
-If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
-If this is the case, the result in the inbox is automatically set to ignored.
-Note that this result is automatically removed when the manual added thing is eventually removed.
-A new discovery would then automatically find this device again and add it to the inbox properly.
+The representation property is used to auto-ignore discovery results of things that already exist in the system.
+This can happen a) if a thing has been created manually, or b) it has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If the new thing goes online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
+If this is the case, the thing in the inbox is automatically set to ignored.
+Note that this thing is automatically removed when the manually added thing is eventually removed.
+A new discovery would then automatically find this thing again and add it to the inbox properly.
+
+When the auto-ignore service checks the `representation property`, it first checks if the thing has `property` of the same name, and then it checks if the thing has `configuration parameter` of the same name.
+If the latter is used, then the respective `parameter` should be described in the `configuration-description` part of the XML:
+
+```xml
+    <thing-type id="thingTypeId">
+        ...
+        <representation-property>serialNumber</representation-property>
+        ...
+    		<config-description>
+  			  <parameter name="serialNumber" type="text">
+		  		  <label>Serial Number</label>
+			  	  <description>The Serial Number</description>
+  			  </parameter>
+    		</config-description>
+        ...
+    </thing-type>
+```
 
 ## Formatting Labels and Descriptions
 
