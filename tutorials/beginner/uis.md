@@ -14,13 +14,13 @@ The Paper UI is an interface that helps set up and configure your openHAB instan
 It does not (yet) cover all aspects, so you still need to resort to textual configuration files, but it already offers the following:
 
 -   Add-on management: Easily install or uninstall openHAB add-ons
-![](images/picture_05.jpg)
+![](images/addons.jpg)
 
 -   Thing discovery: See devices and services found on your network and add them to your setup.
-![](images//picture_09.jpg)
+![](images/add_thing_2.jpg)
 
 -   Linking items to channels: Instead of adding a binding configuration to your item file, you can directly link Thing channels to your items.
-![](images//picture_21.jpg)
+![](images/linked.jpg)
 
 Note that you still need to define your items, sitemaps, persistence configurations and rules in the relevant configuration files (as done in openHAB 1).
 Such functionality will be added bit by bit to the Paper UI only.
