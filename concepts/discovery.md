@@ -27,7 +27,7 @@ Each discovery result also has a timestamp when it was added to or updated in th
 Discovery results can either be ignored or approved, where in the latter case a Thing is created for them and they become available in the application. 
 If an entry is ignored, it will be hidden in the inbox without creating a Thing for it. 
 
-openHAB offers a service to automatically ignore discovery results in the inbox, whenever a) a Thing has been created manually, that represents the same Thing as the respective discovery result would create, or b) whenever a Thing has been discovered separately by two alternate discovery services e.g. by mDNS and UPnP.
+openHAB offers a service to automatically ignore discovery results in the inbox, whenever a) a Thing has been created manually, that represents the same Thing as the respective discovery result would create, or b) whenever a Thing has been discovered separately by two alternate discovery services.
 This Thing would either have the same Thing UID or the value of its `representation property` is equal to the representation property value of the discovery result.
 For a manually created Thing, its representation property may be either a `property` or a `configuration parameter` of the Thing.
 This service is enabled by default but can be disabled by setting `org.eclipse.smarthome.inbox:autoIgnore=false`. 

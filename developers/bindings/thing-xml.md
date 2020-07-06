@@ -488,7 +488,7 @@ In contrast to the properties defined in the 'ThingType' definitions the thing h
 ### Representation Property
 
 A thing type can contain a so-called `representation property`.
-This optional property contains the _**name**_ of a property whose value can be used to uniquely identify a device.
+This optional property contains the **name** of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
@@ -496,7 +496,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` will be defined in the thing type XML: 
+The `representation property` should be defined in the thing type XML: 
 
 ```xml
     <thing-type id="thingTypeId">
@@ -509,8 +509,8 @@ The `representation property` will be defined in the thing type XML:
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type.
-The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization.
+Note that the `representation property` is normally not listed in the `properties` part of the thing type XML, as this part contains static properties, that are the same for all instances of this thing type.
+The name of the `representation property` identifies a property or configuration parameter that is added to the thing in the thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
@@ -521,8 +521,9 @@ If this is the case, the thing in the inbox is automatically set to ignored.
 Note that this thing is automatically removed when the manually added thing is eventually removed.
 A new discovery would then automatically find this thing again and add it to the inbox properly.
 
-When the auto-ignore service checks the `representation property`, it first checks if the thing has `property` of the same name, and then it checks if the thing has a `configuration parameter` of the same name.
-If the latter is used, then the respective `parameter` should be described in the `configuration-description` part of the XML:
+See also [Implementing a Discovery Service](index.md#representation-property))
+
+When the auto-ignore service checks the `representation property`, it first checks if the thing has a `property` of the same name, and then it checks if the thing has a `configuration parameter` of the same name. If a `configuration parameter` is used, then its respective `parameter` should also be described in the `configuration-description` part of the XML:
 
 ```xml
     <thing-type id="thingTypeId">
