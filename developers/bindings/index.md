@@ -727,14 +727,14 @@ DiscoveryResult hub = DiscoveryResultBuilder.create(thingUID)
   .build();
 ```
 
-If things are created manually, the property or configuration parameter, that would match the auto discovery representation property must be set.
-In the case that a `property` will be used to match the representation property, its value must be set in the thing handler’s `initialize()` method:
+If things are created manually, the property or configuration parameter that would match the auto discovery representation property must be set.
+In the case that a `property` will be used to match the representation property its value must be set in the thing handler's `initialize()` method:
 
 ```java
 updateProperty("uniqueId", uniquePropVal);
 ```
 
-Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property, it must be declared in `thing-types.xml` and in the thing handler’s `Configuration` class:
+Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property it must be declared in `thing-types.xml` and in the thing handler’s `Configuration` class:
 
 ```java
 public class MyThingConfiguration {
