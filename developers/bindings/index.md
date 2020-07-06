@@ -660,7 +660,7 @@ The following table gives an overview about the main parts of a `DiscoveryResult
 | `bridgeUID` | If the discovered thing belongs to a bridge, the `bridgeUID` contains the UID of that bridge.
 | `properties` | The `properties` of a `DiscoveryResult` contain the configuration for the newly created thing.
 | `label` | The human readable representation of the discovery result. Do not put IP/MAC addresses or similar into the label but use the special `representationProperty` instead. |
-| `representationProperty` | The name of one of the properties or configuration parameters, that best which discriminates the result from other results of the same type. See chapter [Representation Property](#representation-property) below. |
+| `representationProperty` | The name of one of the properties or configuration parameters, which best discriminates the result from other results of the same type. See chapter [Representation Property](#representation-property) below. |
 
 To simplify the implementation of custom discovery services, an abstract base class `AbstractDiscoveryService` implements the `DiscoveryService` and just needs to be extended.
 Subclasses of `AbstractDiscoveryService` do not need to handle the `DiscoveryListeners` themselves, they can use the methods `thingDiscovered` and `thingRemoved` to notify the registered listeners.
