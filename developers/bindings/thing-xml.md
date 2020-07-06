@@ -496,7 +496,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` should be defined in the thing type XML: 
+The `representation property` shall be defined in the thing type XML: 
 
 ```xml
     <thing-type id="thingTypeId">
@@ -509,36 +509,21 @@ The `representation property` should be defined in the thing type XML:
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type XML, as this part contains static properties, that are the same for all instances of this thing type.
-The name of the `representation property` identifies a property or configuration parameter that is added to the thing in the thing handler upon successful initialization.
+Note that the `representation property` is normally not listed in the `properties` part of the Thing type XML, as this part contains static properties, that are the same for all instances of this Thing type.
+The name of the `representation property` identifies a property or configuration parameter that is added to the Thing in the Thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
-The representation property is used to auto-ignore discovery results of things that already exist in the system.
-This can happen a) if a thing has been created manually, or b) it has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
-If the new thing goes online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
-If this is the case, the thing in the inbox is automatically set to ignored.
-Note that this thing is automatically removed when the manually added thing is eventually removed.
-A new discovery would then automatically find this thing again and add it to the inbox properly.
+The representation property is used to auto-ignore discovery results of Things that already exist in the system.
+This can happen if, a) a Thing has been created manually, or b) the Thing has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If this is the case, the Thing in the inbox is automatically ignored.
+Note that this Thing is automatically removed when the manually added Thing is removed.
+A new discovery would then automatically find this Thing again and add it to the inbox properly.
 
 See also [Implementing a Discovery Service](index.md#representation-property)
 
-When the auto-ignore service checks the `representation property`, it first checks if the thing has a `property` of the same name, and then it checks if the thing has a `configuration parameter` of the same name. If a `configuration parameter` is used, then its respective `parameter` should also be described in the `configuration-description` part of the XML:
-
-```xml
-    <thing-type id="thingTypeId">
-        ...
-        <representation-property>serialNumber</representation-property>
-        ...
-    		<config-description>
-  			  <parameter name="serialNumber" type="text">
-		  		  <label>Serial Number</label>
-			  	  <description>The Serial Number</description>
-  			  </parameter>
-    		</config-description>
-        ...
-    </thing-type>
-```
+When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
+If a configuration parameter will be used, then its respective `parameter` shall be described in the `config-description` section.
 
 ## Formatting Labels and Descriptions
 
