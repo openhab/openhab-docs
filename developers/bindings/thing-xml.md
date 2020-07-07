@@ -525,7 +525,7 @@ See also [Implementing a Discovery Service](index.md#representation-property)
 When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
 If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section:
 
--```xml
+```xml
     <thing-type id="thingTypeId">
         ...
         <representation-property>uniqueId</representation-property>
