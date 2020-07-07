@@ -504,7 +504,7 @@ The `representation property` shall be defined in the thing type XML:
         <properties>
             <property name="vendor">Philips</property>
         </properties>
-        <representation-property>serialNumber</representation-property>
+        <representation-property>uniqueId</representation-property>
         ...
     </thing-type>
 ```
@@ -523,7 +523,22 @@ A new discovery would then automatically find this Thing again and add it to the
 See also [Implementing a Discovery Service](index.md#representation-property)
 
 When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
-If a configuration parameter will be used, then its respective `parameter` shall be described in the `config-description` section.
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section:
+
+-```xml
+    <thing-type id="thingTypeId">
+        ...
+        <representation-property>uniqueId</representation-property>
+        ...
+    		<config-description>
+  			  <parameter name="uniqueId" type="text">
+		  		  <label>Unique Id</label>
+			  	  <description>The Unique Id for Representation Property</description>
+  			  </parameter>
+    		</config-description>
+        ...
+    </thing-type>
+```
 
 ## Formatting Labels and Descriptions
 
