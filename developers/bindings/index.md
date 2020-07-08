@@ -734,7 +734,8 @@ In the case that a `property` will be used to match the representation property 
 updateProperty("uniqueId", uniquePropVal);
 ```
 
-Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property it must be declared in `thing-types.xml` and in the Thing handler's `Configuration` class:
+Alternatively in the case that a `configuration parameter` will be used to match the auto discovery representation property, the parameter must be declared in either, a) the `thing-types.xml` file, or b) the `config-description` [XML file](config-xml.md).
+And it must also be declared in the Thing handler's `Configuration` class:
 
 ```java
 public class MyThingConfiguration {
