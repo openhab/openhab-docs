@@ -488,7 +488,7 @@ In contrast to the properties defined in the 'ThingType' definitions the thing h
 ### Representation Property
 
 A thing type can contain a so-called `representation property`.
-This optional property contains the _name_ of a property whose value can be used to uniquely identify a device.
+This optional property contains the **name** of a property whose value can be used to uniquely identify a device.
 The `thingUID` cannot be used for this purpose because there can be more than one thing for the same device.
 
 Each physical device normally has some kind of a technical identifier which is unique.
@@ -496,7 +496,7 @@ This could be a MAC address (e.g. Hue bridge, camera, all IP-based devices), a u
 This property is normally part of a discovery result for that specific thing type.
 Having this property identified per binding it could be used as the `representation property` for this thing.
 
-The `representation property` will be defined in the thing type XML: 
+The `representation property` shall be defined in the thing type XML: 
 
 ```xml
     <thing-type id="thingTypeId">
@@ -504,22 +504,41 @@ The `representation property` will be defined in the thing type XML:
         <properties>
             <property name="vendor">Philips</property>
         </properties>
-        <representation-property>serialNumber</representation-property>
+        <representation-property>uniqueId</representation-property>
         ...
     </thing-type>
 ```
 
-Note that the `representation property` is normally not listed in the `properties` part of the thing type, as this part contains static properties, that are the same for each thing of this thing type.
-The name of the `representation property` identifies a property that is added to the thing in the thing handler upon successful initialization.
+Note that the `representation property` is normally not listed in the `properties` part of the Thing type XML, as this part contains static properties, that are the same for all instances of this Thing type.
+The name of the `representation property` identifies a property or configuration parameter that is added to the Thing in the Thing handler upon successful initialization.
 
 ### Representation Property and Discovery
 
-The representation property is being used to auto-ignore discovery results of devices that already have a corresponding thing.
-This happens if a device is being added manually.
-If the new thing is going online, the auto-ignore service of the inbox checks if the inbox already contains a discovery result of the same type where the value of its `representation property` is identical to the value of the `representation property` of the newly added thing.
-If this is the case, the result in the inbox is automatically set to ignored.
-Note that this result is automatically removed when the manual added thing is eventually removed.
-A new discovery would then automatically find this device again and add it to the inbox properly.
+The representation property is used to auto-ignore discovery results of Things that already exist in the system.
+This can happen if, a) a Thing has been created manually, or b) the Thing has been discovered separately by two mechanisms e.g. by mDNS, and by NetBios, or UPnP.
+If this is the case, the Thing in the inbox is automatically ignored.
+Note that this Thing is automatically removed when the manually added Thing is removed.
+A new discovery would then automatically find this Thing again and add it to the inbox properly.
+
+See also [Implementing a Discovery Service](index.md#representation-property)
+
+When comparing representation properties, the auto-ignore service checks for matches between the representation property of the newly discovered Thing, and both the properties and the configuration parameters of existing Things.
+If a configuration parameter will be used, then its respective `parameter` shall be declared in the XML `config-description` section or the `config-description` [XML file](config-xml.md):
+
+```xml
+    <thing-type id="thingTypeId">
+        ...
+        <representation-property>uniqueId</representation-property>
+        ...
+    		<config-description>
+  			  <parameter name="uniqueId" type="text">
+		  		  <label>Unique Id</label>
+			  	  <description>The Unique Id for Representation Property</description>
+  			  </parameter>
+    		</config-description>
+        ...
+    </thing-type>
+```
 
 ## Formatting Labels and Descriptions
 
