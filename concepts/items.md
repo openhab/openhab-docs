@@ -133,7 +133,7 @@ There can be metadata attached to an Item for as many namespaces as desired, lik
 
     Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
 
-The metdata can be included with the channel linking, here an Alexa metadata mapping is added after the channel linking separated with a comma. An example for a ZWave switch is given below.
+The metdata can be included with the channel linking, an Alexa metadata mapping is added after the channel linking separated with a comma in the example for a ZWave switch below.
 ```
 Switch LightSwitch "Light Switch" {channel="zwave:device:22c99d1e:node3:switch_binary", alexa="PowerController.powerState"}
 ``` 
