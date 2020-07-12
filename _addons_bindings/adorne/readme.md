@@ -3,7 +3,7 @@ id: adorne
 label: Adorne
 title: Adorne - Bindings
 type: binding
-description: "The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](legrand.com)."
+description: "The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](https://legrand.com/)."
 since: 2x
 install: auto
 ---
@@ -14,7 +14,7 @@ install: auto
 
 # Adorne Binding 
 
-The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](legrand.com).
+The Adorne Binding integrates [Adorne Wi-Fi ready devices](https://www.legrand.us/adorne/products/wireless-whole-house-lighting-controls.aspx) (switches, dimmers, outlets) from [Legrand](https://legrand.com/).
 
 Legrand attempted to provide a public API based on Samsung's ARTIK Cloud and the initial version of this binding was based on that API.
 However, Samsung shut down ARTIK Cloud shortly after the release and Legrand has not offered a public API replacement since.

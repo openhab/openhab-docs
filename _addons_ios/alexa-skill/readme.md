@@ -200,23 +200,23 @@ Switch WaterAlarm          "Water"           (SecuritySystem) {alexa="SecurityPa
 ### Building Block APIs
 For components of a device, which isn't covered by the existing interfaces, that have more than one setting, characterized by a number within a range or just turn on and off, the [Mode](#modecontroller-mode), [Range](#rangecontroller-rangevalue) and [Toggle](#togglecontroller-togglestate) controllers can be used to highly customize how you interact with that device via Alexa. These capabilities can be used like building blocks to model the full feature set of a complex device. With the expansion of these controllers support to other languages, the skill will use your server [regional settings](#regional-settings) if available, falling back to `en`, to determine your default language setting.
 
-A washer and its settings modeled with multiple mode/toggle interface capabilities.
+A washer and its settings modeled with multiple mode interface capabilities.
 
 ```
 Group Washer       "Washer"               {alexa="Endpoint.Other"}
 String Cycle       "Cycle"       (Washer) {alexa="ModeController.mode" [supportedModes="Normal=Normal:Cottons,Delicate=@Value.Delicate:Knits",friendlyNames="Wash Cycle,Wash Setting",ordered=false]}
 Number Temperature "Temperature" (Washer) {alexa="ModeController.mode" [supportedModes="0=Cold:Cool,1=Warm,2=Hot",friendlyNames="Wash Temperature,@Setting.WaterTemperature",ordered=true]}
 String Status      "Status"      (Washer) {alexa="ModeController.mode" [supportedModes="Washing,Rinsing,Spinning",friendlyNames="Wash Status",nonControllable=true]}
-Switch Power       "Power"       (Washer) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Washer"]}
+Switch Power       "Power"       (Washer) {alexa="PowerController.powerState"}
 ```
 
-A fan and its settings modeled with multiple range/toggle interface capabilities.
+A fan and its settings modeled with a mix of range/toggle interface capabilities.
 
 ```
 Group Fan     "Fan"          {alexa="Endpoint.Fan"}
 Number Speed  "Speed"  (Fan) {alexa="RangeController.rangeValue" [supportedRange="1:10:1",presets="1=@Value.Minimum:@Value.Low:Lowest,10=@Value.Maximum:@Value.High:Highest",friendlyNames="@Setting.FanSpeed,Speed"]}
 Switch Rotate "Rotate" (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.Oscillate,Rotate"]}
-Switch Power  "Power"  (Fan) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Fan"]}
+Switch Power  "Power"  (Fan) {alexa="PowerController.powerState"}
 ```
 
 A router and its settings modeled with multiple toggle interface capabilities.
@@ -225,7 +225,7 @@ A router and its settings modeled with multiple toggle interface capabilities.
 Group Router       "Router"                 {alexa="Endpoint.NetworkHardware"}
 Switch 2GGuestWiFi "2G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.2GGuestWiFi"]}
 Switch 5GGuestWiFi "5G Guest WiFi" (Router) {alexa="ToggleController.toggleState" [friendlyNames="@Setting.5GGuestWiFi"]}
-Switch Power       "Power"         (Router) {alexa="ToggleController.toggleState" [friendlyNames="@DeviceName.Router"]}
+Switch Power       "Power"         (Router) {alexa="PowerController.powerState"}
 ```
 
 ### Semantic Extensions
