@@ -97,7 +97,7 @@ The ```config_decimal``` channel is of type ```config_decimal``` and supports th
 
 ## Device Configuration
 
-The following table provides a summary of the 16 configuration parameters available in the LZW30-SN.
+The following table provides a summary of the 17 configuration parameters available in the LZW30-SN.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -118,6 +118,7 @@ Detailed information on each parameter can be found in the sections below.
 | 10 | Active Power Reports | Active Power Reports |
 | 11 | Periodic Power & Energy Reports | Periodic Power & Energy Reports |
 | 12 | Energy Reports | Energy Reports |
+| 51 | Enable Instant On | Enable Instant On |
 
 ### Parameter 1: Power On State
 
@@ -224,6 +225,7 @@ The following option values may be configured, in addition to values in the rang
 | 170 | Blue |
 | 212 | Violet |
 | 234 | Pink |
+| 255 | White |
 
 The manufacturer defined default value is ```170``` (Blue).
 
@@ -351,6 +353,7 @@ The following option values may be configured, in addition to values in the rang
 | 170 | Blue |
 | 212 | Violet |
 | 234 | Pink |
+| 255 | White |
 
 The manufacturer defined default value is ```0``` (Red).
 
@@ -540,6 +543,22 @@ Values in the range 0 to 100 may be set.
 The manufacturer defined default value is ```10```.
 
 This parameter has the configuration ID ```config_12_1``` and is of type ```INTEGER```.
+
+
+### Parameter 51: Enable Instant On
+
+Enable Instant On
+Enable instant on (ie: disable the 700ms delay) for physical switch. Note, if you disable the delay, it will also disable scene control except for Button 1 (ie: tap up 1x or tap down 1x) and button 7 (config button). All other buttons (2-6) will be disabled. 0: No Delay 1: 700ms Delay (default)
+The following option values may be configured -:
+
+| Value  | Description |
+|--------|-------------|
+| 0 | No delay |
+| 1 | 700ms delay |
+
+The manufacturer defined default value is ```1``` (700ms delay).
+
+This parameter has the configuration ID ```config_51_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
