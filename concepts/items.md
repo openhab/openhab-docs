@@ -133,6 +133,11 @@ There can be metadata attached to an Item for as many namespaces as desired, lik
 
     Switch MyFan "My Fan" { homekit="Fan.v2", alexa="Fan" [ type="oscillating", speedSteps=3 ] }
 
+The metdata can be included with the channel linking, an Alexa metadata mapping is added after the channel linking separated with a comma in the example for a ZWave switch below.
+```
+Switch LightSwitch "Light Switch" {channel="zwave:device:22c99d1e:node3:switch_binary", alexa="PowerController.powerState"}
+``` 
+
 The metadata can be maintained via a dedicated REST endpoint and is included in the `EnrichedItemDTO` responses.
 
 Extensions which can infer some metadata automatically need to implement and register a `MetadataProvider` service in order to make them available to the system. 
