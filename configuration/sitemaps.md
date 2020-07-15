@@ -288,8 +288,8 @@ Selection item=LR_TV_Channel label="TV Channel" mappings=[0="DasErste", 1="BBC O
 Setpoint item=<itemname> [label="<labelname>"] [icon="<iconname>"] minValue=<min value> maxValue=<max value> step=<step value>
 ```
 
-- `minValue` and `maxValue` limit the possible range of the value (both included in the range).
-- `step` defines how much the value will change when the button is pressed one time.
+- `minValue` (defaults to 0) and `maxValue` (defaults to 100) limit the possible range of the value (both included in the range).
+- `step` (defaults to 1) defines how much the value will change when the button is pressed one time.
 
 **Example:**
 
