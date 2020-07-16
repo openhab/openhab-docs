@@ -22,6 +22,29 @@ In order to do so, you will need to make some configuration changes.
 HomeKit organizes your home into "accessories" that are made up of a number of "characteristics".
 Some accessory types require a specific set of characteristics.
 
+HomeKit integration supports following accessory types:
+- Window Covering/Blinds
+- Switchable 
+- Outlet
+- Lighting (simple, dimmable, color)
+- Fan
+- Thermostat
+- Heater / Cooler
+- Lock
+- Security System
+- Garage Door Opener
+- Valve
+- Contact Sensor
+- Leak Sensor
+- Motion Sensor
+- Occupancy Sensor
+- Smoke Sensor
+- Temperature Sensor
+- Humidity Sensor
+- Light Sensor
+- Carbon Dioxide Sensor
+- Carbon Monoxide Sensor
+
 **Attention: Some tags have been renamed. Old style may not be supported in future versions. See below for details.**
 
 ## Global Configuration
@@ -74,11 +97,11 @@ org.openhab.homekit:maximumTemperature=100
 
 ## Item Configuration
 
-After setting this global configuration, you will need to tag your [openHAB items](https://www.openhab.org/docs/configuration/items.html) for HomeKit in order to map them to an ontology.
+After setting the global configuration, you will need to tag your [openHAB items](https://www.openhab.org/docs/configuration/items.html) for HomeKit with accessory type.
 For our purposes, you may consider HomeKit accessories to be of two types: simple and complex.
 
-A simple accessory will be mapped to a single openHAB item (i.e. Lightbulb is mapped to Switch, Dimmer, or Color item).
-A complex accessory will be made up of multiple openHAB items (i.e. Thermostat is composed of mode, and current & target temperature).
+A simple accessory will be mapped to a single openHAB item, e.g. HomeKit lighting can represent an openHAB Switch, Dimmer, or Color item.
+A complex accessory will be made up of multiple openHAB items, e.g. HomeKit Thermostat can be composed of mode, and current & target temperature.
 Complex accessories require a tag on a Group Item indicating the accessory type, as well as tags on the items it composes.
 
 A HomeKit accessory has mandatory and optional characteristics (listed below in the table).
@@ -108,12 +131,11 @@ Switch occupancy_and_motion_sensor       "Occupancy and Motion Sensor Tag"  {hom
 The tag can be:
 
 - full qualified: i.e. with accessory type and characteristic, e.g. "LeakSensor.LeakDetectedState"
-- shorthand version: with only either accessory type or characteristic, .e.g. "LeakSensor", "LeakDetectedState".
+- shorthand version: with only either accessory type or characteristic, e.g. "LeakSensor", "LeakDetectedState".
 
-
-if shorthand version has only accessory type, then HomeKit integration will automatically link *all* mandatory characteristics of this accessory type to the OpenHab item.
-e.g. window covering has 3 mandatory characteristics
-and following are identical definitions of window covering
+if shorthand version has only accessory type, then HomeKit will automatically link *all* mandatory characteristics of this accessory type to the openHAB item.
+e.g. HomeKit window covering has 3 mandatory characteristics: CurrentPosition, TargetPosition, PositionState. 
+Following are equal configuration:
 
 ```xtend
 Rollershutter 	window_covering 	"Window Rollershutter"  	{homekit="WindowCovering"}
@@ -121,13 +143,12 @@ Rollershutter 	window_covering 	"Window Rollershutter"  	{homekit="WindowCoverin
 ```
 
 If the shorthand version has only a characteristic then it must be a part of a group which has a HomeKit accessory type.
-
-Complex accessories are defined using group item. The group item must indicated the HomeKit accessory type, e.g.
-using tags (in shorthand notation)
+You can use openHAB group to define complex accessories. The group item must indicate the HomeKit accessory type, 
+e.g. LeakSensor definition using tags
 
 ```xtend
 Group  gLegacy_leaksensor               "Legacy Leak sensor Group"                                      [ "LeakSensor" ]
-Switch legacy_leaksensor                "Legacy Leak sensor"                    (gLegacy_Leaksensor)    [ "LeakSensor" ]
+Switch legacy_leaksensor                "Legacy Leak sensor"                    (gLegacy_Leaksensor)    [ "LeakDetectedState" ]
 Switch legacy_leaksensor_battery        "Legacy Leak sensor battery status"     (gLegacy_Leaksensor)    [ "homekit:BatteryLowStatus" ]
 ```
 
@@ -139,12 +160,37 @@ Switch leaksensor                       "Leak Sensor"                           
 Switch leaksensor_battery               "Leak Sensor Battery"                   (gLeakSensor)            {homekit="LeakSensor.BatteryLowStatus"}
 ```
 
-### Supported Accessories
 
-A full list of supported accessory types can be found in the table *below*.
+You can use openHAB group to manage state of multiple items. (see [Group items](https://www.openhab.org/docs/configuration/items.html#derive-group-state-from-member-items))
+In this case, you can assign HomeKit accessory type to the group and to the group items
+Following example defines 3 HomeKit accessories of type Lighting: 
+
+- "Light 1" and "Light 2" as independent lights
+- "Light Group" that controls "Light 1" and "Light 2" as group
+
+```xtend
+Group:Switch:OR(ON,OFF) gLight "Light Group" {homekit="Lighting"}
+Switch light1 "Light 1" (gLight) {homekit="Lighting.OnState"}
+Switch light2 "Light 2" (gLight) {homekit="Lighting.OnState"}
+```
+
+## Supported accessory type
 
 | Accessory Tag        | Mandatory Characteristics   | Optional     Characteristics | Supported OH items       | Description                                                      |
 |:---------------------|:----------------------------|:-----------------------------|:-------------------------|:-----------------------------------------------------------------|
+| AirQualitySensor     |                             |                              |                          | Air Quality Sensor which can measure different parameters        |
+|                      | AirQuality                  |                              | String                   | Air quality state, possible values (UNKNOWN,EXCELLENT,GOOD,FAIR,INFERIOR,POOR). Custom mapping can be defined at item level, e.g. [EXCELLENT="BEST", POOR="BAD"]         |
+|                      |                             | OzoneDensity                 | Number                   | Ozone density in micrograms/m3, max 1000                         |
+|                      |                             | NitrogenDioxideDensity       | Number                   | NO2 density in micrograms/m3, max 1000                           |
+|                      |                             | SulphurDioxideDensity        | Number                   | SO2 density in micrograms/m3, max 1000                           |
+|                      |                             | PM25Density                  | Number                   | PM2.5 micrometer particulate density in micrograms/m3, max 1000  |
+|                      |                             | PM10Density                  | Number                   | PM10 micrometer particulate density in micrograms/m3, max 1000   |
+|                      |                             | VOCDensity                   | Number                   | VOC Density in micrograms/m3, max 1000                           |
+|                      |                             | Name                         | String                   | Name of the sensor                                               |
+|                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
+|                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
+|                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
+|                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
 | LeakSensor           |                             |                              |                          | Leak Sensor                                                      |
 |                      | LeakDetectedState           |                              | Switch, Contact          | Leak sensor state (ON=Leak Detected, OFF=no leak)                |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
@@ -153,35 +199,35 @@ A full list of supported accessory types can be found in the table *below*.
 |                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
 |                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
 | MotionSensor         |                             |                              |                          | Motion Sensor                                                    |
-|                      | MotionDetectedState         |                              | Switc, Contact           | Motion sensor state (ON=motion detected, OFF=no motion)          |
+|                      | MotionDetectedState         |                              | Switch, Contact          | Motion sensor state (ON=motion detected, OFF=no motion)          |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
 |                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
 |                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
 |                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
 |                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
-| OccupancySensor      |                             |                              |                          | Occupancy Sensor                                                                                                                                                                                                                                                                                          |
-|                      | OccupancyDetectedState      |                              | SwitchItem, Contact Item | Occupancy sensor state (ON=occupied, OFF=not occupied                                                                                                                                                                                                                                                     |
+| OccupancySensor      |                             |                              |                          | Occupancy Sensor                                                 |
+|                      | OccupancyDetectedState      |                              | Switch, Contact          | Occupancy sensor state (ON=occupied, OFF=not occupied)           |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
 |                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
 |                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
 |                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
 |                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
 | ContactSensor        |                             |                              |                          | Contact Sensor,An accessory with on/off state that can be viewed in HomeKit but not changed such as a contact sensor for a door or window                                                                                                                                                                 |
-|                      | ContactSensorState          |                              | SwitchItem, Contact Item | Contact sensor state (ON=open, OFF=closed)                                                                                                                                                                                                                                                                |
+|                      | ContactSensorState          |                              | Switch, Contact          | Contact sensor state (ON=open, OFF=closed)                                                                                                                                                                                                                                                                |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
 |                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
 |                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
 |                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
 |                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
 | SmokeSensor          |                             |                              |                          | Smoke Sensor                                                                                                                                                                                                                                                                                              |
-|                      | SmokeDetectedState          |                              | SwitchItem, Contact Item | Smoke sensor state (ON=smoke detected, OFF=no smoke)                                                                                                                                                                                                                                                      |
+|                      | SmokeDetectedState          |                              | Switch, Contact          | Smoke sensor state (ON=smoke detected, OFF=no smoke)                                                                                                                                                                                                                                                      |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
 |                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
 |                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
 |                      |                             | TamperedStatus               | Switch, Contact          | Tampered status                                                  |
 |                      |                             | BatteryLowStatus             | Switch, Contact          | Battery status                                                   |
 | LightSensor          |                             |                              |                          | Light sensor                                                     |
-|                      | LightLevel                  |                              | Number                   | Light level in lux                                       |
+|                      | LightLevel                  |                              | Number                   | Light level in lux                                               |
 |                      |                             | Name                         | String                   | Name of the sensor                                               |
 |                      |                             | ActiveStatus                 | Switch, Contact          | Working status                                                   |
 |                      |                             | FaultStatus                  | Switch, Contact          | Fault status                                                     |
@@ -417,6 +463,15 @@ Switch          contactsensor_active       "Contact Sensor Active"              
 Switch          contactsensor_fault        "Contact Sensor Fault"               (gContactSensor)     {homekit="ContactSensor.FaultStatus"}
 Switch          contactsensor_tampered     "Contact Sensor Tampered"            (gContactSensor)     {homekit="ContactSensor.TamperedStatus"}
 
+Group           gAirQualitySensor    	    "Air Quality Sensor"      				                 {homekit="AirQualitySensor"}
+String          airquality                  "Air Quality"						(gAirQualitySensor)  {homekit="AirQuality"}
+Number          ozone                       "Ozone Density"						(gAirQualitySensor)  {homekit="OzoneDensity"}
+Number          voc                         "VOC Density"						(gAirQualitySensor)  {homekit="VOCDensity"}
+Number          nitrogen                    "Nitrogen Density"					(gAirQualitySensor)  {homekit="NitrogenDioxideDensity"}
+Number          sulphur                     "Sulphur Density"					(gAirQualitySensor)  {homekit="SulphurDioxideDensity"}
+Number          pm25                        "PM25 Density"						(gAirQualitySensor)  {homekit="PM25Density"}
+Number          pm10                        "PM10 Density"						(gAirQualitySensor)  {homekit="PM10Density"}
+
 Group           gSecuritySystem            "Security System Group"                                   {homekit="SecuritySystem"}
 String          security_current_state     "Security Current State"             (gSecuritySystem)    {homekit="SecuritySystem.CurrentSecuritySystemState"}
 String          security_target_state      "Security Target State"              (gSecuritySystem)    {homekit="SecuritySystem.TargetSecuritySystemState"}
@@ -442,7 +497,7 @@ HomeKit home app sends following commands/update:
 - On "OFF" event home app sends "OFF" without brightness information. 
 
 However, some dimmer devices for example do not expect brightness on "ON" event, some others do not expect "ON" upon brightness change. 
-In order to support different devices HomeKit binding can filter some events. Which events should be filtered is defined via dimmerMode configuration. 
+In order to support different devices HomeKit integration can filter some events. Which events should be filtered is defined via dimmerMode configuration. 
 
 ```xtend
 Dimmer dimmer_light	"Dimmer Light" 	 {homekit="Lighting, Lighting.Brightness" [dimmerMode="<mode>"]}
