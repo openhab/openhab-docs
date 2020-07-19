@@ -50,7 +50,7 @@ OpenJDK may also be used, but it has some [known limitations](https://community.
 | [AdoptOpenJDK](https://adoptopenjdk.net)          | Open Source JDK backed by many large companies |                                                                                                                                                                                                                                                                                                                                      |
 
 Please download and install the **Java 8** version of the JVM.
-openHAB 3 will use Java 11 and you *can* go for it with 2.X, too, but be aware that although developers are working hard to make this workl, there might be problems with the oldest parts of openHAB such as some of the v1 bindings due to non-backward compatible changes in Java 11.
+openHAB 3 will use Java 11 and you *can* go for it with 2.X, too, but be aware that although developers are working hard to make this work, there might be problems with the oldest parts of openHAB such as some of the v1 bindings due to non-backward compatible changes in Java 11.
 
 The **64-bit version** of the JVM is recommended on platforms using a 64-bit OS and an Intel or AMD processor.
 
