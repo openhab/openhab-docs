@@ -710,10 +710,10 @@ and a [Rule]({{base}}/configuration/rules-dsl.html) to toggle this light with a 
 when
     Channel "serialbutton:button:mybutton:button" triggered PRESSED
 then
-    if (Light_Bedroom.getStateAs(OnOffType) != ON)
-        Light_Bedroom.sendCommand(ON)
+    if (Bedroom_Light.getStateAs(OnOffType) != ON)
+        Bedroom_Light.sendCommand(ON)
     else
-        Light_Bedroom.sendCommand(OFF)
+        Bedroom_Light.sendCommand(OFF)
 end
 ```
 
