@@ -175,12 +175,12 @@ Here is the full list of available persistence extensions:
 |-----------------------------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `<item>.persist`                        | Persists the current State of the Item                                                                                                                                     |
 | `<item>.lastUpdate`                     | Queries for the last update timestamp of a given Item                                                                                                                      |
-| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                            |
+| `<item>.historicState(AbstractInstant)` | Retrieves the State of an Item at a certain point in time (returns HistoricItem)                                                                                           |
 | `<item>.changedSince(AbstractInstant)`  | Checks if the State of the Item has (ever) changed since a certain point in time                                                                                           |
 | `<item>.updatedSince(AbstractInstant)`  | Checks if the state of the Item has been updated since a certain point in time                                                                                             |
-| `<item>.maximumSince(AbstractInstant)`  | Gets the maximum value of the State of a persisted Item since a certain point in time  (returns HistoricItem)                                                                                     |
-| `<item>.minimumSince(AbstractInstant)`  | Gets the minimum value of the State of a persisted Item since a certain point in time (returns HistoricItem)                                                                                      |
-| `<item>.averageSince(AbstractInstant)`  | Gets the average value of the State of a persisted Item since a certain point in time                                                                                      |
+| `<item>.maximumSince(AbstractInstant)`  | Gets the maximum value of the State of a persisted Item since a certain point in time  (returns HistoricItem)                                                              |
+| `<item>.minimumSince(AbstractInstant)`  | Gets the minimum value of the State of a persisted Item since a certain point in time (returns HistoricItem)                                                               |
+| `<item>.averageSince(AbstractInstant)`  | Gets the average value of the State of a persisted Item since a certain point in time. This method uses a time-weighted average calculation (see example below)            |
 | `<item>.deltaSince(AbstractInstant)`    | Gets the difference in value of the State of a given Item since a certain point in time                                                                                    |
 | `<item>.previousState()`                | Gets the previous State of a persisted Item (returns HistoricItem)                                                                                                         |
 | `<item>.previousState(true)`            | Gets the previous State of a persisted Item, skips Items with equal State values and searches the first Item with State not equal the current State (returns HistoricItem) |
@@ -190,13 +190,27 @@ These extensions use the default persistence service.
 (Refer to 'Default Persistence Service' above to configure this.)
 You may specify a different persistence service by appending a String as an optional additional parameter at the end of the extension.
 
-**Example**
+#### Examples
+
 To persist an Item called `Lights` in an rrd4j database, you would enter the following:
 `Lights.persist("rrd4j")`
-To get the average temperature over the last 5 minues from the Item called `Temperature` in the influxdb persistence service, you would use:
-`Temperature.averageSince(now.minusMinutes(5),"influxdb")`
+
+To get the average temperature over the last 5 minutes from the Item called `Temperature` in the influxdb persistence service, you would use:
+`Temperature.averageSince(now.minusMinutes(5), "influxdb")`
 
 The most useful methods of the HistoricItem object returned by some queries, are `.state` and `.getTimestamp`
+
+#### Time-weighted averages
+
+Time-weighted averages take into consideration not only the numerical levels of a particular variable, but also the amount of time spent on it.
+For instance, if you are measuring the temperature in a room - acknowledging the differences in the amounts of time until it changes.
+A brief example:
+18 °C for 13 hours a day, 21 °C for 7 hours a day, and 16.5 °C for 4 hours a day, you would obtain 18 °C x 13 h, 21 °C x 7 h and 16.5 °C x 4 h (234, 147, and 66, respectively).
+Sum the values that you obtained.
+In this case, 447 °C hours.
+Add together the time weights to get the total weight.
+In our example, the total weight is 13 h + 7 h + 4 h = 24 h.
+Divide the value in Step 2 by the total weights in Step 3, to get an average of 447 °C hours / 24 h = 18.625 °C.
 
 ### Date and Time Extensions
 
