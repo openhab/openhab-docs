@@ -17,7 +17,7 @@ However, setting up a fully working Linux system with all recommended packages a
 openHABian aims to provide a **self-configuring** Linux system setup specific to the needs of every openHAB user.
 To that end, the project provides two things:
 
-*   Complete **SD-card images pre-configured with openHAB** and many other openHAB- and Hardware-specific preparations for the Raspberry Pi and the Pine A64
+*   Complete **SD-card images pre-configured with openHAB** and many other openHAB- and Hardware-specific preparations for the Raspberry Pi
 *   The openHABian Configuration Tool to set up and configure openHAB and many related things on any Debian/Ubuntu based system
 
 #### Table of Contents
@@ -30,8 +30,8 @@ To that end, the project provides two things:
 The following features are provided by the openHABian image out of the box:
 
 -   Hassle-free setup without a display or keyboard, connected via Ethernet or [WiFi](#wifi-based-setup-notes)
--   openHAB 2 in the latest stable version
--   Zulu Embedded OpenJDK Java 8
+-   the latest stable version of openHAB 2
+-   Zulu Embedded OpenJDK Java 8, 11 or AdoptOpenJDK
 -   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
 -   openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
 -   Samba file sharing with [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
@@ -151,16 +151,16 @@ Mark all components / actions you think to be of value and execute them in one g
 You can actually set a number of parameters before you try installing from SD card for the first time. You can also try with a different set of parameters if your initial attempt fails:
 
 -   Flash the system image to your micro SD card as described, do not remove the SD card yet
--   Access the first SD card partition using the file explorer. It's a vfat (Windows) filesystem. (we assume you're using a Windows, macOS or some other desktop system to flash the SD)
+-   Access the first SD card partition. It's a vfat/FAT-32 (Windows) filesystem so just use the file explorer of your client PC.
 -   Open the file `openhabian.conf` in a text editor
 -   Uncomment and complete the lines to contain the parameters you want to set
--   Save, Unmount, Insert, Boot
+-   Save, unmount/eject, remove and insert into the RPi and boot it
 -   Continue with the instructions for your hardware
 
 ### WiFi based Setup Notes
-If you own a RPi3, RPi3+, RPi4, a RPi0W, a Pine A64, or a compatible WiFi dongle you can set up and use openHABian purely via WiFi.
-For the setup on WiFi, you'll need to make your SSID and password known to the system before the first boot.
-Additionally to the setup instructions given above, the following steps are needed:
+If you own a RPi3, RPi3+, RPi4, a RPi0W or any other model with a compatible WiFi dongle you can set up and use openHABian via WiFi only.
+For the WiFi based setup to work, you'll need to make your SSID and password known to the system before the first boot.
+The following steps are needed in addition to the setup instructions given above:
 
 In `openhabian.conf`, uncomment and complete the lines reading `wifi_ssid="My WiFi SSID"` and `wifi_psk="password123"`
 
