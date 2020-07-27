@@ -3,7 +3,7 @@ id: mongodb
 label: MongoDB
 title: MongoDB - Persistence Services
 type: persistence
-description: "This service allows you to persist state updates using the MongoDB database.  It supports writing information to a MongoDB document store, as well as querying from it."
+description: "This service allows you to persist state updates using the [MongoDB](https://www.mongodb.com/) database.  It supports writing information to a MongoDB document store, as well as querying from it."
 source: https://github.com/openhab/openhab1-addons/blob/master/bundles/persistence/org.openhab.persistence.mongodb/README.md
 since: 1x
 logo: images/addons/mongodb.png
@@ -16,7 +16,7 @@ install: manual
 
 # MongoDB Persistence
 
-This service allows you to persist state updates using the MongoDB database.  It supports writing information to a MongoDB document store, as well as querying from it.
+This service allows you to persist state updates using the [MongoDB](https://www.mongodb.com/) database.  It supports writing information to a MongoDB document store, as well as querying from it.
 
 ## Configuration
 

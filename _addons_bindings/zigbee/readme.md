@@ -295,7 +295,7 @@ Note that the last four characters in the install code are the checksum and may 
 
 ## Leave
 
-When a thing is deleted, the binding will attempt to remove the device from the network by sending the *leave* command on the network.
+When a thing is deleted, the binding will attempt to remove the device from the network by sending the *leave* command on the network. The binding will put the Thing into the `REMOVING` state and once the leave is confirmed it will be finally `REMOVED`. It is not advised for force remove the Thing as this may cause an incomplete removal, and the device may be immediately added back to the Inbox.
 
 ## Thing Configuration
 
