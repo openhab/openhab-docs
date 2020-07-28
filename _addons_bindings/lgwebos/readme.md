@@ -269,24 +269,6 @@ Example:
 actions.launchBrowser("https://www.openhab.org")
 ```
 
-### List<Application> getApplications()
-
-Returns a list of Applications supported by this TV.
-
-Application Properties:
-
-| Name    | Description                                                          |
-|---------|----------------------------------------------------------------------|
-| id      | The Application ID, which serves as parameter appId in other methods.|
-| name    | Human readable name                                                  |
-
-Example:
-
-```
-val apps = actions.getApplications
-apps.forEach[a| logInfo("action",a.toString)]
-```
-
 ### launchApplication(appId)
 
 Opens the application with given Application ID.
@@ -315,7 +297,7 @@ Parameters:
 
 | Name    | Description                                                                   |
 |---------|-------------------------------------------------------------------------------|
-| appId   | The Application ID. getApplications provides available apps and their appIds. |
+| appId   | The Application ID. Console command lgwebos <thingUID> applications provides available apps and their appIds. |
 | params  | The parameters to hand over to the application in JSON format                 |
 
 Examples:
