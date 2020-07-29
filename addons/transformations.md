@@ -51,6 +51,16 @@ Transformation files need to be placed in the directory `$OPENHAB_CONF/transform
     var fahrenheit = transform("JS", "convert-C-to-F.js", temperature)
     ```
 
+3.  Bindings
+
+    Transformations can sometimes be used in binding add-ons.  For example, transforming an openHAB ON command into "action=powerup" for sending to a device.
+    If, and how, this use may be available is described in individual binding documentation.
+
+3.  Profiles
+
+    Transformations can be associated with channels, working on data being passed between bindings and Items. See [profile documentation]({{base}}/configuration/items.html#profiles) for more detail.
+
+
 To keep these examples simple, the contents of the referenced files `window_esp.map` and `convert-C-to-F.js` were left out.
 More details regarding this and other Transformation services can be found in the individual transformation articles linked below.
 
