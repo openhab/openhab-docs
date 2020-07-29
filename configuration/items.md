@@ -658,10 +658,12 @@ The first example shows a symbiosis of the network health Binding and the Wake-o
 The second example shows a common use case for the [Expire Binding](/addons/bindings/expire1/)
 where the mysensors Binding will update temperature readings regularly but the expire Binding will also listen and eventually modify the Item state.
 
-#### Parameter `autoupdate`
+## Parameter `autoupdate`
 
-`autoupdate="false"` is a special instruction which keeps the current state of the item, even if a *command* has been received.
-This way, the Item is unchanged unless you explicitly post an *update* to the item.
+When left as default, openHAB's `autoupdate` function attempts to predict the outcome of a *command* on the Item *state*. This prediction may be influenced by any linked channels.
+`autoupdate="false"` is a special instruction which keeps the current state of the Item, even if a *command* has been received.
+This way, the Item is unchanged unless you explicitly post an *update* to the Item, or a binding updates it.
+`autoupdate="true"` forces `autoupdate` to act, overriding any binding recommendations.
 
 Example:
 
@@ -669,7 +671,7 @@ Example:
 Switch Garage_Gate {binding="xxx", autoupdate="false"}
 ```
 
-#### Profiles
+## Profiles
 
 With Profiles, you're able to change the behavior how Channels interact with your Items. You can use *State Profiles* on State Channels and *Trigger Profiles* on Trigger Channels.
 
@@ -680,8 +682,9 @@ Profiles can be specified as a parameter for a given Channel on the Item configu
 ```
 
 There are some built-in Profiles available which are described in the table below.
-Some Bindings will may offer additional Profiles for Binding-specific use cases.
-If this is the case, you'll find those within the documentation of the Binding.
+
+Some Bindings may offer additional Profiles for Binding-specific use cases. If this is the case, you'll find those within the documentation of the Binding.
+
 Also, all [Transformation Services](/addons/#transform) provide a State Profile which allows you to do the transformation already on item-level instead doing it with a [Sitemap]({{base}}/configuration/sitemaps.html).
 You can find the documentation of these Profiles within the [Add-On documentation of the Transformation Service](/addons/#transform) you'd like to use.
 
