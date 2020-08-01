@@ -103,7 +103,7 @@ You can see that by the icon of each channel:
 | ![](images/linked.png)		| this channel has already at least one item linked |
 | ![](images/unlinked.png)		| this channel has currently no linked item|
 
-Since on our system, the simple mode is enabled, al our channels directly get linked to newly created items and thus you're' finished creating your thing. 
+Since on our system, the simple mode is enabled, all our channels directly get linked to newly created items and thus you're finished creating your thing. 
 Navigate to the ```CONTROL``` section and you should see the following:
 
 ![](images/control_1.png)
