@@ -41,7 +41,7 @@ The following table summarises the channels available for the FMS01 -:
 | Sensor (temperature) | sensor_temperature | sensor_temperature | Temperature | Number:Temperature | 
 | Sensor (power) | sensor_power | sensor_power | Energy | Number | 
 | Sensor (current) | sensor_current | sensor_current |  |  | 
-| Sensor (voltage) | sensor_voltage | sensor_voltage |  |  | 
+| Sensor (voltage) | sensor_voltage | sensor_voltage |  | Number | 
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
@@ -83,7 +83,9 @@ The ```sensor_power``` channel is of type ```sensor_power``` and supports the ``
 Channel type information on this channel is not found.
 
 ### Sensor (voltage)
-Channel type information on this channel is not found.
+Indicates the current voltage.
+
+The ```sensor_voltage``` channel is of type ```sensor_voltage``` and supports the ```Number``` item. This is a read only channel so will only be updated following state changes from the device.
 
 ### Electric meter (watts)
 Indicates the instantaneous power consumption.

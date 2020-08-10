@@ -517,8 +517,18 @@ Buttons operation
       1st button turns the load ON, 2nd button turns the load OFF
     </td>
   </tr>
+  
+  <tr>
+    <td>
+      3
+    </td>
+    
+    <td>
+      device works in 2-way/3-way switch configuration
+    </td>
+  </tr>
 </table>
-Values in the range 1 to 2 may be set.
+Values in the range 1 to 3 may be set.
 
 The manufacturer defined default value is ```1```.
 
@@ -1733,7 +1743,7 @@ Association group 5 supports 5 nodes.
 |---------------|---------|
 | COMMAND_CLASS_BASIC_V1| |
 | COMMAND_CLASS_APPLICATION_STATUS_V1| |
-| COMMAND_CLASS_SWITCH_BINARY_V1| |
+| COMMAND_CLASS_SWITCH_BINARY_V1| Linked to BASIC|
 | COMMAND_CLASS_METER_V3| |
 | COMMAND_CLASS_CRC_16_ENCAP_V1| |
 | COMMAND_CLASS_ASSOCIATION_GRP_INFO_V1| |
@@ -1753,6 +1763,7 @@ Association group 5 supports 5 nodes.
 ### Documentation Links
 
 * [Manual](https://www.cd-jackson.com/zwave_device_uploads/1094/FGWDSEU-221-T-EN-v1-0.pdf)
+* [Fibaro Walli Switch Manual](https://www.cd-jackson.com/zwave_device_uploads/1094/FGWDSEU-221-T-EN-v1-1.pdf)
 
 ---
 

@@ -63,7 +63,7 @@ The following table summarises the channels available for the HE-ZW-THERM-FL2 -:
 | Thermostat mode | thermostat_mode | thermostat_mode | Temperature | Number | 
 | Operating State | thermostat_state | thermostat_state | Temperature | Number | 
 | Setpoint (heating) | thermostat_setpoint | thermostat_setpoint | Heating | Number:Temperature | 
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Sensor (luminance)
 Indicates the current light reading.
@@ -142,7 +142,7 @@ The ```thermostat_setpoint``` channel is of type ```thermostat_setpoint``` and s
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
