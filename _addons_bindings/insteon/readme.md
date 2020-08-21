@@ -51,7 +51,7 @@ X10 devices are not auto discovered.
 
 ## Thing Configuration
 
-###### Network Configuration
+#### Network Configuration
 
 The Insteon PLM or hub is configured with the following parameters:
 
@@ -64,7 +64,7 @@ The Insteon PLM or hub is configured with the following parameters:
 
 >NOTE: For users upgrading from InsteonPLM, The parameter port_1 is now port.
 
-###### Device Configuration
+#### Device Configuration
 
 The Insteon device is configured with the following required parameters:
 
