@@ -10,7 +10,7 @@ This describes the Z-Wave device *WADWAZ-1*, manufactured by *Linear Corp* with 
 
 The device is in the category of *Door*, defining Door sensors.
 
-![WADWAZ-1 product image](https://www.cd-jackson.com/zwave_device_uploads/9/9_default.jpg)
+![WADWAZ-1 product image](https://opensmarthouse.org/zwavedatabase/9/image/)
 
 
 The WADWAZ-1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -157,9 +157,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Manual](https://www.cd-jackson.com/zwave_device_uploads/9/WADWAZ-install.pdf)
+* [Installation Manual](https://opensmarthouse.org/zwavedatabase/9/WADWAZ-install.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/9).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/9).

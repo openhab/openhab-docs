@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZHS03*, manufactured by *Pixela Corporation* w
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZHS03 product image](https://www.cd-jackson.com/zwave_device_uploads/1227/1227_default.png)
+![ZHS03 product image](https://opensmarthouse.org/zwavedatabase/1227/image/)
 
 
 The ZHS03 does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -475,9 +475,9 @@ Association group 5 supports 10 nodes.
 
 ### Documentation Links
 
-* [Handbuch ZHS03 (a.k.a "ZME_WALLC-S")](https://www.cd-jackson.com/zwave_device_uploads/1227/Handbuch-Schwaiger-ZHS03-Wandschalter.pdf)
+* [Handbuch ZHS03 (a.k.a "ZME_WALLC-S")](https://opensmarthouse.org/zwavedatabase/1227/Handbuch-Schwaiger-ZHS03-Wandschalter.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1227).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1227).

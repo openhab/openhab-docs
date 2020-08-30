@@ -10,7 +10,7 @@ This describes the Z-Wave device *GE Outdoor Switch*, manufactured by *Jasco Pro
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![GE Outdoor Switch product image](https://www.cd-jackson.com/zwave_device_uploads/643/643_default.png)
+![GE Outdoor Switch product image](https://opensmarthouse.org/zwavedatabase/643/image/)
 
 
 The GE Outdoor Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -135,9 +135,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/643/14284-EnFrSp-QSG-v1.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/643/14284-EnFrSp-QSG-v1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/643).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/643).

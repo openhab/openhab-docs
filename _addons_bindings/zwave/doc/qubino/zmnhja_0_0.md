@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHJA*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZMNHJA product image](https://www.cd-jackson.com/zwave_device_uploads/354/354_default.png)
+![ZMNHJA product image](https://opensmarthouse.org/zwavedatabase/354/image/)
 
 
 The ZMNHJA supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -383,10 +383,10 @@ Association group 5 supports 99 nodes.
 
 ### Documentation Links
 
-* [User Manual [French]](https://www.cd-jackson.com/zwave_device_uploads/354/Qubino-Flush-Pilot-wire-user-manual-V2-0-fra.pdf)
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/354/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
+* [User Manual [French]](https://opensmarthouse.org/zwavedatabase/354/Qubino-Flush-Pilot-wire-user-manual-V2-0-fra.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/354/Qubino-Flush-pilot-wire-PLUS-user-manual-V1-1-eng.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/354).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/354).

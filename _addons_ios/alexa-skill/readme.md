@@ -97,6 +97,8 @@ Switch LightSwitch "Light Switch" {alexa="PowerController.powerState"}
 ```
 Setting this on a single item will create an Alexa endpoint with the spoken addressable name "Light Switch" and map the powerState property to our item. You can ask Alexa to turn "Light Switch" on or off.
 
+An example of how this works with other metadata is given in [Items Metadata](https://www.openhab.org/docs/concepts/items.html#item-metadata)
+
 This can also be written using [metadata labels](#supported-metadata-labels), which is a shorthand version of the full Alexa namespace:
 ```
 Switch LightSwitch "Light Switch" {alexa="Switchable"}

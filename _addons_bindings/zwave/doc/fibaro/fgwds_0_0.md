@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGWDS*, manufactured by *[Fibargroup](http://w
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![FGWDS product image](https://www.cd-jackson.com/zwave_device_uploads/1094/1094_default.jpg)
+![FGWDS product image](https://opensmarthouse.org/zwavedatabase/1094/image/)
 
 
 The FGWDS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -1762,10 +1762,10 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/1094/FGWDSEU-221-T-EN-v1-0.pdf)
-* [Fibaro Walli Switch Manual](https://www.cd-jackson.com/zwave_device_uploads/1094/FGWDSEU-221-T-EN-v1-1.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/1094/FGWDSEU-221-T-EN-v1-0.pdf)
+* [Fibaro Walli Switch Manual](https://opensmarthouse.org/zwavedatabase/1094/FGWDSEU-221-T-EN-v1-1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1094).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1094).

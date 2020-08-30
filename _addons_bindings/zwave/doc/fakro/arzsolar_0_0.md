@@ -10,7 +10,7 @@ This describes the Z-Wave device *ARZ Solar*, manufactured by *Fakro* with the t
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![ARZ Solar product image](https://www.cd-jackson.com/zwave_device_uploads/853/853_default.jpg)
+![ARZ Solar product image](https://opensmarthouse.org/zwavedatabase/853/image/)
 
 
 The ARZ Solar supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -84,9 +84,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [PDF manual](https://www.cd-jackson.com/zwave_device_uploads/853/ARZ-SOLAR-FAKRO-EN.pdf)
+* [PDF manual](https://opensmarthouse.org/zwavedatabase/853/ARZ-SOLAR-FAKRO-EN.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/853).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/853).

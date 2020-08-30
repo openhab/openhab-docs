@@ -10,7 +10,7 @@ This describes the Z-Wave device *FMI*, manufactured by *FortrezZ LLC* with the 
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![FMI product image](https://www.cd-jackson.com/zwave_device_uploads/934/934_default.jpg)
+![FMI product image](https://opensmarthouse.org/zwavedatabase/934/image/)
 
 
 The FMI supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -285,9 +285,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Flow Meter Technical Manual](https://www.cd-jackson.com/zwave_device_uploads/934/Flow-Meter-Technical-Manual.pdf)
+* [Flow Meter Technical Manual](https://opensmarthouse.org/zwavedatabase/934/Flow-Meter-Technical-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/934).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/934).

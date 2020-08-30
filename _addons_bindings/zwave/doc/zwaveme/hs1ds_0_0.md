@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS1DS*, manufactured by *Z-Wave.Me* with the t
 
 The device is in the category of *Window*, defining Window.
 
-![HS1DS product image](https://www.cd-jackson.com/zwave_device_uploads/783/783_default.png)
+![HS1DS product image](https://opensmarthouse.org/zwavedatabase/783/image/)
 
 
 ## Overview
@@ -103,9 +103,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/783/HSIDS-Z.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/783/HSIDS-Z.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/783).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/783).

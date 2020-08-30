@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS1HT-Z *, manufactured by *[Heiman Technology
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HS1HT-Z  product image](https://www.cd-jackson.com/zwave_device_uploads/709/709_default.png)
+![HS1HT-Z  product image](https://opensmarthouse.org/zwavedatabase/709/image/)
 
 
 The HS1HT-Z  supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -128,10 +128,10 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/709/HS1HT-Z.pdf)
-* [Instructions](https://www.cd-jackson.com/zwave_device_uploads/709/HS1HT-Z-S2doc.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/709/HS1HT-Z.pdf)
+* [Instructions](https://opensmarthouse.org/zwavedatabase/709/HS1HT-Z-S2doc.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/709).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/709).

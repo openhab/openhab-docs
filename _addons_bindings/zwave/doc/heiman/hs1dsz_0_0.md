@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS1DS-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![HS1DS-Z product image](https://www.cd-jackson.com/zwave_device_uploads/551/551_default.png)
+![HS1DS-Z product image](https://opensmarthouse.org/zwavedatabase/551/image/)
 
 
 The HS1DS-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -169,9 +169,9 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Device manual](https://www.cd-jackson.com/zwave_device_uploads/551/HSIDS-Z.pdf)
+* [Device manual](https://opensmarthouse.org/zwavedatabase/551/HSIDS-Z.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/551).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/551).

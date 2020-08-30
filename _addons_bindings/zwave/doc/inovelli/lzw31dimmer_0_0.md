@@ -10,7 +10,7 @@ This describes the Z-Wave device *LZW31*, manufactured by *Inovelli* with the th
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![LZW31 product image](https://www.cd-jackson.com/zwave_device_uploads/1171/1171_default.png)
+![LZW31 product image](https://opensmarthouse.org/zwavedatabase/1171/image/)
 
 
 The LZW31 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -358,9 +358,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [LZW31 Manual](https://www.cd-jackson.com/zwave_device_uploads/1171/LZW31-Manual.pdf)
+* [LZW31 Manual](https://opensmarthouse.org/zwavedatabase/1171/LZW31-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1171).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1171).

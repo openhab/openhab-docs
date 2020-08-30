@@ -10,7 +10,7 @@ This describes the Z-Wave device *Siren*, manufactured by *Wink Inc.* with the t
 
 The device is in the category of *Siren*, defining Siren used by Alarm systems.
 
-![Siren product image](https://www.cd-jackson.com/zwave_device_uploads/917/917_default.png)
+![Siren product image](https://opensmarthouse.org/zwavedatabase/917/image/)
 
 
 The Siren supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -306,9 +306,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Siren](https://www.cd-jackson.com/zwave_device_uploads/917/Wink-Siren-Manual.pdf)
+* [Siren](https://opensmarthouse.org/zwavedatabase/917/Wink-Siren-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/917).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/917).

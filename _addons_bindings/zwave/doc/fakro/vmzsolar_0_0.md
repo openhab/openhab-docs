@@ -10,7 +10,7 @@ This describes the Z-Wave device *VMZ Solar*, manufactured by *Fakro* with the t
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![VMZ Solar product image](https://www.cd-jackson.com/zwave_device_uploads/670/670_default.jpg)
+![VMZ Solar product image](https://opensmarthouse.org/zwavedatabase/670/image/)
 
 
 The VMZ Solar supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -197,9 +197,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual (PL)](https://www.cd-jackson.com/zwave_device_uploads/670/VMZ-Solar-FAKRO.pdf)
+* [User Manual (PL)](https://opensmarthouse.org/zwavedatabase/670/VMZ-Solar-FAKRO.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/670).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/670).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *ITEMP*, manufactured by *Wintop* with the thin
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![ITEMP product image](https://www.cd-jackson.com/zwave_device_uploads/216/216_default.png)
+![ITEMP product image](https://opensmarthouse.org/zwavedatabase/216/image/)
 
 
 The ITEMP supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -213,9 +213,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/216/Wintop-Itemp.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/216/Wintop-Itemp.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/216).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/216).

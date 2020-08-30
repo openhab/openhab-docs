@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZV9102FA-CCT*, manufactured by *[Sunricher](ww
 
 The device is in the category of *Light Bulb*, defining Devices that illuminate something, such as bulbs, etc..
 
-![ZV9102FA-CCT product image](https://www.cd-jackson.com/zwave_device_uploads/793/793_default.png)
+![ZV9102FA-CCT product image](https://opensmarthouse.org/zwavedatabase/793/image/)
 
 
 The ZV9102FA-CCT supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -266,9 +266,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User manual](https://www.cd-jackson.com/zwave_device_uploads/793/sr-zv9102fa-cct-user-manual.pdf)
+* [User manual](https://opensmarthouse.org/zwavedatabase/793/sr-zv9102fa-cct-user-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/793).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/793).

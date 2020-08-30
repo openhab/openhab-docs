@@ -10,7 +10,7 @@ This describes the Z-Wave device *Zwave Clamp*, manufactured by *[Seco](http://w
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![Zwave Clamp product image](https://www.cd-jackson.com/zwave_device_uploads/569/569_default.png)
+![Zwave Clamp product image](https://opensmarthouse.org/zwavedatabase/569/image/)
 
 
 The Zwave Clamp supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -45,7 +45,7 @@ The following table summarises the channels available for the Zwave Clamp -:
 | Electric meter (watts) | meter_watts | meter_watts | Energy | Number | 
 | Electric meter (kWh) | meter_kwh | meter_kwh | Energy | Number | 
 | Electric meter (volts) | meter_voltage | meter_voltage | Energy | Number | 
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Electric meter (amps)
 Indicates the instantaneous current consumption.
@@ -70,7 +70,7 @@ The ```meter_voltage``` channel is of type ```meter_voltage``` and supports the 
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -236,9 +236,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/569/72027101-UM-01-meter-user-manual-v1-0.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/569/72027101-UM-01-meter-user-manual-v1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/569).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/569).

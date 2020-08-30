@@ -10,7 +10,7 @@ This describes the Z-Wave device *HA-ZW-5SE*, manufactured by *Ameta Internation
 
 The device is in the category of *Door*, defining Door sensors.
 
-![HA-ZW-5SE product image](https://www.cd-jackson.com/zwave_device_uploads/1216/1216_default.png)
+![HA-ZW-5SE product image](https://opensmarthouse.org/zwavedatabase/1216/image/)
 
 
 The HA-ZW-5SE supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -266,9 +266,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manufacturer Provided Product Manual](https://www.cd-jackson.com/zwave_device_uploads/1216/Z-Wave-Door-Window-Sensor---User-Guide---Aibase.pdf)
+* [Manufacturer Provided Product Manual](https://opensmarthouse.org/zwavedatabase/1216/Z-Wave-Door-Window-Sensor---User-Guide---Aibase.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1216).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1216).

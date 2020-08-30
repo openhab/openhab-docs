@@ -10,7 +10,7 @@ This describes the Z-Wave device *Forest Shuttle*, manufactured by *[BeNext](htt
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![Forest Shuttle product image](https://www.cd-jackson.com/zwave_device_uploads/1215/1215_default.png)
+![Forest Shuttle product image](https://opensmarthouse.org/zwavedatabase/1215/image/)
 
 
 The Forest Shuttle supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -109,9 +109,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Manual from Forest curtain rails including Z-wave details](https://www.cd-jackson.com/zwave_device_uploads/1215/download-287-Installing-the-FOREST-SHUTTLE-S-M-L--Z-wave-V1-6EN.pdf)
+* [Manual from Forest curtain rails including Z-wave details](https://opensmarthouse.org/zwavedatabase/1215/download-287-Installing-the-FOREST-SHUTTLE-S-M-L--Z-wave-V1-6EN.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1215).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1215).

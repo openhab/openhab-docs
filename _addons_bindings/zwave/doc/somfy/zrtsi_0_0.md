@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZRTSI*, manufactured by *[Somfy](http://www.so
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![ZRTSI product image](https://www.cd-jackson.com/zwave_device_uploads/369/369_default.png)
+![ZRTSI product image](https://opensmarthouse.org/zwavedatabase/369/image/)
 
 
 ## Overview
@@ -59,9 +59,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/369/ZRTSI-Instructions-1811265.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/369/ZRTSI-Instructions-1811265.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/369).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/369).

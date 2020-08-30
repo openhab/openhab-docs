@@ -10,7 +10,7 @@ This describes the Z-Wave device *RF96PIRBMS*, manufactured by *Cooper Wiring De
 
 The device is in the category of *Motion Detector*, defining Motion sensors/detectors.
 
-![RF96PIRBMS product image](https://www.cd-jackson.com/zwave_device_uploads/1210/1210_default.jpg)
+![RF96PIRBMS product image](https://opensmarthouse.org/zwavedatabase/1210/image/)
 
 
 The RF96PIRBMS supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -217,9 +217,9 @@ Association group 2 supports 4 nodes.
 
 ### Documentation Links
 
-* [RF96PIRBMS Manual](https://www.cd-jackson.com/zwave_device_uploads/1210/RF96PIRBMS-Manual-.pdf)
+* [RF96PIRBMS Manual](https://opensmarthouse.org/zwavedatabase/1210/RF96PIRBMS-Manual-.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1210).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1210).

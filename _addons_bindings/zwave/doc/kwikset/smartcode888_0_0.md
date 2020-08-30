@@ -10,7 +10,7 @@ This describes the Z-Wave device *SmartCode 888*, manufactured by *[Black & Deck
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![SmartCode 888 product image](https://www.cd-jackson.com/zwave_device_uploads/864/864_default.jpg)
+![SmartCode 888 product image](https://opensmarthouse.org/zwavedatabase/864/image/)
 
 
 The SmartCode 888 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -341,9 +341,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [Installation Guide and Manual](https://www.cd-jackson.com/zwave_device_uploads/864/Install-Guide-and-Manual-888-ENG.pdf)
+* [Installation Guide and Manual](https://opensmarthouse.org/zwavedatabase/864/Install-Guide-and-Manual-888-ENG.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/864).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/864).

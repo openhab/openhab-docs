@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZV-9101*, manufactured by *[Sunricher](www.sun
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZV-9101 product image](https://www.cd-jackson.com/zwave_device_uploads/1058/1058_default.jpg)
+![ZV-9101 product image](https://opensmarthouse.org/zwavedatabase/1058/image/)
 
 
 The ZV-9101 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -237,9 +237,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [zv-9101 swe/eng manual](https://www.cd-jackson.com/zwave_device_uploads/1058/ZV-9101-manual.pdf)
+* [zv-9101 swe/eng manual](https://opensmarthouse.org/zwavedatabase/1058/ZV-9101-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1058).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1058).

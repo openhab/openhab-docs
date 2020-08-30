@@ -10,7 +10,7 @@ This describes the Z-Wave device *VRCS4*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![VRCS4 product image](https://www.cd-jackson.com/zwave_device_uploads/197/197_default.jpg)
+![VRCS4 product image](https://opensmarthouse.org/zwavedatabase/197/image/)
 
 
 The VRCS4 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -112,11 +112,11 @@ Association group 4 supports 32 nodes.
 
 ### Documentation Links
 
-* [Product Specifications](https://www.cd-jackson.com/zwave_device_uploads/197/Vizia-RF---Controllers-Spec-Sheet.pdf)
-* [Z-Wave Certification](https://www.cd-jackson.com/zwave_device_uploads/197/ZC08-08070003.pdf)
-* [Instruction sheet VRCS4](https://www.cd-jackson.com/zwave_device_uploads/197/Instruction-Sheet-VRCS4.pdf)
+* [Product Specifications](https://opensmarthouse.org/zwavedatabase/197/Vizia-RF---Controllers-Spec-Sheet.pdf)
+* [Z-Wave Certification](https://opensmarthouse.org/zwavedatabase/197/ZC08-08070003.pdf)
+* [Instruction sheet VRCS4](https://opensmarthouse.org/zwavedatabase/197/Instruction-Sheet-VRCS4.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/197).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/197).

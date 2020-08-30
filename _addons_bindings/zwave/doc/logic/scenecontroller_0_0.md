@@ -10,7 +10,7 @@ This describes the Z-Wave device *Heatit Z-Scene Controller*, manufactured by *[
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Heatit Z-Scene Controller product image](https://www.cd-jackson.com/zwave_device_uploads/846/846_default.png)
+![Heatit Z-Scene Controller product image](https://opensmarthouse.org/zwavedatabase/846/image/)
 
 
 The Heatit Z-Scene Controller does not permanently listen for messages sent from the controller - it will periodically wake up automatically to check if the controller has messages to send, but will sleep most of the time to conserve battery life. Refer to the *Wakeup Information* section below for further information.
@@ -1507,9 +1507,9 @@ Association group 31 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/846/manualmultiregzwavescenecontroller.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/846/manualmultiregzwavescenecontroller.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/846).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/846).

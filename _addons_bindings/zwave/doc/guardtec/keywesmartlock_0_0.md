@@ -10,7 +10,7 @@ This describes the Z-Wave device *KeyWe Smart lock *, manufactured by *Guardtec*
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![KeyWe Smart lock  product image](https://www.cd-jackson.com/zwave_device_uploads/1175/1175_default.png)
+![KeyWe Smart lock  product image](https://opensmarthouse.org/zwavedatabase/1175/image/)
 
 
 The KeyWe Smart lock  supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -147,9 +147,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [GKW-2000D](https://www.cd-jackson.com/zwave_device_uploads/1175/GKW-2000D-Z-Wave-Manual-20180807.pdf)
+* [GKW-2000D](https://opensmarthouse.org/zwavedatabase/1175/GKW-2000D-Z-Wave-Manual-20180807.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1175).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1175).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *Keyless Connected Smart Door Lock*, manufactur
 
 The device is in the category of *Lock*, defining Devices whose primary pupose is locking something.
 
-![Keyless Connected Smart Door Lock product image](https://www.cd-jackson.com/zwave_device_uploads/948/948_default.jpg)
+![Keyless Connected Smart Door Lock product image](https://opensmarthouse.org/zwavedatabase/948/image/)
 
 
 The Keyless Connected Smart Door Lock supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -43,7 +43,7 @@ The following table summarises the channels available for the Keyless Connected 
 | Alarm (power) | alarm_power | alarm_power | Energy | Switch | 
 | Alarm (raw) | alarm_raw | alarm_raw |  | String | 
 | Battery Level | battery-level | system.battery_level | Battery | Number |
-| Clock Time Offset | time_offset | time_offset | Temperature | Number | 
+| Clock Time Offset | time_offset | time_offset | Time | Number | 
 
 ### Door Lock
 Lock and unlock the door.
@@ -105,7 +105,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 ### Clock Time Offset
 Provides the current time difference for the devices time.
 
-The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Temperature``` category.
+The ```time_offset``` channel is of type ```time_offset``` and supports the ```Number``` item and is in the ```Time``` category.
 
 
 
@@ -223,9 +223,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [Lock Manual](https://www.cd-jackson.com/zwave_device_uploads/948/YSL-Keyless-Manual-2018-1B.pdf)
+* [Lock Manual](https://opensmarthouse.org/zwavedatabase/948/YSL-Keyless-Manual-2018-1B.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/948).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/948).

@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHHD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZMNHHD product image](https://www.cd-jackson.com/zwave_device_uploads/1100/1100_default.png)
+![ZMNHHD product image](https://opensmarthouse.org/zwavedatabase/1100/image/)
 
 
 The ZMNHHD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -645,9 +645,9 @@ Association group 4 supports 16 nodes.
 
 ### Documentation Links
 
-* [MiniDimmer_product_manual](https://www.cd-jackson.com/zwave_device_uploads/1100/Qubino-Mini-Dimmer-extended-manual-eng-1-8.pdf)
+* [MiniDimmer_product_manual](https://opensmarthouse.org/zwavedatabase/1100/Qubino-Mini-Dimmer-extended-manual-eng-1-8.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1100).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1100).

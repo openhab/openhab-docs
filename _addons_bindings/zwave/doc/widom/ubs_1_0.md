@@ -11,7 +11,7 @@ This version of the device is limited to firmware version 1.0
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![WiDom Universal Relay Switch product image](https://www.cd-jackson.com/zwave_device_uploads/298/298_default.png)
+![WiDom Universal Relay Switch product image](https://opensmarthouse.org/zwavedatabase/298/image/)
 
 
 The WiDom Universal Relay Switch supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -176,9 +176,9 @@ Association group 5 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/298/Widom-UBS--Operating-Manual-multiple-pages-en.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/298/Widom-UBS--Operating-Manual-multiple-pages-en.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/298).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/298).

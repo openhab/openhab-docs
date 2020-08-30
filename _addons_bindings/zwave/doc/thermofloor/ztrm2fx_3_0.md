@@ -11,7 +11,7 @@ This version of the device is limited to firmware versions above 3.0
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
-![Z-TRM2fx product image](https://www.cd-jackson.com/zwave_device_uploads/980/980_default.png)
+![Z-TRM2fx product image](https://opensmarthouse.org/zwavedatabase/980/image/)
 
 
 The Z-TRM2fx supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -643,10 +643,10 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Manual FW 3.4 Ver. 2018-A](https://www.cd-jackson.com/zwave_device_uploads/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
-* [A4_Manual_Heatit_Z-TRM2fx_FW-3.6_Ver2019-A_ENG](https://www.cd-jackson.com/zwave_device_uploads/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-6-Ver2019-A-ENG.pdf)
+* [Manual FW 3.4 Ver. 2018-A](https://opensmarthouse.org/zwavedatabase/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-4-Ver2018-A-ENG.pdf)
+* [A4_Manual_Heatit_Z-TRM2fx_FW-3.6_Ver2019-A_ENG](https://opensmarthouse.org/zwavedatabase/980/A4-Manual-Heatit-Z-TRM2fx-FW-3-6-Ver2019-A-ENG.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/980).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/980).

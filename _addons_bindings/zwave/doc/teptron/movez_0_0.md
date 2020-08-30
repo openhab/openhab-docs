@@ -10,7 +10,7 @@ This describes the Z-Wave device *MoveZ*, manufactured by *Teptron AB* with the 
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![MoveZ product image](https://www.cd-jackson.com/zwave_device_uploads/1264/1264_default.jpg)
+![MoveZ product image](https://opensmarthouse.org/zwavedatabase/1264/image/)
 
 
 The MoveZ supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -149,9 +149,9 @@ Association group 2 supports 5 nodes.
 
 ### Documentation Links
 
-* [MOVEZ Beta User Manual](https://www.cd-jackson.com/zwave_device_uploads/1264/MOVEZ-user-manual-draft-v2.pdf)
+* [MOVEZ Beta User Manual](https://opensmarthouse.org/zwavedatabase/1264/MOVEZ-user-manual-draft-v2.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1264).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1264).

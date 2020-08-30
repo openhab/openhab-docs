@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZNet Lite v2*, manufactured by *[Telldus Techn
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![ZNet Lite v2 product image](https://www.cd-jackson.com/zwave_device_uploads/1257/1257_default.jpg)
+![ZNet Lite v2 product image](https://opensmarthouse.org/zwavedatabase/1257/image/)
 
 
 The ZNet Lite v2 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -96,9 +96,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [Znet manual](https://www.cd-jackson.com/zwave_device_uploads/1257/TellStick-ZNet-Lite-technical-manual.pdf)
+* [Znet manual](https://opensmarthouse.org/zwavedatabase/1257/TellStick-ZNet-Lite-technical-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1257).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1257).

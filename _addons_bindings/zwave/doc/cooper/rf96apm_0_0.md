@@ -10,7 +10,7 @@ This describes the Z-Wave device *RF96APM*, manufactured by *Cooper Wiring Devic
 
 The device is in the category of *Power Outlet*, defining Small devices to be plugged into a power socket in a wall which stick there.
 
-![RF96APM product image](https://www.cd-jackson.com/zwave_device_uploads/1272/1272_default.png)
+![RF96APM product image](https://opensmarthouse.org/zwavedatabase/1272/image/)
 
 
 The RF96APM supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -185,9 +185,9 @@ Association group 2 supports 4 nodes.
 
 ### Documentation Links
 
-* [RF96APM Manual](https://www.cd-jackson.com/zwave_device_uploads/1272/z-wave-wireless-plugin-module-RF96APM-instrsheet.pdf)
+* [RF96APM Manual](https://opensmarthouse.org/zwavedatabase/1272/z-wave-wireless-plugin-module-RF96APM-instrsheet.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1272).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1272).

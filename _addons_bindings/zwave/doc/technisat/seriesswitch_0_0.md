@@ -10,7 +10,7 @@ This describes the Z-Wave device *Series switch 0300/9498*, manufactured by *Tec
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Series switch 0300/9498 product image](https://www.cd-jackson.com/zwave_device_uploads/1273/1273_default.png)
+![Series switch 0300/9498 product image](https://opensmarthouse.org/zwavedatabase/1273/image/)
 
 
 The Series switch 0300/9498 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -288,9 +288,9 @@ Association group 3 supports 10 nodes.
 
 ### Documentation Links
 
-* [data sheet](https://www.cd-jackson.com/zwave_device_uploads/1273/Technical-Data-Sheet-Series-switch-flush-mount-BJ.pdf)
+* [data sheet](https://opensmarthouse.org/zwavedatabase/1273/Technical-Data-Sheet-Series-switch-flush-mount-BJ.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1273).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1273).

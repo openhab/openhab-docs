@@ -10,7 +10,7 @@ This describes the Z-Wave device *Shuttle S/L*, manufactured by *Forest Group Ne
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![Shuttle S/L product image](https://www.cd-jackson.com/zwave_device_uploads/510/510_default.png)
+![Shuttle S/L product image](https://opensmarthouse.org/zwavedatabase/510/image/)
 
 
 The Shuttle S/L supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -121,9 +121,9 @@ Association group 1 supports 1 node.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/510/Shuttle-S-L-Z-Wave-EN.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/510/Shuttle-S-L-Z-Wave-EN.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/510).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/510).

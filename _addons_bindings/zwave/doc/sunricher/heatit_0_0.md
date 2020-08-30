@@ -10,7 +10,7 @@ This describes the Z-Wave device *Heatit Z-Push Button 8*, manufactured by *[Sun
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![Heatit Z-Push Button 8 product image](https://www.cd-jackson.com/zwave_device_uploads/1077/1077_default.png)
+![Heatit Z-Push Button 8 product image](https://opensmarthouse.org/zwavedatabase/1077/image/)
 
 
 The Heatit Z-Push Button 8 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -213,11 +213,11 @@ Association group 5 supports 5 nodes.
 
 ### Documentation Links
 
-* [Product sheet](https://www.cd-jackson.com/zwave_device_uploads/1077/Heatit-Z-Push-Button-8.pdf)
-* [Norweian Installers Manual - Z-Push Button 8](https://www.cd-jackson.com/zwave_device_uploads/1077/anual-heatit-z-push-button-8-fw-1-25-ver2018-a.pdf)
-* [English Installers Manual - Z-Push Button 8](https://www.cd-jackson.com/zwave_device_uploads/1077/a4-manual-heatit-z-push-button-8-fw-1-25-ver2018-b.pdf)
+* [Product sheet](https://opensmarthouse.org/zwavedatabase/1077/Heatit-Z-Push-Button-8.pdf)
+* [Norweian Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/anual-heatit-z-push-button-8-fw-1-25-ver2018-a.pdf)
+* [English Installers Manual - Z-Push Button 8](https://opensmarthouse.org/zwavedatabase/1077/a4-manual-heatit-z-push-button-8-fw-1-25-ver2018-b.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1077).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1077).

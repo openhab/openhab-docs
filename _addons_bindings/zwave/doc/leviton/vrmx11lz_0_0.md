@@ -10,7 +10,7 @@ This describes the Z-Wave device *VRMX1*, manufactured by *Leviton* with the thi
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![VRMX1 product image](https://www.cd-jackson.com/zwave_device_uploads/191/191_default.jpg)
+![VRMX1 product image](https://opensmarthouse.org/zwavedatabase/191/image/)
 
 
 The VRMX1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -88,9 +88,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/191/DI-031-VRMX1-02A-W.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/191/DI-031-VRMX1-02A-W.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/191).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/191).

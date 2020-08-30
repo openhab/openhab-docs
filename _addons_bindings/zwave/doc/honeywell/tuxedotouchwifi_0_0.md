@@ -10,7 +10,7 @@ This describes the Z-Wave device *Tuxedo Touch*, manufactured by *Honeywell* wit
 
 The device is in the category of *Remote Control*, defining Any portable or hand-held device that controls the status of something, e.g. remote control, keyfob etc..
 
-![Tuxedo Touch product image](https://www.cd-jackson.com/zwave_device_uploads/941/941_default.jpg)
+![Tuxedo Touch product image](https://opensmarthouse.org/zwavedatabase/941/image/)
 
 
 ## Overview
@@ -71,4 +71,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/941).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/941).

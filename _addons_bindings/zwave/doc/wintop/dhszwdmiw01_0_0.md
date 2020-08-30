@@ -10,7 +10,7 @@ This describes the Z-Wave device *DHSZWDMIW01*, manufactured by *Wintop* with th
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![DHSZWDMIW01 product image](https://www.cd-jackson.com/zwave_device_uploads/398/398_default.png)
+![DHSZWDMIW01 product image](https://opensmarthouse.org/zwavedatabase/398/image/)
 
 
 The DHSZWDMIW01 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -80,9 +80,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Z-Wave InWall Dimmer User Guide](https://www.cd-jackson.com/zwave_device_uploads/398/Z-Wave-InWall-Dimmer-User-Manual.pdf)
+* [Z-Wave InWall Dimmer User Guide](https://opensmarthouse.org/zwavedatabase/398/Z-Wave-InWall-Dimmer-User-Manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/398).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/398).

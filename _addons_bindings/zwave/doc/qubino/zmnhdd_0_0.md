@@ -10,7 +10,7 @@ This describes the Z-Wave device *ZMNHDD*, manufactured by *[Goap](http://www.qu
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![ZMNHDD product image](https://www.cd-jackson.com/zwave_device_uploads/210/210_default.png)
+![ZMNHDD product image](https://opensmarthouse.org/zwavedatabase/210/image/)
 
 
 The ZMNHDD supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -734,10 +734,10 @@ Association group 11 supports 16 nodes.
 
 ### Documentation Links
 
-* [User Manual V1.6-2](https://www.cd-jackson.com/zwave_device_uploads/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-6-2.pdf)
-* [Qubino_Flush-Dimmer-PLUS-user-manual_V1.9_eng-1.pdf](https://www.cd-jackson.com/zwave_device_uploads/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-9-eng-1.pdf)
+* [User Manual V1.6-2](https://opensmarthouse.org/zwavedatabase/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-6-2.pdf)
+* [Qubino_Flush-Dimmer-PLUS-user-manual_V1.9_eng-1.pdf](https://opensmarthouse.org/zwavedatabase/210/Qubino-Flush-Dimmer-PLUS-user-manual-V1-9-eng-1.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/210).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/210).

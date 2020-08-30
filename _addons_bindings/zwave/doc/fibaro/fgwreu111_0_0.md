@@ -10,7 +10,7 @@ This describes the Z-Wave device *FGWREU-111*, manufactured by *[Fibargroup](htt
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![FGWREU-111 product image](https://www.cd-jackson.com/zwave_device_uploads/1083/1083_default.jpg)
+![FGWREU-111 product image](https://opensmarthouse.org/zwavedatabase/1083/image/)
 
 
 The FGWREU-111 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -776,9 +776,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [Operating Manual](https://www.cd-jackson.com/zwave_device_uploads/1083/FGWREU-111-T-EN-v1-0.pdf)
+* [Operating Manual](https://opensmarthouse.org/zwavedatabase/1083/FGWREU-111-T-EN-v1-0.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/1083).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/1083).

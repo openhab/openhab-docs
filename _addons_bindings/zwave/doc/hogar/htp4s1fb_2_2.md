@@ -11,7 +11,7 @@ This version of the device is limited to firmware versions above 2.2
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 
-![HTP-4S1-FB product image](https://www.cd-jackson.com/zwave_device_uploads/545/545_default.jpg)
+![HTP-4S1-FB product image](https://opensmarthouse.org/zwavedatabase/545/image/)
 
 
 The HTP-4S1-FB supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -147,9 +147,9 @@ The device does not support associations.
 
 ### Documentation Links
 
-* [Manual](https://www.cd-jackson.com/zwave_device_uploads/545/4Touch.pdf)
+* [Manual](https://opensmarthouse.org/zwavedatabase/545/4Touch.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/545).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/545).

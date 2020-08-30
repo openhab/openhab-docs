@@ -10,7 +10,7 @@ This describes the Z-Wave device *Curtain Motor*, manufactured by *Jin Tao Bao* 
 
 The device is in the category of *Blinds*, defining Roller shutters, window blinds, etc..
 
-![Curtain Motor product image](https://www.cd-jackson.com/zwave_device_uploads/654/654_default.jpg)
+![Curtain Motor product image](https://opensmarthouse.org/zwavedatabase/654/image/)
 
 
 The Curtain Motor supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is also able to participate in the routing of data between other devices in the mesh network.
@@ -324,9 +324,9 @@ Association group 1 supports 5 nodes.
 
 ### Documentation Links
 
-* [User Manual](https://www.cd-jackson.com/zwave_device_uploads/654/Jin-tao-bao-Curtain-motor.pdf)
+* [User Manual](https://opensmarthouse.org/zwavedatabase/654/Jin-tao-bao-Curtain-motor.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/654).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/654).

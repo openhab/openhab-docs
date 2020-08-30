@@ -10,7 +10,7 @@ This describes the Z-Wave device *DMWD1*, manufactured by *Elexa Consumer Produc
 
 The device is in the category of *Sensor*, defining Device used to measure something.
 
-![DMWD1 product image](https://www.cd-jackson.com/zwave_device_uploads/608/608_default.jpg)
+![DMWD1 product image](https://opensmarthouse.org/zwavedatabase/608/image/)
 
 
 The DMWD1 supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -203,9 +203,9 @@ Association group 4 supports 5 nodes.
 
 ### Documentation Links
 
-* [Advanced Manual](https://www.cd-jackson.com/zwave_device_uploads/608/dome-z-wave-plus-door-window-sensor-dmwd1-advanced-manual.pdf)
+* [Advanced Manual](https://opensmarthouse.org/zwavedatabase/608/dome-z-wave-plus-door-window-sensor-dmwd1-advanced-manual.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/608).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/608).

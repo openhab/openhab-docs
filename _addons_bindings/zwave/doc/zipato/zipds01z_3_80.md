@@ -83,4 +83,4 @@ The device does not support associations.
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/844).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/844).

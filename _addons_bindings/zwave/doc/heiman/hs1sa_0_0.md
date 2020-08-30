@@ -10,7 +10,7 @@ This describes the Z-Wave device *HS1SA-Z*, manufactured by *[Heiman Technology 
 
 The device is in the category of *Smoke Detector*, defining Smoke detectors.
 
-![HS1SA-Z product image](https://www.cd-jackson.com/zwave_device_uploads/530/530_default.jpg)
+![HS1SA-Z product image](https://opensmarthouse.org/zwavedatabase/530/image/)
 
 
 The HS1SA-Z supports routing. This allows the device to communicate using other routing enabled devices as intermediate routers.  This device is unable to participate in the routing of data from other devices.
@@ -138,9 +138,9 @@ Association group 3 supports 5 nodes.
 
 ### Documentation Links
 
-* [HS1SA-Z](https://www.cd-jackson.com/zwave_device_uploads/530/HS1SAZ-3381756.pdf)
+* [HS1SA-Z](https://opensmarthouse.org/zwavedatabase/530/HS1SAZ-3381756.pdf)
 
 ---
 
 Did you spot an error in the above definition or want to improve the content?
-You can [contribute to the database here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-list/devicesummary/530).
+You can [contribute to the database here](https://opensmarthouse.org/zwavedatabase/530).
