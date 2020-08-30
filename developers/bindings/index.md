@@ -286,13 +286,10 @@ The following code block shows how to start a polling job in the initialize meth
 ```java
 @Override
 public void initialize() {
-    Runnable runnable = new Runnable() {
-        @Override
-        public void run() {
-            // execute some binding specific polling code
-        }
+    Runnable runnable = () -> {
+        // execute some binding specific polling code
     };
-    pollingJob = scheduler.scheduleAtFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
+    pollingJob = scheduler.scheduleWithFixedDelay(runnable, 0, 30, TimeUnit.SECONDS);
 }
 ```
 
