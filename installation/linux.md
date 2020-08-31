@@ -778,7 +778,7 @@ Make sure, the "openhab" user has ownership and/or write access to the openHAB c
 This can be accomplished by executing:
 
 ```shell
-sudo chown -hR openhab:openhab /etc/openhab2 /opt/openhab2/conf
+sudo chown -hR openhab:openhab /etc/openhab2
 ```
 
 Finally check the configuration file for correctness and restart Samba to load the new settings:
