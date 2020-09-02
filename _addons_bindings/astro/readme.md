@@ -68,6 +68,7 @@ This is done by setting `useMeteorologicalSeason` to true in the advanced settin
     * **group** `eclipse`
         * **channel**: 
             * `total, partial, ring` (DateTime)
+            * `totalElevation, partialElevation, ringElevation` (Number:Angle)
     * **group** `phase`
         * **channel** 
             * `name` (String), values: `SUN_RISE, ASTRO_DAWN, NAUTIC_DAWN, CIVIL_DAWN, CIVIL_DUSK, NAUTIC_DUSK, ASTRO_DUSK, SUN_SET, DAYLIGHT, NIGHT`
@@ -85,6 +86,7 @@ This is done by setting `useMeteorologicalSeason` to true in the advanced settin
     * **group** `eclipse`
         * **channel**: 
             * `total, partial` (DateTime)
+            * `totalElevation, partialElevation` (Number:Angle)
     * **group** `distance`
         * **channel**: 
             * `date` (DateTime)
