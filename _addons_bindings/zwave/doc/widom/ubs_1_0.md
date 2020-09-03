@@ -7,7 +7,7 @@ title: WiDom Universal Relay Switch - ZWave
 
 # WiDom Universal Relay Switch WiDom Universal Relay Switch
 This describes the Z-Wave device *WiDom Universal Relay Switch*, manufactured by *wiDom* with the thing type UID of ```widom_ubs_01_000```.
-This version of the device is limited to firmware version 1.0
+This version of the device is limited to firmware versions 1.0 to 1.7
 
 The device is in the category of *Wall Switch*, defining Any device attached to the wall that controls a binary status of something, for ex. a light switch.
 

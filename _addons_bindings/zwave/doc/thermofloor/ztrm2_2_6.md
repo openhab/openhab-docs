@@ -7,7 +7,7 @@ title: Heatit Z-TRM 2 - ZWave
 
 # Heatit Z-TRM 2 Floor thermostat
 This describes the Z-Wave device *Heatit Z-TRM 2*, manufactured by *ThermoFloor* with the thing type UID of ```thermofloor_ztrm2_02_006```.
-This version of the device is limited to firmware version 2.6
+This version of the device is limited to firmware versions 2.6 to 2.255
 
 The device is in the category of *HVAC*, defining Air condition devices, Fans.
 
