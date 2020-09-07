@@ -391,7 +391,7 @@ Devices are identified in the database by 4 pieces of information that are provi
 
 The primary identification is performed using the Manufacturer ID, Device Type and Device ID. Many devices use multiple deviceType and deviceId sets to identify different regions, or other minor differences, and some manufacturers will produce multiple firmware versions for the same device, so this information is also used in some instances.
 
-Further information on the database can be found [here](http://www.cd-jackson.com/index.php/zwave/zwave-device-database/zwave-device-database-guide).
+Further information on the database can be found [here](https://www.opensmarthouse.org/blog/zwave_device_database_guide).
 
 
 #### Unknown Devices

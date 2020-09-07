@@ -84,7 +84,7 @@ This channel provides the battery level as a percentage and also reflects the lo
 
 ## Device Configuration
 
-The following table provides a summary of the 7 configuration parameters available in the NAS-AB01Z.
+The following table provides a summary of the 9 configuration parameters available in the NAS-AB01Z.
 Detailed information on each parameter can be found in the sections below.
 
 | Param | Name  | Description |
@@ -96,6 +96,8 @@ Detailed information on each parameter can be found in the sections below.
 | 5 | Alarm music index | Alarm music index |
 | 6 | Door bell music index | Door bell music index |
 | 7 | Default Siren on mode | Default Siren on mode |
+| 8 | Alarm Led Enable | Alarm Led Enable |
+| 9 | Door Bell Led Enable | Door Bell Led Enable |
 
 ### Parameter 1: Configure Alarm music volume
 
@@ -178,6 +180,32 @@ Values in the range 1 to 2 may be set.
 The manufacturer defined default value is ```1```.
 
 This parameter has the configuration ID ```config_7_1``` and is of type ```INTEGER```.
+
+
+### Parameter 8: Alarm Led Enable
+
+Alarm Led Enable
+This parameter defines the default led enable status when siren is on for ALARM SOUND MODE. If parameter is set to ‘0’, led will be disable. If parameter is set to ‘1’, led will be enable. When siren is on, the led will blink.
+Values in the range 0 to 1 may be set.
+
+The manufacturer defined default value is ```1```.
+
+This parameter has the configuration ID ```config_8_1``` and is of type ```INTEGER```.
+
+
+### Parameter 9: Door Bell Led Enable
+
+Door Bell Led Enable
+This parameter defines the default led enable status when siren is on for DOOR BELL SOUND MODE.
+
+If parameter is set to ‘0’, led will be disable.
+
+If parameter is set t0 ‘1’, led will be enable. When siren is on, the led will blink.
+Values in the range 0 to 1 may be set.
+
+The manufacturer defined default value is ```0```.
+
+This parameter has the configuration ID ```config_9_1``` and is of type ```INTEGER```.
 
 
 ## Association Groups
