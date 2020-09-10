@@ -127,7 +127,7 @@ openhabian-config unattended
 
 to get the automated openHABian installation going.
 
-Please note that we cannot test HW/OS combos upfront so there is no support / no guarantee for this work as explained in the [README](../README.md).
+Please note that we cannot test HW/OS combos upfront so there is no support / no guarantee for this work as explained in the [README](https://github.com/openhab/openhabian/blob/master/README.md).
 Don't be too disappointed if you run into errors. Drop us a note on Github.
 If the `unattended` installation does not work out, you can still try the openHABian configuration tool in interactive mode:
 
@@ -181,8 +181,8 @@ Follow the instructions in the previous section and insert a line into `openhabi
 You might want to setup openHABian to automatically backup and mirror your internal SD card to an external unit.
 We suggest to use another SD card in an external card writer device so that in case your internal SD card fails, you can switch SD cards to get the system back up running fast.
 The second card needs at least twice the size of your internal card.
-Define backupdrive=`/dev/sdX` to enable this functionality right during unattended installation.
-Eventually define `storagedir=/storage` or any other name, too.
+Define `backupdrive=/dev/sdX` (replace X with the proper character) to enable this functionality right during unattended installation.
+Eventually change `storagedir=/storage` to any other name.
 The first attached disk type device is usually called `/dev/sda`.
 openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space to a storage partition.
 Use `storagecapacity=xxx` to override how much space to consume at most for backup storage (in MB).
@@ -389,7 +389,7 @@ You have been warned, if there came any warranty with openHABian to begin with, 
 
 <a id="faq-other-platforms"></a>
 #### Can I use openHABian on ...?
-See the [README](../README.md) for a list of supported HW and OS.
+See the [README](https://github.com/openhab/openhabian/blob/master/README.md) for a list of supported HW and OS.
 openHABian is developed for Debian/Ubuntu based systems.
 If your operating system is based on these or if your hardware supports one, your chances are high openHABian can be used.
 Check out the [Manual Setup](#manual-setup) instructions for guidance and consult the [debug guide](openhabian-DEBUG.md) if you run into problems.
