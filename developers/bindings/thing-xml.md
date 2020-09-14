@@ -188,12 +188,12 @@ If an empty `<event>` tag is specified, the channel can trigger any event payloa
 
 There exist system-wide trigger channel types that are available by default:
 
-| Channel Type ID | Reference typeId       | Description  |
-|-----------------|------------------------|------------- |
-| trigger         | system.trigger         | Can only trigger, no event payload |
-| rawbutton       | system.rawbutton       | Can trigger `PRESSED` and `RELEASED` |
-| button          | system.button          | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED` |
-| rawrocker       | system.rawrocker       | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
+| Channel Type ID | Reference typeId | Description                                                                     |
+|-----------------|------------------|---------------------------------------------------------------------------------|
+| trigger         | system.trigger   | Can only trigger, no event payload                                              |
+| rawbutton       | system.rawbutton | Can trigger `PRESSED` and `RELEASED`                                            |
+| button          | system.button    | Can trigger `SHORT_PRESSED`, `DOUBLE_PRESSED` and `LONG_PRESSED`                |
+| rawrocker       | system.rawrocker | Can trigger `DIR1_PRESSED`, `DIR1_RELEASED`, `DIR2_PRESSED` and `DIR2_RELEASED` |
 
 In the following sections the declaration and semantics of tags, state descriptions and channel categories will be explained in more detail. 
 For a complete sample of the thing types XML file and a full list of possible configuration options please see the [XML Configuration Guide](config-xml.html).
@@ -218,7 +218,7 @@ This library is still in development., and only a very small set of tags are def
 | Lighting           | Switch, Dimmer, Color      | A light source, either switchable, dimmable or color                                  |
 | Switchable         | Switch, Dimmer, Color      | An accessory that can be turned off and on.                                           |
 | CurrentTemperature | Number, Number:Temperature | An accessory that provides a single read-only temperature value.                      |
-| TargetTemperature  | Number, Number:Temperature | A target temperature that should engage a thermostats heating and cooling actions.   |
+| TargetTemperature  | Number, Number:Temperature | A target temperature that should engage a thermostats heating and cooling actions.    |
 | CurrentHumidity    | Number                     | An accessory that provides a single read-only value indicating the relative humidity. |
 
 
@@ -248,7 +248,7 @@ The following XML snippet shows the definition for a temperature actuator channe
 
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
-A `String` item must be used as item type.
+A `String` or `Number` item must be used as item type.
 
 The following XML snippet defines a list of predefined state options:
 
