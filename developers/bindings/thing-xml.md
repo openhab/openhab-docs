@@ -249,6 +249,9 @@ The following XML snippet shows the definition for a temperature actuator channe
 Some channels might have only a limited and countable set of states.
 These states can be specified as options.
 A `String` or `Number` item must be used as item type.
+In general an item type `String` should be preferred with a meaningful option value.
+This prevents the user from having to guess what a value represents if a number is used as option value.
+A `Number` item-type is useful when the value represents a quantity.
 
 The following XML snippet defines a list of predefined state options:
 
