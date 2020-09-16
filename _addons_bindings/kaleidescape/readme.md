@@ -5,7 +5,7 @@ title: Kaleidescape - Bindings
 type: binding
 description: "![Kaleidescape logo](doc/Kaleidescape_Logo.png)"
 since: 2x
-install: manual
+install: auto
 ---
 
 <!-- Attention authors: Do not edit directly. Please add your changes to the appropriate source repository -->
