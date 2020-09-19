@@ -34,15 +34,18 @@ The following features are provided by the openHABian image out of the box:
 -   Zulu Embedded OpenJDK Java 8, 11 or AdoptOpenJDK
 -   [openHABian Configuration Tool](#openhabian-configuration-tool) including updater functionality
 -   openHAB Log Viewer (based on [frontail](https://github.com/mthenw/frontail))
--   Samba file sharing with [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
+-   Samba file sharing [pre-configured to use shares](https://www.openhab.org/docs/installation/linux.html#mounting-locally)
 -   Useful Linux packages pre-installed, including `vim, mc, screen, htop, ...`
 -   Login information screen, powered by [FireMotD](https://github.com/OutsideIT/FireMotD)
 -   Customized Bash shell experience
--   Customized vim settings, including [openHAB syntax highlighting](https://github.com/cyberkov/openhab-vim)
--   Customized nano settings, including [openHAB syntax highlighting](https://github.com/airix1/openhabnano)
--   [Raspberry Pi specific](rasppi.html): Extend to the whole SD card, 16MB GPU memory split
+-   Customized settings and openHAB syntax highlighting for [vim](https://github.com/cyberkov/openhab-vim) and[nano](https://github.com/airix1/openhabnano)
+-   Frontail log viewer
+-   [Mosquitto](https://mosquitto.org) MQTT broker
+-   the [InfluxDB](https://www.influxdata.com/) database to store home automation data and [Grafana](https://grafana.com/) to visualize it
+-   FIND, the [Framework for Internal Navigation and Discovery](https://www.internalpositioning.com/)
+-   [WireGuard](https://www.wireguard.com/) for remote VPN access
 
-Additionally the **openHABian Configuration Tool** [`openhabian-config`](#openhabian-configuration-tool) is included and provides the following optional settings and components:
+The included **openHABian Configuration Tool** [`openhabian-config`](#openhabian-configuration-tool) provides the following optional settings and components:
 
 ![openHABian-config menu](images/openHABian-config.png)
 
@@ -54,21 +57,19 @@ Additionally the **openHABian Configuration Tool** [`openhabian-config`](#openha
 -   Easily install and preconfigure [Optional Components](#optional-components) of your choice
 -   ... and many more
 -   Raspberry Pi specific:
-    -   Prepare the serial port for the use with extension boards like Razberry, SCC, Enocean Pi, ...
+    -   Prepare the serial port for the use with extension boards like RaZberry, Enocean Pi, ...
+    -   Use ZRAM to mitigate SD card wearout due to excessive writes
     -   Move the system partition to an external USB stick or drive
 
 ## Quick Start
-Here you'll find supported and tested installation platforms and instructions.
 
 ### Raspberry Pi (Prepackaged SD Card Image)
 **Flash, plug, wait, enjoy:**
 The provided image is based on the [Raspberry Pi OS Lite](https://www.raspberrypi.org/downloads/raspberry-pi-os/) (previously called Raspbian) standard system.
-On first boot the system will set up openHAB and the mentioned settings and tools.
+On first boot, the system will set up openHAB and the mentioned settings and tools.
 All packages will be downloaded in their newest version and configured to work without further modifications.
 The whole process will take a few minutes, then openHAB and all other needed tools to get started will be ready to use without further configuration steps.
 openHABian is designed as a headless system, you will not need a display or a keyboard.
-
-Learn more about the Raspberry Pi as your platform for openHAB and about the requirements over in our [Raspberry Pi article](rasppi.html).
 
 **Setup:**
 
@@ -179,15 +180,22 @@ Follow the instructions in the previous section and insert a line into `openhabi
 
 ### Auto-backup
 You might want to setup openHABian to automatically backup and mirror your internal SD card to an external unit.
-We suggest to use another SD card in an external card writer device so that in case your internal SD card fails, you can switch SD cards to get the system back up running fast.
-The second card needs at least twice the size of your internal card.
+We suggest to use another SD card in an external card writer device so that in case your internal SD card fails,
+you can switch SD cards to get the system back up running fast.
+The second card needs to have at least twice the size of your internal card.
+
+To setup right at installation time:
 Define `backupdrive=/dev/sdX` (replace X with the proper character) to enable this functionality right during unattended installation.
 Eventually change `storagedir=/storage` to any other name.
 The first attached disk type device is usually called `/dev/sda`.
-openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space to a storage partition.
-Use `storagecapacity=xxx` to override how much space to consume at most for backup storage (in MB).
-The install routine will also setup Amanda to take daily backups and store them to that third partition.
-When you need to switch to run on backup, get a another new SD card to match the size of the broken card.
+openHABian will create partitions 1 and 2 to be mirrors of your internal card and will assign the remaining space
+to a storage partition.
+The unattended install routine will also setup Amanda to take daily backups and store them to that third partition.
+Use `storagecapacity=xxx` to override how much space to consume at most for Amanda backup storage (in MB).
+If you choose to skip this during system installation, you can still setup both, mirroring and Amanda, at
+any later time using the 5X menu options.
+
+Should you need to switch to run on backup, get a another new SD card to match the size of the broken card.
 Note most are not "exactly" 16 or 32 GB so your new one mustn't have less bytes than the old one.
 Use menu option 54 to copy your active backup card back to the new one and switch back as soon as possible.
 
