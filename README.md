@@ -40,7 +40,7 @@ will help you to get it right.
 
 We use them to bring together all relevant articles or to archive versioned content.
 Mostly those branches will get updated automatically through our continuous integration builds.
-You can read a bit more below about our external ressources and how we get them.
+You can read a bit more below about our external resources and how we get them.
 
 ### Automatically Generated Parts
 

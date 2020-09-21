@@ -23,7 +23,7 @@ These are described under *Installation of Add-ons* below
 
 ## Installation of Add-ons
 
-Depending on the [package]({{base}}/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
+Depending on the [package]({{base}}/configuration/packages.html) you have chosen during your first time setup, there are already some pre-installed add-ons.
 Additional add-ons can be installed in the different ways, described below.
 
 ### Through Paper UI
@@ -79,7 +79,7 @@ With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CON
 The path is depending on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux]({{base}}/installation/linux.html#file-locations) or [Windows]({{base}}/installation/windows.html#file-locations).
 
-The file could look like this (depending on your choosen package and already installed add-ons):
+The file could look like this (depending on your chosen package and already installed add-ons):
 
 ```text
 package = standard

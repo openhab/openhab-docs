@@ -103,6 +103,7 @@ or `Fixes #XXX`, which will automatically close the issue when merged.
 openHAB maintainers use the [GitHub review feature](https://help.github.com/articles/about-pull-request-reviews/) to indicate acceptance.
 
 
+<a id="sign-your-work"></a>
 ### Sign your Work
 
 The sign-off is a simple line at the end of the explanation for the
@@ -183,6 +184,24 @@ There are several exceptions to the signing requirement. Currently these are:
 Don't forget: being a maintainer is a time investment.
 Make sure you will have time to make yourself available.
 You don't have to be a maintainer to make a difference on the project!
+
+### Contributing to the Documentation
+Sharing your knowledge through documentation contributions is incredibly valuable for the community allowing everybody to benefit from your lessons learned. 
+If you are not yet ready to contribute code don't let that stop you from contributing to the documentation. 
+Documentation change requests are very easy. 
+No need to file an issue. 
+You don't even need to know Git. 
+* Create a GitHub account and configure your full name in your profile.
+* Go to the documentation page that you want to update and click on "Edit this page on GitHub" at the bottom.
+* GitHub will bring up a web editor where you can enter your desired changes.
+* You can preview your changes under the "Preview changes" tab.
+* Add a title and optional description for your proposed change at the bottom of the editor.
+* The [sign off rules](#sign-your-work) described above do apply to documentation contributions as well. 
+Simply add an empty line and the sign off statement "Signed-off-by: Joe Smith \<joe.smith@email.com\>" at the end of your change description at the bottom of the editor.  
+Note that as per the rules you have to provide your full name in the sign off and that full name has to match the name you configured in your GitHub profile for the DCO check to succeed.
+* Click the "Propose file change" button at the bottom of the editor, then click "Create pull request" on the next page, and then on the summary page click "Create pull request" one more time.
+
+If you prefer to use Git you can of course use the code contribution process for documentation contributions as well. 
 
 ## Community Guidelines
 

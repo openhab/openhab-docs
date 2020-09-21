@@ -32,14 +32,14 @@ openHAB allows you to build up on the following concepts:
   Extend where audio can be played on or implement audio sources.
 * and many more (not covered yet).
 
-Sometimes though its just not worth writing a binding and you are better off
+Sometimes though it's just not worth writing a binding and you are better off
 just using an http action in a rule or script to retrieve some values.
 
 Therefore: First think what you want to achieve! Check our [community forum](https://community.openhab.org)
 and discuss your concept.
 
 Find the right abstraction and the corresponding link on the left navigation panel.
-General [coding guidelines](development/guidelines.html) apply to all types of addon development.
+General [coding guidelines](docs/developer/guidelines.html) apply to all types of addon development.
 
 ## Setup the Development Environment
 

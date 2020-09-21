@@ -6,8 +6,8 @@ layout: documentation
 
 # Installation of Add-ons
 
-Depending on the [package](/docs/configuration/packages.html) you have choosen during your first time setup, there are already some pre-installed add-ons.
-Additional add-ons can be installed in the different ways, described below.
+Depending on the [package](/docs/configuration/packages.html) you have chosen during your first time setup, there are already some pre-installed add-ons.
+Additional add-ons can be installed in different ways, described below.
 
 ## Through Paper UI
 
@@ -59,10 +59,10 @@ The trailing `1` has to be appended for `binding`- and `misc`-addons.
 It is *not needed* for other addon types like `persistence`.
 
 With this information we can now edit the *addons.cfg* file in the `$OPENHAB_CONF/services` folder on the machine you are running openHAB on.
-The path is depending on your installation.
+The path depends on your installation.
 You can find out the correct locations on the corresponding documentation pages, e.g. [Linux](/docs/installation/linux.html#file-locations) or [Windows](/docs/installation/windows.html#file-locations).
 
-The file could look like this (depending on your choosen package and already installed add-ons):
+The file could look like this (depending on your chosen package and already installed add-ons):
 
 ```text
 package = standard
@@ -93,5 +93,5 @@ For this installation option you need a bundles `.jar` file.
 One way of retrieving those files is mentioned above in the openHAB console part.
 
 Place the `.jar` file in the `addons` folder on the machine you are running openHAB on.
-As described already for the addons.cfg option, the path is depending on your installation.
+As described already for the addons.cfg option, the path depends on your installation.
 Place the .jar file in the folder Additional add-on files as described in File Locations ([Linux](/docs/installation/linux.html#file-locations), [Windows](/docs/installation/windows.html#file-locations) or [macOS](/docs/installation/macos.html#file-locations)).

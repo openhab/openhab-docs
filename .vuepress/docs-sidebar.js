@@ -28,7 +28,6 @@ module.exports = [
       ['installation/macos', 'macOS'],
       'installation/openhabian',
       'installation/rasppi',
-      'installation/pine',
       'installation/armbian',
       'installation/docker',
       'installation/synology',

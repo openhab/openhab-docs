@@ -83,7 +83,7 @@ You can now make changes, set breakpoints, etc.
 
 1. May take openHAB a few seconds to realize there is a new bundle and to reinitilize it after it's been copied.  Be a little bit patient.
 2. You must run the `mvn Compile (Online)` task atleast once to allow the offline compile to occur.  You should use the `mvn Compile (Offline)` task for most of your development as it's quicker since it uses the cache files.  When you are ready to commit (or release a test bundle) - you should run the `mvn Compile (Release)` task to include code checks (and resolve them).
-3. Win10+ allows forward slashes as part of it's path.  If you use backward slashes instead - you will need to double up on them since tasks.json uses a backward slash as a delimiter.  Example: `c:\\\\openhab`
+3. Win10+ allows forward slashes as part of its path.  If you use backward slashes instead - you will need to double up on them since tasks.json uses a backward slash as a delimiter.  Example: `c:\\\\openhab`
    
 ## Tasks
 
