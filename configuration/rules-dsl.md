@@ -22,7 +22,7 @@ On this page you will learn how to leverage its functionality to do *real* home 
 ### File Location
 
 Rules are placed in the folder `$OPENHAB_CONF/rules`.
-The [demo setup]({{base}}/tutorials/demo.html) already comes with a demo file called `demo.rules`, which has a couple of examples that can be a good starting point.
+The [demo setup](http://demo.openhab.org:8080/) already comes with a demo file called [`demo.rules`](https://github.com/openhab/openhab-distro/blob/master/features/distro-resources/src/main/resources/rules/demo.rules), which has a couple of examples that can be a good starting point.
 
 A rule file can contain multiple rules.
 All rules of a file share a common execution context, i.e. they can access and exchange variables with each other.
@@ -380,7 +380,7 @@ There are two ways to discover these methods:
 
 - Use the [openHAB VS Code Extension](/docs/configuration/editors.html#editors.html#openhab-vs-code-extension) and the `<ctrl><space>` key combo to list all the available methods
 - Look at the JavaDocs for the given type.
-For example, the [JavaDoc for HSBType](http://www.eclipse.org/smarthome/documentation/javadoc/index.html?org/eclipse/smarthome/core/library/types/HSBType.html) shows getRed, getBlue, and getGreen methods.
+For example, the [JavaDoc for HSBType](https://www.openhab.org/javadoc/v2.5/org/eclipse/smarthome/core/library/types/hsbtype) shows getRed, getBlue, and getGreen methods.
 These methods can be called in Rules-DSL without the "get" part in name as in `(MyColorItem.state as HSBType).red)`.
 They retrieve the state of MyColorItem and then casts it as HSBType to be able to use the methods associated with the HSBType.
 
@@ -553,16 +553,16 @@ Here some other commonly needed conversions:
 * For DecimalType states:
 
 ```java
-//convert integer_number to string containing hex_code
-var String hex_code = Long.toHexString(integer_number);
+// convert integer_number to string containing hex_code
+var String hex_code = Long.toHexString(integer_number)
 
-//convert hex_code to Number type
-var MyNumber = Integer.parseInt(hex_code, 16) as Number
-//use the following for large_hex_code
-var MyNumber = Long.parseLong(hex, 16) as Number
+// convert hex_code to Number type
+var myNumber = Integer.parseInt(hex_code, 16) as Number
+// use the following for large_hex_code
+var myNumber = Long.parseLong(hex, 16) as Number
 
-// coverting hex_code into DecimalType
-var DecimalType parsedResult = DecimalType.valueOf(Long.parseLong(hex_code, 16).toString);
+// convert hex_code to DecimalType
+var DecimalType parsedResult = new DecimalType(Long.parseLong(hex_code, 16))
 ```
 
 * For QuantityType states:

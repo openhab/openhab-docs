@@ -26,6 +26,7 @@ If you are just keen on binding development, you may skip this document first an
 The structure of a binding follows the structure of a typical OSGi bundle project.
 
 ```
+|- doc                   Images and other assets used in the Readme.md
 |- src/main
 |---- feature
 |-------- feature.xml   Your OSGI feature file
@@ -350,8 +351,3 @@ For Web Socket Operations
 ::: tip Note
 WebSocketClient instances should be obtained by the handler factory through the WebSocketClientFactory service and unless there are specific configuration requirements, the shared instance should be used.
 :::
-
-Additionally these libraries are allowed
-
-* Apache Commons IO
-* Apache Commons Lang
