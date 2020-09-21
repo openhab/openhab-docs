@@ -87,7 +87,7 @@ The table below shows the possible states of an OSGi bundle with a short explana
 
 | Status      | Description                                                                                                                                                                                |
 |-------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| INSTALLED   | The bundle has been installed into the OSGi container, but some of it's dependencies are still not resolved. The bundle requires packages that have not been exported by any other bundle. |
+| INSTALLED   | The bundle has been installed into the OSGi container, but some of its dependencies are still not resolved. The bundle requires packages that have not been exported by any other bundle. |
 | RESOLVED    | The bundle is installed and the all the dependencies at a class level are resolved and wired. The bundle can export the packages, that it provides.                                        |
 | STARTING    | A temporary state that the bundle goes through while the bundle is starting, after all dependencies have been resolved. The bundle is permitted to register services.                      |
 | ACTIVE      | The bundle is running                                                                                                                                                                      |
